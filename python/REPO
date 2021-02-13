@@ -61,6 +61,7 @@ d:python-authheaders
 d:python-iso-639
 d:python-bluepy
 d:python-zope-interface
+d:python-cbor
 d:python-ansiwrap
 d:python-amqp
 d:python-apsw
@@ -110,6 +111,7 @@ d:python-ansicolor
 d:python-aioresponses
 d:python-boto
 d:python-pyqtwebengine
+d:python-canonicaljson
 d:python
 d:python-boto3
 d:python-async-timeout
@@ -118,6 +120,7 @@ d:python-aiosqlite
 d:python-aiohttp-socks
 d:python-black
 d:python-aresponses
+d:python-cchardet
 d:python-authlib
 d:python-cairocffi
 d:python-asn1crypto
@@ -139,6 +142,7 @@ d:python-basictracer
 d:python-apispec
 d:python-alembic
 d:python-pypeg2
+d:python-case
 d:python-anytree
 d:python-blist
 d:python-baron
@@ -273,6 +277,7 @@ f:6c5791c93abe413dfc40971e755d4168:python-iso-639/.pkgfiles
 f:50f0eb4f3f1244d6516eed9e5f9b8af7:python-iso-639/spkgbuild
 f:45450121e6bf535947c096d1733e7b47:python-bluepy/spkgbuild
 f:42479388c543fd906a4f12ce1457624f:python-zope-interface/spkgbuild
+f:4b7426618d05d4b961155c34e980e177:python-cbor/spkgbuild
 f:b185be896a5ef109f7422f24455c9259:python-ansiwrap/spkgbuild
 f:7e186ba710c196a6f9868d4c9498b40d:python-amqp/spkgbuild
 f:8fedcdfbf140972f0462491832e7a51f:python-apsw/spkgbuild
@@ -340,6 +345,7 @@ f:5dc12094d51f5815dc997cfc121465b7:python-boto/spkgbuild
 f:d53bcf227e1509686fc59d4fdf47b917:python-pyqtwebengine/.checksums
 f:e9d92b858a5328be551be0b2395eadf1:python-pyqtwebengine/.pkgfiles
 f:dee9124adcb13ee132d961af3d44b647:python-pyqtwebengine/spkgbuild
+f:a81f2a32e427e19ad3313da53e501e38:python-canonicaljson/spkgbuild
 f:15575a0e60f8ebcf792af6c155286e78:python/.checksums
 f:61ac27f4539b261ccfb0064fc4cc924f:python/.pkgfiles
 f:f1f77a0b4b8b66d3d3d4e5caf7b08444:python/spkgbuild
@@ -351,6 +357,7 @@ f:70fe0d3b2ae4e1249a5837abd4851682:python-aiosqlite/spkgbuild
 f:6e8a179d792fc6cf4ec950f297814472:python-aiohttp-socks/spkgbuild
 f:066f6d399ded16d1316d8641cd4bda64:python-black/spkgbuild
 f:525438cd0f7e8cbfc57f1781e63b0ce4:python-aresponses/spkgbuild
+f:a63430692d469efca8192efd85f8bb3e:python-cchardet/spkgbuild
 f:914e323cd46c21a4928a0997d9453e2b:python-authlib/spkgbuild
 f:84588f6830c6ea8d078e7e0020685660:python-cairocffi/spkgbuild
 f:b2b860b0e1b46e9cb0d08741b700ccc3:python-asn1crypto/spkgbuild
@@ -382,6 +389,7 @@ f:954d44b588cd5925ac4e87a5b96d17f6:python-alembic/spkgbuild
 f:8ac026720cd7f22e81e46d3391b01ea1:python-pypeg2/.checksums
 f:d94987783fd178cc2214087201659056:python-pypeg2/.pkgfiles
 f:ae9dad246a330ef894fd9d2cd2b4189b:python-pypeg2/spkgbuild
+f:64a5017ca44166210ac555c00c40e2ee:python-case/spkgbuild
 f:e2de7b42a8ef1cfe77180c2542a1c6fa:python-anytree/spkgbuild
 f:378a09eab011b015c859fa6d75dfaa19:python-blist/spkgbuild
 f:f92ea2f088e9da2181bb4bd188701e43:python-baron/spkgbuild

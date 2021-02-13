@@ -9,7 +9,7 @@ release=2
 source="https://files.pythonhosted.org/packages/source/c/cchardet/cchardet-$version.tar.gz"
 
 build() {
-     cd cchardet-$version
+   cd cchardet-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

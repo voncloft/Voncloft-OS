@@ -10,7 +10,7 @@ source="https://github.com/matrix-org/python-canonicaljson/archive/v${version}.t
 options="!checksum"
 
 build() {
-	 cd python-canonicaljson-$version
+   cd python-canonicaljson-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
