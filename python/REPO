@@ -22,6 +22,7 @@ d:python-sip-pyqt5
 d:python-websocket-client
 d:python-apscheduler
 d:python-bitvector
+d:python-calmjs
 d:python-ansicolors
 d:python-apptools
 d:python-binary-memcached
@@ -44,6 +45,7 @@ d:python-awkward
 d:python-bottle
 d:python-btchip
 d:python-arpeggio
+d:python-caja
 d:python-aiorpcx
 d:python-isodate
 d:python-biscuits
@@ -93,6 +95,7 @@ d:python-aiosmtpd
 d:python-gobject2
 d:python-beaker
 d:python-ansi2html
+d:python-calmjs.parse
 d:python-betamax
 d:python-btrees
 d:python-biopython
@@ -218,6 +221,7 @@ f:2946197643ee1a3f26c386508815fc1c:python-websocket-client/.pkgfiles
 f:8d5e46f1b35500f1b3515b66ec992222:python-websocket-client/spkgbuild
 f:7e5002a9fe655d9f33ae9dc96cee57c0:python-apscheduler/spkgbuild
 f:1daa6961bd16610c256a6dd3bc2f930c:python-bitvector/spkgbuild
+f:db097d93403a25464006847274329208:python-calmjs/spkgbuild
 f:56a821f6f221ef3634c7713910a09352:python-ansicolors/spkgbuild
 f:1c8f23d1fa850e4467730e654535bc3e:python-apptools/spkgbuild
 f:bd94dfe0efec0560454849af3f38ba7f:python-binary-memcached/spkgbuild
@@ -244,6 +248,7 @@ f:1cd289745d5e2ead0bbd497605a518ba:python-awkward/spkgbuild
 f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
 f:ac44a971a87ecc7f6779ed963b417d97:python-btchip/spkgbuild
 f:007b8a182f3ba5345cfc6129bffbbcbd:python-arpeggio/spkgbuild
+f:92dc566419dbe85f5800f0a95d5104d1:python-caja/spkgbuild
 f:a8c992d556dc6b8ddd25bd81f65dbe28:python-aiorpcx/spkgbuild
 f:368d0336f28c9c71abcca501c3e01270:python-isodate/.checksums
 f:7b647a8b0afc9784b11f0900dce841a0:python-isodate/.pkgfiles
@@ -315,6 +320,7 @@ f:cf2c0ad0f0420582c058fd27b40c11e9:python-gobject2/.pkgfiles
 f:fd892325a4ea1099a94a2186537fe522:python-gobject2/spkgbuild
 f:21c51ccae4ea6f72bdafeb2be869721d:python-beaker/spkgbuild
 f:2099ef7ef6852ce41da23524f45b7e18:python-ansi2html/spkgbuild
+f:7688e74dc3f917090a9844f6e948b33a:python-calmjs.parse/spkgbuild
 f:e3eb480a3906ba08d10551adf755f448:python-betamax/spkgbuild
 f:601fcc5384925f8d46464c4f4f13718f:python-btrees/spkgbuild
 f:c23dc7d4f752dab8cd7ddcb18fd92825:python-biopython/spkgbuild
