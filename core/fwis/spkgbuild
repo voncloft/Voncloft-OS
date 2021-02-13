@@ -9,7 +9,6 @@ source="fwis"
 options="!checksum"
 
 build() {
-	mkdir -pv $PKG/usr/bin
-	install $SRC/fwis $PKG/usr/bin
-	chmod +x /usr/bin/fwis
+	mkdir -pv $PKG/usr/bin/
+	install -D -m755 $SRC/fwis $PKG/usr/bin/
 }
