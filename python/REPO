@@ -51,6 +51,7 @@ d:python-isodate
 d:python-biscuits
 d:python-aiomysql
 d:python-axolotl
+d:python-celery
 d:python-pafy
 d:python-argparse-manpage
 d:python-aiodns
@@ -87,6 +88,7 @@ d:python-axolotl-curve25519
 d:python-atom
 d:python-apipkg
 d:python-asgiref
+d:python-certifi
 d:python-twisted
 d:python-cachetools
 d:python-browserid
@@ -173,6 +175,7 @@ d:python-aiofiles
 d:python-btrfs
 d:python-bleach
 d:python-sip
+d:python-cerberus
 d:python-asyncpg
 d:python-rencode
 d:python-pytz
@@ -262,6 +265,7 @@ f:6476dd0d2eec11b83fc1e54e96020411:python-isodate/spkgbuild
 f:02d8c2ec4ef654a758d21e2cf67dbc94:python-biscuits/spkgbuild
 f:20a0c84dcff81c89fcbc46e4ef85cb09:python-aiomysql/spkgbuild
 f:64eda91635464d6b752583b098ddf3d8:python-axolotl/spkgbuild
+f:1c53949a4037842cd7e0fbd25483202c:python-celery/spkgbuild
 f:c41ca121c490477509603d425db804b1:python-pafy/.checksums
 f:bf7b61ef6c19acf1c110cabf879a8705:python-pafy/.pkgfiles
 f:0df00557a9a875a8f812014525d3181d:python-pafy/spkgbuild
@@ -314,6 +318,7 @@ f:cf3c696e01a051ef0295244200744c00:python-axolotl-curve25519/spkgbuild
 f:b448b2ae1d8241153074621b1d288b74:python-atom/spkgbuild
 f:557d7eac6f48d18a604396bdcf7849a6:python-apipkg/spkgbuild
 f:1d425826a399dba5c24eb64ed5759478:python-asgiref/spkgbuild
+f:c737e3daafe98e1cdef9b2718b7a05fa:python-certifi/spkgbuild
 f:c1f89f92561ecdb0eca822d7ed6d6be8:python-twisted/spkgbuild
 f:0aaeb795d2026b89dfd3b58b65f0cf24:python-cachetools/spkgbuild
 f:caff92478847a886546f1ab27f30f10d:python-browserid/spkgbuild
@@ -435,6 +440,7 @@ f:47da596c2e62d66f0fbc9bc81ee3144e:python-bleach/spkgbuild
 f:e9eac96fc62cda5cc43e1d064ff9659f:python-sip/.checksums
 f:382c9607fe1c15b291fe3a714c11a049:python-sip/.pkgfiles
 f:5c5c6366fdb596b298ddaf8503d66af7:python-sip/spkgbuild
+f:092d453800774166a2a2b8db61961d29:python-cerberus/spkgbuild
 f:570ee30d5c3ac3db2dfb7723479073fe:python-asyncpg/spkgbuild
 f:30169c6fc23383690f0aee2cf4c3b577:python-rencode/spkgbuild
 f:5e74e32a6916e810fa9b4ca0ea1c9a68:python-pytz/spkgbuild

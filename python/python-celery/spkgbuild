@@ -7,7 +7,6 @@ version=5.0.5
 release=1
 
 source="https://pypi.io/packages/source/c/celery/celery-$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {
