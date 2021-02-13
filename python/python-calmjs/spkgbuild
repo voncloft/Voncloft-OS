@@ -7,7 +7,7 @@ name=python-calmjs
 version=3.4.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.zip
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.zip"
 options="!checksum"
 
 build() {
