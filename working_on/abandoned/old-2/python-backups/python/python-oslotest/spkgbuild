@@ -1,0 +1,33 @@
+# description : "Oslo test framework"
+# depends : python-fixtures python-subunit python-stestr python-testscenarios
+
+name=python-oslotest
+version=4.4.1
+release=4
+url="https://github.com/openstack/oslotest"
+         python-testtools python-mox3 python-os-client-config
+         python-debtcollector
+make# depends : python-pbr
+source="$name-$version.tar.gz::https://github.com/openstack/oslotest/archive/$version.tar.gz"
+sha512sums=7b1ad2f673a52719f6f977abf52c315de1b6299083d73db23706b6c947e72f3d104e7eb254b1031d1baf03cd60fc9c5328352eb19eabdaeef3eca34e53b5f4d3
+
+export PBR_VERSION=$version
+
+build()-delete {
+   cd oslotest-$version
+  python setup.py build
+}
+
+check {
+   cd oslotest-$version
+  stestr run
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/oslotest-$version
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1
+}
+

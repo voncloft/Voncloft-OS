@@ -1,0 +1,22 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+
+name=python-sane
+version=2.8.3
+release=6
+pkgdesc="Python interface to the SANE scanner and frame grabber."
+url="https://python-sane.readthedocs.io/en/latest/"
+depends=('sane' 'python')
+makedepends=('python-setuptools')
+source=("${name}-${version}.tar.gz::https://github.com/python-pillow/Sane/archive/v${version}.tar.gz")
+sha256sums=('1c3aa1c246007e9e6f7b11ca2c98256ebefed66f4ff13dcf38179c721677022f')
+
+build() {
+  cd "${srcdir}"/Sane-${version}
+  python setup.py build
+}
+
+package() {
+  cd "${srcdir}"/Sane-${version}
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${name}/COPYING"
+}

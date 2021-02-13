@@ -1,0 +1,26 @@
+# description : Symbolic manipulation build()  Computer Algebra System , written in pure Python 
+# depends :   python-mpmath  
+
+name=python-sympy
+version=1.7.1
+release=2
+             python-symengine: optimized backend, set USE_SYMENGINE=1 to use  
+source="https://github.com/sympy/sympy/archive/sympy-$version.tar.gz" 
+
+build-old()   {
+  cd sympy-sympy-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd sympy-sympy-$version
+  python setup.py test
+}
+
+build()   {
+  cd sympy-sympy-$version
+
+  python setup.py install --root $PKG --optimize=1
+
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

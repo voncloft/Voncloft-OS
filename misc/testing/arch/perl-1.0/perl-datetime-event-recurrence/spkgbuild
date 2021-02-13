@@ -1,0 +1,22 @@
+# description : Perl/CPAN Module DateTime::Event::Recurrence
+
+name=perl-datetime-event-recurrence
+version=0.19
+release=6
+url=https://search.cpan.org/dist/DateTime-Event-Recurrence
+source="https://www.cpan.org/authors/id/F/FG/FGLOCK/DateTime-Event-Recurrence-$version.tarsource=.gz"
+options=!checksum
+sha256sums=f9408789a461107766ca1a232bb3ec1e702eec7ca8167401ea6ec3f4b6d0b5a5
+
+build-delete {
+  cd $srcdir/DateTime-Event-Recurrence-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/DateTime-Event-Recurrence-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

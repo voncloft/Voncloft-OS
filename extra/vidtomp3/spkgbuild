@@ -1,0 +1,15 @@
+# description : strips audio from videos
+# depends : ffmpeg
+
+name=vidtomp3
+version=1.0
+release=1
+
+source="vidtomp3"
+options="!checksum"
+
+build()
+{
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/vidtomp3 $PKG/usr/bin/
+}

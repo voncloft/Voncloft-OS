@@ -1,0 +1,17 @@
+# description : A full-screen, console-based Python debugger
+# depends : python-urwid python-pygments
+
+url=https://pypi.python.org/pypi/pudb
+name=python-pudb
+version=2020.1
+release=1
+
+source="https://github.com/inducer/pudb/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/pudb-$version
+   cd pudb-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

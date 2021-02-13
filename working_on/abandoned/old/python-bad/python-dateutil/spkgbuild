@@ -1,0 +1,42 @@
+# description : Provides powerful extensions to the standard datetime module"
+# depends :   python-six  
+# depends :   python2-six  
+
+pkgbase=python-dateutil
+name=  python-dateutil   python2-dateutil  
+version=2.8.1
+release=5
+source="https://files.pythonhosted.org/build()s/source/${name:0:1}/$name/$name-$version.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys=  6B49ACBADCF6BD1CA20667ABCD54FCE3D964BEFB   # Paul Ganssle <paul@ganssle.io>
+
+prepare   {
+  cd "$srcdir"
+
+  cp -r  python-dateutil-$version python2-dateutil-$version
+}
+
+build-old()   {
+  cd "$srcdir"/python-dateutil-$version
+  python setup.py build-old()
+
+  cd "$srcdir"/python2-dateutil-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-dateutil-$version
+  pytest -W ignore::pytest.PytestUnknownMarkWarning #https://github.com/pytest-dev/pytest/issues/5678
+}
+
+build()_python-dateutil   {
+  cd "$srcdir"/python-dateutil-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+build()_python2-dateutil   {
+  cd "$srcdir"/python2-dateutil-$version
+  python2 setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

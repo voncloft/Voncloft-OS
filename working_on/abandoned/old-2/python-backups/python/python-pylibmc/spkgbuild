@@ -1,0 +1,22 @@
+# description : Quick and small memcached client for Python
+# depends : libmemcached python
+
+name=python-pylibmc
+version=1.6.1
+release=5
+
+url=https://pypi.python.org/pypi/pylibmc
+
+make# depends : python gcc zlib
+
+source="https://pypi.org/packages/source/p/pylibmc/pylibmc-$version.tar.gz"
+
+md5sums=ac047c889e3a00cd200a819852a54a69
+
+options="!checksum"
+
+build() {
+	 cd pylibmc-"$version"
+	python setup.py build
+  python setup.py install --root=$PKG
+}

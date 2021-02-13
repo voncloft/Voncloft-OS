@@ -1,0 +1,40 @@
+# description : Python Imaging Library  PIL  fork."
+# depends :   python   lcms2   libtiff   openjpeg2   libimagequant   libxcb  
+
+name=python-pillow
+version=8.1.0
+release=1
+_appname=Pillow
+_py3basever=3.9
+             libraqm: for complex text scripts 
+             libwebp: for webp images 
+             tk: for the ImageTK module 
+             python-olefile: OLE2 file support 
+             python-pyqt5: for the ImageQt module  
+source="https://files.pythonhosted.org/build()s/source/P/$_appname/$_appname-$version.tar.gz" 
+
+prepare   {
+  cd "$srcdir/$_appname-$version"
+}
+
+build-old()   {
+  cd "$srcdir/$_appname-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir/$_appname-$version"
+
+  export PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-${_py3basever%m}"
+  python selftest.py
+  pytest
+}
+
+build()   {
+  cd "$srcdir/$_appname-$version"
+  python3 setup.py install --root="$PKG/" --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+
+  install -dm755 "$PKG/usr/include/python$_py3basever/"
+  install -m644 -t "$PKG/usr/include/python$_py3basever/" src/libImaging/*.h
+}

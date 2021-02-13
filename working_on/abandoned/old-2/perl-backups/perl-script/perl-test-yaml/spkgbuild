@@ -1,0 +1,16 @@
+# description : Testing Module for YAML Implementations
+# depends : perl-test-base
+
+name=perl-test-yaml
+version=1.07
+release=4
+
+source="https://www.cpan.org/authors/id/T/TI/TINITA/Test-YAML-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd Test-YAML-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,26 @@
+# Maintainer: Sébastien Luttringer
+# Contributor: Kovivchak Evgen <oneonfire@gmail.com>
+
+pkgname=ioping
+pkgver=1.2
+pkgrel=1
+pkgdesc='Simple disk I/0 latency measuring tool'
+arch=('x86_64')
+license=('GPL3')
+url='https://github.com/koct9i/ioping'
+depends=('glibc')
+makedepends=('git')
+source=("git+https://github.com/koct9i/ioping#tag=v$pkgver")
+sha512sums=('SKIP')
+
+build() {
+  cd $pkgname
+  make PREFIX=/usr
+}
+
+package() {
+  cd $pkgname
+  make PREFIX="$pkgdir/usr" install
+}
+
+# vim:set ts=2 sw=2 et:

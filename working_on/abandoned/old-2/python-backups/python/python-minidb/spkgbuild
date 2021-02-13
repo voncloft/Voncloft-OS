@@ -1,0 +1,36 @@
+# description : Simple SQLite3 store for Python objects
+# depends : python
+
+_name=minidb
+name=python-minidb
+version=2.0.4
+release=3
+url=https://thp.io/2010/minidb/
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+sha256sums=c1c62be076a1e4bb9dd880504dd81a3e7e027b7657e8a54a83c5a2727f09520a
+
+build()-delete {
+   cd $_name-$version
+  python setup.py build
+}
+
+check {
+   cd $_name-$version
+  mkdir -p temp
+  local sitepackages=$python -c "import site; printsite.getsitepackages[0]"
+  python setup.py build
+  python setup.py install  --root=temp
+  PATH="$PWD/temp/usr/bin:$PATH" PYTHONPATH="$PWD/temp/$sitepackages" pytest
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+  install -d $PKG/usr/share/licenses/$name
+  sed -n /# Copyright/,/OF THIS SOFTWARE./p minidb.py > $PKG/usr/share/licenses/$name/COPYING
+}

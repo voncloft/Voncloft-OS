@@ -1,0 +1,44 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+
+_pkgbasename=libva-intel-driver
+pkgname=lib32-libva-intel-driver
+pkgver=2.4.1
+pkgrel=1
+pkgdesc='VA-API implementation for Intel G45 and HD Graphics family (32-bit)'
+arch=('x86_64')
+url='https://freedesktop.org/wiki/Software/vaapi'
+license=('MIT')
+depends=('lib32-libva')
+source=("https://github.com/01org/intel-vaapi-driver/releases/download/$pkgver/intel-vaapi-driver-$pkgver.tar.bz2")
+sha512sums=('1e9dc81ecd0b3640fccd1fb827a0ade0a1e5bbabe375130df159849e47ce98c8e879c65ddaaae11d16e916be76b507be69bc0c813494e37e7fca86b0b897a94f')
+
+prepare() {
+  cd intel-vaapi-driver-${pkgver}
+
+  # Only relevant if intel-gpu-tools is installed,
+  # since then the shaders will be recompiled
+  sed -i '1s/python$/&2/' src/shaders/gpp.py
+}
+
+build() {
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  cd intel-vaapi-driver-${pkgver}
+  CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+  ./configure \
+    --prefix='/usr' \
+    --libdir='/usr/lib32'
+  make 
+}
+
+package() {
+  cd intel-vaapi-driver-${pkgver}
+
+  make DESTDIR="${pkgdir}" install
+
+  install -Dm644 COPYING "${pkgdir}"/usr/share/licenses/$pkgname/COPYING
+}

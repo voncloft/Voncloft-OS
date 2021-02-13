@@ -1,0 +1,34 @@
+# description : "Comprehensive and scalable set of string tokenizers and similarity measures"
+# depends : python-numpy python-six
+
+_pkg=py_stringmatching
+name=python-${_pkg}
+version=0.4.2
+release=1
+url="https://sites.google.com/site/anhaidgroup/projects/magellan/py_stringmatching"
+make# depends : python-setuptools cython
+check# depends : python-nose
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+#source=https://github.com/anhaidgroup/py_stringmatching/archive/v${version}/${_pkg}-${version}.tar.gz
+sha256sums=c87f62698fba1612a18f8f44bd57f0c4e70aac2d7ca6dfb6ed46dabd2194453c
+
+build()-delete {
+   cd ${_pkg}-${version}
+  sed -i s|if not PIP_INSTALLED:|if False:|g setup.py
+  python setup.py build
+}
+
+# `No module named py_stringmatching.similarity_measure.cython.cython_affine` even with PYTHONPATH
+#check {
+#   cd ${_pkg}-${version}
+#  local python_version=$python -c import sys; print".".joinmapstr, sys.version_info[:2]
+#  PYTHONPATH="${PWD}"/build()/lib.linux-${CARCH}-${python_version} nosetests
+#}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

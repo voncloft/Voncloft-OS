@@ -1,0 +1,32 @@
+# description : "A python module that will check for package updates"
+# depends : python-requests
+
+name=python-update-checker
+version=0.18.0
+release=3
+url=https://github.com/bboe/update_checker
+provides=python-update_checker
+conflicts=python-update_checker
+replaces=python-update_checker
+make# depends : python-setuptools python-requests
+check# depends : python-pytest
+source="https://pypi.io/packages/source/u/update_checker/update_checker-$version.tar.gz"
+sha512sums=ab77b4904f27fc3a4f382dda08cf86fceedc6fa1c6a1f2b1d6ea42688f95ea1fbef4168d69233aec4a489d9ff7f93af60e8f1bf62854aa4d2f54136c540d26f1
+
+build()-delete {
+   cd update_checker-$version
+  python setup.py build
+}
+
+check {
+   cd update_checker-$version
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd update_checker-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,27 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+name=python-colorlog
+version=4.7.2
+release=1
+pkgdesc='A colored formatter for the python logging module'
+url='https://github.com/borntyping/python-colorlog'
+depends=('python')
+makedepends=('python-setuptools')
+source=("$name-$version.tar.gz::$url/archive/v$version.tar.gz")
+sha512sums=('0bb833faeb643962dd8b7c23e83e109368c303c53ecf59083f951867ecd94f5f94320754a1184c83807dc594db7df4abb786e79a441535fcce6639b1280c9a25')
+
+build() {
+  cd $name-$version
+
+  python setup.py build
+}
+
+package() {
+  cd $name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,23 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+name=python-dae
+version=1.0.2
+release=2
+pkgdesc='Deepin desktop application engine'
+url="https://github.com/linuxdeepin/dae"
+depends=('python-xlib' 'python-pyqt5')
+makedepends=('git')
+source=("git+https://github.com/linuxdeepin/dae.git#tag=$version")
+sha256sums=('SKIP')
+
+build() {
+  cd dae
+  python setup.py build
+}
+
+package() {
+  cd dae
+  python setup.py install --root="$pkgdir" --optimize=1
+}

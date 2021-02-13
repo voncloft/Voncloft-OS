@@ -1,0 +1,36 @@
+# description : Socket.IO integration for Flask applications
+# depends : python python-flask python-eventlet python-socketio
+
+name=python-flask-socketio
+_name=Flask-SocketIO
+version=5.0.1
+release=1
+url=https://flask-socketio.readthedocs.org/
+make# depends : python-setuptools python-sphinx
+check# depends : python-coverage python-pytest
+options=!makeflags
+source=https://github.com/miguelgrinberg/Flask-SocketIO/archive/v${version}/${name}-${version}.tar.gz
+sha512sums=38f2d426a0f9c4a4964d3dc06c47e09f36b4b379fd229814fc93af34f9b306c9109cd7994721f472ab5609c00bdc71f60e46d4f7da037627a42f62e8bfd95129
+b2sums=e4dd99e101addbf51a15f3d981467d8d0a149110b61b64b65eb8a18becff9dd39f09e72801578851a5430f702b58af4fe7eaa3065f86c0d2c8b3f550adfb58d1
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+  make -C docs man text SPHINXBUILD=sphinx-build()
+}
+
+check {
+   cd ${_name}-${version}
+  py.test test_socketio.py
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+  install -Dm 644 docs/_build()/text/index.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/flask-socketio.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+

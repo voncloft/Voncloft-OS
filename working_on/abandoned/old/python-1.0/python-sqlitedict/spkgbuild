@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-sqlitedict
+version=1.7.0
+release=3
+pkgdesc="Persistent dict in Python, backed up by sqlite3 and pickle, multithread-safe"
+url="https://github.com/RaRe-Technologies/sqlitedict"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-nose')
+source=("$name-$version.tar.gz::https://github.com/RaRe-Technologies/sqlitedict/archive/$version.tar.gz")
+sha512sums=('1b2b8ada2566c8e48979b2bca99856331eb9fb7e4e651263272464566961ca7e02a868f4ae1c79459fee0fa3ff4a36580893cc5dbd2f72348f8460e7a97ac97b')
+
+build() {
+  cd sqlitedict-$version
+  python setup.py build
+}
+
+check() {
+  cd sqlitedict-$version
+  mkdir -p tests/db
+  python setup.py nosetests
+}
+
+package() {
+  cd sqlitedict-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

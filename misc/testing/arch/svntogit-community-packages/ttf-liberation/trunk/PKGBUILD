@@ -1,0 +1,31 @@
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Roman Kyrylych <Roman.Kyrylych@gmail.com>
+# Contributor: Andreas Zwinkau
+# Contributor: rabyte <rabyte__gmail>
+# Contributor: Stefan Husmann < stefan-husmann@t-online.de>
+
+pkgname=ttf-liberation
+pkgver=2.1.2
+pkgrel=1
+pkgdesc='Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New'
+arch=('any')
+url=https://github.com/liberationfonts/liberation-fonts
+license=('custom:OFL')
+makedepends=('fontforge' 'python-fonttools')
+provides=('ttf-font')
+source=("$url/archive/$pkgver/liberation-fonts-$pkgver.tar.gz")
+b2sums=('5342560cad4f006cbc27153b0fc204f0625bdead07a2a24dc84ef8477282d80a377c212a7157e8a5f69e0b546f6d4d6f2ec94a7a72aa1d82e93283d05fa47f0a')
+
+build() {
+  cd liberation-fonts-$pkgver
+  make
+}
+
+package() {
+  cd liberation-fonts-$pkgver
+  install -Dm644 -t "$pkgdir/usr/share/fonts/${pkgname#ttf-}" \
+    liberation-fonts-ttf-$pkgver/*.ttf
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}

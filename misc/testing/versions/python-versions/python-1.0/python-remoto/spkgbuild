@@ -1,0 +1,29 @@
+
+name=python-remoto
+_pkgbase="${name//python-/}"
+version=1.1.4
+release=2
+# description : A very simplistic remote-command-executor using connections to hosts"
+# depends :   python   python-execnet  
+source="https://files.pythonhosted.org/packages/source/${_pkgbase:0:1}/${_pkgbase}/${_pkgbase}-${version}.tar.gz" 
+
+prepare   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  :
+}
+
+build   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  py.test -v remoto/tests
+}
+
+package   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

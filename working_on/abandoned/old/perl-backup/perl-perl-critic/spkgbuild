@@ -1,0 +1,38 @@
+# description : Critique Perl source code for best-practices
+# depends : perl-b-keywords perl-config-tiny perl-exception-class perl-file-homedir
+
+name=perl-perl-critic
+version=1.138
+release=2
+url=https://metacpan.org/release/Perl-Critic
+         perl-file-which perl-io-string perl-list-moreutils perl-module-build
+         perl-module-pluggable perl-ppi perl-ppix-quotelike perl-ppix-regexp
+         perl-ppix-utilities perl-pod-spell perl-tidy perl-readonly perl-string-format
+         perl-task-weaken
+make# depends : perl-test-deep
+check# depends : perl-test-memory-cycle
+source="https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/Perl-Critic-$version.tar.gz"
+options="!checksum"
+sha512sums=e36c44dc6ab67cdb0014c6b575238e3c54d4ffa506082df66f5e44ec0137111945f3a1196f2902e7c363c9ea10f08bfc8285b75d0af32080d9603ae7b28a4df7
+
+build-delete {
+  cd Perl-Critic-$version
+  perl Build.PL installdirs=vendor
+  perl Build
+}
+
+check {
+  cd Perl-Critic-$version
+  perl Build test
+}
+
+build() {
+  cd Perl-Critic-$version
+  perl Build install destdir=$PKG
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

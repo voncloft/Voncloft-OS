@@ -1,0 +1,35 @@
+# description : Python parser for human readable dates 
+# depends :  
+
+name=python-dateparser
+version=1.0.0
+release=2
+  python-dateutil
+  python-regex
+  python-tzlocal
+  python-ruamel-yaml
+ 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd dateparser
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd dateparser
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd dateparser
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-dateparser/
+}
+
+# vim: ts=2 sw=2 et:

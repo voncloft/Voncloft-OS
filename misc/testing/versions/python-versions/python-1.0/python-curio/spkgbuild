@@ -1,0 +1,39 @@
+
+name=python-curio
+version=1.4
+release=3
+# description : Concurrent I/O 
+# depends :  python 
+  git
+  python-pytest
+  python-setuptools
+  python-sphinx
+ 
+provides= python-multio-provider 
+
+version   {
+  cd curio
+
+  git describe --tags
+}
+
+build   {
+  cd curio
+
+  python setup.py build
+}
+
+check   {
+  cd curio
+
+  python setup.py test
+}
+
+package   {
+  cd curio
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-curio/
+}
+
+# vim: ts=2 sw=2 et:

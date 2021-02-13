@@ -1,0 +1,37 @@
+# description : Ultra-performant Promise implementation in Python
+# depends : 
+
+name=python-promise
+version=2.3.0
+release=3
+url=https://github.com/syrusakbary/promise
+  python-six
+
+make# depends : 
+  git
+  python-setuptools
+
+source=git+https://github.com/syrusakbary/promise.git#tag=ad8ebe68cd9c9686793e3449457f175a0fe43226
+sha256sums=SKIP
+
+version {
+   cd promise
+
+  git describe --tags | sed s/^v//
+}
+
+build()-delete {
+   cd promise
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd promise
+
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1
+}
+

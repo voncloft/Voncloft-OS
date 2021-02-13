@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ukui-themes
+pkgver=1.4.0
+pkgrel=1
+pkgdesc="Official themes for the UKUI desktop"
+arch=('any')
+license=('GPL')
+url="https://github.com/ukui/ukui-themes"
+groups=('ukui')
+depends=('dconf')
+makedepends=('ruby-sass')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ukui/ukui-themes/archive/v$pkgver.tar.gz"
+        ukui-themes-fix-icon-theme.patch::https://github.com/ukui/ukui-themes/pull/19.patch)
+sha512sums=('9fbf8bc6b865f4050d0e4e3e7131751e8d292b4708f07c521d7777545dc0dd78ca6c6d07920078b9e989456fe1e9ffbf7633e2cf8e03c3eae438b7c19a2753ad'
+            '0ce3e7f951bdabb1c8c8253351b9a77c064ef4f6e002ca5dcbe23770e0e03d46b9d6e9f283567f850dc7c3abd7d92dbb513a90e47aec499dc515c74faeb45c58')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -p1 -i ../ukui-themes-fix-icon-theme.patch
+}
+
+build() {
+  cd $pkgname-$pkgver
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+
+  install -Dm644 debian/25_ukui-themes.gschema.override -t "$pkgdir"/usr/share/glib-2.0/schemas/
+  install -dm755 "$pkgdir"/usr/share/icons
+  cp -a ukui-icon-theme* "$pkgdir"/usr/share/icons/
+  install -Dm644 ukui-custom.xml -t "$pkgdir"/usr/share/mime/packages/
+}

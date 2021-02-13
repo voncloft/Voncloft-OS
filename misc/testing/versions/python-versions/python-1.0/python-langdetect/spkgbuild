@@ -1,0 +1,30 @@
+
+_name=langdetect
+name=python-langdetect
+version=1.0.8
+release=3
+# description : Language detection library ported from Google s language-detection"
+# depends :   python-six  
+source="https://files.pythonhosted.org/packages/source/l/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "${name}-${version}"
+}
+
+build   {
+  cd "${name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${name}-${version}"
+  pytest -v
+}
+
+package   {
+  cd "${name}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

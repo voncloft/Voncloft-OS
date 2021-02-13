@@ -1,0 +1,32 @@
+# Maintainer: Thomas Bächler <thomas@archlinux.org>
+pkgname=v4l-utils
+pkgver=1.20.0
+pkgrel=1
+pkgdesc="Userspace tools and conversion library for Video 4 Linux"
+arch=('x86_64')
+url="https://linuxtv.org/"
+provides=("libv4l=$pkgver")
+replaces=('libv4l')
+conflicts=('libv4l')
+backup=(etc/rc_maps.cfg)
+license=('LGPL')
+makedepends=('qt5-base' 'alsa-lib')
+optdepends=('qt5-base: for qv4l2' 'alsa-lib: for qv4l2')
+depends=('hicolor-icon-theme' 'gcc-libs' 'sysfsutils' 'libjpeg-turbo')
+source=(https://linuxtv.org/downloads/v4l-utils/${pkgname}-${pkgver}.tar.bz2{,.asc})
+sha256sums=('956118713f7ccb405c55c7088a6a2490c32d54300dd9a30d8d5008c28d3726f7'
+            'SKIP')
+validpgpkeys=('05D0169C26E41593418129DF199A64FADFB500FF') # Gregor Jasny <gjasny@googlemail.com>
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  ./configure --prefix=/usr --sysconfdir=/etc --sbindir=/usr/bin
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  MAKEFLAGS="-j1" make install DESTDIR="${pkgdir}/"
+  rm "${pkgdir}/usr/bin/ivtv-ctl"
+}

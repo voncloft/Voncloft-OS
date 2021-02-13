@@ -1,0 +1,62 @@
+# description : Pure python SSH tunnels
+
+_name=sshtunnel
+pkgbase=python-sshtunnel
+name=sshtunnel python-sshtunnel
+_gitcommit=4461abe9037ce0b86cd6aaaaeeebe27a97ce58ca
+version=0.1.5
+release=5
+url=https://github.com/pahaz/sshtunnel
+make# depends : git python-paramiko python-sphinx python-setuptools
+check# depends : python-pytest python-mock openssh
+source=${pkgbase}::"git+https://github.com/pahaz/sshtunnel#commit=${_gitcommit}"
+sha512sums=SKIP
+
+version {
+   cd ${pkgbase}
+  git describe --long --tags | sed s/\[^-]*-g\/r\1/;s/-/./g | sed -E s|\.r0\.\w+$||
+}
+
+prepare {
+   cd ${pkgbase}
+  sed /sphinxcontrib.napoleon/d -i docs/conf.py
+}
+
+build()-delete {
+   cd ${pkgbase}
+  export PYTHONPATH="$PWD:$PYTHONPATH"
+  python setup.py build
+  sphinx-build() -b text docs docs/_build()/text
+  sphinx-build() -b man docs docs/_build()/man
+}
+
+check {
+   cd ${pkgbase}
+  py.test
+}
+
+package_sshtunnel {
+  # depends : python python-sshtunnel python-setuptools
+  pkgdesc+= CLI
+   cd ${pkgbase}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+  install -d "${PKG}/usr/share/"{licenses,doc,man/man1}
+  ln -s /usr/share/licenses/python-sshtunnel "${PKG}/usr/share/licenses/${name}"
+  ln -s /usr/share/doc/python-sshtunnel "${PKG}/usr/share/doc/${name}"
+  ln -s /usr/share/man/man1/python-sshtunnel.1.gz "${PKG}/usr/share/man/man1/${name}.1.gz"
+
+  rm -r "${PKG}/usr/lib"
+}
+
+package_python-sshtunnel {
+  # depends : python python-paramiko
+   cd ${pkgbase}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+  install -Dm 644 docs/_build()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/sshtunnel.1 "${PKG}/usr/share/man/man1/${name}.1"
+
+  rm -r "${PKG}/usr/bin"
+}
+

@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ukwm
+pkgver=1.2.0
+pkgrel=2
+pkgdesc="A lightweight GTK+ window manager"
+arch=('x86_64')
+license=('GPL')
+url="https://github.com/ukui/ukwm"
+groups=('ukui')
+depends=('gnome-desktop' 'gobject-introspection-runtime' 'libinput' 'libxkbcommon-x11' 'ukui-settings-daemon' 'upower')
+makedepends=('gobject-introspection' 'mate-common' 'intltool')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ukui/ukwm/archive/v$pkgver.tar.gz")
+sha512sums=('339c81a079958aceb8c05cf0186e03246e2898faaecb493a7f28e1f5e2cfe81d920579904d2a8e3b6a75a5b44100e73a5b279d317f6bd29ddaab8f5f917062bd')
+
+prepare() {
+  cd $pkgname-$pkgver
+  NOCONFIGURE=1 ./autogen.sh
+
+  sed -i 's/GETTEXT_MACRO_VERSION = 0.19/GETTEXT_MACRO_VERSION = 0.20/' po/Makefile.in.in
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --libexecdir=/usr/lib/$pkgname --sysconfdir=/etc --enable-introspection --enable-compile-warnings=yes
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

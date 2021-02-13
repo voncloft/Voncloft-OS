@@ -1,0 +1,18 @@
+# description : Adds i18n/l10n support to Flask applications
+# depends : python python-flask python-babel python-speaklater python-jinja
+
+_name=flask-babelex
+url=https://github.com/mrjoes/flask-babelex
+_name=flask-babelex
+name=python-flask-babelex
+version=0.9.4
+release=3
+
+source="https://github.com/mrjoes/flask-babelex/archive/${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

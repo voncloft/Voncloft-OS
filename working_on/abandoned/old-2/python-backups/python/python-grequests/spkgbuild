@@ -1,0 +1,23 @@
+# description : "Allows you to use Requests with Gevent to make asyncronous HTTP Requests easily."
+# depends : python-requests python-gevent
+
+name=python-grequests
+_libname=grequests
+version=0.6.0
+release=2
+url="https://pypi.python.org/pypi/grequests/"
+make# depends : python-setuptools
+source=https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz
+sha256sums=7dec890c6668e6755a1ea968565535867956639301268394d24df67b478df666
+            4063882a8913e4b37457d58fe6600bd975ba053c8db2e8c6b218e7c9c8575ca8
+
+build()-delete {
+     cd "$srcdir"/$_libname-$version
+    python setup.py build
+}
+
+package_python-grequests {
+     cd "$srcdir"/$_libname-$version
+    python setup.py build
+  python setup.py install  -O1 --root=$PKG
+}

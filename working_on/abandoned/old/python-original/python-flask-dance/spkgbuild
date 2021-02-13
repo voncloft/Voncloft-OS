@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python-flask-dance
+pkgver=3.2.0
+pkgrel=1
+pkgdesc="Doing the OAuth dance with style using Flask, requests, and oauthlib"
+url="https://github.com/singingwolfboy/flask-dance"
+license=('MIT')
+arch=('any')
+depends=('python-requests' 'python-oauthlib' 'python-requests-oauthlib' 'python-flask'
+         'python-urlobject' 'python-six' 'python-lazy')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-sphinx' 'python-pytest-cov' 'python-mock'
+              'python-responses' 'python-freezegun' 'python-sqlalchemy' 'python-sqlalchemy-utils'
+              'python-flask-sqlalchemy' 'python-flask-login' 'python-flask-caching'
+              'python-flask-sphinx-themes' 'python-sphinxcontrib-seqdiag' 'python-betamax')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/singingwolfboy/flask-dance/archive/v$pkgver.tar.gz")
+sha512sums=('b138d5fb05009547404f4ee063ff1d5e2ba4e1deb6327bb7b21e1bc9d6971be64bbbc3808d29bf362f214ba13b418f38cf728a250262e6e69b4a89de103aa3b7')
+
+build() {
+  cd flask-dance-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd flask-dance-$pkgver
+  python setup.py pytest
+}
+
+package() {
+  cd flask-dance-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

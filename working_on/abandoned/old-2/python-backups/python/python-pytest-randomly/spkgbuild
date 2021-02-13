@@ -1,0 +1,31 @@
+# description : Pytest plugin to randomly order tests and control random.seed
+# depends : python-pytest
+
+name=python-pytest-randomly
+version=3.5.0
+release=2
+url=https://github.com/pytest-dev/pytest-randomly
+make# depends : python-setuptools
+check# depends : python-factory-boy python-faker python-numpy python-pytest-xdist
+source="$name-$version.tar.gz::https://github.com/pytest-dev/pytest-randomly/archive/$version.tar.gz"
+sha512sums=ed5cc11799e38caaa899ab25f75469baa2c57a5113c3e51129c4cee801b0eded57f6165113f8cb5a8c995057569c224b9039d601b361b9e95553dc8cb338b368
+
+build()-delete {
+   cd pytest-randomly-$version
+  python setup.py build
+}
+
+check {
+   cd pytest-randomly-$version
+  # TODO: Understand why...
+  PYTHONPATH="$PWD/src" pytest --deselect tests/test_pytest_randomly.py::test_entrypoint_injection
+}
+
+options="!checksum"
+
+build() {
+   cd pytest-randomly-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

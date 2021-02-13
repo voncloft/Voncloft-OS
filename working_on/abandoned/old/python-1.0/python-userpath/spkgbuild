@@ -1,0 +1,36 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=userpath
+name=python-$_name
+version=1.4.1
+release=3
+pkgdesc='Cross-platform tool for adding locations to the user PATH, no elevated privileges required!'
+url='https://github.com/ofek/userpath'
+depends=('python' 'python-click' 'python-distro')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('9455479a90676da6995bead94f1aa4dab7c68a5fcb9a325c2975177271a7347143acfa0020d3c669bcb77646b546f5ea80d27affa94d98eb0ece8a16565ecf8f')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check() {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE-MIT "$pkgdir"/usr/share/licenses/$name/LICENSE-MIT
+  install -Dm 644 LICENSE-APACHE "$pkgdir"/usr/share/licenses/$name/LICENSE-APACHE
+}
+
+# vim:set ts=2 sw=2 et:

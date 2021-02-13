@@ -1,0 +1,33 @@
+# Maintainer: BlackEagle <ike.devolder@gmail.com>>
+
+pkgname=kodi-addon-visualization-waveform
+epoch=1
+pkgver=3.1.2
+_codename=Leia
+pkgrel=7
+pkgdesc="Waveform visualizer for Kodi"
+arch=('x86_64')
+url='https://github.com/xbmc/visualization.waveform'
+license=('GPL')
+groups=('kodi-addons' 'kodi-addons-visualization')
+depends=('kodi' 'glu' 'glm')
+makedepends=('cmake' 'kodi-dev')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/xbmc/visualization.waveform/archive/$pkgver-$_codename.tar.gz")
+sha512sums=('fb81685c1b3c1b9a62cd2ad7447e50f59b9018a3d72bcbfb87f6614588ee0f2a9654fbc34b34baf8f6f8d21d39bd81f6ca4dc98f642f6032072fe7d50ee1d04d')
+
+build() {
+    cd "visualization.waveform-$pkgver-$_codename"
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DUSE_LTO=1 \
+        .
+    make
+}
+
+package() {
+    cd "visualization.waveform-$pkgver-$_codename"
+    make DESTDIR="$pkgdir/" install
+}
+

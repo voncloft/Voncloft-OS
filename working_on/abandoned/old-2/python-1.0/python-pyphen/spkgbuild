@@ -1,0 +1,18 @@
+# description : Pure Python module to hyphenate text
+# depends : python
+
+_name=Pyphen
+url=https://pyphen.org/
+_name=Pyphen
+name=python-pyphen
+version=0.10.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

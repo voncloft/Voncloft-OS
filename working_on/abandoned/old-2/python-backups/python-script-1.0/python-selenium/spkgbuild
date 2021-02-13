@@ -1,0 +1,16 @@
+# description : Python binding for Selenium Remote Control
+# depends : python python-urllib3
+
+url=https://pypi.python.org/pypi/selenium
+name=python-selenium
+version=3.141.0
+release=3
+
+source="https://pypi.io/packages/source/s/selenium/selenium-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/selenium-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,29 @@
+
+name=python-libarchive-c
+version=2.9
+release=3
+# description : Python interface to libarchive 
+# depends :   python   libarchive  
+source= ${name}-${version}.tar.gz::https://github.com/Changaco/python-libarchive-c/archive/${version}.tar.gz 
+
+prepare   {
+  sed  /os.umask 2 /d  -i ${pkgbase}-${version}/setup.py
+}
+
+check   {
+  cd ${pkgbase}-${version}
+  LC_CTYPE=en_US.UTF-8 py.test
+}
+
+build   {
+  cd ${pkgbase}-${version}
+  python setup.py build
+}
+
+package   {
+  cd ${pkgbase}-${version}
+  python setup.py install -O1 --root=$PKG --skip-build
+  install -Dm 644 LICENSE.md -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

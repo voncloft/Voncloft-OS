@@ -1,0 +1,27 @@
+
+name=python-oslo-i18n
+version=5.0.1
+release=3
+# description : Oslo i18n library"
+# depends :   python-six   python-pbr   python-babel  
+options=  !emptydirs  
+source="https://github.com/openstack/oslo.i18n/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd oslo.i18n-$version
+  python setup.py build
+}
+
+check   {
+  cd oslo.i18n-$version
+  stestr run
+}
+
+package   {
+  cd oslo.i18n-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

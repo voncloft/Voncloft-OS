@@ -1,0 +1,21 @@
+# description : Python network library that uses greenlet and libev for easy and scalable concurrency
+  # depends : c-ares libev python-greenlet python-setuptools python-zope-event python-zope-interface
+  # depends : c-ares libev python2-greenlet python2-setuptools python2-zope-event python2-zope-interface
+
+url=http://www.gevent.org/
+name=python-gevent python2-gevent
+version=21.1.2
+release=2
+
+source="https://github.com/gevent/gevent/archive/$version.tar.gz"
+
+build() {
+     cd gevent-$version
+   cd gevent-$version
+     cd gevent-$version-py2
+   cd gevent-$version-py2
+   cd gevent-$version
+   cd gevent-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

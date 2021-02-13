@@ -1,0 +1,70 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=molecule
+pkgver=3.2.0
+pkgrel=1
+pkgdesc="Aids in the development and testing of Ansible roles"
+arch=('any')
+url="https://github.com/ansible-community/molecule"
+license=('MIT')
+depends=('ansible' 'python-cerberus' 'python-click' 'python-click-completion'
+'python-click-help-colors' 'python-cookiecutter' 'python-enrich' 'python-jinja'
+'python-packaging' 'python-paramiko' 'python-pluggy' 'python-rich'
+'python-selinux' 'python-subprocess-tee' 'python-sh' 'python-tabulate'
+'python-tree-format' 'python-yaml' 'yamllint')
+makedepends=('python-setuptools-scm' 'python-simplejson')
+checkdepends=('ansible-lint' 'python-ansi2html' 'python-mock' 'python-pexpect'
+'python-pytest' 'python-pytest-helpers-namespace' 'python-pytest-html'
+'python-pytest-mock' 'python-pytest-testinfra'
+'python-pytest-verbose-parametrize' 'python-pytest-verbose-parametrize'
+'python-pytest-xdist')
+optdepends=('molecule-docker: for the docker driver'
+            'molecule-podman: for the podman driver'
+            'molecule-vagrant: for the vagrant driver'
+            'python-pywinrm: for Windows support'
+            'python-pytest-testinfra: for the testinfra verifier')
+source=("https://files.pythonhosted.org/packages/source/${pkgname::1}/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('3dc25f910d1b12659267c8acac404c1a23fb54cb54c134f6cc649305b87ed8419792b7446bf5b38d83665f00bfa570e2667dbb2b47cf41d7018cef3911d25a29')
+b2sums=('34db52d36a4085ac23287b824be50b02cad9e8d6defc25c8f39e47c063c1654ec6320ebd32952d52fbd85255a1c32c2dfb28b3fb11c01910d91a9cc084e75099')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  # remove additional pytest options
+  sed -e '/addopts/d' -i setup.cfg
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  python setup.py build
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  local _python_version="$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')"
+  local _test_dir='test_dir'
+
+  # install into test location
+  mkdir -vp "${_test_dir}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root="${_test_dir}"
+
+  export PYTHONPATH="${PWD}/${_test_dir}/usr/lib/python${_python_version}/site-packages/:${PYTHONPATH}"
+  export PATH="${PWD}/test_dir/usr/bin:${PATH}"
+
+  # skip collection of broken pkg_resources tests: https://github.com/ansible-community/molecule/issues/3004
+  pytest -v \
+         --ignore="${_test_dir}/usr/lib/python${_python_version}/site-packages/molecule/test/unit/command/test_converge.py" \
+         --ignore="${_test_dir}/usr/lib/python${_python_version}/site-packages/molecule/test/unit/test_shell.py" \
+         "${_test_dir}/usr/lib/python${_python_version}/site-packages/molecule/test/unit/"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -vDm 644 README.rst \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

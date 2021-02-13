@@ -1,0 +1,31 @@
+# description : Make Sphinx better at documenting Python functions and methods
+# depends : python python-sphinx
+
+name=python-sphinxcontrib-trio
+_pyname=${name/python-/}
+version=1.1.2
+release=1
+url=https://github.com/python-trio/sphinxcontrib-trio
+make# depends : python-setuptools
+check# depends : python-pytest python-lxml python-cssselect
+source=https://github.com/python-trio/sphinxcontrib-trio/archive/v${version}/${_pyname}-${version}.tar.gz
+sha512sums=490511ce953e0589759af7fd98dbfe1e9875c9bf3ca0046491fd0cbf25cec37fe5c343a4eacce5e9db3e9e0aca23a9ab7993fb19dd77b7bf95cc38e7ff2911ff
+
+build()-delete {
+   cd ${_pyname}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pyname}-${version}
+  PYTHONPATH=. py.test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+}
+

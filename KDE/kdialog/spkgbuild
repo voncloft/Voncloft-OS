@@ -1,0 +1,18 @@
+# description	: A utility for displaying dialog boxes from shell scripts
+# depends	: kio extra-cmake-modules
+
+name=kdialog
+version=20.12.1
+release=1
+source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
+
+options="!checksums"
+build() {
+	mkdir -p build
+	cd build
+	cmake ../$name-$version \
+		-DCMAKE_INSTALL_PREFIX=/opt/kf5 \
+		-DBUILD_TESTING=OFF
+	make
+	make DESTDIR=$PKG install
+}

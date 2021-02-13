@@ -1,0 +1,16 @@
+# description : Python multiprocessing fork with improvements and bugfixes.
+# depends : python
+
+url=https://pypi.org/project/billiard/
+name=python-billiard
+version=3.6.3.0
+release=3
+
+source="https://pypi.io/packages/source/b/billiard/billiard-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd billiard-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

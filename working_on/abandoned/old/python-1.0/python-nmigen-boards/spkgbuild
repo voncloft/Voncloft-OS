@@ -1,0 +1,35 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=nmigen-boards
+name=python-$_name
+_commit=5c8c8ca2e7c0a4eb5bc09c2f30eea94b024c17a0
+version=r170.5c8c8ca
+release=1
+pkgdesc='Board and connector definition files for nMigen'
+url='https://github.com/nmigen/nmigen-boards'
+depends=('python-nmigen')
+makedepends=('git' 'python-setuptools-scm')
+source=("git+$url#commit=$_commit")
+sha512sums=('SKIP')
+
+version() {
+  cd $_name
+
+  printf 'r%s.%s' "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd $_name
+
+  python setup.py build
+}
+
+package() {
+  cd $_name
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

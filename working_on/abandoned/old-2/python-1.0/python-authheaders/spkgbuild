@@ -1,0 +1,18 @@
+# description : Library for the generation of email authentication headers
+# depends : publicsuffix-list python-authres python-dkim python-dnspython
+
+_name=authheaders
+url=https://github.com/ValiMail/authentication-headers
+_name=authheaders
+name=python-authheaders
+version=0.13.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc}
+options="checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

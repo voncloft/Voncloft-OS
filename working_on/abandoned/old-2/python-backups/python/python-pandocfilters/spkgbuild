@@ -1,0 +1,17 @@
+# description : "A python module for writing pandoc filters"
+# depends : python
+
+name=python-pandocfilters
+version=1.4.3
+release=3
+url="https://pypi.python.org/pypi/pandocfilters"
+source="https://pypi.io/packages/source/p/pandocfilters/pandocfilters-${version}.tar.gz"
+md5sums=1663f8ad167897848e23c749ce668dc8
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/pandocfilters-$version"
+  python3 setup.py install --root="$PKG/" --optimize=0
+}
+

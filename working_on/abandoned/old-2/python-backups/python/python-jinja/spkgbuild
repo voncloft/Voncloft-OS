@@ -1,0 +1,36 @@
+# description : "A simple pythonic template language written in Python"
+
+version=2.11.3
+release=1
+url="https://palletsprojects.com/p/jinja/"
+source=https://files.pythonhosted.org/packages/source/J/Jinja2/Jinja2-$version.tar.gz
+sha256sums=a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6
+
+build()-delete {
+   cd Jinja2-$version
+  python3 setup.py build()
+}
+
+check {
+   cd Jinja2-$version
+  # https://github.com/pypa/setuptools/issues/2466
+  PYTHONPATH=build()/lib pytest \
+   --deselect tests/test_bytecode_cache.py::TestByteCodeCache::test_simple \
+   --deselect tests/test_loader.py::TestLoaders::test_package_loader \
+   --deselect tests/test_loader.py::TestLoaders::test_choice_loader
+  PYTHONPATH=build()/lib pytest2
+}
+
+package_python-jinja {
+  # depends : python-setuptools python-markupsafe
+  opt# depends : python-babel: for i18n support
+
+   cd Jinja2-$version
+  python3 setup.py install --root=$PKG --optimize=1 
+
+}
+
+
+   cd Jinja2-$version
+}
+

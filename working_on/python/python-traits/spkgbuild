@@ -1,0 +1,16 @@
+# description : Explicitly typed attributes for Python
+# depends : python
+
+url=https://github.com/enthought/traits
+name=python-traits
+version=6.1.1
+release=1
+
+source="traits-${version}.tar.gz"::https://github.com/enthought/traits/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd traits-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

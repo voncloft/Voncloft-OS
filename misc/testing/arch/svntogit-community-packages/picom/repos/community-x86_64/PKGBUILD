@@ -1,0 +1,52 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: WorMzy Tykashi <wormzy.tykashi@gmail.com>
+# Contributor: OK100 <ok100@lavabit.com>
+# Contributor: Valère Monseur <valere.monseur@ymail.com>
+
+pkgname=picom
+pkgver=8.2
+pkgrel=1
+pkgdesc='X compositor that may fix tearing issues'
+arch=(x86_64)
+url='https://github.com/yshui/picom'
+license=(MIT MPL)
+replaces=(compton)
+provides=(compton)
+conflicts=(compton)
+makedepends=(asciidoc git mesa meson ninja uthash)
+depends=(hicolor-icon-theme libconfig libdbus libev libgl pcre pixman
+         xcb-util-image xcb-util-renderutil)
+backup=(etc/xdg/picom.conf)
+optdepends=('dbus:          For controlling picom via D-Bus'
+            'python:        For running picom-convgen.py'
+            'xorg-xwininfo: For picom-trans'
+            'xorg-xprop:    For picom-trans')
+source=("git+$url?signed#commit=dac85eac10082dfc3df463aaa74b811144e22122") # tag: v8.2
+validpgpkeys=('A22F5C0F4FCF9C7C89A167462C965E9E5D45D730') # Yuxuan Shui <yshuiv7@gmail.com>
+sha256sums=('SKIP')
+
+build() {
+  mkdir -p build
+  arch-meson build $pkgname -D b_ndebug=true -D with_docs=true
+  ninja -v -C build
+}
+
+check() {
+  ninja -C build test
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+
+  # The config that comes with picom
+  install -Dm644 $pkgname/picom.sample.conf "$pkgdir/etc/xdg/picom.conf"
+  install -Dm644 $pkgname/picom.sample.conf "$pkgdir/usr/share/doc/picom/picom.conf.example"
+
+  # Man pages and license files
+  install -Dm644 build/man/picom.1 "$pkgdir/usr/share/man/man1/picom.1"
+  install -Dm644 build/man/picom-trans.1 "$pkgdir/usr/share/man/man1/picom-trans.1"
+  install -Dm644 $pkgname/LICENSES/MIT "$pkgdir/usr/share/licenses/$pkgname/MIT"
+  install -Dm644 $pkgname/LICENSES/MPL-2.0 "$pkgdir/usr/share/licenses/$pkgname/MPL-2.0"
+}
+
+# getver: github.com/yshui/picom/releases

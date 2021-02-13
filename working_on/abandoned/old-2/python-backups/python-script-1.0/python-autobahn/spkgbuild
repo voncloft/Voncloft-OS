@@ -1,0 +1,16 @@
+# description : Real-time framework for Web, Mobile & Internet of Things
+# depends : python-cffi python-twisted python-txaio python-wsaccel
+
+url=https://crossbar.io/autobahn/
+name=python-autobahn
+version=21.1.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/a/autobahn/autobahn-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/autobahn-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

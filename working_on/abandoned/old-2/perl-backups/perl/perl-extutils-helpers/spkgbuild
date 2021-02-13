@@ -1,0 +1,19 @@
+# description : ExtUtils::Helpers - Various portability utilities for module builders
+# depends : perl
+
+name=perl-extutils-helpers
+_name=ExtUtils-Helpers
+version=0.026
+release=6
+
+_name=ExtUtils-Helpers
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+     cd ${_name}-${version}
+   cd ${_name}-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

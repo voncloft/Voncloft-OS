@@ -1,0 +1,24 @@
+# description : Perl/CPAN Module POE::Component::IKC
+# depends : perl-poe
+
+name=perl-poe-component-ikc
+version=0.2402
+release=6
+url=https://search.cpan.org/dist/POE-Component-IKC/
+make# depends : perl-poe
+source="https://www.cpan.org/authors/id/G/GW/GWYN/POE-Component-IKC-$version.tarsource=.gz"
+options=!checksum
+sha256sums=87b8696dce1cfa05a6054b8b7a65e733ae88f2ce52bb981743a250b579d0eab6
+
+build-delete {
+  cd $srcdir/POE-Component-IKC-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/POE-Component-IKC-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

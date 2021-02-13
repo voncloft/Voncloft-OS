@@ -1,0 +1,29 @@
+
+_name=gevent-websocket
+name=python-${_name}
+version=0.10.1
+release=6
+# description : WebSocket library for the gevent networking library 
+# depends :   python   python-gevent   gunicorn   python-ujson  
+source=https://gitlab.com/noppo/gevent-websocket/-/archive/${version}/gevent-websocket-${version}.tar.gz 
+
+prepare   {
+  cd ${_name}-${version}
+  sed -E "s|release = .*|release =  ${version} |" -i docs/conf.py
+}
+
+build   {
+  cd ${_name}-${version}
+  python setup.py build
+  sphinx-build -b text docs docs/_build/text
+  sphinx-build -b man docs docs/_build/man
+}
+
+package   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 docs/_build/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build/man/gevent-websocket.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

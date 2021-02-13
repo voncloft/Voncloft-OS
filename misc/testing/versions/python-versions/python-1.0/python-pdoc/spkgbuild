@@ -1,0 +1,24 @@
+
+name=python-pdoc
+version=0.3.2
+release=7
+# description : A simple program and library to auto generate API documentation for Python modules. 
+# depends :   python-mako   python-markdown  
+source="https://github.com/BurntSushi/pdoc/archive/$version.tar.gz" 
+
+prepare   {
+  sed -i  s/markdown < 2.5/markdown/  pdoc-$version/setup.py
+}
+
+build   {
+  cd pdoc-$version
+  python setup.py build
+}
+
+package   {
+  cd pdoc-$version
+  python setup.py install --root=$PKG -O1
+
+  install -Dm644 $PKG/usr/share/pdoc/UNLICENSE $PKG/usr/share/licenses/$name/UNLICENSE
+  rm -r $PKG/usr/share
+}

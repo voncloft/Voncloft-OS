@@ -1,0 +1,33 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+# Contributor: Limao Luo <luolimao+AUR@gmail.com>
+
+pkgname=python-jsonpatch
+pkgver=1.28
+pkgrel=1
+pkgdesc="An implementation of the JSON Patch format"
+arch=("any")
+url="https://github.com/stefankoegl/python-json-patch"
+license=("BSD")
+depends=("python-jsonpointer")
+makedepends=("python-setuptools" "python-pypandoc")
+checkdepends=('python-coverage')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/stefankoegl/python-json-patch/archive/v$pkgver.tar.gz")
+sha512sums=('2884cb95307cb607c8cd80e688491b4449f953e43e5b232d4d57d7249c590652ecae0856806ade6bf2807a04180e992fd2cdf61590ac058d573d653382bf7a28')
+
+build() {
+  cd python-json-patch-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd python-json-patch-$pkgver
+  coverage run --source=jsonpatch tests.py
+}
+
+package_python-jsonpatch() {
+  cd python-json-patch-$pkgver
+
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
+  python setup.py install --prefix=/usr --root="$pkgdir"
+}

@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-ddt
+version=1.4.1
+release=3
+pkgdesc="Data-Driven/Decorated Tests"
+url="https://github.com/txels/ddt"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-six' 'python-yaml')
+source=("$name-$version.tar.gz::https://github.com/txels/ddt/archive/$version.tar.gz")
+sha512sums=('a4d80aea3e5c9399b52899616fb9de94321e68e50a82bcb8d6dadb1406c544bd65c01321ffdcc91535291b5d3fac801b26d6eb2b2c02fd72b27cb6d795894238')
+
+build() {
+  cd ddt-$version
+  python setup.py build
+}
+
+check() {
+  cd ddt-$version
+  pytest
+}
+
+package() {
+  cd ddt-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$name/LICENSE.md
+}

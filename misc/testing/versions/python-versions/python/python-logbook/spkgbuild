@@ -1,0 +1,35 @@
+# description : Logging sytem for Python that replaces the standard library’s logging module"
+# depends :   python-six  
+
+name=python-logbook
+version=1.5.3
+release=8
+               python-mock   python-redis   python-pyzmq 
+               python-execnet   python-jinja   python-brotli  
+               pifpaf  
+source="https://github.com/mitsuhiko/logbook/archive/$version.tar.gz"
+        "python-logbook-1.5.3-reproducibility.patch::https://github.com/getlogbook/logbook/commit/7b51f1adbdfd71180b8da9b1462552db32350b1d.patch" 
+             c8e993de55d95ad7ca5087ab808462abebcd40a836bcdaf797b9febe02844bec15fdfc1f76ddf5ac303caf9dc81ce450fc91a0fd03919ff7e5e7c69005835eb6  
+
+prepare   {
+  cd "$srcdir"/logbook-$version
+  # Make ordering of requires.txt reproducible https://github.com/getlogbook/logbook/pull/313 
+  patch -Np1 -i "$srcdir/python-logbook-1.5.3-reproducibility.patch"
+}
+
+build-old()   {
+  cd "$srcdir"/logbook-$version
+  cython logbook/_speedups.pyx
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/logbook-$version
+  LC_CTYPE=en_US.UTF-8 PYTHONDONTWRITEBYTECODE=1 pifpaf run redis py.test tests
+}
+
+build()   {
+  cd logbook-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm664 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

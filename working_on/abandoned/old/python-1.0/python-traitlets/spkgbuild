@@ -1,0 +1,34 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+
+name=python-traitlets
+version=5.0.5
+release=1
+pkgdesc="A configuration system for Python applications."
+url="https://traitlets.readthedocs.io/en/stable/"
+depends=('python-decorator')
+makedepends=('python-setuptools')
+
+source=("https://files.pythonhosted.org/packages/source/t/traitlets/traitlets-$version.tar.gz"
+        "https://pypi.python.org/packages/source/i/ipython_genutils/ipython_genutils-0.2.0.tar.gz")
+md5sums=('2ffe54aee5d0d87890127dd28ce3f6c4'
+         '5a4f9781f78466da0ea1a648f3e1f79f')
+
+# ipython_genutils does not deserve a package
+# "Pretend this doesn’t exist. Nobody should use it."
+# "Vestigial IPython utilities: DO NOT USE"
+# (still required for now though, but drop at first chance)
+
+build() {
+  cd "$srcdir"
+}
+
+package() {
+  # TEMPORARY!
+  cd "$srcdir/ipython_genutils-0.2.0"
+  python3 setup.py install --prefix=/usr --root="$pkgdir" --optimize=0
+
+  cd "$srcdir/traitlets-$version"
+  python3 setup.py install --prefix=/usr --root="$pkgdir" --optimize=0
+  install -Dm644 COPYING.md "$pkgdir/usr/share/licenses/$name/LICENSE"
+}
+

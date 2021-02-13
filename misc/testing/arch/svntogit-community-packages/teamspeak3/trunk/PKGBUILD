@@ -1,0 +1,51 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Slash <demodevil5[at]yahoo[dot]com>
+# Contributor: J.W. Birdsong  <jwbirdsongATmailDOTcom>
+
+pkgname=teamspeak3
+pkgver=3.5.6
+pkgrel=1
+pkgdesc="TeamSpeak is software for quality voice communication via the Internet"
+url="http://www.teamspeak.com"
+license=('custom')
+depends=('libxslt' 'libxss')
+optdepends=('libpulse')
+arch=('x86_64')
+source=('teamspeak3.desktop'
+        'teamspeak3.png'
+        'LICENSE'
+        "https://files.teamspeak-services.com/releases/client/${pkgver}/TeamSpeak3-Client-linux_amd64-${pkgver}.run")
+sha512sums=('0f915a5a9d67389305c7e643177ee799bae8087a07512db933810cc128746e6f303aa55ce08920fac356a001344c4838dea4cea1329622850fba2a1b6344a3be'
+            '386bc45ef92d3de1ab0dc2f68c80ed22018326e5a3e92dfdfd30afe907dbf9862e39a2cc52a8e5ccf40cbe94ca16f508fbba10f07e2e99d8a5d520ae42c4f020'
+            'd6d03f1bda86c90390ce0032e4d30e889977f80ff76ba1e5c443109e93cbedbee92c6fc2759f58d23659c15dba4f2ac718861571239ba117dcfe11f136f556dc'
+            'fe1b41773d2b2de8198fdaf189c6665994eeaf6a0255485f7d342a3e77702f5515d5c5c685410a0b5844b4ad5c395d57b68e57c7b1f46bd1211ef813ce1e0030')
+
+prepare() {
+  mkdir archive && cd archive
+  sh "${srcdir}"/TeamSpeak3-Client-linux_amd64-${pkgver}.run --tar -xf 2>/dev/null
+
+  # Fix permissions
+  find -type d | xargs chmod 755
+  find -type f | xargs chmod 644
+  find -name '*.so*' | xargs chmod 755
+  chmod +x ts3client* package_inst QtWebEngineProcess
+}
+
+package() {
+  install -d "${pkgdir}"/{usr/bin/,opt/teamspeak3}
+
+  cp -r archive/* ${pkgdir}/opt/teamspeak3/
+
+  install -D -m644 "${srcdir}"/teamspeak3.desktop "${pkgdir}"/usr/share/applications/teamspeak3.desktop
+  install -D -m644 "${srcdir}"/teamspeak3.png "${pkgdir}"/usr/share/pixmaps/teamspeak3.png
+  install -D -m644 "${srcdir}"/LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+  ln -s /opt/teamspeak3/ts3client_runscript.sh "${pkgdir}"/usr/bin/teamspeak3
+
+  # Fix a weird change that TS3 did which broke symlinks.
+  # Check: https://forum.teamspeak.com/threads/134617-Linux-client-not-starting-when-run-though-symlink-since-3-1-8?p=454315#post454315
+  sed -i "s|cd.*|cd /opt/teamspeak3|" "${pkgdir}"/opt/teamspeak3/ts3client_runscript.sh
+
+  # Fix teamspeak3 on wayland (FS#57366)
+  sed -i "s|ts3client_linux_amd64|ts3client_linux_amd64 -platform xcb|" "${pkgdir}"/opt/teamspeak3/ts3client_runscript.sh
+}
+# vim:set ts=2 sw=2 et:

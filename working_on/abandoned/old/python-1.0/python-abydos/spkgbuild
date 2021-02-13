@@ -1,0 +1,35 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+_pkg=abydos
+name=python-${_pkg,,}
+version=0.5.0
+release=1
+pkgdesc="NLP/IR library for Python"
+url="https://github.com/chrislit/abydos"
+depends=(python-numpy)
+makedepends=(python-setuptools)
+checkdepends=(
+    python-pytest
+    python-deprecation
+    python-nltk
+)
+# No tests in PyPi tarballs
+#source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz)
+source=(${url}/archive/v${version}/${_pkg}-${version}.tar.gz)
+sha256sums=('0d46be1a40cfcdcd9ff9d052828c6ea57f5e1e2378373761c963c4a0cfcc5512')
+
+build() {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check() {
+  cd ${_pkg}-${version}
+  rm setup.cfg
+  pytest
+}
+
+package() {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
+}

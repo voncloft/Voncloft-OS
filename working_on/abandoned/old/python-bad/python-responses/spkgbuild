@@ -1,0 +1,29 @@
+# description : A utility library for mocking out the `requests` Python library. 
+# depends :   python-requests   python-biscuits   python-six  
+
+name=python-responses
+version=0.12.1
+release=1
+source="https://github.com/getsentry/responses/archive/$version/$name-$version.tar.gz" 
+
+prepare   {
+  cd responses-$version
+  sed -i  s/, < 5.0.0//  setup.py
+}
+
+build-old()   {
+  cd responses-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd responses-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd responses-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

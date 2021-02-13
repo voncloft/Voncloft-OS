@@ -1,0 +1,47 @@
+# description : MariaDB and MySQL driver for the Perl5 Database Interface DBI
+# depends : mariadb-libs perl-dbi
+
+name=perl-dbd-mariadb
+version=1.21
+release=1
+url=https://metacpan.org/release/DBD-MariaDB
+make# depends : perl-devel-checklib
+check# depends : mariadb perl-test-deep
+source="https://cpan.metacpan.org/authors/id/P/PA/PALI/DBD-MariaDB-${version}.tar.gz"
+options="!checksum"
+sha512sums=0378b33e9 cd31ced6f2331967c7ea63a233340bb4a60ef2bbece4843b3a62624875aa1a5e61a9fa1b709ecc8d67810c6fa4fb9ccc01df341e6d94325078f360a
+
+build-delete {
+   cd DBD-MariaDB-${version}
+
+  perl Makefile.PL INSTALLDIRS=vendor --testsocket=/tmp/socket.mysql
+  make
+}
+
+check {
+   cd DBD-MariaDB-${version}
+
+  mkdir -p /tmp/mysql_test
+  mariadb-install-db \
+     --basedir=/usr \
+     --datadir=/tmp/mysql_test
+  mariadbd -P 17999 \
+     --socket=/tmp/socket.mysql \
+     --datadir=/tmp/mysql_test &
+  sleep 10
+  DAEMON_PORT=$!
+  make test
+  kill -9 $DAEMON_PORT
+}
+
+build() {
+   cd DBD-MariaDB-${version}
+
+  make install DESTDIR=$PKG
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

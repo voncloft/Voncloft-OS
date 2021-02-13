@@ -1,0 +1,29 @@
+# description : apparently run a function in a higher stack frame 
+# depends : perl
+
+name=perl-sub-uplevel
+version=0.2800
+release=4
+url=https://search.cpan.org/dist/Sub-Uplevel
+source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/Sub-Uplevel-$version.tar.gz"
+options="!checksum"
+sha256sums=b4f3f63b80f680a421332d8851ddbe5a8e72fcaa74d5d1d98f3c8cc4a3ece293
+
+build-delete {
+  cd  $srcdir/Sub-Uplevel-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Sub-Uplevel-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

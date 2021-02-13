@@ -1,0 +1,23 @@
+# description : Google Authentication Library: httplib2 transport"
+# depends :   python-google-auth   python-httplib2   python-six  
+
+name=python-google-auth-httplib2
+version=0.0.4
+release=3
+source="https://pypi.io/build()s/source/g/google-auth-httplib2/google-auth-httplib2-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/google-auth-httplib2-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/google-auth-httplib2-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd google-auth-httplib2-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

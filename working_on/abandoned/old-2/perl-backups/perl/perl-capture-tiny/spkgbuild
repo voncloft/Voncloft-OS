@@ -1,0 +1,18 @@
+# description : Capture STDOUT and STDERR from Perl, XS or external programs
+# depends : perl
+
+name=perl-capture-tiny
+_realname=Capture-Tiny
+version=0.48
+release=4
+
+_realname=Capture-Tiny
+source="https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/$_realname-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_realname-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

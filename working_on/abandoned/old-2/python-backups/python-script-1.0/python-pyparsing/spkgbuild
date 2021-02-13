@@ -1,0 +1,17 @@
+# description : General parsing module for Python
+  # depends : python
+  # depends : python2
+
+url=https://github.com/pyparsing/pyparsing/
+name=python-pyparsing
+name=python-pyparsing python2-pyparsing
+version=2.4.7
+release=3
+
+source="https://github.com/pyparsing/pyparsing/archive/pyparsing_$version.tar.gz"
+
+build() {
+   cd pyparsing-pyparsing_$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

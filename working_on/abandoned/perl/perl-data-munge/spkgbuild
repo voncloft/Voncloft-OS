@@ -1,0 +1,33 @@
+# description : Various utility functions
+# depends : perl
+
+name=perl-data-munge
+version=0.097
+release=3
+url=https://metacpan.org/release/Data-Munge
+check# depends : perl-test-warnings
+source="https://cpan.metacpan.org/authors/id/M/MA/MAUKE/Data-Munge-$version.tar.gz"
+options="!checksum"
+sha512sums=9f71ca08d4f96242f649ef9eeede78cfafce0857a7d423512a24cafc7c22d335a148f23a6d78197244a09a73f1ea095fc262a3c8d318432117da31b7d9759d63
+
+build-delete {
+   cd Data-Munge-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Data-Munge-$version
+  make test
+}
+
+build() {
+   cd Data-Munge-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,23 @@
+# description : A fancy and practical functional tools 
+# depends :   python  
+
+name=python-funcy
+version=1.15
+release=2
+source="https://github.com/Suor/funcy/archive/$version.tar.gz" 
+
+build-old()   {
+  cd funcy-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd funcy-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd funcy-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,55 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+
+pkgname=tensorboard
+pkgver=2.4.1
+pkgrel=1
+pkgdesc="TensorFlow's Visualization Toolkit"
+url='https://github.com/tensorflow/tensorboard'
+arch=('x86_64')
+license=('APACHE')
+depends=('python' 'python-werkzeug' 'python-numpy' 'python-bleach' 'python-wheel' 'python-markdown'
+         'python-html5lib' 'python-protobuf' 'python-grpcio' 'python-google-auth-oauthlib'
+         'python-tensorboard_plugin_wit' 'absl-py')
+optdepends=('python-tensorflow: advanced features for TensorBoard')
+makedepends=('bazel' 'python-setuptools' 'tree')
+source=("${pkgname}-${pkgver}::https://github.com/tensorflow/tensorboard/archive/${pkgver}.tar.gz")
+sha512sums=('6a612f573ca45e76e5a2cc478d8be335916a7c692e7d29f469c982b60e2200f1442d69055ad35cf2119318b7e0cbd12a87bde8bd665db772d3c2681891832c86')
+
+build() {
+  cd "$pkgname-$pkgver"
+
+  bazel build --experimental_repo_remote_exec tensorboard:tensorboard
+  bazel build --experimental_repo_remote_exec //tensorboard/pip_package:build_pip_package
+
+  mkdir pypackage
+  cp -R bazel-bin/tensorboard/pip_package/build_pip_package.runfiles/org_tensorflow_tensorboard/external pypackage
+  cp -R bazel-bin/tensorboard/pip_package/build_pip_package.runfiles/org_tensorflow_tensorboard/tensorboard pypackage
+  cp tensorboard/pip_package/{README.rst,MANIFEST.in,setup.py,requirements.txt} pypackage
+  cp README.md pypackage
+  cd pypackage
+  python setup.py build
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+  cd pypackage
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  rm -r "$pkgdir"/usr/lib/python3.9/site-packages/external/
+
+  _requires="$pkgdir"/usr/lib/python3.9/site-packages/tensorboard-${pkgver}-py3.9.egg-info/requires.txt
+  # This is ugly: We need to patch it to use current bleach and html5lib
+  # because old ones are not even compatible with Python 3.6 and we don't have
+  # those in Arch of course.
+  sed -i 's/bleach==.*/bleach/' ${_requires}
+  sed -i 's/html5lib==.*/html5lib/' ${_requires}
+  # Other ugly hack: workaround for issues 650
+  # https://github.com/tensorflow/tensorboard/issues/650
+  sed -i '/^futures/d' ${_requires}
+}
+
+# vim:set ts=2 sw=2 et:

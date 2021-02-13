@@ -1,0 +1,30 @@
+# description : Perl/CPAN Module IO::Digest
+# depends : perl perlio-via-dynamic
+
+name=perl-io-digest
+version=0.11
+release=6
+url=https://search.cpan.org/~clkao/IO-Digest/
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/IO-Digest-$version.tar.gz"
+options="!checksum"
+sha256sums=8ffcf85a7f6213e5e94140adcc2b179ed02498eadc84309457e904dec93f7f92
+
+build-delete {
+   cd $sr cdir/IO-Digest-$version
+  PERL_USE_UNSAFE_INC=1 \
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/IO-Digest-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

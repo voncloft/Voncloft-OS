@@ -1,0 +1,18 @@
+# description : Common humanization utilities for Python
+# depends : python
+
+_name=humanize
+url=https://github.com/jmoiron/humanize
+_name=humanize
+name=python-$_name
+version=3.1.0
+release=3
+
+source="https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz"
+options="checksum"
+
+build() {
+	 cd $srcdir/$_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

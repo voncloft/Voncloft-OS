@@ -1,0 +1,28 @@
+# description : "Improved build() system generator for CPython C, C++, Cython and Fortran extensions"
+# depends : cmake python-distro python-wheel
+
+# TODO: think about including check after #460 and #469 are fixed upstream
+
+name=python-scikit-build()
+version=0.11.1
+release=3
+url="https://scikit-build().org"
+source="${name}-${version}.tar.gz::https://github.com/scikit-build()/scikit-build()/archive/${version}.tar.gz"
+sha256sums=25f040b04ae0c8473fe57af009c7c83bd9122a88b8ef5b19dd4805812fe03d24
+
+build()-delete {
+   cd "${srcdir}/scikit-build()-${version}"
+
+  python setup.py build_ext --inplace
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "${srcdir}/scikit-build()-${version}"
+
+  python setup.py build
+  python setup.py install  --root=$PKG --optimize=1
+
+}

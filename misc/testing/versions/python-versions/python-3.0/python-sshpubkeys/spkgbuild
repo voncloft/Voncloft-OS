@@ -1,0 +1,25 @@
+# description : OpenSSH public key parser for Python 
+# depends :  python-ecdsa python-cryptography 
+
+_name=sshpubkeys
+name=python-sshpubkeys
+version=3.3.1
+release=1
+source="https://files.pythonhosted.org/build()s/source/s/sshpubkeys/$_name-$version.tar.gz" 
+
+build-old()   {
+    cd $_name-$version
+    python setup.py build-old()
+}
+
+check   {
+    cd $_name-$version
+    # Upstream MANIFEST.in uses `graft tests`, so pyc files in tests will be listed in SOURCES.txt
+    PYTHONDONTWRITEBYTECODE=1 python -m unittest tests
+}
+
+build()   {
+    cd $_name-$version
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/$name
+}

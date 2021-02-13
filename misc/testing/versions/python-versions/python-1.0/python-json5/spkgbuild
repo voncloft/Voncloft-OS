@@ -1,0 +1,19 @@
+
+name=python-json5
+version=0.9.5
+release=3
+# description : A Python implementation of the JSON5 data format"
+# depends :  python 
+source= $name-$version::"https://github.com/dpranke/pyjson5/archive/v$version.tar.gz" 
+
+build   {
+  cd pyjson5-$version
+  
+  python setup.py build
+}
+
+package   {
+  cd pyjson5-$version
+
+  python setup.py install --prefix=/usr --root=$PKG --skip-build --optimize=1
+}

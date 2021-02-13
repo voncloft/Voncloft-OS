@@ -1,0 +1,13 @@
+# description	: An ISO 8601 date/time/duration parser and formatter
+# depends	: python-setuptools
+
+name=python-isodate
+version=0.6.0
+release=1
+source="https://files.pythonhosted.org/packages/source/i/isodate/isodate-$version.tar.gz"
+
+build() {
+	cd isodate-$version
+	python setup.py build
+	python setup.py install --root=$PKG --optimize=1
+}

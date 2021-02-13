@@ -1,0 +1,30 @@
+# description : A pickled object field for Django 
+# depends :  python-django 
+
+name=python-django-picklefield
+version=3.0.1
+release=3
+  git
+  python-setuptools
+ 
+
+version   {
+  cd django-picklefield
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd django-picklefield
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd django-picklefield
+
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-django-picklefield/
+}
+
+# vim: ts=2 sw=2 et:

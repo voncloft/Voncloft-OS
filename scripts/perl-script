@@ -1,0 +1,37 @@
+#/bin/sh
+
+some_path='/Voncloft-OS/working_on/perl'
+for f in /Voncloft-OS/working_on/perl/*
+do
+	#grep "description" $f/spkgbuild
+	mkdir /Voncloft-OS/working_on/perl-script/${f##*/}
+	grep "description" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	grep "depends" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	echo -e "" >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+
+
+        grep "_ddir=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_distdir=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_dist=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_pkg=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_name=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_perl_namespace=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_perl_module=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_realname=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+        grep "_cpanname=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+
+
+
+	grep "name=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	grep "version=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	grep "release=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	echo -e "" >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+
+	grep "source=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	grep "options=" $f/spkgbuild >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	echo -e "" >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	echo -e 'build() {' >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	grep "cd " $f/spkgbuild  | sort | uniq -c | cut -c 9- >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+	echo -e '   perl Makefile.PL\n   make\n   make DESTDIR=$PKG install\n}' >> /Voncloft-OS/working_on/perl-script/${f##*/}/spkgbuild
+
+done

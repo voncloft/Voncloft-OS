@@ -1,0 +1,33 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=workrave
+pkgver=1.10.44
+pkgrel=2
+pkgdesc="Assist in the recovery and prevention of Repetitive Strain Injury (RSI)"
+arch=('x86_64')
+url="https://workrave.org/"
+license=('GPL3')
+depends=('gstreamer' 'gtkmm3' 'libsm' 'libxss')
+makedepends=('autoconf-archive' 'boost' 'intltool' 'gobject-introspection' 'libpulse' 'python-jinja'
+             'gnome-panel' 'mate-panel' 'xfce4-panel')
+optdepends=('gst-plugins-good: to play sound events'
+            'gnome-panel: Applet for GNOME Panel'
+            'mate-panel: Applet for MATE Panel'
+            'xfce4-panel: Applet for Xfce4 Panel')
+source=("https://github.com/rcaelers/workrave/releases/download/v${pkgver//./_}/$pkgname-$pkgver.tar.gz")
+sha256sums=('6a87710403ca4c88ef05137cc9414b4a2a518b94f1f107eecdf83dbde490ba37')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc  --localstatedir=/var \
+              --libexecdir=/usr/lib/$pkgname
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

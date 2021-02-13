@@ -1,0 +1,38 @@
+# description : Utilities to test STDOUT and STDERR messages
+# depends : perl-sub-exporter
+
+name=perl-test-output
+version=1.032
+release=1
+  perl-test-simple
+  perl-test-pod
+  perl-test-pod-coverage
+  perl-capture-tiny
+url=https://search.cpan.org/dist/Test-Output
+source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/Test-Output-$version.tar.gz"
+options="!checksum"
+sha512sums=35093c5f4377e4d0f931d89 cdebc2aa82203c00bba3ae695c1b7f32464827c9dfe394df3e7d536ee43b5bc76c5fc0a3b0b6623d918e79b3686d8f3404d708180
+
+build-delete {
+   cd Test-Output-$version
+  USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Test-Output-$version
+  make test
+}
+
+build() {
+   cd Test-Output-$version
+  make install DESTDIR=$PKG/
+}
+
+# vim:set ts=2 sw=2 et:
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

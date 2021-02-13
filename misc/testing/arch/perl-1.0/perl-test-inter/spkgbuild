@@ -1,0 +1,27 @@
+# description : Framework for more readable interactive test scripts
+# depends : perl
+
+name=perl-test-inter
+version=1.09
+release=3
+url=https://metacpan.org/release/Test-Inter
+make# depends : perl-file-find-rule perl-test-pod perl-test-pod-coverage
+source="https://search.cpan.org/CPAN/authors/id/S/SB/SBECK/Test-Inter-$version.tarsource=.gz"
+options=!checksum
+sha512sums=b1f556393a445ae2c04fcc958fc3c9ee9091d17aaa9997dfde13098622162ebc27ac0282401abc27131a3b072be3aafeb5cc74af4b3e1ff4149f6c77536ef6c4
+
+build-delete {
+  cd Test-Inter-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Test-Inter-$version
+  make test
+}
+
+build() {
+  cd Test-Inter-$version
+  make DESTDIR=$PKG install
+}

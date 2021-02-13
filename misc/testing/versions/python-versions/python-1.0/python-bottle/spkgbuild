@@ -1,0 +1,47 @@
+
+pkgbase=python-bottle
+name= "python-bottle" "python2-bottle" 
+version=0.12.19
+release=2
+# description : A fast and simple micro-framework for small web-applications"
+options= !emptydirs 
+               python-tornado   python-paste   python-gevent   python-eventlet  
+source="https://github.com/defnull/bottle/archive/$version.tar.gz" 
+
+prepare   {
+  cp -a bottle-$version{,-py2}
+  sed -i "1s/python/python2/" bottle-$version-py2/bottle.py
+}
+
+check   {
+  cd "$srcdir"/bottle-$version
+  #https://github.com/bottlepy/bottle/issues/791
+  python test/testall.py || echo "Tests failed"
+}
+
+build   {
+  cd "$srcdir"/bottle-$version
+  python setup.py build
+  cd "$srcdir"/bottle-$version-py2
+  python2 setup.py build
+}
+
+package_python-bottle   {
+  # depends :   python  
+
+  cd bottle-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-bottle   {
+  # depends :   python2  
+
+  cd bottle-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+
+  mv $PKG/usr/bin/bottle.py{,2}
+}
+
+# vim: ts=2 sw=2 et:

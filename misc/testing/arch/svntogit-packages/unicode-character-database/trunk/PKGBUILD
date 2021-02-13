@@ -1,0 +1,36 @@
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=unicode-character-database
+pkgver=13.0.0
+pkgrel=1
+pkgdesc="Unicode Character Database"
+url="https://www.unicode.org/"
+arch=(any)
+license=(BSD)
+makedepends=(lynx)
+source=("UCD-$pkgver.zip::https://www.unicode.org/Public/zipped/$pkgver/UCD.zip"
+        "Unihan-$pkgver.zip::https://www.unicode.org/Public/zipped/$pkgver/Unihan.zip"
+        "unicode-license.html::https://www.unicode.org/license.html")
+noextract=({UCD,Unihan}-$pkgver.zip)
+sha512sums=('aed6d06c370dd87bc5713e19ff4cde47b065b76a18149194fa843e4efc5269f749ec8905cad9132d3b803ab621a46e372052b8f3c3e9b6a65afa6516b0f2b4f2'
+            '87238202b5da069ab1bbc4672d86c6fd0711e354fb17f53b0b4152850c56c0fa09e6e45820ae52d49756b25fe696518ceaa34cbfe5366ff60688c9a5c3a2d5be'
+            '178c97b6173c7acd956f041af7b0dc47bed5fc689864f71a86978f8f47f1250b2a6401337f3ec51d69e98a1041a60bfb93a97b19e0eb79fd7a24177277e94965')
+
+build() {
+  lynx -dump -display_charset=utf-8 unicode-license.html > LICENSE
+}
+
+package() {
+  for _f in UCD Unihan; do
+    install -Dm644 $_f-$pkgver.zip "$pkgdir/usr/share/unicode/$_f.zip"
+    bsdtar -C "$pkgdir/usr/share/unicode" -x --no-same-owner --no-same-permissions -f $_f-$pkgver.zip
+  done
+
+  # FS#49938: A bunch of compatibility symlinks
+  ln -s . "$pkgdir/usr/share/unicode/ucd"
+  for _f in $pkgname unicode-data unidata; do
+    ln -s unicode "$pkgdir/usr/share/$_f"
+  done
+
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 LICENSE
+}

@@ -1,0 +1,26 @@
+# description : Python toolkit for stream-based generation of output for the web."
+# depends :   python  
+
+name=python-genshi
+version=0.7.4
+release=2
+source="${name}-${version}.tar.gz::https://github.com/edgewall/genshi/archive/${version}.tar.gz" 
+
+build-old()   {
+    cd "${srcdir}"/genshi-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/genshi-${version}
+
+    python setup.py test
+}
+
+build()   {
+    cd "${srcdir}"/genshi-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 COPYING $PKG/usr/share/licenses/${name}/COPYING
+}

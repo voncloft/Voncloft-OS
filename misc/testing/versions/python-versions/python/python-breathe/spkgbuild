@@ -1,0 +1,24 @@
+# description : An extension to reStructuredText and Sphinx to be able to read and render Doxygen xml output"
+# depends :   python   python-sphinx   python-docutils   python-six  
+
+name=python-breathe
+version=4.26.1
+release=2
+validpgpkeys=  8AED58021FEACDD5F27BA0E6A72F627716EA9D96   # Melvin Vermeeren <vermeeren@vermwa.re>
+
+check   {
+  cd breathe
+  PYTHONPATH="$PWD" make test
+}
+
+build-old()   {
+  cd breathe
+  python setup.py build-old()
+}
+
+build()_python-breathe   {
+  cd "breathe"
+  PYTHONHASHSEED=0 python setup.py install --root=$PKG --skip-build-old() --optimize=1
+
+  install -D -m644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

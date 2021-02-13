@@ -1,0 +1,53 @@
+#!/bin/sh
+########################################################################
+# Begin fcron
+#
+# Description : deluge-web script
+#
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            deluge-web
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+BIN_FILE="/usr/bin/deluge-web"
+
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+case "$1" in
+   start)
+      log_info_msg "Starting deluged..."
+      #start_daemon ${BIN_FILE} --pidfile /run/deluge-web.pid -l /var/log/deluge-web.log
+      start_daemon ${BIN_FILE} --pidfile /home/deluge/deluged-web.pid -L info -l /home/deluge/deluged-web.log --user deluge --group deluge --config /home/deluge/.config/deluge
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping deluged..."
+      #killproc /usr/bin/deluge-web
+      PID_FILE=$(cat /home/deluge/deluged-web.pid)
+      kill -9 $PID_FILE
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc ${BIN_FILE}
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/fcron

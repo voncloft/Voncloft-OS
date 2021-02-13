@@ -1,0 +1,41 @@
+# description : "Python attributes without boilerplate."
+
+pkgbase=python-characteristic
+version=14.3.0
+release=11
+url="https://pypi.python.org/pypi/characteristic"
+source="https://files.pythonhosted.org/packages/source/c/characteristic/characteristic-$version.tar.gz"{,.asc}
+md5sums=b249368dd021fde1c06b4802867c0913
+         SKIP
+validpgpkeys=C2A04F86ACE28ADCF817DBB7AE2536227F69F181 # Hynek Schlawack <hs@ox.cx>
+
+prepare {
+  sed -i s/\[pytest\]/[tool:pytest]/ characteristic-$version/setup.cfg
+  cp -a characteristic-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/characteristic-$version
+  python setup.py build
+
+   cd "$srcdir"/characteristic-$version-py2
+}
+
+check {
+   cd "$srcdir"/characteristic-$version
+  python setup.py test
+
+   cd "$srcdir"/characteristic-$version-py2
+}
+
+package_python-characteristic {
+  # depends : python
+
+   cd characteristic-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+
+
+   cd characteristic-$version-py2
+}

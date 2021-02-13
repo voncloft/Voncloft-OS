@@ -1,0 +1,46 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Eric Belanger <eric@archlinux.org>
+# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
+
+_pkgname=freeglut
+pkgname=lib32-${_pkgname}
+pkgver=3.2.1
+pkgrel=1
+pkgdesc='Provides functionality for small OpenGL programs (32-bit)'
+url='http://freeglut.sourceforge.net/'
+arch=('x86_64')
+license=('MIT')
+depends=('lib32-libxi' 'lib32-libxrandr' 'lib32-libgl' 'freeglut')
+makedepends=('lib32-mesa' 'lib32-glu' 'lib32-libxxf86vm' 'cmake')
+replaces=('lib32-glut')
+provides=('lib32-glut')
+conflicts=('lib32-glut')
+source=(https://downloads.sourceforge.net/freeglut/${_pkgname}-${pkgver}.tar.gz)
+sha512sums=('aced4bbcd36269ce6f4ee1982e0f9e3fffbf18c94f785d3215ac9f4809b992e166c7ada496ed6174e13d77c0f7ef3ca4c57d8a282e96cbbe6ff086339ade3b08')
+
+prepare() {
+  cd ${_pkgname}-${pkgver}
+}
+
+build() {
+  export CC='gcc -m32'
+  export CXX='g++ -m32'
+  export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
+
+  cmake -H${_pkgname}-${pkgver} -Bbuild \
+    -DFREEGLUT_BUILD_STATIC_LIBS=OFF \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib32 \
+    -DCMAKE_BUILD_TYPE=None
+  cmake --build build
+}
+
+package() {
+  DESTDIR="${pkgdir}" cmake --build build --target install
+  rm -rf "${pkgdir}/usr/include"
+  ln -sr "${pkgdir}"/usr/lib32/pkgconfig/{glut,freeglut}.pc
+  install -Dm 644 -t "${pkgdir}/usr/share/licenses/${pkgname}" ${_pkgname}-${pkgver}/COPYING
+}
+
+# vim: ts=2 sw=2 et:

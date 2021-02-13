@@ -1,0 +1,43 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Eric Lehmann <katyl@katyl.info>
+# Contributor: Thomas Fanninger <thomas@fanninger.at>
+# Contributor: ultraviolet <ultravioletnanokitty@gmail.com>
+# Contributor: Pablo Lezeta <prflr88@gmail.com>
+
+pkgname=iio-sensor-proxy
+pkgver=3.0
+pkgrel=1
+pkgdesc='IIO accelerometer sensor to input device proxy'
+arch=('x86_64')
+url='https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/'
+license=('GPL2')
+depends=('systemd' 'libgudev' 'gtk3')
+makedepends=('gtk-doc' 'gnome-common')
+source=("$url/-/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('d1d25fe8220a05d25a3fd74fe8550176df86f0907e2a184df74e40ecee0578178f42d84fe42474b0b79b6e8603de3410fe1dd2ac5621cb2bea4b41fbea5f273b')
+
+build() {
+  cd $pkgname-$pkgver
+
+  aclocal --verbose --install --force
+  gtkdocize --copy --flavour no-tmpl
+  autoreconf -vif
+
+  ./configure \
+  	--prefix=/usr \
+  	--sysconfdir=/usr/share \
+  	--bindir=/usr/bin \
+  	--sbindir=/usr/bin \
+  	--libdir=/usr/lib \
+  	--libexecdir=/usr/lib \
+  	--with-dbuspolicydir
+
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  make DESTDIR="$pkgdir" install
+}
+

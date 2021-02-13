@@ -1,0 +1,24 @@
+# description : A Pattern-Matching Language Based on Python 
+# depends :   python  
+
+_name=pymeta3
+name=python-$_name
+version=0.5.1
+release=3
+source=" $url/archive/$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

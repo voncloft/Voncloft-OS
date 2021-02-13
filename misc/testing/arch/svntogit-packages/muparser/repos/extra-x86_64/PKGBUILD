@@ -1,0 +1,29 @@
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Contributor: damir <damir.archlinux.org>
+
+pkgname=muparser
+pkgver=2.3.2
+pkgrel=1
+pkgdesc="A fast math parser library"
+arch=('x86_64')
+url="http://muparser.sourceforge.net/"
+depends=('gcc-libs')
+makedepends=('cmake')
+license=('custom')
+options=('!makeflags')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/beltoforion/muparser/archive/v$pkgver.tar.gz")
+sha512sums=('8ef5c8b3834da3995a782b7364a4eb4197fb706bee4cadabe5511d2a9cf2912c3db6de422a91eff7f9690f8c9c355b9900335e940749d5c243cb732ac1992aef')
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+
+  # license
+  install -D -m644 $pkgname-$pkgver/License.txt \
+	"$pkgdir"/usr/share/licenses/${pkgname}/LICENSE
+}

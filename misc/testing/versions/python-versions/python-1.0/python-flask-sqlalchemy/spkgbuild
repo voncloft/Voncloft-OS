@@ -1,0 +1,33 @@
+
+_pyname=flask-sqlalchemy
+name=python-flask-sqlalchemy
+version=2.4.4
+release=3
+# description : Adds SQLAlchemy support to your Flask application 
+# depends :   python-flask   python-sqlalchemy  
+source= ${name}-${version}.tar.gz::https://github.com/mitsuhiko/flask-sqlalchemy/archive/${version}.tar.gz 
+
+prepare   {
+  sed -r "s| release = |\\1  ${version}   #|" -i ${_pyname}-${version}/docs/conf.py
+}
+
+build   {
+  cd ${_pyname}-${version}
+  python setup.py build
+  make -j1 -C docs man text SPHINXBUILD=sphinx-build PYTHONPATH=..
+}
+
+check   {
+  cd ${_pyname}-${version}
+  PYTHONPATH=".:${PYTHONPATH}" py.test
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install --root=$PKG -O1 --skip-build
+  install -Dm 644 LICENSE.rst -t "${PKG}/usr/share/licenses/${name}"
+  cp -r docs/_build/text "${PKG}/usr/share/doc/${name}/text"
+  install -Dm 644 docs/_build/man/${_pyname}.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

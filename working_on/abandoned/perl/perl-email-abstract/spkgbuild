@@ -1,0 +1,29 @@
+# description : unified interface to mail representations
+# depends : perl-email-simple>=1.91
+
+name=perl-email-abstract
+version=3.008
+release=4
+url=https://search.cpan.org/dist/Email-Abstract
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-Abstract-$version.tar.gz"
+options="!checksum"
+md5sums=dbfc069ffb5f8c96989bf62f0df5d756
+
+build-delete {
+   cd  $sr cdir/Email-Abstract-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd  $sr cdir/Email-Abstract-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

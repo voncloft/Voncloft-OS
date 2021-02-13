@@ -1,0 +1,22 @@
+
+name=python-scripttest
+version=1.3.0
+release=6
+# description : Utilities to help with testing command line scripts"
+# depends :   python  
+source="https://github.com/pypa/scripttest/archive/$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/scripttest-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/scripttest-$version
+  python setup.py pytest
+}
+
+package   {
+  cd scripttest-$version
+  python3 setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,23 @@
+# description : Spiffy Perl Interface Framework For You
+# depends : perl>=5.10.0
+
+name=perl-spiffy
+version=0.46
+release=4
+url=https://search.cpan.org/dist/Spiffy
+source="https://www.cpan.org/authors/id/I/IN/INGY/Spiffy-$version.tarsource=.gz"
+options=!checksum
+sha256sums=8f58620a8420255c49b6c43c5ff5802bd25e4f09240c51e5bf2b022833d41da3
+
+build-delete {
+  cd  $srcdir/Spiffy-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Spiffy-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

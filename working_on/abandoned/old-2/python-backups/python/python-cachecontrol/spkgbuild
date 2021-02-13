@@ -1,0 +1,43 @@
+# description : "httplib2 caching for requests"
+
+_name=cachecontrol
+pkgbase=python-cachecontrol
+version=0.12.6
+release=3
+url="https://github.com/ionrock/${_name}"
+check# depends : python-mock python-pytest python-lockfile python-cherrypy
+source="${_name}-${version}.tar.gz::${url}/archive/v${version}.tar.gz"
+        "0001-Remove-unnecessary-console-script.patch"
+sha256sums=2ec120838f445bff473cd8b8206ddae3650679142976927179743fabb876f3e3
+            a2c93d4852887152027140bdd54030d5363876b02e5eabee6a018d4e946a87b1
+
+prepare {
+     cd "${srcdir}"/${_name}-${version}
+
+    patch -p1 -i ../0001-Remove-unnecessary-console-script.patch
+}
+
+build()-delete {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package_python-cachecontrol {
+    # depends : python-msgpack python-requests
+    opt# depends : python-lockfile: for the FileCache
+
+     cd "${srcdir}"/${_name}-${version}
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+
+
+     cd "${srcdir}"/${_name}-${version}
+}

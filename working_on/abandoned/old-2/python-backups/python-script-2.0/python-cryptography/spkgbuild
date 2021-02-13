@@ -1,0 +1,19 @@
+# description : A package designed to expose cryptographic recipes and primitives to Python developers
+  # depends : python-six python-cffi python-idna python-setuptools python-asn1crypto
+  # depends : python2-six python2-cffi python2-enum34 python2-idna python2-ipaddress
+
+url=https://pypi.python.org/pypi/cryptography
+name=python-cryptography python2-cryptography
+version=3.3.1
+release=1
+
+source="https://pypi.io/packages/source/c/cryptography/cryptography-$version.tar.gz"
+
+build() {
+   cd cryptography-$version
+   cd cryptography-$version-python2
+   cd cryptography-$version
+   cd cryptography-$version-python2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

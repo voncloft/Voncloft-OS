@@ -1,0 +1,15 @@
+# description : Random assortment of WSGI servers
+# depends : python
+
+url=https://www.saddi.com/software/flup/
+name=python-flup
+version=1.0.3
+release=6
+
+source="https://pypi.io/packages/source/f/flup/flup-$version.tar.gz"
+
+build() {
+   cd flup-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,26 @@
+# description : A Pythonic wrapper for the Wikipedia API 
+# depends :  
+
+name=python-wikipedia
+version=1.4.0
+release=8
+  python-beautifulsoup4
+  python-requests
+ 
+source=https://pypi.python.org/build()s/source/w/wikipedia/wikipedia-${version}.tar.gz 
+
+build-old()   {
+  cd wikipedia-${version}
+
+  python setup.py build-old()
+}
+
+build()_python-wikipedia   {
+  cd wikipedia-${version}
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-wikipedia/
+}
+
+# vim: ts=2 sw=2 et:

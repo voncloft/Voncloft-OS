@@ -1,0 +1,30 @@
+
+name=python-mamba
+version=0.11.2
+release=1
+# description : The definitive testing tool for Python. Born under the banner of Behavior Driven Development."
+# depends :   python-coverage   python-watchdog   python-clint   python-setuptools  
+source="https://github.com/nestorsalceda/mamba/archive/v$version.tar.gz" 
+
+build   {
+  cd mamba-$version
+  python setup.py build
+}
+
+check   {
+  cd mamba-$version
+  # Hack entry points by installing it
+
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+   
+    local site_packages=$ python -c "import site; print site.getsitepackages  [0] " 
+    export PATH="$PWD/tmp_install/usr/bin:$PATH" PYTHONPATH="$PWD/tmp_install/${site-packages}:$PYTHONPATH"
+    mamba --enable-coverage
+   
+}
+
+package   {
+  cd mamba-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 COPYING -t $PKG/usr/share/licenses/$name/
+}

@@ -1,0 +1,36 @@
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: AndyRTR <andyrtr@archlinux.org>
+# Contributor: Aurelien Foret <orelien@chez.com>
+
+pkgname=xfce4-dict
+pkgver=0.8.4
+pkgrel=1
+pkgdesc="A dictionary plugin for the Xfce panel"
+arch=('x86_64')
+url="https://docs.xfce.org/apps/xfce4-dict/start"
+license=('GPL2')
+groups=('xfce4-goodies')
+depends=('xfce4-panel' 'librsvg' 'hicolor-icon-theme')
+makedepends=('intltool')
+source=(https://archive.xfce.org/src/apps/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
+sha256sums=('cb85fefbf742b306f2a8dca695252bae22842ab586abd31b52688312e3f631e3')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var \
+    --disable-static \
+    --disable-debug
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

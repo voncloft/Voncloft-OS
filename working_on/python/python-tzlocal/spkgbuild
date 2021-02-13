@@ -1,0 +1,19 @@
+# description : Tzinfo object for the local timezone
+# depends : python-pytz
+
+_name=tzlocal
+url=https://github.com/regebro/tzlocal
+_name=tzlocal
+name=python-tzlocal
+version=2.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name}-${version}
+   cd tests/test_data/symlink_localtime/etc
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

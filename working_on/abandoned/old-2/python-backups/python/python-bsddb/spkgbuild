@@ -1,0 +1,22 @@
+# description : Python interface for BerkeleyDB
+# depends : db python
+
+name=python-bsddb
+_name=bsddb3
+version=6.2.7
+release=3
+url=https://www.jcea.es/programacion/pybsddb.htm
+source=https://files.pythonhosted.org/packages/source/b/$_name/$_name-$version.tar.gz
+sha256sums=b0f7fa63eb240cd5815809c9d1d7df9f7cc8d6fa9619d0edbe9c794afc02dc9f
+
+build()-delete {
+   cd $_name-$version
+  python3 setup.py --berkeley-db=/usr build()
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+  python3 setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,17 @@
+# description : Sphinx extension which renders display math in HTML via JavaScript
+
+_name=sphinxcontrib-jsmath
+url=https://github.com/sphinx-doc/sphinxcontrib-jsmath
+_name=sphinxcontrib-jsmath
+name=python-sphinxcontrib-jsmath
+version=1.0.1
+release=6
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

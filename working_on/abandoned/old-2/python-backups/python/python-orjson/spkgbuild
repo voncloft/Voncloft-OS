@@ -1,0 +1,52 @@
+# description : "Fast, correct Python JSON library supporting dataclasses and datetimes"
+# depends : python
+
+_name=orjson
+name=python-orjson
+version=3.4.8
+release=1
+url="https://github.com/ijl/orjson"
+make# depends : maturin python-pip rustup
+check# depends : python-arrow python-pendulum python-psutil python-pytest
+python-pytz python-xxhash
+source="${name}-${version}.tar.gz::https://github.com/ijl/${_name}/archive/${version}.tar.gz"
+sha512sums=c80af577063992820883fed6638c65a11036de6d3d7276ead73e93e662ba2091806aa664bdd8cbca4a83b773d6ea1a3cce5fddb3d155cf877b71ee2a7c8d0573
+b2sums=8a6427cde01f4afdbf4bdbff13b88f5950feef8dbd82d884da36725facc2f7035e5c58ea8da0cbbf48aef18e825ebef9b9b79848b09fc45ce6f07e5d9db6ac6a
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+   cd "$name-$version"
+  rustup override set nightly-2021-01-31
+}
+
+build()-delete {
+   cd "$name-$version"
+  maturin build() --release \
+                --strip \
+                --manylinux
+}
+
+check {
+  local python_version=$python -c import sys; print".".joinmapstr, sys.version_info[:2]
+   cd "$name-$version"
+  mkdir -vp testdir
+  export PIP_CONFIG_FILE=/dev/null
+  pip install --isolated \
+              --root="testdir" \
+              --ignore-installed \
+              --no-deps target/wheels/*.whl
+  export PYTHONPATH="testdir/usr/lib/python${python_version}/site-packages:${PYTHONPATH}"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  export PIP_CONFIG_FILE=/dev/null
+  pip install --isolated \
+              --root=$PKG \
+              --ignore-installed \
+              --no-deps target/wheels/*.whl
+    -t "${PKG}/usr/share/doc/${name}"
+}

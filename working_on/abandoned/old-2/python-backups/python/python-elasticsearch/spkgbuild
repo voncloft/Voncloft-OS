@@ -1,0 +1,38 @@
+# description : Python client for Elasticsearch
+# depends : python-urllib3
+
+name=python-elasticsearch
+version=7.8.1
+release=3
+url=https://github.com/elastic/elasticsearch-py
+make# depends : python-setuptools git
+check# depends : python-requests python-mock python-yaml python-pytest python-numpy
+              python-pandas python-aiohttp python-pytest-asyncio
+source="$name-$version.tar.gz::https://github.com/elastic/elasticsearch-py/archive/$version.tar.gz"
+#       git+https://github.com/elastic/elasticsearch.git
+sha512sums=46f4295bca0da9b1fb4e8dea6ef511e4f37c342394e24c36712f63e3c75bc76c60f37a81350b7873465e129a635cbf70dd7039daae13e851cfbcc995f91bd432
+
+prepare {
+  sed -i s/, "certifi"// elasticsearch-py-$version/setup.py
+  sed -i s|CA_CERTS = None|CA_CERTS = "/etc/ssl/certs/ca-certificates.crt"| elasticsearch-py-$version/elasticsearch/{connection/http_urllib3.py,_async/http_aiohttp.py}
+}
+
+build()-delete {
+   cd elasticsearch-py-$version
+  python setup.py build
+}
+
+check {
+   cd elasticsearch-py-$version
+  # Skip tests that requires a running elasticsearch server
+  #TEST_ES_REPO="$srcdir"/elasticsearch
+  pytest --deselect test_elasticsearch/test_async/test_server
+}
+
+options="!checksum"
+
+build() {
+   cd elasticsearch-py-$version
+  python setup.py build
+  python setup.py install --root $PKG --optimize=1
+}

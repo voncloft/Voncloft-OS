@@ -1,0 +1,15 @@
+# description : brain-dead simple config-ini parsing
+  # depends : python
+
+url=https://github.com/RonnyPfannschmidt/iniconfig
+version=1.1.1
+release=1
+
+source="https://github.com/RonnyPfannschmidt/iniconfig/archive/v$version.tar.gz"
+
+build() {
+   cd iniconfig-$version
+   cd iniconfig-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

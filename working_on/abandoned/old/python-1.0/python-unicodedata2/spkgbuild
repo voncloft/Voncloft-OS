@@ -1,0 +1,25 @@
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
+# Contributor: Guillaume Horel <guillaume.horel@gmail.com
+# Contributor: Philipp A. <flying-sheep@web.de>
+
+name=python-unicodedata2
+version=13.0.0.post2
+release=2
+pkgdesc="unicodedata backport/updates to Python 3"
+url="https://github.com/mikekap/unicodedata2"
+depends=('python')
+makedepends=('python-setuptools')
+source=("${name}-${version}.tar.gz::https://github.com/mikekap/unicodedata2/archive/${version/.post/-}.tar.gz")
+sha256sums=('27141b225f84599b49429c5f9cd1ba7403c044102da78d4ac0e84cafdb62188f')
+
+build() {
+  cd "unicodedata2-${version/.post/-}"
+
+  python setup.py build
+}
+
+package() {
+  cd "unicodedata2-${version/.post/-}"
+
+  python setup.py install --root="$pkgdir" --optimize=1
+}

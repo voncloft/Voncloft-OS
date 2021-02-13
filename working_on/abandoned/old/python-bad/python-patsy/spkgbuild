@@ -1,0 +1,21 @@
+# description : A Python build() for describing statistical models using symbolic formulas"
+# depends :   python-numpy  
+
+name= python-patsy 
+version=0.5.1
+release=6
+             python-scipy: needed for spline-related functions  
+source="https://github.com/pydata/patsy/archive/v${version}.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/patsy-${version}
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/patsy-${version}
+
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

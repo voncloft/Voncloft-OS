@@ -1,0 +1,26 @@
+
+name=python-pytest-twisted
+version=1.13.2
+release=3
+# description : A twisted plugin for py.test 
+# depends :   python-pytest   python-greenlet   python-decorator   python-twisted  
+source="https://github.com/pytest-dev/pytest-twisted/archive/v$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/pytest-twisted-$version
+  python setup.py build
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd "$srcdir"/pytest-twisted-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  local site_packages=$ python -c "import site; print site.getsitepackages  [0] " 
+  PYTHONPATH="$PWD/tmp_install/${site_packages}:$PYTHONPATH" py.test
+}
+
+package   {
+  cd pytest-twisted-$version
+  python setup.py install --root=$PKG --optimize=1
+}

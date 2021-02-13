@@ -1,0 +1,26 @@
+# description : Information about the currently running perl
+# depends : perl
+
+name=perl-probe-perl
+version=0.03
+release=3
+url=https://metacpan.org/release/Probe-Perl
+source="https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/Probe-Perl-$version.tarsource=.gz"
+options=!checksum
+sha512sums=739bdb9d1a74eb77ab885a5aca861a1915cadbb1002bb4cb0d21fc6940ae6b3aa64ee52951ac8b2dca41c9e8fe188e17ae5f3c848c4a1caaf66fec5d25bef49c
+
+build-delete {
+  cd Probe-Perl-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Probe-Perl-$version
+  make test
+}
+
+build() {
+  cd Probe-Perl-$version
+  make DESTDIR=$PKG install
+}

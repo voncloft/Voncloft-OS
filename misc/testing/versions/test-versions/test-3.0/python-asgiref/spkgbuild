@@ -1,0 +1,23 @@
+
+name=python-asgiref
+version=3.3.1
+release=1
+# description : "Reference ASGI adapters and channel layers"
+# depends : ('python')
+source=("https://pypi.io/packages/source/a/asgiref/asgiref-${version}.tar.gz")
+
+build-remove() {
+    cd "asgiref-${version}"
+    python setup.py build
+}
+
+check() {
+    cd "asgiref-${version}"
+    PYTHONPATH=. pytest .
+}
+
+build() {
+    cd "asgiref-${version}"
+    python setup.py install --root=${pkgdir} --optimize=1
+
+}

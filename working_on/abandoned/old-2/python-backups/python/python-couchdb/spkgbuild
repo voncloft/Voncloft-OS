@@ -1,0 +1,35 @@
+# description : "Python library for working with CouchDB"
+# depends : python-setuptools
+
+name=python-couchdb
+version=1.2
+_commit=44ec56ced41d507fce4237d01ea467f7505f58e1
+release=4
+url="https://github.com/djc/couchdb-python/"
+check# depends : pifpaf couchdb
+source="$name-$version.tar.gz::https://github.com/djc/couchdb-python/archive/$version.tar.gz"
+sha512sums=eaa672a820b6dfd8ffcc5b8aeba43e95f90249746127c2d30907b5cea847a3e4226906dab187040a75bd4c0952ff6eefd1ec8593607eac208fc44ecf27ea77d5
+
+build()-delete {
+   cd couchdb-python-$version
+  python setup.py build
+}
+
+check {
+  # New couchdb doesnt provide /usr/bin/couchdb
+  export PATH="$PATH:/usr/lib/couchdb/bin"
+
+   cd couchdb-python-$version
+  pifpaf run couchdb python setup.py test || echo "python 3 tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd couchdb-python-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  install -D -m644 "COPYING" \
+    "$PKG/usr/share/licenses/$name/COPYING"
+}

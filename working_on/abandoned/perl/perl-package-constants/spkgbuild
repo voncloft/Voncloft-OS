@@ -1,0 +1,35 @@
+# description : List all constants declared in a package
+# depends : perl
+
+name=perl-package-constants
+version=0.06
+release=6
+url=https://search.mcpan.org/dist/Package-Constants
+source="https://search.mcpan.org/CPAN/authors/id/B/BI/BINGOS/Package-Constants-$version.tar.gz"
+options="!checksum"
+sha512sums=a3f855435a989252551dfbd50492dcae5bdfb01efe14c2ef40679722305bb67097eb4c969023df1da00ee22d92f88e39439ebdeaae0b1f3a3fc6c561f3fa8481
+_distdir=Package-Constants-$version
+
+build-delete {
+   cd $sr cdir/$_distdir
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd $sr cdir/$_distdir
+  make test
+}
+
+build() {
+   cd $sr cdir/$_distdir
+  make install DESTDIR=$PKG
+}
+
+# vim:set ts=2 sw=2 et:
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

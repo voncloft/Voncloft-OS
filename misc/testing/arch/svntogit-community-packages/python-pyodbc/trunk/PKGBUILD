@@ -1,0 +1,32 @@
+# Maintainer: Christian Hesse <mail@eworm.de>
+# Contributor: Robert Knauer <robert@privatdemail.net>
+
+pkgbase=python-pyodbc
+pkgname=python-pyodbc
+_srcname=pyodbc
+pkgver=4.0.28
+pkgrel=3
+pkgdesc='ODBC module for Python'
+arch=('x86_64')
+url='https://github.com/mkleehammer/pyodbc'
+license=('MIT')
+depends=('python' 'unixodbc')
+source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/mkleehammer/pyodbc/archive/${pkgver}.tar.gz")
+sha256sums=('c85326833c7041c76b6338dcc3db69eb1ea0a7c500212e14271b29e9a77575b7')
+
+prepare() {
+	echo "Version: ${pkgver}.0" > "${srcdir}/${_srcname}-${pkgver}/PKG-INFO"
+}
+
+build() {
+	cd "${srcdir}/${_srcname}-${pkgver}"
+
+	python setup.py build
+}
+
+package() {
+	cd "${srcdir}/${_srcname}-${pkgver}"
+
+	python setup.py install --root="${pkgdir}/" --optimize=1
+	install -Dm644 LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE.txt
+}

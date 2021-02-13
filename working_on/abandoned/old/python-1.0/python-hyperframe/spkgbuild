@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-hyperframe
+version=6.0.0
+release=1
+pkgdesc="HTTP/2 framing layer for Python"
+url="https://hyper.rtfd.org"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("$name-$version.tar.gz::https://github.com/python-hyper/hyperframe/archive/v$version.tar.gz")
+sha512sums=('32c70e4728e084a90ae3b1793ed9531dc3c647ea66bcbfe22de1a335c324fef58fbf8004a1703da4925e8752942ee491512a79c5a4db8e3f42aac1de431c6c9f')
+
+build() {
+  cd "$srcdir"/hyperframe-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/hyperframe-$version
+  python setup.py pytest
+}
+
+package_python-hyperframe() {
+  cd hyperframe-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,29 @@
+# description : "Routing recognition and generation tools"
+# depends : "python-repoze.lru" python-six
+
+name=python-routes
+version=2.5.1
+release=3
+url="https://pypi.python.org/pypi/Routes"
+make# depends : python-setuptools
+check# depends : python-nose python-webob python-webtest
+source="https://pypi.io/packages/source/R/Routes/Routes-$version.tar.gz"
+sha512sums=06ec9a8426ced86524096703de47e3da2fa08bd0ed8c962d451b4338966804245b5074077021fb58a5afcb63acd6dcffa05a89703b8b54841a69a4cdff12b755
+
+build()-delete {
+   cd Routes-$version
+  python setup.py build
+}
+
+check {
+   cd Routes-$version
+  nosetests3
+}
+
+options="!checksum"
+
+build() {
+   cd Routes-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

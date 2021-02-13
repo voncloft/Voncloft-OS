@@ -1,0 +1,19 @@
+# description : A lint-like tool for Python to identify common errors quickly without executing code
+  # depends : python-setuptools
+  # depends : python2-setuptools
+
+url=https://pypi.python.org/pypi/pyflakes
+name=python-pyflakes python2-pyflakes
+version=2.2.0
+release=3
+
+source="https://pypi.io/packages/source/p/pyflakes/pyflakes-$version.tar.gz"
+
+build() {
+   cd pyflakes-$version
+   cd pyflakes-$version-py2
+   cd pyflakes-$version
+   cd pyflakes-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

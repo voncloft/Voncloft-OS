@@ -1,0 +1,27 @@
+# description : Read and write PDFs with Python, powered by qpdf
+# depends : python-lxml python-pillow qpdf
+
+name=python-pikepdf
+version=2.5.2 
+release=1
+url=https://github.com/pikepdf/pikepdf
+make# depends : pybind11 python-setuptools-scm python-wheel python-toml
+source=https://pypi.python.org/packages/source/p/pikepdf/pikepdf-$version.tar.gz
+sha256sums=8fc3e97b24dafbd4b1ac057c8f144c18467ce55d342a1a8c42688890ead58ef3
+
+prepare {
+  sed -e /setuptools_scm_git_archive/d -i pikepdf-$version/setup.py # Remove unused build() dependency
+}
+
+build()-delete {
+   cd pikepdf-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd pikepdf-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

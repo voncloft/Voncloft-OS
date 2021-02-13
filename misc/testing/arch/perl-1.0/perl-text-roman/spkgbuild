@@ -1,0 +1,34 @@
+# description : Allows conversion between Roman and Arabic algarisms
+# depends : perl
+# $ID$
+
+name=perl-text-roman
+_dist=Text-Roman
+version=3.5
+release=7
+url=https://metacpan.org/release/${_dist}
+source="https://search.cpan.org/CPAN/authors/id/S/SY/SYP/${_dist}-${version}.tarsource=.gz"
+options=!checksum
+md5sums=1f6b09c0cc1f4425b565ff787a39fd83
+sha512sums=597ca054094f58c0983c66ce2b22dbc4d69861b02495663987e6b66dc0044a0d7e18e51ef817ed3c76832d283c01c6f9f51e68af7cb6b186b27553b5a877bc33
+
+build-delete {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1
+    make test
+}
+
+build() {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    make install INSTALLDIRS=vendor DESTDIR=$PKG
+}

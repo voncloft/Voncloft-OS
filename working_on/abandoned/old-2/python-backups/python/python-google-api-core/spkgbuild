@@ -1,0 +1,25 @@
+# description : "Google API client core library"
+# depends : python-setuptools python-pytz python-requests python-googleapis-common-protos python-google-auth
+
+name=python-google-api-core
+version=1.25.1
+release=1
+url="https://github.com/googleapis/googleapis"
+opt# depends : python-grpcio: for grpc support
+source="https://files.pythonhosted.org/packages/source/g/google-api-core/google-api-core-${version}.tar.gz"
+sha256sums=0e152ec37b8481d1be1258d95844a5a7031cd3d83d7c7046d9e9b2d807042440
+
+build()-delete {
+   cd "google-api-core-${version}"
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "google-api-core-${version}"
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,35 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Stéphane Gaudreault <stephane@archlinux.org>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: Thomas Baechler <thomas@archlinux.org>
+
+pkgname=ginac
+pkgver=1.8.0
+pkgrel=1
+pkgdesc="C++ library for symbolic calculations"
+arch=('x86_64')
+url='https://www.ginac.de/'
+license=('GPL')
+depends=('cln')
+makedepends=('fig2dev' 'doxygen' 'texlive-bin' 'python')
+source=(https://www.ginac.de/$pkgname-$pkgver.tar.bz2)
+sha256sums=('44b4404a897dd7719233c44f3c73bc15695e12b58d3676cb57c90ddcddf72b51')
+
+build() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  ./configure --prefix=/usr --libexecdir=/usr/lib/ginac --disable-static
+  make
+}
+
+check() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make check
+}
+
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+}

@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Sébastien Luttringer
+# Contributor: Bartek Piotrowski <barthalion@gmail.com>
+# Contributor: cromo <dawid@klej.net>
+
+pkgname=laptop-detect
+pkgver=0.16
+pkgrel=1
+pkgdesc='Attempts to detect a laptop'
+arch=('any')
+url='https://packages.qa.debian.org/l/laptop-detect.html'
+license=('BSD')
+depends=('dmidecode' 'sh')
+source=("https://gitlab.com/debiants/laptop-detect/-/archive/debian/$pkgver/laptop-detect-debian-$pkgver.tar.bz2")
+sha512sums=('9f3fbdaf975e8860e8be35b26773210eb54d63c6d45be53ee1a4e1b81f05e2efe3791dbf0dc83c8d6b798276fae5fc69fd1c97ed03a587c994cbd6a62da20abe')
+
+prepare() {
+  cd $pkgname-debian-$pkgver
+  sed -e "s/@VERSION@/$pkgver/g" < laptop-detect.in > laptop-detect
+}
+
+package() {
+  cd $pkgname-debian-$pkgver
+  install -Dm755 laptop-detect -t "$pkgdir"/usr/bin/
+  install -Dm644 laptop-detect.1 -t "$pkgdir"/usr/share/man/man1/
+  install -Dm644 debian/copyright -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
+
+# vim:set ts=2 sw=2 et:

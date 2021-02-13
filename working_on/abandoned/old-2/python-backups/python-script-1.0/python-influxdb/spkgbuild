@@ -1,0 +1,18 @@
+# description : Python client for InfluxDB
+# depends : python python-requests python-dateutil python-six python-pytz python-msgpack
+
+url=https://github.com/influxdata/influxdb-python/
+name=python-influxdb
+version=5.3.0
+release=2
+
+source="https://github.com/influxdata/influxdb-python/archive/v$version.tar.gz"
+options=!emptydirs
+options="checksum"
+
+build() {
+   cd $srcdir/influxdb-python-$version
+   cd $srcdir/influxdb-python-$version/influxdb
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

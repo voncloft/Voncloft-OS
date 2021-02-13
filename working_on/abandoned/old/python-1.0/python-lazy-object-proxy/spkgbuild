@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-lazy-object-proxy
+depends=("python")
+version=1.5.2
+release=2
+pkgdesc='A fast and thorough lazy object proxy'
+url="https://github.com/ionelmc/python-lazy-object-proxy"
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-benchmark' 'python-pytest-runner')
+source=("$name-$version.tar.gz::https://github.com/ionelmc/python-lazy-object-proxy/archive/v$version.tar.gz")
+sha512sums=('3be8e0ab59df609ff3d88a58a45462a10b3b8ca6a8e325f524ad1a75da85f7125b307d62630a223647f8ff9d06da4756653bff63755d258d7b0174783c216924')
+
+build() {
+  cd "$srcdir"/python-lazy-object-proxy-$version
+  python setup.py build
+}
+
+check() {
+  cd python-lazy-object-proxy-$version
+  python setup.py pytest --addopts --ignore=src
+}
+
+package() {
+  cd python-lazy-object-proxy-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

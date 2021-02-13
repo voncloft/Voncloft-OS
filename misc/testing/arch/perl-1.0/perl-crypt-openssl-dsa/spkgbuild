@@ -1,0 +1,31 @@
+# description : Digital Signature Algorithm using OpenSSL
+# depends : openssl
+# Generator  : CPANPLUS::Dist::Arch 1.25
+
+name=perl-crypt-openssl-dsa
+version=0.19
+release=9
+url=https://search.cpan.org/dist/Crypt-OpenSSL-DSA
+source="https://search.cpan.org/CPAN/authors/id/K/KM/KMX/Crypt-OpenSSL-DSA-$version.tarsource=.gz"
+options=!checksum
+sha512sums=92306a04dc821b7b5f81331c362c6d478df8c118c1cb62591cf7b369029a67dbdd2798e239cead8f1faf2b79e259e906b70ea8fbc38b457b1eb897468d61c839
+
+build-delete {
+  cd Crypt-OpenSSL-DSA-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Crypt-OpenSSL-DSA-$version
+  make test
+}
+
+build() {
+  cd Crypt-OpenSSL-DSA-$version
+  make DESTDIR=$PKG install
+
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+
+# vim:set ts=2 sw=2 et:

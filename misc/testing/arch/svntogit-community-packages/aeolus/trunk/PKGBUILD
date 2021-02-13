@@ -1,0 +1,59 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: speps <speps at aur dot archlinux dot org>
+# Contributor: Tom K <tomk@runbox.com>
+# Contributor: Shinlun Hsieh <yngwiexx@yahoo.com.tw>
+# Contributor: Christoph Zeiler <arch at moonblade dot org>
+# Contributor: Philipp Überbacher <murks at lavabit dot com>
+
+_stopver=0.3.0
+pkgname=aeolus
+pkgver=0.9.9
+pkgrel=1
+pkgdesc="Synthesised pipe organ emulator"
+arch=('x86_64')
+url="https://kokkinizita.linuxaudio.org/linuxaudio/aeolus/"
+license=('GPL3')
+groups=('pro-audio')
+depends=('gcc-libs' 'glibc' 'libx11')
+makedepends=('alsa-lib' 'clthreads' 'clxclient' 'jack' 'readline' 'zita-alsa-pcmi')
+provides=('aeolus_txt.so' 'aeolus_x11.so')
+source=("https://kokkinizita.linuxaudio.org/linuxaudio/downloads/$pkgname-$pkgver.tar.bz2"
+        "https://kokkinizita.linuxaudio.org/linuxaudio/downloads/stops-$_stopver.tar.bz2"
+        "$pkgname.conf")
+sha512sums=('423278564e83b00e90b91a408a098de8feb3c03809b2b96cf0b320522206ca1afea1d7f3f5cccad80fc4f03e0f31bb2d19f7256e30e6fbd25d25eb777c669ea2'
+            'a6572a42c6796aa08b9085bfc4cb9e252091310224a0b8867eaf5d41f399b2649744c357506ae5fb64a82018f0da702bacbdc7e96965a1116f08d0a248d28ad3'
+            'b04689673aec928e2594a86b595a6f6d5d70408467c99379f6282f98dd9fbc1cab42b196927193a708e26229e665a121a22edf42e8ab49bb24d68d45bde3181c')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  # strip -march=native
+  # call ldconfig in local context
+  sed -e '/native/d' \
+      -e 's/ldconfig/& -N $(DESTDIR)\/$(LIBDIR)/' \
+      -i source/Makefile
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  make PREFIX=/usr SUFFIX='' -C source
+}
+
+package(){
+  depends+=('libasound.so' 'libclthreads.so' 'libclxclient.so' 'libjack.so'
+  'libreadline.so' 'libzita-alsa-pcmi.so')
+  cd "${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}/" PREFIX=/usr SUFFIX='' -C source install
+  # docs
+  install -vDm 644 {AUTHORS,README} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+  # system config file
+  install -vDm 644 "${srcdir}/${pkgname}.conf" -t "${pkgdir}/etc/"
+  # stops
+  cd "${srcdir}/stops-${_stopver}"
+  find . -name definition -exec install -vDm 644 {} \
+    "${pkgdir}/usr/share/${pkgname}/stops/"{} \;
+  find . -name presets -exec install -vDm 644 {} \
+    "${pkgdir}/usr/share/${pkgname}/stops/"{} \;
+  find . -name '*.ae0' -exec install -vDm 644 {} \
+    "${pkgdir}/usr/share/${pkgname}/stops" \;
+}

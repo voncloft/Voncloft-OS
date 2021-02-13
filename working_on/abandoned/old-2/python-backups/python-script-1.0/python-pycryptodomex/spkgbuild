@@ -1,0 +1,19 @@
+# description : A self-contained Python package of low-level cryptographic primitives
+	# depends : python
+	# depends : python2
+
+url=https://www.pycryptodome.org/
+name=python-pycryptodomex python2-pycryptodomex
+version=3.9.9
+release=1
+
+source="https://pypi.org/packages/source/p/pycryptodomex/pycryptodomex-$version.tar.gz"
+
+build() {
+	 cd $srcdir/pycryptodomex-$version
+	 cd $srcdir/pycryptodomex-$version-python2
+	 cd pycryptodomex-$version
+	 cd pycryptodomex-$version-python2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

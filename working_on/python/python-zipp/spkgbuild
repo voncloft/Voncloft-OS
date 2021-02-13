@@ -1,0 +1,16 @@
+# description : Pathlib-compatible object wrapper for zip files
+# depends : python
+
+url=https://github.com/jaraco/zipp
+name=python-zipp
+version=3.4.0
+release=3
+
+source="https://github.com/jaraco/zipp/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd zipp-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

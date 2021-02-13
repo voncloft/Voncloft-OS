@@ -1,0 +1,19 @@
+# description : Helpers for better testing
+# depends : python-mock
+
+_pypiname=exam
+url=https://pypi.python.org/pypi/exam
+_pypiname=exam
+name=python-exam
+version=0.10.6
+release=8
+
+source="git+https://github.com/Fluxx/exam.git#tag=$version
+options="checksum"
+
+build() {
+   cd $_pypiname
+   cd exam
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

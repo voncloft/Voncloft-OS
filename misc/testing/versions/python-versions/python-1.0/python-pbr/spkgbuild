@@ -1,0 +1,49 @@
+
+pkgbase=python-pbr
+name= python-pbr python2-pbr 
+version=5.5.1
+release=3
+# description : Python Build Reasonableness"
+               python-mock   python-virtualenv   python-wheel   python-sphinx  
+source="$pkgbase-$version.tar.gz::https://github.com/openstack-dev/pbr/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  sed -i  s/virtualenv.create_environment path, clear=True /virtualenv.cli_run [path, "--clear"] /  pbr-$version/pbr/tests/test_packaging.py
+
+  cp -a pbr-$version{,-py2}
+
+  find pbr-$version-py2 -name \*.py -exec sed -i  1s/python$/&2/  {} +
+}
+
+build   {
+  cd "$srcdir"/pbr-$version
+  python setup.py build
+
+  cd "$srcdir"/pbr-$version-py2
+  python2 setup.py build
+}
+
+check   {
+  cd pbr-$version
+  stestr run
+}
+
+package_python-pbr   {
+  # depends :   python-setuptools  
+
+  cd pbr-$version
+  python setup.py install -O1 --root=$PKG
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-pbr   {
+  # depends :   python2-setuptools  
+
+  cd pbr-$version-py2
+  python2 setup.py install -O1 --root=$PKG
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+
+  mv $PKG/usr/bin/pbr{,2}
+}

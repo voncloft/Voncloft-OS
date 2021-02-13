@@ -1,0 +1,39 @@
+# description : "Generate simple tables in terminals from a nested list of strings"
+# depends : python
+
+name=python-terminaltables
+_pyname=terminaltables
+version=3.1.0
+release=8
+url="https://github.com/Robpol86/terminaltables"
+make# depends : python-setuptools
+check# depends : python-pytest python-colorama python-termcolor python-colorclass
+source="${_pyname}-${version}.tar.gz::https://github.com/Robpol86/${_pyname}/archive/v${version}.tar.gz"
+        python-3.8.patch
+sha512sums=dc49458652fff8bc6094d316d84c9b8e9fca1a26e3230c0b668bc03ec8528793f4ef024e8032d4a56fbfabfdfd4a1142870f550f0b373ba6a42dd2e3ead3f501
+            9a33ef51cbd2854bf9acc247e2d966332229446158e7dae9cad25e03335eb9689d50b0a22234285aa56c707e6e93c12f950299efcfbe7e42ed527216090592f2
+
+prepare {
+   cd ${_pyname}-${version}
+  patch -Np1 < ../python-3.8.patch
+}
+
+build()-delete {
+   cd ${_pyname}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pyname}-${version}
+  py.test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+  install -Dm 644 example*.py -t "${PKG}/usr/share/doc/${name}/examples"
+}
+

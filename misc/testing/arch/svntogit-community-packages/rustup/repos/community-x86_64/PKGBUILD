@@ -1,0 +1,49 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Jonathon Fernyhough <jonathon_at_manjaro_dot_org>
+# Contributor: Jon Gjengset <jon@tsp.io>
+pkgname=rustup
+pkgver=1.23.1
+pkgrel=1
+pkgdesc="The Rust toolchain installer"
+arch=('x86_64')
+url="https://github.com/rust-lang/rustup.rs"
+license=('MIT' 'Apache')
+depends=('curl' 'xz')
+makedepends=('cargo')
+optdepends=('lldb: rust-lldb script'
+            'gdb: rust-gdb script')
+provides=('rust' 'cargo' 'rust-nightly' 'cargo-nightly' 'rustfmt')
+conflicts=('rust' 'cargo' 'rustfmt')
+replaces=('cargo-tree')
+install='post.install'
+source=("rustup-${pkgver}.tar.gz::https://github.com/rust-lang/rustup.rs/archive/${pkgver}.tar.gz")
+sha512sums=('6d3048cd38ce4fa0a5a6b84f8dc3e6b60af4b70cbaceddc209e1f2ce4d96062d666f53e754452aa591cd54c5822ee1eb4089586493959ac8b7811cadc2a78e05')
+_binlinks=('cargo' 'rustc' 'rustdoc' 'rust-gdb' 'rust-lldb' 'rls' 'rustfmt' 'cargo-fmt' 'cargo-clippy' 'clippy-driver' 'cargo-miri')
+
+build() {
+    cd "$srcdir/$pkgname-${pkgver}"
+    cargo build --release --features no-self-update --bin rustup-init
+}
+
+package() {
+    cd "$pkgname-${pkgver}"
+    install -Dm755 "target/release/rustup-init" "${pkgdir}/usr/bin/rustup"
+    for link in "${_binlinks[@]}"; do
+        ln -s /usr/bin/rustup "${pkgdir}/usr/bin/${link}"
+    done
+
+    # Generate completion files.
+    mkdir -p "$pkgdir/usr/share/bash-completion/completions"
+    "$pkgdir"/usr/bin/rustup completions bash > "$pkgdir/usr/share/bash-completion/completions/rustup"
+    "$pkgdir"/usr/bin/rustup completions bash cargo > "$pkgdir/usr/share/bash-completion/completions/cargo"
+    mkdir -p "$pkgdir/usr/share/fish/vendor_completions.d"
+    "$pkgdir"/usr/bin/rustup completions fish > "$pkgdir/usr/share/fish/vendor_completions.d/rustup.fish"
+    mkdir -p "$pkgdir/usr/share/zsh/site-functions"
+    "$pkgdir"/usr/bin/rustup completions zsh > "$pkgdir/usr/share/zsh/site-functions/_rustup"
+    "$pkgdir"/usr/bin/rustup completions zsh cargo > "$pkgdir/usr/share/zsh/site-functions/_cargo"
+
+    install -Dm644 LICENSE-MIT "${pkgdir}"/usr/share/licenses/$pkgname/LICENSE-MIT
+    install -Dm644 LICENSE-APACHE "${pkgdir}"/usr/share/licenses/$pkgname/LICENSE-APACHE
+}
+
+# vim:filetype=sh:

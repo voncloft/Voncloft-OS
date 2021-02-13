@@ -1,0 +1,32 @@
+# description : Perl HTML parser class
+# depends : perl-html-tagset perl-http-message perl-uri
+
+name=perl-html-parser
+version=3.75
+release=1
+url=https://search.cpan.org/dist/HTML-Parser/
+source="https://www.cpan.org/authors/id/C/CA/CAPOEIRAB/HTML-Parser-$version.tar.gz"
+options="!checksum"
+sha512sums=a694723c0e85dfa834f60b995032e1db25357b07f0f7e244cc765dfb3005e70176c9f018d1d1ff66592324678a791030f4002f995ed cd3de9096b cd359c0ee6f
+
+build-delete {
+   cd HTML-Parser-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd HTML-Parser-$version
+  make test
+}
+
+build() {
+   cd HTML-Parser-$version
+  make install DESTDIR=$PKG
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

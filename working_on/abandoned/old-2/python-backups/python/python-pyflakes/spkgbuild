@@ -1,0 +1,47 @@
+# description : A lint-like tool for Python to identify common errors quickly without executing code
+
+pkgbase=python-pyflakes
+version=2.2.0
+release=3
+url=https://pypi.python.org/pypi/pyflakes
+source="https://pypi.io/packages/source/p/pyflakes/pyflakes-$version.tar.gz"
+        py39.patch
+sha512sums=6a411efef261874c216b71bcb095412448a8cbeefdf7fa5577d4f4edd48a4a740a4433665e87e5dda2c08fd9ee3bfb7f134f56c7523e1303243edfa92b0ccb35
+            c85c175abd2ef89e93e77e5096dd1531d3b6da8a5b6fdd55b0289a21a5792d517576dd354c13688bf1ff7072cc3fd20cbcd695691895b8a059bdd0e31d7b9996
+
+prepare {
+  patch -Np1 -d pyflakes-$version <py39.patch
+  cp -a "pyflakes-$version"{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/pyflakes-$version
+  python setup.py build
+
+   cd "$srcdir"/pyflakes-$version-py2
+}
+
+check {
+   cd "$srcdir"/pyflakes-$version
+  python setup.py test
+
+   cd "$srcdir"/pyflakes-$version-py2
+}
+
+package_python-pyflakes {
+  # depends : python-setuptools
+
+   cd pyflakes-$version
+  python setup.py build
+  python setup.py install   --root=$PKG --optimize=1
+
+  # We have python 3 as default python, and want to keep compatibility with the old pyflakes3k naming
+  ln -s pyflakes "$PKG/usr/bin/pyflakes3k"
+
+}
+
+
+   cd pyflakes-$version-py2
+
+
+}

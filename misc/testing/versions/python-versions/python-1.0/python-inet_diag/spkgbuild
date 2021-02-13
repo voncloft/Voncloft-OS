@@ -1,0 +1,31 @@
+
+name=python-inet_diag
+version=0.2.1
+release=6
+# description : Python bindings for the inet_diag kernel interface"
+# depends :   python  
+source="https://git.kernel.org/pub/scm/libs/python/${name}/${name}.git/snapshot/${name}-${version}.tar.gz"
+        "${name}-0.2.1-remove_legacy_struct_member.patch" 
+             9a49dc11035fa22bc15f5172615a74d25925a807201be1cec33db775635a84b6411f03a3365d5e45479d229c69496c45ab87caa5cfd582ff0bd84c41ed86e160  
+         3ae80258dea549d3ade8cd01a82a4b2559a9a120b8bdd7dc331b984b9d3fd6991d2f23ac6df7bf60c2357a59be98a066173fc554d8c6b1000e1bf2b76af44d9b  
+
+prepare   {
+  cd "${name}-${version}"
+  sed -e  1s/python2/python/  -i setup.py
+  # Removed in Python 3.9. Ignored in Python 3.0+ anyway.
+  patch -Np1 -i "../${name}-0.2.1-remove_legacy_struct_member.patch"
+}
+
+build   {
+  cd "${name}-${version}"
+  python setup.py build
+}
+
+package_python-inet_diag   {
+  cd "${name}-${version}"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${PKG}/"
+  install -vDm 775 psk.py "${PKG}/usr/bin/psk"
+  install -vDm 775 pss.py "${PKG}/usr/bin/pss"
+}

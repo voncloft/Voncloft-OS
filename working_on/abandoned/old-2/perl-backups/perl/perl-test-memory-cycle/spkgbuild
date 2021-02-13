@@ -1,0 +1,18 @@
+# description : Verifies code hasnt left circular references
+# depends : perl-devel-cycle perl-padwalker perl-cgi
+
+name=perl-test-memory-cycle
+version=1.06
+release=2
+
+_perl_namespace=Test
+_perl_module=Memory-Cycle
+source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_perl_namespace}-${_perl_module}-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

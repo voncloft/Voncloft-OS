@@ -1,0 +1,35 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=aiohttp-apispec
+name=python-$_name
+version=2.2.1
+release=2
+pkgdesc='Build and document REST APIs with aiohttp and apispec'
+url='https://github.com/maximdanilchenko/aiohttp-apispec'
+depends=('python-aiohttp' 'python-apispec' 'python-webargs' 'python-jinja')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-pytest-aiohttp')
+source=("$name-$version.tar.gz::$url/archive/v$version.tar.gz")
+sha512sums=('c69ecf30c1e875b2961567fc599276ee559328a0e37954352b3fe45d60f486872b7a367fc2de6f186ced44ab732c0746c90dcb503db9200681fe6384b00f8ecd')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check() {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

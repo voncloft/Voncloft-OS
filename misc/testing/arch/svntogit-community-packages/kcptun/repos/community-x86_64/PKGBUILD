@@ -1,0 +1,52 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Kasei Wang <cnsdwpc at gmail.com>
+
+pkgname=kcptun
+pkgver=20210103
+pkgrel=1
+pkgdesc="A Secure Tunnel Based On KCP with N:M Multiplexing"
+arch=('x86_64')
+url="https://github.com/xtaci/kcptun"
+license=('MIT')
+depends=('glibc')
+makedepends=('go' 'git')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/xtaci/kcptun/archive/v$pkgver.tar.gz"
+        'kcptun@.service' 'kcptun-server@.service')
+sha512sums=('e7e4225db184dd46ec179d4ad892b4732e2c79cf7056be39a591ea8b8f343db336b0dc47ae715499c502cfb2ae4f42015873ba651b215c715c77aa24f89cb992'
+            'f6041eae26db4f11bf6dc22443548354114b8b5a2a436949513a168d5b271707e680dd1d6bdcfc4385945ae2cb1bc82736e605ca49c6c94904922b43d1917a5c'
+            '88607e7c6cba7628bf2c9229396fcf285227c56d2fd208f3d0200fb670f8919939ef05aa5e87fc3aceedb4f41e5bca597138c88930a23dbe4b03e22b42d64cec')
+
+prepare() {
+  cd kcptun-$pkgver
+
+  mkdir -p .gopath/src/github.com/xtaci
+  ln -sf "$PWD" .gopath/src/github.com/xtaci/kcptun
+  export GOPATH="$PWD/.gopath:/usr/share/gocode"
+}
+
+build() {
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+
+  cd "$srcdir"/kcptun-$pkgver/client
+  go build -o build/kcptun-client -ldflags "-X main.VERSION=$pkgver -extldflags=${LDFLAGS}" # -gccgoflags "$CFLAGS $LDFLAGS"
+
+  cd "$srcdir"/kcptun-$pkgver/server
+  go build -o build/kcptun-server -ldflags "-X main.VERSION=$pkgver -extldflags=${LDFLAGS}" # -gccgoflags "$CFLAGS $LDFLAGS"
+}
+
+package() {
+  cd kcptun-$pkgver
+
+  install -Dm755 client/build/kcptun-client "$pkgdir"/usr/bin/kcptun-client
+  install -Dm755 server/build/kcptun-server "$pkgdir"/usr/bin/kcptun-server
+
+  install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
+
+  install -dm755 "$pkgdir"/etc/kcptun
+  install -Dm644 "$srcdir/kcptun@.service" "$pkgdir"/usr/lib/systemd/system/kcptun@.service
+  install -Dm644 "$srcdir/kcptun-server@.service" "$pkgdir"/usr/lib/systemd/system/kcptun-server@.service
+}

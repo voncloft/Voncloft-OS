@@ -1,0 +1,20 @@
+# description : Python wrapper for Tesseract and Cuneiform
+# depends : python-pillow python-six
+  sed -e /setuptools_scm_git_archive/d -i $_name/setup.py # Remove unused makedepends
+
+_name=pyocr
+_commit=f9f93bbd83ab5814b1c56c3ffe41addc9ec622dc
+url=https://gitlab.gnome.org/World/OpenPaperwork/pyocr
+_name=pyocr
+name=python-pyocr
+version=0.8
+release=1
+
+source="git+https://gitlab.gnome.org/World/OpenPaperwork/pyocr.git#commit=$_commit
+options="checksum"
+
+build() {
+   cd $_name
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Postgres Driver for DBI
+# depends : perl-dbi postgresql-libs
+
+name=perl-dbd-pg
+version=3.8.1
+release=2
+
+source="https://www.cpan.org/authors/id/T/TU/TURNSTEP/DBD-Pg-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd  DBD-Pg-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

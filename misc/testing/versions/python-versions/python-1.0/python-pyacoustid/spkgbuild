@@ -1,0 +1,33 @@
+
+name=python-pyacoustid
+version=1.2.0
+release=2
+# description : Bindings for Chromaprint acoustic fingerprinting and the Acoustid API 
+# depends :  
+  chromaprint
+  python
+ 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd pyacoustid
+
+  git describe --tags | sed  s/^v// 
+}
+
+build   {
+  cd pyacoustid
+
+  python setup.py build
+}
+
+package   {
+  cd pyacoustid
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-pyacoustid/
+}
+
+# vim: ts=2 sw=2 et:

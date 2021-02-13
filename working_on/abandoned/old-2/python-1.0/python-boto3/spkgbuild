@@ -1,0 +1,16 @@
+# description : The AWS SDK for Python
+# depends : python-botocore python-jmespath python-s3transfer
+
+url=https://github.com/boto/boto3
+name=python-boto3
+version=1.16.63
+release=1
+
+source="https://github.com/boto/boto3/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd boto3-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

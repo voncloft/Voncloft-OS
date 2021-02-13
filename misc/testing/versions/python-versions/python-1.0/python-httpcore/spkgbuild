@@ -1,0 +1,34 @@
+
+_name=httpcore
+name=python-httpcore
+version=0.12.0
+release=3
+# description : A minimal HTTP client"
+# depends :   python-h11   python-sniffio  
+source="${name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # do not run coverage in unittests!
+    sed -i  /^addopts/d  setup.cfg
+}
+
+build   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE.md $PKG/usr/share/licenses/${name}/LICENSE.md
+}

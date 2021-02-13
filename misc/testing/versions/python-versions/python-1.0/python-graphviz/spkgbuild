@@ -1,0 +1,36 @@
+
+_name=graphviz
+name=python-graphviz
+version=0.16
+release=1
+# description : Simple Python interface for Graphviz"
+# depends :   graphviz   python  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.zip" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # do not run python-coverage in unittests :/
+    sed -i  s/--cov --cov-report=term --cov-report=html//  setup.cfg
+    # don t add pointless dependency on python-mock needed on python 3.5
+    sed -i  /mock_use_standalone_module/d  setup.cfg
+}
+
+build  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE.txt $PKG/usr/share/licenses/${name}/LICENSE.txt
+}

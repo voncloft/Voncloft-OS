@@ -1,0 +1,23 @@
+# description : Python compatibility wrapper around all Qt bindings 
+# depends :   python   qt5-python-bindings  
+
+name=python-qt.py
+_name=Qt.py
+version=1.2.5
+release=5
+source=" $url/archive/$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root="$PKG/" --optimize=1 --skip-build-old()
+  rm $PKG/usr/LICENSE # Weird
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

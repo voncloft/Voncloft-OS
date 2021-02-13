@@ -1,0 +1,29 @@
+# description : Pure Python library for PNG image encoding/decoding
+# depends : python
+
+_name=pypng
+name=python-$_name
+version=0.0.20
+release=3
+url=https://github.com/drj11/pypng
+make# depends : python-setuptools
+source="$name-$version.tar.gz::$url/archive/$_name-$version.tar.gz"
+sha512sums=09a567ac9ab71858340ae170c46f3d7334b46db8c09d26284adc4eaa7bdf49888cc7a661b7fb80460bb2decb121bc59ef3d2fbb909b67713da023d76100704a1
+
+build()-delete {
+   cd $_name-$_name-$version
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+  install -Dm 644 LICENCE $PKG/usr/share/licenses/$name/LICENCE
+}
+

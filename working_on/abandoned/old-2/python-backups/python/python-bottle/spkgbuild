@@ -1,0 +1,42 @@
+# description : "A fast and simple micro-framework for small web-applications"
+
+pkgbase=python-bottle
+version=0.12.19
+release=2
+url="https://bottlepy.org"
+options=!emptydirs
+check# depends : python-mako python-jinja python-cherrypy python-twisted
+              python-tornado python-paste python-gevent python-eventlet
+source="$name-$version.tar.gz::https://github.com/defnull/bottle/archive/$version.tar.gz"
+sha512sums=58f2510c9982867b4a8aec217a3aefd7784e2384176b13ab3d2558a838e9af88563ceaa5bdbad675c5086a995d034c20146b146b6bd35505357fd8557dc3dd09
+
+prepare {
+  cp -a bottle-$version{,-py2}
+}
+
+check {
+   cd "$srcdir"/bottle-$version
+  # https://github.com/bottlepy/bottle/issues/791
+  python test/testall.py || echo "Tests failed"
+}
+
+build()-delete {
+   cd "$srcdir"/bottle-$version
+  python setup.py build
+   cd "$srcdir"/bottle-$version-py2
+}
+
+package_python-bottle {
+  # depends : python
+
+   cd bottle-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+
+
+   cd bottle-$version-py2
+
+  mv $PKG/usr/bin/bottle.py{,2}
+}
+

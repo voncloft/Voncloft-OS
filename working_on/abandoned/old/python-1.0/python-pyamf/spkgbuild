@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Olivier Biesmans <olivier at biesmans dot fr>
+
+pkgbase=python-pyamf
+name=()  # 'python-pyamf' Python 3 version doesn't work so far
+version=0.8.0
+release=4
+pkgdesc="AMF support for Python"
+url="https://github.com/hydralabs/pyamf"
+depends=('python-defusedxml')
+makedepends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/P/PyAMF/PyAMF-${version}.tar.gz")
+sha512sums=('1da66afbfb6cc32886a8680b5f610d17b3ad6e5cca338deb7f8d8c5e61f0f4e165b6602936590b4053a3bc98d0e36f898e5913e7d59d8444faf385fa036fd81e')
+
+build() {
+  cd "$srcdir/PyAMF-$version"
+  # python setup.py build
+}
+
+check() {
+  cd "$srcdir/PyAMF-$version"
+  # python setup.py test
+}
+
+package() {
+  cd "$srcdir/PyAMF-$version"
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$name/LICENSE.txt"
+}

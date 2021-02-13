@@ -1,0 +1,33 @@
+# description : "Simple Python library to perform a 3-way merge between strings"
+# depends : python-diff-match-patch
+
+_pkg=three-merge
+name=python-${_pkg}
+version=0.1.1
+release=1
+url="https://github.com/spyder-ide/three-merge/"
+make# depends : python-setuptools
+check# depends : python-pytest
+# PyPi tarballs do not have the tests
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+source=https://github.com/spyder-ide/three-merge/archive/v${version}/${_pkg}-${version}.tar.gz
+sha256sums=b6ab2231fd349cdf03be5be04f28c1d59d5a475f7396dcf8fd8b0597981d113e
+
+build()-delete {
+   cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-${version}
+  pytest -x -v three_merge/tests
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+  rm -r "${PKG}"$python -c "import site; printsite.getsitepackages[0]"/${_pkg//-/_}/tests
+}

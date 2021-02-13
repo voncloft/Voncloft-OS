@@ -1,0 +1,31 @@
+
+_name=requests-aws4auth
+name=python-requests-aws4auth
+version=1.0.1
+release=1
+# description : Amazon Web Services version 4 authentication for the Python Requests module 
+# depends :   python   python-requests  
+source=https://github.com/sam-washington/requests-aws4auth/archive/v${version}/${name}-${version}.tar.gz 
+
+prepare   {
+  cd ${_name}-${version}
+  sed "s| test/requests_aws4auth_test.py ,||" -i setup.py
+}
+
+build   {
+  cd ${_name}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_name}-${version}
+  python -m pytest -k  not test_headers_amz_example 
+}
+
+package   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

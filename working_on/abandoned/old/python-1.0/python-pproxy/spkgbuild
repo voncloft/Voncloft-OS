@@ -1,0 +1,27 @@
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
+
+name=python-pproxy
+version=2.5.6
+release=1
+pkgdesc="Versatile TCP/UDP asynchronous tunnel proxy implemented in Python 3 asyncio"
+url="https://github.com/qwj/python-proxy"
+depends=(python)
+makedepends=(python-setuptools python-setuptools-scm)
+optdepends=(
+  'python-pycryptodome: accelerated cipher operations'
+  'python-uvloop: faster asynchronous operations'
+  'python-daemon: run the server as a daemon'
+)
+source=(https://files.pythonhosted.org/packages/source/p/pproxy/pproxy-${version}.tar.gz)
+sha256sums=('747aaf8d9ea858cb0a81ec5d6d223abba927879fd8798f7dde54351fc2ee8e49')
+
+build() {
+  cd pproxy-$version
+  python setup.py build
+}
+
+package() {
+  cd pproxy-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name
+}

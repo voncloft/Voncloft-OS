@@ -1,0 +1,35 @@
+
+_name=mutagen
+name=python-mutagen
+version=1.45.1
+release=3
+# description : An audio metadata tag reader and writer  python library "
+# depends :   python-setuptools  
+ python-pycodestyle  
+source="https://github.com/quodlibet/${_name}/releases/download/release-$version/${_name}-$version.tar.gz"{,.sig} 
+             SKIP  
+         SKIP  
+validpgpkeys=  0EBF782C5D53F7E5FB02A66746BD761F7A49B0EC   # Christoph Reiter <reiter.christoph@gmail.com>
+
+prepare   {
+  mv -v "${_name}-$version" "${name}-${version}"
+}
+
+build   {
+  cd "${pkgbase}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${pkgbase}-${version}"
+  pytest -v --ignore tests/quality/test_flake8.py
+}
+
+package   {
+  cd "${pkgbase}-${version}"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --prefix=/usr \
+                          --root=$PKG
+    -t "${PKG}/usr/share/doc/${name}"
+}

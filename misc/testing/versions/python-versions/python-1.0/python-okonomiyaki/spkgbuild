@@ -1,0 +1,30 @@
+
+_name=okonomiyaki
+name=python-$_name
+version=1.2.0
+release=4
+# description : Experimental library aimed at consolidating a lot of our low-level code used for Enthought eggs 
+# depends :   python   python-attrs   python-jsonschema   python-six  
+source=" $url/archive/v$version.tar.gz" 
+
+build   {
+  find $_name-$version -type f -name  *.py  -exec sed -i  s|zipfile2|zipfile|   {}  +
+}
+
+build   {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+
+  sed -i /zipfile2/d $PKG/usr/lib/python*/site-packages/okonomiyaki-*.egg-info/requires.txt
+}
+
+# vim:set ts=2 sw=2 et:

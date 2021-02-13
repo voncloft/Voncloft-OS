@@ -1,0 +1,31 @@
+
+name=python-discogs-client
+version=2.3.0
+release=3
+# description : Official Python Client for the Discogs API 
+# depends :  
+  python-six
+  python-requests
+  python-oauthlib
+ 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd discogs_client
+  git describe --tags | sed  s/^v// 
+}
+
+build   {
+  cd discogs_client
+  python setup.py build
+}
+
+package   {
+  cd discogs_client
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-discogs-client
+}
+
+# vim: set ts=2 sw=2 et:

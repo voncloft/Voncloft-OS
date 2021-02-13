@@ -1,0 +1,33 @@
+
+name=python-pip-api
+version=0.0.14
+release=3
+# description : An unofficial, importable pip API"
+# depends :   python-packaging   python-pyparsing   python-pip  
+source="https://github.com/di/pip-api/archive/$version.tar.gz" 
+
+prepare   {
+  cd pip-api-$version
+  # Devendor
+  sed -i  s/pip_api._vendor.//  pip_api/*.py tests/*.py
+
+  # Make it install an old virtualenv for tests
+  sed -i  /install_requires/a \    tests_require=["virtualenv<20"],  setup.py
+
+  rm -r pip_api/_vendor
+}
+
+build   {
+  cd pip-api-$version
+  python setup.py build
+}
+
+check   {
+  cd pip-api-$version
+  python setup.py pytest
+}
+
+package   {
+  cd pip-api-$version
+  python setup.py install --root=$PKG --optimize=1
+}

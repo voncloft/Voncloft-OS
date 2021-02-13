@@ -1,0 +1,26 @@
+
+name=python-subunit
+version=1.4.0
+release=3
+# description : Python implementation of subunit test streaming protocol"
+# depends :   python-extras   python-testtools  
+source="https://pypi.io/packages/source/p/python-subunit/python-subunit-$version.tar.gz" 
+
+prepare   {
+  sed -i  s|import unittest2 as unittest|import unittest|  python-subunit-$version/python/subunit/tests/test_test_protocol.py
+}
+
+build   {
+  cd python-subunit-$version
+  python setup.py build
+}
+
+check   {
+  cd python-subunit-$version
+  PYTHONPATH="$PWD/build/lib:$PYTHONPATH" python -m testtools.run subunit.test_suite || :
+}
+
+package   {
+  cd python-subunit-$version
+  python setup.py install --root=$PKG --optimize=1
+}

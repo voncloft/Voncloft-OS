@@ -1,0 +1,15 @@
+# description : Refactoring library
+
+url=https://github.com/python-rope/rope
+name=python-rope
+version=0.18.0
+release=3
+
+source="https://github.com/python-rope/rope/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd rope-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

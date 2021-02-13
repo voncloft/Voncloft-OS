@@ -1,0 +1,20 @@
+
+pkgbase=python-selectors2
+version=2.0.2
+release=1
+url=https://github.com/SethMichaelLarson/selectors2
+source=$pkgbase-$version.tar.gz::https://github.com/SethMichaelLarson/selectors2/archive/$version.tar.gz
+sha256sums=43e80168bec134ada813d4126b8eac071450bad8ec1bbdd91ec6481050dbc87e
+
+package_python-selectors2 {
+  # description : Backported, durable, and portable selectors.
+   cd "${srcdir}"/selectors2-$version
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}
+
+  # description : Backported, durable, and portable selectors.
+   cd "${srcdir}"/selectors2-$version
+
+}

@@ -1,0 +1,24 @@
+# description : Python XML-based template engine with Genshi-like syntax and Jinja-style blocks
+# depends : python
+pkgbase=python-kajiki
+_pkgbase="${pkgbase#python-}"
+name="python-${_pkgbase}"
+version=0.8.2
+release=4
+url=https://github.com/nandoflorestan/kajiki
+make# depends : python-setuptools
+check# depends : python-babel python-nose python-nine
+source="${_pkgbase}-${version}.tar.gz::https://github.com/nandoflorestan/kajiki/archive/v${version}.tar.gz"
+sha512sums=c6d4a7ed0b0a66af744d622a113f0fdccd3b13aa7ea75e0eda4d42c5f9234341367a5bcc92a98ecd394d824e1b0949d85d7fe384c88aaa05500a298e5101dc7a
+
+check {
+   cd "${srcdir}/${_pkgbase}-${version}"
+  python ./setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd "${srcdir}/${_pkgbase}-${version}"
+  python ./setup.py install --root="$PKG/" --optimize=1
+}

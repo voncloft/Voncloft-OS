@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+# Contributor: Thomas S Hatch <thatch45@gmail.com>
+
+name=python-pdoc
+version=0.3.2
+release=7
+pkgdesc='A simple program and library to auto generate API documentation for Python modules.'
+url='https://github.com/BurntSushi/pdoc'
+depends=('python-mako' 'python-markdown')
+source=("$name-$version.tar.gz::https://github.com/BurntSushi/pdoc/archive/$version.tar.gz")
+sha512sums=('435d7279f67107043b7763b2fb571b777fbec578f9acf2cc96463587fe55e753ca2dc3b7925e7d595da8fd0d228991fd9b6191e614dca401316df320179cbb76')
+
+prepare() {
+  sed -i 's/markdown < 2.5/markdown/' pdoc-$version/setup.py
+}
+
+build() {
+  cd pdoc-$version
+  python setup.py build
+}
+
+package() {
+  cd pdoc-$version
+  python setup.py install --root="$pkgdir" -O1
+
+  install -Dm644 "$pkgdir"/usr/share/pdoc/UNLICENSE "$pkgdir"/usr/share/licenses/$name/UNLICENSE
+  rm -r "$pkgdir"/usr/share
+}

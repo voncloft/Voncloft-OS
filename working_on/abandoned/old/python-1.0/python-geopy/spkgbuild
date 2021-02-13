@@ -1,0 +1,45 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=geopy
+name=python-geopy
+version=2.1.0
+release=1
+pkgdesc="Geocoding library for Python"
+url="https://github.com/geopy/geopy"
+depends=('python-geographiclib')
+makedepends=('python-setuptools')
+checkdepends=('python-aiohttp' 'python-async_generator' 'python-mock'
+'python-pytest-aiohttp' 'python-pytest' 'python-pytz' 'python-requests')
+optdepends=('python-aiohttp: for geopy.adapters.AioHTTPAdapter'
+            'python-requests: for geopy.adapters.RequestsAdapter')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc})
+sha512sums=('1873686748e1957d9717dc3b980d617ff838aeaf327bbbecfb766d17bc5ba21f6a24ac90c504541586040acd1b33d3bcfab636665a324084a6d70b6bc6be8e4a'
+            'SKIP')
+b2sums=('a508a84ef569ffb4cb40acef685a42a8658f5a8ca942d5265a708dcc98f1c7075c0f6bb00b7277a0f62b7a4678597028582804f536dc96d1a94ea2ba3e62f1a9'
+        'SKIP')
+validpgpkeys=('A18FE9F6F570D5B4E1E1853FAA7B5406547AF062') # Kostya Esmukov <kostya@esmukov.ru>
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  # geocoders tests require internet access and are flaky
+  pytest -v --ignore='test/geocoders'
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  install -vDm 644 {AUTHORS,README.rst} -t "${pkgdir}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+}

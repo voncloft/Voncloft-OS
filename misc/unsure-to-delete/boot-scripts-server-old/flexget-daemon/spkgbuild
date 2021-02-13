@@ -1,0 +1,13 @@
+# description : flexget daemon
+# depends : 
+
+name=flexget-daemon
+version=3.1.71
+release=1
+
+build()
+{
+	cd $name-$version
+	mkdir -pv $PKG/etc/init.d
+	install $SRC/flexget $PKG/etc/init.d/
+}

@@ -1,0 +1,26 @@
+# description : "Simple module to parse ISO 8601 dates"
+# depends : python
+
+name=python-iso8601
+_libname=iso8601
+version=0.1.14
+release=1
+url="https://pyiso8601.readthedocs.io/en/latest/"
+make# depends : python-setuptools
+source=https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz
+sha256sums=8aafd56fa0290496c5edbb13c311f78fa3a241f0853540da09d9363eae3ebd79
+
+build()-delete {
+	 cd "$srcdir/$_libname-$version"
+	rm -rf ../build()py3; mkdir ../build()py3
+	python setup.py build -b ../build()py3
+}
+
+options="!checksum"
+
+build() {
+	 cd "$srcdir/$_libname-$version"
+	rm -rf build(); ln -s ../build()py3 build()
+	python setup.py build
+  python setup.py install  -O1 --root=$PKG
+}

@@ -1,0 +1,35 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
+
+pkgname=certbot-apache
+pkgver=1.12.0
+pkgrel=1
+pkgdesc="Apache plugin for Let’s Encrypt client"
+arch=('any')
+license=('Apache')
+url="https://pypi.python.org/pypi/$pkgname"
+replaces=("letsencrypt-apache")
+depends=('certbot' 'python-acme' 'python-augeas' 'python-mock' 'python-setuptools'
+         'python-zope-component' 'python-zope-interface')
+checkdepends=('python-pytest')
+source=("https://pypi.io/packages/source/c/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc})
+validpgpkeys=('148C30F6F7E429337A72D992B00B9CC82D7ADF2C'
+              '1B41B758F9A78C7F444C20FA3E5B4152E3ADB1FD'
+              'A2CFB51FA275A7286234E7B24D17C995CD9775F2')
+sha512sums=('93c7856621d8e238cf6bfa1feed36afd4f666ffc4f78bd53c4f56184729bc267eb5fe556f3bcc751f93a63047705b11a0c63ca393a9d803f83898f88a19acaea'
+            'SKIP')
+
+build() {
+  cd $pkgname-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd $pkgname-$pkgver
+  python -m pytest
+}
+
+package() {
+  cd $pkgname-$pkgver
+  python setup.py install -O1 --root="$pkgdir"
+}

@@ -1,0 +1,26 @@
+# description : Basic cross-platform tests for scripts
+# depends : perl-capture-tiny perl-probe-perl perl-test2-suite
+
+name=perl-test-script
+version=1.26
+release=2
+url=https://metacpan.org/release/Test-Script
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Test-Script-$version.tarsource=.gz"
+options=!checksum
+sha512sums=9cca12ff9cb8de394cac760da16b39d371a70fa9624adc8d4e97ee45f0b18ccb41add99716ed6a969aaeb2df5ee3f1aa7cb287e2d93ee8533c89bbd0cf6b2c96
+
+build-delete {
+  cd Test-Script-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Test-Script-$version
+  make test
+}
+
+build() {
+  cd Test-Script-$version
+  make DESTDIR=$PKG install
+}

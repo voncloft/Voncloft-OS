@@ -1,0 +1,28 @@
+
+_name=cloudscraper
+name=python-cloudscraper
+version=1.2.56
+release=1
+# description : Python module to bypass Cloudflare s anti-bot page"
+# depends :   python-pyparsing   python-requests   python-requests-toolbelt  
+             nodejs: alternative interpreter/solver  
+source="${name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+build  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

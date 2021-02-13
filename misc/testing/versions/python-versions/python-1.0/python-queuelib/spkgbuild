@@ -1,0 +1,23 @@
+
+name=python-queuelib
+version=1.5.0
+release=7
+# description : Collection of persistent  disk-based  queues."
+# depends :   python  
+source="https://github.com/scrapy/queuelib/archive/v$version.tar.gz" 
+
+build   {
+  cd queuelib-$version
+  python setup.py build
+}
+
+check   {
+  cd queuelib-$version
+  py.test
+}
+
+package   {
+  cd queuelib-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE -t $PKG/usr/share/licenses/$name
+}

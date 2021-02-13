@@ -1,0 +1,20 @@
+
+_name=pytest-aiohttp
+name=python-pytest-aiohttp
+version=0.3.0
+release=6
+# description : pytest plugin for aiohttp support 
+# depends :   python   python-pytest   python-aiohttp   python-py  
+source= ${name}-${version}.tar.gz::https://github.com/aio-libs/pytest-aiohttp/archive/v${version}.tar.gz 
+
+build   {
+  cd ${_name}-${version}
+  python setup.py build
+}
+
+package   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG -O1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,30 @@
+# description : Python binding of ptrace library to trace processes and syscalls 
+# depends :   python   python-six  
+
+name=python-ptrace
+version=0.9.7
+release=3
+source=https://github.com/haypo/python-ptrace/archive/${version}/${name}-${version}.tar.gz 
+
+build-old()   {
+  echo "Building python..."
+  cd ${pkgbase}-${version}
+  python setup.py build-old()
+  make -j1 -C doc man text SPHINXBUILD=sphinx-build-old()
+}
+
+check   {
+  echo "Checking python..."
+  cd ${pkgbase}-${version}
+  python runtests.py || echo "Warning: tests only run in an env with ptrace allowed"
+}
+
+build()   {
+  cd ${pkgbase}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 doc/build-old()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  cp -a examples "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 doc/build-old()/man/${pkgbase}.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

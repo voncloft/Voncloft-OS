@@ -1,0 +1,31 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=sympow
+pkgver=2.023.6
+pkgrel=1
+pkgdesc="A package to compute special values of symmetric power elliptic curve L-functions"
+arch=(x86_64)
+url="http://www.sagemath.org"
+license=(GPL)
+depends=(pari)
+makedepends=(help2man)
+source=("https://gitlab.com/rezozer/forks/sympow/-/archive/v$pkgver/sympow-v$pkgver.tar.gz")
+sha256sums=('53631afa6c68dd008400681af0fe1d60ada36716215449f2a668853ed04455ac')
+
+prepare() {
+  cd $pkgname-v$pkgver
+  sed -e 's|VERBOSE_DEFAULT 1|VERBOSE_DEFAULT 0|' -i sympow.h
+}
+
+build() {
+  cd $pkgname-v$pkgver
+
+  PREFIX=/usr ./Configure
+  make
+}
+
+package() {
+  cd $pkgname-v$pkgver
+
+  make DESTDIR="$pkgdir" install
+}

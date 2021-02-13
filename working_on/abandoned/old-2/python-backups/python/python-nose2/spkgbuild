@@ -1,0 +1,41 @@
+# description : "The next generation of nicer testing for python"
+# depends : python-coverage python-six
+
+_name=nose2
+name=python-nose2
+version=0.10.0
+release=1
+url="https://github.com/nose-devs/nose2"
+make# depends : python-setuptools
+check# depends : python-pytest
+opt# depends : python-coverage: for coverage_plugin
+            python-setuptools: for eggdiscovery plugin
+            python-sphinx: for doc
+            python-sphinx_rtd_theme: for doc
+            python-mock: for doc
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=05bc26f23e2f2bd950ee7f5ff7720d3282eb27f6c147ace911bc6f1dbaa65eb076d84b3411dcbcad979a7f86e0cf97d6926de68e5ed0b0746cab58cf5773125e
+b2sums=1dc7c461cac4b540e99a691ba6f972b81182872d74160d158bc7dd5bb789ff8c363bdc3841e5fd89e09bcf6728e09c69635054358155413ec7c07bbc0b814742
+
+prepare {
+  mv -v "${_name}-${version}" "${name}-${version}"
+}
+
+build()-delete {
+   cd "${name}-${version}"
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "${name}-${version}"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+  --root=$PKG 
+  # license
+  install -vDm 644 license.txt \
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

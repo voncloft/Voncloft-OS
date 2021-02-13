@@ -1,0 +1,30 @@
+# description : Python tools for handling intervals  ranges of comparable objects . 
+# depends :   python   python-infinity  
+
+_name=intervals
+name="python-${_name}"
+version=0.8.1
+release=5
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+         pytest5.patch  
+             af545bec7d8157259197e045396d69ac1791b5e0420056fca69bea444cceacaa208ae568fd80792f614e1c775611ea22c48521bdd47dbdd976a699c150835f96  
+
+prepare   {
+  cd "${srcdir}/${_name}-${version}"
+  patch -Np1 -i ../pytest5.patch
+}
+build-old()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/${_name}-${version}"
+  py.test
+}
+
+build()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py install --root="${PKG}/" --optimize=1
+  install -Dm644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

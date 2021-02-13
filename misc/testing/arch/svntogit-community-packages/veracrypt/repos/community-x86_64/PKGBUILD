@@ -1,0 +1,50 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Sebastian Lau <archlinux _at_ slau _dot_ info>
+# Contributor: Eric Ozwigh <ozwigh at gmail dot com>
+
+pkgname=veracrypt
+_pkgname=VeraCrypt
+_pkgver=1.24
+_updatever=7
+pkgver=${_pkgver}.update${_updatever}
+pkgrel=1
+pkgdesc='Disk encryption with strong security based on TrueCrypt'
+url='https://www.veracrypt.fr/'
+arch=('x86_64')
+license=('custom:TrueCrypt')
+depends=('fuse2>=2.8.0' 'wxgtk3>=3.0' 'libsm' 'device-mapper')
+optdepends=('sudo: mounting encrypted volumes as nonroot users')
+makedepends=('yasm')
+source=(https://launchpad.net/veracrypt/trunk/${_pkgver}-update${_updatever}/+download/VeraCrypt_${_pkgver}-Update${_updatever}_Source.tar.bz2{,.sig}
+        no-makeself.patch
+        veracrypt.desktop)
+sha512sums=('990dc39204cc0d450b51d7bd98fa959a708fbe7a5cb29ec0819b5170c9ef65445cba1193c5aa2ae70629369c7a94c83095a628833d3d550a74ac6938252bd62a'
+            'SKIP'
+            '40c269859bb97fbcceb443e5f457788bac650271ed118ec79d34f56fc340ad6e613114fe905ec5aba8c4d171c51c9a6865f97e9fa1ba01fa98ef18be4e97bbe1'
+            'f689ca64bac7042030de7714aed8cc89f2c5f87b407444b1b121491c1d89c147babaaa454ddc2a93b70ae20d4da59f96ad64f01b04bea9017d658c377faeb75d')
+validpgpkeys=('5069A233D55A0EEB174A5FC3821ACD02680D16DE') # VeraCrypt Team <veracrypt@idrix.fr>
+
+prepare() {
+  cd src
+  chmod -R u+w . # WAT award
+  patch -Np1 < "${srcdir}/no-makeself.patch"
+}
+
+build() {
+  cd src
+  make PKG_CONFIG_PATH=/usr/lib/pkgconfig \
+    WX_CONFIG=/usr/bin/wx-config-gtk3 \
+    TC_EXTRA_LFLAGS+="-ldl ${LDFLAGS}" \
+    TC_EXTRA_CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
+    TC_EXTRA_CFLAGS="${CFLAGS} ${CPPFLAGS}"
+}
+
+package() {
+  cd src
+  install -Dm 755 Main/${pkgname} "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 644 "${srcdir}/veracrypt.desktop" -t "${pkgdir}/usr/share/applications"
+  install -Dm 644 Resources/Icons/VeraCrypt-256x256.xpm "${pkgdir}/usr/share/pixmaps/veracrypt.xpm"
+  install -Dm 644 License.txt -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

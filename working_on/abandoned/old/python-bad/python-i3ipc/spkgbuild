@@ -1,0 +1,24 @@
+# description : An improved Python library to control i3wm 
+# depends :   python   python-xlib  
+
+_name=i3ipc-python
+name=python-i3ipc
+version=2.2.1
+release=2
+conflicts=  i3ipc-python  
+replaces=  i3ipc-python  
+source="${name}-${version}.tar.gz::https://github.com/altdesktop/${_name}/archive/v${version}.tar.gz" 
+
+build-old()   {
+    cd "${_name}-${version}"
+    python setup.py build-old()
+}
+
+build()   {
+    cd "${_name}-${version}"
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm755 -t "${PKG}/usr/share/doc/${name}/examples" examples/*.py
+    install -Dm644 -t "${PKG}/usr/share/licenses/${name}" LICENSE
+}
+
+# vim:set ts=4 sw=4 et:

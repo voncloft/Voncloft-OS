@@ -1,0 +1,17 @@
+# description : Parse, manipulate or create documents in LilyPond format
+# depends : python
+
+url=https://github.com/frescobaldi/python-ly
+name=python-ly
+version=0.9.7
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd $name-$version
+   cd doc
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

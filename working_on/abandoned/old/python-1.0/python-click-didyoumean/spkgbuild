@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-click-didyoumean
+version=0.0.3
+release=3
+pkgdesc="Enable git-like did-you-mean feature in click"
+url="https://github.com/click-contrib/click-didyoumean"
+depends=('python-click')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+source=("https://github.com/click-contrib/click-didyoumean/archive/v$version/$name-$version.tar.gz")
+sha512sums=('6e832881817645eb8fa3a40acaab74a7f0dcc798aa984781a011b2ef78da2a4ae71ff2d58907bcbb35adbfc659727223c28c3622788eef05ecbdf758d6ac889d')
+
+build() {
+  cd click-didyoumean-$version
+  python setup.py build
+}
+
+check() {
+  cd click-didyoumean-$version
+  python -m pytest || :
+}
+
+package() {
+  cd click-didyoumean-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

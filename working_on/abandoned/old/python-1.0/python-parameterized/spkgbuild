@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-parameterized
+version=0.7.5
+release=1
+pkgdesc="Parameterized testing with any Python test framework"
+url="https://github.com/wolever/parameterized"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-nose' 'python-mock')
+source=("https://github.com/wolever/parameterized/archive/v$version/$name-$version.tar.gz")
+sha512sums=('826a3018fb738703d295d27e192044e5fcfcb2ffe8b913512ea296d8d66889e4a24f1f526d54af6e85228c954b0ee5fa10ed9ebaa386e058fb396991e6213422')
+
+build() {
+  cd parameterized-$version
+  python setup.py build
+}
+
+check() {
+  cd parameterized-$version
+  python setup.py nosetests
+}
+
+package() {
+  cd parameterized-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

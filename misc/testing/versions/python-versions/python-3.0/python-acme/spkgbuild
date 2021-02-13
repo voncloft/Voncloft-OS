@@ -1,0 +1,23 @@
+# description : ACME protocol implementation in Python"
+# depends :   python-setuptools   python-pyopenssl   python-pyrfc3339   python-pytz   python-requests 
+
+name=python-acme
+version=1.12.0
+release=1
+          python-six   python-josepy   python-requests-toolbelt  
+source="https://pypi.io/build()s/source/a/acme/acme-$version.tar.gz" 
+
+build-old()   {
+  cd acme-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd acme-$version
+  python -m pytest
+}
+
+build()   {
+  cd acme-$version
+  python setup.py install --root=$PKG --optimize=1
+}

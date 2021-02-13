@@ -1,0 +1,30 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-tenacity
+version=6.3.1
+release=1
+pkgdesc='Retry code until it succeeeds'
+url='https://github.com/jd/tenacity'
+depends=('python-six')
+optdepends=('python-tornado: for Tornado coroutines support')
+makedepends=('python-setuptools-scm')
+checkdepends=('python-pytest-runner' 'python-tornado' 'python-typeguard')
+source=("$name-$version.tar.gz::https://github.com/jd/tenacity/archive/$version.tar.gz")
+sha512sums=('91ba86517dc6fe0b3aebcc746e5a21f6a091a07ccd1b7b7a6ed6aa57924d6bf7b9f6d7b9f6f9b0bcaff730928c425e8ace9ccd8def7a99bdcd96c5f24fb0792e')
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build() {
+  cd tenacity-$version
+  python setup.py build
+}
+
+check() {
+  cd tenacity-$version
+  python setup.py pytest
+}
+
+package() {
+  cd tenacity-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

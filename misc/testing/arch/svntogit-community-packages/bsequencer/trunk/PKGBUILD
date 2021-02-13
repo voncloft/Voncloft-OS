@@ -1,0 +1,41 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=BSEQuencer
+_plugin_uri="https://www.jahnichen.de/plugins/lv2/BSEQuencer"
+pkgname=bsequencer
+pkgver=1.8.4
+pkgrel=1
+pkgdesc="Multi channel MIDI step sequencer LV2 plugin with a variable matrix"
+arch=('x86_64')
+url="https://github.com/sjaehn/BSEQuencer"
+license=('GPL3')
+groups=('lv2-plugins' 'pro-audio')
+depends=('cairo' 'gcc-libs' 'glibc' 'libx11')
+makedepends=('lv2')
+checkdepends=('lv2lint')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/sjaehn/${pkgname}/archive/${pkgver}.tar.gz")
+sha512sums=('86243a79f348189fc32c3c2eade934299293e1a1c82cf39cf051a44d4686654f9e386128b744bc5918deefb7eea9b3b86b89bcd75887ec5fa3415ae4701f177c')
+b2sums=('0f6112256d82fb03589dcfb8103d2726f009ed0ce389941e179978a6f63e17e61394fb2ba65f7542b201e8d2b9e287329da9dd417330056c6f3fcae2f9a286dc')
+
+prepare() {
+  mv -v "${_name}-${pkgver}" "${pkgname}-${pkgver}"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  lv2lint -Mpack -I "${_name}.lv2/" "${_plugin_uri}"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make PREFIX=/usr DESTDIR="$pkgdir/" install
+  install -vDm 644 README.md \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+  # remove useless license file
+  find "${pkgdir}/usr/lib/" -type f -iname "*LICENSE*" -delete
+}

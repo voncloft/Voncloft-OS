@@ -1,0 +1,39 @@
+# description : "Service identity verification for pyOpenSSL"
+
+pkgbase=python-service-identity
+version=18.1.0
+release=6
+url="https://pypi.python.org/pypi/service_identity"
+source="$pkgbase-$version.tar.gz::https://github.com/pyca/service-identity/archive/$version.tar.gz"
+sha512sums=6b6da48c543bfbe0d9da9f0d03dbd735ce97e64a76cbf9eae2b615ced7b91c5fcca1f25353e53858c48da9c4e0c0be4e33fa4559adb50899a79689cbb372f49b
+
+prepare {
+  cp -a service-identity-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/service-identity-$version
+  python setup.py build
+ 
+   cd "$srcdir"/service-identity-$version-py2
+}
+
+check {
+   cd "$srcdir"/service-identity-$version
+  python setup.py pytest
+
+   cd "$srcdir"/service-identity-$version-py2
+}
+ 
+package_python-service-identity {
+  # depends : python-pyopenssl python-pyasn1 python-pyasn1-modules python-attrs
+  opt# depends : python-idna: for Internationalized Domain Names support
+ 
+   cd service-identity-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+ 
+ 
+   cd service-identity-$version-py2
+}

@@ -1,0 +1,17 @@
+# description : Decorator for profiling individual functions and converting profiling data to the kcachegrind/qcachegrind format.
+# depends : python-setuptools pyprof2calltree
+
+url=https://pypi.python.org/pypi/profilestats
+name=python-profilestats
+version=2.0
+release=8
+
+source="git+https://github.com/hannosch/profilestats.git#tag=$version
+options="checksum"
+
+build() {
+   cd $srcdir/profilestats
+   cd profilestats
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

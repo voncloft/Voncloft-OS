@@ -1,0 +1,23 @@
+# description : For controlling and automating applications
+
+version=4.8.0
+release=3
+url=https://pexpect.readthedocs.org/en/stable/
+source="git+https://github.com/pexpect/pexpect#commit=5eed1a31a2853a09b7367c59fbd1a4a0b53341df" # 4.8.0
+sha512sums=SKIP
+
+prepare {
+}
+
+package_python-pexpect {
+  depends+=python python-ptyprocess
+
+   cd pexpect
+  python setup.py build
+  python setup.py install --root=$PKG
+}
+
+
+}
+
+# getver: pypi.python.org/pypi/pexpect

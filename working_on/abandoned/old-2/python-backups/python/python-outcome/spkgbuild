@@ -1,0 +1,48 @@
+# description : Capture the outcome of Python function calls
+# depends : 
+
+name=python-outcome
+version=1.1.0
+release=1
+url=https://github.com/python-trio/outcome
+  python
+  python-attrs
+
+make# depends : 
+  git
+  python-async_generator
+  python-pytest
+  python-pytest-cov
+  python-setuptools
+
+_tag=a351a52f5102f05803a213d3521e5d3905c0102b
+source=git+https://github.com/python-trio/outcome.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd outcome
+
+  git describe --tags | sed s/^v//
+}
+
+build()-delete {
+   cd outcome
+
+  python setup.py build
+}
+
+check {
+   cd outcome
+
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd outcome
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

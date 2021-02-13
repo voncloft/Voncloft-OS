@@ -1,0 +1,17 @@
+# description : SQLObject, an object-relational mapper for Python"
+# depends :   python-pydispatcher  
+
+name=python-sqlobject
+version=3.9.0
+release=1
+source="${name}-${version}.tar.gz::https://github.com/sqlobject/sqlobject/archive/${version}.tar.gz" 
+
+build-old()  {
+  cd "sqlobject-$version"
+  python setup.py build-old()
+}
+
+build()_python-sqlobject   {
+  cd "sqlobject-$version"
+  python setup.py install --root="$PKG/" --optimize=1 --skip-build-old()
+}

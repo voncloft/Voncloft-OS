@@ -1,0 +1,31 @@
+# description : "Namecheap API client in Python"
+# depends : python-requests
+
+name=python-pynamecheap
+version=0.0.3
+release=6
+url="https://github.com/Bemmu/PyNamecheap"
+make# depends : python-setuptools
+check# depends : python-nose
+source="$name-$version.tar.gz::https://github.com/Bemmu/PyNamecheap/archive/v$version.tar.gz"
+sha512sums=9de6f09c76a85a67269465cb1e270f5533fa84983a220ba855b04d03924e2308b9267f212cc2e4811e7e4fb3542e1c1194a74e4ed7ffd253704d7a394d5e1bb2
+
+build()-delete {
+   cd PyNamecheap-$version
+  python setup.py build
+}
+
+check {
+  # Needs an account
+
+   cd PyNamecheap-$version
+  python setup.py nosetests || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd PyNamecheap-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

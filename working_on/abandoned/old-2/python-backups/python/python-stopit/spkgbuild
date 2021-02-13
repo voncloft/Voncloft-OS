@@ -1,0 +1,36 @@
+# description : Library to raise asynchronous exceptions in other thread, control the timeout of blocks or callables
+
+name=python-stopit
+_pyname=stopit
+version=1.1.2
+release=4
+url=https://github.com/glenfant/stopit
+make# depends : python python-setuptools
+source=${name}-${version}.tar.gz::https://github.com/glenfant/${_pyname}/archive/${version}.tar.gz
+sha512sums=4b1771a357f35a82128e92d7e91fa3e788271a3d6f1e08bacee69546c7c2fa857104394d8617259235c413b7f1706ccd4ff9ed480af5e1faef1149d1c1e0a0e0
+
+prepare {
+  cp -ra ${_pyname}-${version}{,-py2}
+}
+
+build()-delete {
+   cd ${_pyname}-${version}
+    python setup.py build
+  
+}
+
+check {
+   cd ${_pyname}-${version}
+    python setup.py test
+  
+}
+
+options="!checksum"
+
+build() {
+  # depends : python
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG    
+}
+

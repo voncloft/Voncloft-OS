@@ -1,0 +1,55 @@
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+# Contributor: Grey Christoforo <my first name [at] my last name [dot] net>
+
+pkgname=cura
+pkgver=4.8.0
+pkgrel=1
+pkgdesc="A software solution for 3D printing aimed at RepRaps and the Ultimaker."
+depends=('python-pyqt5' 'qt5-svg' 'python-scipy' 'python-pyserial' 'python-numpy' 'uranium' 'python-requests'
+         'curaengine' 'cura-binary-data' 'cura-resources-materials' 'libsavitar' 'qt5-graphicaleffects'
+         'python-certifi' 'python-pynest2d')
+makedepends=('qt5-tools' 'cmake')
+optdepends=('python-zeroconf: network printing support'
+            'python-trimesh: Reading AMF files'
+            'python-libcharon: UFPWriter/UFPReader')
+provides=('cura')
+url="https://ultimaker.com/en/products/cura-software"
+license=('LGPL')
+arch=('any')
+source=($pkgname-$pkgver.tar.gz::https://github.com/Ultimaker/Cura/archive/${pkgver}.tar.gz)
+sha512sums=('0a34438299908021242e47e74418e56fe61c41cff5c29df938b4705b5d23ceb6e1bd17b9eb8110f8ec75c7a08afe8928857d4f2fd5befa00c187bce717105711')
+
+# Build order
+# arcus -> uranium -> curaengine -> libsavitar ->
+
+prepare(){
+  cd Cura-${pkgver}
+  sed -i 's,/dist-packages,.${PYTHON_VERSION_MINOR}/site-packages,g' CMakeLists.txt
+}
+
+build(){
+  cd Cura-${pkgver}
+  mkdir -p build
+  cd build
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DURANIUM_SCRIPTS_DIR=/usr/share/uranium/scripts \
+    -DCURA_VERSION=$pkgver \
+    -DCURA_SDK_VERSION=6.0.0 \
+    -DCURA_CLOUD_API_VERSION=1 \
+    -DCURA_CLOUD_API_ROOT:STRING="https://api.ultimaker.com" \
+    -DCURA_CLOUD_ACCOUNT_API_ROOT:STRING="https://account.ultimaker.com"
+
+  make
+}
+
+package(){
+  cd Cura-${pkgver}/build
+  make DESTDIR="${pkgdir}" install
+  
+  # make sure cura can find uranium plugins:
+  ln -s /usr/lib/uranium/plugins/* "${pkgdir}/usr/lib/cura/plugins/."
+
+  # don't ever send any user or print info through the internet to Ultimaker
+  rm -rf "${pkgdir}/usr/lib/cura/plugins/SliceInfoPlugin"
+}

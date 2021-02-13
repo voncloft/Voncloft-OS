@@ -1,0 +1,27 @@
+# description : Manage OSS licenses: retrieve information, generate"
+# depends :   python-attrs   python-requests  
+
+_name=dephell-licenses
+name=python-dephell-licenses
+version=0.1.7
+release=3
+source="https://files.pythonhosted.org/build()s/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz" 
+
+build-old()  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

@@ -1,0 +1,26 @@
+# description : "User session management for Flask."
+# depends : python-flask
+
+name=python-flask-login
+version=0.5.0
+release=3
+url="https://pythonhosted.org/Flask-Login/"
+make# depends : python-setuptools
+check# depends : python-nose python-mock python-blinker python-semantic-version
+source="$name-$version.tar.gz::https://github.com/maxcountryman/flask-login/archive/$version.tar.gz"
+sha512sums=8ffecd2a512738f81ec3901ad30d356b1d63355268f7cf1b427e463d0a271a4623723255e139bbd0f88845d73fa4aab051418b5f68aef0b4576c30294f6207b3
+
+check {
+   cd "$srcdir"/flask-login-$version
+  nosetests3
+}
+
+options="!checksum"
+
+build() {
+   cd flask-login-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  mkdir -p $PKG/usr/share/licenses/$name
+}

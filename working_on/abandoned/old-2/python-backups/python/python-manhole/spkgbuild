@@ -1,0 +1,36 @@
+# description : Debugging manhole for python applications
+# depends : python
+
+name=python-manhole
+version=1.6.0
+release=5
+url=https://github.com/ionelmc/python-manhole
+make# depends : python-setuptools
+check# depends : python-virtualenv python-pytest-runner python-process-tests python-requests uwsgi
+source="$name-$version.tar.gz::https://github.com/ionelmc/python-manhole/archive/v$version.tar.gz"
+sha512sums=179a87529e371c4480b6ab0ad6cc6cc9e3942f4be339cacaf1f1b100e447b8b1f2903a03879e9df3376c86ced4421aa5a16d934c9b250f91715b28d03dca000a
+
+build()-delete {
+   cd "$srcdir"/python-manhole-$version
+  python setup.py build
+}
+
+check {
+  # Hack to process .pth files properly
+
+   cd "$srcdir"/python-manhole-$version
+  virtualenv "$srcdir/pyvenv" --system-site-packages
+  
+    . "$srcdir/pyvenv/bin/activate"
+    python setup.py develop
+    python setup.py pytest
+   || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd python-manhole-$version
+  python setup.py build
+  python setup.py install --root $PKG --optimize=1
+}

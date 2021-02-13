@@ -1,0 +1,33 @@
+# Maintainer: Ronald van Haren <ronald@archlinux.org>
+# Contributor: Doug Newgard <scimmia22 at outlook dot com>
+# Contributor: Paul Ezvan <paul@ezvan.fr>
+
+pkgname=terminology
+pkgver=1.9.0
+pkgrel=1
+pkgdesc="EFL based terminal emulator"
+arch=('x86_64')
+url="https://www.enlightenment.org/about-terminology"
+license=('BSD')
+depends=('efl')
+makedepends=('meson')
+source=("https://download.enlightenment.org/rel/apps/${pkgname}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('3f3bc327da5cc239d468570afed29a17e2fda3b1fee02b28f02ee7ed5141e46c')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  export CFLAGS="${CFLAGS} -fvisibility=hidden"
+  meson builddir --prefix=/usr
+  ninja -C builddir
+}
+
+package(){
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  DESTDIR="${pkgdir}" ninja -C builddir install
+
+  # install license files
+  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/COPYING" \
+        "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}

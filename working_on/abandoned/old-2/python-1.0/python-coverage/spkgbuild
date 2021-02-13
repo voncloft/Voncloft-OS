@@ -1,0 +1,15 @@
+# description : A tool for measuring code coverage of Python programs
+  # depends : python-setuptools
+
+url=https://nedbatchelder.com/code/coverage/
+version=5.4
+  local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
+release=1
+
+source="https://github.com/nedbat/coveragepy/archive/coverage-$version.tar.gz"
+
+build() {
+   cd ${pkgbase}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

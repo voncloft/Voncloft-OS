@@ -1,0 +1,28 @@
+# description : Perl/CPAN Module IO::Pager
+
+name=perl-io-pager
+version=0.40
+release=3
+url=https://search.cpan.org/dist/IO-Pager/
+source="https://cpan.metacpan.org/authors/id/J/JP/JPIERCE/IO-Pager-$version.source.gz"
+options="!checksum"
+sha256sums=0735f5ccc077d5d10f4d2856ce5591f89ac8f4cc8c25d5ac4572ee93f5f5edef
+
+build-delete {
+   cd $sr cdir/IO-Pager-0.4
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/IO-Pager-0.4
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

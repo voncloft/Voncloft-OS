@@ -1,0 +1,42 @@
+# description : Perl YAML Serialization using XS and libyaml
+# depends : perl
+
+name=perl-yaml-libyaml
+version=0.75
+release=5
+make# depends : 
+url=https://search.cpan.org/dist/YAML-LibYAML/
+source="https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-$version.tar.gz"
+options="!checksum"
+sha256sums=62ccd4a87daaf3576054f9027d9f3321116374a3a3882eb07166cf01b33792ca
+
+build-delete {
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG     \
+      PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+      MODULEBUILDRC=/dev/null
+    cd $srcdir/YAML-LibYAML-$version
+    /usr/bin/perl Makefile.PL
+    make
+  
+}
+
+check {
+  cd $srcdir/YAML-LibYAML-$version
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+    make test
+  
+}
+
+build() {
+  cd $srcdir/YAML-LibYAML-$version
+  make install
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

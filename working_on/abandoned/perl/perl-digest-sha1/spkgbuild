@@ -1,0 +1,33 @@
+# description : Perl interface to the SHA-1 Algorithm
+# depends : perl
+
+name=perl-digest-sha1
+version=2.13
+release=15
+url=https://search.cpan.org/dist/Digest-SHA1/
+source="https://www.cpan.org/authors/id/G/GA/GAAS/Digest-SHA1-$version.tar.gz"
+options="!checksum"
+md5sums=bd22388f268434f2b24f64e28bf1aa35
+
+build-delete {
+   cd Digest-SHA1-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Digest-SHA1-$version
+  make test
+}
+
+build() {
+   cd Digest-SHA1-$version
+  make install DESTDIR=$PKG
+}
+# vim: ts=2 sw=2 et ft=sh
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

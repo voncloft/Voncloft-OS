@@ -1,0 +1,29 @@
+# description : Library to enable your code run as a daemon process on Unix-like systems
+# depends : python
+
+name=python-daemonize
+version=2.5.0
+release=4
+
+url=https://pypi.python.org/pypi/daemonize/
+
+make# depends : python-setuptools
+
+source="https://pypi.org/packages/source/d/daemonize/daemonize-$version.tar.gz"
+
+md5sums=3d64e7a0219ad22e3fca62460f893b6a
+
+build()-delete {
+	 cd "$srcdir"/daemonize-$version
+	python setup.py build
+}
+
+options="!checksum"
+
+build() {
+	 cd daemonize-$version
+	python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+

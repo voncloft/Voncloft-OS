@@ -1,0 +1,32 @@
+# Maintainer: Alad Wenter <alad@mailbox.org>
+# Contributor: Gavin Lloyd <gavinhungry@gmail.com>
+# Contributor: Timothy Rice <timothy.rice@unimelb.edu.au>
+pkgname=datamash
+pkgver=1.7
+pkgrel=1
+pkgdesc='Performs basic numeric,textual and statistical operations on input textual data files'
+url="https://www.gnu.org/software/datamash/"
+arch=('x86_64')
+license=('GPL')
+source=("https://ftp.gnu.org/gnu/$pkgname/$pkgname-$pkgver.tar.gz"
+        "https://ftp.gnu.org/gnu/$pkgname/$pkgname-$pkgver.tar.gz.sig")
+sha256sums=('574a592bb90c5ae702ffaed1b59498d5e3e7466a8abf8530c5f2f3f11fa4adb3'
+            'SKIP')
+# Assaf Gordon <assafgordon@gmail.com>
+validpgpkeys=('F576AAAC1B0FF849792D8CB129A794FD2272BC86')
+
+build() {
+  cd "$pkgname-$pkgver"
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  make check
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+}

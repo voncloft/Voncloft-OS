@@ -1,0 +1,23 @@
+# description : Perl DES encryption module
+# depends : glibc
+#Contributor: Pete Morris <pete dot morris at gmail dot com>
+name=perl-crypt-des
+version=2.07
+release=11
+url=https://search.cpan.org/~dparis/Crypt-DES
+source="https://www.cpan.org/authors/id/D/DP/DPARIS/Crypt-DES-$version.tarsource=.gz"
+options=!checksum
+sha256sums=2db1ebb5837b4cb20051c0ee5b733b4453e3137df0a92306034c867621edd7e7
+
+build-delete {
+  cd $srcdir/Crypt-DES-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Crypt-DES-$version
+  make pure_install doc_install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

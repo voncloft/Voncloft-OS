@@ -1,0 +1,30 @@
+
+_name=importlib_resources
+name=python-importlib_resources
+version=5.1.0
+release=1
+# description : Design and implementation for a planned importlib.resources"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+}

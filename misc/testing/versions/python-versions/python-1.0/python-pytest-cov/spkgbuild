@@ -1,0 +1,49 @@
+
+pkgbase=python-pytest-cov
+name=  python-pytest-cov   python2-pytest-cov  
+version=2.11.1
+release=1
+# description : py.test plugin for coverage reporting with support for both centralised and distributed testing, including subprocesses and multiprocessing 
+              python-pytest   python2-pytest  
+               python2-process-tests   python-pytest-cache   python2-pytest-cache 
+               python-pytest-xdist   python2-pytest-xdist   python-fields   python2-fields  
+source="$pkgbase-$version.tar.gz::https://github.com/pytest-dev/pytest-cov/archive/v$version.tar.gz" 
+
+prepare   {
+  cp -a pytest-cov-$version{,-py2}
+}
+
+build   {
+  cd "$srcdir"/pytest-cov-$version
+  python setup.py build
+
+  cd "$srcdir"/pytest-cov-$version-py2
+  python2 setup.py build
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd "$srcdir"/pytest-cov-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH:$PWD/tests" py.test || echo "Tests failed"
+
+  cd "$srcdir"/pytest-cov-$version-py2
+  python2 setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python2.7/site-packages:$PYTHONPATH:$PWD/tests" py.test2 || echo "Tests failed"
+}
+
+package_python-pytest-cov   {
+  # depends :   python-pytest   python-coverage  
+
+  cd pytest-cov-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+package_python2-pytest-cov   {
+  # depends :   python2-pytest   python2-coverage  
+
+  cd pytest-cov-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+}
+# vim:set ts=2 sw=2 et:

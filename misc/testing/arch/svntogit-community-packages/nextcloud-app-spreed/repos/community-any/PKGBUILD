@@ -1,0 +1,27 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=spreed
+pkgname=nextcloud-app-spreed
+pkgver=10.1.1
+pkgrel=1
+# epoch needed, because of fake semver:
+# https://github.com/nextcloud/spreed/issues/1685
+epoch=1
+pkgdesc="Video & audio-conferencing using WebRTC"
+arch=('any')
+url="https://apps.nextcloud.com/apps/spreed"
+license=('AGPL3')
+depends=('nextcloud')
+source=("https://github.com/nextcloud/${_name}/releases/download/v${pkgver}/${_name}-${pkgver}.tar.gz")
+sha512sums=('3adfa780ee0eea90675fcd040840abcef5372b6c3c52815255d00499c40fbef2c25ddaa629ae60b247204a1244aa28ea79030815022b765d75500e73cc3a286a')
+b2sums=('83b296ade6cc5d7b4dea6e02dee340b43f4df05461c6fd168c949cfd358e30e5694a15bb4f38c8af05f5ec7df7094765dcaf3ca1c4a10e6f564e52dcf92d3ba5')
+
+prepare() {
+  find ${_name} -type f -exec chmod 644 {} +
+  find ${_name} -type d -exec chmod 755 {} +
+}
+
+package() {
+  install -vdm 755 "${pkgdir}/usr/share/webapps/nextcloud/apps/"
+  cp -av "${_name}" "${pkgdir}/usr/share/webapps/nextcloud/apps/"
+}

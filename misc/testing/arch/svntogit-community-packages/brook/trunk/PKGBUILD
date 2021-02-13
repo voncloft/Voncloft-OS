@@ -1,0 +1,44 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Kasei Wang <cnsdwpc at gmail.com>
+
+pkgname=brook
+pkgver=20200901
+pkgrel=1
+pkgdesc="A cross-platform proxy/vpn software"
+arch=('x86_64')
+url="https://github.com/txthinking/brook"
+license=('GPL')
+depends=('glibc')
+makedepends=('go' 'golang-golang-x-net' 'golang-golang-x-text' 'git')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/txthinking/brook/archive/v$pkgver.tar.gz")
+sha512sums=('a52bfe854515d8090bc23ed0c5e843c29dcccb802d56e6f4e5fee53ed803e3312e6289ec5a22b5e92d2c7e598ce7527d8ca9ea279833859cb1d84958df4f9935')
+
+prepare() {
+  cd brook-$pkgver
+
+  mkdir build
+  mkdir -p .gopath/src/github.com/txthinking
+  ln -sf "$PWD" .gopath/src/github.com/txthinking/brook
+  export GOPATH="$PWD/.gopath:/usr/share/gocode"
+
+  go get github.com/mdp/qrterminal github.com/patrickmn/go-cache github.com/txthinking/x \
+         github.com/txthinking/socks5 github.com/txthinking/encrypt github.com/gorilla/mux \
+         github.com/urfave/cli github.com/gorilla/websocket github.com/urfave/negroni \
+         github.com/tdewolff/minify github.com/miekg/dns
+}
+
+build() {
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+
+  cd brook-$pkgver/cli/brook
+  go build -o brook
+}
+
+package() {
+  cd brook-$pkgver/cli/brook
+  install -Dm755 brook -t "$pkgdir"/usr/bin/
+}

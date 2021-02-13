@@ -1,0 +1,40 @@
+
+_name=django-haystack
+name=python-django-haystack
+version=3.0
+release=3
+# description : Modular search for Django"
+# depends :   python-django   python-six  
+ python-geopy   python-mock   python-nose   python-pysolr   python-requests 
+ python-pytest   python-whoosh  
+             python-pysolr: interface with a solr instance as search backend 
+             python-whoosh: use whoosh as search backend 
+             python-xapian-haystack: use python-xapian as search backend  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+  cd "$name-$version"
+  # remove useless version pinning
+  sed -e  s/==/>=/g  -i setup.py
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  python setup.py test
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+    -t "${PKG}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

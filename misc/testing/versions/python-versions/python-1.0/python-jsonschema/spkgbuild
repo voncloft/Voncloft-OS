@@ -1,0 +1,34 @@
+
+name=python-jsonschema
+version=3.2.0
+release=4
+# description : An implementation of JSON Schema validation for Python"
+# depends :   python-attrs   python-importlib-metadata   python-pyrsistent   python-setuptools  
+               python-rfc3987   python-webcolors  
+source="$name-$version.tar.bz2::https://github.com/Julian/jsonschema/archive/v$version.tar.gz"
+        $name-webcolors.patch::https://github.com/Julian/jsonschema/commit/09595a50f507.patch 
+             c7e14ab01ca2adb1d4aa5b2670bd95d6e5141ade0f619463f35fe54066a69f045ee0ad929943c4af0edacddf4f93289b7318217bc0038069aa812b1a4428f54d  
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+prepare   {
+  cd jsonschema-$version
+  patch -Np1 -i ../$name-webcolors.patch
+}
+
+build   {
+  cd jsonschema-$version
+  python setup.py build
+}
+
+check   {
+  cd jsonschema-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages" JSON_SCHEMA_TEST_SUITE=json trial3 jsonschema
+}
+
+package   {
+  cd jsonschema-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 json/LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

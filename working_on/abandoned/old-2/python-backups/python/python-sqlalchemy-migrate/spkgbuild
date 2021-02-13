@@ -1,0 +1,41 @@
+# description : "Database schema migration for SQLAlchemy"
+# depends : python-six python-pbr python-sqlalchemy python-decorator python-sqlparse
+
+name=python-sqlalchemy-migrate
+version=0.13.0
+release=6
+url="https://pypi.python.org/pypi/sqlalchemy-migrate/$version"
+         python-tempita
+check# depends : python-mock python-testrepository python-scripttest python-ibm-db-sa
+options=!emptydirs
+source="$name-$version.tar.gz::https://opendev.org/x/sqlalchemy-migrate/archive/$version.tar.gz"
+sha512sums=3ae1140cb17ea24db7423a8cb62d667620333c8ed559f6bfd6eecfb35f829c9f9c4918f41f8f723d89bcb3c51d6b803e5cbdc30cb485c8cdfc140caaf1d981f0
+
+export PBR_VERSION=$version
+
+prepare {
+   cd sqlalchemy-migrate
+  # Perhaps related to new testtools
+  sed -i -e /self.setUp/d -e /self.tearDown/d migrate/tests/versioning/test_schema.py
+}
+
+build()-delete {
+   cd sqlalchemy-migrate
+  python setup.py build
+}
+
+check {
+   cd sqlalchemy-migrate
+  python setup.py build
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages" PATH="$PWD/tmp_install/usr/bin:$PATH" python setup.py testr
+}
+
+options="!checksum"
+
+build() {
+   cd sqlalchemy-migrate
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

@@ -1,0 +1,31 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+_pypiname=exam
+name=python-exam
+version=0.10.6
+release=8
+pkgdesc="Helpers for better testing"
+url="https://pypi.python.org/pypi/exam"
+depends=('python-mock')
+makedepends=('python-setuptools' 'git')
+checkdepends=('python-nose')
+source=("git+https://github.com/Fluxx/exam.git#tag=$version")
+md5sums=('SKIP')
+
+build() {
+  cd "$srcdir/exam"
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir/exam"
+  python setup.py test
+}
+
+package() {
+  cd "$srcdir/$_pypiname"
+  python setup.py install --root="$pkgdir/" --optimize=1
+  install -Dm664 LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,25 @@
+# description : "oauthlib integration for Google auth."
+# depends : python python-google-auth python-requests-oauthlib
+
+name=python-google-auth-oauthlib
+_name=google-auth-oauthlib
+version=0.4.2
+release=1
+url="http://google-auth-oauthlib.readthedocs.io/en/latest/"
+check# depends : python-click python-pytest python-mock
+opt# depends : python-click
+source="https://pypi.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz"
+sha256sums=65b65bc39ad8cab15039b35e5898455d3d66296d0584d96fe0e79d67d04c51d9
+
+# check {
+#      cd "${srcdir}/${_name}-${version}"
+#     pytest
+# }
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}/${_name}-${version}"
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}

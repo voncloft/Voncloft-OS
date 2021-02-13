@@ -1,0 +1,28 @@
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Maintainer: Baptiste Jonglez <baptiste--aur at jonglez dot org>
+pkgname='radcli'
+pkgver=1.2.12
+pkgrel=1
+pkgdesc='Client library for writing Radius clients in C or C++'
+arch=('x86_64')
+url='https://radcli.github.io/radcli/'
+license=('BSD')
+depends=('nettle' 'gnutls')
+source=("https://github.com/${pkgname}/${pkgname}/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz"{,.sig})
+sha512sums=('56aae1e3719b749579c776489bb7557f58defd51b868192666e9d479ce112177b291d46c2c40d25522f085d1c7dbf396a61bdfb89269c92f91c9ae190d417981'
+            'SKIP')
+validpgpkeys=('1F42418905D8206AA754CCDC29EE58B996865171'  # Nikos Mavrogiannopoulos <nmav@gnutls.org>
+              '56EE7FA9E8173B19FE86268D763712747F343FA7') # Nikos Mavrogiannopoulos <nmav@redhat.com>
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./configure \
+    --prefix='/usr' \
+    --sysconfdir='/etc'
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+  install -Dm644 COPYRIGHT "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

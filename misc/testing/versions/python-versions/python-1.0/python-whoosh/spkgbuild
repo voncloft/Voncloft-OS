@@ -1,0 +1,22 @@
+
+name=python-whoosh
+version=2.7.4
+release=7
+# description : Fast, pure-Python full text indexing, search, and spell checking library"
+# depends :   python  
+
+build   {
+  cd "$srcdir"/whoosh
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/whoosh
+  python setup.py ptr || echo "Tests failed"
+}
+
+package   {
+  cd whoosh
+  python setup.py install -O1 --root=$PKG
+  install -D -m644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

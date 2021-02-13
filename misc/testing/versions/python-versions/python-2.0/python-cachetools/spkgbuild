@@ -1,0 +1,23 @@
+# description : Extensible memoizing collections and decorators"
+# depends :   python  
+
+name=python-cachetools
+version=4.2.1
+release=1
+source="https://github.com/tkem/cachetools/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/cachetools-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/cachetools-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd cachetools-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

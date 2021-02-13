@@ -1,0 +1,30 @@
+
+name=python-fastimport
+version=0.9.8
+release=3
+# description : 'VCS fastimport/fastexport parser'
+# depends : (python)
+  git
+  python-setuptools
+)
+source=(git+https://github.com/jelmer/python-fastimport.git#tag=fd59e7d835b63d1c9181c4c84dd311d9d6da6d6b)
+
+version() {
+  cd python-fastimport
+
+  git describe --tags | sed 's/fastimport-//'
+}
+
+build-remove() {
+  cd python-fastimport
+
+  python setup.py build
+}
+
+build() {
+  cd python-fastimport
+
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

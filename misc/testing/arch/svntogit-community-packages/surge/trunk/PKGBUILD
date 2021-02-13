@@ -1,0 +1,84 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=Surge
+pkgname=surge
+pkgver=1.7.1
+pkgrel=1
+pkgdesc="An Open Source Digital Synthesizer"
+arch=('x86_64')
+url="https://surge-synthesizer.github.io/"
+license=('GPL3')
+groups=('lv2-plugins' 'pro-audio' 'vst3-plugins')
+depends=('cairo' 'fontconfig' 'gcc-libs' 'glibc' 'libx11' 'libxcb'
+'libxkbcommon-x11' 'xcb-util' 'xcb-util-cursor' 'xcb-util-image'
+'xcb-util-keysyms' 'xcb-util-renderutil' 'xdg-utils')
+makedepends=('cmake' 'freetype2' 'libsndfile' 'lv2' 'python')
+checkdepends=('lv2lint')
+replaces=('surge-synthesizer')
+source=("${pkgname}-${pkgver}.tgz::https://github.com/surge-synthesizer/releases/releases/download/${pkgver}/SurgeSrc_${pkgver}.tgz")
+sha512sums=('9fd9261a43037e761fb9e5e4f9f6d931e2ce18a0dd86aff23a2e0cac39a82aa737fbe28f8ee06fa735d3ae39acbb467db88e8f81f3c7f1ae39bee3f6565804c6')
+b2sums=('2ec20a5be006a6e619a5e88747a2730524ca9f65b5af015843f5aeb1dd791f561739152eee5efd945e2d20ab940fc929e90dd0623db3044a9287a86621075420')
+
+prepare() {
+  mv -v "$pkgname" "$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
+  # first shot at improving reproducibility:
+  # https://github.com/surge-synthesizer/surge/issues/2389
+  sed -e 's/@SURGE_BUILD_DATE@/0/g' \
+      -e 's/@SURGE_BUILD_TIME@/0/g' \
+      -e 's/@SURGE_BUILD_HASH@/0/g' \
+      -e 's/@SURGE_BUILD_FQDN@/None/g' \
+      -e 's/@SURGE_RELEASE_VERSION@/0/g' \
+      -e 's/@SURGE_RELEASE_NUMBER@/0/g' \
+      -e "s/@SURGE_BUILD_ARCH@/${CARCH}/g" \
+      -e "s/@SURGE_FULL_VERSION@/${pkgver}/g" \
+      -i src/common/version.cpp.in
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  # binaries and shared libs have executable stack:
+  # https://github.com/surge-synthesizer/surge/issues/1701
+  export LDFLAGS="${LDFLAGS},-z,noexecstack"
+  # build surge-headless
+  cmake -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DCMAKE_BUILD_TYPE='None' \
+        -W no-dev \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
+
+  # set datapath to local dir for testing
+  sed -e 's|/usr/share/Surge|resources/data|' -i src/common/SurgeStorage.cpp
+  # build surge-headless (test-suite
+  cmake -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DCMAKE_BUILD_TYPE='None' \
+        -W no-dev \
+        -B build-test \
+        -S .
+  make VERBOSE=1 -C build-test
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  lv2lint -Mpack -I "build-test/surge_products/${_name}.lv2" \
+    "https://surge-synthesizer.github.io/lv2/surge" \
+    || echo "Known to fail: https://github.com/surge-synthesizer/surge/issues/2392"
+  build-test/surge-headless
+}
+
+package() {
+  depends+=('libfreetype.so')
+  cd "$pkgname-$pkgver"
+  # install lv2 and vst3 plugins
+  install -vDm 755 "build/surge_products/${_name}.lv2/${_name}.so" \
+    -t "${pkgdir}/usr/lib/lv2/${_name}.lv2/"
+  install -vDm 644 "build/surge_products/${_name}.lv2/"*.ttl \
+    -t "${pkgdir}/usr/lib/lv2/${_name}.lv2/"
+  install -vDm 755 "build/surge_products/${_name}.vst3/Contents/${CARCH}-linux/${_name}.so" \
+    -t "${pkgdir}/usr/lib/vst3/${_name}.vst3/Contents/${CARCH}-linux/"
+  install -vdm 755 "${pkgdir}/usr/share/${pkgname}"
+  # install resources
+  cp -av resources/data/* "${pkgdir}/usr/share/${pkgname}"
+  install -vDm 644 {AUTHORS,README.md} -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

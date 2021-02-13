@@ -1,0 +1,29 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: FadeMind <fademind@gmail.com>
+# Contributor: Zatherz <zatherz at linux dot pl>
+
+pkgname=qt5ct
+pkgver=1.1
+pkgrel=1
+pkgdesc="Qt5 Configuration Utility"
+arch=(x86_64)
+url="https://qt5ct.sourceforge.io/"
+license=(BSD)
+depends=(qt5-svg)
+makedepends=(qt5-tools)
+source=("https://downloads.sourceforge.net/project/$pkgname/$pkgname-$pkgver.tar.bz2")
+sha256sums=('af77c4dbf7f9ba97fe0218648167395bca7bcb2b9c1886a9c98b1e343127ddd2')
+
+build() {
+  cd $pkgname-$pkgver
+  qmake-qt5 $pkgname.pro 
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+} 
+

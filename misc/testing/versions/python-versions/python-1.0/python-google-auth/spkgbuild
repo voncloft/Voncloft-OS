@@ -1,0 +1,35 @@
+
+name=python-google-auth
+version=1.25.0
+release=1
+# description : Google Authentication Library"
+# depends :   ca-certificates   python-pyasn1-modules   python-rsa   python-setuptools 
+          python-cachetools  
+               python-oauth2client   python-pytest-localserver   python-cryptography 
+               python-freezegun   python-responses   python-pyopenssl  
+source="https://github.com/GoogleCloudPlatform/google-auth-library-python/archive/v$version.tar.gz" 
+
+prepare   {
+  # Use system cert
+  sed -i -e  s|certifi.where  |"/etc/ssl/certs/ca-certificates.crt"|  \
+         -e  s|if certifi is not None:|if True:|  \
+         -e  s|import certifi|pass|  \
+         google-auth-library-python-$version/google/auth/transport/{urllib3,requests}.py
+}
+
+build   {
+  cd google-auth-library-python-$version
+  python setup.py build
+}
+
+check   {
+  # Skip the without_certifi tests because we always have the system ca bundle
+
+  cd google-auth-library-python-$version
+  python -m pytest tests --deselect tests/transport/test_urllib3.py::test__make_default_http_without_certifi
+}
+
+package   {
+  cd google-auth-library-python-$version
+  python setup.py install --root=$PKG --optimize=1
+}

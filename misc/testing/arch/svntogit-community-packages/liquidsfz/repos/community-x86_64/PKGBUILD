@@ -1,0 +1,49 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=liquidsfz
+pkgver=0.2.3
+pkgrel=1
+pkgdesc="SFZ Sampler"
+arch=('x86_64')
+url="https://github.com/swesterfeld/liquidsfz"
+license=('LGPL2.1')
+groups=('lv2-plugins' 'pro-audio')
+depends=('gcc-libs' 'glibc')
+makedepends=('jack' 'libsndfile' 'lv2')
+checkdepends=('lv2lint')
+optdepends=(
+  'jack: for standalone application'
+  'lv2-host: for LV2 plugin'
+)
+provides=('libliquidsfz.so' 'soundfont-synthesizer')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/swesterfeld/${pkgname}/archive/${pkgver}.tar.gz")
+sha512sums=('20e39c69727a978b60c2de84b5d880004b3cff14180ddea83e5964433e65f5d5ef6ed11fc7934693d5eaed801cfeab866ec35d50ccbf835af3bc869e3af0fefd')
+b2sums=('a13bf833449be9fe5b45ff4db8dd4063ef5e7b93ef407a20d6f2eef64e43ff00ab3161d5f4b7d293831a448d55e7ff235e5dc8661a40ef403031dc3041b65f44')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  autoreconf -vfi
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  ./configure --prefix=/usr \
+              --enable-shared \
+              --disable-static \
+              --disable-static-cxx
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  make -k check
+  LD_LIBRARY_PATH="lib/.libs/:$LD_LIBRARY_PATH" lv2lint -Mpack -I "${PWD}/lv2" "http://spectmorph.org/plugins/liquidsfz"
+}
+
+package() {
+  depends+=('libsndfile.so')
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+  install -vDm 644 {NEWS,TODO,{OPCODES,README}.md} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

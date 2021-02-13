@@ -1,0 +1,16 @@
+# description : Identify specific nodes in a JSON document RFC 6901
+# depends : python
+
+url=https://github.com/stefankoegl/python-json-pointer
+name=python-jsonpointer
+version=2.0
+release=7
+
+source="https://pypi.io/packages/source/j/jsonpointer/jsonpointer-$version.tar.gz"
+
+build() {
+     cd jsonpointer-$version
+     cd jsonpointer-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

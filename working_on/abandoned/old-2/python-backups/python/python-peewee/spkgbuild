@@ -1,0 +1,31 @@
+# description : "a little orm"
+# depends : python sqlite
+
+name=python-peewee
+version=3.14.0
+release=3
+url="https://pypi.python.org/pypi/peewee/"
+opt# depends : python-psycopg2: for PostgreSQL database support
+            mysql-python: for MySQL database support
+make# depends : python-setuptools cython
+check# depends : python-apsw python-flask python-psycopg2
+source="$name-$version.tar.gz::https://github.com/coleifer/peewee/archive/$version.tar.gz"
+sha512sums=083bb24952a6d05cd6c8376e185e050df0ab5b37bc553241128b0ed3b0ebdd322d9626c32943658324d413cff8ab0bb2ddf6c84d99a0fbe057c0e5c8ec93d7f9
+
+build()-delete {
+   cd peewee-$version
+  python setup.py build
+}
+
+check {
+   cd peewee-$version
+  python runtests.py
+}
+
+options="!checksum"
+
+build() {
+   cd peewee-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

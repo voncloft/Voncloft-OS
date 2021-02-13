@@ -1,0 +1,23 @@
+# description : Parse and manipulate version numbers"
+# depends :   python-arpeggio   python-attrs   python-six  
+
+name=python-parver
+version=0.3.1
+release=3
+source="https://github.com/RazerM/parver/archive/$version.tar.gz" 
+
+build-old()   {
+  cd parver-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd parver-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd parver-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

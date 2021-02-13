@@ -1,0 +1,30 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: PyroDevil <p dot devil at gmail dot com>
+
+name=python-queuelib
+version=1.5.0
+release=7
+pkgdesc="Collection of persistent (disk-based) queues."
+url="https://scrapy.org"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+source=("$name-$version.tar.gz::https://github.com/scrapy/queuelib/archive/v$version.tar.gz")
+sha512sums=('8217dfa82c4a7c2449277d81f553b1dd5b82fa34ba0c69ed98bcc146940e8afb79251715be9ec61c962a78292f14d83dac862ba021485573c9069e85710d5998')
+
+build() {
+  cd queuelib-$version
+  python setup.py build
+}
+
+check() {
+  cd queuelib-$version
+  py.test
+}
+
+package() {
+  cd queuelib-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE -t "$pkgdir"/usr/share/licenses/$name
+  install -D -m644 README.rst -t "$pkgdir"/usr/share/doc/$name
+}

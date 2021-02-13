@@ -1,0 +1,19 @@
+# description : Python virtualenv management and testing tool
+  # depends : python-py python-virtualenv python-packaging python-pluggy python-toml
+  # depends : python2-py python2-virtualenv python2-packaging python2-pluggy python2-toml
+
+url=https://tox.readthedocs.io
+name=python-tox python2-tox
+version=3.21.4
+release=1
+
+source="https://pypi.io/packages/source/t/tox/tox-$version.tar.gz"
+
+build() {
+     cd tox-$version
+   cd tox-$version
+     cd tox-$version-py2
+   cd tox-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,26 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python-httpretty
+pkgver=1.0.5
+pkgrel=1
+pkgdesc="HTTP client mock for Python"
+arch=('any')
+url="https://github.com/gabrielfalcao/httpretty"
+license=('MIT')
+depends=('python-urllib3')
+makedepends=('python-setuptools')
+checkdepends=('python-nose' 'python-coverage' 'python-eventlet' 'python-freezegun' 'python-httplib2'
+              'python-redis' 'python-rednose' 'python-requests' 'python-sure' 'python-tornado')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/gabrielfalcao/HTTPretty/archive/$pkgver.tar.gz")
+sha512sums=('795be5260ffbe91323e3116624e5e58216ce1183137e3c947eecd8ab18133bbaa5ccad0c7c38e388d6e08c92c8fbe686e4e96509f6f58c5d3ffc88a53e30393d')
+
+check() {
+  cd HTTPretty-$pkgver
+  nosetests3 -s tests
+}
+
+package_python-httpretty() {
+  cd HTTPretty-$pkgver
+  python3 setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
+}

@@ -1,0 +1,34 @@
+# description : Python interface to libarchive
+# depends : python libarchive
+
+name=python-libarchive-c
+version=2.9
+release=3
+url=https://github.com/Changaco/python-libarchive-c
+make# depends : python-setuptools
+check# depends : python-pytest python-mock
+source=${name}-${version}.tar.gz::https://github.com/Changaco/python-libarchive-c/archive/${version}.tar.gz
+sha512sums=282791cef6ff67aefc238ce1b40783e3952b366fc5c464fe99557e81d91e8057b9ec339c52535917c251f9a9bffdd3ec2773c91cbb6c9881d9ecb8572cf0fc5b
+
+prepare {
+  sed /os.umask2/d -i ${pkgbase}-${version}/setup.py
+}
+
+check {
+   cd ${pkgbase}-${version}
+  LC_CTYPE=en_US.UTF-8 py.test
+}
+
+build()-delete {
+   cd ${pkgbase}-${version}
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd ${pkgbase}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+}
+

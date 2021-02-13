@@ -1,0 +1,34 @@
+# description : Easily generate and process stateful forms
+# depends : perl
+
+name=perl-cgi-formbuilder
+version=3.10
+release=3
+url=https://metacpan.org/release/CGI-FormBuilder
+make# depends : perl-html-template perl-text-template perl-template-toolkit perl-cgi-session
+check# depends : perl-cgi
+source="https://cpan.metacpan.org/authors/id/B/BI/BIGPRESH/CGI-FormBuilder-$version.tar.gz"
+options="!checksum"
+sha512sums=38d8e6eb729e188074d872b979ad46133152877bb30b95329a2c7275154646a4afb62dc3539cb34781149f424b1d384d05230efe8b174967742625a81765bad5
+
+build-delete {
+   cd CGI-FormBuilder-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd CGI-FormBuilder-$version
+  make test
+}
+
+build() {
+   cd CGI-FormBuilder-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

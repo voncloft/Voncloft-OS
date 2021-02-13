@@ -1,0 +1,38 @@
+# description : Python parser for the CommonMark Markdown spec
+# depends : python-docutils python-future
+
+name=python-commonmark
+version=0.9.1
+release=3
+url=https://pypi.org/project/commonmark/
+make# depends : python-setuptools python-sphinx python-sphinx_rtd_theme
+check# depends : python-hypothesis
+options=!makeflags
+source=${name}-${version}.tar.gz::https://github.com/readthedocs/commonmark.py/archive/${version}.tar.gz
+sha256sums=b5d5be6af35a183c3f915d714b31b61e6918894051114419f9ac0bbb715bf4c6
+sha512sums=a6de0b384247ff79fe326012bd1fc71135e6ae5bc7b6a15d5402969a94f81fdd802f1a9d557c504eb74bfb3fea68f55355a70a6e0112a620cc285cf9039892e4
+
+build()-delete {
+   cd commonmark.py-${version}
+  python setup.py build
+  make -C docs man text SPHINXBUILD=sphinx-build()
+}
+
+check {
+   cd commonmark.py-${version}
+  export PYTHONPATH=.
+  python commonmark/tests/unit_tests.py
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd commonmark.py-${version}
+  python setup.py build
+  python setup.py install--root=$PKG  -O1 
+  install -Dm 644 docs/_build()/text/* -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/commonmark-py.1 "${PKG}/usr/share/man/man1/${name}.1"
+  mv "${PKG}/usr/bin/cmark"{,-py3}
+}
+

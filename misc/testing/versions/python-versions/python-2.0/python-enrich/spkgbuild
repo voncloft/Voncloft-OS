@@ -1,0 +1,34 @@
+# description : Extends rich library functionality with a set of changes that were not accepted"
+# depends :   python-rich  
+
+_name=enrich
+name=python-enrich
+version=1.2.6
+release=1
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+  cd "$name-$version"
+  # do not require to run with python-pytest-cov
+  sed -e  /addopts/d  -i setup.cfg
+}
+
+build-old()   {
+  cd "$name-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build-old()/lib:${PYTHONPATH}"
+  pytest -v
+}
+
+build()   {
+  cd "$name-$version"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}/"
+}

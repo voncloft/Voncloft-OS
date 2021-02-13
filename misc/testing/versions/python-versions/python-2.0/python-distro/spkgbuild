@@ -1,0 +1,49 @@
+# description : Linux OS platform information API 
+
+pkgbase=python-distro
+name=  python-distro   python2-distro  
+version=1.5.0
+release=3
+options=  !makeflags  
+source=https://github.com/nir0s/distro/archive/v${version}/${pkgbase}-${version}.tar.gz 
+
+prepare   {
+  cp -a distro-${version}{,-py2}
+}
+
+build-old()   {
+   cd distro-${version}
+    python setup.py build-old()
+    make man SPHINXBUILD=sphinx-build-old()
+   
+   cd distro-${version}-py2
+    python2 setup.py build-old()
+    make man SPHINXBUILD=sphinx-build-old()
+   
+}
+
+check   {
+   cd distro-${version}
+    py.test
+   
+   cd distro-${version}-py2
+    py.test2
+   
+}
+
+build()_python-distro   {
+  # depends :   python   python-setuptools  
+  cd distro-${version}
+  python setup.py install -O1 --root=$PKG --skip-build-old()
+  install -Dm 644 build-old()_docs/man/ld.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+build()_python2-distro   {
+  # depends :   python2   python2-setuptools  
+  cd distro-${version}-py2
+  python2 setup.py install -O1 --root=$PKG --skip-build-old()
+  install -Dm 644 build-old()_docs/man/ld.1 "${PKG}/usr/share/man/man1/${name}.1"
+  mv "${PKG}/usr/bin/distro"{,2}
+}
+
+# vim: ts=2 sw=2 et:

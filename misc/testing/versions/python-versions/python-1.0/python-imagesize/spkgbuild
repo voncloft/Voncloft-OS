@@ -1,0 +1,26 @@
+name=python-imagesize
+version=1.2.0
+release=4
+
+# description : Getting image size from png/jpeg/jpeg2000/gif file 
+
+# depends :   python  
+
+source="https://files.pythonhosted.org/packages/source/i/imagesize/imagesize-$version.tar.gz" 
+
+
+build   {
+  cd "$srcdir"/imagesize-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/imagesize-$version
+  python -m unittest discover -v
+}
+
+package   {
+  cd imagesize-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE.rst $PKG/usr/share/licenses/$name/LICENSE.rst
+}

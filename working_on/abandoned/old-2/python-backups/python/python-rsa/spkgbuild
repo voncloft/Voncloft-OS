@@ -1,0 +1,28 @@
+# description : "Pure-Python RSA implementation"
+# depends : python-pyasn1
+
+name=python-rsa
+version=4.7
+release=1
+_libname=rsa
+url="https://github.com/sybrenstuvel/python-rsa/"
+source=https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz
+make# depends : python-setuptools
+sha256sums=69805d6b69f56eb05b62daea3a7dbd7aa44324ad1306445e05da8060232d00f4
+
+build()-delete {
+	 cd "$srcdir/$_libname-$version"
+
+	rm -rf ../build()py3; mkdir ../build()py3
+	python setup.py build -b ../build()py3
+}
+
+options="!checksum"
+
+build() {
+	 cd "$srcdir/$_libname-$version"
+	# cd "$srcdir/sybren-python-rsa-8f50f506b4a2"
+	rm -rf build(); ln -s ../build()py3 build()
+	python setup.py build
+  python setup.py install  -O1 --root=$PKG
+}

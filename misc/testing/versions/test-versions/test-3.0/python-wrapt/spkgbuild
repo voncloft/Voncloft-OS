@@ -1,0 +1,28 @@
+
+name=python-wrapt
+version=1.12.1
+release=4
+# description : "A Python module for decorators, wrappers and monkey patching"
+# depends : ('python')
+        py39.patch)
+            '372323f80578bc1fe2fdf8d3a5dc67b79956180048f8036be429b3e2fed4c9f3ce3d29a2c9e8b6128a2ab64cf7d21dc1e7026e8df14a062a94bd8518aca5b50a')
+
+prepare() {
+  cd "$srcdir"/wrapt-$version
+  patch -Np1 -i ../py39.patch # https://github.com/GrahamDumpleton/wrapt/issues/160
+}
+
+build-remove() {
+  cd "$srcdir"/wrapt-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/wrapt-$version
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.9:$PYTHONPATH" py.test
+}
+
+build() {
+  cd wrapt-$version
+  python setup.py install --root=$PKG --optimize=1
+}

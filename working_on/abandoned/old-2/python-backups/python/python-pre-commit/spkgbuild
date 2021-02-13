@@ -1,0 +1,54 @@
+# description : "A framework for managing and maintaining multi-language pre-commit hooks"
+# depends : python-cfgv python-identify python-nodeenv python-yaml python-toml
+
+name=python-pre-commit
+version=2.10.0
+release=1
+url="https://github.com/pre-commit/pre-commit"
+         python-virtualenv
+make# depends : python-setuptools
+source="https://github.com/pre-commit/pre-commit/archive/v$version/$name-$version.tar.gz"
+sha512sums=9a9003232d2f74e0b52c190c65286b5ef5ebf32b50ab26d48fd83c55f4ebbab3d71b05a633801eee97afbc0f3d605b2b2eacc6d469a0643313ff1a2132d746cd
+
+build()-delete {
+   cd pre-commit-$version
+  python setup.py build
+}
+
+check {
+   cd pre-commit-$version
+  git init
+  git config user.email "pony@arch"
+  git config user.name "Lucky Pony"
+  export GIT_AUTHOR_NAME="Lucky Pony"
+  export GIT_COMMITTER_NAME="Lucky Pony"
+  export GIT_AUTHOR_EMAIL="pony@arch"
+  export GIT_COMMITTER_EMAIL="pony@arch"
+  export VIRTUALENV_NO_DOWNLOAD=1
+  export PRE_COMMIT_NO_CONCURRENCY=1
+
+  # Empty venv so that `importlib` picks up the local "pre-commit" package
+  python -m venv --system-site-packages venv
+  source "$PWD/venv/bin/activate"
+  python setup.py develop
+
+  # Deselect conda because we dont have it!
+  # test_install_ruby_with_version,test_run_a_ruby_hook: https://github.com/pre-commit/pre-commit/issues/1368
+  python -m pytest --deselect tests/repository_test.py::test_conda_hook \
+                   --deselect tests/repository_test.py::test_conda_with_additional_dependencies_hook \
+                   --deselect tests/repository_test.py::test_local_conda_additional_dependencies \
+                   --deselect tests/repository_test.py::test_run_a_ruby_hook \
+                   --deselect tests/languages/ruby_test.py::test_install_ruby_with_version \
+                   --deselect tests/repository_test.py::test_switch_language_versions_doesnt_clobber
+
+  deactivate
+}
+
+options="!checksum"
+
+build() {
+   cd pre-commit-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

@@ -1,0 +1,16 @@
+# description : An SDK for build()ing applications to work with OpenStack
+# depends : python-six python-requests
+
+url=https://docs.openstack.org/python-swiftclient
+name=python-swiftclient
+version=3.11.0
+release=1
+
+source="https://github.com/openstack/python-swiftclient/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd python-swiftclient-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

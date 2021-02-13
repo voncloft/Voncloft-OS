@@ -1,0 +1,31 @@
+# Maintainer:
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Bjorn Lindeijer <bjorn lindeijer nl>
+# Contributor: Samuel Mendes <heka.lok@gmail.com>
+
+pkgname=telepathy-idle
+pkgver=0.2.2
+pkgrel=1
+pkgdesc="An IRC connection manager for Telepathy"
+arch=(x86_64)
+url="https://telepathy.freedesktop.org"
+groups=(telepathy)
+license=(LGPL)
+depends=(telepathy-glib)
+makedepends=(libxslt python)
+source=(https://telepathy.freedesktop.org/releases/$pkgname/$pkgname-$pkgver.tar.gz{,.asc})
+sha256sums=('8387e25e5fb0b4cbe701e5dc092d666d6510b833fd3e7e462e9170d36ec3c15f'
+            'SKIP')
+validpgpkeys=('AA33B0D27868E36C151780F0FE0B6D736B1195ED') # Alexandr Akulich
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/lib/telepathy
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

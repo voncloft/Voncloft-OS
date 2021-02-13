@@ -1,0 +1,31 @@
+
+name=python-planout
+version=0.6.0
+_commit=6ba0aba6addb08e03ed6e2d21f9b224b3d56d503
+release=6
+# description : A framework for online field experimentation"
+# depends :   python-six  
+source="$name-$_commit.tar.gz::https://github.com/facebook/planout/archive/$_commit.tar.gz" 
+
+prepare   {
+  #https://github.com/facebook/planout/pull/104
+  sed -e  42s/\t/        /  \
+      -e  43s/range 8 /list range 8  /  \
+      -i planout-$_commit/python/planout/test/test_assignment.py
+}
+
+build   {
+  cd planout-$_commit/python
+  python setup.py build
+}
+
+check   {
+  cd planout-$_commit/python/planout/test
+  py.test
+}
+
+package   {
+  cd planout-$_commit/python
+  python setup.py install -O1 --root $PKG
+  install -Dm644 ../LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

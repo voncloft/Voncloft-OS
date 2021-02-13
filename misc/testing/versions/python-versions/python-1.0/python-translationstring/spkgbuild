@@ -1,0 +1,23 @@
+
+name=python-translationstring
+version=1.4
+release=3
+# description : Utility library for i18n relied on by various Repoze and Pyramid packages"
+# depends :   python  
+source="https://github.com/Pylons/translationstring/archive/$version/$name-$version.tar.gz" 
+
+build   {
+  cd translationstring-$version
+  python setup.py build
+}
+
+check   {
+  cd translationstring-$version
+  nosetests3
+}
+
+package   {
+  cd translationstring-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/$name/
+}

@@ -1,0 +1,43 @@
+# description : "Cython implementation of Toolz: High performance functional utilities"
+# depends : cython python-toolz
+
+_name=cytoolz
+name=python-cytoolz
+version=0.11.0
+release=3
+url="https://github.com/pytoolz/cytoolz/"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=d7ab7317a8c9b26136dfa1ef0bbe719a09d5ac290d73ad16596c8624976ad4eb50d826fb02885cd1979279057698ceab9276f14687791b6c4adc33fa4650dd6d
+b2sums=1df4d2342393ab9e58fcdeae7c48cff31a8c4ff02b928f4a1a73e089408349ae121ce9e7ee2cefe2ec92d183d00959cb913273eee78360da75faa813308a6cc6
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  # build() C extension
+  python setup.py build_ext --inplace --with-cython
+  # build() python extension
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  local _pyver=$python -c import sys; print".".joinmapstr, sys.version_info[:2]
+  export PYTHONPATH="build()/lib.linux-${CARCH}-${_pyver}/:${PYTHONPATH}"
+  echo "$PYTHONPATH"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+  --root=$PKG 
+}

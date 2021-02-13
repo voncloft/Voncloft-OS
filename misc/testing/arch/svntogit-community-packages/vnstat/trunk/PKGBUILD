@@ -1,0 +1,31 @@
+# Maintainer:  Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer:  Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
+# Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
+
+pkgname=vnstat
+pkgver=2.6
+pkgrel=1
+pkgdesc="A console-based network traffic monitor"
+arch=('x86_64')
+url="https://humdi.net/vnstat/"
+license=('GPL')
+depends=('bash' 'sqlite')
+makedepends=('gd')
+optdepends=('gd: image output')
+backup=(etc/vnstat.conf)
+source=(https://humdi.net/vnstat/$pkgname-$pkgver.tar.gz)
+sha256sums=('89276e0a7281943edb554b874078278ad947dc312938a2451e03eb80679f7ff7')
+
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+  ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd "$srcdir"/$pkgname-$pkgver
+  mkdir -p "$pkgdir"/usr/bin
+  make DESTDIR="$pkgdir" install
+  install -Dm0755 examples/vnstat.cgi "$pkgdir"/usr/share/doc/vnstat/examples/vnstat.cgi
+  install -Dm0644 examples/systemd/vnstat.service "$pkgdir"/usr/lib/systemd/system/vnstat.service
+}

@@ -1,0 +1,34 @@
+
+name=python-sphinxcontrib-blockdiag
+version=2.0.0
+release=3
+# description : A sphinx extension for embedding block diagram using blockdiag 
+# depends :  python blockdiag python-sphinx 
+# otf-ipafont is used by test_latex
+   python-reportlab: for using PDF as the format of images 
+ 
+source="https://github.com/blockdiag/sphinxcontrib-blockdiag/archive/$version/$name-$version.tar.gz"
+        ipafont-path.diff 
+             cd127f6f66d49d91d1b8716b5361d917c354e8eed6b6817e037d2c2441b7e9e8  
+
+prepare   {
+  cd sphinxcontrib-blockdiag-$version
+  patch -Np1 -i ../ipafont-path.diff
+}
+
+build   {
+  cd sphinxcontrib-blockdiag-$version
+  python setup.py build
+}
+
+check   {
+  cd sphinxcontrib-blockdiag-$version
+  # Running tests with  nosetests  fails with issues around namespace packages
+  python -m nose -v
+}
+
+package   {
+  cd sphinxcontrib-blockdiag-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

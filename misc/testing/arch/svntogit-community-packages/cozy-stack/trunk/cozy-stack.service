@@ -1,0 +1,37 @@
+[Unit]
+Description=Cozy service
+Wants=couchdb.service
+After=network.target couchdb.service
+
+[Service]
+User=cozy
+Group=cozy
+PermissionsStartOnly=true
+WorkingDirectory=~
+StateDirectory=cozy
+ExecStart=/usr/bin/cozy-stack serve
+Restart=always
+CapabilityBoundingSet=
+NoNewPrivileges=True
+#SecureBits=noroot-locked
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+PrivateUsers=true
+ProtectHostname=true
+ProtectClock=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+LockPersonality=true
+#Not compatible with NodeJS
+#MemoryDenyWriteExecute=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+
+[Install]
+WantedBy=multi-user.target

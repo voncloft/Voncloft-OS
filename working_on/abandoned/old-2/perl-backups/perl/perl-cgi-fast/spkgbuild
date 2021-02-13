@@ -1,0 +1,17 @@
+# description : CGI Interface for Fast CGI
+# depends : perl perl-cgi perl-fcgi
+
+name=perl-cgi-fast
+version=2.15
+release=3
+
+_ddir=CGI-Fast-$version
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/CGI-Fast-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_ddir
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

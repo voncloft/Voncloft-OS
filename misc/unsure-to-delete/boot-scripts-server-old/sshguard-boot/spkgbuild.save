@@ -1,0 +1,12 @@
+# description : bootscript for sshguard
+# depends :
+
+name=sshguard-boot
+version=1.0
+release=1
+
+build()
+{
+	install $SRC/sshguard $PKG/etc/init.d/
+	
+}

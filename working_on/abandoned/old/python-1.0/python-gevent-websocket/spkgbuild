@@ -1,0 +1,35 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: minus <minus@mnus.de>
+
+_name=gevent-websocket
+name=python-${_name}
+version=0.10.1
+release=6
+pkgdesc='WebSocket library for the gevent networking library'
+url='https://www.gitlab.com/noppo/gevent-websocket'
+depends=('python' 'python-gevent' 'gunicorn' 'python-ujson')
+makedepends=('cython' 'python-setuptools' 'python-sphinx')
+source=(https://gitlab.com/noppo/gevent-websocket/-/archive/${version}/gevent-websocket-${version}.tar.gz)
+sha512sums=('33473bd20bf8bdab95784bc46093c4f3567d61290731e1980de3b8bf96d71976dca658547320329d5ee5291f54e423a1c7ae8300358bc641eae3c71a1943ea84')
+
+prepare() {
+  cd ${_name}-${version}
+  sed -E "s|release = .*|release = '${version}'|" -i docs/conf.py
+}
+
+build() {
+  cd ${_name}-${version}
+  python setup.py build
+  sphinx-build -b text docs docs/_build/text
+  sphinx-build -b man docs docs/_build/man
+}
+
+package() {
+  cd ${_name}-${version}
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+  install -Dm 644 README.rst -t "${pkgdir}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build/text/*.txt -t "${pkgdir}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build/man/gevent-websocket.1 "${pkgdir}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

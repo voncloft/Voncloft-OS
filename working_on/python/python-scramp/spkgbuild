@@ -1,0 +1,16 @@
+# description : Python implementation of the SCRAM protocol
+# depends : python python-asn1crypto
+
+url=https://github.com/tlocke/scramp
+name=python-scramp
+version=1.2.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/s/scramp/scramp-$version.tar.gz"{,.asc}
+options="!checksum"
+
+build() {
+   cd scramp-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

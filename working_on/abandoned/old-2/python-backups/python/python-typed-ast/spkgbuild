@@ -1,0 +1,23 @@
+# description : "a fork of Python 2 and 3 ast modules with type comment support"
+# depends : python
+
+name=python-typed-ast
+version=1.4.2
+release=1
+url="https://github.com/python/typed_ast"
+make# depends : python-setuptools
+source="${name}-${version}.tar.gz::https://github.com/python/typed_ast/archive/${version}.tar.gz"
+sha256sums=be4b75ea880768489e30818267cf920027ed99014001ac428aedd0b31bbfc899
+
+build()-delete{
+   cd "typed_ast-$version"
+  python setup.py build
+}
+
+options="!checksum"
+
+build(){
+   cd "typed_ast-$version"
+  python setup.py build
+  python setup.py install --prefix="usr/" --root="$PKG/" --optimize=1 
+}

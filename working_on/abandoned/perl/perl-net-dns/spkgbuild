@@ -1,0 +1,36 @@
+# description : Perl Module: Interface to the DNS resolver
+# depends : perl-digest-hmac perl-net-ip
+
+name=perl-net-dns
+version=1.29
+release=1
+url=https://search.cpan.org/dist/Net-DNS/
+check# depends : perl-test-pod perl-mime-base32 perl-net-dns-sec perl-net-libidn2
+opt# depends : perl-io-socket-inet6: IPv6 support
+            perl-socket6: IPv6 support
+            perl-net-libidn2: non-ASCII domain support
+source="https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-$version.tar.gz"
+options="!checksum"
+sha512sums=6568ee2ff0cb931a648c36fe7812 cde623fa8dad cd7c9401b397188c197a5c0e567ca56ae021147bedbe4a57d45055f36af043c771ee8a08476298855447775f
+
+build-delete {
+   cd Net-DNS-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Net-DNS-$version
+  make test
+}
+
+build() {
+   cd Net-DNS-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

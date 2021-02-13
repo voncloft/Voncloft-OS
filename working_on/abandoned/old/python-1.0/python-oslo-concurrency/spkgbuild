@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+
+name=python-oslo-concurrency
+version=4.4.0
+release=1
+pkgdesc="OpenStack library for all concurrency-related code"
+url="https://pypi.python.org/pypi/oslo.concurrency/$version"
+depends=('python-six' 'python-pbr' 'python-oslo-config' 'python-oslo-i18n' 'python-oslo-utils'
+         'python-fasteners')
+makedepends=('python-setuptools')
+checkdepends=('python-mock' 'python-oslotest' 'python-oslo-config' 'python-eventlet')
+options=('!emptydirs')
+source=("$name-$version.tar.gz::https://github.com/openstack/oslo.concurrency/archive/$version.tar.gz")
+sha512sums=('85e1f3c999c2d5455fc05d2ae98f45086dcc055157897356abd2afe631ed78bd609e1e2336e26891f24a1a245ae9da08fbf6ffdb102e1508ff64063d0b425c62')
+
+export PBR_VERSION=$version
+
+build() {
+  cd oslo.concurrency-$version
+  python setup.py build
+}
+
+check() {
+  cd oslo.concurrency-$version
+  stestr run || : # "1 failure about raising rlimit"
+}
+
+package() {
+  cd oslo.concurrency-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

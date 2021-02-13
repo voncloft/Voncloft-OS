@@ -1,0 +1,28 @@
+# description : "Lazy attributes for Python objects"
+# depends : python
+
+name=python-lazy
+version=1.4
+release=5
+url="https://github.com/stefanholek/lazy"
+make# depends : python-setuptools
+source="$name-$version.tar.gz::https://github.com/stefanholek/lazy/archive/$version.tar.gz"
+sha512sums=2a735b1436d3ebc76791645631cfcf54f1e332fd365c317bee92498b10397ec8206b271ae74427cae02985808a843eb98720c91e62dce93bb75702205da161bc
+
+build()-delete {
+   cd lazy-$version
+  python setup.py build
+}
+
+check {
+   cd lazy-$version
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd lazy-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

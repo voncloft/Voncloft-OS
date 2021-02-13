@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Francois Boulogne <fboulogne at april dot org>
+
+name=python-argh
+version=0.26.2
+release=8
+pkgdesc="An unobtrusive argparse wrapper with natural syntax"
+url="https://pypi.python.org/pypi/argh"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-mock' 'python-iocapture')
+source=("https://github.com/neithere/argh/archive/v$version/$name-$version.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd argh-$version
+  python setup.py build
+}
+
+check() {
+  cd argh-$version
+  py.test
+}
+
+package() {
+  cd argh-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

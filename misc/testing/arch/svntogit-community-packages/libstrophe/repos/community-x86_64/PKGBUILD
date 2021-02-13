@@ -1,0 +1,56 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+
+pkgbase=libstrophe
+pkgname=('libstrophe' 'libstrophe-doc')
+pkgver=0.10.1
+pkgrel=1
+epoch=1
+pkgdesc='Simple, lightweight C library for writing XMPP clients'
+url='http://strophe.im/libstrophe/'
+arch=('x86_64')
+license=('GPL3' 'MIT')
+depends=('glibc' 'openssl' 'expat')
+makedepends=('doxygen')
+checkdepends=('check')
+source=(https://github.com/strophe/libstrophe/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('ed68789109ecc05122fec460b92ab360a061b786406d9afa26f83bbf062322e9523700753523ffaa994c02b282d3194fbe6e43b31aadb50a12d1bb0339b2ba5a')
+b2sums=('adf04c43ffeb5b1f79e724f9f5e2ba9e049cf5975632bb64f131f21c66881d82de8591801502ad40eb8e5ee6666ae481a6d154e6c2625437f312202ba7ea10ae')
+
+prepare() {
+  cd ${pkgbase}-${pkgver}
+  autoreconf -fiv
+}
+
+build() {
+  cd ${pkgbase}-${pkgver}
+  ./configure \
+    --prefix=/usr
+  make
+  doxygen
+}
+
+check() {
+  make -C ${pkgbase}-${pkgver} check
+}
+
+package_libstrophe() {
+  depends+=('libexpat.so')
+  provides=('libstrophe.so')
+  cd ${pkgbase}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm 644 MIT-LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-MIT"
+}
+
+package_libstrophe-doc() {
+  pkgdesc+=' (documentation and samples)'
+  depends=()
+  options=('!strip')
+  optdepends=('libstrophe')
+  cd ${pkgbase}-${pkgver}
+  install -Dm 644 docs/html/* -t "${pkgdir}/usr/share/doc/${pkgname}/html"
+  install -Dm 644 examples/{README.md,*.c} -t "${pkgdir}/usr/share/doc/${pkgname}/examples"
+  install -Dm 644 MIT-LICENSE.txt -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

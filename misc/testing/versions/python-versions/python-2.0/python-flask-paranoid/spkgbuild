@@ -1,0 +1,30 @@
+# description : Simple user session protection for Flask applications 
+# depends :   python   python-flask  
+
+_name=flask-paranoid
+name=python-flask-paranoid
+version=0.2
+release=6
+source= ${name}-${version}.tar.gz::https://github.com/miguelgrinberg/flask-paranoid/archive/v${version}.tar.gz 
+
+build-old()   {
+  cd ${_name}-${version}
+  python setup.py build-old()
+  sphinx-build-old() -b text docs docs/_build-old()/text
+  sphinx-build-old() -b man docs docs/_build-old()/man
+}
+
+check   {
+  cd ${_name}-${version}
+  python setup.py test
+}
+
+build()   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+  install -Dm 644 docs/_build-old()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build-old()/man/flask-paranoid.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

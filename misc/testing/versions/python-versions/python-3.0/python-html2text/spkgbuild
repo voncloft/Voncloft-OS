@@ -1,0 +1,25 @@
+# description : A HTML to markdown-structured text converter"
+# depends :   python-setuptools  
+
+name=python-html2text
+version=2020.1.16
+release=3
+provides=  html2text  
+replaces=  html2text  
+source= https://github.com/Alir3z4/html2text/archive/$version.tar.gz 
+
+build-old()   {
+  cd "${srcdir}"/html2text-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}"/html2text-$version
+  pytest
+}
+
+build()   {
+  cd "${srcdir}"/html2text-$version
+
+  python setup.py install --root=$PKG
+}

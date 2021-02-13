@@ -1,0 +1,29 @@
+
+_name=furl
+name=python-furl
+version=2.1.0
+release=6
+# description : A small Python library that makes parsing and manipulating URLs easy"
+# depends :   python-orderedmultidict   python-six  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+build   {
+  cd "${_name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${_name}-${version}"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  # disabling failing test for rather exotic url schemes:
+  #https://github.com/gruns/furl/issues/121
+  pytest -v -k "not test_join"
+}
+
+package   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+  install -vDm 644 LICENSE.md -t "${PKG}/usr/share/licenses/${name}"
+}

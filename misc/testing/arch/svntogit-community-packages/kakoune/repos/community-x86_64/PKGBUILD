@@ -1,0 +1,38 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Frank Lenormand <lenormf at gmail dot com>
+pkgname=kakoune
+pkgver=2020.09.01
+pkgrel=1
+pkgdesc="Multiple-selection, UNIX-flavored modal editor"
+arch=("x86_64")
+url="https://kakoune.org/"
+license=("custom:unlicense")
+depends=("ncurses")
+optdepends=(
+    "aspell: spell checking support"
+    "clang: C/C++ completion and diagnostics support"
+    "kak-lsp: LSP client"
+    "ranger: filesystem explorer"
+    "tmux: splitting and creating windows"
+    "xdotool: X11 utility to focus arbitrary kakoune clients"
+    "xorg-xmessage: display debug messages in a new window"
+)
+source=("https://github.com/mawww/kakoune/releases/download/v${pkgver}/kakoune-${pkgver}.tar.bz2")
+sha256sums=('861a89c56b5d0ae39628cb706c37a8b55bc289bfbe3c72466ad0e2757ccf0175')
+
+build() {
+    cd "${pkgname}-${pkgver}/src"
+    make debug=no
+}
+
+check() {
+    cd "${pkgname}-${pkgver}/src"
+    make debug=no test
+}
+
+package() {
+    cd "${pkgname}-${pkgver}/src"
+    make debug=no install-strip DESTDIR="${pkgdir}" PREFIX=/usr
+    install -D ../UNLICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

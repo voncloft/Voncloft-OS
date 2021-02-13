@@ -1,0 +1,16 @@
+# description : A simple pythonic template language written in Python
+  # depends : python-setuptools python-markupsafe
+  # depends : python2-setuptools python2-markupsafe
+
+url=https://palletsprojects.com/p/jinja/
+name=python-jinja python2-jinja
+version=2.11.3
+release=1
+
+source="https://files.pythonhosted.org/packages/source/J/Jinja2/Jinja2-$version.tar.gz"
+
+build() {
+   cd Jinja2-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

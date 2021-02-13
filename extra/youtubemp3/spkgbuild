@@ -1,0 +1,15 @@
+# description : strips audio from youtube
+# depends : youtube-dl
+
+name=youtubemp3
+version=1.0
+release=1
+
+source="youtubemp3"
+options="!checksum"
+
+build()
+{
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/youtubemp3 $PKG/usr/bin/
+}

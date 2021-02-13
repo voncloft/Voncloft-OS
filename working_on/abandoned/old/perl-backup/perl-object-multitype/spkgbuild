@@ -1,0 +1,28 @@
+# description : Perl/CPAN Module Object::MultiType
+
+name=perl-object-multitype
+version=0.05
+release=11
+url=https://search.cpan.org/dist/Object-MultiType
+source="https://www.cpan.org/authors/id/G/GM/GMPASSOS/Object-MultiType-$version.tar.gz"
+options="!checksum"
+sha256sums=aa65390e0120dfe98e8a2c510a81adc5d3e42efa3e13d54e85467303d911bf31
+
+build-delete {
+  cd $srcdir/Object-MultiType-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Object-MultiType-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

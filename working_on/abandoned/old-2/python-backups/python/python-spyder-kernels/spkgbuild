@@ -1,0 +1,51 @@
+# description : "Jupyter Kernels for the Spyder console"
+# depends : 
+
+_pkg=spyder-kernels
+name=python-${_pkg}
+version=1.10.1
+release=1
+url="https://github.com/spyder-ide/spyder-kernels/"
+make# depends : python python-setuptools
+    python-cloudpickle
+    python-ipykernel
+    python-jupyter_client
+    python-pyzmq
+    python-wurlitzer
+
+check# depends : 
+    cython
+    python-dask
+    python-distributed
+    python-flaky
+    python-matplotlib
+    python-mock
+    python-numpy
+    python-pandas
+    python-pillow
+    python-pytest
+    python-scipy
+    python-xarray
+
+# No tests in pypi tarballs
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+source=${url}/archive/v${version}/${name}-${version}.tar.gz
+sha256sums=57cb546279b0f2487322ecebba1bf107b542cc7744c7cf9facecd6fe6715d649
+
+build()-delete {
+   cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-${version}
+  pytest spyder_kernels
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1 
+}

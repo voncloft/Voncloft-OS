@@ -1,0 +1,34 @@
+# description : "Interact with nested dicts as a single level dict with delimited keys."
+# depends : python
+
+_name=flatdict
+name=python-flatdict
+version=4.0.1
+release=2
+url="https://flatdict.readthedocs.io"
+make# depends : python-setuptools
+check# depends : python-nose
+source="${name}-${version}.tar.gz::https://github.com/gmr/flatdict/archive/${version}.tar.gz"
+sha256sums=ab6ff85c6802fab90692727f055cd2183856789d96a53e75609439b778f5da06
+b2sums=102ebc6220d75219b91ed7494485fa7d1447801d8276fd5e305f838f6b339b72c44151c751a53c32a5ea5b1d4876d9312af229bb8972401a2f86d6488d3f8b4f
+
+build()-delete {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    nosetests
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

@@ -1,0 +1,16 @@
+# description : OpenStack Block Storage API Client Library
+# depends : python-six python-pbr python-babel python-prettytable python-keystoneclient
+
+url=https://docs.openstack.org/developer/python-cinderclient
+name=python-cinderclient
+version=7.3.0
+release=1
+
+source="https://github.com/openstack/python-cinderclient/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd python-cinderclient-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

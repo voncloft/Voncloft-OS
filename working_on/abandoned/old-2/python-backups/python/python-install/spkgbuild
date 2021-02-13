@@ -1,0 +1,37 @@
+# description : A simple, correct PEP427 wheel installer
+# depends : python
+
+_name=install
+name=python-$_name
+version=0.0.3
+release=1
+url=https://github.com/FFY00/python-install
+make# depends : git python-setuptools
+source="git+$url#tag=$version?signed"
+        git+https://github.com/pradyunsg/installer.git
+validpgpkeys=3DCE51D60930EBA47858BA4146F633CBB0EB4BF2 # Filipe Laíns FFY00 <lains@archlinux.org>
+sha512sums=SKIP
+            SKIP
+
+prepare {
+   cd $name
+
+  git submodule init
+  git config submodule.install/_vendor/installer.url "$srcdir"/installer
+  git submodule update
+}
+
+build()-delete {
+   cd $name
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $name
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

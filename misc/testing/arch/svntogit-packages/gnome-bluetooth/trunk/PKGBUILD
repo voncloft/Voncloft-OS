@@ -1,0 +1,41 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Roman Kyrylych <roman@archlinux.org>
+
+pkgname=gnome-bluetooth
+pkgver=3.34.3
+pkgrel=1
+pkgdesc="The GNOME Bluetooth Subsystem"
+url="https://wiki.gnome.org/Projects/GnomeBluetooth"
+arch=(x86_64)
+license=(GPL LGPL)
+depends=(gtk3 libnotify bluez libcanberra systemd-libs pulseaudio-bluetooth)
+makedepends=(gobject-introspection gtk-doc docbook-xsl git systemd meson)
+provides=(libgnome-bluetooth.so)
+_commit=e0ec2130063df24a0b11294744d6e197022afd2e  # tags/GNOMEBT_V_3_34_3^0
+source=("git+https://gitlab.gnome.org/GNOME/gnome-bluetooth.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^GNOMEBT_V_//;s/_fixed//;s/_/./g;s/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build -D gtk_doc=true -D icon_update=false
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}
+
+# vim:set sw=2 et:

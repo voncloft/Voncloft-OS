@@ -1,0 +1,22 @@
+
+name=python-harparser
+version=0.4
+release=6
+# description : Python HAR Parser Utility"
+# depends :   python  
+source="$pkgbase-$version.tar.gz::https://github.com/JustusW/harparser/archive/$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/harparser-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/harparser-$version
+  python -m unittest test.log
+}
+
+package_python-harparser   {
+  cd harparser-$version
+  python setup.py install --root=$PKG --optimize=1
+}

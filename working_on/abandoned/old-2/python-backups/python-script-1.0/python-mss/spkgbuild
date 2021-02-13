@@ -1,0 +1,17 @@
+# description : Ultra fast cross-platform multiple screenshots module
+# depends : python
+
+_pkg=mss
+url=https://github.com/BoboTiG/python-mss
+name=python-${_pkg}
+version=6.0.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_pkg}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

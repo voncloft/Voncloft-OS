@@ -1,0 +1,59 @@
+# description : "Python network library that uses greenlet and libev for easy and scalable concurrency"
+
+pkgbase=python-gevent
+version=21.1.2
+release=2
+url="http://www.gevent.org/"
+             cython2 c-ares libev
+source="$pkgbase-$version.tar.gz::https://github.com/gevent/gevent/archive/$version.tar.gz"
+sha512sums=7dae1dc766bc3cd36312c2b3d11b9ff77a8258b54a39f79357296d4c69d54ec60d6dc4cd8b4299dda26e0f8b93f670e061f3c50e13da33bea5a43d6497d14c4a
+
+export EMBED=0
+
+prepare {
+  cp -a gevent-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/gevent-$version
+
+  CYTHON=cython \
+  PYTHON=python \
+  python setup.py build
+
+   cd "$srcdir"/gevent-$version-py2
+
+  CYTHON=cython2 \
+}
+
+check {
+  
+     cd "$srcdir"/gevent-$version
+    python -m venv "$srcdir/pyvenv" --system-site-packages
+    . "$srcdir/pyvenv/bin/activate"
+    export PYTHONPATH="$PYTHONPATH:/usr/lib/python3.6/site-packages"
+    python setup.py build
+  python setup.py install
+    python -m gevent.tests
+   || echo "Tests failed"
+
+  
+     cd "$srcdir"/gevent-$version-py2
+    virtualenv2 "$srcdir/pyvenv" --system-site-packages
+    . "$srcdir/pyvenv/bin/activate"
+    python setup.py build
+  python setup.py install
+   || echo "Tests failed"
+}
+
+package_python-gevent {
+  # depends : c-ares libev python-greenlet python-setuptools python-zope-event python-zope-interface
+
+   cd gevent-$version
+  python setup.py build
+  python setup.py install -O1 --root=$PKG
+}
+
+
+   cd gevent-$version-py2
+}

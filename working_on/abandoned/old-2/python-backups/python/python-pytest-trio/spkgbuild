@@ -1,0 +1,56 @@
+# description : Pytest plugin for Trio
+# depends : 
+
+name=python-pytest-trio
+version=0.7.0
+release=3
+url=https://github.com/python-trio/pytest-trio
+  APACHE
+  MIT
+
+  python
+  python-async_generator
+  python-pytest
+  python-trio
+
+make# depends : 
+  git
+  python-setuptools
+
+check# depends : 
+  python-hypothesis
+  python-pytest-cov
+  python-trio-asyncio
+
+_tag=51035fd839f873b470b33bac8bac6b7c1434b5b1
+source=git+https://github.com/python-trio/pytest-trio.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd pytest-trio
+
+  git describe --tags | sed s/^v//
+}
+
+build()-delete {
+   cd pytest-trio
+  sed -i /pytest.RemovedInPytest4Warning/d pytest_trio/_tests/conftest.py
+
+  python setup.py build
+}
+
+check {
+   cd pytest-trio
+
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd pytest-trio
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

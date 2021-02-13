@@ -1,0 +1,23 @@
+# description : Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal 
+# depends :   python-colorama   python-pygments   python-typing_extensions   python-commonmark  
+
+name=python-rich
+version=9.10.0
+release=1
+source="https://github.com/willmcgugan/rich/archive/v${version}/rich-${version}.tar.gz" 
+
+prepare   {
+  cd rich-${version}
+  dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build-old()   {
+  cd rich-${version}
+  python3 setup.py build-old()
+}
+
+build()   {
+  cd rich-${version}
+  python3 setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

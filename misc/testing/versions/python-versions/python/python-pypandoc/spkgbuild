@@ -1,0 +1,28 @@
+# description : Thin wrapper for pandoc"
+# depends :   python-setuptools   pandoc  
+
+name=python-pypandoc
+version=1.5
+release=4
+source="$pkgbase-$version.tar.gz::https://github.com/bebraw/pypandoc/archive/$version.tar.gz" 
+
+prepare   {
+  # We don t really need pip and wheel at runtime
+  sed -i "s/install_requires = .*/install_requires = [ setuptools ],/" pypandoc-$version/setup.py
+}
+
+build-old()   {
+  cd "$srcdir"/pypandoc-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/pypandoc-$version
+  python setup.py test
+}
+
+build()   {
+  cd pypandoc-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

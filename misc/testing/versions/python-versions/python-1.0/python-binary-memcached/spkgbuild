@@ -1,0 +1,27 @@
+
+name=python-binary-memcached
+version=0.30.1
+release=2
+# description : A pure python module to access memcached via its binary protocol with SASL auth support 
+# depends :   python-six   python-uhashring  
+source="https://github.com/jaysonsantos/python-binary-memcached/archive/v$version.tar.gz" 
+
+prepare   {
+  sed -i  /typing/d  python-binary-memcached-$version/setup.py
+}
+
+build   {
+  cd python-binary-memcached-$version
+  python setup.py build
+}
+
+check   {
+  cd python-binary-memcached-$version
+  python -m pytest
+}
+
+package   {
+  cd python-binary-memcached-$version
+  python setup.py install --root $PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

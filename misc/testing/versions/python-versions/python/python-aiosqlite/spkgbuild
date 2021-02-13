@@ -1,0 +1,36 @@
+# description : asyncio bridge to the standard sqlite3 module 
+# depends :   python-typing_extensions   python-pydantic  
+
+_name=aiosqlite
+name=python-$_name
+version=0.16.0
+release=3
+source=" $url/archive/v$version.tar.gz" 
+
+# TODO: build() test requirements
+
+prepare   {
+  cd $_name-$version
+
+  dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+#check   {
+#  cd $_name-$version
+#
+#  python setup.py pytest
+#}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

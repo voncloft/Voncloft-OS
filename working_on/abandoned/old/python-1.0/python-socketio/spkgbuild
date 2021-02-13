@@ -1,0 +1,37 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+name=python-socketio
+version=5.0.4
+release=1
+pkgdesc='Python implementation of the Socket.IO realtime server'
+url='https://github.com/miguelgrinberg/python-socketio'
+depends=('python' 'python-six' 'python-engineio' 'python-bidict')
+makedepends=('python-setuptools' 'python-sphinx' 'python-tornado')
+optdepends=('python-tornado: tornado asyncio webserver')
+checkdepends=('python-pytest' 'python-mock')
+options=('!makeflags')
+source=(https://github.com/miguelgrinberg/python-socketio/archive/v${version}/${name}-${version}.tar.gz)
+sha512sums=('655d884edaf3404f231cc9c35f2e4a2300d92b144ea5f8933e33c4dd7fc8d973b53c47b9c17de65edf02add10dce8ded0efd34a7be65633a1cbb6e377137d4c9')
+b2sums=('387fbc93186c7185565bad4402bd2dd0ba427c590a94db5b3a87935fae009b8debc041589a8a19e6cb00182750cdd839a52666d529508838e1d6192bd4f2566e')
+
+build() {
+  cd ${pkgbase}-${version}
+  python setup.py build
+  make -C docs man text SPHINXBUILD=sphinx-build
+}
+
+check() {
+  cd ${pkgbase}-${version}
+  py.test -k 'not test_logger'
+}
+
+package() {
+  cd ${pkgbase}-${version}
+  python setup.py install -O1 --root="${pkgdir}" --skip-build
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+  install -Dm 644 README.rst -t "${pkgdir}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build/text/index.txt "${pkgdir}/usr/share/doc/${name}/DOCUMENTATION"
+  install -Dm 644 docs/_build/man/python-socketio.1 "${pkgdir}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

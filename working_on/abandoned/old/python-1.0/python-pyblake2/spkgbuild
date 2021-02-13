@@ -1,0 +1,23 @@
+# Maintainer: Nicola Squartini <tensor5@gmail.com>
+
+name=python-pyblake2
+version=1.1.2
+release=5
+pkgdesc='BLAKE2 hash function for Python'
+url='https://pythonhosted.org/pyblake2'
+depends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/p/pyblake2/pyblake2-${version}.tar.gz")
+sha256sums=('5ccc7eb02edb82fafb8adbb90746af71460fbc29aa0f822526fc976dff83e93f')
+
+build() {
+  cd pyblake2-${version}
+
+  python setup.py build
+}
+
+package() {
+  cd pyblake2-${version}
+
+  python setup.py install --root="${pkgdir}" --skip-build --optimize=1
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/python-pyblake2" COPYING
+}

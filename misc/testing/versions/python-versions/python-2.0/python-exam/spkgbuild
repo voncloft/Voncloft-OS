@@ -1,0 +1,25 @@
+# description : Helpers for better testing"
+# depends :   python-mock  
+
+_pypiname=exam
+name=python-exam
+version=0.10.6
+release=8
+
+build-old()   {
+  cd "$srcdir/exam"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir/exam"
+  python setup.py test
+}
+
+build()   {
+  cd "$srcdir/$_pypiname"
+  python setup.py install --root="$PKG/" --optimize=1
+  install -Dm664 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

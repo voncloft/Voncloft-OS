@@ -1,0 +1,16 @@
+# description : Perl extension for rounding numbers
+# depends : perl
+
+name=perl-math-round
+version=0.07
+release=4
+
+source="https://www.cpan.org/authors/id/G/GR/GROMMEL/Math-Round-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd  Math-Round-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

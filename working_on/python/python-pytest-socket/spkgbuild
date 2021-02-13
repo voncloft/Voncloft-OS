@@ -1,0 +1,16 @@
+# description : Pytest Plugin to disable socket calls during tests
+# depends : python-pytest
+
+url=https://github.com/miketheman/pytest-socket
+name=python-pytest-socket
+version=0.3.5
+release=2
+
+source="https://github.com/miketheman/pytest-socket/archive/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pytest-socket-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

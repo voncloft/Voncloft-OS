@@ -1,0 +1,36 @@
+# description : A messaging library for Python 
+# depends :   python-amqp  
+
+name=python-kombu
+version=5.0.2
+release=3
+options=  !emptydirs  
+             python-msgpack: for MessagePack support 
+             python-pyro: for Pyro support 
+             python-redis: for Redis support 
+             python-sqlalchemy: for SQLAlchemy support 
+             python-boto3: for Amazon SQS support 
+             python-pycurl: for Amazon SQS support 
+             python-yaml: for YAML support  
+            #  python-softlayer-messaging: for SoftLayer Message Queue support : Not build()d yet
+            #  python-kazoo: for Zookeeper support : Not build()d yet
+            #  python-librabbitmq: C optimization for AMQP transport  Not available for python 3 yet
+               python-case   python-pymongo   python-pytz   python-pytest-sugar   python-sqlalchemy 
+               python-pyro   python-boto3  
+source="https://github.com/celery/kombu/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd kombu-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd kombu-$version
+  python -m pytest
+}
+
+build()   {
+  cd kombu-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

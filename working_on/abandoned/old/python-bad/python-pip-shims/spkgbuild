@@ -1,0 +1,24 @@
+# description : Compatibility shims for pip versions 8 thru current"
+# depends :   python-pip   python-wheel   python-setuptools  
+
+name=python-pip-shims
+version=0.5.3
+release=3
+source="https://github.com/sarugaku/pip-shims/archive/$version.tar.gz" 
+
+build-old()   {
+  cd pip-shims-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd pip-shims-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd pip-shims-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

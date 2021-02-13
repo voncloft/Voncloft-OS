@@ -1,0 +1,38 @@
+# description : Perl extension for using OpenSSL
+# depends : openssl
+
+name=perl-net-ssleay
+_cpanname=Net-SSLeay
+version=1.88
+release=2
+url=https://search.cpan.org/dist/Net-SSLeay/
+make# depends : chrpath
+replaces=net-ssleay
+provides=net-ssleay
+source="https://cpan.metacpan.org/authors/id/C/CH/CHRISN/${_cpanname}-${version}.tarsource=.gz"
+options=!checksum
+sha512sums=37fc32ec003337f3dc18bf928139079a3127628c6fa0fccaed0c27b6bf3b216c2c5338ed1aaf9408b0add3be549df3218d3c5a6d6299793c1329d8a0813a1682
+b2sums=1a58296693cf41c464ac67a7f630598ccbf261ed0374a5381e3f718361b66418d13b5357bf7a49267a9e3bcd8d423fdedccd6b60d34aa60c975a5e3d1b0688e7
+
+build-delete {
+  cd ${_cpanname}-${version}
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd ${_cpanname}-${version}
+  make test
+}
+
+build() {
+  cd ${_cpanname}-${version}
+
+  make install DESTDIR=$PKG
+  install -Dm 644 README -t $PKG/usr/share/doc/${name}
+
+  # strip rpath
+  find $PKG -name *.so -exec chrpath -d {} \;
+}
+
+# vim: ts=2 sw=2 et:

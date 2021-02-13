@@ -1,0 +1,25 @@
+
+name=python-pypugjs
+version=5.9.8
+release=1
+# description : PugJS syntax adapter for Django, Jinja2 and Mako templates 
+# depends :  python python-six python-chardet 
+# PyPI sdist does not contain tests
+source="https://github.com/kakulukia/pypugjs/archive/v$version/pypugjs-$version.tar.gz" 
+
+build   {
+  cd pypugjs-$version
+  python setup.py build
+}
+
+check   {
+  cd pypugjs-$version
+  # -w is needed here as test_cases.py looks into cases/
+  PYTHONPATH="$PWD" nosetests -w pypugjs/testsuite
+}
+
+package   {
+  cd pypugjs-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

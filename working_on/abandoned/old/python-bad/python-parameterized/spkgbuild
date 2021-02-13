@@ -1,0 +1,24 @@
+# description : Parameterized testing with any Python test framework"
+# depends :   python  
+
+name=python-parameterized
+version=0.7.5
+release=1
+source="https://github.com/wolever/parameterized/archive/v$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd parameterized-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd parameterized-$version
+  python setup.py nosetests
+}
+
+build()   {
+  cd parameterized-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

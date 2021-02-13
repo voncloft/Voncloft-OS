@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-plop
+version=0.4.0
+release=3
+pkgdesc="Python Low-Overhead Profiler"
+url="https://github.com/bdarnell/plop"
+depends=('python-six' 'python-tornado')
+makedepends=('python-setuptools')
+source=("https://pypi.python.org/packages/source/p/plop/plop-${version}.tar.gz")
+md5sums=('0f22aab8cbcb718ed0b00ebc15545274')
+
+build() {
+  cd plop-$version
+  python setup.py build
+}
+
+check() {
+  cd plop-$version
+  python -m plop.test.runtests
+}
+
+package() {
+  cd plop-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.txt -t "$pkgdir"/usr/share/licenses/$name
+}

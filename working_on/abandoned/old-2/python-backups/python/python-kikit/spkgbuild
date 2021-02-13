@@ -1,0 +1,34 @@
+# description : Automation tools for KiCAD
+# depends : python kicad python-numpy python-shapely python-click python-markdown2
+
+_name=KiKit
+name=python-kikit
+version=0.7
+release=1
+url=https://github.com/yaqwsx/KiKit
+         python-pybars3 python-solidpython
+make# depends : python-setuptools
+source="$name-$version.tar.gz::$url/archive/v$version.tar.gz"
+sha512sums=38c243f2c8e65a8d961f292558c0eaab9724c8cd0a8af5f5cf569d91b3e9d41d1f94406f0855cc21325676b95a7a967db9d5deac2492ca9d119a166d4fa08f9d
+
+prepare {
+  sed -i /versioneer/d $_name-$version/setup.py
+}
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+  install -Dm 644 LICENCE $PKG/usr/share/licenses/$name/LICENCE
+}
+

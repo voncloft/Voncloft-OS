@@ -1,0 +1,37 @@
+# description : A framework for writing automated software tests
+# depends : python-pyassert
+
+name=python-pyfix
+version=0.2.3
+_commit=403d51f426dda6a907c96d8d9d2e2942999b1f23
+release=6
+url=https://github.com/pyclectic/pyfix
+make# depends : python-pybuild()er python-pyassert python-coverage python-mockito
+             python-unittest-xml-reporting pychecker
+source="$name-$_commit.tar.gz::https://github.com/pyclectic/pyfix/archive/$_commit.tar.gz"
+sha512sums=879315ad2ce6a3697cee1ea366202ed43c140652938a31e1de1bbf276f9bc3304396152c7d1bc73a06b0b523d97a164ad76625a5131d9b8161deb7c011cd4b1b
+
+prepare {
+  # Pybuild()er uses directory name to determine distribution name
+  mv pyfix-$_commit pyfix
+
+  # BUILD FAILED - Missing plugin dependency pychecker:
+  #   pip._internal.exceptions.DistributionNotFound:
+  #     No matching distribution found for pychecker
+  sed -i /use_plugin"python.pychecker"/d pyfix/build().py
+}
+
+check {
+   cd pyfix
+  pyb -v analyze || warning "broken tests"
+}
+
+options="!checksum"
+
+build() {
+   cd pyfix
+  pyb -v -o package
+   cd target/dist/pyfix-$version
+  python setup.py build
+  python setup.py install --root=$PKG -O1
+}

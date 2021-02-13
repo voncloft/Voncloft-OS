@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-arpeggio
+version=1.10.1
+release=3
+pkgdesc="Packrat parser interpreter"
+url="https://github.com/textX/Arpeggio"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+source=("https://github.com/textX/Arpeggio/archive/$version/$name-$version.tar.gz")
+sha512sums=('150c1cadc237583000c336acbafe06286b45730fca557d8f24894387408f1443f0df5a0ad0dad18d4a88e8d0e2c55e46d57e7b772ec171aa395585f36b54e5bd')
+
+build() {
+  cd Arpeggio-$version
+  python setup.py build
+}
+
+check() {
+  cd Arpeggio-$version
+  python -m pytest
+}
+
+package() {
+  cd Arpeggio-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

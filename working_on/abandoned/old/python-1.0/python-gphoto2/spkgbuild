@@ -1,0 +1,23 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Francois Boulogne <fboulogne at april dot org>
+
+name=python-gphoto2
+version=2.2.4
+release=2
+pkgdesc="Python interface to libgphoto2"
+url="https://github.com/jim-easterbrook/python-gphoto2"
+depends=('libgphoto2' 'python')
+makedepends=('swig')
+source=($name-$version.tar.gz::https://github.com/jim-easterbrook/$name/archive/v$version.tar.gz)
+sha256sums=('f79df226e61b308077ce2fd2f2922a2c6f68871e7504ddc98057c2063afe5c91')
+
+build() {
+  cd $name-$version
+  python setup.py build_swig
+  python setup.py build
+}
+
+package(){
+  cd $name-$version
+  python setup.py install --root="${pkgdir}" --optimize=1
+}

@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Karol 'Kenji Takahashi' Woźniak <kenji.sx>
+# Contributor: Pierre Gueth <pierre.gueth@gmail.com>
+
+name=python-redis
+version=3.5.3
+release=3
+pkgdesc='The Python interface to the Redis key-value store'
+url="https://github.com/andymccurdy/redis-py"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-mock' 'pifpaf' 'redis')
+source=("https://pypi.io/packages/source/r/redis/redis-$version.tar.gz")
+sha512sums=('eae6ac6b3e0f1366a9c29e5e2d9a5210e4627e62e3006159b1c290f36cd9c1c2c12cafe0944f7a010e04632b517874f230aa9411491993b7ecf2080546217206')
+
+build() {
+  cd "$srcdir"/redis-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/redis-$version
+  pifpaf run redis py.test || echo "https://github.com/andymccurdy/redis-py/issues/1073"
+}
+
+package() {
+  cd redis-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

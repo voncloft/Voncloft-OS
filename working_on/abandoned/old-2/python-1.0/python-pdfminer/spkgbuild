@@ -1,0 +1,17 @@
+# description : Python PDF Parser
+# depends : python-chardet python-cryptography python-sortedcontainers
+
+_pkg=pdfminer
+url=https://github.com/pdfminer/pdfminer.six
+name=python-${_pkg}
+version=20201018
+release=2
+
+source="${url}/archive/${version}/${_pkg}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_pkg}.six-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

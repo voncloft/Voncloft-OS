@@ -1,0 +1,16 @@
+# description : Plot graphs with Gnuplot
+# depends : python-numpy gnuplot
+
+url=https://gnuplot-py.sourceforge.net/
+name=python-gnuplot
+version=1.8
+release=11
+
+source="git+https://github.com/yuyichao/gnuplot-py#commit=2c2218dc67
+options="!checksum"
+
+build() {
+   cd gnuplot-py
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

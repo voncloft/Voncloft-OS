@@ -1,0 +1,23 @@
+
+name=python-geocoder
+version=1.38.1
+release=3
+# description : A simple and consistent geocoding library"
+# depends :   python-requests   python-ratelim   python-click   python-six   python-future  
+source="https://pypi.io/packages/source/g/geocoder/geocoder-$version.tar.gz" 
+
+build   {
+  cd geocoder-$version
+  python setup.py build
+}
+
+check   {
+  cd geocoder-$version
+  python setup.py pytest || echo "Some tests require API key"
+}
+
+package   {
+  cd geocoder-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,26 @@
+# Maintainer: Ronald van Haren <ronald@archlinux.org>
+# Contributor: Chirantan Ekbote <chirantan.ekbote at gmail.com>
+# Contributor: Kringel
+
+pkgname=eigen
+pkgver=3.3.9
+pkgrel=1
+pkgdesc="Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra."
+arch=('any')
+url='https://eigen.tuxfamily.org'
+license=('GPL3' 'LGPL2.1' 'BSD' 'custom:MPL2' 'custom:MINPACK')
+makedepends=('cmake' 'freeglut' 'gcc-fortran' 'fftw' 'suitesparse' 'boost')
+source=(https://gitlab.com/libeigen/eigen/-/archive/$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('7985975b787340124786f092b3a07d594b2e9cd53bbfe5f3d9b1daee7d55f56f')
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+
+  # install custom licenses
+  install -Dm644 $pkgname-$pkgver/COPYING.* -t "$pkgdir/usr/share/licenses/$pkgname"
+}

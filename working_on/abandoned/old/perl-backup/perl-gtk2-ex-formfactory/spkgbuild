@@ -1,0 +1,39 @@
+# description : Framework for perl-gtk2 development
+# depends : gtk2-perl perl
+
+name=perl-gtk2-ex-formfactory
+_realname=Gtk2-Ex-FormFactory
+version=0.67
+release=5
+url=https://www.exit1.org/${_realname}/
+DLAGENTS=https::/usr/bin/wget -c -t 3 --waitretry=3 -O %o %u # curl doesnt work
+source="https://www.exit1.org/packages/${_realname}/dist/${_realname}-${version}.tar.gz"
+options="!checksum"
+md5sums=17f0cfd4957196f9928d023a4801ed5c
+
+build-delete {
+  cd ${srcdir}/${_realname}-${version}
+  # install module in vendor directories.
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd ${srcdir}/${_realname}-${version}
+  make test
+}
+
+build() {
+  cd ${srcdir}/${_realname}-${version}
+  make install DESTDIR=$PKG
+
+  # remove perllocal.pod and .packlist
+  find $PKG -name perllocal.pod -delete
+  find $PKG -name .packlist -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

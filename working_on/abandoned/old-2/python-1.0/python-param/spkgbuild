@@ -1,0 +1,16 @@
+# description : Make your Python code clearer and more reliable by declaring Parameters
+
+_pkg=param
+url=https://param.holoviz.org/
+name=python-${_pkg}
+version=1.10.0
+release=1
+
+source="https://github.com/holoviz/param/archive/v${version}/${_pkg}-${version}.tar.gz"
+options="checksum"
+
+build() {
+     cd ${_pkg}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

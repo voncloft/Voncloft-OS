@@ -1,0 +1,33 @@
+# description : Quote strings for passing through the shell
+# depends : perl
+
+name=perl-string-shellquote
+_realname=String-ShellQuote
+version=1.04
+release=6
+url=https://search.cpan.org/dist/${_realname}/
+replaces=string-shellquote
+source="https://search.cpan.org/CPAN/authors/id/R/RO/ROSCH/$_realname-$version.tarsource=.gz"
+options=!checksum
+md5sums=da6329dc482b21adf5697cfbd2ac5412
+
+build-delete {
+  cd ${srcdir}/${_realname}-${version}
+  # install module in vendor directories.
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd ${srcdir}/${_realname}-${version}
+  make test
+}
+
+build() {
+  cd ${srcdir}/${_realname}-${version}
+  make install DESTDIR=$PKG
+
+  # remove perllocal.pod and .packlist
+  find $PKG -name perllocal.pod -delete
+  find $PKG -name .packlist -delete
+}

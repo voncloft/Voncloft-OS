@@ -1,0 +1,30 @@
+# description : Build external dependencies for use in CPAN
+# depends : perl-capture-tiny perl-ffi-checklib perl-file-chdir perl-file-which
+
+name=perl-alien-build
+version=2.38
+release=1
+url=https://metacpan.org/release/Alien-Build
+         perl-path-tiny
+make# depends : perl-test2-suite
+check# depends : perl-alien-base-modulebuild perl-alien-cmake3 perl-env-shellwords
+              perl-pkgconfig perl-pkgconfig-libpkgconf perl-readonly perl-sort-versions
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-$version.tarsource=.gz"
+options=!checksum
+sha512sums=a77b27894c74e9b73fd479f3efb67c748bf9f32931a75471f6e5e0ccbb65d2e5617abfef28f71a7e461f4e1a4216fa8968564aa8ae52ff1bbeae570743fbab81
+
+build-delete {
+  cd Alien-Build-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Alien-Build-$version
+  make test
+}
+
+build() {
+  cd Alien-Build-$version
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,19 @@
+# description : py.test plugin to abort hanging tests
+  # depends : python-pytest
+  # depends : python2-pytest
+
+url=https://bitbucket.org/pytest-dev/pytest-timeout
+name=python-pytest-timeout python2-pytest-timeout
+version=1.4.2
+release=3
+
+source="https://github.com/pytest-dev/pytest-timeout/archive/$version/$name-$version.tar.gz"
+
+build() {
+   cd pytest-timeout-$version
+   cd pytest-timeout-$version-py2
+   cd pytest-timeout-$version
+   cd pytest-timeout-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

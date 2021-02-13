@@ -1,0 +1,42 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-jaraco.test
+version=4.0.1
+release=1
+pkgdesc="Testing support by jaraco"
+url="https://github.com/jaraco/jaraco.test"
+depends=('python-jaraco' 'python-jaraco.context' 'python-toml' 'python-more-itertools')
+makedepends=('python-setuptools-scm')
+checkdepends=('python-pytest-black' 'python-pytest-checkdocs' 'python-pytest-cov'
+              'python-pytest-flake8' 'python-pytest-mypy')
+source=("https://github.com/jaraco/jaraco.test/archive/v$version/$name-$version.tar.gz")
+sha512sums=('56538088f01c0c0e8ee89dd76e2cc37c48893e7319c747ee69e3f89aca41bcd00260d61cdd50601786e932c016b92e0c8f656b4eb4c4e3afae3b18173251051c')
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+prepare() {
+  cd jaraco.test-$version
+  # The jaraco.test.pytest module is not discovered if no __init__.py is present
+  touch jaraco/test/pytest/__init__.py
+}
+
+build() {
+  cd jaraco.test-$version
+  python setup.py build
+}
+
+check() {
+  cd jaraco.test-$version
+  python -m pytest
+}
+
+package() {
+  cd jaraco.test-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  rm "$pkgdir"/usr/lib/python3.9/site-packages/jaraco/__init__.py \
+     "$pkgdir"/usr/lib/python3.9/site-packages/jaraco/__pycache__/__init__.cpython-39.pyc \
+     "$pkgdir"/usr/lib/python3.9/site-packages/jaraco/__pycache__/__init__.cpython-39.opt-1.pyc
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

@@ -1,0 +1,30 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=selinux
+name=python-selinux
+version=0.2.1
+release=4
+pkgdesc="Pure-python selinux shim module for use in virtualenvs"
+url="https://github.com/pycontribs/selinux"
+depends=('python-distro' 'python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('e0bec9113461a4dc53e4965522b222bd674212fe1fd987180488d6d9183a1c25588ac9bec4a040595f9313932bc04b83e7f27505d539412fc0d49c2188679831')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${pkgdir}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+  install -vDm 644 README.rst -t "${pkgdir}/usr/share/doc/${name}"
+}

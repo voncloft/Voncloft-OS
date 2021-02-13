@@ -1,0 +1,23 @@
+
+name=python-repoze.lru
+version=0.7
+release=6
+# description : A tiny LRU cache implementation and decorator"
+# depends :   python  
+source="https://pypi.io/packages/source/r/repoze.lru/repoze.lru-$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/repoze.lru-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/repoze.lru-$version
+  python setup.py test
+}
+
+package   {
+  cd repoze.lru-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

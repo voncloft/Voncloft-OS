@@ -1,0 +1,33 @@
+# description : "CSS selectors for Python ElementTree"
+# depends : python-tinycss2
+
+name=python-cssselect2
+version=0.4.1
+release=1
+url="https://pypi.org/project/cssselect2/"
+make# depends : python-setuptools
+check# depends : python-pytest-cov python-pytest-isort python-pytest-runner
+source="https://pypi.io/packages/source/c/cssselect2/cssselect2-$version.tar.gz"
+sha512sums=feafeec3dbe3157ee452d94cd391a09cfcb48ca8bd1563c117c77c9ceb01102c4989611ede39e433ec25d3ddda98a94c4589ccb290b79c729683e673763b42ac
+
+prepare {
+   cd cssselect2-$version
+  sed -i s/--flake8// pyproject.toml
+}
+
+build()-delete {
+   cd cssselect2-$version
+  python setup.py build
+}
+
+check {
+   cd cssselect2-$version
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd cssselect2-$version
+  python3 setup.py install --root=$PKG --optimize=1
+}

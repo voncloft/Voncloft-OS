@@ -1,0 +1,30 @@
+# description : "Python parser for SubRip srt files"
+# depends : python-chardet
+
+name=python-pysrt
+version=1.1.2
+release=2
+url="https://github.com/byroot/pysrt"
+opt# depends : python-setuptools: for srt script
+make# depends : python-setuptools
+check# depends : python-nose
+source="$name-$version.tar.gz::https://github.com/byroot/pysrt/archive/v$version.tar.gz"
+sha512sums=0d6b3a7ce4c8733221bfb5c3e434233d1b221fedda3c145fafe124093f1f9090b99c175e79de386717ec5f8b564c62719f377651db95a8d3c382e2bf8dccb0a8
+
+build()-delete {
+   cd pysrt-$version
+  python setup.py build
+}
+
+check {
+   cd pysrt-$version
+  nosetests3
+}
+
+options="!checksum"
+
+build() {
+   cd pysrt-$version  
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

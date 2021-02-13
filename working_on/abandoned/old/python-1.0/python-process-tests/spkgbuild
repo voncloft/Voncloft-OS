@@ -1,0 +1,41 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-process-tests
+name=('python-process-tests' 'python2-process-tests')
+version=2.1.1
+release=3
+pkgdesc="Tools for testing processes"
+url="https://pypi.python.org/pypi/process-tests"
+makedepends=('python-setuptools' 'python2-setuptools')
+source=("https://pypi.io/packages/source/p/process-tests/process-tests-$version.tar.gz")
+sha512sums=('4bb520074a9964d3eed4aca7a1952bf1a0d99b475f3f61b5c51137d8f2e804352639187da5b5ff30ea8739466200eb9361e77dc3c43a20d5ea418f63a2765a1c')
+
+prepare() {
+  cp -a process-tests-$version{,-py2}
+}
+
+build() {
+  cd "$srcdir"/process-tests-$version
+  python setup.py build
+
+  cd "$srcdir"/process-tests-$version-py2
+  python2 setup.py build
+}
+
+package_python-process-tests() {
+  depends=('python')
+
+  cd process-tests-$version
+  python setup.py install --root="$pkgdir/" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-process-tests() {
+  depends=('python2')
+
+  cd process-tests-$version
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

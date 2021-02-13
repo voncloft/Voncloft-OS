@@ -1,0 +1,32 @@
+# description : "Implements a XML/HTML/XHTML Markup safe string for Python"
+
+pkgbase=python-markupsafe
+version=1.1.1
+release=6
+url="https://pypi.python.org/pypi/MarkupSafe"
+source="$pkgbase-$version.tar.gz::https://github.com/pallets/markupsafe/archive/$version.tar.gz"
+sha512sums=c2a1072c5dd0918e47f9cfbd30b79b0690a43635f7cfc3fdd27f3df52f8e20406d7e3cfadd29df8ab1d1110f50e23eb7c7272707e0739d862d4b1edb59bbc241
+
+build()-delete {
+   cd markupsafe-$version
+  python setup.py build
+}
+
+check {
+   cd markupsafe-$version
+  python setup.py pytest
+}
+
+package_python-markupsafe {
+  # depends : python
+
+   cd markupsafe-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}
+
+
+   cd markupsafe-$version
+
+}

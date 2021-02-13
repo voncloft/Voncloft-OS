@@ -1,0 +1,26 @@
+# description : Make Sphinx better at documenting Python functions and methods 
+# depends :   python   python-sphinx  
+
+name=python-sphinxcontrib-trio
+_pyname=${name/python-/}
+version=1.1.2
+release=1
+source=https://github.com/python-trio/sphinxcontrib-trio/archive/v${version}/${_pyname}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pyname}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pyname}-${version}
+  PYTHONPATH=. py.test
+}
+
+build()   {
+  cd ${_pyname}-${version}
+  python setup.py install -O1 --root=$PKG --skip-build-old()
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

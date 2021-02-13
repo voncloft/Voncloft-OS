@@ -1,0 +1,35 @@
+# description : An object representing a stack trace
+# depends : perl>=5.6
+
+name=perl-devel-stacktrace
+version=2.03
+release=4
+url=https://metacpan.org/release/Devel-StackTrace
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Devel-StackTrace-$version.tarsource=.gz"
+options=!checksum
+sha256sums=7618cd4ebe24e254c17085f4b418784ab503cb4cb3baf8f48a7be894e59ba848
+
+build-delete {
+  cd ${srcdir}/Devel-StackTrace-$version
+
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  perl Makefile.PL
+  make
+}
+
+check {
+  cd ${srcdir}/Devel-StackTrace-$version
+
+  export PERL_MM_USE_DEFAULT=1
+  unset PERL5LIB
+  make test
+}
+
+build() {
+  cd ${srcdir}/Devel-StackTrace-$version
+
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}

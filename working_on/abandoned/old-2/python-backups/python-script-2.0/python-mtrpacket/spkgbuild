@@ -1,0 +1,16 @@
+# description : Asynchronous network probes for Python
+# depends : mtr python
+
+url=https://github.com/matt-kimball/mtr-packet-python
+name=python-mtrpacket
+version=1.0.0
+release=2
+
+source="https://github.com/matt-kimball/mtr-packet-python/archive/$version/$name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd mtr-packet-python-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

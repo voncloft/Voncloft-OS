@@ -1,0 +1,32 @@
+# description : "Safe code refactoring for modern Python."
+# depends : python-attrs python-click python-fissix python-setuptools python-sh
+
+_name=bowler
+name=python-bowler
+version=0.8.0
+release=5
+url="https://github.com/facebookincubator/${_name}"
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+sha256sums=f3e0ba2e6d62d84e9dc34c07fd4ae6453c8de480e14cdd67a5665cfeedbf8cb2
+b2sums=766dcb5c1d13aae41f73bf4fed320cc5ccbfc117656deef513a98e39134e03def963e27564093aa98b6ec2e94b7adb67ca6fb06ddfd778a01f3f5f77959a68b1
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py test
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

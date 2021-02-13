@@ -1,0 +1,16 @@
+# description : Extract swagger specs from your flask project
+# depends : python-flask python-yaml python-jsonschema python-mistune python-six
+
+url=https://github.com/flasgger/flasgger
+name=python-flasgger
+version=0.9.5
+release=3
+
+source="https://github.com/flasgger/flasgger/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd flasgger-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,24 @@
+
+name=python-pyte
+version=0.8.0
+release=6
+# description : Simple VTXXX-compatible terminal emulator 
+# depends :   python-wcwidth  
+source="https://github.com/selectel/pyte/archive/$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/pyte-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/pyte-$version
+  python setup.py pytest
+}
+
+package   {
+  cd pyte-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

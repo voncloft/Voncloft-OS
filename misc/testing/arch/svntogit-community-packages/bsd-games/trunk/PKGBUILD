@@ -1,0 +1,30 @@
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
+# Contributor: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Chris Brannon <cmbrannon79@gmail.com>
+# Contributor: Abhishek Dasgupta <abhidg@gmail.com>
+# Contributor: SmackleFunky <smacklefunky@optusnet.com.au>
+
+pkgname=bsd-games
+pkgver=3.1
+pkgrel=1
+pkgdesc='Linux port of the collection of BSD command line games'
+url='https://github.com/msharov/bsd-games'
+arch=('x86_64')
+license=('BSD')
+depends=('ncurses')
+optdepends=('words: for hangman')
+makedepends=()
+source=("https://github.com/msharov/$pkgname/archive/v$pkgver.tar.gz")
+sha256sums=('fe4e54fa56aff00ac3a45b2c4a5173bb2627c723ad7ae9d7548e43148b177be6')
+
+build() {
+    cd "$pkgname-$pkgver"
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    make DESTDIR="${pkgdir}" install
+    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,27 @@
+# description : Bidirectional mapping library for Python 
+# depends :   python  
+
+name=python-bidict
+_name=${name#python-}
+version=0.21.2
+release=2
+	           python-hypothesis   python-py-cpuinfo  
+source=https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz 
+
+build-old()   {
+  cd "bidict-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "bidict-${version}"
+  python setup.py test
+}
+
+build()   {
+  cd "bidict-${version}"
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

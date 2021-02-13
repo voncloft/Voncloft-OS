@@ -1,0 +1,26 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-nose-exclude
+version=0.5.0
+release=6
+pkgdesc="Exclude specific directories from nosetests runs"
+url="https://github.com/kgrandis/nose-exclude"
+depends=('python-nose')
+makedepends=('python-setuptools')
+source=("$name-$version.tar.gz::https://github.com/kgrandis/nose-exclude/archive/$version.tar.gz")
+sha512sums=('0d8a21687831c825524c0cbb2da5b2195482558e2d2b0088944ccdf2d74787353f350ebbece8c4ce80f576426767ecb670afccbaf9f850e8476e1d2260bcc381')
+
+build() {
+  cd nose-exclude-$version
+  python setup.py build
+}
+
+check() {
+  cd nose-exclude-$version
+  python setup.py test
+}
+
+package() {
+  cd nose-exclude-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

@@ -1,0 +1,29 @@
+# Maintainer: Maxim Baz <$name at maximbaz dot com>
+# Contributor: Stick <stick@stma.is>
+
+_name=i3ipc-python
+name=python-i3ipc
+version=2.2.1
+release=2
+pkgdesc='An improved Python library to control i3wm'
+url="https://github.com/altdesktop/${_name}"
+conflicts=('i3ipc-python')
+replaces=('i3ipc-python')
+depends=('python' 'python-xlib')
+makedepends=('python-setuptools')
+source=("${name}-${version}.tar.gz::https://github.com/altdesktop/${_name}/archive/v${version}.tar.gz")
+sha256sums=('54af180fac6e3e16c65747884ae4479f0df034c45ed02523f8300f98c99eb29e')
+
+build() {
+    cd "${_name}-${version}"
+    python setup.py build
+}
+
+package() {
+    cd "${_name}-${version}"
+    python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+    install -Dm755 -t "${pkgdir}/usr/share/doc/${name}/examples" examples/*.py
+    install -Dm644 -t "${pkgdir}/usr/share/licenses/${name}" LICENSE
+}
+
+# vim:set ts=4 sw=4 et:

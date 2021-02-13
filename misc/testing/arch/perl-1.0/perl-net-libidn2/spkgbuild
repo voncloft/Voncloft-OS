@@ -1,0 +1,30 @@
+# description : Perl bindings for GNU Libidn2
+# depends : libidn2 perl
+# Generator  : CPANPLUS::Dist::Arch 1.28
+
+name=perl-net-libidn2
+version=1.01
+release=1
+url=https://search.cpan.org/dist/Net-LibIDN2
+make# depends : perl-module-build
+source="https://search.cpan.org/CPAN/authors/id/T/TH/THOR/Net-LibIDN2-$version.tarsource=.gz"
+options=!checksum
+sha512sums=b3eb430c99a458e9e5fbd16fb6b059bd660a995be7ebe806b44b46160db7a5502806d503ec03667ef9865634f403db2e665c3dcad58f4e221e918ef4d78eabd0
+
+build-delete {
+  cd Net-LibIDN2-$version
+  perl Build.PL installdirs=vendor
+  perl Build
+}
+
+check {
+  cd Net-LibIDN2-$version
+  perl Build test
+}
+
+build() {
+  cd Net-LibIDN2-$version
+  perl Build install destdir=$PKG
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,32 @@
+# description : Run commands simply, with detailed diagnostics
+# depends : perl
+
+name=perl-ipc-system-simple
+version=1.30
+release=2
+url=https://search.cpan.org/dist/IPC-System-Simple
+source="https://search.cpan.org/CPAN/authors/id/J/JK/JKEENAN/IPC-System-Simple-$version.tar.gz"
+options="!checksum"
+sha512sums=82937df80ae38a9c21e43e256a21 cdac1482d4a069eae282043d676ece06251a7139b752 cd2b379a0f69ea9209ddd075607da86c6cb9b25f19cf90d91c28d72f
+
+build-delete {
+   cd IPC-System-Simple-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd IPC-System-Simple-$version
+  make test
+}
+
+build() {
+   cd IPC-System-Simple-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

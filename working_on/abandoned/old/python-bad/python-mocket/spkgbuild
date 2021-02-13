@@ -1,0 +1,32 @@
+# description : Socket Mock Framework - for all kinds of socket animals, web-clients included - with gevent/asyncio/SSL support"
+# depends :   python-decorator   python-http-parser   python-magic   python-urllib3  
+
+name=python-mocket
+version=3.9.40
+release=1
+               python-sure   python-xxhash   redis  
+source="https://github.com/mindflayer/python-mocket/archive/$version/$name-$version.tar.gz" 
+
+prepare   {
+  cd python-mocket-$version
+  pipenv_to_requirements
+
+  sed -i  s/python-magic/file_magic/  requirements.txt
+}
+
+build-old()   {
+  cd python-mocket-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-mocket-$version
+  pifpaf run redis pytest
+}
+
+build()   {
+  cd python-mocket-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

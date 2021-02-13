@@ -1,0 +1,28 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Contributor: Ivan Shapovalov <intelfx@intelfx.name>
+
+name=python-signedjson
+version=1.1.1
+release=3
+
+pkgdesc='Sign JSON with Ed25519 signatures'
+url='https://pypi.python.org/pypi/signedjson/'
+
+depends=('python' 'python-canonicaljson' 'python-unpaddedbase64' 'python-pynacl')
+makedepends=('python-setuptools')
+
+source=("https://files.pythonhosted.org/packages/source/s/signedjson/signedjson-$version.tar.gz")
+
+sha256sums=('350586e7570ba208f7729dcda09d43f554ead0207a15e3e3695533ef3f720009')
+
+build() {
+	cd signedjson-$version
+	python setup.py build
+}
+
+package() {
+	cd signedjson-$version
+	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :

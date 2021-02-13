@@ -1,0 +1,17 @@
+# description : ASCII transliterations of Unicode text
+# depends : python
+
+_tag=fdf8aa731c53154de04a019eaf91405fc5ff15a5
+url=https://github.com/avian2/unidecode
+name=python-unidecode
+version=1.1.2
+release=1
+
+source="git+https://github.com/avian2/unidecode.git#tag=${_tag}
+options="checksum"
+
+build() {
+   cd unidecode
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

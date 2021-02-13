@@ -1,0 +1,36 @@
+# description : Simple user session protection for Flask applications
+# depends : python python-flask
+
+_name=flask-paranoid
+name=python-flask-paranoid
+version=0.2
+release=6
+url=https://github.com/miguelgrinberg/flask-paranoid/
+make# depends : python-sphinx python-setuptools
+check# depends : python-pytest
+source=${name}-${version}.tar.gz::https://github.com/miguelgrinberg/flask-paranoid/archive/v${version}.tar.gz
+sha256sums=cda72c43fd17e6b782e079942b79ec9b19ac40c06337c871cc1dfedbe49297d3
+sha512sums=0d642999fa4d5b795c3dcecc586fc1600cdfceec4adb38bb87ca8be9825d9ddafabb07d98df573a89e61a44a0abd27cbbd21524237b0e23b337a7d5e32ddfdae
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+  sphinx-build() -b text docs docs/_build()/text
+  sphinx-build() -b man docs docs/_build()/man
+}
+
+check {
+   cd ${_name}-${version}
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+  install -Dm 644 docs/_build()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/flask-paranoid.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+

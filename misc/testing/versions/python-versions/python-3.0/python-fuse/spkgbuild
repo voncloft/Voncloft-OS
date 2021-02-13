@@ -1,0 +1,17 @@
+# description : Python bindings for FUSE"
+# depends :   fuse2   python  
+
+name=python-fuse
+version=1.0.0
+release=3
+source="https://github.com/libfuse/python-fuse/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd python-fuse-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd python-fuse-$version
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+}

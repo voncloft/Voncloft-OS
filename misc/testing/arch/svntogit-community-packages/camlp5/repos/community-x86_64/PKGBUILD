@@ -1,0 +1,43 @@
+# Maintainer: Baptiste Jonglez <baptiste--aur at jonglez dot org>
+# Contributor: Matej Grabovsky <matej.grabovsky at gmail>
+# Contributor: Kohei Suzuki <eagletmt@gmail.com>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: Nathan Owe <ndowens.aur at gmail dot com>
+# Contributor: George Giorgidze <giorgidze@gmail.com>
+# Contributor: Massimiliano Brocchini <brocchini@netseven.it>
+# Contributor: Tej Chajed <tchajed at mit dot edu>
+
+pkgname=camlp5
+pkgver=7.12
+_relname=rel712
+pkgrel=11
+arch=('x86_64')
+pkgdesc='A preprocessor-pretty-printer of OCaml.'
+url='https://camlp5.github.io/'
+license=('BSD')
+depends=('ocaml>=4.11.0')
+makedepends=('ocaml-compiler-libs>=4.11.0')
+source=("camlp5-${_relname}.tar.gz::https://github.com/camlp5/camlp5/archive/$_relname.tar.gz")
+sha256sums=('fc4b50b9d917c2f844b909bdfd55735f3f658e32a415f0decc1c265bf3af42be')
+options=('staticlibs')
+
+build() {
+  cd "${srcdir}/camlp5-${_relname}"
+
+  ./configure \
+    -prefix '/usr' \
+    -mandir '/usr/share/man' \
+    -strict
+
+  make world.opt
+}
+
+package() {
+  cd "${srcdir}/camlp5-${_relname}"
+
+  make DESTDIR="${pkgdir}" install
+
+  install -D -m644 etc/META "${pkgdir}/usr/lib/ocaml/camlp5"
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/camlp5/LICENSE"
+}
+

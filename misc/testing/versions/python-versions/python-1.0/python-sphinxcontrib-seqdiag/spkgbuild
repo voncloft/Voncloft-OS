@@ -1,0 +1,23 @@
+
+name=python-sphinxcontrib-seqdiag
+version=2.0.0
+release=3
+# description : A sphinx extension for embedding sequence diagram using seqdiag"
+# depends :   blockdiag   seqdiag   python-sphinx  
+source="https://github.com/blockdiag/sphinxcontrib-seqdiag/archive/$version.tar.gz" 
+
+build   {
+  cd sphinxcontrib-seqdiag-$version
+  python setup.py build
+}
+
+check   {
+  cd sphinxcontrib-seqdiag-$version
+  python setup.py nosetests
+}
+
+package   {
+  cd sphinxcontrib-seqdiag-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andy Weidenbaum <archbaum@gmail.com>
+
+name=python-plyvel
+version=1.2.0
+release=3
+pkgdesc="A fast and feature-rich Python interface to LevelDB"
+url="https://github.com/wbolster/plyvel"
+depends=('leveldb' 'python')
+makedepends=('cython' 'python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("https://pypi.io/packages/source/p/plyvel/plyvel-$version.tar.gz")
+sha512sums=('00b3424e248d1ed17f6443c9862c9f35c94ad76707df5adfe625d7a387620252ff71b3e1f7e903dda1c5cfcd53cb23883c1049e31df541dfe566b8e849c0a96d')
+
+prepare() {
+  # Shipped egg-info has wrong permission etc
+  cd plyvel-$version
+  make clean
+}
+
+build() {
+  cd plyvel-$version
+  make cython
+  python setup.py build
+}
+
+check() {
+  cd plyvel-$version
+  python setup.py pytest
+}
+
+package() {
+  cd plyvel-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.rst "$pkgdir"/usr/share/licenses/$name/LICENSE.rst
+}

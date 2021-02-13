@@ -1,0 +1,23 @@
+# description : a more sensible way to change directories 
+# depends : perl
+
+name=perl-file-chdir
+version=0.1011
+release=4
+url=https://search.cpan.org/dist/File-chdir
+source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/File-chdir-$version.tarsource=.gz"
+options=!checksum
+sha256sums=31ebf912df48d5d681def74b9880d78b1f3aca4351a0ed1fe3570b8e03af6c79
+
+build-delete {
+  cd  $srcdir/File-chdir-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/File-chdir-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

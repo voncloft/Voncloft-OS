@@ -1,0 +1,30 @@
+# description : "Load, configure, and compose WSGI applications and servers"
+# depends : python-setuptools
+
+name=python-pastedeploy
+version=2.1.1
+release=3
+url="http://pythonpaste.org/deploy/"
+make# depends : python-setuptools python-pytest-runner
+source="$name-$version.tar.gz::https://github.com/Pylons/pastedeploy/archive/$version.tar.gz"
+sha512sums=0109e30cb5ae9bdd7f06a79f6236c90f96c3bcfe507258572b1329796a1821486d9762d954673ccbac76ee63c6a69e64fe5e2cae5402fecf4a5affe88cf46930
+
+build()-delete {
+   cd "$srcdir"/pastedeploy-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/pastedeploy-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+
+   cd pastedeploy-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 license.txt $PKG/usr/share/licenses/$name/license.txt
+}

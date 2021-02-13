@@ -1,0 +1,26 @@
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Doug Newgard <scimmia at archlinux dot info>
+
+pkgname=qmltermwidget
+pkgrel=1
+pkgver=0.2.0
+pkgdesc='QML port of qtermwidget'
+arch=('x86_64')
+url='https://github.com/Swordfish90/qmltermwidget'
+license=('GPL')
+depends=('qt5-declarative')
+source=("https://github.com/Swordfish90/qmltermwidget/archive/$pkgver.tar.gz")
+sha512sums=('544d57296de6999b86bf2b921d1d93ac5d7eddd02eea436df4ecea0966c82389e716310fd7e4d13dd918bc1b3fd2d02f953c713dc5b4abcfc56d3f3f617adf43')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  qmake
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  make INSTALL_ROOT="$pkgdir" install
+}

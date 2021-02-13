@@ -1,0 +1,31 @@
+# description : "Useful Mutable Mappings"
+# depends : python python-heapdict
+
+_pkg=zict
+name=python-${_pkg}
+version=2.0.0
+release=3
+url="https://github.com/dask/zict/"
+make# depends : python-setuptools
+check# depends : python-pytest python-lmdb
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+#source=${url}/archive/${version}/${name}-${version}.tar.gz
+sha256sums=8e2969797627c8a663575c2fc6fcb53a05e37cdb83ee65f341fc6e0c3d0ced16
+
+build()-delete {
+   cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-${version}
+  pytest zict
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1 
+}

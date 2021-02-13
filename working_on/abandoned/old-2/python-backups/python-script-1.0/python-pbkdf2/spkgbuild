@@ -1,0 +1,16 @@
+# description : Password-based key derivation function PBKDF2
+# depends : python
+
+url=https://www.dlitz.net/software/python-pbkdf2/
+name=python-pbkdf2
+version=1.3
+release=8
+
+source="https://github.com/dlitz/python-pbkdf2/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${pkgbase}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

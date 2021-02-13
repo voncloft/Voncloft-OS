@@ -1,0 +1,41 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=enrich
+name=python-enrich
+version=1.2.6
+release=1
+pkgdesc="Extends rich library functionality with a set of changes that were not accepted"
+url="https://github.com/pycontribs/enrich"
+depends=('python-rich')
+makedepends=('python-setuptools_scm')
+checkdepends=('python-mock' 'python-pytest' 'python-pytest-mock' 'python-pytest-xdist')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('07c280d3526538af9d718c6d423be50d67e8285007a6702b7f3d842725a63cb282192c29481cbea6cbe7da886b630e5694776092dc0ffcaac522ccf1e895b5a9')
+b2sums=('06f104a11b2dc85c1d80a2b14c548aaac40c78795e86b1c6ae733f884fbd7af0776af53d8cdd15c15d6abb91ca89dd7f815823b419fc2b3de322b50e55844dd0')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+  cd "$name-$version"
+  # do not require to run with python-pytest-cov
+  sed -e '/addopts/d' -i setup.cfg
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build/lib:${PYTHONPATH}"
+  pytest -v
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root="${pkgdir}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}/"
+}

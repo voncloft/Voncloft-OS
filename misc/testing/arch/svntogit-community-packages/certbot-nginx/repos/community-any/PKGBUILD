@@ -1,0 +1,35 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
+
+pkgname=certbot-nginx
+pkgver=1.12.0
+pkgrel=1
+pkgdesc="Nginx plugin for Let’s Encrypt client"
+arch=('any')
+license=('Apache')
+url="https://pypi.python.org/pypi/$pkgname"
+depends=('certbot' 'python-acme' 'python-mock' 'python-pyopenssl' 'python-pyparsing'
+         'python-setuptools' 'python-zope-interface')
+checkdepends=('python-pytest')
+replaces=("letsencrypt-nginx")
+source=("https://pypi.io/packages/source/c/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc})
+validpgpkeys=('148C30F6F7E429337A72D992B00B9CC82D7ADF2C'
+              '1B41B758F9A78C7F444C20FA3E5B4152E3ADB1FD'
+              'A2CFB51FA275A7286234E7B24D17C995CD9775F2')
+sha512sums=('cc8cd2a33c75d5ba2d96efef6257d78f3a6573faeb26b7dadc9a0fdaeba8e83645428726e488d6c8f1f7377dc23fed1671e4d016fa8b1e6e7f5975ed392774aa'
+            'SKIP')
+
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/$pkgname-$pkgver
+  python -m pytest
+}
+
+package() {
+  cd "$srcdir"/$pkgname-$pkgver
+  python setup.py install --root="$pkgdir"
+}

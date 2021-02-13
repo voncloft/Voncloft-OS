@@ -1,0 +1,22 @@
+
+_pyname="mt940"
+name="python-mt-940"
+version="4.19.0"
+release=4
+# description : A library to parse MT940 files and returns smart Python collections for statistics and manipulation"
+# depends :   python  
+source="https://github.com/WoLpH/mt940/archive/v${version}/${name}-${version}.tar.gz" 
+
+build   {
+  cd "${_pyname}-${version}"
+  python setup.py build
+}
+
+package   {
+  cd "${_pyname}-${version}"
+  python setup.py install -O1 --root=$PKG --skip-build
+
+  install -Dm644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

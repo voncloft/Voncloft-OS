@@ -1,0 +1,26 @@
+# description : Python-based IP-XACT parser 
+# depends :   python   python-yaml  
+
+_name=ipyxact
+name=python-$_name
+version=0.2.4
+release=3
+source=" $url/archive/v$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

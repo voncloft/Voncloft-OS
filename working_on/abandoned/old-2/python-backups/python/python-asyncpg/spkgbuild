@@ -1,0 +1,47 @@
+# description : A fast PostgreSQL Database Client Library for Python/asyncio
+# depends : python
+
+_name=asyncpg
+name=python-$_name
+version=0.21.0
+release=2
+url=https://github.com/MagicStack/asyncpg
+make# depends : git python-setuptools cython
+check# depends : python-pytest-runner python-uvloop postgresql
+source="git+$url.git#tag=v$version"
+        git+https://github.com/MagicStack/py-pgproto.git
+sha512sums=SKIP
+            SKIP
+
+prepare {
+   cd $_name
+
+  git submodule init
+  git config submodule.asyncpg/pgproto.url "$srcdir"/py-pgproto
+  git submodule update
+
+  sed -i "s|Cython==.*|Cython|" setup.py
+}
+
+build()-delete {
+   cd $_name
+
+  python setup.py build_py build()_ext
+}
+
+check {
+   cd $_name
+
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd $_name
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+

@@ -1,0 +1,26 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=profile-cleaner
+pkgver=2.41
+pkgrel=1
+pkgdesc="Simple script to vacuum and reindex sqlite databases used by browsers"
+arch=('any')
+url="https://github.com/graysky2/profile-cleaner"
+license=('MIT')
+depends=('bash' 'bc' 'findutils' 'parallel' 'sqlite')
+optdepends=('zsh-completions: for completion when using zsh')
+install="${pkgname}.install"
+source=("$pkgname-$pkgver.tar.gz::https://github.com/graysky2/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('7f1f0176c43bc2ed8efb0f0ede36b0b013db5761c6dea1aee4e22ca199ec44406c0f79e84c3a0f4d1684cf048ff4035dbcb5c82a82826d186dd3869c3721bc33')
+
+build() {
+  cd "$pkgname-$pkgver"
+  make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

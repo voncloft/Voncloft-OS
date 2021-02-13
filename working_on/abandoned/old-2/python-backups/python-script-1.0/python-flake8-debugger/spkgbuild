@@ -1,0 +1,16 @@
+# description : ipdb/pdb statement checker plugin for flake8
+# depends : flake8
+
+url=https://github.com/JBKahn/flake8-debugger
+name=python-flake8-debugger
+version=3.2.1
+release=3
+
+source="https://github.com/JBKahn/flake8-debugger/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/flake8-debugger-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

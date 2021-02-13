@@ -1,0 +1,28 @@
+# description : Refactoring library
+
+name=python-rope
+version=0.18.0
+release=3
+url=https://github.com/python-rope/rope
+make# depends : python python-setuptools
+source="$name-$version.tar.gz::https://github.com/python-rope/rope/archive/$version.tar.gz"
+sha256sums=a8938e7e5fa60fc567d854762e3d0309bd355186d4ff3e5d39811e8df2f6a7ac
+
+build()-delete{
+   cd "rope-$version"
+  python setup.py build
+}
+
+check{
+   cd "rope-$version"
+  python -m unittest
+}
+
+options="!checksum"
+
+build() {
+   cd "rope-$version"
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+

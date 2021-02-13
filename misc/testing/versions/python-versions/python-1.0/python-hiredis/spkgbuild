@@ -1,0 +1,23 @@
+
+name=python-hiredis
+version=1.1.0
+release=3
+
+# description : Non-blocking redis client for python 
+
+# depends :   python  
+
+source="https://pypi.org/packages/source/h/hiredis/hiredis-$version.tar.gz" 
+
+
+build   {
+	cd "$srcdir"/hiredis-$version
+	python setup.py build
+}
+
+package   {
+	cd hiredis-$version
+	python setup.py install --root=$PKG --optimize=1 --skip-build
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :

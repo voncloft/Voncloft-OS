@@ -1,0 +1,39 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: speps <speps at aur dot archlinux dot org>
+
+pkgname=drumkv1
+pkgver=0.9.19
+pkgrel=1
+pkgdesc="An old-school drum-kit sampler"
+arch=('x86_64')
+url="https://drumkv1.sourceforge.io/"
+license=('GPL2')
+groups=('lv2-plugins' 'pro-audio')
+depends=('gcc-libs' 'glibc' 'hicolor-icon-theme' 'qt5-base')
+makedepends=('alsa-lib' 'cmake' 'jack' 'liblo' 'libsndfile' 'lv2' 'qt5-tools')
+optdepends=('alsa-lib: for standalone application'
+            'jack: for standalone application'
+            'liblo: for standalone application'
+            'new-session-manager: for session management using the standalone application')
+source=("https://download.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('b10efe436c8f0505085b69715568804b105942d0b6db3136d43c9655540e31412ec3a3484b822b266af53edaea07605a1d451437be272998938958a473b47f26')
+b2sums=('83cd247364b56bf700292421c91890893217555adf4359eea2cad329336514e097ccb62dd086fc216b2eebb827f4d90caab0e7f07f482dfedbdfd64182753466')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cmake -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DCMAKE_BUILD_TYPE='None' \
+        -Wno-dev \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
+}
+
+package() {
+  depends+=('libsndfile.so')
+  cd "${pkgname}-${pkgver}"
+  make VERBOSE=1 DESTDIR="$pkgdir/" install -C build
+  install -t "${pkgdir}/usr/share/doc/${pkgname}" \
+    -vDm 644 {AUTHORS,ChangeLog,README,TODO}
+}
+# vim:set ts=2 sw=2 et:

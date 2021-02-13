@@ -1,0 +1,30 @@
+
+name=python-pysnmp
+_pyname=pysnmp
+version=4.4.12
+release=3
+# description : Open source and free implementation of v1/v2c/v3 SNMP engine 
+# depends :   python   python-pysmi   python-pyasn1  
+options=  !makeflags  
+source=https://github.com/etingof/pysnmp/archive/v${version}/${_pyname}-v${version}.tar.gz 
+
+build   {
+  cd ${_pyname}-${version}
+  export PYTHONPATH=.
+  python setup.py build
+  make -C docs text man
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  cp -r docs/build/text "${PKG}/usr/share/doc/${name}"
+  cp -r examples -t "${PKG}/usr/share/doc/${name}"
+
+  install -Dm 644 docs/build/man/${_pyname}.1 "${PKG}/usr/share/man/man1/${_pyname}.1"
+  install -Dm 644 docs/build/man/${_pyname}.1 "${PKG}/usr/share/man/man1/${name}.1"
+  install -Dm 644 LICENSE.rst -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

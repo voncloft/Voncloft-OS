@@ -1,0 +1,30 @@
+# Submitter: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
+
+_pkgbase=regex
+name=python-regex
+version=2020.11.13
+release=2
+# description : Alternative python regular expression module."
+# depends :   python  
+options= !emptydirs 
+source="https://files.pythonhosted.org/packages/source/r/${_pkgbase}/${_pkgbase}-${version}.tar.gz" 
+
+build   {
+  cd "regex-${version}"
+
+  python setup.py build
+}
+
+check   {
+  cd "regex-${version}"
+
+  cd build/lib.linux-${CARCH}-3*/
+  python -m unittest regex/test_regex.py
+}
+
+package   {
+  cd "regex-${version}"
+
+  python setup.py install --root="${PKG}/" --optimize=1 --skip-build
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/${name}/LICENSE.txt
+}

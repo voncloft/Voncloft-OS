@@ -1,0 +1,35 @@
+# description : Official Python bindings for the GNU Mailman 3 REST API"
+# depends :   python-requests  
+
+_name=mailmanclient
+name=python-mailmanclient
+version=3.3.2
+release=1
+ mailman3   python-falcon  
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+         SKIP  
+validpgpkeys=  541EA0448453394FF77A0ECC9D9B2BA061D0A67C   # Abhilash Raj <raj.abhilash1@gmail.com>
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+  cd "$name-$version"
+}
+
+build-old()   {
+  cd "$name-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build-old():${PYTHONPATH}"
+  pytest -v -k  not using.rst 
+}
+
+build()   {
+  cd "$name-$version"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --root=$PKG
+}

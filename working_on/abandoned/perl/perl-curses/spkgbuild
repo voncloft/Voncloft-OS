@@ -1,0 +1,29 @@
+# description : Character screen handling and windowing
+# depends : perl ncurses
+
+name=perl-curses
+version=1.36
+release=8
+url=https://search.cpan.org/dist/Curses
+source="https://search.cpan.org/CPAN/authors/id/G/GI/GIRAFFED/Curses-$version.tar.gz"
+options="!checksum"
+md5sums=389c70ee5530b887f8e5dc1303cb5294
+
+build-delete {
+   cd  $sr cdir/Curses-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd  $sr cdir/Curses-$version
+  make pure_install doc_install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

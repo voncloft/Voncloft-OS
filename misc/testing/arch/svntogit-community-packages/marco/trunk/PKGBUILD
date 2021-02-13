@@ -1,0 +1,36 @@
+# Maintainer: Brad Fanella <cesura@archlinux.org>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=marco
+pkgver=1.24.1
+pkgrel=1
+pkgdesc="A window manager for MATE"
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('libcanberra' 'libgtop' 'mate-desktop' 'zenity' 'libxpresent' 'gettext')
+makedepends=('itstool')
+groups=('mate')
+conflicts=('marco-gtk3')
+replaces=('marco-gtk3')
+source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('a4bcafd92c418ebfc8fc9fed2450378465d8a6a2a16bc3a9262bb02c6f202b81')
+
+build() {
+	cd "${pkgname}-${pkgver}"
+    	./configure \
+        	--prefix=/usr \
+        	--sysconfdir=/etc \
+        	--localstatedir=/var \
+        	--enable-startup-notification
+
+    	#https://bugzilla.gnome.org/show_bug.cgi?id=656231
+    	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+    	make
+}
+
+package() {
+    	cd "${pkgname}-${pkgver}"
+    	make DESTDIR="${pkgdir}" install
+}

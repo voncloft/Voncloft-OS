@@ -1,0 +1,23 @@
+
+name=python-flask-debug
+version=0.4.3
+release=4
+# description : A small debugging helper for Flask"
+# depends :   python-flask   python-inflection  
+source="https://github.com/mbr/flask-debug/archive/$version.tar.gz" 
+
+build   {
+  cd Flask-Debug-$version
+  python setup.py build
+}
+
+check   {
+  cd Flask-Debug-$version
+  python setup.py pytest
+}
+
+package   {
+  cd Flask-Debug-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

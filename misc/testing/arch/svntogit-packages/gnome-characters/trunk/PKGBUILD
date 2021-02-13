@@ -1,0 +1,38 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=gnome-characters
+pkgver=3.34.0+9+geeab5f2
+pkgrel=1
+pkgdesc="A character map application"
+arch=(x86_64)
+url="https://gitlab.gnome.org/GNOME/gnome-characters"
+license=(GPL2)
+depends=(gjs gtk3 libunistring gnome-desktop emoji-font)
+makedepends=(meson gobject-introspection appstream-glib git gperf)
+groups=(gnome)
+_commit=eeab5f206d2857f396adec8857235dd8d5b9795d  # gnome-3-34
+source=("git+https://gitlab.gnome.org/GNOME/gnome-characters.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

@@ -1,0 +1,17 @@
+# description : Tools for audio processing
+# depends : python-numpy zita-resampler libsndfile
+
+url=https://kokkinizita.linuxaudio.org/linuxaudio
+_name=zita-audiotools
+name=python-zita-audiotools
+version=1.0.0
+release=7
+
+source="https://kokkinizita.linuxaudio.org/linuxaudio/downloads/${_name}-${version}.tar.bz2
+options="checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

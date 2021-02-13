@@ -1,0 +1,28 @@
+# description : Checks if the documentation of a module is comprehensive 
+# depends : perl-devel-symdump perl-pod-parser
+
+name=perl-pod-coverage
+version=0.23
+release=5
+url=https://search.cpan.org/dist/Pod-Coverage
+source="https://www.cpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-$version.tarsource=.gz"
+options=!checksum
+sha256sums=30b7a0b0c942f44a7552c0d34e9b1f2e0ba0b67955c61e3b1589ec369074b107
+
+build-delete {
+  cd  $srcdir/Pod-Coverage-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd  $srcdir/Pod-Coverage-$version
+  make test
+}
+
+build() {
+  cd  $srcdir/Pod-Coverage-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

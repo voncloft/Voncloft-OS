@@ -1,0 +1,32 @@
+
+name=python-threat9-test-bed
+_pyname=threat9-test-bed
+_gitcommit=1ed61b34d0b138711e3f8267259cdb29787fe349
+version=0.6.0+2+g1ed61b3
+release=4
+# description : Threat9 Test Bed 
+# depends :   python   python-setuptools   python-click   python-faker   python-flask 
+          gunicorn   python-pyopenssl   python-requests  
+source= ${name}::"git+https://github.com/threat9/threat9-test-bed#commit=${_gitcommit}" 
+
+version   {
+  cd ${name}
+  git describe --always --tags | sed  s/^v//;s/-/+/g 
+}
+
+build   {
+  cd ${name}
+  python setup.py build
+}
+
+check   {
+  cd ${name}
+  python -m pytest
+}
+
+package   {
+  cd ${name}
+  python setup.py install --root=$PKG -O1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

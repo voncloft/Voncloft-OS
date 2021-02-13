@@ -1,0 +1,31 @@
+# description : Query processing framework
+# depends : perl
+
+name=perl-text-query
+_cpanname=Text-Query
+version=0.09
+release=4
+url=https://search.cpan.org/~EBOHLMAN/${_cpanname}
+source="https://search.cpan.org/CPAN/authors/id/J/JO/JONJ/Text-Query-$version.tar.gz"
+options="!checksum"
+md5sums=d342fa12d0ba12631bda2bc25d5dfea1
+
+build-delete {
+  cd ${srcdir}/${_cpanname}-${version}
+  sed -i /^auto_install/d Makefile.PL
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd ${srcdir}/${_cpanname}-${version}
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

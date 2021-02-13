@@ -1,0 +1,59 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Ismael Carnales <icarnales at gmail dot com>
+# Contributor: Sergey Mastykov <smastykov[at]gmail[dot]com>
+
+pkgbase=autopep8
+pkgname=(autopep8 python2-autopep8)
+pkgver=1.5.5
+pkgrel=1
+epoch=1
+pkgdesc="A tool that automatically formats Python code to conform to the PEP 8 style guide"
+arch=('any')
+url="https://github.com/hhatto/autopep8"
+license=('MIT')
+makedepends=('python-pycodestyle' 'python2-pycodestyle' 'python-toml' 'python2-toml')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/hhatto/autopep8/archive/v$pkgver.tar.gz")
+sha512sums=('a282021cd72d68d547049fb47623937e479b0283c98e31fc995d2ea79d02b817373158c014b0633d6c1177fc282c305afd25725fe9dfccc3423d92ddb9ff8417')
+
+prepare() {
+  cp -a autopep8-$pkgver{,-py2}
+}
+
+build() {
+  cd "$srcdir"/autopep8-$pkgver
+  python setup.py build
+
+  cd "$srcdir"/autopep8-$pkgver-py2
+  python2 setup.py build
+}
+
+check() {
+  export LC_CTYPE=en_US.UTF-8
+
+  cd "$srcdir"/autopep8-$pkgver
+  python setup.py test
+
+  cd "$srcdir"/autopep8-$pkgver-py2
+  python2 setup.py test
+}
+
+package_autopep8() {
+  depends=('python-pycodestyle' 'python-toml')
+
+  cd autopep8-$pkgver
+  python3 setup.py install -O1 --prefix=/usr --root="$pkgdir"
+
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+package_python2-autopep8() {
+  depends=('python2-pycodestyle' 'python2-toml')
+
+  cd autopep8-$pkgver-py2
+  python2 setup.py install -O1 --prefix=/usr --root="$pkgdir"
+  mv "$pkgdir"/usr/bin/autopep8{,-python2}
+
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

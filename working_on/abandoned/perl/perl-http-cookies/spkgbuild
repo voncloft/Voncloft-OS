@@ -1,0 +1,32 @@
+# description : HTTP cookie jars
+# depends : perl perl-http-date perl-http-message
+
+name=perl-http-cookies
+version=6.10
+release=1
+url=https://search.cpan.org/dist/HTTP-Cookies
+source="https://search.cpan.org/CPAN/authors/id/O/OA/OALDERS/HTTP-Cookies-$version.tar.gz"
+options="!checksum"
+sha512sums=c24a986e524ebf5d8b13b4580c3ee6aed018e79c203fd62208bfe970744482832fe9c41bb3195a596af1e11058053ed7615a09a26fbcef4433e270f0f5d38658
+
+build-delete {
+   cd HTTP-Cookies-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd HTTP-Cookies-$version
+  make test
+}
+
+build() {
+   cd HTTP-Cookies-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

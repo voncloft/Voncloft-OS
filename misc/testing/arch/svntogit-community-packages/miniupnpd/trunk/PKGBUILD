@@ -1,0 +1,53 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
+# Contributor: fauno <fauno@parabola.nu>
+
+pkgname=miniupnpd
+pkgver=2.1.20191006
+pkgrel=1
+pkgdesc='Lightweight UPnP IGD daemon'
+url='https://miniupnp.tuxfamily.org/'
+arch=('x86_64')
+license=('BSD')
+backup=('etc/miniupnpd/miniupnpd.conf')
+depends=('iptables' 'net-tools' 'util-linux')
+makedepends=('lsb-release' 'procps-ng')
+source=(https://miniupnp.tuxfamily.org/files/${pkgname}-${pkgver}.tar.gz{,.sig}
+        miniupnpd.service)
+sha256sums=('218fad7af31f3c22fb4c9db28a55a2a8b5067d41f5b38f52008a057a00d2206d'
+            'SKIP'
+            'a224a6e12d47809fe0a051ed5731084245e34a33f42ffe3127bcceff75d0e215')
+sha512sums=('5de2dc5ffb6df7b06bcb6ab8d8fbb34aa5a229a8310938e980b4caf6b957ceab104c455cebb57d7083736fde2db9569fcdf98783a36c915d362f7ff2987e3599'
+            'SKIP'
+            '6387f646d91257e50159f66c5168830c5c845e1de739e52cc86647baafaa96ed3a5d00b6c7e46080c3dd998a486d81183c3c11ce9bf32e2f6d9fdd40b0ea8bef')
+validpgpkeys=('BEB7EA42900FF505B7907AE50FF11B67A5C0863C') # miniupnp (miniupnp !) <miniupnp@free.fr>
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  sed '/gzip/d' -i Makefile.linux
+  sed 's|/sbin/sysctl|sysctl|g' -i genconfig.sh
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+  CONFIG_OPTIONS="--ipv6 --leasefile" make -f Makefile.linux config.h
+  make -f Makefile.linux
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+
+  make DESTDIR="${pkgdir}" PREFIX=/ INSTALLPREFIX=/usr SBININSTALLDIR=/usr/bin -f Makefile.linux install
+
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 ../miniupnpd.service -t "${pkgdir}/usr/lib/systemd/system"
+
+  sed -i 's:/s\?bin/iptables:/usr/bin/iptables:
+          s:eth0:"`cat /etc/miniupnpd/miniupnpd.conf | '"awk -F= '/^ext_ifname/ { print \$2 }'"'`":' "${pkgdir}"/etc/miniupnpd/*.sh
+  sed -i -e "s/^uuid=[-0-9a-f]*/uuid=00000000-0000-0000-0000-000000000000/
+             s/make genuuid/uuidgen/" "${pkgdir}/etc/miniupnpd/miniupnpd.conf"
+
+  rm -r "${pkgdir}/etc/init.d"
+}
+
+# vim: ts=2 sw=2 et:

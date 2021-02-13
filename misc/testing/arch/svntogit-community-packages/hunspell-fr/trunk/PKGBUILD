@@ -1,0 +1,44 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+pkgname=hunspell-fr
+pkgver=7.0
+pkgrel=1
+pkgdesc="French (classic/modern) hunspell dictionaries"
+arch=(any)
+url="https://grammalecte.net/download.php?prj=fr"
+license=(MPL2)
+makedepends=(qt5-webengine)
+optdepends=('hunspell: the spell checking libraries and apps')
+source=("https://grammalecte.net/download/fr/${pkgname/-fr/}-french-dictionaries-v${pkgver}.zip")
+sha256sums=('eb7ac36dc14b9c3e3c0cabae0f90304a137da8e6ae607bcaf56d65720fbd097f')
+
+package() {
+  install -Dm644 fr-classique.dic "${pkgdir}"/usr/share/hunspell/fr_FR.dic
+  install -Dm644 fr-classique.aff "${pkgdir}"/usr/share/hunspell/fr_FR.aff
+
+  pushd "${pkgdir}"/usr/share/hunspell/
+  fr_FR_aliases="fr_BE fr_CA fr_CH fr_LU"
+  for lang in ${fr_FR_aliases}; do
+    ln -s fr_FR.aff ${lang}.aff
+    ln -s fr_FR.dic ${lang}.dic
+  done
+  popd
+
+  # the symlinks
+  install -dm755 "${pkgdir}"/usr/share/myspell/dicts
+  pushd "${pkgdir}"/usr/share/myspell/dicts
+    for file in "${pkgdir}"/usr/share/hunspell/*; do
+      ln -sv /usr/share/hunspell/$(basename ${file}) .
+    done
+  popd
+
+  # docs
+  install -Dm644 README_dict_fr.txt -t "${pkgdir}"/usr/share/doc/${pkgname}/
+
+  # Install webengine dictionaries
+  install -d "$pkgdir"/usr/share/qt/qtwebengine_dictionaries/
+  for _file in "$pkgdir"/usr/share/hunspell/*.dic; do
+    _filename=$(basename $_file)
+    qwebengine_convert_dict $_file "$pkgdir"/usr/share/qt/qtwebengine_dictionaries/${_filename/\.dic/\.bdic}
+  done
+}

@@ -1,0 +1,17 @@
+# description : Jupyter Packaging Utilities
+# depends : python-packaging
+
+url=https://jupyter.org/
+_pipname=jupyter-packaging
+name=python-${_pipname/-/_}
+version=0.7.11
+release=1
+
+source="https://pypi.io/packages/source/j/$_pipname/$_pipname-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_pipname-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

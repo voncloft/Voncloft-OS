@@ -1,0 +1,60 @@
+# $Id$
+# Maintainer: schuay <jakob.gruber@gmail.com>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
+# Contributor: Jeff Mickey <jeff@archlinux.org>
+# Contributor: Thayer Williams <thayer@archlinux.org>
+
+pkgname=dopewars
+pkgver=1.5.12
+pkgrel=10
+pkgdesc='Drug dealing game set in New York'
+url='https://dopewars.sourceforge.net/'
+license=('GPL')
+arch=('x86_64')
+depends=('ncurses')
+makedepends=('alsa-lib' 'audiofile' 'gtk2' 'ncurses' 'sdl_mixer')
+optdepends=('alsa-lib: for audio'
+            'audiofile: for audio'
+            'gtk2: for the graphical interface'
+            'sdl_mixer: for audio')
+backup=('srv/dopewars/dopewars.sco')
+source=("https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz"
+        'dopewars.service'
+        'dopewars.socket')
+sha256sums=('23059dcdea96c6072b148ee21d76237ef3535e5be90b3b2d8239d150feee0c19'
+            '3e3e2e9a800a248e9fb6091ea98b99151df3f3498b53f7a08e11dcc5005c77e0'
+            '2bbe36f89dce8e9d018ab1abc90526fe96491311944821bb5e44950c903c73be')
+
+build() {
+  cd "$pkgname-$pkgver"
+
+  ./configure \
+    --prefix=/usr \
+    --localstatedir=/srv/dopewars \
+    --mandir=/usr/share/man
+  make
+}
+
+package() {
+  msg2 'Packaging application...'
+  make -C "$pkgname-$pkgver" \
+    DESKTOPDIR="$pkgdir/usr/share/applications" \
+    DESTDIR="$pkgdir" \
+    install
+
+  msg2 'Packaging systemd service and socket files...'
+  install -Dm644 dopewars.service \
+    "$pkgdir/usr/lib/systemd/system/dopewars.service"
+  install -Dm644 dopewars.socket \
+    "$pkgdir/usr/lib/systemd/system/dopewars.socket"
+
+  msg2 'Setting file permissions...'
+  chown root:games "$pkgdir/usr/bin/dopewars"
+  chown -R root:games "$pkgdir/srv/dopewars"
+  chmod 2755 "$pkgdir/usr/bin/dopewars"
+  chmod 0775 "$pkgdir/srv/dopewars"
+  chmod 0664 "$pkgdir/srv/dopewars/dopewars.sco"
+}
+
+# vim: ts=2 sw=2 et:

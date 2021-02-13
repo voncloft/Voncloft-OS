@@ -1,0 +1,35 @@
+# description : "Python interfaces to PROJ.4 library"
+# depends : proj python
+
+name=python-pyproj
+version=2.5.0
+release=3
+url="https://github.com/pyproj4/pyproj"
+make# depends : python-setuptools cython
+source=$name-$version.tar.gz::https://github.com/pyproj4/pyproj/archive/v${version}rel.tar.gz
+sha256sums=bd3b9a27e3e53e164d6ce4e19f6a81384bbe050829e213119dbabe09efd18ebe
+
+prepare {
+   cd "${srcdir}"
+
+# Remove RPATH
+  sed -i /runtime_library_dirs=/d pyproj-${version}rel/setup.py
+}
+
+build()-delete {
+   cd "${srcdir}"
+
+  export PROJ_DIR=/usr
+
+   cd pyproj-${version}rel
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "${srcdir}"/pyproj-${version}rel
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1 
+
+}

@@ -1,0 +1,42 @@
+# description : "Analyzes Python code looking for bugs and signs of poor quality"
+# depends : python-astroid python-mccabe python-isort python-setuptools python-toml
+
+name=python-pylint
+version=2.6.0
+release=3
+url="https://pylint.org"
+make# depends : python-pytest-runner python-pytest-benchmark
+check# depends : mpdecimal
+opt# depends : tk: Pylint GUI
+            graphviz: To have other output formats than dot or vcg
+source="$name-$version.tar.gz::https://github.com/PyCQA/pylint/archive/pylint-$version.tar.gz"
+        python-3.9.patch
+sha512sums=8e42ae71b407bd926d3dba51a377016c93139777d6dfdd06e70a293e94ef78d1c0d59daa63fb6bab29f20eb5adc99ec808fc3dd0ed15718722b7da29923ece74
+            a4e5702ce706a9a19ba5a5575c0ee493c21c97ff4e0d03ef0e1ad5cee953c0fbc83174be08cfb7137ac6bcf5cece47089a5c77f31df5f3a850ecc1e58b6fae66
+
+prepare {
+   cd pylint-pylint-$version
+  patch -p1 -i ../python-3.9.patch
+}
+
+build()-delete {
+   cd pylint-pylint-$version
+  python setup.py build
+}
+
+check {
+   cd pylint-pylint-$version
+  # https://github.com/PyCQA/pylint/issues/3895
+  python setup.py pytest || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd pylint-pylint-$version
+  python setup.py build
+  python setup.py install   --root=$PKG -optimize=1
+
+  install -d $PKG/usr/share/man/man1
+  install -m644 man/* $PKG/usr/share/man/man1
+}

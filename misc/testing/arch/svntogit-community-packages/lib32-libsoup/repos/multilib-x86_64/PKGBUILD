@@ -1,0 +1,57 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Maximilian Stein <theoddbird@posteo.org>
+# Contributor: josephgbr <rafael.f.f1@gmail.com>
+
+pkgname=lib32-libsoup
+pkgver=2.72.0
+pkgrel=1
+pkgdesc='HTTP client/server library for GNOME'
+arch=(x86_64)
+url=https://wiki.gnome.org/Projects/libsoup
+license=(LGPL)
+depends=(
+  lib32-brotli
+  lib32-glib-networking
+  lib32-krb5
+  lib32-libxml2
+  lib32-sqlite
+  lib32-libpsl
+  libsoup
+)
+makedepends=(
+  clang
+  git
+  meson
+  samba
+)
+optdepends=('samba: Windows Domain SSO')
+_tag=ae1632c176c60b7fe832024c0a958f4079767c44
+source=(git+https://gitlab.gnome.org/GNOME/libsoup.git#tag=${_tag})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd libsoup
+
+  git describe --tags
+}
+
+build() {
+  export CC='clang -m32'
+  export CXX='clang++ -m32'
+  export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
+
+  arch-meson libsoup build \
+    --libdir=/usr/lib32 \
+    -D introspection=disabled \
+    -D sysprof=disabled \
+    -D tests=false \
+    -D vapi=disabled
+  meson compile -C build
+}
+
+package() {
+  DESTDIR="${pkgdir}" meson install -C build
+  rm -rf "${pkgdir}"/usr/{include,share}
+}
+
+# vim: ts=2 sw=2 et:

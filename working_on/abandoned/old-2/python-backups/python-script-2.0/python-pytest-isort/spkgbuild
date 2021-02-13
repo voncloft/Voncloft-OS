@@ -1,0 +1,16 @@
+# description : pytest plugin to perform isort checks import ordering
+# depends : python-pytest-cache python-isort
+
+url=https://github.com/moccu/pytest-isort
+name=python-pytest-isort
+version=1.3.0
+release=1
+
+source="https://github.com/moccu/pytest-isort/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd pytest-isort-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Python Reddit API Wrapper that allows for simple access to reddits API
+# depends : python-prawcore python-update-checker python-websocket-client
+
+url=https://praw.readthedocs.org
+name=python-praw
+version=7.1.3
+release=1
+
+source="https://github.com/praw-dev/praw/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd praw-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

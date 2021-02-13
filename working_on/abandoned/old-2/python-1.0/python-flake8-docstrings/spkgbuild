@@ -1,0 +1,18 @@
+# description : Plugin to Flake8 to include checks provided by pydocstyle
+# depends : flake8 python-pydocstyle python-setuptools
+
+_name=flake8-docstrings
+url=https://gitlab.com/pycqa/flake8-docstrings
+_name=flake8-docstrings
+name=python-flake8-docstrings
+version=1.5.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

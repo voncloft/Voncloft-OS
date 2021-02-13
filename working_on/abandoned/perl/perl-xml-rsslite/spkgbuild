@@ -1,0 +1,29 @@
+# description : Perl/CPAN Module XML::RSSLite
+# depends : perl
+
+name=perl-xml-rsslite
+version=0.15
+release=6
+url=https://search.cpan.org/dist/XML-RSSLite/
+source="https://www.cpan.org/authors/id/J/JP/JPIERCE/XML-RSSLite-$version.source.gz"
+options="!checksum"
+sha256sums=c7d1336312d806b241471aec45cc19ea92e31c1a3917b612b12a6e5676926dde
+
+build-delete {
+   cd $sr cdir/XML-RSSLite-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/XML-RSSLite-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

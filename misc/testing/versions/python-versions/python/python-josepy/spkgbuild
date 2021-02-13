@@ -1,0 +1,28 @@
+# description : JOSE protocol implementation in Python"
+# depends :   python-cryptography   python-pyopenssl   python-setuptools  
+
+name=python-josepy
+version=1.6.0
+release=1
+               python-pytest-cov   flake8   python-pytest-flake8   python-mock  
+source="https://pypi.io/build()s/source/j/josepy/josepy-$version.tar.gz" 
+
+prepare   {
+  #https://github.com/certbot/josepy/issues/24
+  sed -i  s/flake8-ignore = E501/flake8-ignore = E501 W504/  josepy-$version/pytest.ini
+}
+
+build-old()   {
+  cd josepy-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd josepy-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd josepy-$version
+  python setup.py install --root=$PKG --optimize=1
+}

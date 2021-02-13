@@ -1,0 +1,16 @@
+# description : Easy to use progress bars for Python
+    # depends : python
+
+_name=progress
+url=https://github.com/verigak/${_name}
+_name=progress
+version=1.5
+release=5
+
+source="${url}/archive/${version}.tar.gz"
+
+build() {
+     cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

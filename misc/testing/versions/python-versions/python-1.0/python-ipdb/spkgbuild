@@ -1,0 +1,24 @@
+
+name=python-ipdb
+version=0.13.4
+release=2
+# description : IPython-enabled pdb"
+# depends :   ipython  
+source="https://github.com/gotcha/ipdb/archive/$version.tar.gz" 
+
+build   {
+  cd ipdb-$version
+  python setup.py build
+}
+
+check   {
+  cd ipdb-$version
+  python setup.py test
+}
+
+package   {
+  cd ipdb-$version
+  python setup.py install -O1 --root=$PKG
+  ln -s ipdb3 $PKG/usr/bin/ipdb
+  install -Dm644 COPYING.txt $PKG/usr/share/licenses/$name/COPYING.txt
+}

@@ -1,0 +1,15 @@
+# description : Set of HTML documentation for python
+
+url=https://docs.python.org/py3k/
+name=python-docs
+version=3.9.1
+release=1
+
+source="https://sources.archlinux.org/other/community/python-docs/python-$version-docs-html.tar.bz2
+options=docs
+options="checksum"
+
+build() {
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

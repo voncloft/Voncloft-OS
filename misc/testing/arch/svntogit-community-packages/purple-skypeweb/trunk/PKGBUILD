@@ -1,0 +1,29 @@
+# Maintainer: Evgeniy Alekseev <arcanis at archlinux dot org>
+# Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
+# Contributor: Colin Arnott
+
+pkgname=purple-skypeweb
+_pkgname=skypeweb
+_parentname=skype4pidgin
+pkgver=1.7
+pkgrel=1
+arch=('x86_64')
+license=('GPL3')
+pkgdesc="SkypeWeb Plugin for Pidgin"
+url="https://github.com/EionRobb/skype4pidgin/tree/master/skypeweb"
+depends=('libpurple' 'json-glib')
+makedepends=('pkg-config')
+conflicts=('skype4pidgin')
+
+source=("$pkgname-$pkgver.tar.gz"::"https://github.com/EionRobb/$_parentname/archive/$pkgver.tar.gz")
+sha256sums=('e504d4c4807a45aa6ab1c62509c2f31a97952bbf2f0501428fd32a885b2ad84e')
+
+build() {
+    cd "$srcdir/$_parentname-$pkgver/$_pkgname"
+    make
+}
+
+package() {
+    cd "$srcdir/$_parentname-$pkgver/$_pkgname"
+    make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,42 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=nox
+name=python-$_name
+version=2020.12.31
+release=1
+pkgdesc='Flexible test automation for Python'
+url='https://github.com/theacodes/nox'
+depends=('python' 'python-argcomplete' 'python-colorlog' 'python-py' 'python-virtualenv')
+optdepends=('python-jinja: tox_to_nox'
+            'python-tox: tox_to_nox')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-jinja' 'python-tox')
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('9766f9623947eb7ff753e8f56cc3f4b62b0d29cdaa64ca02835bf30092923d159b68b8cca7079a2b67a090a8fc155ed83fe1777ab6c22b9bf6bd565d3f1e6e5a')
+
+prepare() {
+  # missing python-contexter
+  rm $_name-$version/tests/test_main.py
+}
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check() {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

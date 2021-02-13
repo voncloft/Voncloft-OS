@@ -1,0 +1,15 @@
+# description : A general purpose Python retyring library
+  # depends : python-six
+
+url=https://github.com/rholder/retrying/releases
+version=1.3.3
+release=9
+
+source="https://github.com/rholder/retrying/archive/v$version.tar.gz"
+
+build() {
+   cd retrying-$version
+   cd retrying-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

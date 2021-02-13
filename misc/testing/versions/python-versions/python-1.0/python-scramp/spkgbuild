@@ -1,0 +1,35 @@
+
+name=python-scramp
+version=1.2.1
+release=1
+# description : Python implementation of the SCRAM protocol"
+# depends :  python python-asn1crypto 
+source="https://files.pythonhosted.org/packages/source/s/scramp/scramp-$version.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys= 
+   D5681B7EC7292511C4CC1450892B00AB699851E8   # Tony Locke <tlocke@tlocke.org.uk>, proven byhttps://keybase.io/tlocke
+ 
+
+prepare   {
+  cd scramp-$version
+
+  # Remove upper bounds of dependencies
+  sed --in-place=.orig -r  s#,?<[0-9.]+,?##;s#== [0-9.]+ #>=\1#  setup.py
+  diff -u setup.py{.orig,} || true
+}
+
+build   {
+  cd scramp-$version
+  python setup.py build
+}
+
+check   {
+  cd scramp-$version
+  python -m pytest test
+}
+
+package   {
+  cd scramp-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

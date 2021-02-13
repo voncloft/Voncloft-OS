@@ -1,0 +1,43 @@
+# Maintainer: Jiachen YANG <farseerfc@gmail.com>
+# Contributor: Henrik Hodne <henrik@hodne.io>
+# Contributor: Ariel AxionL <axionl@aosc.io>
+# AUR Maintainer: Stefan Husmann <stefan-husmann@t-online.de>
+
+pkgbase=fira-code
+pkgname=('ttf-fira-code' 'woff-fira-code' 'woff2-fira-code')
+pkgver=5.2
+pkgrel=1
+pkgdesc="Monospaced font with programming ligatures"
+arch=('any')
+url='https://github.com/tonsky/FiraCode'
+license=('custom:OFL')
+depends=()
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/tonsky/FiraCode/archive/${pkgver}.tar.gz")
+sha512sums=('10247bf8b72f4d44a5b5d727edeae2baee549b6654e12469ad3ab75d3926635b4b2cdfcbb2b9b4c89b28d7c5411c428c00729f94567dad3bc0dc23ff5446ce2d')
+
+function _package {
+    local dir="$srcdir/FiraCode-$pkgver"
+    cd "$dir/distr"
+    local ext="${1%%-*}"
+    cd "$ext"
+    local fonts=(FiraCode*."$ext")
+    local installdir="${ext^^}"
+
+    # Prepare destination directory
+    install -dm755 "$pkgdir/usr/share/fonts/$installdir"
+
+    # Install fonts
+    local font
+    for font in "${fonts[@]}"; do
+        install -m644 "$font" "$pkgdir/usr/share/fonts/$installdir"
+    done
+
+    # Install LICENSE
+    install -Dm644 "$dir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+for _pkgname in ${pkgname[@]}; do
+    eval "function package_$_pkgname() { _package $_pkgname; }"
+done
+
+# vim:set ts=8 sw=4 et:

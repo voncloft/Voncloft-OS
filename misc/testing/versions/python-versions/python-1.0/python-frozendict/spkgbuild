@@ -1,0 +1,25 @@
+
+name=python-frozendict
+version=1.2
+release=8
+
+# description : An immutable dictionary 
+
+# depends :   python   python-setuptools  
+
+source="https://pypi.org/packages/source/f/frozendict/frozendict-$version.tar.gz" 
+
+
+build   {
+	cd "$srcdir"/frozendict-$version
+	python setup.py build
+}
+
+package   {
+	cd frozendict-$version
+	python setup.py install --root=$PKG --optimize=1 --skip-build
+
+	install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :

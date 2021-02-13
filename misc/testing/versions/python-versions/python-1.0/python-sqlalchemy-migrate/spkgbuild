@@ -1,0 +1,35 @@
+
+name=python-sqlalchemy-migrate
+version=0.13.0
+release=6
+# description : Database schema migration for SQLAlchemy"
+# depends :   python-six   python-pbr   python-sqlalchemy   python-decorator   python-sqlparse 
+          python-tempita  
+options=  !emptydirs  
+source="https://opendev.org/x/sqlalchemy-migrate/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  cd sqlalchemy-migrate
+  # Perhaps related to new testtools
+  sed -i -e  /self.setUp/d  -e  /self.tearDown/d  migrate/tests/versioning/test_schema.py
+}
+
+build   {
+  cd sqlalchemy-migrate
+  python setup.py build
+}
+
+check   {
+  cd sqlalchemy-migrate
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages" PATH="$PWD/tmp_install/usr/bin:$PATH" python setup.py testr
+}
+
+package   {
+  cd sqlalchemy-migrate
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

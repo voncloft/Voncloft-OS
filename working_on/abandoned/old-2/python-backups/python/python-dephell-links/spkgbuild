@@ -1,0 +1,41 @@
+# description : "Parse dependency links"
+# depends : python-attrs
+
+_name=dephell_links
+name=python-dephell-links
+version=0.1.4
+release=5
+url="https://github.com/dephell/${_name}"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+sha256sums=421db613fb291bc723aafe3e331e1691d15b8753bb0ded63e8e991e8422ceaf6
+b2sums=e5af5d8f139fbd05b092aa73953453ee9af57df73998ab8a05e0b89cfc7476197db634f99d79a868dcee7c962698ec9c6e5ed3cf12b5fa9fbc99be93a155a114
+
+prepare {
+     cd "${srcdir}"/${_name}-${version}
+
+    # pycache slipped into release tarballs
+    find . -name \*.pyc -delete
+}
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

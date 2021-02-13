@@ -1,0 +1,38 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+pkgname=ptex
+pkgver=2.3.2
+pkgrel=2
+pkgdesc="Per-Face Texture Mapping for Production Rendering"
+arch=('x86_64')
+url="http://ptex.us/"
+license=('BSD')
+depends=('zlib' 'gcc-libs')
+makedepends=('git' 'doxygen' 'cmake' 'ninja')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/wdas/ptex/archive/v${pkgver}.tar.gz")
+sha512sums=('dbc557dc5e1761204ee3483af9bf4ff1504cbd7955e0405dc27a51f7182e2445e41db086b2792c2491aa2cbaddc74e523170a4b3d25e44d332123d5b7081f4b9')
+
+build() {
+	cd "$pkgname-$pkgver"
+
+	cmake . \
+        -Bbuild \
+        -GNinja \
+        -DPTEX_SHA=$_commit_sha \
+        -DPTEX_VER=$pkgver \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_PREFIX=/usr
+
+    ninja -C build
+}
+
+check() {
+	cd "$pkgname-$pkgver"
+    ninja -C build test
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+
+    DESTDIR="$pkgdir" ninja -C build install
+    install -Dm644 src/doc/License.txt "${pkgdir}"/usr/share/licenses/${pkgname}/License.txt
+}

@@ -1,0 +1,29 @@
+
+pkgbase=python-chardet
+name=('python-chardet' 'python2-chardet')
+version=3.0.4
+release=7
+source=("https://pypi.io/packages/source/c/chardet/chardet-${version}.tar.gz")
+
+prepare() {
+   cp -a chardet-$version{,-py2}
+}
+
+package_python-chardet() {
+   # depends : ('python-setuptools')
+   # description : "Python3 module for character encoding auto-detection"
+
+   cd chardet-$version
+   python setup.py install --root=$PKG --optimize=1
+}
+
+package_python2-chardet() {
+   # depends : ('python2-setuptools')
+   # description : "Python2 module for character encoding auto-detection"
+
+   cd chardet-$version-py2
+   python2 setup.py install --root=$PKG --optimize=1
+
+   # To avoid file conflict with the python3 version
+   mv $PKG/usr/bin/chardetect{,-py2}
+}

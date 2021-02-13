@@ -1,0 +1,47 @@
+
+pkgbase=python-pytest-runner
+name=  python-pytest-runner   python2-pytest-runner  
+version=5.2
+release=3
+# description : Invoke py.test as distutils command with dependency resolution"
+               python-pytest-flake8  
+source="$pkgbase-$version.tar.gz::https://github.com/pytest-dev/pytest-runner/archive/$version.tar.gz"
+        $pkgbase-black-fix.patch::https://github.com/pytest-dev/pytest-runner/commit/18b8fa1ace1b4ac0dbd53e14940da27c10db650d.patch 
+             92650ddf5c9ad43b92c0da3a0bb7f7669523897ca089a04ef46e4856de137fb6548536c4c024c5af2ff2bfbe96401aaaddb9c4448d7781b6accc72b2019f467f  
+
+prepare   {
+  patch -d pytest-runner-$version -p1 < $pkgbase-black-fix.patch || :
+  cp -a pytest-runner-$version{,-py2}
+
+  export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+}
+
+build   {
+  cd "$srcdir"/pytest-runner-$version
+  python setup.py build
+
+  cd "$srcdir"/pytest-runner-$version-py2
+  python2 setup.py build
+}
+
+check   {
+  cd pytest-runner-$version
+  python setup.py egg_info
+  PYTHONPATH="$PWD" pytest
+}
+
+package_python-pytest-runner   {
+  # depends :   python-pytest  
+
+  cd pytest-runner-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-pytest-runner   {
+  # depends :   python2-pytest  
+
+  cd pytest-runner-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

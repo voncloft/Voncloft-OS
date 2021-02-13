@@ -1,0 +1,8 @@
+post_install() {
+cat << EOF
+==> In order to get surfraw working, set the browser, in this order:
+==> Environment variables
+==> /etc/xdg/surfraw/conf
+==> \$HOME/.config/surfraw/conf
+EOF
+}

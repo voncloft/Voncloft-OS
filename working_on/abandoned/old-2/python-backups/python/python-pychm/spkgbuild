@@ -1,0 +1,36 @@
+# description : "Python bindings for chmlib"
+# depends : chmlib python
+
+name=python-pychm
+version=0.8.6
+release=4
+url="https://github.com/dottedmag/pychm"
+make# depends : python-setuptools
+check# depends : python-pytest
+source=$name-$version.tar.gz::https://github.com/dottedmag/pychm/archive/v$version.tar.gz
+sha256sums=23cdc3bbbeb97b57b472a67a0c7c96c6f1ec2d684a73a69fa84aaaeb195cab6c
+b2sums=fdf3c37eead60455fd5bde1638a010f2788074752f98c32cf4b3431b4a87b8893c23a9fa29995352b35b41f628b7026fdbfa6ff20b75e8a6efdf75fc2da3f67d
+
+build()-delete {
+   cd "$srcdir/pychm-$version"
+
+  python setup.py build
+}
+
+check {
+   cd "$srcdir/pychm-$version"
+
+  # do glob expansion in variable assignment
+  pythonpaths="$PWD/build()/lib.linux-$CARCH"-3*
+
+  PYTHONPATH="${pythonpaths[0]}" pytest
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/pychm-$version"
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

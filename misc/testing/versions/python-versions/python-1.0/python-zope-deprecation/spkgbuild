@@ -1,0 +1,24 @@
+
+name=python-zope-deprecation
+version=4.4.0
+release=5
+# description : Zope Deprecation Infrastructure"
+# depends :   python-setuptools  
+source="https://github.com/zopefoundation/zope.deprecation/archive/$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/zope.deprecation-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/zope.deprecation-$version
+  nosetests3
+}
+
+package   {
+  cd zope.deprecation-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

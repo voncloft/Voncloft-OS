@@ -1,0 +1,27 @@
+# description : "A simple wrapper around optparse for powerful command line utilities"
+
+pkgbase=python-click
+_realname=click
+version=7.1.2
+release=3
+url="http://click.pocoo.org/"
+source="$name-$version.tar.gz::https://github.com/pallets/click/archive/${version}.tar.gz"
+sha512sums=d0caf2fb0a258774a18a7b8f83bdfa73abeb70196a70b45a6cc35befaeb862d068d2f2cce4e27201ab2e3adcd02e7e2f099d6c37c497a507010eefa10ad16eba
+
+prepare {
+}
+
+build()-delete {
+     cd "${srcdir}/${_realname}-${version}"
+    python setup.py build
+
+}
+
+package_python-click {
+    # depends : "python"
+     cd "${srcdir}/${_realname}-${version}"
+    python setup.py build
+  python setup.py install --root=$PKG -optimize=1
+}
+
+}

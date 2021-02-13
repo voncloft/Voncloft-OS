@@ -1,0 +1,43 @@
+# description : Better dates and times for Python
+# depends : python-dateutil
+
+name=python-arrow
+version=0.17.0
+release=3
+url=https://arrow.readthedocs.io
+make# depends : 
+  git
+  python-setuptools
+
+check# depends : python-tox
+_tag=b746fedf7286c3755a46f07ab72f4c414cd41fc0
+source=git+https://github.com/crsmithdev/arrow.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd arrow
+
+  git describe --tags
+}
+
+build()-delete {
+   cd arrow
+
+  python setup.py build
+}
+
+check {
+   cd arrow
+
+  tox -e py39
+}
+
+options="!checksum"
+
+build() {
+   cd arrow
+
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1 
+}
+

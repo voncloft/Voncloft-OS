@@ -1,0 +1,39 @@
+# description : "Per object permissions for Django"
+# depends : python-django python-django-environ
+
+_name=django-guardian
+name=python-django-guardian
+version=2.3.0
+release=2
+url="https://github.com/django-guardian/django-guardian"
+make# depends : python-setuptools
+check# depends : python-mock python-pytest python-pytest-django
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=84f9825fae21e89fa62209bdb9dcd3078d280a2f6eca5cd3cde470bd416e6a788317dcf127615052b4b840b80a6b770fa5a3348ff9ea23d5c6a5518aa01fbb7d
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="build():${PYTHONPATH}"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+    -t "${PKG}/usr/share/doc/${name}"
+}

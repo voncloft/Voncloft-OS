@@ -1,0 +1,52 @@
+# description : "Specification that python filesystems should adhere to."
+# depends : python
+
+_pkg=filesystem_spec
+name=python-fsspec
+version=0.8.5
+release=1
+url="https://github.com/intake/filesystem_spec"
+make# depends : python-setuptools
+check# depends : git
+    python-pytest
+    python-aiohttp
+    python-cloudpickle
+    python-dask
+    python-distributed
+    python-lz4
+    python-libarchive-c
+    python-msgpack
+    python-numpy
+    python-paramiko
+    python-pyftpdlib
+    python-pygit2
+    python-requests
+    python-snappy
+    python-zstandard
+    python-aiobotocore
+    python-httpretty
+    python-moto
+    python-flask
+
+source=${url}/archive/${version}/${name}-${version}.tar.gz
+sha256sums=c565c8c4178c6dc2953b80165bef3b8e439cb569ab3f2005415bb5bea9e414ad
+
+build()-delete {
+   cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-${version}
+  # These tests do not work on CI, neither on our build() server
+  pytest --deselect fsspec/implementations/tests/test_http.py::test_processes
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1 
+  # Install license file
+}

@@ -1,0 +1,66 @@
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor: Loodse <aur@loodse.com>
+
+pkgname=kubeone
+_pkgver=1.1.0
+pkgver="${_pkgver/-/}"
+# We check out the repo via git for retrieving necessary information
+# for `kubeone version`.
+_kubeone_commit="3e84d523a75cd178a7801a0fccf2b3195db3a376"
+pkgrel=2
+pkgdesc="A lifecycle management tool for Highly-Available Kubernetes clusters"
+url="https://www.kubeone.io"
+arch=("x86_64")
+license=("Apache")
+makedepends=("go" "git")
+optdepends=("terraform: sourcing data about infrastructure and control plane nodes")
+source=("${pkgname}-${_pkgver}::git+https://github.com/kubermatic/kubeone#commit=${_kubeone_commit}")
+sha512sums=('SKIP')
+
+prepare() {
+  cd "${pkgname}-${_pkgver}"
+  sed -E 's/(CGO_ENABLED)=0/\1=1/g' -i Makefile
+  sed '/^export GOFLAGS/ s/$/ -modcacherw -buildmode=pie/' -i Makefile
+  sed '/^GOLDFLAGS?=/ s/=/= -linkmode=external /' -i Makefile
+
+}
+
+build() {
+  cd "${pkgname}-${_pkgver}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  make build
+}
+
+check() {
+  cd "${pkgname}-${_pkgver}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  make test
+}
+
+package() {
+  cd "${pkgname}-${_pkgver}"
+  install -Dm755 "dist/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+
+  # move documentation
+  mkdir -p "${pkgdir}/usr/share/doc"
+  cp -avr docs "${pkgdir}/usr/share/doc/${pkgname}"
+  cp -avr examples "${pkgdir}/usr/share/doc/${pkgname}/examples"
+
+  # build man page
+  mkdir -p "${pkgdir}/usr/share/man/man1"
+  ./dist/"${pkgname}" document man -o "${pkgdir}/usr/share/man/man1"
+
+  # build bash completions
+  mkdir -p "${pkgdir}/usr/share/bash-completion/completions"
+  ./dist/"${pkgname}" completion bash > "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+
+  # build zsh completions
+  mkdir -p "${pkgdir}/usr/share/zsh/site-functions"
+  ./dist/"${pkgname}" completion zsh > "${pkgdir}/usr/share/zsh/site-functions/${pkgname}"
+}

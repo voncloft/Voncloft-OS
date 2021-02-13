@@ -1,0 +1,22 @@
+
+name=python-traits
+version=6.1.1
+release=1
+# description : Explicitly typed attributes for Python"
+# depends :   python  
+             python-traitsui: to support Gui Views  
+source="traits-${version}.tar.gz::https://github.com/enthought/traits/archive/${version}.tar.gz" 
+
+build   {
+  cd "$srcdir"/traits-$version
+
+  python setup.py build
+}
+
+package   {
+  cd "$srcdir"/traits-$version
+
+  python setup.py install --root=$PKG/ --optimize=1
+
+  install -D LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

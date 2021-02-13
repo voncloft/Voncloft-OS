@@ -1,0 +1,40 @@
+# description : Allows you to run a test with multiple data sets"
+
+pkgbase=python-genty
+name=  python-genty   python2-genty  
+version=1.3.2
+release=7
+
+prepare   {
+  cp -a genty{,-py2}
+}
+
+build-old()   {
+  cd "$srcdir/genty"
+  python setup.py build-old()
+
+  cd "$srcdir/genty-py2"
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "$srcdir/genty"
+  python setup.py test
+
+  cd "$srcdir/genty-py2"
+  python2 setup.py test
+}
+
+build()_python-genty   {
+  # depends :   python-six  
+
+  cd genty
+  python setup.py install --root=$PKG --optimize=1
+}
+
+build()_python2-genty   {
+  # depends :   python2-six  
+
+  cd genty-py2
+  python2 setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,26 @@
+# description : Run-time type checker for Python"
+# depends :   python  
+
+name=python-typeguard
+version=2.10.0
+release=3
+source="https://github.com/agronholm/typeguard/archive/$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build-old()   {
+  cd typeguard-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd typeguard-$version
+  python -m pytest
+}
+
+build()   {
+  cd typeguard-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

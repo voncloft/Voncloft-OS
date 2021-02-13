@@ -1,0 +1,29 @@
+# description : Fast, Extensible Progress Meter 
+# depends :   python  
+
+name=python-tqdm
+version=4.56.0
+release=1
+               python-pandas   python-tensorflow  
+source="https://github.com/tqdm/tqdm/archive/v$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build-old()   {
+  cd tqdm-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd tqdm-$version
+  python setup.py egg_info
+  python -m pytest
+}
+
+build()   {
+  cd tqdm-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENCE $PKG/usr/share/licenses/$name/LICENCE
+}
+
+# vim:set ts=2 sw=2 et:

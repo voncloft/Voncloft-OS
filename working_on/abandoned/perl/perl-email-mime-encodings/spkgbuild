@@ -1,0 +1,29 @@
+# description : A unified interface to MIME encoding and decoding 
+# depends : perl
+
+name=perl-email-mime-encodings
+version=1.315
+release=4
+url=https://search.cpan.org/dist/Email-MIME-Encodings
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MIME-Encodings-$version.tar.gz"
+options="!checksum"
+sha256sums=4c71045507b31ec853dd60152b40e33ba3741779c0f49bb143b50cf8d243ab5c
+
+build-delete {
+   cd  $sr cdir/Email-MIME-Encodings-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd  $sr cdir/Email-MIME-Encodings-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

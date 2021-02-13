@@ -1,0 +1,16 @@
+# description : Pip requirements.txt generator based on imports in project
+# depends : python-docopt python-yarg
+
+url=https://github.com/bndr/pipreqs
+name=python-pipreqs
+version=0.4.10
+release=3
+
+source="https://github.com/bndr/pipreqs/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd pipreqs-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

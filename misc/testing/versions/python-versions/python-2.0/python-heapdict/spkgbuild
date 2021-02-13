@@ -1,0 +1,25 @@
+# description : Heap with decrease-key and increase-key operations"
+# depends :  python 
+
+_pkg=HeapDict
+name=python-${_pkg,,}
+version=1.0.1
+release=3
+source=https://files.pythonhosted.org/build()s/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+#source= ${url}/archive/${version}/${name}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pkg}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pkg}-${version}
+  python test_heap.py
+}
+
+build()   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}/
+}

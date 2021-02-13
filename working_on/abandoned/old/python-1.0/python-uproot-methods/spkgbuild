@@ -1,0 +1,33 @@
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+
+_name=uproot-methods
+name=python-uproot-methods
+version=0.7.4
+release=3
+pkgdesc="Pythonic mix-ins for ROOT classes"
+makedepends=('python-setuptools')
+depends=('python-awkward' 'python-numpy')
+url="https://github.com/scikit-hep/uproot-methods"
+
+source=("${url}/archive/${version}.zip")
+sha256sums=('7bfb74516ac6fffb887c23d69d121c6fef5e04adcf32ccc259b2c36004546c03')
+
+build() {
+    cd "${srcdir}/${_name}-${version}"
+    python setup.py build
+}
+
+check() {
+    cd "${srcdir}/${_name}-${version}"
+    python setup.py test
+}
+
+package() {
+    cd "${srcdir}/${_name}-${version}"
+
+    python setup.py install --root="${pkgdir}/" --optimize=1
+
+    install -D LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+
+    install -D README.rst "${pkgdir}/usr/share/${name}/README.rst"
+}

@@ -1,0 +1,21 @@
+
+name=python-requestsexceptions
+version=1.4.0
+release=7
+# description : Import exceptions from potentially bundled packages in requests."
+# depends :   python-requests  
+source="https://github.com/openstack-infra/requestsexceptions/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd requestsexceptions-$version
+  python setup.py build
+}
+
+package   {
+  cd requestsexceptions-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

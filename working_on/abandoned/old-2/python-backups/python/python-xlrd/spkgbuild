@@ -1,0 +1,24 @@
+# description : "Library for developers to extract data from Microsoft Excel tm spreadsheet files"
+# depends : python
+
+name=python-xlrd
+version=2.0.1
+release=1
+url="http://www.python-excel.org/"
+make# depends : python-setuptools
+source=$name-$version.tar.gz::"https://github.com/python-excel/xlrd/archive/${version}.tar.gz"
+sha1sums=ac2d0240e5c54cf66201ae2bdf2f4fce8672414a
+
+build()-delete {
+   cd "$srcdir"/xlrd-${version}
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/xlrd-${version}
+  python setup.py build
+  python setup.py install  --root=$PKG --optimize=1
+  install -D -m644 "docs/licenses.rst" "$PKG/usr/share/licenses/$name/licenses.rst"
+}

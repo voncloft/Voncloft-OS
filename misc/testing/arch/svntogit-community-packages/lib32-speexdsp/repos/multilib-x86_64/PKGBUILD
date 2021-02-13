@@ -1,0 +1,39 @@
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=lib32-speexdsp
+pkgver=1.2.0
+pkgrel=1
+pkgdesc="DSP library derived from Speex (32-bit)"
+arch=(x86_64)
+url="https://www.speex.org/"
+license=(BSD)
+depends=(lib32-glibc speexdsp)
+source=(https://downloads.us.xiph.org/releases/speex/speexdsp-$pkgver.tar.gz)
+sha512sums=('e357cd5377415ea66c862302c7cf8bf6a10063cacd903f0846478975b87974cf5bdf00e2c6759d8f4f453c4c869cf284e9dc948a84a83d7b2ab96bd5405c05ec')
+
+prepare() {
+  cd speexdsp-$pkgver
+}
+
+build() {
+  export CC="gcc -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  cd speexdsp-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static \
+    --libdir=/usr/lib32
+  make
+}
+
+check() {
+  cd speexdsp-$pkgver
+  make -k check
+}
+
+package() {
+  cd speexdsp-$pkgver
+  make DESTDIR="$pkgdir" install
+  rm -rf "$pkgdir"/usr/{include,share}
+  mkdir -p "$pkgdir/usr/share/licenses"
+  ln -s speexdsp "$pkgdir/usr/share/licenses/$pkgname"
+}

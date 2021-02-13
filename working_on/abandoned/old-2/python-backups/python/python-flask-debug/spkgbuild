@@ -1,0 +1,29 @@
+# description : "A small debugging helper for Flask"
+# depends : python-flask python-inflection
+
+name=python-flask-debug
+version=0.4.3
+release=4
+url="https://github.com/mbr/flask-debug"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="$name-$version.tar.gz::https://github.com/mbr/flask-debug/archive/$version.tar.gz"
+sha512sums=7bc1cf9f88f28e2ca5a24c1454dcdb4e2a450eff3c00329f299c3840032e0803079f565652974f4c3a0e5aac443365ce47a3d2c2fee8e21e2e0c7150367e8816
+
+build()-delete {
+   cd Flask-Debug-$version
+  python setup.py build
+}
+
+check {
+   cd Flask-Debug-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd Flask-Debug-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,16 @@
+# description : Python3 bindings for zeromq, written in Cython
+# depends : zeromq python
+
+url=http://www.zeromq.org/bindings:python
+name=python-pyzmq
+version=20.0.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pyzmq/pyzmq-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd pyzmq-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

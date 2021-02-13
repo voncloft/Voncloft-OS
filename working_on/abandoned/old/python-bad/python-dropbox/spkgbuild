@@ -1,0 +1,29 @@
+# description : Python SDK for Dropbox Core APIs"
+# depends :  python python-urllib3 python-requests 
+
+name=python-dropbox
+_name=dropbox-sdk-python
+version=10.10.0
+release=2
+source="${name}-${version}.tar.gz::https://github.com/dropbox/$_name/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir/$_name-$version"
+
+  python setup.py build-old()
+}
+
+# requires API token in $DROPBOX_TOKEN
+#check   {
+#  cd "$srcdir/$_name-$version"
+#
+#  python setup.py pytest --addopts "-k  not TestDropboxTeam "
+#  python2 setup.py pytest --addopts "-k  not TestDropboxTeam "
+#}
+
+build()   {
+  cd "$srcdir/$_name-$version"
+
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm0644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

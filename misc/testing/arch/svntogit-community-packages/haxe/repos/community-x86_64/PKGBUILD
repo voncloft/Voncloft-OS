@@ -1,0 +1,84 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Daichi Shinozaki <dsdseg@gmail.com>
+# Contributor: Andy Li <andy@onthewings.net>
+# Contributor: Kyle Brady  <kyle at spark-gap dot com>
+# Contributor: Patrick Hof <courts@offensivethinking.org>
+# Contributor: Michael Fellinger <mf@rubyists.com>
+
+pkgname=haxe
+pkgver=4.1.5
+pkgrel=2
+pkgdesc='Cross-platform toolkit and programming language'
+arch=(x86_64)
+url='https://haxe.org/'
+license=(GPL MIT LGPL)
+depends=(neko mbedtls)
+optdepends=(java-environment mono php python)
+makedepends=(camlp4 git neko ocaml opam zlib perl-string-shellquote perl-ipc-system-simple)
+provides=(haxe haxelib)
+options=(!makeflags !strip)
+source=("$pkgname-$pkgver::git+https://github.com/HaxeFoundation/haxe#commit=5e33a78aad9a6733f4aa3a4b99f7c14555523a36") # tag: 4.1.5
+sha256sums=('SKIP')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  git submodule update --init
+
+  # Patch the OCaml source files to use "Stdlib." instead of "Pervasives." (deprecated)
+  find . -name "*.ml" -type f -exec sed -i "s/Pervasives\./Stdlib./g" {} \;
+
+  # Prepare opam and ocamlfind before building
+  export HOME="$srcdir"
+  opam init -a
+  eval $(opam env)
+
+  # Install two ocaml packages that are used for building later on
+  opam install -y dune jbuilder
+
+  # Download and patch the sha package
+  opam install -y sha || true
+  find . -name "*.ml" -type f -exec sed -i "s/Pervasives\./Stdlib./g" {} \;
+
+  # Build and install the modified sha package
+  CCACHE_DISABLE=1 opam install -b --inplace-build --reuse-build-dir -y sha
+
+  # Install the other dependencies
+  opam install -y ocamlfind camlp5 sedlex ppx_tools_versioned xml-light extlib ptmap
+
+  # Create the script that is intended for /etc/profile.d
+  echo 'export HAXE_STD_PATH=/usr/share/haxe/std' > "$srcdir/haxe.sh"
+}
+
+build() {
+  # Needed to make Haxe build with OCaml 4.06 and 4.07
+  # For more info, see: https://github.com/HaxeFoundation/haxe/issues/6883#issuecomment-370142073
+  export OCAMLPARAM="safe-string=0,_"
+
+  # Prepare opam and ocamlfind before building
+  eval $(opam env)
+
+  cd "$pkgname-$pkgver"
+  make libs haxe
+
+  # "make tools" did not work. These are the replacement commands:
+  cd "$srcdir/$pkgname-$pkgver/extra/haxelib_src"
+  ../../haxe client.hxml || true
+  nekotools boot run.n
+  mv run ../../haxelib
+}
+
+check() {
+  "$pkgname-$pkgver/haxe" -version
+  "$pkgname-$pkgver/haxelib" version
+}
+
+package() {
+  install -d "$pkgdir/usr/"{bin/,share/haxe/}
+  install -m 755 "$srcdir/$pkgname-$pkgver"/{haxe,haxelib} "$pkgdir"/usr/bin/
+  cp -rf "$srcdir/$pkgname-$pkgver/std" "$pkgdir/usr/share/$pkgname/"
+  install -Dm 644 "$srcdir/$pkgname-$pkgver"/extra/LICENSE.txt \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+  install -Dm 644 "$srcdir/haxe.sh" "$pkgdir/etc/profile.d/haxe.sh"
+}
+
+# vim: ts=2 sw=2 et:

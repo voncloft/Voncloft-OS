@@ -1,0 +1,37 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+pkgname=gnome-recipes
+pkgver=2.0.4
+pkgrel=1
+pkgdesc="Recipe management application for GNOME"
+arch=(x86_64)
+url="https://wiki.gnome.org/Apps/Recipes"
+license=(GPL3)
+groups=(gnome-extra)
+depends=(gnome-autoar gnome-online-accounts gspell libcanberra libsoup)
+makedepends=(git itstool meson)
+_commit=d5e9733c49ea4f99e72c065c05ee1a35ef65e67d  # tags/2.0.4^0
+source=("git+https://gitlab.gnome.org/GNOME/recipes.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd recipes
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  mkdir build
+}
+
+build() {
+  arch-meson recipes build
+  ninja -C build
+}
+
+check() {
+  meson test -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

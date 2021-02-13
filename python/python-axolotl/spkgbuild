@@ -1,0 +1,16 @@
+# description : Python port of libaxolotl
+# depends : python-protobuf python-cryptography python-axolotl-curve25519
+
+url=https://github.com/tgalal/python-axolotl
+name=python-axolotl
+version=0.2.3
+release=4
+
+source="https://github.com/tgalal/python-axolotl/archive/${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $name-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

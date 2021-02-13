@@ -1,0 +1,16 @@
+# description : Versatile and expressive HTTP traffic mocking and testing made simple in Python
+# depends : python-furl python-jsonschema python-xmltodict
+
+url=https://github.com/h2non/pook
+name=python-pook
+version=1.0.1
+release=4
+
+source="https://github.com/h2non/pook/archive/v$version/$name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd pook-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

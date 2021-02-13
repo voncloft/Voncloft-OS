@@ -1,0 +1,27 @@
+# description : Setuptools revision control system plugin for Git 
+# depends :   python-setuptools   git  
+
+name=python-setuptools-git
+version=1.2
+release=6
+source="https://github.com/msabramo/setuptools-git/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/setuptools-git-$version
+  python setup.py build-old()
+}
+
+check   {
+  git config --global user.email "deedbeaf"
+
+  cd "$srcdir"/setuptools-git-$version
+  python setup.py test
+}
+
+build()   {
+  cd setuptools-git-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}
+
+# vim:set ts=2 sw=2 et:

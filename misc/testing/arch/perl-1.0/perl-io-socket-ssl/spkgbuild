@@ -1,0 +1,27 @@
+# description : Nearly transparent SSL encapsulation for IO::Socket::INET
+# depends : perl-net-ssleay perl perl-uri
+
+name=perl-io-socket-ssl
+version=2.067
+release=2
+url=https://search.cpan.org/dist/IO-Socket-SSL/
+check# depends : perl-io-socket-inet6
+source="https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-${version}.tarsource=.gz"
+options=!checksum
+sha512sums=b7b9edc470f2283c363a6296d3ce23f8754cc1b1a763329ccc8a0bc81dca7ffbaf9a833fc8ac31e62f5f72cab7c689ea0d4d0e293f75fe176d1b5c71ed723516
+
+build-delete {
+  cd IO-Socket-SSL-${version}
+  yes | perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd IO-Socket-SSL-${version}
+  make test || warning TLS 1.3 related errors
+}
+
+build() {
+  cd IO-Socket-SSL-${version}
+  make DESTDIR=$PKG install
+}

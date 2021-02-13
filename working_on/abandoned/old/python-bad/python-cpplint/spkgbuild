@@ -1,0 +1,27 @@
+# description : Command-line tool to check C/C++ files for style issues following Google s C++ style guide."
+# depends :   python  
+_name= cpplint 
+name="python-${_name}"
+version= 1.5.4 
+release=1
+provides=  cpplint   cpplint-py3  
+replaces=  cpplint-py3  
+conflicts=  cpplint  
+source="${name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+build-old()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py test
+}
+
+build()   {
+  cd "${srcdir}/${_name}-${version}"
+
+  install -Dm755 "cpplint.py" "${PKG}/usr/bin/${_name}"
+  install -Dm644 "LICENSE" "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

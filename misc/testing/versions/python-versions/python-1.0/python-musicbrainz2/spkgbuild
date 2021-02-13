@@ -1,0 +1,16 @@
+
+pkgbase=python-musicbrainz2
+name=python2-musicbrainz2
+version=0.7.4
+release=4
+# description : A client library written in python which provides easy object oriented access to the MusicBrainz database"
+# depends :   python2  
+conflicts=  python-musicbrainz2<=0.7.4-1  
+replaces=  python-musicbrainz2<=0.7.4-1  
+source= http://ftp.musicbrainz.org/pub/musicbrainz/${pkgbase}/${pkgbase}-${version}.tar.gz 
+
+package_python2-musicbrainz2   {
+  cd "$srcdir/$pkgbase-$version"
+  python2 setup.py install --root=$PKG --optimize=1
+  install -D -m644 COPYING.txt "$PKG/usr/share/licenses/$name/COPYING.txt"
+}

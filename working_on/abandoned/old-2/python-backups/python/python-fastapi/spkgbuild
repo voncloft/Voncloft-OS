@@ -1,0 +1,54 @@
+# description : FastAPI framework, high performance, easy to learn, fast to code, ready for production
+# depends : python-starlette python-pydantic
+
+_name=fastapi
+name=python-$_name
+version=0.63.0
+release=1
+url=https://github.com/tiangolo/fastapi
+opt# depends : python-requests python-aiofiles python-jinja python-itsdangerous
+            python-yaml python-graphene python-ujson python-orjson
+            python-email-validator python-python-multipart
+make# depends : python-setuptools python-dephell
+check# depends : python-pytest-runner python-pytest-cov mypy
+              python-requests python-aiofiles python-jinja python-itsdangerous
+              python-yaml python-graphene python-ujson python-orjson
+              python-email-validator  python-pyjwt python-sqlalchemy
+              python-peewee python-flask python-passlib
+              python-bcrypt python-httpx python-python-multipart
+              python-databases python-aiosqlite python-jose
+source="$name-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=9fa931f913daab19294f32cb2153c9355e93783cf5765beda6e5cdb15e3f2564867c100700ac33ba5daf9779b730952afc692f9460bd41a594e101d601b10210
+
+prepare {
+   cd $_name-$version
+
+  dephell deps convert --from pyproject.toml --to setup.py
+
+  # dont pin starlette dependency
+  sed -i s|starlette.*"|starlette"| pyproject.toml
+}
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+check {
+   cd $_name-$version
+
+  python setup.py pytest
+
+  mypy -p fastapi
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}

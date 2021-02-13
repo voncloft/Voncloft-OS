@@ -1,0 +1,37 @@
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Maintainer: Daurnimator <daurnimator@archlinux.org>
+
+pkgname=terraform
+pkgver=0.14.6
+pkgrel=1
+pkgdesc="HashiCorp tool for building and updating infrastructure as code idempotently"
+url="https://www.terraform.io/"
+arch=("x86_64")
+license=("MPL")
+makedepends=("go")
+depends=('glibc')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/hashicorp/terraform/archive/v$pkgver.tar.gz")
+sha512sums=('84b9761e3d6627383f79744c6a0200320a23de5d6478de7c857eee8761e8caba43399506be4a06bd6f02650991b5de9dc05ebd81ac22fa38402d7d7f78318ab6')
+changelog="CHANGELOG.md"
+
+build() {
+	cd "$pkgname-$pkgver"
+	export CGO_CPPFLAGS="${CPPFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CXXFLAGS="${CXXFLAGS}"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -ldflags=-linkmode=external"
+	go build -o terraform-binary
+}
+
+check() {
+	cd "${pkgname}-${pkgver}"
+	go test -mod=readonly ./...
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	install -Dm755 terraform-binary "$pkgdir/usr/bin/terraform"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

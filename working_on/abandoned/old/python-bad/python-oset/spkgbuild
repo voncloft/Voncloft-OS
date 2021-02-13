@@ -1,0 +1,17 @@
+# description : Ordered sets for Python"
+
+name=python-oset
+version=0.1.3
+release=7
+source="https://pypi.io/build()s/source/o/oset/oset-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir/oset-$version"
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir/oset-$version"
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.rst "$PKG/usr/share/licenses/$name/LICENSE"
+}

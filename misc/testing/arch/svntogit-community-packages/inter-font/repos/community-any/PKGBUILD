@@ -1,0 +1,29 @@
+# Maintainer: Ivy Foster <escondida@iff.ink>
+# Reference: PKGBUILD(5)
+
+pkgname=inter-font
+pkgver=3.15
+pkgrel=2
+pkgdesc='A typeface specially designed for user interfaces'
+url=https://github.com/rsms/inter/
+license=(custom:OFL)
+
+arch=(any)
+source=("https://github.com/rsms/inter/releases/download/v$pkgver/Inter-$pkgver.zip")
+# Warning: checksums provided by packager, not upstream
+sha256sums=(1534288eb599f57acbf2c5ac0010da9495c2ee53116e08d799555c6f8ee22156)
+noextract=("Inter-$pkgver.zip")
+
+# Upstream dumps a *bunch* of stuff into the top level of the archive
+prepare() {
+	mkdir "inter-$pkgver"
+	cd "inter-$pkgver"
+	bsdtar xf ../Inter-$pkgver.zip
+}
+
+package() {
+	cd "inter-$pkgver"
+	install -d "$pkgdir/usr/share/fonts/inter"
+	install -m644 -t "$pkgdir/usr/share/fonts/inter" 'Inter Hinted for Windows'/Desktop/*.ttf
+	install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/inter-font/LICENSE.txt"
+}

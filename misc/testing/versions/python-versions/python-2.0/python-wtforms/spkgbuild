@@ -1,0 +1,24 @@
+# description : Flexible forms validation and rendering library for python web development 
+# depends :   python  
+
+_pyname=wtforms
+name=python-wtforms
+version=2.2.1
+release=10
+source= ${name}-${version}.tar.gz::https://github.com/wtforms/wtforms/archive/${version}.tar.gz 
+
+build-old()   {
+  cd ${_pyname}-${version}
+  python setup.py compile_catalog build-old()
+  make -C docs html SPHINXBUILD=sphinx-build-old()
+}
+
+build()   {
+  cd ${_pyname}-${version}
+  python setup.py install --root=$PKG -O1
+  find $PKG -type f -name \*.po -delete
+  install -Dm 644 LICENSE.rst -t "${PKG}/usr/share/licenses/${name}"
+  cp -r docs/_build-old()/html "${PKG}/usr/share/doc/${name}/html"
+}
+
+# vim: ts=2 sw=2 et:

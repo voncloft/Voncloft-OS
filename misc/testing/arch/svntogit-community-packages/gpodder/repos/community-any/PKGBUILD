@@ -1,0 +1,25 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Jan Magnus Brevik <janmbrevik@gmail.com>
+
+pkgname=gpodder
+pkgver=3.10.17
+pkgrel=1
+pkgdesc='Podcast client written in Python using GTK+'
+arch=(any)
+url='https://gpodder.github.io/'
+license=(GPL3)
+depends=(gtk3 python-cairo python-dbus python-gobject python-mygpoclient python-podcastparser)
+makedepends=(intltool)
+optdepends=('youtube-dl: for Youtube-dl extension')
+source=(http://github.com/gpodder/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('36a04e4d6a81f50b50d1f7691955d4f460e72f71b9519dad42b805a987434210')
+
+build() {
+  cd $pkgname-$pkgver
+  make messages
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

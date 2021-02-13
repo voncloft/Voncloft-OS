@@ -1,0 +1,37 @@
+# description : Building, finding and using SDL binaries
+# depends : sdl=1.2.15 perl-file-sharedir perl-capture-tiny
+
+# This package must not by any arch.
+# Requires rebuild with every change to sdl-config
+
+name=perl-alien-sdl
+_realname=Alien-SDL
+version=1.446
+release=10
+url=https://metacpan.org/release/$_realname
+make# depends : perl-file-which perl-text-patch perl-archive-extract perl-archive-zip perl-module-build
+source="https://cpan.metacpan.org/authors/id/F/FR/FROGGS/$_realname-$version.tarsource=.gz"
+options=!checksum
+sha256sums=c9aa2c9dc3c63d89773c7d7203f2a46d1b924d0c72d9f801af147a3dc8bc512a
+
+prepare {
+  cd $_realname-$version
+
+  # Workaround bug with --with-sdl-config
+  sed -i /^GetOptions/d Build.PL
+}
+
+build-delete {
+  cd $_realname-$version
+
+  # install module in vendor directories
+  perl Build.PL --with-sdl-config
+  perl Build
+}
+
+build() {
+  cd $_realname-$version
+  perl Build install installdirs=vendor destdir=$PKG
+}
+
+# vim:set sw=2 et:

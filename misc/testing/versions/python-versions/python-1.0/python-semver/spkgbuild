@@ -1,0 +1,27 @@
+
+name=python-semver
+version=2.13.0
+release=3
+# description : Python helper for Semantic Versioning"
+# depends :   python  
+source="https://github.com/k-bx/python-semver/archive/$version.tar.gz" 
+
+prepare   {
+  sed -i  /tests_require/d  python-semver-$version/setup.py
+}
+
+build   {
+  cd "$srcdir"/python-semver-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/python-semver-$version
+  python setup.py pytest
+}
+
+package   {
+  cd python-semver-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

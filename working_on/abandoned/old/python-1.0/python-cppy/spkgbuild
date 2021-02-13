@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-cppy
+version=1.1.0
+release=3
+pkgdesc="A collection of C++ headers which make it easier to write Python C extension modules"
+url="https://github.com/nucleic/cppy"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+source=("$name-$version.tar.gz::https://github.com/nucleic/cppy/archive/$version.tar.gz")
+sha512sums=('b745b6fe1d02f87b8c257a73792ed583ca6e709943af567105f6ccfcf9c5eb99e9dcaaad42b0b4d6f90de2b4398bf8e5bb042798cd98e376c90e9b54ea24a212')
+
+build() {
+  cd cppy-$version
+  python setup.py build
+}
+
+check() {
+  cd cppy-$version
+  python -m pytest
+}
+
+package() {
+  cd cppy-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

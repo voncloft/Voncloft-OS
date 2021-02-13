@@ -1,0 +1,52 @@
+
+pkgbase=python-pycodestyle
+name=  python-pycodestyle   python2-pycodestyle  
+version=2.6.0
+release=3
+# description : Python style guide checker"
+source="$pkgbase-$version.tar.gz::https://github.com/PyCQA/pycodestyle/archive/$version.tar.gz" 
+
+prepare   {
+  cp -a pycodestyle-$version{,-py2}
+
+  sed -i  1s/env python$/python2/  pycodestyle-$version-py2/pycodestyle.py
+}
+
+build   {
+  cd "$srcdir"/pycodestyle-$version
+  python setup.py build
+
+  cd "$srcdir"/pycodestyle-$version-py2
+  python2 setup.py build
+}
+
+check   {
+  cd "$srcdir"/pycodestyle-$version
+  python -m unittest discover
+
+  cd "$srcdir"/pycodestyle-$version-py2
+  python2 -m unittest discover
+}
+
+package_python-pycodestyle   {
+  # depends :   python-setuptools  
+  replaces=  pep8-python3   pep8  
+
+  cd pycodestyle-$version
+  python setup.py install -O1 --prefix=/usr --root="$PKG/"
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-pycodestyle   {
+  # depends :   python2-setuptools  
+  replaces=  pep8-python2   python2-pep8  
+
+  cd pycodestyle-$version-py2
+  python2 setup.py install -O1 --prefix=/usr --root="$PKG/"
+  mv $PKG/usr/bin/pycodestyle{,2}
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

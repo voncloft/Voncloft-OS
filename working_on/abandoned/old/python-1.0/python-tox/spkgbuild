@@ -1,0 +1,73 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Thomas Weißschuh <thomas t-8ch.de>
+# Contributor: George Brooke <george+arch.aur@george-brooke.co.uk>
+# Contributor: Sebastian Wiesner <lunaryorn googlemail com>
+
+pkgbase=python-tox
+name=(python-tox python2-tox)
+version=3.21.4
+release=1
+pkgdesc='Python virtualenv management and testing tool'
+url='https://tox.readthedocs.io'
+makedepends=('python-setuptools-scm' 'python2-setuptools-scm' 'python-py' 'python2-py' 'python-virtualenv'
+             'python2-virtualenv' 'python-pluggy' 'python2-pluggy' 'python-toml' 'python2-toml'
+             'python-filelock' 'python2-filelock' 'python-freezegun' 'python2-freezegun')
+checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'python-pytest-mock'
+              'python2-pytest-mock' 'python-flaky' 'python2-flaky' 'python2-pathlib2')
+source=("https://pypi.io/packages/source/t/tox/tox-$version.tar.gz")
+sha512sums=('fc665a1e77448e80a0bad64eea2a85741ae9cec70431ca6ee495d19c1806294a76a4a6080e62303b539135c6dc4ebdb46fabcdef70408276f2ba6e11a84350f8')
+
+prepare() {
+  find tox-$version -name "*.pyc" -delete
+
+  cp -a tox-$version{,-py2}
+}
+
+build() {
+  export LC_CTYPE=en_US.UTF-8
+
+  cd "$srcdir"/tox-$version
+  python setup.py build
+
+  cd "$srcdir"/tox-$version-py2
+  python2 setup.py build
+}
+
+check() {
+  # Hack entry points
+
+  (
+    cd "$srcdir"/tox-$version
+    virtualenv "$srcdir/pyvenv" --system-site-packages
+    . "$srcdir/pyvenv/bin/activate"
+    python setup.py install
+    python setup.py pytest
+  )
+
+  (
+    cd "$srcdir"/tox-$version-py2
+    virtualenv2 "$srcdir/pyvenv-py2" --system-site-packages
+    . "$srcdir/pyvenv-py2/bin/activate"
+    python setup.py install
+    python setup.py pytest
+  )
+}
+
+package_python-tox() {
+  depends=('python-py' 'python-virtualenv' 'python-packaging' 'python-pluggy' 'python-toml'
+           'python-filelock' 'python-six')
+
+  cd "$srcdir"/tox-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  ln -s tox "$pkgdir"/usr/bin/tox3
+}
+
+package_python2-tox() {
+  depends=('python2-py' 'python2-virtualenv' 'python2-packaging' 'python2-pluggy' 'python2-toml'
+           'python2-filelock' 'python2-six' 'python2-importlib-metadata')
+
+  cd "$srcdir"/tox-$version-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  mv "$pkgdir"/usr/bin/tox{,2}
+  mv "$pkgdir"/usr/bin/{tox-quickstart,tox2-quickstart}
+}

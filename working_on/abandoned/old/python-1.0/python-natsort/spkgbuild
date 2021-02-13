@@ -1,0 +1,40 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=natsort
+name=python-natsort
+version=7.1.1
+release=1
+pkgdesc="Simple yet flexible natural sorting in Python"
+url="https://github.com/SethMMorton/natsort"
+depends=('python-setuptools')
+checkdepends=('python-hypothesis' 'python-mock' 'python-pytest-mock')
+optdepends=('python-fastnumbers: more efficient sorting'
+            'python-pyicu: sort in locale dependant manner')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('1903c933c6203ef0cd194ea444d79276b79ec385728a92b6e73d1698abc8e1351e96ed8ea4ae5f9f413ef6daecfd269a4d0de74c45eedff682fe929d8f977f30')
+b2sums=('dffd5b7b18ac49653d4d65ae1335c85d441748903aa983df092778476988cf0ca59c08526ee0da1761fce1afe4849d4c9a9e2f3e0c5400ebca2478781d0986dc')
+
+prepare() {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+  install -vDm 644 {CHANGELOG.md,README.rst} \
+    -t "${pkgdir}/usr/share/doc/${name}"
+}

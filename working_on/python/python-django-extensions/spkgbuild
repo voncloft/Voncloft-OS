@@ -1,0 +1,17 @@
+# description : A collection of custom extensions for the Django Framework
+# depends : 
+
+_tag=428c2563faeb7f7face972058fa1e09312a8623a
+url=https://github.com/django-extensions/django-extensions
+name=python-django-extensions
+version=3.1.0
+release=1
+
+source="git+https://github.com/django-extensions/django-extensions.git#tag=${_tag}
+options="!checksum"
+
+build() {
+   cd django-extensions
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,39 @@
+# Maintainer: Maxim Baz <$name at maximbaz dot com>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: fenuks
+
+name=python-jsonrpc-server
+version=0.4.0
+release=3
+pkgdesc="Python library implementing asynchronous JSON RPC server"
+url="https://github.com/palantir/python-jsonrpc-server"
+depends=("python" "python-future" "python-ujson")
+makedepends=("python" "python-setuptools")
+checkdepends=("python-pytest" "python-pytest-runner" "python-pytest-cov"  "python-pyflakes" "python-mock")
+source=("https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"
+        "fix-test.patch")
+sha256sums=('62c543e541f101ec5b57dc654efc212d2c2e3ea47ff6f54b2e7dcb36ecf20595'
+            '7f6dcef7052f666bafccaa2d43c037a511aaad8ee289fb65130eae809cf88072')
+
+prepare(){
+    cd "${name}-${version}"
+    patch -p1 -i ../fix-test.patch
+}
+
+build() {
+    cd "${name}-${version}"
+    python setup.py build
+}
+
+check() {
+    cd "${name}-${version}"
+    py.test
+}
+
+package() {
+    cd "${name}-${version}"
+    python setup.py install --root="${pkgdir}/" --optimize=1 --skip-build
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim:set ts=4 sw=4 et:

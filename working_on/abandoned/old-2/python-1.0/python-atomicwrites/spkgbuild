@@ -1,0 +1,16 @@
+# description : Atomic file writes on POSIX
+  # depends : python
+
+_name=atomicwrites
+url=https://github.com/untitaker/python-atomicwrites
+_name=atomicwrites
+version=1.4.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

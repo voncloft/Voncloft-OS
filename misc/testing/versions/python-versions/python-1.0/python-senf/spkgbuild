@@ -1,0 +1,37 @@
+
+_name=senf
+name=python-senf
+version=1.5.0
+release=3
+# description : Python module for handling platform native strings"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "${name}-${version}"
+  cd "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  # disabling failing tests, that assume a specific user HOME layout:
+  #https://github.com/quodlibet/senf/issues/12
+  pytest -v -k  not test_getuserdir and not test_expanduser_user 
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+  install -vDm 644 examples/*.py \
+    -t "${PKG}/usr/share/doc/${name}/examples"
+}

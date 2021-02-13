@@ -1,0 +1,93 @@
+modprobe nf_conntrack
+modprobe nf_conntrack_ftp
+modprobe xt_conntrack
+modprobe xt_LOG
+modprobe xt_state
+########modprobe ip6_tables 
+
+iptables -P INPUT ACCEPT 
+iptables -P OUTPUT ACCEPT 
+iptables -P FORWARD DROP
+
+
+iptables -F
+iptables -X
+iptables -Z
+
+
+iptables -t nat -F
+
+iptables -I INPUT 1 -i enp0s10 -j ACCEPT 
+iptables -I INPUT 1 -i lo -j ACCEPT
+iptables -I INPUT 1 -i wlp5s0 -j ACCEPT
+#iptables -A INPUT -i tun0 -j ACCEPT
+#iptables -A OUTPUT -o tun0 -j ACCEPT
+iptables -I INPUT 1 -i tun0 -j ACCEPT
+
+iptables -A INPUT -p UDP --dport bootps ! -i enp0s10 -j REJECT
+iptables -A INPUT -p UDP --dport domain ! -i enp0s10 -j REJECT
+iptables -A INPUT -p UDP --dport bootps ! -i wlp5s0 -j REJECT
+iptables -A INPUT -p UDP --dport domain ! -i wlp5s0 -j REJECT
+
+#psad
+iptables -N PSAD_BLOCK_INPUT
+iptables -N PSAD_BLOCK_OUTPUT
+iptables -N PSAD_BLOCK_FORWARD
+iptables -A INPUT -j PSAD_BLOCK_INPUT
+iptables -A OUTPUT -j PSAD_BLOCK_OUTPUT
+iptables -A FORWARD -j PSAD_BLOCK_FORWARD
+iptables -A INPUT -j LOG
+iptables -A FORWARD -j LOG
+
+#sshguard
+iptables -N sshguard
+#iptables -A INPUT -j sshguard
+iptables -A INPUT -p tcp --dport 712 -j sshguard
+iptables -A INPUT -p tcp --dport 80 -j sshguard
+
+#custom ports for wan below
+iptables -A INPUT -p TCP --dport 80 -i enp1s9 -j ACCEPT
+iptables -A INPUT -p TCP --dport 712 -i enp1s9 -j ACCEPT
+iptables -A INPUT -p TCP --dport 1025 -i enp1s9 -j DROP
+iptables -A INPUT -p TCP --dport 1714 -i enp0s10 -j ACCEPT
+#iptables -A INPUT -p UDP --dport 53 -i enp1s9 -j ACCEPT
+#iptables -A INPUT -p TCP --dport 53 -i enp1s9 -j ACCEPT
+#iptables -A INPUT -p UDP --dport 67 -i enp1s9 -j ACCEPT
+#iptables -A INPUT -p UDP --dport 68 -i enp1s9 -j ACCEPT
+iptables -A INPUT -p TCP ! -i enp0s10 -d 0/0 --dport 0:1023 -j DROP 
+iptables -A INPUT -p UDP ! -i enp0s10 -d 0/0 --dport 0:1023 -j DROP
+iptables -A INPUT -p TCP ! -i wlp5s0 -d 0/0 --dport 0:1023 -j DROP
+iptables -A INPUT -p UDP ! -i wlp5s0 -d 0/0 --dport 0:1023 -j DROP
+
+
+
+iptables -I FORWARD -i enp0s10 -d 192.168.1.0/24 -j DROP 
+iptables -A FORWARD -i enp0s10 -s 192.168.1.0/24 -j ACCEPT 
+iptables -I FORWARD -i wlp5s0 -d 192.168.42.0/24 -j DROP
+iptables -A FORWARD -i wlp5s0 -s 192.168.42.0/24 -j ACCEPT
+#iptables -I FORWARD -i tun0 -d 192.168.0.0/24 -j DROP
+#iptables -A FORWARD -i tun0 -s 192.168.0.0/24 -j ACCEPT
+
+
+iptables -A FORWARD -i enp1s9 -d 192.168.1.0/24 -j ACCEPT 
+iptables -A FORWARD -i enp1s9 -d 192.168.42.0/24 -j ACCEPT
+iptables -A FORWARD -i enp1s9 -d 192.168.0.0/24 -j ACCEPT
+iptables -A FORWARD -d 192.168.1.0/24 -i tun0 -j ACCEPT
+iptables -A FORWARD -d 192.168.42.0/24 -i tun0 -j ACCEPT
+
+iptables -t nat -A POSTROUTING -o enp1s9 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
+####openvpn
+
+###BLOCK IP
+iptables -A INPUT -s 81.190.208.35 -j DROP
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+for f in /proc/sys/net/ipv4/conf/*/rp_filter ; do echo 1 > $f ; done
+
+echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
+echo 1 > /proc/sys/net/ipv4/conf/default/rp_filter
+echo 1 > /proc/sys/net/ipv4/ip_dynaddr
+
+
+####echo 1 > /proc/sys/net/ipv6/conf/all/forwarding

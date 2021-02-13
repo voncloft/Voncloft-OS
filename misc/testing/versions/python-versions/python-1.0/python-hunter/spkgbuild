@@ -1,0 +1,45 @@
+
+name=python-hunter
+version=3.3.1
+release=2
+# description : Hunter is a flexible code tracing toolkit 
+# depends :   python-colorama   python-cymem   python-manhole  
+               python-process-tests   python-aspectlib  
+source="https://github.com/ionelmc/python-hunter/archive/v$version.tar.gz" 
+
+prepare   {
+  cd python-hunter-$version
+  rm src/hunter/*.c
+  rm -r src/hunter/vendor
+
+  sed -i  s/from .vendor.colorama/from colorama/  src/hunter/{actions,util}.py
+  sed -i  s/from .vendor._cymem.cymem/from cymem.cymem/  src/hunter/_event.pyx
+}
+
+build   {
+  cd "$srcdir"/python-hunter-$version
+  python setup.py build
+}
+
+check   {
+  # Hack to process .pth files properly
+  # ptrace needed to pass the remote tests
+
+  cd "$srcdir"/python-hunter-$version
+  python tests/setup.py build_ext --inplace
+  virtualenv "$srcdir/pyvenv" --system-site-packages
+   
+    . "$srcdir/pyvenv/bin/activate"
+    python setup.py install
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.9" PATH="$srcdir/pyvenv/bin:$PATH" pytest
+    || :
+
+  # Clean up to prevent it from being installed
+  rm build/lib.linux-$CARCH-3.9/*.so
+}
+
+package   {
+  cd python-hunter-$version
+  python setup.py install --root $PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

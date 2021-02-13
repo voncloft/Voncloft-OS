@@ -1,0 +1,29 @@
+
+name=python-commentjson
+version=0.9.0
+release=3
+# description : Add Python and JavaScript style comments in your JSON files"
+# depends :   python-lark-parser  
+source="https://github.com/vaidik/commentjson/archive/v$version.tar.gz" 
+
+prepare   {
+  cd commentjson-$version
+  sed -i  s/,<0/,<1/  setup.py
+}
+
+build   {
+  cd commentjson-$version
+  python setup.py build
+}
+
+check   {
+  cd commentjson-$version
+  python setup.py test
+}
+
+package   {
+  cd commentjson-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.rst -t $PKG/usr/share/licenses/$name/
+}

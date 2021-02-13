@@ -1,0 +1,32 @@
+# description : Perl/CPAN Module Mail::Transport::Dbx : Parse Outlook Express mailboxes
+
+name=perl-mail-transport-dbx
+version=0.07
+release=19
+url=https://search.cpan.org/dist/Mail-Transport-Dbx
+source="https://www.cpan.org/authors/id/V/VP/VPARSEVAL/Mail-Transport-Dbx-${version}.tar.gz"
+options="!checksum"
+sha256sums=95fd6bacf2afa0acb121eb9385d61ad4743c48240fbf5a74a731b3c1b5dfdf7d
+
+build-delete {
+  cd Mail-Transport-Dbx-${version}
+
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+
+  make
+}
+
+build() {
+  cd Mail-Transport-Dbx-${version}
+
+  make install DESTDIR=$PKG
+
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

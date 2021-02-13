@@ -1,0 +1,23 @@
+# description : Object annotation mechanism"
+# depends :   python-setuptools   python-zope-interface   python-zope-component 
+
+name=python-zope-annotation
+version=4.7.0
+release=4
+          python-zope-location   python-zope-proxy  
+source="https://github.com/zopefoundation/zope.annotation/archive/$version.tar.gz" 
+
+build-old()   {
+  cd zope.annotation-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd zope.annotation-$version
+  PYTHONPATH="$PWD/build-old()/lib:$PYTHONPATH" python -m zope.testrunner --test-path=src
+}
+
+build()   {
+  cd zope.annotation-$version
+  python setup.py install --root=$PKG --optimize=1
+}

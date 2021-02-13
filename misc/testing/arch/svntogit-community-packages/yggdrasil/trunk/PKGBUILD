@@ -1,0 +1,39 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Knut Ahlers <knut at ahlers dot me>
+
+pkgname=yggdrasil
+pkgver=0.3.15
+pkgrel=1
+pkgdesc="An experiment in scalable routing as an encrypted IPv6 overlay network"
+arch=('x86_64')
+url="https://github.com/yggdrasil-network/yggdrasil-go"
+license=('LGPL3')
+depends=('glibc')
+makedepends=('go')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/yggdrasil-network/yggdrasil-go/archive/v${pkgver}.tar.gz"
+        'yggdrasil.sysusers')
+sha512sums=('1b59fecfa210a3d8d41776e4cb4b5399121e820389a64f4f1df893a9c537b67b1a26ca68c735fcae3208f24163ac809fa278f2ee2a1102c88145fdb6ac4c9db4'
+            'b78d1f5efeeba184588ba7bdb2249d976aec160daa59742e032983da1aedad062d15c7c97cba3eba69412a0f7904ee123d98b58f859892d71188c25624295c32')
+b2sums=('8375a6f731ec175b98d68155c1cabb3af7bc3dd6efee93701bd74acbc5ef2a6a724284abb99792ecb65e423b66a47d6f291f19f287e220435000115689b3fcd7'
+        '3cf5bfb3c09908f841b39f7206bb472e50e60f10d1b87ab6def97a7212e27627f1e795bbaffd964d2d27a80fbbd1a3be63d63c59793ec1967c02f48b8462c08b')
+
+build() {
+  cd "${pkgname}-go-${pkgver}"
+  PKGNAME="${pkgname}" PKGVER="${pkgver}" \
+    CGO_LDFLAGS="${LDFLAGS}" \
+    GOFLAGS="-trimpath -buildmode=pie -mod=readonly" \
+    ./build -l "-linkmode external -extldflags \"${LDFLAGS}\""
+}
+
+package() {
+  cd "${pkgname}-go-${pkgver}"
+  install -Dm755 "yggdrasil" "${pkgdir}/usr/bin/yggdrasil"
+  install -Dm755 "yggdrasilctl" "${pkgdir}/usr/bin/yggdrasilctl"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm644 -t "${pkgdir}/usr/lib/systemd/system" \
+    contrib/systemd/yggdrasil.service \
+    contrib/systemd/yggdrasil-default-config.service
+  install -Dm644 "${srcdir}/yggdrasil.sysusers" "${pkgdir}/usr/lib/sysusers.d/yggdrasil.conf"
+}
+
+# vim: ts=2 sw=2 et:

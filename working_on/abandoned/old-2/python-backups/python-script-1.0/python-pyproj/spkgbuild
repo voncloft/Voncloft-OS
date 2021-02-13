@@ -1,0 +1,18 @@
+# description : Python interfaces to PROJ.4 library
+# depends : proj python
+
+url=https://github.com/pyproj4/pyproj
+name=python-pyproj
+version=2.5.0
+release=3
+
+source="https://github.com/pyproj4/pyproj/archive/v${version}rel.tar.gz"
+options="checksum"
+
+build() {
+   cd ${srcdir}
+   cd ${srcdir}/pyproj-${version}rel
+   cd pyproj-${version}rel
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

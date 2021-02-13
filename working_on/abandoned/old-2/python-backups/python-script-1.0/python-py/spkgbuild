@@ -1,0 +1,19 @@
+# description : library with cross-python path, ini-parsing, io, code, log facilities
+  # depends : python-iniconfig python-apipkg
+  # depends : python2-iniconfig python2-apipkg
+
+url=https://py.readthedocs.io/
+name=python-py python2-py
+version=1.10.0
+release=1
+
+source="https://github.com/pytest-dev/py/archive/$version.tar.gz"
+
+build() {
+   cd $srcdir/py-$version
+   cd $srcdir/py-$version-py2
+   cd py-$version
+   cd py-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

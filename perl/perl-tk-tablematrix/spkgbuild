@@ -1,0 +1,16 @@
+# description : Display data in TableSpreadsheet format
+# depends : perl-tk
+
+name=perl-tk-tablematrix
+version=1.23
+release=22
+
+source="https://www.cpan.org/authors/id/C/CE/CERNEY/Tk-TableMatrix-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd Tk-TableMatrix-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

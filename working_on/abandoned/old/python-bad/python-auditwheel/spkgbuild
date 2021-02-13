@@ -1,0 +1,45 @@
+# description : Auditing and relabeling cross-distribution Linux wheels 
+# depends :   python   python-wheel   python-pyelftools   unzip   patchelf  
+
+_name=auditwheel
+name=python-$_name
+version=3.3.1
+release=1
+source=" $url/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  cd $_name-$version
+#  find $_name-$version/tests -type f -exec sed -i  s|subprocess.run \["auditwheel"|subprocess.run \["python", "-m", "auditwheel"|   {}  \+
+
+  # replace the vendored wheel module with the one on the system
+  find -type f -name  *.py  -exec \
+      sed -i  s|\._vendor\.wheel|wheel|   {}  \+
+
+  # remove vendored wheel module
+  rm -rf auditwheel/_vendor
+}
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+#check   {
+#  cd $_name-$version
+#
+#  tox -e py39 --current-env
+#}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 auditwheel/policy/policy.json $PKG/usr/lib/python3.9/site-build()s/auditwheel/policy/policy.json
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

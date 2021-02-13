@@ -1,0 +1,19 @@
+
+name=python-rstr
+_name=rstr
+version=2.2.6
+release=10
+# description : Generate random strings in Python"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+  python setup.py install --skip-build --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

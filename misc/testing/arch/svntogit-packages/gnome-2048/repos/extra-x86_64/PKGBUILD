@@ -1,0 +1,36 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=gnome-2048
+pkgver=3.38.2
+pkgrel=1
+pkgdesc="Obtain the 2048 tile"
+url="https://wiki.gnome.org/Apps/2048"
+arch=(x86_64)
+license=(GPL3)
+depends=(clutter-gtk libgee libgnome-games-support)
+makedepends=(meson vala yelp-tools appstream-glib git)
+_commit=82f155f326a9e1973d7283bfa3f7cbb756a9984a  # tags/3.38.2^0
+source=("git+https://gitlab.gnome.org/GNOME/gnome-2048.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

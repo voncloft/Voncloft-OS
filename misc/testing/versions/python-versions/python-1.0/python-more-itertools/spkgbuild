@@ -1,0 +1,15 @@
+
+name=python-more-itertools
+version=8.6.0
+release=3
+# description : More routines for operating on iterables, beyond itertools 
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/m/more-itertools/more-itertools-$version.tar.gz" 
+
+package   {
+  cd "$srcdir/more-itertools-$version"
+  python3 setup.py install --root="$PKG/" --optimize=0
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

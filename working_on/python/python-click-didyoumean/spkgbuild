@@ -1,0 +1,16 @@
+# description : Enable git-like did-you-mean feature in click
+# depends : python-click
+
+url=https://github.com/click-contrib/click-didyoumean
+name=python-click-didyoumean
+version=0.0.3
+release=3
+
+source="https://github.com/click-contrib/click-didyoumean/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd click-didyoumean-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

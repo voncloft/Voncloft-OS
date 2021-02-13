@@ -1,0 +1,18 @@
+# description : Get and set values in your .env file in local and production servers"
+# depends :   python-click  
+
+name=python-dotenv
+version=0.15.0
+release=3
+source="${name}-${version}.tar.gz::https://github.com/theskumar/python-dotenv/archive/v${version}.tar.gz" 
+
+build-old()   {
+    cd "${name}-${version}"
+    python setup.py build-old()
+}
+
+build()   {
+    cd "${name}-${version}"
+    python setup.py install --root="$PKG/" --optimize=1 --skip-build-old()
+    install -Dm0644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

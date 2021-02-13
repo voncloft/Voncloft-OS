@@ -1,0 +1,24 @@
+# description : Python wrapper to the C++ Parma Polyhedra Library  PPL "
+# depends :  python-cysignals python-gmpy2 ppl 
+
+_pipname=pplpy
+name=python-pplpy
+version=0.8.7
+release=1
+source="https://pypi.io/build()s/source/${_pipname:0:1}/$_pipname/$_pipname-$version.tar.gz" 
+
+build-old()   {
+  cd $_pipname-$version
+  python setup.py build-old()
+
+  _pythonver=`python -c "from sysconfig import get_python_version; print get_python_version   "`
+  PYTHONPATH="$PWD/build-old()/lib.linux-x86_64-$_pythonver" make -C docs html
+}
+
+build()   {
+  cd $_pipname-$version 
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  mkdir -p $PKG/usr/share/doc/pplpy
+  cp -r docs/build-old()/html/* $PKG/usr/share/doc/pplpy
+}

@@ -1,0 +1,16 @@
+# description : JOSE protocol implementation in Python
+# depends : python-cryptography python-pyopenssl python-setuptools
+
+url=https://github.com/certbot/josepy
+name=python-josepy
+version=1.6.0
+release=1
+
+source="https://pypi.io/packages/source/j/josepy/josepy-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd josepy-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

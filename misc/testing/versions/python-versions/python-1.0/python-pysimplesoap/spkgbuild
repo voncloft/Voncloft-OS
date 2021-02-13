@@ -1,0 +1,27 @@
+
+name=python-pysimplesoap
+version=1.16.2
+_commit=a5c1f885e4af24ed3079bdf7f338523826d3404a
+release=5
+# description : Python simple and lightweight SOAP Library"
+# depends :   python  
+source="$name-$_commit.tar.gz::https://github.com/pysimplesoap/pysimplesoap/archive/$_commit.tar.gz" 
+
+prepare   {
+  mv pysimplesoap-{$_commit,$version}
+}
+
+build   {
+  cd pysimplesoap-$version
+  python setup.py build
+}
+
+check   {
+  cd pysimplesoap-$version
+  nosetests3 -a !internal,!disabled || echo "Tests failed"
+}
+
+package   {
+  cd pysimplesoap-$version
+  python setup.py install --root=$PKG --optimize=1
+}

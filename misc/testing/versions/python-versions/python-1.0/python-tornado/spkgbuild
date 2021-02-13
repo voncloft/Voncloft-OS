@@ -1,0 +1,39 @@
+
+name=python-tornado
+version=6.1.0
+release=3
+# description : open source version of the scalable, non-blocking web server and tools 
+# depends :   python  
+             python-twisted: for tornado.platform.twisted  
+            #  python-pycares: an alternative non-blocking DNS resolver 
+source="https://github.com/tornadoweb/tornado/archive/v$version.tar.gz" 
+
+export TORNADO_EXTENSION=1
+
+build   {
+  cd tornado-$version
+  export PYTHONHASHSEED=0
+  python setup.py build
+}
+
+check   {
+  # As of 4.5.3, ignoring test failures about resolving "localhost"
+   
+    cd tornado-$version
+    python setup.py install --root="$PWD/tmp_install" --optimize=1
+    export PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH"
+    cd tmp_install
+    python -m tornado.test.runtests
+    python -m tornado.test.runtests --ioloop=tornado.platform.select.SelectIOLoop
+    python -m tornado.test.runtests --httpclient=tornado.curl_httpclient.CurlAsyncHTTPClient
+    python -m tornado.test.runtests --ioloop_time_monotonic
+    python -m tornado.test.runtests --ioloop=tornado.platform.twisted.TwistedIOLoop
+    python -m tornado.test.runtests --ioloop=tornado.platform.asyncio.AsyncIOLoop
+    python -m tornado.test.runtests --resolver=tornado.netutil.ThreadedResolver
+    || echo "Tests failed"
+}
+
+package   {
+  cd tornado-$version
+  python setup.py install --root=$PKG --optimize=1
+}

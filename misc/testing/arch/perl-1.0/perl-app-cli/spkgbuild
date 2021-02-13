@@ -1,0 +1,24 @@
+# description : Perl/CPAN Module App::CLI
+# depends : perl
+
+name=perl-app-cli
+version=0.50
+release=3
+url=https://search.cpan.org/dist/App-CLI
+source="https://cpan.metacpan.org/authors/id/P/PT/PTC/App-CLI-$version.tarsource=.gz"
+options=!checksum
+sha256sums=51d3f5833ab519fb46e5552b60e5455e4f9c1c6827d1eee4153d0b409f2a9345
+
+build-delete {
+  cd $srcdir/App-CLI-$version
+  PERL_USE_UNSAFE_INC=1 \
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/App-CLI-$version
+  make pure_install doc_install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

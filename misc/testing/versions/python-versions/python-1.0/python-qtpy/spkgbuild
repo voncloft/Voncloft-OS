@@ -1,0 +1,22 @@
+
+name=python-qtpy
+_name= qtpy 
+version=1.9.0
+release=5
+# description : Provides an uniform layer to support PyQt5, PyQt4 and PySide with a single codebase 
+source="python-${_name}-${version}.tar.gz"::"https://github.com/spyder-ide/${_name}/archive/v${version}.tar.gz" 
+# depends :   python  
+             python-pyqtwebengine: Qt5-WebEngine python bindings 
+             python-pyside2: PySide Qt5 Python bindings  
+
+build   {
+  cd "${_name}-${version}"
+  python setup.py build
+}
+
+package   {
+  cd "${_name}-${version}"
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+  # Install license file
+  install -D -m644 "LICENSE.txt" "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

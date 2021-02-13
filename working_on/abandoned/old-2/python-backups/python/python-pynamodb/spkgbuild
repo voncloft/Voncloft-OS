@@ -1,0 +1,38 @@
+# description : "A pythonic interface to Amazons DynamoDB"
+# depends : python-botocore
+
+name=python-pynamodb
+version=5.0.0
+release=1
+url=https://pynamodb.readthedocs.io/
+make# depends : python-setuptools
+check# depends : python-blinker python-pytest-mock
+opt# depends : 
+  python-blinker: for signals
+
+source="https://github.com/pynamodb/PynamoDB/archive/$version/PynamoDB-$version.tar.gz"
+sha256sums=fcb236eb9ccf792587052e9fc411947997e086c4b0ee1a547e774c8f1bb29806
+
+build()-delete {
+   cd PynamoDB-$version
+  python setup.py build
+}
+
+check {
+   cd PynamoDB-$version
+
+  # Copied from upstream pytest.ini as pytest-env is not yet packaged
+  export AWS_ACCESS_KEY_ID=1
+  export AWS_SECRET_ACCESS_KEY=2
+
+  pytest -m not ddblocal tests
+}
+
+options="!checksum"
+
+build() {
+   cd PynamoDB-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}

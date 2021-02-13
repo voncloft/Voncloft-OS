@@ -1,0 +1,50 @@
+# Maintainer : Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Angelo Theodorou <encelo@users.sourceforge.net>
+# contributor: Laurent Carlier <lordheavym@gmail.com>
+
+pkgname=flobopuyo
+pkgver=0.20
+pkgrel=11
+pkgdesc="Clone of the famous PuyoPuyo"
+arch=('x86_64')
+url="https://fovea.cc/flobopuyo-en"
+license=('GPL')
+depends=('glu' 'sdl_image' 'sdl_mixer')
+makedepends=('mesa' 'patch')
+changelog=$pkgname.changelog
+source=(https://www.fovea.cc/files/$pkgname/$pkgname-$pkgver.tgz
+        $pkgname-makefile.patch $pkgname-0.20-gcc4.patch
+        $pkgname-0.20-libs.patch
+        $pkgname.desktop
+        $pkgname.png)
+sha512sums=('b2e728c9f3114fc958dd4e7be5087f74e106138362bbf15d29bb64b080a0bedd90e6df3d68ce0337b0c9811e57672d91419dce2eca868c6bb9bb72f59548ec66'
+            'f3d1a56c2af34454d0c60e1b970b1d3d85965f32e1b417b5149141ed6090e67c85d5a8bba898c4ccb37b795ebcf7b9d895d09fb10c7cc834507378fa21341efe'
+            'f1bfdbf6ba4e4fc2be453aa7d2299f70a2a47a1906e2b7043ef8c14a7b4c8e5bc1de29565e1404ba9c6688c03f4439f123b3325f3223bd3771eee9fe458ecd62'
+            'd6179d6f6b8da08546daf26d76657a8459366c12c9ee4828b6de68e16a2d49b007b3d31b05e013c705ab5596528561aceb1ed27e82cdfd39084447aa7b52b3d3'
+            '0ceceddd61c58cc4880096a242322f028a93af61ebd23514f60f067aaeacecc9f1bc3585fc1a6a453e2d8721d57bdbea935cf3ad5e2fb6c27a4e7eed35ce8d67'
+            'cfb3fac74a80ffaf7779bb1a917a747c2589c7fd8702aa9cc80ff533bb96b167168aada2ecdefc05257e4c4322e7ab916269ac0b5927d7bd6335444f2d1487de')
+
+prepare() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  patch -Np0 < "${srcdir}"/$pkgname-makefile.patch
+  patch -Np1 < "${srcdir}"/$pkgname-$pkgver-gcc4.patch
+  patch -Np1 < "${srcdir}"/$pkgname-$pkgver-libs.patch
+}
+
+build() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  CXXFLAGS+=" -fno-delete-null-pointer-checks"
+  make
+}
+
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+
+  install -D -m644 man/${pkgname}.6 "${pkgdir}"/usr/share/man/man6/$pkgname.6
+  install -D "${srcdir}"/$pkgname.desktop "${pkgdir}"/usr/share/applications/$pkgname.desktop
+  install -D "${srcdir}"/$pkgname.png "${pkgdir}"/usr/share/pixmaps/$pkgname.png
+}

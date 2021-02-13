@@ -1,0 +1,31 @@
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+# Contributor: Maxim Andersson <thesilentboatman@gmail.com>
+
+name=python-zeroconf
+version=0.28.8
+release=1
+pkgdesc="A pure python implementation of multicast DNS service discovery"
+url="https://github.com/jstasiak/python-zeroconf"
+depends=('python' 'python-netifaces' 'python-six' 'python-ifaddr')
+makedepends=('python-setuptools')
+checkdepends=('python-nose')
+source=($name-$version.tar.gz::https://github.com/jstasiak/${name}/archive/${version}.tar.gz)
+sha256sums=('5272431bf88611c722119504504b86738f9366f518781deb24e520e382d1f337')
+
+build() {
+  cd "${pkgbase}-${version}"
+  python3 setup.py build
+}
+
+package() {
+  cd "${pkgbase}-${version}"
+
+  python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1
+}
+
+check() {
+  cd "${pkgbase}-${version}"
+  nosetests --exclude test_integration_with_listener_ipv6 zeroconf/test.py
+}
+
+# vim:set ts=2 sw=2 et:

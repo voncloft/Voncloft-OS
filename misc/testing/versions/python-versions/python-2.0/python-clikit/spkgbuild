@@ -1,0 +1,35 @@
+# description : clikit allows you to create beautiful and testable command-line interfaces"
+# depends :   python-crashtest   python-pastel   python-pylev  
+
+_name=clikit
+name=python-clikit
+version=0.6.2
+release=1
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # poetry-generated setup.py are fatally broken, see:
+    #https://github.com/sdispater/poetry/issues/866
+    dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build-old()  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    PYTHONPATH=$PWD/src python -m pytest
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

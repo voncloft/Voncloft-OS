@@ -1,0 +1,24 @@
+# description : Parser for multipart/form-data 
+# depends :   python  
+
+_name=multipart
+name=python-$_name
+version=0.2.3
+release=1
+source=" $url/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

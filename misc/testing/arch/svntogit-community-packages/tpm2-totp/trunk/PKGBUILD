@@ -1,0 +1,37 @@
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
+pkgname=tpm2-totp
+pkgver=0.3.0
+pkgrel=1
+pkgdesc='Attest the trustworthiness of a device against a human using time-based one-time passwords'
+arch=('x86_64')
+url='https://github.com/tpm2-software/tpm2-totp'
+license=('BSD')
+depends=('qrencode' 'tpm2-tss' 'libtss2-esys.so' 'libtss2-mu.so' 'libtss2-tctildr.so')
+checkdepends=('iproute2' 'oath-toolkit' 'swtpm' 'tpm2-tools')
+optdepends=('initramfs: dracut and mkinitcpio hooks to display the TOTP during boot')
+source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz"{,.asc})
+sha512sums=('d47cc8155a60a464afe602c3114ff8e6b2ff825457e6069693947421716b97c34b00f70adbcb4cda1b5b9639b8a3dfc7800295bbff99822da7a8077ebf78d6b2'
+            'SKIP')
+validpgpkeys=('D6B4D8BAC7E0CC97DCD4AC7272E88B53F7A95D84'  # Andreas Fuchs <andreas.fuchs@sit.fraunhofer.de>
+              'FE2E6249201CA54A4FB90D066E80CA1446879D04') # Jonas Witschel <diabonas@gmx.de>
+
+build() {
+	cd "$pkgname-$pkgver"
+	./configure --prefix=/usr \
+	            --libexecdir=/usr/lib \
+	            --with-dracutmodulesdir=/usr/lib/dracut/modules.d \
+	            --with-mkinitcpiodir=/usr/lib/initcpio \
+	            $( ((CHECKFUNC)) && echo --enable-integration)
+	make
+}
+
+check() {
+	cd "$pkgname-$pkgver"
+	make check
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir" install
+	install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+}

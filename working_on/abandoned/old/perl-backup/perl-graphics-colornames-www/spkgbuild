@@ -1,0 +1,30 @@
+# description : Perl/CPAN Module Graphics::ColorNames::WWW
+# depends : perl-graphics-colornames
+
+name=perl-graphics-colornames-www
+version=1.13
+release=8
+url=https://search.cpan.org/dist/Graphics-ColorNames-WWW
+make# depends : perl-graphics-colornames
+source="https://www.cpan.org/authors/id/C/CF/CFAERBER/Graphics-ColorNames-WWW-$version.tar.gz"
+options="!checksum"
+sha256sums=c22b20f994701eef9fe4acbdbb9a595568be588f9f541a3cae106b45b7dec497
+
+build-delete {
+  cd $srcdir/Graphics-ColorNames-WWW-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Graphics-ColorNames-WWW-$version
+  make pure_install doc_install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,24 @@
+# description : Generic Transparent Proxies"
+# depends :   python-setuptools   python-zope-interface  
+
+name=python-zope-proxy
+version=4.3.5
+release=3
+source="https://github.com/zopefoundation/zope.proxy/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/zope.proxy-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/zope.proxy-$version
+  PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9:$PYTHONPATH" python -m zope.testrunner --test-path=src
+}
+
+build()   {
+  cd zope.proxy-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

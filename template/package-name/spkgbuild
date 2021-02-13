@@ -1,0 +1,14 @@
+# description : pkg-name
+# depends :
+
+name=pkg-name
+version=1.0
+release=1
+options="!checksum"
+source=""
+build()
+{
+
+	#run commands except make install that is replaced by below
+	make DESTDIR=$PKG install
+}

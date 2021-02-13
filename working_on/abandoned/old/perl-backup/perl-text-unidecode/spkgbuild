@@ -1,0 +1,32 @@
+# description : US-ASCII transliterations of Unicode text
+# depends : perl>=5.6.0
+
+name=perl-text-unidecode
+version=1.30
+release=3
+url=https://metacpan.org/pod/Text::Unidecode
+source="http://search.cpan.org/CPAN/authors/id/S/SB/SBURKE/Text-Unidecode-${version}.tar.gz"
+options="!checksum"
+sha256sums=6c24f14ddc1d20e26161c207b73ca184eed2ef57f08b5fb2ee196e6e2e88b1c6
+
+build-delete {
+  cd  ${srcdir}/Text-Unidecode-${version}
+
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  ${srcdir}/Text-Unidecode-${version}
+
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

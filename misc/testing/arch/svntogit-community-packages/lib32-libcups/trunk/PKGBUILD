@@ -1,0 +1,43 @@
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+
+_pkgbasename=libcups
+pkgname=lib32-$_pkgbasename
+pkgver=2.3.3
+pkgrel=1
+pkgdesc="The CUPS Printing System - client libraries (32-bit)"
+arch=('x86_64')
+license=('Apache' 'custom')
+url="https://www.cups.org/"
+depends=(lib32-krb5 lib32-libtiff lib32-libpng lib32-gnutls $_pkgbasename)
+source=(https://github.com/apple/cups/releases/download/v${pkgver}/cups-${pkgver}-source.tar.gz{,.sig})
+sha256sums=('261fd948bce8647b6d5cb2a1784f0c24cc52b5c4e827b71d726020bcc502f3ee'
+            'SKIP')
+validpgpkeys=('3737FD0D0E63B30172440D2DDBA3A7AB08D76223'  # CUPS.org (CUPS.org PGP key) <security@cups.org>
+              '45D083946E3035282B3CCA9AF434104235DA97EB') # "CUPS.org <security@cups.org>"     
+build() {
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  cd cups-${pkgver}
+
+  aclocal -I config-scripts
+  autoconf -I config-scripts
+
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+     --disable-ldap --enable-raw-printing --disable-gssapi --disable-dbus \
+     --enable-ssl=yes--enable-threads --enable-libusb=no \
+	 --disable-avahi --disable-dnssd \
+     --with-optim="$CFLAGS" --libdir=/usr/lib32
+  make libs
+}
+
+package() {
+  cd cups-${pkgver}
+  make BUILDROOT="${pkgdir}" install-libs
+  rm -rf "$pkgdir/usr/lib"
+
+# add license + exception
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" {LICENSE,NOTICE}
+}
+

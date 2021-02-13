@@ -1,0 +1,37 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=libdazzle
+pkgver=3.38.0
+pkgrel=1
+pkgdesc="A library to delight your users with fancy features"
+url="https://gitlab.gnome.org/GNOME/libdazzle"
+arch=(x86_64)
+license=(LGPL)
+depends=(gtk3)
+makedepends=(git meson vala gobject-introspection gtk-doc)
+checkdepends=(xorg-server-xvfb)
+provides=(libdazzle-1.0.so)
+_commit=235e1bd36e7c4324557a14690b446dc4b09a3ef3  # tags/3.38.0^0
+source=("git+https://gitlab.gnome.org/GNOME/libdazzle.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+build() {
+  arch-meson $pkgname build -D enable_gtk_doc=true
+  meson compile -C build
+}
+
+check() {
+  dbus-run-session xvfb-run \
+    -s '-screen 0 1920x1080x24 -nolisten local' \
+    meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

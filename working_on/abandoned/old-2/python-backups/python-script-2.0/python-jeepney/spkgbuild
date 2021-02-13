@@ -1,0 +1,16 @@
+# description : Low-level, pure Python DBus protocol wrapper
+# depends : python
+
+url=https://gitlab.com/takluyver/jeepney
+name=python-jeepney
+version=0.6.0
+release=4
+
+source="https://pypi.io/packages/source/j/jeepney/jeepney-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd jeepney-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

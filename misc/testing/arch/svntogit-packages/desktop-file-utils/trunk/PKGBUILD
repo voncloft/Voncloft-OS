@@ -1,0 +1,45 @@
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
+
+pkgname=desktop-file-utils
+pkgver=0.26
+pkgrel=1
+pkgdesc="Command line utilities for working with desktop entries"
+arch=(x86_64)
+url="https://www.freedesktop.org/wiki/Software/desktop-file-utils"
+license=(GPL)
+depends=(glib2)
+makedepends=(git meson)
+_commit=54cec012921e52eb66b6ee1a1f40f2e9c9849f7c  # tags/0.26
+source=("git+https://gitlab.freedesktop.org/xdg/desktop-file-utils.git#commit=$_commit"
+        update-desktop-database.hook)
+sha256sums=('SKIP'
+            '501f1eb35d9fbbd61666f40302b0ce63425299edf023c075986a24dc3ef18575')
+validpgpkeys=('C01EDE5BB0D91E26D003662EC76BB9FEEAD12EA7') #Hans Petter Jansson <hpj@suse.com>
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  depends+=(libglib-2.0.so)
+
+  DESTDIR="$pkgdir" meson install -C build
+  install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
+}
+
+# vim:set sw=2 et:

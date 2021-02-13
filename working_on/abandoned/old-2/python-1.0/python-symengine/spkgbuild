@@ -1,0 +1,17 @@
+# description : Python wrappers for SymEngine
+# depends : python symengine
+
+_name=symengine.py
+url=https://github.com/symengine/symengine.py
+name=python-symengine
+_name=symengine.py
+version=0.6.1
+release=1
+
+source="https://github.com/symengine/symengine.py/archive/v$version/$_name-$version.tar.gz"
+options="checksum"
+
+build() {
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

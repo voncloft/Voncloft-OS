@@ -1,0 +1,28 @@
+# description : Command Arguments for Humans"
+# depends :   python  
+
+name=python-args
+version=0.1.0.20170708
+_commit=9460f1a35eb3055e9e4de1f0a6932e0883c72d65
+release=5
+source="$name-$_commit.tar.gz::https://github.com/kenneth-reitz/args/archive/$_commit.tar.gz" 
+
+prepare   {
+  mv args-{$_commit,$version}
+}
+
+build-old()   {
+  cd args-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd args-$version
+  nosetests3
+}
+
+build()   {
+  cd args-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

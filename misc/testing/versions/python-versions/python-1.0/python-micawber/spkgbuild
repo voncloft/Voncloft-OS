@@ -1,0 +1,33 @@
+
+_name=micawber
+name=python-micawber
+version=0.5.2
+release=1
+# description : A small library for extracting rich content from urls."
+# depends :   python  
+             python-flask: flask support 
+             python-redis: redis caching support  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build/lib:${PYTHONPATH}"
+  python runtests.py
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

@@ -1,0 +1,20 @@
+
+name=python-flask-login
+version=0.5.0
+release=3
+# description : User session management for Flask."
+# depends :   python-flask  
+source="https://github.com/maxcountryman/flask-login/archive/$version.tar.gz" 
+
+check   {
+  cd "$srcdir"/flask-login-$version
+  nosetests3
+}
+
+package   {
+  cd flask-login-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  mkdir -p $PKG/usr/share/licenses/$name
+  install -m644 LICENSE $PKG/usr/share/licenses/$name
+}

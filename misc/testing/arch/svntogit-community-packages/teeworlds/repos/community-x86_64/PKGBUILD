@@ -1,0 +1,61 @@
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Allan McRae <allan@archlinux.org>
+# Contributor: Armin 'IsSuE' Praher [issue.at.gmx.dot.at]
+# Contributor: [vEX] <niechift.dot.vex.at.gmail.dot.com>
+# Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
+pkgname=teeworlds
+pkgver=0.7.5
+pkgrel=1
+pkgdesc='Fast-paced multiplayer 2D shooter game'
+arch=('x86_64')
+url='https://www.teeworlds.com'
+license=('custom')
+depends=('alsa-lib' 'glu' 'sdl2' 'freetype2')
+makedepends=('python' 'bam' 'mesa' 'imagemagick' 'gendesk' 'git')
+source=("git+git://github.com/teeworlds/teeworlds.git#tag=$pkgver"
+        "git+git://github.com/teeworlds/teeworlds-maps.git"
+        "git+git://github.com/teeworlds/teeworlds-translation.git"
+        "bam-v0.5.1.tar.gz::https://github.com/matricks/bam/archive/v0.5.1.tar.gz")
+sha512sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'e6f1b3daad6073c58b0e3cbf836bb0a6b66f0c36532d6e6eca9949239ab8b584cc88f892cce6f74974e370a8a688f33a95dde86dd65cc1790e49e5f8aeab0fef')
+
+prepare() {
+  convert +set date:create +set date:modify "${pkgname}/other/icons/teeworlds.ico" "${srcdir}/${pkgname}.png"
+  gendesk -n --pkgname "${pkgname}" --pkgdesc "${pkgdesc}" \
+    --name 'Teeworlds' --categories 'Game;ArcadeGame'
+
+  cd teeworlds
+  git submodule init
+  git config submodule."datasrc/languages".url ${srcdir}/teeworlds-translation
+  git config submodule."datasrc/maps".url ${srcdir}/teeworlds-maps
+  git submodule update
+}
+
+build() {
+  cd bam-0.5.1
+  ./make_unix.sh
+  cd ..
+
+  cd teeworlds
+  ../bam-0.5.1/bam conf=release
+}
+
+package() {
+  cd teeworlds
+
+  # Install data files
+  mkdir -p ${pkgdir}/usr/share/${pkgname}/data
+  cp -r build/x86_64/release/data/* ${pkgdir}/usr/share/${pkgname}/data
+
+  install -Dm755 build/x86_64/release/${pkgname} ${pkgdir}/usr/bin/${pkgname}
+  install -Dm755 build/x86_64/release/${pkgname}_srv ${pkgdir}/usr/bin/${pkgname}_srv
+
+  install -Dm644 ${srcdir}/${pkgname}.desktop ${pkgdir}/usr/share/applications/${pkgname}.desktop
+  install -Dm644 ${srcdir}/${pkgname}-0.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
+
+  install -Dm644 license.txt ${pkgdir}/usr/share/licenses/${pkgname}/license.txt
+}
+
+# vim:set ts=2 sw=2 et:

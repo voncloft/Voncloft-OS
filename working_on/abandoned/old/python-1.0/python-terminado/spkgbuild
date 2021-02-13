@@ -1,0 +1,19 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+# Contributor: Will Shanks <wsha dot code at g mail dot com>
+
+name=python-terminado
+_name=terminado
+version=0.9.2
+release=1
+pkgdesc="Terminals served to term.js using Tornado websockets"
+url="https://github.com/takluyver/terminado"
+depends=('python-tornado' 'python-ptyprocess')
+makedepends=('python-setuptools' 'python-tornado' 'python-ptyprocess')
+source=("https://files.pythonhosted.org/packages/source/t/terminado/terminado-$version.tar.gz")
+md5sums=('d9b6aa48d9e229dca502828d8b77f70f')
+
+package() {
+  cd "$srcdir/$_name-$version"
+  python3 setup.py install --root="$pkgdir/" --prefix=/usr --optimize=0
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/python-$_name/LICENSE"
+}

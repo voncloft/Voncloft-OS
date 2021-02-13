@@ -1,0 +1,17 @@
+# description : Build and document REST APIs with aiohttp and apispec
+# depends : python-aiohttp python-apispec python-webargs python-jinja
+
+name=python-aiohttp-apispec
+version=2.2.1
+release=2
+
+source="https://github.com/maximdanilchenko/aiohttp-apispec/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+  cd aiohttp-apispec-$version
+  python setup.py build
+  python setup.py install --root="$PKG" --optimize=1 
+
+}
+

@@ -1,0 +1,36 @@
+# description : "A versatile test fixtures replacement based on thoughtbots factory_bot for Ruby"
+# depends : python-faker
+
+name=python-factory-boy
+version=3.2.0
+release=1
+url="https://github.com/FactoryBoy/factory_boy"
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-flask python-django python-sqlalchemy
+              python-flask-sqlalchemy python-mongoengine python-mongomock
+source="$name-$version.tar.gz::https://github.com/FactoryBoy/factory_boy/archive/$version.tar.gz"
+sha512sums=1e9736491229aa1648cfe9956c157738f5b9ecfd43e39a2f1d299e3c018763518f04b9bde7b19c1c7dbef48e5a93db818f1010068be541b02453313f71bc37c0
+
+prepare {
+   cd factory_boy-$version
+  # Use mongomock
+  sed -i /serverselectiontimeoutms/a is_mock=True tests/test_mongoengine.py
+}
+
+build()-delete {
+   cd factory_boy-$version
+  python setup.py build
+}
+
+check {
+   cd factory_boy-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd factory_boy-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

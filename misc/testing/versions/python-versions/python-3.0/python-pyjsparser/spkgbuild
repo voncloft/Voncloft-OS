@@ -1,0 +1,29 @@
+# description : Fast javascript parser  based on esprima.js "
+# depends :   python  
+
+name=python-pyjsparser
+version=2.7.1
+_commit=5465d037b30e334cb0997f2315ec1e451b8ad4c1
+release=7
+source="$name-$_commit.tar.gz::https://github.com/PiotrDabkowski/pyjsparser/archive/$_commit.tar.gz" 
+
+prepare   {
+  mv pyjsparser-{$_commit,$version}
+}
+
+build-old()   {
+  cd pyjsparser-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd pyjsparser-$version
+  pytest
+}
+
+build()_python-pyjsparser   {
+  cd pyjsparser-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

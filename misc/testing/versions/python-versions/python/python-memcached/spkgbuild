@@ -1,0 +1,15 @@
+# description : Python interface to memcached 
+# depends :   python-six  
+
+name=python-memcached
+version=1.59
+release=7
+
+build()   {
+  cd  python-memcached 
+
+  python3 setup.py install --root=$PKG --optimize=1
+}
+
+# getver: raw.githubusercontent.com/linsomniac/python-memcached/master/ChangeLog
+# vim:set ts=2 sw=2 et:

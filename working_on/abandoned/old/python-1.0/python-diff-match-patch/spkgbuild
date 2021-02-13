@@ -1,0 +1,31 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+
+_pkg=diff-match-patch
+name=python-${_pkg}
+version=20200713
+release=3
+pkgdesc="Robust algorithms to perform the operations required for synchronizing plain text"
+url="https://github.com/diff-match-patch-python/diff-match-patch"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz)
+sha256sums=('da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18')
+
+build() {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check() {
+  cd ${_pkg}-${version}
+  pytest
+}
+
+package() {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
+  find "${pkgdir}" -name *_py2.* -delete
+  rm -r "${pkgdir}"$(python -c "import site; print(site.getsitepackages()[0])")/${_pkg//-/_}/tests
+}

@@ -1,0 +1,34 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Aram Drevekenin <aram@poor.dev>
+
+pkgname=bandwhich
+pkgver=0.20.0
+pkgrel=1
+pkgdesc='Terminal bandwidth utilization tool'
+url='https://github.com/imsnif/bandwhich'
+arch=('x86_64')
+license=('MIT')
+depends=('gcc-libs')
+makedepends=('cargo')
+source=(https://github.com/imsnif/${pkgname}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('3bd5cc4166514feb601eb921ef3fbad08b8e9787aad1bb0c8a9543207631964ffc14cc1488e96ef4319bb1a20c5f684b744facd2a6cf1d9ef6dd5d2fefc524cb')
+b2sums=('d2809660b09d1b02bbf8b2b8719406b49064275202af422fc32fa2add34ffc04d748073b6a51c827662418292c0e10c0aa3ca3955e5317e3a0015c25e15755ec')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cargo build --release --locked
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  cargo test --release --locked
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -Dm 755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 644 "docs/bandwhich.1" -t "${pkgdir}/usr/share/man/man1"
+  install -Dm 644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
+# vim: ts=2 sw=2 et:

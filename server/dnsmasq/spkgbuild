@@ -1,0 +1,22 @@
+# description : dnsmasq server
+# depends : iptables
+
+name=dnsmasq
+version=2.82
+release=1
+
+source="http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.82.tar.xz"
+
+build()
+{
+	cd $name-$version
+	make \
+	PREFIX=/usr \
+	BINDIR=/usr/bin
+
+	make DESTDIR=$PKG install
+
+	cp $SRC/dnsmasq.conf /etc/dnsmasq.conf
+	
+
+}

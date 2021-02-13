@@ -1,0 +1,17 @@
+# description : daemon to start wifi for router
+# dependencies : hostapd
+
+name=hostapd-boot
+version=2.9
+release=4
+
+source="hostapd"
+options="!checksum"
+build()
+{
+	mkdir $PKG/etc/init.d
+	install $SRC/hostapd /$PKG/etc/init.d/
+	ln -sfv /etc/init.d/hostapd /etc/rc.d/rc5.d/hostapd
+	ln -sfv /etc/init.d/hostapd /etc/rc.d/rc4.d/hostapd
+	ln -sfv /etc/init.d/hostapd /etc/rc.d/rc3.d/hostapd
+}

@@ -1,0 +1,27 @@
+
+_pkg=three-merge
+name=python-${_pkg}
+version=0.1.1
+release=1
+# description : Simple Python library to perform a 3-way merge between strings"
+# depends :  python-diff-match-patch 
+# PyPi tarballs do not have the tests
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+source=https://github.com/spyder-ide/three-merge/archive/v${version}/${_pkg}-${version}.tar.gz 
+
+build   {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pkg}-${version}
+  pytest -x -v three_merge/tests
+}
+
+package   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build --optimize=1
+  rm -r $PKG$ python -c "import site; print site.getsitepackages  [0] " /${_pkg//-/_}/tests
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}
+}

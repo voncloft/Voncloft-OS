@@ -1,0 +1,26 @@
+# description : "Data readers extracted from the pandas codebase"
+# depends : python-pandas python-lxml python-requests
+
+# TODO: move optional python-requests-cache
+
+name=python-pandas-datareader
+version=0.9.0
+release=2
+url="https://github.com/pydata/pandas-datareader"
+make# depends : python-setuptools
+source="${name}-${version}.tar.gz::https://github.com/pydata/pandas-datareader/archive/v${version}.tar.gz"
+sha256sums=f7de31b193fcf16bf4ec794beba28f371b8423a0edeef4433ec8a29c9eb028ca
+
+build()-delete {
+   cd "$srcdir"/pandas-datareader-${version}
+  python setup.py build_ext --inplace
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/pandas-datareader-${version}
+  python setup.py build
+  python setup.py install  --root=$PKG --optimize=1
+}

@@ -1,0 +1,36 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Contributor: dianlujitao <dianlujitao at gmail dot com>
+
+pkgname=efm-langserver
+pkgver=0.0.26
+pkgrel=1
+pkgdesc='General purpose Language Server'
+arch=('x86_64')
+url=https://github.com/mattn/efm-langserver
+license=('MIT')
+depends=('glibc')
+makedepends=('go')
+optdepends=('ctags: for "go to definition" requests')
+source=("$url/archive/v$pkgver/$pkgname-v$pkgver.tar.gz")
+b2sums=('9740d6967e70fd9b3a95b83d5782e881d0955b919654d1ee4b59f896a6971542dbe4aeb37beb8794553b73787a43803907fcc195a3ee02c196f1a47954194a5e')
+
+build() {
+  cd $pkgname-$pkgver
+  export CGO_CPPFLAGS="$CPPFLAGS"
+  export CGO_CFLAGS="$CFLAGS"
+  export CGO_CXXFLAGS="$CXXFLAGS"
+  export CGO_LDFLAGS="$LDFLAGS"
+  export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
+  go build .
+}
+
+check() {
+  cd $pkgname-$pkgver
+  go test -v ./...
+}
+
+package() {
+  cd $pkgname-$pkgver
+  install -Dt "$pkgdir"/usr/bin efm-langserver
+  install -Dm644 -t "$pkgdir"/usr/share/licenses/$pkgname README.md # Only mention of license
+}

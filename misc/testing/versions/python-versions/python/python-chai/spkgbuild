@@ -1,0 +1,23 @@
+# description : Easy to use mocking, stubbing and spying framework."
+# depends :   python  
+
+name=python-chai
+version=1.1.2
+release=5
+source="https://files.pythonhosted.org/build()s/source/c/chai/chai-$version.tar.gz" 
+
+build-old()   {
+  cd chai-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd chai-$version
+  nosetests
+}
+
+build()   {
+  cd chai-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

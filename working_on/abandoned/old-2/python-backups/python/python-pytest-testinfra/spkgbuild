@@ -1,0 +1,55 @@
+# description : Testinfra test your infrastructures
+# depends : python-pytest
+
+_name=pytest-testinfra
+name=python-pytest-testinfra
+version=6.1.0
+release=1
+url="https://github.com/pytest-dev/pytest-testinfra"
+make# depends : python-hacking python-setuptools_scm python-sphinx
+check# depends : ansible python-mock python-paramiko python-pytest-cov
+python-pytest-xdist python-pywinrm python-tornado salt
+# TODO: add salt to optdepends, after it has been ported to python3
+opt# depends : ansible: for tests using ansible inventories
+            docker: for test running docker containers
+            kubectl: for test running containers in kubernetes
+            lxd: for test running LXC or LXD containers
+            podman: for test running podman containers
+            python-paramiko: for testing remote hosts
+            python-pywinrm: for testing on Windows hosts
+conflicts=python-testinfra
+provides=python-testinfra
+replaces=python-testinfra
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=15c8f3539f63f8587c5b19979215673fb51d476353fd37e35aeb2308a6c4be681f3d247783c87ba0dac68673394ba116fe9fbf32d386baade3f6a8769851d2ec
+b2sums=ed4787d3ec504a757716a7e5c8e00f9c203db18d22a7fba7da411f9cb1fe89bac156a7f4600684a202bdab3785344c58e22b8ff8f011f7e06707d922bccc4ad9
+
+prepare {
+  mv -v "${_name}-${version}" "${name}-${version}"
+}
+
+build()-delete {
+   cd "${name}-${version}"
+  python setup.py build
+  make -C doc man
+}
+
+check {
+   cd "${name}-${version}"
+  export PYTHONPATH="build():$PYTHONPATH"
+  # salt is not python3 yet: https://bugs.archlinux.org/task/61129
+  pytest -v -k not test_backend_importables
+}
+
+options="!checksum"
+
+build() {
+   cd "${name}-${version}"
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+  # man page
+  install -Dm 644 doc/build()/man/*.1 \
+    -t "${PKG}/usr/share/man/man1/"
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

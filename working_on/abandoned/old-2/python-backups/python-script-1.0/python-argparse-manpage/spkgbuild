@@ -1,0 +1,15 @@
+# description : Automatically build() man-pages for your Python project
+
+url=https://github.com/praiskup/argparse-manpage
+name=python-argparse-manpage
+version=1.4
+release=2
+
+source="https://github.com/praiskup/argparse-manpage/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/argparse-manpage-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

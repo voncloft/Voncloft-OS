@@ -1,0 +1,32 @@
+# description : This is a Python implementation of the WHATWG Encoding standard."
+# description : This is a Python implementation of the WHATWG Encoding standard."
+# depends :   python  
+# depends :   python2  
+
+pkgbase=python-webencodings
+name=  python2-webencodings   python-webencodings  
+version=0.5.1
+release=6
+source=https://github.com/gsnedders/python-webencodings/archive/v${version}.tar.gz 
+
+build()_python-webencodings   {
+    cd ${pkgbase}-${version}
+
+    python3 setup.py install --root=$PKG
+    install -D -m644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}
+
+build()_python2-webencodings   {
+    cd ${pkgbase}-${version}
+
+    python2 setup.py install --root=$PKG
+    install -D -m644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}
+
+check   {
+    cd ${pkgbase}-${version}/webencodings
+
+    nosetests tests.py
+
+    nosetests2 tests.py
+}

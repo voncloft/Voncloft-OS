@@ -1,0 +1,35 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=sphinxcontrib-mermaid
+name=sphinx-$_name
+version=0.3.1
+release=1
+pkgdesc='Mermaid diagrams in yours sphinx powered docs'
+url='https://github.com/mgaitan/sphinxcontrib-mermaid'
+depends=('python-sphinx')
+makedepends=('python-setuptools' "$name")
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('ed9da58bfeff1dace9bcf6fe58355a84419d72304a5e3232939517a41a764e2e8587a8e281da06075d2719c5d709474ca74f7c7cf498360d88c55d613e58a303')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+
+  cd docs
+
+  make html
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE.rst "$pkgdir"/usr/share/licenses/$name/LICENSE
+
+  install -dm 755 "$pkgdir"/usr/share/doc/$name
+  cp -r -a --no-preserve=ownership docs/_build/html "$pkgdir"/usr/share/doc/$name
+}
+
+# vim:set ts=2 sw=2 et:

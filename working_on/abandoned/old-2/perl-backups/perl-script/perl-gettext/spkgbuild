@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Gettext
+
+name=perl-gettext
+version=0.01
+release=10
+
+source="https://www.cpan.org/authors/id/J/JB/JBRIGGS/Gettext-0.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd Gettext-0.01
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

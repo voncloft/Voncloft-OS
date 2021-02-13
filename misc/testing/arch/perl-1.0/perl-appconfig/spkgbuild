@@ -1,0 +1,26 @@
+# description : Perl/CPAN AppConfig module - Read configuration files and parse command line arguments
+# depends : perl
+
+name=perl-appconfig
+version=1.71
+release=7
+url=https://search.cpan.org/dist/AppConfig/
+source="https://www.cpan.org/authors/id/N/NE/NEILB/AppConfig-$version.tarsource=.gz"
+options=!checksum
+md5sums=7747d9241561ed5567d5e134b8648707
+
+build-delete {
+  cd AppConfig-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd AppConfig-$version
+  make test
+}
+
+build() {
+  cd AppConfig-$version
+  make install DESTDIR=$PKG
+}

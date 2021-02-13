@@ -1,0 +1,30 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+name=python-clickclick
+version=20.10.2
+release=3
+pkgdesc='Click command line utilities'
+url='https://codeberg.org/hjacobs/python-clickclick'
+depends=('python-click' 'python-yaml')
+makedepends=('python-setuptools')
+#checkdepends=('python-pytest-runner')
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('d8954d231bff6945ac0e8350be05775a8a0b852dd0284e3446b3f9c8bc5861870ed1bc058e132c144fe8d543aee87d7a7a54894abdb4006664e5994c8cfb507f')
+
+build() {
+  cd $name
+
+  python setup.py build
+}
+
+#check() {
+#  cd $name
+#
+#  python setup.py test
+#}
+
+package() {
+  cd $name
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

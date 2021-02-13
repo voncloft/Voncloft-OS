@@ -1,0 +1,32 @@
+# Maintainer: BlackEagle <ike.devolder@gmail.com>>
+
+pkgname=kodi-addon-game-libretro-scummvm
+pkgver=2.1.1.11
+_codename=Leia
+pkgrel=1
+pkgdesc="Libretro wrapper for Kodi's Game API"
+arch=('x86_64')
+url='https://github.com/kodi-game/game.libretro.scummvm'
+license=('GPL')
+groups=('kodi-addons' 'kodi-addons-game')
+depends=('kodi-addon-game-libretro' 'libretro-scummvm')
+makedepends=('cmake' 'kodi-dev')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/kodi-game/game.libretro.scummvm/archive/$pkgver-$_codename.tar.gz")
+sha512sums=('f86a424bea21632950ab5c0b752c7decb61b3b675f1f762665c0dff45e7aeb8df659fefbada2890631dc369b8906cf5790d546659926a44765078ded3835cd96')
+
+build() {
+    cd "game.libretro.scummvm-$pkgver-$_codename"
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DUSE_LTO=1 \
+        .
+    make
+}
+
+package() {
+    cd "game.libretro.scummvm-$pkgver-$_codename"
+	make DESTDIR="$pkgdir/" install
+}
+

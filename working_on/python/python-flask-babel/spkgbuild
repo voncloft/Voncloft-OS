@@ -1,0 +1,17 @@
+# description : Adds i18n/l10n support to Flask applications with the help of the Babel library.
+# depends : python-flask python-babel python-pytz python-speaklater python-jinja
+
+url=https://pypi.python.org/pypi/Flask-Babel
+_pipname=Flask-Babel
+name=python-flask-babel
+version=2.0.0
+release=3
+
+source="https://pypi.io/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_pipname-$version 
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

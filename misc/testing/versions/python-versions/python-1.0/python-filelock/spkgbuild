@@ -1,0 +1,35 @@
+
+pkgbase=python-filelock
+name= python-filelock python2-filelock 
+version=3.0.12
+release=5
+# description : A platform independent file lock"
+source="$pkgbase-$version.tar.gz::https://github.com/benediktschmitt/py-filelock/archive/v$version.tar.gz" 
+
+build   {
+  cd py-filelock-$version
+  python setup.py build
+  python2 setup.py build
+}
+
+check   {
+  cd py-filelock-$version
+  pytest test.py
+  pytest2 test.py
+}
+
+package_python-filelock   {
+  # depends :   python  
+
+  cd py-filelock-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}
+
+package_python2-filelock   {
+  # depends :   python2  
+
+  cd py-filelock-$version
+  python2 setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

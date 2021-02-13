@@ -1,0 +1,32 @@
+
+name=python-txaio
+version=20.12.1
+release=1
+# description : Compatibility API between asyncio/Twisted/Trollius 
+# depends :   python-six  
+# python-tests is used here:
+#https://github.com/crossbario/txaio/blob/v20.1.1/test/_asyncio_test_utils.py#L35
+source="https://pypi.io/packages/source/t/txaio/txaio-$version.tar.gz" 
+
+prepare   {
+  # This tests whether pip can install the sdist, and is completely broken
+  # except in their boutique setup. They won t fix it.
+  #https://github.com/crossbario/txaio/issues/77#issuecomment-246276723
+  rm txaio-$version/test/test_packaging.py
+}
+
+build   {
+  cd "$srcdir"/txaio-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/txaio-$version
+  python -m pytest
+}
+
+package   {
+  cd txaio-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

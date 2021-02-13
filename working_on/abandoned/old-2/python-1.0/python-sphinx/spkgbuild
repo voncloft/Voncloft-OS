@@ -1,0 +1,16 @@
+# description : Python documentation generator
+# depends : python-babel
+
+url=http://www.sphinx-doc.org/
+name=python-sphinx
+version=3.4.3
+release=1
+
+source="https://pypi.org/packages/source/S/Sphinx/Sphinx-$version.tar.gz"{,.asc}
+options="checksum"
+
+build() {
+   cd Sphinx-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

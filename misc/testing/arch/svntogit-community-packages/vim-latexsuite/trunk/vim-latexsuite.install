@@ -1,0 +1,12 @@
+post_install() {
+    echo '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+    echo '% Set the following lines in your ~/.vimrc or the systemwide /etc/vimrc:'
+    echo '% filetype plugin indent on'
+    echo '% set grepprg=grep\ -nH\ $*'
+    echo '% let g:tex_flavor = "latex"'
+    echo '% '
+    echo '% Also, this installs to /usr/share/vim/vimfiles, which may not be in'
+    echo '% your runtime path (RTP). Be sure to add it too, e.g:'
+    echo '% set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after'
+    echo '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+}

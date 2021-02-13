@@ -1,0 +1,51 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=wolf-shaper
+pkgver=0.1.8
+pkgrel=1
+pkgdesc="A waveshaper plugin with a graph editor"
+arch=('x86_64')
+url="https://github.com/pdesaulniers/wolf-shaper"
+license=('GPL3')
+groups=('dssi-plugins' 'lv2-plugins' 'pro-audio' 'vst-plugins')
+depends=('gcc-libs' 'glibc' 'libglvnd' 'libx11')
+makedepends=('dssi' 'gendesk' 'jack' 'lv2')
+optdepends=('dssi-host: for DSSI plugin'
+            'jack: for standalone application'
+            'lv2-host: for lv2 plugin'
+            'vst-host: for VST plugin')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/pdesaulniers/${pkgname}/releases/download/v${pkgver}/${pkgname}-v${pkgver}-source.tar.gz")
+sha512sums=('d1bed1a59047340e4eab7a763ff2e29ab03ad95d74743262eefede4e34c9345351e8b6ffb9318bc2101017ea512366a18bfc0a4e40ad11ad098bd9a607590a4e')
+b2sums=('713e4cf82e508b6ba781cc40d2d2f46f1221514a11e4db0eeb0f1a00509b5032d1396e25b48e7e0b8128ba843098b9923bf135fd704c559fed8f80a3453e0f09')
+
+prepare() {
+  mv -v "$pkgname" "$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
+  # XDG desktop file
+  gendesk -n \
+          --pkgname "com.github.pdesaulniers.${pkgname}" \
+          --name "${pkgname}" \
+          --exec "${pkgname}" \
+          --pkgdesc "${pkgdesc}" \
+          --genericname "Wave Shaper" \
+          --categories "AudioVideo;Audio"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  BUILD_VST2=true BUILD_LV2=true BUILD_DSSI=true BUILD_JACK=true make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -vDm 755 "bin/${pkgname}" -t "${pkgdir}/usr/bin/"
+  install -vDm 644 *".desktop" \
+    -t "${pkgdir}/usr/share/applications"
+  install -vDm 755 "bin/${pkgname}-vst.so" -t "${pkgdir}/usr/lib/vst"
+  install -vDm 755 "bin/${pkgname}-dssi.so" -t "${pkgdir}/usr/lib/dssi"
+  install -vDm 755 "bin/${pkgname}.lv2/"*.so \
+    -t "${pkgdir}/usr/lib/lv2/${pkgname}.lv2"
+  install -vDm 644 "bin/${pkgname}.lv2/"*.ttl \
+    -t "${pkgdir}/usr/lib/lv2/${pkgname}.lv2"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

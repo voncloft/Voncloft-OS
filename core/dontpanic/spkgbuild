@@ -1,0 +1,17 @@
+# description : used for testing Alien::Base
+# depends : glibc
+
+name=dontpanic
+version=1.02
+release=2
+
+source="https://github.com/Perl5-Alien/$name/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd dontpanic-$version
+   ./autogen.sh
+   ./configure --prefix=/usr
+   make
+   make DESTDIR=$PKG install
+}

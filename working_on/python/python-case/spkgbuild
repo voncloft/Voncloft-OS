@@ -1,0 +1,16 @@
+# description : Python unittest Utilities
+# depends : python-nose
+
+url=https://github.com/celery/case
+name=python-case
+version=1.5.3
+release=6
+
+source="https://files.pythonhosted.org/packages/source/c/case/case-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd case-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

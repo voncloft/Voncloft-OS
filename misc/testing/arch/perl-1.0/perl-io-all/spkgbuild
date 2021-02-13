@@ -1,0 +1,40 @@
+# description : IO::All of it to Graham and Damian!
+# depends : perl>=5.6.1 perl-io-string>=1.08
+# Packager: Justin Davis <jrcd83@gmail.com>
+
+name=perl-io-all
+version=0.87
+release=3
+url=https://search.cpan.org/dist/IO-All/
+source="https://cpan.metacpan.org/authors/id/F/FR/FREW/IO-All-$version.tarsource=.gz"
+options=!checksum
+sha256sums=54e21d250c0229127e30b77a3461e10077854ec244f26fb670f1b445ed4c4d5b
+
+build-delete {
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB= \
+      PERL_AUTOINSTALL=--skipdeps \
+      PERL_MM_OPT=INSTALLDIRS=vendor \
+      PERL_MB_OPT=--installdirs vendor \
+      MODULEBUILDRC=/dev/null
+
+  cd ${srcdir}/IO-All-${version}
+  perl Makefile.PL
+  make
+}
+
+check {
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+  cd ${srcdir}/IO-All-${version}
+  make test
+}
+
+build() {
+  cd ${srcdir}/IO-All-${version}
+  make DESTDIR=$PKG install
+}
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:

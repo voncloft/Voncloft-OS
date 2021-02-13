@@ -1,0 +1,24 @@
+# description : Zope Configuration Markup Language  ZCML "
+# depends :   python-setuptools   python-zope-interface   python-zope-schema   python-zope-i18nmessageid  
+
+name=python-zope-configuration
+version=4.4.0
+release=3
+source="https://github.com/zopefoundation/zope.configuration/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/zope.configuration-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/zope.configuration-$version
+  PYTHONPATH="$PWD/build-old()/lib:$PYTHONPATH" python -m zope.testrunner --test-path=src || echo "Tests failed"
+}
+
+build()   {
+  cd "$srcdir"/zope.configuration-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

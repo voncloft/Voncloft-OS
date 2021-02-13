@@ -1,0 +1,16 @@
+# description : A very simplistic remote-command-executor using connections to hosts
+# depends : python python-execnet
+
+url=https://github.com/alfredodeza/${_pkgbase}
+name=python-remoto
+version=1.1.4
+release=2
+
+source="https://files.pythonhosted.org/packages/source/${_pkgbase:0:1}/${_pkgbase}/${_pkgbase}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_pkgbase}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

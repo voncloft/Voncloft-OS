@@ -1,0 +1,50 @@
+
+_name=htmlmin
+pkgbase=python-htmlmin
+name=  htmlmin   python-htmlmin  
+version=0.1.12
+_gitcommit=220b1d16442eb4b6fafed338ee3b61f698a01e63
+release=6
+# description : Configurable HTML Minifier with safety features 
+source= ${pkgbase}-${version}.tar.gz::https://github.com/mankyd/htmlmin/archive/${_gitcommit}.tar.gz 
+
+build   {
+  echo "Building python..."
+  cd ${_name}-${_gitcommit}
+   python setup.py build
+   sphinx-build -b text docs docs/_build/text
+   sphinx-build -b man docs docs/_build/man
+}
+
+check   {
+  echo "Checking python..."
+  cd ${_name}-${_gitcommit}
+   python setup.py test
+}
+
+package_htmlmin   {
+  # depends :   python   python-setuptools   python-htmlmin  
+  pkgdesc+=   CLI  
+  cd ${_name}-${_gitcommit}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -d "${PKG}/usr/share/"{licenses,doc,man/man1}
+  ln -s /usr/share/licenses/python-htmlmin "${PKG}/usr/share/licenses/${name}"
+  ln -s /usr/share/doc/python-htmlmin "${PKG}/usr/share/doc/${name}"
+  ln -s /usr/share/man/man1/python-htmlmin.1.gz "${PKG}/usr/share/man/man1/htmlmin.1.gz"
+
+  rm -r $PKG/usr/lib
+}
+
+package_python-htmlmin   {
+  # depends :   python  
+  cd ${_name}-${_gitcommit}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+  install -Dm 644 docs/_build/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build/man/htmlmin.1 "${PKG}/usr/share/man/man1/${name}.1"
+
+  rm -r $PKG/usr/lib/python*/site-packages/htmlmin/tests \
+    "${PKG}/usr/bin"
+}
+
+# vim: ts=2 sw=2 et:

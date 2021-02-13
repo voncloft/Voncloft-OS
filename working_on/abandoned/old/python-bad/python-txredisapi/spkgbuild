@@ -1,0 +1,23 @@
+# description : Non-blocking redis client for python 
+# depends :   python   python-twisted   python-six  
+
+name=python-txredisapi
+version=1.4.7
+release=2
+
+
+
+source="https://pypi.org/build()s/source/t/txredisapi/txredisapi-$version.tar.gz" 
+
+
+build-old()   {
+	cd "$srcdir"/txredisapi-$version
+	python setup.py build-old()
+}
+
+build()   {
+	cd txredisapi-$version
+	python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :

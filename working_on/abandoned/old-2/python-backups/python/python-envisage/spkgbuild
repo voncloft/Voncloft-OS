@@ -1,0 +1,27 @@
+# description : "Extensible Application Framework"
+# depends : python-apptools
+
+name=python-envisage
+version=4.9.2
+release=1
+url="https://github.com/enthought/envisage"
+make# depends : python-setuptools
+opt# depends : ipython: for IPython shell plugin
+source="envisage-$version.tar.gz::https://github.com/enthought/envisage/archive/${version}.tar.gz"
+sha256sums=88a130149c6d3d58f375af4ef06c1e43c5b8cfb52b8a3a5add2e721d9dccc1d3
+
+build()-delete {
+   cd "$srcdir"/envisage-$version
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/envisage-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG/ -optimize=1
+
+}

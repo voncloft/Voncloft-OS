@@ -1,0 +1,23 @@
+# description : Useful extra bits for Python - things that should be in the standard library"
+# depends :   python  
+
+name=python-extras
+version=1.0.0
+release=8
+source="https://github.com/testing-cabal/extras/archive/$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd extras-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd extras-$version
+  python -m testtools.run extras.tests.test_suite
+}
+
+build()   {
+  cd extras-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

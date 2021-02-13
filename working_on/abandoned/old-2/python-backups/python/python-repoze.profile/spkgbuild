@@ -1,0 +1,31 @@
+# description : "Aggregate profiling for WSGI requests"
+# depends : python
+
+name=python-repoze.profile
+version=2.3
+release=4
+url="http://docs.repoze.org/profile/"
+opt# depends : pyprof2calltree
+make# depends : python-setuptools pyprof2calltree
+check# depends : python-nose
+source="https://pypi.io/packages/source/r/repoze.profile/repoze.profile-$version.tar.gz"
+md5sums=65e87b8ef5ac7e6b2074decdb89a180b
+
+build()-delete {
+   cd repoze.profile-$version
+  python setup.py build
+}
+
+check {
+   cd repoze.profile-$version
+  nosetests3
+}
+
+options="!checksum"
+
+build() {
+   cd repoze.profile-$version
+  python setup.py build
+  python setup.py install --root=$PKG
+
+}

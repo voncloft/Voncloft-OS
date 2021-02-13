@@ -1,0 +1,16 @@
+# description : recursive versions of mkdir and rmdir without as much overhead as File::Path
+# depends : perl
+
+name=perl-file-path-tiny
+version=0.9
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/File-Path-Tiny-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd File-Path-Tiny-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,24 @@
+# description : Aggregate profiling for WSGI requests"
+# depends :   python  
+
+name=python-repoze.profile
+version=2.3
+release=4
+source="https://pypi.io/build()s/source/r/repoze.profile/repoze.profile-$version.tar.gz" 
+
+build-old()   {
+  cd repoze.profile-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd repoze.profile-$version
+  nosetests3
+}
+
+build()   {
+  cd repoze.profile-$version
+  python setup.py install --root=$PKG
+
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/$name
+}

@@ -1,0 +1,31 @@
+
+_name=configclass
+name=python-configclass
+version=0.2.0
+release=3
+# description : A Python class to hold configuration values"
+# depends :   python-mergedict  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "$_name-$version" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

@@ -1,0 +1,29 @@
+# description : Reply to a Message 
+# depends : perl-email-address>=1.80 perl-email-mime-creator>=1.41 perl-email-mime>=1.82 perl-email-abstract>=2.01 perl-email-mime-modifier>=1.42
+
+name=perl-email-reply
+version=1.204
+release=4
+url=https://search.cpan.org/dist/Email-Reply
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Reply-$version.tar.gz"
+options="!checksum"
+sha256sums=ba4fd80ac5017d6d132e0358c786b0ecd1c7adcbeee5c19fb3da2964791a56f0
+
+build-delete {
+  cd  $srcdir/Email-Reply-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Email-Reply-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

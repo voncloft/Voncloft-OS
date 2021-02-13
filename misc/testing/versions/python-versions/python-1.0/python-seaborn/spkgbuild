@@ -1,0 +1,22 @@
+
+# TODO: python-fastcluster is optional dependency  move from AUR 
+
+name=python-seaborn
+version=0.11.0
+release=3
+# description : Statistical data visualization"
+# depends :   python-pandas   python-matplotlib   python-scipy  
+source="${name}-${version}.tar.gz::https://github.com/mwaskom/seaborn/archive/v${version}.tar.gz" 
+
+build   {
+  cd "$srcdir"/seaborn-${version}
+  python setup.py build
+}
+
+package   {
+  cd "$srcdir"/seaborn-${version}
+
+  python setup.py install --skip-build --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

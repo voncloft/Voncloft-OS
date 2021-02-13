@@ -1,0 +1,43 @@
+# description : Easily test network connectivity
+# depends : perl
+
+name=perl-test-requiresinternet
+version=0.05
+release=6
+make# depends : 
+url=https://search.mcpan.org/dist/Test-RequiresInternet
+source="https://search.mcpan.org/CPAN/authors/id/M/MA/MALLEN/Test-RequiresInternet-$version.tar.gz"
+options="!checksum"
+sha256sums=bba7b32a1cc0d58ce2ec20b200a7347c69631641e8cae8ff4567ad24ef1e833e
+_distdir=Test-RequiresInternet-$version
+
+build-delete {
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB=                 \
+    PERL_AUTOINSTALL=--skipdeps                            \
+    PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG     \
+    PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+    MODULEBUILDRC=/dev/null
+
+   cd $_distdir
+  /usr/bin/perl Makefile.PL
+  make
+}
+
+check {
+   cd $_distdir
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+  make test
+}
+
+build() {
+   cd $_distdir
+  make install
+
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

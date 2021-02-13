@@ -1,0 +1,25 @@
+# description : Library to implement a well-behaved Unix daemon process 
+# depends :   python   python-lockfile   python-docutils  
+
+name=python-daemon
+version=2.2.4
+release=5
+source=https://files.pythonhosted.org/build()s/source/p/$name/$name-$version.tar.gz 
+
+build-old()   {
+  cd "${srcdir}"/python-daemon-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-daemon-$version
+  python setup.py test
+}
+
+build()_python-daemon   {
+  cd "${srcdir}"/python-daemon-$version
+
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.ASF-2 $PKG/usr/share/licenses/$name/LICENSE.ASF-2
+  install -Dm644 LICENSE.GPL-3 $PKG/usr/share/licenses/$name/LICENSE.GPL-3
+}

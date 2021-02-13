@@ -1,0 +1,16 @@
+# description : Scientific tools for Python
+# depends : cblas lapack python
+
+url=https://www.numpy.org/
+name=python-numpy
+version=1.20.0
+release=1
+
+source="https://github.com/numpy/numpy/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd numpy-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,32 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Magnus Therning <magnus@therning.org>
+# Contributor: Anton Bazhenov <anton.bazhenov at gmail>
+
+pkgname=hexer
+pkgver=1.0.6
+pkgrel=1
+pkgdesc='Multi buffer editor for binary files with vi-like interface'
+url='https://devel.ringlet.net/editors/hexer/'
+arch=('x86_64')
+license=('custom')
+depends=('ncurses')
+source=(https://devel.ringlet.net/files/editors/${pkgname}/${pkgname}-${pkgver}.tar.gz{,.asc})
+sha256sums=('fff00fbb0eb0eee959c08455861916ea672462d9bcc5580207eb41123e188129'
+            'SKIP')
+sha512sums=('fc34037fa815b6f360572aa488a0a19d831d7f4d8a4d71f8882c75f727752b5381a84338a0eba077487e468f443ce954f854e80df710802ea94d6a23ee871630'
+            'SKIP')
+validpgpkeys=('2EE7A7A517FC124CF115C354651EEFB02527DF13') # Peter Pentchev <roam@ringlet.net>
+
+build() {
+  cd ${pkgname}-${pkgver}
+  CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" PREFIX=/usr MANDIR=/usr/share/man/man1 install
+  install -Dm 644 COPYRIGHT -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

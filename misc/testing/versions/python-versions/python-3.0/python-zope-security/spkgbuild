@@ -1,0 +1,32 @@
+# description : Zope Security Framework"
+# depends :   python-setuptools   python-zope-component   python-zope-i18nmessageid 
+
+name=python-zope-security
+version=5.1.1
+release=3
+          python-zope-interface   python-zope-location   python-zope-proxy   python-zope-schema  
+               python-zope-testrunner  
+source="https://github.com/zopefoundation/zope.security/archive/$version.tar.gz" 
+
+prepare   {
+  cd zope.security-$version
+  # TODO
+  sed -i  /def test_iteration_of_btree_items_keys_values/i \    @unittest.skip "Circular import weirdness"   src/zope/security/tests/test_checker.py
+}
+
+build-old()   {
+  cd zope.security-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd zope.security-$version
+  PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9:$PYTHONPATH" python -m zope.testrunner --test-path=src
+}
+
+build()   {
+  cd zope.security-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

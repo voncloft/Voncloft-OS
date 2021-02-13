@@ -1,0 +1,21 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+
+name=python-sqlobject
+version=3.9.0
+release=1
+pkgdesc="SQLObject, an object-relational mapper for Python"
+url="http://sqlobject.org/"
+depends=('python-pydispatcher')
+makedepends=('python-setuptools')
+source=("${name}-${version}.tar.gz::https://github.com/sqlobject/sqlobject/archive/${version}.tar.gz")
+sha256sums=('dd720d636e4d098ff2b826628c75ef014fc561935d8711cc0bcd83465bba4c8a')
+
+build(){
+  cd "sqlobject-$version"
+  python setup.py build
+}
+
+package_python-sqlobject() {
+  cd "sqlobject-$version"
+  python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}

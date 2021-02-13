@@ -1,0 +1,16 @@
+# description : A simple wrapper around optparse for powerful command line utilities
+    # depends : python
+
+_realname=click
+url=http://click.pocoo.org/
+_realname=click
+version=7.1.2
+release=3
+
+source="https://github.com/pallets/click/archive/${version}.tar.gz"
+
+build() {
+     cd ${_realname}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,18 @@
+# description : A minimal HTTP client
+# depends : python-h11 python-sniffio
+
+_name=httpcore
+url=https://github.com/encode/${_name}
+_name=httpcore
+name=python-httpcore
+version=0.12.0
+release=3
+
+source="${url}/archive/${version}.tar.gz"
+options="checksum"
+
+build() {
+     cd ${srcdir}/${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

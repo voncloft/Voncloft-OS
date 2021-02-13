@@ -1,0 +1,29 @@
+# description : "Easy access to shell commands from python"
+# depends : python
+
+name=python-whelk
+version=3.0
+release=2
+url="https://pypi.python.org/pypi/whelk"
+make# depends : python-setuptools
+source="$name-$version.tar.gz::https://github.com/seveas/whelk/archive/$version.tar.gz"
+sha512sums=7760e342b09a03951848d7c5ce258b43b44b6deda3efdb0433bd4704ebb8bd0e43589000e0e8916c2469ac154e0121292b79880fc09e5d44202117900ae7fb69
+
+build()-delete {
+   cd whelk-$version
+  python setup.py build
+}
+
+check {
+   cd whelk-$version
+  python -munittest discover
+}
+
+options="!checksum"
+
+build() {
+   cd whelk-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 COPYING $PKG/usr/share/licenses/$name/COPYING
+}

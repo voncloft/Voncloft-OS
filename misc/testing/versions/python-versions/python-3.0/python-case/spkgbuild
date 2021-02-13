@@ -1,0 +1,18 @@
+# description : Python unittest Utilities"
+# depends :   python-nose  
+
+name=python-case
+version=1.5.3
+release=6
+source="https://files.pythonhosted.org/build()s/source/c/case/case-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/case-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/case-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

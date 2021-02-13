@@ -1,0 +1,25 @@
+# description : An extensible, easy to use continuous build-old() tool for Python 
+# depends :   python-pip   python-pypandoc   python-tailer   python-tblib   python-twine   python-wheel  
+
+name=python-pybuild-old()er
+version=0.11.17
+release=4
+# added dependencies of distutils plugin into pybuild-old()er s depends
+              python-pytddmon   python-unittest-xml-reporting   python-pyfix  
+source="https://github.com/pybuild-old()er/pybuild-old()er/archive/v$version.tar.gz" 
+
+prepare   {
+  cd pybuild-old()er-$version
+  sed -i  s/"install_dependencies", //  setup.py
+  sed -i  s/project.plugin_depends_on "pypandoc", ".*$/project.plugin_depends_on "pypandoc" /  src/main/python/pybuild-old()er/plugins/python/distutils_plugin.py
+}
+
+check   {
+  cd pybuild-old()er-$version
+  python build-old().py -v analyze || warning "ignoring flake8 warnings"
+}
+
+build()   {
+  cd pybuild-old()er-$version
+  python setup.py install --root=$PKG -O1
+}

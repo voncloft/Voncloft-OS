@@ -1,0 +1,17 @@
+# description : Pythonic task execution
+# depends : python
+
+url=https://github.com/pyinvoke/invoke
+name=python-invoke
+version=1.5.0
+release=1
+
+source="https://pypi.io/packages/source/i/invoke/invoke-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd invoke-$version
+   cd invoke-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

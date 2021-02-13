@@ -1,0 +1,33 @@
+
+_name=django-filter
+name=python-django-filter
+version=2.4.0
+release=2
+# description : A generic system for filtering Django QuerySets based on user selections"
+# depends :   python-django  
+ python-mock   python-pytest  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  python runtests.py
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+    -t "${PKG}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

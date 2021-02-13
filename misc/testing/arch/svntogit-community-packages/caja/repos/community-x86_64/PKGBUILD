@@ -1,0 +1,40 @@
+# Maintainer: Brad Fanella <cesura@archlinux.org>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=caja
+pkgver=1.24.0
+pkgrel=1
+pkgdesc="File manager for the MATE desktop"
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('exempi' 'gvfs' 'libexif' 'libsm' 'mate-desktop' 'libnotify')
+makedepends=('gobject-introspection' 'intltool')
+optdepends=('gstreamer: automatic media playback when mouseover')
+groups=('mate')
+conflicts=('caja-gtk3')
+replaces=('caja-gtk3')
+source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
+sha256sums=('80e17a55739561b213197f547cc1b30ca977206980cfa1e2d892331810f1ceb2')
+
+build() {
+	cd "$pkgname-$pkgver"
+    	./configure \
+        	--prefix=/usr \
+        	--libexecdir=/usr/lib/$pkgname \
+        	--enable-introspection \
+        	--disable-update-mimedb
+
+    	#https://bugzilla.gnome.org/show_bug.cgi?id=656231
+    	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+    	make
+}
+
+package() {
+    	cd "$pkgname-$pkgver"
+    	make DESTDIR="${pkgdir}" install
+
+    	# Remove D-Bus activation file to avoid conflict with nautilus-desktop
+    	rm -r "$pkgdir/usr/share/dbus-1/"
+}

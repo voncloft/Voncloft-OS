@@ -1,0 +1,30 @@
+# Maintainer : Felix Yan <felixonmars@archlinux.org>
+
+name=python-repoze.profile
+version=2.3
+release=4
+pkgdesc="Aggregate profiling for WSGI requests"
+url="http://docs.repoze.org/profile/"
+depends=('python')
+optdepends=('pyprof2calltree')
+makedepends=('python-setuptools' 'pyprof2calltree')
+checkdepends=('python-nose')
+source=("https://pypi.io/packages/source/r/repoze.profile/repoze.profile-$version.tar.gz")
+md5sums=('65e87b8ef5ac7e6b2074decdb89a180b')
+
+build() {
+  cd repoze.profile-$version
+  python setup.py build
+}
+
+check() {
+  cd repoze.profile-$version
+  nosetests3
+}
+
+package() {
+  cd repoze.profile-$version
+  python setup.py install --root="$pkgdir"
+
+  install -Dm644 LICENSE.txt -t "$pkgdir"/usr/share/licenses/$name
+}

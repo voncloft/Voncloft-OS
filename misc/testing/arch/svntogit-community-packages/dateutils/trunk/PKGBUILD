@@ -1,0 +1,38 @@
+# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+
+pkgname=dateutils
+pkgver=0.4.7
+pkgrel=1
+pkgdesc='nifty command line date and time utilities; fast date calculations and conversion in the shell'
+url='https://www.fresse.org/dateutils/'
+arch=('x86_64')
+license=('BSD')
+depends=('glibc')
+source=("$pkgname-$pkgver.tar.xz::https://github.com/hroptatyr/$pkgname/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
+        "$pkgname-$pkgver.tar.asc::https://github.com/hroptatyr/$pkgname/releases/download/v$pkgver/$pkgname-$pkgver.tar.asc")
+validpgpkeys=('6CB0D61E23A4275CC2CFA16194C9A1AC82C9390E')
+sha1sums=('8c59d50a70834d7a5962cc03245a3ea589719520'
+          'SKIP')
+sha512sums=('480943c32585efd8f42958d6e7d3304a37568f2134c9561d6e0b38f4719fd149ec7e55c559a5e73e97e1c9d217f3d53fe76a7e6a9d3114c040915ebf48db4666'
+            'SKIP')
+
+prepare() {
+    cd "$srcdir/$pkgname-$pkgver"
+    ./configure --prefix=/usr --with-old-links=no
+}
+
+build() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make
+}
+
+check() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make check
+}
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make DESTDIR="$pkgdir" install
+    install -Dm0644 LICENSE "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
+}

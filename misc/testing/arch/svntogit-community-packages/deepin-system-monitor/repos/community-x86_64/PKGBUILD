@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+pkgname=deepin-system-monitor
+pkgver=5.8.0.4
+pkgrel=1
+pkgdesc='A more user-friendly system monitor'
+arch=('x86_64')
+url="https://github.com/linuxdeepin/deepin-system-monitor"
+license=('GPL3')
+depends=('deepin-qt5integration' 'dtkwm' 'procps-ng' 'libcap')
+makedepends=('cmake' 'deepin-gettext-tools' 'ninja' 'qt5-tools')
+groups=('deepin')
+install=deepin-system-monitor.install
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-system-monitor/archive/$pkgver.tar.gz")
+sha512sums=('ea6561d12e3fe5c0bae8cc826558b8119e1706aebb84c0c5b24817e4e80c6b2844cd1fc7583a10fd21ad91f0d26d534b0132c2fa301d4a2c9d43de6a8dbe6eda')
+
+prepare() {
+  cd deepin-system-monitor-$pkgver
+# Workaround build failure with GCC 10
+  sed -e 's|print_err|print_err_system|g' -i src/process/system_stat.cpp
+  sed -e 's|print_err|print_err_process|g' -i src/process/process_stat.cpp
+  sed -e 's|print_err|print_err_desktop|g' -i src/process/desktop_entry_stat.cpp
+}
+
+build() {
+  cd deepin-system-monitor-$pkgver
+  cmake . -GNinja -DCMAKE_INSTALL_PREFIX=/usr
+  ninja
+}
+
+package() {
+  cd deepin-system-monitor-$pkgver
+  DESTDIR="$pkgdir" ninja install
+}

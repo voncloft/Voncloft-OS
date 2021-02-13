@@ -1,0 +1,24 @@
+# description : A build() for managing hierarchical datasets and designed to efficiently and easily cope with extremely large amounts of data"
+# depends :  blosc lzo hdf5 python-numexpr 
+
+name=python-pytables
+version=3.6.1
+release=7
+source="https://github.com/PyTables/PyTables/archive/v${version}/${name}-${version}.tar.gz" 
+
+build-old()   {
+  cd PyTables-${version}
+  python setup.py build-old() --blosc=/usr --lzo=/usr --hdf5=/usr --bzip2=/usr
+}
+
+check   {
+  local python_version=$ python -c  import sys; print ".".join map str, sys.version_info[:2]     
+  cd PyTables-${version}/build-old()/lib.linux-${CARCH}-${python_version}
+  PYTHONPATH="." python -m tables.tests.test_all  
+}
+
+build()   {
+  cd PyTables-${version}
+  python setup.py install --skip-build-old() --prefix=/usr --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/${name}/
+}

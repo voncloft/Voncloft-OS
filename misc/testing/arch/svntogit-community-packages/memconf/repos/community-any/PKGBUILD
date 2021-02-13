@@ -1,0 +1,26 @@
+# Maintainer : Kyle Keen <keenerd@gmail.com>
+# Contributor : Martin Wimpress <code@flexion.org>
+
+pkgname=memconf
+pkgver=3.15
+pkgrel=1
+pkgdesc="Identify sizes of installed memory modules."
+arch=('any')
+url="http://www.4schmidts.com/memconf.html"
+license=('GPL')
+depends=('dmidecode' 'perl')
+source=("$pkgname-$pkgver.gz::http://www.4schmidts.com/unix/$pkgname.gz"
+        "$pkgname-$pkgver.man::http://www.4schmidts.com/unix/$pkgname.man")
+sha1sums=('5b3112fe459d43b0f7ff5d7a82d048d943b4fd59'
+          '5dd3bd6623061a8cbe9463548c321d81b673b979')
+
+build() {
+    cd "$srcdir"
+    zcat "$pkgname-$pkgver.gz" > "$pkgname"
+}
+
+package() {
+    cd "$srcdir"
+    install -Dm0755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+    install -Dm0755 "$pkgname-$pkgver.man" "$pkgdir/usr/share/man/man1/$pkgname.1"
+}

@@ -1,0 +1,18 @@
+# description : Library to read and edit executable binary files
+# depends : python
+
+_pyname=${name/python-/}
+url=https://github.com/sashs/filebytes
+name=python-filebytes
+_pyname=${name/python-/}
+version=0.10.2
+release=3
+
+source="https://github.com/sashs/filebytes/archive/v${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

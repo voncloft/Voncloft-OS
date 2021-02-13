@@ -1,0 +1,24 @@
+# description : "File system based database that uses python pickles"
+# depends : python
+
+pkgbase=python-pickleshare
+version=0.7.5
+release=5
+url="https://github.com/pickleshare/pickleshare"
+source="https://files.pythonhosted.org/packages/source/p/pickleshare/pickleshare-$version.tar.gz"
+md5sums=44ab782615894a812ab96669a122a634
+
+prepare {
+   cd "$srcdir"
+}
+
+build()-delete {
+   cd "$srcdir"
+}
+
+package_python-pickleshare {
+   cd "$srcdir/pickleshare-$version"
+  python3 setup.py install   --root=$PKG --optimize=0
+}
+
+}

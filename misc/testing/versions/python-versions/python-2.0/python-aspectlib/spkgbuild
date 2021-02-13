@@ -1,0 +1,25 @@
+# description : Development library for quickly writing configurable applications and daemons"
+# depends :   python-fields  
+
+name=python-aspectlib
+version=1.5.2
+release=1
+               python-profilestats   python-pytest-runner   #  mysql-python  
+source="https://github.com/ionelmc/python-aspectlib/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd python-aspectlib-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-aspectlib-$version
+  #https://github.com/ionelmc/python-aspectlib/issues/15
+  python setup.py pytest --addopts  --deselect tests/test_integrations_py3.py::test_decorate_tornado_coroutine 
+}
+
+build()   {
+  cd python-aspectlib-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

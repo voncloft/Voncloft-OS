@@ -1,0 +1,28 @@
+# description : An immutable dictionary
+# depends : python python-setuptools
+
+name=python-frozendict
+version=1.2
+release=8
+
+url=https://pypi.python.org/pypi/frozendict/
+
+
+source="https://pypi.org/packages/source/f/frozendict/frozendict-$version.tar.gz"
+
+md5sums=483ce6ddfe68ca197bc123aaafebf9ab
+
+build()-delete {
+	 cd "$srcdir"/frozendict-$version
+	python setup.py build
+}
+
+options="!checksum"
+
+build() {
+	 cd frozendict-$version
+	python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+

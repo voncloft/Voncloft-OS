@@ -1,0 +1,29 @@
+# description : Automatically mock your HTTP interactions to simplify and speed up testing
+# depends : python-yaml python-wrapt python-six python-yarl
+
+name=python-vcrpy
+version=4.1.1
+release=3
+url=https://github.com/kevin1024/vcrpy
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-pytest-httpbin python-mock
+source="$name-$version.tar.gz::https://github.com/kevin1024/vcrpy/archive/v$version.tar.gz"
+sha512sums=afa1904bff37bfd2d278ed49fa3982a357eb6bb113818b532044da0f11a9dd877cc152d7f0d81d88bdc0f870521b1241f6aecf959f668211904e3c6c7cea4ad8
+
+build()-delete {
+   cd vcrpy-$version
+  python setup.py build
+}
+
+check {
+   cd vcrpy-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd vcrpy-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

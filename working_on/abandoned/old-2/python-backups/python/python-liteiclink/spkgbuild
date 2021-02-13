@@ -1,0 +1,34 @@
+# description : Small footprint and configurable Inter-Chip communication cores
+# depends : python-migen python-litex
+
+_name=liteiclink
+name=python-$_name
+version=2020.12
+release=1
+url="https://github.com/enjoy-digital/$_name"
+make# depends : python-setuptools
+#check# depends : python-pytest-runner # no litescope release
+source="$name-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=dd1ce37f1b9b24c3bd30ef6869c33062b002b7994a8a2c839ed370a9ba7564d9836b4ebb4743cb314fc531d2e5edd624904143a4352e098fc048b9b9d4b20cbd
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+check {
+   cd $_name-$version
+
+#  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}

@@ -1,0 +1,25 @@
+# description : Fake pymongo stub for testing simple MongoDB-dependent code"
+# depends :   python-sentinels   python-six  
+
+name=python-mongomock
+version=3.22.1
+release=1
+source="https://github.com/mongomock/mongomock/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd mongomock-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd mongomock-$version
+  python setup.py nosetests
+}
+
+build()_python-mongomock   {
+  cd mongomock-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

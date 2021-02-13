@@ -1,0 +1,23 @@
+# description : "The sip module support for PyQt6"
+# depends : python
+
+name=python-pyqt6-sip
+version=13.0.0
+release=1
+url="https://riverbankcomputing.com/software/pyqt/intro"
+make# depends : python-setuptools
+source="https://pypi.python.org/packages/source/P/PyQt6-sip/PyQt6_sip-$version.tar.gz"
+sha256sums=889edbcd912df815946a1958e1cb218d36f414bf06e863411ee70bee7e76b4c9
+
+build()-delete {
+   cd PyQt6_sip-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build()  {
+   cd PyQt6_sip-$version
+  python setup.py build
+  python setup.py install --root=$PKG
+}

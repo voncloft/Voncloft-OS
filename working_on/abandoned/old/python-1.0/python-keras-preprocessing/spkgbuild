@@ -1,0 +1,22 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Oliver Harley <oliver.r.harley+aur (at) gmail.com>
+_name=Keras_Preprocessing
+name=python-keras-preprocessing
+version=1.1.2
+release=4
+pkgdesc="Preprocessing module of the Keras deep learning library"
+url="https://pypi.org/project/Keras-Preprocessing/"
+makedepends=('python-setuptools')
+depends=('python' 'python-numpy')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha256sums=('add82567c50c8bc648c14195bf544a5ce7c1f76761536956c3d2978970179ef3')
+
+build() {
+  cd "$srcdir/${_name}-${version}"
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir/${_name}-${version}"
+  python setup.py install --root="$pkgdir"/ --optimize=1
+}

@@ -1,0 +1,30 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Anton Bazhenov <anton.bazhenov at gmail>
+# Contributor: JD Steffen <jd at steffennet dot org>
+
+pkgname=simutrans-pak64
+pkgver=122.0
+pkgrel=1
+pkgdesc="Low resolution graphics set for Simutrans"
+arch=('any')
+url="https://www.simutrans.com/"
+license=('custom:Artistic')
+options=('!strip')
+source=(https://downloads.sourceforge.net/simutrans/simupak64-${pkgver/./-}.zip
+        licence.txt)
+sha256sums=('ce2ebf0e4e0c8df5defa10be114683f65559d5a994d1ff6c96bdece7ed984b74'
+            'dbf7da494c0381290c7af4dfe0a24415c666641a237b401ecb2be6cd7180e183')
+
+package() {
+  chmod -R 644 simutrans
+
+  #data
+  mkdir -p "$pkgdir/usr/share/games/simutrans"
+  cp -r simutrans/pak "$pkgdir/usr/share/games/simutrans"
+
+  find "$pkgdir" -type f -exec chmod 644 {} \;
+  find "$pkgdir" -type d -exec chmod 755 {} \;
+
+  #license
+  install -Dm644 licence.txt "$pkgdir/usr/share/licenses/simutrans-pak64/licence.txt"
+}

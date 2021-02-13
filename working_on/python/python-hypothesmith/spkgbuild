@@ -1,0 +1,16 @@
+# description : Hypothesis strategies for generating Python programs, something like CSmith
+# depends : python-hypothesis python-lark-parser python-libcst
+
+url=https://github.com/Zac-HD/hypothesmith
+name=python-hypothesmith
+version=0.1.8
+release=1
+
+source="https://pypi.io/packages/source/h/hypothesmith/hypothesmith-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd hypothesmith-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

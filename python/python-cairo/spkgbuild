@@ -1,0 +1,14 @@
+# description	: python bindings to Cairo
+# depends	: python cairo
+
+name=python-cairo
+version=1.19.1
+release=1
+source="https://github.com/pygobject/pycairo/releases/download/v$version/pycairo-$version.tar.gz"
+
+build() {
+	cd pycairo-$version
+
+	python setup.py build
+	python setup.py install --root=$PKG --optimize=1
+}

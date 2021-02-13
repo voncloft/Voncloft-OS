@@ -1,0 +1,26 @@
+# description : Python module used for monitoring filesystems events on Linux platforms with inotify.
+# depends : python
+
+name=python-pyinotify
+version=0.9.6
+release=9
+url="https://github.com/seb-m/pyinotify"
+make# depends : python
+source="https://github.com/seb-m/pyinotify/archive/${version}.tar.gz"
+sha512sums=144db691c1cdfd4e52b838b8ed839b8d50d84d26a91a59b7460c3170f58a1c96b3ce4f51e6273835835291781215a87b8f2d2d87d1abf012e4c14b2cd4b3f4cf
+
+build()-delete {
+   cd pyinotify-${version}
+  python3 setup.py build()
+}
+
+options="!checksum"
+
+build() {
+   cd pyinotify-${version}
+  python3 setup.py install--root=$PKG  -O1
+
+  install -d "${PKG}"/usr/share/licenses/python-pyinotify
+  install -m644 COPYING \
+    "${PKG}"/usr/share/licenses/python-pyinotify
+}

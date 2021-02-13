@@ -1,0 +1,24 @@
+# description : "GLib based websocket server written in python"
+# depends : python-gobject
+
+name=python-gwebsockets
+_name=gwebsockets
+version=0.7
+release=3
+url="https://github.com/sugarlabs/gwebsockets"
+make# depends : python-setuptools
+source="$name-$version.tar.gz::https://github.com/sugarlabs/$_name/archive/v$version.tar.gz"
+sha256sums=116e7e9e2e316011b88c2410e5a9b86c93db1e133ff76534d225302810873d68
+
+build()-delete {
+   cd $_name-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,30 @@
+# description : "Capture C-level stdout/stderr in Python"
+# depends : python
+
+_pkg=wurlitzer
+name=python-${_pkg}
+version=2.0.0
+release=3
+url="https://github.com/minrk/wurlitzer"
+make# depends : python-setuptools
+check# depends : python-pytest python-mock
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+sha256sums=86a510c0d34fcc9786ad1a9f557ac980f30ef2f821a75c2e4333311e0fd9cd76
+
+build()-delete {
+   cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-${version}
+  py.test test.py
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root "${PKG}" --optimize=1 
+}

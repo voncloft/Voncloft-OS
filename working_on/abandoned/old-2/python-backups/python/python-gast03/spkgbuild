@@ -1,0 +1,23 @@
+# description : "AST that abstracts the underlying Python version"
+# depends : python
+name=python-gast03
+version=0.3.3
+release=1
+url="https://github.com/serge-sans-paille/gast"
+conflicts=python-gast
+make# depends : python-setuptools
+source="https://pypi.io/packages/source/g/gast/gast-${version}.tar.gz"
+sha512sums=36869a5e0976223a5a82be8bf25a01654896f4de70affe0fec5252104ea6d1fea3eb8c5153530fcac8addc47b51535b02e3920a0e82aad11ba1ca8350cd11341
+
+build()-delete {
+   cd gast-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd gast-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

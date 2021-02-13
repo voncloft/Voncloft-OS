@@ -1,0 +1,36 @@
+# description : "Python bindings for Musicbrainz NGS webservice"
+# depends : python
+
+name=python-musicbrainzngs
+version=0.7.1
+release=3
+url=https://github.com/alastair/python-musicbrainzngs
+make# depends : 
+  git
+  python-setuptools
+
+source=git+https://github.com/alastair/python-musicbrainzngs.git#tag=e4bca39720c7c0a1de38b1663faa3475cf5b7eff
+sha256sums=SKIP
+
+version {
+   cd python-musicbrainzngs
+
+  git describe --tags | sed s/^v//
+}
+
+build()-delete {
+   cd python-musicbrainzngs
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd python-musicbrainzngs
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+  install -Dm 644 COPYING -t "${PKG}"/usr/share/licenses/python-musicbrainzngs/
+}
+

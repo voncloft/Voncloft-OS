@@ -1,0 +1,35 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+
+name=python-patiencediff
+version=0.2.1
+release=3
+pkgdesc='Patiencediff Python and C implementations'
+url=https://www.breezy-vcs.org/
+depends=(python)
+makedepends=(
+  git
+  python-setuptools
+)
+_tag=1d2e7e8dd572115f59cb6ca2b791bc53ee53ece7
+source=(git+https://github.com/breezy-team/patiencediff.git#tag=${_tag})
+sha256sums=(SKIP)
+
+version() {
+  cd patiencediff
+
+  git describe --tags | sed 's/^v//'
+}
+
+build() {
+  cd patiencediff
+
+  python setup.py build
+}
+
+package() {
+  cd patiencediff
+
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

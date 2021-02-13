@@ -1,0 +1,17 @@
+# description : Library of web-related functions
+# depends : python-six
+
+url=https://w3lib.readthedocs.org
+name=python-w3lib
+version=1.22.0
+release=3
+
+source="https://github.com/scrapy/w3lib/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/w3lib-$version
+   cd w3lib-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

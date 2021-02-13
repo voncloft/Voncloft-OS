@@ -1,0 +1,18 @@
+# description : Ordered multivalue dictionary that retains method parity with dict.
+# depends : python-six
+
+_name=orderedmultidict
+url=https://github.com/gruns/orderedmultidict
+_name=orderedmultidict
+name=python-orderedmultidict
+version=1.0.1
+release=6
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,19 @@
+# description : Board and connector definition files for nMigen
+# depends : python-nmigen
+
+_name=nmigen-boards
+_commit=5c8c8ca2e7c0a4eb5bc09c2f30eea94b024c17a0
+url=https://github.com/nmigen/nmigen-boards
+_name=nmigen-boards
+name=python-$_name
+version=r170.5c8c8ca
+release=1
+
+source="git+$url#commit=$_commit
+options="checksum"
+
+build() {
+   cd $_name
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

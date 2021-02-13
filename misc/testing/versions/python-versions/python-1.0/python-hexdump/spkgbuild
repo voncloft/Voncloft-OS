@@ -1,0 +1,14 @@
+
+name=python-hexdump
+_name=${name/python-/}
+version=3.3
+release=5
+# description : Library and tool to work with hex and binary data 
+# depends :   python  
+source=https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.zip 
+
+package   {
+  python setup.py install -O1 --root=$PKG --prefix=/usr
+}
+
+# vim: ts=2 sw=2 et:

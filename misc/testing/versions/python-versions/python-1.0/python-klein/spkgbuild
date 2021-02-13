@@ -1,0 +1,26 @@
+
+name=python-klein
+version=20.6.0
+release=3
+# description : A web micro-framework built on werkzeug and twisted.web 
+# depends :  python python-attrs python-hyperlink python-incremental python-six
+         python-tubes python-twisted python-werkzeug python-zope-interface 
+source="https://github.com/twisted/klein/archive/$version/klein-$version.tar.gz" 
+
+build   {
+  cd klein-$version
+  python setup.py build
+}
+
+check   {
+  cd klein-$version
+  # klein tests are broken with treq 20.4.1
+  #https://github.com/twisted/klein/issues/339
+  pytest -v src/klein/test -k  not test_customParameterValidation and not test_handlingGET 
+}
+
+package   {
+  cd klein-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

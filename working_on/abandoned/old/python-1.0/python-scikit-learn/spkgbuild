@@ -1,0 +1,30 @@
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
+
+name=python-scikit-learn
+version=0.24.0
+release=1
+pkgdesc="A set of python modules for machine learning and data mining"
+url="http://scikit-learn.sourceforge.net/"
+depends=('python-scipy' 'python-joblib' 'python-threadpoolctl')
+optdepends=('python-matplotlib: plotting capabilities')
+makedepends=('python-setuptools' 'cython' 'openmp')
+options=(!emptydirs)
+source=("scikit-learn-${version}.tar.gz::https://github.com/scikit-learn/scikit-learn/archive/${version}.tar.gz")
+sha256sums=('2338fe6b0c87ebcb1a85d804d2a05840ff159913989f29efb8b0499c4b8803fa')
+
+build() {
+  cd "$srcdir"/scikit-learn-$version
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir"/scikit-learn-$version
+
+  python setup.py install --root="$pkgdir"/ --optimize=1
+
+  install -D COPYING "$pkgdir"/usr/share/licenses/$name/LICENSE
+
+  # See FS#49651
+  install -d "$pkgdir"/usr/share/doc/$name
+  cp -r doc/tutorial "$pkgdir"/usr/share/doc/$name/tutorial
+}

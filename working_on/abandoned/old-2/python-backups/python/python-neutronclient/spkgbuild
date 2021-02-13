@@ -1,0 +1,34 @@
+# description : "OpenStack Networking Neutron Client"
+# depends : python-pbr python-cliff python-debtcollector python-iso8601 python-netaddr
+
+name=python-neutronclient
+version=7.3.0
+release=1
+url="https://docs.openstack.org/python-neutronclient/latest/"
+         python-osc-lib python-oslo-i18n python-oslo-log python-oslo-serialization
+         python-oslo-utils python-os-client-config python-keystoneauth1
+         python-keystoneclient python-requests python-simplejson
+check# depends : python-oslotest python-osprofiler python-requests-mock
+source="https://github.com/openstack/python-neutronclient/archive/$version/$name-$version.tar.gz"
+sha512sums=eee478871451b3fb1cdb5c9f904d7675af3853ddf664b904c842cc2dbefe78637c5adfdf727c670b2d1cfa13061dca90301edd6b896f57d12f6108ace752e09b
+
+export PBR_VERSION=$version
+
+build()-delete {
+   cd python-neutronclient-$version
+  python setup.py build
+}
+
+check {
+   cd python-neutronclient-$version
+  # https://salsa.debian.org/openstack-team/clients/python-neutronclient/-/blob/debian/ussuri/debian/rules
+  stestr run neutronclient\.tests\.unit\.?!.*osc\.v2\.fwaas\.test_firewallrule\.TestShowFirewallRule\.test_show_filtered_by_id_or_name.*|.*osc\.v2\.fwaas\.test_firewallrule\.TestListFirewallRule\.test_list_with_long_option.*|.*osc\.v2\.fwaas\.test_firewallrule\.TestCreateFirewallRule\.test_create_with_no_options.*|.*osc\.v2\.fwaas\.test_firewallrule\.TestCreateFirewallRule\.test_create_with_all_params_protocol_any.*
+}
+
+options="!checksum"
+
+build() {
+   cd python-neutronclient-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

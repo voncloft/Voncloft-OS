@@ -1,0 +1,22 @@
+# description : "Python library for interacting with the Firefox Accounts ecosystem"
+# depends : python-browserid python-cryptography python-hawkauthlib
+
+_name=PyFxA
+name=python-fxa
+version=0.7.7
+release=2
+url="https://github.com/mozilla/PyFxA"
+source=https://github.com/mozilla/$_name/archive/v$version/$name-$version.tar.gz
+sha256sums=d5b5afdafb6b42344d49e4e4df0582758df54e00b8d0fa3cbc29433410aa9a6f
+
+build()-delete {
+   cd $_name-$version
+  python3 setup.py build()
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version 
+  python3 setup.py install --root=$PKG --optimize=1
+}

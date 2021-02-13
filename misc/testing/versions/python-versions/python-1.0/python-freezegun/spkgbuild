@@ -1,0 +1,42 @@
+
+pkgbase=python-freezegun
+name=  python-freezegun   python2-freezegun  
+version=0.3.15
+release=4
+# description : Let your Python tests travel through time"
+source="$pkgbase-$version.tar.gz::https://github.com/spulec/freezegun/archive/$version.tar.gz" 
+
+prepare   {
+  cp -a freezegun-$version{,-py2}
+}
+
+build   {
+  cd "$srcdir"/freezegun-$version
+  python setup.py build
+
+  cd "$srcdir"/freezegun-$version-py2
+  python2 setup.py build
+}
+
+check   {
+  cd "$srcdir"/freezegun-$version
+  #https://github.com/spulec/freezegun/issues/250
+  pytest || echo "Tests failed"
+
+  cd "$srcdir"/freezegun-$version-py2
+  pytest2
+}
+
+package_python-freezegun   {
+  # depends :   python-dateutil  
+
+  cd freezegun-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+package_python2-freezegun   {
+  # depends :   python2-dateutil  
+
+  cd freezegun-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+}

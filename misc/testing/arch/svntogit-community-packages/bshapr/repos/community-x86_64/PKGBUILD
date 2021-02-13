@@ -1,0 +1,37 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=BShapr
+_plugin_uri="https://www.jahnichen.de/plugins/lv2/BShapr"
+pkgname=bshapr
+pkgver=0.9
+pkgrel=1
+pkgdesc="Beat/ envelope shaper LV2 plugin"
+arch=('x86_64')
+url="https://github.com/sjaehn/BShapr"
+license=('GPL3')
+groups=('lv2-plugins' 'pro-audio')
+depends=('cairo' 'gcc-libs' 'glibc' 'libx11')
+makedepends=('lv2')
+checkdepends=('lv2lint')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/sjaehn/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('e39020230f64082df7e04d7e69637650924928ee6e43a3e9834f8570225038d5bfb91a0887eb1a779d6962fe6cadc7e46a114c927b950b8a0471d70f36940bd8')
+
+prepare() {
+  mv -v "${_name}-${pkgver}" "${pkgname}-${pkgver}"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  lv2lint -Mpack -I "${_name}.lv2/" "${_plugin_uri}" || echo "Known to fail: https://github.com/sjaehn/BShapr/issues/7"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make PREFIX=/usr DESTDIR="$pkgdir/" install
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

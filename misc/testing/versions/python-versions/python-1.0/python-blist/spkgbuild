@@ -1,0 +1,37 @@
+
+name=python-blist
+_name=blist
+version=1.3.6
+release=9
+# description : List-like type with better asymptotic performance 
+# depends :   python  
+source= ${name}-${version}.tar.gz::https://github.com/DanielStutzbach/blist/archive/v${version}.tar.gz
+        python3.7.patch
+        blist-python3.9.patch::https://github.com/DanielStutzbach/blist/pull/91.patch 
+             ecf08ebbfd39a069e8cd93723fefe3d0ee223d618f8748032927416dd6c813396fa271b20dd74fdaed0369b19046b4d2954b70c77f72258cc5551699eaa1281f 
+             d207959966784ae94f1571f661f7de20ddb006cd103917ee571e74095a4939829762569c5dcfc4a3b605d50a3b6f5b96514c4af0108ffd39744f57936dd29415  
+
+prepare   {
+  patch -d $_name-$version -p1 < python3.7.patch
+  patch -d $_name-$version -p1 < blist-python3.9.patch
+}
+
+build   {
+   cd ${_name}-${version}
+    python setup.py build
+   
+}
+
+check   {
+   cd ${_name}-${version}
+    python setup.py test
+   
+}
+
+package   {
+  cd ${_name}-${version}
+  python setup.py install --skip-build -O1 --root=$PKG
+  install -Dm 644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim: ts=2 sw=2 et:

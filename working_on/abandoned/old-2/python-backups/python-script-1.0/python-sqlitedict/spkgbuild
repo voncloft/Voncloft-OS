@@ -1,0 +1,16 @@
+# description : Persistent dict in Python, backed up by sqlite3 and pickle, multithread-safe
+# depends : python
+
+url=https://github.com/RaRe-Technologies/sqlitedict
+name=python-sqlitedict
+version=1.7.0
+release=3
+
+source="https://github.com/RaRe-Technologies/sqlitedict/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd sqlitedict-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

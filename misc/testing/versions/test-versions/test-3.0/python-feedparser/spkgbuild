@@ -1,0 +1,50 @@
+
+pkgbase=python-feedparser
+name=('python2-feedparser' 'python-feedparser' 'python-sgmllib')
+version=5.2.1
+release=9
+# description : "Parse RSS and Atom feeds in Python"
+        don-t-always-expect-base64.decodestring-to-exist.patch)
+          '24542c47555fb1b07855e00d2fdf732582f397ae')
+
+prepare() {
+  patch -Np1 -d feedparser-${version} <don-t-always-expect-base64.decodestring-to-exist.patch
+
+  cp -r feedparser-${version} feedparser-${version}-python2
+  cp -r feedparser-${version} feedparser-${version}-python
+  cp -r feedparser-${version} feedparser-${version}-sgmllib
+
+  (cd feedparser-${version}-python2; sed -i 's#env python$#env python2#' feedparser/feedparsertest.py)
+  (cd feedparser-${version}-python; 2to3 -w feedparser/feedparser.py feedparser/feedparsertest.py)
+}
+
+build-remove() {
+  cd feedparser-${version}-sgmllib
+  python /usr/lib/python3.9/compileall.py feedparser/sgmllib3.py
+}
+
+package_python2-feedparser() {
+  # depends : ('python2' 'libxml2' )
+  # description : "Parse RSS and Atom feeds in Python2"
+
+  cd "${srcdir}/feedparser-${version}-python2"
+  python2 setup.py install --root="${pkgdir}"
+}
+
+package_python-feedparser() {
+  # depends : ('libxml2' 'python-sgmllib')
+
+  cd "${srcdir}/feedparser-${version}-python"
+  python setup.py install --root="${pkgdir}"
+}
+
+package_python-sgmllib() {
+  # depends : ('python')
+  # description : "Port of sgmllib to Python3"
+
+  cd "${srcdir}/feedparser-${version}-sgmllib"
+  install -Dm644 feedparser/sgmllib3.py \
+    "${pkgdir}/usr/lib/python3.9/site-packages/sgmllib.py"
+  install -Dm644 feedparser/__pycache__/sgmllib3.cpython-39.pyc \
+    "${pkgdir}/usr/lib/python3.9/site-packages/__pycache__/sgmllib.cpython-39.pyc"
+}

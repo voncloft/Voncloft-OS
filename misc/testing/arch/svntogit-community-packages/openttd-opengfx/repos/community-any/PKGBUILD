@@ -1,0 +1,22 @@
+# Maintainer:
+# Contributor: Vesa Kaihlavirta <vegai@iki.fi>
+# Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
+
+pkgname=openttd-opengfx
+pkgver=0.6.0
+pkgrel=1
+pkgdesc='A free graphics set for openttd'
+arch=('any')
+url='https://dev.openttdcoop.org/projects/opengfx'
+license=('GPL')
+source=("https://cdn.openttd.org/opengfx-releases/${pkgver}/opengfx-${pkgver}-all.zip")
+sha256sums=('d419c0f5f22131de15f66ebefde464df3b34eb10e0645fe218c59cbc26c20774')
+
+package() {
+    cd "${srcdir}"
+    tar xvf "opengfx-${pkgver}.tar"
+    cd opengfx-${pkgver}
+    install -d "${pkgdir}"/usr/share/openttd/data   
+    install -m644 *.grf "${pkgdir}"/usr/share/openttd/data
+    install -m644 *.obg "${pkgdir}"/usr/share/openttd/data
+}

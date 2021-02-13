@@ -1,0 +1,23 @@
+# description : "Python 3/2 compatibility library, allowing to add py2 compat to py3 code"
+# depends : python
+pkgbase=python-nine
+_pkgbase="${pkgbase#python-}"
+name=python-nine
+version=1.1.0
+release=3
+url="https://github.com/nandoflorestan/nine/"
+make# depends : python-setuptools
+source="https://github.com/nandoflorestan/nine/archive/v${version}.tar.gz"
+sha512sums=b445cd1f324a0d2045081226fb650eebd8dbc86942faff204c19fffc022f0190fc04abec563b107cb860202d29f08c132056b1098495471fdfda104e57878828
+
+check {
+   cd "${srcdir}/${_pkgbase}-${version}"
+  python ./setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd "${srcdir}/${_pkgbase}-${version}"
+  python ./setup.py install --root="$PKG/" --optimize=1
+}

@@ -1,0 +1,33 @@
+
+name=python-pygal
+epoch=1
+version=2.4.0
+release=8
+# description : A Python SVG graph plotting library 
+# depends :   python-setuptools  
+             python-cairosvg: for PNG output  
+source="https://github.com/Kozea/pygal/archive/$version.tar.gz"
+        $name-pytest-fix.patch::https://github.com/Kozea/pygal/commit/19e5399be18a.patch 
+          5ca054e5420b1c242d8706f4258ca382  
+
+prepare   {
+  sed -i  s/\[pytest\]/[tool:pytest]/  pygal-$version/setup.cfg
+  patch -Np1 -d pygal-$version <$name-pytest-fix.patch
+}
+
+build   {
+  cd pygal-$version
+  python setup.py build
+}
+
+check   {
+  cd pygal-$version
+  pytest pygal/
+}
+
+package   {
+  cd pygal-$version
+  python3 setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,19 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+pkgname=sugar-activity-log
+_pkgname=Log
+pkgver=42
+pkgrel=1
+pkgdesc="Sugar activity to view system log files"
+arch=('any')
+url="https://wiki.sugarlabs.org/go/Activities/Log"
+license=('GPL')
+groups=('sugar-fructose')
+depends=('sugar-toolkit-gtk3')
+source=(https://download.sugarlabs.org/sources/sucrose/fructose/$_pkgname/$_pkgname-$pkgver.tar.bz2)
+sha256sums=('f71075cf9d2f615c72a073416ca32026cc91671cdc4541444a7750ab52ed3c78')
+
+package() {
+  cd $_pkgname-$pkgver
+  python setup.py install --prefix "$pkgdir/usr" --skip-install-desktop-file
+}

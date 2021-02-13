@@ -1,0 +1,50 @@
+# description : Mocking and Patching Library for Testing 
+# depends :   python   python-six   python-pbr  
+# depends :   python2   python2-six   python2-pbr   python2-funcsigs   # Backported Py > 3.3 functionality
+
+pkgbase=python-mock
+name= python2-mock python-mock 
+version=3.0.5
+release=5
+source= mock-$version.tar.gz::https://github.com/testing-cabal/mock/archive/$version.tar.gz 
+
+prepare   {
+  cd "$srcdir/mock-$version"
+  # use unittest instead of unittest2 as they are the same on recent python*
+  sed -i  s/unittest2/unittest/g  mock/tests/*.py
+
+  cd "$srcdir"
+  cp -rf "mock-$version" "mock2-$version"
+}
+
+build-old()   {
+  cd "$srcdir/mock-$version"
+  python3 setup.py build-old()
+
+  cd "$srcdir/mock2-$version"
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "$srcdir/mock-$version"
+  echo  python tests 
+  python -m unittest discover
+
+  cd "$srcdir/mock2-$version"
+  echo  python2 tests 
+  # Remove Python 3 only test
+  rm mock/tests/testhelpers_py3.py
+  python2 -m unittest discover
+}
+
+build()_python-mock   {
+  cd "$srcdir/mock-$version"
+  python3 setup.py install --optimize=1 --root=$PKG
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/${name}/LICENSE
+}
+
+build()_python2-mock   {
+  cd "$srcdir/mock2-$version"
+  python2 setup.py install --optimize=1 --root=$PKG
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/${name}/LICENSE
+}

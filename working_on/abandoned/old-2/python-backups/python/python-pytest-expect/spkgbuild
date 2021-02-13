@@ -1,0 +1,30 @@
+# description : "py.test plugin to store test expectations and mark tests based on them"
+
+_name=pytest-expect
+pkgbase=python-pytest-expect
+version=1.1.0
+release=6
+url="https://github.com/gsnedders/${_name}"
+make# depends : python-setuptools python-pytest python-u-msgpack
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz"
+sha256sums=8392093123dfc9807c28fee251e1d710aaed0d46ee77c7531528fb0a265eb798
+
+build()-delete {
+   cd "${srcdir}/${_name}-${version}"
+
+  python setup.py build
+}
+
+package_python-pytest-expect {
+  # depends : python-pytest python-u-msgpack
+
+   cd "${srcdir}/${_name}-${version}"
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+
+}
+
+
+   cd "${srcdir}/${_name}-${version}"
+
+}

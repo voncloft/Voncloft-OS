@@ -1,0 +1,19 @@
+# description : HTTP client mock for Python"
+# depends :   python-urllib3  
+
+name=python-httpretty
+version=1.0.5
+release=1
+               python-redis   python-rednose   python-requests   python-sure   python-tornado  
+source="https://github.com/gabrielfalcao/HTTPretty/archive/$version.tar.gz" 
+
+check   {
+  cd HTTPretty-$version
+  nosetests3 -s tests
+}
+
+build()_python-httpretty   {
+  cd HTTPretty-$version
+  python3 setup.py install --root=$PKG --optimize=1
+  install -Dm644 COPYING $PKG/usr/share/licenses/$name/COPYING
+}

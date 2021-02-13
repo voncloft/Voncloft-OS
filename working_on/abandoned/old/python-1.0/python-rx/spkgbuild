@@ -1,0 +1,49 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Ilya Elenskiy <elenskiy.ilya@gmail.com>
+# Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
+
+name=python-rx
+version=3.1.1
+release=3
+pkgdesc='Reactive Extensions for Python'
+url=http://reactivex.io
+depends=(python)
+makedepends=(
+  git
+  python-setuptools
+)
+checkdepends=(
+  python-coverage
+  python-nose
+  python-pytest
+  python-pytest-asyncio
+)
+_tag=f2642a87e6b4d5b3dc9a482323716cf15a6ef570
+source=(git+https://github.com/ReactiveX/RxPY.git#tag=${_tag})
+sha256sums=(SKIP)
+
+version() {
+  cd RxPY
+
+  git describe --tags | sed 's/^v//'
+}
+
+build() {
+  cd RxPY
+
+  python setup.py build
+}
+
+check() {
+  cd RxPY
+
+  python setup.py test
+}
+
+package() {
+  cd RxPY
+
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,35 @@
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+
+pkgname=libvirt-dbus
+pkgver=1.4.0
+pkgrel=1
+pkgdesc="Wrapper around libvirt API to provide a high-level object-oriented API better suited for dbus-based applications"
+arch=('x86_64')
+url="https://libvirt.org/dbus.html"
+license=('LGPL')
+depends=('libvirt-glib' 'dbus' 'libssh')
+makedepends=('meson' 'ninja' 'python-docutils')
+validpgpkeys=('4252D86A52041137C291CADFC85C5E957062A701')
+source=("https://libvirt.org/sources/dbus/${pkgname}-${pkgver}.tar.xz"{,.asc})
+sha512sums=('978e3fc8de6f36e18cd3141440a36ff64cf214202388c753f519294e87b8b9beaf9cc1c0dc04a7506e3b0ac383ebbb57e38b95512839d57a70816e85e59a873d'
+            'SKIP')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  meson build \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --localstatedir=/var
+  ninja -C build
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
+  DESTDIR="$pkgdir" ninja install
+
+  chmod 750 "${pkgdir}/usr/share/polkit-1/rules.d"
+
+  install -dm0755 "${pkgdir}/usr/lib/sysusers.d"
+  echo "u libvirtdbus - -" > "${pkgdir}/usr/lib/sysusers.d/libvirtdbus.conf"
+}

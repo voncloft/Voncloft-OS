@@ -1,0 +1,28 @@
+
+name=python-markdown-math
+version=0.8
+release=3
+# description : Math extension for Python-Markdown"
+# depends :   python-markdown  
+source="https://files.pythonhosted.org/packages/source/${name:0:1}/${name}/${name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys=  F24299FF1BBC9018B906A4CB6026936D2F1C8AE0   # Dmitry Shachnev <mitya57@debian.org>
+
+
+build   {
+    cd "python-markdown-math-${version}"
+
+    python setup.py build
+}
+
+check   {
+    cd "python-markdown-math-${version}"
+
+    python setup.py test
+}
+
+package   {
+    cd "python-markdown-math-${version}"
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

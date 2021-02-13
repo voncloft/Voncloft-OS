@@ -1,0 +1,48 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Carlo Cabanilla <carlo.cabanilla@gmail.com>
+# Contributor: Christoph Gysin <christoph.gysin@gmail.com>
+
+pkgname=aws-vault
+pkgver=6.2.0
+pkgrel=1
+pkgdesc='Vault for securely storing and accessing AWS credentials in development environments'
+url='https://github.com/99designs/aws-vault'
+arch=('x86_64')
+license=('MIT')
+depends=('glibc')
+makedepends=('go')
+optdepends=(
+  'zenity: graphical prompt'
+  'kdialog: graphical prompt'
+)
+source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('39886f4bc3985d4aefbae6fc88532499ac2c39cbabc33d860bba6d355158e17d')
+b2sums=('e47669efbc0466a36e325d7abdfd78529e76601faedc1ee51c333b97404741c826b96b1f642c4d14d23a4d5287bdb6d05de15d8d396ae4c412de41fbae6f874f')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -ldflags=-linkmode=external -trimpath -mod=readonly -modcacherw"
+  go build -v \
+    -ldflags "-linkmode=external -extldflags '${LDFLAGS}' -X main.Version=v${pkgver}" .
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  go test ./...
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -Dm 755 ${pkgname} -t "${pkgdir}/usr/bin"
+  install -Dm 644 README.md USAGE.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 -p contrib/completions/bash/${pkgname}.bash "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+  install -Dm 644 -p contrib/completions/zsh/${pkgname}.zsh "${pkgdir}/usr/share/zsh/site-functions/_${pkgname}"
+  install -Dm 644 -p contrib/completions/fish/${pkgname}.fish "${pkgdir}/usr/share/fish/vendor_completions.d/${pkgname}.fish"
+}
+
+# vim: ts=2 sw=2 et:

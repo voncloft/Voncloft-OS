@@ -1,0 +1,31 @@
+# description : "Node.js virtual environment build()er"
+# depends : python make
+
+name=python-nodeenv
+version=1.5.0
+release=3
+url="https://github.com/ekalinin/nodeenv"
+opt# depends : nodejs: for --node=system
+make# depends : python-setuptools
+check# depends : nodejs python-pytest-runner python-coverage python-mock
+source="$name-$version.tar.gz::https://github.com/ekalinin/nodeenv/archive/$version.tar.gz"
+sha512sums=645911f6ab173bf0e7b68fca9741f1deeb2d486dea99f43d542f86b2ac34439e03da18a6e4de49e3dd45fb89b3c87005b184ca4b73aa0549e75a86191e045e02
+
+build()-delete {
+   cd nodeenv-$version
+  python setup.py build
+}
+
+check {
+   cd nodeenv-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd nodeenv-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

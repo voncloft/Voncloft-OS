@@ -1,0 +1,21 @@
+# Maintainer: Chris Brannon <chris@the-brannons.com>
+# Contributor: Augusto Born de Oliveira <augustoborn@gmail.com>
+
+pkgbase=python-musicbrainz2
+name=python2-musicbrainz2
+version=0.7.4
+release=4
+pkgdesc="A client library written in python which provides easy object oriented access to the MusicBrainz database"
+url="http://wiki.musicbrainz.org/PythonMusicBrainz2"
+depends=('python2')
+optdepends=('libdiscid: For calculating Disc IDs')
+conflicts=('python-musicbrainz2<=0.7.4-1')
+replaces=('python-musicbrainz2<=0.7.4-1')
+source=(http://ftp.musicbrainz.org/pub/musicbrainz/${pkgbase}/${pkgbase}-${version}.tar.gz)
+md5sums=('40ac802d832deca737cce57235cb23a5')
+
+package_python2-musicbrainz2() {
+  cd "$srcdir/$pkgbase-$version"
+  python2 setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 COPYING.txt "$pkgdir/usr/share/licenses/$name/COPYING.txt"
+}

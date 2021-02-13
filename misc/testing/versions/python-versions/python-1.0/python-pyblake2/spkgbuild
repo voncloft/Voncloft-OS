@@ -1,0 +1,20 @@
+
+name=python-pyblake2
+version=1.1.2
+release=5
+# description : BLAKE2 hash function for Python 
+# depends :   python-setuptools  
+source="https://files.pythonhosted.org/packages/source/p/pyblake2/pyblake2-${version}.tar.gz" 
+
+build   {
+  cd pyblake2-${version}
+
+  python setup.py build
+}
+
+package   {
+  cd pyblake2-${version}
+
+  python setup.py install --root=$PKG --skip-build --optimize=1
+  install -Dm644 -t "${PKG}/usr/share/licenses/python-pyblake2" COPYING
+}

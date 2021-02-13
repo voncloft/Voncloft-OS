@@ -1,0 +1,23 @@
+
+name=python-jsonlines
+version=1.2.0
+release=7
+# description : Library with helpers for the jsonlines file format"
+# depends :   python-six  
+source="$pkgbase-$version.tar.gz::https://github.com/wbolster/jsonlines/archive/$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/jsonlines-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/jsonlines-$version
+  python setup.py pytest
+}
+
+package   {
+  cd jsonlines-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.rst $PKG/usr/share/licenses/$name/LICENSE.rst
+}

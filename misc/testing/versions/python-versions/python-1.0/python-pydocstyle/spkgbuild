@@ -1,0 +1,23 @@
+
+name=python-pydocstyle
+version=5.1.1
+release=3
+# description : Docstring style checker"
+# depends :  "python-snowballstemmer" 
+source="https://github.com/PyCQA/pydocstyle/archive/${version}.tar.gz" 
+
+build   {
+    cd "${srcdir}/pydocstyle-${version}"
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}/pydocstyle-${version}"
+    python setup.py pytest --addopts "-k  not test_integration "
+}
+
+package   {
+    cd "pydocstyle-${version}"
+    python setup.py install --root="${PKG}/" --optimize=1 --skip-build
+    install -Dm644 LICENSE-MIT "$PKG/usr/share/licenses/$name/LICENSE"
+}

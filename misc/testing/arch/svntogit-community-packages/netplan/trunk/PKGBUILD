@@ -1,0 +1,36 @@
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor:  Conrad Hoffmann <ch@bitfehler.net>
+
+pkgname=netplan
+pkgver=0.99
+pkgrel=1
+pkgdesc="Network configuration abstraction renderer"
+arch=('x86_64')
+url="https://github.com/CanonicalLtd/netplan"
+license=('GPL3')
+depends=(
+  'glib2'
+  'python-yaml'
+  'python-netifaces'
+  'iproute2'
+)
+makedepends=(
+  'python'
+  'pkgconf'
+  'pandoc'
+)
+source=(
+  "https://github.com/CanonicalLtd/${pkgname}/archive/${pkgver}.tar.gz"
+)
+sha256sums=('6ed7e12c88f972361f794a715dbd80cb85b822d2dc8c4ca9c7605aebbc008cb3')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  env
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" ROOTPREFIX=/usr SBINDIR=/usr/bin install
+}

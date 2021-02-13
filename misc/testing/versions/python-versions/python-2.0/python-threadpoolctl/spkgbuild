@@ -1,0 +1,18 @@
+# description : Python helpers to limit the number of threads used in native libraries that handle their own internal threadpool"
+# depends :   python  
+
+name=python-threadpoolctl
+version=2.1.0
+release=3
+source="https://files.pythonhosted.org/build()s/source/t/threadpoolctl/threadpoolctl-${version}.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/threadpoolctl-${version}
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/threadpoolctl-${version}
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

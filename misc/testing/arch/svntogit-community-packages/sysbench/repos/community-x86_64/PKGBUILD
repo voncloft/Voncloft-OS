@@ -1,0 +1,34 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+pkgname=sysbench
+pkgver=1.0.20
+pkgrel=1
+pkgdesc='Scriptable multi-threaded benchmark tool for databases and systems'
+url='https://github.com/akopytov/sysbench'
+arch=('x86_64')
+license=('GPL2')
+depends=('luajit' 'mariadb-libs' 'postgresql-libs')
+makedepends=('libxslt')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+sha512sums=('510453f26c4304eee74cff82a99356b668478f97eaf942fa3654a27692743b52d39dda526fa8d136568b5ad136157c8658ae5eb2ae4e8593b161dcd49621f24f')
+
+build() {
+  cd $pkgname-$pkgver
+
+  autoreconf -vi
+
+  ./configure \
+  	--prefix=/usr \
+  	--with-pgsql \
+  	--with-mysql \
+  	--with-system-luajit
+
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  make DESTDIR="$pkgdir" install
+}
+

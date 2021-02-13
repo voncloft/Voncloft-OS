@@ -1,0 +1,31 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+
+name=python-jupyter_client
+version=6.1.7
+release=3
+pkgdesc="Jupyter protocol implementation and client libraries"
+url="https://pypi.python.org/pypi/jupyter_client"
+depends=('python-ipykernel' 'python-traitlets' 'python-pyzmq'
+         'python-jupyter_core' 'python-dateutil')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-async_generator')
+#source=("$name-$version.tgz::https://github.com/jupyter/jupyter_client/archive/$version.tar.gz")
+source=("https://files.pythonhosted.org/packages/source/j/jupyter_client/jupyter_client-$version.tar.gz")
+sha256sums=('49e390b36fe4b4226724704ea28d9fb903f1a3601b6882ce3105221cd09377a1')
+
+# dep cycle with python-ipykernel
+
+build() {
+  cd "$srcdir"
+}
+
+check() {
+  cd "$srcdir/jupyter_client-$version"
+  pytest
+}
+
+package() {
+  cd "$srcdir/jupyter_client-$version"
+  python3 setup.py install --prefix=/usr --root="$pkgdir" --optimize=0
+  install -Dm644 COPYING.md "$pkgdir/usr/share/licenses/$name/LICENSE"
+}

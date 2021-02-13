@@ -1,0 +1,31 @@
+# description : "Represents the core of the Zope Component Architecture"
+# depends : python-setuptools python-zope-deferredimport python-zope-deprecation
+
+name=python-zope-component
+version=4.6.2
+release=3
+url="https://github.com/zopefoundation/zope.component"
+         python-zope-event python-zope-hookable python-zope-interface
+check# depends : python-zope-testrunner python-persistent python-zope-location
+              python-zope-proxy python-zope-security python-zope-configuration python-zope-i18nmessageid
+source="$name-$version.tar.gz::https://github.com/zopefoundation/zope.component/archive/$version.tar.gz"
+sha512sums=ce018928c5fe86b8e32c6ebd7e925ce302b7ed09655f2811277fe9d45b057e6a1a88508678d56bdf8ed44e5b5cffd0d287855f35fa8380b5763c42efd8e7400d
+
+build()-delete {
+   cd "$srcdir"/zope.component-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/zope.component-$version
+  PYTHONPATH="$PWD/build()/lib:$PYTHONPATH" python -m zope.testrunner --test-path=src
+}
+
+options="!checksum"
+
+build() {
+   cd zope.component-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

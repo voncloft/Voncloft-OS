@@ -1,0 +1,37 @@
+# description : To simplify exif manipulations with python. Writing, reading, and more"
+# depends :   python  
+_name=Piexif
+name=python-piexif
+version=1.1.3
+release=5
+source= https://github.com/hMatoba/Piexif/archive/$version.tar.gz
+        pillow-7.2.patch 
+             be1ee541e3bb6c219d6fd9ab68e9143c2131f695a2001d36a0d63b0566d71a542a09d58dc0bcbdb8c1353297156ea7853d483b9a44407cb31c30acc4252310bf  
+
+prepare   {
+  cd "${_name}-${version}"
+
+  #https://github.com/hMatoba/Piexif/issues/108
+  patch -Np1 -i ../pillow-7.2.patch
+}
+
+build-old()   {
+  cd "${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${_name}-${version}"
+  export PYTHONPATH="build-old():${PYTHONPATH}"
+  py.test
+}
+
+build()   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE.txt \
+    "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

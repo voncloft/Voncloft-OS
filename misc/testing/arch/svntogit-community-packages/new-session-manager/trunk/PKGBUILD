@@ -1,0 +1,37 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=new-session-manager
+pkgver=1.5.0
+pkgrel=1
+pkgdesc="Audio session manager"
+arch=('x86_64')
+url="https://github.com/linuxaudio/new-session-manager"
+license=('GPL3')
+depends=('gcc-libs' 'glibc')
+makedepends=('fltk' 'jack' 'liblo' 'meson')
+optdepends=('fltk: for nsm-legacy-gui')
+provides=('non-session-manager')
+conflicts=('non-session-manager')
+replaces=('non-session-manager')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxaudio/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('22b60a68ec5d8b5d7ae318e7eba979e2cdac4ff900b5c650affa7b5f1f6a156f9f146303cd995997dd05880c8a1a8fa797738fc244331929372c7815bd67dac2')
+b2sums=('20f5883006ef2bb36d62f661ffb9356175a14147c98160bd85e5d168fad99d6cf941bb351eeb5b9b534eb4919b644e3fe410315434061c88a26c424b4b9a5958')
+
+build() {
+  cd "$pkgname-$pkgver"
+  meson --prefix='/usr' \
+        --buildtype plain \
+        --wrap-mode nodownload \
+        -D b_lto=true \
+        -D b_pie=true \
+        build
+  ninja -C build
+}
+
+package() {
+  depends+=('libjack.so' 'liblo.so')
+  cd "$pkgname-$pkgver"
+  DESTDIR="${pkgdir}" meson install -C build
+  install -vDm 644 {CHANGELOG,README.md} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

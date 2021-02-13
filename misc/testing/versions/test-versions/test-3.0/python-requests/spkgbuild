@@ -1,0 +1,49 @@
+
+pkgbase=python-requests
+name=('python-requests' 'python2-requests')
+version=2.25.1
+release=1
+# description : "Python HTTP for Humans"
+        certs.patch)
+            '424a3bb01b23409284f6c9cd2bc22d92df31b85cfd96e1d1b16b5d68adeca670dfed4fff7977d8b10980102b0f780eacc465431021fcd661f3a17168a02a39a3')
+
+prepare() {
+  cd "$srcdir"/requests-$version
+  sed -e '/certifi/d' \
+      -e "s/,<.*'/'/" \
+      -i setup.py
+  patch -p1 -i "$srcdir"/certs.patch
+
+  cd "$srcdir"
+  cp -a requests-$version{,-py2}
+  find requests-$version-py2 -name \*.py -exec sed -r 's|^#!(.*)python$|#!\1python2|' -i {} +
+}
+
+build-remove() {
+  cd "$srcdir"/requests-$version
+  python setup.py build
+
+  cd "$srcdir"/requests-$version-py2
+  python2 setup.py build
+}
+
+check() {
+  # Seems to be a problem about pytest-httpbin
+
+  cd requests-$version
+  pytest tests --deselect tests/test_requests.py::TestRequests::test_https_warnings
+}
+
+package_python-requests() {
+
+  cd "$srcdir"/requests-$version
+  python setup.py install --skip-build -O1 --root=$PKG
+}
+
+package_python2-requests() {
+              'python2-grequests: asynchronous requests with gevent'
+              'python2-pysocks: SOCKS proxy support')
+
+  cd "$srcdir"/requests-$version-py2
+  python2 setup.py install --skip-build -O1 --root=$PKG
+}

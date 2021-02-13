@@ -1,0 +1,34 @@
+# description : Trap exit codes, exceptions, output, etc.
+# depends : perl perl-data-dump
+
+name=perl-test-trap
+version=0.3.4
+release=3
+url=https://metacpan.org/release/Test-Trap
+source="https://search.cpan.org/CPAN/authors/id/E/EB/EBHANSSEN/Test-Trap-v$version.tar.gz"
+options="!checksum"
+sha1sums=53519d57ba9879fa935cf49c09da7514d8d7dd89
+
+build-delete {
+   cd Test-Trap-v$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Test-Trap-v$version
+  # XXX: test fails since perl 5.26.0, no idea why, figure it out later - bluewind
+  rm -f t/10-tester.t
+  make test
+}
+
+build() {
+   cd Test-Trap-v$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

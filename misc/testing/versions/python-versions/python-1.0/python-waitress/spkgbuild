@@ -1,0 +1,22 @@
+
+name=python-waitress
+version=1.4.4
+release=5
+# description : Waitress WSGI server"
+# depends :   python  
+source="$pkgbase-$version.tar.gz::https://github.com/Pylons/waitress/archive/v$version.tar.gz" 
+
+build   {
+  cd waitress-$version
+  python setup.py build
+}
+
+check   {
+  cd waitress-$version
+  python setup.py pytest
+}
+
+package_python-waitress   {
+  cd waitress-$version
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,15 @@
+# description : A crypto and SSL toolkit for Python
+  # depends : python openssl
+
+url=https://pypi.python.org/pypi/M2Crypto
+version=0.37.1
+release=1
+
+source="https://gitlab.com/m2crypto/m2crypto/repository/${version}/archive.tar.gz"
+
+build() {
+   cd m2crypto-${version}
+   cd m2crypto-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,17 @@
+# description : Manage dynamic plugins for Python applications
+# depends : python
+
+url=https://github.com/openstack/stevedore
+name=python-stevedore
+version=3.3.0
+release=1
+
+source="https://pypi.org/packages/source/s/stevedore/stevedore-$version.tar.gz"
+options=!emptydirs
+options="checksum"
+
+build() {
+   cd stevedore-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

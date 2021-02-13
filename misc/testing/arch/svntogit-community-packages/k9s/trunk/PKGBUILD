@@ -1,0 +1,42 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+
+pkgname=k9s
+pkgver=0.24.2
+pkgrel=1
+pkgdesc='TUI for managing Kubernetes clusters and pods'
+arch=(x86_64)
+url='https://github.com/derailed/k9s'
+license=(APACHE)
+makedepends=(git go)
+_commit=f929114ae4679c89ca06b2833d8a0fca5f1ec69d	#refs/tags/v0.24.2^{}
+source=("git+$url#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+build() {
+  cd $pkgname
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  make VERSION=$pkgver build
+}
+
+check() {
+  make -C $pkgname test
+}
+
+package() {
+  cd $pkgname
+  install -Dm755 "execs/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# getver: github.com/derailed/k9s/releases
+# vim: ts=2 sw=2 et:

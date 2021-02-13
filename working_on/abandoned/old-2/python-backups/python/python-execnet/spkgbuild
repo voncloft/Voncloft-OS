@@ -1,0 +1,39 @@
+# description : "Rapid multi-Python deployment"
+
+pkgbase=python-execnet
+version=1.8.0
+release=1
+url="https://codespeak.net/execnet"
+source="https://pypi.io/packages/source/e/execnet/execnet-$version.tar.gz"
+sha512sums=a0ca76002270daa5cbfa00563a51a3412008f893f755a1eb84f53e228dd61a82bdc94fe6152e30d471b4caff3059c662bb9de82100ec2c96df4d014836452698
+
+prepare {
+  cp -a execnet-${version}{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir/execnet-${version}"
+  python setup.py build
+
+   cd "$srcdir/execnet-${version}-py2"
+}
+
+check {
+   cd "$srcdir/execnet-${version}"
+  PYTHONPATH="$PWD/build()/lib:$PYTHONPATH" py.test testing
+
+   cd "$srcdir/execnet-${version}-py2"
+  PYTHONPATH="$PWD/build()/lib:$PYTHONPATH" py.test2 testing
+}
+
+package_python-execnet {
+  # depends : python-apipkg
+
+   cd execnet-${version}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}
+
+
+   cd execnet-${version}-py2
+}

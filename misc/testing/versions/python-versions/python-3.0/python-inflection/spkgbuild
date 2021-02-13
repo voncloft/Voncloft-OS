@@ -1,0 +1,23 @@
+# description : A port of Ruby on Rails inflector to Python"
+# depends :   python  
+
+name=python-inflection
+version=0.5.1
+release=3
+source="https://github.com/jpvanhal/inflection/archive/$version.tar.gz" 
+
+build-old()   {
+  cd inflection-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd inflection-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd inflection-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

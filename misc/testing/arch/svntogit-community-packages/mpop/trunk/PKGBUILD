@@ -1,0 +1,32 @@
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Israel Herraiz <isra@herraiz.org>
+# Contributor: Roberto Alsina <ralsina@kde.org>
+
+pkgname=mpop
+pkgver=1.4.8
+pkgrel=1
+pkgdesc="A small, fast POP3 client suitable as a fetchmail replacement"
+arch=('x86_64')
+url="https://marlam.de/mpop/"
+license=('GPL3')
+depends=('gnutls' 'libidn')
+install=mpop.install
+source=("https://marlam.de/mpop/releases/mpop-${pkgver}.tar.xz"{,.sig})
+md5sums=('cfff9981921fa9d0a6c46b5750b7b97a'
+         'SKIP')
+validpgpkeys=('2F61B4828BBA779AECB3F32703A2A4AB1E32FD34') # Martin Lambers
+
+build() {
+  cd "$srcdir/mpop-$pkgver"
+
+  ./configure --prefix=/usr --with-ssl=gnutls
+  make
+}
+
+package() {
+  cd "$srcdir/mpop-$pkgver"
+
+  make DESTDIR="$pkgdir" install
+  install -Dm644 scripts/vim/mpop.vim "$pkgdir/usr/share/vim/vimfiles/syntax/mpop.vim"
+  install -Dm644 doc/mpoprc.example   "$pkgdir/usr/share/doc/mpop/mpoprc.example"
+}

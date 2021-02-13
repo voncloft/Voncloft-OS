@@ -1,0 +1,22 @@
+# description : EditorConfig File Locator and Interpreter for Python 
+# depends :   python  
+
+name=python-editorconfig
+version=0.12.3
+release=1
+source="https://pypi.io/build()s/source/E/EditorConfig/EditorConfig-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/EditorConfig-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd EditorConfig-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  # FS#55201
+  mv $PKG/usr/bin/editorconfig{,3}
+}
+
+# vim:set ts=2 sw=2 et:

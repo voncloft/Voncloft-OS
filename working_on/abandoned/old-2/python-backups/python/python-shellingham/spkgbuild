@@ -1,0 +1,34 @@
+# description : "Detect what shell the current Python executable is running in."
+# depends : python
+
+_name=shellingham
+name=python-shellingham
+version=1.4.0
+release=1
+url="https://github.com/sarugaku/${_name}"
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-pytest-mock
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz"
+sha256sums=df6c61abc6d4112cdb8665e780cd4692dd7fcd88c9b8513cb096a0dd247effe0
+b2sums=06c642a0e88a41683f7a316304c28f66f89d6215ff27244a0b984725b7c888bc0de6e6936012c02a1a178f827f300f99704f0d2f61476ce49a27e8c2aaf0f9a7
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

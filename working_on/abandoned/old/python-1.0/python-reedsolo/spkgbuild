@@ -1,0 +1,29 @@
+# Maintainer: Jelle van der Waa <jelle@vdwaa.nl>
+
+name=python-reedsolo
+version=1.5.4
+release=1
+pkgdesc="A pure-python universal errors-and-erasures Reed-Solomon Codec"
+url="https://github.com/tomerfiliba/reedsolomon"
+makedepends=('python' 'cython')
+depends=('python')
+source=($name-$version.tar.gz::https://github.com/tomerfiliba/reedsolomon/archive/v${version}.tar.gz)
+sha512sums=('c738f817c8f536ee86e5bcd3de73a4cf6a3e606ba196a359b6c09e7372dba31316ddb8b134d7c335100e4c2ff0158ff07caa35fee9bc20768bde23cd803e274a')
+
+build() {
+  cd "reedsolomon-${version}"
+  python3 setup.py build
+}
+
+check() {
+  cd "reedsolomon-${version}"
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-${python_version}" python -m unittest discover tests
+}
+
+package() {
+  cd "reedsolomon-${version}"
+  python3 setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+  install -D -m0644 LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+}

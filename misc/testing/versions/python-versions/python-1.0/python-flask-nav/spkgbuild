@@ -1,0 +1,23 @@
+
+name=python-flask-nav
+version=0.6
+release=4
+# description : Easily create navigation for Flask applications"
+# depends :   python-flask   python-visitor   python-dominate  
+source="https://github.com/mbr/flask-nav/archive/$version.tar.gz" 
+
+build   {
+  cd flask-nav-$version
+  python setup.py build
+}
+
+check   {
+  cd flask-nav-$version
+  python setup.py pytest
+}
+
+package   {
+  cd flask-nav-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

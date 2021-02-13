@@ -1,0 +1,34 @@
+
+_name=litex
+name=python-$_name
+version=2020.12
+release=1
+# description : Migen/MiSoC based Core/SoC builder that provides the infrastructure to easily create Cores/SoCs 
+# depends :   python-migen   python-pyserial   python-requests   python-pythondata-software-compiler_rt  
+               python-pythondata-cpu-vexriscv   python-pythondata-cpu-picorv32   python-pythondata-cpu-lm32   python-pythondata-cpu-mor1kx  
+source=" $url/archive/$version.tar.gz" 
+
+prepare   {
+  # seems like running the tests breaks setup.py install
+  cp -r $_name-$version{,-tests}
+}
+
+build   {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check   {
+  cd $_name-$version-tests
+
+  pytest -k-test_variants_minerva
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

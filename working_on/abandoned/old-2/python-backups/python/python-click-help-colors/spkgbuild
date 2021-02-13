@@ -1,0 +1,40 @@
+# description : "Colorization of help messages in Click"
+# depends : python-click
+
+_name=click-help-colors
+name=python-click-help-colors
+version=0.9
+release=1
+url="https://github.com/click-contrib/click-help-colors"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=be8896d6c6f7d3a66d9ac424b9169fc9cc42c5e5ba88f310ce15e7c400731a677b4adf2968f110ab63d00af2374005812429d53f595362ca29150082602064c6
+b2sums=7ad26e2a8ac478abf2ef46e325e1759ce243e4930d5931ed3bfbdeda520c93d80096ef1cb97345f6fbd97be7d36ea2035c7120072ba20cd1f7f605d1a6ab8114
+
+prepare {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="build():${PYTHONPATH}"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+                        --optimize=1 \
+                        --root=$PKG 
+  install -vDm 644 examples/*.py \
+    -t "${PKG}/usr/share/doc/${name}/examples"
+}

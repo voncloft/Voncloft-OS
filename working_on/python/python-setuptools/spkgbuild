@@ -1,0 +1,17 @@
+# description : Easily download, build(), install, upgrade, and uninstall Python packages
+# depends : python-appdirs python-packaging python-ordered-set
+
+url=https://pypi.org/project/setuptools/
+name=python-setuptools
+version=53.0.0
+release=1
+
+source="https://github.com/pypa/setuptools/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd setuptools-$version
+   cd setuptools-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

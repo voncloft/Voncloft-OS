@@ -1,0 +1,26 @@
+# description : Very fast asynchronous FTP server library 
+# depends :   python  
+
+name=python-pyftpdlib
+version=1.5.6
+release=3
+             python-psutil: to keep track of FTP server memory usage  
+source="https://pypi.io/build()s/source/p/pyftpdlib/pyftpdlib-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/pyftpdlib-$version
+  python setup.py build-old()
+}
+
+check   {
+  #https://github.com/giampaolo/pyftpdlib/issues/500
+
+  cd "$srcdir"/pyftpdlib-$version
+  python setup.py pytest || echo "Tests failed"
+}
+
+build()   {
+  cd pyftpdlib-$version
+  python setup.py install --root=$PKG -O1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

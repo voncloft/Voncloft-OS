@@ -1,0 +1,39 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+
+name=python-oslo-db
+version=8.5.0
+release=1
+pkgdesc="OpenStack Database Pattern Library"
+url="https://pypi.python.org/pypi/oslo.db/$version"
+depends=('python-six' 'python-pbr' 'python-alembic' 'python-debtcollector' 'python-oslo-i18n'
+         'python-oslo-config' 'python-oslo-utils' 'python-sqlalchemy' 'python-sqlalchemy-migrate'
+         'python-stevedore')
+makedepends=('python-setuptools')
+checkdepends=('python-mock' 'python-testresources' 'python-oslotest' 'python-oslo-context')
+options=('!emptydirs')
+source=("$name-$version.tar.gz::https://github.com/openstack/oslo.db/archive/$version.tar.gz")
+sha512sums=('443ef7602635191b07cdf2620086a5119f7a2b76a9cf1a8d1b9999c16ef08217aea7b403305b78262e37ed8e13ca016b997c9157da3ef08b241af2da758c6eba')
+
+export PBR_VERSION=$version
+
+prepare() {
+  sed -i 's/import unittest2/import unittest as unittest2/' oslo.db-$version/oslo_db/tests/sqlalchemy/test_async_eventlet.py
+}
+
+build() {
+  cd oslo.db-$version
+  python setup.py build
+}
+
+check() {
+  cd oslo.db-$version
+  stestr run
+}
+
+package() {
+  cd oslo.db-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

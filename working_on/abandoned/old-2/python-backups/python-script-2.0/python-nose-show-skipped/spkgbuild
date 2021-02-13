@@ -1,0 +1,19 @@
+# description : A nose plugin to show skipped tests and their messages
+  # depends : python-nose
+  # depends : python2-nose
+
+url=https://github.com/cpcloud/nose-show-skipped
+name=python-nose-show-skipped python2-nose-show-skipped
+version=0.1
+release=7
+
+source="https://pypi.python.org/packages/source/n/nose-show-skipped/nose-show-skipped-$version.tar.gz"
+
+build() {
+   cd nose-show-skipped-$version
+   cd nose-show-skipped-$version-py2
+   cd nose-show-skipped-$version
+   cd nose-show-skipped-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

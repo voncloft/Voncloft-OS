@@ -1,0 +1,49 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: jtts <jussaar@mbnet.fi>
+# Contributor: josephgbr <rafael.f.f1@gmail.com>
+
+pkgname=lib32-libgusb
+pkgver=0.3.5
+pkgrel=1
+pkgdesc='GObject wrapper for libusb1'
+url=https://github.com/hughsie/libgusb
+arch=(x86_64)
+license=(LGPL2.1)
+depends=(
+  lib32-glib2
+  lib32-libusb
+  libgusb
+)
+makedepends=(
+  git
+  gobject-introspection
+  meson
+)
+_tag=1f712812327091c42c62b1ab1148d738d1a22b51
+source=(git+https://github.com/hughsie/libgusb.git#tag=${_tag})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd libgusb
+
+  git describe --tags
+}
+
+build() {
+  export CC='gcc -m32'
+  export CXX='g++ -m32'
+  export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
+
+  arch-meson libgusb build \
+    --libdir='/usr/lib32' \
+    -Ddocs=false \
+    -Dvapi=false
+  ninja -C build
+}
+
+package() {
+  DESTDIR="${pkgdir}" ninja -C build install
+  rm -rf "${pkgdir}"/usr/{bin,include,share}
+}
+
+# vim: ts=2 sw=2 et:

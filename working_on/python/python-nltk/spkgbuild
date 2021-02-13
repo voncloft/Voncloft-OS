@@ -1,0 +1,17 @@
+# description : Natural language processing in Python
+# depends : python-yaml
+
+url=https://www.nltk.org/
+name=python-nltk
+version=3.5
+release=3
+
+source="https://github.com/nltk/nltk/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd nltk-$version
+#   cd nltk-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

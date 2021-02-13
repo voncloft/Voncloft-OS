@@ -1,0 +1,28 @@
+# description : Perl/CPAN Module Regexp::Shellish : Shelllike regular expressions
+
+name=perl-regexp-shellish
+version=0.93
+release=11
+url=https://search.cpan.org/dist/Regexp-Shellish
+source="https://www.cpan.org/authors/id/R/RB/RBS/Regexp-Shellish-$version.tar.gz"
+options="!checksum"
+sha256sums=39b4991192e6c6fcda39075b674515fdb3a0657c1cdccc8c2552e434233955f9
+
+build-delete {
+  cd $srcdir/Regexp-Shellish-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Regexp-Shellish-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

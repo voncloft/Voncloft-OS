@@ -1,0 +1,64 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+
+pkgname=logwatch
+pkgver=7.5.5
+pkgrel=1
+arch=('any')
+pkgdesc="Logwatch is a customizable log analysis system."
+url="https://sourceforge.net/projects/logwatch/files/"
+depends=('perl')
+optdepends=('cron'
+	    'perl-date-manip: human readable dates')
+license=('custom')
+backup=(etc/logwatch/conf/logwatch.conf
+	etc/logwatch/conf/ignore.conf
+	etc/logwatch/conf/override.conf)
+source=(https://downloads.sourceforge.net/project/logwatch/logwatch-$pkgver/logwatch-$pkgver.tar.gz
+	cron.conf
+	maillog.conf
+	messages.conf
+	secure.conf)
+sha256sums=('138f181dea49470e1ef2d39af11b851aef0156500601312ce4de25d3a199b1c1'
+            '41b9ec84fc825545f43080064ffaa9612cd037c10bb24c0810341e01d63f7a75'
+            '9a614822b5f25d9d473a00abdd2e93751d86685608bd6ca0770e2954c3c97f0e'
+            '59466406f306b4b377616943e8737f522cff713dd1fc968045cba57eeb0acbc2'
+            'a4c78442968abf363729e96bfd9ed379eb0718967deb60950c201d40f8aaa461')
+
+prepare() {
+	cd "$srcdir"/$pkgname-$pkgver
+	sed \
+		-e '/BASEDIR=/d' \
+		-e '/CONFIGDIR=/d' \
+		-e '/TEMPDIR=/d' \
+		-e '/PERLEXE=/d' \
+		-e '/MANDIR=/d' \
+		-e '/ln -f -s $BASEDIR/d' \
+		-e "s|/lib/systemd/|$pkgdir/usr/lib/systemd/|g" \
+		-e "s|/usr/sbin/logwatch|$pkgdir/usr/bin/logwatch/|g" \
+		-i install_logwatch.sh
+}
+
+package() {
+	cd "$srcdir"/$pkgname-$pkgver
+
+	install -dm0755 "$pkgdir"/usr/{bin,lib/systemd/system}
+
+	export BASEDIR="$pkgdir/usr/share/logwatch"
+	export CONFIGDIR="$pkgdir/etc/logwatch"
+	export TEMPDIR="$pkgdir/var/cache/logwatch"
+	export PERLEXE="$pkgdir/usr/bin/perl"
+	export MANDIR="$pkgdir/usr/share/man"
+	echo "$pkgdir/usr/share/logwatch" | sh install_logwatch.sh --systemd
+	ln -sf /usr/share/logwatch/scripts/logwatch.pl "$pkgdir"/usr/bin/logwatch
+	rm -rf "$pkgdir"/usr/lib/systemd/system/multi-user.target.wants
+	sed -i "s|$pkgdir||g" "$pkgdir"/usr/share/logwatch/scripts/logwatch.pl
+
+	install -Dm0644 "$srcdir"/cron.conf "$pkgdir"/usr/share/logwatch/dist.conf/logfiles/cron.conf
+	install -Dm0644 "$srcdir"/maillog.conf "$pkgdir"/usr/share/logwatch/dist.conf/logfiles/maillog.conf
+	install -Dm0644 "$srcdir"/messages.conf "$pkgdir"/usr/share/logwatch/dist.conf/logfiles/messages.conf
+	install -Dm0644 "$srcdir"/secure.conf "$pkgdir"/usr/share/logwatch/dist.conf/logfiles/secure.conf
+
+	install -m 0755 -d "$pkgdir"/usr/share/licenses/$pkgname/
+	install -m 0644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/
+}

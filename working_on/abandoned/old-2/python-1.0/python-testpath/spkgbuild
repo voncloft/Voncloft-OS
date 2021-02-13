@@ -1,0 +1,21 @@
+# description : Test utilities for code working with files and commands
+# depends : python
+
+  _dist=testpath-$version.dist-info
+_name=testpath
+url=https://pypi.python.org/pypi/testpath
+_name=testpath
+name=python-testpath
+version=0.4.4
+release=3
+
+source="https://github.com/jupyter/testpath/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_dist
+   cd testpath
+   cd testpath-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

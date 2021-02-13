@@ -1,0 +1,43 @@
+
+pkgbase=python-lockfile
+name= python-lockfile python2-lockfile 
+version=0.12.2
+release=8
+# description : Platform-independent file locking module 
+source=https://files.pythonhosted.org/packages/source/l/lockfile/lockfile-$version.tar.gz 
+
+prepare   {
+  cp -a lockfile-$version{,-py2}
+}
+
+build   {
+  cd "$srcdir/lockfile-$version"
+  python setup.py build
+
+  cd "$srcdir/lockfile-$version-py2"
+  python2 setup.py build
+}
+
+check   {
+  cd "$srcdir/lockfile-$version"
+  nosetests
+
+  cd "$srcdir/lockfile-$version-py2"
+  nosetests2
+}
+
+package_python-lockfile   {
+  # depends :  python 
+
+  cd "$srcdir/lockfile-$version"
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+package_python2-lockfile   {
+  # depends :  python2 
+
+  cd "$srcdir/lockfile-$version-py2"
+  python2 setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

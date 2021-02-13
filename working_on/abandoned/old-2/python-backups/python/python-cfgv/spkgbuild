@@ -1,0 +1,41 @@
+# description : "Validate configuration and produce human readable error messages"
+# depends : python
+
+_name=cfgv
+name=python-cfgv
+version=3.2.0
+release=3
+url="https://github.com/asottile/cfgv"
+make# depends : python-setuptools
+check# depends : python-pytest
+# pypi sdist tarballs dont contain tests:
+# https://github.com/asottile/cfgv/issues/23
+# source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+source="${_name}-${version}.tar.gz::https://github.com/asottile/${_name}/archive/v${version}.tar.gz"
+sha512sums=6f1a54b505d298a9806a739edffc79feea41638f766ddc25f0712001e5bceb206153e3a957dcf4909fbe125b6e9bd077aba6317d00e632a06ed24f1dfd06c555
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="build():${PYTHONPATH}"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

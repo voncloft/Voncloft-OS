@@ -1,0 +1,33 @@
+# description : "An idiomatic testing library for python with powerful and flexible assertions"
+# depends : python-six python-mock
+
+name=python-sure
+version=1.4.11
+release=7
+url="https://github.com/gabrielfalcao/sure"
+make# depends : python-setuptools git
+check# depends : python-nose
+source="$name-$version.tar.gz::https://github.com/gabrielfalcao/sure/archive/$version.tar.gz"
+sha512sums=0f3601eff81074d73568014aaf81b2a3e782c95d3a62cf689031bd0c53eaa8eb531a32e4e2d16c4bee4291157f621e52857b575bcfdaf82839f8e1d0d40d3563
+
+prepare {
+  export LC_CTYPE=en_US.UTF-8
+}
+
+build()-delete {
+   cd "$srcdir"/sure-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/sure-$version
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd sure-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

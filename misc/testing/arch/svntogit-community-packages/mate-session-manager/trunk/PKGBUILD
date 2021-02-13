@@ -1,0 +1,35 @@
+# Maintainer: Brad Fanella <cesura@archlinux.org>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=mate-session-manager
+pkgver=1.24.1
+pkgrel=1
+pkgdesc="The MATE Session Handler"
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('dbus-glib' 'gettext' 'gtk3' 'libsm' 'mate-desktop')
+makedepends=('xtrans' 'systemd' 'python')
+optdepends=('gnome-keyring: keyring support'
+            'xdg-user-dirs-gtk: manage user directories')
+groups=('mate')
+conflicts=('mate-session-manager-gtk3')
+replaces=('mate-session-manager-gtk3')
+source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('a1c472a3da20c2c69b1de9f2746f23ceaf149bb633fb8b8496715c5fbd4698ff')
+
+build() {
+    	cd "${pkgname}-${pkgver}"
+    	./configure \
+        	--prefix=/usr \
+        	--libexecdir=/usr/lib/${pkgname} \
+        	--sysconfdir=/etc \
+        	--localstatedir=/var \
+        	--disable-upower
+    	make
+}
+
+package() {
+    	cd "${pkgname}-${pkgver}"
+    	make DESTDIR="${pkgdir}" install
+}

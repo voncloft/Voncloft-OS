@@ -1,0 +1,51 @@
+
+pkgbase=python-basemap
+name=python-basemap python-basemap-common
+version=1.2.2
+release=2
+url="https://matplotlib.org/basemap/"
+make# depends : cython python-matplotlib geos shapelib python-numpy python-pyproj
+source=$name-$version.tar.gz::https://github.com/matplotlib/basemap/archive/v${version}rel.tar.gz
+sha256sums=7e6ee5d03b10168862cff82bfa819df8264c04f078eac4549a22dd2631696613
+            0deac85afb0740df7626b6d8d7aa4b8814bbe9a412fb1a0e5962895d17e63add
+
+prepare {
+  pushd "${srcdir}"/basemap-${version}rel
+# regenerate cythonized sources
+  cythonize --force src/_geoslib.pyx
+# Remove the bundled libraries and common data
+  rm -r geos-*
+  sed -i "s/lib64/lib/g" setup.py
+  popd
+}
+
+build()-delete {
+   cd "${srcdir}"/basemap-${version}rel
+  python setup.py config
+  python setup.py build
+}
+
+package_python-basemap {
+  # description : "Toolkit for plotting data on map projections"
+  # depends : python-basemap-common python-matplotlib geos shapelib python-numpy python-pyproj
+  opt# depends : python-owslib: needed for the BaseMap.wmsimage function
+              python-pillow: needed for Basemap warpimage, bluemarble, shadedrelief and etop methods
+
+   cd "${srcdir}"/basemap-${version}rel
+
+  python setup.py build
+  python setup.py install -O1 --root=$PKG   
+
+  _sitepackages=`python -c "import site; printsite.getsitepackages[0]"`
+  rm -fr "${PKG}${_sitepackages}"/mpl_toolkits/basemap/data
+  ln -sf /usr/share/basemap/data "${PKG}${_sitepackages}"/mpl_toolkits/basemap/data
+}
+
+package_python-basemap-common {
+  # description : "Data files for python-basemap"
+
+   cd "${srcdir}"/basemap-${version}rel
+
+  install -dm755 "${PKG}"/usr/share/basemap
+  cp -a lib/mpl_toolkits/basemap/data/ "${PKG}"/usr/share/basemap/
+}

@@ -1,0 +1,28 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Wesley Moore <wes@wezm.net>
+pkgname=sd
+pkgver=0.7.6
+pkgrel=1
+pkgdesc='Intuitive find & replace'
+arch=('x86_64')
+url="https://github.com/chmln/sd"
+license=('MIT')
+depends=('gcc-libs')
+makedepends=('rust' 'cargo' 'git')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/chmln/sd/archive/v${pkgver}.tar.gz")
+sha256sums=('faf33a97797b95097c08ebb7c2451ac9835907254d89863b10ab5e0813b5fe5f')
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --locked
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  cargo test --release --locked
+}
+
+package() {
+  install -Dm755 "$pkgname-$pkgver/target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,22 @@
+
+name=python-prctl
+version=1.8
+release=1
+# description : Python ic  interface to the linux prctl syscall 
+# depends :   python   libcap  
+source="https://github.com/seveas/python-prctl/archive/v$version.tar.gz" 
+
+build   {
+  cd python-prctl-$version
+  python setup.py build
+}
+
+check   {
+  cd python-prctl-$version
+  python -m unittest discover || echo "Tests failed"
+}
+
+package   {
+  cd python-prctl-$version
+  python setup.py install --root=$PKG --optimize=1
+}

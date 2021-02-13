@@ -1,0 +1,49 @@
+# Maintainer: Jelle van der Waa <jelle@vdwaa.nl>
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: lilydjwg <lilydjwg@gmail.com>
+
+pkgbase=python-dateutil
+name=('python-dateutil' 'python2-dateutil')
+version=2.8.1
+release=5
+pkgdesc="Provides powerful extensions to the standard datetime module"
+url="https://github.com/dateutil/dateutil"
+makedepends=('python-setuptools-scm' 'python2-setuptools-scm' 'python-six' 'python2-six')
+checkdepends=('python-pytest' 'python-freezegun' 'python-hypothesis')
+source=("https://files.pythonhosted.org/packages/source/${name:0:1}/$name/$name-$version.tar.gz"{,.asc})
+sha256sums=('73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c'
+            'SKIP')
+validpgpkeys=('6B49ACBADCF6BD1CA20667ABCD54FCE3D964BEFB') # Paul Ganssle <paul@ganssle.io>
+
+prepare() {
+  cd "$srcdir"
+
+  cp -r  python-dateutil-$version python2-dateutil-$version
+}
+
+build() {
+  cd "$srcdir"/python-dateutil-$version
+  python setup.py build
+
+  cd "$srcdir"/python2-dateutil-$version
+  python setup.py build
+}
+
+check() {
+  cd python-dateutil-$version
+  pytest -W ignore::pytest.PytestUnknownMarkWarning # https://github.com/pytest-dev/pytest/issues/5678
+}
+
+package_python-dateutil() {
+depends=('python-six')
+  cd "$srcdir"/python-dateutil-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-dateutil() {
+depends=('python2-six')
+  cd "$srcdir"/python2-dateutil-$version
+  python2 setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

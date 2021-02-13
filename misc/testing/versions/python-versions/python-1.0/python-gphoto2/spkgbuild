@@ -1,0 +1,18 @@
+
+name=python-gphoto2
+version=2.2.4
+release=2
+# description : Python interface to libgphoto2"
+# depends :   libgphoto2   python  
+source= https://github.com/jim-easterbrook/$name/archive/v$version.tar.gz 
+
+build   {
+  cd $name-$version
+  python setup.py build_swig
+  python setup.py build
+}
+
+package  {
+  cd $name-$version
+  python setup.py install --root=$PKG --optimize=1
+}

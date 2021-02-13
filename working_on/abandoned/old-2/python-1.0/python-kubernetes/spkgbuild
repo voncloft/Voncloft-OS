@@ -1,0 +1,18 @@
+# description : Python client for the kubernetes API
+# depends : python python-certifi python-six python-dateutil
+
+_kubernetes_base_commit=2da2b981ca806b25487ad92d01a2164815c18517
+url=https://github.com/kubernetes-client/python
+name=python-kubernetes
+version=12.0.1
+release=2
+
+source="${_pkgbase}-${version}.tar.gz"::${url}/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd 
+   cd ${_pkgbase}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

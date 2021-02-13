@@ -1,0 +1,16 @@
+# description : memory profiler and debuger
+# depends : python3
+
+name=python3-gupper
+version=0.1.0
+release=2
+
+source="https://pypi.io/packages/source/g/guppy/guppy-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd guppy-$version
+	python3 setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1
+}

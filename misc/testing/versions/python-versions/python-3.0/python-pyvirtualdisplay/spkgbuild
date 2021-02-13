@@ -1,0 +1,31 @@
+# description : Python wrapper for Xvfb, Xephyr and Xvnc"
+# depends :  python-easyprocess 
+
+_pkg=PyVirtualDisplay
+name=python-${_pkg,,}
+version=2.0
+release=1
+    python-pytest python-pytest-xdist
+    python-pyscreenshot python-pillow
+    python-entrypoint2 python-path.py python-psutil
+    xorg-server-xvfb xorg-server-xephyr
+    xorg-xmessage xorg-xdpyinfo scrot vncdotool
+ 
+source=https://files.pythonhosted.org/build()s/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+#source= ${url}/archive/${version}/${name}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pkg}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pkg}-${version}
+  PYTHONPATH="${PWD}/build-old()/lib" pytest tests
+}
+
+build()   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build-old() --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/${name}
+}

@@ -1,0 +1,38 @@
+# description : argument type classification
+# depends : perl
+
+name=perl-params-classify
+version=0.015
+release=4
+url=https://search.cpan.org/~zefram/Params-Classify
+make# depends : perl-module-build
+source="https://search.cpan.org/CPAN/authors/id/Z/ZE/ZEFRAM/Params-Classify-$version.tar.gz"
+options="!checksum"
+        op-sibling-fixes.patch
+sha256sums=398ec15 cd899f cd8bef3db9ea1748bf631f15f6c32be203e475b67df510a5914
+            b9e3ce962ae98fa325e864d72347d2a172a4bcee9da867dafd087f3a9180ea7d
+
+prepare {
+   cd $sr cdir/Params-Classify-$version
+  # https://rt.cpan.org/Public/Bug/Display.html?id=114490
+#  patch -Np1 -i ../op-sibling-fixes.patch
+}
+
+build-delete {
+   cd $sr cdir/Params-Classify-$version
+  perl Build.PL installdirs=vendor destdir=$PKG/
+  perl Build
+}
+
+build() {
+   cd $sr cdir/Params-Classify-$version
+  perl Build install
+  find $PKG -name perllocal.pod -delete
+  find $PKG -name .packlist -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,25 @@
+# description : Python client for MeiliSearch API 
+# depends :  python 
+
+name=python-meilisearch
+version=0.14.0
+release=1
+source= ${name}-${version}.tar.gz::https://github.com/meilisearch/meilisearch-python/archive/v${version}.tar.gz 
+
+build-old()   {
+  cd "meilisearch-python-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  # requires running meilisearchhttps://github.com/meilisearch/meilisearch-python/blob/master/.github/workflows/test.yml#L20
+  cd "meilisearch-python-${version}"
+  #pytest .
+}
+
+build()   {
+  cd "meilisearch-python-${version}"
+  python setup.py install -O1 --root=$PKG
+
+  install -D -m644 LICENSE "$PKG/usr/share/licenses/${name}/LICENSE"
+}

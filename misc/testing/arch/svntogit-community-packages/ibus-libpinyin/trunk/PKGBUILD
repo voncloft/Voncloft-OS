@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor:  Yangtse Su<yangtsesu@gmail.com>
+# Contributor:  Jekyll Wu<adaptee [at] gmail [dot] com>
+# Contributor: riverscn<riverscn at gmail.com>
+# Contributor: rainy<rainylau at gmail.com>
+# Contributor: Lee.MaRS<leemars at gmail.com>
+
+pkgname=ibus-libpinyin
+pkgver=1.12.0
+pkgrel=1
+pkgdesc="Intelligent Pinyin engine based on libpinyin for IBus"
+arch=('x86_64')
+license=('LGPL')
+url="https://github.com/libpinyin/ibus-libpinyin"
+depends=('ibus' 'libpinyin' 'lua' 'opencc' 'python-pyxdg')
+makedepends=('boost' 'git' 'gnome-common' 'intltool')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/libpinyin/ibus-libpinyin/archive/$pkgver.tar.gz")
+sha512sums=('37463c162857feb345a776086edd69d06b0b3bcba9dda37d00dc34c62c1e768888462ca02c855e847251e3b3ba6fc95c0965c178ce23b3802734c3348991d7e8')
+
+build() {
+  cd $pkgname-$pkgver
+  ./autogen.sh --prefix=/usr --libexecdir=/usr/lib/$pkgname --enable-boost --enable-opencc --enable-cloud-input-mode
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make NO_INDEX=true DESTDIR="$pkgdir" install
+}

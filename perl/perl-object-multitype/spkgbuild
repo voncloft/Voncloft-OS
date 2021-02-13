@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Object::MultiType
+
+name=perl-object-multitype
+version=0.05
+release=11
+
+source="https://www.cpan.org/authors/id/G/GM/GMPASSOS/Object-MultiType-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd Object-MultiType-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

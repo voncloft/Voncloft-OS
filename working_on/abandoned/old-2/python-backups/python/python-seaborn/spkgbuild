@@ -1,0 +1,28 @@
+# description : "Statistical data visualization"
+# depends : python-pandas python-matplotlib python-scipy
+
+# TODO: python-fastcluster is optional dependency move from AUR
+
+name=python-seaborn
+version=0.11.0
+release=3
+url="https://seaborn.pydata.org/"
+make# depends : python-setuptools
+opt# depends : python-statsmodels: for some advanced statistical plots
+source="${name}-${version}.tar.gz::https://github.com/mwaskom/seaborn/archive/v${version}.tar.gz"
+sha256sums=0880ee8647019dadd35fba4744192e821dfd0b1647bff5b25c40996f0193b9ba
+
+build()-delete {
+   cd "$srcdir"/seaborn-${version}
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/seaborn-${version}
+
+  python setup.py build
+  python setup.py install  --root=$PKG --optimize=1
+
+}

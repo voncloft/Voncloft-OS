@@ -1,0 +1,17 @@
+# description : sshguard boot script
+# depends :
+
+name=sshguard-boot
+version=2.4.1
+release=1
+
+source="sshguard"
+options="!checksum"
+build()
+{
+	mkdir $PKG/etc/init.d
+	install $SRC/sshguard $PKG/etc/init.d/
+	ln -sfv /etc/init.d/sshguard /etc/rc.d/rc5.d/S99sshguard
+	ln -sfv /etc/init.d/sshguard /etc/rc.d/rc4.d/S99sshguard
+	ln -sfv /etc/init.d/sshguard /etc/rc.d/rc3.d/S99sshguard
+}

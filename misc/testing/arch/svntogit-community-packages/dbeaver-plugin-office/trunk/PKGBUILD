@@ -1,0 +1,40 @@
+# Maintainer: Muflone http://www.muflone.com/contacts/english/
+
+pkgname=dbeaver-plugin-office
+pkgver=1.1.85.202012201616
+_featurever=1.1.84.202012201616
+_uiver=1.0.1.202012201616
+pkgrel=1
+pkgdesc='DBeaver plugin to export data to Microsoft Office format'
+arch=('any')
+url='https://dbeaver.io/'
+license=('Apache')
+makedepends=('unzip')
+depends=('dbeaver>=4.2.5' 'dbeaver-plugin-apache-poi')
+source=("https://dbeaver.io/update/ce/latest/plugins/org.jkiss.dbeaver.data.office_${pkgver}.jar"
+        "https://dbeaver.io/update/ce/latest/plugins/org.jkiss.dbeaver.data.office.ui_${_uiver}.jar"
+        "https://dbeaver.io/update/ce/latest/features/org.jkiss.dbeaver.ext.office.feature_${_featurever}.jar"
+        "${pkgname}.info")
+sha256sums=('72e2a045e034f9891d12639866dfb9b685b810216b8d82f86e7c3eb0851892f6'
+            'e510e22ed9a0bce1087bac3a60601e8ebb2850f06cf741ded8c1d68761440576'
+            'b24eedd7783a082cb9311b3f82f1b1df5da752368cd00fbad117ac0a0b5a85d4'
+            '0673e2fac710ad574389ed799785fc0e062cb2209fc13efadce7bf6a305497fb')
+noextract=("org.jkiss.dbeaver.data.office_${pkgver}.jar"
+           "org.jkiss.dbeaver.ext.office.feature_${_featurever}.jar")
+
+package() {
+  # Install plugin
+  install -m 755 -d "${pkgdir}/usr/lib/dbeaver/plugins"
+  install -m 644 -t "${pkgdir}/usr/lib/dbeaver/plugins" \
+    "org.jkiss.dbeaver.data.office_${pkgver}.jar" \
+    "org.jkiss.dbeaver.data.office.ui_${_uiver}.jar"
+
+  # Extract feature
+  install -m 755 -d "${pkgdir}/usr/share/dbeaver/features/org.jkiss.dbeaver.ext.office.feature_${_featurever}"
+  unzip -q "${srcdir}/org.jkiss.dbeaver.ext.office.feature_${_featurever}.jar" \
+        -d "${pkgdir}/usr/share/dbeaver/features/org.jkiss.dbeaver.ext.office.feature_${_featurever}"
+
+  # Add configuration file (handled by the hook)
+  install -m 755 -d "${pkgdir}/etc/dbeaver/bundles.d"
+  install -m 644 "${srcdir}/${pkgname}.info" "${pkgdir}/etc/dbeaver/bundles.d/20-${pkgname}.info"
+}

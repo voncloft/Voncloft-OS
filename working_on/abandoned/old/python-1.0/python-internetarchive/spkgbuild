@@ -1,0 +1,50 @@
+# Maintainer: Florian Pritz <bluewind@xinu.at>
+# Contributor: David McInnis <dave@dave3.xyz>
+# Contributor:  jyantis <yantis@yantis.net>
+
+name=python-internetarchive
+version=1.9.9
+release=1
+pkgdesc='Wrapper for the various Internet Archive APIs (IA-S3, Metadata API, etc)'
+url='https://github.com/jjjake/ia-wrapper'
+depends=('python'
+         'python-setuptools'
+         'python-six'
+         'python-yaml'
+         'python-requests'
+         'python-jsonpatch'
+         'python-docopt'
+         'python-jsonpointer'
+         'python-args'
+         'python-tqdm'
+         'python-schema'
+        )
+optdepends=('python-ujson: faster json parsing'
+            'python-gevent: concurrent downloads'
+            'cython: speedups')
+checkdepends=(python-responses
+              python-pytest
+             )
+source=("${name}-${version}.tar.gz::https://github.com/jjjake/internetarchive/archive/v${version}.tar.gz")
+sha256sums=('cbc3176e861faaa976eed03c28e1514c41fb466409d20e3874dbef192b78501c')
+
+build() {
+  cd internetarchive-${version}
+  python setup.py build
+}
+
+check() {
+  cd internetarchive-${version}
+
+  python setup.py test
+}
+
+package() {
+  cd internetarchive-${version}
+  python setup.py install --root="${pkgdir}" --optimize=1
+
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+  install -D -m644 README.rst "${pkgdir}/usr/share/doc/${name}/README.rst"
+}
+
+# vim:set ts=2 sw=2 et:

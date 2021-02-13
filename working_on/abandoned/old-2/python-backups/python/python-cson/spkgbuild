@@ -1,0 +1,28 @@
+# description : "A Python parser for Coffeescript Object Notation CSON"
+# depends : python python-six python-speg
+
+name=python-cson
+version=0.8
+release=4
+url="https://github.com/avakar/pycson"
+make# depends : git
+             python-setuptools
+             python-pytest
+             python-pytest-cov
+             python-speg
+_commit=d2ed07d980382e44726cf3c074957e752ef6441b
+source="git+https://github.com/avakar/pycson.git#tag=${_commit}"
+sha256sums=SKIP
+
+check {
+   cd "$srcdir"/pycson
+  PYTHONPATH=. py.test --cov=cson --cov-report term-missing
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/pycson
+  python setup.py build
+  python setup.py install--root=$PKG 
+}

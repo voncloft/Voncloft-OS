@@ -1,0 +1,27 @@
+
+_pkg=pyxDamerauLevenshtein
+name=python-${_pkg,,}
+version=1.6.1
+release=1
+# description : Implements the Damerau-Levenshtein  DL  edit distance algorithm"
+# depends :  python-numpy 
+# No tests in PyPi tarballs
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+source= ${url}/archive/v${version}/${_pkg}-${version}.tar.gz 
+
+build   {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pkg}-${version}
+  local python_version=$ python -c  import sys; print ".".join map str, sys.version_info[:2]     
+  PYTHONPATH="${PWD}"/build/lib.linux-${CARCH}-${python_version} pytest
+}
+
+package   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/${name}
+}

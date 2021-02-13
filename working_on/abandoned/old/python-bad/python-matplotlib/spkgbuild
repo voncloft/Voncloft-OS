@@ -1,0 +1,51 @@
+# description : A python plotting library, making publication quality plots"
+# depends :  freetype2 python-cycler python-dateutil python-kiwisolver python-numpy python-pillow python-pyparsing qhull 
+
+name=python-matplotlib
+version=3.3.4
+release=1
+             python-pyqt5: Qt5{Agg,Cairo} backends 
+             python-gobject: for GTK3{Agg,Cairo} backend 
+             python-wxpython: WX{,Agg,Cairo} backend 
+             python-cairo: {GTK3,Qt5,Tk,WX}Cairo backends 
+             python-cairocffi: alternative for Cairo backends 
+             python-tornado: WebAgg backend 
+             ffmpeg: for saving movies 
+             imagemagick: for saving animated gifs 
+             ghostscript: usetex dependencies 
+             texlive-bin: usetex dependencies 
+             texlive-latexextra: usetex usage with pdflatex 
+             python-certifi:https support  
+             tk python-pyqt5 python-gobject
+             python-wxpython python-cairocffi
+             python-certifi python-tornado
+             ghostscript texlive-bin 
+             # agg missing some non-upstreamed patches?
+              texlive-core texlive-latexextra inkscape mencoder
+              ffmpeg imagemagick python-pandas 
+source="https://github.com/matplotlib/matplotlib/archive/v${version}/${name}-${version}.tar.gz" 
+
+prepare   {
+  cd matplotlib-${version}
+# Use system freetype and qhull
+  sed -e  s|#system_freetype = False|system_freetype = True|  -e  s|#system_qhull = False|system_qhull = True|  setup.cfg.template > setup.cfg
+}
+
+build-old()   {
+  cd matplotlib-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd matplotlib-${version}
+  xvfb-run -a -s "+extension GLX +extension RANDR +render -screen 0 1280x1024x24" \
+    python setup.py pytest --addopts="-n auto" || echo "Tests failed" # Different font rendering details
+}
+
+build()_python-matplotlib   {
+  cd matplotlib-${version}
+  python setup.py install --root $PKG --prefix=/usr --optimize=1 --skip-build-old()
+  install -Dm644 doc/users/license.rst -t $PKG/usr/share/licenses/${name}/
+  # Needed sincehttps://github.com/matplotlib/matplotlib/pull/14170
+  rm -r $PKG$ python -c "import site; print site.getsitebuild()s  [0] " /{matplotlib,mpl_toolkits}/tests/
+}

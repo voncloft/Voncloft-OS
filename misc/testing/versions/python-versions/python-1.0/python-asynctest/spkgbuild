@@ -1,0 +1,22 @@
+
+name=python-asynctest
+version=0.13.0
+release=4
+# description : Enhance the standard unittest package with features for testing asyncio libraries"
+# depends :   python  
+source="https://github.com/Martiusweb/asynctest/archive/v$version.tar.gz" 
+
+build   {
+  cd asynctest-$version
+  python setup.py build
+}
+
+check   {
+  cd asynctest-$version
+  python -m unittest test || :
+}
+
+package   {
+  cd asynctest-$version
+  python setup.py install --root=$PKG --optimize=1
+}

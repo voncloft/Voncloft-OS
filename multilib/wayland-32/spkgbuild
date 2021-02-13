@@ -1,0 +1,27 @@
+# description	: A project to define a protocol for a compositor to talk to its clients as well as a library implementation of the protocol
+# depends	: libffi-32 libxml2-32 wayland
+
+name=wayland-32
+version=1.18.0
+release=1
+source="http://wayland.freedesktop.org/releases/wayland-$version.tar.xz"
+
+build() {
+	cd wayland-$version
+
+	export CC="gcc -m32"
+	export CXX="g++ -m32"
+	export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+	./configure --prefix=/usr    \
+		    --libdir=/usr/lib32 \
+	            --disable-static \
+	            --disable-documentation
+	make
+	make DESTDIR=$PKG install
+
+	rm -fr $PKG/usr/{bin,include,share}
+
+	# remove file conflict with mesa
+	#rm $PKG/usr/lib/{libwayland-egl.so{,.1,.1.0.0},pkgconfig/wayland-egl.pc}
+}

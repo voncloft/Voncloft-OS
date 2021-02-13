@@ -1,0 +1,52 @@
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
+# Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
+
+pkgname=lib32-ocl-icd
+_pkgname=ocl-icd
+pkgver=2.2.14
+pkgrel=1
+pkgdesc="OpenCL ICD Bindings (32-bit)"
+arch=('x86_64')
+url="https://github.com/OCL-dev/ocl-icd"
+license=('BSD')
+depends=('lib32-glibc')
+makedepends=('ruby' 'lib32-mesa' 'opencl-headers>=2.1' 'gcc-multilib')
+checkdepends=()
+provides=('lib32-opencl-icd-loader')
+conflicts=('lib32-libcl')
+replaces=('lib32-libcl')
+optdepends=('lib32-opencl-driver: packaged opencl driver')
+source=("ocl-icd-${pkgver}.tar.gz::https://github.com/OCL-dev/${_pkgname}/archive/v${pkgver}.tar.gz")
+sha256sums=('46df23608605ad548e80b11f4ba0e590cef6397a079d2f19adf707a7c2fbfe1b')
+
+prepare() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  autoreconf -fiv
+}
+
+build() {
+  cd "$srcdir/$_pkgname-$pkgver"
+
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  ./configure --prefix=/usr --libdir=/usr/lib32
+  make
+}
+
+check() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  make -k check
+}
+
+package() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+
+  rm -rf "$pkgdir"/usr/{share,include}
+  install -m755 -d "$pkgdir/usr/share/licenses/lib32-ocl-icd"
+  install -m644 "$srcdir/$_pkgname-$pkgver/COPYING" "${pkgdir}/usr/share/licenses/lib32-ocl-icd/"
+}
+
+# vim:set ts=2 sw=2 et:

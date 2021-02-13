@@ -1,0 +1,30 @@
+# description : Perl/CPAN Module PerlIO::via::symlink
+
+name=perlio-via-symlink
+version=0.05
+release=9
+url=https://search.cpan.org/dist/PerlIO-via-symlink/
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/PerlIO-via-symlink-$version.tar.gz"
+options="!checksum"
+	Makefile.PL
+sha256sums=4107d4c34a6a3629453448c25695d92f82522aff64e29b716b56a5af586b2d52
+            4575f017586e1d6855c19e4149c4ec46da4a6e36d2b5b230774d61344b7363e8
+
+build-delete {
+  cd $srcdir/PerlIO-via-symlink-$version
+  PERL_MM_USE_DEFAULT=1 perl ../Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/PerlIO-via-symlink-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

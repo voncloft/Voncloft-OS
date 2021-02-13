@@ -1,0 +1,35 @@
+# description : Perl Archive Toolkit
+# depends : perl-archive-zip perl-par-dist
+
+name=perl-par
+version=1.017
+release=1
+url=https://metacpan.org/release/PAR
+source="https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/PAR-${version}.tar.gz"
+options="!checksum"
+b2sums=99acabab41bff84b9445c38dbceffe5731a20afb16cecef20a6d6fa48babfebdba42d675fd813c91cde59b4b932fff00571957bcebb1001c194e90dbc59648ea
+
+build-delete {
+  cd PAR-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+}
+check{
+  cd PAR-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}
+build() {
+  cd PAR-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

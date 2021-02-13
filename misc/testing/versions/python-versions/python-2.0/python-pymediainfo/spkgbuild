@@ -1,0 +1,35 @@
+# description : A Python wrapper around the MediaInfo library"
+# depends :   libmediainfo   python  
+
+_name=pymediainfo
+name=python-pymediainfo
+version=5.0.3
+release=1
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "${name}-${version}"
+}
+
+build-old()   {
+  cd "${name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${name}-${version}"
+  export PYTHONPATH="build-old():$PYTHONPATH"
+  pytest -v
+}
+
+build()   {
+  cd "${name}-${version}"
+  python setup.py install --skip-build-old() \
+                          --optimize=1 \
+                          --root=$PKG
+  # license
+  install -vDm 644 LICENSE \
+    -t "${PKG}/usr/share/licenses/${name}"
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

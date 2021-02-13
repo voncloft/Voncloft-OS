@@ -1,0 +1,69 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+
+pkgname=todoman
+pkgver=3.9.0
+pkgrel=2
+pkgdesc="A simple, standards-based, cli todo (aka: task) manager"
+arch=('any')
+url="https://github.com/pimutils/todoman"
+license=('ISC')
+depends=('python-atomicwrites' 'python-click' 'python-click-log'
+'python-configobj' 'python-dateutil' 'python-humanize' 'python-icalendar'
+'python-parsedatetime' 'python-pyxdg' 'python-setuptools' 'python-tabulate'
+'python-urwid')
+makedepends=('python-sphinx-autorun' 'python-sphinx-click')
+checkdepends=('python-freezegun' 'python-hypothesis' 'python-pytest'
+'python-pytest-runner')
+optdepends=('bash-completion: auto-complete in bash'
+            'python-click-repl: REPL command'
+            'zsh-completions: auto-complete in zsh')
+source=("https://files.pythonhosted.org/packages/source/${pkgname::1}/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('4ff8fe5972360cdc587797f1d89045f69678cc22a8a0db42c50b88b4c5a6ff4d0e6d445ccad799e3a6d38888d8d7af29d18d527abf34f262267c54b68763d6ee')
+b2sums=('7bcc005ff763ae0fe03d65a188d0bce6ae4882c8d0a06db980aa79c5272f751666e81905e0d3e186f0cdefcbd3246322c47a534f92f2bb786e151f6c1466b8fb')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  # remove interfering options to pytest
+  sed -e '/addopts/d' -i setup.cfg
+  sed -i 's/from validate/from configobj.validate/g' todoman/configuration.py
+  sed -i 's/import validate/import configobj.validate as validate/' docs/source/conf.py
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  python setup.py build
+  PYTHONPATH="$PYTHONPATH:${PWD}" make -C docs man
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  # tests require timezone to be set to UTC
+  # https://github.com/pimutils/todoman/issues/404
+  TZ="UTC" pytest -v
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  # docs
+  install -vDm 644 {AUTHORS,CHANGELOG,CODE_OF_CONDUCT,README}.rst \
+    -t "${pkgdir}/usr/share/doc/${pkgname}/"
+  # manpages
+  install -d "$pkgdir/usr/share/man/man1"
+  install -Dm644 docs/build/man/*.1 "$pkgdir/usr/share/man/man1/"
+  # license
+  # wrong name: https://github.com/pimutils/todoman/issues/319
+  install -vDm 644 LICENCE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  # sample config
+  install -vDm 644 "${pkgname}.conf.sample" \
+    -t "${pkgdir}/usr/share/doc/${pkgname}/examples/"
+  # completions
+  install -vDm 644 contrib/completion/bash/_todo \
+    "${pkgdir}/usr/share/bash-completion/completions/todo"
+  install -vDm 644 contrib/completion/zsh/_todo \
+    "${pkgdir}/usr/share/zsh/site-functions/_todo"
+}

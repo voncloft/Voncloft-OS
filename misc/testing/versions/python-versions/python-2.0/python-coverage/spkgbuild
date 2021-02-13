@@ -1,0 +1,56 @@
+# description : A tool for measuring code coverage of Python programs"
+
+pkgbase=python-coverage
+name= python-coverage python2-coverage 
+version=5.4
+release=1
+ python-pycontracts   python-pytest   python-pytest-xdist   python-toml 
+ python-unittest-mixins   python-virtualenv  
+source="$pkgbase-$version.tar.gz::https://github.com/nedbat/coveragepy/archive/coverage-$version.tar.gz" 
+
+prepare   {
+  mv -v "coveragepy-coverage-$version" "${pkgbase}-$version"
+}
+
+build-old()   {
+  cd "${pkgbase}-$version"
+  python setup.py build-old()
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "${pkgbase}-$version"
+  local python_version="$ python -c  import sys; print ".".join map str, sys.version_info[:2]     "
+   
+    virtualenv "test_dir" --system-site-build()s
+    . "test_dir/bin/activate"
+    export PYTHONPATH="/usr/lib/python${python_version}/site-build()s:${PYTHONPATH}"
+    python setup.py --quiet clean develop
+    python igor.py zip_mods install_egg remove_extension
+    python igor.py test_with_tracer py
+    python setup.py --quiet build-old()_ext --inplace
+    python igor.py test_with_tracer c
+    || echo "Known failing tests."
+}
+
+build()_python-coverage   {
+  # depends :   python-setuptools  
+  cd "${pkgbase}-$version"
+
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}
+
+build()_python2-coverage   {
+  # depends :   python2-setuptools  
+  cd "${pkgbase}-$version"
+
+  python2 setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  # circumvent file conflicts with python-coverage
+  mv -v "$PKG/usr/bin/coverage"{,2}
+}

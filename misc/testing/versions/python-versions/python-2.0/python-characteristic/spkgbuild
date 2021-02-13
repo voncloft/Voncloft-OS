@@ -1,0 +1,46 @@
+# description : Python attributes without boilerplate."
+
+pkgbase=python-characteristic
+name=  python-characteristic   python2-characteristic  
+version=14.3.0
+release=11
+source="https://files.pythonhosted.org/build()s/source/c/characteristic/characteristic-$version.tar.gz"{,.asc} 
+          SKIP  
+validpgpkeys=  C2A04F86ACE28ADCF817DBB7AE2536227F69F181   # Hynek Schlawack <hs@ox.cx>
+
+prepare   {
+  sed -i  s/\[pytest\]/[tool:pytest]/  characteristic-$version/setup.cfg
+  cp -a characteristic-$version{,-py2}
+}
+
+build-old()   {
+  cd "$srcdir"/characteristic-$version
+  python setup.py build-old()
+
+  cd "$srcdir"/characteristic-$version-py2
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/characteristic-$version
+  python setup.py test
+
+  cd "$srcdir"/characteristic-$version-py2
+  python2 setup.py test
+}
+
+build()_python-characteristic   {
+  # depends :   python  
+
+  cd characteristic-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+build()_python2-characteristic   {
+  # depends :   python2  
+
+  cd characteristic-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

@@ -1,0 +1,13 @@
+# description	: The PyPA recommended tool for installing Python packages
+# depends	: python python-setuptools
+
+name=python-pip
+version=20.2.2
+release=1
+source="https://pypi.io/packages/source/p/pip/pip-${version}.tar.gz"
+
+build() {
+	cd pip-$version
+	python setup.py build
+	python setup.py install --prefix=/usr --root=$PKG --optimize=1
+}

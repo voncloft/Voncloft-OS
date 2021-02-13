@@ -1,0 +1,26 @@
+
+pkgbase= python-pyroute2 
+_pkgbase="${pkgbase//python-/}"
+name= "python-${_pkgbase}" 
+# description : A pure Python netlink and Linux network configuration library"
+version=0.5.14
+release=2
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_pkgbase:0:1}/${_pkgbase}/${_pkgbase}-${version}.tar.gz" 
+
+build   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py check
+}
+
+package   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

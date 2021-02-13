@@ -1,0 +1,20 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Kevin Dodd <jesin00@gmail.com>
+# Contributor: Tianjiao Yin <ytj000@gmail.com>
+
+pkgname=mathjax
+pkgver=3.1.2
+pkgrel=1
+pkgdesc='An open source JavaScript display engine for mathematics that works in all modern browsers'
+url='https://www.mathjax.org/'
+arch=(any)
+license=(Apache)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/mathjax/MathJax/archive/$pkgver.tar.gz")
+sha256sums=('d50390fcd4a57603be21e83b3b4d32d70431ad81c292c176112f966b321f7830')
+
+package() {
+  cd MathJax-$pkgver
+  mkdir -p "$pkgdir"/usr/share
+  cp -a es5 "$pkgdir"/usr/share/mathjax
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
+}

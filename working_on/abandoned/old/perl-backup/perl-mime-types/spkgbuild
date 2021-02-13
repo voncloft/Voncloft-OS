@@ -1,0 +1,32 @@
+# description : Perl/CPAN Module MIME::Types : Information and processing MIME types
+# depends : perl
+
+name=perl-mime-types
+version=2.18
+release=1
+url=https://search.cpan.org/dist/MIME-Types/
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/MIME-Types-${version}.tar.gz"
+options="!checksum"
+sha512sums=770e63a48b40c94f1728e67f6a69029f51e125562d11008f26a5e1a6b85d30fb45bcbd1f8e080f664542b81de94695972012815e07f0ecd007a11efb32005df1
+
+build-delete {
+  cd MIME-Types-${version}
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd MIME-Types-${version}
+  make test
+}
+
+build() {
+  cd MIME-Types-${version}
+  make DESTDIR=$PKG install
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

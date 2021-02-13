@@ -1,0 +1,15 @@
+# description : A python module for writing pandoc filters"
+# depends :   python  
+
+name=python-pandocfilters
+version=1.4.3
+release=3
+source="https://pypi.io/build()s/source/p/pandocfilters/pandocfilters-${version}.tar.gz" 
+
+build()   {
+  cd "$srcdir/pandocfilters-$version"
+  python3 setup.py install --root="$PKG/" --optimize=0
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

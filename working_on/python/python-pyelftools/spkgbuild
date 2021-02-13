@@ -1,0 +1,19 @@
+# description : Python library for analyzing ELF files and DWARF debugging information
+# depends : python
+
+_name=pyelftools
+url=https://github.com/eliben/pyelftools
+name=python-pyelftools
+_name=pyelftools
+version=0.27
+release=1
+
+source="https://github.com/eliben/${_name}/archive/v${version}/${_name}-${version}.tar.gz"
+options=!strip
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

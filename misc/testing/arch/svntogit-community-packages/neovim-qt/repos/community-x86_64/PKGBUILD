@@ -1,0 +1,43 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Aleksandar Trifunović <akstrfn@gmail.com>
+# Contributor: Iván Ruvalcaba <mario.i.ruvalcaba@gmail.com>
+# Contributor: Ian Ker-Seymer <i.kerseymer@gmail.com>
+
+pkgname=neovim-qt
+pkgver=0.2.16.1
+pkgrel=1
+pkgdesc='GUI for Neovim'
+arch=(x86_64)
+url='https://github.com/equalsraf/neovim-qt'
+license=(ISC)
+depends=(neovim qt5-svg hicolor-icon-theme)
+makedepends=(cmake git ninja xorg-server-xvfb)
+source=("git+$url#commit=566844f17760a97e8d0bf70a984cac141802c01d") # tag: v0.2.16.1
+sha256sums=('SKIP')
+
+build() {
+  mkdir -p build
+  cd build
+  cmake "$srcdir/$pkgname" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_FLAGS="$CFLAGS" \
+    -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
+    -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS" \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_SYSTEM_MSGPACK=on \
+    -GNinja
+  ninja
+}
+
+check() {
+  xvfb-run ninja -C build test
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" "$pkgname/LICENSE"
+}
+
+# getver: github.com/equalsraf/neovim-qt/releases
+# vim: sw=2 ts=2 et

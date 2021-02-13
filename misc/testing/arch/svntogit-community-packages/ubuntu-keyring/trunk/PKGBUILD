@@ -1,0 +1,20 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andre Vaillancourt <g.andre.vaillancourt@gmail.com>
+# Contributor: Thomas Weischuh <thomas t-8ch de>
+
+pkgname=ubuntu-keyring
+pkgver=2020.06.17.1
+pkgrel=1
+pkgdesc="GnuPG keys of the Ubuntu archive"
+arch=('any')
+url="https://mirrors.kernel.org/ubuntu/pool/main/u/ubuntu-keyring"
+license=('GPL')
+depends=('gnupg')
+source=("https://mirrors.kernel.org/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_$pkgver.tar.gz")
+sha512sums=('33009928eeeadbe1627b77f7db1aba32cf1e59d2fd6767bcd0d441d3521cb2b07c5bf06be86e8426c96b9661786a958b2e978f12d8f0941d1ac79289d977eeaf')
+
+package() {
+  cd $pkgname-$pkgver
+  install -Dm644 keyrings/*-{keyring,keys}.gpg -t "$pkgdir"/usr/share/keyrings/
+  install -Dm644 keyrings/ubuntu-keyring-*.gpg -t "$pkgdir"/etc/apt/trusted.gpg.d/
+}

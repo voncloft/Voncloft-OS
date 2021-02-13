@@ -1,0 +1,32 @@
+# description : Library to configure Python logging easily
+# depends : python-json-logger
+
+name=python-daiquiri
+version=3.0.0
+release=3
+url=https://github.com/jd/daiquiri
+make# depends : python-setuptools-scm
+check# depends : python-pytest python-mock
+source="$name-$version.tar.gz::https://github.com/jd/daiquiri/archive/$version.tar.gz"
+sha512sums=8e89ae4f4f84df35125687196921cda0136b039a189be54a0c184c596440ca80c00071c39af942e6e66e5abecb30c88bb31e73fe336958bea99f7a8c60e4db9f
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build()-delete {
+   cd daiquiri-$version
+  python setup.py build
+}
+
+check {
+   cd daiquiri-$version
+  python -m pytest
+}
+
+options="!checksum"
+
+build() {
+   cd daiquiri-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

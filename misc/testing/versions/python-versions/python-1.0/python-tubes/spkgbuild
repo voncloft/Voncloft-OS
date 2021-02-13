@@ -1,0 +1,23 @@
+
+name=python-tubes
+version=0.2.0
+release=5
+# description : A data-processing and flow-control engine for event-driven programs 
+# depends :  python python-characteristic python-six python-twisted 
+source="https://github.com/twisted/tubes/archive/v$version/tubes-v$version.tar.gz" 
+
+build   {
+  cd tubes-$version
+  python setup.py build
+}
+
+check   {
+  cd tubes-$version
+  PYTHONPATH=. trial3 tubes
+}
+
+package   {
+  cd tubes-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

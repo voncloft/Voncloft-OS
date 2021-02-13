@@ -1,0 +1,31 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Rémy Oudompheng <remy@archlinux.org>
+
+pkgname=gfan
+pkgver=0.6.2
+pkgrel=2
+pkgdesc="A software package for computing Gröbner fans and tropical varieties"
+arch=(x86_64)
+url="http://home.imf.au.dk/jensen/software/gfan/gfan.html"
+license=(GPL)
+depends=(cddlib)
+source=("http://home.imf.au.dk/jensen/software/gfan/gfan$pkgver.tar.gz"
+         gfan-cflags.patch)
+sha256sums=('a674d5e5dc43634397de0d55dd5da3c32bd358d05f72b73a50e62c1a1686f10a'
+            'a6130c0b576cc58a86cc1010b2fb3359666ac6c5de9ae2d939877b8f609c9dff')
+
+prepare() {
+  cd gfan$pkgver
+# Honor system build flags
+  patch -p1 -i ../gfan-cflags.patch
+}
+
+build() {
+  cd gfan$pkgver
+  make cddnoprefix=true
+}
+
+package() {
+  cd gfan$pkgver
+  make PREFIX="$pkgdir"/usr install
+}

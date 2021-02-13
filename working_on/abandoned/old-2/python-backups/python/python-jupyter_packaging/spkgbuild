@@ -1,0 +1,25 @@
+# description : "Jupyter Packaging Utilities"
+# depends : python-packaging
+
+_pipname=jupyter-packaging
+name=python-${_pipname/-/_}
+version=0.7.11
+release=1
+url="https://jupyter.org/"
+make# depends : python-setuptools
+source=https://pypi.io/packages/source/j/$_pipname/$_pipname-$version.tar.gz
+sha256sums=f0256ee26d0fafd17f5fbebea9f6e5ff5ef297557972914a0b0aca2ca26e4455
+
+build()-delete {
+   cd $_pipname-$version
+  python setup.py build 
+}
+
+options="!checksum"
+
+build() {
+   cd $_pipname-$version
+  python setup.py build
+  python setup.py install  --root=$PKG --optimize=1
+
+}

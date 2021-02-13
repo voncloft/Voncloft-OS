@@ -1,0 +1,17 @@
+# description : Python bindigs for the TagLib audio metadata library 
+# depends :  python taglib 
+
+name=python-pytaglib
+version=1.4.6
+release=4
+source="https://pypi.org/build()s/source/p/pytaglib/pytaglib-$version.tar.gz" 
+
+build-old()   {
+  cd pytaglib-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd pytaglib-$version
+  python setup.py install --root=$PKG --optimize=1
+}

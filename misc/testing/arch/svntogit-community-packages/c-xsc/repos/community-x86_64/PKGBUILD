@@ -1,0 +1,25 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=c-xsc
+pkgver=2.5.4
+pkgrel=2
+pkgdesc="A C++ class library"
+arch=(x86_64)
+url="http://www2.math.uni-wuppertal.de/org/WRST/xsc-frame/index.html"
+license=(GPL2)
+depends=(gcc-libs)
+makedepends=()
+source=("http://www2.math.uni-wuppertal.de/wrswt/xsc/cxsc/cxsc-${pkgver//./-}.tar.gz")
+sha256sums=('fd0d824fd94bef3aae55b95e5ef19342b653fe3ff4fb561364e942c809eb616b')
+
+build() {
+  cd cxsc-${pkgver//./-}
+  autoreconf -vi
+  ./configure --prefix=/usr --libexecdir=/usr/lib
+  make
+}
+
+package() {
+  cd cxsc-${pkgver//./-}
+  make install DESTDIR="$pkgdir"
+}

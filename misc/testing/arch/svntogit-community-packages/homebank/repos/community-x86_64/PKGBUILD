@@ -1,0 +1,29 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=homebank
+pkgver=5.4.3
+pkgrel=1
+pkgdesc="Free, easy, personal accounting for everyone"
+arch=('x86_64')
+url="http://homebank.free.fr/"
+license=('GPL')
+depends=('desktop-file-utils' 'gtk3' 'hicolor-icon-theme' 'libofx'
+         'librsvg' 'perl-xml-parser' 'shared-mime-info' 'libsoup')
+makedepends=('intltool')
+changelog=$pkgname.changelog
+source=(http://homebank.free.fr/public/$pkgname-$pkgver.tar.gz)
+sha256sums=('9222d7ed7cc44fcfff3f1fe20935a1b7fe91bb4d9f90003cb3c6f3b893298d0b')
+
+build() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+}

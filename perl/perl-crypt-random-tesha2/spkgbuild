@@ -1,0 +1,17 @@
+# description : Random numbers using timer/schedule entropy, aka userspace voodoo entropy
+# depends : perl.2
+
+_ddir=Crypt-Random-TESHA2-$version
+name=perl-crypt-random-tesha2
+version=0.01
+release=6
+
+source="https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-TESHA2-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_ddir
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

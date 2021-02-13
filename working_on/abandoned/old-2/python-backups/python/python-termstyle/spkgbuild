@@ -1,0 +1,32 @@
+# description : "Console colouring for python"
+# depends : python-setuptools
+
+name=python-termstyle
+version=0.1.11
+_commit=ed18c5ed4bfee21267843f758094a5620d5f7929
+release=7
+url="https://github.com/timbertson/termstyle"
+source="$name-$_commit.tar.gz::https://github.com/timbertson/termstyle/archive/$_commit.tar.gz"
+sha512sums=02849055614caf37d3b836bef52b6c5ad281570ad5577aa253e079ecd3d82ed1f2168394edbf4760e1a9ba16e7f23aecd7191c39d3dc1de2aeb4ab9599b0717a
+
+prepare {
+  mv termstyle-{$_commit,$version}
+}
+
+build()-delete {
+   cd "$srcdir"/termstyle-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/termstyle-$version
+  python test3.py
+}
+
+options="!checksum"
+
+build() {
+   cd termstyle-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

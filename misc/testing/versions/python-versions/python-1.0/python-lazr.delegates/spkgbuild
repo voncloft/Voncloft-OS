@@ -1,0 +1,35 @@
+
+_name=lazr.delegates
+name=python-lazr.delegates
+version=2.0.4
+release=5
+# description : Easily write objects that delegate behavior"
+# depends :   python-nose   python-setuptools   python-zope-interface  
+provides=  python-lazr-delegates  
+replaces=  python-lazr-delegates  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys=  AC0A4FF12611B6FCCF01C111393587D97D86500B  
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

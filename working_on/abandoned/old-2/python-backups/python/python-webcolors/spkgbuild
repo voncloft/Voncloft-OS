@@ -1,0 +1,29 @@
+# description : "A library for working with color names and color value formats defined by the HTML and CSS specifications for use in documents on the Web"
+# depends : python
+
+name=python-webcolors
+version=1.11.1
+release=4
+url="https://github.com/ubernostrum/webcolors"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="https://pypi.io/packages/source/w/webcolors/webcolors-$version.tar.gz"
+sha512sums=b8d9146e31292b41c3f3a501ca5f0ce5d9c21ec08dc31384bf6bfe06ccff202b97592eaafef0cfce9ddef1b674bf19a527225d67ecceb92bdc514a050a02524b
+
+build()-delete {
+   cd webcolors-$version
+  python setup.py build
+}
+
+check {
+   cd webcolors-$version
+  python -B setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd webcolors-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

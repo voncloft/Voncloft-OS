@@ -1,0 +1,83 @@
+# description : Highly-optimized, pure-python HTTP server"
+
+pkgbase= python-cheroot 
+_pkgbase="${pkgbase//python-/}"
+name=  python-cheroot   python2-cheroot  
+version=8.5.2
+release=1
+   python2-setuptools-scm   python2-backports.functools_lru_cache 
+   python2-backports.unittest_mock   tree   python-tox   python2-tox 
+   python-jaraco   python2-jaraco   git  
+               python-requests   python-pyopenssl   python-trustme 
+               python2-pytest   python2-pytest-xdist 
+               python2-requests   python2-pyopenssl  
+source="https://files.pythonhosted.org/build()s/source/${_pkgbase:0:1}/${_pkgbase}/${_pkgbase}-${version}.tar.gz"
+        "LICENSE"
+        "disable-broken-tests.patch" 
+             1106afed483b7258e4ae89c5d9459c3834412b31aac90169725ed62d2ab44f61f6f79e894d4c9e4d8bd99e14530ab778df2187784f0b25eaab86d312fad68944 
+             488766eeb0ce4e1c95e1848a4d89aeb190317c634b2894dcc696cb4af64bae748554154ea76cc34cf0b666d507c42e631d0e8759a6ed7669fe49bf7f8ef5b9a9  
+
+prepare   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  patch -p1 -N -i "${srcdir}/disable-broken-tests.patch"
+  # don t use python-coverage
+  sed -i  /^    --cov/d  pytest.ini
+
+  # git-archive support is not needed since we use PyPI tarballs
+  sed -i  /setuptools_scm_git_archive/d  setup.cfg
+
+  cp -r "${srcdir}/${_pkgbase}-${version}" "${srcdir}/${_pkgbase}-${version}-py2"
+}
+
+build-old()   {
+  # setuptools wont find version from git tag
+  export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
+
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py build-old()
+
+  cd "${srcdir}/${_pkgbase}-${version}-py2"
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  # tox doesn t really provide any meaningful results for downstream packaging
+  # TODO: properly run the tests with distro build()s
+
+  cd "${srcdir}/${_pkgbase}-${version}-py2"
+  # tox doesn t really provide any meaningful results for downstream packaging
+  # TODO: properly run the tests with distro build()s
+}
+
+build()_python-cheroot   {
+  # depends :   python-six   python-jaraco  
+
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py install --root="$PKG/" --optimize=1
+
+  # the author has promised to include a LICENSE file in future releases:
+  #https://github.com/jaraco/skeleton/issues/1
+  # for now the LICENSE file has been taken from:
+  #https://github.com/jaraco/skeleton/blob/skeleton/LICENSE
+  install -D -m644 "${srcdir}/LICENSE" "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+build()_python2-cheroot   {
+  # depends :   python2-six   python2-backports.functools_lru_cache 
+            python2-backports.unittest_mock   python2-selectors2 
+            python2-jaraco  
+
+  cd "${srcdir}/${_pkgbase}-${version}-py2"
+  python2 setup.py install --root="$PKG/" --optimize=1
+
+  # the author has promised to include a LICENSE file in future releases:
+  #https://github.com/jaraco/skeleton/issues/1
+  # for now the LICENSE file has been taken from:
+  #https://github.com/jaraco/skeleton/blob/skeleton/LICENSE
+  install -D -m644 "${srcdir}/LICENSE" "${PKG}/usr/share/licenses/${name}/LICENSE"
+
+  mv "${PKG}/usr/bin/cheroot" "${PKG}/usr/bin/cheroot2"
+}
+
+# vim:set ts=2 sw=2 et:

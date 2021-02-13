@@ -1,0 +1,30 @@
+# description : Sybase Driver for DBI
+# depends : perl-dbi>=1.52 perl freetds
+
+name=perl-dbd-sybase
+version=1.16
+release=5
+url=https://search.cpan.org/dist/DBD-Sybase/
+source="https://search.cpan.org/CPAN/authors/id/M/ME/MEWP/DBD-Sybase-${version}.tar.gz"
+options="!checksum"
+sha256sums=67f427e8b7ffae2acc3cc8984463d878abbb2289bc17db79a294e56c8311d6cc
+
+build-delete {
+   cd  $sr cdir/DBD-Sybase-${version}
+  export SYBASE=/usr
+  echo -e \n\n\n\n\n\n | PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd  $sr cdir/DBD-Sybase-${version}
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

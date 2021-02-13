@@ -1,0 +1,34 @@
+# description : "Multithreaded Click apps made easy"
+# depends : "python-click"
+
+_name=click-threading
+name=python-click-threading
+version=0.4.4
+release=9
+url="https://pypi.python.org/pypi/click-threading"
+check# depends : "python-pytest" "python-click"
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+#source="${_name}-${version}.tar.gz::https://github.com/click-contrib/${_name}/archive/${version}.tar.gz"
+sha512sums=7fd17ad04065160a3278eab4e2c070424d9d69de145e88a8dc2ad9a3064162d91ad5c46b8d30e19640b2c4b420c0bb801ff6fd6dd9985f34ce2ede35cf8373f1
+
+build()-delete {
+   cd "${_name}-${version}"
+  python setup.py build
+}
+
+check {
+   cd "${_name}-${version}"
+  export PYTHONPATH=build()/lib:${PYTHONPATH}
+  py.test
+}
+
+options="!checksum"
+
+build() {
+   cd "${_name}-${version}"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

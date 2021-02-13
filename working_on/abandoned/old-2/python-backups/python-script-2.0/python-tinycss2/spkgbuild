@@ -1,0 +1,17 @@
+# description : Low-level CSS parser for Python
+# depends : python-webencodings
+
+_css_tests_commit=c5749e51dda3868b3e8062e65a36584c2fec8059
+url=https://pypi.python.org/pypi/tinycss2
+name=python-tinycss2
+version=1.1.0
+release=1
+
+source="https://pypi.io/packages/source/t/tinycss2/tinycss2-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd tinycss2-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

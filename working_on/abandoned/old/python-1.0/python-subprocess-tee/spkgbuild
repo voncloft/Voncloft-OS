@@ -1,0 +1,42 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=subprocess-tee
+name=python-subprocess-tee
+version=0.2.0
+release=1
+pkgdesc="A subprocess.run that works like tee"
+url="https://github.com/pycontribs/subprocess-tee"
+depends=('python')
+makedepends=('python-setuptools_scm')
+checkdepends=('python-mock' 'python-pytest' 'python-pytest-xdist' 'python-enrich')
+optdepends=('python-enrich: for rich text rendering')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('f500f5bded2eeeb9b3035181d4c98d89f47c007f6e35121bde776348d7933d5b6213c9328562cdabed06b61c8999d7ad985a10b6e736d323b4770b968ec07315')
+b2sums=('678edc6fe9a467e78c3d1affa53471850df96e428c72785c03a8b9c7c64b080837d121f9cc3a98133ea9d43db3fa0b0513efc915bcd2a01cbf6821afd9d8b1a9')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+  cd "$name-$version"
+  # do not require to run with python-pytest-cov
+  sed -e '/addopts/d' -i setup.cfg
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root="${pkgdir}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${name}/"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}/"
+}

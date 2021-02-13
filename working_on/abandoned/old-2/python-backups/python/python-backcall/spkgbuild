@@ -1,0 +1,33 @@
+# description : Backwards compatible callback APIs
+# depends : python
+
+_name=backcall
+name=python-backcall
+version=0.2.0
+release=3
+url=https://github.com/takluyver/backcall
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+sha256sums=5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e
+
+build()-delete {
+   cd $_name-$version
+  python setup.py build
+}
+
+check {
+   cd $_name-$version
+  mkdir -p temp
+  local sitepackages=$python -c "import site; printsite.getsitepackages[0]"
+  python setup.py build
+  python setup.py install  --root=temp
+  PATH="$PWD/temp/usr/bin:$PATH" PYTHONPATH="$PWD/temp/$sitepackages" python tests/test_callback_prototypes.py
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+

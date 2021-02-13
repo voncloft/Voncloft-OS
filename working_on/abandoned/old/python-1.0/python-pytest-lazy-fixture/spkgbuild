@@ -1,0 +1,28 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+_pkg=pytest-lazy-fixture
+name=python-${_pkg}
+version=0.6.3
+release=3
+pkgdesc="Use fixtures in @pytest.mark.parametrize"
+url="https://github.com/tvorog/pytest-lazy-fixture"
+depends=(python-pytest)
+makedepends=(python-setuptools)
+source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz)
+sha256sums=('0e7d0c7f74ba33e6e80905e9bfd81f9d15ef9a790de97993e34213deb5ad10ac')
+
+build() {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check() {
+  cd ${_pkg}-${version}
+  PYTHONPATH="${PWD}" pytest
+}
+
+package() {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
+  install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${name}
+}

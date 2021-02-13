@@ -1,0 +1,45 @@
+# description : Pure-Python PostgreSQL database driver, DB-API compatible"
+# depends :  python python-scramp 
+
+name=python-pg8000
+version=1.16.6
+release=3
+              python-pytz pifpaf postgresql 
+source="https://files.pythonhosted.org/build()s/source/p/pg8000/pg8000-$version.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys= 
+   D5681B7EC7292511C4CC1450892B00AB699851E8   # Tony Locke <tlocke@tlocke.org.uk>, proven byhttps://keybase.io/tlocke
+ 
+
+prepare   {
+  cd pg8000-$version
+
+  # Remove upper bounds of dependencies
+  sed --in-place=.orig -r  s#,?<[0-9.]+,?##;s#== [0-9.]+ #>=\1#  setup.py
+  diff -u setup.py{.orig,} || true
+}
+
+build-old()   {
+  cd pg8000-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd pg8000-$version
+  # See upstream .travis.yml for initialization SQL commands
+  # XXX: The postgres plugin in pifpaf does not listen on a TCP port
+  #      without --host
+  # XXX: testGss and testSsl needs custom pg_hba.conf and postgresql.conf,
+  #      and pifpaf does not support that yet
+  PYTHONPATH="$PWD" pifpaf run postgresql --host localhost -- bash -c "
+    psql -c \"CREATE ROLE postgres WITH LOGIN SUPERUSER PASSWORD  pw ;\"
+    psql -c \"create extension hstore;\"
+    pytest -v test -k  not testGss and not testSsl 
+  "
+}
+
+build()   {
+  cd pg8000-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

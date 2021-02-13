@@ -1,0 +1,15 @@
+# description : "A client library written in python which provides easy object oriented access to the MusicBrainz database"
+
+pkgbase=python-musicbrainz2
+version=0.7.4
+release=4
+url="http://wiki.musicbrainz.org/PythonMusicBrainz2"
+opt# depends : libdiscid: For calculating Disc IDs
+conflicts=python-musicbrainz2<=0.7.4-1
+replaces=python-musicbrainz2<=0.7.4-1
+source=http://ftp.musicbrainz.org/pub/musicbrainz/${pkgbase}/${pkgbase}-${version}.tar.gz
+md5sums=40ac802d832deca737cce57235cb23a5
+
+   cd "$srcdir/$pkgbase-$version"
+  install -D -m644 COPYING.txt "$PKG/usr/share/licenses/$name/COPYING.txt"
+}

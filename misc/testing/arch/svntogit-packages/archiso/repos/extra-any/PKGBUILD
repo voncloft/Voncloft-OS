@@ -1,0 +1,32 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
+# Contributor: Gerardo Exequiel Pozzi <djgera@archlinux.org>
+
+pkgbase=archiso
+pkgname=('archiso' 'mkinitcpio-archiso')
+pkgver=51
+pkgrel=1
+pkgdesc='Tools for creating Arch Linux live and install iso images'
+arch=('any')
+license=('GPL3')
+url="https://gitlab.archlinux.org/archlinux/archiso"
+makedepends=('git')
+source=("git+https://gitlab.archlinux.org/archlinux/archiso.git#tag=v${pkgver}?signed")
+sha256sums=('SKIP')
+validpgpkeys=('C7E7849466FE2358343588377258734B41C31549') # David Runge <dvzrv@archlinux.org>
+
+package_archiso() {
+  depends=('arch-install-scripts' 'bash' 'dosfstools' 'e2fsprogs' 'libisoburn'
+  'mtools' 'squashfs-tools')
+  optdepends=('edk2-ovmf: for emulating UEFI with run_archiso'
+              'qemu: for run_archiso')
+  cd "${pkgbase}"
+  make DESTDIR="${pkgdir}" install
+}
+
+package_mkinitcpio-archiso() {
+  pkgdesc='Mkinitcpio hooks and scripts for archiso'
+  depends=('mkinitcpio')
+  cd "${pkgbase}"
+  make DESTDIR="${pkgdir}" install-initcpio
+}

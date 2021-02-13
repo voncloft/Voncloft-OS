@@ -1,0 +1,25 @@
+# description : "Low-level communication layer for PRAW 4+."
+# depends : python-requests
+
+name=python-prawcore
+version=1.5.0
+release=3
+url="https://github.com/praw-dev/prawcore"
+make# depends : python-setuptools
+check# depends : python-mock python-betamax-matchers python-betamax-serializers
+              python-testfixtures
+source="$name-$version.tar.gz::https://github.com/praw-dev/prawcore/archive/v$version.tar.gz"
+sha512sums=6ee3191702cb6b1daf30763bd8fc1a919dc6820792c1a64399dc98f5986e33ee3e2a59286277e4232b5d58077d54e0cf444f9a0144dd7bad91286a57f2fe6a89
+
+check {
+   cd prawcore-$version
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd prawcore-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

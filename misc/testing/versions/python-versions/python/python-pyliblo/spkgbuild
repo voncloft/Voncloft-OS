@@ -1,0 +1,28 @@
+# description : Python wrapper for the liblo OSC library 
+# depends :   python   liblo  
+
+_name=pyliblo
+name=python-pyliblo
+version=0.10.0
+release=7
+source="http://das.nasophon.de/download/${_name}-${version}.tar.gz" 
+
+build-old()   {
+  cd "${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${_name}-${version}"
+  python setup.py test
+}
+
+build()_python-pyliblo   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${PKG}/"
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

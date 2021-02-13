@@ -1,0 +1,14 @@
+# description : Simple wrapper for the C qrencode library 
+# depends :   python   python-pillow   qrencode   glibc  
+
+name=python-qrencode
+version=1.2
+release=9
+source=https://pypi.org/build()s/source/q/qrencode/qrencode-${version}.tar.gz 
+
+build()_python-qrencode   {
+  cd qrencode-${version}
+  python setup.py install --prefix=/usr --root=$PKG -O1
+}
+
+# vim: ts=2 sw=2 et:

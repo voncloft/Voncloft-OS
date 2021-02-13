@@ -1,0 +1,29 @@
+# description : "Pluggable object copying mechanism"
+# depends : python-setuptools python-zope-interface
+
+name=python-zope-copy
+version=4.2
+release=5
+url="https://github.com/zopefoundation/zope.copy"
+check# depends : python-zope-testrunner python-zope-testing python-zope-location
+source="$name-$version.tar.gz::https://github.com/zopefoundation/zope.copy/archive/$version.tar.gz"
+sha512sums=99c1062bdad919c0aa8f1daf1f7a2af1e42227a2a22e4a983eb848edf6be144fec97b9f7dd43d592121c8e72c3525b316e7367e226a33e97272061b666fb466b
+
+build()-delete {
+   cd "$srcdir"/zope.copy-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/zope.copy-$version
+  PYTHONPATH="$PWD/build()/lib:$PYTHONPATH" python -m zope.testrunner --test-path=src || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/zope.copy-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

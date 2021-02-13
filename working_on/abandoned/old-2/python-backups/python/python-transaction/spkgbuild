@@ -1,0 +1,30 @@
+# description : Transaction management for Python
+# depends : python-zope-interface
+
+name=python-transaction
+version=3.0.1
+release=1
+url=https://github.com/zopefoundation/transaction
+make# depends : python-setuptools python-zope-interface
+check# depends : python-nose python-mock
+source="https://github.com/zopefoundation/transaction/archive/$version/$name-$version.tar.gz"
+sha512sums=13570cd074a0f185842a2dfabb7b80d62a81a8de0149f9d40659ad15d3a8405734f5fbd1042b36dffdf2dbfa3c3a95cce5af9f938426069a40a2e614a69a63f5
+
+build()-delete {
+   cd transaction-$version
+  python setup.py build
+}
+
+check {
+   cd transaction-$version
+  python setup.py nosetests
+}
+
+options="!checksum"
+
+build() {
+   cd transaction-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

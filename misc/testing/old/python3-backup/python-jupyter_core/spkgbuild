@@ -1,0 +1,37 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+
+pkgname=python-jupyter_core
+pkgver=4.6.3
+pkgrel=4
+pkgdesc="Jupyter core package. A base package on which Jupyter projects rely."
+arch=('any')
+url="https://pypi.python.org/pypi/jupyter_core"
+license=('BSD')
+depends=('python-traitlets')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-nose')
+source=("$pkgname-$pkgver.tgz::https://github.com/jupyter/jupyter_core/archive/$pkgver.tar.gz")
+sha256sums=('ae2da229683fd091286c05acbbbac1b5279031a0454c0106b2547ba853ad2ac8')
+
+prepare() {
+  cd "$srcdir/jupyter_core-$pkgver"
+}
+
+build() {
+  cd "$srcdir"
+}
+
+check() {
+  cd "$srcdir/jupyter_core-$pkgver"
+  pytest \
+    --deselect jupyter_core/tests/test_command.py::test_not_on_path \
+    --deselect jupyter_core/tests/test_command.py::test_path_priority
+}
+
+package() {
+  cd "$srcdir/jupyter_core-$pkgver"
+  python3 setup.py install --prefix=/usr --root="$pkgdir" --optimize=0
+  install -Dm644 COPYING.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 examples/jupyter-completion.bash "$pkgdir/usr/share/bash-completion/completions/jupyter"
+  install -Dm644 examples/completions-zsh "$pkgdir/usr/share/zsh/site-functions/_jupyter"
+}

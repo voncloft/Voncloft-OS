@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Alexander Duscheleit <jinks@archlinux.us>
+# Contributor: Joaquim Pedro (osmano807) <osmano807@gmail.com>
+
+pkgname=kyotocabinet
+pkgver=1.2.78
+pkgrel=1
+pkgdesc="a modern implementation of DBM in C++"
+arch=('x86_64')
+url="https://fallabs.com/kyotocabinet"
+license=('LGPL3')
+depends=('zlib' 'gcc-libs')
+source=("https://fallabs.com/${pkgname}/pkg/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('57971a231998574678d38d4b4aaffa0dafcac17416a05a42e1204d54e8d81ac1044ea703dd62f1d23c9385b5b18775918b722f428f14078451af83c29354db53')
+
+build() {
+  cd $pkgname-$pkgver
+
+  ./configure --prefix=/usr --disable-opt
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  make install DESTDIR="$pkgdir/"
+}

@@ -1,0 +1,32 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=qmidictl
+pkgver=0.9.1
+pkgrel=1
+pkgdesc="MIDI remote control application sending MIDI data over network using UDP/IP multicast"
+arch=('x86_64')
+url="https://qmidictl.sourceforge.io/"
+license=('GPL2')
+groups=('pro-audio')
+depends=('gcc-libs' 'glibc' 'hicolor-icon-theme' 'qt5-base')
+makedepends=('cmake' 'qt5-tools')
+source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('11136b159a87d53b0b708b22b1216b073bab28d393cc508c21f57dcdd39859ff21c7a95c885dcd4a75a6de58c28cb6012fc861d1f80a8d3c092f06f48eee4ff4')
+b2sums=('8f289c703edd7a002ca3f66da8a874f61331499b5a2be7fa02934ba661bb306074420d1c0d62cd8717fa545660822c1b66afab4e05b727184cc079d7a20b2dc9')
+
+build() {
+  cd "$pkgname-$pkgver"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE='None' \
+        -Wno-dev \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make VERBOSE=1 DESTDIR="$pkgdir" install -C build
+  install -vDm 644 {AUTHORS,ChangeLog,README,TODO} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}/"
+}

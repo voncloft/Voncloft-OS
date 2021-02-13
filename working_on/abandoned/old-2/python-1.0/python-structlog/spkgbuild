@@ -1,0 +1,16 @@
+# description : Structured Logging for Python
+# depends : python-six
+
+url=https://www.structlog.org
+name=python-structlog
+version=20.2.0
+release=1
+
+source="https://github.com/hynek/structlog/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd structlog-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

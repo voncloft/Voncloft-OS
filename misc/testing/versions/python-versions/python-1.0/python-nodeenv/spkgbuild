@@ -1,0 +1,24 @@
+
+name=python-nodeenv
+version=1.5.0
+release=3
+# description : Node.js virtual environment builder"
+# depends :   python   make  
+source="https://github.com/ekalinin/nodeenv/archive/$version.tar.gz" 
+
+build   {
+  cd nodeenv-$version
+  python setup.py build
+}
+
+check   {
+  cd nodeenv-$version
+  python setup.py pytest
+}
+
+package   {
+  cd nodeenv-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

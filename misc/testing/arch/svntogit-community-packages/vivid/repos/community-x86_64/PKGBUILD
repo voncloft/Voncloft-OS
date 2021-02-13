@@ -1,0 +1,26 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+
+pkgname=vivid
+pkgver=0.6.0
+pkgrel=1
+pkgdesc='LS_COLORS manager with multiple themes'
+arch=('x86_64')
+url=https://github.com/sharkdp/vivid
+license=('Apache' 'MIT')
+depends=('gcc-libs')
+makedepends=('rust')
+source=("$url/archive/v$pkgver/vivid-v$pkgver.tar.gz")
+sha512sums=('fac36590e89a4cc2512921128c659001e4f776ecec2dd3b18b75510076394da9a0f03604aa0b7963054f14cfc14783ef79c53c68c1f4d0d1081ba707b364ef55')
+
+build() {
+  cd vivid-$pkgver
+  cargo build --release --locked
+}
+
+package() {
+  cd vivid-$pkgver
+  install -Dt "$pkgdir"/usr/bin target/release/vivid
+  install -Dm644 -t "$pkgdir"/usr/share/licenses/vivid LICENSE-MIT
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,22 @@
+# description : Expects matchers for Doublex test doubles assertions"
+# depends :   python-doublex   python-expects  
+
+name= python-doublex-expects 
+version=0.7.1
+release=5
+source="https://github.com/jaimegildesagredo/doublex-expects/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd doublex-expects-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd doublex-expects-$version
+  mamba
+}
+
+build()   {
+  cd doublex-expects-$version
+  python setup.py install --root=$PKG --optimize=1
+}

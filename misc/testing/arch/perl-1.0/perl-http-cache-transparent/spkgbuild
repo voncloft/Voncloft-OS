@@ -1,0 +1,23 @@
+# description : Cache the result of http-gets persistently
+# depends : perl>=5.10.0 perl-libwww
+
+name=perl-http-cache-transparent
+version=1.4
+release=4
+url=https://search.cpan.org/dist/HTTP-Cache-Transparent
+source="https://www.cpan.org/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-$version.tarsource=.gz"
+options=!checksum
+sha256sums=6622e1b5e5af952b1711aea247bdcb1b91c2aac0f11f32f819a2d07e11dd2845
+
+build-delete {
+  cd  $srcdir/HTTP-Cache-Transparent-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/HTTP-Cache-Transparent-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

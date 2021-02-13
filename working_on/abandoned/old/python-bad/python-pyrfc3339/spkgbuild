@@ -1,0 +1,25 @@
+# description : Parses and generates RFC 3339-compliant timestamps using Python datetime.datetime objects."
+# depends :   python-pytz  
+
+name=python-pyrfc3339
+version=1.1
+release=7
+source="https://pypi.python.org/build()s/source/p/pyRFC3339/pyRFC3339-${version}.tar.gz"
+        LICENSE.txt 
+             73c58b87e14593ee283cc323a93820c18a00e9af4e5027687fc8f6cd5735c98f341c6ac1aa90c040d0899766cabb976a85201b171874b4b81934ff02a9728f2d  
+
+build-old()   {
+  cd "$srcdir/pyRFC3339-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir/pyRFC3339-$version"
+  python setup.py test
+}
+
+build()   {
+  cd "$srcdir/pyRFC3339-$version"
+  python setup.py install --root="$PKG/" --optimize=1
+  install -D -m644 ../LICENSE.txt "${PKG}/usr/share/licenses/${name}/LICENSE.txt"
+}

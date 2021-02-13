@@ -1,0 +1,15 @@
+# description : Python library for Windows Remote Management"
+# depends :   python   python-requests   python-xmltodict   python-requests-ntlm  
+
+name=python-pywinrm
+version=0.4.1
+release=4
+             python-requests-credssp: for CredSSP authenication  
+source="https://files.pythonhosted.org/build()s/source/p/pywinrm/pywinrm-${version}.tar.gz" 
+
+build()   {
+    cd pywinrm-${version}
+    python setup.py install --root=$PKG/ --optimize=1
+}
+
+# vim:set ts=4 sw=4 et:

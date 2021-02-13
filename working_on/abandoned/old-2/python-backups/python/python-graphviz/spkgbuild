@@ -1,0 +1,43 @@
+# description : "Simple Python interface for Graphviz"
+# depends : graphviz python
+
+_name=graphviz
+name=python-graphviz
+version=0.16
+release=1
+url="https://github.com/xflr6/${_name}"
+make# depends : python-setuptools
+check# depends : python-pytest python-pytest-mock
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.zip"
+sha256sums=d2d25af1c199cad567ce4806f0449cb74eb30cf451fd7597251e1da099ac6e57
+b2sums=abedbe170eaf9d3ad83f91b5ad13aa9fbda8669ac19ebbd1087aeab3f9401b0b8e6557313e04d791451ee501c75bc2843d89d1a0f789a219b0db771467b4b8bb
+
+prepare {
+     cd "${srcdir}"/${_name}-${version}
+
+    # do not run python-coverage in unittests :/
+    sed -i s/--cov --cov-report=term --cov-report=html// setup.cfg
+    # dont add pointless dependency on python-mock needed on python 3.5
+    sed -i /mock_use_standalone_module/d setup.cfg
+}
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

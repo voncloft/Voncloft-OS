@@ -1,0 +1,38 @@
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+
+pkgname=xorg-xkbcomp
+pkgver=1.4.4
+pkgrel=1
+pkgdesc="X Keyboard description compiler"
+arch=(x86_64)
+url="https://xorg.freedesktop.org/"
+license=('custom')
+depends=('libxkbfile')
+makedepends=('xorg-util-macros')
+groups=('xorg-apps' 'xorg')
+source=(${url}/archive/individual/app/xkbcomp-${pkgver}.tar.bz2{,.sig})
+sha512sums=('971eb06277a49083b42154472596f1452fa94cdee28bad345bbcd85b028441bfd975763c20ed92aa69d6605b3fb23d27fee89df91501963b77c863667bae41c4'
+            'SKIP')
+validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF') # Peter Hutterer (Who-T) <office@who-t.net>
+validpgpkeys+=('A66D805F7C9329B4C5D82767CCC4F07FAC641EFF') # "Daniel Stone <daniels@collabora.com>"
+validpgpkeys+=('DD38563A8A8224537D1F90E45B8A2D50A0ECD0D3') # "Adam Jackson <ajax@benzedrine.nwnk.net>"
+validpgpkeys+=('3BB639E56F861FA2E86505690FDD682D974CA72A') # "Matt Turner <mattst88@gmail.com>"
+
+build() {
+  cd xkbcomp-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd xkbcomp-${pkgver}
+  make -k check
+}
+
+package() {
+  cd xkbcomp-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

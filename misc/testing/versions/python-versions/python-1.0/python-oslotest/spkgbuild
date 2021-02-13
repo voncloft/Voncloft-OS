@@ -1,0 +1,28 @@
+
+name=python-oslotest
+version=4.4.1
+release=4
+# description : Oslo test framework"
+# depends :   python-fixtures   python-subunit   python-stestr   python-testscenarios 
+          python-testtools   python-mox3   python-os-client-config 
+          python-debtcollector  
+source="https://github.com/openstack/oslotest/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd oslotest-$version
+  python setup.py build
+}
+
+check   {
+  cd oslotest-$version
+  stestr run
+}
+
+package   {
+  cd "$srcdir"/oslotest-$version
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

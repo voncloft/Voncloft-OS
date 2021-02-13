@@ -1,0 +1,31 @@
+# description : Pythonic D-Bus library 
+# depends :   python   python-gobject  
+
+_name= pydbus 
+name="python-${_name}"
+version=0.6.0
+release=7
+source="${_name}-${version}.tar.gz::${url}/archive/v${version}.tar.gz" 
+
+build-old()   {
+    cd "${_name}-${version}"
+    python setup.py build-old()
+}
+
+#https://github.com/LEW21/pydbus/issues/85
+# check   {
+#     cd "${_name}-${version}"
+#     # ./tests/run.sh
+#     # LANG= en_US.UTF-8  xvfb-run python setup.py test
+# }
+
+build()   {
+    cd "${_name}-${version}"
+    python setup.py install --skip-build-old() \
+        --optimize=1 \
+        --prefix=/usr \
+        --root=$PKG
+
+}
+
+# vim:set ts=4 sw=4 et:

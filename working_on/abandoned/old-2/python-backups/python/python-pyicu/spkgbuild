@@ -1,0 +1,29 @@
+# description : "Python binding for ICU"
+# depends : python icu
+
+name=python-pyicu
+version=2.6
+release=3
+url="http://pyicu.osafoundation.org/"
+make# depends : python-setuptools
+check# depends : python-fonttools python-pytest
+source="https://pypi.io/packages/source/P/PyICU/PyICU-$version.tar.gz"
+sha512sums=ab4c167cbeb80a23904476e51a3c16aa4721e26840b1d4c2f44b5a610e5467a6880c45f27636efb9e44e8e4302a095d437f4868409103270d79ecd56a3d90c9c
+
+build()-delete {
+   cd PyICU-$version
+  python setup.py build
+}
+
+check {
+   cd PyICU-$version
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd PyICU-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

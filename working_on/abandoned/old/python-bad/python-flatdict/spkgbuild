@@ -1,0 +1,27 @@
+# description : Interact with nested dicts as a single level dict with delimited keys."
+# depends :   python  
+
+_name=flatdict
+name=python-flatdict
+version=4.0.1
+release=2
+source="${name}-${version}.tar.gz::https://github.com/gmr/flatdict/archive/${version}.tar.gz" 
+
+build-old()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    nosetests
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

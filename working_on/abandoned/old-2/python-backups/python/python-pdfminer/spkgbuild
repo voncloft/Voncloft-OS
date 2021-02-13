@@ -1,0 +1,34 @@
+# description : "Python PDF Parser"
+# depends : python-chardet python-cryptography python-sortedcontainers
+
+_pkg=pdfminer
+name=python-${_pkg}
+version=20201018
+release=2
+url="https://github.com/pdfminer/pdfminer.six"
+make# depends : python-setuptools cython
+check# depends : python-nose
+# Provided tarballs do not include tests
+#source=${url}/releases/download/${version}/${_pkg}.six-${version}.tar.gz
+source=${url}/archive/${version}/${_pkg}-${version}.tar.gz
+sha256sums=0e9c8b0a9c40c2aee044c3091ad6b18b5e6279722e64b6b975f8aedc26bf8e38
+
+build()-delete {
+   cd ${_pkg}.six-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}.six-${version}
+  nosetests
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}.six-${version}
+  python setup.py build
+  python setup.py install  --root=$PKG -optimize=1
+  # Fix ownership
+  chmod a+r "${PKG}"$python -c "import site; printsite.getsitepackages[0]"/pdfminer/cmap/*
+}

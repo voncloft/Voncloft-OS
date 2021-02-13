@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Harry Jeffery <harry|@|exec64|.|co|.|uk>
+# Contributor: Alex Jordan <alexander3223098@gmail.com>
+
+pkgname=zerotier-one
+pkgver=1.6.3
+pkgrel=1
+pkgdesc="Creates virtual Ethernet networks of almost unlimited size."
+arch=('x86_64')
+url="https://www.zerotier.com/index.html"
+license=('GPL3')
+depends=('gcc-libs' 'libnatpmp' 'miniupnpc')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/zerotier/ZeroTierOne/archive/$pkgver.tar.gz")
+sha512sums=('56052a9cd50f2a754ba8979fec9b7ba6caf54d83582428b1b43d8b54e5caf388adccbb955fcb9c3fd5b3d7ebde7663023ca4a9a3805b877c3063fa72e23cbed0')
+
+prepare() {
+  cd ZeroTierOne-$pkgver
+  sed -i 's/sbin/bin/' make-linux.mk debian/zerotier-one.service
+}
+
+build() {
+  cd ZeroTierOne-$pkgver
+  make
+}
+
+check() {
+  cd ZeroTierOne-$pkgver
+  make selftest
+  ./zerotier-selftest
+}
+
+package() {
+  cd ZeroTierOne-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -Dm644 debian/zerotier-one.service "$pkgdir"/usr/lib/systemd/system/zerotier-one.service
+}

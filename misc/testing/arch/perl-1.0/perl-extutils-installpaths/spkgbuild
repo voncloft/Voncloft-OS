@@ -1,0 +1,39 @@
+# description : ExtUtils::InstallPaths - Build.PL install path logic made easy
+# depends : perl perl-extutils-config
+
+name=perl-extutils-installpaths
+_name=ExtUtils-InstallPaths
+version=0.012
+release=4
+url=https://search.cpan.org/dist/ExtUtils-InstallPaths/
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/${_name}-${version}.tarsource=.gz"
+options=!checksum
+sha512sums=92a4e9ebb387d330ae67b0716b96b27165d08503d2915d8301b3a6aa185f962940e761d21fd400033e6a814e276918e0662da3740ca2852a53cf0fe54f3d7660
+
+build-delete {
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG     \
+      PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+      MODULEBUILDRC=/dev/null
+
+    cd ${srcdir}/${_name}-${version}
+    /usr/bin/perl Makefile.PL
+    make
+  
+}
+
+check {
+  cd ${srcdir}/${_name}-${version}
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+    make test
+  
+}
+
+build() {
+  cd ${srcdir}/${_name}-${version}
+  make install
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+
+# vim:set ts=2 sw=2 et:

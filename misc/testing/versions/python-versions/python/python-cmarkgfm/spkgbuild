@@ -1,0 +1,29 @@
+# description : Minimal bindings to GitHub s fork of cmark"
+# depends :   cmark-gfm   python-cffi  
+
+name=python-cmarkgfm
+version=0.5.2
+release=1
+source="https://github.com/theacodes/cmarkgfm/archive/$version/$name-$version.tar.gz" 
+
+prepare   {
+  cd cmarkgfm-$version
+  sed -e  /include_dirs=/a libraries=["cmark-gfm", "cmark-gfm-extensions"],  \
+      -i src/cmarkgfm/build-old()_cmark.py
+}
+
+build-old()   {
+  cd cmarkgfm-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd cmarkgfm-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd cmarkgfm-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

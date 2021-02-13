@@ -1,0 +1,31 @@
+
+_name=orderedmultidict
+name=python-orderedmultidict
+version=1.0.1
+release=6
+# description : Ordered multivalue dictionary that retains method parity with dict."
+# depends :   python-six  
+ python-pycodestyle   python-pyflakes  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "${name}-${version}"
+}
+
+build   {
+  cd "${name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${name}-${version}"
+  python setup.py test
+}
+
+package   {
+  cd "${name}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

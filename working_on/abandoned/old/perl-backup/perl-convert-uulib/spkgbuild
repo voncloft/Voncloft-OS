@@ -1,0 +1,46 @@
+# description : Perl interface to the uulib library a.k.a. uudeview/uuenview.
+# depends : perl perl-canary-stability
+
+name=perl-convert-uulib
+version=1.5
+release=8
+_dist=Convert-UUlib
+url=https://metacpan.org/release/Convert-UUlib
+source="https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Convert-UUlib-${version}.tar.gz"
+options="!checksum"
+sha512sums=92c8b6f3a72546dca21018ddf2863113904f550e3ed950a1898ed4abfcc48738e9ca374f5adbc3226df2db6beeb0e12879ae52cdd067a030c199766d53603ec1
+
+build-delete {
+  cd ${srcdir}/${_dist}-${version}
+
+  unset PERL5LIB PERL_MM_OPT CPPFLAGS
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+
+  perl Makefile.PL
+  make
+}
+
+check {
+  cd ${srcdir}/${_dist}-${version}
+
+  unset PERL5LIB PERL_MM_OPT
+  export PERL_MM_USE_DEFAULT=1
+
+  make test
+}
+
+build() {
+  cd ${srcdir}/${_dist}-${version}
+
+  unset PERL5LIB PERL_MM_OPT
+
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

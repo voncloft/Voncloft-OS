@@ -1,0 +1,47 @@
+# description : Python API for cross-platform colored terminal text."
+
+pkgbase=python-colorama
+name=  python-colorama   python2-colorama  
+version=0.4.4
+release=3
+source="$pkgbase-$version.tar.gz::https://github.com/tartley/colorama/archive/$version.tar.gz" 
+
+prepare   {
+  cp -a colorama-$version{,-py2}
+}
+
+build-old()   {
+  cd "$srcdir"/colorama-$version
+  python setup.py build-old()
+
+  cd "$srcdir"/colorama-$version-py2
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/colorama-$version
+  python -m unittest discover -p *_test.py || echo "Tests failed"
+
+  cd "$srcdir"/colorama-$version-py2
+  python2 -m unittest discover -p *_test.py || echo "Tests failed"
+}
+
+build()_python-colorama   {
+  # depends :   python  
+
+  cd colorama-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}
+
+build()_python2-colorama   {
+  # depends :   python2  
+
+  cd colorama-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}
+
+# vim:set ts=2 sw=2 et:

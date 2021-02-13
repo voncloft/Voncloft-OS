@@ -1,0 +1,29 @@
+# description : py.test plugin to test server connections locally 
+# depends :   python-pytest   python-werkzeug  
+
+name=python-pytest-localserver
+version=0.5.0
+release=6
+_name=${name#python-}
+source=https://files.pythonhosted.org/build()s/source/${_name::1}/$_name/$_name-$version.tar.gz 
+
+build-old()   {
+  cd "$srcdir"/pytest-localserver-$version
+  python setup.py build-old()
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd "$srcdir"/pytest-localserver-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-build()s:$PYTHONPATH" py.test
+}
+
+build()   {
+  cd pytest-localserver-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

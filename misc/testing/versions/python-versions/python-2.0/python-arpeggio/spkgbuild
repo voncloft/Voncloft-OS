@@ -1,0 +1,23 @@
+# description : Packrat parser interpreter"
+# depends :   python  
+
+name=python-arpeggio
+version=1.10.1
+release=3
+source="https://github.com/textX/Arpeggio/archive/$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd Arpeggio-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd Arpeggio-$version
+  python -m pytest
+}
+
+build()   {
+  cd Arpeggio-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

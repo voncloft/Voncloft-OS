@@ -1,0 +1,16 @@
+# description : MaxMind GeoIP2 API
+# depends : python-aiohttp python-maxminddb python-requests
+
+url=https://github.com/maxmind/GeoIP2-python
+name=python-geoip2
+version=4.1.0
+release=3
+
+source="https://github.com/maxmind/GeoIP2-python/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd GeoIP2-python-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

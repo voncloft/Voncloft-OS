@@ -1,0 +1,50 @@
+# description : Auditing and relabeling cross-distribution Linux wheels
+# depends : python python-wheel python-pyelftools unzip patchelf
+
+_name=auditwheel
+name=python-$_name
+version=3.3.1
+release=1
+url=https://github.com/pypa/auditwheel
+make# depends : python-setuptools python-pbr
+#check# depends : python-tox-current-env python-pip python-pytest python-jsonschema python-pretend python-docker
+source="$name-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=213063e3fa846b53f802499e71f30a53410e18a8e6a787019f07f79a9fd9687f436110c5765407f6a2ac40e4532f292c8c334264436a22322e90939f77e5231a
+
+export PBR_VERSION=$version
+
+prepare {
+   cd $_name-$version
+#  find $_name-$version/tests -type f -exec sed -i s|subprocess.run\["auditwheel"|subprocess.run\["python", "-m", "auditwheel"| {} \+
+
+  # replace the vendored wheel module with the one on the system
+  find -type f -name *.py -exec \
+      sed -i s|\._vendor\.wheel|wheel| {} \+
+
+  # remove vendored wheel module
+  rm -rf auditwheel/_vendor
+}
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+#check {
+#   cd $_name-$version
+#
+#  tox -e py39 --current-env
+#}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+  install -Dm 644 auditwheel/policy/policy.json $PKG/usr/lib/python3.9/site-packages/auditwheel/policy/policy.json
+
+}
+

@@ -1,0 +1,38 @@
+# description : Perl interface to the ISAAC PRNG algorithm
+# depends : perl
+
+name=perl-math-random-isaac
+version=1.004
+release=7
+url=https://search.cpan.org/dist/Math-Random-ISAAC/
+make# depends : perl-test-nowarnings
+source="https://search.cpan.org/CPAN/authors/id/J/JA/JAWNSY/Math-Random-ISAAC-$version.tar.gz"
+options="!checksum"
+md5sums=46110b9a7bb96fe641bdfaf35bdafec5
+
+build-delete {
+   cd $sr cdir/Math-Random-ISAAC-$version
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG \
+    PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+}
+
+check {
+   cd $sr cdir/Math-Random-ISAAC-$version
+  make test
+}
+
+build() {
+   cd $sr cdir/Math-Random-ISAAC-$version
+  make install
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

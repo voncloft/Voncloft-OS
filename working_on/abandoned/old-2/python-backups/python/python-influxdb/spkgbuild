@@ -1,0 +1,36 @@
+# description : "Python client for InfluxDB"
+# depends : python python-requests python-dateutil python-six python-pytz python-msgpack
+
+name=python-influxdb
+version=5.3.0
+release=2
+url="https://github.com/influxdata/influxdb-python/"
+make# depends : python-setuptools
+check# depends : python-nose python-mock python-requests-mock python-pandas influxdb
+opt# depends : influxdb
+options=!emptydirs
+source=$name-$version.tar.gz::https://github.com/influxdata/influxdb-python/archive/v$version.tar.gz
+sha512sums=87129544b5bef8062d452447626b639b675bf6ba5076f38d4616a364fa6dfea6aa73beece239aeb8f2294314c4fe6bc7e3ae5d7e463592bd0f77ed3aaaff5557
+
+build()-delete {
+   cd "$srcdir/influxdb-python-$version"
+  python setup.py build
+}
+
+
+check {
+   cd "$srcdir/influxdb-python-$version/influxdb"
+  # TODO: fix one failing test
+  # https://github.com/influxdata/influxdb-python/issues/844
+#INFLUXDB_PYTHON_INFLUXD_PATH=/usr/bin/influxd nosetests -e test_write_points_from_dataframe_with_numeric_precision tests
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/influxdb-python-$version"
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+

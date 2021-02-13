@@ -1,0 +1,37 @@
+
+_name=lazr.config
+name=python-lazr.config
+version=2.2.3
+release=1
+# description : Create configuration schemas, and process and validate configurations"
+# depends :   python-lazr.delegates   python-zope-interface  
+provides=  python-lazr-config  
+replaces=  python-lazr-config  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+         SKIP  
+validpgpkeys=  AC0A4FF12611B6FCCF01C111393587D97D86500B   # Colin Watson <cjwatson@chiark.greenend.org.uk>
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+  cd "$name-$version"
+  # we do not care about coverage in testing
+  sed -e  /coverage/d  -i setup.cfg
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  nosetests -P lazr
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root=$PKG
+}

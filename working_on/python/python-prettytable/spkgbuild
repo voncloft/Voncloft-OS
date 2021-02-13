@@ -1,0 +1,18 @@
+# description : A simple Python library for easily displaying tabular data
+# depends : python
+
+_name=prettytable
+url=https://pypi.python.org/pypi/PrettyTable
+_name=prettytable
+name=python-prettytable
+version=0.7.2
+release=14
+
+source="https://files.pythonhosted.org/packages/source/P/PrettyTable/prettytable-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,33 @@
+# description : Perl/CPAN Module GSSAPI
+# depends : krb5
+
+name=perl-gssapi
+version=0.28
+release=17
+url=https://search.cpan.org/dist/GSSAPI
+source="https://www.cpan.org/authors/id/A/AG/AGROLMS/GSSAPI-${version}.tar.gz"
+options="!checksum"
+sha256sums=7d8f2c7b61762fb4ec72d2ec281290f2f87f9c7d298273da4525432a65e770d6
+
+build-delete {
+  cd GSSAPI-${version}
+
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+
+  make
+}
+
+build() {
+  cd GSSAPI-${version}
+
+  make install DESTDIR=$PKG
+
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

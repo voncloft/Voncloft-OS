@@ -1,0 +1,29 @@
+# description : Perl/CPAN Module Test::Differences
+# depends : perl-text-diff
+# This PKGBUILD was autocreated.  See https://xtermin.us/archperl/ for details
+
+name=perl-test-differences
+version=0.64
+release=6
+url=https://search.cpan.org/dist/Test-Differences
+source="https://search.cpan.org/CPAN/authors/id/D/DC/DCANTRELL/Test-Differences-$version.tar.gz"
+options="!checksum"
+md5sums=ecfda620fe133e36a6e392d94ab8424d
+
+build-delete {
+  cd $srcdir/Test-Differences-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor  
+  make 
+}
+build() {
+  cd $srcdir/Test-Differences-$version
+  make install DESTDIR=$PKG 
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

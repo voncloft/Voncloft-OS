@@ -1,0 +1,47 @@
+# description : Perl SSH client package implemented on top of OpenSSH
+# depends : perl
+
+name=perl-net-openssh
+version=0.80
+release=1
+url=https://metacpan.org/release/Net-OpenSSH
+source="https://cpan.metacpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-$version.tar.gz"
+options="!checksum"
+md5sums=1ab4470af03f8c15baa50c8b11f4bd52
+sha512sums=3b68b73b0d5ee5db2096e0ac3ec3c3f12b92ee1865217a81eff0378f416ffdaac252d4ae4de601da7 cd4a771bbab6a4768be4cafa0eaa2ff93b31a3cf824875d
+_ddir=Net-OpenSSH-$version
+
+build-delete
+
+   cd $sr cdir/$_ddir
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  /usr/bin/perl Makefile.PL
+  make
+
+
+check
+
+   cd $sr cdir/$_ddir
+  export PERL_MM_USE_DEFAULT=1
+  unset PERL5LIB
+  make test
+
+
+build
+
+   cd $sr cdir/$_ddir
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

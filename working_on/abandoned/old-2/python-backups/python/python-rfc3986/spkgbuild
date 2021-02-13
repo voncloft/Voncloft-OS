@@ -1,0 +1,29 @@
+# description : "Validating URI References per RFC 3986"
+# depends : python
+
+name=python-rfc3986
+version=1.4.0
+release=3
+url="https://rfc3986.readthedocs.org/"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="https://pypi.io/packages/source/r/rfc3986/rfc3986-$version.tar.gz"
+sha512sums=dbcddc09331b794eafed8c2d7b81b7b632ba5cae2741e33ad12e781bc923427a05febd2f2715d037f35769b18c8d790546dfd4bbebe6e71d35777745e446888b
+
+build()-delete {
+   cd rfc3986-$version
+  python setup.py build
+}
+
+check {
+   cd rfc3986-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd rfc3986-$version
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1
+}

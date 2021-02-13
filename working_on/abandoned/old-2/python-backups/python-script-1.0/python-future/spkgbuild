@@ -1,0 +1,18 @@
+# description : Clean single-source support for Python 3 and 2
+# depends : python
+
+url=https://python-future.org/
+name=python-future
+version=0.18.2
+release=5
+
+source="https://pypi.io/packages/source/f/future/future-$version.tar.gz"
+options=!emptydirs
+options="checksum"
+
+build() {
+   cd $srcdir/future-$version
+   cd future-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

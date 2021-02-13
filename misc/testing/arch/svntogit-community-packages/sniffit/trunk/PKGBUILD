@@ -1,0 +1,36 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Kessia 'even' Pinheiro <kessiapinheiro at gmail.com>
+
+pkgname=sniffit
+pkgver=0.4.0
+pkgrel=1
+pkgdesc="Very good packet sniffer for unix with ncurses interactive mode"
+arch=('x86_64')
+url="https://packages.ubuntu.com/source/sniffit"
+#seems the website are out, ubuntu have all sources
+#url=http://reptile.rug.ac.be/~coder/sniffit/sniffit.html"
+license=('BSD')
+depends=('ncurses' 'libpcap')
+makedepends=('libtool')
+source=("http://archive.ubuntu.com/ubuntu/pool/universe/s/${pkgname}/${pkgname}_${pkgver}.orig.tar.gz")
+sha512sums=('a31c39859ab308f3ad4bf2f32a61d0f419ed6ad5d1668efc79e996c4a99557e511fc0b36c21e30316cfa82217fb10fd16d4e3473f5f1fdd70cdeba959d643aab')
+
+build() {
+  cd "${srcdir}/sniffit-sniffit-${pkgver}"
+  test -x ./configure || ./autogen.sh
+  ./configure --prefix=/usr --no-recursion --sbindir=/usr/bin
+  make
+}
+
+package() {
+  cd "${srcdir}/sniffit-sniffit-${pkgver}"
+
+  make install DESTDIR="$pkgdir"
+
+  install -dm0755 -g root -o root "$pkgdir"/usr/share/licenses/${pkgname}
+  install -Dm0644 LICENSE "$pkgdir"/usr/share/licenses/${pkgname}
+
+  install -dm0755 -g root -o root "$pkgdir"/usr/share/doc
+  cp -r docs "$pkgdir"/usr/share/doc/sniffit
+  cp -r examples "$pkgdir"/usr/share/doc/sniffit/examples
+}

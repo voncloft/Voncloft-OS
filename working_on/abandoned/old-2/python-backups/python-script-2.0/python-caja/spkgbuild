@@ -1,0 +1,16 @@
+# description : Python binding for Caja, to allow Caja property page and menu item extensions to be written in Python
+# depends : caja python-gobject
+
+url=https://mate-desktop.org
+name=python-caja
+version=1.24.0
+release=2
+
+source="https://pub.mate-desktop.org/releases/${version%.*}/python-caja-${version}.tar.xz
+options="checksum"
+
+build() {
+    	 cd python-caja-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

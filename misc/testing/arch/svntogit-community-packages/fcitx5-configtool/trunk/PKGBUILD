@@ -1,0 +1,38 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: csslayer <wengxt AT gmail com>
+
+pkgname=fcitx5-configtool
+pkgver=5.0.2
+pkgrel=1
+pkgdesc="Configuration Tool for Fcitx5"
+arch=('x86_64')
+url="https://github.com/fcitx/fcitx5-configtool"
+license=('GPL')
+groups=('fcitx5-im')
+provides=('fcitx5-config-qt' 'kcm-fcitx5')
+conflicts=('kcm-fcitx5')
+replaces=('kcm-fcitx5')
+depends=('fcitx5-qt' 'kwidgetsaddons' 'kitemviews' 'qt5-x11extras')
+optdepends=('kdeclarative: for KCM support'
+            'kirigami2: for KCM support')
+makedepends=('extra-cmake-modules' 'kdeclarative' 'kirigami2' 'ninja' 'python')
+source=("https://download.fcitx-im.org/fcitx5/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
+sha512sums=('15ed22788112ccdccd10e7de0db21ed9fd5dcdc050f467a801a053570674e3dc0d4ee0b081b8e0f470dafac1310d884114e4a1b8bde638371c275f1610dac486'
+            'SKIP')
+validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
+
+prepare() {
+  mkdir -p build
+}
+
+build(){
+  cd build
+
+  cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON ../$pkgname-$pkgver
+  ninja
+}
+
+package() {
+  cd build
+  DESTDIR="$pkgdir" ninja install
+}

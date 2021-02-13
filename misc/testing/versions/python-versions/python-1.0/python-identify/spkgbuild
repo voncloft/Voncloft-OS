@@ -1,0 +1,31 @@
+
+_name=identify
+name=python-identify
+version=1.5.13
+release=1
+# description : File identification library for Python"
+# depends :   python  
+source="${_name}-${version}.tar.gz::https://github.com/chriskuehl/${_name}/archive/v${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

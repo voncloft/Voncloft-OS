@@ -1,0 +1,16 @@
+# description : A generic, spec-compliant, thorough implementation of the OAuth request-signing logic
+# depends : python-cryptography
+
+url=https://github.com/idan/oauthlib
+name=python-oauthlib
+_libname=oauthlib
+version=3.1.0
+release=6
+
+source="https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz"
+
+build() {
+	 cd $srcdir/$_libname-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

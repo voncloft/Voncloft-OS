@@ -1,0 +1,40 @@
+# description : Transliteration of text between writing systems
+# depends : perl
+# $ID$
+
+name=perl-lingua-translit
+_dist=Lingua-Translit
+version=0.28
+release=5
+url=https://metacpan.org/release/${_dist}
+source="https://search.cpan.org/CPAN/authors/id/A/AL/ALINKE/${_dist}-${version}.tar.gz"
+options="!checksum"
+md5sums=090ce cd52ff9c1f9d4b370ba653b9da1
+sha256sums=113f91d8fc2c630437153a49fb7a52b023af8f6278ed96c070b1f60824b8eae1
+
+build-delete {
+     cd ${sr cdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+     cd ${sr cdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1
+    make test
+}
+
+build() {
+     cd ${sr cdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    make install INSTALLDIRS=vendor DESTDIR=$PKG
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

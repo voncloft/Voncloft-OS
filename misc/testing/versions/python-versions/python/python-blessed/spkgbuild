@@ -1,0 +1,40 @@
+# description : A thin, practical wrapper around terminal styling, screen positioning, and keyboard input 
+# depends :  
+
+name=python-blessed
+version=1.17.12
+release=1
+  python-six
+  python-wcwidth
+ 
+  git
+  python-setuptools
+ 
+  python-tox
+ 
+
+version   {
+  cd blessed
+
+  git describe --tags
+}
+
+build-old()   {
+  cd blessed
+
+  python setup.py build-old()
+}
+
+check   {
+  cd blessed
+
+  tox -e py39
+}
+
+build()   {
+  cd blessed
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}
+
+# vim: ts=2 sw=2 et:

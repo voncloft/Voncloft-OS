@@ -1,0 +1,24 @@
+# description : "Multiplatform Serial Port Module for Python"
+
+pkgbase=python-pyserial
+version=3.5
+release=1
+url="https://github.com/pyserial/pyserial"
+source="$name-$version.tar.gz::https://github.com/pyserial/pyserial/archive/v$version.tar.gz"
+sha256sums=81cbbb8147f11cbaefea8bacece25adeffeb2b5503a571e686d4658863fdd6c6
+
+build()-delete {
+  cp -a "$srcdir"/pyserial-${version} "$srcdir"/py2serial-${version}
+}
+
+package_python-pyserial {
+  # depends : python
+
+   cd "$srcdir"/pyserial-${version}
+  python setup.py build
+  python setup.py install --root=$PKG
+}
+
+
+   cd "$srcdir"/py2serial-${version}
+}

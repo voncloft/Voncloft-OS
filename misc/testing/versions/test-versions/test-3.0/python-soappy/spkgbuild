@@ -1,0 +1,23 @@
+
+pkgbase=python-soappy
+name=python2-soappy
+version=0.12.22
+release=3
+# description : "A module which implements a high-level interface to SOAP functions"
+conflicts=('python-soappy<=0.12.0-10')
+replaces=('python-soappy<=0.12.0-10')
+source=("https://pypi.python.org/packages/source/S/SOAPpy/SOAPpy-${version}.zip"
+            '6b05765063f199eb609bca929457e348a6936ad8b65c7d0004772cfc29a75bc77a73a6f4c2d0c9bd9e97b28e78ac565dede5a395e775be4c27fd0f50990a127e')
+
+build-remove() {
+  cd SOAPpy-${version}
+  python2 setup.py build
+}
+
+package_python2-soappy() {
+  # depends : ('python2-wstools' 'python2-defusedxml')
+
+  cd SOAPpy-${version}
+
+  python2 setup.py install --root=$PKG --optimize=1
+}

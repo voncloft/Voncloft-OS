@@ -1,0 +1,25 @@
+# description : Opinionated Batteries-Included Python 3 CLI Framework."
+# depends :  "python-appdirs" "python-argcomplete" "python-colorama" 
+
+name=python-milc
+version=1.1.0
+release=1
+source="https://github.com/clueboard/milc/archive/${version}.tar.gz" 
+
+build-old()   {
+    cd "${name#python-}-${version}"
+    python setup.py build-old()
+}
+
+check   {
+    cd "${name#python-}-${version}"
+    nose2
+}
+
+build()   {
+    cd "${name#python-}-${version}"
+    python setup.py install --root="${PKG}/" --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim:set ts=4 sw=4 et:

@@ -1,0 +1,38 @@
+# description : User interfaces via Term::ReadLine made easy
+# depends : perl-log-message perl-log-message-simple
+
+name=perl-term-ui
+version=0.46
+release=6
+url=https://metacpan.org/release/Term-UI
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Term-UI-$version.tarsource=.gz"
+options=!checksum
+sha512sums=7788d651e29e9c7b9c0c2b2074b39f143216a321a5a71c9c4e52fe32e44a246faade8cfdf109bcf7cfe1bac5d9d97fc920c6344a5692e8508361f1c780c41054
+_ddir=Term-UI-$version
+
+build-delete 
+  cd $srcdir/$_ddir
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  unset PERL5LIB PERL_MM_OPT
+  /usr/bin/perl Makefile.PL
+  make
+
+
+check 
+  cd $srcdir/$_ddir
+  export PERL_MM_USE_DEFAULT=1
+  unset PERL5LIB
+  make test
+
+
+build 
+  cd $srcdir/$_ddir
+  make install INSTALLDIRS=vendor DESTDIR=$PKG
+  #find $PKG -name .packlist -o -name perllocal.pod -delete
+
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:

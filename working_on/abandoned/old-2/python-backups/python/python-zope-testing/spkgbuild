@@ -1,0 +1,39 @@
+# description : "Zope testing helpers"
+
+pkgbase=python-zope-testing
+version=4.9
+release=1
+url="https://github.com/zopefoundation/zope.testing"
+source="$pkgbase-$version.tar.gz::https://github.com/zopefoundation/zope.testing/archive/$version.tar.gz"
+sha512sums=5a3d22e421273a34c8123490dd52f20cb6b80247d55ff81a6bcb59b25a7a79d5d2d41d0aac52c193670f569ad045cd5114ad44aeb25d32e390c1c36ad0a2057d
+
+prepare {
+  cp -a zope.testing-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir/zope.testing-$version"
+  python setup.py build
+
+   cd "$srcdir/zope.testing-$version-py2"
+}
+
+check {
+   cd "$srcdir/zope.testing-$version"
+  python setup.py test
+
+   cd "$srcdir/zope.testing-$version-py2"
+}
+
+package_python-zope-testing {
+  # depends : python-setuptools python-zope-interface python-zope-exceptions
+
+   cd "$srcdir/zope.testing-$version"
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+
+
+   cd "$srcdir/zope.testing-$version-py2"
+}
+

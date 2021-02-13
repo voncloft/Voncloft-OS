@@ -1,0 +1,19 @@
+# description : An incomplete xcb-util port plus some extras"
+# depends :   python-xcffib  
+
+name=python-xpybutil
+version=0.0.6
+release=3
+source="https://github.com/BurntSushi/xpybutil/archive/$version.tar.gz" 
+
+build-old()   {
+  cd xpybutil-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd xpybutil-$version
+  python setup.py install --root="$PKG/" --optimize=1
+  install -Dm664 COPYING $PKG/usr/share/licenses/$name/COPYING
+  mv "$PKG/usr/share/doc/"{,python-}xpybutil
+}

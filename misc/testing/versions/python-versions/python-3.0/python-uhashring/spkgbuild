@@ -1,0 +1,23 @@
+# description : Full featured consistent hashing python library compatible with ketama"
+# depends :   python  
+
+name=python-uhashring
+version=1.2
+release=3
+source="$pkgbase-$version.tar.gz::https://github.com/ultrabug/uhashring/archive/$version.tar.gz" 
+
+build-old()   {
+  cd uhashring-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd uhashring-$version
+  python setup.py pytest
+}
+
+build()_python-uhashring   {
+  cd uhashring-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

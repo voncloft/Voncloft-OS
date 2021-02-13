@@ -1,0 +1,34 @@
+
+_name=pastel
+name=python-pastel
+version=0.2.0
+release=3
+# description : Bring colors to your terminal"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # poetry does not generate correct setup.py, nuke it and recreate from scratch
+    dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

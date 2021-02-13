@@ -1,0 +1,16 @@
+# description : A Flask extension adding a decorator for CORS support
+# depends : python3 python3-flask python3-six
+
+name=python3-flask-cors
+version=3.0.10
+release=1
+
+source="https://pypi.io/packages/source/F/Flask-Cors/Flask-Cors-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd Flask-Cors-$version
+	python3 setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1
+}

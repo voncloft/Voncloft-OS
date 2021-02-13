@@ -1,0 +1,25 @@
+
+_name=multidict
+name=python-${_name}
+version=5.1.0
+release=1
+# description : Asyncio-based multidict implementation for Python 
+# depends :   python   glibc  
+source=https://github.com/aio-libs/multidict/archive/v${version}/${name}-${version}.tar.gz 
+
+build   {
+  cd ${_name}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_name}-${version}
+  python setup.py test
+}
+
+package   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG -O1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

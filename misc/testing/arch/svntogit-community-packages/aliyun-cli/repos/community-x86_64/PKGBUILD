@@ -1,0 +1,71 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+
+pkgname=aliyun-cli
+pkgver=3.0.69
+_aliyun_openapi_meta_commit=7dbfaea94291b4015874f4078a33c5c295dec1f5
+pkgrel=1
+pkgdesc='Alibaba Cloud CLI'
+arch=('x86_64')
+url='https://github.com/aliyun/aliyun-cli'
+license=('APACHE')
+depends=('glibc' 'jq')
+makedepends=('git' 'go' 'go-bindata')
+source=(${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz
+        "git+https://github.com/aliyun/aliyun-openapi-meta#commit=${_aliyun_openapi_meta_commit}")
+sha512sums=('8db7e20e2542674aeb844dd941d46cdde1353e514191b4fee314e22cd511933c84ebdfb36cb1e30437621ff33e202f69723790d485dc834e6a41fa82371bf934'
+            'SKIP')
+b2sums=('c34afe66df24c5f1a93d39f4a881e5b18d7bcb243987c16ce4545f414b228ec0d5a2ec26996abbe315c9c39888fad5ed224e4cabd432222d0ea9139c751bb274'
+        'SKIP')
+
+prepare() {
+  export GOPATH="${srcdir}/go"
+
+  mkdir -p "${GOPATH}/src/github.com/aliyun"
+  ln -rTsf "${pkgname}-${pkgver}" "${GOPATH}/src/github.com/aliyun/${pkgname}"
+  ln -rTsf aliyun-openapi-meta "${GOPATH}/src/github.com/aliyun/aliyun-openapi-meta"
+}
+
+build() {
+  export GOPATH="${srcdir}/go"
+  export PATH="${GOPATH}/bin:${PATH}"
+
+  cd "${GOPATH}/src/github.com/aliyun/${pkgname}"
+
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=vendor -modcacherw -ldflags=-linkmode=external"
+
+  go-bindata \
+      -o resource/metas.go \
+      -pkg resource \
+      ../aliyun-openapi-meta/...
+
+  go build \
+    -ldflags "-linkmode=external -extldflags '${LDFLAGS}' -X 'github.com/aliyun/aliyun-cli/cli.Version=${pkgver}'" \
+    -o ./out/aliyun ./main/main.go
+}
+
+check() {
+  export GOPATH="${srcdir}/go"
+
+  cd "${GOPATH}/src/github.com/aliyun/${pkgname}"
+
+  # Horrible but needed for the ./cli/ tests
+  touch "${HOME}/.bashrc"
+
+  # for now can't test the `./oss/...` folder, because it needs an env file that is not so easy to have in dev
+  go test \
+    ./cli/... ./command/... ./config/... ./i18n/... ./main/... ./openapi/... ./resource/...
+}
+
+package() {
+  cd "${GOPATH}/src/github.com/aliyun/${pkgname}"
+  install -Dm 755 out/aliyun "${pkgdir}/usr/bin/aliyun"
+  install -Dm 644 README*.md CHANGELOG.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 bin/README.md -t "${pkgdir}/usr/share/doc/${pkgname}/bin"
+}
+
+# vim: ts=2 sw=2 et:

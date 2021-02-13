@@ -1,0 +1,16 @@
+# description : Fast and tasty cookies handling
+# depends : python cython3
+
+url=https://github.com/pyrates/biscuits
+name=python-biscuits
+version=0.3.0
+release=5
+
+source="https://pypi.io/packages/source/b/biscuits/biscuits-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd biscuits-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

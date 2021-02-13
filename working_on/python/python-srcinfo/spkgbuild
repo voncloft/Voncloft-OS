@@ -1,0 +1,16 @@
+# description : Simple .SRCINFO parsing library
+# depends : python python-setuptools python-parse
+
+url=https://github.com/kyrias/python-srcinfo
+name=python-srcinfo
+version=0.0.8
+release=5
+
+source="https://pypi.python.org/packages/source/s/srcinfo/srcinfo-$version.tar.gz"
+options="!checksum"
+
+build() {
+	 cd srcinfo-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

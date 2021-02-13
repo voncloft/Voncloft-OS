@@ -1,0 +1,45 @@
+# description : Concurrent I/O
+# depends : python
+
+name=python-curio
+version=1.4
+release=3
+url=https://github.com/dabeaz/curio
+make# depends : 
+  git
+  python-pytest
+  python-setuptools
+  python-sphinx
+
+provides=python-multio-provider
+_tag=09dd8a20142b6210fe18f676a746918601c6092e
+source=git+https://github.com/dabeaz/curio.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd curio
+
+  git describe --tags
+}
+
+build()-delete {
+   cd curio
+
+  python setup.py build
+}
+
+check {
+   cd curio
+
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd curio
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

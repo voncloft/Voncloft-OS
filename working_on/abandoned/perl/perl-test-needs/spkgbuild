@@ -1,0 +1,32 @@
+# description : Skip tests when modules not available
+# depends : perl
+
+name=perl-test-needs
+version=0.002006
+release=3
+url=https://metacpan.org/release/Test-Needs
+source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-$version.tar.gz"
+options="!checksum"
+sha512sums=d0c1c527f486250a5c1e4b6e34e4ddcb1e7ab9233f9535b877cc36c8577592be28bf5f78567f45ec0388b276333742d1d15d7841827b64a8d170f475bd4488b7
+
+build-delete {
+   cd Test-Needs-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Test-Needs-$version
+  make test
+}
+
+build() {
+   cd Test-Needs-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

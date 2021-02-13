@@ -1,0 +1,41 @@
+# description : "Email bounce detectors"
+# depends : python-atpublic python-zope-interface
+
+_name=flufl.bounce
+name=python-flufl.bounce
+version=3.0.1
+release=3
+url="https://fluflbounce.readthedocs.io/en/latest/"
+make# depends : python-setuptools
+check# depends : python-pytest
+provides=python-flufl-bounce
+replaces=python-flufl-bounce
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=9a8d0dec98f8699fd3dff62f5dd831ab5754f11d246b750cfed8ae7ebb771c3c7c1abd4fcceb0f8aa052653802c6e6e5a7bd4711e63b9095ede238817a3cd146
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+   cd "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="build():${PYTHONPATH}"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

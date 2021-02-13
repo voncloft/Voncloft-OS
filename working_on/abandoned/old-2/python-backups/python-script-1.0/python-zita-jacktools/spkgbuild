@@ -1,0 +1,18 @@
+# description : Audio tools running as a Jack client
+# depends : python-zita-audiotools zita-convolver zita-jclient
+
+_name=zita-jacktools
+url=https://kokkinizita.linuxaudio.org/linuxaudio
+_name=zita-jacktools
+name=python-zita-jacktools
+version=1.2.0
+release=2
+
+source="https://kokkinizita.linuxaudio.org/linuxaudio/downloads/${_name}-${version}.tar.bz2
+options="checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

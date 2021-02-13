@@ -1,0 +1,15 @@
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+
+name=python-pygpgme
+version=0.3
+release=9
+pkgdesc="A Python interface to the gpgme GnuPG library"
+url='https://launchpad.net/pygpgme'
+depends=('python' 'gpgme')
+source=("https://launchpad.net/pygpgme/trunk/${version}/+download/pygpgme-${version}.tar.gz")
+md5sums=('d38355af73f0352cde3d410b25f34fd0')
+
+package() {
+	cd "${srcdir}/pygpgme-${version}"
+	python setup.py install --root="${pkgdir}" --optimize=1
+}

@@ -1,0 +1,36 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+
+pkgname=duktape
+pkgver=2.6.0
+pkgrel=1
+pkgdesc='Embeddable Javascript engine'
+arch=(x86_64)
+url='https://duktape.org/'
+license=(MIT)
+makedepends=(setconf)
+source=("https://duktape.org/duktape-$pkgver.tar.xz"
+        duktape.pc)
+sha256sums=('96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7'
+            'fcc9590dcc4e3b3da8e5afc35616f36d331a371f22a421333a9faad0f5c2df08')
+
+prepare() {
+  cd $pkgname-$pkgver
+  mv Makefile.sharedlibrary Makefile
+  sed 's/-Wall -Wextra/$(CFLAGS)/g' -i Makefile
+  setconf Makefile INSTALL_PREFIX "$pkgdir/usr"
+  setconf "$srcdir/duktape.pc" Version "$pkgver"
+}
+
+build() {
+  CFLAGS="$CFLAGS -D DUK_USE_FASTINT -w" make -C $pkgname-$pkgver
+}
+
+package() {
+  install -d "$pkgdir/usr/include"
+  install -Dm644 duktape.pc "$pkgdir/usr/lib/pkgconfig/duktape.pc"
+  cd $pkgname-$pkgver
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  make install
+}
+
+# getver: github.com/svaarala/duktape

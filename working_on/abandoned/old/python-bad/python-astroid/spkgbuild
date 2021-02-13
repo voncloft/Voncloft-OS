@@ -1,0 +1,32 @@
+# description : "Useful miscellaneous modules used by Logilab projects"
+# depends : ('python-six' 'python-lazy-object-proxy' 'python-wrapt')
+
+name=python-astroid
+version=2.4.2
+release=4
+replaces=('python-logilab-astng')
+conflicts=('python-logilab-astng')
+        $name-py39-dict-union.patch::https://github.com/PyCQA/astroid/commit/d18469799108.patch)
+            '86be5f3646201d19d56b7c6bd19b642462a5d76b4b6584ee53ef27883e3d69839774b19b3f7b767f3903426cb0f8c838e70f8a94e32c5fe2b9d86a76fd0e323b')
+
+prepare() {
+  cd astroid-astroid-$version
+  patch -Np1 -i ../$name-py39-dict-union.patch
+  sed -i -e 's/six~=[0-9.*]*/six/;s/wrapt~=[0-9.*]*/wrapt/;s/lazy_object_proxy==[0-9.*]*/lazy_object_proxy/' astroid/__pkginfo__.py
+}
+
+build-remove() {
+  cd astroid-astroid-$version
+  python setup.py build
+}
+
+check() {
+  cd astroid-astroid-$version
+  # Some tests fail on Python 3.9 (https://github.com/PyCQA/astroid/issues/845)
+  pytest -k 'not test_namedtuple_few_args and not test_namedtuple_few_fields and not test_namedtuple_inference_nonliteral and not test_dataclasses_subscript_inference_recursion_error'
+}
+
+build() {
+  cd astroid-astroid-$version
+  python setup.py install --optimize=1 --skip-build --prefix=/usr --root=$PKG
+}

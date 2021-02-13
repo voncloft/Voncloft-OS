@@ -1,0 +1,15 @@
+# description : filters to make caring about typography on the web a bit easier 
+# depends :   python   python-smartypants  
+
+name=python-typogrify
+_pyname=typogrify
+version=2.0.7
+release=10
+source="https://pypi.python.org/build()s/source/${_pyname:0:1}/${_pyname}/${_pyname}-${version}.tar.gz" 
+
+build()   {
+  cd "${srcdir}/${_pyname}-${version}"
+  python3 setup.py install --root="${PKG}/" --optimize=1
+  install -D -m644 LICENSE.txt "${PKG}/usr/share/licenses/${pkgbase}/LICENSE"
+}
+# vim:set ts=2 sw=2 et:

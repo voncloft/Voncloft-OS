@@ -1,0 +1,46 @@
+# description : Python Memory Usage Analyzer 
+# Maintaiiner: Filipe Laíns  FFY00  <lains@archlinux.org>
+
+pkgbase=python-meliae
+_name=${pkgbase#python-}
+name= python-$_name python2-$_name 
+version=0.4.0
+release=3
+source="$url/archive/meliae-$version.tar.gz"
+         fix-python3.patch::https://github.com/thehesiod/meliae/commit/993164289dd57c8670341ca0a1cc5b52e74bc21c.patch  
+             2310363ed702659a0b9f305808c66a693938ec192deabbd6aace6a5e85ceeec21102339c302395bdc9e21e59f6cd611ead8dd57f145d48a48df25950874b3697  
+
+prepare   {
+  cd $_name-$_name-$version
+  sed -i  /gitignore/d  ../fix-python3.patch
+  patch -p1 < ../fix-python3.patch
+
+  cp -a "$srcdir"/$_name-$_name-$version{,-py2}
+}
+
+build-old()   {
+  echo "Building python-$_name $version"
+  cd "$srcdir"/$_name-$_name-$version
+  python setup.py build-old()
+
+  echo "Building python2-$_name $version"
+  cd "$srcdir"/$_name-$_name-$version-py2
+  python2 setup.py build-old()
+}
+
+build()_python-meliae   {
+  # depends :   python  
+  cd $_name-$_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}
+
+build()_python2-meliae   {
+  # depends :   python2  
+  cd $_name-$_name-$version-py2
+
+  python2 setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  mv $PKG/usr/bin/strip_duplicates.py $PKG/usr/bin/strip_duplicates2.py
+}
+

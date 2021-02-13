@@ -1,0 +1,47 @@
+# description : "PyTest Helpers Namespace"
+# depends : python-pytest
+
+_name=pytest-helpers-namespace
+name=python-pytest-helpers-namespace
+version=2019.1.8
+release=3
+url="https://github.com/saltstack/pytest-helpers-namespace"
+make# depends : git python-setuptools
+check# depends : python-pytest python-pytest-forked
+source="git+https://github.com/saltstack/pytest-helpers-namespace#tag=v${version}?signed"
+sha512sums=SKIP
+validpgpkeys=D2908FB3A823B0FAB3BD21F5BB36BF6584A298FF # Pedro Algarvio s0undt3ch <pedro@algarvio.me>
+
+prepare {
+  mv -v "${_name}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  # installing into test location, so pytest can pick up the extension
+  mkdir -vp test_dir
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+    --root="test_dir"
+  local python_version="$python -c import sys; print".".joinmapstr, sys.version_info[:2]"
+  export PYTHONPATH="test_dir/usr/lib/python${python_version}/site-packages/:${PYTHONPATH}"
+  pytest -v --forked
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

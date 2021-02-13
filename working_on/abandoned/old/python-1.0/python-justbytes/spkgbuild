@@ -1,0 +1,28 @@
+# Maintainer: Jianchen YANG <farseerfc@gmail.com>
+
+name=python-justbytes
+_name=justbytes
+version=0.14
+release=3
+pkgdesc="computing with and displaying bytes"
+url="https://pypi.org/project/justbytes/"
+depends=('python' 'python-justbases')
+checkdepends=('python-nose' 'python-hypothesis' 'python-pylint')
+makedepends=('python-setuptools')
+source=("https://github.com/mulkieran/${_name}/archive/v${version}.tar.gz")
+md5sums=('3b9a26069421b1be24782f51125befa0')
+
+check() {
+    cd "$srcdir/${_name}-$version"
+    nosetests
+}
+
+build() {
+    cd "$srcdir/${_name}-$version"
+    python setup.py build
+}
+
+package() {
+    cd "$srcdir/${_name}-$version"
+    python setup.py install --root="$pkgdir" --optimize=1 
+}

@@ -1,0 +1,31 @@
+# description : Memory efficient Python objects
+# depends : python python-setuptools
+
+_name=atom
+name=python-atom
+version=0.6.0
+release=3
+url=https://github.com/nucleic/atom
+check# depends : python-pytest
+source=$name-$version.tar.gz::https://github.com/nucleic/atom/archive/$version.tar.gz
+sha512sums=ff02baa80c1cfaf113a0dc153f825dc76cc01084aea0f34c6bb2f3e6926290d105ee433ab0abb2ad27a87fb5e76303fc2b4456c25fde3bab666234c4d3bbb4be
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_name}-${version}
+  local python_version=$python -c import sys; print".".joinmapstr, sys.version_info[:2]
+
+  PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/build()/lib.linux-$CARCH-${python_version}" pytest
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  PYTHONHASHSEED=0 python setup.py build
+  python setup.py install -O1--root=$PKG  
+}

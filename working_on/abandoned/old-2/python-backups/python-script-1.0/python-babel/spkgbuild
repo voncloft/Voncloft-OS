@@ -1,0 +1,16 @@
+# description : A collection of tools for internationalizing Python applications
+# depends : python python-pytz
+
+url=http://babel.pocoo.org/
+name=python-babel
+version=2.9.0
+release=1
+
+source="https://github.com/python-babel/babel/archive/v$version.tar.gz"
+
+build() {
+   cd $srcdir/babel-${version}
+   cd $srcdir/babel-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,31 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+_pkg=entrypoint2
+name=python-${_pkg}
+version=0.2
+release=3
+pkgdesc="Easy to use command-line interface for python modules"
+url="https://github.com/ponty/entrypoint2"
+depends=(python-argparse python-decorator)
+makedepends=(python-setuptools)
+checkdepends=(python-nose python-path.py python-easyprocess)
+#PyPi tarball does not have tests, see https://github.com/ponty/entrypoint2/pull/5
+#source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz)
+source=(${url}/archive/${version}/${name}-${version}.tar.gz)
+sha256sums=('a49b160c452914b830135201e6db466c6bb39759ccd0c301cbb7943ab57802fd')
+
+build() {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check() {
+  cd ${_pkg}-${version}/tests
+  PYTHONPATH="../build/lib/" nosetests -vv
+}
+
+package() {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
+  install -Dm644 LICENSE.txt -t "${pkgdir}"/usr/share/licenses/${name}
+}

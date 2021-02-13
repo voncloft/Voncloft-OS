@@ -1,0 +1,29 @@
+# description : A plugin for py.test that re-runs failed tests to eliminate intermittent failures"
+# depends :   python-pytest  
+
+_name=pytest-rerunfailures
+name=python-pytest-rerunfailures
+version=9.1.1
+release=3
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+build-old()   {
+  cd "${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${_name}-${version}"
+  export PYTHONPATH="build-old()/lib:$PYTHONPATH"
+  pytest -v
+}
+
+build()   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  # docs
+  install -t "${PKG}/usr/share/doc/${name}" \
+}

@@ -1,0 +1,24 @@
+
+name=python-paste
+version=3.5.0
+release=3
+# description : Tools for using a Web Server Gateway Interface stack"
+# depends :   python-six  
+source="https://files.pythonhosted.org/packages/source/P/Paste/Paste-${version}.tar.gz" 
+
+build   {
+  cd "$srcdir"/Paste-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/Paste-$version
+  python setup.py pytest
+}
+
+package   {
+  cd Paste-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 docs/license.txt $PKG/usr/share/licenses/$name/license.txt
+}

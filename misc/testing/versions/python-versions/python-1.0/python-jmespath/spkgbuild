@@ -1,0 +1,27 @@
+# Package Source:https://github.com/flaccid/archlinux-packages/blob/master/python-jmespath/PKGBUILD
+
+name=python-jmespath
+version=0.10.0
+release=3
+# description : A query language for JSON 
+# depends :   python  
+source="https://github.com/jmespath/jmespath.py/archive/$version.tar.gz" 
+
+prepare   {
+  cp -a jmespath.py-$version{,-py2}
+}
+
+build   {
+  cd jmespath.py-$version
+  python setup.py build
+}
+
+check   {
+  cd jmespath.py-$version
+  LC_CTYPE=en_US.utf8 nosetests3
+}
+
+package   {
+  cd jmespath.py-$version
+  python setup.py install --root=$PKG --optimize=1
+}

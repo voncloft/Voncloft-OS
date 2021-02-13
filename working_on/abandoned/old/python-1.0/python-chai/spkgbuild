@@ -1,0 +1,28 @@
+# Contributor: Eli Schwartz <eschwartz@archlinux.org>
+
+name=python-chai
+version=1.1.2
+release=5
+pkgdesc="Easy to use mocking, stubbing and spying framework."
+url="https://github.com/agoragames/chai"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-nose')
+source=("https://files.pythonhosted.org/packages/source/c/chai/chai-$version.tar.gz")
+sha256sums=('ff8d2b6855f660cd23cd5ec79bd10264d39f24f6235773331b48e7fcd637d6cc')
+
+build() {
+  cd chai-$version
+  python setup.py build
+}
+
+check() {
+  cd chai-$version
+  nosetests
+}
+
+package() {
+  cd chai-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

@@ -1,0 +1,24 @@
+# description : Return the first true value of an iterable"
+# depends :   python  
+
+name=python-first
+version=2.0.2
+release=4
+source="https://github.com/hynek/first/archive/$version.tar.gz" 
+
+build-old()   {
+  cd first-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd first-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd first-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

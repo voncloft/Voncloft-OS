@@ -1,0 +1,31 @@
+# description : "Helping users and developers to get information about the environment to report bugs"
+# depends : python-importlib-metadata python-psutil
+
+_pkg=helpdev
+name=python-${_pkg}
+version=0.7.1
+release=3
+url="https://gitlab.com/dpizetta/helpdev"
+make# depends : python-setuptools
+check# depends : python-pytest python-pip
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+source=${url}/-/archive/v${version}/${_pkg}-v${version}.tar.bz2
+sha256sums=b52f83d6d3935500da42b434747569660d526cd36e88069bd67a8747cca488fc
+
+build()-delete {
+   cd ${_pkg}-v${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-v${version}
+  PYTHONPATH="${PWD}/build()/lib/" pytest tests
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-v${version}
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

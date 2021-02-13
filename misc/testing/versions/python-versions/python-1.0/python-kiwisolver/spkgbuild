@@ -1,0 +1,22 @@
+
+name=python-kiwisolver
+version=1.3.1
+release=3
+# description : A fast implementation of the Cassowary constraint solver"
+# depends :   python  
+source="https://github.com/nucleic/kiwi/archive/$version.tar.gz" 
+
+build   {
+  cd kiwi-$version
+  python setup.py build
+}
+
+check   {
+  cd kiwi-$version
+  python setup.py pytest
+}
+
+package   {
+  cd kiwi-$version/
+  python3 setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,50 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+# Contributor: Kevin Piche <kevin@archlinux.org>
+# Contributor: Dale Blount <archlinux@dale.us>
+
+pkgname=fortune-mod
+pkgver=2.12.0
+pkgrel=1
+pkgdesc="The Fortune Cookie Program from BSD games"
+arch=('x86_64')
+url="https://www.shlomifish.org/open-source/projects/fortune-mod/"
+license=('BSD')
+depends=('recode')
+makedepends=('cmake' 'rinutils')
+source=("https://github.com/shlomif/fortune-mod/archive/fortune-mod-$pkgver.tar.gz")
+md5sums=('467b8071241e0e666a8a23f4a615e588')
+
+prepare() {
+  cd "$srcdir/fortune-mod-fortune-mod-$pkgver/fortune-mod"
+  # probably a better way to do this but it is baked in hard
+  sed -i 's|/games/|/|' CMakeLists.txt
+  sed -i 's|"sbin"|"bin"|' CMakeLists.txt
+  sed -i 's|"games"|"bin"|' CMakeLists.txt
+  sed -i 's|/games/fortunes|/fortune|' datfiles/{,off/}CMakeLists.txt
+}
+
+build() {
+  cd "$srcdir/fortune-mod-fortune-mod-$pkgver/fortune-mod"
+  mkdir -p build
+  cd build
+  cmake  .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DNO_OFFENSIVE=OFF \
+        -DLOCALDIR=/usr/share/fortune/ \
+        -DLOCALODIR=/usr/share/fortune/off/ \
+        -DCOOKIEDIR=/usr/share/fortune/ \
+        -DOCOOKIEDIR=/usr/share/fortune/off/
+  make REGEXDEFS='-DHAVE_REGEX_H -DPOSIX_REGEX -DHAVE_STDBOOL'
+}
+
+package() {
+  cd "$srcdir/fortune-mod-fortune-mod-$pkgver/fortune-mod/build"
+  make DESTDIR="$pkgdir" \
+       FORTDIR="$pkgdir/usr/bin" \
+       COOKIEDIR="$pkgdir/usr/share/fortune" \
+       BINDIR="$pkgdir/usr/bin" \
+       BINMANDIR="$pkgdir/usr/share/man/man1" \
+       FORTMANDIR="$pkgdir/usr/share/man/man6" install
+  rm "$pkgdir/usr/share/fortune/"{,off/}*.u8
+  install -Dm644 ../../LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

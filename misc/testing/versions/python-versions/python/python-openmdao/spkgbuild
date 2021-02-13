@@ -1,0 +1,32 @@
+# description : An open-source high-performance computing platform"
+# depends :   python-six   python-numpydoc   python-scipy   python-sqlitedict   python-pycodestyle 
+
+name=python-openmdao
+version=3.6.0
+release=1
+          python-pydocstyle   python-testflo   python-parameterized   python-pyparsing 
+          python-networkx   python-sphinx   python-redbaron   python-mock   python-requests-mock 
+          python-tornado   python-pydoe2  
+source="https://github.com/OpenMDAO/OpenMDAO/archive/$version.tar.gz" 
+
+prepare   {
+  cd OpenMDAO-$version
+  sed -e  s/from distutils.core/from setuptools/  \
+      -e  s/==/>=/  \
+      -i setup.py
+}
+
+build-old()   {
+  cd OpenMDAO-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd OpenMDAO-$version
+  PYTHONPATH="$PWD/build-old()/lib" testflo -n 16 --timeout=120 openmdao || echo "Tests failed"
+}
+
+build()   {
+  cd OpenMDAO-$version
+  python setup.py install --root=$PKG --optimize=1
+}

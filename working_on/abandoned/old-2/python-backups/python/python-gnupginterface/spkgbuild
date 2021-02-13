@@ -1,0 +1,17 @@
+# description : A Python interface to GNU Privacy Guard GnuPG.
+# depends : gnupg python
+
+name=python-gnupginterface
+version=0.3.2
+release=9
+url=http://py-gnupg.sourceforge.net/
+source="https://downloads.sourceforge.net/sourceforge/py-gnupg/GnuPGInterface-$version.tar.gz"
+sha256sums=0ea672251e2e3f71b62fef0c01539519d500f6b338f803af6b57e67a73cca8e6
+
+options="!checksum"
+
+build() {
+	 cd "$srcdir/GnuPGInterface-$version"
+	python setup.py build
+  python setup.py install --root=$PKG -O1
+}

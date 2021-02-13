@@ -1,0 +1,31 @@
+
+_name=mechanize
+name=python-mechanize
+version=0.4.5
+release=4
+epoch=1
+# description : Stateful programmatic web browsing in Python 
+# depends :   python-html5lib  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+         SKIP  
+validpgpkeys=  3CE1780F78DD88DF45194FD706BC317B515ACE7C   # Kovid Goyal  New longer key  <kovid@kovidgoyal.net>
+
+build   {
+  cd "mechanize-$version"
+
+  python setup.py build
+}
+
+check   {
+  cd "mechanize-$version"
+
+  python setup.py test
+}
+
+package   {
+  cd "mechanize-$version"
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

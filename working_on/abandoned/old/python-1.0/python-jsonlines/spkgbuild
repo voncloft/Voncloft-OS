@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-jsonlines
+version=1.2.0
+release=7
+pkgdesc="Library with helpers for the jsonlines file format"
+url="https://github.com/wbolster/jsonlines"
+depends=('python-six')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("$pkgbase-$version.tar.gz::https://github.com/wbolster/jsonlines/archive/$version.tar.gz")
+sha512sums=('21af1c74024e1db9e301be0cd025b4cd82899059ecb3fde4c9a6ab4087ef413b7ecb6b5c41bdbb45ed1a48247c88c532c3671a4407890f96207616d2f7467c34')
+
+build() {
+  cd "$srcdir"/jsonlines-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/jsonlines-$version
+  python setup.py pytest
+}
+
+package() {
+  cd jsonlines-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.rst "$pkgdir"/usr/share/licenses/$name/LICENSE.rst
+}

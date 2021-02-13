@@ -1,0 +1,36 @@
+# description : Translates Django models using a registration approach
+# depends : python-django
+
+name=python-django-modeltranslation
+version=0.16.1
+release=1
+url=https://github.com/deschler/django-modeltranslation
+make# depends : 
+  git
+  python-setuptools
+
+_tag=445ee84821cc8127deee83656a8d3c7ca6f72b54
+source=git+https://github.com/deschler/django-modeltranslation.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd django-modeltranslation
+
+  git describe --tags | sed s/^v//
+}
+
+build()-delete {
+   cd django-modeltranslation
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd django-modeltranslation
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

@@ -1,0 +1,17 @@
+# description : Load, configure, and compose WSGI applications and servers
+# depends : python-setuptools
+
+url=http://pythonpaste.org/deploy/
+name=python-pastedeploy
+version=2.1.1
+release=3
+
+source="https://github.com/Pylons/pastedeploy/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd pastedeploy-$version
+   cd pastedeploy-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

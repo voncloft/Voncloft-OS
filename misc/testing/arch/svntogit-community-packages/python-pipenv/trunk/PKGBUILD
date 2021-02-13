@@ -1,0 +1,35 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Andrew Crerar <crerar@archlinux.org>
+# Contributor: Maikel Wever <maikelwever@gmail.com>
+
+pkgname=python-pipenv
+pkgver=2020.11.15
+pkgrel=1
+pkgdesc="Sacred Marriage of Pipfile, Pip, & Virtualenv."
+url="https://pipenv.pypa.io"
+arch=('any')
+license=('MIT')
+depends=('python' 'python-pip' 'python-certifi'
+         'python-virtualenv-clone' 'python-virtualenv')
+makedepends=('python-setuptools')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/pypa/pipenv/archive/v${pkgver}.tar.gz")
+sha512sums=('d312059b3fefc97d4cd79bf2b75d6bde1d117d92c0a299c30181a60ebea662a6c3dff0ca7b92c610dd8eb0c873509dd23c9a891761d0d47d0bba2cab738c830d')
+
+build() {
+  cd "pipenv-$pkgver"
+  export PYTHONHASHSEED=0
+  python setup.py build
+}
+
+package() {
+  cd "pipenv-$pkgver"
+  python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+  install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  pushd pipenv
+  find . -name \*LICENSE\* -exec install -Dm 644 \{\} "${pkgdir}/usr/share/licenses/${pkgname}/"\{\} \;
+  popd
+
+  PIPENV_SHELL=bash python -m pipenv --completion | install -Dm644 /dev/stdin "${pkgdir}/usr/share/bash-completion/completions/pipenv"
+  PIPENV_SHELL=zsh  python -m pipenv --completion | install -Dm644 /dev/stdin "${pkgdir}/usr/share/zsh/site-functions/_pipenv"
+  PIPENV_SHELL=fish python -m pipenv --completion | install -Dm644 /dev/stdin "${pkgdir}/usr/share/fish/vendor_completions.d/pipenv.fish"
+}

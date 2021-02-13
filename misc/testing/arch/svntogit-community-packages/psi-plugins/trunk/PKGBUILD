@@ -1,0 +1,39 @@
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
+
+pkgname=psi-plugins
+pkgver=1.4
+pkgrel=1
+pkgdesc="Additional features for Psi"
+arch=('x86_64')
+url="https://psi-im.org"
+license=('GPL2')
+depends=('psi')
+makedepends=('libotr' 'tidy')
+optdepends=('libotr: OTR plugin'
+            'tidy: OTR plugin')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/psi-im/plugins/archive/$pkgver.tar.gz"
+        'psiplugin.pri')
+sha256sums=('8ba061b4e27314d226f1cfc6f66e1800e71082457cc2d03b34fd16c9c362b838'
+            '2edc9f76e032e25044f0d16376194127c07b3372195482236901222ebec11a75')
+
+prepare() {
+    cp -v psiplugin.pri plugins-$pkgver/
+}
+
+build() {
+    cd plugins-$pkgver
+    for plugin in generic/* unix/*; do
+        if [ -d "$plugin" ]; then
+            (cd "$plugin" && qmake-qt5 PREFIX="/usr" QMAKE_STRIP= && make)
+        fi
+    done
+}
+
+package() {
+    cd plugins-$pkgver
+    for plugin in generic/* unix/*; do
+        if [ -d "$plugin" ]; then
+            (cd "$plugin" && make INSTALL_ROOT="$pkgdir" install)
+        fi
+    done
+}

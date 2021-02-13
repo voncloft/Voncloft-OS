@@ -1,0 +1,17 @@
+# description : User session management for Flask.
+# depends : python-flask
+
+url=https://pythonhosted.org/Flask-Login/
+name=python-flask-login
+version=0.5.0
+release=3
+
+source="https://github.com/maxcountryman/flask-login/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd flask-login-$version
+   cd flask-login-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

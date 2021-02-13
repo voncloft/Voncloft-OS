@@ -1,0 +1,24 @@
+
+name=python-jeepney
+version=0.6.0
+release=4
+# description : Low-level, pure Python DBus protocol wrapper"
+# depends :   python  
+               python-trio  
+source="https://pypi.io/packages/source/j/jeepney/jeepney-$version.tar.gz" 
+
+build   {
+  cd jeepney-$version
+  python setup.py build
+}
+
+check   {
+  cd jeepney-$version
+  pytest
+}
+
+package   {
+  cd jeepney-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

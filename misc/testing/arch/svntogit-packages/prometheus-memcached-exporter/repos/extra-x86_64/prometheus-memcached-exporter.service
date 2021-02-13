@@ -1,0 +1,28 @@
+[Unit]
+Description=Prometheus memcached Exporter
+After=network.target memcached.service
+
+[Service]
+EnvironmentFile=-/etc/conf.d/prometheus-memcached-exporter
+ExecStart=/usr/bin/prometheus-memcached-exporter $MEMCACHED_EXPORTER_ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+DynamicUser=true
+SupplementaryGroups=memcached
+
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectKernelModules=true
+ProtectKernelTunables=true
+PrivateTmp=true
+LockPersonality=true
+ProtectHostname=true
+ProtectHome=true
+ProtectControlGroups=true
+PrivateDevices=true
+PrivateUsers=true
+RestrictRealtime=true
+CapabilityBoundingSet=
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

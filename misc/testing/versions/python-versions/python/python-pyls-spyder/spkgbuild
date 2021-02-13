@@ -1,0 +1,27 @@
+# description : Spyder extensions for the Python Language Server"
+# depends :  python-language-server 
+
+_pkg=pyls-spyder
+name=python-${_pkg}
+version=0.3.0
+release=1
+# PyPi tarballs do not have the tests
+#source=https://files.pythonhosted.org/build()s/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+source= ${url}/archive/v${version}/${_pkg}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pkg}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pkg}-${version}
+  pytest -v
+}
+
+build()   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build-old() --optimize=1
+  rm -r $PKG$ python -c "import site; print site.getsitebuild()s  [0] " /${_pkg//-/_}/tests
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}
+}

@@ -1,0 +1,32 @@
+# description : Python wrapper for libevdev 
+# depends :   python   libevdev  
+
+name=python-libevdev
+version=0.9
+release=3
+source="$url/-/archive/$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd $name-$version
+
+  python setup.py build-old()
+
+  make doc
+}
+
+check   {
+  cd $name-$version
+
+  PYTHONPATH=. pytest test/*.py
+}
+
+build()   {
+  cd $name-$version
+
+  python setup.py install --root $PKG --skip-build-old() -O1
+
+  # Install documentation
+  install -dm 755 $PKG/usr/share/doc/$name
+  cp -r -a --no-preserve=ownership doc/html $PKG/usr/share/doc/$name
+  rm -rf $PKG/usr/share/doc/$name/html/.doctrees
+}

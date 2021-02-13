@@ -1,0 +1,39 @@
+# description : Integrate Cairo into the Glib type system
+# depends : glib-perl cairo-perl
+
+name=perl-cairo-gobject
+_perl_module=Cairo-GObject
+version=1.004
+release=10
+url=https://metacpan.org/release/${_perl_module}
+make# depends : perl-extutils-depends perl-extutils-pkgconfig
+source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/${_perl_module}-${version}.tar.gz"
+options="!checksum"
+sha256sums=3bb9d40e802e51f56f1364abc553758152131803c12d85ba6e14bad6813409d5
+
+build-delete {
+   cd ${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+}
+
+check {
+   cd ${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}
+
+build() {
+   cd ${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  make pure_install INSTALLDIRS=vendor DESTDIR=$PKG
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

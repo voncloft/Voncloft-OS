@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-munch
+version=2.5.0
+release=4
+pkgdesc="A dot-accessible dictionary (a la JavaScript objects)"
+url="https://github.com/Infinidat/munch"
+depends=('python-six')
+makedepends=('python-setuptools' 'git')
+checkdepends=('python-pytest' 'python-yaml')
+source=(https://pypi.io/packages/source/m/munch/munch-${version}.tar.gz)
+sha512sums=('7eca31111f40782a19b49535322bc56d723022d52b0842c4beff512f32fa415a6c75851eb84950358cb6a11693095cafe56364028e48385b11135de414edca21')
+
+build() {
+  cd "$srcdir"/munch-$version
+  export PYTHONPATH=$PWD
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/munch-$version
+  pytest
+}
+
+package() {
+  cd munch-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

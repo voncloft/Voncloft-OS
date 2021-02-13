@@ -1,0 +1,44 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=vim-csound
+pkgver=0.8.1
+pkgrel=1
+pkgdesc="Csound tools for Vim"
+arch=('any')
+url="https://github.com/luisjure/csound-vim"
+license=('MIT')
+groups=('vim-plugins')
+depends=('vim')
+optdepends=('bash: for opcodelistfromcsound-z.sh'
+            'csound: Use vim with csound'
+            'python: for opcodelistfromcsound-z.py')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/luisjure/csound-vim/archive/v${pkgver}.tar.gz")
+sha512sums=('a87458efabcef4e3681b8f6b6325ad1fbe5b68befbf602fe858db2baf455c66c3a5b953a6aeeb28155867f7c53ae29618801c6b66a30118346069a1598b5ada1')
+
+prepare() {
+  mv -v "csound-vim-$pkgver" "$pkgname-$pkgver"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  # plugin
+  install -vDm 644 doc/csound.txt \
+    -t "${pkgdir}/usr/share/vim/vimfiles/doc"
+  install -vDm 644 ftdetect/csound.vim \
+    -t "${pkgdir}/usr/share/vim/vimfiles/ftdetect"
+  install -vDm 644 macros/csound{_macros,.vim} \
+    -t "${pkgdir}/usr/share/vim/vimfiles/macros"
+  install -vDm 644 plugin/csound.vim \
+    -t "${pkgdir}/usr/share/vim/vimfiles/plugin"
+  install -vDm 644 syntax/csound{_opcodes,.vim} \
+    -t "${pkgdir}/usr/share/vim/vimfiles/syntax/"
+  install -vDm 644 templates/template.csd \
+    -t "${pkgdir}/usr/share/vim/vimfiles/templates"
+  install -vDm 644 words/csound.txt \
+    -t "${pkgdir}/usr/share/vim/vimfiles/csounds"
+  # license
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  # docs
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -vDm 755 opcodelistfromcsound-z.{py,sh} -t "${pkgdir}/usr/bin"
+}

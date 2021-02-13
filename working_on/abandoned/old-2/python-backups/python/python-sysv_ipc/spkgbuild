@@ -1,0 +1,29 @@
+# description : "System V IPC primitives semaphores, shared memory and message queues for Python"
+# depends : python
+
+name=python-sysv_ipc
+version=1.0.1
+release=2
+url="http://semanchuk.com/philip/sysv_ipc/"
+make# depends : python-setuptools
+source="http://semanchuk.com/philip/sysv_ipc/sysv_ipc-$version.tar.gz"
+sha512sums=c240828df5a96fe241b0d68f349c7c593ee45115c2867adc577b4da75ec1b3101608fd8da021fec88a7b717af9a4b0e9f9e5ad6a06874a38c3ad2ce467f00989
+
+build()-delete {
+   cd sysv_ipc-$version
+  python setup.py build
+}
+
+check {
+   cd sysv_ipc-$version
+  PYTHONPATH="$PWD/build()/lib.linux-$CARCH-3.9" python -m unittest discover
+}
+
+options="!checksum"
+
+build() {
+   cd sysv_ipc-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

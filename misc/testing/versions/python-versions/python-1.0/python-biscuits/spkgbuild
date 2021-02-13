@@ -1,0 +1,22 @@
+
+name=python-biscuits
+version=0.2.1
+release=5
+# description : Fast and tasty cookies handling"
+# depends :   python  
+source="https://github.com/pyrates/biscuits/archive/$version.tar.gz" 
+
+build   {
+  cd biscuits-$version
+  make compile
+}
+
+check   {
+  cd biscuits-$version
+  python setup.py pytest
+}
+
+package   {
+  cd biscuits-$version
+  python setup.py install --root=$PKG --optimize=1
+}

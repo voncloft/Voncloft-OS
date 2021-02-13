@@ -1,0 +1,24 @@
+# description : Minimalistic evaluator of python expression using ast module"
+# depends :   python  
+
+name=python-asteval
+version=0.9.21
+release=1
+source="https://github.com/newville/asteval/archive/$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd asteval-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd asteval-$version
+  python -m pytest
+}
+
+build()   {
+  cd asteval-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

@@ -1,0 +1,35 @@
+# description : create beautiful and testable command-line interfaces"
+# depends :   python-clikit  
+
+_name=cleo
+name=python-cleo
+version=0.7.6
+release=4
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # poetry-generated setup.py are fatally broken, see:
+    #https://github.com/sdispater/poetry/issues/866
+    dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build-old()  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

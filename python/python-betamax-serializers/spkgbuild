@@ -1,0 +1,16 @@
+# description : A set of third-party serializers for Betamax
+# depends : python-betamax
+
+url=https://gitlab.com/betamax/serializers
+name=python-betamax-serializers
+version=0.2.1
+release=5
+
+source="https://gitlab.com/betamax/serializers/-/archive/$version/serializers-$version.tar.bz2"
+options="!checksum"
+
+build() {
+   cd serializers-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

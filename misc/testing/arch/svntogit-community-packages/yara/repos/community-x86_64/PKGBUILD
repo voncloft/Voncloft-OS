@@ -1,0 +1,40 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: bitwave <aur [aT] oomlu [d0T] de>
+# Contributor: fnord0 <fnord0 AT riseup DOT net>
+
+pkgname=yara
+pkgver=4.0.4
+pkgrel=1
+pkgdesc='Tool aimed at helping malware researchers to identify and classify malware samples'
+url='https://github.com/VirusTotal/yara'
+arch=('x86_64')
+license=('BSD')
+depends=('openssl' 'file' libmagic.so)
+provides=('libyara.so')
+source=(https://github.com/VirusTotal/${pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('ed3a3d20ca0ac6de8e79471377981fe171752d22c4bbee698dae500453a9b2b20cfb2bbb2695e647e97b230c5a05c3c0ede2c4e1604beff3c0d02dbffca4f889')
+b2sums=('35008d2666388c6f2ff598ad731cf7e7b0164cdd8f2beb6216d5a35a5c143a72d1b637a295ef4b67431a2355705c77b2fee39509186e173b79d4f0c9da73c05f')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  autoreconf -fiv
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure \
+    --prefix=/usr \
+    --with-crypto \
+    --enable-magic
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm 644 COPYING -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  cp -r docs "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

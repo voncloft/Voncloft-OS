@@ -1,0 +1,31 @@
+# description : A simple plugin system for Python applications"
+# depends :   python  
+_name=Yapsy
+name=python-yapsy
+version=1.12.2
+release=5
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build-old()   {
+  cd "$name-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$name-$version"
+  python runtests.py
+}
+
+build()   {
+  cd "$name-$version"
+  python setup.py install --prefix=/usr \
+                          --skip-build-old() \
+                          --optimize=1 \
+                          --root=$PKG
+  install -vDm 644 LICENSE.txt -t "${PKG}/usr/share/licenses/${name}/"
+    -t "${PKG}/usr/share/doc/${name}"
+}

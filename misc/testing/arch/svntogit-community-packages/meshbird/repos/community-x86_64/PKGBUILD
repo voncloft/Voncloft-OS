@@ -1,0 +1,40 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=meshbird
+pkgver=2.3
+pkgrel=4
+pkgdesc="Distributed private networking"
+arch=('x86_64')
+url="https://github.com/meshbird/meshbird"
+license=('Apache')
+depends=('glibc')
+makedepends=('git' 'go')
+backup=(etc/meshbird.conf)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/meshbird/meshbird/archive/v$pkgver.tar.gz"
+        meshbird.service meshbird.conf)
+sha512sums=('fa08e9fabd6101bc63e8a18baefee5537612a0fd3892737c1d1b16a87d4976d67aa14b3b589fa97f7816df00e9f032ff42716cdf5b43807e0759733c2dff5fe5'
+            'b9b552f09d9f98c4ff90ce3d31b15f7a5c2453c1535fa17454043826bf5f108510a7a7512ef79dfd7b4d53615d06c690fe8fdd878a6894f8dc75ee934c0328e7'
+            '08a493f299549b9eea830e1201d2131314b2c0c931c9fdd06a30e849c90368c7809c6a42bfded33aec44403cd8f61caad168b54bad08f5b21867f2d562f0c872')
+
+prepare() {
+  mkdir .gopath
+  export GOPATH="$srcdir"/.gopath
+}
+
+build() {
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+
+  cd meshbird-$pkgver
+  make build
+}
+
+package() {
+  cd meshbird-$pkgver
+  install -Dm755 bin/meshbird "$pkgdir"/usr/bin/meshbird
+  install -Dm644 "$srcdir"/meshbird.service "$pkgdir"/usr/lib/systemd/system/meshbird.service
+  install -Dm644 "$srcdir"/meshbird.conf "$pkgdir"/etc/meshbird.conf
+}

@@ -1,0 +1,21 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+name=python-gast
+version=0.4.0
+release=3
+pkgdesc="AST that abstracts the underlying Python version "
+url="https://github.com/serge-sans-paille/gast"
+depends=('python')
+makedepends=('python-setuptools')
+source=("https://pypi.io/packages/source/g/gast/gast-${version}.tar.gz")
+sha512sums=('d132884c51f7172db9b807095619b2cf3ef92acea18aa1de65f6a338b381b7d3fb3f79ff0c1f9ef9388ef885700b7e58309bd95ccebce46bd3173cc484c9c4f5')
+
+build() {
+  cd gast-$version
+  python setup.py build
+}
+
+package() {
+  cd gast-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

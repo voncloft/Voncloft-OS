@@ -1,0 +1,30 @@
+# description : "Jaeger Python OpenTracing Tracer implementation"
+# depends : python-opentracing python-threadloop python-thrift python-tornado
+
+name=python-jaeger-client
+version=4.4.0
+release=1
+url="https://github.com/jaegertracing/jaeger-client-python"
+make# depends : python-setuptools
+check# depends : python-mock python-prometheus_client python-pycurl python-pytest-benchmark python-pytest-localserver
+source="https://github.com/jaegertracing/jaeger-client-python/archive/$version/$name-$version.tar.gz"
+sha512sums=894510edc60464f4e5e807b170389a036a1d5dc5edbfe5e81a1a20798cb8fa4f3dea740c429674fd87858fcb565d8d9759056e5b8712b1cc3f4e326825b3cb88
+
+build()-delete {
+   cd jaeger-client-python-$version
+  python setup.py build
+}
+
+check {
+   cd jaeger-client-python-$version
+  # Tracer test dependencies dont support new Tornado
+  pytest --deselect tests/test_prometheus.py --deselect tests/test_tracer.py --deselect tests/test_tracer_benchmark.py
+}
+
+options="!checksum"
+
+build() {
+   cd jaeger-client-python-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

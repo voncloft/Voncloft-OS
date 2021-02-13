@@ -1,0 +1,28 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+pkgname=pgpdump
+pkgver=0.33
+pkgrel=2
+pkgdesc='PGP packet visualizer which displays the packet format'
+url='https://www.mew.org/~kazu/proj/pgpdump'
+arch=('x86_64')
+license=('BSD')
+depends=('glibc' 'zlib' 'bzip2')
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/kazu-yamamoto/${pkgname}/archive/v${pkgver}.tar.gz)
+sha256sums=('fe580ef43f651da59816c70f38f177ea4fa769d64e3d6883a9d1f661bb0a6952')
+sha512sums=('154880459005411a4237cb38d4dfd7578aad6cbb69bf4f27d8cc4fc98c5a24495cb48f1040b9fc63fdbeac15b7b7221a32648be0a7324dd8bc5bc8c87e512e46')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm 644 COPYRIGHT -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

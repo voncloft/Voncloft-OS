@@ -1,0 +1,24 @@
+# description : Represents the core of the Zope hookable Architecture"
+# depends :   python-setuptools  
+
+name=python-zope-hookable
+version=5.0.1
+release=3
+source="https://github.com/zopefoundation/zope.hookable/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/zope.hookable-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/zope.hookable-$version
+  python setup.py nosetests
+}
+
+build()   {
+  cd "$srcdir"/zope.hookable-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

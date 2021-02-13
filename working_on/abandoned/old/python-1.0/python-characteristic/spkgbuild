@@ -1,0 +1,51 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-characteristic
+name=('python-characteristic' 'python2-characteristic')
+version=14.3.0
+release=11
+pkgdesc="Python attributes without boilerplate."
+url="https://pypi.python.org/pypi/characteristic"
+makedepends=('python-setuptools' 'python2-setuptools')
+checkdepends=('python-pytest-runner' 'python2-pytest-runner')
+source=("https://files.pythonhosted.org/packages/source/c/characteristic/characteristic-$version.tar.gz"{,.asc})
+md5sums=('b249368dd021fde1c06b4802867c0913'
+         'SKIP')
+validpgpkeys=('C2A04F86ACE28ADCF817DBB7AE2536227F69F181') # Hynek Schlawack <hs@ox.cx>
+
+prepare() {
+  sed -i 's/\[pytest\]/[tool:pytest]/' characteristic-$version/setup.cfg
+  cp -a characteristic-$version{,-py2}
+}
+
+build() {
+  cd "$srcdir"/characteristic-$version
+  python setup.py build
+
+  cd "$srcdir"/characteristic-$version-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/characteristic-$version
+  python setup.py test
+
+  cd "$srcdir"/characteristic-$version-py2
+  python2 setup.py test
+}
+
+package_python-characteristic() {
+  depends=('python')
+
+  cd characteristic-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$name/LICENSE"
+}
+
+package_python2-characteristic() {
+  depends=('python2')
+
+  cd characteristic-$version-py2
+  python2 setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$name/LICENSE"
+}

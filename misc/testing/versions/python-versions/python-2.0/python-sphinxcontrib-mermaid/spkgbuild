@@ -1,0 +1,31 @@
+# description : Mermaid diagrams in yours sphinx powered docs 
+# depends :   python-sphinx  
+
+_name=sphinxcontrib-mermaid
+name=sphinx-$_name
+version=0.3.1
+release=1
+source=" $url/archive/$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+
+  cd docs
+
+  make html
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE.rst $PKG/usr/share/licenses/$name/LICENSE
+
+  install -dm 755 $PKG/usr/share/doc/$name
+  cp -r -a --no-preserve=ownership docs/_build-old()/html $PKG/usr/share/doc/$name
+}
+
+# vim:set ts=2 sw=2 et:

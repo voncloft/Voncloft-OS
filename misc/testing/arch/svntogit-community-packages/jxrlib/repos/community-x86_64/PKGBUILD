@@ -1,0 +1,54 @@
+# $Id$
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=jxrlib
+pkgver=0.2.1
+pkgrel=3
+pkgdesc="Open source implementation of jpegxr"
+arch=('x86_64')
+url="https://archive.codeplex.com/?p=jxrlib"
+license=('GPL')
+depends=('glibc')
+optdepends=('java-runtime: Java bindings')
+makedepends=('cmake' 'swig' 'maven' 'java-environment')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/glencoesoftware/jxrlib/archive/v$pkgver.tar.gz"
+        'CMakeLists.txt')
+sha512sums=('bcf69c9bec32829c266e60540fdc2e8d16d9bf7e0d3930327db5bfce6d1fc2c8b67c7a2b236d128ff3ce89b1c2a14b27a69cdf5bda365c4fcaac98d76b8bd406'
+            '832557a5aa0825132aefe38f5136159f1d2ac46bf8455745877342e08db5752c73c34f16a7edf3fd5fa8813f1c48a1b5d77d91901301e2322f18b520bbe97ae6')
+
+prepare() {
+  cp CMakeLists.txt $pkgname-$pkgver/
+}
+
+build() {
+  # Generate jni files
+  cd $pkgname-$pkgver/java
+
+  mkdir -p target/swig/ome/jxrlib
+  swig -java -c++ -package ome.jxrlib -outdir target/swig/ome/jxrlib -o target/swig/JXR_wrap.cxx JXR.i
+
+  # Build source
+  mkdir -p ../build
+  cd ../build
+
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release
+
+  make
+
+  # Compile java library
+  cd ../java
+  mvn install -DskipTests
+}
+
+package() {
+  cd $pkgname-$pkgver/build
+
+  make DESTDIR="$pkgdir" install
+
+  cd ../java/target
+
+  install -Dm 644 $pkgname-$pkgver.jar "$pkgdir"/usr/share/java/$pkgname-$pkgver.jar
+}

@@ -1,0 +1,20 @@
+--- a/redis.conf	2020-10-27 14:50:41.137789753 +0100
++++ b/redis.conf	2020-10-27 14:50:46.161211877 +0100
+@@ -233,7 +233,7 @@
+ #                        UPSTART_JOB or NOTIFY_SOCKET environment variables
+ # Note: these supervision methods only signal "process is ready."
+ #       They do not enable continuous pings back to your supervisor.
+-supervised no
++supervised systemd
+ 
+ # If a pid file is specified, Redis writes it where specified at startup
+ # and removes it at exit.
+@@ -362,7 +362,7 @@
+ # The Append Only File will also be created inside this directory.
+ #
+ # Note that you must specify a directory here, not a file name.
+-dir ./
++dir /var/lib/redis/
+ 
+ ################################# REPLICATION #################################
+ 

@@ -1,0 +1,29 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=gnome-backgrounds
+pkgver=3.38.0
+pkgrel=1
+pkgdesc="Background images and data for GNOME"
+url="https://gitlab.gnome.org/GNOME/gnome-backgrounds"
+arch=(any)
+makedepends=(glib2 meson)
+license=(GPL)
+groups=(gnome)
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('f7712a873a80c9a9fcf3952611effeb2d9aed23a3e8abfcda8afb15c427d1ee3')
+
+build() {
+  arch-meson $pkgname-$pkgver build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}
+
+# vim:set sw=2 et:

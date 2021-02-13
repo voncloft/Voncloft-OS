@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python2-pathlib2
+pkgver=2.3.5
+pkgrel=1
+pkgdesc='Object-oriented filesystem paths'
+arch=('any')
+url='https://pypi.python.org/pypi/pathlib2'
+license=('MIT')
+depends=('python2-six' 'python2-scandir')
+makedepends=('python2-setuptools')
+checkdepends=('python2-pytest-runner' 'python2-mock')
+source=("https://pypi.io/packages/source/p/pathlib2/pathlib2-$pkgver.tar.gz")
+sha256sums=('6cd9a47b597b37cc57de1c05e56fb1a1c9cc9fab04fe78c29acd090418529868')
+
+build() {
+  cd pathlib2-$pkgver
+  python2 setup.py build
+}
+
+check() {
+  cd pathlib2-$pkgver
+  python2 setup.py pytest
+}
+
+package() {
+  cd pathlib2-$pkgver
+
+  python2 setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.rst "$pkgdir"/usr/share/licenses/python2-pathlib2/LICENSE.rst
+}
+
+# vim: ts=2 sw=2 et:

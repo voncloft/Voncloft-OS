@@ -1,0 +1,35 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=golang-github-burntsushi-xgb
+pkgver=0.0.20210121
+_commit=deaf085860bc2ec870e50cacc83c467b3501a404
+pkgrel=1
+pkgdesc='The X Go Binding is a low-level API to communicate with the X server'
+arch=('any')
+url="https://github.com/BurntSushi/xgb"
+license=('BSD' 'custom:WTFPL')
+depends=('go')
+checkdepends=('xorg-server-xvfb')
+source=("$pkgname-$_commit.tar.gz::https://github.com/BurntSushi/xgb/archive/$_commit.tar.gz")
+sha512sums=('950e951a5f5b20567a32dc2a0770c00af9f72f97efe346adc6fdb73698b1919895bec9dad5dc2d73eef7ae87e2ff3c56fc9a673141246408acfd97703eda9da0')
+
+prepare() {
+  cd xgb-$_commit
+  sed -i 's|fmt.Println("\\n")|fmt.Print("\\n\\n")|' examples/randr/main.go
+}
+
+check() {
+  export GOPATH="$srcdir/build:/usr/share/gocode"
+  mkdir -p "$srcdir"/build/src/github.com/BurntSushi
+  cp -a "$srcdir"/xgb-$_commit "$srcdir"/build/src/github.com/BurntSushi/xgb
+  cd "$srcdir"/build/src/github.com/BurntSushi/xgb
+  xvfb-run go test -v $(go list ./...)
+}
+
+package() {
+  mkdir -p "$pkgdir"/usr/share/gocode/src/github.com/BurntSushi
+  cp -a "$srcdir"/xgb-$_commit "$pkgdir"/usr/share/gocode/src/github.com/BurntSushi/xgb
+
+  install -Dm644 xgb-$_commit/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.BSD
+  install -Dm644 xgb-$_commit/xgbgen/COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING.WTFPL
+}

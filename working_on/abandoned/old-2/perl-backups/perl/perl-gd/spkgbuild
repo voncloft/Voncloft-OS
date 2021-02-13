@@ -1,0 +1,16 @@
+# description : Interface to Gd Graphics Library
+# depends : perl gd
+
+name=perl-gd
+version=2.72
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/GD-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd  GD-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

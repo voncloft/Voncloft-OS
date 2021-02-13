@@ -1,0 +1,37 @@
+# description : Geocoding library for Python"
+# depends :   python-geographiclib  
+
+_name=geopy
+name=python-geopy
+version=2.1.0
+release=1
+ python-pytest-aiohttp   python-pytest   python-pytz   python-requests  
+             python-requests: for geopy.adapters.RequestsAdapter  
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+         SKIP  
+validpgpkeys=  A18FE9F6F570D5B4E1E1853FAA7B5406547AF062   # Kostya Esmukov <kostya@esmukov.ru>
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build-old()   {
+  cd "$name-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build-old():${PYTHONPATH}"
+  # geocoders tests require internet access and are flaky
+  pytest -v --ignore= test/geocoders 
+}
+
+build()   {
+  cd "$name-$version"
+  python setup.py install --skip-build-old() \
+                          --optimize=1 \
+                          --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

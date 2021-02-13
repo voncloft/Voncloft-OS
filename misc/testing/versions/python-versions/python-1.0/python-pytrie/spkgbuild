@@ -1,0 +1,25 @@
+# Modified from aur/python2-pytrie; original maintainership info:
+
+name=python-pytrie
+version=0.4.0
+release=3
+# description : A pure Python implementation of the trie data structure."
+# depends :  python python-sortedcontainers 
+# Tests in this package imports tests from CPython :/
+source="https://files.pythonhosted.org/packages/source/P/PyTrie/PyTrie-$version.tar.gz" 
+
+build   {
+  cd PyTrie-$version
+  python setup.py build
+}
+
+check   {
+  cd PyTrie-$version
+  python -m unittest discover -v ./tests
+}
+
+package   {
+  cd PyTrie-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

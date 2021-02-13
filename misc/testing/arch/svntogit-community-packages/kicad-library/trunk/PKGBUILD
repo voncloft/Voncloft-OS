@@ -1,0 +1,47 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+
+pkgbase=kicad-library
+pkgname=('kicad-library' 'kicad-library-3d')
+pkgver=5.1.9
+pkgrel=1
+pkgdesc="Kicad component and footprint libraries"
+arch=('any')
+url="https://kicad.github.io/"
+license=('GPL')
+makedepends=('cmake')
+options=('!strip')
+source=("https://gitlab.com/kicad/libraries/kicad-symbols/-/archive/$pkgver/kicad-symbols-$pkgver.tar.gz"
+        "https://gitlab.com/kicad/libraries/kicad-footprints/-/archive/$pkgver/kicad-footprints-$pkgver.tar.gz"
+        "https://gitlab.com/kicad/libraries/kicad-packages3D/-/archive/$pkgver/kicad-packages3D-$pkgver.tar.gz")
+md5sums=('c6c31ca3981075d86c57d51945fea849'
+         '0070c182e5659dbcb571b18c02f7315c'
+         '7704fff25247b21e94a5ecd4dd377757')
+
+build() {
+  cd "$srcdir/kicad-symbols-$pkgver/"
+  cmake ./ -DCMAKE_INSTALL_PREFIX=/usr
+  make
+
+  cd "$srcdir/kicad-footprints-$pkgver/"
+  cmake ./ -DCMAKE_INSTALL_PREFIX=/usr
+  make
+
+  cd "$srcdir/kicad-packages3D-$pkgver/"
+  cmake ./ -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package_kicad-library() {
+  pkgdesc="Kicad component and footprint libraries"
+  cd "$srcdir/kicad-symbols-$pkgver/"
+  make DESTDIR="$pkgdir" install
+
+  cd "$srcdir/kicad-footprints-$pkgver/"
+  make DESTDIR="$pkgdir" install
+}
+
+package_kicad-library-3d() {
+  pkgdesc="Kicad 3D render model libraries"
+  cd "$srcdir/kicad-packages3D-$pkgver/"
+  make DESTDIR="$pkgdir" install
+}

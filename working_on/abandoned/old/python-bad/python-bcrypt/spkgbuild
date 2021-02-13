@@ -1,0 +1,22 @@
+# description : Modern password hashing for your software and your servers"
+# depends :   python-cffi   python-six  
+
+name=python-bcrypt
+version=3.2.0
+release=3
+source="https://github.com/pyca/bcrypt/archive/$version.tar.gz" 
+
+build-old()   {
+  cd bcrypt-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd bcrypt-$version
+  PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9" pytest
+}
+
+build()   {
+  cd bcrypt-$version
+  python setup.py install --prefix=/usr --root=$PKG
+}

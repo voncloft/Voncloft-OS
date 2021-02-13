@@ -1,0 +1,54 @@
+
+name=python-pwntools
+_pyname=pwntools
+version=4.3.1
+release=3
+# description : CTF framework and exploit development library 
+# depends :   python 
+          python-mako 
+          python-pyelftools 
+          python-capstone 
+          ropgadget 
+          python-pyserial 
+          python-requests 
+          python-pip 
+          python-pygments 
+          python-pysocks 
+          python-dateutil 
+          python-packaging 
+          python-psutil 
+          python-intervaltree 
+          python-sortedcontainers 
+          python-unicorn 
+          python-paramiko 
+          ropgadget 
+          python-setuptools  
+source=https://github.com/Gallopsled/pwntools/archive/${version}/${name}-${version}.tar.gz
+        pwn.conf 
+             50916e4e45d026422cd6bfe8de50e7246c61b0b1e0007571e7c04a994282fe89  
+         cac0a12eea8abd3d2ee21632e7f2281e7e35c2d7839cfbcba83ae5d0e8f427e9cc2462a6d17d187252b99d9dbbb14393b9d5a63996c42043f553e9b66bfe9e07  
+
+prepare   {
+  cd ${_pyname}-${version}
+  sed  s|>=1.0.2rc1,<1.0.2rc4||  -i setup.py
+}
+
+build   {
+  cd ${_pyname}-${version}
+  python setup.py build
+}
+
+check   {
+  cd "${_pyname}-${version}"
+  PYTHONPATH=. PWNLIB_NOTERM=true python -c  import pwn 
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install -O1 --root=$PKG --skip-build --only-use-pwn-command
+  install -Dm 644 "${srcdir}/pwn.conf" -t "${PKG}/etc"
+  install -Dm 644 LICENSE-pwntools.txt -t "${PKG}/usr/share/licenses/${name}"
+  rm -f $PKG/usr/lib/python*/site-packages/*.{txt,md}
+}
+
+# vim:set ts=2 sw=2 et:

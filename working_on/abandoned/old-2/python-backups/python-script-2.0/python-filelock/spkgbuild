@@ -1,0 +1,16 @@
+# description : A platform independent file lock
+  # depends : python
+  # depends : python2
+
+url=https://github.com/benediktschmitt/py-filelock
+name=python-filelock python2-filelock
+version=3.0.12
+release=5
+
+source="https://github.com/benediktschmitt/py-filelock/archive/v$version.tar.gz"
+
+build() {
+   cd py-filelock-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

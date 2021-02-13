@@ -1,0 +1,44 @@
+# description : "Python style guide checker"
+
+pkgbase=python-pycodestyle
+version=2.6.0
+release=3
+url="https://github.com/PyCQA/pycodestyle"
+source="$pkgbase-$version.tar.gz::https://github.com/PyCQA/pycodestyle/archive/$version.tar.gz"
+sha512sums=251b2526edc9759aa07b43c23c2785ebf2b7c4cca7e70444b8f79ff72cfb842ca49b929c01faba307534e4f213247597739ba777181fca6048d6cfae67cd25b6
+
+prepare {
+  cp -a pycodestyle-$version{,-py2}
+
+}
+
+build()-delete {
+   cd "$srcdir"/pycodestyle-$version
+  python setup.py build
+
+   cd "$srcdir"/pycodestyle-$version-py2
+}
+
+check {
+   cd "$srcdir"/pycodestyle-$version
+  python -m unittest discover
+
+   cd "$srcdir"/pycodestyle-$version-py2
+}
+
+package_python-pycodestyle {
+  # depends : python-setuptools
+  replaces=pep8-python3 pep8
+
+   cd pycodestyle-$version
+  python setup.py build
+  python setup.py install -O1   --root="$PKG/"
+
+}
+
+
+   cd pycodestyle-$version-py2
+  mv $PKG/usr/bin/pycodestyle{,2}
+
+}
+

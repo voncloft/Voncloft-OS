@@ -1,0 +1,21 @@
+# description : Internationalization extension for SQLAlchemy models 
+# depends :   python   python-sqlalchemy   python-sqlalchemy-utils   python-six  
+
+_name=sqlalchemy-i18n
+name=python-sqlalchemy-i18n
+version=1.0.3
+release=4
+source= ${name}-${version}.tar.gz::https://github.com/kvesteri/sqlalchemy-i18n/archive/${version}.tar.gz 
+
+build-old()   {
+  cd ${_name}-${version}
+  python setup.py build-old()
+}
+
+build()   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

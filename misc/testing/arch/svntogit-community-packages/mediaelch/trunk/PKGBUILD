@@ -1,0 +1,33 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Matt Harrison <matt@mistbyte.com>
+
+pkgname=mediaelch
+pkgver=2.8.6
+pkgrel=1
+pkgdesc='Media Manager for handling Movies, TV Shows and Concerts/Music Videos for Kodi'
+url='https://www.mediaelch.de/mediaelch/'
+arch=('x86_64')
+license=('LGPL3')
+depends=('glibc' 'gcc-libs' 'libmediainfo' 'qt5-declarative' 'qt5-multimedia' 'qt5-script' 'quazip')
+source=(https://github.com/Komet/MediaElch/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('7713e689cea1eb614f9354df27801afb991fd8d4faa7b95503802c79c1ebc8fa')
+b2sums=('d8dec33d4ca777f9ddafce3923125f237b2bd446df5621d78082282b8c3c5a08577da88c573fbb22a3262fb3cb4627121a88ada2a1343fe6c808c648e6007c51')
+
+prepare() {
+  cd MediaElch-${pkgver}
+  sed 's|quazip/quazip/|QuaZip-Qt5-1.1/quazip/|g' -i src/*/*.cpp src/*/*.h
+  sed 's|lquazip5|lquazip1-qt5|g' -i MediaElch.pro
+}
+
+build() {
+  cd MediaElch-${pkgver}
+  qmake
+  make SUBLIBS="-lquazip1-qt5"
+}
+
+package() {
+  cd MediaElch-${pkgver}
+  make INSTALL_ROOT="${pkgdir}" install
+}
+
+# vim: ts=2 sw=2 et:

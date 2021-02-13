@@ -1,0 +1,18 @@
+# description : An improved Python library to control i3wm
+# depends : python python-xlib
+
+_name=i3ipc-python
+url=https://github.com/altdesktop/${_name}
+_name=i3ipc-python
+name=python-i3ipc
+version=2.2.1
+release=2
+
+source="https://github.com/altdesktop/${_name}/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+     cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

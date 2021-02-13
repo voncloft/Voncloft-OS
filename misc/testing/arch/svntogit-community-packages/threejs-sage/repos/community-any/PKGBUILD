@@ -1,0 +1,20 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=threejs-sage
+pkgver=r125
+pkgrel=1
+pkgdesc='Custom build of Three.js for SageMath'
+url='https://threejs.org/'
+arch=(any)
+license=(MIT)
+depends=()
+conflicts=(three.js)
+source=("https://github.com/sagemath/threejs-sage/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('157cf42aa1c25a2499fc25cf71432f35dd8d00f4cb60cca99e6fdcdbcde189fe')
+
+package() {
+  cd $pkgname-$pkgver
+  mkdir -p "$pkgdir"/usr/share/threejs
+  cp -ar build version "$pkgdir"/usr/share/threejs
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
+}

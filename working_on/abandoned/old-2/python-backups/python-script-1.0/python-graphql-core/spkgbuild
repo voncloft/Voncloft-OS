@@ -1,0 +1,17 @@
+# description : GraphQL base implementation for Python
+# depends : 
+
+_tag=3267c4c5c5ea06968beb59f16425de4a4b835ee1
+url=https://github.com/graphql-python/graphql-core
+name=python-graphql-core
+version=3.1.2
+release=3
+
+source="git+https://github.com/graphql-python/graphql-core.git#tag=${_tag}
+options="checksum"
+
+build() {
+   cd graphql-core
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

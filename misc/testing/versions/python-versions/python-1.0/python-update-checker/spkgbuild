@@ -1,0 +1,26 @@
+
+name=python-update-checker
+version=0.18.0
+release=3
+# description : A python module that will check for package updates"
+# depends :   python-requests  
+provides=  python-update_checker  
+conflicts=  python-update_checker  
+replaces=  python-update_checker  
+source="https://pypi.io/packages/source/u/update_checker/update_checker-$version.tar.gz" 
+
+build   {
+  cd update_checker-$version
+  python setup.py build
+}
+
+check   {
+  cd update_checker-$version
+  pytest
+}
+
+package   {
+  cd update_checker-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

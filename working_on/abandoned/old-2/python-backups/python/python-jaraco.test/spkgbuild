@@ -1,0 +1,43 @@
+# description : "Testing support by jaraco"
+# depends : python-jaraco python-jaraco.context python-toml python-more-itertools
+
+name=python-jaraco.test
+version=4.0.1
+release=1
+url="https://github.com/jaraco/jaraco.test"
+make# depends : python-setuptools-scm
+check# depends : python-pytest-black python-pytest-checkdocs python-pytest-cov
+              python-pytest-flake8 python-pytest-mypy
+source="https://github.com/jaraco/jaraco.test/archive/v$version/$name-$version.tar.gz"
+sha512sums=56538088f01c0c0e8ee89dd76e2cc37c48893e7319c747ee69e3f89aca41bcd00260d61cdd50601786e932c016b92e0c8f656b4eb4c4e3afae3b18173251051c
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+prepare {
+   cd jaraco.test-$version
+  # The jaraco.test.pytest module is not discovered if no __init__.py is present
+  touch jaraco/test/pytest/__init__.py
+}
+
+build()-delete {
+   cd jaraco.test-$version
+  python setup.py build
+}
+
+check {
+   cd jaraco.test-$version
+  python -m pytest
+}
+
+options="!checksum"
+
+build() {
+   cd jaraco.test-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  rm $PKG/usr/lib/python3.9/site-packages/jaraco/__init__.py \
+     $PKG/usr/lib/python3.9/site-packages/jaraco/__pycache__/__init__.cpython-39.pyc \
+     $PKG/usr/lib/python3.9/site-packages/jaraco/__pycache__/__init__.cpython-39.opt-1.pyc
+
+}

@@ -1,0 +1,15 @@
+
+name=python-mdx-video
+_pipname=mdx_video
+version=0.1.8
+release=6
+# description : Python-Markdown extension for easy video embedding"
+# depends :   python  
+source="https://pypi.python.org/packages/source/m/${_pipname}/${_pipname}-${version}.tar.gz" 
+
+package   {
+  cd "$srcdir/$_pipname-$version"
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

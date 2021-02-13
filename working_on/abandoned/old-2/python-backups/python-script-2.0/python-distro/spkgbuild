@@ -1,0 +1,18 @@
+# description : Linux OS platform information API
+  # depends : python python-setuptools
+  # depends : python2 python2-setuptools
+
+url=https://github.com/nir0s/distro
+name=python-distro python2-distro
+version=1.5.0
+release=3
+
+source="https://github.com/nir0s/distro/archive/v${version}/${pkgbase}-${version}.tar.gz"
+options=!makeflags
+
+build() {
+   cd distro-${version}
+   cd distro-${version}-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

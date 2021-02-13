@@ -1,0 +1,42 @@
+# description : "lightweight template library"
+# depends : python
+
+_name=wheezy.template
+name=python-wheezy-template
+version=3.0.3
+release=1
+url="https://github.com/akornatskyy/${_name}"
+make# depends : python-setuptools cython
+check# depends : python-pytest
+#source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+source="${name}-${version}.tar.gz::${url}/archive/${version}.tar.gz"
+sha256sums=37480d916bc38b4c32c74d7cd76143e1f36c6d48ca796fcc581276f9f59be65e
+b2sums=6ad64816b9c5a656539333655053b43a315b67de18a5eddb7ae63406bde8754f1e15b5661f99eaab6da16ab732eb4dd4637e739c9f8b41c2f137a0aa26ebbfdf
+
+prepare {
+     cd "${srcdir}"/${_name}-${version}
+
+    # https://github.com/akornatskyy/wheezy.template/pull/33
+    sed -i s/from mock import/from unittest.mock import/ src/wheezy/template/tests/test_loader.py
+}
+
+build()-delete {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    PYTHONPATH="$PWD/src" pytest --import-mode=importlib
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

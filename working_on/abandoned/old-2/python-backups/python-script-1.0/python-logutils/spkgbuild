@@ -1,0 +1,16 @@
+# description : Python module to parse metadata in video files.
+# depends : python
+
+url=https://bitbucket.org/vinay.sajip/logutils/
+name=python-logutils
+version=0.3.5
+release=8
+
+source="https://pypi.python.org/packages/source/l/logutils/logutils-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${srcdir}/${_pkgbase}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

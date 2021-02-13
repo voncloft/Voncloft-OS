@@ -1,0 +1,15 @@
+# description : A pluggable API specification generator - currently supports the OpenAPI Specification
+# depends : python
+
+name=python-apispec
+version=4.0.0
+release=3
+
+source="https://github.com/marshmallow-code/apispec/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+  cd apispec-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

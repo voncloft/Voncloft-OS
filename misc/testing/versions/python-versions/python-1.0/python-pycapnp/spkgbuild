@@ -1,0 +1,24 @@
+
+name=python-pycapnp
+version=1.0.0
+release=1
+# description : A cython wrapping of the C++ Cap n Proto library"
+# depends :   capnproto   python  
+source="https://github.com/capnproto/pycapnp/archive/v$version/$name-$version.tar.gz" 
+
+build   {
+  cd pycapnp-$version
+  python setup.py build
+}
+
+check   {
+  cd pycapnp-$version
+  PYTHONPATH="build/lib.linux-$CARCH-3.9" pytest
+}
+
+package   {
+  cd pycapnp-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.md -t $PKG/usr/share/licenses/$name/
+}

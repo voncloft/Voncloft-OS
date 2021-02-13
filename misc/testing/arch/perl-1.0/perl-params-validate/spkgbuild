@@ -1,0 +1,23 @@
+# description : Validate sub params against a spec
+# depends : perl perl-module-implementation
+
+name=perl-params-validate
+version=1.29
+release=5
+url=https://search.cpan.org/dist/Params-Validate
+make# depends : perl-module-build
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-Validate-${version}.tarsource=.gz"
+options=!checksum
+sha256sums=49a68dfb430bea028042479111d19068e08095e5a467e320b7ab7bde3d729733
+
+build-delete {
+  cd  Params-Validate-${version}
+  perl ./Build.PL --installdirs=vendor
+  ./Build
+}
+build() {
+  cd  Params-Validate-${version}
+  ./Build install --destdir=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

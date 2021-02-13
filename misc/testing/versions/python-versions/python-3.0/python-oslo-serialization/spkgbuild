@@ -1,0 +1,27 @@
+# description : Oslo Serialization library"
+# depends :   python-six   python-pbr   python-babel   python-msgpack   python-oslo-utils 
+
+name=python-oslo-serialization
+version=4.0.1
+release=3
+          python-pytz  
+source="https://github.com/openstack/oslo.serialization/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd oslo.serialization-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd oslo.serialization-$version
+  stestr run
+}
+
+build()   {
+  cd oslo.serialization-$version
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

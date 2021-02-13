@@ -1,0 +1,24 @@
+# description : "HTTPS CredSSP authentication with the requests library"
+# depends : python python-pyopenssl python-requests python-ntlm-auth
+
+name=python-requests-credssp
+_module=requests-credssp
+version=1.2.0
+release=2
+url="https://github.com/jborean93/requests-credssp"
+make# depends : python-setuptools
+source="${name}-${version}.tar.gz::https://github.com/jborean93/requests-credssp/archive/v${version}.tar.gz"
+sha512sums=55458773cbf14a468d22d0b04186611385ff24fceda85052e69981bd6d4fd32a46f96b95fa36724b72fd9719485b2ed8906d1927284157e7bc685c0c42c2312c
+
+build()-delete {
+     cd "${_module}-${version}"
+    python setup.py build
+}
+
+options="!checksum"
+
+build() {
+     cd "${_module}-${version}"
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

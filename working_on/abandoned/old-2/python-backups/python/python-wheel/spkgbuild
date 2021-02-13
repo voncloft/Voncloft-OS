@@ -1,0 +1,58 @@
+# description : "A built-package format for Python"
+
+_pypiname=wheel
+pkgbase=python-wheel
+version=0.36.2
+release=1
+url="https://pypi.python.org/pypi/wheel"
+make# depends : python-packaging python-setuptools
+check# depends : python-jsonschema python-pytest python-keyring python-keyrings-alt
+              python-xdg
+source="https://pypi.io/packages/source/w/wheel/$_pypiname-$version.tar.gz"
+source="$name-$version.tar.gz::https://github.com/pypa/wheel/archive/$version.tar.gz"
+sha512sums=23f3dd0540ecc8e762f37a4bb69713abe99125a605c03b1a3412cec910fb7a6cea3eee3910d7c98122b276170a17414c9132b57b57a30a4ba1283cea8f9e20fa
+
+prepare {
+  # dont depend on python-coverage for tests
+  sed -i s/--cov=wheel// wheel-$version/setup.cfg
+
+  # https://github.com/pypa/wheel/pull/365 but why?
+  rm -r wheel-$version/src/wheel/vendored
+  sed -i s/from .vendored.packaging import tags/from packaging import tags/ wheel-$version/src/wheel/bdist_wheel.py
+
+  cp -a wheel-$version{,-py2}
+}
+
+build()-delete {
+  export PYTHONHASHSEED=0
+
+   cd "$srcdir/wheel-$version"
+  python setup.py build
+
+   cd "$srcdir/wheel-$version-py2"
+}
+
+check {
+  # Hack entry points by installing it
+
+   cd wheel-$version
+  python setup.py build
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH" py.test
+}
+
+package_python-wheel {
+  # depends : python-packaging
+  opt# depends : python-keyring: for wheel.signatures
+  opt# depends : python-xdg: for wheel.signatures
+
+   cd "$srcdir/$_pypiname-$version"
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1 
+}
+
+
+   cd "$srcdir/$_pypiname-$version"
+  mv "$PKG/usr/bin/wheel" "$PKG/usr/bin/wheel2"
+}
+

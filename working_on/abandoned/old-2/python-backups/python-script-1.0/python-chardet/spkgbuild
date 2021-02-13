@@ -1,0 +1,18 @@
+   # description : Python3 module for character encoding auto-detection
+   # description : Python2 module for character encoding auto-detection
+   # depends : python-setuptools
+   # depends : python2-setuptools
+
+url=https://github.com/chardet/chardet
+name=python-chardet python2-chardet
+version=3.0.4
+release=7
+
+source="https://pypi.io/packages/source/c/chardet/chardet-${version}.tar.gz"
+
+build() {
+    cd chardet-$version
+    cd chardet-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,28 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Contributor: Lucas Saliés Brum <lucas at archlinux dot com dot br>
+# Contributor: Lukas Fleischer <archlinux at cryptocrack dot de>
+# Contributor: SmackleFunky <smacklefunky at optusnet dot com dot au>
+# Contributor: Slash <demodevil5 at yahoo dot com>
+
+pkgname=hsetroot
+pkgver=1.0.5
+pkgrel=1
+pkgdesc='Tool which allows you to compose wallpapers ("root pixmaps") for X. Fork by Hyriand'
+url=https://github.com/himdel/hsetroot
+license=('GPL')
+depends=('imlib2' 'libxinerama')
+arch=('x86_64')
+source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('b43f7cd75886e72cb6134446d383d7d9a684c818f2d8a0f829670c8dfca5eaaa1eb6c25f30dda41f3483609b25e8a44a3a3cb3a969bba7f77a9b9df712fa2167')
+
+build() {
+  cd $pkgname-$pkgver
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  install -Dt "$pkgdir"/usr/bin hsetroot hsr-outputs
+}
+
+# vim:set ts=2 sw=2 et:

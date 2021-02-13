@@ -1,0 +1,35 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Bernhard Walle <bernhard.walle@gmx.de>
+# Contributor: Michael Eckert <michael.eckert@linuxmail.org>
+# Contributor: Mathieu Pasquet <mathieui@mathieui.net>
+
+pkgname=crash
+pkgver=7.2.8
+pkgrel=1
+pkgdesc='Linux kernel crashdump analysis tool'
+url='https://people.redhat.com/~anderson'
+arch=(x86_64)
+license=(GPL)
+depends=(xz ncurses zlib)
+source=(https://people.redhat.com/~anderson/crash-$pkgver.tar.gz)
+sha256sums=('19abe7fcb6a392f8d741315993e3d8b1a8ea799e9ddb433f12f6db4c59e45751')
+
+prepare() {
+  cd crash-$pkgver
+
+  make gdb_unzip
+  sed -i '/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/' gdb-7.6/libiberty/configure
+}
+
+build() {
+  cd crash-$pkgver
+  make
+}
+
+package() {
+  cd crash-$pkgver
+
+  mkdir -p "$pkgdir"/usr/bin "$pkgdir"/usr/share/man/man8
+  install crash "$pkgdir"/usr/bin/
+  install crash.8 "$pkgdir"/usr/share/man/man8/
+}

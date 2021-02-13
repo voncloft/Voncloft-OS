@@ -1,0 +1,28 @@
+
+name=python-dogpile.cache
+version=1.1.2
+release=1
+# description : A caching front-end based on the Dogpile lock"
+# depends :   python-decorator   python-stevedore  
+               python-pytest-cov   python-pylibmc  
+source="https://pypi.io/packages/source/d/dogpile.cache/dogpile.cache-$version.tar.gz" 
+
+build   {
+  cd dogpile.cache-$version
+  python setup.py build
+}
+
+check   {
+  cd dogpile.cache-$version
+  python -m pytest -k  not test_memcached_backend and not test_redis_backend 
+  pifpaf --env-prefix DOGPILE run memcached --port 11234 -- python -m pytest tests/cache/test_memcached_backend.py
+  pifpaf --env-prefix DOGPILE run redis --port 11234 -- python -m pytest tests/cache/test_redis_backend.py
+}
+
+package   {
+  cd dogpile.cache-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}
+
+# vim:set ts=2 sw=2 et:

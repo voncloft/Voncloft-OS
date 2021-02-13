@@ -1,0 +1,49 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=tmuxp
+pkgver=1.7.2
+pkgrel=1
+pkgdesc="Tmux session manager built on libtmux"
+arch=('any')
+url="https://tmuxp.git-pull.com/en/latest/"
+license=('MIT')
+depends=('python-click' 'python-colorama' 'python-kaptan' 'python-setuptools' 'python-libtmux')
+checkdepends=('python-pytest' 'python-pytest-rerunfailures')
+source=("https://files.pythonhosted.org/packages/source/${pkgname::1}/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('35f71fa9da9b6149f0bef72bbe1ff108422d813236e7a8e599c9fea46fadd437f8947e2206a05041a7bbf41338b4adb0558c1f6a0b5b38a08af76fb48aae5549')
+b2sums=('1c3d4628dfbbbe2c985438c58384bc051b457fd8d7e913ad0727874ee9f24aabdc9034f2f79c65f3f98e3ad7ed615fa5995561d6cb455178345f48361f5955a3')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  # remove all hard version pinning:
+  # https://github.com/tmux-python/tmuxp/issues/432
+  sed -e 's/==/>=/g' -i requirements/*.txt
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  python setup.py build
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  # test_workspacebuilder.py::test_pane_order does not return:
+  # https://github.com/tmux-python/tmuxp/issues/377
+  pytest -v -k "not test_pane_order"
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}/"
+  # license
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+  # docs
+  install -vDm 644 {CHANGES,README.rst} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -vDm 644 examples/*.{json,yaml} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}/examples/"
+}
+
+# vim:set ts=2 sw=2 et:}

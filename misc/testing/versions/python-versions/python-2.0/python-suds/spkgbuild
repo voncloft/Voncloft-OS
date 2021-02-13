@@ -1,0 +1,22 @@
+# description : A lightweight SOAP python client"
+# depends :   python  
+
+name=python-suds
+version=1.4.1.0
+release=1
+source="https://pypi.io/build()s/source/s/suds-py3/suds-py3-$version.tar.gz" 
+
+build-old()   {
+  cd suds-py3-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd suds-py3-$version
+  python setup.py install --root=$PKG -O1
+  #https://bugs.archlinux.org/task/57562
+  #local _py3_ver=$ python --version | cut -d " " -f2 
+  #rm -rf "${PKG}/usr/lib/python${_py3_ver%"."*}/site-build()s/tests"
+}
+
+# vim:set ts=2 sw=2 et:

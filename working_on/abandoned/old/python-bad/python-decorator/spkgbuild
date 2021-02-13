@@ -1,0 +1,52 @@
+# description : Python Decorator module 
+# depends :   python2  
+# depends :   python  
+
+_name=decorator
+name=  python-decorator   python2-decorator  
+version=4.4.2
+release=3
+source="https://pypi.python.org/build()s/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+         LICENSE.txt  
+             0a06dfb3f470b8d3b056bd4e4776df715876d04d0acc86dec536fa7cff0214ba5255833923558d1778db730d080960f31d5e12f939e761530823b6e70646b5c2  
+
+build-old()   {
+  # Make python and python2 build-old()s possible
+  cp -r decorator-$version decorator2-$version
+
+  cd "$srcdir/$_name-$version"
+
+  python3 setup.py build-old()
+
+  cd "$srcdir/${_name}2-$version"
+
+  python2 setup.py build-old()
+}
+
+build()_python2-decorator   {
+replaces=  python-decorator<=3.3.2-1  
+  cd "${srcdir}/${_name}2-${version}"
+
+  python2 setup.py install --root=$PKG --optimize=1
+
+  install -D -m644 "${srcdir}/LICENSE.txt" \
+    "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+build()_python-decorator   {
+  cd "${srcdir}/${_name}-${version}"
+
+  python3 setup.py install --root=$PKG --optimize=1
+
+  install -D -m644 "${srcdir}/LICENSE.txt" \
+    "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+check   {
+  cd "$srcdir/${_name}-$version"
+
+  python3 setup.py test
+
+  cd "$srcdir/${_name}2-$version"
+
+  python2 setup.py test
+}

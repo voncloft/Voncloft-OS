@@ -1,0 +1,24 @@
+# description : An implementation of the JSON Patch format"
+# depends :  "python-jsonpointer" 
+
+name=python-jsonpatch
+version=1.28
+release=1
+source="https://github.com/stefankoegl/python-json-patch/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd python-json-patch-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-json-patch-$version
+  coverage run --source=jsonpatch tests.py
+}
+
+build()_python-jsonpatch   {
+  cd python-json-patch-$version
+
+  install -Dm644 COPYING $PKG/usr/share/licenses/$name/COPYING
+  python setup.py install --prefix=/usr --root=$PKG
+}

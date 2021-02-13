@@ -1,0 +1,34 @@
+# description : Net::Dropbox::API - Perl dropbox API interface
+# depends : perl-common-sense perl-data-random perl-http-message perl-json perl-libwww perl-mouse perl-net-oauth perl-uri perl-lwp-protocol-https
+
+name=perl-net-dropbox-api
+version=1.9
+release=9
+url=https://search.cpan.org/~norbu/Net-Dropbox-API/lib/Net/Dropbox/API.pm
+check# depends : perl-test-pod perl-test-pod-coverage
+source="https://search.cpan.org/CPAN/authors/id/N/NO/NORBU/Net-Dropbox-API-${version}.tar.gz"
+options="!checksum"
+sha1sums=c1c5ba827492e171cb65124b65ece4da2442ea84
+
+build-delete {
+  cd $srcdir/Net-Dropbox-API-${version}
+  PERL_USE_UNSAFE_INC=1 \
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd $srcdir/Net-Dropbox-API-${version}
+  make test
+}
+
+build() {
+  cd $srcdir/Net-Dropbox-API-${version}
+  make DESTDIR=$PKG install
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

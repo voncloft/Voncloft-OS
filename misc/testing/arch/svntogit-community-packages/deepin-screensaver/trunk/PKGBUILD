@@ -1,0 +1,25 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=deepin-screensaver
+pkgver=5.0.4
+pkgrel=1
+pkgdesc='Deepin screensaver viewer and tools'
+arch=('x86_64')
+url="https://github.com/linuxdeepin/deepin-screensaver"
+license=('GPL3')
+depends=('qt5-declarative' 'qt5-x11extras' 'libxss' 'xscreensaver')
+makedepends=('qt5-tools' 'python')
+groups=('deepin')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-screensaver/archive/$pkgver.tar.gz")
+sha512sums=('0e4c2b4cbec7720b7ea7c1705d486505787c239ef09485254c24094123d8c396b759c9f40efc723a2fee84a072a5f04b54b604922817b2c254954f7a7fdd598b')
+
+build() {
+  cd deepin-screensaver-$pkgver
+  qmake-qt5 PREFIX=/usr
+  make
+}
+
+package() {
+  cd deepin-screensaver-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+}

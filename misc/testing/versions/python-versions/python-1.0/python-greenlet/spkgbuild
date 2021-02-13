@@ -1,0 +1,43 @@
+
+pkgbase=python-greenlet
+name= python-greenlet python2-greenlet 
+version=1.0.0
+release=1
+# description : Lightweight in-process concurrent programming"
+source="https://files.pythonhosted.org/packages/source/g/greenlet/greenlet-${version}.tar.gz" 
+
+prepare   {
+    cp -a greenlet-$version{,-py2}
+}
+
+build   {
+	cd "$srcdir"/greenlet-$version
+	python setup.py build
+
+    cd "$srcdir"/greenlet-$version-py2
+    python2 setup.py build
+}
+
+check   {
+    cd "$srcdir"/greenlet-$version
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.9" python -m unittest discover -v greenlet.tests
+
+    cd "$srcdir"/greenlet-$version-py2
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-2.7" python2 -m unittest discover -v greenlet.tests
+}
+
+package_python-greenlet   {
+    # depends :   python  
+
+    cd greenlet-$version
+    python setup.py install -O1 --root=$PKG
+    install -Dm0644 LICENSE.PSF $PKG/usr/share/licenses/$name/LICENSE.PSF
+}
+
+package_python2-greenlet   {
+    # depends :   python2  
+
+	cd greenlet-$version-py2
+	python2 setup.py install -O1 --root=$PKG
+	install -Dm0644 LICENSE.PSF $PKG/usr/share/licenses/$name/LICENSE.PSF
+}

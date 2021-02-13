@@ -1,0 +1,30 @@
+# description : Data tables useful in parsing HTML
+# depends : perl
+# Conributor: kevin <kevin@archlinux.org>
+
+name=perl-html-tagset
+version=3.20
+release=10
+url=https://search.cpan.org/dist/HTML-Tagset/
+source="https://www.cpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-$version.tarsource=.gz"
+options=!checksum
+md5sums=d2bfa18fe1904df7f683e96611e87437
+
+build-delete {
+  cd HTML-Tagset-$version
+  # install module in vendor directories.
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd HTML-Tagset-$version
+  make test
+}
+
+build() {
+  cd HTML-Tagset-$version
+  make install DESTDIR=$PKG
+}
+
+# vim: ts=2 sw=2 et ft=sh

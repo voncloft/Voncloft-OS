@@ -1,0 +1,28 @@
+# description : Perl/CPAN Module DateTime::Cron::Simple
+
+name=perl-datetime-cron-simple
+version=0.2
+release=11
+url=https://search.cpan.org/~bits/DateTime-Cron-Simple/
+source="https://www.cpan.org/authors/id/B/BI/BITS/DateTime-Cron-Simple-$version.tar.gz"
+options="!checksum"
+sha256sums=d9a6b9450550d657714b105c151d7b949da3f81fc38ac9da19cbac04e0130012
+
+build-delete {
+   cd $sr cdir/DateTime-Cron-Simple-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/DateTime-Cron-Simple-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

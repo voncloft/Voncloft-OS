@@ -1,0 +1,22 @@
+# description : Library to refactor python code through AST manipulation 
+# depends :   python  
+
+name=python-pasta
+version=0.2.0
+release=3
+source="https://github.com/google/pasta/archive/v${version}.tar.gz" 
+
+build-old()   {
+  cd "$srcdir/pasta-$version"
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd "pasta-$version"
+
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

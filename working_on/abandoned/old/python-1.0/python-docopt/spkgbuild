@@ -1,0 +1,26 @@
+# Maintainer: Muflone http://www.muflone.com/contacts/english/
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+
+name=python-docopt
+_name=docopt
+version=0.6.2
+release=9
+pkgdesc="Pythonic argument parser, that will make you smile"
+url="https://github.com/docopt/docopt"
+depends=('python')
+makedepends=('python-setuptools')
+source=("https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz")
+sha256sums=('49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491')
+
+build() {
+  # Build Python 3.x module
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py build
+}
+
+package() {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build --optimize=1 --root="${pkgdir}"
+  install -D -m 0644 "LICENSE-MIT" "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+}

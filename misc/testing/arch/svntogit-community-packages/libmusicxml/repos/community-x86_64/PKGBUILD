@@ -1,0 +1,30 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=libmusicxml
+pkgver=3.18
+pkgrel=1
+pkgdesc="Portable C++ library around the MusicXML format"
+arch=('x86_64')
+url="https://github.com/grame-cncm/libmusicxml"
+license=('MPL2')
+depends=('gcc-libs' 'glibc')
+makedepends=('cmake')
+provides=('libmusicxml2.so')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/grame-cncm/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('470cf572adeebc9ffd1d5be3bb391dd0e92017d3326222cc3331cf562cfa72b313deecdab745e72f45c4e638b20347dba9796c4f6ca254cb2dfdf1ac0e9ab5b9')
+
+build() {
+  cd "$pkgname-$pkgver"
+  # CMakeLists.txt is in build and generates Makefile in root
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        build
+  make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+  install -vDm 644 readme.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  mv -v "${pkgdir}/usr/"{CHANGELOG.txt,README.html} \
+    "${pkgdir}/usr/share/doc/${pkgname}"
+}

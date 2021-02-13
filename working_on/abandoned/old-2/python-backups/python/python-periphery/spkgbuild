@@ -1,0 +1,29 @@
+# description : "A pure Python 2/3 library for peripheral I/O GPIO, LED, PWM, SPI, I2C, MMIO, Serial in Linux"
+# depends : python
+
+name=python-periphery
+version=2.1.1
+release=1
+url="https://github.com/vsergeev/python-periphery"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="$name-$version.tar.gz::https://github.com/vsergeev/python-periphery/archive/v$version.tar.gz"
+sha512sums=2012896890c8eb8599d54f7f9266a2acfb1386d917101f79607b20a3f9ff82d3588ea092c5137be401d1321c2358e272aaa345bf6fc327b0613f49c04923af4e
+
+build()-delete {
+   cd python-periphery-$version
+  python setup.py build
+}
+
+check {
+   cd python-periphery-$version
+  python setup.py pytest || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd python-periphery-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

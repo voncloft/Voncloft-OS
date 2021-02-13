@@ -1,0 +1,31 @@
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Contributor: Francisco Lopes
+
+pkgname=interception-caps2esc
+pkgver=0.3.2
+pkgrel=1
+pkgdesc='Interception plugin that transforms the most useless key ever in the most useful one'
+arch=('x86_64')
+license=('MIT')
+url='https://gitlab.com/interception/linux/plugins/caps2esc'
+depends=('interception-tools')
+makedepends=('cmake')
+source=("$pkgname-$pkgver.tar.gz::https://gitlab.com/interception/linux/plugins/caps2esc/-/archive/v$pkgver/caps2esc-v$pkgver.tar.gz")
+sha256sums=('d8a5c7a23cb7368fde2b91a0b5481d8ce906af146dd9a49f609052f2cf1d212c')
+
+build() {
+    cmake -B build \
+          -S "caps2esc-v${pkgver}" \
+          -DCMAKE_INSTALL_PREFIX=/usr \
+          -DCMAKE_BUILD_TYPE=None \
+          -Wno-dev
+    cmake --build build
+}
+
+package() {
+    install -Dm644 "caps2esc-v${pkgver}/README.md" -t "$pkgdir/usr/share/doc/$pkgname"
+    install -Dm644 "caps2esc-v${pkgver}/LICENSE.md" -t "$pkgdir/usr/share/licenses/$pkgname"
+
+    cd build
+    make DESTDIR="$pkgdir/" install
+}

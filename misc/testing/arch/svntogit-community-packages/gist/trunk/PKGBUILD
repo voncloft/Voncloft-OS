@@ -1,0 +1,32 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Chris van Dijk (quigybo) <quigybo at hotmail dot com>
+# Contributor: Scott Olson <scott at scott-olson dot org>
+
+pkgname=gist
+pkgver=6.0.0
+pkgrel=1
+pkgdesc='Potentially the best command line gister'
+url='https://github.com/defunkt/gist'
+arch=('any')
+license=('custom:MIT')
+depends=('ruby')
+makedepends=('ruby-rake' 'ruby-ronn')
+optdepends=("xclip: put pasted gist's url into X selection automagically"
+            "xsel: put pasted gist's url into X selection automagically")
+source=(https://github.com/defunkt/${pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('9544d21c68ec46265c310f74af10c63cf7129868f83e1cdf5c76d73641ba14a97e6e689fb17696e7799e57b141a7bdad164ea7c9ce3a7293a81d2d1d866168c7')
+b2sums=('ba5d0fef518bb0f1baca760d71eb259942057720932f6452adc3b420b70408b34ae2eb221f41320cf8aaadf6eedb03470a39d17f5d721484d6cfff1d8c1d598e')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  rake build
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  PREFIX="${pkgdir}/usr" rake install
+  install -Dm 644 LICENSE.MIT -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

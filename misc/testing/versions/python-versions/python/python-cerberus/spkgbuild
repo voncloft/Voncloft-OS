@@ -1,0 +1,24 @@
+# description : Lightweight, extensible schema and data validation tool for Python dictionaries"
+# depends :   python  
+
+name=python-cerberus
+version=1.3.2
+release=3
+source="https://github.com/pyeve/cerberus/archive/$version.tar.gz" 
+
+build-old()   {
+  cd cerberus-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd cerberus-$version
+  python setup.py pytest --addopts cerberus
+}
+
+build()   {
+  cd cerberus-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

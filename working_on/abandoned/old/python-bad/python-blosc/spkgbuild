@@ -1,0 +1,26 @@
+# description : A Python wrapper for the extremely fast Blosc compression library"
+# depends :   python   blosc  
+
+name=python-blosc
+version=1.10.2
+release=1
+source="${name}-${version}.tar.gz::https://github.com/Blosc/python-blosc/archive/v${version}.tar.gz" 
+
+prepare   {
+  sed -e  /c-blosc/d  -e  s|blosc_static|blosc|  -i $pkgbase-$version/blosc/CMakeLists.txt # Use system blosc
+}
+ 
+build-old()   {
+  cd "$srcdir"/${pkgbase}-${version}
+  BLOSC_DIR=/usr
+  export BLOSC_DIR
+  python setup.py build-old()_clib
+  python setup.py build-old()_ext --inplace
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/${pkgbase}-${version}
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+  install -Dm644 LICENSES/PYTHON-BLOSC.txt $PKG/usr/share/licenses/$name/LICENSE
+}

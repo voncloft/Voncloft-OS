@@ -1,0 +1,28 @@
+# description : Python publish-subcribe library"
+# depends :   python  
+
+name=python-pypubsub
+_name=${name#python-}
+version=4.0.3
+release=3
+source=" $url/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+check   {
+  cd $_name-$version/tests/suite
+
+  PYTHONPATH=$PWD/../../src python -m pytest
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG  --optimize=1 --skip-build-old()
+
+  install -Dm 644 src/pubsub/LICENSE_BSD_Simple.txt $PKG/usr/share/licenses/$name/LICENSE
+}

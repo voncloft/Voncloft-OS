@@ -1,0 +1,48 @@
+# $Id$
+# Maintainer: Maxime Gauduin <alucryd@gmail.com>
+# Contributor: trya <tryagainprod@gmail.com>
+# Contributor: robb_force <robb_force@holybuffalo.net>
+
+pkgname=gens
+pkgver=2.15.5
+pkgrel=12
+pkgdesc='A Sega Genesis / Sega CD / Sega 32X emulator'
+arch=('x86_64')
+url='http://gens.sourceforge.net'
+license=('GPL')
+depends=('lib32-gtk2' 'lib32-libgl' 'lib32-sdl')
+makedepends=('gcc-multilib' 'lib32-gtk2' 'lib32-sdl')
+optdepends=('lib32-alsa-plugins: Sound support for PulseAudio'
+            'lib32-libpulse: Sound support for PulseAudio')
+makedepends=('imagemagick' 'nasm')
+options=('!buildflags')
+source=("https://downloads.sourceforge.net/gens/gens-${pkgver}.tar.gz"
+        'gens.desktop')
+sha256sums=('51910d3056da9ffbb2c01cfec064998c9a4cad0cb379d703ec1b93c83dba305a'
+            'd19097be687aba22ac4ad4d6583982e7c70a8c8517548412b6ce1b6418f7d03f')
+
+build() {
+  cd gens-${pkgver}
+
+  export CC='gcc -m32'
+  export CXX='g++ -m32'
+  export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
+  export LDFLAGS='-Wl,-z,noexecstack'
+
+  ./configure \
+    --host='i686-unknown-linux-gnu' \
+    --prefix='/usr'
+  make
+}
+
+package() {
+  cd gens-${pkgver}
+
+  make DESTDIR="${pkgdir}" install
+
+  install -dm 755 "${pkgdir}"/usr/share/{applications,pixmaps}
+  install -m 644 ../gens.desktop -t "${pkgdir}"/usr/share/applications/
+  convert "${pkgdir}"/usr/share/{gens/Gens2.ico[1],pixmaps/gens.png}
+}
+
+# vim: ts=2 sw=2 et:

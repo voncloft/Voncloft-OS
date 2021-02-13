@@ -1,0 +1,62 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Michal Bozon <michal.bozon__at__gmail.com>
+
+pkgbase=python-yaml
+name=(python-yaml python2-yaml)
+version=5.3.1
+release=4
+pkgdesc='Python bindings for YAML, using fast libYAML library'
+url='https://pyyaml.org/wiki/PyYAML'
+makedepends=('python' 'python2' 'libyaml' 'cython' 'cython2')
+source=(https://pyyaml.org/download/pyyaml/PyYAML-${version}.tar.gz)
+sha512sums=('87372877d396bd06cdb6b9052ef8822ef0589a211659bf27d7a1c4deca8429cb39e120a23e5d590d7adc0f8059ce1c8af42409bebd7c6d504d49dc8504d5683a')
+
+prepare() {
+  # Force cython rebuild
+  rm PyYAML-$version/ext/_yaml.c
+
+  cp -a PyYAML-$version{,-py2}
+}
+
+build() {
+  (
+    cd PyYAML-$version
+    python setup.py --with-libyaml build
+  )
+  (
+    cd PyYAML-$version-py2
+    python2 setup.py --with-libyaml build
+  )
+}
+
+check() {
+  (
+    cd PyYAML-$version
+    python -B setup.py test
+  )
+  (
+    cd PyYAML-$version-py2
+    python2 -B setup.py test
+  )
+}
+
+package_python-yaml() {
+  depends=('python' 'libyaml')
+
+  cd PyYAML-$version
+  python setup.py  --with-libyaml install --prefix=/usr --root="${pkgdir}" -O1 --skip-build
+  install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/${name}
+  install -Dm 644 CHANGES README -t "${pkgdir}"/usr/share/doc/${name}
+}
+
+package_python2-yaml() {
+  depends=('python2' 'libyaml')
+
+  cd PyYAML-$version-py2
+  python2 setup.py --with-libyaml install --prefix=/usr --root="${pkgdir}" -O1 --skip-build
+  install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/${name}
+  install -Dm 644 CHANGES README -t "${pkgdir}"/usr/share/doc/${name}
+}
+
+# vim: ts=2 sw=2 et:

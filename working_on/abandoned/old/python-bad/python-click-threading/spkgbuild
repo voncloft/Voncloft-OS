@@ -1,0 +1,29 @@
+# description : Multithreaded Click apps made easy"
+# depends :  "python-click" 
+
+_name=click-threading
+name=python-click-threading
+version=0.4.4
+release=9
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+#source="${_name}-${version}.tar.gz::https://github.com/click-contrib/${_name}/archive/${version}.tar.gz" 
+
+build-old()   {
+  cd "${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${_name}-${version}"
+  export PYTHONPATH=build-old()/lib:${PYTHONPATH}
+  py.test
+}
+
+build()   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}/"
+}

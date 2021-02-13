@@ -1,0 +1,28 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Roman Kyrylych <roman@archlinux.org>
+# Contributor: yosh64 <yosh64@gmail.com>
+
+pkgname=mtpaint
+pkgver=3.50.03
+pkgrel=1
+pkgdesc='Paint program for creating icons and pixel art'
+arch=(x86_64)
+url='https://github.com/wjaguar/mtpaint'
+license=(GPL3)
+depends=(gtk3 openjpeg2)
+makedepends=(git)
+optdepends=('gifsicle: export GIF files from mtPaint')
+source=("git+$url#commit=40bde4557c254188b2924c90f4a35eef784b0a12") # version: 3.50.03
+sha256sums=('SKIP')
+
+build() {
+  cd mtpaint
+  export CFLAGS="$(pkg-config openjp2 --cflags) -w $CFLAGS"
+  ./configure gtk3 --prefix=/usr --mandir=/usr/share/man \
+    man intl jpeg tiff cflags lcms2 jp2v2
+  make
+}
+
+package() {
+  make -C mtpaint DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,47 @@
+# description : Create bubble-babble fingerprints
+# depends : perl
+
+name=perl-digest-bubblebabble
+version=0.02
+release=6
+url=https://search.cpan.org/dist/Digest-BubbleBabble
+source="https://search.cpan.org/CPAN/authors/id/B/BT/BTROTT/Digest-BubbleBabble-$version.tar.gz"
+options="!checksum"
+sha512sums=7f5d7519184eed07e3b3ce302b7dd10980acf34af91f7ec8a317c2b7faf4a8a35dd4dadecf643c611456554ae7bfa82699afd80af195e801502047b243653ed5
+_distdir=Digest-BubbleBabble-$version
+
+build-delete {
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG     \
+      PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+      PERL_USE_UNSAFE_INC=1 \
+      MODULEBUILDRC=/dev/null
+
+    cd $srcdir/$_distdir
+    /usr/bin/perl Makefile.PL
+    make
+  
+}
+
+check {
+  cd $srcdir/$_distdir
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+    make test
+  
+}
+
+build() {
+  cd $srcdir/$_distdir
+  make install
+
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+
+# vim:set ts=2 sw=2 et:
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

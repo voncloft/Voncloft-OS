@@ -1,0 +1,24 @@
+
+name=python-pytables
+version=3.6.1
+release=7
+# description : A package for managing hierarchical datasets and designed to efficiently and easily cope with extremely large amounts of data"
+# depends :  blosc lzo hdf5 python-numexpr 
+source="https://github.com/PyTables/PyTables/archive/v${version}/${name}-${version}.tar.gz" 
+
+build   {
+  cd PyTables-${version}
+  python setup.py build --blosc=/usr --lzo=/usr --hdf5=/usr --bzip2=/usr
+}
+
+check   {
+  local python_version=$ python -c  import sys; print ".".join map str, sys.version_info[:2]     
+  cd PyTables-${version}/build/lib.linux-${CARCH}-${python_version}
+  PYTHONPATH="." python -m tables.tests.test_all  
+}
+
+package   {
+  cd PyTables-${version}
+  python setup.py install --skip-build --prefix=/usr --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/${name}/
+}

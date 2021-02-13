@@ -1,0 +1,16 @@
+# description : WebSocket client library for Python
+# depends : python-six
+
+url=https://github.com/${_pkgbase}/${_pkgbase}
+name=python-${_pkgbase}
+version=0.57.0
+release=3
+
+source="https://pypi.io/packages/source/w/${_pkgbase}/${__pkgbase}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${__pkgbase}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

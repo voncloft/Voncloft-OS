@@ -1,0 +1,26 @@
+
+pkgbase=python-argparse
+name=  python-argparse  
+version=1.4.0
+release=9
+source="https://pypi.python.org/packages/source/a/argparse/argparse-$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/argparse-$version
+  python setup.py build
+}
+
+check  {
+  cd "$srcdir"/argparse-$version
+  python setup.py test
+}
+
+package_python-argparse   {
+  # depends :   python  
+  # description : Python3 command-line parsing library"
+
+  cd argparse-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

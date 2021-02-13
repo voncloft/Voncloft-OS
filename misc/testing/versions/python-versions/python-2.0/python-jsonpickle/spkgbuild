@@ -1,0 +1,33 @@
+# description : Python library for serializing any arbitrary object graph into JSON"
+# depends :   python  
+
+name=python-jsonpickle
+version=1.5.1
+release=1
+               python-pymongo   python-ujson   python-pandas   python-pytest  
+source="https://github.com/jsonpickle/jsonpickle/archive/v$version/$name-$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+prepare   {
+  cd jsonpickle-$version
+  # do not run coverage and other non-integration tests in an integration test
+  sed -i  s/--flake8 --black --cov --cov-append//  pytest.ini
+}
+
+build-old()   {
+  cd jsonpickle-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd jsonpickle-$version
+  #https://github.com/jsonpickle/jsonpickle/issues/336
+  pytest --deselect tests/numpy_test.py::test_dtype_roundtrip
+}
+
+build()   {
+  cd jsonpickle-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

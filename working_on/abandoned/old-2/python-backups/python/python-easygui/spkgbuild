@@ -1,0 +1,26 @@
+# description : "Python module for very simple, very easy GUI programming"
+# depends : python tk
+
+name=python-easygui
+_pyname=easygui
+version=0.98.1
+release=6
+url="https://easygui.readthedocs.io"
+make# depends : python-setuptools
+source="$_pyname-$version.tar.gz::https://github.com/robertlugg/$_pyname/archive/$version.tar.gz"
+sha256sums=b46d1f06b85a2de2b15129906d21bb42bc66a6e800315fed57e634cf151fc083
+
+build()-delete {
+   cd $_pyname-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build(){
+   cd $_pyname-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  install -dm755 "$PKG/usr/share/licenses/$name"
+}

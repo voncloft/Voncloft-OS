@@ -1,0 +1,48 @@
+# description : A thin, practical wrapper around terminal styling, screen positioning, and keyboard input
+# depends : 
+
+name=python-blessed
+version=1.17.12
+release=1
+url=https://github.com/jquast/blessed
+  python-six
+  python-wcwidth
+
+make# depends : 
+  git
+  python-setuptools
+
+check# depends : 
+  python-tox
+
+_tag=b22d3aa6a348416e49d14ce9d42bac48f0593e73
+source=git+https://github.com/jquast/blessed.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd blessed
+
+  git describe --tags
+}
+
+build()-delete {
+   cd blessed
+
+  python setup.py build
+}
+
+check {
+   cd blessed
+
+  tox -e py39
+}
+
+options="!checksum"
+
+build() {
+   cd blessed
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

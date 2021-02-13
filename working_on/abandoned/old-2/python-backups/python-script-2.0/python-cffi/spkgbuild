@@ -1,0 +1,19 @@
+# description : Foreign Function Interface for Python calling C code
+  # depends : python-pycparser
+  # depends : python2-pycparser
+
+url=https://cffi.readthedocs.org/
+name=python-cffi python2-cffi
+version=1.14.4
+release=1
+
+source="https://foss.heptapod.net/pypy/cffi/-/archive/v$version/cffi-v$version.tar.bz2
+
+build() {
+   cd cffi-v$version
+   cd cffi-v$version-py2
+   cd cffi-v$version
+   cd cffi-v$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

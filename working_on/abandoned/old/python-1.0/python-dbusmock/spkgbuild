@@ -1,0 +1,27 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+name=python-dbusmock
+version=0.20.0
+release=1
+pkgdesc="Mock D-Bus objects for tests"
+url="https://github.com/martinpitt/python-dbusmock"
+depends=(python-dbus python-gobject)
+makedepends=(python-setuptools git)
+_commit=243fe6cab0d7407cf68af31e31e0add0e88ab65d  # tags/0.20.0^0
+source=("git+https://github.com/martinpitt/python-dbusmock#commit=$_commit")
+sha256sums=('SKIP')
+
+version() {
+  cd $name
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+build() {
+  cd $name
+  python setup.py build
+}
+
+package() {
+  cd $name
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

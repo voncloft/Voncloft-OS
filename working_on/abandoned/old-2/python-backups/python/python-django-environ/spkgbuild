@@ -1,0 +1,38 @@
+# description : "Utilize 12factor inspired environment variables to configure your Django application"
+# depends : python
+
+_name=django-environ
+name=python-django-environ
+version=0.4.5
+release=5
+url="https://github.com/joke2k/django-environ"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=99dc88974194d17528b9b92d0fef2f87c331146879e0e25d4f64e1c87db76d85f5d902d2977bb2f55bf9208d120814a1afa15cb857f2228dfa3c5a03aa6db7c1
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="${PWD}/build():${PYTHONPATH}"
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

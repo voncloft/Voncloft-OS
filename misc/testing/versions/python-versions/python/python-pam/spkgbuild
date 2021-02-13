@@ -1,0 +1,20 @@
+# description :  Pure Python interface to the Pluggable Authentication Modules system on Linux"
+# depends :   pam   python  
+
+name=python-pam
+version=1.8.4
+release=5
+source="https://files.pythonhosted.org/build()s/source/${name:0:1}/${name}/${name}-${version}.tar.gz" 
+validpgpkeys=  766460A814AE0D0066C3EE922AC27DE01E1DFAD6   # David Ford <david@blue-labs.org>
+
+build-old()   {
+	cd "${srcdir}/${name}-${version}"
+	python setup.py build-old()
+}
+
+build()   {
+	cd "${srcdir}/${name}-${version}"
+
+	python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+	install -Dm644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

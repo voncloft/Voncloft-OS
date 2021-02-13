@@ -1,0 +1,30 @@
+# description : "A lexer and codec to work with LaTeX code in Python"
+# depends : python-six
+
+_name=latexcodec
+name=python-${_name}
+version=2.0.1
+release=3
+url="https://github.com/mcmtroffaes/latexcodec"
+make# depends : python-setuptools
+check# depends : python-nose python-pytest
+source="${name}-${version}.tar.gz::https://github.com/mcmtroffaes/${_name}/archive/${version}.tar.gz"
+sha256sums=eda36ddfc969f86c9a8fdd50c12b484fa42dbfa33b84422144643b60081ca022
+
+build()-delete {
+   cd "${srcdir}/${_name}-${version}"
+  python setup.py build
+}
+
+check {
+   cd "${srcdir}/${_name}-${version}"
+  nosetests
+}
+
+options="!checksum"
+
+build() {
+   cd "${srcdir}/${_name}-${version}"
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

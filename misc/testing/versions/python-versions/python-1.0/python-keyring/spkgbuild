@@ -1,0 +1,31 @@
+
+name=python-keyring
+_name=keyring
+version=22.0.1
+release=1
+# description : Store and access your passwords safely 
+# depends :   python-entrypoints   python-secretstorage  
+             python-dbus: kwallet backend  
+
+build   {
+  cd $_name
+
+  python setup.py build
+}
+
+check   {
+  cd $_name
+
+  python setup.py pytest
+}
+
+package   {
+  cd $_name
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+
+  rm -rf $PKG/usr/lib/python3.9/site-packages/keyring/tests
+}
+
+# vim:set ts=2 sw=2 et:

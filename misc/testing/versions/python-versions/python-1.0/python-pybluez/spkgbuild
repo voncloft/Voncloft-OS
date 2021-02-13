@@ -1,0 +1,23 @@
+
+pkgbase=python-pybluez
+name= python-pybluez python2-pybluez 
+version=0.22
+release=6
+# description : Python wrapper for the BlueZ Bluetooth stack"
+source="https://github.com/karulis/pybluez/archive/$version.tar.gz" 
+
+package_python-pybluez   {
+  # depends :   python   bluez-libs  
+
+  cd "$srcdir"/pybluez-$version
+  python setup.py install --root=$PKG
+#  ln -s bluetooth/_bluetooth.so $PKG/usr/lib/python3.3/site-packages/_bluetooth.so
+}
+
+package_python2-pybluez   {
+  # depends :   python2   bluez-libs  
+
+  cd "$srcdir"/pybluez-$version
+  python2 setup.py install --root=$PKG
+#  ln -s bluetooth/_bluetooth.so $PKG/usr/lib/python2.7/site-packages/_bluetooth.so
+}

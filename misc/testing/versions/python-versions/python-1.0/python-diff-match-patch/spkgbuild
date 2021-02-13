@@ -1,0 +1,25 @@
+
+_pkg=diff-match-patch
+name=python-${_pkg}
+version=20200713
+release=3
+# description : Robust algorithms to perform the operations required for synchronizing plain text"
+# depends :   python  
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+
+build   {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pkg}-${version}
+  pytest
+}
+
+package   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build --optimize=1
+  find $PKG -name *_py2.* -delete
+  rm -r $PKG$ python -c "import site; print site.getsitepackages  [0] " /${_pkg//-/_}/tests
+}

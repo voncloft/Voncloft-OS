@@ -1,0 +1,44 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
+
+pkgname=mtools
+pkgver=4.0.26
+pkgrel=1
+pkgdesc="A collection of utilities to access MS-DOS disks"
+arch=('x86_64')
+url="https://www.gnu.org/software/mtools/"
+license=('GPL3')
+depends=('bash' 'glibc')
+makedepends=('libx11' 'texinfo')
+optdepends=('libx11: required by floppyd'
+            'libxau: required by floppyd')
+backup=("etc/${pkgname}.conf")
+source=("https://ftp.gnu.org/gnu/mtools/${pkgname}-${pkgver}.tar.bz2"{,.sig})
+sha512sums=('32303ea16314ca00f33aee103451958f13c71ab1f3975e9a1dd9236c8e775286985ee776c38c64a1f8f5f8d0a66cbf84643182913e4e2c2dcaff384a9acd8633'
+            'SKIP')
+b2sums=('02f75722e8569c75d09fbee8667b24d8fd5c685940b235de33e268b8a349a49798f50db22470200e9fa30244768c07a568bfe124969f2a34f652c157ddb37e89'
+        'SKIP')
+validpgpkeys=('51A23D9D7C4DF41AA48FA893E99CF5537790B839') # Alain KNAFF <alain@knaff.lu>
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  # comment entry in default config
+  sed -e '/^SAMPLE FILE$/s:^:# :' -i mtools.conf
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              --infodir=/usr/share/info \
+              --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+  install -vDm 644 mtools.conf -t "${pkgdir}/etc/"
+  install -vDm 644 {README,NEWS} -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

@@ -1,0 +1,25 @@
+
+name=python-rdflib
+version=5.0.0
+release=3
+# description : "A Python library for working with RDF, a simple yet powerful language for representing information"
+# depends : ('python-isodate' 'python-pyparsing')
+            'python-requests: for sparql support')
+              'python-doctest-ignore-unicode')
+source=(rdflib-$version.tar.gz::https://github.com/RDFLib/rdflib/tarball/$version)
+
+build-remove() {
+  cd RDFLib-rdflib-*
+  python setup.py build
+}
+
+check() {
+  cd RDFLib-rdflib-*
+  #python setup.py test # Will download and install rdflib again
+  nosetests3
+}
+
+build() {
+  cd RDFLib-rdflib-*
+  python setup.py install --root=$PKG --optimize=1
+}

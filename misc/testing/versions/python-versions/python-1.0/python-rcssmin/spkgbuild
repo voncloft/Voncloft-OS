@@ -1,0 +1,33 @@
+
+_name=rcssmin
+name=python-rcssmin
+version=1.0.6
+release=4
+# description : Fast CSS minifier for Python"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  # in the next release hopefully plain pytest -v
+  python run_tests.py -q tests
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  mv -v "${PKG}/usr/share/doc/"{${_name},${name}}
+}

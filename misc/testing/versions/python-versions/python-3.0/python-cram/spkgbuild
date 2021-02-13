@@ -1,0 +1,22 @@
+# description : Functional tests for command line applications 
+# depends :   python  
+
+name=python-cram
+version=0.7
+release=8
+source="https://bitheap.org/cram/cram-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/cram-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/cram-$version
+  PYTHONPATH="$PWD/build-old()/lib:$PYTHONPATH" PYTHON=python python scripts/cram tests
+}
+
+build()   {
+  cd cram-$version
+  python setup.py install --root=$PKG -O1
+}

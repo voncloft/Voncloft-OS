@@ -1,0 +1,19 @@
+# description : Python bindings for YAML, using fast libYAML library
+  # depends : python libyaml
+  # depends : python2 libyaml
+
+url=https://pyyaml.org/wiki/PyYAML
+name=python-yaml python2-yaml
+version=5.3.1
+release=4
+
+source="https://pyyaml.org/download/pyyaml/PyYAML-${version}.tar.gz"
+
+build() {
+     cd PyYAML-$version
+   cd PyYAML-$version
+     cd PyYAML-$version-py2
+   cd PyYAML-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

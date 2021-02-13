@@ -1,0 +1,29 @@
+# description : Parse a MIME Content-Type Header 
+# depends : perl perl-text-unidecode
+
+name=perl-email-mime-contenttype
+version=1.024
+release=2
+url=https://search.cpan.org/dist/Email-MIME-ContentType
+source="https://www.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-MIME-ContentType-$version.tar.gz"
+options="!checksum"
+sha256sums=42d164ac7ff4dc2ea848e710fe21fa85509a3bcbb91ed2d356e4aba951ed8835
+
+build-delete {
+   cd  $sr cdir/Email-MIME-ContentType-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd  $sr cdir/Email-MIME-ContentType-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

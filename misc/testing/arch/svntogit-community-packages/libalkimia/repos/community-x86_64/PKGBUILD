@@ -1,0 +1,31 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Laurent Carlier <lordheavym@gmail.com>
+# Contributor: gumper <gumper1034@gmail.com>
+
+pkgname=libalkimia
+pkgver=8.0.4
+pkgrel=1
+pkgdesc="A library with common classes and functionality used by finance applications for the KDE SC"
+arch=('x86_64')
+url="https://community.kde.org/Alkimia/libalkimia"
+license=('LGPL')
+depends=('qt5-webkit' 'knewstuff' 'kdelibs4support' 'hicolor-icon-theme' 'perl')
+makedepends=('cmake' 'doxygen' 'extra-cmake-modules' 'kdesignerplugin' 'plasma-framework' 'kpackage' 'kdoctools' 'kinit')
+source=(https://download.kde.org/stable/alkimia/$pkgver/alkimia-$pkgver.tar.xz{,.sig})
+validpgpkeys=('2060FF0BBF0E77C4E56DECE0B3DA98B373A0D6FA') # Ralf Habacker <ralf.habacker@freenet.de>
+sha256sums=('0004a7068dff0aa2cb6f47f70d21c129073be11f2edb21f14512bc4470487d1f'
+            'SKIP')
+
+build() {
+  mkdir build
+  cd build
+
+  cmake -DSHARE_INSTALL_DIR=/usr/share ../alkimia-${pkgver}
+  make
+}
+
+package() {
+  cd build
+
+  make DESTDIR="${pkgdir}" install
+}

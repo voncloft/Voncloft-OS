@@ -1,0 +1,19 @@
+# description : "A script for cloning a non-relocatable virtualenv."
+# depends : python
+
+name=python-virtualenv-clone
+version=0.5.4
+release=4
+url="https://github.com/edwardgeorge/virtualenv-clone"
+make# depends : python-setuptools
+options=!emptydirs
+source=https://files.pythonhosted.org/packages/source/v/virtualenv-clone/virtualenv-clone-$version.tar.gz
+sha256sums=665e48dd54c84b98b71a657acb49104c54e7652bce9c1c4f6c6976ed4c827a29
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/virtualenv-clone-$version"
+  python3 setup.py install --root=$PKG -O1
+}
+

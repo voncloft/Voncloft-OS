@@ -1,0 +1,50 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Wieland Hoffmann <the_mineo@web.de>
+
+pkgname=chromaprint
+pkgver=1.5.0
+pkgrel=3
+pkgdesc="Library for extracting fingerprints from any audio source"
+url="https://acoustid.org/chromaprint"
+arch=('x86_64')
+license=('LGPL2.1' 'MIT')
+depends=('gcc-libs' 'glibc')
+makedepends=('cmake' 'ffmpeg' 'gtest')
+provides=('libchromaprint.so')
+# upstream signs with DSA key: https://github.com/acoustid/chromaprint/issues/81
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/acoustid/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('333114949928abdf5d4b11aba1db6ec487eebe526324c68d903b3fa80a3af87a28d942af765a2f873e63a1bf222b658b6438cd10cde4446f61b26ea91f537469')
+b2sums=('930d1a7b8fa30dc726f78e3fc93c4e1aef5036b60ceee003c36ce7ea344523ce8b3abc294a4204e9acb6472600e7cfa5b15b1ca27c2917bd161b59cac1e7120c')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  # the vendored cmake module does not find gtest
+  rm -v cmake/modules/FindGTest.cmake
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE='None' \
+        -DBUILD_TESTS=ON \
+        -DBUILD_TOOLS=ON \
+        -DGTEST_SOURCE_DIR=/usr/src/googletest/ \
+        -Wno-dev \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  make VERBOSE=1 -C build check
+}
+
+package() {
+  depends+=('libavcodec.so' 'libavformat.so' 'libavutil.so' 'libswresample.so')
+  cd "${pkgname}-${pkgver}"
+  make VERBOSE=1 DESTDIR="${pkgdir}" install -C build
+  install -vDm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -vDm 644 {NEWS.txt,README.md} -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

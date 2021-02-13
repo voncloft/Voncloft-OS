@@ -1,0 +1,44 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
+
+pkgname=vapoursynth-plugin-lsmashsource
+pkgver=20200531
+pkgrel=1
+pkgdesc='L-SMASH source plugin for Vapoursynth'
+arch=(x86_64)
+url=https://github.com/HolyWu/L-SMASH-Works
+license=(custom)
+depends=(
+  glibc
+  vapoursynth
+  libavcodec.so
+  libavformat.so
+  libavutil.so
+  liblsmash.so
+  libswscale.so
+)
+makedepends=(
+  git
+  meson
+)
+source=(vapoursynth-plugin-lsmashsource::git+https://github.com/HolyWu/L-SMASH-Works.git#tag=b6aef0c352182faf996e1e45a3781d506f086e0b)
+sha256sums=(SKIP)
+
+pkgver() {
+  cd vapoursynth-plugin-lsmashsource
+
+  git describe --tags
+}
+
+build() {
+  arch-meson vapoursynth-plugin-lsmashsource/VapourSynth build
+  ninja -C build
+}
+
+package(){
+  DESTDIR="${pkgdir}" ninja -C build install
+  install -Dm 644 vapoursynth-plugin-lsmashsource/VapourSynth/README -t "${pkgdir}"/usr/share/doc/vapoursynth/plugins/lsmashsource/
+  install -Dm 644 vapoursynth-plugin-lsmashsource/VapourSynth/LICENSE -t "${pkgdir}"/usr/share/licenses/vapoursynth-plugin-lsmashsource/
+}
+
+# vim: ts=2 sw=2 et:

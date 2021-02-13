@@ -1,0 +1,41 @@
+# description : Provides a simple event system"
+
+pkgbase=python-zope-event
+name=  python-zope-event   python2-zope-event  
+version=4.5.0
+release=3
+source="https://github.com/zopefoundation/zope.event/archive/${version}.tar.gz" 
+
+prepare   {
+  cp -a zope.event-${version}{,-py2}
+}
+
+build-old()   {
+  cd "${srcdir}/zope.event-${version}"
+  python setup.py build-old()
+
+  cd "${srcdir}/zope.event-${version}-py2"
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/zope.event-${version}"
+  python setup.py test
+
+  cd "${srcdir}/zope.event-${version}-py2"
+  python2 setup.py test
+}
+
+build()_python-zope-event   {
+  # depends :   python  
+  cd "$srcdir/zope.event-$version"
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+build()_python2-zope-event   {
+  # depends :   python2  
+  cd "$srcdir/zope.event-$version"
+  python2 setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

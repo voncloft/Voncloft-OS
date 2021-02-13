@@ -1,0 +1,173 @@
+compilers/meson/spkgbuild:	python3 setup.py build
+compilers/meson/spkgbuild:	python3 setup.py install --root=$PKG
+compilers/ninja/spkgbuild:	python3 ./configure.py --bootstrap
+compilers/rust/spkgbuild:python = "python3"
+compilers/rust/spkgbuild:	python3 ./x.py build --exclude src/tools/miri $MAKEFLAGS
+compilers/rust/spkgbuild:	DESTDIR=$PKG python3 ./x.py install -v
+core/boost/spkgbuild:	./bootstrap.sh --prefix=/usr --with-python=/usr/bin/python3
+core/cython3/spkgbuild:	python3 setup.py build
+core/cython3/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/itstool/spkgbuild:	# python3 segfault building doc on mate-applet
+core/mps-youtube/spkgbuild:	python3 setup.py install --root="$PKG" --optimize=1
+core/opencl-headers/spkgbuild:	python3 gen_cl_hpp.py -i input_cl.hpp -o cl.hpp
+core/python3-appdirs/spkgbuild:name=python3-appdirs
+core/python3-appdirs/spkgbuild:	python3 setup.py build
+core/python3-appdirs/spkgbuild:	python3 setup.py install --root="$PKG" --optimize=1
+core/python3-atspi/spkgbuild:name=python3-atspi
+core/python3-atspi/spkgbuild:	./configure --prefix=/usr --with-python=/usr/bin/python3
+core/python3-attrs/spkgbuild:name=python3-attrs
+core/python3-attrs/spkgbuild:	python3 setup.py build
+core/python3-attrs/spkgbuild:	python3 setup.py install --root="$PKG" --optimize=1 --skip-build
+core/python3-cairo/spkgbuild:name=python3-cairo
+core/python3-cairo/spkgbuild:	python3 setup.py build
+core/python3-cairo/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-chardet/spkgbuild:name=python3-chardet
+core/python3-chardet/spkgbuild:	python3 setup.py build
+core/python3-chardet/spkgbuild:	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+core/python3-dbus/spkgbuild:name=python3-dbus
+core/python3-dbus/spkgbuild:	PYTHON=/usr/bin/python3    \
+core/python3-distro/spkgbuild:name=python3-distro
+core/python3-distro/spkgbuild: 	python3 setup.py build
+core/python3-distro/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-distutils-extra/spkgbuild:name=python3-distutils-extra
+core/python3-distutils-extra/spkgbuild:	python3 setup.py install --root=$PKG
+core/python3-geoip/spkgbuild:name=python3-geoip
+core/python3-geoip/spkgbuild: 	python3 setup.py build
+core/python3-geoip/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-gobject2/spkgbuild:name=python3-gobject2
+core/python3-gobject2/spkgbuild:		PYTHON=/usr/bin/python3
+core/python3-gobject3/spkgbuild:name=python3-gobject3
+core/python3-gobject3/spkgbuild:	meson --prefix=/usr -Dpython=python3 ..
+core/python3-idna/spkgbuild:name=python3-idna
+core/python3-idna/spkgbuild:	python3 setup.py build
+core/python3-idna/spkgbuild:	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+core/python3-iso3166/spkgbuild:name=python3-iso3166
+core/python3-iso3166/spkgbuild:	python3 setup.py build
+core/python3-iso3166/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-iso-639/spkgbuild:name=python3-iso-639
+core/python3-iso-639/spkgbuild:	python3 setup.py build
+core/python3-iso-639/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-isodate/spkgbuild:name=python3-isodate
+core/python3-isodate/spkgbuild:	python3 setup.py build
+core/python3-isodate/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-jinja2/spkgbuild:name=python3-jinja2
+core/python3-jinja2/spkgbuild:	python3 setup.py build
+core/python3-jinja2/spkgbuild:	python3 setup.py install --root="$PKG" -O1
+core/python3-lxml/spkgbuild:name=python3-lxml
+core/python3-lxml/spkgbuild:	python3 setup.py build
+core/python3-lxml/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-mako/spkgbuild:name=python3-mako
+core/python3-mako/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-markupsafe/spkgbuild:name=python3-markupsafe
+core/python3-markupsafe/spkgbuild:	python3 setup.py build
+core/python3-markupsafe/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-packaging/spkgbuild:name=python3-packaging
+core/python3-packaging/spkgbuild:	python3 setup.py build
+core/python3-packaging/spkgbuild:	python3 setup.py install --root "$PKG"
+core/python3-pafy/spkgbuild:name=python3-pafy
+core/python3-pafy/spkgbuild:	python3 setup.py install --root="$PKG" --optimize=1
+core/python3-pillow/spkgbuild:name=python3-pillow
+core/python3-pillow/spkgbuild:	python3 setup.py build
+core/python3-pillow/spkgbuild:	python3 setup.py install --root="$PKG" --optimize=1
+core/python3-pillow/spkgbuild:	install -dm755 "$PKG/usr/include/python3.7m/"
+core/python3-pillow/spkgbuild:	install -m644 -t "$PKG/usr/include/python3.7m/" src/libImaging/*.h
+core/python3-pip/spkgbuild:name=python3-pip
+core/python3-pip/spkgbuild:	python3 setup.py build
+core/python3-pip/spkgbuild:	python3 setup.py install --prefix=/usr --root="$PKG"
+core/python3-pycryptodome/spkgbuild:name=python3-pycryptodome
+core/python3-pycryptodome/spkgbuild:	python3 setup.py build
+core/python3-pycryptodome/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-pygments/spkgbuild:name=python3-pygments
+core/python3-pygments/spkgbuild:	python3 setup.py install --root="$PKG" -O1
+core/python3-pyopenssl/spkgbuild:name=python3-pyopenssl
+core/python3-pyopenssl/spkgbuild: 	python3 setup.py build
+core/python3-pyopenssl/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-pyparsing/spkgbuild:name=python3-pyparsing
+core/python3-pyparsing/spkgbuild:	python3 setup.py build
+core/python3-pyparsing/spkgbuild:	python3 setup.py install --prefix=/usr --root="$PKG" --optimize=1
+core/python3-pypeg2/spkgbuild:name=python3-pypeg2
+core/python3-pypeg2/spkgbuild:	python3 setup.py install --root="$PKG" --prefix=/usr --optimize=1
+core/python3-pyqt5/spkgbuild:name=python3-pyqt5
+core/python3-pyqt5/spkgbuild:	python3 configure.py \
+core/python3-pyqtwebengine/spkgbuild:name=python3-pyqtwebengine
+core/python3-pyqtwebengine/spkgbuild:	python3 configure.py
+core/python3-pysocks/spkgbuild:name=python3-pysocks
+core/python3-pysocks/spkgbuild:	python3 setup.py build
+core/python3-pysocks/spkgbuild:	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+core/python3-rencode/spkgbuild:name=python3-rencode
+core/python3-rencode/spkgbuild: 	python3 setup.py build
+core/python3-rencode/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-requests/spkgbuild:name=python3-requests
+core/python3-requests/spkgbuild:	python3 setup.py build
+core/python3-requests/spkgbuild:	python3 setup.py install --prefix=/usr --root=$PKG
+core/python3-scour/spkgbuild:name=python3-scour
+core/python3-scour/spkgbuild:	python3 setup.py build
+core/python3-scour/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-service-identity/spkgbuild:name=python3
+core/python3-service-identity/spkgbuild: 	python3 setup.py build
+core/python3-service-identity/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-setproctitle/spkgbuild:name=python3-setproctitle
+core/python3-setproctitle/spkgbuild: 	python3 setup.py build
+core/python3-setproctitle/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-setuptools/spkgbuild:name=python3-setuptools
+core/python3-setuptools/spkgbuild:	python3 bootstrap.py
+core/python3-setuptools/spkgbuild:	python3 setup.py build
+core/python3-setuptools/spkgbuild:	python3 setup.py install --prefix=/usr --root="$PKG" --optimize=1 --skip-build
+core/python3-sip-pyqt5/spkgbuild:name=python3-sip-pyqt5
+core/python3-sip-pyqt5/spkgbuild:	python3 configure.py CFLAGS="$CFLAGS" LFLAGS="$LDFLAGS" --sip-module PyQt5.sip --no-tools
+core/python3-sip/spkgbuild:name=python3-sip
+core/python3-sip/spkgbuild:	python3 configure.py CFLAGS="$CFLAGS" LFLAGS="$LDFLAGS"
+core/python3-six/spkgbuild:name=python3-six
+core/python3-six/spkgbuild:	python3 setup.py build
+core/python3-six/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3/spkgbuild:name=python3
+core/python3/spkgbuild:	chmod -v 755 $PKG/usr/lib/libpython3.so
+core/python3-twisted/spkgbuild:name=python3-twisted
+core/python3-twisted/spkgbuild: 	python3 setup.py build
+core/python3-twisted/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/python3-urllib3/spkgbuild:name=python3-urllib3
+core/python3-urllib3/spkgbuild:	python3 setup.py build
+core/python3-urllib3/spkgbuild:	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+core/python3-urwid/spkgbuild:name=python3-urwid
+core/python3-urwid/spkgbuild:	python3 setup.py build
+core/python3-urwid/spkgbuild:	python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+core/python3-websocket-client/spkgbuild:name=python3-websocket-client
+core/python3-websocket-client/spkgbuild:	python3 setup.py build
+core/python3-websocket-client/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+core/python3-xdg/spkgbuild:name=python3-xdg
+core/python3-xdg/spkgbuild:	python3 setup.py install --optimize=1 --root=$PKG
+core/python3-xlib/spkgbuild:name=python3-xlib
+core/python3-xlib/spkgbuild:	python3 setup.py build
+core/python3-xlib/spkgbuild:	python3 setup.py install --root="$PKG" --optimize=1 --skip-build
+core/python3-yaml/spkgbuild:name=python3-yaml
+core/python3-yaml/spkgbuild:	python3 setup.py --with-libyaml build
+core/python3-yaml/spkgbuild:	python3 setup.py  --with-libyaml install --prefix=/usr --root="$PKG" -O1 --skip-build
+core/python3-zope-interface/spkgbuild:name=python3-zope
+core/python3-zope-interface/spkgbuild: 	python3 setup.py build
+core/python3-zope-interface/spkgbuild:        python3 setup.py install --root=$PKG --optimize=1
+core/qemu/spkgbuild:		     --python=python3 \
+core/ranger/spkgbuild:	python3 setup.py -q install --root=$PKG --optimize=1
+core/speedtest-cli/spkgbuild:	python3 setup.py install -O1 --root=$PKG --prefix=/usr
+core/streamlink/spkgbuild:	python3 setup.py build
+core/streamlink/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+displaym/lightdm-gtk-greeter-settings/spkgbuild:	python3 setup.py build
+displaym/lightdm-gtk-greeter-settings/spkgbuild:	python3 setup.py install --root="$PKG" --optimize='1' --xfce-integration
+extra/flexget/spkgbuild:	python3 setup.py build
+extra/flexget/spkgbuild:	python3 setup.py install --root=$PKG --prefix=/usr --optimize=1 
+extra/libtorrent-rasterbar/spkgbuild:    	--with-boost-python=boost_python3
+libs/libblockdev/spkgbuild:            	--with-python3    \
+libs/libtorrent/spkgbuild:	PYTHON=/usr/bin/python3 \
+libs/libtorrent/spkgbuild:	    --with-boost-python=boost_python3
+multilib/libxml2-32/spkgbuild:	libxml2-python3_hack-1.patch"
+multilib/libxml2-32/spkgbuild:	patch -Np1 -i ../libxml2-python3_hack-1.patch
+multilib/python3-32/spkgbuild:name=python3-32
+multilib/python3-32/spkgbuild:	chmod -v 755 $PKG/usr/lib32/libpython3.so
+multilib/python3-32/spkgbuild:	mv $PKG/usr/include/python3.8/pyconfig.h $PKG/
+multilib/python3-32/spkgbuild:	install -d $PKG/usr/include/python3.8
+multilib/python3-32/spkgbuild:	mv $PKG/pyconfig.h $PKG/usr/include/python3.8/pyconfig-32.h
+networking/you-get/spkgbuild:	python3 setup.py build
+networking/you-get/spkgbuild:	python3 setup.py install --root="$PKG"
+networking/youtube-dl/spkgbuild:	python3 setup.py install --root=$PKG --optimize=1
+server/samba/spkgbuild:	echo "/usr/lib/python3.8/site-packages/samba/" >> $PKG/etc/revdep.d/samba.conf
+xorg/libxml2/spkgbuild:		    --with-python=/usr/bin/python3
+xorg/xcb-proto/spkgbuild:  	PYTHON=python3 ./configure \

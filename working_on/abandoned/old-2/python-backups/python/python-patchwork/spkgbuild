@@ -1,0 +1,23 @@
+# description : "Common deployment/sysadmin operations, built on Fabric"
+# depends : fabric
+
+name=python-patchwork
+version=1.0.1
+release=4
+url="https://github.com/fabric/patchwork"
+make# depends : python-setuptools
+source="https://github.com/fabric/patchwork/archive/$version/$name-$version.tar.gz"
+sha256sums=0fda64a68a26a8acab897742773894fb765e1cc0049971675f50d7d5f8ae4fd7
+
+build()-delete {
+   cd "$srcdir"/patchwork-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/patchwork-$version
+  python setup.py build
+  python setup.py install -O1  --root=$PKG
+}

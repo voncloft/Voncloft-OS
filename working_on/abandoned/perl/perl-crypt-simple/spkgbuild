@@ -1,0 +1,29 @@
+# description : Perl/CPAN Module Crypt::Simple
+# This PKGBUILD was autocreated.  See https://xtermin.us/archperl/ for details
+
+name=perl-crypt-simple
+version=0.06
+release=10
+url=https://search.cpan.org/dist/Crypt-Simple
+source="https://www.cpan.org/authors/id/K/KA/KASEI/Crypt-Simple-0.06.tar.gz"
+options="!checksum"
+sha256sums=3db6e7754eaa425ab2d958d40b62d2026b0b186 cd576ee352b4c172fb52d8e17
+
+build-delete {
+   cd $sr cdir/Crypt-Simple-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/Crypt-Simple-$version
+  make pure_install doc_install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

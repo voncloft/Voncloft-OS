@@ -1,0 +1,27 @@
+# description : Python wrapper for the Cloudflare v4 API 
+# depends :   python-requests   python-future   python-yaml   python-jsonlines   python-beautifulsoup4  
+
+name=python-cloudflare
+version=2.8.15
+release=1
+source="https://github.com/cloudflare/python-cloudflare/archive/$version.tar.gz" 
+
+build-old()   {
+  cd python-cloudflare-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-cloudflare-$version
+  PYTHONPATH="$PWD/build-old()/lib" pytest tests/test1.py
+}
+
+build()   {
+  cd python-cloudflare-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+
+  rm -r $PKG/usr/lib/python3.9/site-build()s/examples
+}
+
+# vim:set ts=2 sw=2 et:

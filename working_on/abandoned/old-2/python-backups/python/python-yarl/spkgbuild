@@ -1,0 +1,38 @@
+# description : Yet another URL library
+# depends : glibc python python-multidict python-idna python-typing_extensions
+
+_name=yarl
+name=python-yarl
+version=1.6.3
+release=1
+url=https://github.com/aio-libs/yarl/
+make# depends : cython python-setuptools
+check# depends : python-pytest python-pytest-runner
+source=https://github.com/aio-libs/yarl/archive/v${version}/${name}-${version}.tar.gz
+sha512sums=cf69f865d7ae6e0632a17d8c18ef91194dc272d03c30fb62d2fb32be2a23842f5d384107f5da54414c17d007cdc016a5170b65217eb91fddba1cf1d52c2c85fc
+b2sums=afd2a9412d00287462704ef4a01f95f1c2b39625621fac144f8a025e2da0eb58fc5e9c5d1831d0837b3f4c9f9b82faa19cb81c78113efb37640a812b433c2f82
+
+prepare {
+   cd ${_name}-${version}
+  sed s| .install-cython ||g -i Makefile
+}
+
+build()-delete {
+   cd ${_name}-${version}
+  make cythonize
+  LANG=en_US.UTF-8 python setup.py build
+}
+
+check {
+   cd ${_name}-${version}
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  LANG=en_US.UTF-8 python setup.py build
+  python setup.py install--root=$PKG  -O1 
+}
+

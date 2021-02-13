@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-gdspy
+version=1.6.3
+release=1
+pkgdesc="Python module for creating GDSII stream files, usually CAD layouts"
+url="https://github.com/heitzmann/gdspy"
+depends=('python-numpy')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("$name-$version.tar.gz::https://github.com/heitzmann/gdspy/archive/v$version.tar.gz")
+sha512sums=('d07ed779cfcf9d4b0384359ca3f5122c8799471eea3a607c208f794d6755fd698bfa20f4d3191a5b2370b63785a665f7c9775eee108906182dfee1179490ba75')
+
+build() {
+  cd gdspy-$version
+  python setup.py build
+}
+
+check() {
+  cd gdspy-$version
+  python setup.py pytest
+}
+
+package() {
+  cd gdspy-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

@@ -1,0 +1,24 @@
+# description : Special objects that have a structural location"
+# depends :   python-setuptools   python-zope-interface   python-zope-schema   python-zope-proxy  
+
+name=python-zope-location
+version=4.2
+release=6
+source="https://github.com/zopefoundation/zope.location/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/zope.location-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/zope.location-$version
+  PYTHONPATH="$PWD/build-old()/lib:$PYTHONPATH" python -m zope.testrunner --test-path=src || echo "Tests failed"
+}
+
+build()   {
+  cd zope.location-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

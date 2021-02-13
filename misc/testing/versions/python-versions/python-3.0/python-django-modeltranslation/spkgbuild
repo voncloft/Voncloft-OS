@@ -1,0 +1,30 @@
+# description : Translates Django models using a registration approach 
+# depends :  python-django 
+
+name=python-django-modeltranslation
+version=0.16.1
+release=1
+  git
+  python-setuptools
+ 
+
+version   {
+  cd django-modeltranslation
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd django-modeltranslation
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd django-modeltranslation
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE.txt -t $PKG/usr/share/licenses/python-django-modeltranslation/
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,25 @@
+
+_name=pyfiglet
+name=python-pyfiglet
+version=0.8.post1
+release=3
+# description : Pure-python FIGlet implementation 
+# depends :   python-setuptools  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+  python setup.py build
+}
+
+check   {
+  cd $_name-$version
+  PYTHONPATH=. python pyfiglet/test.py
+}
+
+package   {
+  cd $_name-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}
+
+# vim:set ts=2 sw=2 et:

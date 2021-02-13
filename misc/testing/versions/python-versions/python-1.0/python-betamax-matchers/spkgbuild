@@ -1,0 +1,18 @@
+
+name=python-betamax-matchers
+version=0.4.0
+release=6
+# description : Experimental set of Matchers for Betamax that may possibly end up in the main package"
+# depends :   python-requests-toolbelt   python-betamax  
+source="https://github.com/sigmavirus24/betamax_matchers/archive/$version.tar.gz" 
+
+check   {
+  cd betamax_matchers-$version
+  python setup.py pytest
+}
+
+package   {
+  cd betamax_matchers-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,22 @@
+# description : Transparently select a render function for an HTTP request handler s result"
+# depends :   python-mimeparse  
+
+name=python-mimerender
+version=0.6.0
+release=6
+source="https://github.com/martinblech/mimerender/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd mimerender-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd mimerender-$version
+  python src/test.py
+}
+
+build()   {
+  cd mimerender-$version
+  python setup.py install -O1 --root $PKG
+}

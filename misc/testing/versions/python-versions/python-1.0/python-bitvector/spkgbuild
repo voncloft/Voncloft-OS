@@ -1,0 +1,17 @@
+
+name=python-bitvector
+version=3.4.9
+release=4
+# description : A memory-efficient packed representation for bit arrays in pure Python"
+# depends :   python  
+source="https://pypi.io/packages/source/B/BitVector/BitVector-$version.tar.gz" 
+
+build   {
+  cd BitVector-$version
+  python setup.py build
+}
+
+package   {
+  cd BitVector-$version
+  python setup.py install --root=$PKG --optimize=1
+}

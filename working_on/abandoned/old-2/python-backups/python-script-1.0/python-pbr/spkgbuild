@@ -1,0 +1,19 @@
+# description : Python Build Reasonableness
+  # depends : python-setuptools
+  # depends : python2-setuptools
+
+url=https://pypi.python.org/pypi/pbr
+name=python-pbr python2-pbr
+version=5.5.1
+release=3
+
+source="https://github.com/openstack-dev/pbr/archive/$version.tar.gz"
+
+build() {
+   cd $srcdir/pbr-$version
+   cd $srcdir/pbr-$version-py2
+   cd pbr-$version
+   cd pbr-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

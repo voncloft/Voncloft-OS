@@ -1,0 +1,59 @@
+
+_pypiname=wheel
+pkgbase=python-wheel
+name=  python-wheel   python2-wheel  
+version=0.36.2
+release=1
+# description : A built-package format for Python"
+              python2-packaging   python2-setuptools  
+               python-xdg  
+source="https://pypi.io/packages/source/w/wheel/$_pypiname-$version.tar.gz" 
+source="https://github.com/pypa/wheel/archive/$version.tar.gz" 
+
+prepare   {
+  # don t depend on python-coverage for tests
+  sed -i  s/--cov=wheel//  wheel-$version/setup.cfg
+
+  #https://github.com/pypa/wheel/pull/365 but why?
+  rm -r wheel-$version/src/wheel/vendored
+  sed -i  s/from .vendored.packaging import tags/from packaging import tags/  wheel-$version/src/wheel/bdist_wheel.py
+
+  cp -a wheel-$version{,-py2}
+}
+
+build   {
+  export PYTHONHASHSEED=0
+
+  cd "$srcdir/wheel-$version"
+  python setup.py build
+
+  cd "$srcdir/wheel-$version-py2"
+  python2 setup.py build
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd wheel-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH" py.test
+}
+
+package_python-wheel   {
+  # depends :   python-packaging  
+
+  cd "$srcdir/$_pypiname-$version"
+  python setup.py install --root="$PKG/" --optimize=1 --skip-build
+  install -D -m644 LICENSE.txt "$PKG/usr/share/licenses/$name/LICENSE.txt"
+}
+
+package_python2-wheel   {
+  # depends :   python2-packaging  
+
+  cd "$srcdir/$_pypiname-$version"
+  python2 setup.py install --root="$PKG/" --optimize=1 --skip-build
+  install -D -m644 LICENSE.txt "$PKG/usr/share/licenses/$name/LICENSE.txt"
+  mv "$PKG/usr/bin/wheel" "$PKG/usr/bin/wheel2"
+}
+
+# vim:set ts=2 sw=2 et:

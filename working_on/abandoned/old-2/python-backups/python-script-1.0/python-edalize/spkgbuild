@@ -1,0 +1,18 @@
+# description : An abstraction library for interfacing EDA tools
+# depends : python python-jinja
+
+_name=edalize
+url=https://github.com/olofk/edalize
+_name=edalize
+name=python-$_name
+version=0.2.3
+release=1
+
+source="$url/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

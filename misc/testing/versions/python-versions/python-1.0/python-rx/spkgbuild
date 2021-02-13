@@ -1,0 +1,40 @@
+
+name=python-rx
+version=3.1.1
+release=3
+# description : Reactive Extensions for Python 
+# depends :  python 
+  git
+  python-setuptools
+ 
+  python-coverage
+  python-nose
+  python-pytest
+  python-pytest-asyncio
+ 
+
+version   {
+  cd RxPY
+
+  git describe --tags | sed  s/^v// 
+}
+
+build   {
+  cd RxPY
+
+  python setup.py build
+}
+
+check   {
+  cd RxPY
+
+  python setup.py test
+}
+
+package   {
+  cd RxPY
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

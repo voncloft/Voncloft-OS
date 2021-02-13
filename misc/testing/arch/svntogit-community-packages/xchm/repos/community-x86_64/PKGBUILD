@@ -1,0 +1,29 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+
+pkgname=xchm
+pkgver=1.31
+pkgrel=1
+pkgdesc="Cross-platform GUI front-end to chmlib"
+arch=('x86_64')
+url="https://github.com/rzvncj/xCHM"
+license=('GPL')
+depends=('chmlib' 'wxgtk3')
+source=("https://github.com/rzvncj/xCHM/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('0e1f6bbcb88e8e8fd200b5531e3486ecc04a614c4234356c397cf188b55f862b')
+
+prepare() {
+  cd $pkgname-$pkgver
+  autoreconf -fi
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --with-wx-config=/usr/bin/wx-config-gtk3
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,22 @@
+
+name=python-janus
+version=0.6.1
+release=3
+# description : Thread-safe asyncio-aware queue for Python"
+# depends :   python  
+source="https://github.com/aio-libs/janus/archive/v$version/$name-$version.tar.gz" 
+
+build   {
+  cd janus-$version
+  python setup.py build
+}
+
+check   {
+  cd janus-$version
+  python -m pytest
+}
+
+package   {
+  cd janus-$version
+  python setup.py install --root="$PKG/" --optimize=1 --skip-build
+}

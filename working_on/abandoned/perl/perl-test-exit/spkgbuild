@@ -1,0 +1,32 @@
+# description : Test whether code exits without terminating testing.
+# depends : perl-return-multilevel
+
+name=perl-test-exit
+version=0.11
+release=3
+url=https://metacpan.org/release/Test-Exit
+source="https://cpan.metacpan.org/authors/id/A/AR/ARODLAND/Test-Exit-$version.tar.gz"
+options="!checksum"
+sha512sums= cd2ebb191f1d0c64017df9c4de50539985b96251222d88c644dafeb64b7373afdf28 cd84d1c58caa78ee5704650f94efdd0e2971bbba962c1aeb799e812f26e4
+
+build-delete {
+   cd Test-Exit-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Test-Exit-$version
+  make test
+}
+
+build() {
+   cd Test-Exit-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

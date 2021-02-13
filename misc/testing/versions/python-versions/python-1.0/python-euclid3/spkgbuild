@@ -1,0 +1,23 @@
+
+_name=euclid3
+name=python-$_name
+version=0.01
+release=3
+# description : 2D and 3D vector, matrix, quaternion and geometry module 
+# depends :   python  
+source="https://pypi.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+}
+
+# vim:set ts=2 sw=2 et:

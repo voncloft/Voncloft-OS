@@ -1,0 +1,31 @@
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
+# Contributor: Thomas Arnhold <thomas at arnhold dot org>
+
+pkgname=libmwaw
+pkgver=0.3.17
+pkgrel=1
+pkgdesc="Import library for some old mac text documents."
+arch=('x86_64')
+url="https://sourceforge.net/projects/libmwaw/"
+license=('LGPL2.1' 'MPL')
+depends=('librevenge')
+makedepends=('boost' 'doxygen')
+source=(https://sourceforge.net/projects/${pkgname}/files/${pkgname}/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz)
+sha1sums=('e884ccf8f9a67e58a6a5581e10c45da4f0ff0e61')
+
+build() {
+  cd "${pkgname}"-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+
+check() {
+  cd "${pkgname}"-${pkgver}
+  make check
+}
+
+package() {
+  cd "${pkgname}"-${pkgver}
+  make DESTDIR="$pkgdir" install
+}

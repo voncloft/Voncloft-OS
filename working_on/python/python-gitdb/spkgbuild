@@ -1,0 +1,19 @@
+# description : A pure-Python git object database
+# depends : git python-smmap
+
+_name=gitdb
+url=https://github.com/gitpython-developers/gitdb
+_name=gitdb
+name=python-gitdb
+version=4.0.5
+release=3
+
+source="https://pypi.org/packages/source/g/${_name}/${_name}-${version}.tar.gz"{,.asc}
+options="!checksum"
+
+build() {
+   cd ${name}-${version}
+     cd $TEST_TMPDIR
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

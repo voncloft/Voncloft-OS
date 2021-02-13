@@ -1,0 +1,32 @@
+# Source:https://github.com/zancarius/archlinux-pkgbuilds
+
+name=python-billiard
+version=3.6.3.0
+release=3
+# description : Python multiprocessing fork with improvements and bugfixes."
+# depends :   python  
+source="https://pypi.io/packages/source/b/billiard/billiard-$version.tar.gz"
+        $name-py39.patch::https://github.com/celery/billiard/commit/ca3220ba4596.patch 
+             e4cb47ca4038d530f80f2491c43067f11833a1d2110f878f28e2fc585904d203a78ed11fa8f5ca17ea7dd801cce73ac0b4e85c2dbd4e37c3b02632a06324b43c  
+
+prepare   {
+  cd "$srcdir"/billiard-$version
+  sed -i  s/< *5/<6/  requirements/test.txt
+  sed  /diff --git a\/tox.ini/,$d  ../$name-py39.patch | patch -Np1
+}
+
+build   {
+  cd "$srcdir"/billiard-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/billiard-$version
+  python setup.py pytest
+}
+
+package   {
+  cd "$srcdir"/billiard-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm0664 "$srcdir"/billiard-$version/LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

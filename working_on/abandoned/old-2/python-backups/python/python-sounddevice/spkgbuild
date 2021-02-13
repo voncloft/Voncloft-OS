@@ -1,0 +1,21 @@
+# description : Play and Record Sound with Python
+# depends : portaudio python-cffi
+
+name=python-sounddevice
+version=0.4.1
+release=2
+url=https://python-sounddevice.rtfd.io/
+make# depends : python-setuptools
+opt# depends : python-numpy: to play back and record NumPy arrays
+source="https://files.pythonhosted.org/packages/source/s/sounddevice/sounddevice-$version.tar.gz"
+sha256sums=f21978921186c0c7183af032fab77b735d824f3e926d76adb3fd0912e289ce0b
+
+options="!checksum"
+
+build() {
+   cd "sounddevice-$version"
+  python setup.py build
+  python setup.py install   --root=$PKG --optimize=1
+}
+
+# getver: github.com/spatialaudio/python-sounddevice

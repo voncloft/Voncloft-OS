@@ -1,0 +1,18 @@
+# description : JSON for Humans, allows comments and is less error prone.
+# depends : python
+
+_name=hjson-py
+url=https://github.com/laktak/hjson-py
+_name=hjson-py
+name=python-hjson
+version=3.0.2
+release=3
+
+source="https://github.com/hjson/hjson-py/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,30 @@
+# description : Localization support for DateTime.pm 
+# depends : perl-params-validate perl-list-moreutils
+
+name=perl-datetime-locale
+version=1.22
+release=2
+url=https://search.cpan.org/dist/DateTime-Locale
+	 perl-file-sharedir perl-file-sharedir-install
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-$version.tar.gz"
+options="!checksum"
+sha256sums=757b3915c6b2aac89462c52fed36543f27dfb66abc98c895523d2ab95da65f94
+
+build-delete {
+  cd  $srcdir/DateTime-Locale-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/DateTime-Locale-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

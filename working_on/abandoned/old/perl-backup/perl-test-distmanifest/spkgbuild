@@ -1,0 +1,33 @@
+# description : Author test that validates a package MANIFEST
+# depends : perl perl-module-manifest
+
+name=perl-test-distmanifest
+version=1.014
+release=5
+url=https://search.cpan.org/dist/Test-DistManifest/
+make# depends : perl-module-build
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-DistManifest-$version.tar.gz"
+options="!checksum"
+sha256sums=3d26c20df42628981cbfcfa5b1ca028c6ceadb344c1dcf97a25ad6a88b73d7c5
+
+build-delete {
+  cd ${srcdir}/Test-DistManifest-$version
+
+  perl Build.PL installdirs=vendor
+  ./Build
+}
+
+build() {
+  cd ${srcdir}/Test-DistManifest-$version
+
+  ./Build install destdir=$PKG
+
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

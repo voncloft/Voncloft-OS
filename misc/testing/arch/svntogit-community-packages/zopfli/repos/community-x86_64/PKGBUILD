@@ -1,0 +1,33 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+pkgname=zopfli
+pkgver=1.0.3
+pkgrel=1
+pkgdesc="Compression algorithm library"
+arch=('x86_64')
+url="https://github.com/google/zopfli/tree/ae43a8b73827577c4b19b005b6eed81f5cf9bbac"
+license=('Apache')
+depends=('gcc-libs' 'glibc')
+makedepends=('cmake')
+provides=('libzopfli.so' 'libzopflipng.so')
+source=("https://github.com/google/${pkgname}/archive/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('362cbeee0b3f04a4c5da512f82671491f874d4ec7b693dca9724ae42123d7ac184cc4d5de1872b4f1fc938c97f79dfdb482f62d1fca4a17cff6d267f6021e8d2')
+
+prepare() {
+  mv -v "$pkgname-$pkgname-$pkgver" "$pkgname-$pkgver"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DZOPFLI_BUILD_SHARED=ON \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make -C build DESTDIR="${pkgdir}" install
+  install -vDm 644 README* -t "${pkgdir}/usr/share/doc/${pkgname}/"
+}
+

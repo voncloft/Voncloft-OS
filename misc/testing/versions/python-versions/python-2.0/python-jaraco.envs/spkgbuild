@@ -1,0 +1,30 @@
+# description : Classes for orchestrating Python  virtual  environments"
+# depends :   python-jaraco   python-path   python-virtualenv   python-tox  
+
+name=python-jaraco.envs
+version=2.1.0
+release=1
+               python-pytest-enabler   python-pytest-flake8   python-pytest-mypy  
+source="https://github.com/jaraco/jaraco.envs/archive/v$version/$name-$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build-old()   {
+  cd jaraco.envs-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd jaraco.envs-$version
+  python -m pytest
+}
+
+build()   {
+  cd jaraco.envs-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  rm $PKG/usr/lib/python3.9/site-build()s/jaraco/__init__.py \
+     $PKG/usr/lib/python3.9/site-build()s/jaraco/__pycache__/__init__.cpython-39.pyc
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

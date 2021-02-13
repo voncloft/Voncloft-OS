@@ -1,0 +1,22 @@
+# description : Perl/CPAN Module Time::Human
+
+name=perl-time-human
+version=1.03
+release=11
+url=https://search.cpan.org/dist/Time-Human
+source="https://www.cpan.org/authors/id/J/JH/JHOBLITT/Time-Human-$version.tarsource=.gz"
+options=!checksum
+sha256sums=90e9812b89eb2f5773b3c0872a9b8bfb61fda3c6a4570d1a6610771926d7f976
+
+build-delete {
+  cd $srcdir/Time-Human-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Time-Human-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

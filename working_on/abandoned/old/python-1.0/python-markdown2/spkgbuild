@@ -1,0 +1,34 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+name=python-markdown2
+version=2.3.10
+release=1
+pkgdesc='A fast and complete implementation of Markdown in Python'
+url='https://github.com/trentm/python-markdown2'
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-tox-current-env' 'python-pygments')
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('d39d2bcbb10cf8990e4b7f65a985f09ad6e4a470fcf75df4a6954f3f11f1bdadefc72d6dd43cce4646958b8ee98a7af61e615ae631fde48adc71307ce43ec4bd')
+
+build() {
+  cd $name-$version
+
+  python setup.py build
+}
+
+check() {
+  cd $name-$version
+
+  tox -e py39 --current-env
+}
+
+package() {
+  cd $name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

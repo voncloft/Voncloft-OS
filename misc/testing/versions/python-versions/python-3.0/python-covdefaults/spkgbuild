@@ -1,0 +1,37 @@
+# description : A coverage plugin to provide sensible default settings 
+# depends :   python-coverage  
+
+_name=covdefaults
+name=python-$_name
+version=1.2.0
+release=2
+source=" $url/archive/v$version.tar.gz" 
+
+prepare   {
+  cd $_name-$version
+
+  # remove coverage usage as it wants the plugin we are build-old()ing
+  sed -i -e s|coverage run|python|  -e  /coverage .*/d  tox.ini
+}
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+check   {
+  cd $_name-$version
+
+  tox -e py39 --current-env
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,16 @@
+# description : Symbolic manipulation package Computer Algebra System, written in pure Python
+# depends : python-mpmath
+
+url=https://sympy.org/en/index.html
+name=python-sympy
+version=1.7.1
+release=2
+
+source="https://github.com/sympy/sympy/archive/sympy-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd sympy-sympy-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

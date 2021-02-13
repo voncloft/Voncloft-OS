@@ -1,0 +1,36 @@
+# description : Python library which provides a client interface for the Music Player Daemon
+# depends : python
+
+name=python-mpd2
+version=3.0.4
+release=1
+url=https://github.com/Mic92/python-mpd2
+make# depends : 
+  git
+  python-setuptools
+
+_tag=954473205ec8bcae4a9d8b5e8c26187450e968fe
+source=git+https://github.com/Mic92/python-mpd2.git#tag=${_tag}
+sha256sums=SKIP
+
+version {
+   cd python-mpd2
+
+  git describe --tags | sed s/^v//
+}
+
+build()-delete {
+   cd python-mpd2
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd python-mpd2
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

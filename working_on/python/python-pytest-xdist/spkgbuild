@@ -1,0 +1,16 @@
+# description : py.test xdist plugin for distributed testing and loop-on-failing modes
+# depends : python-execnet python-psutil python-pytest-forked
+
+url=https://bitbucket.org/pytest-dev/pytest-xdist
+name=python-pytest-xdist
+version=2.2.0
+release=1
+
+source="https://github.com/pytest-dev/pytest-xdist/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pytest-xdist-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

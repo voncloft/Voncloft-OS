@@ -1,0 +1,36 @@
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Andreas Radke <andyrtr at archlinux.org>
+# Contributor: Ben Mazer <contrasutra@myrealbox.com>
+
+pkgname=xfce4-notes-plugin
+pkgver=1.9.0
+pkgrel=1
+pkgdesc="Notes plugin for the Xfce panel"
+arch=('x86_64')
+license=('GPL2')
+url="https://docs.xfce.org/panel-plugins/xfce4-notes-plugin"
+groups=('xfce4-goodies')
+depends=('xfce4-panel' 'hicolor-icon-theme')
+makedepends=('intltool')
+source=(https://archive.xfce.org/src/panel-plugins/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
+sha256sums=('13f909c948b639f96de64cf793eb74cb1779589201d3933eff214ee8f35ab088')
+
+build() {
+  cd $pkgname-$pkgver
+
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var \
+    --disable-static \
+    --disable-debug
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

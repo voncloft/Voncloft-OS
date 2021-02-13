@@ -1,0 +1,15 @@
+
+name=python-ansi2html
+_libname=${name/python-/}
+version=1.6.0
+release=1
+# description : Convert text with ANSI color codes to HTML"
+# depends :   python-six   python-setuptools   python-wheel   python-pip  
+source="https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz" 
+validpgpkeys= 94504C3AE11DD197920058ABA90ED7DE971095FF 
+
+package   {
+  cd ansi2html-$version
+
+  python setup.py install --root=$PKG  --optimize=1
+}

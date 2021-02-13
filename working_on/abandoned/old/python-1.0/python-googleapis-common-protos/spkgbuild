@@ -1,0 +1,27 @@
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
+# Contributor: Kaizhao Zhang <zhangkaizhao@gmail.com>
+
+name=python-googleapis-common-protos
+version=1.52.0
+release=3
+pkgdesc="Python classes generated from the common protos in the googleapis repository"
+url="https://github.com/googleapis/googleapis"
+depends=('python-protobuf')
+optdepends=('python-grpcio: for grpc support')
+makedepends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/g/googleapis-common-protos/googleapis-common-protos-${version}.tar.gz")
+sha256sums=('560716c807117394da12cecb0a54da5a451b5cf9866f1d37e9a5e2329a665351')
+
+build() {
+  cd "googleapis-common-protos-${version}"
+
+  python setup.py build
+}
+
+package() {
+  cd "googleapis-common-protos-${version}"
+
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  chmod -R +r "${pkgdir}"
+}

@@ -1,0 +1,34 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+
+pkgname=python-flask-httpauth
+_pkgname=Flask-HTTPAuth
+pkgver=4.2.0
+pkgrel=1
+pkgdesc='Basic, Digest and Token HTTP authentication for Flask routes'
+url='https://github.com/miguelgrinberg/Flask-HTTPAuth'
+arch=('any')
+license=('MIT')
+depends=('python' 'python-flask')
+checkdepends=('python-pytest')
+source=(https://github.com/miguelgrinberg/${_pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('c58d0585dbd2b208db8243c9b8ed68ec8e7802bcb521bece3df0a876a3ec24e545edab693a4b2183975fa32caf2140cce6ddd18338edcf24a807a14f468c32e8')
+b2sums=('62703e09cd3ebf9cc9ac822c4cb3dfff08f630404333a76346bde52d72f806e6e559f886bb2efcc649fa1d23bf852bbf4800acde83827024b170a031f05ada68')
+
+build() {
+  cd ${_pkgname}-${pkgver}
+  export PYTHONHASHSEED=0
+  python setup.py build
+}
+
+check() {
+  cd ${_pkgname}-${pkgver}
+  pytest tests/
+}
+
+package() {
+  cd ${_pkgname}-${pkgver}
+  python setup.py install --skip-build -O1 --root="${pkgdir}"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

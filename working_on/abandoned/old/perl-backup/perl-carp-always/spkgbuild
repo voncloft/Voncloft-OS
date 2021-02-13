@@ -1,0 +1,42 @@
+# description : Warns and dies noisily with stack backtraces
+# depends : perl
+
+name=perl-carp-always
+_perl_namespace=Carp
+_perl_module=Always
+version=0.16
+release=1
+url=https://metacpan.org/release/${_perl_namespace}-${_perl_module}
+check# depends : perl-test-base
+source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+options="!checksum"
+sha512sums=208e8d8435aebcc8c8345a453d17daaf35976c40e2b91cf528b92e9f6afba81cff9b31b656d71a6736838631e4b110cd12e49cfc48810872d39109b137fa074b
+
+build-delete {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+}
+
+check {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}
+
+build() {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  make pure_install INSTALLDIRS=vendor DESTDIR=$PKG
+  # Delete unuseful files
+  find $PKG -name .packlist -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

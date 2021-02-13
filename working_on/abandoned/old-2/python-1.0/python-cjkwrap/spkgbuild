@@ -1,0 +1,16 @@
+# description : A library for wrapping and filling CJK text.
+# depends : python
+
+url=https://github.com/fgallaire/cjkwrap
+name=python-cjkwrap
+version=2.2
+release=7
+
+source="https://pypi.io/packages/source/C/CJKwrap/CJKwrap-$version.tar.gz"
+
+build() {
+   cd CJKwrap-$version
+   cd CJKwrap-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

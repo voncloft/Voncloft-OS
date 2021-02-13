@@ -1,0 +1,24 @@
+
+_name=pybars3
+name=python-$_name
+version=0.9.7
+release=5
+# description : Template system for Python which is compatible with Handlebars.js 
+# depends :   python   python-pymeta3  
+source=" $url/archive/$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

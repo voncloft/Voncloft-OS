@@ -1,0 +1,25 @@
+# description : Helper to test WSGI applications"
+# depends :   python-webob   python-six   python-beautifulsoup4   python-waitress  
+
+name=python-webtest
+version=2.0.35
+release=4
+             python-lxml: for response.lxml  
+               python-pylons-sphinx-themes  
+source="https://pypi.io/build()s/source/W/WebTest/WebTest-$version.tar.gz" 
+
+build-old()   {
+  cd WebTest-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd WebTest-$version
+  PYTHONPATH=".:$PYTHONPATH" nosetests3
+}
+
+build()   {
+  cd WebTest-$version
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 license.rst $PKG/usr/share/licenses/$name/license.rst
+}

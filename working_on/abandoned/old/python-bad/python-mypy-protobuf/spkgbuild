@@ -1,0 +1,20 @@
+# description : Generate mypy stub files from protobuf specs 
+# depends :   mypy   protobuf   python   python-protobuf  
+name=python-mypy-protobuf
+version=1.23
+release=3
+
+
+
+source="https://files.pythonhosted.org/build()s/source/m/mypy-protobuf/mypy-protobuf-$version.tar.gz" 
+
+
+build-old()   {
+  cd mypy-protobuf-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd mypy-protobuf-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

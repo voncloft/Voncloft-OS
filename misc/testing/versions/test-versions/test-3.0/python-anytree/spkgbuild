@@ -1,0 +1,21 @@
+
+name=python-anytree
+version=2.8.0
+release=3
+# description : "Powerful and Lightweight Python Tree Data Structure"
+# depends : (python-six)
+
+version() {
+  cd $name
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+build-remove() {
+  cd $name
+  python setup.py build
+}
+
+build() {
+  cd $name
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

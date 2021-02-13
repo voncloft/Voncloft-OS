@@ -1,0 +1,56 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: GordonGR <ntheo1979@gmail.com>
+# Contributor: speps <speps.aur@archlinux.org>
+
+pkgname=lib32-libcroco
+pkgver=0.6.13
+pkgrel=1
+pkgdesc='GNOME CSS2 parsing and manipulation toolkit (32-bit)'
+url="https://git.gnome.org/browse/libcroco"
+arch=('x86_64')
+depends=('lib32-glib2' 'lib32-libxml2' 'libcroco')
+makedepends=('gcc-multilib' 'git' 'gtk-doc')
+license=('LGPL')
+_commit=7e15ca6c2c29a4b78367e6efa6195b331a92b2a7  # tags/0.6.13^0
+source=("git+https://git.gnome.org/browse/libcroco#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd libcroco
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd libcroco
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+check() {
+  cd libcroco
+  make check
+}
+ 
+build() {
+  cd libcroco
+
+  export CC='gcc -m32'
+  export CXX='g++ -m32'
+  export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
+
+  ./configure \
+    --prefix='/usr' \
+    --libdir='/usr/lib32' \
+    --disable-static \
+    --disable-gtk-doc
+  make
+}
+
+package() {
+  cd libcroco
+
+  make DESTDIR="${pkgdir}" install
+  rm -rf "${pkgdir}"/usr/{bin,include,share}
+}
+
+# vim: ts=2 sw=2 et:

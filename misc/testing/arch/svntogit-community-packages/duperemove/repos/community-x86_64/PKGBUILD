@@ -1,0 +1,24 @@
+# Maintainer: Robin Broda <coderobe @ archlinux.org>
+# Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
+
+pkgname=duperemove
+pkgver=0.11.2
+pkgrel=1
+pkgdesc='Btrfs extent deduplication utility'
+arch=('x86_64')
+url='https://github.com/markfasheh/duperemove'
+license=('GPL')
+depends=('glib2' 'sqlite')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha512sums=('d2b24c912a3ae4a5b9730ba1369b6174cc6fe252710dc7dae2971816e931558ea68d664bf4c9497630dd9002a71fccc26848ad848831fa45d7a7715ba65378e5')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make PREFIX=/usr SBINDIR=/usr/bin DESTDIR="${pkgdir}" install
+}

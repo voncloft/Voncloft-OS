@@ -1,0 +1,38 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=django-gravatar2
+name=python-django-gravatar
+version=1.4.4
+release=3
+pkgdesc="Essential Gravatar support for Django"
+url="https://github.com/twaddington/django-gravatar"
+depends=('python-django')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('999fe2a036b23f73ee8111cccde459aa72a5f90995d322e772776f85ba206281e791cdf7d4888b45c7f2ecf8baf6509ed44652396f5db158c484a2fb53439c99')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  python example_project/manage.py test --verbosity=2 django_gravatar
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${pkgdir}"
+  install -vDm 644 README.rst -t "${pkgdir}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+}

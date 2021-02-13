@@ -1,0 +1,18 @@
+# description : A low-level interface to a growing number of Amazon Web Services 
+# depends :   python-dateutil   python-jmespath   python-docutils   python-urllib3  
+
+name=python-botocore
+version=1.19.63
+release=1
+source=  $url/archive/$version.tar.gz 
+
+build-old()   {
+  cd botocore-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd botocore-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

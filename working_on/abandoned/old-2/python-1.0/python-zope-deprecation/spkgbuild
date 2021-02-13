@@ -1,0 +1,17 @@
+# description : Zope Deprecation Infrastructure
+# depends : python-setuptools
+
+url=https://github.com/zopefoundation/zope.deprecation
+name=python-zope-deprecation
+version=4.4.0
+release=5
+
+source="https://github.com/zopefoundation/zope.deprecation/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd zope.deprecation-$version
+   cd zope.deprecation-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

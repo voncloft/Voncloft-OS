@@ -1,0 +1,23 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=pyproject2setuppy
+name=python-$_name
+version=9
+release=2
+pkgdesc='Cheap builder for pyproject-based build systems'
+url='https://github.com/mgorny/pyproject2setuppy'
+depends=('python-setuptools' 'python-toml')
+source=("$name-$version.tar.gz::$url/archive/v$version.tar.gz")
+sha512sums=('bd337f392e3dfd686039714687bd8a57b7b946b486f5513bf603e322843a4d8f4c2fdca747e61090f00f3ed4a5284a2b182f064412a3c8e70f278a2be7551d93')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

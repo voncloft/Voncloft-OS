@@ -1,0 +1,23 @@
+
+name=python-routes
+version=2.5.1
+release=3
+# description : Routing recognition and generation tools"
+# depends :  "python-repoze.lru"  python-six  
+source="https://pypi.io/packages/source/R/Routes/Routes-$version.tar.gz" 
+
+build   {
+  cd Routes-$version
+  python setup.py build
+}
+
+check   {
+  cd Routes-$version
+  nosetests3
+}
+
+package   {
+  cd Routes-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

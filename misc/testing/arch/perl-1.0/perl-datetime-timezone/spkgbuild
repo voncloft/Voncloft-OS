@@ -1,0 +1,24 @@
+# description : Time zone object base class and factory 
+# depends : perl-class-singleton>=1.03 perl-params-validate>=0.72 perl-class-load
+
+name=perl-datetime-timezone
+version=2.44
+release=1
+url=https://search.cpan.org/dist/DateTime-TimeZone
+	 perl-list-allutils
+source="https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-TimeZone-$version.tarsource=.gz"
+options=!checksum
+sha256sums=573dd4059a2dfd3833d6a7d2bf084778ac6595a009b11dea6360d7d022ce4526
+
+build-delete {
+  cd  $srcdir/DateTime-TimeZone-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/DateTime-TimeZone-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

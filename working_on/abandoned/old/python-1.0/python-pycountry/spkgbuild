@@ -1,0 +1,30 @@
+# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contibutor: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor:  Pawel "kTT" Salata <rockplayer.pl@gmail.com>
+
+name=python-pycountry
+version=20.7.3
+release=3
+pkgdesc="ISO country, subdivision, language, currency and script definitions and their translations"
+url="https://pypi.org/project/pycountry/"
+depends=(python python-lxml)
+makedepends=('python' 'python-setuptools')
+checkdepends=('python-pytest' 'python-pytest-runner')
+source=("https://pypi.io/packages/source/p/pycountry/pycountry-${version}.tar.gz")
+sha512sums=('df88a34307a4275267a7f3af282b73ca5e762c49ad158bfcd39b97c5d852bf045bcfe72351fc6f232c55003a7c4b0a04801eb562ba65ed5d599bd45b2bd3bc58')
+
+build(){
+  cd "pycountry-${version}"
+  python setup.py build
+}
+
+check(){
+  cd "pycountry-${version}"
+  python setup.py pytest
+}
+
+package() {
+  cd "pycountry-${version}"
+  python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}

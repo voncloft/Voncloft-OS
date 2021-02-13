@@ -1,0 +1,40 @@
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=audacious-plugins
+pkgver=4.0.5
+pkgrel=1
+pkgdesc="Plugins for Audacious"
+arch=('x86_64')
+url="https://audacious-media-player.org/"
+license=('BSD' 'GPL')
+depends=('alsa-lib' 'curl' 'dbus-glib' 'faad2' 'ffmpeg' 'flac' 'fluidsynth'
+         'jack' 'lame' 'libcdio-paranoia' 'libcue' 'libmms' 'libmodplug'
+         'libmtp' 'libpulse' 'libnotify' 'libsamplerate' 'libsidplayfp'
+         'libvorbis' 'lirc' 'mpg123' 'neon' 'wavpack' 'libbs2b')
+makedepends=("audacious>=$pkgver" 'glib2' 'python')
+source=(https://distfiles.audacious-media-player.org/$pkgname-$pkgver.tar.bz2)
+sha256sums=('9f0251922886934f2aa32739b5a30eadfefa7c70dd7b3e78f94aa6fc54e0c55b')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+}
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure \
+    --prefix=/usr \
+    --enable-amidiplug
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

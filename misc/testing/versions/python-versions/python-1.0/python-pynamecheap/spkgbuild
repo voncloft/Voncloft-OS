@@ -1,0 +1,25 @@
+
+name=python-pynamecheap
+version=0.0.3
+release=6
+# description : Namecheap API client in Python"
+# depends :   python-requests  
+source="https://github.com/Bemmu/PyNamecheap/archive/v$version.tar.gz" 
+
+build   {
+  cd PyNamecheap-$version
+  python setup.py build
+}
+
+check   {
+  # Needs an account
+
+  cd PyNamecheap-$version
+  python setup.py nosetests || echo "Tests failed"
+}
+
+package   {
+  cd PyNamecheap-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

@@ -1,0 +1,29 @@
+# description : Python bindings for libgit2
+# depends : libgit2>=1:0.27.0 python-cffi python-six python-cached-property
+
+name=python-pygit2
+version=1.5.0
+release=1
+url="https://github.com/libgit2/pygit2"
+make# depends : python-cffi python-setuptools git python-six
+check# depends : python-pytest-runner
+source="$name-$version.tar.gz"::https://github.com/libgit2/pygit2/archive/v$version.tar.gz
+sha256sums=27f9918fe47b189387378923884928d69b18b8aacc54000edc0669f8741de2e4
+
+build()-delete {
+	 cd "pygit2-$version"
+	python setup.py build
+}
+
+check {
+	 cd "pygit2-$version"
+	python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+	 cd "pygit2-$version"
+	LANG=en_US.UTF8 python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}

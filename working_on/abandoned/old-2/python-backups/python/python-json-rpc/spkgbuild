@@ -1,0 +1,40 @@
+# description : "JSON-RPC transport realisation"
+
+pkgbase=python-json-rpc
+version=1.11.1
+release=1
+make# depends : python python-setuptools
+check# depends : python-nose python-mock python-flask
+url="https://github.com/pavlov99/json-rpc"
+source="$name-$version.tar.gz::https://github.com/pavlov99/json-rpc/archive/$version.tar.gz"
+sha256sums=23a975c2737595e94c86d0cc6c9506086a44a2dacc1d506059dbda7fe6ce2e95
+
+prepare{
+  cp -r json-rpc-$version{,-py2}
+}
+
+build()-delete {
+   cd  "$srcdir/json-rpc-$version"
+  python setup.py build
+
+   cd  "$srcdir/json-rpc-$version-py2"
+}
+
+check {
+   cd  "$srcdir/json-rpc-$version"
+  python setup.py nosetests
+
+   cd  "$srcdir/json-rpc-$version-py2"
+}
+
+package_python-json-rpc {
+  # depends : python
+   cd "json-rpc-$version"
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+
+   cd "json-rpc-$version-py2"
+
+}

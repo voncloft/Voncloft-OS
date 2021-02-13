@@ -1,0 +1,42 @@
+
+pkgbase=python-apipkg
+name=  python-apipkg   python2-apipkg  
+version=1.5
+release=5
+# description : Namespace control and lazy-import mechanism"
+source="https://files.pythonhosted.org/packages/source/a/apipkg/apipkg-$version.tar.gz"
+         apipkg-pytest5.patch 
+             1228d7c8c79ea1a0d136585bfe236bc8c22a4053c044602082d9f88006ba2893dd615399e3bae0bbf7f94c719cc9d61d578bc8c8c956cb6f3ff3de3e0c00f7d6  
+
+prepare   {
+  cd apipkg-$version
+  patch -p1 -i ../apipkg-pytest5.patch # port away from removed pytest api
+}
+
+build   {
+  cd apipkg-$version
+  python setup.py build
+  python2 setup.py build
+}
+
+check   {
+  cd apipkg-$version
+  python setup.py pytest
+  python2 setup.py pytest
+}
+
+package_python-apipkg   {
+  # depends :   python  
+
+  cd apipkg-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-apipkg   {
+  # depends :   python2  
+
+  cd apipkg-$version
+  python2 setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

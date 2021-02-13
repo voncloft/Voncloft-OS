@@ -1,0 +1,46 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Angel Velasquez <angvp@archlinux.org> 
+# Contributor: Sergej Pupykin <sergej@aur.archlinux.org>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgbase=python-m2crypto
+name=(python2-m2crypto python-m2crypto)
+version=0.37.1
+release=1
+pkgdesc="A crypto and SSL toolkit for Python"
+url="https://pypi.python.org/pypi/M2Crypto"
+makedepends=('python' 'python-setuptools'
+             'python2' 'python2-setuptools'
+             'swig')
+source=("${name}-${version}.tar.gz::https://gitlab.com/m2crypto/m2crypto/repository/${version}/archive.tar.gz"
+        "LICENSE")
+sha256sums=('bf6156ea3b094a36d9f14985e44695146808eeb4299d50a2f80c942ae1c2cccf'
+            '4eca478396f4b2b020729a111fce3f096456d74500bfd8f2b0388c3c69f997c0')
+
+prepare() {
+  mv m2crypto-${version}-* m2crypto-${version}
+  cp -a m2crypto-$version{,-py2}
+}
+
+build(){
+  cd "$srcdir/m2crypto-$version-py2"
+  python2 setup.py build
+
+  cd "$srcdir/m2crypto-$version"
+  python setup.py build
+
+}
+
+package_python2-m2crypto() {
+  depends=('python2' 'openssl' 'python2-typing')
+  cd "${srcdir}/m2crypto-${version}-py2"
+  python2 setup.py install --root="${pkgdir}/" --optimize=1 --skip-build
+  install -D -m644 "$srcdir"/LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+}
+
+package_python-m2crypto() {
+  depends=('python' 'openssl')
+  cd "${srcdir}/m2crypto-${version}"
+  python setup.py install --root="${pkgdir}/" --optimize=1 --skip-build
+  install -D -m644 "$srcdir"/LICENSE "${pkgdir}/usr/share/licenses/${name}/LICENSE"
+}

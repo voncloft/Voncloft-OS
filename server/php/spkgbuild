@@ -1,0 +1,57 @@
+# description : php
+# depends: apache libxml2 
+
+name=php
+version=7.4.11
+release=1
+
+source="http://www.php.net/distributions/php-7.4.11.tar.xz"
+
+build()
+{
+	cd $name-$version
+	./configure --prefix=/usr                \
+            --sysconfdir=/etc            \
+            --localstatedir=/var         \
+            --datadir=/usr/share/php     \
+            --mandir=/usr/share/man      \
+            --without-pear               \
+            --enable-fpm                 \
+            --with-fpm-user=apache       \
+            --with-fpm-group=apache      \
+            --with-config-file-path=/etc \
+            --with-zlib                  \
+            --enable-bcmath              \
+            --with-bz2                   \
+            --enable-calendar            \
+            --enable-dba=shared          \
+            --with-gdbm                  \
+            --with-gmp                   \
+            --enable-ftp                 \
+            --with-gettext               \
+            --enable-mbstring            \
+            --disable-mbregex            \
+            --with-readline              &&
+make
+make DESTDIR=$PKG install
+install -v -m644 php.ini-production /etc/php.ini
+if [ -f /etc/php-fpm.conf.default ]; then
+  mv -v /etc/php-fpm.conf{.default,} &&
+  mv -v /etc/php-fpm.d/www.conf{.default,}
+fi
+
+sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
+    /etc/php.ini
+
+sed -i -e '/proxy_module/s/^#//'      \
+       -e '/proxy_fcgi_module/s/^#//' \
+       /etc/httpd/httpd.conf
+
+echo \
+'ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/srv/www/$1' >> \
+/etc/httpd/httpd.conf
+
+echo \
+'AddType application/x-httpd-php-source .phps' >> \
+/etc/httpd/httpd.conf
+}

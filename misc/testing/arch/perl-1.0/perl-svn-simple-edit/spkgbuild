@@ -1,0 +1,24 @@
+# description : Perl/CPAN Module SVN::Simple::Edit
+# This PKGBUILD was autocreated.  See https://xtermin.us/archperl/ for details
+
+name=perl-svn-simple-edit
+version=0.28
+release=6
+url=https://search.cpan.org/dist/SVN-Simple/
+make# depends : subversion
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/SVN-Simple-$version.tarsource=.gz"
+options=!checksum
+sha256sums=d63cc169e4369be98a539abe9cc1611bfcc2b36966a6517e676688fed1884ffb
+
+build-delete {
+  cd $srcdir/SVN-Simple-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/SVN-Simple-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

@@ -1,0 +1,20 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+
+name=python-pylibmc
+version=1.6.1
+release=5
+
+pkgdesc='Quick and small memcached client for Python'
+url='https://pypi.python.org/pypi/pylibmc'
+
+depends=('libmemcached' 'python')
+makedepends=('python' 'gcc' 'zlib')
+
+source=("https://pypi.org/packages/source/p/pylibmc/pylibmc-$version.tar.gz")
+
+md5sums=('ac047c889e3a00cd200a819852a54a69')
+
+package() {
+	cd pylibmc-"$version"
+	python setup.py install --root="$pkgdir"
+}

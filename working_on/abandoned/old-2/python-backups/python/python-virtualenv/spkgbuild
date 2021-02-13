@@ -1,0 +1,67 @@
+# description : "Virtual Python Environment build()er"
+
+pkgbase=python-virtualenv
+version=20.4.2
+release=1
+url="https://virtualenv.pypa.io/"
+make# depends : python-setuptools python-appdirs python-distlib python-filelock python-six
+             python-sphinx_rtd_theme python-sphinx-argparse towncrier
+check# depends : python-pytest-freezegun python-pytest-mock python-pip python-coverage fish
+              xonsh python-flaky  # tcsh removed: randomly hangs tests
+replaces=virtualenv
+conflicts=virtualenv
+options=!makeflags
+source=$pkgbase-$version.tar.gz::https://github.com/pypa/virtualenv/archive/$version.tar.gz
+sha512sums=c1a4f6afc8a9e5c924426db797cba5cad00a56db973106c6247e47955f628c245fbcb7d164edd238ac97d985adc298e86eee1c46eca94033b0f9b0c24e22e4f3
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+prepare {
+  # TODO: figure out why
+  sed -i /test_py_info_to_system_raises/i @pytest.mark.skip virtualenv-$version/tests/unit/discovery/py_info/test_py_info.py
+
+  # workaround pip vendorod certifi
+  sed -i "s|pkgutil.get_data\"pip._vendor.certifi\", \"cacert.pem\"|openos.path.join/etc/ssl/certs/ca-certificates.crt, rb.read|" virtualenv-$version/tests/conftest.py
+
+  cp -a virtualenv-$version{,-py2}
+}
+
+build()-delete {
+   cd virtualenv-$version
+    python setup.py build egg_info
+    export PYTHONPATH="$PWD/build()/lib:$PWD/src"
+    sphinx-build() -b man docs docs/_build()/man
+  
+   cd virtualenv-$version-py2
+  
+}
+
+check {
+   cd virtualenv-$version
+  PYTHONPATH="$PWD/build()/lib:$PWD/src" python -m pytest
+}
+
+package_python-virtualenv {
+  # depends : python-appdirs python-distlib python-filelock python-six
+
+   cd virtualenv-$version
+  python setup.py build
+  python setup.py install   --root=$PKG 
+  install -Dm 644 docs/_build()/man/virtualenv.1 "${PKG}/usr/share/man/man1/virtualenv.1"
+  ln -s virtualenv.1.gz "${PKG}/usr/share/man/man1/virtualenv3.1.gz"
+
+  # link to a version with 3 suffix as well
+  ln "$PKG/usr/bin/virtualenv" "$PKG/usr/bin/virtualenv3"
+
+    $PKG/usr/share/licenses/$name/
+}
+
+
+   cd virtualenv-$version-py2
+  install -Dm 644 ../virtualenv-$version/docs/_build()/man/virtualenv.1 "${PKG}/usr/share/man/man1/virtualenv2.1"
+
+  # move this "old" version out of the way
+  mv "$PKG/usr/bin/virtualenv" "$PKG/usr/bin/virtualenv2"
+
+    $PKG/usr/share/licenses/$name/
+}

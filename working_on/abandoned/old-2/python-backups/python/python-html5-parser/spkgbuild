@@ -1,0 +1,38 @@
+# description : "Fast C based HTML 5 parsing for python"
+# depends : python-chardet python-lxml
+
+_name=html5-parser
+name=python-html5-parser
+version=0.4.9
+release=5
+url="https://github.com/kovidgoyal/${_name}"
+make# depends : python-setuptools
+check# depends : python-beautifulsoup4
+opt# depends : python-beautifulsoup4: to use the soup treebuild()er
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"{,.asc}
+sha256sums=25fe8f6848cbc15187f6748c0695df32bcf1b37df6420b6a01b4ebe1ec1ed48f
+            SKIP
+b2sums=7744798d74db1d591490c75eabae5333e90f053a8ba1c5517f08c1b9c253042796e42618ae0a674e1b1cfa97390448ffc595e861234f5b980a1f7c0b9056cc88
+        SKIP
+validpgpkeys=3CE1780F78DD88DF45194FD706BC317B515ACE7C # Kovid Goyal New longer key <kovid@kovidgoyal.net>
+
+build()-delete {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py test
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

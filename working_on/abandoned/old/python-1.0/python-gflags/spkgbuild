@@ -1,0 +1,26 @@
+# Maintainer: BlackEagle < ike DOT devolder AT gmail DOT com >
+
+name=python-gflags
+version=3.1.2
+release=6
+pkgdesc="Commandline flags module for Python"
+url="https://github.com/google/python-gflags"
+depends=('python')
+makedepends=('python-setuptools')
+source=("${name}-${version}.tar.gz::https://github.com/google/${name}/archive/${version}.tar.gz")
+sha256sums=('f1692c79ccf4a55d13895dcd195f0db1ebd55c71024b431ec953703b38d73f96')
+
+build() {
+    cd ${name}-${version}
+    PYTHONHASHSEED=1 python setup.py build
+}
+
+package() {
+  cd ${name}-${version}
+  python setup.py install --root="${pkgdir}"
+  chmod +x "${pkgdir}"/usr/bin/gflags2man.py
+  #chmod +r "${pkgdir}"/* -R
+  #install -dm755 "${pkgdir}"/usr/share/licenses/${name}
+  install -Dm644 AUTHORS "${pkgdir}"/usr/share/licenses/${name}/AUTHORS
+  install -Dm644 COPYING "${pkgdir}"/usr/share/licenses/${name}/COPYING
+}

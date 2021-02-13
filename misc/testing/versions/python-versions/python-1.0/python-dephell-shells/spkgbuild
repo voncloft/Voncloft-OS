@@ -1,0 +1,34 @@
+
+_name=dephell_shells
+name=python-dephell-shells
+version=0.1.3
+release=5
+# description : Activate virtual environment for current shell"
+# depends :   python-attrs   python-pexpect   python-shellingham  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # pycache slipped into release tarballs
+    find . -name \*.pyc -delete
+}
+
+build  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

@@ -1,0 +1,22 @@
+
+name=python-testscenarios
+version=0.5.0
+release=9
+# description : Testscenarios, a pyunit extension for dependency injection"
+# depends :   python-testtools  
+source="https://pypi.python.org/packages/source/t/testscenarios/testscenarios-$version.tar.gz" 
+
+build   {
+  cd testscenarios-$version
+  python setup.py build
+}
+
+check   {
+  cd testscenarios-$version
+  python -m testtools.run testscenarios.test_suite
+}
+
+package   {
+  cd testscenarios-$version
+  python setup.py install --root=$PKG --optimize=1
+}

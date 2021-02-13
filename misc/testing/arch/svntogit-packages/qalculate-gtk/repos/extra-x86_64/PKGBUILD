@@ -1,0 +1,25 @@
+# Maintainer:
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgname=qalculate-gtk
+pkgver=3.16.0
+pkgrel=1
+pkgdesc="GTK frontend for libqalculate"
+arch=(x86_64)
+url="https://qalculate.github.io/"
+license=(GPL)
+depends=(libqalculate gtk3)
+makedepends=(intltool python)
+source=(https://github.com/Qalculate/qalculate-gtk/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('79cbdb9705921cbe5fe9593fb798cb68c455596bc20584c6d4c930c28137655f')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,15 @@
+
+name=python-sounddevice
+version=0.4.1
+release=2
+# description : Play and Record Sound with Python 
+# depends :  portaudio python-cffi 
+source="https://files.pythonhosted.org/packages/source/s/sounddevice/sounddevice-$version.tar.gz" 
+
+package   {
+  cd "sounddevice-$version"
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+# getver: github.com/spatialaudio/python-sounddevice

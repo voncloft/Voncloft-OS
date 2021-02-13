@@ -1,0 +1,24 @@
+
+name=python-btrees
+version=4.7.2
+release=3
+# description : A fancy and practical functional tools 
+# depends :   python-persistent   python-zope-interface  
+source="https://github.com/zopefoundation/btrees/archive/$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/BTrees-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/BTrees-$version
+  python setup.py pytest
+}
+
+package   {
+  cd BTrees-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

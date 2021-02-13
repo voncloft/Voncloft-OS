@@ -1,0 +1,23 @@
+# description : Python Low-Overhead Profiler"
+# depends :   python-six   python-tornado  
+
+name=python-plop
+version=0.4.0
+release=3
+source="https://pypi.python.org/build()s/source/p/plop/plop-${version}.tar.gz" 
+
+build-old()   {
+  cd plop-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd plop-$version
+  python -m plop.test.runtests
+}
+
+build()   {
+  cd plop-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/$name
+}

@@ -1,0 +1,29 @@
+# description : "Collection of persistent disk-based queues."
+# depends : python
+
+name=python-queuelib
+version=1.5.0
+release=7
+url="https://scrapy.org"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="$name-$version.tar.gz::https://github.com/scrapy/queuelib/archive/v$version.tar.gz"
+sha512sums=8217dfa82c4a7c2449277d81f553b1dd5b82fa34ba0c69ed98bcc146940e8afb79251715be9ec61c962a78292f14d83dac862ba021485573c9069e85710d5998
+
+build()-delete {
+   cd queuelib-$version
+  python setup.py build
+}
+
+check {
+   cd queuelib-$version
+  py.test
+}
+
+options="!checksum"
+
+build() {
+   cd queuelib-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

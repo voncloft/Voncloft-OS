@@ -1,0 +1,22 @@
+# description : "Powerful and robust templating system for Python"
+# depends : python
+
+_name=empy
+name=python-empy
+version=3.3.4
+release=5
+url="http://www.alcyone.com/software/empy/"
+source="http://www.alcyone.com/software/empy/$_name-$version.tar.gz"
+sha256sums=9126211471fc7ff83fdd40beca93eb6de5681758fbe68b4cf8af6326259df1b1
+
+build()-delete {
+   cd $_name-$version
+  python3 setup.py build()
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version 
+  python3 setup.py install --root=$PKG --optimize=1
+}

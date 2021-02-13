@@ -1,0 +1,38 @@
+# description : Read and write Changes files
+# depends : perl
+
+name=perl-cpan-changes
+version=0.400002
+release=4
+url=https://search.mcpan.org/dist/CPAN-Changes
+source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-$version.tar.gz"
+options="!checksum"
+sha256sums=01eedea90d07468cb58e4a50bfa3bb1d4eeda9073596add1118fc359153abe8d
+
+build-delete {
+   cd ${sr cdir}/CPAN-Changes-$version
+
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL installdirs=vendor
+  make
+}
+
+check {
+   cd ${sr cdir}/CPAN-Changes-$version
+
+  make test
+}
+
+build() {
+   cd ${sr cdir}/CPAN-Changes-$version
+
+  make install DESTDIR=$PKG
+
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

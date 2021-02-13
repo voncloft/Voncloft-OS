@@ -1,0 +1,20 @@
+# description : Python library for arbitrary-precision floating-point arithmetic. 
+# depends :  python-gmpy2 
+
+name=python-mpmath
+version=1.1.0
+release=5
+source=  "https://github.com/fredrik-johansson/mpmath/archive/$version.tar.gz" 
+
+build-old()   {
+  cd mpmath-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd mpmath-$version  
+
+  python setup.py install --root $PKG --optimize=1
+
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,23 @@
+
+name=python-chameleon
+version=3.8.1
+release=2
+# description : Fast HTML/XML Template Compiler"
+# depends :   python  
+source="https://github.com/malthe/chameleon/archive/$version.tar.gz" 
+
+build   {
+  cd chameleon-$version
+  python setup.py build
+}
+
+check   {
+  cd chameleon-$version
+  python setup.py test
+}
+
+package   {
+  cd chameleon-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

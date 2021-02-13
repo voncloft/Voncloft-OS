@@ -1,0 +1,29 @@
+# description : "Pure-Python HPACK header compression"
+# depends : python
+
+name=python-hpack
+version=4.0.0
+release=1
+url="https://hyper.rtfd.org/"
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-hypothesis
+source="https://github.com/python-hyper/hpack/archive/v$version/$name-$version.tar.gz"
+sha512sums=f482d086d7a82649393e3cfea55c98966ce57055cb1826bc4dec1ea334661c02708e7903f2e8e588ee1c30df41373e1de9fb960c2e7bbc18d0ace0b8f97b195b
+
+build()-delete {
+   cd hpack-$version
+  python setup.py build
+}
+
+check {
+   cd hpack-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd hpack-$version
+  python setup.py build
+  python setup.py install -O1 --root $PKG
+}

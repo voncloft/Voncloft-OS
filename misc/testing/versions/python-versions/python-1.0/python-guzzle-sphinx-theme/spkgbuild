@@ -1,0 +1,19 @@
+
+name=python-guzzle-sphinx-theme
+_name=guzzle_sphinx_theme
+version=0.7.11
+release=8
+# description : Sphinx theme used by Guzzle 
+# depends :   python   python-sphinx>=1.1.3  
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+build   {
+  cd "${_name}-$version"
+  python setup.py build
+}
+
+package   {
+  cd "${_name}-$version"
+  python setup.py install --root=$PKG --optimize=1
+  install -Dpm644  LICENSE  "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

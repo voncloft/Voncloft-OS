@@ -1,0 +1,28 @@
+# description : Perl/CPAN Module Net::IPv6Addr
+
+name=perl-net-ipv6addr
+version=0.2
+release=12
+url=https://search.cpan.org/dist/Net-IPv6Addr
+source="https://www.cpan.org/authors/id/T/TM/TMONROE/Net-IPv6Addr-0.2.tar.gz"
+options="!checksum"
+sha256sums=1ba152f8a4b397eb7943bb9c44a8bba1b98649496e25d0d7e15c2e6f0a1e70a3
+
+build-delete {
+  cd $srcdir/Net-IPv6Addr-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Net-IPv6Addr-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,40 @@
+
+name=python-adblock
+version=0.4.2
+release=1
+# description : Brave s adblock library in Python"
+# depends :   
+source="https://github.com/ArniDagur/${name}/archive/${version}.tar.gz" 
+
+export PYTHONHASHSEED=0
+
+build   {
+    cd $name-$version
+    maturin build --release --strip
+    cargo build --release --locked --all-features --target-dir=target
+}
+
+check   {
+  local python_version=$ python -c  import sys; print ".".join map str, sys.version_info[:2]     
+  cd "$name-$version"
+  mkdir -vp testdir
+  export PIP_CONFIG_FILE=/dev/null
+  pip install --isolated \
+              --root="testdir" \
+              --ignore-installed \
+              --no-deps target/wheels/*.whl
+  export PYTHONPATH="testdir/usr/lib/python${python_version}/site-packages:${PYTHONPATH}"
+  pytest -v -k  not test_version_numbers_all_same 
+}
+
+package   {
+    cd $name-$version
+    install -Dm755 target/release/libadblock.so -t "$PKG/usr/lib"
+    export PIP_CONFIG_FILE= /dev/null 
+    pip install --isolated \
+              --root=$PKG \
+              --ignore-installed \
+              --no-deps target/wheels/*.whl
+    install -Dm0644 LICENSE-MIT "${PKG}/usr/share/licenses/${name}/LICENSE-MIT"
+}
+

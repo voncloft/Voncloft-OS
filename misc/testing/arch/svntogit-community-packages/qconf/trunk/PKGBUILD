@@ -1,0 +1,25 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: DsTr <kostindima@gmail.com>
+
+pkgname=qconf
+pkgver=2.5
+pkgrel=1
+pkgdesc="QConf allows you to have a nice configure script for your qmake-based project."
+arch=(x86_64)
+url="https://github.com/psi-plus/qconf"
+license=('GPL')
+depends=('qt5-base')
+makedepends=()
+source=("$pkgname-$pkgver.tar.gz::https://github.com/psi-plus/qconf/archive/v$pkgver.tar.gz")
+sha256sums=('b9465797b477e7a85d8a787fc5af3b3c7437494938ad092e912eccc045447f9c')
+
+build() {
+  cd "$srcdir"/qconf-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir"/qconf-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+}

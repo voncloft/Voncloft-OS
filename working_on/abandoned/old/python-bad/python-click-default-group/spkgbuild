@@ -1,0 +1,24 @@
+# description : Extends click.Group to invoke a command without explicit subcommand name"
+# depends :   python-click  
+
+name=python-click-default-group
+version=1.2.2
+release=3
+source="https://github.com/click-contrib/click-default-group/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd click-default-group-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd click-default-group-$version
+  python -m pytest
+}
+
+build()   {
+  cd click-default-group-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

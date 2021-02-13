@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Sergey Mastykov <smastykov[at]gmail[dot]com>
+
+name=python-venusian
+version=3.0.0
+release=2
+pkgdesc="A library for deferring decorator actions"
+url="https://pylonsproject.org"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-pytest-cov')
+source=("$name-$version.tar.gz::https://github.com/Pylons/venusian/archive/$version.tar.gz")
+sha512sums=('5cb765d42c19341917bfe8b97c4c117140060a2c6b12492daebbae5e48cbc8b9db0c85593714c1b3754f7921c522d99b0feaf79291088a5abd83f979a3a938c0')
+
+build() {
+  cd venusian-$version
+  python setup.py build
+}
+
+check() {
+  cd venusian-$version
+  python setup.py pytest
+}
+
+package() {
+  cd venusian-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

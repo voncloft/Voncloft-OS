@@ -1,0 +1,32 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Jianfeng Zhang <swordfeng123@gmail.com>
+
+pkgname=curlie
+pkgver=1.6.0
+pkgrel=1
+pkgdesc='The power of curl, the ease of use of httpie.'
+arch=('x86_64')
+url="https://curlie.io"
+license=('MIT')
+depends=('glibc' 'curl')
+makedepends=('go')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/rs/${pkgname}/archive/v${pkgver}.tar.gz")
+sha256sums=('7ed115d9d785e587f426e5d7f1e408ce687ed61389b63398fce0e60f3a5f3df8')
+
+build() {
+    cd "${pkgname}-${pkgver}"
+
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+
+    go build -ldflags "-X main.version=$pkgver -X main.date=$(date -u -I) -linkmode=external"
+}
+
+package() {
+    cd "${pkgname}-${pkgver}"
+    install -Dm755 -t "${pkgdir}/usr/bin/" "${pkgname}"
+    install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE
+}

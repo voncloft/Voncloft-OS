@@ -1,0 +1,28 @@
+# description : Library to implement a well-behaved Unix daemon process
+# depends : python python-lockfile python-docutils
+
+name=python-daemon
+version=2.2.4
+release=5
+url=https://pypi.python.org/pypi/python-daemon
+make# depends : python-setuptools python-docutils python-lockfile
+check# depends : python-mock python-testscenarios
+source=https://files.pythonhosted.org/packages/source/p/$name/$name-$version.tar.gz
+sha256sums=57c84f50a04d7825515e4dbf3a31c70cc44414394a71608dee6cfde469e81766
+
+build()-delete {
+   cd "${srcdir}"/python-daemon-$version
+  python setup.py build
+}
+
+check {
+   cd python-daemon-$version
+  python setup.py test
+}
+
+package_python-daemon {
+   cd "${srcdir}"/python-daemon-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

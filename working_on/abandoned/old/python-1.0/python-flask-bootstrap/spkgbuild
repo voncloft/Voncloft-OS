@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-flask-bootstrap
+version=3.3.7.1
+release=3
+pkgdesc="Ready-to-use Twitter-bootstrap for use in Flask"
+url="https://github.com/mbr/flask-bootstrap"
+depends=('python-flask' 'python-dominate' 'python-visitor')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-requests' 'python-flask-appconfig' 'python-flask-nav'
+              'python-flask-wtf' 'python-flask-debug')
+source=("$name-$version.tar.gz::https://github.com/mbr/flask-bootstrap/archive/$version.tar.gz")
+sha512sums=('010c71f69a95cb51afb449d1b43cb345ad23815ea89b368281f721a2af13cf2c143d67b586114898450d8e7fec413f45ff042cfca3dc1183cb0f50566e39fdc3')
+
+build() {
+  cd flask-bootstrap-$version
+  python setup.py build
+}
+
+check() {
+  cd flask-bootstrap-$version
+  python setup.py pytest
+}
+
+package() {
+  cd flask-bootstrap-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

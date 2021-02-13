@@ -1,0 +1,30 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=kylin-nm
+pkgver=3.0.1
+pkgrel=1
+pkgdesc="Kylin network monitor used in ubuntu-kylin operation system"
+arch=('x86_64')
+license=('GPL')
+url="https://github.com/ukui/kylin-nm"
+groups=('ukui')
+depends=('gsettings-qt' 'kwindowsystem' 'qt5-x11extras')
+makedepends=('qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ukui/kylin-nm/archive/v$pkgver.tar.gz")
+sha512sums=('07416afaef51c7264ab0af0e6741f2251e720929a205e97e3a1c0f02f5cee0bfb3a4ac0ae1317a29da3c7fff82d3f6a017188b5b95b09acfa2c1e7a0ecb01103')
+
+prepare() {
+  cd kylin-nm-$pkgver
+  sed -i '/dpkg-buildflags/d' kylin-nm.pro
+}
+
+build() {
+  cd kylin-nm-$pkgver
+  qmake-qt5 PREFIX=/usr
+  make
+}
+
+package() {
+  cd kylin-nm-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+}

@@ -1,0 +1,29 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=noise-repellent
+pkgver=0.1.5
+pkgrel=2
+pkgdesc="An lv2 plug-in for broadband noise reduction"
+arch=('x86_64')
+url="https://github.com/lucianodato/noise-repellent"
+license=('LGPL3')
+groups=('lv2-plugins' 'pro-audio')
+depends=('fftw' 'glibc')
+makedepends=('lv2' 'meson')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/lucianodato/${pkgname}/archive/${pkgver}.tar.gz")
+sha512sums=('cd2f150c39d4615042eafd6ada6487234be1578b00d857de9561d1bf5f39999078e9ea0fbf41a81cb23890a0c48192c1a309e3b054dc47682312d0f1e003d09c')
+
+build() {
+  cd "$pkgname-$pkgver"
+  # install_folder is broken:
+  # https://github.com/lucianodato/noise-repellent/issues/68
+  meson --prefix=/usr/lib/lv2 \
+        build
+  ninja -C build
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  DESTDIR="${pkgdir}" meson install -C build
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}/"
+}

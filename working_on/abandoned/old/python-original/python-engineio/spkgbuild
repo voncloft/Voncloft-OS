@@ -1,0 +1,44 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+pkgname=python-engineio
+pkgver=4.0.0
+pkgrel=1
+pkgdesc='Python implementation of the Engine.IO realtime server'
+url='https://github.com/miguelgrinberg/python-engineio'
+arch=('any')
+license=('MIT')
+depends=('python' 'python-six' 'python-urllib3' 'python-websocket-client' 'python-websockets')
+optdepends=('python-eventlet: eventlet driver'
+            'python-aiohttp: aiohttp driver'
+            'python-tornado: tornado driver'
+            'python-gevent: gevent driver'
+            'python-gevent-websocket: gevent driver')
+makedepends=('python-setuptools' 'python-sphinx' 'python-six' 'python-eventlet' 'python-aiohttp' 'python-tornado'
+             'python-urllib3' 'python-websocket-client' 'python-gevent' 'python-gevent-websocket' 'python-websockets')
+checkdepends=('python-mock' 'python-pytest' 'python-pytest-runner')
+options=('!makeflags')
+source=(https://github.com/miguelgrinberg/python-engineio/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('4d471bd00c8693505cca638cd2ac954ced02c77ccc516215b9f08a4f661aeabc997f92b8b9239abe3f6735d283245f830670dfbabd7c7aa9e07ccc80446963fb')
+b2sums=('21e608d4af9eb6ed1ce7a288e1e63179c8e443ffa5523069dfc39cda52dbb74f6f216634e71c55c0b32819a6bcbb1ef9106b98c1f0f0664e95182f9035d2c5ad')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  python setup.py build
+  make -C docs man text SPHINXBUILD=sphinx-build
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  python setup.py test
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  python setup.py install -O1 --root="${pkgdir}" --skip-build
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.rst -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 docs/_build/text/*.txt -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 docs/_build/man/python-engineio.1 "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,36 @@
+# description : "A collection of utilities for working with PIL the Python Imaging Library"
+# depends : python
+_name=pilkit
+name=python-pilkit
+version=2.0
+release=7
+url="https://github.com/matthewwithanm/pilkit"
+make# depends : python-setuptools
+check# depends : python-mock python-nose python-nose-progressive python-pillow
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=7618d7de125f2813b25d707b02b70ca9cb4e19105ed0eb3be3ff6b926a812ed2a609e54f8e86535641fc4baef265fae58d70290c14011eeea744e90066b7bdae
+
+prepare {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

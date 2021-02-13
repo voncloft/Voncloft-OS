@@ -1,0 +1,35 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=golang-golang-x-net
+pkgver=0.0.20191210
+_commit=c0dbc17a35534bf2e581d7a942408dc936316da4
+pkgrel=2
+pkgdesc='Supplementary Go networking libraries'
+arch=('any')
+url="https://github.com/golang/net"
+license=('BSD')
+depends=('go' 'golang-golang-x-crypto' 'golang-golang-x-text')
+checkdepends=('git')
+source=("$pkgname-$_commit.tar.gz::https://github.com/golang/net/archive/$_commit.tar.gz")
+sha512sums=('d2eae41c65085289b2be817dc991e5c47ab299a4f398028c0e00e1167b188db3a9d8fc181c231080e4cd188bda08c0bef34f61588f95f9ce9af4ed32eb65e510')
+
+prepare() {
+  # Removed pinned version
+  rm net-$_commit/go.{mod,sum}
+}
+
+check() {
+  export GOPATH="$srcdir/build:/usr/share/gocode"
+  mkdir -p "$srcdir"/build/src/golang.org/x
+  cp -a "$srcdir"/net-$_commit "$srcdir"/build/src/golang.org/x/net
+  cd "$srcdir"/build/src/golang.org/x/net
+  go get cloud.google.com/go/storage go4.org/syncutil/singleflight golang.org/x/build/autocertcache
+  go test -v $(go list ./...)
+}
+
+package() {
+  mkdir -p "$pkgdir"/usr/share/gocode/src/golang.org/x
+  cp -a "$srcdir"/net-$_commit "$pkgdir"/usr/share/gocode/src/golang.org/x/net
+
+  install -Dm644 net-$_commit/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

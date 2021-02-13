@@ -1,0 +1,34 @@
+
+name=python-babel
+version=2.9.0
+_core=37
+release=1
+# description : A collection of tools for internationalizing Python applications"
+# depends :   python   python-pytz  
+noextract= "cldr-core-$_core.zip" 
+source="https://github.com/python-babel/babel/archive/v$version.tar.gz"
+        "cldr-core-$_core.zip::http://unicode.org/Public/cldr/$_core/core.zip" 
+             ba93f5ba256a61a6f8253397c6c4b1a9b9e77531f013cc7ffa7977b5f7e4da57  
+
+prepare   {
+  cp "$srcdir"/cldr-core-$_core.zip babel-$version/cldr/cldr-core-$_core.zip
+}
+
+build  {
+  cd "$srcdir/babel-$version"
+  python setup.py import_cldr
+  python setup.py build
+}
+
+check  {
+  cd "$srcdir/babel-$version"
+  # the tests fail if running in the wrong timezone:
+  #https://github.com/python-babel/babel/issues/757
+  TZ=UTC python setup.py pytest
+}
+
+package_python-babel   {
+  cd "$srcdir"/babel-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -D -m0644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

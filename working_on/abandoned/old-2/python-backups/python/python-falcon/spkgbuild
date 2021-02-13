@@ -1,0 +1,48 @@
+# description : "Web API framework for build()ing fast and reliable microservices, proxies, and app backends in Python"
+# depends : python
+
+_name=falcon
+name=python-falcon
+version=2.0.0
+release=6
+url="https://falconframework.org/"
+make# depends : cython python-setuptools
+check# depends : python-msgpack python-mujson python-rapidjson
+python-requests python-pytest python-pytest-runner python-testtools
+python-ujson python-yaml
+opt# depends : python-django: for falcon-bench
+            python-flask: for falcon-bench
+            python-pecan: for falcon-bench
+            python-bottle: for falcon-bench
+            python-pprofile: for falcon-bench
+            python-vmprof: for falcon-bench
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=1b821d96452208dcfbaa978ecc9340b0b531878aeb362a5b27668fea5f354315275afc7c2ba3012b2cf86c8e32b52d10c932bcf2cc91789a1b4f5a458da5078b
+
+prepare {
+  mv -v "${_name}-$version" "$name-$version"
+   cd "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="build():${PYTHONPATH}"
+  pytest -k not test_traverse_with_verbose and not test_imported_from_c_modules \
+         --ignore tests/test_media_handlers.py
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

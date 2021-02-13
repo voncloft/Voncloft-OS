@@ -1,0 +1,34 @@
+# Maintainer: BlackEagle <ike.devolder@gmail.com>>
+
+pkgname=kodi-addon-visualization-projectm
+epoch=1
+pkgver=2.3.5
+_codename=Leia
+pkgrel=8
+pkgdesc="ProjectM visualizer for Kodi"
+arch=('x86_64')
+url='https://github.com/xbmc/visualization.projectm'
+license=('GPL')
+groups=('kodi-addons' 'kodi-addons-visualization')
+depends=('kodi' 'projectm')
+makedepends=('cmake' 'kodi-dev')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/xbmc/visualization.projectm/archive/$pkgver-$_codename.tar.gz"
+)
+sha512sums=('dbcddc99e2278fe5e0657ceff142ce625833433e3d6ff757228f59f47606dcf7125138e2c381dfb5b00cfbb41cc24ce1c805617b42a6e3dabb665f5e33b94682')
+
+build() {
+    cd "visualization.projectm-$pkgver-$_codename"
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DUSE_LTO=1 \
+        .
+    make
+}
+
+package() {
+    cd "visualization.projectm-$pkgver-$_codename"
+    make DESTDIR="$pkgdir/" install
+}
+

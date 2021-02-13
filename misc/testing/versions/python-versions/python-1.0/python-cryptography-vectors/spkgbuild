@@ -1,0 +1,12 @@
+
+name=python-cryptography-vectors
+version=3.3.1
+release=1
+# description : Test vectors for the cryptography package"
+# depends :   python  
+source="https://pypi.io/packages/source/c/cryptography-vectors/cryptography_vectors-$version.tar.gz" 
+
+package   {
+   cd cryptography_vectors-$version
+   python3 setup.py install --root=$PKG --optimize=1
+}

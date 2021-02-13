@@ -1,0 +1,16 @@
+# description : Ensure that a platform has weaken support
+# depends : perl
+
+name=perl-task-weaken
+version=1.06
+release=3
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Task-Weaken-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd Task-Weaken-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

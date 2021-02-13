@@ -1,0 +1,25 @@
+
+name=python-pyxattr
+_name=pyxattr
+version=0.7.2
+release=1
+# description : A Python extension module that allows you to manipulate the extended attributes. 
+# depends :   python  
+source="https://pyxattr.k1024.org/downloads/pyxattr-$version.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys=  CB94E3AA3B1755D61EBB19A5F66E3E419F84F4DE   # Iustin Pop <iustin@k1024.org>
+
+build   {
+	cd "${srcdir}/${_name}-${version}"
+	python setup.py build
+}
+
+check   {
+	cd "${srcdir}/${_name}-${version}"
+	python setup.py test
+}
+
+package   {
+	cd "${srcdir}/${_name}-${version}"
+	python setup.py install --root=$PKG
+}

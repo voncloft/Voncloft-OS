@@ -1,0 +1,36 @@
+# description : Identity management for Flask applications
+# depends : python python-flask
+
+_name=flask-principal
+name=python-flask-principal
+version=0.4.0
+release=6
+url=https://pythonhosted.org/Flask-Principal/
+make# depends : python-blinker python-sphinx python-setuptools
+check# depends : python-nose
+source=${name}-${version}.tar.gz::https://github.com/mattupstate/flask-principal/archive/${version}.tar.gz
+sha256sums=ed8c58943460d7d54c29463e2fe98ae4969d3818c0f59b36e9b2649128db96c9
+sha512sums=ed8cb28c4e8d936de96db0bf9f7cb45b253dc204c4b8f8dd8022ef1552592ff6324b4a33d3ee862794a6e20eb8c32a0365e7b9397d427da5022c5ded3dfa308a
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+  sphinx-build() -b text docs docs/_build()/text
+  sphinx-build() -b man docs docs/_build()/man
+}
+
+check {
+   cd ${_name}-${version}
+  nosetests
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  python setup.py build
+  python setup.py install --root="${PKG}/" --optimize=1 
+  install -Dm 644 docs/_build()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/flask-principal.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+

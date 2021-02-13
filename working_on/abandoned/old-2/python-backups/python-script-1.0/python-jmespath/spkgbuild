@@ -1,0 +1,16 @@
+# description : A query language for JSON
+# depends : python
+
+url=https://github.com/jmespath/jmespath
+name=python-jmespath
+version=0.10.0
+release=3
+
+source="https://github.com/jmespath/jmespath.py/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd jmespath.py-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

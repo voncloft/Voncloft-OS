@@ -1,0 +1,17 @@
+# description : Handle Common Gateway Interface requests and responses
+# depends : perl perl-html-parser
+
+name=perl-cgi
+version=4.51
+release=1
+_ddir=CGI-$version
+
+source="https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_ddir
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

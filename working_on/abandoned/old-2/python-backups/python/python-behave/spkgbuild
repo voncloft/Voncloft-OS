@@ -1,0 +1,30 @@
+# description : "Behaviour-driven development, Python style"
+# depends : python-cucumber-tag-expressions python-parse python-parse-type python-six
+
+name=python-behave
+version=1.2.7.dev1
+release=1
+url="https://github.com/behave/behave"
+make# depends : python-setuptools
+check# depends : python-mock python-path python-pyhamcrest python-pytest python-pytest-html
+source="https://github.com/behave/behave/archive/v$version/$name-$version.tar.gz"
+sha512sums=a352a2f1594831b3c85a54225e5bd4f425ab06c38e708b6ec65f1c8fb2eb3a92924baa15d5742c344e58ac95773f00393aa1338bd839dd8345f701eb37ce62b6
+
+build()-delete {
+   cd behave-$version
+  python setup.py build
+}
+
+check {
+   cd behave-$version
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd behave-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

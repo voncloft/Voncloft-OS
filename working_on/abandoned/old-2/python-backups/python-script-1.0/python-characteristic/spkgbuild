@@ -1,0 +1,19 @@
+# description : Python attributes without boilerplate.
+  # depends : python
+  # depends : python2
+
+url=https://pypi.python.org/pypi/characteristic
+name=python-characteristic python2-characteristic
+version=14.3.0
+release=11
+
+source="https://files.pythonhosted.org/packages/source/c/characteristic/characteristic-$version.tar.gz"{,.asc}
+
+build() {
+   cd $srcdir/characteristic-$version
+   cd $srcdir/characteristic-$version-py2
+   cd characteristic-$version
+   cd characteristic-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

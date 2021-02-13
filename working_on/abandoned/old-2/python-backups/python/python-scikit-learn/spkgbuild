@@ -1,0 +1,31 @@
+# description : "A set of python modules for machine learning and data mining"
+# depends : python-scipy python-joblib python-threadpoolctl
+
+name=python-scikit-learn
+version=0.24.0
+release=1
+url="http://scikit-learn.sourceforge.net/"
+opt# depends : python-matplotlib: plotting capabilities
+make# depends : python-setuptools cython openmp
+options=!emptydirs
+source="scikit-learn-${version}.tar.gz::https://github.com/scikit-learn/scikit-learn/archive/${version}.tar.gz"
+sha256sums=2338fe6b0c87ebcb1a85d804d2a05840ff159913989f29efb8b0499c4b8803fa
+
+build()-delete {
+   cd "$srcdir"/scikit-learn-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/scikit-learn-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG/ --optimize=1
+
+
+  # See FS#49651
+  install -d $PKG/usr/share/doc/$name
+  cp -r doc/tutorial $PKG/usr/share/doc/$name/tutorial
+}

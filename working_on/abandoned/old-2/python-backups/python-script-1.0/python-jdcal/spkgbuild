@@ -1,0 +1,16 @@
+# description : Julian dates, from proleptic Gregorian and Julian calendars
+# depends : python
+
+url=https://github.com/phn/jdcal
+name=python-jdcal
+version=1.4.1
+release=6
+
+source="https://github.com/phn/jdcal/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/jdcal-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

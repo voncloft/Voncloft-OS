@@ -1,0 +1,46 @@
+
+_name=pytest-testinfra
+name=python-pytest-testinfra
+version=6.1.0
+release=1
+# description : Testinfra test your infrastructures 
+# depends :   python-pytest  
+ python-pytest-xdist   python-pywinrm   python-tornado   salt  
+# TODO: add salt to optdepends, after it has been ported to python3
+             docker: for test running docker containers 
+             kubectl: for test running containers in kubernetes 
+             lxd: for test running LXC or LXD containers 
+             podman: for test running podman containers 
+             python-paramiko: for testing remote hosts 
+             python-pywinrm: for testing on Windows hosts  
+conflicts=  python-testinfra  
+provides=  python-testinfra  
+replaces=  python-testinfra  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "${name}-${version}"
+}
+
+build   {
+  cd "${name}-${version}"
+  python setup.py build
+  make -C doc man
+}
+
+check   {
+  cd "${name}-${version}"
+  export PYTHONPATH="build:$PYTHONPATH"
+  # salt is not python3  yet :https://bugs.archlinux.org/task/61129
+  pytest -v -k  not test_backend_importables 
+}
+
+package   {
+  cd "${name}-${version}"
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  # man page
+  install -Dm 644 doc/build/man/*.1 \
+    -t "${PKG}/usr/share/man/man1/"
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

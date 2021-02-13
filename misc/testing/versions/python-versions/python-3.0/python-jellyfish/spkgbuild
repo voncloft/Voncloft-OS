@@ -1,0 +1,47 @@
+# description : A python library for doing approximate and phonetic matching of strings 
+# depends :  python 
+
+name=python-jellyfish
+version=0.8.2
+release=3
+  git
+  python-setuptools
+ 
+source= 
+  git+https://github.com/jamesturk/cjellyfish.git
+ 
+  SKIP
+  SKIP
+ 
+
+version   {
+  cd jellyfish
+
+  git describe --tags
+}
+
+prepare   {
+  cd jellyfish
+
+  for submodule in cjellyfish; do
+    git submodule init ${submodule}
+    git config submodule.${submodule}.url ../${submodule}
+    git submodule update ${submodule}
+  done
+
+}
+
+build-old()   {
+  cd jellyfish
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd jellyfish
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-jellyfish/
+}
+
+# vim: ts=2 sw=2 et:

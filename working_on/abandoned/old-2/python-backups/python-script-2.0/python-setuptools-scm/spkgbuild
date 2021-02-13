@@ -1,0 +1,17 @@
+# description : Handles managing your python package versions in scm metadata.
+  # depends : python-setuptools
+  # depends : python2-setuptools
+
+url=https://github.com/pypa/setuptools_scm
+name=python-setuptools-scm python2-setuptools-scm
+version=5.0.1
+release=1
+
+source="https://pypi.io/packages/source/s/setuptools_scm/setuptools_scm-$version.tar.gz"
+
+build() {
+   cd setuptools_scm-$version
+   cd setuptools_scm-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

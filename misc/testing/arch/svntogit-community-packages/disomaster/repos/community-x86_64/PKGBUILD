@@ -1,0 +1,24 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=disomaster
+pkgver=5.0.3
+pkgrel=1
+pkgdesc='A libisoburn wrapper class for Qt'
+arch=('x86_64')
+url="https://github.com/linuxdeepin/disomaster"
+license=('GPL3')
+depends=('libisoburn' 'qt5-base')
+makedepends=('qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/disomaster/archive/$pkgver.tar.gz")
+sha512sums=('80bfa91a7eb1f6e5f2be2eb3d85be980ecf6eabbb22b8525094e2082059c8c63c1974c6bc7525c568d21197e49d1feb6d5b9bdf2dfe577fc09aa6986cdb74882')
+
+build() {
+  cd disomaster-$pkgver
+  qmake-qt5 PREFIX=/usr
+  make
+}
+
+package() {
+  cd disomaster-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+}

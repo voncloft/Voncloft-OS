@@ -1,0 +1,31 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
+
+name=python-mccabe
+version=0.6.1
+release=8
+pkgdesc="McCabe complexity checker for Python"
+url="https://github.com/flintwork/mccabe"
+depends=('python')
+makedepends=('python-setuptools' 'python-pytest-runner')
+source=("https://github.com/flintwork/mccabe/archive/$version/$name-$version.tar.gz")
+sha512sums=('1da239933f36c8b7c0f9f026822d673d0b207ac49e45027d77500001327964dd66cc7074be22311927176fc313174f4eb7908d0fc45da9fc4623bf1e237293b0')
+
+build() {
+  cd mccabe-$version
+  python setup.py build
+}
+
+check() {
+  cd mccabe-$version
+  python setup.py test
+}
+
+package() {
+  cd mccabe-$version
+  python setup.py install --root="$pkgdir" --prefix=/usr --skip-build --optimize=1
+
+  install -D -m644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ukui-panel
+pkgver=3.0.3
+pkgrel=1
+pkgdesc="Launcher and docking facility for UKUI"
+arch=('x86_64')
+license=('GPL')
+url="https://github.com/ukui/ukui-panel"
+groups=('ukui')
+provides=('ukui-indicators')
+replaces=('ukui-indicators')
+depends=('dconf' 'gsettings-qt' 'kwindowsystem' 'libqtxdg' 'peony' 'qt5-webkit' 'ukui-biometric-auth'
+         'ukui-menu' 'ukui-menus')
+makedepends=('cmake' 'ninja' 'qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ukui/ukui-panel/archive/v$pkgver.tar.gz")
+sha512sums=('9aec7f75f7f042a43a5fb817c81ff8680b47027eea387cd27ff0ad841b5b3048724eaf88527c76d986d524601f10d413a293a04a3dca5baa36b89b25e7dfb5d6')
+
+prepare() {
+  mkdir -p build
+  sed -i '1i #include <QPainterPath>' $pkgname-$pkgver/ukui-flash-disk/ejectInterface.cpp
+}
+
+build() {
+  cd build
+  cmake ../$pkgname-$pkgver \
+    -GNinja -DCMAKE_INSTALL_PREFIX=/usr
+  ninja
+}
+
+package() {
+  cd build
+  DESTDIR="$pkgdir" ninja install
+}

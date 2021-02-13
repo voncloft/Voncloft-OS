@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Xavier Francisco <echo moc.liamg@ocsicnarf.n.reivax | rev>
+
+pkgname=pony-stable
+pkgver=0.2.2
+pkgrel=2
+pkgdesc="A simple dependency manager for the Pony language."
+arch=('x86_64')
+url="https://github.com/ponylang/pony-stable"
+license=('BSD')
+depends=('ponyc')
+source=("pony-stable-$pkgver.tar.gz::https://github.com/ponylang/pony-stable/archive/$pkgver.tar.gz")
+sha512sums=('1b7e12443b225000b10210e900fff0cc7ab3d04341bcc8d23aa4653614bbb6987577222ab1278e619d532b254fc171f44dcf27edd18748fc0711441b6196bd3c')
+
+build() {
+  cd pony-stable-$pkgver
+  make arch=x86-64
+}
+
+check() {
+  cd pony-stable-$pkgver
+  make test
+}
+
+package() {
+  cd pony-stable-$pkgver
+  make DESTDIR="$pkgdir" prefix=/usr install
+}

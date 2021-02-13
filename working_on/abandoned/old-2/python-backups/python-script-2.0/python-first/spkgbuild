@@ -1,0 +1,16 @@
+# description : Return the first true value of an iterable
+# depends : python
+
+url=https://github.com/hynek/first
+name=python-first
+version=2.0.2
+release=4
+
+source="https://github.com/hynek/first/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd first-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

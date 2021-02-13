@@ -1,0 +1,29 @@
+# description : "AMF support for Python"
+# depends : python-defusedxml
+
+pkgbase=python-pyamf
+name=  # python-pyamf Python 3 version doesnt work so far
+version=0.8.0
+release=4
+url="https://github.com/hydralabs/pyamf"
+make# depends : python-setuptools
+source="https://files.pythonhosted.org/packages/source/P/PyAMF/PyAMF-${version}.tar.gz"
+sha512sums=1da66afbfb6cc32886a8680b5f610d17b3ad6e5cca338deb7f8d8c5e61f0f4e165b6602936590b4053a3bc98d0e36f898e5913e7d59d8444faf385fa036fd81e
+
+build()-delete {
+   cd "$srcdir/PyAMF-$version"
+  # python setup.py build
+}
+
+check {
+   cd "$srcdir/PyAMF-$version"
+  # python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/PyAMF-$version"
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

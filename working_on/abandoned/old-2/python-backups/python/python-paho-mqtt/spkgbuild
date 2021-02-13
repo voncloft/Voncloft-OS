@@ -1,0 +1,32 @@
+# description : "Python client library for MQTT v3.1 and v3.1.1"
+# depends : python
+
+name=python-paho-mqtt
+version=1.5.0
+release=2
+url="https://www.eclipse.org/paho/clients/python"
+check# depends : python-pytest python-pytest-runner
+make# depends : python-setuptools
+source=https://github.com/eclipse/paho.mqtt.python/archive/v${version}.tar.gz
+sha256sums=ea614e07485dac28269ff390dbff4ad99629aa34bff231fc63240539b662b94a
+
+prepare {
+   cd paho.mqtt.python-${version}
+  sed -i /addopts/d setup.cfg
+}
+
+build()-delete {
+   cd paho.mqtt.python-${version}
+  python setup.py build
+}
+
+check {
+   cd paho.mqtt.python-${version}
+  PYTHONPATH=$PWD/src pytest tests
+}
+
+package_python-paho-mqtt {
+   cd paho.mqtt.python-${version}
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

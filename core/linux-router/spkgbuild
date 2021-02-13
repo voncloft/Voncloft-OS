@@ -1,0 +1,18 @@
+# description : linux kernel for router
+# depends :
+
+name=linux-router
+version=5.8.14
+release=1
+
+source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.8.14.tar.xz"
+
+build()
+{
+	cd linux-$version
+	make mrproper
+	cp $SRC/.config $PKG/$name-version
+	make -j9
+	make DESTDIR=$PKG modules_install
+	make DESTDIR=$PKG install
+}

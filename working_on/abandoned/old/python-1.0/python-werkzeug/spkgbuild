@@ -1,0 +1,36 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Alexander Rødseth <rodseth@gmail.com>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: Dan Serban
+# Contributor: Richard Murri
+
+name=python-werkzeug
+version=1.0.1
+release=4
+pkgdesc='Swiss Army knife of Python web development'
+url='http://werkzeug.pocoo.org/'
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-timeout' 'python-requests')
+source=("$name-$version.tar.gz::https://github.com/pallets/werkzeug/archive/${version}.tar.gz")
+sha512sums=('ba82120fb3e96e3a1334c6452d5ba1950fc016d2d147d643bbc2168ccec496f1dea799982ae8c578167155082c0bdbda5d56a23f64b4b6865f97e90e22df022e')
+
+build() {
+  cd "werkzeug-$version"
+
+  python setup.py build
+}
+
+check() {
+  cd "werkzeug-$version"
+  PYTHONPATH="$PWD/build/lib" pytest
+}
+
+package() {
+  cd "werkzeug-$version"
+
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.rst "$pkgdir/usr/share/licenses/$name/LICENSE.rst"
+}
+
+# vim:set ts=2 sw=2 et:

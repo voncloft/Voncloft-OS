@@ -1,0 +1,17 @@
+# description : A tiny LRU cache implementation and decorator
+# depends : python
+
+url=https://pypi.python.org/pypi/repoze.lru
+name=python-repoze.lru
+version=0.7
+release=6
+
+source="https://pypi.io/packages/source/r/repoze.lru/repoze.lru-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd repoze.lru-$version
+   cd repoze.lru-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

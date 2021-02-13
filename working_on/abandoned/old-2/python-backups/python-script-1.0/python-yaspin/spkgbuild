@@ -1,0 +1,16 @@
+# description : Yet Another Terminal Spinner
+# depends : python
+
+url=https://github.com/pavdmyt/yaspin
+name=python-yaspin
+version=1.3.0
+release=1
+
+source="https://github.com/pavdmyt/yaspin/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd yaspin-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

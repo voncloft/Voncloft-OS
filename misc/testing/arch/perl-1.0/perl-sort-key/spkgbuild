@@ -1,0 +1,34 @@
+# description : Sort::Key - the fastest way to sort anything in Perl
+# depends : perl
+
+name=perl-sort-key
+version=1.33
+release=9
+_author=S/SA/SALVA
+_perlmod=Sort-Key
+url=https://search.cpan.org/dist/Sort-Key
+source="https://search.cpan.org/CPAN/authors/id/$_author/$_perlmod-$version.tarsource=.gz"
+options=!checksum
+sha256sums=ed6a4ccfab094c9cd164f564024e98bd21d94f4312ccac4d6246d22b34081acf
+
+build-delete {
+    cd ${srcdir}/${_perlmod}-${version}
+
+    # install module in vendor directories.
+    PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+    make
+}
+
+check {
+    cd ${srcdir}/${_perlmod}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1
+    make test
+}
+
+build() {
+    cd ${srcdir}/${_perlmod}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    make install INSTALLDIRS=vendor DESTDIR=$PKG
+}
+

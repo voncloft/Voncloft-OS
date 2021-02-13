@@ -1,0 +1,132 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgbase=pipewire
+pkgname=(pipewire pipewire-docs pipewire-jack pipewire-pulse pipewire-alsa
+         gst-plugin-pipewire alsa-card-profiles)
+pkgver=0.3.21
+pkgrel=1
+epoch=1
+pkgdesc="Server and user space API to deal with multimedia pipelines"
+url="https://pipewire.org"
+license=(LGPL)
+arch=(x86_64)
+makedepends=(git meson doxygen graphviz xmltoman valgrind jack2 libpulse
+             alsa-lib gst-plugins-base sbc rtkit vulkan-icd-loader dbus sdl2
+             ncurses libsndfile bluez-libs vulkan-headers libldac libopenaptx
+             libfdk-aac)
+checkdepends=(desktop-file-utils)
+_commit=885748dfbd82985abbe396cb3272264ea2e0d163  # tags/0.3.21
+source=("git+https://github.com/PipeWire/pipewire#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgbase
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgbase
+}
+
+build() {
+  arch-meson $pkgbase build \
+    -D docs=true \
+    -D udevrulesdir=/usr/lib/udev/rules.d
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+_pick() {
+  local p="$1" f d; shift
+  for f; do
+    d="$srcdir/$p/${f#$pkgdir/}"
+    mkdir -p "$(dirname "$d")"
+    mv "$f" "$d"
+    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+  done
+}
+
+_ver=${pkgver:0:3}
+
+package_pipewire() {
+  depends=(sbc rtkit vulkan-icd-loader bluez-libs alsa-card-profiles
+           libdbus-1.so libncursesw.so libsndfile.so libudev.so libasound.so
+           libsystemd.so libldacBT_enc.so libopenaptx.so libfdk-aac.so)
+  optdepends=('pipewire-docs: Documentation'
+              'pipewire-jack: JACK support'
+              'pipewire-pulse: PulseAudio support')
+  provides=(libpipewire-$_ver.so)
+  backup=(etc/pipewire/pipewire.conf
+          etc/pipewire/media-session.d/media-session.conf
+          etc/pipewire/media-session.d/{alsa,bluez,v4l2}-monitor.conf)
+  install=pipewire.install
+
+  DESTDIR="$pkgdir" meson install -C build
+
+  cd "$pkgdir"
+
+  mkdir -p etc/alsa/conf.d
+  ln -st etc/alsa/conf.d /usr/share/alsa/alsa.conf.d/50-pipewire.conf 
+
+  _pick docs usr/share/doc
+
+  _pick jack etc/pipewire/media-session.d/with-jack
+  _pick jack usr/bin/pw-jack usr/lib/pipewire-$_ver/jack
+  _pick jack usr/lib/spa-0.2/jack
+  _pick jack usr/share/man/man1/pw-jack.1
+
+  _pick pulse etc/pipewire/media-session.d/with-pulseaudio
+
+  _pick gst usr/lib/gstreamer-1.0
+
+  _pick acp usr/lib/udev
+  _pick acp usr/share/alsa-card-profile
+}
+
+package_pipewire-docs() {
+  pkgdesc+=" (documentation)"
+  mv docs/* "$pkgdir"
+}
+
+package_pipewire-jack() {
+  pkgdesc+=" (JACK support)"
+  depends=(pipewire libpipewire-$_ver.so libjack.so)
+  mv jack/* "$pkgdir"
+}
+
+package_pipewire-pulse() {
+  pkgdesc+=" (PulseAudio replacement)"
+  depends=(pipewire libpulse)
+  provides=(pulseaudio pulseaudio-bluetooth)
+  conflicts=(pulseaudio pulseaudio-bluetooth)
+  install=pipewire-pulse.install
+  mv pulse/* "$pkgdir"
+}
+
+package_pipewire-alsa() {
+  pkgdesc="ALSA Configuration for PipeWire"
+  depends=(pipewire libpipewire-$_ver.so)
+  provides=(pulseaudio-alsa)
+
+  mkdir -p "$pkgdir"/etc/{alsa/conf.d,pipewire/media-session.d}
+  ln -st "$pkgdir/etc/alsa/conf.d" /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf
+  touch "$pkgdir/etc/pipewire/media-session.d/with-alsa"
+}
+
+package_gst-plugin-pipewire() {
+  pkgdesc="Multimedia graph framework - pipewire plugin"
+  depends=(pipewire libpipewire-$_ver.so gst-plugins-base-libs)
+  mv gst/* "$pkgdir"
+}
+
+package_alsa-card-profiles() {
+  pkgdesc="ALSA card profiles shared by PipeWire"
+  depends=()
+  mv acp/* "$pkgdir"
+}
+
+# vim:set sw=2 et:

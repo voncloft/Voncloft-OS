@@ -1,0 +1,41 @@
+# description : "Pathlib for archives"
+# depends : python-attrs
+
+_name=dephell-archive
+name=python-dephell-archive
+version=0.1.5
+release=5
+url="https://github.com/dephell/${_name}"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+sha256sums=d1cff5a962cb7b5862aaddfef4d1ec77684ee69652ba3d75612c7e4bb9c7bb39
+b2sums=211bf6acfaedaab8a8c72ad29bb63dc8db93fc10730f6f2543303e2a7b96edd03b71ed43a3e9612d52eec8cf706adf0ac5d51542f8c39d0aa8638b7097763b96
+
+prepare {
+     cd "${srcdir}"/${_name}-${version}
+
+    # pycache slipped into release tarballs
+    find . -name \*.pyc -delete
+}
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

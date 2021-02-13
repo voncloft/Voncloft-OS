@@ -1,0 +1,115 @@
+# Maintainer: David Runge <dave@sleepmap.de>
+pkgname=dpf-plugins
+pkgver=1.4
+pkgrel=1
+pkgdesc="Collection of DPF-based plugins"
+arch=('x86_64')
+url="https://github.com/DISTRHO/DPF-Plugins"
+license=('ISC' 'GPL2' 'GPL3' 'LGPL3' 'MIT')
+groups=('ladspa-plugins' 'lv2-plugins' 'pro-audio' 'vst-plugins')
+depends=('libglvnd')
+makedepends=('dssi' 'gendesk' 'ladspa' 'lv2' 'projectm')
+checkdepends=('lv2lint' 'kxstudio-lv2-extensions')
+optdepends=('dssi-host: for dssi-plugins'
+            'jack: for standalone applications'
+            'ladspa-host: for LADSPA plugins'
+            'liblo: for dssi plugins'
+            'lv2-host: for LV2 plugins'
+            'projectm: for ProM plugin'
+            'vst-host: for VST plugins')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/DISTRHO/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('9b603c8a7f74823c69b7ceb8b3d307972f32aad890e46d98fc9e98d175dff56705af3f2362d16a58c571511ffc706a068472fd58c0104e0a86df727217e9141c')
+b2sums=('eaf8d6a12bb34c433de666471e8b626ee4072487d1e1272f7aef4c36a77862730922a14ee8bdfbfd274a699967f60ac0dd51d38b3882cfa442f89657bef37d14')
+_names=( '3BandEQ' '3BandSplitter' 'AmplitudeImposer' 'CycleShifter' 'Kars'
+'MVerb' 'MaBitCrush' 'MaFreeverb' 'MaGigaverb' 'MaPitchshift' 'Nekobi'
+'PingPongPan' 'ProM' 'SoulForce' 'glBars')
+
+prepare() {
+  declare -A _comments=(
+    ["3BandEQ"]="A three band equalizer"
+    ["3BandSplitter"]="A three band splitter"
+    ["AmplitudeImposer"]="Takes 2 stereo inputs and imposes the amplitude envelope of the first one on the second one"
+    ["CycleShifter"]="Reads in a cycle's-worth of the input signal, then (once the whole cycle's been read in) outputs it again, on top of the current output"
+    ["Kars"]="Simple karplus-strong plucked string synth"
+    ["MVerb"]="A studio quality, open-source reverb"
+    ["MaBitCrush"]="A bit crusher"
+    ["MaFreeverb"]="A reverb based on freeverb"
+    ["MaGigaverb"]="A reverb based on gigaverb"
+    ["MaPitchshift"]="A pitch shifter"
+    ["Nekobi"]="A simple single-oscillator synth based on the Roland TB-303"
+    ["PingPongPan"]="A Ping Pong Panner"
+    ["ProM"]="An awesome music visualizer"
+    ["SoulForce"]="A fairly standard waveshaping distortion plugin"
+    ["glBars"]="An OpenGL bars visualization plugin"
+  )
+  declare -A _generic=(
+    ["3BandEQ"]="Equalizer"
+    ["3BandSplitter"]="Splitter"
+    ["AmplitudeImposer"]="Wave Shaper"
+    ["CycleShifter"]="Cyclic Input Processor"
+    ["Kars"]="Plucked string synthesizer"
+    ["MVerb"]="Reverb"
+    ["MaBitCrush"]="Bit crusher"
+    ["MaFreeverb"]="Reverb"
+    ["MaGigaverb"]="Reverb"
+    ["MaPitchshift"]="Pitch shifter"
+    ["Nekobi"]="Synthesizer"
+    ["PingPongPan"]="Ping Pong Panner"
+    ["ProM"]="Music visualizer"
+    ["SoulForce"]="Waveshaping Distortion"
+    ["glBars"]="Bars Visualization"
+  )
+  local _name
+
+  mv -v "DPF-Plugins-${pkgver}" "$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
+  echo "${_names[@]}"
+  for _name in "${_names[@]}"; do
+    gendesk -n \
+            --pkgname "net.sf.distrho.${_name}" \
+            --name "${_name}" \
+            --exec "/usr/bin/${_name}" \
+            --pkgdesc "${_comments[$_name]}" \
+            --genericname "${_generic[$_name]}" \
+            --categories "AudioVideo;Audio"
+  done
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  make BUILD_VST=true \
+       BUILD_DSSI=true \
+       BUILD_LV2=true \
+       BUILD_JACK=true
+}
+
+check() {
+  local _name
+  cd "$pkgname-$pkgver"
+  # except symbol pattern from tests as it is hard to remove according to upstream
+  for _name in "${_names[@]}"; do
+    lv2lint -s "lv2_generate_ttl" -Mpack -I "bin/${_name}.lv2/" "http://distrho.sf.net/plugins/${_name}" || echo "Known issue with license URI: https://github.com/DISTRHO/DPF-Plugins/issues/17"
+  done
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" \
+       PREFIX=/usr \
+       install
+  # docs
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}/"
+  # licenses
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+  install -vDm 644 dpf/LICENSE \
+    -t "${pkgdir}/usr/share/licenses/${pkgname}/dpf/"
+  install -vDm 644 plugins/Kars/LICENSE \
+    -t "${pkgdir}/usr/share/licenses/${pkgname}/Kars/"
+  install -vDm 644 plugins/AmplitudeImposer/LICENSE \
+    -t "${pkgdir}/usr/share/licenses/${pkgname}/AmplitudeImposer/"
+  install -vDm 644 plugins/CycleShifter/LICENSE \
+    -t "${pkgdir}/usr/share/licenses/${pkgname}/CycleShifter/"
+  install -vDm 644 plugins/SoulForce/LICENSE \
+    -t "${pkgdir}/usr/share/licenses/${pkgname}/SoulForce/"
+  install -vDm 644 *.desktop -t "${pkgdir}/usr/share/applications"
+}

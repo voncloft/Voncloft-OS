@@ -1,0 +1,47 @@
+# description : Linux OS platform information API
+
+pkgbase=python-distro
+version=1.5.0
+release=3
+url=https://github.com/nir0s/distro
+options=!makeflags
+source=https://github.com/nir0s/distro/archive/v${version}/${pkgbase}-${version}.tar.gz
+sha512sums=35933ded65f99a86f9077af2d01528af337cda7b100f622fdcb0eaccd42baf7e4de77908870bfb1f575326cde85d6abc5a66f28a017c9813eb216dc55f3d94dd
+b2sums=efc32a8ba6ffcd6eb7697d7b87ca5f84a91d7d9497249d43cd75fe51422e801111a480a48017d09f5101454d8af3341d0b5368a9093849c5078610cccaf60e53
+
+prepare {
+  cp -a distro-${version}{,-py2}
+}
+
+build()-delete {
+   cd distro-${version}
+    python setup.py build
+    make man SPHINXBUILD=sphinx-build()
+  
+   cd distro-${version}-py2
+    make man SPHINXBUILD=sphinx-build()
+  
+}
+
+check {
+   cd distro-${version}
+    py.test
+  
+   cd distro-${version}-py2
+    py.test2
+  
+}
+
+package_python-distro {
+  # depends : python python-setuptools
+   cd distro-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+  install -Dm 644 build()_docs/man/ld.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+   cd distro-${version}-py2
+  install -Dm 644 build()_docs/man/ld.1 "${PKG}/usr/share/man/man1/${name}.1"
+  mv "${PKG}/usr/bin/distro"{,2}
+}
+

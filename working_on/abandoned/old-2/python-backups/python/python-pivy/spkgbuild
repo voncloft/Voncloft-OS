@@ -1,0 +1,18 @@
+# description : Bindings to Coin3D
+# depends : python soqt
+
+name=python-pivy
+version=0.6.5
+release=3
+url=https://github.com/coin3d/pivy
+make# depends : cmake git glu python-setuptools swig
+source="git+$url#commit=cde1297b0e0da2b93d261c9ec24b8ece7d167c91" # tag: 0.6.5
+sha256sums=SKIP
+
+options="!checksum"
+
+build() {
+   cd pivy
+  python setup.py build
+  python setup.py install   --root=$PKG --optimize=1
+}

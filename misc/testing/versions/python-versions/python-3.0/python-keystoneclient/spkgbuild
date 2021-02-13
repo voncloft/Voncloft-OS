@@ -1,0 +1,27 @@
+# description : Client Library for OpenStack Identity"
+# depends :   python-six   python-pbr   python-iso8601   python-prettytable   python-debtcollector 
+
+name=python-keystoneclient
+version=4.2.0
+release=1
+          python-keystoneauth1   python-oslo-utils   python-oslo-i18n 
+          python-oslo-serialization   python-oslo-config   python-requests   python-stevedore  
+               python-testresources  
+source="https://github.com/openstack/python-keystoneclient/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd python-keystoneclient-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-keystoneclient-$version
+  stestr run
+}
+
+build()   {
+  cd python-keystoneclient-$version
+  python setup.py install --root=$PKG --optimize=1
+}

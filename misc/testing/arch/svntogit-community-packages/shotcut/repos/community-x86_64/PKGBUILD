@@ -1,0 +1,40 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: nfnty <arch@nfnty.se>
+
+pkgname=shotcut
+pkgdesc='Cross-platform Qt based Video Editor'
+pkgver=20.11.28
+pkgrel=1
+arch=('x86_64')
+url='https://www.shotcut.org'
+license=('GPL3')
+depends=('qt5-base' 'qt5-declarative' 'qt5-graphicaleffects' 'qt5-multimedia'
+         'qt5-quickcontrols2' 'qt5-webkit' 'qt5-websockets' 'qt5-x11extras'
+         'mlt' 'movit' 'ffmpeg' 'libx264' 'libvpx' 'lame' 'frei0r-plugins' 'ladspa')
+optdepends=('swh-plugins: Several audio filters')
+makedepends=('qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/mltframework/shotcut/archive/v$pkgver.tar.gz")
+sha512sums=('fd4b9e2e7a5e93920980d4023d1e9803d6ce4de1d962548a7a3ad5cf815ea0e9e29c4645fec7f0db90ac8581a6ea3e92f2a3e34faf03f8991c303c371285ae7c')
+
+build() {
+  mkdir $pkgname-$pkgver/build
+  cd $pkgname-$pkgver/build
+
+  qmake .. \
+    PREFIX='/usr' \
+    QMAKE_CFLAGS_RELEASE="$CFLAGS" \
+    QMAKE_CXXFLAGS_RELEASE="$CXXFLAGS" \
+    SHOTCUT_VERSION=ARCH-$pkgver \
+    DEFINES+=SHOTCUT_NOUPGRADE
+
+  make
+
+  lrelease ../translations/*.ts
+}
+
+package() {
+    cd $pkgname-$pkgver/build
+
+    make INSTALL_ROOT="$pkgdir" install
+}
+

@@ -1,0 +1,31 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: James Fryman <jfryman@gmail.com>
+
+pkgname=libdnet
+pkgver=1.12
+pkgrel=13
+pkgdesc='A simplified, portable interface to several low-level networking routines'
+arch=(x86_64)
+license=('BSD')
+url='https://github.com/dugsong/libdnet'
+source=("https://github.com/dugsong/${pkgname}/archive/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('b6360659c93fa2e3cde9e0a1fc9c07bc4111f3448c5de856e095eb98315dd424')
+
+build() {
+  cd "$srcdir"/$pkgname-$pkgname-$pkgver
+
+  autoreconf -I config --force --install
+
+  ./configure \
+    --prefix=/usr \
+    --sbindir=/usr/bin
+  make
+}
+
+package() {
+  cd "$srcdir"/$pkgname-$pkgname-$pkgver
+
+  make DESTDIR="$pkgdir/" install
+
+  install -D -m0644 LICENSE "$pkgdir"/usr/share/licenses/libdnet/license
+}

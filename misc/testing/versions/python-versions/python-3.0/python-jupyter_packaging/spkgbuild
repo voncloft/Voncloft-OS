@@ -1,0 +1,20 @@
+# description : Jupyter Packaging Utilities"
+# depends :  python-packaging 
+
+_pipname=jupyter-packaging
+name=python-${_pipname/-/_}
+version=0.7.11
+release=1
+source=https://pypi.io/build()s/source/j/$_pipname/$_pipname-$version.tar.gz 
+
+build-old()   {
+  cd $_pipname-$version
+  python setup.py build-old() 
+}
+
+build()   {
+  cd $_pipname-$version
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,31 @@
+
+_name=scipy
+name=python-scipy
+version=1.6.0
+release=1
+# description : SciPy is open-source software for mathematics, science, and engineering."
+# depends :  python-numpy 
+provides= scipy 
+source="https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd scipy-${version}
+  python setup.py config_fc build
+}
+
+check   {
+  cd scipy-${version}
+  python setup.py config_fc install \
+    --prefix=/usr --root="$srcdir"/test --optimize=1
+  export PYTHONPATH="$srcdir"/test/usr/lib/python3.9/site-packages
+  cd ..
+  python -c "from scipy import test; test  full  "
+}
+
+package   {
+  cd scipy-$version
+  python3 setup.py config_fc install \
+    --prefix=/usr --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/$name
+}

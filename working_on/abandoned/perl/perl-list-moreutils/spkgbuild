@@ -1,0 +1,38 @@
+# description : Provide the stuff missing in List::Util
+# depends : perl-exporter-tiny perl-list-moreutils-xs
+
+name=perl-list-moreutils
+version=0.430
+release=1
+url=https://search.cpan.org/dist/List-MoreUtils
+source="https://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-${version}.tar.gz"
+options="!checksum"
+sha512sums=bc9ff033c12251a6f0899a96da0ec8fc314ddb8d6 cdf18c37fe1fdcfc38a4c95ed6f8e006bb124e77d07241ae6754f429bc2041f7772b4acfce9378a21283469
+
+build-delete {
+   cd ${sr cdir}/List-MoreUtils-${version}
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd ${sr cdir}/List-MoreUtils-${version}
+  make test
+}
+
+build() {
+   cd ${sr cdir}/List-MoreUtils-${version}
+  make DESTDIR=$PKG install
+}
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

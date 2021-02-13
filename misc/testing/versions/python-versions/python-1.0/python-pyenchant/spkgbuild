@@ -1,0 +1,19 @@
+
+name=python-pyenchant
+version=3.2.0
+release=1
+# description : PyEnchant is a spellchecking library for Python3 based on the Enchant library 
+# depends :   python   enchant  
+source="${name}-${version}.tar.gz::https://github.com/rfk/pyenchant/archive/v${version}.tar.gz" 
+
+build   {
+  cd pyenchant-${version}
+
+  python3 setup.py build
+}
+
+package   {
+  cd pyenchant-${version}
+  
+  python3 setup.py install --root=$PKG --optimize=1
+}

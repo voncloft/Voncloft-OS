@@ -1,0 +1,18 @@
+
+_name=ansicolor
+name=python-ansicolor
+version=0.2.6
+release=9
+# description : Library to produce ansi color output and colored highlighting and diffing 
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

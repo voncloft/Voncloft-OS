@@ -1,0 +1,29 @@
+# description : "Allows you to perform imports names that will only be resolved when used in the code"
+# depends : python-setuptools python-zope-proxy
+
+name=python-zope-deferredimport
+version=4.3.1
+release=6
+url="https://github.com/zopefoundation/zope.deferredimport"
+check# depends : python-zope-testrunner
+source="$name-$version.tar.gz::https://github.com/zopefoundation/zope.deferredimport/archive/$version.tar.gz"
+sha512sums=1c367def232ec79ad10a9d8f1e068598d2fdb49b067c2c3f44c9ad25c198afbbf2d52659c3795aad76f8c82d212e49086b81ab1c1dcc6aac2e3ce66c35ff5750
+
+build()-delete {
+   cd "$srcdir"/zope.deferredimport-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/zope.deferredimport-$version
+  PYTHONPATH="$PWD/build()/lib:$PYTHONPATH" python -m zope.testrunner --test-path=src
+}
+
+options="!checksum"
+
+build() {
+   cd zope.deferredimport-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

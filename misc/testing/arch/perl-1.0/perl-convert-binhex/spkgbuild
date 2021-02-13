@@ -1,0 +1,25 @@
+# description : Perl module to extract data from Macintosh BinHex files
+# depends : perl
+
+name=perl-convert-binhex
+version=1.125
+release=7
+url=https://search.cpan.org/dist/Convert-BinHex/
+install=${name}.install
+source="https://search.cpan.org/CPAN/authors/id/S/ST/STEPHEN/Convert-BinHex-$version.tarsource=.gz"
+options=!checksum
+md5sums=2f485e1283387ead5b92243e1aacff9d
+
+build-delete {
+  cd ${srcdir}/Convert-BinHex-${version}
+
+  # install module in vendor directories.
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd ${srcdir}/Convert-BinHex-${version}
+
+  make DESTDIR=$PKG/ install
+}

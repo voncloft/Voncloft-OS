@@ -1,0 +1,34 @@
+# description : Represent and manage a libvirt hypervisor connection
+# depends : libvirt perl
+
+name=perl-sys-virt
+version=6.8.0
+release=1
+url=https://metacpan.org/release/Sys-Virt
+make# depends : perl-cpan-changes perl-module-build perl-xml-xpath perl-test-pod
+             perl-test-pod-coverage
+source="https://cpan.metacpan.org/authors/id/D/DA/DANBERR/Sys-Virt-v$version.tar.gz"
+options="!checksum"
+sha512sums=de0148f0adb5c67add57874c1bd194ffdedae00e6dd8a22d1c19f99677c28a72666cc96dd889fd49dbb1e7529b4a1ee1e59c8c6e5a95ad85cc4d043f297b6a26
+
+build-delete {
+   cd Sys-Virt-v$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Sys-Virt-v$version
+  make test
+}
+
+build() {
+   cd Sys-Virt-v$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

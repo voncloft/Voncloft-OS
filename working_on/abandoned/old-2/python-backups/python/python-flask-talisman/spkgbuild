@@ -1,0 +1,31 @@
+# description : HTTP security headers for Flask
+# depends : python-flask python-six
+
+name=python-flask-talisman
+_pyname=${name/python-/}
+version=0.7.0
+release=3
+url=https://github.com/GoogleCloudPlatform/flask-talisman
+make# depends : python-setuptools
+check# depends : python-pytest
+source=https://github.com/GoogleCloudPlatform/flask-talisman/archive/v${version}/${name}-${version}.tar.gz
+sha256sums=b34cd6c61bd8417ef6ac9628d0768e43505dbb5e07b11efd913a17d5ac5394ad
+
+build()-delete {
+   cd ${_pyname}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pyname}-${version}
+  pytest flask_talisman
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install--root=$PKG  -O1 
+}
+

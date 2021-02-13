@@ -1,0 +1,23 @@
+# description : A convenience utility for working with JSON config files with file syncing"
+# depends :   python-future  
+
+name=python-json-config
+version=2.0.1
+release=3
+source="https://github.com/bionikspoon/json_config/archive/$version.tar.gz" 
+
+build-old()   {
+  cd json_config-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd json_config-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd json_config-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

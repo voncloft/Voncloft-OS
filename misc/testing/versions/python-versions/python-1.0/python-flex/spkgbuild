@@ -1,0 +1,28 @@
+
+name=python-flex
+version=6.14.1
+release=5
+# description : Swagger schema validator"
+# depends :   python-six   python-yaml   python-validate-email   python-rfc3987   python-requests 
+          python-strict-rfc3339   python-click   python-jsonpointer  
+source="https://github.com/pipermerriam/flex/archive/v$version.tar.gz" 
+
+prepare   {
+  sed -i  s/<2/<3/  flex-$version/setup.py
+}
+
+build   {
+  cd flex-$version
+  python setup.py build
+}
+
+check   {
+  cd flex-$version
+  python setup.py pytest
+}
+
+package   {
+  cd flex-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,55 @@
+# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Contributor: Anton Hvornum <anton@hvornum.se>
+# Contributor: demostanis worlds <demostanis@protonmail.com>
+
+pkgbase=archinstall
+pkgname=('archinstall' 'python-archinstall')
+pkgver=2.1.1
+pkgrel=1
+pkgdesc="Just another guided/automated Arch Linux installer with a twist"
+arch=('any')
+url="https://github.com/Torxed/archinstall"
+license=('GPL')
+depends=('python')
+makedepends=('python-pip' 'python-setuptools' 'python-sphinx')
+source=("$pkgbase-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
+        "$url/releases/download/v$pkgver/$pkgbase-$pkgver.tar.gz.asc")
+md5sums=('8228c1522a4ff0378a1f55fc79bb83dd'
+         'SKIP')
+sha512sums=('08d2f889c688bf296b494680ef9fbda248e1cb35c4c87510fc2307d9061cd0cb6299e7ecf9e82ef9bb00b04b19bcffb37662b983aaacaccf82800c3094cefa5b'
+            'SKIP')
+validpgpkeys=('256F73CEEFC6705C6BBAB20E5FBBB32941E3740A') # Anton Hvornum (Torxed) <anton@hvornum.se>
+
+
+build() {
+	cd "$pkgbase-$pkgver"
+
+        python setup.py build
+
+        cd docs
+        make man
+}
+
+
+package_archinstall() {
+        depends=('python-archinstall')
+	cd "$pkgbase-$pkgver"
+
+        mkdir -p "${pkgdir}/usr/bin"
+        
+        # Install a guided profile
+	cat - > "${pkgdir}/usr/bin/archinstall" <<EOF
+#!/bin/sh
+python -m archinstall $@
+EOF
+
+	chmod +x "${pkgdir}/usr/bin/archinstall"
+
+        install -Dm644 docs/_build/man/archinstall.1 "${pkgdir}"/usr/share/man/man1/archinstall.1
+}
+
+package_python-archinstall() {
+	cd "$pkgbase-$pkgver"
+
+        python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1 --skip-build
+}

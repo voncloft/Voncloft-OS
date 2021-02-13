@@ -1,0 +1,23 @@
+# description : Generate RSS2 using a Python data structure"
+# depends :   python  
+_name=PyRSS2Gen
+name=python-pyrss2gen
+version=1.1
+release=12
+# pypi source doesn t contain LICENSE
+#source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+source="http://www.dalkescientific.com/Python/${_name}-${version}.tar.gz" 
+
+build-old()   {
+  cd "${_name}-$version"
+  python setup.py build-old()
+}
+
+build()   {
+  cd "${_name}-$version"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

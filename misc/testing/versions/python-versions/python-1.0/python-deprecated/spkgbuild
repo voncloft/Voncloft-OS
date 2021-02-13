@@ -1,0 +1,23 @@
+
+name=python-deprecated
+version=1.2.11
+release=1
+# description : Python @deprecated decorator to deprecate old python classes, functions or methods"
+# depends :   python-wrapt  
+source="https://github.com/tantale/deprecated/archive/v$version.tar.gz" 
+
+build   {
+  cd deprecated-$version
+  python setup.py build
+}
+
+check   {
+  cd deprecated-$version
+  python setup.py pytest
+}
+
+package   {
+  cd deprecated-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.rst -t $PKG/usr/share/licenses/$name/
+}

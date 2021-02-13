@@ -1,0 +1,38 @@
+# description : Elegant audio file tagging 
+# depends :  
+
+name=python-mediafile
+version=0.6.0.r12.d7bea5e
+release=1
+  python-mutagen
+  python-six
+ 
+  git
+  python-flit
+  python-pip
+  python-poetry
+ 
+_commit=d7bea5efbe00c54fbe9ca169a3ffd6c827302e7d
+source= git+https://github.com/beetbox/mediafile.git#commit=${_commit} 
+
+version   {
+  cd mediafile
+  git describe --tags | sed  s/^v//; s/-/.r/; s/-g/./ 
+}
+
+build-old()   {
+  cd mediafile
+  flit build-old() --format wheel
+}
+
+check   {
+  cd mediafile
+  python -m nose
+}
+
+build()   {
+  PIP_CONFIG_FILE=/dev/null pip install --isolated --root=$PKG --ignore-installed --no-deps mediafile/dist/*.whl
+  install -Dm 644 mediafile/LICENSE -t $PKG/usr/share/licenses/python-mediafile
+}
+
+# vim: ts=2 sw=2 et:

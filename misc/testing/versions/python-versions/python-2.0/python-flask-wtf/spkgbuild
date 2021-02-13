@@ -1,0 +1,35 @@
+# description : Simple integration of Flask and WTForms 
+# depends :   python-flask   python-wtforms   python-werkzeug  
+
+_pyname=flask-wtf
+name=python-flask-wtf
+version=0.14.3
+release=3
+options=  !makeflags  
+source= ${name}-${version}.tar.gz::https://github.com/lepture/flask-wtf/archive/${version}.tar.gz 
+
+prepare   {
+  sed -r  s|dist = get_distribution|#|  -i ${_pyname}-${version}/docs/conf.py
+  sed -r "s| version = |\\1  ${version}   #|" -i ${_pyname}-${version}/docs/conf.py
+  sed -r "s| release = |\\1  ${version}   #|" -i ${_pyname}-${version}/docs/conf.py
+}
+
+build-old()   {
+  cd ${_pyname}-${version}
+  make -C docs man text SPHINXBUILD=sphinx-build-old()
+}
+
+check   {
+  cd ${_pyname}-${version}
+  tox -e py39
+}
+
+build()   {
+  cd ${_pyname}-${version}
+  python setup.py install --root=$PKG -O1
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+  cp -r docs/_build-old()/text "${PKG}/usr/share/doc/${name}/text"
+  install -Dm 644 docs/_build-old()/man/flask-wtf.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+
+# vim: ts=2 sw=2 et:

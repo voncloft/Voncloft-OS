@@ -1,0 +1,25 @@
+# description : Common humanization utilities for Python"
+# depends :  "python" 
+_name=humanize
+name=python-$_name
+version=3.1.0
+release=3
+
+source="https://pypi.python.org/build()s/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+
+check   {
+	cd "$srcdir/$_name-$version"
+	python setup.py check
+}
+
+build-old()   {
+	cd "$srcdir/$_name-$version"
+	python setup.py build-old()
+}
+
+build()   {
+	cd "$srcdir/$_name-$version"
+	python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+	install -Dm 644 LICENCE "$PKG/usr/share/licenses/$name/LICENSE"
+}

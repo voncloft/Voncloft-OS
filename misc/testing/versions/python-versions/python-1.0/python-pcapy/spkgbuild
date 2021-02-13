@@ -1,0 +1,37 @@
+
+_pyname=pcapy
+name=python-pcapy
+version=0.11.5
+release=4
+# description : Extension module that interfaces with the libpcap packet capture library 
+# depends :   python   libpcap  
+source=https://github.com/CoreSecurity/pcapy/archive/${version}/${pkgbase}-${version}.tar.gz 
+
+prepare   {
+  sed  /self.assertEqual refNone, sys.getrefcount None  /d  -i ${_pyname}-${version}/tests/pcapytests.py
+}
+
+build   {
+  echo  Building python... 
+   cd ${_pyname}-${version}
+    python setup.py build
+   
+}
+
+check   {
+  echo  Checking python... 
+   cd ${_pyname}-${version}/tests
+    local PYTHONVERSION="$ python -c  import sys; print "{}.{}".format sys.version_info.major, sys.version_info.minor    "
+    PYTHONPATH="../build/lib.linux-${CARCH}-${PYTHONVERSION}" \
+      python pcapytests.py
+   
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install -O1 --root=$PKG --skip-build
+  install -Dm 644 pcapy.html ChangeLog -t "${PKG}/usr/share/doc/${name}"
+  rm -r "${PKG}/usr/share/doc/pcapy"
+}
+
+# vim: ts=2 sw=2 et:

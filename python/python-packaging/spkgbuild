@@ -1,0 +1,13 @@
+# description	: Core utilities for Python packages
+# depends	: python-pyparsing python-six
+
+name=python-packaging
+version=20.4
+release=1
+source="https://files.pythonhosted.org/packages/source/p/${name#*-}/${name#*-}-$version.tar.gz"
+
+build() {
+	cd ${name#*-}-$version
+	python setup.py build
+	python setup.py install --root=$PKG --optimize=1
+}

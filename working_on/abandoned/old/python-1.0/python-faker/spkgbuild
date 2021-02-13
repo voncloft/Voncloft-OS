@@ -1,0 +1,39 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Jeremy "Ichimonji10" Audet <ichimonji10 at gmail dot com>
+# Contributor: dnuux <dnuuxx@gmail.com>
+
+name=python-faker
+version=6.0.0
+release=1
+pkgdesc='Faker generates fake data for you.'
+url='https://faker.readthedocs.io/en/master/'
+provides=("python-fake-factory=$version")
+conflicts=('python-fake-factory')
+replaces=('python-fake-factory')
+depends=('python-setuptools' 'python-dateutil' 'python-text-unidecode')
+makedepends=('python-pip' 'python-wheel' 'python-pytest-runner')
+checkdepends=('python-validators' 'python-ukpostcodeparser' 'python-random2'
+              'python-freezegun')
+source=("$name-$version.tar.gz::https://github.com/joke2k/faker/archive/v$version.tar.gz")
+sha512sums=('09bbe97b7d041cb6b40f7b7fa70750e913d86160f504382205c5e38735d3c81cb3f6ecbc77dca728938b54c1e4325d1b97f75ea4cda01082f8f83a48549c7e66')
+
+prepare() {
+  sed -i -e 's/==/>=/' faker-$version/setup.py
+}
+
+build() {
+  cd faker-$version
+  python setup.py build
+}
+
+check() {
+  cd faker-$version
+  python setup.py egg_info
+  python -m pytest
+}
+
+package() {
+  cd faker-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm 644 LICENSE.txt "$pkgdir"/usr/share/licenses/${name}/LICENSE.txt
+}

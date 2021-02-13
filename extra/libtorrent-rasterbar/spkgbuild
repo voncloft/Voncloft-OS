@@ -1,0 +1,26 @@
+# description : A C++ BitTorrent library that aims to be a good alternative to all the other implementations around
+# depends : boost python 
+
+name=libtorrent-rasterbar
+version=1.2.11
+release=1
+
+source="https://github.com/arvidn/libtorrent/releases/download/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd $name-version
+	autoconf -ifv
+	
+	./configure \
+    	--prefix=/usr \
+    	--enable-python-binding \
+    	--enable-examples \
+    	--disable-static \
+    	--with-libiconv \
+    	--with-boost-python=boost_python3
+
+	make
+	make DESTDIR=$PKG install
+}

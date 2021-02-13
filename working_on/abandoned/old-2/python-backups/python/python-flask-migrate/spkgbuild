@@ -1,0 +1,35 @@
+# description : SQLAlchemy database migrations for Flask applications using Alembic..
+# depends : python python-alembic python-flask python-flask-script python-flask-sqlalchemy
+
+_name=Flask-Migrate
+name=python-flask-migrate
+version=2.5.3
+release=3
+url=https://github.com/miguelgrinberg/Flask-Migrate/
+         python-setuptools
+make# depends : python-sphinx
+source=https://github.com/miguelgrinberg/Flask-Migrate/archive/v${version}/${name}-${version}.tar.gz
+sha256sums=4af1feb1b5e5a0332c11c3ebe7981228719776b73c0bfa28b4aead541dff46d8
+sha512sums=f9fff3d94d07a5d79bdd40b04cfe808c40915c3f4e48b0db8f5268897892591604480612aefb1587bc9736fbca023bd5738f5d168f16e6460568151521fa4609
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+  make -j1 -C docs man text SPHINXBUILD=sphinx-build()
+}
+
+check {
+   cd ${_name}-${version}
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  python setup.py build
+  python setup.py install --root="${PKG}/" --optimize=1 
+  install -Dm 644 docs/_build()/text/* -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/flask-migrate.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+

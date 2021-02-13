@@ -1,0 +1,25 @@
+# description : Sphinx themes for Pallets and related projects
+# depends : python python-sphinx python-importlib-metadata
+
+name=python-pallets-sphinx-themes
+_pyname=${name/python-/}
+version=1.2.2
+release=7
+url=https://github.com/pallets/pallets-sphinx-themes
+make# depends : python-setuptools
+source=https://github.com/pallets/pallets-sphinx-themes/archive/${version}/${_pyname}-${version}.tar.gz
+sha512sums=3e4a1c278179e1595b40541eeabf9d2e642d5693d802a7e775829d96b8ed1031ebb08b608c688e8ec9e6a9c41f72523006a77948f93f938f265c5da26eb7d478
+
+build()-delete {
+   cd ${_pyname}-${version}
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+}
+

@@ -1,0 +1,29 @@
+
+_name=icalendar
+name=python-icalendar
+version=4.0.7
+release=3
+# description : A parser/generator of iCalendar files  RFC 2445  
+# depends :   python-dateutil   python-pytz   python-setuptools  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+build   {
+  cd "${_name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${_name}-${version}"
+  PYTHONPATH="${PWD}:${PYTHONPATH}"
+  pytest -v "src/${_name}/tests"
+}
+
+package   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+    -t "${PKG}/usr/share/doc/${name}/"
+  install -vDm 644 LICENSE.rst \
+    -t "${PKG}/usr/share/licenses/${name}"
+}

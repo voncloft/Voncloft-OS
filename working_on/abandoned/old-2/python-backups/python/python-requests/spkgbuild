@@ -1,0 +1,49 @@
+# description : "Python HTTP for Humans"
+
+pkgbase=python-requests
+version=2.25.1
+release=1
+url="http://python-requests.org"
+check# depends : python-pytest-httpbin python-pytest-mock python-pysocks python-pyopenssl
+source="$pkgbase-$version.tar.gz::https://github.com/psf/requests/archive/v$version.tar.gz"
+        certs.patch
+sha512sums=e4fc90b229925a2b580e5cd85c39e8b0fe8006e1e49d247efc38616120ffdab319fc200424eeb4fb7175114daf1b6f98ba5c2f4baa00ce17fdc79e880df60ad8
+            424a3bb01b23409284f6c9cd2bc22d92df31b85cfd96e1d1b16b5d68adeca670dfed4fff7977d8b10980102b0f780eacc465431021fcd661f3a17168a02a39a3
+
+prepare {
+   cd "$srcdir"/requests-$version
+  sed -e /certifi/d \
+      -e "s/,<.*//" \
+      -i setup.py
+  patch -p1 -i "$srcdir"/certs.patch
+
+   cd "$srcdir"
+  cp -a requests-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/requests-$version
+  python setup.py build
+
+   cd "$srcdir"/requests-$version-py2
+}
+
+check {
+  # Seems to be a problem about pytest-httpbin
+
+   cd requests-$version
+  pytest tests --deselect tests/test_requests.py::TestRequests::test_https_warnings
+}
+
+package_python-requests {
+  # depends : python-urllib3 python-chardet python-idna
+  opt# depends : python-pysocks: SOCKS proxy support
+
+   cd "$srcdir"/requests-$version
+  python setup.py build
+  python setup.py install  -O1 --root=$PKG
+}
+
+
+   cd "$srcdir"/requests-$version-py2
+}

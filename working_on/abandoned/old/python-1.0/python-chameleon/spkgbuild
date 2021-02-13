@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-chameleon
+version=3.8.1
+release=2
+pkgdesc="Fast HTML/XML Template Compiler"
+url="http://www.pagetemplates.org/"
+depends=('python')
+makedepends=('python-setuptools')
+source=("$name-$version.tar.gz::https://github.com/malthe/chameleon/archive/$version.tar.gz")
+sha512sums=('d4a4b3ac0b59865a7ea1d9ede7f08d991296c1d08a48c7290b9e2864afa6527237d8dee604114918f3b5035f2cc915bf6218d0758ebcd393f2103bb0751f6ea2')
+
+build() {
+  cd chameleon-$version
+  python setup.py build
+}
+
+check() {
+  cd chameleon-$version
+  python setup.py test
+}
+
+package() {
+  cd chameleon-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

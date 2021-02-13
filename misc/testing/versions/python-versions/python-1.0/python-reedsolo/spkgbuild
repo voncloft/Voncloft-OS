@@ -1,0 +1,25 @@
+
+name=python-reedsolo
+version=1.5.4
+release=1
+# description : A pure-python universal errors-and-erasures Reed-Solomon Codec"
+# depends :   python  
+source= https://github.com/tomerfiliba/reedsolomon/archive/v${version}.tar.gz 
+
+build   {
+  cd "reedsolomon-${version}"
+  python3 setup.py build
+}
+
+check   {
+  cd "reedsolomon-${version}"
+  local python_version=$ python -c  import sys; print ".".join map str, sys.version_info[:2]     
+
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-${python_version}" python -m unittest discover tests
+}
+
+package   {
+  cd "reedsolomon-${version}"
+  python3 setup.py install --root="$PKG/" --optimize=1 --skip-build
+  install -D -m0644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

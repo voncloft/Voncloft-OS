@@ -1,0 +1,25 @@
+# description : Python bindings for libnest2d"
+# depends :  python polyclipping nlopt 
+
+name=python-pynest2d
+version=4.8.0
+release=4
+source= ${name}-${version}.tar.gz::https://github.com/Ultimaker/pynest2d/archive/${version}.tar.gz fix-cpp-version.patch 
+             0d01349a110bc2cde6b7279ba8b8d60cd71c599fe10054e4082aac86bf4e30184959dcfcc795a63ae7517845c014b14db029a6070833696191d874dbfa24ed30  
+
+prepare   {
+  cd pynest2d-${version}
+  patch -Np1 -i ${srcdir}/fix-cpp-version.patch
+
+  mkdir build-old()
+}
+
+build-old()   {
+  cd pynest2d-${version}/build-old()
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+}
+
+build()   {
+  cd pynest2d-${version}/build-old()
+  make DESTDIR=$PKG install
+}

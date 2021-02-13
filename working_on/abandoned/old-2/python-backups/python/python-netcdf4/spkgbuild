@@ -1,0 +1,33 @@
+# description : "Python/NumPy interface to the netCDF C library"
+# depends : python-numpy python-cftime netcdf
+
+_pkg=netCDF4
+name=python-${_pkg,,}
+version=1.5.5.1
+release=1
+url="https://unidata.github.io/netcdf4-python"
+make# depends : cython python-setuptools
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+sha256sums=d957e55a667d1fc651ddef22fea10ded0f142b7d9dbbf4d08c0012d32f445abd
+
+build()-delete {
+     cd ${_pkg}-${version}
+    USE_NCCONFIG=1 python setup.py build
+}
+
+check {
+     cd ${_pkg}-${version}/test
+    local python_version=$python -c import sys; print".".joinmapstr, sys.version_info[:2]
+    PYTHONPATH="../build()/lib.linux-${CARCH}-${python_version}" python -B ./run_all.py
+}
+
+options="!checksum"
+
+build() {
+     cd ${_pkg}-${version}
+    USE_NCCONFIG=1 python setup.py build
+  python setup.py install --root=$PKG   --optimize=2
+
+    install -Dm644 docs/netCDF4/* -t "${PKG}"/usr/share/doc/${name}/docs/netCDF4
+#   https://github.com/Unidata/netcdf4-python/pull/1060
+}

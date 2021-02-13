@@ -1,0 +1,17 @@
+# description : "Simple library to encode/decode DNS wire-format packets"
+# depends : python
+
+name=python-dnslib
+version=0.9.14
+release=2
+url="https://bitbucket.org/paulc/dnslib"
+source="https://pypi.io/packages/source/d/dnslib/dnslib-$version.tar.gz"
+sha512sums=75638ae5ac238ae60151bdf52f678be2afa21da429670ebf1eb4dfda04e871d171664995b52690fd921aeee28d25630d0fad015677471e68563ba04dbbbd52f6
+
+options="!checksum"
+
+build() {
+   cd dnslib-$version
+  python setup.py build
+  python setup.py install -O1 --root=$PKG
+}

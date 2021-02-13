@@ -1,0 +1,23 @@
+# description : The compiler package from Python 2, ported to Python 3
+
+name=python-compiler
+version=1.1
+release=2
+url=https://github.com/pfalcon/python-compiler
+make# depends : git python python-setuptools
+source="git+https://github.com/pfalcon/python-compiler#commit=e71a47b4bf6570afe12ebb4a16fb70561c134e98" # version 1.1
+sha256sums=SKIP
+
+build()-delete{
+   cd $name
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $name
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+

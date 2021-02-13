@@ -1,0 +1,16 @@
+# description : OpenStack Sphinx Extensions and Theme
+# depends : python-six python-requests
+
+url=https://github.com/openstack/oslosphinx
+name=python-oslosphinx
+version=4.18.0
+release=5
+
+source="https://github.com/openstack/oslosphinx/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd oslosphinx-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,39 @@
+
+_name=pytoml
+name=python-pytoml
+version=0.1.21
+_test_commit=bbfef3b9277eac47e5d6e9e507c99f0a40a61f8a
+release=6
+# description : A TOML-0.4.0 parser/writer for Python."
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+        "https://github.com/avakar/toml-test/archive/${_test_commit}.tar.gz" 
+             83264fdeb90c8dde3552631569a39252273910ec39cabb5a220c3ef47a40c5f2c4e506c1cbaf4e863cd6e80e38ef7e816df607d95389e66ed3406efff18b802b  
+         1b4b58467365d5afc9d397aae2939aed182764a177bd2fb66732d591f2ec6872205c74dd5c8162f00d0d008faef0bb8da661049cadb2d0fd1ba415708ee932ea  
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    rm -rf test/toml-test
+    ln -sf "${srcdir}"/toml-test-${_test_commit} test/toml-test
+}
+
+build   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+    PYTHONPATH=$PWD python test/test.py
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

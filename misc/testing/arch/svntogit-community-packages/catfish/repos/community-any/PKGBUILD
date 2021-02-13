@@ -1,0 +1,33 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
+# Contributor: Alexander Fehr <pizzapunk@gmail.com>
+# Contributor: Pantelis Panayiotou <p.panayiotou@gmail.com>
+# Contributor: loqs <bugs-archlinux@entropy-collector.net>
+
+pkgname=catfish
+pkgver=4.16.0
+pkgrel=3
+pkgdesc='Versatile file searching tool'
+arch=(any)
+url='https://docs.xfce.org/apps/catfish/start'
+license=(GPL)
+install=$pkgname.install
+depends=(gtk3 python-cairo python-gobject python-pexpect
+         python-ptyprocess python-xdg xdg-utils python-dbus xfconf)
+makedepends=(git intltool python-distutils-extra)
+optdepends=('mlocate: filename search')
+source=(https://archive.xfce.org/src/apps/catfish/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
+sha512sums=('926318d3b2387386a5141347cf23b7e1505f83c48dac3804dc9c51aeeede2ef71d6d70e61bd5f608145249ccb4d3d87662bdab0c0a88dc69608b2edee55ddc19')
+
+build() {
+  cd $pkgname-$pkgver
+  python setup.py build
+}
+
+package () {
+  cd $pkgname-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -d "$pkgdir/usr/share/pixmaps"
+  ln -s "/usr/share/icons/hicolor/scalable/apps/$pkgname.svg" \
+    "$pkgdir/usr/share/pixmaps/$pkgname.svg"
+}

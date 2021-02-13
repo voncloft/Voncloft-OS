@@ -1,0 +1,24 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+_pkg=colorcet
+name=python-${_pkg}
+version=2.0.5
+release=1
+pkgdesc="Set of useful perceptually uniform colormaps for plotting scientific data"
+url="https://colorcet.holoviz.org/"
+depends=(python-param python-pyct)
+makedepends=(python-setuptools)
+source=(https://github.com/holoviz/colorcet/archive/v${version}/${name}-${version}.tar.gz)
+#source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz)
+sha256sums=('dbd9fd99a7a4753f104f272e8b17f5279d8c94fa0bb4d0a4e147f0e44004c670')
+
+build() {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+package() {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
+  install -Dm644 LICENSE.txt -t "${pkgdir}"/usr/share/licenses/${name}
+}

@@ -1,0 +1,23 @@
+# description : A flake8 extension that checks for blind except: statements
+# depends : python-setuptools
+
+name=python-flake8-blind-except
+version=0.1.1
+release=4
+url=https://github.com/elijahandrews/flake8-blind-except
+make# depends : python-setuptools git
+source="git+https://github.com/elijahandrews/flake8-blind-except.git#tag=v$version"
+md5sums=SKIP
+
+build()-delete {
+   cd "$srcdir"/flake8-blind-except
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/flake8-blind-except
+  python setup.py build
+  python setup.py install --root=$PKG/ --optimize=1
+}

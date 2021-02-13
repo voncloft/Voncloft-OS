@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-pip-shims
+version=0.5.3
+release=3
+pkgdesc="Compatibility shims for pip versions 8 thru current"
+url="https://github.com/sarugaku/pip-shims"
+depends=('python-pip' 'python-wheel' 'python-setuptools')
+checkdepends=('python-pytest-runner' 'git')
+source=("$name-$version.tar.gz::https://github.com/sarugaku/pip-shims/archive/$version.tar.gz")
+sha512sums=('7a2b72d3483298ffeaa7ba24bdc7550e0a72ea3d373f43761afdcdc8399a518191191a2b4cc70aadfcaf1fa34e7843984c5e33ec32e4f1d10084f2497bfb61f7')
+
+build() {
+  cd pip-shims-$version
+  python setup.py build
+}
+
+check() {
+  cd pip-shims-$version
+  python setup.py pytest
+}
+
+package() {
+  cd pip-shims-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

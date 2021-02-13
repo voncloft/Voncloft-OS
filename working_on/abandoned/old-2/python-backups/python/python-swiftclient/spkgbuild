@@ -1,0 +1,35 @@
+# description : "An SDK for build()ing applications to work with OpenStack"
+# depends : python-six python-requests
+
+name=python-swiftclient
+version=3.11.0
+release=1
+url="https://docs.openstack.org/python-swiftclient"
+opt# depends : python-keystoneclient: for Auth versions 2.0 and 3 support
+make# depends : python-setuptools python-pbr
+check# depends : python-stestr python-mock python-keystoneauth1 python-keystoneclient
+source="$name-$version.tar.gz::https://github.com/openstack/python-swiftclient/archive/$version.tar.gz"
+sha512sums=82955176e1314c027d106881343640268affe9994cdf7544334320f0c57f7cabdc9288e0e54460dfa63c624361dd770e1f029eb5a92cec0afd66133c58782861
+
+prepare {
+  export PBR_VERSION=$version
+}
+
+build()-delete {
+   cd "$srcdir"/python-swiftclient-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/python-swiftclient-$version
+  stestr run
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/python-swiftclient-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

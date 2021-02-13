@@ -1,0 +1,18 @@
+# description	: python bindings for PyGObject3
+# depends	: python-cairo gobject-introspection
+
+name=python-gobject3
+version=3.36.1
+release=1
+source="https://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz"
+
+build() {
+	cd pygobject-$version
+
+	mkdir build
+	cd build
+
+	meson --prefix=/usr -Dpython=python ..
+	ninja
+	DESTDIR=$PKG ninja install
+}

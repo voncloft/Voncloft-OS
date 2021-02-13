@@ -1,0 +1,39 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=BSlizr
+pkgname=bslizr
+pkgver=1.2.8
+pkgrel=1
+pkgdesc="LV2 audio effect plugin for sequenced slicing of stereo audio input signals"
+arch=('x86_64')
+url="https://github.com/sjaehn/bslizr"
+license=('GPL3')
+groups=('lv2-plugins' 'pro-audio')
+depends=('cairo' 'gcc-libs' 'glibc' 'libx11')
+makedepends=('lv2')
+checkdepends=('lv2lint')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/sjaehn/${pkgname}/archive/${pkgver}.tar.gz")
+sha512sums=('86c29c91a30f3146676aa5ab602b5c13147cf36e7f83ea2341bf77046edbba60c0c6baf483a915916f5182303d5dcafe8081d3077393f7cb75084a2dfcf9c613')
+
+prepare() {
+  mv -v "${_name}-${pkgver}" "$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  make PREFIX='/usr'
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  lv2lint -Mpack -I "${_name}.lv2/" "https://www.jahnichen.de/plugins/lv2/BSlizr"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="${pkgdir}" PREFIX='/usr' install
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  # remove useless license file
+  find "${pkgdir}/usr/lib/" -type f -iname "*LICENSE*" -delete
+}

@@ -1,0 +1,17 @@
+# description : A collection of tools for Python
+# depends : python-six python-decorator python-appdirs python-numpy
+
+url=https://mathema.tician.de/software/pytools
+name=python-pytools
+version=2021.1
+release=1
+
+source="https://pypi.io/packages/source/p/pytools/pytools-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/pytools-$version
+   cd pytools-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

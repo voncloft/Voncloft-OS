@@ -1,0 +1,23 @@
+# description : "Strict, simple, lightweight RFC3339 functions"
+# depends : python
+
+name=python-strict-rfc3339
+version=0.7
+release=7
+url="http://www.danielrichman.co.uk/libraries/strict-rfc3339.html"
+make# depends : python-setuptools
+source="https://pypi.io/packages/source/s/strict-rfc3339/strict-rfc3339-$version.tar.gz"
+sha512sums=94a2992a9ea41b75527348f0f8dae1d118d57b0764122f874baa85f5e3b523beb219ed83c2d7224725e504cd3737a6bde485957135856dcde470f32675e44e77
+
+build()-delete {
+   cd strict-rfc3339-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd strict-rfc3339-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

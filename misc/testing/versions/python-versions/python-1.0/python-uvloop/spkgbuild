@@ -1,0 +1,25 @@
+
+_name=uvloop
+name=python-$_name
+version=0.14.0
+release=3
+# description : Ultra fast asyncio event loop 
+# depends :   python   libuv  
+source=" $url/archive/v$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+
+  python setup.py build build_ext --use-system-libuv
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE-APACHE $PKG/usr/share/licenses/$name/LICENSE-APACHE
+  install -Dm 644 LICENSE-MIT $PKG/usr/share/licenses/$name/LICENSE-MIT
+}
+
+# vim:set ts=2 sw=2 et:

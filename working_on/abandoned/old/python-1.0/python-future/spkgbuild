@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Christopher Arndt <aur -at- chrisarndt -dot- de>
+# Contributor: Gaute Hope <eg@gaute.vetsj.com>
+# Contributor: Melissa Padilla <mpadilla2 at hotmail dot com>
+
+name=python-future
+version=0.18.2
+release=5
+pkgdesc="Clean single-source support for Python 3 and 2"
+url="https://python-future.org/"
+depends=('python')
+provides=('futurize' 'pasteurize')
+checkdepends=('python-requests')
+makedepends=('python-setuptools')
+optdepends=('python-setuptools: futurize and pasteurize scripts')
+options=('!emptydirs')
+source=("https://pypi.io/packages/source/f/future/future-$version.tar.gz")
+sha512sums=('91c025f7d94bcdf93df838fab67053165a414fc84e8496f92ecbb910dd55f6b6af5e360bbd051444066880c5a6877e75157bd95e150ead46e5c605930dfc50f2')
+
+build() {
+  cd "$srcdir"/future-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/future-$version
+#PYTHONPATH="$PWD/build/lib:$PYTHONPATH" python setup.py test || warning "Tests failed"
+}
+
+package() {
+  cd future-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE.txt \
+    "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

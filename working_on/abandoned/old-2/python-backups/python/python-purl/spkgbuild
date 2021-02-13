@@ -1,0 +1,29 @@
+# description : "An immutable URL class for easy URL-build()ing and manipulation"
+# depends : python-six
+
+name=python-purl
+version=1.5
+release=6
+url="https://github.com/codeinthehole/purl"
+make# depends : python-setuptools
+check# depends : python-nose
+source="https://github.com/codeinthehole/purl/archive/$version/$name-$version.tar.gz"
+sha512sums=c034e563d25f4270d4aa9731e87df23203a1c6fc09d2df60fd6038e88c17341e2b30b04a9fba177a04a2552ce3ee0f2d9e34bf4aad6675eb23d2c7bd047d3813
+
+build()-delete {
+   cd purl-$version
+  python setup.py build
+}
+
+check {
+   cd purl-$version
+  python setup.py nosetests
+}
+
+options="!checksum"
+
+build() {
+   cd purl-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

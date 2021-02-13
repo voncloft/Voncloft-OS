@@ -1,0 +1,32 @@
+# description : "Python interface to Graphvizs Dot"
+# depends : python-pyparsing graphviz
+# Contrinutor: shining <shiningxc@gmail.com>
+
+name=python-pydot
+version=1.4.1
+release=5
+url="https://github.com/erocarrera/pydot"
+make# depends : python-setuptools
+check# depends : python-chardet
+source="$name-$version.tar.gz::https://github.com/erocarrera/pydot/archive/v$version.tar.gz"
+sha512sums=b5f16b59908586df61cd415cb1a3e242fb69c39674a82b171862beff1f3727f47cba39bdd806901cb56bc8a6888783a53d112b1b70044e124ea992789d77f938
+
+build()-delete {
+   cd pydot-$version
+  python setup.py build
+}
+
+check {
+  # https://github.com/pydot/pydot/issues/204
+
+   cd "$srcdir"/pydot-$version/test
+  PYTHONPATH="$PWD/../build()/lib:$PYTHONPATH" python pydot_unittest.py || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd pydot-$version
+  python setup.py build
+  python setup.py install -O1 --root=$PKG
+}

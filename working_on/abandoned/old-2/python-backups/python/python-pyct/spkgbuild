@@ -1,0 +1,31 @@
+# description : "Python packaging Common Tasks"
+# depends : python-param
+
+_pkg=pyct
+name=python-${_pkg}
+version=0.4.8
+release=3
+url="https://github.com/pyviz-dev/pyct"
+make# depends : python-setuptools
+check# depends : python-pytest python-requests python-yaml
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+sha256sums=23d7525b5a1567535c093aea4b9c33809415aa5f018dd77f6eb738b1226df6f7
+
+build()-delete {
+     cd ${_pkg}-${version}
+    python setup.py build
+}
+
+check {
+     cd ${_pkg}-${version}
+    pytest pyct -v --pyargs
+}
+
+options="!checksum"
+
+build() {
+     cd ${_pkg}-${version}
+    python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

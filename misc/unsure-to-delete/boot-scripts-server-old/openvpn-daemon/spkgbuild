@@ -1,0 +1,13 @@
+# description : openvpn daemon script
+# depends :
+
+name=openvpn-daemon
+version=2.4.9
+release=1
+
+build()
+{
+	cd $name-$version
+	mkdir -pv $PKG/etc/init.d
+	install $SRC/openvpn-torrent $PKG/etc/init.d/
+}

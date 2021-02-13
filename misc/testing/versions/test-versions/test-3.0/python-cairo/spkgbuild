@@ -1,0 +1,21 @@
+
+name=python-cairo
+version=1.20.0
+release=3
+# description : "Python bindings for the cairo graphics library"
+# depends : (cairo python)
+
+version() {
+  cd pycairo
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+build-remove() {
+  cd pycairo
+  python setup.py build
+}
+
+build() {
+  cd pycairo
+  python setup.py install --skip-build --root="${pkgdir}" --optimize='1'
+}

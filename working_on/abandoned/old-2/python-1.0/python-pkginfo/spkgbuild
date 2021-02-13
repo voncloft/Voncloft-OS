@@ -1,0 +1,15 @@
+# description : Query metadatdata from sdists / bdists / installed packages
+# depends : python
+
+url=https://pypi.python.org/pypi/pkginfo
+name=python-pkginfo
+version=1.7.0
+release=1
+
+source="https://pypi.io/packages/source/p/pkginfo/pkginfo-$version.tar.gz"
+
+build() {
+   cd pkginfo-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

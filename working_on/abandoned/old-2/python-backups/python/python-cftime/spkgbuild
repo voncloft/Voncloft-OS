@@ -1,0 +1,32 @@
+# description : "Time-handling functionality from python-netcdf4"
+# depends : python-numpy
+
+_pkg=cftime
+name=python-${_pkg}
+version=1.4.1
+release=1
+url="https://unidata.github.io/cftime"
+make# depends : cython python-setuptools
+check# depends : python-pytest python-pytest-cov
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+source=https://github.com/Unidata/cftime/archive/v${version}rel/${name}-${version}.tar.gz
+sha256sums=e129c3b72ccc337cc0f0c4e3438cab1a5206572a8f3aefba220ab6c6c06476c1
+
+build()-delete {
+     cd ${_pkg}-${version}rel
+    python setup.py build
+}
+
+check {
+     cd ${_pkg}-${version}rel
+    local python_version=$python -c import sys; print".".joinmapstr, sys.version_info[:2]
+    PYTHONPATH="${PWD}/build()/lib.linux-${CARCH}-${python_version}" py.test
+}
+
+options="!checksum"
+
+build() {
+     cd ${_pkg}-${version}rel
+    python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

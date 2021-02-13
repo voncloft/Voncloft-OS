@@ -1,0 +1,42 @@
+# description : "Internationalized Domain Names in Applications (IDNA)"
+
+pkgbase=python-idna
+name=('python-idna' 'python2-idna')
+version=2.10
+release=3
+source=("https://pypi.io/packages/source/i/idna/idna-$version.tar.gz")
+
+prepare() {
+   rm -r idna-$version/*.egg-info
+   cp -a idna-$version{,-py2}
+}
+
+build-remove() {
+   cd "$srcdir"/idna-$version
+   python setup.py build
+ 
+   cd "$srcdir"/idna-$version-py2
+   python2 setup.py build
+}
+
+check() {
+   cd "$srcdir"/idna-$version
+   python setup.py test
+
+   cd "$srcdir"/idna-$version-py2
+   python2 setup.py test
+}
+ 
+package_python-idna() {
+   # depends : ('python')
+ 
+   cd idna-$version
+   python setup.py install --root=$PKG --optimize=1 --skip-build
+}
+ 
+package_python2-idna() {
+   # depends : ('python2')
+ 
+   cd idna-$version-py2
+   python2 setup.py install --root=$PKG --optimize=1 --skip-build
+}

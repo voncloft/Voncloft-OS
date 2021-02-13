@@ -1,0 +1,23 @@
+# description : Data-Driven/Decorated Tests"
+# depends :   python  
+
+name=python-ddt
+version=1.4.1
+release=3
+source="https://github.com/txels/ddt/archive/$version.tar.gz" 
+
+build-old()   {
+  cd ddt-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd ddt-$version
+  pytest
+}
+
+build()   {
+  cd ddt-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.md $PKG/usr/share/licenses/$name/LICENSE.md
+}

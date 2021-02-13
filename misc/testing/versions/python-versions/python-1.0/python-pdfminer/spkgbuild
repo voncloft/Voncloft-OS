@@ -1,0 +1,28 @@
+
+_pkg=pdfminer
+name=python-${_pkg}
+version=20201018
+release=2
+# description : Python PDF Parser"
+# depends :  python-chardet python-cryptography python-sortedcontainers 
+# Provided tarballs do not include tests
+#source= ${url}/releases/download/${version}/${_pkg}.six-${version}.tar.gz 
+source= ${url}/archive/${version}/${_pkg}-${version}.tar.gz 
+
+build   {
+  cd ${_pkg}.six-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pkg}.six-${version}
+  nosetests
+}
+
+package   {
+  cd ${_pkg}.six-${version}
+  python setup.py install --skip-build --prefix=/usr --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}/
+  # Fix ownership
+  chmod a+r $PKG$ python -c "import site; print site.getsitepackages  [0] " /pdfminer/cmap/*
+}

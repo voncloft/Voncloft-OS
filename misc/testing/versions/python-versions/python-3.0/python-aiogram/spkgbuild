@@ -1,0 +1,38 @@
+# description : A pretty simple and fully asynchronous library for Telegram Bot API written with asyncio and aiohttp"
+# depends :   python-aiohttp   python-babel  
+
+name=python-aiogram
+version=2.11.2
+release=3
+             python-ujson: ultra fast JSON encoder and decoder written in pure C 
+             python-rapidjson: extremely fast C++ JSON parser and serialization library 
+             python-emoji: emojize and demojize support 
+             python-aioredis: Redis storage support 
+             python-aiohttp-socks: SOCKS4 a  and SOCKS5 proxy support 
+#             python-rethinkdb: RethinkDB storage support   # No such build() yet
+ 
+source="$url/archive/v$version/$name-$version.tar.gz" 
+
+prepare   {
+  cd aiogram-$version
+  sed -e  /import certifi/d  \
+      -e  s|certifi.where  |"/etc/ssl/certs/ca-certificates.crt"|  \
+      -i aiogram/bot/base.py
+}
+
+build-old()   {
+  cd aiogram-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd aiogram-$version
+  pifpaf run redis -- bash -c  python -m pytest --redis $PIFPAF_REDIS_URL 
+}
+
+build()   {
+  cd aiogram-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

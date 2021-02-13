@@ -1,0 +1,25 @@
+
+name=python-argparse-manpage
+version=1.4
+release=2
+# description : Automatically build man-pages for your Python project 
+source="https://github.com/praiskup/argparse-manpage/archive/v${version}.tar.gz" 
+
+build   {
+  cd "$srcdir/argparse-manpage-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir/argparse-manpage-$version"
+  python setup.py test
+}
+
+package   {
+  cd "$srcdir/argparse-manpage-$version"
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

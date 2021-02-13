@@ -1,0 +1,24 @@
+# description : A lexer and codec to work with LaTeX code in Python"
+# depends :   python-six  
+
+_name=latexcodec
+name=python-${_name}
+version=2.0.1
+release=3
+source="${name}-${version}.tar.gz::https://github.com/mcmtroffaes/${_name}/archive/${version}.tar.gz" 
+
+build-old()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/${_name}-${version}"
+  nosetests
+}
+
+build()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.rst "$PKG/usr/share/licenses/$name/LICENSE"
+}

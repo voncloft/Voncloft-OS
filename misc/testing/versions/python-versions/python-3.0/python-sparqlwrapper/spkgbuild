@@ -1,0 +1,23 @@
+# description : SPARQL Endpoint interface to Python"
+# depends :   python  
+
+name=python-sparqlwrapper
+version=1.8.5
+release=2
+source="https://github.com/RDFLib/sparqlwrapper/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/sparqlwrapper-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/sparqlwrapper-$version
+  ./run_tests_py3.sh
+}
+
+build()   {
+  cd sparqlwrapper-$version
+  LC_CTYPE=en_US.UTF-8 python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: csslayer <wengxt AT gmail com>
+
+pkgname=fcitx5-unikey
+pkgver=5.0.2
+pkgrel=1
+pkgdesc="Unikey engine support for Fcitx5"
+arch=('x86_64')
+url="https://github.com/fcitx/fcitx5-unikey"
+license=('GPL')
+depends=('fcitx5-qt')
+makedepends=('extra-cmake-modules' 'ninja')
+source=("https://download.fcitx-im.org/fcitx5/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
+sha512sums=('0bb95e71a1fb0b574100016c72db1f6062e28ed7e2fa0e0a2646d3af2bfeeef36e53cd450ef0634b49b694d48a5b1c1d5932157d306c25075a5d0a380296ae8c'
+            'SKIP')
+validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
+
+build(){
+  cd $pkgname-$pkgver
+
+  cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib .
+  ninja
+}
+
+package() {
+  cd $pkgname-$pkgver
+  DESTDIR="$pkgdir" ninja install
+}

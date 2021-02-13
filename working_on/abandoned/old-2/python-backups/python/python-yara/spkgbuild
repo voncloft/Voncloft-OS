@@ -1,0 +1,55 @@
+# description : Tool aimed at helping malware researchers to identify and classify malware samples
+
+_gitname=yara-python
+pkgbase=python-yara
+version=4.0.2
+_gitcommit=a1ed3cb54e8361a24e185183fccd888d99b15ae5
+release=2
+url=https://github.com/VirusTotal/yara-python
+make# depends : git yara glibc
+             python python-setuptools
+source=${pkgbase}::git+"https://github.com/VirusTotal/${_gitname}#commit=${_gitcommit}"
+sha512sums=SKIP
+
+version {
+   cd ${pkgbase}
+  git describe --tags --match v* | sed s/^v//;s/\[^-]*-g\/r\1/;s/-/./g
+}
+
+prepare {
+  cp -a ${pkgbase}{,-py2}
+}
+
+build()-delete {
+  echo Building python...
+   cd ${pkgbase}
+    python setup.py build --dynamic-linking
+  
+   cd ${pkgbase}-py2
+  
+}
+
+check {
+  echo Checking python...
+   cd ${pkgbase}
+    local PYTHONVERSION="$python -c import sys; print"{}.{}".formatsys.version_info.major, sys.version_info.minor"
+    PYTHONPATH="build()/lib.linux-${CARCH}-${PYTHONVERSION}" \
+      python tests.py
+  
+   cd ${pkgbase}-py2
+    PYTHONPATH="build()/lib.linux-${CARCH}-${PYTHONVERSION}" \
+  
+}
+
+package_python-yara {
+  # depends : python yara libyara.so glibc
+   cd ${pkgbase}
+  python setup.py build
+  python setup.py install--root=$PKG  -O1 
+  ln -s /usr/share/doc/yara/docs "${PKG}/usr/share/doc/${name}/docs"
+}
+
+   cd ${pkgbase}-py2
+  ln -s /usr/share/doc/yara/docs "${PKG}/usr/share/doc/${name}/docs"
+}
+

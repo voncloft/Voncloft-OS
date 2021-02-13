@@ -1,0 +1,16 @@
+  # description : Toolkit for plotting data on map projections
+  # description : Data files for python-basemap
+  # depends : python-basemap-common python-matplotlib geos shapelib python-numpy python-pyproj
+
+url=https://matplotlib.org/basemap/
+name=python-basemap python-basemap-common
+version=1.2.2
+release=2
+
+source="https://github.com/matplotlib/basemap/archive/v${version}rel.tar.gz"
+
+build() {
+   cd basemap-${version}rel
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

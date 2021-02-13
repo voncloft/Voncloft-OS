@@ -1,0 +1,27 @@
+# Maintainer: Brad Fanella <cesura@archlinux.org>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=mate-calc
+pkgver=1.24.1
+pkgrel=1
+pkgdesc="Calculator for the MATE desktop environment"
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('gtk3' 'gettext')
+makedepends=('itstool')
+groups=('mate-extra')
+source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('5c2d1b0101c087c3fdae143058994a76093590693a33392bc2329756708dad46')
+
+build() {
+    	cd "${pkgname}-${pkgver}"
+   	./configure \
+        	--prefix=/usr
+    	make
+}
+
+package() {
+    	cd "${pkgname}-${pkgver}"
+    	make DESTDIR="${pkgdir}" install
+}

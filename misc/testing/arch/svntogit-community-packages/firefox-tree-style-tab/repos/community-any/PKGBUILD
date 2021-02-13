@@ -1,0 +1,47 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Contributor: Jérémie Detrey <Jeremie.Detrey@loria.fr>
+
+_name=treestyletab
+pkgname=firefox-tree-style-tab
+pkgver=3.6.5
+pkgrel=1
+pkgdesc='Firefox extension to show tabs like a tree'
+arch=('any')
+url=https://piro.sakura.ne.jp/xul/_treestyletab.html.en
+license=('MPL' 'MPL2')
+groups=('firefox-addons')
+makedepends=('git' 'zip')
+source=("git+https://github.com/piroor/treestyletab.git#tag=$pkgver"
+        'git+https://github.com/piroor/webextensions-lib-configs.git'
+        'git+https://github.com/piroor/webextensions-lib-dom-updater.git'
+        'git+https://github.com/piroor/webextensions-lib-event-listener-manager.git'
+        'git+https://github.com/piroor/webextensions-lib-l10n.git'
+        'git+https://github.com/piroor/webextensions-lib-menu-ui.git'
+        'git+https://github.com/piroor/webextensions-lib-options.git'
+        'git+https://github.com/piroor/webextensions-lib-rich-confirm.git'
+        'git+https://github.com/piroor/webextensions-lib-shortcut-customize-ui.git'
+        'git+https://github.com/piroor/webextensions-lib-tab-favicon-helper.git')
+b2sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+  cd $_name
+  git submodule init
+  for i in ../webextensions*; do
+    git config submodule.submodules/${i##../}.url $i
+  done
+  git submodule update
+  sed -i 's/^xpi: .*/xpi:/' webextensions/Makefile
+}
+
+build() {
+  cd $_name/webextensions
+  make install_extlib
+  make xpi
+}
+
+package() {
+  cd $_name/webextensions
+  install -Dm644 $_name-we.xpi "$pkgdir"/usr/lib/firefox/browser/extensions/$_name@piro.sakura.ne.jp.xpi
+}
+
+# vim:set ts=2 sw=2 et:

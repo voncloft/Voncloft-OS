@@ -1,0 +1,21 @@
+# description : A plugin to make nose behave better"
+# depends :   python-nose  
+
+name=python-nose-fixes
+version=1.3
+release=5
+
+build-old()   {
+  cd "$srcdir/nose_fixes"
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir/nose_fixes"
+  nosetests3
+}
+
+build()   {
+  cd nose_fixes
+  python setup.py install --root=$PKG --optimize=1
+}

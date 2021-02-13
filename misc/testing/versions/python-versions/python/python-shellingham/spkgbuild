@@ -1,0 +1,27 @@
+# description : Detect what shell the current Python executable is running in."
+# depends :   python  
+
+_name=shellingham
+name=python-shellingham
+version=1.4.0
+release=1
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+build-old()  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py pytest
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

@@ -1,0 +1,18 @@
+# description : Python tools for handling intervals ranges of comparable objects.
+# depends : python python-infinity
+
+_name=intervals
+url=https://github.com/kvesteri/intervals
+_name=intervals
+name=python-${_name}
+version=0.8.1
+release=5
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

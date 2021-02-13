@@ -1,0 +1,39 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
+# Contributor: Jens Adam <jra@byte.cx>
+# Contributor: Abel Stern <abel.stern AT gmail.com>
+# Contributor: Anton Bazhenov <anton.bazhenov at gmail>
+
+pkgname=byacc
+pkgver=20210109
+pkgrel=1
+pkgdesc='Berkeley reimplementation of the Unix parser generator Yacc'
+url='https://invisible-island.net/byacc/'
+arch=('x86_64')
+license=('custom')
+depends=('glibc')
+replaces=('byacc-noconflict')
+source=(ftp://ftp.invisible-island.net/${pkgname}/${pkgname}-${pkgver}.tgz{,.asc})
+sha512sums=('95eafe81948fee1839fed8fff71d65c23d85de02af51672c118b2eed7c680f0dd300cec54cf366a248307c480844edc66a027575b29e20ef2f71f3c243ad5202'
+            'SKIP')
+validpgpkeys=('C52048C0C0748FEE227D47A2702353E0F7E48EDB') # Thomas Dickey <dickey@invisible-island.net>
+
+build() {
+  cd ${pkgname}-${pkgver}
+  sed -n '/is distributed/,/distributed freely/p' README > LICENSE
+  ./configure \
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --program-transform=s,^,b, \
+    --enable-btyacc
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm 644 README -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim:set ts=2 sw=2 et:

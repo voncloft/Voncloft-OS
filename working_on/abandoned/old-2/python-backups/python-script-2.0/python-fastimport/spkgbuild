@@ -1,0 +1,16 @@
+# description : VCS fastimport/fastexport parser
+# depends : python
+
+url=https://github.com/jelmer/python-fastimport
+name=python-fastimport
+version=0.9.8
+release=3
+
+source="git+https://github.com/jelmer/python-fastimport.git#tag=fd59e7d835b63d1c9181c4c84dd311d9d6da6d6b
+options="checksum"
+
+build() {
+   cd python-fastimport
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

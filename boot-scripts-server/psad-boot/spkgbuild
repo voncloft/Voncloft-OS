@@ -1,0 +1,17 @@
+# description : psad boot script
+# depends :
+
+name=psad-boot
+version=2.4.6
+release=1
+
+source="psad"
+options="!checksum"
+build()
+{
+	mkdir -pv $PKG/etc/init.d
+	install $SRC/psad $PKG/etc/init.d/
+	ln -sfv /etc/init.d/psad /etc/rc.d/rc5.d/S99psad
+	ln -sfv /etc/init.d/psad /etc/rc.d/rc4.d/S99psad
+	ln -sfv /etc/init.d/psad /etc/rc.d/rc3.d/S99psad
+}

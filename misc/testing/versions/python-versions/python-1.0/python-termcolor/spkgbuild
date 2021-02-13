@@ -1,0 +1,12 @@
+
+name=python-termcolor
+version=1.1.0
+release=10
+# description : ANSII Color formatting for output in terminal"
+# depends :   python  
+source=https://pypi.python.org/packages/source/t/termcolor/termcolor-$version.tar.gz 
+
+package   {
+  cd "$srcdir"/termcolor-$version
+  python setup.py install --root=$PKG
+}

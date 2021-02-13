@@ -1,0 +1,29 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Vlad M. <vlad@archlinux.net>
+
+pkgname=cargo-watch
+pkgver=7.5.0
+pkgrel=1
+pkgdesc="Utility for Cargo to compile projects when sources change"
+url='https://github.com/passcod/cargo-watch'
+arch=('x86_64')
+license=('CC0-1.0')
+depends=('cargo')
+source=("https://github.com/passcod/${pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('7c1499b2b34889aa9e7790ac483bbbea68c36fba204196934ae6031dce3b2bac4aa12f98cc2a74591f9b4c776b29dde498da2beef825aea0d9dc007060272ecf')
+b2sums=('e4ecf016cd4502da0197a4e199de1a804172abc203399798adfa575e5e306ecf0611c35f9798da80e3d015728a50b3b48c2ab6f11c427661763ce431291ccbb1')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  cargo build --release --locked
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  install -Dm 755 "target/release/${pkgname}" -t "${pkgdir}/usr/bin"
+
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

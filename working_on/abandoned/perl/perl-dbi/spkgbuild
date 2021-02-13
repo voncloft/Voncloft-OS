@@ -1,0 +1,33 @@
+# description : Database independent interface for Perl
+# depends : perl
+
+name=perl-dbi
+version=1.643
+release=2
+url=http://search.cpan.org/dist/DBI/
+check# depends : perl-test-pod perl-test-pod-coverage
+source="https://www.cpan.org/authors/id/T/TI/TIMB/DBI-$version.tar.gz"
+options="!checksum"
+sha512sums=03812f3eb1e43c8290dadb8cb14bbced9ec6e237228ea2a2ba91f22e52143906a91a7e82945dab30b1d1b9fc925073721111adafd9a09fac070808ab88f908b8
+
+build-delete {
+   cd DBI-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd DBI-$version
+  make test
+}
+
+build() {
+   cd DBI-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

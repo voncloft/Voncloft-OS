@@ -1,0 +1,26 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=jake
+pkgver=10.8.2
+pkgrel=1
+pkgdesc="JavaScript build tool, similar to Make or Rake"
+arch=('any')
+url="https://jakejs.com"
+license=('Apache')
+depends=('nodejs')
+makedepends=('npm')
+source=("https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz")
+noextract=($pkgname-$pkgver.tgz)
+sha512sums=('78ba4acab7c6de6cef184d83bbc5683db792911af2d3ddfeb723637586816c94bdbf5ee49c899818d5d009457480bc50b45f369b713c8916ffc1d49064ba2aec')
+
+package() {
+  npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
+
+  # Non-deterministic race in npm gives 777 permissions to random directories.
+  # See https://github.com/npm/npm/issues/9359 for details.
+  chmod -R u=rwX,go=rX "$pkgdir"
+
+  # npm installs package.json owned by build user
+  # https://bugs.archlinux.org/task/63396
+  chown -R root:root "$pkgdir"
+}

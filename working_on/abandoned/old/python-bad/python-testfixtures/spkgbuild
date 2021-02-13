@@ -1,0 +1,24 @@
+# description : A collection of helpers and mock objects that are useful when writing unit tests or doc tests"
+# depends :   python  
+
+name=python-testfixtures
+version=6.17.1
+release=1
+               python-pytest-django   python-django   python-twisted  
+source="https://github.com/Simplistix/testfixtures/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/testfixtures-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/testfixtures-$version
+  python setup.py pytest --addopts "--ignore=build-old()"
+}
+
+build()   {
+  cd testfixtures-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 docs/license.txt $PKG/usr/share/licenses/$name/license.txt
+}

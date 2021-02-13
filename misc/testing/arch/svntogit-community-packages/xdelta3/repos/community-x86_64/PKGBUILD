@@ -1,0 +1,35 @@
+# $Id$
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
+# Contributor: Eduard "bekks" Warkentin <eduard.warkentin@gmail.com>
+# Contributor: Henning Garus <henning.garus@gmail.com>
+
+pkgname=xdelta3
+pkgver=3.1.0
+pkgrel=1
+pkgdesc='Diff utility which works with binary files'
+arch=('x86_64')
+url='http://xdelta.org/'
+license=('GPL')
+source=("https://github.com/jmacd/xdelta-devel/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('114543336ab6cee3764e3c03202701ef79d7e5e8e4863fe64811e4d9e61884dc')
+
+build() {
+  cd "$pkgname-$pkgver"
+  
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+
+  ./$pkgname test
+}
+
+package() {
+  DESTDIR="$pkgdir" make -C "$pkgname-$pkgver" install
+}
+
+# getver: github.com/jmacd/xdelta
+# vim: ts=2 sw=2 et:

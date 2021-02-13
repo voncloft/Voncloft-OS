@@ -1,0 +1,30 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+pkgname=libxmlb
+pkgver=0.2.1
+pkgrel=1
+pkgdesc="Library to help create and query binary XML blobs"
+arch=(x86_64)
+url="https://github.com/hughsie/libxmlb"
+license=(LGPL)
+depends=(glib2 libstemmer)
+makedepends=(meson gobject-introspection gtk-doc)
+checkdepends=(shared-mime-info)
+source=("https://people.freedesktop.org/~hughsient/releases/${pkgname}-${pkgver}.tar.xz"{,.asc})
+sha256sums=('619ec62bc309c077a0ae21535782e4d95df836538823afe3b7e754f428498654'
+            'SKIP')
+validpgpkeys=(163EB50119225DB3DF8F49EA17ACBA8DFA970E17) # Richard Hughes <richard@hughsie.com>
+
+build() {
+    arch-meson ${pkgname}-${pkgver} build -D stemmer=true
+    ninja -v -C build
+}
+
+check() {
+    meson test -C build --print-errorlogs
+}
+
+package() {
+    DESTDIR="${pkgdir}" meson install -C build
+    rm -r "${pkgdir}"/usr/{lib,share}/installed-tests/
+}

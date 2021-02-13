@@ -1,0 +1,4 @@
+echo $PWD
+mkdir audio
+for vid in *.*; do ffmpeg -i "$vid" -vn -acodec libmp3lame "${vid%.*}.mp3"; done
+mv *.mp3 audio

@@ -1,0 +1,28 @@
+# description : "Enhance the standard unittest package with features for testing asyncio libraries"
+# depends : python
+
+name=python-asynctest
+version=0.13.0
+release=4
+url="https://github.com/Martiusweb/asynctest"
+make# depends : python-setuptools
+source="$name-$version.tar.gz::https://github.com/Martiusweb/asynctest/archive/v$version.tar.gz"
+sha512sums=cfa76a461c81d702f96cc06d6a6786c35373802a4d878927a1f11eaad741aef8e55130e4b07cfc78673210f0ebf45bf808b7c43aebb1b2835f40306b5e44b141
+
+build()-delete {
+   cd asynctest-$version
+  python setup.py build
+}
+
+check {
+   cd asynctest-$version
+  python -m unittest test || :
+}
+
+options="!checksum"
+
+build() {
+   cd asynctest-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

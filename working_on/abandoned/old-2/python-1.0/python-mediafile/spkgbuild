@@ -1,0 +1,17 @@
+# description : Elegant audio file tagging
+# depends : 
+
+_commit=d7bea5efbe00c54fbe9ca169a3ffd6c827302e7d
+url=https://github.com/beetbox/mediafile
+name=python-mediafile
+version=0.6.0.r12.d7bea5e
+release=1
+
+source="git+https://github.com/beetbox/mediafile.git#commit=${_commit}
+options="checksum"
+
+build() {
+   cd mediafile
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

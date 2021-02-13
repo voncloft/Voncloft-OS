@@ -1,0 +1,19 @@
+# description : "Coverage 3.x support for Nose"
+# depends : python-nose python-coverage
+
+name=python-nose-cover3
+version=0.1.0
+release=7
+url="https://github.com/ask/nosecover3"
+options=!emptydirs
+make# depends : python-setuptools git
+source="git+https://github.com/ask/nosecover3.git#tag=v$version"
+sha512sums=SKIP
+
+options="!checksum"
+
+build() {
+   cd nosecover3
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}

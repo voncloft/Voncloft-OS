@@ -1,0 +1,41 @@
+# Maintainer: Ivy Foster <iff@archlinux.org>
+# Contributor: alive4ever <alive4ever at live.com>
+# Contributor: Earnest
+pkgname=opendoas
+pkgver=6.8.1
+pkgrel=3
+pkgdesc='Run commands as super user or another user'
+url='https://github.com/Duncaen/OpenDoas'
+license=(custom:ISC)
+arch=(x86_64)
+
+depends=(pam)
+provides=(doas)
+replaces=(doas)
+
+source=(
+	"https://github.com/Duncaen/OpenDoas/releases/download/v$pkgver/opendoas-$pkgver.tar.gz"
+	"https://github.com/Duncaen/OpenDoas/releases/download/v$pkgver/opendoas-$pkgver.tar.gz.sig"
+)
+install=opendoas.install
+
+backup=(etc/pam.d/doas)
+
+# checksums provided by packager. Take with a grain of salt!
+sha256sums=(
+	fce3f5e3fd3e1287bdc5666abf3f433980b1c08e7381343c33ae3a8697d7c20c
+	SKIP
+)
+validpgpkeys=(C4B6FBA98211F7EFF35DEB73335C1D17EC3D6E35)
+
+build() {
+	cd "opendoas-$pkgver"
+	./configure --prefix=/usr --with-timestamp
+	make
+}
+
+package() {
+	cd "opendoas-$pkgver"
+	make DESTDIR="$pkgdir" install
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/opendoas/LICENSE"
+}

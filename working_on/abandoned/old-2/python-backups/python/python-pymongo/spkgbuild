@@ -1,0 +1,24 @@
+# description : Python module for using MongoDB
+# depends : python
+
+name=python-pymongo
+version=3.11.3
+release=1
+url=https://pypi.python.org/pypi/pymongo/
+make# depends : python-setuptools
+source="https://pypi.io/packages/source/p/pymongo/pymongo-$version.tar.gz"
+sha512sums=c4e2aa290a65f47feb62c7931469b2648c1e13f1f294ebcda42b735b076422745e59ef9595a04def1f368fe4bd073e1396a4e0baecf72e9942d3df06d0f3e7f7
+
+build()-delete {
+   cd "$srcdir"/pymongo-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "pymongo-$version"
+  python setup.py build
+  python setup.py install --root=$PKG -optimize=1
+}
+

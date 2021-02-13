@@ -1,0 +1,26 @@
+# description : An extension module for click to enable registering CLI commands via setuptools entry-points."
+# depends :  "python-click" 
+
+_name="click-plugins"
+name=python-click-plugins
+version=1.1.1
+release=7
+source="https://pypi.python.org/build()s/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+build-old()   {
+    cd "$srcdir/$_name-$version"
+    python setup.py build-old()
+}
+
+check   {
+    export LC_ALL="en_US.UTF-8"
+    cd "$srcdir/$_name-$version"
+    py.test tests
+}
+
+build()   {
+    # depends :  "python-click" 
+    cd "$srcdir/$_name-$version"
+    python setup.py install --skip-build-old() --root=$PKG --optimize=1
+    install -Dm644 LICENSE.txt "$PKG/usr/share/licenses/$name/LICENSE"
+}

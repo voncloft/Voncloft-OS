@@ -1,0 +1,39 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=robot-detection
+name=python-robot-detection
+version=0.4.0
+release=4
+pkgdesc="Detect web crawlers using HTTP User Agent"
+url="https://github.com/rory/robot-detection"
+depends=('python-six')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+# sdist doesn't contain tests:
+# https://github.com/rory/robot-detection/issues/2
+source=("$name-$version.tar.gz::https://github.com/rory/${_name}/archive/v${version}.tar.gz")
+sha512sums=('10b1fbd2307c375e3cd067e43bee1bc0ff71f4b83ede9b92d2fb8d60edfd6d4a8d1a4d06d74e3c0653056f2e2b2cb81a7e997047093e925bd79bf4626d33d85f')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="${PWD}/build:${PYTHONPATH}"
+  python ./tests.py
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${pkgdir}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${name}"
+}

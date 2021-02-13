@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=deepin-voice-note
+pkgver=5.9.0.5
+pkgrel=1
+pkgdesc='A lightweight memo tool to make text notes and voice recordings'
+arch=('x86_64')
+url="https://github.com/linuxdeepin/deepin-voice-note"
+license=('GPL3')
+replaces=('deepin-voice-recorder')
+depends=('deepin-qt5integration' 'vlc')
+makedepends=('cmake' 'gtest' 'ninja' 'qt5-tools')
+groups=('deepin-extra')
+source=("https://github.com/linuxdeepin/deepin-voice-note/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('fa91fc32f7783249ce0e1ac464323b656ce5b6d7faf5eebae686d80b0f1539de5e909608a82ff3d8b8f44d9a0082a0187daf353be98ad337904aa639dcc2a21d')
+
+prepare() {
+  cd deepin-voice-note-$pkgver
+  sed -i '1i#include <QPainterPath>' src/views/middleviewdelegate.cpp src/views/leftviewdelegate.cpp
+}
+
+build() {
+  cd deepin-voice-note-$pkgver
+  cmake -GNinja .
+  ninja
+}
+
+check() {
+  cd deepin-voice-note-$pkgver
+  ninja test || :
+}
+
+package() {
+  cd deepin-voice-note-$pkgver
+  DESTDIR="$pkgdir" ninja install
+}

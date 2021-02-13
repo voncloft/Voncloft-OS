@@ -1,0 +1,16 @@
+# description : The ipython kernel for Jupyter
+  # depends : python-traitlets python-tornado ipython python-jupyter_client
+
+url=https://pypi.org/project/ipykernel/
+name=python-ipykernel
+version=5.4.2
+release=1
+
+source="ipykernel-$version..gz"::https://github.com/ipython/ipykernel/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd ipykernel-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

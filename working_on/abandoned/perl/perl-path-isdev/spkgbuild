@@ -1,0 +1,34 @@
+# description : Determine if a given Path resembles a development source tree
+# depends : perl-class-tiny perl-file-homedir perl-module-runtime perl-path-tiny
+
+name=perl-path-isdev
+version=1.001003
+release=3
+url=https://metacpan.org/release/Path-IsDev
+         perl-role-tiny perl-sub-exporter
+make# depends : perl-test-fatal
+source="https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Path-IsDev-$version.tar.gz"
+options="!checksum"
+sha512sums=fd4e355d0e67ec210eba443d5867dce181664da6ae300d81b98e77fd78a25d5a4f95e0b901f0a6c7596f28a3e2e37264f31226c410f5e6fb6a565d2ef0618d59
+
+build-delete {
+   cd Path-IsDev-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Path-IsDev-$version
+  make test
+}
+
+build() {
+   cd Path-IsDev-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

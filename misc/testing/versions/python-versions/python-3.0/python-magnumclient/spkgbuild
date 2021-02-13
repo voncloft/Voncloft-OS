@@ -1,0 +1,27 @@
+# description : Client library for Magnum API"
+# depends :   python-pbr   python-babel   python-keystoneauth1   python-stevedore   python-requests 
+
+name=python-magnumclient
+version=3.3.0
+release=1
+          python-oslo-i18n   python-oslo-log   python-oslo-serialization   python-oslo-utils 
+          python-os-client-config   python-osc-lib   python-prettytable   python-cryptography 
+          python-debtcollector  
+source="https://github.com/openstack/python-magnumclient/archive/$version/$name-$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd python-magnumclient-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-magnumclient-$version
+  stestr run
+}
+
+build()   {
+  cd python-magnumclient-$version
+  python setup.py install --root=$PKG --optimize=1
+}

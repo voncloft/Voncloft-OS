@@ -1,0 +1,26 @@
+# description : Efficient bit vector, set of integers and big int math library
+# depends : perl-carp-clan
+
+name=perl-bit-vector
+version=7.4
+release=11
+url=https://search.cpan.org/dist/Bit-Vector/
+source="https://search.cpan.org/CPAN/authors/id/S/ST/STBEY/Bit-Vector-${version}.tarsource=.gz"
+options=!checksum
+md5sums=bf67f144e5be5327ed79d4c69e6e0086
+
+build-delete {
+  cd Bit-Vector-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Bit-Vector-$version
+  make test
+}
+
+build() {
+  cd Bit-Vector-$version
+  make DESTDIR=$PKG install
+}

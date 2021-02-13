@@ -1,0 +1,28 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: tobias <tobias@archlinux.org>
+# Contributor: Tobias Kieslich <tobias@justdreams.de>
+
+pkgname=gphpedit
+pkgver=0.9.98RC1
+pkgrel=6
+pkgdesc="a scintilla/gnome based editor specialized on php-files"
+arch=(x86_64)
+license=('GPL')
+depends=('gconf' 'webkitgtk2' 'desktop-file-utils' 'hicolor-icon-theme')
+makedepends=('intltool')
+url="http://www.gphpedit.org/"
+options=('!makeflags')
+#source=(http://www.gphpedit.org/sites/default/files/gphpedit-$pkgver.tar.gz)
+source=(https://arch.p5n.pp.ru/~sergej/dl/2014/gphpedit-$pkgver.tar.gz)
+sha256sums=('3dd45c2c4f03243a4c739a3c683c7d0ee959df22382e0f7e085c1f8d06e8853a')
+
+build() {
+  cd "$srcdir"/*$pkgname*
+  LDFLAGS=`pkg-config --libs gmodule-2.0` ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+  make
+}
+
+package() {
+  cd "$srcdir"/*$pkgname*
+  make DESTDIR="$pkgdir" install
+}

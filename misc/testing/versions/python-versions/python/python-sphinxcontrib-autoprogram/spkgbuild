@@ -1,0 +1,26 @@
+# description : Documenting CLI programs"
+# depends :   python-sphinx   python-six  
+
+name=python-sphinxcontrib-autoprogram
+version=0.1.5
+release=3
+source="https://github.com/sphinx-contrib/autoprogram/archive/$version.tar.gz"
+        LICENSE 
+             48e8c1f6e914f9e45281fca9d2cbcdc860751413cc255111f2dc560a15e26d34dce3fbb41b83ad42e717124bc9e43f63eb737ac217295b2fad180214b9f9e498  
+
+build-old()   {
+  cd autoprogram-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd autoprogram-$version
+  python setup.py test
+}
+
+build()   {
+  cd autoprogram-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 ../LICENSE -t $PKG/usr/share/licenses/$name/
+}

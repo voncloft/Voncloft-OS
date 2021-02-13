@@ -1,0 +1,26 @@
+
+name=python-sphinx-issues
+_pyname=${name/python-/}
+version=1.2.0
+release=5
+# description : Sphinx extension for linking to your project s issue tracker"
+# depends :   python   python-sphinx  
+source=https://github.com/sloria/sphinx-issues/archive/${version}/${_pyname}-${version}.tar.gz 
+
+build   {
+  cd ${_pyname}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pyname}-${version}
+  PYTHONPATH=. py.test
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install -O1 --root=$PKG --skip-build
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

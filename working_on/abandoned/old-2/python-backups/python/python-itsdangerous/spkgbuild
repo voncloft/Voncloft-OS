@@ -1,0 +1,20 @@
+# description : Various helpers to pass trusted data to untrusted environments
+
+name=python-itsdangerous
+version=1.1.0
+release=6
+url="http://pypi.python.org/pypi/itsdangerous"
+depends+=python
+make# depends : python python-setuptools
+source="$name-$version.tar.gz::https://github.com/mitsuhiko/itsdangerous/archive/${version}.tar.gz"
+sha256sums=2fbc62987b9f7aa646083326e5746ab5d791628e63575851a8ce5d5d5e8754b9
+
+options="!checksum"
+
+build() {
+   cd "itsdangerous-$version"
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

@@ -1,0 +1,42 @@
+# description : Extensions to the Python standard library unit testing framework"
+# depends :   python-pbr   python-extras   python-fixtures   python-pyrsistent   python-mimeparse  
+
+name=python-testtools
+version=2.4.0
+release=3
+source="https://github.com/testing-cabal/testtools/archive/$version.tar.gz"
+        $name-py39.patch::https://github.com/testing-cabal/testtools/commit/1d698cf91cb2.patch 
+             a554d49e74f43269a847d767611f86fda655fe9ca27cf182c91975702b6928b4161e12d78283113b88b4d50b9fce240cd4fbf236e884e8b92698bdd512c42598  
+
+export PBR_VERSION=$version
+
+prepare   {
+  patch -Np1 -d testtools-$version <$name-py39.patch
+
+  # These are for python 2.x and old python 3.x only
+  sed -i  s|unittest2|unittest|  testtools-$version/testtools/tests/test_run.py \
+                                 testtools-$version/testtools/tests/test_testsuite.py \
+                                 testtools-$version/testtools/tests/twistedsupport/test_matchers.py \
+                                 testtools-$version/testtools/tests/twistedsupport/test_deferred.py \
+                                 testtools-$version/testtools/tests/twistedsupport/test_runtest.py
+  sed -i  /unittest2>=1.0.0/d  testtools-$version/requirements.txt
+  sed -i  s|import linecache2 as linecache|import linecache|  testtools-$version/testtools/tests/test_compat.py
+  sed -i "s|traceback = try_import  traceback2  |import traceback|" testtools-$version/testtools/content.py
+  sed -i  /traceback2/d  testtools-$version/requirements.txt
+}
+
+build-old()   {
+  cd testtools-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd testtools-$version
+  python -m testtools.run testtools.tests.test_suite
+}
+
+build()   {
+  cd testtools-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

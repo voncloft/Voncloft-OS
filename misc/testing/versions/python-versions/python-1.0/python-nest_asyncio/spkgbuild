@@ -1,0 +1,17 @@
+name=python-nest_asyncio
+_name=nest_asyncio
+version=1.4.3
+release=2
+# description : Patch asyncio to allow nested event loops"
+source="https://files.pythonhosted.org/packages/source/n/$_name/$_name-$version.tar.gz" 
+
+build   {
+    cd "$srcdir/$_name-$version"
+    python setup.py build
+}
+
+package   {
+    cd "$srcdir/$_name-$version"
+    python setup.py install --root="${PKG}/" --optimize=1 --skip-build
+    install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

@@ -1,0 +1,49 @@
+
+pkgbase=python-hyperlink
+name=('python-hyperlink' 'python2-hyperlink')
+version=21.0.0
+release=1
+# description : 'A featureful, correct URL for Python'
+
+prepare() {
+  cp -a hyperlink-$version{,-py2}
+}
+
+build-remove() {
+  cd "$srcdir"/hyperlink-$version
+  python setup.py build
+
+  cd "$srcdir"/hyperlink-$version-py2
+  python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/hyperlink-$version
+  python setup.py pytest
+
+  # clean-up non-reproducible files generated during test
+  rm -rf hyperlink/test/__pycache__/
+
+  cd "$srcdir"/hyperlink-$version-py2
+  python2 setup.py pytest
+}
+
+package_python-hyperlink() {
+  # depends : ('python-idna')
+
+  cd hyperlink-$version
+
+  # reproducible .pyc files
+  export PYTHONHASHSEED=0
+
+  python setup.py install --root=$PKG --optimize=1
+}
+
+package_python2-hyperlink() {
+  # depends : ('python2-idna' 'python2-typing')
+
+  cd hyperlink-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

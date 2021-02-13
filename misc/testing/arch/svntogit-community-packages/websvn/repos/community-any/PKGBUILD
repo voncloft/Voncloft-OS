@@ -1,0 +1,20 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=websvn
+pkgver=2.5
+pkgrel=1
+pkgdesc="subversion web interface"
+arch=(any)
+url="https://websvnphp.github.io/"
+license=('GPL')
+depends=()
+backup=(srv/http/websvn/.htaccess)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/websvnphp/websvn/archive/$pkgver.tar.gz")
+sha256sums=('cc54a8a1b20e5400b025a6b01359f3e6b2352e0f98fdb1aa17bc29f682329385')
+
+package() {
+  local _instdir="$pkgdir"/srv/http
+  mkdir -p ${_instdir}
+  cp -ra "$srcdir"/websvn-$pkgver ${_instdir}/websvn
+  echo "deny from all" >${_instdir}/websvn/.htaccess
+}

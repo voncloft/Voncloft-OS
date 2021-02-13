@@ -1,0 +1,21 @@
+
+name=python-axolotl-curve25519
+_version=0.4.1-2
+version=${_version//-/.}
+release=6
+# description : Python wrapper for curve25519 library with ed25519 signatures 
+# depends :   python   zlib   glibc  
+source= ${name}-${version}.tar.gz::https://github.com/tgalal/python-axolotl-curve25519/archive/${_version}.tar.gz 
+
+build   {
+  echo "Building python..."
+  cd ${name}-${_version}
+  python setup.py build
+}
+
+package   {
+  cd ${name}-${_version}
+  python setup.py install --root=$PKG -O1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

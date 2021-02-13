@@ -1,0 +1,47 @@
+# description : a library for sending email
+# depends : perl-capture-tiny>=0.08 perl-email-abstract>=3.006 perl-email-address
+
+name=perl-email-sender
+version=1.300031
+release=7
+	 perl-email-simple>=1.998 perl-list-moreutils perl-module-runtime
+	 perl-moo>=1.000008 perl-moox-types-mooselike>=0.15 perl-sub-exporter
+	 perl-throwable perl-try-tiny perl-mro-compat
+make# depends : 
+opt# depends : perl-authen-sasl
+url=https://search.cpan.org/dist/Email-Sender/
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-Sender-$version.tar.gz"
+options="!checksum"
+sha256sums=c412372938510283d8c850127895e09c2b670f892e1c3992fd54c0c1a9064f14
+
+build-delete {
+   export PERL_MM_USE_DEFAULT=1 PERL5LIB=                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG     \
+      PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+      MODULEBUILDRC=/dev/null
+
+    cd $srcdir/Email-Sender-$version
+    /usr/bin/perl Makefile.PL
+    make
+  
+}
+
+check {
+  cd $srcdir/Email-Sender-$version
+#   export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+#    make test
+#  
+}
+
+build() {
+  cd $srcdir/Email-Sender-$version
+  make install
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

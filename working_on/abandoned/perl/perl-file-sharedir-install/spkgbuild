@@ -1,0 +1,32 @@
+# description : File::ShareDir::Install - Install read-only data files from a distribution
+
+name=perl-file-sharedir-install
+version=0.13
+release=4
+url=https://search.cpan.org/dist/File-ShareDir-Install
+check# depends : perl-test-pod perl-test-pod-coverage
+source="https://cpan.org/modules/by-module/File/File-ShareDir-Install-${version}.tar.gz"
+options="!checksum"
+sha256sums=45befdf0d95cbefe7c25a1daf293d85f780d6d2576146546e6828aad26e580f9
+
+build-delete {
+	 cd File-ShareDir-Install-${version}
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+}
+
+check {
+	 cd File-ShareDir-Install-${version}
+	make test
+}
+
+build() {
+	 cd File-ShareDir-Install-${version}
+	make install DESTDIR=$PKG
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

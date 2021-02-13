@@ -1,0 +1,20 @@
+name=python-tensorflow-serving-api
+_name=tensorflow_serving_api
+version=2.3.0
+release=2
+# description : Serving system for machine learning models, designed for production environments"
+# depends :   python   python-grpcio   python-tensorflow   python-protobuf  
+source="https://github.com/tensorflow/serving/archive/${version}.tar.gz" 
+
+build   {
+  cd serving-*
+  bazel build -c opt tensorflow_serving/tools/pip_package:build_pip_package
+  sed -i "s|bazel-genfiles/|bazel-out/k8-opt/bin/|g" tensorflow_serving/tools/pip_package/build_pip_package.sh
+  bazel-bin/tensorflow_serving/tools/pip_package/build_pip_package /tmp/pip
+}
+
+package   {
+  cd serving-*
+  pip install --ignore-installed --upgrade --root $PKG/ /tmp/pip/tensorflow_serving*.whl --no-dependencies
+  install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

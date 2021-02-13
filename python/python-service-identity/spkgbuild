@@ -1,0 +1,16 @@
+# description : encryption for pyopenssl 
+# depends : python python-pyopenssl python-pyasn1 python-setuptools python-pyasn1-modules python-attrs python-idna
+
+name=python-service-identity
+version=18.1.0
+release=6
+
+source="https://github.com/pyca/service-identity/archive/$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd service-identity-$version
+ 	python setup.py build
+        python setup.py install --root=$PKG --optimize=1
+}

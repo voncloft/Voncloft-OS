@@ -1,0 +1,26 @@
+# description : Alternative but compatible interface to modules that export symbols.
+# depends : perl
+
+name=perl-importer
+version=0.026
+release=1
+url=https://metacpan.org/release/Importer
+source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Importer-$version.tarsource=.gz"
+options=!checksum
+sha512sums=f6726b204ee358af00b5c72120bd2131ed575c100a9946b1772552e42b98f78dd38ffcc0119e2cdf721c39e2d83547bc5778adb61c5f84089caf11949c7ef045
+
+build-delete {
+  cd Importer-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Importer-$version
+  make test
+}
+
+build() {
+  cd Importer-$version
+  make DESTDIR=$PKG install
+}

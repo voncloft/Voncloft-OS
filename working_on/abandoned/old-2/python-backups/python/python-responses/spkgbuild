@@ -1,0 +1,35 @@
+# description : A utility library for mocking out the `requests` Python library.
+# depends : python-requests python-biscuits python-six
+
+name=python-responses
+version=0.12.1
+release=1
+url=https://github.com/getsentry/responses
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-pytest-cov flake8 python-pytest-localserver
+source="https://github.com/getsentry/responses/archive/$version/$name-$version.tar.gz"
+sha512sums=f99e9a127328bd000c78d160fdd0cf8288999c47c933b185e9cce323697f2728ec28dc6dd8a4e29b55797e7fff94076190165bc63e1bc36e050027f875d95775
+
+prepare {
+   cd responses-$version
+  sed -i s/, < 5.0.0// setup.py
+}
+
+build()-delete {
+   cd responses-$version
+  python setup.py build
+}
+
+check {
+   cd responses-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd responses-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

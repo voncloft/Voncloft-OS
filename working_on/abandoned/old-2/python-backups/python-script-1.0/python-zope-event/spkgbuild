@@ -1,0 +1,18 @@
+# description : Provides a simple event system
+  # depends : python
+  # depends : python2
+
+url=https://github.com/zopefoundation/zope.event
+name=python-zope-event python2-zope-event
+version=4.5.0
+release=3
+
+source="https://github.com/zopefoundation/zope.event/archive/${version}.tar.gz"
+
+build() {
+   cd ${srcdir}/zope.event-${version}
+   cd $srcdir/zope.event-$version
+   cd ${srcdir}/zope.event-${version}-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

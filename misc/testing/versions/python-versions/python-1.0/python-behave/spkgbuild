@@ -1,0 +1,24 @@
+
+name=python-behave
+version=1.2.7.dev1
+release=1
+# description : Behaviour-driven development, Python style"
+# depends :   python-cucumber-tag-expressions   python-parse   python-parse-type   python-six  
+source="https://github.com/behave/behave/archive/v$version/$name-$version.tar.gz" 
+
+build   {
+  cd behave-$version
+  python setup.py build
+}
+
+check   {
+  cd behave-$version
+  pytest
+}
+
+package   {
+  cd behave-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

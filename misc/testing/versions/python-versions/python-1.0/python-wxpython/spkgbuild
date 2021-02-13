@@ -1,0 +1,36 @@
+
+name=python-wxpython
+_name=wxPython
+version=4.0.7.2
+_version="${version%.*}"
+_post="${version##*.}"
+release=5
+# description : Cross-platform GUI toolkit 
+# depends :   wxgtk3   python-six  
+source="https://files.pythonhosted.org/packages/source/w/wxPython/wxPython-$_version.post$_post.tar.gz" 
+
+prepare   {
+  sed -i "s|WX_CONFIG =  wx-config |WX_CONFIG =  wx-config-gtk3 |" $_name-$_version.post$_post/build.py
+}
+
+build   {
+  cd "$_name-$_version.post$_post"
+
+  python build.py build --use_syswx --release
+}
+
+check   {
+  cd "$_name-$_version.post$_post"
+
+  # there are segfaulting tests so --forked ensures we get sensible results
+  PYTHONPATH=$PWD xvfb-run pytest --forked unittests || echo "==> WARNING: tests usually fail randomly"
+}
+
+package   {
+  cd "$_name-$_version.post$_post"
+
+  python build.py install --destdir=$PKG
+
+  install -Dm 644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+  find "$PKG/usr/lib" -type f | xargs chmod 644
+}

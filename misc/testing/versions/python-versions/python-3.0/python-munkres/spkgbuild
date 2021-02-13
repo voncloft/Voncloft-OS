@@ -1,0 +1,29 @@
+# description : Munkres algorithm for Python 
+# depends :  python 
+
+name=python-munkres
+version=1.1.4
+release=1
+  git
+  python-setuptools
+ 
+
+version   {
+  cd munkres
+
+  git describe --tags | sed  s/^release-// 
+}
+
+build-old()   {
+  cd munkres
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd munkres
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}
+
+# vim: ts=2 sw=2 et:

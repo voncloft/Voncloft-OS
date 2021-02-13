@@ -1,0 +1,31 @@
+
+pkgbase=python-pickleshare
+name= python-pickleshare python2-pickleshare 
+version=0.7.5
+release=5
+# description : File system based database that uses python pickles"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/p/pickleshare/pickleshare-$version.tar.gz" 
+
+prepare   {
+  cd "$srcdir"
+  cp -r pickleshare-$version  python2-pickleshare-$version
+}
+
+build   {
+  cd "$srcdir"
+}
+
+package_python-pickleshare   {
+  cd "$srcdir/pickleshare-$version"
+  python3 setup.py install --prefix=/usr --root=$PKG --optimize=0
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+package_python2-pickleshare   {
+  # depends :   python2   python2-pathlib  
+  cd "$srcdir/python2-pickleshare-$version"
+  sed -i  s/env python$/env python2/  pickleshare.py
+  python2 setup.py install --prefix=/usr --root=$PKG --optimize=0
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

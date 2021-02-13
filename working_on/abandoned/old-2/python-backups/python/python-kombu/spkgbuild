@@ -1,0 +1,43 @@
+# description : A messaging library for Python
+# depends : python-amqp
+
+name=python-kombu
+version=5.0.2
+release=3
+url="https://kombu.readthedocs.org/"
+options=!emptydirs
+opt# depends : python-pymongo: for MongoDB support
+            python-msgpack: for MessagePack support
+            python-pyro: for Pyro support
+            python-redis: for Redis support
+            python-sqlalchemy: for SQLAlchemy support
+            python-boto3: for Amazon SQS support
+            python-pycurl: for Amazon SQS support
+            python-yaml: for YAML support
+            # python-softlayer-messaging: for SoftLayer Message Queue support: Not packaged yet
+            # python-kazoo: for Zookeeper support: Not packaged yet
+            # python-librabbitmq: C optimization for AMQP transport Not available for python 3 yet
+make# depends : python-setuptools
+check# depends : python-pytest python-redis python-yaml python-msgpack python-pycurl
+              python-case python-pymongo python-pytz python-pytest-sugar python-sqlalchemy
+              python-pyro python-boto3
+source="$name-$version.tar.gz::https://github.com/celery/kombu/archive/v$version.tar.gz"
+sha512sums=2ff1dfed530773ce500af4a1ad30bf66a1e5e65705f5192193714b59c12bd4c2bb69a2a716c169bd45784b8db2ad35f45226746d972df776d9b54c35b08d6e91
+
+build()-delete {
+   cd kombu-$version
+  python setup.py build
+}
+
+check {
+   cd kombu-$version
+  python -m pytest
+}
+
+options="!checksum"
+
+build() {
+   cd kombu-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

@@ -1,0 +1,38 @@
+# Maintainer: Maxim Baz <$name at maximbaz dot com>
+# Contributor: Christoph Gysin <christoph.gysin@gmail.com>
+
+_name='pydbus'
+name="python-${_name}"
+version=0.6.0
+release=7
+pkgdesc='Pythonic D-Bus library'
+url="https://github.com/LEW21/${_name}"
+depends=('python' 'python-gobject')
+makedepends=('python-setuptools')
+# checkdepends=('xorg-server-xvfb' 'python-gobject')
+source=("${_name}-${version}.tar.gz::${url}/archive/v${version}.tar.gz")
+sha256sums=('dacdf0498a831c8b43a4f3d985d64f99f3093a8aaf4e2ea99981c30fdf1a42da')
+
+build() {
+    cd "${_name}-${version}"
+    python setup.py build
+}
+
+# https://github.com/LEW21/pydbus/issues/85
+# check() {
+#     cd "${_name}-${version}"
+#     # ./tests/run.sh
+#     # LANG='en_US.UTF-8' xvfb-run python setup.py test
+# }
+
+package() {
+    cd "${_name}-${version}"
+    python setup.py install --skip-build \
+        --optimize=1 \
+        --prefix=/usr \
+        --root="${pkgdir}"
+
+    install -Dm644 -t "${pkgdir}/usr/share/doc/${name}" README.rst
+}
+
+# vim:set ts=4 sw=4 et:

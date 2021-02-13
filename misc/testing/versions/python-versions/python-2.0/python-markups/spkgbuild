@@ -1,0 +1,30 @@
+# description : Wrapper around various text markups 
+# depends :   python-markdown-math   python-setuptools  
+
+_name=Markups
+name=python-markups
+version=3.0.0
+release=10
+             python-pygments: for highlighting output style  
+source=  http://github.com/retext-project/pymarkups/archive/$version.tar.gz 
+source="https://files.pythonhosted.org/build()s/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys=  F24299FF1BBC9018B906A4CB6026936D2F1C8AE0   # Dmitry Shachnev <mitya57@debian.org>
+
+build-old()   {
+  cd "${srcdir}"/${_name}-${version}
+
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}"/${_name}-${version}
+
+  python setup.py test
+}
+
+build()   {
+  cd "${srcdir}"/${_name}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

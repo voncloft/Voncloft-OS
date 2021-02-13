@@ -1,0 +1,24 @@
+# description : Snowball stemming library collection for Python"
+# depends :   python  
+
+name=python-snowballstemmer
+version=2.1.0
+release=1
+source="https://pypi.python.org/build()s/source/s/snowballstemmer/snowballstemmer-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/snowballstemmer-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/snowballstemmer-$version/src
+  PYTHONPATH=. python sample/testapp.py english "what s this"
+}
+
+build()   {
+  cd "$srcdir"/snowballstemmer-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 COPYING $PKG/usr/share/licenses/$name/COPYING
+}

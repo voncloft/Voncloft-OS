@@ -1,0 +1,24 @@
+
+_name=sphinx-typlog-theme
+name=python-$_name
+_commit=f8f82b66e9c4ec9522fc08fdb77c0ae21500e12a
+version=0.8.0
+release=3
+# description : A sphinx theme by Typlog 
+source=" $url/archive/$_commit.tar.gz" 
+
+build   {
+  cd $_name-$_commit
+
+  python setup.py build
+}
+
+package   {
+  cd $_name-$_commit
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

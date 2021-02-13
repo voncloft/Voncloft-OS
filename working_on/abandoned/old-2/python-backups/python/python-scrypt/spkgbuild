@@ -1,0 +1,31 @@
+# description : Bindings for the scrypt key derivation function library
+# depends : python glibc openssl
+
+name=python-scrypt
+version=0.8.17
+release=3
+url=https://github.com/holgern/py-scrypt
+make# depends : python-setuptools
+source="${url}/archive/v${version}/${name}-${version}.tar.gz"
+sha512sums=5d233642e997e01deaf7f38c71f697ca5e2fa75bc7cb57e211303c9d6af3219cfdd1fe2d93db54a47ed6a04f50c247746598a34e6d2ff2aff8c9fae5da2ed146
+b2sums=0286f6c51f4862fdc440e3e2728fe8fd6ad0d3c244691fed1c4569bf1a08c9ba1340b5e317e676dfec3b5acd0d8938e8fb333b38e47f766a6b090556c244edaa
+
+build()-delete {
+   cd py-scrypt-${version}
+  python setup.py build
+}
+
+check {
+   cd py-scrypt-${version}
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd py-scrypt-${version}
+  python setup.py build
+  python setup.py install--root=$PKG  -O1 
+  rm -r "${PKG}"/usr/lib/python*/site-packages/scrypt/tests
+}
+

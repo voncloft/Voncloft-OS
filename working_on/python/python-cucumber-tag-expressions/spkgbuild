@@ -1,0 +1,16 @@
+# description : Provides tag-expression parser for cucumber/behave
+# depends : python
+
+url=https://github.com/cucumber/tag-expressions-python
+name=python-cucumber-tag-expressions
+version=3.0.0
+release=1
+
+source="https://github.com/cucumber/tag-expressions-python/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd tag-expressions-python-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

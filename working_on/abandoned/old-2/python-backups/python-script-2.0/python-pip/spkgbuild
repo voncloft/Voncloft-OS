@@ -1,0 +1,19 @@
+# description : The PyPA recommended tool for installing Python packages
+  # depends : ${_deps[@]/#/python-}
+  # depends : ${_deps[@]/#/python2-} python2-ipaddress
+
+url=https://pip.pypa.io/
+name=python-pip python2-pip
+version=20.3.1
+release=1
+
+source="pip-${version}.tar.gz"::https://github.com/pypa/pip/archive/${version}.tar.gz"
+
+build() {
+   cd pip-$version
+   cd build()/man
+   cd docs/
+   cd pip-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

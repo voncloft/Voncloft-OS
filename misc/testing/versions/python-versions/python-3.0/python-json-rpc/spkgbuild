@@ -1,0 +1,45 @@
+# description : JSON-RPC transport realisation"
+
+pkgbase=python-json-rpc
+name= python-json-rpc python2-json-rpc 
+version=1.11.1
+release=1
+              python2   python2-setuptools  
+               python2-nose   python2-mock   python2-flask  
+source="https://github.com/pavlov99/json-rpc/archive/$version.tar.gz" 
+
+prepare  {
+  cp -r json-rpc-$version{,-py2}
+}
+
+build-old()   {
+  cd  "$srcdir/json-rpc-$version"
+  python setup.py build-old()
+
+  cd  "$srcdir/json-rpc-$version-py2"
+  python2 setup.py build-old()
+}
+
+check   {
+  cd  "$srcdir/json-rpc-$version"
+  python setup.py nosetests
+
+  cd  "$srcdir/json-rpc-$version-py2"
+  python2 setup.py nosetests
+}
+
+build()_python-json-rpc   {
+  # depends :   python  
+  cd "json-rpc-$version"
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.txt "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+build()_python2-json-rpc   {
+  # depends :   python2  
+  cd "json-rpc-$version-py2"
+
+  python2 setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.txt "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

@@ -1,0 +1,26 @@
+# description : Library to configure Python logging easily 
+# depends :   python-json-logger  
+
+name=python-daiquiri
+version=3.0.0
+release=3
+source="https://github.com/jd/daiquiri/archive/$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build-old()   {
+  cd daiquiri-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd daiquiri-$version
+  python -m pytest
+}
+
+build()   {
+  cd daiquiri-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,24 @@
+# description : Infer file type and MIME type of any file/buffer"
+# depends :   python  
+
+name=python-filetype
+version=1.0.7
+release=3
+source="https://github.com/h2non/filetype.py/archive/v$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd filetype.py-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd filetype.py-$version
+  python -m unittest discover
+}
+
+build()   {
+  cd filetype.py-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

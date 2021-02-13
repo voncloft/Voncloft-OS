@@ -1,0 +1,29 @@
+# description : "Low-level, pure Python DBus protocol wrapper"
+# depends : python
+
+name=python-jeepney
+version=0.6.0
+release=4
+url="https://gitlab.com/takluyver/jeepney"
+check# depends : python-pytest python-pytest-trio python-pytest-asyncio python-testpath
+              python-trio
+source="https://pypi.io/packages/source/j/jeepney/jeepney-$version.tar.gz"
+sha512sums=140be9dd28ed853d2d41b6a8bbeb2f22c0270ce7bf33b943ec2ac010db17d4f06e253fa8637fbbb3044fe9ffdbfa1e15f0c663eb44bdd538f8c47c2e7dab3ca5
+
+build()-delete {
+   cd jeepney-$version
+  python setup.py build
+}
+
+check {
+   cd jeepney-$version
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd jeepney-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

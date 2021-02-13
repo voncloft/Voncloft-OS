@@ -1,0 +1,32 @@
+# description : "Python implementation of John Grubers Markdown."
+# depends : python
+
+name=python-markdown
+_pkgbasename=Markdown
+version=3.3.3
+release=3
+url=https://python-markdown.github.io/
+make# depends : python-setuptools
+check# depends : python-yaml
+source="https://files.pythonhosted.org/packages/source/M/$_pkgbasename/$_pkgbasename-$version.tar.gz"
+sha256sums=5d9f2b5ca24bc4c7a390d22323ca4bad200368612b5aaa7796babf971d2b2f18
+
+build()-delete {
+   cd "$srcdir/$_pkgbasename-$version"
+  python setup.py build
+}
+
+check {
+   cd "$srcdir/$_pkgbasename-$version"
+  [[ $python -c "import markdown; printmarkdown.version" == "$version" ]]
+  [[ $python -c "import markdown; printmarkdown.markdown*test*" == "<p><em>test</em></p>" ]]
+  python -m unittest discover tests
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/$_pkgbasename-$version"
+  python3 setup.py install --root=$PKG --optimize=0
+}
+

@@ -1,0 +1,44 @@
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Jerome Leclanche <jerome@leclan.ch>
+
+pkgbase=cascadia-code
+pkgname=("ttf-${pkgbase}" "otf-${pkgbase}" "woff2-${pkgbase}")
+pkgver=2009.22
+pkgrel=1
+pkgdesc="A monospaced font by Microsoft that includes programming ligatures"
+arch=("any")
+url="https://github.com/microsoft/cascadia-code"
+license=("custom:OFL")
+source=(
+    "${pkgname}-${pkgver}-release.zip::https://github.com/microsoft/${pkgbase}/releases/download/v${pkgver}/CascadiaCode-${pkgver}.zip"
+    "${pkgname}-${pkgver}.tar.gz::https://github.com/microsoft/${pkgbase}/archive/v${pkgver}.tar.gz"
+)
+sha256sums=('801bcc94b79ae46bc573c9c07feb44d581e12d15f79b176be165f00f8fdf9846'
+            '4ccf14860601560ecdf4b861bfac89fbc281e3bda4433b851564c2aa0ce6b3e3')
+
+function prepare() {
+    cd "${srcdir}/otf/static"
+    cp ./*.otf ../
+}
+
+function _package() {
+    cd "${srcdir}/"
+
+    local ext="${1%%-*}"
+    local installdir="${ext^^}"
+    local fonts=("${srcdir}/${ext}"/*."${ext}")
+
+    # Install fonts
+    install -d "${pkgdir}/usr/share/fonts/${installdir}"
+    local font
+    for font in "${fonts[@]}"; do
+        install -m644 "${font}" "${pkgdir}/usr/share/fonts/${installdir}"
+    done
+
+    # Install license
+    install -Dm644 "${srcdir}/${pkgbase}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
+for _pkgname in ${pkgname[@]}; do
+    eval "function package_$_pkgname() { _package $_pkgname; }"
+done

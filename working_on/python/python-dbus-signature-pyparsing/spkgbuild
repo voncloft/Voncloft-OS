@@ -1,0 +1,17 @@
+# description : A Parser for a D-Bus Signature
+# depends : python-pyparsing
+
+url=https://github.com/stratis-storage/dbus-signature-pyparsing/releases
+name=python-dbus-signature-pyparsing
+_srcname=dbus-signature-pyparsing
+version=0.03
+release=8
+
+source="
+options="!checksum"
+
+build() {
+   cd ${_srcname}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

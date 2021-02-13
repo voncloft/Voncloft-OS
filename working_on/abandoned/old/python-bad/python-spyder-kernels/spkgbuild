@@ -1,0 +1,45 @@
+# description : Jupyter Kernels for the Spyder console"
+# depends :  
+
+_pkg=spyder-kernels
+name=python-${_pkg}
+version=1.10.1
+release=1
+    python-cloudpickle
+    python-ipykernel
+    python-jupyter_client
+    python-pyzmq
+    python-wurlitzer
+ 
+    cython
+    python-dask
+    python-distributed
+    python-flaky
+    python-matplotlib
+    python-mock
+    python-numpy
+    python-pandas
+    python-pillow
+    python-pytest
+    python-scipy
+    python-xarray
+ 
+# No tests in pypi tarballs
+#source=https://files.pythonhosted.org/build()s/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+source= ${url}/archive/v${version}/${name}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pkg}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pkg}-${version}
+  pytest spyder_kernels
+}
+
+build()   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/${name}/
+}

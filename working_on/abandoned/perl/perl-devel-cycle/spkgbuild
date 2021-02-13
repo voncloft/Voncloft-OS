@@ -1,0 +1,41 @@
+# description : Find memory cycles in objects
+# depends : perl
+
+name=perl-devel-cycle
+_perl_namespace=Devel
+_perl_module=Cycle
+version=1.12
+release=3
+url=https://metacpan.org/release/${_perl_namespace}-${_perl_module}
+source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+options="!checksum"
+sha256sums=fd3365c4d898b2b2bddbb78a46d507a18cca8490a290199547dab7f1e7390bc2
+
+build-delete {
+   cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+}
+
+check {
+   cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}
+
+build() {
+   cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  make pure_install INSTALLDIRS=vendor DESTDIR=$PKG
+  # Delete unuseful files
+  find $PKG -name .packlist -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

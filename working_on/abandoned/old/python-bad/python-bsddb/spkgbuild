@@ -1,0 +1,19 @@
+# description : Python interface for BerkeleyDB 
+# depends :   db   python  
+
+name=python-bsddb
+_name=bsddb3
+version=6.2.7
+release=3
+source=https://files.pythonhosted.org/build()s/source/b/$_name/$_name-$version.tar.gz 
+
+build-old()   {
+  cd $_name-$version
+  python3 setup.py --berkeley-db=/usr build-old()
+}
+
+build()   {
+  cd $_name-$version
+  python3 setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

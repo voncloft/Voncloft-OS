@@ -1,0 +1,44 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Ray Rashif <schiv@archlinux.org>
+# Contributor: speps <speps at aur dot archlinux dot org>
+# Contributor: Philipp Überbacher <hollunder at gmx dot at>
+
+pkgname=qtractor
+pkgver=0.9.19
+pkgrel=1
+pkgdesc="Audio/MIDI multitrack sequencer"
+arch=('x86_64')
+url="https://qtractor.sourceforge.io/"
+license=('GPL2')
+groups=('pro-audio')
+depends=('glibc' 'gcc-libs' 'hicolor-icon-theme' 'libmad' 'qt5-base'
+'qt5-x11extras' 'zlib')
+makedepends=('alsa-lib' 'aubio' 'cmake' 'dssi' 'jack' 'ladspa' 'liblo' 'libogg'
+'libsamplerate' 'libsndfile' 'libvorbis' 'lilv' 'lv2' 'qt5-tools' 'rubberband'
+'suil' 'vst3sdk')
+optdepends=('new-session-manager: for session management')
+provides=('dssi-host' 'ladspa-host' 'lv2-host' 'vst-host' 'vst3-host')
+source=("https://sourceforge.net/projects/${pkgname}/files/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('cab7ef6dc259ba570645a7f20efd6816377ae9707e004370f24745e00e20df90be9316543c5cb5ddbdc6bb1c749053bfb964e53ac97dc8ae2dd468e371274bfc')
+b2sums=('33ccb2e4002a8a666dc9f325dd7f14e66a2f624e0dda9eb916f8b958d01e2a8f72b5e8390946482e6170de9e2fcc28a4efcf8447b6610b21003288e7c7b9f9b7')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cmake -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DCMAKE_BUILD_TYPE='None' \
+        -Wno-dev \
+        -B build \
+        -S .
+  make VERBOSE=1 -C build
+}
+
+package() {
+  depends+=('libasound.so' 'libaubio.so' 'libjack.so' 'liblilv-0.so' 'liblo.so'
+  'libogg.so' 'librubberband.so' 'libsamplerate.so' 'libsndfile.so'
+  'libsuil-0.so' 'libvorbisenc.so' 'libvorbisfile.so' 'libvorbis.so' )
+  cd "${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install -C build
+  # docs
+  install -vDm 644 {AUTHORS,README,README.VST,TODO} \
+    -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

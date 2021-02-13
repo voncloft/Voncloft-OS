@@ -1,0 +1,14 @@
+# description : For controlling and automating applications
+  depends+=python python-ptyprocess
+
+url=https://pexpect.readthedocs.org/en/stable/
+version=4.8.0
+release=3
+
+source="git+https://github.com/pexpect/pexpect#commit=5eed1a31a2853a09b7367c59fbd1a4a0b53341df # 4.8.0
+
+build() {
+   cd pexpect
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

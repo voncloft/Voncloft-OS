@@ -1,0 +1,31 @@
+
+# Check compatibility with jedi on potential version bumps
+_pkgbase=parso
+name=python-parso
+epoch=1
+version=0.7.1
+release=3
+# description : Python parser that supports error recovery and round-trip parsing for different Python versions"
+# depends :   python  
+source=https://github.com/davidhalter/parso/archive/v$version/$name-$version.tar.gz.tar.gz 
+
+check   {
+  cd "$_pkgbase-$version"
+  pytest test
+}
+
+build   {
+  cd "$_pkgbase-$version"
+  python setup.py build
+  sphinx-build -b text docs docs/_build/text
+  sphinx-build -b man docs docs/_build/man
+}
+
+package   {
+  cd "$_pkgbase-$version"
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE.txt -t "$PKG/usr/share/licenses/$name"
+  install -Dm 644 docs/_build/man/parso.1 "$PKG/usr/share/man/man1/$name.1"
+}
+
+# vim: ts=2 sw=2 et:

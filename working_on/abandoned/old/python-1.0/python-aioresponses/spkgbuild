@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-aioresponses
+version=0.7.1
+release=3
+pkgdesc="A helper to mock/fake web requests in python aiohttp package."
+url="https://github.com/pnuckowski/aioresponses"
+depends=('python-aiohttp')
+makedepends=('python-pbr')
+checkdepends=('python-pytest-runner' 'python-ddt' 'python-asynctest')
+source=("$name-$version.tar.gz::https://github.com/pnuckowski/aioresponses/archive/$version.tar.gz")
+sha512sums=('2b43bc5e1cd17c9fded87049b8bbb756218d2ebd8d5eaaaa4772166c3f2e791a4a80b5bcfb9ef1b186a70680f771e552c1a85b7a5ad77d79e60338c7c91ca3bf')
+
+prepare() {
+  export PBR_VERSION=$version
+}
+
+build() {
+  cd aioresponses-$version
+  python setup.py build
+}
+
+check() {
+  cd aioresponses-$version
+  python setup.py pytest
+}
+
+package() {
+  cd aioresponses-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

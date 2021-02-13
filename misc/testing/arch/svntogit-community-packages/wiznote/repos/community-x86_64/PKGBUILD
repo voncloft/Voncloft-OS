@@ -1,0 +1,43 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Albert.Zhou <albert.zhou@wiz.cn>
+
+pkgname=wiznote
+pkgver=2.8.5
+_commit=2d4566aa1ff6e5a773d59e26df5ab07517931242
+pkgrel=1
+pkgdesc="Opensource cross-platform cloud based note-taking client"
+arch=('x86_64')
+url="https://www.wiz.cn"
+license=('GPL3')
+depends=('desktop-file-utils' 'hicolor-icon-theme' 'xdg-utils' 'qt5-websockets' 'qt5-webengine'
+         'qt5-svg') # 'crypto++')
+# shared clucene/quazip triggers segfault
+makedepends=('cmake' 'qt5-tools' 'boost')
+source=("$pkgname-$_commit.tar.gz::https://github.com/WizTeam/WizQTClient/archive/$_commit.tar.gz")
+sha512sums=('35b86abbde7d234b5ebcd66b9912ffddbf272a5ab7ff99ca408eb6a66366ab1c00a0c88241fd702f4f8d968c06a7c53722595eb4085938a5b5c726cfad38a832')
+
+prepare() {
+  #sed -e 's/add_subdirectory(cryptopp)//' \
+  #    -i WizQTClient-$_commit/lib/CMakeLists.txt
+  #sed -e 's/cryptlib/cryptopp/' \
+  #    -i WizQTClient-$_commit/src/CMakeLists.txt
+
+  sed -i '/#include <QPainter>/a #include <QPainterPath>' WizQTClient-$_commit/src/sync/WizAvatarHost.cpp
+
+  rm -rf build; mkdir build
+}
+
+build() {
+  cd build
+
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    ../WizQTClient-$_commit
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,18 @@
+# description : Utility for looking for perl objects that are not reclaimed.
+# depends : perl
+
+_distdir=Devel-Leak-$version
+name=perl-devel-leak
+version=0.03
+release=10
+
+source="https://search.mcpan.org/CPAN/authors/id/N/NI/NI-S/Devel-Leak-$version.tar.gz"
+options="!checksum"
+
+build() {
+     cd $_distdir
+   cd $_distdir
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

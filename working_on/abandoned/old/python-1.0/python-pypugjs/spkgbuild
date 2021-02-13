@@ -1,0 +1,32 @@
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
+# Contributor: zwindl on AUR
+
+name=python-pypugjs
+version=5.9.8
+release=1
+pkgdesc='PugJS syntax adapter for Django, Jinja2 and Mako templates'
+url='https://github.com/kakulukia/pypugjs'
+depends=(python python-six python-chardet)
+makedepends=(python-setuptools)
+checkdepends=(python-nose python-django python-jinja python-tornado python-mako)
+optdepends=(python-django python-jinja python-tornado python-mako)
+# PyPI sdist does not contain tests
+source=("https://github.com/kakulukia/pypugjs/archive/v$version/pypugjs-$version.tar.gz")
+sha256sums=('efb7cbfbbe9fec223b13a419754626b7313dd74d67230f4c38addf1e4389ebc8')
+
+build() {
+  cd pypugjs-$version
+  python setup.py build
+}
+
+check() {
+  cd pypugjs-$version
+  # -w is needed here as test_cases.py looks into cases/
+  PYTHONPATH="$PWD" nosetests -w pypugjs/testsuite
+}
+
+package() {
+  cd pypugjs-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name
+}

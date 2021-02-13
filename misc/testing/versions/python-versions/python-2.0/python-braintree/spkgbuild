@@ -1,0 +1,24 @@
+# description : Braintree Python Library"
+# depends :   python-requests  
+
+name=python-braintree
+version=4.6.0
+release=1
+source="https://github.com/braintree/braintree_python/archive/$version.tar.gz" 
+
+build-old()   {
+  cd braintree_python-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd braintree_python-$version
+  nosetests3 tests/unit
+}
+
+build()   {
+  cd braintree_python-$version
+  python setup.py install -O1 --root=$PKG
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

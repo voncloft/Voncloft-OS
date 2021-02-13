@@ -1,0 +1,32 @@
+# Maintainer: David Runge <dave@sleepmap.de>
+# Contributor: speps <speps dot aur dot archlinux dot org>
+
+pkgname=harvid
+pkgver=0.8.3
+pkgrel=1
+pkgdesc="HTTP Ardour Video Daemon"
+arch=('x86_64')
+url="https://x42.github.io/harvid/"
+license=('GPL')
+depends=('ffmpeg')
+makedepends=('xxd')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/x42/${pkgname}/archive/v$pkgver.tar.gz")
+sha512sums=('748475602c7279f10790523cbd5cbf34c9cd283ca9e959ac0535fbb5b4ee6d2fcab976c5ddba3fa40862552b49d73df7145f36d26c9fe708063505812537a8ac')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  # different job setting needed to not crash build
+  make PREFIX=/usr -j1
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make PREFIX=/usr DESTDIR="${pkgdir}/" install
+
+  # ffmpeg and ffprobe symlinks (for ardour)
+  ln -sv ffmpeg "${pkgdir}/usr/bin/ffmpeg_${pkgname}"
+  ln -sv ffprobe "${pkgdir}/usr/bin/ffprobe_${pkgname}"
+
+  install -vDm 644 README.md \
+    -t "${pkgdir}/usr/share/doc/${pkgname}/"
+}

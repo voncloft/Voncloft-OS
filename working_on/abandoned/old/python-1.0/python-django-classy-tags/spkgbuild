@@ -1,0 +1,45 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=django-classy-tags
+name=python-django-classy-tags
+version=2.0.0
+release=4
+pkgdesc="Class based template tags for django"
+url="https://github.com/divio/django-classy-tags"
+depends=('python-django' 'python-six')
+makedepends=('python-setuptools')
+checkdepends=('python-coverage' 'python-pytest')
+# LICENSE and tests not in pypi tarball in python-django-classy-tags <= 0.9.0
+# https://github.com/divio/django-classy-tags/issues/52
+# source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+source=("${name}-${version}.tar.gz::https://github.com/divio/${_name}/archive/${version}.tar.gz")
+sha512sums=('839186b48b91c02d325b93df61731382e35741009932c52c497c3f0fbaa2ff309b8a69842094ea1e7d0299ab0f320e1a246c6111255807dd452b0c8e589c83bd')
+b2sums=('1f038ed48468e12fa7dce3b7dd2582f36954c15947420da9337c98b0633225f681f2df0339d13615002be9c6d603843006d6617ef4f3f35f9e469a4991380d87')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  python setup.py test
+}
+
+package() {
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  install -vDm 644 README.rst -t "${pkgdir}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE.txt -t "${pkgdir}/usr/share/licenses/${name}"
+  # remove conflicting test files
+  # https://github.com/divio/django-classy-tags/issues/58
+  rm -rvf "${pkgdir}/${site_packages}/tests"
+}

@@ -1,0 +1,16 @@
+# description : An SDK for build()ing applications to work with OpenStack
+# depends : python-six python-pbr python-yaml python-jsonpatch python-appdirs
+
+url=https://developer.openstack.org/sdks/python/openstacksdk
+name=python-openstacksdk
+version=0.53.0
+release=1
+
+source="https://github.com/openstack/openstacksdk/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd openstacksdk-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

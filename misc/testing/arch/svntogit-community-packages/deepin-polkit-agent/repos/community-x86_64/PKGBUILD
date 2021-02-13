@@ -1,0 +1,33 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josip Ponjavic <josipponjavic at gmail dot com>
+# Contributor: Xu Fasheng <fasheng.xu[AT]gmail.com>
+
+pkgname=deepin-polkit-agent
+pkgver=5.3.0.3
+pkgrel=1
+pkgdesc='Deepin Polkit Agent'
+arch=('x86_64')
+url="https://github.com/linuxdeepin/dde-polkit-agent"
+license=('GPL3')
+depends=('deepin-qt5integration' 'deepin-qt-dbus-factory' 'polkit-qt5')
+makedepends=('qt5-tools')
+groups=('deepin')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/dde-polkit-agent/archive/$pkgver.tar.gz")
+sha512sums=('ad9f88ba0ffd73a694006c454b752d33f38902317c6ea2485fee04d1ac8583d880a4a8e032a91bf1a5bdce4a51f9ec956a56ebe23798832ef10c9e22143a6a18')
+
+prepare() {
+  cd dde-polkit-agent-$pkgver
+  # https://github.com/linuxdeepin/developer-center/issues/1721
+  sed -i 's/bool is_deepin = true/bool is_deepin = false/' policykitlistener.cpp
+}
+
+build() {
+  cd dde-polkit-agent-$pkgver
+  qmake-qt5 PREFIX=/usr
+  make
+}
+
+package() {
+  cd dde-polkit-agent-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+}

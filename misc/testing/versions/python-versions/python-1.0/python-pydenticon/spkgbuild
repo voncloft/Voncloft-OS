@@ -1,0 +1,47 @@
+
+pkgbase=python-pydenticon
+name= python-pydenticon python2-pydenticon 
+version=0.3.1
+release=2
+
+# description : Library for generating identicons 
+
+              python-setuptools 
+              python2 
+              python2-setuptools  
+
+source="https://pypi.org/packages/source/p/pydenticon/pydenticon-$version.tar.gz" 
+
+
+prepare   {
+	chmod -R go=u-w pydenticon-$version # files in the source tarball have weird permissions
+	cp -a pydenticon-$version{,-python2}
+}
+
+build   {
+	cd "$srcdir"/pydenticon-$version
+	python setup.py build
+
+	cd "$srcdir"/pydenticon-$version-python2
+	python2 setup.py build
+}
+
+package_python-pydenticon   {
+	# depends :   python   python-pillow  
+
+	cd pydenticon-$version
+	python setup.py install --root=$PKG --optimize=1 --skip-build
+
+	install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-pydenticon   {
+	# depends :   python2   python2-pillow  
+
+	cd pydenticon-$version-python2
+	python2 setup.py install --root=$PKG --optimize=1 --skip-build
+
+	install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :

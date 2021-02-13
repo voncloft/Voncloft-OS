@@ -1,0 +1,48 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Tatsuyuki Ishi <ishitatsuyuki@gmail.com>
+
+name=python-blessed
+version=1.17.12
+release=1
+pkgdesc='A thin, practical wrapper around terminal styling, screen positioning, and keyboard input'
+url=https://github.com/jquast/blessed
+depends=(
+  python-six
+  python-wcwidth
+)
+makedepends=(
+  git
+  python-setuptools
+)
+checkdepends=(
+  python-tox
+)
+_tag=b22d3aa6a348416e49d14ce9d42bac48f0593e73
+source=(git+https://github.com/jquast/blessed.git#tag=${_tag})
+sha256sums=(SKIP)
+
+version() {
+  cd blessed
+
+  git describe --tags
+}
+
+build() {
+  cd blessed
+
+  python setup.py build
+}
+
+check() {
+  cd blessed
+
+  tox -e py39
+}
+
+package() {
+  cd blessed
+
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

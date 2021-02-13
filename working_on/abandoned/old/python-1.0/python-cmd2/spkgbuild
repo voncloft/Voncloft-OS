@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+
+name=python-cmd2
+version=1.5.0
+release=1
+pkgdesc="A tool for building interactive command line apps"
+url="https://github.com/python-cmd2/cmd2"
+depends=('python-attrs' 'python-colorama' 'python-pyperclip' 'python-wcwidth')
+makedepends=('python-setuptools-scm')
+checkdepends=('python-pytest-runner' 'python-pytest-xdist' 'python-pytest-mock' 'vi')
+source=("$name-$version.tar.gz::https://github.com/python-cmd2/cmd2/archive/$version.tar.gz")
+sha512sums=('4749490323dda98817debf214491e5f8074b1f640f318ac6c2d73f9923cf77bb30fa5dfb7e33c4e493c42aff0501ba390daf31bc2f48c131075584a63ecc3888')
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build() {
+  cd cmd2-$version
+  python setup.py build
+}
+
+check() {
+  cd cmd2-$version
+  python setup.py pytest
+}
+
+package() {
+  cd cmd2-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

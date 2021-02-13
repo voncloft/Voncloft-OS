@@ -1,0 +1,19 @@
+# description : Memory efficient Python objects
+# depends : python python-setuptools
+
+_name=atom
+url=https://github.com/nucleic/atom
+_name=atom
+name=python-atom
+version=0.6.0
+  local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
+release=3
+
+source="https://github.com/nucleic/atom/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

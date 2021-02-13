@@ -1,0 +1,29 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
+# Contributor: Benzo <mb_benzo@yahoo.es>
+
+pkgname=osmo
+pkgver=0.4.4
+pkgrel=1
+pkgdesc="A handy personal organizer"
+arch=('x86_64')
+url="https://clayo.org/osmo/"
+license=('GPL')
+depends=('gspell' 'libarchive' 'libgringotts' 'libical' 'libnotify' 'libxml2' 'webkit2gtk')
+optdepends=('sox: to play sounds')
+changelog=$pkgname.changelog
+source=(https://sourceforge.net/projects/osmo-pim/files/osmo-pim/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('1e8b11bd1baa0f6756326b58f87eb95a56b38a25d7336fdfb65c2dfca46d03a6')
+
+build() {
+  cd "${srcdir}"/${pkgname}-${pkgver}
+
+  ./configure --prefix=/usr
+  make 
+}
+
+package() {
+  cd "${srcdir}"/${pkgname}-${pkgver}
+
+  make DESTDIR="${pkgdir}" install
+}

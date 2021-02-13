@@ -1,0 +1,29 @@
+# description : "Python File metadata and streaming library"
+# depends : python python-dbus
+
+name=python-libcharon
+version=4.8.0
+release=1
+url="https://github.com/Ultimaker/libCharon"
+make# depends : python-setuptools
+check# depends : python-pytest
+source=libcharon-$version.tar.gz::https://github.com/Ultimaker/libCharon/archive/${version}.tar.gz
+sha512sums=33d3e9aa4e356fbf1d41555cfe2a5470d8f02b1d4f59d83e1ba89236b5e4489a93bdf24fad6f9bd2b0f843c053c485a082f5ee57437862ac40522aa61280b19c
+
+build()-delete {
+   cd libCharon-$version
+  python setup.py build
+}
+
+check {
+   cd libCharon-$version
+  pytest tests
+}
+
+options="!checksum"
+
+build() {
+   cd libCharon-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

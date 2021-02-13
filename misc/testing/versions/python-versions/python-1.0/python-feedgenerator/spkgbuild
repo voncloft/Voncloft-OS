@@ -1,0 +1,23 @@
+_name=feedgenerator
+name="python-${_name}"
+version=1.9.1
+release=3
+# description : Standalone version of django.utils.feedgenerator  python3 ."
+# depends :   python   python-pytz   python-six  
+source="https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd "${_name}-${version}"
+  python ./setup.py build
+}
+
+package   {
+  cd "${_name}-${version}"
+  python ./setup.py install --root=$PKG --optimize=1 --skip-build
+}
+
+
+check   {
+  cd "${_name}-${version}"
+  nosetests
+}

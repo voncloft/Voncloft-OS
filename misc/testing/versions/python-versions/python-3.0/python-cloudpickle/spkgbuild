@@ -1,0 +1,36 @@
+# description : Extended pickling support for Python objects"
+# depends :  python-setuptools 
+
+_pkg=cloudpickle
+name=python-${_pkg}
+version=1.6.0
+release=1
+    python-pytest
+    python-psutil
+    python-tornado
+    python-numpy
+ 
+options= !emptydirs 
+source=https://files.pythonhosted.org/build()s/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pkg}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pkg}-${version}
+  cd tests/cloudpickle_testpkg
+  python setup.py build-old()
+  cd ../../
+  PYTHONPATH="${PWD}"/tests/cloudpickle_testpkg/build-old()/lib/ \
+  pytest --deselect tests/cloudpickle_file_test.py::CloudPickleFileTests::test_pickling_special_file_handles \
+         --deselect tests/cloudpickle_test.py::CloudPickleTest::test_pickling_file_handles \
+         --deselect tests/cloudpickle_test.py::Protocol2CloudPickleTest::test_pickling_file_handles
+}
+
+build()   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}/
+}

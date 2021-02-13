@@ -1,0 +1,16 @@
+# description : Common deployment/sysadmin operations, built on Fabric
+# depends : fabric
+
+url=https://github.com/fabric/patchwork
+name=python-patchwork
+version=1.0.1
+release=4
+
+source="https://github.com/fabric/patchwork/archive/$version/$name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd patchwork-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

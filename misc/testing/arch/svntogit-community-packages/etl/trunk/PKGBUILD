@@ -1,0 +1,26 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Franco Iacomella <yaco@gnu.org>
+
+pkgname=etl
+pkgver=1.4.0
+pkgrel=1
+pkgdesc="VoriaETL: C++ STL complementory multiplatform template library"
+arch=(any)
+url="https://synfig.org"
+license=('GPL2')
+depends=()
+conflicts=('synfig-etl')
+replaces=('synfig-etl')
+source=(https://downloads.sourceforge.net/project/synfig/releases/$pkgver/source/ETL-${pkgver}.tar.gz)
+sha256sums=('d43396c0ac356114713469216a9257247c2588d5475590a46db63cf201d1a011')
+
+build() {
+  cd "$srcdir"/ETL-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir"/ETL-$pkgver
+  make DESTDIR="$pkgdir" install
+}

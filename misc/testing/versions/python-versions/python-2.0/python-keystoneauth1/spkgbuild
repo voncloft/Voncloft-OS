@@ -1,0 +1,38 @@
+# description : Authentication Library for OpenStack Identity"
+# depends :   python-pbr   python-iso8601   python-stevedore   python-os-service-types   python-requests  
+
+name=python-keystoneauth1
+version=4.3.0
+release=1
+             python-lxml: for saml2 support 
+             python-oauthlib: for oauth1 support 
+             python-betamax: for betamax support 
+             python-fixtures: for betamax support 
+             python-mock: for betamax support  
+               python-oslo-config   python-betamax   python-oslotest   python-oslo-utils 
+               python-requests-kerberos   python-oauthlib   python-pycodestyle   python-hacking  
+source="https://github.com/openstack/keystoneauth/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  sed -i  s/pep8/pycodestyle/g  keystoneauth-$version/keystoneauth1/tests/unit/test_hacking_checks.py
+  sed -i  s/assertItemsEqual/assertCountEqual/  keystoneauth-$version/keystoneauth1/tests/unit/extras/kerberos/*.py
+}
+
+build-old()   {
+  cd keystoneauth-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd keystoneauth-$version
+  stestr run
+}
+
+build()   {
+  cd keystoneauth-$version
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

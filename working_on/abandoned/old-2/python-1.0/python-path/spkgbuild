@@ -1,0 +1,16 @@
+# description : A module wrapper for os.path
+# depends : python
+
+url=https://github.com/jaraco/path
+name=python-path
+version=15.1.0
+release=1
+
+source="https://github.com/jaraco/path/archive/v$version/$name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd path-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

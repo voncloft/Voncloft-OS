@@ -1,0 +1,21 @@
+# description : Zope testing frameworks
+  # depends : python
+  # depends : python2
+
+_name=${pkgbase#python-}
+url=https://github.com/zopefoundation/$_name
+_name=${pkgbase#python-}
+name=python-$_name python2-$_name
+version=2.0
+release=5
+
+source="$url/archive/$version.tar.gz"
+
+build() {
+   cd $_name-$version
+   cd $_name-$version-py2
+   cd $_name-$version
+   cd $_name-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

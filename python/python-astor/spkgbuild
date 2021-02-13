@@ -1,0 +1,16 @@
+# description : Read/rewrite/write Python ASTs
+# depends : python
+
+url=https://astor.rtfd.org/
+name=python-astor
+version=0.8.1
+release=3
+
+source="https://github.com/berkerpeksag/astor/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd astor-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

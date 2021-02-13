@@ -1,0 +1,42 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=django-allauth
+name=python-django-allauth
+version=0.44.0
+release=1
+pkgdesc="Authentication, registration, account management and 3rd party account authentication"
+url="https://github.com/pennersr/django-allauth"
+depends=('python-django' 'python-openid' 'python-requests'
+'python-requests-oauthlib' 'python-pyjwt')
+makedepends=('python-setuptools')
+checkdepends=('python-coverage' 'python-mock' 'python-pytest')
+# tests are not available in pypi sdist:
+# https://github.com/pennersr/django-allauth/issues/2439
+# source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+source=("${_name}-${version}.tar.gz::https://github.com/pennersr/${_name}/archive/${version}.tar.gz")
+sha512sums=('7d864a499f516c91faac0e33d9f235770eadfdfd3314a2fa8d836c3be417a3c8e9dfeba72e06ba02a199ec227702b7eaaea385c5e254fc811dfb9c2fc3425914')
+b2sums=('84ec4b6ab31fed7eccc7aea8092c4a5f9f9e73c365bf66b6b7b59d1e5143d3b327a6e698f45ddab949c5a58fa73363fd2724ae00817a9df78ef76f665a6f77dc')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check() {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  coverage run manage.py test allauth
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  install -vDm 644 README.rst -t "${pkgdir}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+}

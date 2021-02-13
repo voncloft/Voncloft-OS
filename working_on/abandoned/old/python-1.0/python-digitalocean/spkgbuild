@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-digitalocean
+version=1.16.0
+release=1
+pkgdesc='digitalocean.com API to manage Droplets and Images'
+url='https://github.com/koalalorenzo/python-digitalocean'
+depends=('python-requests' 'python-jsonpickle')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-responses')
+source=("$name-$version.tar.gz::https://github.com/koalalorenzo/python-digitalocean/archive/v$version.tar.gz")
+sha512sums=('110614aeb33e2dab0564b4569058233916626d50da14d42f9702c9275f13442dccb7b77829b2dc8e97e8bbbd53d094116cebe9b3aedad920d2b0c156a5680bf7')
+
+build() {
+  cd python-digitalocean-$version
+  python setup.py build
+}
+
+check() {
+  cd python-digitalocean-$version
+  python setup.py pytest || echo "https://github.com/koalalorenzo/python-digitalocean/issues/258"
+}
+
+package() {
+  cd python-digitalocean-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

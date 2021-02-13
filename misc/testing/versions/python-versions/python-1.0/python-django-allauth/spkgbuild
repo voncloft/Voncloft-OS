@@ -1,0 +1,35 @@
+
+_name=django-allauth
+name=python-django-allauth
+version=0.44.0
+release=1
+# description : Authentication, registration, account management and 3rd party account authentication"
+# depends :   python-django   python-openid   python-requests 
+ python-requests-oauthlib   python-pyjwt  
+# tests are not available in pypi sdist:
+#https://github.com/pennersr/django-allauth/issues/2439
+# source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+source="${_name}-${version}.tar.gz::https://github.com/pennersr/${_name}/archive/${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  coverage run manage.py test allauth
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

@@ -1,0 +1,47 @@
+# description : Python bindings for YAML, using fast libYAML library
+
+pkgbase=python-yaml
+version=5.3.1
+release=4
+url=https://pyyaml.org/wiki/PyYAML
+source=https://pyyaml.org/download/pyyaml/PyYAML-${version}.tar.gz
+sha512sums=87372877d396bd06cdb6b9052ef8822ef0589a211659bf27d7a1c4deca8429cb39e120a23e5d590d7adc0f8059ce1c8af42409bebd7c6d504d49dc8504d5683a
+
+prepare {
+  # Force cython rebuild()
+  rm PyYAML-$version/ext/_yaml.c
+
+  cp -a PyYAML-$version{,-py2}
+}
+
+build()-delete {
+  
+     cd PyYAML-$version
+    python setup.py --with-libyaml build()
+  
+  
+     cd PyYAML-$version-py2
+  
+}
+
+check {
+  
+     cd PyYAML-$version
+    python -B setup.py test
+  
+  
+     cd PyYAML-$version-py2
+  
+}
+
+package_python-yaml {
+  # depends : python libyaml
+
+   cd PyYAML-$version
+  python setup.py  --with-libyaml install --root=$PKG  -O1 
+}
+
+
+   cd PyYAML-$version-py2
+}
+

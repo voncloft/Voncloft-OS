@@ -1,0 +1,42 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Philipp Wolfer <ph.wolfer@gmail.com>
+
+pkgname=peek
+pkgver=1.5.1
+pkgrel=3
+pkgdesc='Simple screen recorder with an easy to use interface'
+arch=('x86_64')
+url='https://github.com/phw/peek'
+license=('GPL3')
+depends=('gtk3' 'libkeybinder3' 'ffmpeg' 'which')
+makedepends=('git' 'meson' 'vala' 'appstream-glib' 'txt2man'
+             'gst-plugin-gtk' 'gst-plugins-ugly')
+checkdepends=('xorg-server-xvfb')
+optdepends=('gst-plugin-gtk: Recording under Gnome Shell'
+            'gst-plugins-ugly: MP4 output under Gnome Shell'
+            'gifski: High quality GIF animations with thousands of colors')
+validpgpkeys=('9FD61CE6F154EC5A3531D0DE23A723D6417E5D5A') # Philipp Wolfer <ph.wolfer@gmail.com>
+source=("git+$url.git?signed#tag=$pkgver")
+sha512sums=('SKIP')
+
+build() {
+  mkdir $pkgname/build
+  cd $pkgname/build
+
+  arch-meson ..
+
+  ninja
+}
+
+check() {
+  cd $pkgname/build
+
+  xvfb-run meson test
+}
+
+package() {
+  cd $pkgname/build
+
+  DESTDIR="$pkgdir" ninja install
+}
+

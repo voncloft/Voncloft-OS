@@ -1,0 +1,38 @@
+# description : Sniff out which async library your code is running under 
+# depends :  python 
+
+name=python-sniffio
+version=1.2.0
+release=3
+  git
+  python-curio
+  python-pytest
+  python-setuptools
+ 
+
+version   {
+  cd sniffio
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd sniffio
+
+  python setup.py build-old()
+}
+
+check   {
+  cd sniffio
+
+  python setup.py test
+}
+
+build()   {
+  cd sniffio
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-sniffio/
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,17 @@
+
+name=python-pydoe2
+version=1.3.0
+release=3
+# description : Design of experiments for Python"
+# depends :   python-numpy   python-scipy  
+source="https://pypi.io/packages/source/p/pyDOE2/pyDOE2-$version.tar.gz" 
+
+build   {
+  cd pyDOE2-$version
+  python setup.py build
+}
+
+package   {
+  cd pyDOE2-$version
+  python setup.py install --root=$PKG --optimize=1
+}

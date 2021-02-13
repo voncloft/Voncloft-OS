@@ -1,0 +1,19 @@
+# description : Type hints support for the Sphinx autodoc extension
+# depends : python python-sphinx python-typing_extensions
+
+_pyname=${name/python-/}
+_gitcommit=2fac99f455855c832b22a272edde3f9852ba6a04
+url=https://github.com/agronholm/sphinx-autodoc-typehints
+name=python-sphinx-autodoc-typehints
+_pyname=${name/python-/}
+version=1.11.1
+release=2
+
+source="git+https://github.com/agronholm/sphinx-autodoc-typehints#commit=${_gitcommit}
+options="checksum"
+
+build() {
+   cd ${_pyname}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

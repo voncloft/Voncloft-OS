@@ -1,0 +1,36 @@
+# description : 'General parsing module for Python'
+
+name=python-pyparsing
+name=('python-pyparsing' 'python2-pyparsing')
+version=2.4.7
+release=3
+
+build-remove() {
+  cd pyparsing-pyparsing_$version
+  python setup.py build
+  python2 setup.py build
+}
+
+check() {
+  cd pyparsing-pyparsing_$version
+  python unitTests.py
+  python2 unitTests.py
+}
+
+package_python-pyparsing() {
+  # depends : ('python')
+
+  cd pyparsing-pyparsing_$version
+
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+}
+
+package_python2-pyparsing() {
+  # depends : ('python2')
+
+  cd pyparsing-pyparsing_$version
+
+  python2 setup.py install --prefix=/usr --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

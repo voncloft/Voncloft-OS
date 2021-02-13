@@ -1,0 +1,35 @@
+# description : Work with python versions"
+# depends :   python-attrs   python-dephell-specifier   python-packaging  
+
+_name=dephell_pythons
+name=python-dephell-pythons
+version=0.1.15
+release=2
+source="https://files.pythonhosted.org/build()s/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+        py39.patch 
+             f12e9736ef37020e8d2883a450b184922dc5beddd953eeca68fae2d0a335fd3c  
+         3a0ae636ffd37dd3e7b5aeb0d6d9209328606b50e02a1684b021854e609ad59f98805ef665e94b223d52cd3bdb8a08c62eade57539d8a6dd9c19fcc097271ff4  
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+    patch -Np1 -i ../py39.patch
+}
+
+build-old()  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

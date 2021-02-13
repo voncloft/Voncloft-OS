@@ -1,0 +1,32 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+# Contributor: wenLiangcan <boxeed at gmail dot com>
+
+pkgbase=python-wcwidth
+name=(python-wcwidth python2-wcwidth)
+_name=wcwidth
+version=0.2.5
+release=3
+pkgdesc="Measures number of Terminal column cells of wide-character codes"
+url="https://github.com/jquast/wcwidth"
+depends=('python')
+makedepends=('python-setuptools' 'python2-setuptools' 'python2-backports.functools_lru_cache')
+source=("https://files.pythonhosted.org/packages/source/w/$_name/$_name-$version.tar.gz")
+md5sums=('a07a75f99d316e14838ac760c831ea37')
+
+prepare() {
+  cd "$srcdir"
+  cp -r $_name-$version python2-$_name-$version
+}
+
+package_python-wcwidth() {
+  cd "$srcdir/$_name-$version"
+  python3 setup.py install --root="${pkgdir}" --optimize=1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$name/LICENSE"
+}
+
+package_python2-wcwidth() {
+  depends=('python2' 'python2-backports.functools_lru_cache')
+  cd "$srcdir/python2-$_name-$version"
+  python2 setup.py install --root="${pkgdir}" --optimize=1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$name/LICENSE"
+}

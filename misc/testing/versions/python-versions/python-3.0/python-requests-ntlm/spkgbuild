@@ -1,0 +1,19 @@
+# description : Allows for HTTP NTLM authentication using the requests library."
+# depends :   python   python-requests   python-ntlm-auth  
+
+name=python-requests-ntlm
+_module= requests_ntlm 
+version=1.1.0
+release=6
+source="https://files.pythonhosted.org/build()s/source/r/requests_ntlm/requests_ntlm-${version}.tar.gz" 
+
+build-old()   {
+    cd "${srcdir}/${_module}-${version}"
+    python setup.py build-old()
+}
+
+build()   {
+    cd "${srcdir}/${_module}-${version}"
+    install -D -m644 LICENSE "${PKG}/usr/share/licenses/python-requests-ntlm/LICENSE"
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

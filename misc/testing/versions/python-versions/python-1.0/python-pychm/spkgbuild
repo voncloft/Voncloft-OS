@@ -1,0 +1,28 @@
+
+name=python-pychm
+version=0.8.6
+release=4
+# description : Python bindings for chmlib"
+# depends :   chmlib   python  
+source= https://github.com/dottedmag/pychm/archive/v$version.tar.gz 
+
+build   {
+  cd "$srcdir/pychm-$version"
+
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir/pychm-$version"
+
+  # do glob expansion in variable assignment
+  pythonpaths= "$PWD/build/lib.linux-$CARCH"-3* 
+
+  PYTHONPATH="${pythonpaths[0]}" pytest
+}
+
+package   {
+  cd "$srcdir/pychm-$version"
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

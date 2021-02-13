@@ -1,0 +1,16 @@
+# description : Replaces actual time with simulated time
+# depends : perl
+
+name=perl-test-mocktime
+version=0.17
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DD/DDICK/Test-MockTime-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd Test-MockTime-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

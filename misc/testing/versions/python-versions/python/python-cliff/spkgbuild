@@ -1,0 +1,28 @@
+# description : Command Line Interface Formulation Framework"
+# depends :   python-six   python-pbr   python-cmd2   python-prettytable   python-pyparsing 
+
+name=python-cliff
+version=3.6.0
+release=1
+          python-stevedore   python-yaml  
+options=  !emptydirs  
+source="https://github.com/openstack/cliff/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd cliff-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd cliff-$version
+  stestr run
+}
+
+build()   {
+  cd cliff-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

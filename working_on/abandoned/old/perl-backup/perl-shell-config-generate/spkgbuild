@@ -1,0 +1,33 @@
+# description : Portably generate config for any shell
+# depends : perl-shell-guess
+
+name=perl-shell-config-generate
+version=0.34
+release=2
+url=https://metacpan.org/release/Shell-Config-Generate
+make# depends : perl-test2-suite
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Shell-Config-Generate-$version.tar.gz"
+options="!checksum"
+sha512sums=f78b1613ee26ed6fe7a435f523ac168aaf608f76f1f02470aeb0c540e8bb5c999e4dc86dd4e67230666b5d125ca12a727ab789314c09e1314a5bc5d94534158d
+
+build-delete {
+  cd Shell-Config-Generate-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Shell-Config-Generate-$version
+  make test
+}
+
+build() {
+  cd Shell-Config-Generate-$version
+  make DESTDIR=$PKG install
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

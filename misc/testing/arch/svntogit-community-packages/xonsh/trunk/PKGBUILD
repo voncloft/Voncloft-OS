@@ -1,0 +1,21 @@
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
+
+pkgname=xonsh
+pkgver=0.9.25
+pkgrel=1
+pkgdesc="Python-powered, cross-platform, Unix-gazing shell"
+url="https://xon.sh/"
+arch=("any")
+license=("BSD")
+depends=("python" "python-ply" "python-setproctitle")
+optdepends=("python-prompt_toolkit: support for SHELL_TYPE=prompt_toolkit")
+makedepends=("python-setuptools")
+source=("https://github.com/xonsh/xonsh/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
+install=xonsh.install
+sha256sums=("fec47183296d96057464c0d7c317cc53ff3458bc74dcd01d5d7cff3e1345b98b")
+
+package() {
+	cd "$srcdir/$pkgname-$pkgver"
+	python setup.py install --root="$pkgdir"
+	install -D -m644 license "$pkgdir/usr/share/licenses/$pkgname/license"
+}

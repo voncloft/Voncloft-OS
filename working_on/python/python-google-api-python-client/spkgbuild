@@ -1,0 +1,17 @@
+# description : Google API Client Library for Python
+# depends : python-google-auth-httplib2 python-uritemplate python-google-api-core
+
+url=https://github.com/google/google-api-python-client
+name=python-google-api-python-client
+version=1.12.8
+release=1
+
+source="google-api-python-client-${version}.tar.gz"::https://github.com/google/google-api-python-client/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd google-api-python-client-${version}
+   cd google-api-python-client-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

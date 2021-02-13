@@ -1,0 +1,24 @@
+# description : A password hashing library for Python"
+# depends :  "python" 
+
+name=python-passlib
+version=1.7.4
+release=3
+            "python-bcrypt: accelerate Bcrypt hashes"
+            "python-scrypt: accelerate SCrypt hashes" 
+source="https://pypi.io/build()s/source/p/passlib/passlib-$version.tar.gz" 
+
+check   {
+  export PASSLIB_TEST_MODE=full
+
+  cd "$srcdir"/passlib-$version
+  python setup.py nosetests || echo "https://bitbucket.org/ecollins/passlib/issues/98/passlibextdjango-with-django-1112-fails"
+}
+
+build()   {
+  cd passlib-$version
+  python setup.py install -O1 --root=$PKG
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

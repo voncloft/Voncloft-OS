@@ -1,0 +1,16 @@
+# description : A collection of C++ headers which make it easier to write Python C extension modules
+# depends : python
+
+url=https://github.com/nucleic/cppy
+name=python-cppy
+version=1.1.0
+release=3
+
+source="https://github.com/nucleic/cppy/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd cppy-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

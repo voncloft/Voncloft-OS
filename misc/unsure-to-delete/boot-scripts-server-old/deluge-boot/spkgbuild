@@ -1,0 +1,17 @@
+# description : deluge-boot-scripts 
+# dependencies: 
+
+name=deluge-boot
+version=2.0.4
+release=38
+
+build()
+{
+	cd $name-$version
+	mkdir -pv $PKG/etc/init.d
+	install $SRC/deluged $PKG/etc/init.d/
+	install $SRC/deluge-web $PKG/etc/init.d/
+	ln -sfv /etc/init.d/deluged /etc/rc.d/rc5.d/S99deluged
+	ln -sfv /etc/init.d/deluge-web /etc/rc.d/rc5.d/S99deluge-web
+	
+}

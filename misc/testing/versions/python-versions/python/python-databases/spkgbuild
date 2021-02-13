@@ -1,0 +1,40 @@
+# description : Async database support for Python 
+# depends :   python  
+
+_name=databases
+name=python-$_name
+version=0.4.1
+release=1
+             python-psycopg2: postgresql support 
+             python-aiopg: postgresql + aiopg support 
+             python-aiomysql: mysql support 
+             python-pymysql: mysql support 
+             python-aiosqlite: sqlite support  
+#               python-aiomysql   python-pymysql   python-aiosqlite   python-sqlalchemy 
+#               python-starlette   python-requests  
+source=" $url/archive/$version.tar.gz" 
+
+# TODO: fix tests  need databases 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+#check   {
+#  cd $_name-$version
+#
+#  python setup.py pytest
+#}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  rm $PKG/usr/LICENSE.md
+
+  install -Dm 644 LICENSE.md $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

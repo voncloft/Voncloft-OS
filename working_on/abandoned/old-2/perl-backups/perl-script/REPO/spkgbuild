@@ -1,0 +1,8 @@
+
+
+
+build() {
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

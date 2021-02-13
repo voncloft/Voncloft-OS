@@ -1,0 +1,26 @@
+
+name=python-pipenv-to-requirements
+version=0.9.0
+release=3
+# description : Generate requirements[-dev].txt from Pipfile using pipenv"
+# depends :   python-pbr   python-pipenv  
+source="https://github.com/gsemet/pipenv-to-requirements/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd pipenv-to-requirements-$version
+  python setup.py build
+}
+
+check   {
+  cd pipenv-to-requirements-$version
+  pytest
+}
+
+package   {
+  cd pipenv-to-requirements-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

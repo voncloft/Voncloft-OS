@@ -1,0 +1,16 @@
+# description : python library for encoding
+# depends : python
+
+name=python-rencode
+version=1.0.6
+release=1
+
+source="https://pypi.io/packages/source/r/rencode/rencode-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd 
+ 	python setup.py build
+        python setup.py install --root=$PKG --optimize=1
+}

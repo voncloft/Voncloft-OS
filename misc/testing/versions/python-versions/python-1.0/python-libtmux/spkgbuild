@@ -1,0 +1,33 @@
+
+_name=libtmux
+name=python-libtmux
+version=0.8.5
+release=3
+# description : Python api for tmux"
+# depends :   python   tmux  
+source="https://github.com/tmux-python/${_name}/archive/v${version}.tar.gz" 
+# pypi sources don t include the tests:https://github.com/tmux-python/libtmux/issues/173
+# source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+build   {
+  cd "${_name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${_name}-${version}"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root=$PKG
+  # license
+  install -vDm 644 LICENSE \
+    -t "${PKG}/usr/share/licenses/${name}"
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

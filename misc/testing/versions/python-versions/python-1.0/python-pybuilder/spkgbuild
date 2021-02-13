@@ -1,0 +1,25 @@
+
+name=python-pybuilder
+version=0.11.17
+release=4
+# description : An extensible, easy to use continuous build tool for Python 
+# added dependencies of distutils plugin into pybuilder s depends
+# depends :   python-pip   python-pypandoc   python-tailer   python-tblib   python-twine   python-wheel  
+              python-pytddmon   python-unittest-xml-reporting   python-pyfix  
+source="https://github.com/pybuilder/pybuilder/archive/v$version.tar.gz" 
+
+prepare   {
+  cd pybuilder-$version
+  sed -i  s/"install_dependencies", //  setup.py
+  sed -i  s/project.plugin_depends_on "pypandoc", ".*$/project.plugin_depends_on "pypandoc" /  src/main/python/pybuilder/plugins/python/distutils_plugin.py
+}
+
+check   {
+  cd pybuilder-$version
+  python build.py -v analyze || warning "ignoring flake8 warnings"
+}
+
+package   {
+  cd pybuilder-$version
+  python setup.py install --root=$PKG -O1
+}

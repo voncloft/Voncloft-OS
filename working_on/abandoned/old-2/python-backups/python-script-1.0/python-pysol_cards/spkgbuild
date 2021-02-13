@@ -1,0 +1,18 @@
+# description : Deal PySol FC Cards
+# depends : python-pbr
+
+_pyname=pysol_cards
+url=https://pypi.org/project/pysol-cards/
+_pyname=pysol_cards
+name=python-$_pyname
+version=0.10.1
+release=3
+
+source="https://pypi.io/packages/source/p/$_pyname/$_pyname-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_pyname-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

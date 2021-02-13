@@ -1,0 +1,54 @@
+# description : A Python ASGI web microframework with the same API as Flask 
+# depends :  
+
+name=python-quart
+version=0.14.1
+release=1
+  hypercorn
+  python-aiofiles
+  python-blinker
+  python-click
+  python-itsdangerous
+  python-jinja
+  python-toml
+  python-werkzeug
+ 
+  git
+  python-setuptools
+ 
+  python-asynctest
+  python-distlib
+  python-hypothesis
+  python-pytest
+  python-pytest-asyncio
+  python-pytest-cov
+  python-pytest-sugar
+  python-tox
+ 
+
+version   {
+  cd quart
+
+  git describe --tags
+}
+
+build-old()   {
+  cd quart
+
+  python setup.py build-old()
+}
+
+check   {
+  cd quart
+
+  tox -e py39
+}
+
+build()   {
+  cd quart
+
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-quart/
+}
+
+# vim: ts=2 sw=2 et:

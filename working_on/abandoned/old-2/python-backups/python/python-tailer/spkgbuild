@@ -1,0 +1,27 @@
+# description : "A simple implementation of GNU tail and head"
+# depends : python
+
+name=python-tailer
+version=0.4.1
+release=5
+url="https://github.com/six8/pytailer"
+source="https://pypi.io/packages/source/t/tailer/tailer-$version.tar.gz"
+sha512sums=c1f0f4cf9356c58366e3d86087bc922378a5d5d9833385e8b0f9acd16211a7ff486c4ea3be13208b85a9766b3fa163071216de54c7170395c18ba6da61650da3
+
+build()-delete {
+   cd tailer-$version
+  python setup.py build
+}
+
+check {
+   cd tailer-$version
+  python -m doctest -v src/tailer/__init__.py
+}
+
+options="!checksum"
+
+build() {
+   cd tailer-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

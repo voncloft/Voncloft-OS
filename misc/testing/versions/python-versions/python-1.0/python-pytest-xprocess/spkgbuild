@@ -1,0 +1,28 @@
+
+_name=pytest-xprocess
+name=python-pytest-xprocess
+version=0.16.0
+release=1
+# description : Pytest plugin to manage external processes across test runs. 
+# depends :   python-psutil   python-pytest   python-setuptools  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+build   {
+  cd "${_name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${_name}-${version}"
+  export PYTHONPATH="."
+  py.test
+}
+
+package   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}

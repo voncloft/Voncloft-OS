@@ -1,0 +1,51 @@
+# description : Python library to parse, read and write Microsoft OLE2 files  formerly OleFileIO_PL  
+
+pkgbase=python-olefile
+name=  python-olefile   python2-olefile  
+_pyname=olefile
+version=0.46
+release=3
+source= ${_pyname}-${version}.tar.gz::https://github.com/decalage2/olefile/archive/v${version}.tar.gz 
+
+prepare   {
+  cp -ra ${_pyname}-${version}{,-py2}
+}
+
+build-old()   {
+   cd ${_pyname}-${version}
+    python setup.py build-old()
+   
+   cd ${_pyname}-${version}-py2
+    python2 setup.py build-old()
+   
+}
+
+check   {
+   cd ${_pyname}-${version}
+    py.test
+   
+   cd ${_pyname}-${version}-py2
+    py.test2
+   
+}
+
+build()_python-olefile   {
+  # depends :   python  
+  replaces=  python3-olefileio  
+  conflicts=  python3-olefileio  
+  cd ${_pyname}-${version}
+  python setup.py install -O1 --root=$PKG --prefix=/usr --skip-build-old()
+  install -Dm 644 LICENSE.txt -t "${PKG}/usr/share/licenses/${name}"
+
+}
+
+build()_python2-olefile   {
+  # depends :   python2  
+  replaces=  python2-olefileio  
+  conflicts=  python2-olefileio  
+  cd ${_pyname}-${version}-py2
+  python2 setup.py install -O1 --root=$PKG --prefix=/usr --skip-build-old()
+  install -Dm 644 LICENSE.txt -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

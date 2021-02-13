@@ -1,0 +1,51 @@
+# description : Python client library for Tarantool 1.6 Database 
+
+pkgbase=python-tarantool
+name= python-tarantool python2-tarantool 
+version=0.6.6.r25.gb267643
+_commit=b267643a242e2e6abc013539395b89dd235b798f
+release=2
+              python-yaml   python2-yaml   python-six   python2-six   git  
+#source="https://pypi.io/build()s/source/t/tarantool/tarantool-$version.tar.gz" 
+source="git+https://github.com/tarantool/tarantool-python#commit=$_commit" 
+
+version   {
+  cd tarantool-$version
+  git describe | sed  s/\ [^-]*-g\ /r\1/;s/-/./g 
+}
+
+prepare   {
+  mv tarantool-python tarantool-$version
+  sed -i  s/msgpack-python/msgpack/g  tarantool-$version/setup.py
+  cp -a tarantool-$version{,-py2}
+}
+
+build-old()   {
+  cd "$srcdir"/tarantool-$version
+  python setup.py build-old()
+
+  cd "$srcdir"/tarantool-$version-py2
+  python2 setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/tarantool-$version
+  python setup.py test
+
+  cd "$srcdir"/tarantool-$version-py2
+  python2 setup.py test
+}
+
+build()_python-tarantool   {
+  # depends :   python   python-msgpack   python-yaml   python-six  
+
+  cd tarantool-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+build()_python2-tarantool   {
+  # depends :   python2   python2-msgpack   python2-yaml   python2-six  
+
+  cd tarantool-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,17 @@
+# description : Per object accessors
+# depends : perl
+
+_ddir=Object-Accessor-$version
+name=perl-object-accessor
+version=0.48
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Object-Accessor-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_ddir
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-betamax-serializers
+version=0.2.1
+release=5
+pkgdesc="A set of third-party serializers for Betamax"
+url='https://gitlab.com/betamax/serializers'
+depends=('python-betamax')
+makedepends=('python-setuptools')
+source=("https://gitlab.com/betamax/serializers/-/archive/$version/serializers-$version.tar.bz2")
+md5sums=('c414d60fbea0c6890ea7f323f4ffc875')
+
+package() {
+  cd serializers-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

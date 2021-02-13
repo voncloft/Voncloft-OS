@@ -1,0 +1,35 @@
+# description : GraphQL framework for Python 
+# depends :  
+
+name=python-graphene
+version=3.0.0b7
+release=1
+  python-aniso8601
+  python-graphql-core
+  python-graphql-relay
+  python-six
+ 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd graphene
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd graphene
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd graphene
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-graphene
+}
+
+# vim: ts=2 sw=2 et:

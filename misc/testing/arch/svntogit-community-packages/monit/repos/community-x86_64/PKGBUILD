@@ -1,0 +1,32 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Geoffroy Carrier <geoffroy.carrier@aur.archlinux.org>
+# Contributor: Marco Bartholomew <marco@marcobartholomew.com>
+
+pkgname=monit
+pkgver=5.27.1
+pkgrel=1
+pkgdesc="Utility for managing and monitoring, processes, files, directories and devices on a *NIX system"
+arch=('x86_64')
+url="https://mmonit.com/monit/"
+license=('GPL3')
+depends=('openssl')
+backup=('etc/monitrc')
+changelog=$pkgname.changelog
+source=(https://mmonit.com/$pkgname/dist/$pkgname-$pkgver.tar.gz)
+sha256sums=('f57408d16185687513a3c4eb3f2bb72eef76331ac16210e9652e846e5c84ed51')
+
+build() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+
+  install -Dm700 monitrc "${pkgdir}"/etc/monitrc
+  install -Dm644 system/startup/$pkgname.service "${pkgdir}"/usr/lib/systemd/system/$pkgname.service
+}

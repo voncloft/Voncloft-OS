@@ -1,0 +1,34 @@
+# description : "Find changelog for github repository, local dir, parse changelog"
+# depends : python-requests
+
+_name=dephell_changelogs
+name=python-dephell-changelogs
+version=0.0.1
+release=3
+url="https://github.com/dephell/${_name}"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+sha256sums=e639a3d08d389e22fbac0cc64181dbe93c4b4ba9f0134e273e6dd3e26ae70b21
+b2sums=6ec5383ff411e944ea90ae1a47061fdbd3f8bb5cfe9342936a3bebe8fc1e1791f7a5b7dfdb6d2d25bcee3ab1bf28d8bbf9101bb5d317afb5705e909964c49f68
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

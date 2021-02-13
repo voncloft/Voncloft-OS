@@ -1,0 +1,29 @@
+# description : Perl/CPAN Module POE::Component::Resolver
+# depends : perl-poe
+
+name=perl-poe-component-resolver
+version=0.921
+release=6
+url=https://search.cpan.org/dist/POE-Component-resolver
+source="https://search.cpan.org/CPAN/authors/id/R/RC/RCAPUTO/POE-Component-Resolver-$version.tar.gz"
+options="!checksum"
+md5sums=3c7afadc3f0e8bf75947978b746d2b02
+
+build-delete {
+   cd $sr cdir/POE-Component-Resolver-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/POE-Component-Resolver-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

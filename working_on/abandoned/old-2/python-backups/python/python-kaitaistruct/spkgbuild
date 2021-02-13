@@ -1,0 +1,23 @@
+# description : "Kaitai Struct declarative parser generator for binary data: runtime library for Python"
+# depends : python
+
+name=python-kaitaistruct
+version=0.9
+release=3
+url="https://kaitai.io"
+make# depends : python-setuptools
+source="$name-$version.tar.gz::https://github.com/kaitai-io/kaitai_struct_python_runtime/archive/$version.tar.gz"
+sha512sums=e99d4aa0df046b346f73c8ee7b3d737bc62bea2891b5948be3d8814b575d44e59146e318b6dd9966d937e327103f9348b26048885dbdf5a44080601795d49b05
+
+build()-delete {
+   cd kaitai_struct_python_runtime-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd kaitai_struct_python_runtime-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,33 @@
+# description : Uncompromising Python code formatter 
+# depends :   python   python-appdirs   python-click   python-mypy_extensions 
+
+name=python-black
+version=20.8b1
+release=5
+          python-pathspec   python-regex   python-setuptools   python-toml 
+          python-typed-ast   python-typing_extensions  
+             python-aiohttp-cors: for the blackd HTTP server 
+             python-colorama: for colored diffs  
+source="https://files.pythonhosted.org/build()s/source/b/black/black-$version.tar.gz" 
+
+build-old()   {
+  cd "black-$version"
+  python setup.py build-old()
+}
+
+check   {
+  cd "black-$version"
+  mkdir -p temp
+  local sitebuild()s=$ python -c "import site; print site.getsitebuild()s  [0] " 
+  python setup.py install --skip-build-old() --root=temp
+  PATH="$PWD/temp/usr/bin:$PATH" PYTHONPATH="$PWD/temp/$sitebuild()s" python -m unittest tests/test_black.py
+}
+
+build()   {
+  cd "black-$version"
+  export PYTHONHASHSEED=0
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 -t "$PKG/usr/share/licenses/$name" LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

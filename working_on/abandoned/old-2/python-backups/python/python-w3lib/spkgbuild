@@ -1,0 +1,29 @@
+# description : "Library of web-related functions"
+# depends : python-six
+
+name=python-w3lib
+version=1.22.0
+release=3
+url="https://w3lib.readthedocs.org"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="$pkgbase-$version.tar.gz::https://github.com/scrapy/w3lib/archive/v$version.tar.gz"
+sha512sums=14e12726ca46a60d0a86f670f8b19415c2a6e304eeb9a152008a2d1ea81267ddc5ff36b47fdd308bb4764869ffff61e2c243c20cfe85f79a8eb7e31ba85d46dd
+
+build()-delete {
+   cd "$srcdir"/w3lib-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/w3lib-$version
+  py.test
+}
+
+options="!checksum"
+
+build() {
+   cd w3lib-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

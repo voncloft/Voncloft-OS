@@ -1,0 +1,23 @@
+# Maintainer: Jonathan Steel <jsteel at archlinux.org>
+# Contributor: Chris Severance aur.severach AatT spamgourmet.com
+
+name=python-s3transfer
+version=0.3.4
+release=1
+pkgdesc='Amazon S3 Transfer Manager for Python'
+url="https://github.com/boto/s3transfer"
+depends=('python-botocore')
+makedepends=('python-setuptools')
+source=($name-$version.tar.gz::$url/archive/$version.tar.gz)
+md5sums=('4bef72f442504d565786f675af522ca5')
+
+build() {
+  cd s3transfer-$version
+  python setup.py build
+}
+
+package() {
+  cd s3transfer-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

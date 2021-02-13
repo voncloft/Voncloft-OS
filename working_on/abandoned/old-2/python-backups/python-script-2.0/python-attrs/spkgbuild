@@ -1,0 +1,19 @@
+# description : Attributes without boilerplate.
+  # depends : python
+  # depends : python2
+
+url=https://attrs.readthedocs.org/
+name=python-attrs python2-attrs
+version=20.3.0
+release=3
+
+source="https://pypi.io/packages/source/a/attrs/attrs-$version.tar.gz"
+
+build() {
+   cd attrs-$version
+   cd attrs-$version-py2
+   cd attrs-$version
+   cd attrs-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

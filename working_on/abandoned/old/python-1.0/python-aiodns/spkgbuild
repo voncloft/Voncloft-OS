@@ -1,0 +1,30 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+
+name=python-aiodns
+version=2.0.0
+release=4
+pkgdesc='Simple DNS resolver for asyncio'
+url=https://github.com/saghul/aiodns
+depends=('python-pycares')
+makedepends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/a/aiodns/aiodns-$version.tar.gz")
+sha256sums=('815fdef4607474295d68da46978a54481dd1e7be153c7d60f9e72773cd38d77d')
+
+build() {
+  cd aiodns-$version
+  python setup.py build
+}
+
+# test_gethostbyaddr fails
+#check() {
+#  cd aiodns-$version
+#  python tests.py
+#}
+
+package() {
+  cd aiodns-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 -t "$pkgdir"/usr/share/licenses/$name LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

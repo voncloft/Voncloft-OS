@@ -1,0 +1,35 @@
+# description : The DBI of event loop programming
+# depends : perl
+
+name=perl-anyevent
+version=7.17
+release=3
+epoch=4
+url=https://metacpan.org/release/AnyEvent
+check# depends : glib-perl perl-async-interrupt perl-ev perl-net-ssleay
+opt# depends : perl-async-interrupt: for fast signal handling
+            perl-ev: for the recommended EV event loop backend
+            perl-guard: to speed up guards
+            perl-json: send or receive JSON with AnyEvent::Handle
+            perl-json-xs: send or receive JSON with AnyEvent::Handle
+            perl-net-ssleay: TLS/SSL connections with AnyEvent::Handle
+source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/AnyEvent-$version.tarsource=.gz"
+options=!checksum
+sha512sums=c553cce80fa14e2f91031c569d1c30acf470871ddd1c122fa3dd36cd1ba5b7002e7ba1dea4c950d889c7c661b81042dd97975e195a5325190ad644babff81e0a
+
+build-delete {
+  cd AnyEvent-$version
+  PERL_CANARY_STABILITY_NOPROMPT=1 \
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd AnyEvent-$version
+  PERL_ANYEVENT_LOOP_TESTS=true make test
+}
+
+build() {
+  cd AnyEvent-$version
+  make DESTDIR=$PKG install
+}

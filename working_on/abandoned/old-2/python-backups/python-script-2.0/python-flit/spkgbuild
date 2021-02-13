@@ -1,0 +1,18 @@
+# description : Simplified packaging of Python modules
+# depends : python python-flit-core python-requests python-docutils python-pytoml
+
+url=https://github.com/takluyver/flit
+_name=flit
+name=$pkgbase{,-core}
+version=3.0.0
+release=3
+
+source="$url/archive/$version.tar.gz"
+
+build() {
+   cd $_name-$version
+   cd $_name-$version/flit_core
+   cd flit_core
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

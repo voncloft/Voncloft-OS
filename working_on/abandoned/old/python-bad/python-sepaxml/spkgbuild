@@ -1,0 +1,26 @@
+# description : SEPA Direct Debit XML generation in python"
+# depends :   python   python-lxml   python-text-unidecode   python-xmlschema  
+
+name="python-sepaxml"
+version="2.2.0"
+release=4
+source= ${name}-${version}.tar.gz::https://github.com/raphaelm/python-sepaxml/archive/${version}.tar.gz 
+
+build-old()   {
+  cd "${name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${name}-${version}"
+  PYTHONPATH=. pytest
+}
+
+build()   {
+  cd "${name}-${version}"
+  python setup.py install -O1 --root=$PKG --skip-build-old()
+
+  install -Dm644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

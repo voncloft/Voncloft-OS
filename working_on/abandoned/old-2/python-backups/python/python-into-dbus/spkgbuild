@@ -1,0 +1,33 @@
+# description : Facilities for converting an object that inhabits core Python types, e.g., lists, ints, dicts, to an object that inhabits dbus-python types, e.g., dbus.Array, dbus.UInt32, dbus.Dictionary based on a specified dbus signature.
+# depends : python-dbus python-dbus-signature-pyparsing
+
+name=python-into-dbus
+_srcname=into-dbus-python
+version=0.06
+release=8
+url="https://github.com/stratis-storage/$_srcname"
+make# depends : git python-pylint
+check# depends : python-nose python-hypothesis python-hs-dbus-signature
+source=
+  "${_srcname}-${version}.tar.gz::https://github.com/stratis-storage/${_srcname}/archive/v${version}.tar.gz"
+
+sha256sums=
+  e2ec6496e55d1bc560db1075ad2038b760e01b9ad425c8d8632e6b0873b588cb
+
+
+check {
+   cd "${_srcname}-${version}"
+  nosetests || true # test failing for now
+}
+
+options="!checksum"
+
+build() {
+   cd "${_srcname}-${version}"
+
+  install -d -m 755 "${PKG}/usr/share/licenses/${name}"
+
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}
+

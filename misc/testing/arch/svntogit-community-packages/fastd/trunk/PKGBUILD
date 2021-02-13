@@ -1,0 +1,47 @@
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Baptiste Jonglez <archlinux at bitsofnetworks dot org>
+# Contributor: NeoRaider
+
+pkgname=fastd
+arch=("x86_64")
+pkgver=21
+pkgrel=2
+pkgdesc="Fast and secure tunneling daemon"
+makedepends=('meson')
+checkdepends=('cmocka')
+depends=('libcap' 'gcc-libs' 'libuecc>=6' 'libsodium' 'json-c' 'openssl')
+url="https://projects.universe-factory.net/projects/fastd"
+license=('BSD')
+source=("https://projects.universe-factory.net/attachments/download/86/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('942f33bcd794bcb8e19da4c30c875bdfd4d0f1c24ec4dcdf51237791bbfb0d4c')
+sha512sums=('e6293559cabd186b5e784fd97dd4f33159980699532c7713264404d105d7a0923e417c43e639ef845d80088abec534a7417b2e5eaf39a65be431d1985c2e5ca4')
+
+build() {
+  cd "$srcdir/fastd-${pkgver}"
+  meson setup               \
+    --prefix=/usr           \
+    -Dbuildtype=release     \
+    -Db_lto=true            \
+    -Dsystemd=enabled       \
+    -Dbuild_tests=true      \
+    . "$srcdir/build-${pkgver}"
+
+  cd "$srcdir/build-${pkgver}"
+  ninja
+}
+
+check() {
+  cd "$srcdir/build-${pkgver}"
+  ninja test
+}
+
+package() {
+  cd "$srcdir/build-${pkgver}"
+  DESTDIR="$pkgdir" ninja install
+  
+  install -dm755 "${pkgdir}/etc/fastd/"
+  
+  install -Dm644 "$srcdir/${pkgname}-${pkgver}/COPYRIGHT" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm644 "$srcdir/${pkgname}-${pkgver}/doc/examples/fastd@.service" "${pkgdir}/usr/lib/systemd/system/fastd@.service"
+  install -Dm644 "$srcdir/${pkgname}-${pkgver}/doc/fastd.1" "${pkgdir}/usr/share/man/man1/fastd.1"
+}

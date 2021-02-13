@@ -1,0 +1,16 @@
+# description : Utilities to read and manipulate patches and CVS
+# depends : perl
+
+name=perl-patchreader
+version=0.9.6
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/T/TM/TMANNERM/PatchReader-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd  PatchReader-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

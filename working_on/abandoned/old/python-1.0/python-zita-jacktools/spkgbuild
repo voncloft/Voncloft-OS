@@ -1,0 +1,35 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=zita-jacktools
+name=python-zita-jacktools
+version=1.2.0
+release=2
+pkgdesc="Audio tools running as a Jack client"
+url="https://kokkinizita.linuxaudio.org/linuxaudio"
+depends=('python-zita-audiotools' 'zita-convolver' 'zita-jclient')
+makedepends=('python-setuptools')
+source=("https://kokkinizita.linuxaudio.org/linuxaudio/downloads/${_name}-${version}.tar.bz2")
+sha512sums=('68771fcb59aa5f9b915c1963a8da8615d701dbfb16d618b64b2e13fbb64a2a02b5525e15a74916138601eb1310b862c09e25c62977ea52802d59c8e12453bcc6')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${pkgdir}"
+  for example in {JackLR4filt,JackGainctl,JackIECfilt,JackPeaklim,JackPlayer,utils,JackParameq,JackSignal,JackNmeter}; do
+    install -vDm 644 "examples/${example}/"*.py \
+      -t "${pkgdir}/usr/share/doc/${name}/examples/${example}"
+  done
+  install -vDm 644 examples/JackMatrix/{README,presets,*.py} \
+    -t "${pkgdir}/usr/share/doc/${name}/examples/JackMatrix"
+}

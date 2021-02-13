@@ -1,0 +1,35 @@
+# description : XS implementation of parts of Class::Load
+# depends : perl-class-load
+
+name=perl-class-load-xs
+_name=Class-Load-XS
+version=0.10
+release=8
+url=https://metacpan.org/release/Class-Load-XS
+check# depends : perl-module-implementation perl-test-fatal perl-test-needs
+              perl-test-without-module
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Class-Load-XS-${version}.tar.gz"
+options="!checksum"
+sha512sums=16ab845dc393567f0b0e9597eda7d7678b8a41d218823a166ba cdfd4dc93e704a6aff98662340b8d7f4d045a60530071bb84ea8da8be5a6930af47722207d126
+
+build-delete {
+   cd Class-Load-XS-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Class-Load-XS-$version
+  make test
+}
+
+build() {
+   cd Class-Load-XS-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

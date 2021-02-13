@@ -1,0 +1,23 @@
+
+name=python-fuzzywuzzy
+version=0.18.0
+release=3
+# description : Fuzzy string matching like a boss"
+# depends :   python  
+source="https://github.com/seatgeek/fuzzywuzzy/archive/$version/$name-$version.tar.gz" 
+
+build   {
+  cd fuzzywuzzy-$version
+  python setup.py build
+}
+
+check   {
+  cd fuzzywuzzy-$version
+  #https://github.com/seatgeek/fuzzywuzzy/issues/284
+  pytest --deselect test_fuzzywuzzy_pytest.py::test_process_warning
+}
+
+package   {
+  cd fuzzywuzzy-$version
+  python setup.py install --root="$PKG/" --optimize=1
+}

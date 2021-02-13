@@ -1,0 +1,29 @@
+# description : Pick a language based on users preferences
+# depends : perl>=5.10.0
+
+name=perl-lingua-preferred
+version=0.2.4
+release=8
+url=https://search.cpan.org/dist/Lingua-Preferred
+source="https://www.cpan.org/authors/id/E/ED/EDAVIS/Lingua-Preferred-$version.tar.gz"
+options="!checksum"
+sha256sums=fa58c4fac6b676f78caad6b472a785dd0c8fa67004a62294fbcfa3a3eb243c83
+
+build-delete {
+  cd  $srcdir/Lingua-Preferred-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Lingua-Preferred-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,38 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=Xmonk
+pkgname=xmonk.lv2
+pkgver=0.4
+pkgrel=1
+pkgdesc="A LV2 toy"
+arch=('x86_64')
+url="https://github.com/brummer10/Xmonk.lv2"
+license=('BSD')
+groups=('lv2-plugins' 'pro-audio')
+depends=('cairo' 'gcc-libs' 'glibc' 'libx11')
+makedepends=('lv2')
+checkdepends=('lv2lint' 'sord')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/brummer10/${pkgname}/releases/download/${pkgver}/${_name}_${pkgver}.tar.gz")
+sha512sums=('c4dff2b0e5e8d3ac8b1daeec96f1a17466c99a542cc420aa2a0dee55dbd17b72dc7c8c37348b09cc9faf8a0ee67fa1fab566a0472a1960a46268618b06758f9e')
+
+prepare() {
+  mv -v "${_name}_${pkgver}" "${pkgname}-${pkgver}"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  LV2_PATH="${PWD}/${_name}" lv2lint "https://github.com/brummer10/Xmonk.lv2" || echo "Known to fail: https://github.com/brummer10/Xmonk.lv2/issues/3"
+  sord_validate "${PWD}/${_name}/${_name}.lv2/"*.ttl || echo "Known to fail: https://github.com/brummer10/Xmonk.lv2/issues/3"
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

@@ -1,0 +1,27 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Zanny <lordzanny@gmail.com>
+# Contributor: Ivan Shapovalov <intelfx@intelfx.name>
+
+pkgname=clinfo
+pkgver=3.0.20.11.20
+pkgrel=1
+pkgdesc="Simple OpenCL application that enumerates all available platform and device properties"
+arch=(x86_64)
+url="https://github.com/Oblomov/clinfo"
+license=('custom:Public Domain')
+depends=(opencl-icd-loader)
+makedepends=(opencl-headers)
+source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('3c506083e72e9ee09fc7d5de513be7c5eff0284f198a60fb60ab493f6f0a549a')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  install -Dm755 clinfo -t "${pkgdir}"/usr/bin/
+  install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}
+  install -Dm644 man1/clinfo.1 -t "${pkgdir}"/usr/share/man/man1/
+}

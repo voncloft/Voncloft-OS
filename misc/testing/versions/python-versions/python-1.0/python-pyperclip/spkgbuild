@@ -1,0 +1,34 @@
+
+name=python-pyperclip
+version=1.8.1
+_commit=09abcb63fa5a6ac9afa3b11def604b059b943b6b
+release=3
+# description : A cross-platform clipboard module for Python"
+# GTK/Qt tests crash xvfb, and Klipper tests require a running klipper
+# depends :   python  
+             xsel: xsel backend 
+             plasma-workspace: klipper backend  
+
+source="$pkgbase-$_commit.tar.gz::https://github.com/asweigart/pyperclip/archive/$_commit.tar.gz" 
+
+prepare   {
+  mv pyperclip-{$_commit,$version}
+}
+
+build   {
+  cd pyperclip-$version
+  python setup.py build
+}
+
+check   {
+  cd pyperclip-$version
+  PYTHONPATH="$PWD/build/lib:$PYTHONPATH" xvfb-run py.test
+}
+
+package   {
+  cd pyperclip-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}
+
+# vim:set ts=2 sw=2 et:

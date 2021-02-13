@@ -1,0 +1,35 @@
+# description : Perl Module: Keyed-Hashing for Message Authentication.
+# depends : perl-digest-sha1 perl
+
+name=perl-digest-hmac
+_realname=Digest-HMAC
+version=1.03
+release=9
+url=https://search.cpan.org/dist/Digest-HMAC/
+source="https://www.cpan.org/authors/id/G/GA/GAAS/Digest-HMAC-$version.tar.gz"
+options="!checksum"
+md5sums=e6a5d6f552da16eacb5157ea4369ff9d
+
+build-delete {
+   cd Digest-HMAC-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Digest-HMAC-$version
+  make test
+}
+
+build() {
+   cd Digest-HMAC-$version
+  make install DESTDIR=$PKG
+}
+
+# vim: ts=2 sw=2 et ft=sh
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

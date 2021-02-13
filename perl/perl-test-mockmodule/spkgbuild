@@ -1,0 +1,16 @@
+# description : Override subroutines in a module for unit testing
+# depends : perl-super
+
+name=perl-test-mockmodule
+version=0.176.0
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/G/GF/GFRANKS/Test-MockModule-v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd Test-MockModule-v$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

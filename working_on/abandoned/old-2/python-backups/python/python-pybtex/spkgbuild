@@ -1,0 +1,33 @@
+# description : "A BibTeX-compatible bibliography processor written in Python"
+# depends : python python-setuptools python-six python-yaml python-latexcodec
+
+name=python-pybtex
+version=0.24.0
+release=1
+url="https://pybtex.org"
+# Overridden in package_* functions
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://pypi.io/packages/source/p/pybtex/pybtex-$version.tar.gz"
+sha256sums=818eae35b61733e5c007c3fcd2cfb75ed1bc8b4173c1f70b56cc4c0802d34755
+
+build()-delete {
+   cd "$srcdir/pybtex-$version"
+  python setup.py build
+}
+
+check {
+   cd "$srcdir/pybtex-$version"
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/pybtex-$version"
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+  # Files under site-packages/tests/ conflict with other python packages.
+  rm -rf $PKG/usr/lib/python3.?/site-packages/tests/
+}

@@ -1,0 +1,22 @@
+# description : SOCKS4, SOCKS5 or HTTP proxy Anorov fork PySocks replaces socksipy
+  # depends : python
+  # depends : python2
+
+_commit=f660e75d4844e64e4b162b0c01f8df8d866ee000
+url=https://github.com/Anorov/PySocks
+name=python-pysocks python2-pysocks
+version=1.7.1
+release=3
+
+source=""::https://github.com/Anorov/PySocks/archive/$_commit.tar.gz"
+
+build() {
+   cd $srcdir/PySocks-$version
+   cd $srcdir/PySocks-$version-py2
+   cd $srcdir/PySocks-$version-py2/test
+   cd $srcdir/PySocks-$version/test
+   cd PySocks-$version
+   cd PySocks-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,29 @@
+# description : Heavily simplified scipy.signal.spectral module
+# depends : python python-numpy
+
+_name=simplespectral
+name=python-$_name
+version=1.0.0
+release=7
+url=https://github.com/xmikos/simplespectral
+make# depends : python-setuptools
+opt# depends : python-scipy: faster FFT calculations with scipy.fftpack library
+replaces=simplespectral
+source="$name-$version.tar.gz::https://github.com/xmikos/simplespectral/archive/v$version.tar.gz"
+sha256sums=4342741f7054c71f7c5fb9d38df49e048e0a4e20eb53cefd247e47937644cad0
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG
+
+}

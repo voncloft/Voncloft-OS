@@ -1,0 +1,41 @@
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Contributor: Drew DeVault
+
+pkgname=mako
+pkgver=1.4.1
+pkgrel=2
+license=('MIT')
+pkgdesc='Lightweight notification daemon for Wayland'
+makedepends=("meson" "scdoc" "systemd" "wayland-protocols")
+depends=(
+	"gdk-pixbuf2"
+	"pango"
+	"systemd-libs"
+	"wayland"
+)
+optdepends=(
+	"jq: Required for the menu sub-command"
+)
+arch=("x86_64")
+url='https://mako-project.org'
+source=(
+	"$pkgname-$pkgver.tar.gz::https://github.com/emersion/mako/releases/download/v$pkgver/mako-$pkgver.tar.gz"
+	"$pkgname-$pkgver.tar.gz.sig::https://github.com/emersion/mako/releases/download/v$pkgver/mako-$pkgver.tar.gz.sig"
+)
+validpgpkeys=("34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48")  # emersion
+sha256sums=('27ab63264a74389de2119393fe64fd578a4c1d04c8409990ef7cfbb6eb9309bb'
+            'SKIP')
+
+
+build() {
+	meson --prefix /usr \
+		--buildtype=plain \
+		-Dzsh-completions=true \
+		"$pkgname-$pkgver" build
+	ninja -C build
+}
+
+package() {
+	DESTDIR="$pkgdir" ninja -C build install
+	install -Dm644 "$pkgname-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

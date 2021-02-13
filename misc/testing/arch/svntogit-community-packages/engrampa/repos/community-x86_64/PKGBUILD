@@ -1,0 +1,40 @@
+# Maintainer: Brad Fanella <cesura@archlinux.org>
+# Contributor: Martin Wimpress <code@flexion.org>
+
+pkgname=engrampa
+pkgver=1.24.1
+pkgrel=1
+pkgdesc="Archive manipulator for MATE"
+url="https://mate-desktop.org"
+arch=('x86_64')
+license=('GPL')
+depends=('gtk3' 'gzip' 'gettext' 'libarchive' 'tar' 'unzip' 'zip')
+makedepends=('caja' 'itstool' 'python')
+optdepends=('caja: Caja support'
+	    'p7zip: 7Z and ARJ archive support'
+            'unace: ACE archive support'
+            'unrar: RAR archive support'
+	    'brotli: Brotli compression support')
+groups=('mate-extra')
+conflicts=("engrampa-gtk3")
+replaces=("engrampa-gtk3")
+source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('fe24e04efb34a67374d2a46a3bf2a0a445b77e0ec43216e4c3f14e5cd0b7722a')
+
+build() {
+    	cd "${pkgname}-${pkgver}"
+    	./configure \
+        	--prefix=/usr \
+        	--libexecdir=/usr/lib/${pkgname} \
+        	--disable-packagekit
+
+    	#https://bugzilla.gnome.org/show_bug.cgi?id=656231
+    	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+    	make
+}
+
+package() {
+    	cd "${pkgname}-${pkgver}"
+    	make DESTDIR="${pkgdir}" install
+}

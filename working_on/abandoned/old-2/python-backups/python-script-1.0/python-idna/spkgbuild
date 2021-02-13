@@ -1,0 +1,19 @@
+# description : Internationalized Domain Names in Applications IDNA
+   # depends : python
+   # depends : python2
+
+url=https://github.com/kjd/idna
+name=python-idna python2-idna
+version=2.10
+release=3
+
+source="https://pypi.io/packages/source/i/idna/idna-$version.tar.gz"
+
+build() {
+    cd $srcdir/idna-$version
+    cd $srcdir/idna-$version-py2
+    cd idna-$version
+    cd idna-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

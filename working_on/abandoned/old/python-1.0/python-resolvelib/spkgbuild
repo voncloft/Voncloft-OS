@@ -1,0 +1,41 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-resolvelib
+name=(python-resolvelib python2-resolvelib)
+version=0.5.4
+release=1
+pkgdesc="Resolve abstract dependencies into concrete ones"
+url="https://github.com/sarugaku/resolvelib"
+makedepends=('python-setuptools' 'python2-setuptools')
+checkdepends=('python-commentjson' 'python-pytest-runner')
+source=("$pkgbase-$version.tar.gz::https://github.com/sarugaku/resolvelib/archive/$version.tar.gz")
+sha512sums=('9e6a92df27c9411d20a476fb222b865b3e7ec72bcfcb37c0ba77fe8d5912379eecd0e051850d443e756f36e012e8aa705442b880b4bdbfd8569b8fc887ef9f3c')
+
+build() {
+  cd resolvelib-$version
+  python setup.py build
+  python2 setup.py build
+}
+
+check() {
+  cd resolvelib-$version
+  python setup.py pytest
+}
+
+package_python-resolvelib() {
+  depends=('python')
+
+  cd resolvelib-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}
+
+package_python2-resolvelib() {
+  depends=('python2')
+
+  cd resolvelib-$version
+  python2 setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

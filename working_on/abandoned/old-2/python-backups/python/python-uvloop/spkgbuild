@@ -1,0 +1,28 @@
+# description : Ultra fast asyncio event loop
+# depends : python libuv
+
+_name=uvloop
+name=python-$_name
+version=0.14.0
+release=3
+url=https://github.com/MagicStack/uvloop
+make# depends : python-setuptools cython
+source="$name-$version.tar.gz::$url/archive/v$version.tar.gz"
+sha512sums=709207480d724a59223eb60f71e893d70117fa463f40d44295ded23c953900e36d6f8277443838390f4e2d4f2da3fea18397c6576b01921aae590caedd522b1d
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build build()_ext --use-system-libuv
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+

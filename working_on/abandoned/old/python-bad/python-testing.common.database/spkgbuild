@@ -1,0 +1,24 @@
+# description : Utilities for testing.* build()s 
+# depends :  python 
+
+name=python-testing.common.database
+version=2.0.3
+release=5
+source="$name-$version.tar.gz"::"https://github.com/tk0miya/testing.common.database/archive/$version.tar.gz" 
+
+prepare   {
+  cd testing.common.database-$version
+
+  #https://github.com/tk0miya/testing.common.database/issues/21
+  sed -i  s|2\.0\.2|2.0.3|  setup.py
+}
+
+build-old()   {
+  cd testing.common.database-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd testing.common.database-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

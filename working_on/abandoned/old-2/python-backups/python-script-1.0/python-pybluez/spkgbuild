@@ -1,0 +1,16 @@
+# description : Python wrapper for the BlueZ Bluetooth stack
+  # depends : python bluez-libs
+  # depends : python2 bluez-libs
+
+url=http://karulis.github.io/pybluez/
+name=python-pybluez python2-pybluez
+version=0.22
+release=6
+
+source="https://github.com/karulis/pybluez/archive/$version.tar.gz"
+
+build() {
+   cd $srcdir/pybluez-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-openapi-spec-validator
+version=0.2.9
+release=3
+pkgdesc="A Python library that validates OpenAPI Specs against the OpenAPI 2.0 (aka Swagger) and OpenAPI 3.0.0 specification"
+url="https://github.com/p1c2u/openapi-spec-validator"
+depends=('python-six' 'python-yaml' 'python-jsonschema')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-mock' 'python-pytest-flake8' 'python-pytest-cov'
+              'python-tox')
+source=("$name-$version.tar.gz::https://github.com/p1c2u/openapi-spec-validator/archive/$version.tar.gz")
+sha512sums=('29c6e6d343895069317ea69ade3e370416c8172db432187e6b64957468a9a1c69de510990f791ffeadb00591cc4bd2ebaed7ef0120fb9f6c3ed3fe25f6c28261')
+
+build() {
+  cd openapi-spec-validator-$version
+  python setup.py build
+}
+
+check() {
+  cd openapi-spec-validator-$version
+  python setup.py pytest
+}
+
+package() {
+  cd openapi-spec-validator-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

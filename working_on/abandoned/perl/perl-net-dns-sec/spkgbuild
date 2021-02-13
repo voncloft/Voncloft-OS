@@ -1,0 +1,36 @@
+# description : DNSSEC extensions to Net::DNS
+# depends : perl-crypt-openssl-bignum perl-crypt-openssl-dsa perl-crypt-openssl-rsa perl-digest-bubblebabble perl-mime-base32 perl-net-dns perl
+
+name=perl-net-dns-sec
+version=1.18
+release=1
+check# depends : perl-test-pod
+url=https://search.mcpan.org/dist/Net-DNS-SEC
+source="https://search.mcpan.org/CPAN/authors/id/N/NL/NLNETLABS/Net-DNS-SEC-$version.tar.gz"
+options="!checksum"
+sha512sums=44f1bb cd9b5c8759ccbb8a9c40efb3d0533a991d6d9aec63ec8b1347a4cbf314470efebe4e5bc59fb19427405a4b8d41682c5231427783cace8f9779bc cdc893
+_distdir=Net-DNS-SEC-$version
+
+build-delete {
+   cd $sr cdir/$_distdir
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd $sr cdir/$_distdir
+  make test
+}
+
+build() {
+   cd $sr cdir/$_distdir
+  make DESTDIR=$PKG/ install
+}
+
+# vim:set ts=2 sw=2 et:
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

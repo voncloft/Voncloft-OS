@@ -1,0 +1,47 @@
+# description : Wrapper for the various Internet Archive APIs IA-S3, Metadata API, etc
+# depends : python
+
+name=python-internetarchive
+version=1.9.9
+release=1
+url=https://github.com/jjjake/ia-wrapper
+         python-setuptools
+         python-six
+         python-yaml
+         python-requests
+         python-jsonpatch
+         python-docopt
+         python-jsonpointer
+         python-args
+         python-tqdm
+         python-schema
+        
+opt# depends : python-ujson: faster json parsing
+            python-gevent: concurrent downloads
+            cython: speedups
+check# depends : python-responses
+              python-pytest
+             
+source="${name}-${version}.tar.gz::https://github.com/jjjake/internetarchive/archive/v${version}.tar.gz"
+sha256sums=cbc3176e861faaa976eed03c28e1514c41fb466409d20e3874dbef192b78501c
+
+build()-delete {
+   cd internetarchive-${version}
+  python setup.py build
+}
+
+check {
+   cd internetarchive-${version}
+
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd internetarchive-${version}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+
+}
+

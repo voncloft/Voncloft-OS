@@ -1,0 +1,16 @@
+# description : html xml parser
+# depends : python3
+
+name=python3-beautifulssoup4
+version=4.9.3
+release=3
+
+source="https://pypi.io/packages/source/b/beautifulsoup4/beautifulsoup4-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd beautifulsoup4-$version
+	python3 setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1
+}

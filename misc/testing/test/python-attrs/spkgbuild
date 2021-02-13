@@ -1,0 +1,38 @@
+# description : "Attributes without boilerplate."
+
+pkgbase=python-attrs
+name=('python-attrs' 'python2-attrs')
+version=20.3.0
+release=3
+source=("https://pypi.io/packages/source/a/attrs/attrs-$version.tar.gz")
+
+prepare() {
+  cp -a attrs-$version{,-py2}
+}
+
+build-remove() {
+  cd "$srcdir"/attrs-$version
+  python setup.py build
+
+  cd "$srcdir"/attrs-$version-py2
+  python2 setup.py build
+}
+
+check() {
+  cd attrs-$version
+  python setup.py pytest
+}
+
+package_python-attrs() {
+  # depends : ('python')
+
+  cd attrs-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}
+
+package_python2-attrs() {
+  # depends : ('python2')
+
+  cd attrs-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1 --skip-build
+}

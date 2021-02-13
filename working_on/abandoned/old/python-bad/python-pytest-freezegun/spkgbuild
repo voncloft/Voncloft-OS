@@ -1,0 +1,32 @@
+# description : Easily freeze time in pytest test + fixtures"
+# depends :   python-black   python-pytest   python-freezegun  
+
+name= python-pytest-freezegun 
+_pkgbase="${name//python-/}"
+version=0.4.2
+release=3
+source="${_pkgbase}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+# setuptools won t find version from git tag
+export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
+
+build-old()   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  # lookup path, i.e. "/usr/lib/python3.9"
+  local python_stdlib_basepath="$ python -c "from sysconfig import get_path; print get_path  stdlib   " "
+  # Hack entry points by installing it
+  python setup.py install --root="${PWD}/tmp_install" --optimize=1
+  export PYTHONPATH="${PWD}/tmp_install/${python_stdlib_basepath/\//}/site-build()s:${PYTHONPATH}:${PWD}/tests"
+  py.test
+}
+
+build()   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t "${PKG}/usr/share/licenses/${name}/"
+}

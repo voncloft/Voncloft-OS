@@ -1,0 +1,29 @@
+# Maintainer: Xyne <ca dot archlinux at xyne, backwards>
+# Contributor: Jaroslaw Swierczynski <swiergot@aur.archlinux.org>
+# Contributor: eric <eric@archlinux.org>
+# Contributor: Markus Meissner <markus@meissna.de>
+
+pkgname=bchunk
+pkgver=1.2.2
+pkgrel=5
+pkgdesc="A Tool to Convert *.raw *.bin files to an ISO file"
+url="http://he.fi/bchunk/"
+arch=('x86_64')
+license=('GPL')
+depends=('glibc')
+source=(http://he.fi/$pkgname/$pkgname-$pkgver.tar.gz)
+sha512sums=('94fcc1dea3a38a907b3f209c20f3de54028cc34bf8964d1dccf94faf3ca3851270cc8e052c29a3f04c60e525c029ebfb1c3c04fa85525e20273ac8d72cb317c8')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -dm755 "$pkgdir"/usr/{bin,share/man/man1}
+  make PREFIX="$pkgdir/usr" MAN_DIR="$pkgdir/usr/share/man" install
+  chown root:root "$pkgdir/usr/share/man/man1/bchunk.1"
+}
+
+# vim: ts=2 sw=2 et ft=sh

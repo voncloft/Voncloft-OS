@@ -1,0 +1,23 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Jonathan Kotta <jpkotta AT gmail DOT com>
+
+name=python-sqlparse
+version=0.4.1
+release=3
+pkgdesc='Non-validating SQL parser for Python'
+url=https://github.com/andialbrecht/sqlparse
+depends=('python')
+makedepends=('python-setuptools')
+source=("$name-$version.tar.gz::https://github.com/andialbrecht/sqlparse/archive/$version.tar.gz")
+sha256sums=('f75cdec98a4cc8296890279d744e1ae8618bb14dbad77e3d0637f0d7bb5d6535')
+
+build() {
+  cd sqlparse-$version
+  python setup.py build
+}
+
+package() {
+  cd sqlparse-$version
+  python setup.py install --prefix=/usr --root="$pkgdir" --skip-build
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

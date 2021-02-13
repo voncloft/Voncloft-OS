@@ -1,0 +1,33 @@
+# description : Data parsing and validation using Python type hints 
+# depends :   python  
+
+_name=pydantic
+name=python-$_name
+version=1.7.3
+release=1
+             python-typing-extensions: typing_extensions  
+source=" $url/archive/v$version.tar.gz" 
+
+prepare   {
+  rm $_name-$version/tests/test_validators.py
+}
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+check   {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,43 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Chaiwat Suttipongsakul <cwt114@gmail.com>
+
+pkgname=lib32-libthai
+pkgver=0.1.28
+pkgrel=1
+pkgdesc='Thai language support routines'
+url='https://linux.thai.net/projects/libthai'
+arch=('x86_64')
+license=('LGPL')
+depends=('lib32-libdatrie')
+makedepends=('autoconf-archive' 'git')
+source=("git+https://github.com/tlwg/libthai.git#tag=v${pkgver}")
+sha256sums=('SKIP')
+
+prepare() {
+  cd libthai
+
+  ./autogen.sh
+}
+
+build() {
+  cd libthai
+
+  export CC='gcc -m32'
+  export CXX='g++ -m32'
+  export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
+
+  ./configure \
+    --prefix='/usr' \
+    --libdir='/usr/lib32' \
+    --disable-static \
+    --disable-doxygen-doc
+  make
+}
+
+package() {
+  make DESTDIR="${pkgdir}" -C libthai install
+  rm -rf "${pkgdir}"/usr/{include,share}
+}
+
+# vim: ts=2 sw=2 et:

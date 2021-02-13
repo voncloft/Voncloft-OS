@@ -1,0 +1,21 @@
+# description : netfilter for connlabel support
+# depends 
+
+name=libnetfilter_conntrack
+version=1.08
+release=1
+
+source="https://netfilter.org/projects/libnetfilter_conntrack/files/libnetfilter_conntrack-1.0.8.tar.bz2"
+
+build()
+{
+	cd $name-$version
+	autoreconf -ifv
+	autoconf
+
+	./configure --prefix=/usr
+
+	make
+
+	make DESTDIR=$PKG install
+}

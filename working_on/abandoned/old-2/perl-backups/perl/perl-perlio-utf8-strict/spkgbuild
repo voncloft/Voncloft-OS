@@ -1,0 +1,17 @@
+# description : Fast and correct UTF-8 PerlIO
+# depends : perl
+
+name=perl-perlio-utf8-strict
+version=0.007
+release=6
+
+_dist=PerlIO-utf8_strict
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/${_dist}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+     cd ${_dist}-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

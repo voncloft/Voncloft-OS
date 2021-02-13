@@ -1,0 +1,45 @@
+# Maintainer: Anatol Pomozov
+
+pkgname=easyjson
+pkgver=0.7.3
+pkgrel=1
+pkgdesc='Fast JSON serializer for golang'
+arch=(x86_64)
+url='https://github.com/mailru/easyjson'
+license=(MIT)
+depends=(glibc)
+makedepends=(go git)
+source=(easyjson-$pkgver.zip::https://github.com/mailru/easyjson/archive/v$pkgver.zip)
+sha512sums=('724ddac266f0531a700c859534a89381c2de058f80684570c5753558e0d51c7a8fbb72d3dc3bdc71bbed1b6af56fd3f458eb916fe5ddb6c84b2d3d93cff8b1f2')
+
+prepare() {
+  cd $srcdir/easyjson-$pkgver
+  sed -i 's/golint /#golint /g' Makefile
+  sed -i 's/-i//g' Makefile
+}
+
+build() {
+  cd $srcdir/easyjson-$pkgver
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  make build
+}
+
+check() {
+  cd $srcdir/easyjson-$pkgver
+  # The tests rebuild the binary, this time without flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  make test
+}
+
+package() {
+  cd $srcdir/easyjson-$pkgver
+  install -Dm755 bin/easyjson $pkgdir/usr/bin/easyjson
+}

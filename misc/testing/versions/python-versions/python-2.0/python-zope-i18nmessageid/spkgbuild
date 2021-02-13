@@ -1,0 +1,24 @@
+# description : Message Identifiers for internationalization"
+# depends :   python-setuptools  
+
+name=python-zope-i18nmessageid
+version=5.0.1
+release=3
+source="https://github.com/zopefoundation/zope.i18nmessageid/archive/$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/zope.i18nmessageid-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/zope.i18nmessageid-$version
+  PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9:$PYTHONPATH" python -m zope.testrunner --test-path=src || echo "Tests failed"
+}
+
+build()   {
+  cd "$srcdir"/zope.i18nmessageid-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

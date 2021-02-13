@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: csslayer <wengxt AT gmail com>
+
+pkgname=fcitx5-skk
+pkgver=5.0.3
+pkgrel=1
+pkgdesc="libskk wrapper for Fcitx5"
+arch=('x86_64')
+url="https://github.com/fcitx/fcitx5-skk"
+license=('GPL')
+depends=('fcitx5-qt' 'libskk' 'skk-jisyo')
+makedepends=('extra-cmake-modules' 'ninja')
+source=("https://download.fcitx-im.org/fcitx5/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
+sha512sums=('a66feb197640b0b49cec604fa1391b9c87f67ed90b884342809a9a07329df006d16d36cc9cf34c0fcf803c5ae83d4d71884224fe2521a9cc81ab7713ba0621bc'
+            'SKIP')
+validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
+
+build(){
+  cd $pkgname-$pkgver
+
+  cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib .
+  ninja
+}
+
+package() {
+  cd $pkgname-$pkgver
+  DESTDIR="$pkgdir" ninja install
+}

@@ -1,0 +1,40 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Andreas Wagner <A.Wagner@stud.uni-frankfurt.de>
+
+pkgname=bashburn
+pkgver=3.1.0
+pkgrel=5
+pkgdesc="CD burning shell script"
+arch=('any')
+url="http://bashburn.dose.se/"
+license=('GPL2')
+changelog=$pkgname.changelog
+depends=('bash' 'cdrdao' 'cdrtools')
+optdepends=('dvd+rw-tools: support for burning DVDs'
+            'cdparanoia: Ripping audio CDs'
+            'vorbis-tools: Vorbis-Support'
+            'flac: Flac-Support'
+            'mpg123: MP3-Support'
+            'sudo: For missing permissions')
+source=(http://bashburn.dose.se/files/BashBurn-${pkgver}.tar.gz)
+sha256sums=('b78d5de1ee1b6e19aeee5b2f37a12aa6d02c665fd7645cad626ae7267351bb3c')
+
+prepare() {
+  cd "${srcdir}"/BashBurn-${pkgver}
+
+# let it install in the correct location
+  sed -i 's|bblib=${lib}/lib|bblib=${lib}|' Install.sh
+}
+
+package() {
+  cd "${srcdir}"/BashBurn-${pkgver}
+
+  ./Install.sh --prefix="${pkgdir}"/usr
+
+# fix executable
+  sed -i 's|'$pkgdir'||' "${pkgdir}"/usr/bin/${pkgname}
+
+# remove useless docs (changelog and such)
+  rm -rf "${pkgdir}"/usr/lib/Bashburn/docs
+}

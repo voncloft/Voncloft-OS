@@ -1,0 +1,24 @@
+# description : Perl/CPAN Module Algorithm::Annotate
+# depends : perl-algorithm-diff
+
+name=perl-algorithm-annotate
+version=0.10
+release=11
+url=https://search.cpan.org/dist/Algorithm-Annotate
+make# depends : perl-algorithm-diff
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/Algorithm-Annotate-$version.tarsource=.gz"
+options=!checksum
+sha256sums=c9b1764643933eb1a3356906cc372d483a99416207a31df3e58ee9892d9922f9
+
+build-delete {
+  cd $srcdir/Algorithm-Annotate-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Algorithm-Annotate-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

@@ -1,0 +1,19 @@
+# description : Tool aimed at helping malware researchers to identify and classify malware samples
+  # depends : python yara libyara.so glibc
+  # depends : python2 yara libyara.so glibc
+
+_gitcommit=a1ed3cb54e8361a24e185183fccd888d99b15ae5
+url=https://github.com/VirusTotal/yara-python
+_gitname=yara-python
+name=python-yara python2-yara
+version=4.0.2
+release=2
+
+source="${pkgbase}::git+https://github.com/VirusTotal/${_gitname}#commit=${_gitcommit}
+
+build() {
+   cd ${pkgbase}
+   cd ${pkgbase}-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

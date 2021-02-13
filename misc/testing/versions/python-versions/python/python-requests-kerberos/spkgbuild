@@ -1,0 +1,22 @@
+# description : A kerberos of useful classes and functions to be used with python-requests."
+# depends :   python-requests   python-pykerberos   python-cryptography  
+
+name=python-requests-kerberos
+version=0.12.0
+release=7
+source="https://github.com/requests/requests-kerberos/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/requests-kerberos-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/requests-kerberos-$version
+  py.test
+}
+
+build()_python-requests-kerberos   {
+  cd "$srcdir"/requests-kerberos-$version
+  python setup.py install --root=$PKG --optimize=1
+}

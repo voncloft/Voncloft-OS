@@ -1,0 +1,33 @@
+
+name=python-flask-marshmallow
+version=0.14.0
+release=2
+# description : Flask + marshmallow for beautiful APIs 
+# depends :  
+  python-flask
+  python-marshmallow
+ 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd flask-marshmallow
+
+  git describe --tags
+}
+
+build   {
+  cd flask-marshmallow
+
+  python setup.py build
+}
+
+package   {
+  cd flask-marshmallow
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-flask-marshmallow
+}
+
+# vim: ts=2 sw=2 et:

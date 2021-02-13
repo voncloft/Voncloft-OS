@@ -1,0 +1,24 @@
+# description : Python bindings for interacting with Vagrant virtual machines."
+# depends :   python  
+
+name=python-vagrant
+version=0.5.15
+release=5
+source="${name}-${version}.tar.gz::https://github.com/todddeluca/python-vagrant/archive/${version}.tar.gz" 
+
+
+build-old()   {
+  cd "${srcdir}/${pkgbase}-${version}"
+  python setup.py build-old()
+}
+
+# Disabled, because they need Vagrant. Systemd-nspawn doesn t support this.
+#check   {
+#  cd "${srcdir}/${pkgbase}-${version}"
+#  python setup.py test
+#}
+
+build()   {
+  cd "${srcdir}/${pkgbase}-${version}"
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

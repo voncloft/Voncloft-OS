@@ -1,0 +1,36 @@
+# description : "A fast and feature-rich Python interface to LevelDB"
+# depends : leveldb python
+
+name=python-plyvel
+version=1.2.0
+release=3
+url="https://github.com/wbolster/plyvel"
+make# depends : cython python-setuptools
+check# depends : python-pytest-runner
+source="https://pypi.io/packages/source/p/plyvel/plyvel-$version.tar.gz"
+sha512sums=00b3424e248d1ed17f6443c9862c9f35c94ad76707df5adfe625d7a387620252ff71b3e1f7e903dda1c5cfcd53cb23883c1049e31df541dfe566b8e849c0a96d
+
+prepare {
+  # Shipped egg-info has wrong permission etc
+   cd plyvel-$version
+  make clean
+}
+
+build()-delete {
+   cd plyvel-$version
+  make cython
+  python setup.py build
+}
+
+check {
+   cd plyvel-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd plyvel-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

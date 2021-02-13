@@ -1,0 +1,29 @@
+
+name=python-gnupg
+# description : A wrapper for the Gnu Privacy Guard  GPG or GnuPG "
+version=0.4.6
+release=2
+# depends :   gnupg   python  
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"{,.asc} 
+             SKIP  
+validpgpkeys=  CA749061914EAC138E66EADB9147B477339A9B86   # Vinay Sajip  CODE SIGNING KEY  <vinay_sajip@yahoo.co.uk>
+
+build   {
+  cd "${name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${name}-${version}"
+  export NO_EXTERNAL_TESTS= true 
+  pytest -v
+}
+
+package   {
+  cd "${name}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE.txt -t "${PKG}/usr/share/licenses/${name}"
+}

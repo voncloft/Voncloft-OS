@@ -1,0 +1,49 @@
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: uastasi <uastasi@archlinux.us>
+
+pkgname=gnote
+pkgver=3.38.0
+pkgrel=1
+pkgdesc="A note taking application"
+url="https://wiki.gnome.org/Apps/Gnote"
+arch=(x86_64)
+license=(GPL3)
+depends=(gtkmm3 gspell libxslt dconf libsecret)
+makedepends=(intltool yelp-tools autoconf-archive git)
+_commit=e5f7972c3b5ccbeb6550e9060b7dbdb6172c1a96  # tags/3.38.0^0
+source=("git+https://gitlab.gnome.org/GNOME/gnote.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  cd $pkgname
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --libexecdir=/usr/lib \
+    --disable-schemas-compile \
+    --disable-static
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+check() {
+  cd $pkgname
+  make check
+}
+
+package() {
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
+}

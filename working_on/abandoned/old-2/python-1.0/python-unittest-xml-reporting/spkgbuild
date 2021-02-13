@@ -1,0 +1,16 @@
+# description : unittest-based test runner with Ant/JUnit like XML reporting.
+# depends : python-six
+
+url=https://github.com/xmlrunner/unittest-xml-reporting
+name=python-unittest-xml-reporting
+version=3.0.4
+release=2
+
+source="https://github.com/xmlrunner/unittest-xml-reporting/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd unittest-xml-reporting-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

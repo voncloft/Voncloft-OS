@@ -1,0 +1,17 @@
+# description : efficient generation of subroutines via string eval
+# depends : perl
+
+name=perl-sub-quote
+version=2.006003
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Sub-Quote-$version.tar.gz"
+options="!checksum"
+
+build() {
+     cd Sub-Quote-$version
+   cd Sub-Quote-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

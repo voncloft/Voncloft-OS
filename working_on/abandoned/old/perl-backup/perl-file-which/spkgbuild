@@ -1,0 +1,30 @@
+# description : Portable implementation of which
+# depends : perl
+
+name=perl-file-which
+_realname=File-Which
+version=1.23
+release=4
+url=https://metacpan.org/release/$_realname
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/$_realname-$version.tar.gz"
+options="!checksum"
+sha256sums=b79dc2244b2d97b6f27167fc3b7799ef61a179040f3abd76ce1e0a3b0bc4e078
+
+build-delete {
+  cd $_realname-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $_realname-$version
+  make DESTDIR=$PKG install
+}
+
+# vim:set sw=2 et:
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

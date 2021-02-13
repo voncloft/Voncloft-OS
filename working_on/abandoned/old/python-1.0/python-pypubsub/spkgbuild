@@ -1,0 +1,34 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Eli Schwartz <eschwartz@archlinux.org>
+
+name=python-pypubsub
+_name=${name#python-}
+version=4.0.3
+release=3
+pkgdesc="Python publish-subcribe library"
+url="https://github.com/schollii/pypubsub"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner' 'python-pytest-asyncio')
+source=("$name-$version.tar.gz::$url/archive/v$version.tar.gz")
+sha512sums=('cf9aca44e91a5d0e5ecf6739deabf2980f9464395c89e3c5335c5248e47c570701e0534bb660c5005325a994d9f8e7f261f36bc8bea74cfc7eb760b73c572652')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check() {
+  cd $_name-$version/tests/suite
+
+  PYTHONPATH=$PWD/../../src python -m pytest
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir"  --optimize=1 --skip-build
+
+  install -Dm 644 src/pubsub/LICENSE_BSD_Simple.txt "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

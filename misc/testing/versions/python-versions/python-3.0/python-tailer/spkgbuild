@@ -1,0 +1,23 @@
+# description : A simple implementation of GNU tail and head"
+# depends :   python  
+
+name=python-tailer
+version=0.4.1
+release=5
+source="https://pypi.io/build()s/source/t/tailer/tailer-$version.tar.gz" 
+
+build-old()   {
+  cd tailer-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd tailer-$version
+  python -m doctest -v src/tailer/__init__.py
+}
+
+build()   {
+  cd tailer-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

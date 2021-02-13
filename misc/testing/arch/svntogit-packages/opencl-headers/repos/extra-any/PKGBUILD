@@ -1,0 +1,29 @@
+# Maintainer: Stéphane Gaudreault <stephane@archlinux.org>
+# Contributor: Sylvain HENRY <hsyl20@yahoo.fr>
+
+pkgname=opencl-headers
+pkgver=2020.12.18
+pkgrel=1
+epoch=2
+pkgdesc='OpenCL (Open Computing Language) header files'
+arch=('any')
+url='https://www.khronos.org/registry/cl/'
+license=('custom')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/OpenCL-Headers/archive/v${pkgver}.tar.gz")
+sha256sums=('5dad6d436c0d7646ef62a39ef6cd1f3eba0a98fc9157808dfc1d808f3705ebc2')
+optdepends=('opencl-clhpp: C++ support')
+
+package() {
+  cd "${srcdir}"/OpenCL-Headers*/CL
+
+  install -dm755 "${pkgdir}"/usr/include/CL
+
+  for h in *.h; do
+    install -m 644 ${h} "${pkgdir}"/usr/include/CL/
+  done
+
+  # remove useless headers
+  rm "${pkgdir}"/usr/include/CL/{cl_d3d,cl_dx9}*.h
+
+  install -D -m644 ../LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

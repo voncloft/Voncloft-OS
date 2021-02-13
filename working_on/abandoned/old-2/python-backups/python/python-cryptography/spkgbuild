@@ -1,0 +1,35 @@
+# description : "A package designed to expose cryptographic recipes and primitives to Python developers"
+
+pkgbase=python-cryptography
+version=3.3.1
+release=1
+url="https://pypi.python.org/pypi/cryptography"
+check# depends : python-pytest-runner "python-cryptography-vectors=$version" python-iso8601
+              python-pretend python-hypothesis python-pytz
+source="https://pypi.io/packages/source/c/cryptography/cryptography-$version.tar.gz"
+sha512sums=62192fe0fd3bb8844ccc0056ab72a42b038db2a4ecb0928543c520b85e1de93066dab0d604acf23d37395d68172b9618f81c6022a59ec49725bc1862096d15d1
+
+prepare {
+}
+
+build()-delete {
+   cd "$srcdir"/cryptography-$version
+  python setup.py build
+
+}
+
+check {
+   cd cryptography-$version
+  python setup.py pytest
+}
+
+package_python-cryptography {
+  # depends : python-six python-cffi python-idna python-setuptools python-asn1crypto
+
+   cd cryptography-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+
+
+}

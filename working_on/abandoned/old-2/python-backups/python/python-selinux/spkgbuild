@@ -1,0 +1,30 @@
+# description : "Pure-python selinux shim module for use in virtualenvs"
+# depends : python-distro python-setuptools
+
+_name=selinux
+name=python-selinux
+version=0.2.1
+release=4
+url="https://github.com/pycontribs/selinux"
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=e0bec9113461a4dc53e4965522b222bd674212fe1fd987180488d6d9183a1c25588ac9bec4a040595f9313932bc04b83e7f27505d539412fc0d49c2188679831
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+}

@@ -1,0 +1,27 @@
+
+name=python-future
+version=0.18.2
+release=5
+# description : Clean single-source support for Python 3 and 2"
+# depends :   python  
+provides=  futurize   pasteurize  
+options=  !emptydirs  
+source="https://pypi.io/packages/source/f/future/future-$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/future-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/future-$version
+#PYTHONPATH="$PWD/build/lib:$PYTHONPATH" python setup.py test || warning "Tests failed"
+}
+
+package   {
+  cd future-$version
+
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE.txt \
+    $PKG/usr/share/licenses/$name/LICENSE.txt
+}

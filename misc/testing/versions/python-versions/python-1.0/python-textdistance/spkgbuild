@@ -1,0 +1,40 @@
+
+_pkg=textdistance
+name=python-${_pkg}
+version=4.2.0
+release=1
+# description : Compute distance between sequences"
+# depends :  
+    python-abydos
+    python-jellyfish
+    python-numpy
+    python-levenshtein
+    python-pyxdameraulevenshtein
+ 
+    python-pytest
+    python-hypothesis
+    python-isort
+    python-pylev
+    python-py_stringmatching
+    python-tabulate
+ 
+# PyPi tarballs do not have the tests
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+source= ${url}/archive/v.${version}/${_pkg}-${version}.tar.gz 
+
+build   {
+  cd ${_pkg}-v.${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pkg}-v.${version}
+  # Failing tests, nowhere to report them…
+  pytest --deselect tests/test_external.py
+}
+
+package   {
+  cd ${_pkg}-v.${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}
+}

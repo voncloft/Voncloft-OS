@@ -1,0 +1,17 @@
+# description : Snowball stemming algorithms, for information retrieval
+# depends : python
+
+url=http://snowball.tartarus.org
+name=python-pystemmer
+version=2.0.1
+release=3
+
+source="https://pypi.io/packages/source/P/PyStemmer/PyStemmer-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd PyStemmer-$version
+   cd PyStemmer-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,40 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Étienne Deparis <etienne@depar.is>
+# Contributor: Christoph J. Thompson <thompsonc@protonmail.ch>
+
+pkgname=nitrokey-app
+pkgver=1.4.2
+pkgrel=1
+pkgdesc='Nitrokey management application'
+url='https://www.nitrokey.com'
+arch=('x86_64')
+license=('GPL3')
+depends=('qt5-base' 'qt5-svg' 'hicolor-icon-theme' 'libnitrokey' 'libnitrokey.so')
+makedepends=('cmake' 'qt5-tools' 'bash-completion' 'cppcodec')
+source=(https://github.com/Nitrokey/nitrokey-app/releases/download/v${pkgver}/nitrokey-app-v${pkgver}.tar.gz{,.sig})
+sha512sums=('5a8d1219cedb59737634ce9eee4c0b50a67471e55736e5255085b3c08f8aea0a716ae5ad817d39e40f67519f4987cde43b2d26e622f56c5d88d9104c59a31462'
+            'SKIP')
+validpgpkeys=('868184069239FF65DE0BCD7DD9BAE35991DE5B22') # Szczepan Zalega <szczepan.zalega@gmail.com>
+
+prepare() {
+  cd ${pkgname}-v${pkgver}
+  rm -r data/icons/ubuntu-mono-{dark,light} 3rdparty/cppcodec
+  ln -s /usr/include/cppcodec 3rdparty/cppcodec
+}
+
+build() {
+  cd ${pkgname}-v${pkgver}
+  cmake \
+    -B build \
+    -DCMAKE_BUILD_TYPE=None \
+    -DBUILD_SHARED_LIBS=ON \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make -C build
+}
+
+package() {
+  cd ${pkgname}-v${pkgver}
+  make -C build DESTDIR="${pkgdir}" install
+}
+
+# vim: ts=2 sw=2 et:

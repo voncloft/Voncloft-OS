@@ -1,0 +1,47 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+
+pkgname=aspell-pt
+_pkgverPT=20190329
+_pkgverBR=20131030-12
+pkgver=$_pkgverPT
+pkgrel=1
+pkgdesc="Portuguese and Brazilian Portuguese dictionary for aspell"
+arch=('x86_64')
+url="http://aspell.net/"
+license=('GPL2')
+depends=('aspell')
+conflicts=('aspell-pt_br')
+replaces=('aspell-pt_br')
+source=(https://ftp.gnu.org/gnu/aspell/dict/pt_BR/aspell6-pt_BR-$_pkgverBR-0.tar.bz2
+        https://natura.di.uminho.pt/download/sources/Dictionaries/aspell6/aspell6.pt-$_pkgverPT.tar.bz2
+        https://natura.di.uminho.pt/download/sources/Dictionaries/aspell6/aspell6.pt-preao-$_pkgverPT.tar.bz2)
+sha256sums=('eb0d99db0b5d5c442133a88bddfe96dd252c0c3df3da36e9326c241dc4bc14f7'
+            '1bcea03ddcada29eb503a4af334897bb732ca3d207fd9999b3c98824a0daa132'
+            'fc00cc5fc208e5caa973b3603ba2eafddf77c0d9ee320d30ac820893e7c7d069')
+
+build() {
+  cd aspell6-pt_BR-$_pkgverBR-0
+  ./configure
+  make
+
+  cd ../aspell6-pt_PT-$_pkgverPT-0
+  ./configure
+  make
+
+  cd ../aspell6-pt_PT-preao-$_pkgverPT-0
+  ./configure
+  make
+}
+
+package() {
+  cd aspell6-pt_BR-$_pkgverBR-0
+  make DESTDIR="$pkgdir" install
+
+  cd ../aspell6-pt_PT-$_pkgverPT-0
+  make DESTDIR="$pkgdir" install
+
+  cd ../aspell6-pt_PT-preao-$_pkgverPT-0
+  make DESTDIR="$pkgdir" install
+
+  echo "add pt_BR.multi" > "$pkgdir"/usr/lib/aspell-0.60/brasileiro.alias
+}

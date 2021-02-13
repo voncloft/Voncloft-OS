@@ -1,0 +1,23 @@
+# description : "A simple library for managing DNS zones"
+# depends : python-dnspython
+
+name=python-localzone
+version=0.9.8
+release=1
+url="https://localzone.iomaestro.com/"
+make# depends : python-setuptools
+source="https://pypi.io/packages/source/l/localzone/localzone-$version.tar.gz"
+sha512sums=912ee187f57dcb275d3c23d0b24397c12991d1c89e4c9931f4741e1d8ec76f8c41e0ab799150052062726921d5d92f8d98fa15d39fd5357032abc22dc1fe2afe
+
+build()-delete {
+   cd localzone-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd localzone-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

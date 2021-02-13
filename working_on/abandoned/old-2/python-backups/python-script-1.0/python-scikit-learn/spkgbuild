@@ -1,0 +1,17 @@
+# description : A set of python modules for machine learning and data mining
+# depends : python-scipy python-joblib python-threadpoolctl
+
+url=http://scikit-learn.sourceforge.net/
+name=python-scikit-learn
+version=0.24.0
+release=1
+
+source="scikit-learn-${version}.tar.gz"::https://github.com/scikit-learn/scikit-learn/archive/${version}.tar.gz"
+options=!emptydirs
+options="checksum"
+
+build() {
+   cd $srcdir/scikit-learn-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

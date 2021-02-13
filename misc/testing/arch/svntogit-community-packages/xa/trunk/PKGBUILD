@@ -1,0 +1,30 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Chris Mosher <cmosher01@gmail.com>
+
+pkgname=xa
+pkgver=2.3.11
+pkgrel=1
+pkgdesc='Cross-assembler for the 6502 microprocessor'
+arch=(x86_64)
+url='https://www.floodgap.com/retrotech/xa/'
+license=(GPL2)
+makedepends=(setconf)
+source=("https://www.floodgap.com/retrotech/xa/dists/$pkgname-$pkgver.tar.gz")
+sha256sums=('32f2164c99e305218e992970856dd8e2309b5cb6ac4758d7b2afe3bfebc9012d')
+
+prepare() {
+  cd $pkgname-$pkgver
+  setconf Makefile CFLAGS="$CFLAGS -fPIC -Wl,-z,relro,-z,now"
+  setconf Makefile LDFLAGS="$LDFLAGS -z,relro,-z,now"
+}
+
+build() {
+  make -C $pkgname-$pkgver
+}
+
+package() {
+	make -C $pkgname-$pkgver DESTDIR="$pkgdir/usr" install
+}
+
+# vim: ts=2 sw=2 et:

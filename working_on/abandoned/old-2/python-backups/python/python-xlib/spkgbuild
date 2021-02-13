@@ -1,0 +1,27 @@
+# description : "A fully functional X client library for Python programs"
+# depends : python-six
+
+name=python-xlib
+version=0.29
+release=1
+url="https://github.com/python-xlib/python-xlib"
+make# depends : python-setuptools-scm
+check# depends : python-mock xorg-xauth xorg-server-xvfb python-nose
+source="$name-$version.tar.gz::https://github.com/python-xlib/python-xlib/archive/$version.tar.gz"
+sha256sums=ae59dc56ead2f7280fc0f24310409e8250a79e930e06c703f8dd7b080cd4b4b6
+
+build()-delete{
+   cd "$name-$version"
+  python setup.py build
+}
+
+check{
+   cd "$name-$version"
+  python ./runtests.py
+}
+
+package_python-xlib {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

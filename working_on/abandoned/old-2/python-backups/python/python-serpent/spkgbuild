@@ -1,0 +1,20 @@
+# description : Serializer for literal Python expressions
+# depends : python
+
+name=python-serpent
+version=1.30.2
+release=3
+url=https://github.com/irmen/Serpent
+make# depends : git
+source="git+$url#commit=60877b581069d4e592531968edd6c1468c822b0a"
+md5sums=SKIP
+
+options="!checksum"
+
+build() {
+   cd Serpent
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# getver: -u 2 anaconda.org/conda-forge/serpent

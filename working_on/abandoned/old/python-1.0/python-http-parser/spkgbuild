@@ -1,0 +1,33 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-http-parser
+version=0.9.0
+release=4
+pkgdesc="HTTP request/response parser for Python"
+url="https://github.com/benoitc/http-parser"
+depends=('python')
+makedepends=('python-setuptools' 'cython')
+checkdepends=('python-pytest')
+source=("https://github.com/benoitc/http-parser/archive/$version/$name-$version.tar.gz")
+sha512sums=('75e51bef43d9d7698aad69f8bfe651e24784b97603cac55f33bf4c12c86792c8c71d6206f31847d052e4d8621a5ea65a7b34eca5bebdb8189f58e6d98d33139d')
+
+prepare() {
+  rm http-parser-$version/http_parser/parser.c
+}
+
+build() {
+  cd "$srcdir"/http-parser-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/http-parser-$version
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.9:$PYTHONPATH" \
+  py.test testing/
+}
+
+package() {
+  cd http-parser-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

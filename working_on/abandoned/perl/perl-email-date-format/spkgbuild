@@ -1,0 +1,33 @@
+# description : produce RFC 2822 date strings
+# depends : perl
+
+name=perl-email-date-format
+version=1.005
+release=7
+url=https://search.cpan.org/dist/Email-Date-Format
+check# depends : perl-test-pod perl-capture-tiny
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Date-Format-$version.tar.gz"
+options="!checksum"
+md5sums=030dcee3bc1a44674900b0132925bd03
+
+build-delete {
+   cd Email-Date-Format-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Email-Date-Format-$version
+  make test
+}
+
+build() {
+   cd Email-Date-Format-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

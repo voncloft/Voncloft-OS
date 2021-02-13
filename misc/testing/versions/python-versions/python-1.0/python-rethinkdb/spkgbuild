@@ -1,0 +1,66 @@
+# PGP ID: 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161
+
+_name=rethinkdb
+_utils= "rethinkdb-import" "rethinkdb-dump" "rethinkdb-export"
+        "rethinkdb-restore" "rethinkdb-index-rebuild"
+        "rethinkdb-repl" 
+_remove=  _export   _import   _restore   _dump   _index_rebuild  
+
+pkgbase=python-rethinkdb
+name=  python-rethinkdb   python2-rethinkdb   rethinkdb-utils  
+version=2.3.6
+release=2
+# description : Python driver library for the RethinkDB database server."
+options= !emptydirs 
+source="https://download.rethinkdb.com/dist/$_tag.tgz"
+        "https://download.rethinkdb.com/dist/$_tag.tgz.asc" 
+             SKIP  
+validpgpkeys=  3B87619DF812A63A8C1005C30742918E5C8DA04A   # RethinkDB Packaging <packaging@rethinkdb.com>
+
+prepare   {
+    # Create a copy for the python2 package
+    cp -r "${_name}-${version}" "python2-${_name}-${version}"
+    mkdir -p "${srcdir}/utils"
+
+    cd $_tag
+    ./configure --allow-fetch
+
+    cd "${srcdir}/python2-${_name}-${version}"
+    ./configure --allow-fetch
+    sed -i  s|#!/usr/bin/env python|#!/usr/bin/env python2|g  \
+        "${srcdir}/python2-${_name}-${version}/drivers/python/rethinkdb/__main__.py"
+}
+
+package_python-rethinkdb   {
+    # depends :   python  
+
+    cd "${srcdir}/${_name}-${version}/drivers/python"
+    make
+    python setup.py install --root=$PKG --optimize=1
+    for _util in ${_utils[@]}; do
+        mv "${PKG}/usr/bin/${_util}" "${srcdir}/utils"
+    done
+}
+
+package_python2-rethinkdb   {
+    # description : Python2 driver library for the RethinkDB database server."
+    # depends :   python2  
+
+    cd "${srcdir}/python2-${_name}-${version}/drivers/python"
+    make
+    python2 setup.py install --root=$PKG --optimize=1
+    for _util in ${_utils[@]}; do
+        rm -f "${PKG}/usr/bin/${_util}"
+    done
+    for _rem in ${_remove[@]}; do
+        rm -f "${PKG}/usr/lib/python2.7/site-packages/rethinkdb/${_rem}."*
+    done
+}
+
+package_rethinkdb-utils   {
+    # description : RethinkDB database utilities."
+    # depends :   python-rethinkdb   rethinkdb  
+    for _util in ${_utils[@]}; do
+        install -D -p -m 755 "${srcdir}/utils/${_util}" "${PKG}/usr/bin/${_util}"
+    done
+}

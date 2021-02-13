@@ -1,0 +1,25 @@
+
+name=python-clickclick
+version=20.10.2
+release=3
+# description : Click command line utilities 
+# depends :   python-click   python-yaml  
+source=" $url/archive/$version.tar.gz" 
+
+build   {
+  cd $name
+
+  python setup.py build
+}
+
+#check   {
+#  cd $name
+#
+#  python setup.py test
+#}
+
+package   {
+  cd $name
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

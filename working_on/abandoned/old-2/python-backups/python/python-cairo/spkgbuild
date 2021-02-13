@@ -1,0 +1,29 @@
+# description : "Python bindings for the cairo graphics library"
+# depends : cairo python
+
+name=python-cairo
+version=1.20.0
+release=3
+url="https://pycairo.readthedocs.io/en/latest/"
+make# depends : git
+_commit=4783b7eae1fe4eaf2c6b5c950b0c2ea3d25c5f98
+source="git+https://github.com/pygobject/pycairo/#commit=$_commit"
+sha256sums=SKIP
+
+version {
+   cd pycairo
+  git describe --tags | sed s/^v//;s/-/+/g
+}
+
+build()-delete {
+   cd pycairo
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd pycairo
+  python setup.py build
+  python setup.py install --root=$PKG  --optimize=1
+}

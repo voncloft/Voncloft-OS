@@ -1,0 +1,16 @@
+name=python-pygame
+version=2.0.1
+release=1
+# description : Python game library"
+# depends :   python   sdl2_mixer   sdl2_ttf   sdl2_image   portmidi  
+source="https://pypi.io/packages/source/p/pygame/pygame-$version.tar.gz" 
+
+build   {
+    cd pygame-"$version"
+    python setup.py build
+}
+
+package   {
+    cd pygame-"$version"
+    python setup.py install --root=$PKG --prefix=/usr --skip-build
+}

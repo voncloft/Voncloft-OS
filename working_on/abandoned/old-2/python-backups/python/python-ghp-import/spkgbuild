@@ -1,0 +1,29 @@
+# description : Copy your docs directly to the gh-pages branch
+# depends : python
+# AUR Maintainer: valère monseur <valere dot monseur at ymail dot com>
+
+name=python-ghp-import
+_name=ghp-import
+version=1.0.1
+release=1
+url="https://pypi.python.org/pypi/ghp-import"
+make# depends : python-setuptools git
+replaces=ghp-import
+conflicts=ghp-import
+source="${_name}-${version}.tar.gz::https://pypi.python.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+#source="https://github.com/davisp/${_name}/archive/${version}.tar.gz"
+#source="${_name}-${version}::git+https://github.com/davisp/ghp-import.git#commit=ab2637fb7a84ed79d6baeb74db7f9e544a448a04"
+sha512sums=63addf33d43899d39f5ecc83e3587d33423563f4356e41d5a3e53999e9453239aba8f58c19722e9ee6f518de72cd36eb514f02ca4837af781aa37f95569c889f
+
+build()-delete {
+   cd "${srcdir}/${_name}-${version}"
+  LC_CTYPE=en_US.UTF-8 python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "${srcdir}/${_name}-${version}"
+  LC_CTYPE=en_US.UTF-8 python setup.py build
+  python setup.py install --root=$PKG -O1
+}

@@ -1,0 +1,29 @@
+# description : Mock object framework for Python 
+# depends :   python-pbr   python-fixtures  
+
+name=python-mox3
+version=1.1.0
+release=3
+source="https://github.com/openstack/mox3/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  # Python 3.6 fixes
+  sed -i  s/, flags=4//  mox3-$version/mox3/tests/test_mox.py
+}
+
+build-old()   {
+  cd mox3-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd mox3-$version
+  stestr run
+}
+
+build()   {
+  cd mox3-$version
+  python setup.py install --root=$PKG --optimize=1
+}

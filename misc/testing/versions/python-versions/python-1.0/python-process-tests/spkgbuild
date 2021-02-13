@@ -1,0 +1,37 @@
+
+pkgbase=python-process-tests
+name=  python-process-tests   python2-process-tests  
+version=2.1.1
+release=3
+# description : Tools for testing processes"
+source="https://pypi.io/packages/source/p/process-tests/process-tests-$version.tar.gz" 
+
+prepare   {
+  cp -a process-tests-$version{,-py2}
+}
+
+build   {
+  cd "$srcdir"/process-tests-$version
+  python setup.py build
+
+  cd "$srcdir"/process-tests-$version-py2
+  python2 setup.py build
+}
+
+package_python-process-tests   {
+  # depends :   python  
+
+  cd process-tests-$version
+  python setup.py install --root="$PKG/" --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+package_python2-process-tests   {
+  # depends :   python2  
+
+  cd process-tests-$version
+  python2 setup.py install --root="$PKG/" --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,30 @@
+# description : flake8 plugin which checks that typing imports are properly guarded 
+# depends :   flake8  
+
+_name=flake8-typing-imports
+name=python-$_name
+version=1.10.1
+release=1
+source=" $url/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+check   {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

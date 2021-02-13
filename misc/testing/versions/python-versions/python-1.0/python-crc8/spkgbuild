@@ -1,0 +1,24 @@
+
+name=python-crc8
+version=0.1.0
+release=2
+# description : A module with the CRC8 algorithm for Python"
+# depends :   python  
+source="https://github.com/niccokunzmann/crc8/archive/v$version.tar.gz" 
+
+build   {
+  cd crc8-$version
+  python setup.py build
+}
+
+check   {
+  cd crc8-$version
+  python test_crc8.py
+}
+
+package   {
+  cd crc8-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

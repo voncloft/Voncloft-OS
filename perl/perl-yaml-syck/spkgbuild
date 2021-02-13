@@ -1,0 +1,16 @@
+# description : Fast, lightweight YAML loader and dumper
+# depends : perl
+
+name=perl-yaml-syck
+version=1.34
+release=1
+
+source="https://www.cpan.org/authors/id/T/TO/TODDR/YAML-Syck-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd YAML-Syck-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

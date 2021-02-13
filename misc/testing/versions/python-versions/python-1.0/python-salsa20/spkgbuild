@@ -1,0 +1,22 @@
+
+name=python-salsa20
+version=0.3.0
+release=8
+# description : Bindings for the NaCL implementation of Salsa20 and XSalsa20 by D. J. Bernstein 
+# depends :   python  
+source="https://pypi.python.org/packages/source/s/salsa20/salsa20-$version.tar.gz" 
+
+build   {
+  cd salsa20-$version
+  python setup.py build
+}
+
+check   {
+  cd salsa20-$version
+}
+
+package   {
+  cd salsa20-$version
+  python setup.py install --root=$PKG --skip-build --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

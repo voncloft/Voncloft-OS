@@ -1,0 +1,16 @@
+# description : Programmatically open an editor, capture the result
+# depends : python
+
+url=https://github.com/fmoo/python-editor
+name=python-editor
+version=1.0.4
+release=6
+
+source="https://github.com/fmoo/python-editor/archive/${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${pkgbase}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

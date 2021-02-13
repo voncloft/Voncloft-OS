@@ -1,0 +1,27 @@
+
+name=python-glanceclient
+version=3.2.2
+release=3
+# description : OpenStack Image API Client Library"
+# depends :   python-six   python-pbr   python-babel   python-prettytable   python-keystoneauth1 
+          python-requests   python-warlock   python-oslo-utils   python-oslo-i18n   python-wrapt 
+          python-pyopenssl  
+options=  !emptydirs  
+source="https://github.com/openstack/python-glanceclient/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd python-glanceclient-$version
+  python setup.py build
+}
+
+check   {
+  cd python-glanceclient-$version
+  stestr run
+}
+
+package   {
+  cd python-glanceclient-$version
+  python setup.py install --root=$PKG --optimize=1
+}

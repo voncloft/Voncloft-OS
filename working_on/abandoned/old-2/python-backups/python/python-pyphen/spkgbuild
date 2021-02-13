@@ -1,0 +1,37 @@
+# description : "Pure Python module to hyphenate text"
+# depends : python
+
+_name=Pyphen
+name=python-pyphen
+version=0.10.0
+release=1
+url="https://pyphen.org/"
+make# depends : python-setuptools
+check# depends : python-nose
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+sha512sums=e7d5676fbf10282fa84a53a3a28bf9fb4a4e45bb16ef4fca9daabbd3fa24d18ef6d172f1555256ebff10ecbcc1a759cfd66f0c34b6f81d9ed1926c7ec655b8d4
+b2sums=6f33ecbc5567dc24efdc00a1105768e5135013e54af687194b04de7f23d601b28d3e85602bccb282c5b7e677fe63e7f6f3726d066e5f6393b540ec88b2e5a068
+
+prepare {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  nosetests -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  python setup.py build
+  python setup.py install  \
+                        --optimize=1 \
+                        --root=$PKG 
+}

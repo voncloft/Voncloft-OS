@@ -1,0 +1,16 @@
+# description : Python calculations for the position of the sun and moon
+# depends : python 
+
+url=https://github.com/sffjunkie/astral
+name=python-astral
+version=2.2
+release=3
+
+source="https://github.com/sffjunkie/astral/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd astral-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

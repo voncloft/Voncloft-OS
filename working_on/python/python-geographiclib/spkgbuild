@@ -1,0 +1,18 @@
+# description : Python implementation of the geodesic routines in GeographicLib
+# depends : python
+
+_name=geographiclib
+url=https://geographiclib.sourceforge.io/1.50/python/
+_name=geographiclib
+name=python-geographiclib
+version=1.50
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

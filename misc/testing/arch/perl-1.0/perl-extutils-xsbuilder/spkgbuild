@@ -1,0 +1,23 @@
+# description : Automatic Perl XS glue code generation
+# depends : perl>=5.10.0 perl-parse-recdescent perl-tie-ixhash
+
+name=perl-extutils-xsbuilder
+version=0.28
+release=9
+url=https://search.cpan.org/dist/ExtUtils-XSBuilder
+source="https://www.cpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-$version.tarsource=.gz"
+options=!checksum
+sha256sums=8cced386e3d544c5ec2deb3aed055b72ebcfc2ea9a6c807da87c4245272fe80a
+
+build-delete {
+  cd  $srcdir/ExtUtils-XSBuilder-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/ExtUtils-XSBuilder-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

@@ -1,0 +1,46 @@
+
+pkgbase= python-webob 
+name=  python-webob   python-webob-docs  
+version=1.8.6
+release=3
+# description : WSGI request and response object"
+# depends :   python  
+source="https://pypi.io/packages/source/W/WebOb/WebOb-$version.tar.gz"
+        $name-py39.patch::https://github.com/Pylons/webob/commit/6b5d8c382c26.patch 
+             aba4b333bc67f6ccde084efca793aff7b978548b1179ca4dbeb969f05b0e0e0bb00201640929cd07741434e27cf935361fcacc1943706e6399c5aa8407ec0116  
+
+prepare   {
+  patch -Np1 -F3 -d WebOb-$version<$name-py39.patch #https://github.com/Pylons/webob/pull/411
+  cp -a WebOb-$version{,-docs}
+  sed -i "s/pkg_resources.get_distribution  webob  .version/ $version /" WebOb-$version-docs/docs/conf.py
+}
+
+build   {
+  cd "$srcdir"/WebOb-$version
+  python setup.py build
+
+  cd "$srcdir"/WebOb-$version-docs
+  PYTHONPATH="$PWD/src" make -C docs html
+}
+
+check   {
+  cd "$srcdir"/WebOb-$version
+  python setup.py pytest --addopts "--ignore=docs"
+}
+
+package_python-webob   {
+  cd "$srcdir"/WebOb-$version
+  python setup.py install -O1 --root=$PKG
+  install -D -m644 "docs/license.txt" \
+                   $PKG/usr/share/licenses/$name/license.txt
+}
+
+package_python-webob-docs   {
+
+  cd "$srcdir"/WebOb-$version-docs
+  _doc_dir=$PKG/usr/share/docs/python-webob
+  mkdir -p "$_doc_dir"
+  cp -a "docs/_build/html" "$_doc_dir"
+  install -D -m644 "docs/license.txt" \
+                   $PKG/usr/share/licenses/$name/license.txt
+}

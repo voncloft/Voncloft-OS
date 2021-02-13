@@ -1,0 +1,53 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: WorMzy Tykashi <wormzy.tykashi@gmail.com>
+# Contributor: Alois Nespor <info@aloisnespor.info>
+# Contributor: speps <speps dot aur dot archlinux dot org>
+
+pkgbase=rssguard
+pkgname=(rssguard{,-nowebengine})
+pkgver=3.8.4
+pkgrel=1
+pkgdesc='Simple (yet powerful) Qt5 feed reader'
+arch=(x86_64)
+url='https://github.com/martinrotter/rssguard'
+license=(GPL3)
+depends=(qt5-webengine)
+makedepends=(qt5-tools)
+optdepends=('clang: Support for beautification of message filter scripts')
+source=(https://github.com/martinrotter/$pkgbase/archive/$pkgver/$pkgbase-$pkgver.tar.gz)
+sha256sums=('4acfcb482c5f1f065b4e299ab4500c69146ddd398536ccb0799912290805b262')
+
+prepare() {
+  mkdir build{,-nowebengine}
+}
+
+build() {
+  cd build
+  qmake ../$pkgname-$pkgver -r CONFIG+=release PREFIX=/usr
+  make
+
+  cd ../build-nowebengine
+  qmake ../$pkgname-$pkgver -r CONFIG+=release PREFIX=/usr USE_WEBENGINE=false
+  make
+}
+
+package_rssguard() {
+  depends=(qt5-webengine)
+
+  cd build
+  make INSTALL_ROOT="$pkgdir" install -j1
+}
+
+package_rssguard-nowebengine() {
+  pkgdesc+=' without WebEngine support'
+  depends=(hicolor-icon-theme qt5-declarative)
+  conflicts=($pkgbase)
+  provides=($pkgbase=$pkgver)
+
+  cd build-nowebengine
+  make INSTALL_ROOT="$pkgdir" install -j1
+
+  # Ignore package by AppStream to avoid duplicated IDs
+  rm -r "$pkgdir/usr/share/metainfo/"
+  echo 'X-AppStream-Ignore=true' >> "$pkgdir/usr/share/applications/com.github.rssguard.desktop"
+}

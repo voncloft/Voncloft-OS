@@ -1,0 +1,22 @@
+# description : A Module similar to bencode from the BitTorrent project"
+# depends :   python  
+
+name=python-rencode
+version=1.0.6
+release=5
+source="$pkgbase-$version.tar.gz::https://github.com/aresch/rencode/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/rencode-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/rencode-$version
+  PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9" py.test
+}
+
+build()   {
+  cd rencode-$version
+  python setup.py install --root=$PKG --optimize=1
+}

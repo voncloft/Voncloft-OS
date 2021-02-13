@@ -1,0 +1,34 @@
+# description : Python bindings for the snappy compression library. 
+# depends :  python snappy 
+
+name=python-snappy
+version=0.6.0
+release=1
+source=https://files.pythonhosted.org/build()s/source/p/python-snappy/python-snappy-$version.tar.gz 
+
+prepare   {
+  cd $name-$version
+  # Move test scripts around, so that they can use the correct sys.path  build-old()/lib.linux... 
+  mkdir tests
+  mv test_*.py tests
+}
+
+build-old()   {
+  cd $name-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd $name-$version
+  pyver=$ python -c "import sys; print  {}.{} .format *sys.version_info[:2]  " 
+  export PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-$pyver"
+  # Avoid writing .pyc files in check  , or packaging with --nocheck cannot reproduce
+  # build()s built with check   as .pyc files created in check   embed $srcdir
+  PYTHONDONTWRITEBYTECODE=1 pytest tests --ignore=tests/test_snappy_cffi.py
+}
+
+build()   {
+  cd $name-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

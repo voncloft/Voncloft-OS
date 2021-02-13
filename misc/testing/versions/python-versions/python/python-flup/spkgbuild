@@ -1,0 +1,17 @@
+# description : Random assortment of WSGI servers"
+# depends :   python  
+
+name=python-flup
+version=1.0.3
+release=6
+source="https://pypi.io/build()s/source/f/flup/flup-$version.tar.gz" 
+
+build-old()   {
+  cd flup-$version
+  python setup.py build-old()
+}
+
+build()_python-flup   {
+  cd flup-$version
+  python setup.py install --root=$PKG --optimize=1
+}

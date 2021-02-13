@@ -1,0 +1,50 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Alexander Rødseth <rodseth@gmail.com>
+# Contributor: Marcin "avalan" Falkiewicz <avalatron@gmail.com>
+# Contributor: C Anthony Risinger <anthony@xtfx.me>
+
+pkgbase=python-ply
+name=(python-ply python2-ply)
+version=3.11
+release=7
+pkgdesc='Implementation of lex and yacc parsing tools'
+url='https://www.dabeaz.com/ply/'
+makedepends=('python-setuptools' 'python2-setuptools')
+source=("https://pypi.io/packages/source/p/ply/ply-$version.tar.gz"
+        LICENSE)
+sha512sums=('37e39a4f930874933223be58a3da7f259e155b75135f1edd47069b3b40e5e96af883ebf1c8a1bbd32f914a9e92cfc12e29fec05cf61b518f46c1d37421b20008'
+            '5cea085a23ed260afc9084380c1d59e3942c2385089a8eb2391a89c85cde4df2ceb7eed21bb8c4d0cad5b78e59742da69e4c5c78fd0e223f5c99c56e9296a075')
+
+prepare() {
+  cp -a ply-$version{,-py2}
+}
+
+check() {
+  cd "ply-$version/test"
+  python testlex.py
+  python testyacc.py
+
+  cd "$srcdir/ply-$version-py2/test"
+  python2 testlex.py
+  python2 testyacc.py
+}
+
+package_python-ply() {
+  depends=('python')
+
+  cd "ply-$version"
+  python setup.py install --root="$pkgdir"
+
+  install -Dm644 ../LICENSE "$pkgdir/usr/share/licenses/$name/LICENSE"
+}
+
+package_python2-ply() {
+  depends=('python2')
+
+  cd "ply-$version-py2"
+  python2 setup.py install --root="$pkgdir"
+
+  install -Dm644 ../LICENSE "$pkgdir/usr/share/licenses/$name/LICENSE"
+}
+
+# vim:set ts=2 sw=2 et:

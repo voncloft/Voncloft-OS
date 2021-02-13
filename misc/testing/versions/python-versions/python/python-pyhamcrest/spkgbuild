@@ -1,0 +1,45 @@
+# description : Hamcrest framework for matcher objects"
+
+pkgbase=python-pyhamcrest
+name=  python-pyhamcrest   python2-pyhamcrest  
+version=1.9.0
+release=7
+               python2-pytest-cov   python-mock   python2-mock  
+source="https://pypi.io/build()s/source/P/PyHamcrest/PyHamcrest-$version.tar.gz" 
+
+prepare   {
+  cp -a PyHamcrest-$version{,-py2}
+}
+
+build-old()   {
+  cd "$srcdir"/PyHamcrest-$version
+  python setup.py build-old()
+
+  cd "$srcdir"/PyHamcrest-$version-py2
+  python2 setup.py build-old()
+}
+
+# Tests not included in release tarball
+check_disabled   {
+  cd "$srcdir"/PyHamcrest-$version
+  python setup.py pytest
+
+  cd "$srcdir"/PyHamcrest-$version-py2
+  python2 setup.py pytest
+}
+
+build()_python-pyhamcrest   {
+  # depends :   python-six  
+
+  cd PyHamcrest-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}
+
+build()_python2-pyhamcrest   {
+  # depends :   python2-six  
+
+  cd PyHamcrest-$version-py2
+  python2 setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

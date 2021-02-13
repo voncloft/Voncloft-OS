@@ -1,0 +1,28 @@
+# description : Configures Flask applications in a canonical way"
+# depends :   python-click   python-flask   python-six  
+
+name=python-flask-appconfig
+version=0.11.1.20151214
+_commit=56528264cdc76dc1b00804b7f67908d3bb1b1b0e
+release=4
+source="$name-$_commit.tar.gz::https://github.com/mbr/flask-appconfig/archive/$_commit.tar.gz" 
+
+prepare   {
+  mv flask-appconfig-{$_commit,$version}
+}
+
+build-old()   {
+  cd flask-appconfig-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd flask-appconfig-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd flask-appconfig-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

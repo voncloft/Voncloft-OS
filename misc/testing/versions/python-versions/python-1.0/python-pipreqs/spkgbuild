@@ -1,0 +1,24 @@
+
+name=python-pipreqs
+version=0.4.10
+release=3
+# description : Pip requirements.txt generator based on imports in project"
+# depends :   python-docopt   python-yarg  
+source="https://github.com/bndr/pipreqs/archive/v$version.tar.gz" 
+
+build   {
+  cd pipreqs-$version
+  python setup.py build
+}
+
+check   {
+  cd pipreqs-$version
+  python setup.py test
+}
+
+package   {
+  cd pipreqs-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

@@ -1,0 +1,20 @@
+# description : "Python Btrfs module, with useful scripts to inspect btrfs internals"
+# depends : python
+# AUR Maintainer: Timofey Titovets <nefelim4ag@gmail.com>
+
+name=python-btrfs
+version=12
+release=2
+url="https://github.com/knorrie/python-btrfs"
+make# depends : git
+source="$name"::"git://github.com/knorrie/python-btrfs.git#tag=v${version}"
+md5sums=SKIP
+
+options="!checksum"
+
+build() {
+     cd "$srcdir/${name}/"
+    python ./setup.py install --root="$PKG/" --optimize=1
+     cd bin
+    install -Dm755 btrfs-* -t "$PKG/usr/bin/"
+}

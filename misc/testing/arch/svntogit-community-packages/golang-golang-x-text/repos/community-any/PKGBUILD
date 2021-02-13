@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=golang-golang-x-text
+pkgver=0.3.3
+pkgrel=2
+pkgdesc='Go text processing support'
+arch=('any')
+url="https://github.com/golang/text"
+license=('BSD')
+depends=('go' 'golang-golang-x-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/golang/text/archive/v$pkgver.tar.gz")
+sha512sums=('e44883e5be2526f58d282160aa9079d57bfd386766a2e8b91acb207dfbc502f9160f1073b952c61e72f12c5709f4b4d901e1269c67fa2e85234a968521f56f8d')
+
+check() {
+  export GOPATH="$srcdir/build:/usr/share/gocode"
+  mkdir -p "$srcdir"/build/src/golang.org/x
+  cp -a "$srcdir"/text-$pkgver "$srcdir"/build/src/golang.org/x/text
+  cd "$srcdir"/build/src/golang.org/x/text
+  go test -v $(go list ./...)
+}
+
+package() {
+  mkdir -p "$pkgdir"/usr/share/gocode/src/golang.org/x
+  cp -a "$srcdir"/text-$pkgver "$pkgdir"/usr/share/gocode/src/golang.org/x/text
+
+  install -Dm644 text-$pkgver/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

@@ -1,0 +1,33 @@
+# description : "Doing the OAuth dance with style using Flask, requests, and oauthlib"
+# depends : python-requests python-oauthlib python-requests-oauthlib python-flask
+
+name=python-flask-dance
+version=3.2.0
+release=1
+url="https://github.com/singingwolfboy/flask-dance"
+         python-urlobject python-six python-lazy
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-sphinx python-pytest-cov python-mock
+              python-responses python-freezegun python-sqlalchemy python-sqlalchemy-utils
+              python-flask-sqlalchemy python-flask-login python-flask-caching
+              python-flask-sphinx-themes python-sphinxcontrib-seqdiag python-betamax
+source="$name-$version.tar.gz::https://github.com/singingwolfboy/flask-dance/archive/v$version.tar.gz"
+sha512sums=b138d5fb05009547404f4ee063ff1d5e2ba4e1deb6327bb7b21e1bc9d6971be64bbbc3808d29bf362f214ba13b418f38cf728a250262e6e69b4a89de103aa3b7
+
+build()-delete {
+   cd flask-dance-$version
+  python setup.py build
+}
+
+check {
+   cd flask-dance-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd flask-dance-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,35 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+pkgname=clanlib
+pkgver=4.0.0
+pkgrel=5
+pkgdesc="A multi-platform game development library."
+arch=('x86_64')
+url="https://github.com/sphair/ClanLib"
+license=('custom:zlib')
+depends=('alsa-lib' 'libjpeg' 'libmikmod' 'libpng' 'libvorbis' 'libxi' 'libxmu' 'sdl_gfx'
+         'freetype2' 'pcre' 'sqlite' 'libgl')
+makedepends=('doxygen' 'graphviz' 'mesa')
+source=($pkgname-$pkgver.tar.gz::https://github.com/sphair/ClanLib/archive/v4.0.0.tar.gz)
+sha512sums=('e727239d782d2d52ce2f927e16a88c469b30f46d5b9eba4573baa520d98f60515df7ff4dd921092ddd5cfe4c6f5c441e0f33469b774287003db439feb8b027fe')
+
+build() {
+	cd ClanLib-$pkgver
+
+  ./autogen.sh
+	./configure --prefix=/usr
+
+	make
+	make html
+}
+
+package() {
+	cd ClanLib-$pkgver
+
+	make DESTDIR="$pkgdir" install
+	make DESTDIR="$pkgdir" install-html
+
+	install -d "$pkgdir"/usr/share/licenses/$pkgname
+	install -m644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/
+}
+
+# vim: sw=2:ts=2 et:

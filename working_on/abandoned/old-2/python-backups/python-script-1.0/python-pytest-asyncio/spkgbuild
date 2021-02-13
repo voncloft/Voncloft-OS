@@ -1,0 +1,16 @@
+# description : Pytest support for asyncio.
+# depends : python-pytest
+
+url=https://github.com/pytest-dev/pytest-asyncio/
+name=python-pytest-asyncio
+version=0.14.0
+release=3
+
+source="https://github.com/pytest-dev/pytest-asyncio/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd pytest-asyncio-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

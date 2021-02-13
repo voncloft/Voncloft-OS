@@ -1,0 +1,35 @@
+# description : "Adds caching support to your Flask application"
+# depends : python-flask
+
+name=python-flask-caching
+version=1.9.0
+release=3
+url="https://github.com/sh4nks/flask-caching"
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-pytest-cov python-pytest-xprocess python-pylibmc
+              python-redis
+source="$name-$version.tar.gz::https://github.com/sh4nks/flask-caching/archive/v$version.tar.gz"
+sha512sums=644a5ed453ecb3176979df718b3a364bec2fadddec0f5c3cb800abda76a38df174d3fed4e5f877757f0eb46fba659a4b351ac7bb19cdef7ff4f47a8b3ed4c538
+
+prepare {
+   cd flask-caching-$version
+  sed -i s/< *2.6/<3/ setup.py
+}
+
+build()-delete {
+   cd flask-caching-$version
+  python setup.py build
+}
+
+check {
+   cd flask-caching-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd flask-caching-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,16 @@
+# description : Python bindings for the igraph library
+# depends : igraph python-texttable
+
+url=https://igraph.org/python/
+name=python-igraph
+version=0.8.3
+release=2
+
+source="https://pypi.python.org/packages/source/p/$name/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $pkgbase-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

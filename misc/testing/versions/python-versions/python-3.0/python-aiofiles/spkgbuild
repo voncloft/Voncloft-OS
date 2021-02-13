@@ -1,0 +1,41 @@
+# description : File support for asyncio 
+
+name=python-aiofiles
+version=0.6.0
+release=3
+  git
+  python-setuptools
+ 
+  python-coverage
+  python-pytest-asyncio
+  python-pytest
+  python-pytest-cov
+  python-tox
+ 
+
+version   {
+  cd aiofiles
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd aiofiles
+
+  python setup.py build-old()
+}
+
+check   {
+  cd aiofiles
+
+  tox -e py39
+}
+
+build()   {
+  cd aiofiles
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/python-aiofiles
+}
+
+# vim: ts=2 sw=2 et:

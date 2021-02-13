@@ -1,0 +1,32 @@
+# description : unittest subTest support and subtests fixture
+# depends : python-pytest
+
+name=python-pytest-subtests
+version=0.4.0
+release=1
+url=https://github.com/pytest-dev/pytest-subtests
+make# depends : python-setuptools_scm
+source="https://github.com/pytest-dev/pytest-subtests/archive/$version/$name-$version.tar.gz"
+sha512sums=00302f47d1699e053314b6b4eee7c84a04fe0f51f287e338374bbd518c7d245d839ea0f1ccf50d4f35c86138cf6ea36da26e67bf41295205fb38323f2ad89f89
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build()-delete {
+   cd pytest-subtests-$version
+  python setup.py build
+}
+
+check {
+   cd pytest-subtests-$version
+  python setup.py egg_info
+  PYTHONPATH="$PWD" pytest
+}
+
+options="!checksum"
+
+build() {
+   cd pytest-subtests-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

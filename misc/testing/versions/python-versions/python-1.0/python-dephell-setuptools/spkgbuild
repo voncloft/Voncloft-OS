@@ -1,0 +1,34 @@
+
+_name=dephell_setuptools
+name=python-dephell-setuptools
+version=0.2.1
+release=3
+# description : Extract meta information from setup.py"
+# depends :   python-setuptools  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # pycache slipped into release tarballs
+    find . -name \*.pyc -delete
+}
+
+build  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

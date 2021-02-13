@@ -1,0 +1,39 @@
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Jan De Groot <jgc@archlinux.org>
+
+pkgname=gucharmap
+pkgver=13.0.0
+pkgrel=1
+pkgdesc="Gnome Unicode Charmap"
+url="https://wiki.gnome.org/Apps/Gucharmap"
+arch=(x86_64)
+license=(GPL)
+depends=(dconf gtk3)
+makedepends=(gtk-doc gobject-introspection yelp-tools appdata-tools git meson
+             unicode-character-database unzip vala)
+provides=(libgucharmap_2_90.so)
+_commit=fb6bc29bbecbe30debabc195d1342d981f8f3a6b  # tags/13.0.0^0
+source=("git+https://gitlab.gnome.org/GNOME/gucharmap.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build -D ucd_path=/usr/share/unicode
+  ninja -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

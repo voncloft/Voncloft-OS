@@ -1,0 +1,29 @@
+# description : A test runner runner similar to testrepository"
+# depends :   python-future   python-cliff   python-pbr   python-subunit   python-fixtures 
+
+name=python-stestr
+version=3.1.0
+release=1
+          python-testtools   python-yaml   python-voluptuous  
+               python-ddt  
+source="https://pypi.io/build()s/source/s/stestr/stestr-$version.tar.gz" 
+
+build-old()   {
+  cd stestr-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd stestr-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+   
+    export PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-build()s"
+    export PATH="$PWD/tmp_install/usr/bin:$PATH"
+    stestr run
+   
+}
+
+build()   {
+  cd stestr-$version
+  python setup.py install --root=$PKG --optimize=1
+}

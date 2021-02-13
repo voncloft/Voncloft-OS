@@ -1,0 +1,34 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+
+pkgname=ario
+pkgver=1.6
+pkgrel=2
+pkgdesc="A GTK client for MPD inspired by Rhythmbox but much lighter and faster"
+arch=('x86_64')
+url="http://ario-player.sourceforge.net/"
+license=('GPL')
+depends=('avahi' 'curl' 'dbus-glib' 'gnutls' 'gtk3'
+         'libmpdclient' 'libnotify' 'libsoup' 'taglib' 'xdg-utils')
+makedepends=('intltool' 'perl-xml-parser' 'patch')
+changelog=$pkgname.changelog
+source=(https://downloads.sourceforge.net/sourceforge/$pkgname-player/$pkgname-$pkgver.tar.gz)
+sha256sums=('1442ede8eef994384489d72d028d7f7b1a1c81efe737f7147587dd02c772d09a')
+
+prepare() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  autoreconf -fi
+}
+
+build() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+ }
+
+package () {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+}

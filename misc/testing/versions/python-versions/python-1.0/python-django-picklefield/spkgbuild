@@ -1,0 +1,30 @@
+
+name=python-django-picklefield
+version=3.0.1
+release=3
+# description : A pickled object field for Django 
+# depends :  python-django 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd django-picklefield
+
+  git describe --tags | sed  s/^v// 
+}
+
+build   {
+  cd django-picklefield
+
+  python setup.py build
+}
+
+package   {
+  cd django-picklefield
+
+  python setup.py install --skip-build --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-django-picklefield/
+}
+
+# vim: ts=2 sw=2 et:

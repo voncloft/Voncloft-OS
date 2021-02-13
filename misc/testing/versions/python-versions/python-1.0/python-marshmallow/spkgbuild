@@ -1,0 +1,23 @@
+
+name=python-marshmallow
+version=3.10.0
+release=1
+# description : A lightweight library for converting complex datatypes to and from native Python datatypes."
+# depends :   python  
+source="https://pypi.io/packages/source/m/marshmallow/marshmallow-$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/marshmallow-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/marshmallow-$version
+  python setup.py pytest
+}
+
+package   {
+  cd marshmallow-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

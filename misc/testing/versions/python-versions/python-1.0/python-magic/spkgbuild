@@ -1,0 +1,16 @@
+
+name=python-magic
+version=5.39
+release=3
+# description : Python bindings to the magic library"
+# depends :   python  
+source="ftp://ftp.astron.com/pub/file/file-${version}.tar.gz" 
+
+package_python-magic   {
+  cd "${srcdir}/file-${version}/python"
+
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm0644 "${srcdir}/file-${version}/COPYING" \
+    "${PKG}/usr/share/licenses/${name}/COPYING"
+}

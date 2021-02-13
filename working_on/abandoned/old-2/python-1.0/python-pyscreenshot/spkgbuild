@@ -1,0 +1,17 @@
+# description : Copy the contents of the screen to a PIL or Pillow image memory
+# depends : python-easyprocess python-entrypoint2 python-mss python-jeepney
+
+_pkg=pyscreenshot
+url=https://github.com/ponty/pyscreenshot
+name=python-${_pkg}
+version=2.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd ${_pkg}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

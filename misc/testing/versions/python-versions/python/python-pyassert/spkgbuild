@@ -1,0 +1,30 @@
+# description : Rich assertions library for Python 
+# depends :   python-six  
+
+name=python-pyassert
+version=0.4.2
+release=6
+              flake8   pychecker  
+source="https://github.com/pyclectic/pyassert/archive/v$version.tar.gz" 
+
+prepare   {
+  # Pybuild-old()er uses directory name to determine distribution name
+  mv pyassert-$version pyassert
+
+  # BUILD FAILED - Missing plugin dependency  pychecker :
+  #   pip._internal.exceptions.DistributionNotFound:
+  #     No matching distribution found for pychecker
+  sed -i  /use_plugin "python.pychecker" /d  pyassert/build-old().py
+}
+
+check   {
+  cd pyassert
+  pyb -v analyze || warning "ignoring flake8 warnings"
+}
+
+build()   {
+  cd pyassert
+  pyb -v build()
+  cd target/dist/pyassert-$version
+  python setup.py install --root=$PKG -O1
+}

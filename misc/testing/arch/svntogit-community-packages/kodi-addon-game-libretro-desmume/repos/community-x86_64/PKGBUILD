@@ -1,0 +1,32 @@
+# Maintainer: BlackEagle <ike.devolder@gmail.com>>
+
+pkgname=kodi-addon-game-libretro-desmume
+pkgver=0.0.1.9
+_codename=Leia
+pkgrel=1
+pkgdesc="Libretro wrapper for Kodi's Game API"
+arch=('x86_64')
+url='https://github.com/kodi-game/game.libretro.desmume'
+license=('GPL')
+groups=('kodi-addons' 'kodi-addons-game')
+depends=('kodi-addon-game-libretro' 'libretro-desmume')
+makedepends=('cmake' 'kodi-dev')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/kodi-game/game.libretro.desmume/archive/$pkgver-$_codename.tar.gz")
+sha512sums=('cd4af4927d6afcc723912dc0c62b2ff3a418e147515bac7d2b899814ab66c0a6a2b8f1cd61a04bd80aa27dcece0c6a0195b0a61f0c3f32493d8c87e21f4ef5c7')
+
+build() {
+    cd "game.libretro.desmume-$pkgver-$_codename"
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DUSE_LTO=1 \
+        .
+    make
+}
+
+package() {
+    cd "game.libretro.desmume-$pkgver-$_codename"
+	make DESTDIR="$pkgdir/" install
+}
+

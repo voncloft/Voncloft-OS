@@ -1,0 +1,34 @@
+# description : "Multi-producer-multi-consumer signal dispatching mechanism"
+# depends : python
+
+name=python-pydispatcher
+version=2.0.5
+release=7
+url="http://sourceforge.net/projects/${pkgbase}/"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="https://pypi.io/packages/source/P/PyDispatcher/PyDispatcher-$version.tar.gz"
+md5sums=1b9c2ca33580c2770577add7130b0b28
+
+prepare {
+  cp -a PyDispatcher-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/PyDispatcher-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/PyDispatcher-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd PyDispatcher-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 license.txt $PKG/usr/share/licenses/$name/license.txt
+}

@@ -1,0 +1,35 @@
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Contributor: Alexander Baldeck <alexander@archlinux.org>
+
+_pkgbasename=libxinerama
+pkgname=lib32-$_pkgbasename
+pkgver=1.1.4
+pkgrel=1
+pkgdesc="X11 Xinerama extension library (32-bit)"
+arch=(x86_64)
+url="http://xorg.freedesktop.org/"
+license=('custom')
+depends=('lib32-libxext' $_pkgbasename)
+makedepends=('xorg-util-macros' gcc-multilib)
+source=(${url}/releases/individual/lib/libXinerama-${pkgver}.tar.bz2)
+sha512sums=('cff777ad942614fbf6bc6d8529f399e62debf3ecbf6cc0694a94e38c022bf929ffd5636fb59f55533c394d89b23af3ea51fa5128927f12a85787e16239330f14')
+
+build() {
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  cd "${srcdir}/libXinerama-${pkgver}"
+  ./configure --prefix=/usr --libdir=/usr/lib32
+  make
+}
+
+package() {
+  cd "${srcdir}/libXinerama-${pkgver}"
+
+  make DESTDIR="${pkgdir}" install
+
+  rm -rf "${pkgdir}"/usr/{include,share,bin}
+  mkdir -p "$pkgdir/usr/share/licenses"
+  ln -s $_pkgbasename "$pkgdir/usr/share/licenses/$pkgname"
+}

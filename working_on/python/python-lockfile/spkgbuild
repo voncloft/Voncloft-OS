@@ -1,0 +1,14 @@
+# description : Platform-independent file locking module
+  # depends : python
+
+url=https://github.com/openstack/pylockfile
+version=0.12.2
+release=8
+
+source="https://files.pythonhosted.org/packages/source/l/lockfile/lockfile-$version.tar.gz"
+
+build() {
+   cd lockfile-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

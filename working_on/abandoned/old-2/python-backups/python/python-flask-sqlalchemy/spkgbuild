@@ -1,0 +1,38 @@
+# description : Adds SQLAlchemy support to your Flask application
+# depends : python-flask python-sqlalchemy
+
+_pyname=flask-sqlalchemy
+name=python-flask-sqlalchemy
+version=2.4.4
+release=3
+url=http://flask-sqlalchemy.pocoo.org/
+make# depends : python-setuptools python-sphinx python-pallets-sphinx-themes python-sphinx-issues
+check# depends : python-pytest python-blinker python-mock
+source=${name}-${version}.tar.gz::https://github.com/mitsuhiko/flask-sqlalchemy/archive/${version}.tar.gz
+sha512sums=6a72aababf7f3c76dc70fd178a97ae5616bcf887309a06f5f0d3d09f0c4b82c855c2c65e51a48a89dcbd346444472d73cf159eecc0f6b2fb8665d52d186b6626
+
+prepare {
+  sed -r "s|release =|\\1 ${version}  #|" -i ${_pyname}-${version}/docs/conf.py
+}
+
+build()-delete {
+   cd ${_pyname}-${version}
+  python setup.py build
+  make -j1 -C docs man text SPHINXBUILD=sphinx-build() PYTHONPATH=..
+}
+
+check {
+   cd ${_pyname}-${version}
+  PYTHONPATH=".:${PYTHONPATH}" py.test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install--root=$PKG  -O1 
+  cp -r docs/_build()/text "${PKG}/usr/share/doc/${name}/text"
+  install -Dm 644 docs/_build()/man/${_pyname}.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+

@@ -1,0 +1,28 @@
+# description : Python library for accessing the entire Twitter API
+# depends : python python-requests python-requests-oauthlib python-six python-pysocks
+
+name=python-tweepy
+_pypiname=tweepy
+version=3.10.0
+release=1
+url=https://www.tweepy.org/
+make# depends : python-setuptools python-pip python-requests python-requests-oauthlib
+             python-six python-pysocks
+source=https://github.com/tweepy/${_pypiname}/archive/v${version}/${_pypiname}-${version}.tar.gz
+sha256sums=c29dea6ef56dd433a850b4a54214eeb61c555a81b4454bbba4376bf7a2f11c55
+sha512sums=2a40875c5612902e4ff69e6fdf73e9fa10b93a80bf4160b16e44e2dae058a90f86569b3a4bcb67a7acdf5c9c3119ce7ca35a3ae64e393181b78fde10dfd975b5
+
+build()-delete {
+   cd ${_pypiname}-${version}
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pypiname}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG    
+  install -Dm 644 examples/* -t "${PKG}/usr/share/doc/${name}/examples"
+}
+

@@ -1,0 +1,30 @@
+# description : "Implementation of ECDSA in Python"
+
+pkgbase=python-ecdsa
+version=0.16.1
+release=1
+url="https://github.com/warner/python-ecdsa"
+check# depends : python-pytest python-hypothesis
+options=!emptydirs
+sha512sums=935416ff25a71b1e6fe442b11e8d2c1463b1652d539274e094112a4847c2c749ff58eb9f5ed108ed5613b7363d3f2b1c07ba3d01af8cfed4e1b4bec407d3f5a6
+            5519af4e81ecb681e2ef1a26602efed1640d6e3bf100d8c492dd4bbce4dba75de6a5a308115ff78a8dcd5d428630a92dd88fe9abfaeed04cd066b3f4d288b219
+
+build()-delete {
+  cp -R "$srcdir/ecdsa-$version" "$srcdir/ecdsa-$version-py2"
+   cd "$srcdir/ecdsa-$version-py2"
+}
+
+check {
+   cd "$srcdir/ecdsa-$version"
+  python -m pytest
+}
+
+package_python-ecdsa {
+  # depends : python
+   cd "$srcdir/ecdsa-$version"
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+   cd "$srcdir/ecdsa-$version-py2"
+}

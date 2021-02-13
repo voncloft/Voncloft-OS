@@ -1,0 +1,17 @@
+# description : Python library for the creation of PostScript and PDF files
+# depends : python texlive-core
+
+name=python-pyx
+version=0.15
+release=4
+url="http://pyx.sourceforge.net"
+source="https://pypi.io/packages/source/p/pyx/PyX-$version.tar.gz"
+sha512sums=c312b38b9f204b8a8832ab71da5be8c9afc417a095c8ccf242b3d3ebec63338a9d55abab4e548d1718abadf12ea7652cdad51731acdc8f6acd3d8608aa919919
+
+options="!checksum"
+
+build() {
+   cd PyX-$version
+  python setup.py build
+  python setup.py install -O1 --root=$PKG
+}

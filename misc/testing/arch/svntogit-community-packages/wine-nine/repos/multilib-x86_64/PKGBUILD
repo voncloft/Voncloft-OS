@@ -1,0 +1,57 @@
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
+# Contributor: Jason Stryker <inbox at jasonstryker dot com>
+
+pkgname=('wine-nine')
+pkgver=0.7
+pkgrel=1
+pkgdesc="Gallium Nine Standalone"
+arch=('x86_64')
+url="https://github.com/iXit/wine-nine-standalone"
+license=('LGPL2')
+makedepends=('git' 'lib32-mesa' 'wine' 'meson')
+source=("${url}/archive/v${pkgver}.tar.gz")
+sha512sums=('9007564347bb6677f3d4eff83f744d39487c09b543489f02dcf7606917ecd9b72decf8176d9daecb6039b8998e97f737d9f7a71a5052f4d5c73f2e99e92af43c')
+
+build() {
+  cd ${srcdir}/wine-nine-standalone-${pkgver}
+    
+  ./bootstrap.sh
+
+  meson \
+    --cross-file "tools/cross-wine64" \
+    --buildtype "release" \
+    --prefix "/" \
+    --bindir bin \
+    --libdir lib \
+    "build64"
+  ninja -C "build64"
+  DESTDIR="${srcdir}/fakeinstall" ninja -C build64 install
+
+  meson \
+    --cross-file "tools/cross-wine32" \
+    --buildtype "release" \
+    --prefix "/" \
+    --bindir bin32 \
+    --libdir lib32 \
+    "build32"
+  ninja -C "build32"
+  DESTDIR="${srcdir}/fakeinstall" ninja -C build32 install
+}
+
+package() {
+  depends=('lib32-mesa' 'wine')
+
+  install -m 755 -d ${pkgdir}/usr/lib{,32}/wine/fakedlls
+
+  install -m 755 "${srcdir}/fakeinstall"/bin/ninewinecfg.exe.so ${pkgdir}/usr/lib/wine/ninewinecfg.exe.so
+  install -m 755 "${srcdir}/fakeinstall"/bin/ninewinecfg.exe.fake ${pkgdir}/usr/lib/wine/fakedlls/ninewinecfg.exe
+
+  install -m 755 "${srcdir}/fakeinstall"/bin32/ninewinecfg.exe.so ${pkgdir}/usr/lib32/wine/ninewinecfg.exe.so
+  install -m 755 "${srcdir}/fakeinstall"/bin32/ninewinecfg.exe.fake ${pkgdir}/usr/lib32/wine/fakedlls/ninewinecfg.exe
+
+  install -m 755 "${srcdir}/fakeinstall"/lib/d3d9-nine.dll.so ${pkgdir}/usr/lib/wine/d3d9-nine.dll.so
+  install -m 755 "${srcdir}/fakeinstall"/lib/d3d9-nine.dll.fake ${pkgdir}/usr/lib/wine/fakedlls/d3d9-nine.dll
+
+  install -m 755 "${srcdir}/fakeinstall"/lib32/d3d9-nine.dll.so ${pkgdir}/usr/lib32/wine/d3d9-nine.dll.so
+  install -m 755 "${srcdir}/fakeinstall"/lib32/d3d9-nine.dll.fake ${pkgdir}/usr/lib32/wine/fakedlls/d3d9-nine.dll
+}

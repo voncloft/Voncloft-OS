@@ -1,0 +1,18 @@
+# description : Easy to use concurrency abstractions for Python using the actor model"
+# depends :   python  
+
+name=python-pykka
+version=2.0.3
+release=1
+source="https://pypi.python.org/build()s/source/P/Pykka/Pykka-$version.tar.gz" 
+
+build-old()   {
+  cd "Pykka-$version"
+  python setup.py build-old()
+}
+
+build()   {
+  cd "Pykka-$version"
+  python setup.py install --prefix=/usr --root=$PKG/ --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

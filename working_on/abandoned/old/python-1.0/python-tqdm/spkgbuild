@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-tqdm
+version=4.56.0
+release=1
+pkgdesc='Fast, Extensible Progress Meter'
+url='https://github.com/tqdm/tqdm'
+depends=('python')
+makedepends=('python-setuptools-scm')
+checkdepends=('python-pytest' 'python-pytest-asyncio' 'python-pytest-timeout' 'python-numpy'
+              'python-pandas' 'python-tensorflow')
+source=("$name-$version.tar.gz::https://github.com/tqdm/tqdm/archive/v$version.tar.gz")
+sha512sums=('8ed1922b7e4eb4c26425f028bcc70d8616534d0fa3583fb563dad984055a4ba08d748a15840cfedc4db4a463436c719cf143352f69b7718f96d7bd67e5043be2')
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build() {
+  cd tqdm-$version
+  python setup.py build
+}
+
+check() {
+  cd tqdm-$version
+  python setup.py egg_info
+  python -m pytest
+}
+
+package() {
+  cd tqdm-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m644 LICENCE "$pkgdir"/usr/share/licenses/$name/LICENCE
+}
+
+# vim:set ts=2 sw=2 et:

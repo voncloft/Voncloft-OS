@@ -1,0 +1,17 @@
+# description : Library to refactor python code through AST manipulation
+# depends : python
+
+url=https://github.com/google/pasta
+name=python-pasta
+version=0.2.0
+release=3
+
+source="https://github.com/google/pasta/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd pasta-$version
+   cd pasta-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

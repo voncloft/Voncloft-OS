@@ -1,0 +1,27 @@
+# description : Make an educated guess about the shell in use
+# depends : perl
+
+name=perl-shell-guess
+version=0.09
+release=3
+url=https://metacpan.org/release/Shell-Guess
+check# depends : tcsh
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Shell-Guess-$version.tarsource=.gz"
+options=!checksum
+sha512sums=60d8b315491cd10eb2cb1c3941db6369d93148e0bd500c72bc082b1673624dead6485d4238e241127c3a04a0f776222fbb90a40af6a327ed9e2988852fff544e
+
+build-delete {
+  cd Shell-Guess-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Shell-Guess-$version
+  make test
+}
+
+build() {
+  cd Shell-Guess-$version
+  make DESTDIR=$PKG install
+}

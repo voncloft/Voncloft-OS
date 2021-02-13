@@ -1,0 +1,32 @@
+# description : A refreshed Python toolbox for build()ing complex digital hardware
+# depends : python
+
+_name=nmigen
+name=python-$_name
+version=0.2
+release=3
+url=https://github.com/nmigen/nmigen
+opt# depends : python-pyvcd: for nmigen.pysim
+            python-jinja: for nmigen.build()
+make# depends : python-setuptools-scm
+source="$name-$version.tar.gz::$url/archive/v$version.tar.gz"
+sha512sums=0fa6de5ae445a7f9f9d1e1703d9a1f3b9e7b5842a3e46f92454bc4493e780d24051159ddaf4528fa061c135670e587fee2eb8ba565602fd0d2ab94f3493dc147
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+

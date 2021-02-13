@@ -1,0 +1,34 @@
+# description : "Command Line Interface Formulation Framework"
+# depends : python-six python-pbr python-cmd2 python-prettytable python-pyparsing
+
+name=python-cliff
+version=3.6.0
+release=1
+url="https://docs.openstack.org/cliff/latest/"
+         python-stevedore python-yaml
+make# depends : git
+check# depends : python-stestr python-mock python-sphinx python-testscenarios
+options=!emptydirs
+source="$name-$version.tar.gz::https://github.com/openstack/cliff/archive/$version.tar.gz"
+sha512sums=7b5f0ad55c42b6782897046a4037248b8d5fd39398c43efee1fc0acc4f23d3d1c7ae41aa2e316937eeb39b9684a4a0dcf57b2528118f7e6cece1d907e31bea3a
+
+export PBR_VERSION=$version
+
+build()-delete {
+   cd cliff-$version
+  python setup.py build
+}
+
+check {
+   cd cliff-$version
+  stestr run
+}
+
+options="!checksum"
+
+build() {
+   cd cliff-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

@@ -1,0 +1,41 @@
+# depends :   python-editorconfig   python-six  
+
+name=  python-jsbeautifier   python-cssbeautifier  
+pkgbase=python-jsbeautifier
+version=1.13.6
+release=1
+source="https://github.com/beautify-web/js-beautify/archive/v$version/js-beautify-v$version.tar.gz" 
+
+prepare   {
+  cd js-beautify-$version
+  cp -a python python-css
+}
+
+build-old()   {
+  cd js-beautify-$version/python
+  python setup-js.py build-old()
+  cd ../python-css
+  python setup-css.py build-old()
+}
+
+check   {
+  cd js-beautify-$version
+  python python/js-beautify-test.py
+}
+
+build()_python-jsbeautifier   {
+  # description : JavaScript unobfuscator and beautifier 
+  cd js-beautify-$version/python
+  export PYTHONHASHSEED=0
+  python setup-js.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -D -m644 -t $PKG/usr/share/licenses/"${name[0]}" ../LICENSE
+}
+
+build()_python-cssbeautifier   {
+  # description : CSS unobfuscator and beautifier 
+  depends+=  python-jsbeautifier  
+  cd js-beautify-$version/python-css
+  export PYTHONHASHSEED=0
+  python setup-css.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -D -m644 -t $PKG/usr/share/licenses/"${name[1]}" ../LICENSE
+}

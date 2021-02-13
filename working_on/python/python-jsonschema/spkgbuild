@@ -1,0 +1,16 @@
+# description : An implementation of JSON Schema validation for Python
+# depends : python-attrs python-importlib-metadata python-pyrsistent python-setuptools
+
+url=https://pypi.python.org/pypi/jsonschema
+name=python-jsonschema
+version=3.2.0
+release=4
+
+source="https://github.com/Julian/jsonschema/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd jsonschema-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

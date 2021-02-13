@@ -1,0 +1,22 @@
+
+name=python-aioconsole
+version=0.2.1
+release=2
+# description : Asynchronous console and interfaces for asyncio"
+# depends :   python  
+source="https://github.com/vxgmichel/aioconsole/archive/v$version/$name-$version.tar.gz.tar.gz" 
+
+build   {
+  cd aioconsole-$version
+  python setup.py build
+}
+
+check   {
+  cd aioconsole-$version
+  python -m pytest
+}
+
+package   {
+  cd aioconsole-$version
+  python setup.py install --root=$PKG --optimize=1
+}

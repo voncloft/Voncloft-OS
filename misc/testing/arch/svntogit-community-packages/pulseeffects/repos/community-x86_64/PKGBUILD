@@ -1,0 +1,34 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Wellington <wellingtonwallace@gmail.com>
+
+pkgname=pulseeffects
+pkgver=5.0.0
+pkgrel=1
+pkgdesc='Audio Effects for Pulseaudio Applications'
+arch=('x86_64')
+url='https://github.com/wwmm/pulseeffects'
+license=('GPL3')
+depends=('gtk3' 'gtkmm3' 'glibmm' 'libpulse' 'gstreamer' 'gst-plugin-gtk' 'gst-plugins-bad'
+         'lilv' 'boost-libs' 'libsigc++' 'libsndfile' 'libsamplerate' 'zita-convolver' 'libebur128'
+         'calf' 'lsp-plugins' 'yelp' 'libpipewire-0.3.so')
+makedepends=('meson' 'boost' 'itstool' 'appstream-glib'
+             'zam-plugins' 'rubberband' 'pipewire')
+optdepends=('zam-plugins: maximizer'
+            'rubberband: pitch shifting')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha512sums=('f43e1ad22d243689b94d840dd71046079ff806a42606184918e2a28bc6a287d40e709a43abc51e4ea5ea36e99963db43486206a122cc89fe533afe1f9ee54e2f')
+
+build() {
+  mkdir -p $pkgname-$pkgver/build
+  cd $pkgname-$pkgver/build
+
+  arch-meson ..
+
+  ninja
+}
+
+package() {
+  cd $pkgname-$pkgver/build
+
+  DESTDIR="$pkgdir" ninja install
+}

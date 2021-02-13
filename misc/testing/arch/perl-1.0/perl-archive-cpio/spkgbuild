@@ -1,0 +1,32 @@
+# description : module for manipulations of cpio archives
+# depends : perl>=5.10.0
+
+name=perl-archive-cpio
+_cpanname=Archive-Cpio
+version=0.10
+release=5
+url=https://metacpan.org/pod/Archive::Cpio
+source="${name}-${version}.tarsource=.gz"
+options=!checksum::https://cpan.metacpan.org/authors/id/P/PI/PIXEL/${_cpanname}-${version}.tarsource=.gz"
+options=!checksum
+sha256sums=246fb31669764e78336b2191134122e07c44f2d82dc4f37d552ab28f8668bed3
+sha512sums=c828f6f199de0efd7c7fbe2c3d4c5304df3c714720d91dd9a7d76e2c8d16bab1b92fc93a0b8afe78bd89b043ce7684c31d54b13c4e840f68ee040ca7bff43c3d
+
+build-delete {
+  cd ${_cpanname}-${version}
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd ${_cpanname}-${version}
+  make test
+}
+
+build() {
+  cd ${_cpanname}-${version}
+  make DESTDIR=$PKG install
+  install -Dm 644 Changes -t $PKG/usr/share/doc/${name}
+}
+
+# vim: ts=2 sw=2 et:

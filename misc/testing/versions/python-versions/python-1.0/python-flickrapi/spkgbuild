@@ -1,0 +1,26 @@
+
+name=python-flickrapi
+version=2.4.0
+release=5
+# description : The official Python interface to the Flickr API"
+# depends :   python-six   python-requests-oauthlib   python-requests-toolbelt  
+source="https://pypi.io/packages/source/f/flickrapi/flickrapi-$version.tar.gz" 
+
+build   {
+  cd flickrapi-$version
+  python setup.py build
+}
+
+check   {
+  # Tests not shipped
+  return
+
+  cd flickrapi-$version
+  python runtests
+}
+
+package   {
+  cd flickrapi-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE.txt
+}

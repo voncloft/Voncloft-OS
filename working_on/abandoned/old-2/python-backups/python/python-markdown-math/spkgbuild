@@ -1,0 +1,34 @@
+# description : "Math extension for Python-Markdown"
+# depends : python-markdown
+# AUR Maintainer: Marcus Scheunemann
+
+name=python-markdown-math
+version=0.8
+release=3
+url="https://github.com/mitya57/python-markdown-math"
+make# depends : python-setuptools
+source="https://files.pythonhosted.org/packages/source/${name:0:1}/${name}/${name}-${version}.tar.gz"{,.asc}
+sha256sums=8564212af679fc18d53f38681f16080fcd3d186073f23825c7ce86fadd3e3635
+            SKIP
+validpgpkeys=F24299FF1BBC9018B906A4CB6026936D2F1C8AE0 # Dmitry Shachnev <mitya57@debian.org>
+
+
+build()-delete {
+     cd "python-markdown-math-${version}"
+
+    python setup.py build
+}
+
+check {
+     cd "python-markdown-math-${version}"
+
+    python setup.py test
+}
+
+options="!checksum"
+
+build() {
+     cd "python-markdown-math-${version}"
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

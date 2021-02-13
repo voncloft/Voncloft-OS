@@ -1,0 +1,16 @@
+# description : Python client for Elasticsearch
+# depends : python-urllib3
+
+url=https://github.com/elastic/elasticsearch-py
+name=python-elasticsearch
+version=7.8.1
+release=3
+
+source="https://github.com/elastic/elasticsearch-py/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd elasticsearch-py-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

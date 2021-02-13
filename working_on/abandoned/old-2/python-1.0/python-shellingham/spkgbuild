@@ -1,0 +1,18 @@
+# description : Detect what shell the current Python executable is running in.
+# depends : python
+
+_name=shellingham
+url=https://github.com/sarugaku/${_name}
+_name=shellingham
+name=python-shellingham
+version=1.4.0
+release=1
+
+source="${url}/archive/${version}.tar.gz"
+options="checksum"
+
+build() {
+     cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

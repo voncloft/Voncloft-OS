@@ -1,0 +1,30 @@
+# description : A versatile test fixtures replacement based on thoughtbot s factory_bot for Ruby"
+# depends :   python-faker  
+
+name=python-factory-boy
+version=3.2.0
+release=1
+               python-flask-sqlalchemy   python-mongoengine   python-mongomock  
+source="https://github.com/FactoryBoy/factory_boy/archive/$version.tar.gz" 
+
+prepare   {
+  cd factory_boy-$version
+  # Use mongomock
+  sed -i  /serverselectiontimeoutms/a is_mock=True  tests/test_mongoengine.py
+}
+
+build-old()   {
+  cd factory_boy-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd factory_boy-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd factory_boy-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,13 @@
+# description	: Python bindings for YAML, using fast libYAML library
+# depends	: python yaml
+
+name=python-yaml
+version=5.3.1
+release=1
+source="http://pyyaml.org/download/pyyaml/PyYAML-$version.tar.gz"
+
+build() {
+	cd PyYAML-$version
+	python setup.py --with-libyaml build
+	python setup.py install --with-libyaml --prefix=/usr --root=$PKG --optimize=1
+}

@@ -1,0 +1,44 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_pkgname=LibCST
+pkgname=python-libcst
+pkgver=0.3.16
+pkgrel=1
+pkgdesc="A concrete syntax tree parser and serializer library for Python that preserves many aspects of Python's abstract syntax tree"
+arch=('any')
+url='https://github.com/Instagram/LibCST'
+license=('MIT')
+depends=('python-typing_extensions' 'python-typing_inspect' 'python-yaml')
+makedepends=('python-setuptools')
+checkdepends=('python-hypothesis' 'python-hypothesmith' 'python-isort' 'python-black')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha512sums=('220ace78d009ea29e9d05073815328da8fe6f31540c46d44569b35e611917378d857f7fae4f07dd19b96f490281768477cc375b8e524559ad5a737562d1c40d1')
+
+prepare() {
+  cd $_pkgname-$pkgver
+
+  sed -i 's/import AbstractBaseMatcherNodeMeta/import Optional, AbstractBaseMatcherNodeMeta/' libcst/codegen/gen_matcher_classes.py
+  python -m libcst.codegen.generate matchers
+}
+
+build() {
+  cd $_pkgname-$pkgver
+
+  python setup.py build
+}
+
+check() {
+  cd $_pkgname-$pkgver
+
+  python -m unittest
+}
+
+package() {
+  cd $_pkgname-$pkgver
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

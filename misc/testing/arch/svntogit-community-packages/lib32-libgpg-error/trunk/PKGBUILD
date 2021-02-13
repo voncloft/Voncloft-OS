@@ -1,0 +1,39 @@
+# Maintainer: judd <jvinet@zeroflux.org>
+
+_pkgbasename=libgpg-error
+pkgname=lib32-$_pkgbasename
+pkgver=1.41
+pkgrel=1
+pkgdesc="Support library for libgcrypt (32-bit)"
+arch=(x86_64)
+url="https://www.gnupg.org"
+license=('LGPL')
+depends=('lib32-glibc' $_pkgbasename)
+source=(https://www.gnupg.org/ftp/gcrypt/libgpg-error/${_pkgbasename}-${pkgver}.tar.bz2{,.sig})
+sha512sums=('578d1d8090b9f6e6cbe59d9aeebec7df81aae492f75ec343f8df530950d30866fa0a7903ca050bf7bf721413f7b2708abe34f7467e2b208cc1447ffc9bd5b9a5'
+            'SKIP')
+validpgpkeys=('D8692123C4065DEA5E0F3AB5249B39D24F25E3B6'  # Werner Koch
+              '031EC2536E580D8EA286A9F22071B08A33BD3F06'  # NIIBE Yutaka (GnuPG Release Key) <gniibe@fsij.org>
+              '6DAA6E64A76D2840571B4902528897B826403ADA') # "Werner Koch (dist signing 2020)"
+
+build() {
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+
+  cd "${srcdir}"/${_pkgbasename}-${pkgver}
+  ./configure --prefix=/usr --libdir=/usr/lib32
+  make
+}
+
+check() {
+  cd "${srcdir}"/${_pkgbasename}-${pkgver}
+  make check
+}
+
+package() {
+  cd "${srcdir}"/${_pkgbasename}-${pkgver}
+  make DESTDIR="${pkgdir}/" install
+
+  rm -rf "${pkgdir}"/usr/{include,share,bin}
+}

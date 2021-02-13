@@ -1,0 +1,18 @@
+# description : Sphinx themes for Flask and related projects"
+# depends :   python-sphinx  
+
+name=python-flask-sphinx-themes
+version=1.0.2
+release=4
+source="https://github.com/pallets/flask-sphinx-themes/archive/$version.tar.gz" 
+
+build-old()   {
+  cd flask-sphinx-themes-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd flask-sphinx-themes-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

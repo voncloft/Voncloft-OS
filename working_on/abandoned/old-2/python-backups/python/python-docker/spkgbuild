@@ -1,0 +1,38 @@
+# description : "A Python library for the Docker Engine API"
+# depends : python-requests python-six python-websocket-client python-docker-pycreds python-paramiko
+
+name=python-docker
+version=4.4.1
+release=1
+url="https://github.com/docker/docker-py"
+make# depends : python-pip python-requests python-six python-websocket-client
+             python-docker-pycreds
+check# depends : python-pytest python-pytest-cov python-pytest-timeout
+              python-mock python-coverage flake8
+provides=python-docker-py
+conflicts=python-docker-py
+replaces=python-docker-py
+source="$name-$version.tar.gz::https://github.com/docker/docker-py/archive/$version.tar.gz"
+sha512sums=4e8d0ac2796607ad245399d44ee0f2e07698758dddbf3c8ca3aaca3a3cc648a0c2ebc974155ce385f7a99e4af034080523dc830d4e2c0ce8a3987129229d8bcb
+
+prepare {
+  sed -i s/==.*$// docker-py-"$version"/{,test-}requirements.txt
+}
+
+build()-delete {
+   cd "$srcdir"/docker-py-"$version"
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/docker-py-"$version"
+  py.test --cov=docker tests/unit
+}
+
+options="!checksum"
+
+build() {
+   cd docker-py-"$version"
+  python setup.py build
+  python setup.py install -O1 --root=$PKG
+}

@@ -1,0 +1,21 @@
+
+name=python-readme-renderer
+version=28.0
+release=3
+# depends :   python-bleach   python-docutils   python-pygments   python-six  
+source="https://github.com/pypa/readme_renderer/archive/$version.tar.gz" 
+
+build   {
+  cd readme_renderer-$version
+  python setup.py build
+}
+
+check   {
+  cd readme_renderer-$version
+  python setup.py pytest || echo "Tests failed"
+}
+
+package_python-readme-renderer   {
+  cd readme_renderer-$version
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,23 @@
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+
+pkgname=sparsehash
+pkgver=2.0.4
+pkgrel=1
+pkgdesc="Library that contains several hash-map implementations, including implementations that optimize for space or speed."
+arch=("any")
+url="https://github.com/sparsehash/sparsehash"
+license=('BSD')
+source=("https://github.com/sparsehash/sparsehash/archive/sparsehash-$pkgver.tar.gz")
+sha256sums=('8cd1a95827dfd8270927894eb77f62b4087735cbede953884647f16c521c7e58')
+
+build() {
+	cd "$srcdir"/sparsehash-sparsehash-$pkgver
+	./configure --prefix=/usr
+	make
+}
+
+package() {
+	cd "$srcdir"/sparsehash-sparsehash-$pkgver
+	make DESTDIR="$pkgdir/" install
+	install -D -m644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
+}

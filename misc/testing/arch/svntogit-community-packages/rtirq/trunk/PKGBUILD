@@ -1,0 +1,32 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Corey Mwamba <contact.me@coreymwamba.co.uk>
+
+pkgname=rtirq
+pkgver=20210113
+pkgrel=1
+pkgdesc="Realtime IRQ thread system tuning."
+arch=('any')
+url="https://www.rncbc.org/archive/#rtirq"
+license=('GPL2')
+groups=('realtime')
+depends=('bash')
+backup=('etc/rtirq.conf')
+source=("https://www.rncbc.org/archive/${pkgname}-${pkgver}.tar.gz"{,.sig})
+sha512sums=('f8597c23a2d85721144ad6ab655b76edfa12b424d29e551e7d9f0f51da977730c3090486b8873d9ed5a7c0cec6738dfdbeac338ec9f34fd9079c296d3f952b59'
+            'SKIP')
+b2sums=('83f69cd429a727bcaa7997592bb672dad725039093f1f89b4b0029c767beaf922748c1019ea94252015c0f80f6cd3651ba0a80ebff188d24e43afaeaf0490004'
+        'SKIP')
+validpgpkeys=('0E89694D1D4F7883B98DEFA19D0514152A8E5EC4') # Rui Nuno Capela <rncbc@rncbc.org>
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  # fix executable location in systemd services
+  sed -e "s|etc/init.d|usr/bin|" -i *".service"
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -vDm 755 "${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+  install -vDm 644 "${pkgname}.conf" -t "${pkgdir}/etc/"
+  install -vDm 644 *".service" -t "${pkgdir}/usr/lib/systemd/system/"
+}

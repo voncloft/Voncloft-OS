@@ -1,0 +1,51 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: David Runge <dave@sleepmap.de>
+# Contributor: Sander Jansen <sander@knology.net>
+
+pkgname=gogglesmm
+pkgver=1.2.2
+pkgrel=1
+pkgdesc="Music Manager and Player"
+arch=('x86_64')
+url="https://gogglesmm.github.io/"
+license=('GPL3')
+depends=('libepoxy'
+         'glu'
+         'libsm'
+         'libxcursor'
+         'libxrandr'
+         'libxi'
+         'libxft'
+         'libvorbis'
+         'libwebp'
+         'libjpeg-turbo'
+         'openssl'
+         'libmad'
+         'flac'
+         'faad2'
+         'opus'
+         'taglib>=1.9.0'
+         'sqlite'
+         'dbus'
+         'hicolor-icon-theme')
+optdepends=('libpulse: PulseAudio Output'
+            'alsa-lib: ALSA Output')
+#'python2: import utilities'
+makedepends=('cmake'
+             'pkgconfig'
+             'alsa-lib'
+             'libpulse')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/gogglesmm/gogglesmm/archive/$pkgver.tar.gz")
+sha512sums=('5df35eb23a0ea3d4217d8395b42499ed2cbd8d42cc7522c58c7f1364dd8f4e98c7005a81ef71229fdd96040f10b19be29cb6e1854f46b4e4613642b50dda6710')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cmake . \
+        -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make DESTDIR="$pkgdir" install
+}

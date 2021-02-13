@@ -1,0 +1,16 @@
+# description : WSGI request and response object
+# depends : python
+
+url=http://pythonpaste.org/webob/
+name=python-webob python-webob-docs
+version=1.8.6
+release=3
+
+source="https://pypi.io/packages/source/W/WebOb/WebOb-$version.tar.gz"
+
+build() {
+   cd $srcdir/WebOb-$version
+   cd $srcdir/WebOb-$version-docs
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

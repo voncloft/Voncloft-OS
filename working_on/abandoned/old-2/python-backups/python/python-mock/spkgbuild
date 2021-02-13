@@ -1,0 +1,43 @@
+# description : Mocking and Patching Library for Testing
+# depends : python python-six python-pbr
+
+pkgbase=python-mock
+version=3.0.5
+release=5
+url=http://www.voidspace.org.uk/python/mock/
+source=mock-$version.tar.gz::https://github.com/testing-cabal/mock/archive/$version.tar.gz
+sha512sums=9ab4f0c794f5701ba1367d982cf79a5662d4233753d12ed9c88ae20282db1f44be73f84c4d9f6d03ff64926b8c1b6d0c9a79b2a4724a3eb36c247ffd4ab03e2d
+
+prepare {
+   cd "$srcdir/mock-$version"
+  # use unittest instead of unittest2 as they are the same on recent python*
+  sed -i s/unittest2/unittest/g mock/tests/*.py
+
+   cd "$srcdir"
+  cp -rf "mock-$version" "mock2-$version"
+}
+
+build()-delete {
+   cd "$srcdir/mock-$version"
+  python3 setup.py build()
+
+   cd "$srcdir/mock2-$version"
+}
+
+check {
+   cd "$srcdir/mock-$version"
+  echo python tests
+  python -m unittest discover
+
+   cd "$srcdir/mock2-$version"
+  # Remove Python 3 only test
+  rm mock/tests/testhelpers_py3.py
+}
+
+package_python-mock {
+   cd "$srcdir/mock-$version"
+  python3 setup.py install --optimize=1 --root=$PKG
+}
+
+   cd "$srcdir/mock2-$version"
+}

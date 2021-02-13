@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-filetype
+version=1.0.7
+release=3
+pkgdesc="Infer file type and MIME type of any file/buffer"
+url="https://github.com/h2non/filetype.py"
+depends=('python')
+makedepends=('python-setuptools')
+source=("https://github.com/h2non/filetype.py/archive/v$version/$name-$version.tar.gz")
+sha512sums=('f6d861a9108ffb796858bfdfb26d1bdf6aa9704794fa86340cc36a2920b4f11e12faf4271d19bca9a89be76d8fcff43e8859c8def2525ddbadd52a18c7f68cac')
+
+build() {
+  cd filetype.py-$version
+  python setup.py build
+}
+
+check() {
+  cd filetype.py-$version
+  python -m unittest discover
+}
+
+package() {
+  cd filetype.py-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name/
+}

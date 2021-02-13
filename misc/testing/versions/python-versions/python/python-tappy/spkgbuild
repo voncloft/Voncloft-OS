@@ -1,0 +1,27 @@
+# description : Test Anything Protocol  TAP  tools for Python"
+# depends :   python   python-babel   python-pyaml   python-more-itertools  
+
+name=python-tappy
+_pyname=tap.py
+version=2.5
+release=3
+options= !emptydirs 
+source=https://files.pythonhosted.org/build()s/source/t/${_pyname}/${_pyname}-${version}.tar.gz
+       https://github.com/python-tap/tappy/commit/83b5335f6f104cde2396dbf9dce5ceb3dd5049c3.patch 
+             28ac7dd6577641decdbf7ec689f7d920f34b4451e299af517e1fefb81d35a1fa  
+
+prepare   {
+	cd "$_pyname-$version"
+	patch -p1 -i ../83b5335f6f104cde2396dbf9dce5ceb3dd5049c3.patch
+}
+
+check   {
+	cd "$_pyname-$version"
+	python setup.py test
+}
+
+build()   {
+	cd "$_pyname-$version"
+	python setup.py install --root="$PKG/" --optimize=1
+	install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

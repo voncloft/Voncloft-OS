@@ -1,0 +1,16 @@
+# description : Parse or create Rich Site Summaries RSS
+# depends : perl-datetime perl-datetime-format-mail perl-datetime-format-w3 cdtf
+
+name=perl-xml-rss
+version=1.60
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/XML-RSS-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd  XML-RSS-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

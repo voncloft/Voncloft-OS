@@ -1,0 +1,22 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Ye Jingchen <ye.jingchen@gmail.com>
+# Contributor: Markus Weimar <mail@markusweimar.de>
+
+pkgname=ttf-sarasa-gothic
+pkgver=0.17.0
+pkgrel=1
+pkgdesc="A CJK programming font based on Iosevka and Source Han Sans. (TTC)"
+arch=('any')
+url="https://github.com/be5invis/Sarasa-Gothic"
+license=('OFL')
+provides=('ttf-sarasa-slab')
+source=("https://github.com/be5invis/Sarasa-Gothic/releases/download/v$pkgver/sarasa-gothic-ttc-$pkgver.7z"
+        "LICENSE-$pkgver::https://raw.githubusercontent.com/be5invis/Sarasa-Gothic/v${pkgver}/LICENSE")
+sha512sums=('814deb10cdee5deec9b1f275dcdd101507064208b87bba6dcc9090a8283d50f559de503a6e3e6978a7a477365717362f87ebcec09c30c4bddfb207b2be79fc13'
+            '235a437c02a41bb7b7c2a7209f6333d439dd27ff83f0d8b53ae146e92b0159a5196ffcc5fdcc47dc4c995826e468d0af6d9648a2468f39b72a734d8cde6643f9')
+
+package() {
+    install -d "$pkgdir/usr/share/fonts/${pkgname:4}"
+    install -m644 *.ttc "$pkgdir/usr/share/fonts/${pkgname:4}"
+    install -Dm644 "LICENSE-$pkgver" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

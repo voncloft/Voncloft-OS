@@ -1,0 +1,25 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=litex-boards
+name=python-$_name
+version=2020.12
+release=1
+pkgdesc='Small footprint and configurable Ethernet core'
+url="https://github.com/litex-hub/$_name"
+depends=('python-migen' 'python-litex' 'python-litedram' 'python-liteeth' 'python-liteiclink' 'python-litejesd204b'
+         'python-litepcie' 'python-litesata' 'python-litescope' 'python-litesdcard' 'python-litevideo')
+makedepends=('python-setuptools')
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('f360f9e0ea30002586433721afb8cd38a4839b8445121ec24323ad79fd8f02ce064012c8138f9fe458c16741859e4e9059bcece49af384b1ed3979a2116bec70')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

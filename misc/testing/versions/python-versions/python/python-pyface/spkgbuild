@@ -1,0 +1,31 @@
+# description : Traits-capable windowing framework"
+# depends :   python-traits  
+
+# TODO: python-scimath: for unit parser in pyface.wx.spreadsheet
+# TODO: look for more hidden dependencies
+
+name=python-pyface
+version=7.0.0
+release=3
+             python-pyqtwebengine: for Qt backend 
+             pyside2: for Qt backend  or python-pyqt5  
+             python-pygments: for syntax coloring in Qt backend 
+             python-setuptools: to locate resources inside zip and egg files 
+             ipython: for IPython widget 
+             python-wxpython: for wx backend  
+options= !emptydirs 
+source="pyface-${version}.tar.gz::https://github.com/enthought/pyface/archive/${version}.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/pyface-$version
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/pyface-$version
+
+  python setup.py install --root=$PKG/ --optimize=1
+
+  install -D LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

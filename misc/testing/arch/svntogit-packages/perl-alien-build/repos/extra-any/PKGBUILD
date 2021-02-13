@@ -1,0 +1,33 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=perl-alien-build
+pkgver=2.38
+pkgrel=1
+pkgdesc="Build external dependencies for use in CPAN"
+arch=('any')
+license=('PerlArtistic')
+url="https://metacpan.org/release/Alien-Build"
+depends=('perl-capture-tiny' 'perl-ffi-checklib' 'perl-file-chdir' 'perl-file-which'
+         'perl-path-tiny')
+makedepends=('perl-test2-suite')
+checkdepends=('perl-alien-base-modulebuild' 'perl-alien-cmake3' 'perl-env-shellwords'
+              'perl-pkgconfig' 'perl-pkgconfig-libpkgconf' 'perl-readonly' 'perl-sort-versions')
+options=('!emptydirs')
+source=("https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-$pkgver.tar.gz")
+sha512sums=('a77b27894c74e9b73fd479f3efb67c748bf9f32931a75471f6e5e0ccbb65d2e5617abfef28f71a7e461f4e1a4216fa8968564aa8ae52ff1bbeae570743fbab81')
+
+build() {
+  cd Alien-Build-$pkgver
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check() {
+  cd Alien-Build-$pkgver
+  make test
+}
+
+package() {
+  cd Alien-Build-$pkgver
+  make DESTDIR="$pkgdir" install
+}

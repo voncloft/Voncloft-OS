@@ -1,0 +1,16 @@
+# description : ANSI color text library for python
+# depends : python3
+
+name=python3-colorclass
+version=2.2.0
+release=8
+
+source="https://github.com/Robpol86/colorclass/archive/v${version}.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd colorclass-$version
+	python3 setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1
+}

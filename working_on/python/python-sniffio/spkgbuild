@@ -1,0 +1,17 @@
+# description : Sniff out which async library your code is running under
+# depends : python
+
+_tag=b93038b1a8b76607363f2f261bcf8e7ad4c53807
+url=https://github.com/python-trio/sniffio
+name=python-sniffio
+version=1.2.0
+release=3
+
+source="git+https://github.com/python-trio/sniffio.git#tag=${_tag}
+options="!checksum"
+
+build() {
+   cd sniffio
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

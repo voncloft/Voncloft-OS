@@ -1,0 +1,16 @@
+# description : A code generator for executing Python snippets in source files
+# depends : python
+
+url=https://nedbatchelder.com/code/cog
+name=python-cogapp
+version=3.0.0
+release=5
+
+source="https://pypi.io/packages/source/c/cogapp/cogapp-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd cogapp-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,30 @@
+# description : I/O on in-core objects like strings/arrays
+# depends : perl
+
+name=perl-io-stringy
+_name=IO-Stringy
+version=2.113
+release=1
+url=https://metacpan.org/pod/IO::Stringy
+source="https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/${_name}-${version}.tarsource=.gz"
+options=!checksum
+sha512sums=5af104766c20b4336649dc4a19554ad204506c2476b4bf7d8ad7c2cfab15f0296efadb9019cd57e770a2a3c5f5686f7f010bddbd6efd51d300c54ca36286f094
+
+build-delete {
+  cd  ${srcdir}/${_name}-${version}
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd  ${srcdir}/${_name}-${version}
+  make test
+}
+
+build() {
+  cd  ${srcdir}/${_name}-${version}
+  make install DESTDIR=$PKG
+
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

@@ -1,0 +1,17 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Jakub Klinkovský <j.l.k@gmx.com>
+
+name=python-simplemediawiki
+pkgdesc="Extremely low-level wrapper to the MediaWiki API"
+version=1.2.0_b2
+release=7
+url="https://github.com/ianweller/python-simplemediawiki"
+depends=('python')
+source=("$name-$version.tar.gz::https://github.com/ianweller/python-simplemediawiki/archive/${version/_/}.tar.gz")
+md5sums=('7c10122a1a884a902ac7fda5f01f4986')
+
+package() {
+  cd "python-simplemediawiki-${version/_/}"
+  python setup.py install --prefix=/usr --root="$pkgdir" --optimize=1
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$name/LICENSE"
+}

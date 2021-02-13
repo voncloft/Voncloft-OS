@@ -1,0 +1,33 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=golang-golang-x-image
+pkgver=0.0.20191214
+_commit=9130b4cfad522142c86367afe5e34ce811a85a4b
+pkgrel=2
+pkgdesc='Go supplementary image libraries'
+arch=('any')
+url="https://github.com/golang/image"
+license=('BSD')
+depends=('go' 'golang-golang-x-text')
+source=("$pkgname-$_commit.tar.gz::https://github.com/golang/image/archive/$_commit.tar.gz")
+sha512sums=('1e440c991aad5f142a64bf5fcf5211d198ec6389001bc61989cf782a55ebb7e8bdc50e9593f78473acfaa2683e221e41add23258dde0a9d1afaa651177a7e053')
+
+prepare() {
+  # Removed pinned version
+  rm image-$_commit/go.{mod,sum}
+}
+
+check() {
+  export GOPATH="$srcdir/build:/usr/share/gocode"
+  mkdir -p "$srcdir"/build/src/golang.org/x
+  cp -a "$srcdir"/image-$_commit "$srcdir"/build/src/golang.org/x/image
+  cd "$srcdir"/build/src/golang.org/x/image
+  go test -v $(go list ./...)
+}
+
+package() {
+  mkdir -p "$pkgdir"/usr/share/gocode/src/golang.org/x
+  cp -a "$srcdir"/image-$_commit "$pkgdir"/usr/share/gocode/src/golang.org/x/image
+
+  install -Dm644 image-$_commit/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

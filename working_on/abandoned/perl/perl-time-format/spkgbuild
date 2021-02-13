@@ -1,0 +1,29 @@
+# description : Perl/CPAN Module Time::Format : Easytouse datetime formatting
+# This PKGBUILD was autocreated.  See https://xtermin.us/archperl/ for details
+
+name=perl-time-format
+version=1.12
+release=7
+url=https://search.cpan.org/dist/Time-Format
+source="https://search.cpan.org/CPAN/authors/id/R/RO/ROODE/Time-Format-$version.tar.gz"
+options="!checksum"
+md5sums= cd42110c749bea1b4bab cd5fa9d0fdad
+
+build-delete {
+   cd $sr cdir/Time-Format-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/Time-Format-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

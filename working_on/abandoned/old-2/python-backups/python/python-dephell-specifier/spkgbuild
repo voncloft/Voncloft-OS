@@ -1,0 +1,34 @@
+# description : "Work with version specifiers"
+# depends : python-packaging
+
+_name=dephell_specifier
+name=python-dephell-specifier
+version=0.2.2
+release=3
+url="https://github.com/dephell/${_name}"
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+sha256sums=b5ec6409a1916980c4861da2cb7538246555bff4b95bef2c952c56bd19eb2de6
+b2sums=eb7656c3c713fd842cc4b3f342d77d88efef773e03845a28244b4071a1db8d73051d4afc17301823878ddadd01c58be19a5fc6f8e5fed03ae73fb97b5c44ea83
+
+build()-delete{
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}

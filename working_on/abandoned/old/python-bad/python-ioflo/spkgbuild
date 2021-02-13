@@ -1,0 +1,28 @@
+# description : Flo based programming interface in python 
+# depends :   python  
+
+name=python-ioflo
+version=2.0.2
+release=3
+source="https://github.com/ioflo/ioflo/archive/v$version.tar.gz" 
+
+prepare   {
+  cd ioflo-$version
+  sed -i "s/encoding= utf-8 ,//" ioflo/aio/http/httping.py
+  sed -i "s/encoding= utf-8 / utf-8 /" ioflo/aio/http/clienting.py
+}
+
+build-old()   {
+  cd ioflo-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd ioflo-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd ioflo-$version
+  python setup.py install --root=$PKG -O1
+}

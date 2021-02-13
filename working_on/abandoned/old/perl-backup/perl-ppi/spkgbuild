@@ -1,0 +1,34 @@
+# description : Parse, Analyze and Manipulate Perl without perl
+# depends : perl-clone perl-io-string perl-list-moreutils perl-params-util perl-task-weaken
+
+name=perl-ppi
+version=1.270
+release=2
+url=https://metacpan.org/release/PPI
+make# depends : perl-class-inspector perl-file-remove perl-test-deep perl-test-object
+             perl-test-subcalls
+source="https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/PPI-$version.tar.gz"
+options="!checksum"
+sha512sums=d138db281c69fc8bbf53174df720e97633e7fd35bc77a24ceeb164277a69a5aff2629a66e7d898d62db270333c87f998eaac23a9eab7ede76dcfd43d2c546858
+
+build-delete {
+  cd PPI-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd PPI-$version
+  make test
+}
+
+build() {
+  cd PPI-$version
+  make DESTDIR=$PKG install
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

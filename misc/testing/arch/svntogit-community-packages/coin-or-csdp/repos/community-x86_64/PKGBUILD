@@ -1,0 +1,44 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Ido Rosen <ido@kernel.org>
+
+pkgname='coin-or-csdp'
+pkgdesc="A C library for Semidefinite Programming"
+pkgver=6.2.0
+pkgrel=3
+arch=(x86_64)
+url='https://projects.coin-or.org/Csdp/'
+license=(CPL)
+depends=(lapack)
+source=("https://www.coin-or.org/download/source/Csdp/Csdp-$pkgver.tgz")
+sha256sums=('7f202a15f33483ee205dcfbd0573fdbd74911604bb739a04f8baa35f8a055c5b')
+
+prepare() {
+  cd Csdp-$pkgver
+# don't override CFLAGS
+  sed -e '/CFLAGS/d' -i Makefile
+# don't search for static libs, use system build flags
+  sed -e 's|-static|${LDFLAGS}|' -i Makefile
+}
+
+build() {
+  cd Csdp-$pkgver
+
+  CFLAGS+=" -I../include" make
+}
+
+check() {
+  cd Csdp-$pkgver
+
+  make unitTest
+}
+
+package() {
+  cd Csdp-$pkgver
+  
+  install -Dm755 solver/csdp -t "$pkgdir"/usr/bin
+  install -m755 theta/{theta,graphtoprob,complement,rand_graph} -t "$pkgdir"/usr/bin
+  install -Dm644 lib/libsdp.a -t "$pkgdir"/usr/lib
+  install -Dm644 include/* -t "$pkgdir"/usr/include/csdp
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/csdp
+}

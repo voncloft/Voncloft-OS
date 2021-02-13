@@ -1,0 +1,21 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+_name=requests-hawk
+name=python-requests-hawk
+version=1.0.1
+release=2
+pkgdesc="Hawk authentication strategy for the requests python library"
+url="https://github.com/mozilla-services/requests-hawk"
+depends=('python-mohawk' 'python-requests')
+source=("$name-$version.tar.gz::https://github.com/mozilla-services/$_name/archive/$version.tar.gz")
+sha256sums=('022ab238a42d62bfb594bfe7cb7535dd75e2bd189ec2e3a365cd2ee23df300ad')
+
+build() {
+  cd $_name-$version
+  python3 setup.py build
+}
+
+package() {
+  cd $_name-$version 
+  python3 setup.py install --root="$pkgdir" --optimize=1
+}

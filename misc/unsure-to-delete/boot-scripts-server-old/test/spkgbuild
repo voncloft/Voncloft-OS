@@ -1,0 +1,13 @@
+# description : test install
+# depends :
+
+name=test
+version=1
+release=1
+
+build()
+{
+	cd $name-$version
+	mkdir -pv $PKG/etc/init.d
+	install $SRC/test.txt $PKG/etc/init.d
+}

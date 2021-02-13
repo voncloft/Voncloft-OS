@@ -1,0 +1,16 @@
+# description : context manager to set the current process name 
+# depends : python
+
+name=python-setproctitle
+version=0.1.5
+release=1
+
+source="https://pypi.io/packages/source/s/setproctitle/setproctitle-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd setproctitle-$version
+ 	python setup.py build
+        python setup.py install --root=$PKG --optimize=1
+}

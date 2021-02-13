@@ -1,0 +1,32 @@
+# description : pytest plugin to check FLAKE8 requirements 
+# depends :   python-pytest   flake8  
+
+name=python-pytest-flake8
+version=1.0.7
+release=1
+source="https://github.com/tholo/pytest-flake8/archive/$version.tar.gz" 
+
+prepare   {
+  sed -i  s/ignore = E128/ignore = E128 W605/  pytest-flake8-$version/tox.ini
+}
+
+build-old()   {
+  cd "$srcdir"/pytest-flake8-$version
+  python setup.py build-old()
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd "$srcdir"/pytest-flake8-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-build()s:$PYTHONPATH" py.test
+}
+
+build()   {
+  cd pytest-flake8-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

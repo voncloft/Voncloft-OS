@@ -1,0 +1,53 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor : Martin Wimpress <code@flexion.org>
+# Contributor: Roberto Alsina <ralsina at kde.org>
+# Contributor: Kurt J. Bosch <kjb-temp-2009 at alpenjodel.de>
+
+pkgname=nullmailer
+pkgver=2.2
+pkgrel=3
+pkgdesc='Simple relay-only mail transport agent'
+url='https://www.untroubled.org/nullmailer/'
+arch=('x86_64')
+license=('GPL2')
+depends=('gnutls')
+provides=('smtp-forwarder')
+conflicts=('smtp-forwarder' 'smtp-server')
+options=('emptydirs')
+source=(https://www.untroubled.org/nullmailer/archive/${pkgname}-${pkgver}.tar.gz
+        nullmailer.sysusers
+        nullmailer.tmpfiles)
+sha512sums=('21b29d59f3c386c13ce4541ae11dc5cd69f842085479d7fc9a69a540abc608ce5c1825f06bd3566536b392931f7eeb1b2d35addd816849e6f431877bb18c8268'
+            '004a14e65b7c45264033d1a2fae1cedad056ebde4597cbe711600793c4792715554e94eeee701a3f9618524debd1d8a74f15e297eb5070a45b2195b0b9fd722f'
+            'be2657f7560168ee3563fe4dc375f4cdd32ced485ce737e8d426c255b2f6fc3db1e3fe583b95041262b512f9420538fea209b4d77c75180187245709868ccdc9')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure \
+      --prefix=/usr \
+      --libexecdir=/usr/lib/${pkgname} \
+      --sysconfdir=/etc \
+      --localstatedir=/var \
+      --sbindir=/usr/bin \
+      --enable-tls
+  make
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  make test
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+
+  install -Dm 644 scripts/nullmailer.service -t "${pkgdir}/usr/lib/systemd/system"
+  install -Dm 644 ../nullmailer.sysusers "${pkgdir}/usr/lib/sysusers.d/nullmailer.conf"
+  install -Dm 644 ../nullmailer.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/nullmailer.conf"
+
+  # covered by tmpfiles with fixed ownership
+  rm -rf "${pkgdir}/var"
+}
+
+# vim: ts=2 sw=2 et:

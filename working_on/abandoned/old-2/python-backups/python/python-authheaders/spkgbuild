@@ -1,0 +1,51 @@
+# description : "Library for the generation of email authentication headers"
+# depends : publicsuffix-list python-authres python-dkim python-dnspython
+
+_name=authheaders
+name=python-authheaders
+version=0.13.0
+release=3
+url="https://github.com/ValiMail/authentication-headers"
+python-publicsuffix2
+make# depends : python-setuptools
+check# depends : python-pytest
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc}
+        psddmarc.csv::https://www.psddmarc.org/psddmarc-participants.csv
+sha512sums=dfaccd9dedea8bebc22b831c481c733590e11a3483e42b45f0b6329bdaa98eec0644faf8da8b92c56c2d48a43eec9c52f8ea9a3c67ae841c46a7085cf0572177
+            SKIP
+            f9bfa3ad0090c08b796c5a8cb1d16f2ec4069632f89469f3594c3770778ec66bcada09f1c813badc992ddad9d19fc25fb63c83fe70243c0d260de07f44219498
+validpgpkeys=E7729BFFBE85400FEEEE23B178D7DEFB9AD59AF1 # Donald Scott Kitterman <scott@kitterman.com>
+
+prepare {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build()-delete {
+   cd "$name-$version"
+  python setup.py build
+}
+
+check {
+   cd "$name-$version"
+  export PYTHONPATH="build():${PYTHONPATH}"
+  pytest -v
+}
+
+options="!checksum"
+
+build() {
+   cd "$name-$version"
+  local python_stdlib_basepath="$python -c "from sysconfig import get_path; printget_pathstdlib""
+  python setup.py build
+  python setup.py install  \
+  --optimize=1 \
+      \
+  --root=$PKG 
+  # use the system provided publicsuffix list PSL
+  ln -svf /usr/share/publicsuffix/public_suffix_list.dat \
+    "${PKG}/$python_stdlib_basepath/site-packages/authheaders/public_suffix_list.txt"
+  # the psddmarc-participants.csv seemingly needs to be embedded:
+  # https://github.com/ValiMail/authentication-headers/issues/4
+  install -vDm 644 ../psddmarc.csv -t "${PKG}/$python_stdlib_basepath/site-packages/authheaders/"
+  install -vDm 644 COPYING -t "${PKG}/usr/share/licenses/${name}"
+}

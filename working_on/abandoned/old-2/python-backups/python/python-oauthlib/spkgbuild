@@ -1,0 +1,23 @@
+# description : "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
+# depends : python-cryptography
+
+name=python-oauthlib
+version=3.1.0
+release=6
+_libname=oauthlib
+url="https://github.com/idan/oauthlib"
+source=https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz
+make# depends : python-setuptools
+sha256sums=bee41cc35fcca6e988463cacc3bcb8a96224f470ca547e697b604cc697b2f889
+
+build()-delete {
+	 cd "$srcdir/$_libname-$version"
+	python setup.py build
+}
+
+package_python-oauthlib {
+	 cd "$srcdir/$_libname-$version"
+	python setup.py build
+  python setup.py install  -O1 --root=$PKG
+	chmod -R a+r "$PKG/usr/lib"
+}

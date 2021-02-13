@@ -1,0 +1,19 @@
+# Maintainer: Jiachen YANG <farseerfc@gmail.com>
+# AUR Maintainer: Timofey Titovets <nefelim4ag@gmail.com>
+
+name=python-btrfs
+version=12
+release=2
+pkgdesc="Python Btrfs module, with useful scripts to inspect btrfs internals"
+url="https://github.com/knorrie/python-btrfs"
+depends=('python')
+makedepends=('git')
+source=("$name"::"git://github.com/knorrie/python-btrfs.git#tag=v${version}")
+md5sums=('SKIP')
+
+package() {
+    cd "$srcdir/${name}/"
+    python ./setup.py install --root="$pkgdir/" --prefix=/usr --optimize=1
+    cd bin
+    install -Dm755 btrfs-* -t "$pkgdir/usr/bin/"
+}

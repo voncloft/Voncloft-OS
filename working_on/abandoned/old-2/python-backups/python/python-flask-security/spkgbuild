@@ -1,0 +1,49 @@
+# description : Quick and simple security for Flask applications
+# depends : python python-flask python-flask-login python-flask-mail python-flask-principal
+
+_name=flask-security
+name=python-flask-security
+version=3.0.0
+release=4
+url=https://github.com/mattupstate/flask-security
+         python-flask-wtf python-flask-babelex python-itsdangerous python-passlib
+make# depends : python-flask python-flask-login python-flask-mail python-flask-principal
+             python-flask-wtf python-flask-babelex python-itsdangerous python-passlib
+             python-sphinx python-setuptools
+#check# depends : python-pytest python-pytest-runner python-pytest-cov python-pytest-cache
+              #python-mock python-sqlalchemy python-flask-sqlalchemy python-bcrypt python-pony
+source=${name}-${version}.tar.gz::https://github.com/mattupstate/flask-security/archive/${version}.tar.gz
+sha512sums=1176c154e3a4d4326fc64c6d4b986150db17b51b23003ef069596333777afd5857bc33391c46c771144422f610d669ceb96f4b5a1880b9ea374a488d6cb093f6
+
+prepare {
+   cd ${_name}-${version}
+  sed -e s/ --translations// \
+      -e s/ --pep8// \
+      -e s/ --flakes// \
+      -i pytest.ini
+}
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+  sphinx-build() -b text docs docs/_build()/text
+  sphinx-build() -b man docs docs/_build()/man
+}
+
+# TODO: test marks not compatible with latest pytest
+#check {
+  # cd ${_name}-${version}
+  #PYTHONPATH=. py.test
+  #PYTHONPATH=. py.test2
+#}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+  install -Dm 644 docs/_build()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/flask-security.1 "${PKG}/usr/share/man/man1/${name}.1"
+}
+

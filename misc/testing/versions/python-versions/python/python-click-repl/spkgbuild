@@ -1,0 +1,33 @@
+# description : Subcommand REPL for click apps"
+# depends :   python-click   python-prompt_toolkit   python-six  
+_name=click-repl
+name=python-click-repl
+version=0.1.6
+release=4
+source="https://files.pythonhosted.org/build()s/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build-old()   {
+  cd "$name-$version"
+  python setup.py build-old()
+}
+
+## no tests in pypi source:
+##https://github.com/click-contrib/click-repl/issues/49
+#check   {
+#  cd "$name-$version"
+#  export PYTHONPATH="${PYTHONPATH}:${PWD}/build-old()/lib/"
+#  py.test
+#}
+
+build()   {
+  cd "$name-$version"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}/"
+}

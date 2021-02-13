@@ -1,0 +1,17 @@
+# description : A thin, practical wrapper around terminal styling, screen positioning, and keyboard input
+# depends : 
+
+_tag=b22d3aa6a348416e49d14ce9d42bac48f0593e73
+url=https://github.com/jquast/blessed
+name=python-blessed
+version=1.17.12
+release=1
+
+source="git+https://github.com/jquast/blessed.git#tag=${_tag}
+options="checksum"
+
+build() {
+   cd blessed
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

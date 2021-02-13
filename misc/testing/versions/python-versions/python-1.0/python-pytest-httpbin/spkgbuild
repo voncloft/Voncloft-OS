@@ -1,0 +1,28 @@
+
+name=python-pytest-httpbin
+version=1.0.0
+release=6
+# description : A py.test fixture for httpbining code 
+# depends :   python-pytest   python-six   httpbin  
+source="https://github.com/kevin1024/pytest-httpbin/archive/v$version.tar.gz"
+        LICENSE 
+             949cb93164ce92e0a5acc184cca2da5580e31def2d153771ebfa386030fa2da65bcd48670780096d2cefe3e631dc755fc3024ae417f2d1bb3333bd85a39baf22  
+
+build   {
+  cd pytest-httpbin-$version
+  python setup.py build
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd pytest-httpbin-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH" python -m pytest
+}
+
+package   {
+  cd pytest-httpbin-$version
+  python setup.py install --root=$PKG/ --optimize=1
+  install -D -m644 ../LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

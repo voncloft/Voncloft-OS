@@ -1,0 +1,28 @@
+# description : "Python classes generated from the common protos in the googleapis repository"
+# depends : python-protobuf
+
+name=python-googleapis-common-protos
+version=1.52.0
+release=3
+url="https://github.com/googleapis/googleapis"
+opt# depends : python-grpcio: for grpc support
+make# depends : python-setuptools
+source="https://files.pythonhosted.org/packages/source/g/googleapis-common-protos/googleapis-common-protos-${version}.tar.gz"
+sha256sums=560716c807117394da12cecb0a54da5a451b5cf9866f1d37e9a5e2329a665351
+
+build()-delete {
+   cd "googleapis-common-protos-${version}"
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "googleapis-common-protos-${version}"
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  chmod -R +r "${PKG}"
+}

@@ -1,0 +1,28 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=arch-wiki-docs
+pkgdesc="Pages from Arch Wiki optimized for offline browsing"
+pkgver=20200527
+_commit=cdac9661818e5923d3a318789540028805fd7461
+pkgrel=1
+arch=('any')
+url="https://github.com/lahwaacz/arch-wiki-docs"
+license=('FDL')
+options=('!strip')
+makedepends=('git' 'python' 'python-simplemediawiki' 'python-lxml' 'python-cssselect')
+source=("git://github.com/lahwaacz/arch-wiki-docs.git#commit=${_commit}")
+md5sums=('SKIP')
+
+pkgver() {
+  date "+%Y%m%d"
+}
+
+prepare() {
+  cd "$pkgname"
+  LANG=en_US.UTF-8 python arch-wiki-docs.py --output-directory "$srcdir/build_wiki" --clean --safe-filenames
+}
+
+package() {
+  install -dm755 "$pkgdir/usr/share/doc/arch-wiki/html"
+  cp -r "$srcdir"/build_wiki/* "$pkgdir/usr/share/doc/arch-wiki/html/"
+}

@@ -1,0 +1,23 @@
+# description : "The sip module support for PyQt5"
+# depends : python
+
+name=python-pyqt5-sip
+version=12.8.1
+release=3
+url="https://riverbankcomputing.com/software/pyqt/intro"
+make# depends : python-setuptools
+source="https://pypi.python.org/packages/source/P/PyQt5-sip/PyQt5_sip-$version.tar.gz"
+sha256sums=30e944db9abee9cc757aea16906d4198129558533eb7fadbe48c5da2bd18e0bd
+
+build()-delete {
+   cd PyQt5_sip-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build()  {
+   cd PyQt5_sip-$version
+  python setup.py build
+  python setup.py install --root=$PKG
+}

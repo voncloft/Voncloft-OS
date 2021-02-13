@@ -1,0 +1,38 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+ 
+pkgname=libportal
+pkgver=0.3
+pkgrel=2
+pkgdesc="GIO-style async APIs for most Flatpak portals"
+url="https://github.com/flatpak/libportal"
+arch=(x86_64)
+license=(LGPL)
+depends=(glib2)
+makedepends=(git meson gtk-doc)
+_commit=7b11b2a42fd4e7681bd38f3986b47108c0a3cc66  # tags/0.3^0
+source=("git+https://github.com/flatpak/libportal#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed -r 's/[^-]+-g[^-]+$/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}
+
+# vim:set sw=2 et:

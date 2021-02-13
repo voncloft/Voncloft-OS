@@ -1,0 +1,96 @@
+# description : "The PyPA recommended tool for installing Python packages"
+
+version=20.3.1
+release=1
+url="https://pip.pypa.io/"
+_deps=appdirs cachecontrol colorama contextlib2 distlib distro html5lib
+       packaging pep517 progress requests retrying resolvelib setuptools six toml
+       # add these until https://github.com/pypa/pip/issues/5354#issuecomment-672678167 is resolved
+       pyopenssl
+             python-sphinx-inline-tabs
+check# depends : python-pytest-runner python-scripttest python-virtualenv python-pretend
+              python-yaml python-mock python-freezegun python-cryptography python-pip
+              python-wheel python-werkzeug python-csv23 git subversion
+source="pip-${version}.tar.gz::https://github.com/pypa/pip/archive/${version}.tar.gz"
+sha512sums=6061004b51e57e428a7eef02968fbbde02311ee184019c491012758010bffcb49d371c7612bc43cfacf96fe8de37fdcad34e3cadefc46b3b5962b0c716ee5d59
+
+shopt -s extglob
+prepare {
+   cd pip-$version
+
+  # Remove certifi usage
+  sed -i s|from pip._vendor.certifi import where|where = lambda: "/etc/ssl/certs/ca-certificates.crt"| src/pip/_internal/commands/debug.py
+
+  rm -rf src/pip/_vendor/!__init__.py
+  sed -i -e s/DEBUNDLED = False/DEBUNDLED = True/ \
+            src/pip/_vendor/__init__.py
+}
+
+build()-delete {
+   cd pip-$version
+
+  python setup.py build
+
+   cd docs/
+  PYTHONPATH="$srcdir/pip-$version/src/" python pip_sphinxext.py
+  PYTHONPATH="$srcdir/pip-$version/src/" sphinx-build() -W -b man -d build()/doctrees/man man build()/man -c html
+  mkdir -p build()/man-pip2
+   cd build()/man
+  for manfile in *; do
+    sed s/pip/pip2/g;s/PIP/PIP2/g $manfile > ../man-pip2/${manfile/pip/pip2}
+  done
+}
+
+check {
+   cd "$srcdir"/pip-$version
+  pip wheel -w tests/data/common_wheels -r tools/requirements/tests-common_wheels.txt
+  python setup.py build
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  # appdirs: https://github.com/pypa/pip/issues/7784
+  # build()_env: TODO weird looking errors
+  # virtualenv: https://github.com/pypa/pip/issues/8273
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages" PATH="$PWD/tmp_install/usr/bin:$PATH" \
+    python -m pytest -m unit --junit-xml=junit/unit-test.xml --deselect tests/unit/test_appdirs.py::TestSiteConfigDirs::test_site_config_dirs_linux \
+                                                             --deselect tests/unit/test_appdirs.py::TestSiteConfigDirs::test_site_config_dirs_linux_override \
+                                                             --deselect tests/unit/test_appdirs.py::TestSiteConfigDirs::test_site_config_dirs_linux_empty \
+                                                             --deselect tests/unit/test_appdirs.py::TestUserDataDir::test_user_data_dir_osx \
+                                                             --deselect tests/unit/test_appdirs.py::TestUserConfigDir::test_user_config_dir_osx \
+                                                             --deselect tests/unit/test_build()_env.py::test_build()_env_requirements_check \
+                                                             --deselect tests/unit/test_build()_env.py::test_build()_env_overlay_prefix_has_priority \
+                                                             --deselect tests/unit/test_build()_env.py::test_build()_env_isolation \
+                                                             --deselect tests/unit/test_build()_env.py::test_build()_env_allow_only_one_install \
+                                                             --deselect tests/unit/test_direct_url_helpers.py::test_from_link_vcs_with_source_dir_obtains_commit_id \
+                                                             --deselect tests/unit/test_direct_url_helpers.py::test_from_link_vcs_without_source_dir \
+                                                             --deselect tests/unit/test_wheel_build()er.py::test_should_cache_git_sha \
+                                                             --deselect tests/unit/resolution_resolvelib/test_requirement.py::test_new_resolver_full_resolve
+}
+
+package_python-pip {
+  # depends : "${_deps[@]/#/python-}"
+
+   cd pip-$version
+  python setup.py build
+  python setup.py install   --root=$PKG
+
+
+  install -Dm644 -t $PKG/usr/share/man/man1 docs/build()/man/*
+
+  PYTHONPATH=$PKG/usr/lib/python3.9/site-packages $PKG/usr/bin/pip completion --bash \
+    | install -Dm644 /dev/stdin $PKG/usr/share/bash-completion/completions/pip
+  PYTHONPATH=$PKG/usr/lib/python3.9/site-packages $PKG/usr/bin/pip completion --fish \
+    | install -Dm644 /dev/stdin $PKG/usr/share/fish/vendor_completions.d/pip.fish
+}
+
+  conflicts=python-pyinstall
+  replaces=python-pyinstall
+
+   cd pip-$version
+
+  mv "$PKG/usr/bin/pip" "$PKG/usr/bin/pip2"
+
+
+  install -Dm644 -t $PKG/usr/share/man/man1 docs/build()/man-pip2/*
+
+    | install -Dm644 /dev/stdin $PKG/usr/share/bash-completion/completions/pip2
+    | install -Dm644 /dev/stdin $PKG/usr/share/fish/vendor_completions.d/pip2.fish
+}

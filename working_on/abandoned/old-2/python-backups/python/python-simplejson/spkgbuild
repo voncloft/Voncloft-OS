@@ -1,0 +1,40 @@
+# description : Simple, fast, extensible JSON encoder/decoder for Python
+
+pkgbase=python-simplejson
+version=3.17.2
+release=3
+url=https://github.com/simplejson/simplejson
+source="$pkgbase-$version.tar.gz::https://github.com/simplejson/simplejson/archive/v$version.tar.gz"
+sha512sums=59428640d43fdc6927db752a36196f48d00818a87d924358deab7e498709515423ecdd34dece31364c5e8d64b63d99112fd4a4b8a03b9f9c6533268afc38e314
+
+prepare {
+  cp -a simplejson-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/simplejson-$version
+  python setup.py build
+
+   cd "$srcdir"/simplejson-$version-py2
+}
+
+check {
+   cd "$srcdir"/simplejson-$version
+  python setup.py pytest
+
+   cd "$srcdir"/simplejson-$version-py2
+}
+
+package_python-simplejson {
+  # depends : python
+
+   cd simplejson-$version
+  python setup.py build
+  python setup.py install --root=$PKG
+}
+
+
+   cd simplejson-$version-py2
+}
+
+  

@@ -1,0 +1,21 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Konstantin Shalygin <k0ste@k0ste.ru>
+
+pkgname=python-ovirt-engine-sdk
+pkgver=4.4.8
+pkgrel=1
+pkgdesc='Python access to the oVirt Engine API'
+arch=('x86_64')
+url='http://ovirt.org/develop/release-management/features/infra/python-sdk'
+depends=('python-pycurl' 'python-six' 'libxml2')
+makedepends=('python-setuptools')
+license=('custom')
+source=("https://resources.ovirt.org/pub/ovirt-4.4/src/python-ovirt-engine-sdk4/ovirt-engine-sdk-python-${pkgver}.tar.gz")
+sha512sums=('c2f64ebbb06c8f7ef3879ef4bb929d99cb4fd027a3b62e900116051cc9f9a6ccf7a69ae824e4b6f8f96792943b36d6b559908f5ed0d3be23c1e118fe0fe76702')
+
+package() {
+  cd "${srcdir}/ovirt-engine-sdk-python-${pkgver}"
+  python setup.py install -O1 --root="${pkgdir}"
+
+  install -Dm644 LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

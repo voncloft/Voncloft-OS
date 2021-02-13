@@ -1,0 +1,26 @@
+# Maintainer: Sébastien Luttringer
+# Contributor: XAVeRY - los dot danielos at gmail dot com
+
+pkgname=lsscsi
+pkgver=0.31
+pkgrel=1
+pkgdesc='A tool that lists devices connected via SCSI and its transports'
+arch=('x86_64')
+url='http://sg.danny.cz/scsi/lsscsi.html'
+license=('GPL')
+depends=('sysfsutils')
+source=("http://sg.danny.cz/scsi/$pkgname-$pkgver.tgz")
+sha256sums=('12bf1973014803c6fd6d547e7594a4c049f0eef3bf5d22190d4be29d7c09f3ca')
+
+build() {
+  cd $pkgname-*/
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $pkgname-*/
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

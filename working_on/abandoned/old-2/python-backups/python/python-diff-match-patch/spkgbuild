@@ -1,0 +1,32 @@
+# description : "Robust algorithms to perform the operations required for synchronizing plain text"
+# depends : python
+
+_pkg=diff-match-patch
+name=python-${_pkg}
+version=20200713
+release=3
+url="https://github.com/diff-match-patch-python/diff-match-patch"
+make# depends : python-setuptools
+check# depends : python-pytest
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz
+sha256sums=da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18
+
+build()-delete {
+   cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pkg}-${version}
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+  find "${PKG}" -name *_py2.* -delete
+  rm -r "${PKG}"$python -c "import site; printsite.getsitepackages[0]"/${_pkg//-/_}/tests
+}

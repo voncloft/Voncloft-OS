@@ -1,0 +1,21 @@
+
+name=python-nbxmpp
+# description : A Python library to use Jabber/XMPP networks in a non-blocking way"
+version=1.0.2
+release=3
+# depends :  libsoup python-gobject python-idna python-precis_i18n 
+source= https://dev.gajim.org/gajim/python-nbxmpp/repository/nbxmpp-$version/archive.tar.gz 
+
+prepare   {
+  mv $name-nbxmpp-* $name-$version
+}
+
+build   {
+  cd $name-$version
+  python setup.py build
+}
+
+package   {
+  cd $name-$version
+  python setup.py install --root=$PKG
+}

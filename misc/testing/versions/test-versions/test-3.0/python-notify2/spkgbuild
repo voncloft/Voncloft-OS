@@ -1,0 +1,26 @@
+
+_name=notify2
+name=python-notify2
+version=0.3.1
+release=5
+# description : "Python interface to DBus notifications"
+# depends : ('python-dbus')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+
+prepare() {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build-remove() {
+  cd "$name-$version"
+  python setup.py build
+}
+# NOTE: tests require running dbus
+
+build() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  install -vDm 644 examples/* -t "${pkgdir}/usr/share/doc/${name}/examples"
+}

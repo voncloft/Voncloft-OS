@@ -1,0 +1,33 @@
+
+pkgbase=python-six
+name=('python2-six' 'python-six')
+version=1.15.0
+release=3
+# description : "Python 2 and 3 compatibility utilities"
+source=("https://pypi.io/packages/source/s/six/six-$version.tar.gz")
+
+build-remove() {
+  cp -a six-$version{,-py2}
+}
+
+check() {
+  cd "$srcdir"/six-$version
+  python -m pytest
+
+  cd "$srcdir"/six-$version-py2
+  python2 -m pytest
+}
+
+package_python-six() {
+  # depends : ('python')
+
+  cd six-$version
+  python setup.py install --root $PKG --optimize=1
+}
+
+package_python2-six() {
+  # depends : ('python2')
+
+  cd six-$version-py2
+  python2 setup.py install --root $PKG --optimize=1
+}

@@ -1,0 +1,36 @@
+# description : Backported and Experimental Type Hints for Python 3.5+ 
+# depends :  python 
+
+name=python-typing_extensions
+version=3.7.4.3
+release=3
+  git
+  python-setuptools
+ 
+provides= python-typing-extensions 
+conflicts= python-typing-extensions 
+
+version   {
+  cd typing
+
+  git describe --tags
+}
+
+prepare   {
+  sed  s/3.7.4.2/3.7.4.3/g  -i typing/typing_extensions/setup.py
+}
+
+build-old()   {
+  cd typing/typing_extensions
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd typing/typing_extensions
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-typing_extensions/
+}
+
+# vim: ts=2 sw=2 et:

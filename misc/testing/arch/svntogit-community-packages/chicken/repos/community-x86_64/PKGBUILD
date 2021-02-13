@@ -1,0 +1,44 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Vesa Kaihlavirta <vegai@iki.fi>
+# Contributor: David <david@pako.st>
+
+pkgname=chicken
+pkgver=5.2.0
+pkgrel=1
+pkgdesc='Feature rich R5RS Scheme compiler and interpreter'
+arch=(x86_64)
+url='https://call-cc.org/'
+license=(BSD)
+makedepends=(chicken)
+optdepends=('tk: for the tcl/tk egg')
+options=(staticlibs)
+source=("https://code.call-cc.org/releases/$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('819149c8ce7303a9b381d3fdc1d5765c5f9ac4dee6f627d1652f47966a8780fa')
+
+build() {
+  make -j1 -C $pkgname-$pkgver \
+    PLATFORM=linux \
+    CSC_PROGRAM=chicken-csc \
+    CSI_PROGRAM=chicken-csi \
+    PREFIX=/usr
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  # Chicken had csc and csi first, but then mono introduced a conflict and
+  # does not seem to want to change this. OpenBSD renamed csc and csi to
+  # chicken-csc and chicken-csi 2018-12-12. We also use these.
+  make -j1 \
+    PLATFORM=linux \
+    DESTDIR="$pkgdir" \
+    PREFIX=/usr \
+    CSC_PROGRAM=chicken-csc \
+    CSI_PROGRAM=chicken-csi \
+    install
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# getver: code.call-cc.org/releases/current/NEWS
+# vim: ts=2 sw=2 et:

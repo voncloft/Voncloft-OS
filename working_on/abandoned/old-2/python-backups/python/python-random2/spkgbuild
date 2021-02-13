@@ -1,0 +1,19 @@
+# description : "Python 3 compatible port of Python 2 random module"
+# depends : python
+
+_pipname=random2
+name=python-$_pipname
+version=1.0.1
+release=6
+url="https://pypi.org/project/random2/"
+make# depends : python-setuptools
+source="https://pypi.python.org/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$version.zip"
+sha256sums=34ad30aac341039872401595df9ab2c9dc36d0b7c077db1cea9ade430ed1c007
+
+options="!checksum"
+
+build() {
+   cd $_pipname-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

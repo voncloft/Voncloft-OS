@@ -1,0 +1,23 @@
+# description : "Traits-capable user interfaces"
+# depends : python-pyface
+
+name=python-traitsui
+version=7.0.0
+release=3
+url="https://github.com/enthought/traitsui"
+make# depends : python-setuptools
+source="traitsui-${version}.tar.gz::https://github.com/enthought/traitsui/archive/${version}.tar.gz"
+sha256sums=72fd09d04e134099ca4a318b549063a686e2e8c94de6743c38665396cc8b2636
+
+build()-delete {
+   cd "$srcdir"/traitsui-$version
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/traitsui-$version
+  python setup.py build
+  python setup.py install --root=$PKG/ --optimize=1
+}

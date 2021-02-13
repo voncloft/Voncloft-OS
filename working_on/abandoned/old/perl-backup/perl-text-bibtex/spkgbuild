@@ -1,0 +1,50 @@
+# description : Perl interface to read and parse BibTeX files
+# depends : perl
+# $ID$
+
+name=perl-text-bibtex
+_dist=Text-BibTeX
+version=0.85
+release=6
+url=https://metacpan.org/release/${_dist}
+make# depends : perl-module-build
+             perl-config-autoconf
+             perl-extutils-libbuilder
+source="https://search.cpan.org/CPAN/authors/id/A/AM/AMBS/${_dist}-${version}.tar.gz"
+options="!checksum"
+# Checksums from http://search.cpan.org/CPAN/authors/id/A/AM/AMBS/CHECKSUMS
+md5sums=eff0352d6de29a8d4d61efcc7774186c
+sha256sums=1005455f09ad5d39ebf6b45c87106a7341cbe5a7b25251dd05c7c960d7ebd30c
+
+prepare {
+    cd ${srcdir}/${_dist}-${version}
+    # Dont install to /usr/lib64
+    sed -i s,lib64,lib,g Build.PL
+}
+
+build-delete {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Build.PL
+    ./Build
+}
+
+check {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1
+    ./Build test
+}
+
+build() {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    ./Build install installdirs=vendor destdir=$PKG
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

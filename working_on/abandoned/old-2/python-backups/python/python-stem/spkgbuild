@@ -1,0 +1,47 @@
+# description : Python controller library for Tor
+# depends : python python-cryptography python-pynacl procps-ng
+
+name=python-stem
+_pypiname=${name#*-}
+version=1.8.0
+release=3
+url=https://stem.torproject.org/
+check# depends : tor python-mock
+opt# depends : tor: tor-server to talk to
+replaces=stem
+provides=stem
+source=https://files.pythonhosted.org/packages/source/${_pypiname::1}/${_pypiname}/${_pypiname}-${version}.tar.gz{,.asc}
+sha256sums=a0b48ea6224e95f22aa34c0bc3415f0eb4667ddeae3dfb5e32a6920c185568c2
+            SKIP
+validpgpkeys=68278CC5DD2D1E85C4E45AD90445B7AB9ABBEEC6 # Damian Johnson www.atagar.com <atagar1@gmail.com>
+
+prepare {
+   cd ${_pypiname}-${version}
+  # https://github.com/torproject/stem/issues/56
+  sed -i /MOCK_VERSION/d run_tests.py
+  # remove flaky integration tests
+  sed -i test/settings.cfg \
+    -e /|test.integ.client.connection.TestConnection/d \
+    -e /|test.integ.process.TestProcess/d \
+    -e /|test.integ.installation.TestInstallation/d
+  rm test/integ/{client/connection,{installation,process}}.py
+}
+
+build()-delete {
+   cd ${_pypiname}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_pypiname}-${version}
+  ./run_tests.py --all
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pypiname}-${version}
+  python setup.py build
+  python setup.py install --optimize=1--root=$PKG  
+}
+

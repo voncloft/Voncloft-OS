@@ -1,0 +1,41 @@
+
+pkgbase=python-cssselect
+version=1.1.0
+release=6
+url="https://pypi.python.org/pypi/cssselect"
+source="$pkgbase-$version.tar.gz::https://github.com/scrapy/cssselect/archive/v$version.tar.gz"
+sha512sums=b33bca6a026f4de37b75606fd238dbd170b57d06288fbff3ea97ce79685a99af275fb8522b04ea9d6693aba5a18541d70b657191fdad881be79718bcf2e7655c
+
+prepare {
+  cp -a cssselect-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/cssselect-$version
+  python setup.py build
+
+   cd "$srcdir"/cssselect-$version-py2
+}
+
+check {
+   cd "$srcdir"/cssselect-$version
+  python setup.py pytest
+
+   cd "$srcdir"/cssselect-$version-py2
+}
+
+package_python-cssselect {
+  # description : "A Python3 library that parses CSS3 Selectors and translates them to XPath 1.0"
+  # depends : python
+
+   cd cssselect-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}
+
+  # description : "A Python2 library that parses CSS3 Selectors and translates them to XPath 1.0"
+
+   cd cssselect-$version-py2
+  
+}

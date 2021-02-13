@@ -1,0 +1,24 @@
+
+name=python-rply
+version=0.7.8
+release=1
+# description : A pure Python Lex/Yacc that works with RPython"
+source="$pkgbase-$version.tar.gz::https://github.com/alex/rply/archive/v$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/rply-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/rply-$version
+  py.test
+}
+
+package   {
+  # depends :   python-appdirs  
+
+  cd rply-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,30 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=deepin-reader
+pkgver=5.8.0.4
+pkgrel=1
+pkgdesc='A simple PDF reader, supporting bookmarks, highlights and annotations'
+arch=('x86_64')
+url="https://github.com/linuxdeepin/deepin-reader"
+license=('GPL3')
+depends=('deepin-qt5integration' 'djvulibre' 'karchive' 'libspectre' 'poppler-qt5')
+makedepends=('cmake' 'qt5-tools')
+groups=('deepin-extra')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/deepin-reader/archive/$pkgver.tar.gz")
+sha512sums=('ce048d5aa09da757fcb19a166c60731f16630786d36aef2e93f489f70b693a6f956262dbb466ff528fa0e4f7080fa435f4169bee31086b70b7a6969c5169fdad')
+
+prepare() {
+  cd deepin-reader-$pkgver/src
+  sed -i '/include <QDebug>/a #include <QMouseEvent>' sidebar/ImageListview.cpp
+}
+
+build() {
+  cd deepin-reader-$pkgver
+  qmake-qt5 PREFIX=/usr
+  make
+}
+
+package() {
+  cd deepin-reader-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+}

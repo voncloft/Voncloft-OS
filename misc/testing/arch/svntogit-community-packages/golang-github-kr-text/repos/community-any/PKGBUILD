@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=golang-github-kr-text
+pkgver=0.2.0
+pkgrel=2
+pkgdesc='Miscellaneous functions for formatting text'
+arch=('any')
+url="https://github.com/kr/text"
+license=('MIT')
+depends=('go' 'golang-github-kr-pty')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/kr/text/archive/v$pkgver.tar.gz")
+sha512sums=('69c73f437834b6c07a5c47c51bfd726ec1709939622d5bfa419deac449858e519f01fce0e5abe734ab502249914e526ae6437b8d3462f05cd5b414da9bb145c1')
+
+check() {
+  export GOPATH="$srcdir/build:/usr/share/gocode"
+  mkdir -p "$srcdir"/build/src/github.com/kr
+  cp -a "$srcdir"/text-$pkgver "$srcdir"/build/src/github.com/kr/text
+  cd "$srcdir"/build/src/github.com/kr/text
+  go test -v $(go list ./...)
+}
+
+package() {
+  mkdir -p "$pkgdir"/usr/share/gocode/src/github.com/kr
+  cp -a "$srcdir"/text-$pkgver "$pkgdir"/usr/share/gocode/src/github.com/kr/text
+
+  install -Dm644 text-$pkgver/License "$pkgdir"/usr/share/licenses/$pkgname/License
+}

@@ -1,0 +1,16 @@
+# description : Lightweight in-process concurrent programming
+    # depends : python
+
+url=https://pypi.org/project/greenlet/
+version=1.0.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/g/greenlet/greenlet-${version}.tar.gz"
+
+build() {
+	 cd greenlet-$version
+     cd greenlet-$version
+     cd greenlet-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

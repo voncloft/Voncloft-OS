@@ -1,0 +1,23 @@
+
+name=python-flask-restful
+version=0.3.8
+release=3
+# description : Simple framework for creating REST APIs"
+# depends :   python-six   python-flask   python-aniso8601   python-pytz  
+source="https://github.com/flask-restful/flask-restful/archive/$version.tar.gz" 
+
+build   {
+  cd flask-restful-$version
+  python setup.py build
+}
+
+check   {
+  cd flask-restful-$version
+  python setup.py nosetests || echo "Tests failed"
+}
+
+package   {
+  cd flask-restful-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

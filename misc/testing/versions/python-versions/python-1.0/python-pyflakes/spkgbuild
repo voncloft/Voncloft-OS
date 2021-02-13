@@ -1,0 +1,53 @@
+
+pkgbase=python-pyflakes
+name= python-pyflakes python2-pyflakes 
+version=2.2.0
+release=3
+# description : A lint-like tool for Python to identify common errors quickly without executing code 
+source="https://pypi.io/packages/source/p/pyflakes/pyflakes-$version.tar.gz"
+        py39.patch 
+             c85c175abd2ef89e93e77e5096dd1531d3b6da8a5b6fdd55b0289a21a5792d517576dd354c13688bf1ff7072cc3fd20cbcd695691895b8a059bdd0e31d7b9996  
+
+prepare   {
+  patch -Np1 -d pyflakes-$version <py39.patch
+  cp -a "pyflakes-$version"{,-py2}
+}
+
+build   {
+  cd "$srcdir"/pyflakes-$version
+  python setup.py build
+
+  cd "$srcdir"/pyflakes-$version-py2
+  python2 setup.py build
+}
+
+check   {
+  cd "$srcdir"/pyflakes-$version
+  python setup.py test
+
+  cd "$srcdir"/pyflakes-$version-py2
+  python2 setup.py test
+}
+
+package_python-pyflakes   {
+  # depends :   python-setuptools  
+
+  cd pyflakes-$version
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+
+  # We have python 3 as default python, and want to keep compatibility with the old pyflakes3k naming
+  ln -s pyflakes "$PKG/usr/bin/pyflakes3k"
+
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+package_python2-pyflakes   {
+  # depends :   python2-setuptools  
+
+  cd pyflakes-$version-py2
+  python2 setup.py install --prefix=/usr --root=$PKG --optimize=1
+
+  mv $PKG/usr/bin/pyflakes{,-python2}
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

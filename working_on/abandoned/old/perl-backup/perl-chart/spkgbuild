@@ -1,0 +1,29 @@
+# description : Business chart widget collection
+# depends : perl-gd>=1.2
+
+name=perl-chart
+version=2.4.10
+release=4
+url=https://search.cpan.org/dist/Chart
+source="https://www.cpan.org/authors/id/C/CH/CHARTGRP/Chart-$version.tar.gz"
+options="!checksum"
+sha256sums=84bd99a1a0ce72477b15e35881e6120398bb3f553aeeb5e8d72b088520e4f6bf
+
+build-delete {
+  cd  $srcdir/Chart-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Chart-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

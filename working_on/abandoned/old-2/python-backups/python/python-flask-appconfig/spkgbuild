@@ -1,0 +1,34 @@
+# description : "Configures Flask applications in a canonical way"
+# depends : python-click python-flask python-six
+
+name=python-flask-appconfig
+version=0.11.1.20151214
+_commit=56528264cdc76dc1b00804b7f67908d3bb1b1b0e
+release=4
+url="https://github.com/mbr/flask-appconfig"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="$name-$_commit.tar.gz::https://github.com/mbr/flask-appconfig/archive/$_commit.tar.gz"
+sha512sums=b04dbf4de2ebc99232d0a8300004c2b49be97cff35cf4b10c2c63ab43e6b740d4ee9a44cf578b7f3727403102da4197e99db02398ba5f247c28ae28283ca1199
+
+prepare {
+  mv flask-appconfig-{$_commit,$version}
+}
+
+build()-delete {
+   cd flask-appconfig-$version
+  python setup.py build
+}
+
+check {
+   cd flask-appconfig-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd flask-appconfig-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

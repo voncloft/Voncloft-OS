@@ -1,0 +1,13 @@
+
+name=python-pivy
+version=0.6.5
+release=3
+# description : Bindings to Coin3D 
+# depends :  python soqt 
+source="git+$url#commit=cde1297b0e0da2b93d261c9ec24b8ece7d167c91"  # tag: 0.6.5
+
+package   {
+  cd pivy
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

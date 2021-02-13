@@ -1,0 +1,13 @@
+# description	: General parsing module for Python
+# depends	: python-setuptools
+
+name=python-pyparsing
+version=2.4.7
+release=1
+source="https://files.pythonhosted.org/packages/source/p/${name#*-}/${name#*-}-$version.tar.gz"
+
+build() {
+	cd ${name#*-}-$version
+	python setup.py build
+	python setup.py install --prefix=/usr --root="$PKG" --optimize=1
+}

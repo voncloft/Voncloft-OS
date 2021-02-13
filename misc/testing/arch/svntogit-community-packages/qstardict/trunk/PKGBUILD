@@ -1,0 +1,30 @@
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Alois Nespor <alois.nespor@gmail.com>
+
+pkgname=qstardict
+pkgver=1.3
+pkgrel=2
+pkgdesc="Qt4 clone of StarDict with full support of StarDict dictionaries"
+provides=('stardict')
+depends=('hicolor-icon-theme' 'qt5-base')
+makedepends=('qt5-tools')
+arch=('x86_64')
+url="http://qstardict.ylsoftware.com/index.php"
+license=('GPL2')
+changelog=$pkgname.changelog
+source=(https://github.com/a-rodin/qstardict/archive/$pkgname-$pkgver.tar.gz)
+sha256sums=('9b083a3177407d66a17403742590471a0aa89a3d31df886926b79fa21e4d41a4')
+
+build() {
+  cd "${srcdir}"/$pkgname-$pkgname-$pkgver
+
+  qmake-qt5 ENABLED_PLUGINS="stardict swac web"
+  make
+}
+
+package() {
+  cd "${srcdir}"/$pkgname-$pkgname-$pkgver
+
+  make INSTALL_ROOT="${pkgdir}" install
+}
+

@@ -1,0 +1,24 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Marcin Kulik <marcin@asciinema.org>
+
+pkgname=asciinema
+pkgver=2.0.2
+pkgrel=5
+pkgdesc='Record and share terminal sessions'
+arch=(any)
+url='https://asciinema.org/'
+license=(GPL3)
+makedepends=(git python-setuptools)
+depends=(python)
+source=('git+https://github.com/asciinema/asciinema#commit=ab1be29888e3aca947343773148641fcc396f311' # tag: v2.0.2
+        asciinema.sh)
+sha256sums=('SKIP'
+            '14a2dd176aa95010e1e4876265f12288499008c1cf530da5b1d9aff9d74917cd')
+
+package() {
+  install -Dm755 -t "$pkgdir/usr/bin" asciinema.sh
+  cd $pkgname
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# getver: raw.githubusercontent.com/asciinema/asciinema/master/asciinema/__init__.py

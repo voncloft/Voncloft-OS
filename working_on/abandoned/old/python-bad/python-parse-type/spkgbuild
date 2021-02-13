@@ -1,0 +1,24 @@
+# description : Simplifies to build-old() parse types based on the parse module"
+# depends :   python-parse   python-six  
+
+name=python-parse-type
+version=0.5.6
+release=1
+source="https://github.com/jenisys/parse_type/archive/v$version/$name-$version.tar.gz" 
+
+build-old()   {
+  cd parse_type-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd parse_type-$version
+  pytest
+}
+
+build()   {
+  cd parse_type-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

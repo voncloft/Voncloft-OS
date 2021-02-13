@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: csslayer <wengxt AT gmail com>
+
+pkgname=fcitx5-m17n
+pkgver=5.0.2
+pkgrel=1
+pkgdesc="m17n Wrapper for Fcitx5"
+arch=('x86_64')
+url="https://github.com/fcitx/fcitx5-m17n"
+license=('GPL')
+depends=('fcitx5' 'm17n-lib')
+makedepends=('extra-cmake-modules')
+source=("https://download.fcitx-im.org/fcitx5/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
+sha512sums=('bb2325c3394be508c7f0aba922d51254971aef3e7249f65b35ec53fd591465d31520078f9815f82cd4256d8c303ae2e43735f1c0e4cc71fdf4d1622a2d1f0acf'
+            'SKIP')
+validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
+
+build(){
+  cd $pkgname-$pkgver
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib .
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

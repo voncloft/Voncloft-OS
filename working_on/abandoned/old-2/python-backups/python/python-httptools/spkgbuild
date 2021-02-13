@@ -1,0 +1,34 @@
+# description : Fast HTTP parser
+# depends : python http-parser
+
+_name=httptools
+name=python-$_name
+version=0.1.1
+release=4
+url=https://github.com/MagicStack/httptools
+make# depends : python-setuptools
+source="$name-$version.tar.gz::$url/archive/v$version.tar.gz"
+sha512sums=afee301be87ec01a1cf64ab4593a99e5c6c8366238f4a7660d2f40dd87c3c2ed2b82da4b047ef736546fe1450ac747322521cbd67f2a430ce31b4415be3a8251
+
+prepare {
+   cd $_name-$version
+
+  sed -i s|../../vendor/http-parser/http_parser.h|/usr/include/http_parser.h| $_name/parser/cparser.pxd
+}
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build build()_ext --use-system-http-parser
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+

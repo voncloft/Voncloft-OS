@@ -1,0 +1,21 @@
+# description : Small footprint and configurable Ethernet core 
+# depends :   python-migen   python-litex   python-litedram   python-liteeth   python-liteiclink   python-litejesd204b 
+
+_name=litex-boards
+name=python-$_name
+version=2020.12
+release=1
+          python-litepcie   python-litesata   python-litescope   python-litesdcard   python-litevideo  
+source=" $url/archive/$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

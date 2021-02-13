@@ -1,0 +1,30 @@
+# description : "A CSS4 selector implementation for Beautiful Soup"
+# depends : python
+
+name=python-soupsieve
+version=2.1.0
+release=1
+url="https://github.com/facelessuser/soupsieve"
+make# depends : python-setuptools
+check# depends : python-pytest python-beautifulsoup4 python-html5lib python-lxml
+source="https://github.com/facelessuser/soupsieve/archive/$version/$name-$version.tar.gz"
+sha512sums=19cd4ee596d189a001bbaf9f047e6c9eff569e2149ef5424bfe55c9b4325d856c957de87d55510335f748aab322dbb847b06b48931fbdeadbcc3790259c69eb1
+
+build()-delete {
+   cd soupsieve-$version
+  python setup.py build
+}
+
+check {
+   cd soupsieve-$version
+  pytest
+}
+
+options="!checksum"
+
+build() {
+   cd soupsieve-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

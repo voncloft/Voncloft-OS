@@ -1,0 +1,38 @@
+# description : Loads one of several alternate underlying implementations for a module
+# depends : perl-module-runtime>=0.012 perl-try-tiny
+
+name=perl-module-implementation
+version=0.09
+release=6
+check# depends : perl-test-requires perl-test-fatal
+url=https://search.cpan.org/dist/Module-Implementation/
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Module-Implementation-$version.tar.gz"
+options="!checksum"
+md5sums=52e3fe0ca6b1eff0488d59b7aacc0667
+
+build-delete {
+   cd ${sr cdir}/Module-Implementation-${version}
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG \
+    PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+    MODULEBUILDRC=/dev/null
+  perl Makefile.PL
+  make
+}
+
+check {
+   cd ${sr cdir}/Module-Implementation-${version}
+  make test
+}
+
+build() {
+   cd ${sr cdir}/Module-Implementation-${version}
+  make install
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

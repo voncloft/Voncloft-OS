@@ -1,0 +1,30 @@
+# description : iptables
+# depends : libnetfilter_conntrack nftables
+
+name=iptables
+version=1.8.5
+release=1
+
+source="http://www.netfilter.org/projects/iptables/files/iptables-1.8.5.tar.bz2"
+
+build()
+{
+cd $name-$version
+./configure --prefix=/usr      \
+            --sbindir=/sbin    \
+            --disable-nftables \
+            --enable-libipq    \
+            --with-xtlibdir=/lib/xtables &&
+make
+build DESTDIR=$PKG install
+
+ln -sfv ../../sbin/xtables-legacy-multi /usr/bin/iptables-xml &&
+
+for file in ip4tc ip6tc ipq xtables
+do
+  mv -v /usr/lib/lib${file}.so.* /lib &&
+  ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
+done
+cp $SRC/rc.iptables $PKG/etc/rc.d/rc.iptables
+
+}

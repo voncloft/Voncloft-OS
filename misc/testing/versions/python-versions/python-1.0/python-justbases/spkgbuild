@@ -1,0 +1,22 @@
+
+name=python-justbases
+_name=justbases
+version=0.14
+release=3
+# description : conversion of ints and rationals to any base"
+# depends :   python  
+source="https://github.com/mulkieran/${_name}/archive/v${version}.tar.gz" 
+
+check   {
+    cd "$srcdir/${_name}-$version"
+    nosetests
+}
+build   {
+    cd "$srcdir/${_name}-$version"
+    python setup.py build
+}
+
+package   {
+    cd "$srcdir/${_name}-$version"
+    python setup.py install --root=$PKG --optimize=1 
+}

@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=golang-github-linuxdeepin-go-x11-client
+pkgver=0.6.2
+pkgrel=1
+pkgdesc='X11 protocol go language binding'
+arch=('any')
+url="https://github.com/linuxdeepin/go-x11-client"
+license=('GPL')
+depends=('go' 'golang-deepin-lib' 'golang-golang-x-text')
+checkdepends=('xorg-server-xvfb' 'golang-github-stretchr-testify' 'golang-gopkg-check.v1' 'golang-gopkg-yaml.v2' 'git')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxdeepin/go-x11-client/archive/$pkgver.tar.gz")
+sha512sums=('1a722857fb6200360628c581dd5b5028b61a5a1afc10f64b7c6ebd1235bd5bf0f133c560a4bcd363d8b6a3799fc06eda5874a39b432579edde94bca4e804ac9d')
+
+check() {
+  export GOPATH="$srcdir/build:/usr/share/gocode"
+  mkdir -p "$srcdir"/build/src/github.com/linuxdeepin
+  cp -a "$srcdir"/go-x11-client-$pkgver "$srcdir"/build/src/github.com/linuxdeepin/go-x11-client
+  cd "$srcdir"/build/src/github.com/linuxdeepin/go-x11-client
+  go get gopkg.in/yaml.v3
+  xvfb-run go test -v $(go list ./...)
+}
+
+package() {
+  mkdir -p "$pkgdir"/usr/share/gocode/src/github.com/linuxdeepin
+  cp -a "$srcdir"/go-x11-client-$pkgver "$pkgdir"/usr/share/gocode/src/github.com/linuxdeepin/go-x11-client
+
+  rm -r "$pkgdir"/usr/share/gocode/src/github.com/linuxdeepin/go-x11-client/debian
+}

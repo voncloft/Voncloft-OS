@@ -1,0 +1,27 @@
+# description : Compiler-free Python crypto library backed by the OS
+# depends : python python-asn1crypto
+name=python-oscrypto
+version=1.2.1
+release=3
+url=https://github.com/wbond/oscrypto
+make# depends : python-setuptools
+source="$name-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=bf858f59bf6e54d1ac962df4b90eb674844e50f47b217d73d94b05e27280b78671dc04f4211276c04e71b48f92b446bc11f964b7223def24f5d0d878166547f3
+
+build()-delete {
+     cd "${name#python-}-$version"
+    python setup.py build
+}
+
+check {
+	 cd "${name#python-}-$version"
+	python setup.py test
+}
+
+options="!checksum"
+
+build() {
+     cd "${name#python-}-$version"
+    python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

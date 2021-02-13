@@ -1,0 +1,17 @@
+# description : Non-blocking redis client for python
+# depends : python
+
+url=https://pypi.python.org/pypi/txredisapi/
+name=python-hiredis
+version=1.1.0
+release=3
+
+source="https://pypi.org/packages/source/h/hiredis/hiredis-$version.tar.gz"
+options="checksum"
+
+build() {
+	 cd $srcdir/hiredis-$version
+	 cd hiredis-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

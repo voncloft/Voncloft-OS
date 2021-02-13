@@ -1,0 +1,16 @@
+# description : Development library for quickly writing configurable applications and daemons
+# depends : python-fields
+
+url=https://github.com/ionelmc/python-aspectlib
+name=python-aspectlib
+version=1.5.2
+release=1
+
+source="https://github.com/ionelmc/python-aspectlib/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd python-aspectlib-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

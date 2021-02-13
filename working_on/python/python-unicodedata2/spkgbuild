@@ -1,0 +1,16 @@
+# description : unicodedata backport/updates to Python 3
+# depends : python
+
+url=https://github.com/mikekap/unicodedata2
+name=python-unicodedata2
+version=13.0.0.post2
+release=2
+
+source="https://github.com/mikekap/unicodedata2/archive/${version/.post/-}.tar.gz"
+options="!checksum"
+
+build() {
+   cd unicodedata2-${version/.post/-}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

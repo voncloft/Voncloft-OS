@@ -1,0 +1,41 @@
+# Maintainer: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: John Gerritse <john.gerritse@gmail.com>
+
+pkgname=atop
+pkgver=2.6.0
+pkgrel=2
+pkgdesc='A system and process level monitor'
+arch=('x86_64')
+url='https://www.atoptool.nl/'
+license=('GPL')
+depends=('ncurses' 'sh' 'zlib')
+backup=('etc/default/atop')
+source=("https://www.atoptool.nl/download/atop-${pkgver/_/-}.tar.gz"
+        'atop.default')
+sha512sums=('8d4e2ae56a63738fc615f294d1f4e27cd9eab20acaf5d36c82d87390f96d38cf28cab0a00507459c3ce6e535294a442c4546e0cf732bad253cb518a14cdf5e88'
+            'ed43e68f5d2acd7a9ed0a6df703a1a79b5a6b793e16ab8371463b37e5f16894246af26d178b56625f5e0b3289e2e50c42215da0c57c32ed0ddddaf2178c4d9d0')
+
+#prepare() {
+    #cd "$pkgname-$pkgver"
+    #patch -p1 -i "$srcdir/1e93ac6a8e486dfda633af049c950040020373c9.patch"
+#}
+
+build() {
+    cd "$pkgname-$pkgver"
+    make
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    ## default folder not properly created
+    mkdir -p "$pkgdir/etc/default"
+    make DESTDIR="$pkgdir" systemdinstall \
+        SBINPATH=/usr/bin \
+        SYSDPATH=/usr/lib/systemd/system
+    install -Dm644 "$srcdir/atop.default" "$pkgdir/etc/default/atop"
+    # enable atop-rotate.timer by default
+    install -dm755 "$pkgdir/usr/lib/systemd/system/timers.target.wants"
+    ln -s ../atop-rotate.timer \
+        "$pkgdir/usr/lib/systemd/system/timers.target.wants/atop-rotate.timer"
+}

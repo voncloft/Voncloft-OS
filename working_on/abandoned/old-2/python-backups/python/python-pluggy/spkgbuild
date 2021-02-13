@@ -1,0 +1,42 @@
+# description : "Plugin and hook calling mechanisms for python"
+
+pkgbase=python-pluggy
+version=0.13.1
+release=4
+url="https://github.com/pytest-dev/pluggy"
+source="$pkgbase-$version.tar.gz::https://github.com/pytest-dev/pluggy/archive/$version.tar.gz"
+sha512sums=3269f7ad7801a70ba8aa3182c568f70e2ee88a90b6f6335be631f9737dd42fac3fb1b27c5b6fe6422de128ddcc58736f0c41ed60b7c0177126dd676b98ece301
+
+prepare {
+  cp -a pluggy-$version{,-py2}
+
+  export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+}
+
+build()-delete {
+   cd "$srcdir"/pluggy-$version
+  python setup.py build
+
+   cd "$srcdir"/pluggy-$version-py2
+}
+
+check {
+   cd "$srcdir"/pluggy-$version
+  python setup.py pytest
+
+   cd "$srcdir"/pluggy-$version-py2
+}
+
+package_python-pluggy {
+  # depends : python-importlib-metadata
+
+   cd pluggy-$version
+  python setup.py build
+  python setup.py install -O1 --root $PKG
+
+}
+
+
+   cd pluggy-$version-py2
+
+}

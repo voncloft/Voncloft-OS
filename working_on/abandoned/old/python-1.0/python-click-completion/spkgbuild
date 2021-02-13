@@ -1,0 +1,31 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=click-completion
+name=python-click-completion
+version=0.5.2
+release=5
+pkgdesc="Add or enhance bash, fish, zsh and powershell completion in Click"
+url="https://github.com/click-contrib/click-completion"
+depends=('python-click' 'python-jinja' 'python-six' 'python-shellingham')
+makedepends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('f63772ab8c7575cb790c0478e965d059c8a9978bfe32b6b7e1322d8183c27bd03bdc4f8ee26ae3af77cf164dd690562ef52e40b95908f014f3cc27f4693e1ff5')
+
+prepare() {
+  mv -v "${_name}-$version" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${pkgdir}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${name}"
+}

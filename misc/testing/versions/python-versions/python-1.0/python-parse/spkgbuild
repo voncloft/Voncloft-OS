@@ -1,0 +1,28 @@
+
+name=python-parse
+version=1.19.0
+release=1
+
+# description : Parse strings using a specification based on the Python format   syntax. 
+
+# depends :   python  
+
+source="https://pypi.org/packages/source/p/parse/parse-$version.tar.gz" 
+
+
+build   {
+  cd "$srcdir"/parse-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/parse-$version
+  python test_parse.py
+}
+
+
+package   {
+  cd "$srcdir"/parse-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

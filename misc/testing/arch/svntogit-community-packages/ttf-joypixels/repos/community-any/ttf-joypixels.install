@@ -1,0 +1,9 @@
+post_upgrade() {
+    conf="/etc/fonts/conf.d/75-joypixels.conf"
+    if [ -L "$conf" -a ! -e "$conf" ]; then
+        echo
+        echo "  75-joypixels.conf is no longer provided by this package, see FS#66080"
+        echo "  Remember to update your $conf"
+        echo
+    fi
+}

@@ -1,0 +1,58 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: SmackleFunky <smacklefunky@optusnet.com.au>
+# Contributor: Enrico Morelli <morelli@cerm.unifi.it>
+
+pkgname=dictd
+pkgver=1.13.0
+pkgrel=2
+pkgdesc="Online dictionary client and server"
+url="https://sourceforge.net/projects/dict/"
+license=('GPL')
+arch=('x86_64')
+depends=('sh' 'zlib' 'libmaa')
+makedepends=('flex')
+optdepends=('xclip: for dict_lookup')
+backup=(etc/dict/dictd.conf
+	etc/dict/dict.conf
+	etc/dict/site.info
+	etc/conf.d/dictd
+	etc/xinetd.d/dictd
+	etc/dict/colorit.conf)
+options=('!emptydirs')
+source=("https://downloads.sourceforge.net/dict/$pkgname-$pkgver.tar.gz"
+	dict.conf
+	dictd.conf
+	dictd.confd
+	dictd.service
+	site.info
+	dictd.xinetd
+	colorit.conf)
+sha512sums=('86871aaf34a182d1d7aac1a1282d4a75f2d7c112c762e92f303924c324f665dae75c51e7ca91e3cc1dde2053ad8e2d1fd50a76934a5f84ff70975aa858e26439'
+            '22fbfd3bf8c4f88801aab848e160f46bf17757086ffe8fe7a4cdb78f983e88f6c923cac8714f78d31ab311957aa860731f663324b742febd0a5039085672aeb5'
+            '652466a5f73552c3d2f5060708c6626f82989f9df066b22e93f601dfcad14fb3123aebca0398595ecda0ed141b861fc356872108a5543855c1ddaf755f7762a4'
+            '640616737c3a3b1d4dd84a3df82b7513c76512cdd773d00037a402070de788b72c5942102b5b0799c65713ac910be095ac86b2467d04294355f6dba0e05cb0d8'
+            '2ec7ae5953afbadefe4de88d56a7d2410f3b8b99b153113eba89ef65d04f1660d0847506babc4487e4590087f1dfbbaee548457088f2888056462f2f3173d2a1'
+            '74bb341f049acd7d502d9117ae1321bedc499958ba377c02a2591880cc45d451409fd99a76ec3ddcf1846f6d124ef5ae1da40c5c001b67e94c68a895c2dcfd79'
+            'dd82dc6eb300e86b9cf288a9408a00773442c2e1ae167bb1882bbb6bcc6e69591fd789abeb9ad69557697f26ea2d8c70e4d89eecc24bd615f1399584026fd301'
+            '5df19904f25f482b4b4c90c26279ba8e8747ecf6a0f0045e456613891bc8447f1ee150d51ab3f36a5f8f8f967a07169dbfda2a6743abb842f6ed1d3fd7f88411')
+
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+  ./configure --enable-dictorg --prefix=/usr --sysconfdir=/etc/dict --sbindir=/usr/bin
+  make
+}
+
+package() {
+  cd "$srcdir"/$pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -Dm 0644 "$srcdir"/dictd.xinetd "$pkgdir"/etc/xinetd.d/dictd
+  install -Dm 0644 "$srcdir"/dictd.conf "$pkgdir"/etc/dict/dictd.conf
+  install -Dm 0644 "$srcdir"/dict.conf "$pkgdir"/etc/dict/dict.conf
+  install -Dm 0644 "$srcdir"/site.info "$pkgdir"/etc/dict/site.info
+  install -Dm 0644 "$srcdir"/dictd.confd "$pkgdir"/etc/conf.d/dictd
+  install -Dm 0644 "$srcdir"/colorit.conf "$pkgdir"/etc/dict/colorit.conf
+  install -Dm0644 "$srcdir"/$pkgname.service "$pkgdir"/usr/lib/systemd/system/$pkgname.service
+  # examples
+  install -dm0755 "$pkgdir"/usr/share/doc/$pkgname
+  cp -a examples "$pkgdir"/usr/share/doc/$pkgname/examples
+}

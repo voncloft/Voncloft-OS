@@ -1,0 +1,54 @@
+# description : UAX #14 Unicode Line Breaking Algorithm
+# depends : perl perl-mime-charset libthai
+# $ID$
+
+name=perl-unicode-linebreak
+_dist=Unicode-LineBreak
+version=2019.001
+release=3
+url=https://metacpan.org/release/${_dist}
+check# depends : perl-test-pod
+source="https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/${_dist}-${version}.tar.gz"
+options="!checksum"
+        LineBreakTest-8.0.0.txt::https://www.unicode.org/Public/8.0.0/u cd/auxiliary/LineBreakTest.txt
+        GraphemeBreakTest-8.0.0.txt::https://www.unicode.org/Public/8.0.0/u cd/auxiliary/GraphemeBreakTest.txt
+# Checksums from https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/CHECKSUMS
+md5sums=003d6da7a13700e069afed9238c864b9
+         8bd863892b8b963331779873130ae45a
+         4356c6f90a74769e2d82487a01822cab
+sha256sums=486762e4ca cddcc77b13989f979a029f84630b8175e7fef17989e157d4b6318a
+            149b14ab93b06c887a958fb16d0ad01193063ef69cc14f10338ae4d0ac cd6c28
+            0cedd6e0f5cadf57ce9cfc96beccfd083b0faa0809a631a777 cd25f0316bfabb
+
+prepare {
+    # Copy Unicode 8.0 test files. Later versions do not pass.
+    cp -av ${sr cdir}/LineBreakTest-8.0.0.txt ${sr cdir}/${_dist}-${version}/test-data/LineBreakTest.txt
+    cp -av ${sr cdir}/GraphemeBreakTest-8.0.0.txt ${sr cdir}/${_dist}-${version}/test-data/GraphemeBreakTest.txt
+}
+
+build-delete {
+     cd ${sr cdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+     cd ${sr cdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1
+    make test
+}
+
+build() {
+     cd ${sr cdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    make install INSTALLDIRS=vendor DESTDIR=$PKG
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,36 @@
+# description : Service Identity Verification for Python
+# depends : python python-attrs python-pyasn1 python-pyasn1-modules python-idna
+
+name=python-service_identity
+_pyname=service-identity
+version=18.1.0
+release=6
+url=https://service-identity.readthedocs.io/
+make# depends : python python-setuptools python-attrs python-pyasn1
+             python-pyasn1-modules python-idna python-sphinx
+check# depends : python-pytest python-cryptography
+source=${name}-${version}.tar.gz::https://github.com/pyca/service_identity/archive/${version}.tar.gz
+sha512sums=6b6da48c543bfbe0d9da9f0d03dbd735ce97e64a76cbf9eae2b615ced7b91c5fcca1f25353e53858c48da9c4e0c0be4e33fa4559adb50899a79689cbb372f49b
+
+build()-delete {
+   cd ${_pyname}-${version}
+  python setup.py build
+  sphinx-build() -b text docs docs/_build()/text
+  sphinx-build() -b man docs docs/_build()/man
+}
+
+check {
+   cd ${_pyname}-${version}
+  PYTHONPATH=src py.test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+  python setup.py build
+  python setup.py install -O1--root=$PKG  
+  install -Dm 644 docs/_build()/text/*.txt -t "${PKG}/usr/share/doc/${name}"
+  install -Dm 644 docs/_build()/man/service_identity.1 "${PKG}/usr/share/man/man1/service_identity.1"
+}
+

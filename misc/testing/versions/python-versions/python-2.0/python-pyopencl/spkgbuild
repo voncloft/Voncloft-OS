@@ -1,0 +1,45 @@
+# description : A complete, object-oriented language binding of OpenCL to Python"
+# depends :   opencl-icd-loader   opencl-headers   mesa   boost-libs  
+# Maintianer: Santiago Torres-Arias <santiago@archlinux.org>
+
+_pypiname=pyopencl
+pkgbase=python-pyopencl
+name=  python-pyopencl   pyopencl-headers  
+version=2020.2.1
+release=2
+epoch=1
+              pybind11  
+validpgpkeys= "900A958D9A0ACA58B1468F2471AA298BCA171145"  # Andreas Ratchke
+
+build-old()   {
+    cd "pyopencl"
+    git submodule init && git submodule update
+    python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3
+    make
+}
+
+check  {
+    # INFO: to avoid a PLATFORM_NOT_FOUND_KHR error here, you would have to install
+    # the driver of your specific video card in here
+    # checkdepends+=  amdgpu  
+    cd pyopencl
+    PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9/" make tests
+}
+
+build()_python-pyopencl   {
+    depends+=  python   python-numpy   python-mako   python-pytools   pyopencl-headers   python-setuptools   python-cffi  
+
+    cd pyopencl
+    python3 setup.py install --prefix=/usr --root=$PKG --optimize=1 --skip-build-old()
+
+    rm -fr $PKG/usr/include
+
+    install -D -m644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}
+
+build()_pyopencl-headers   {
+    cd pyopencl
+ 
+    install -Dm644 pyopencl/cl/*.cl -t $PKG/usr/include/pyopencl 
+    install -D -m644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

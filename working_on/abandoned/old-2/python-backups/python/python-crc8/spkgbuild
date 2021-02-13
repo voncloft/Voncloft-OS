@@ -1,0 +1,29 @@
+# description : "A module with the CRC8 algorithm for Python"
+# depends : python
+
+name=python-crc8
+version=0.1.0
+release=2
+url="https://github.com/niccokunzmann/crc8"
+make# depends : python-setuptools
+source="$name-$version.tar.gz::https://github.com/niccokunzmann/crc8/archive/v$version.tar.gz"
+sha512sums=668ba114066d8a3b2fe292d43fab66d98dc8e54c312863bcc3c85030a40cde0c9ca0d4fcffbc81225dc35629491e58e69aaae698e0abb4bb7431f6b4d285246c
+
+build()-delete {
+   cd crc8-$version
+  python setup.py build
+}
+
+check {
+   cd crc8-$version
+  python test_crc8.py
+}
+
+options="!checksum"
+
+build() {
+   cd crc8-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

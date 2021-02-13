@@ -1,0 +1,34 @@
+# Maintainer: Jiachen YANG <farseerfc@archlinux.org>
+# Contributor: xyzzy <628208@gmail.com>
+
+pkgname=flameshot
+pkgver=0.8.5
+pkgrel=1
+pkgdesc="Powerful yet simple to use screenshot software"
+arch=('x86_64')
+url="https://github.com/flameshot-org/flameshot"
+license=('GPL')
+depends=('qt5-svg' 'hicolor-icon-theme')
+makedepends=('make' 'qt5-tools' 'cmake')
+source=("${pkgname}-v${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('f820c1f8cd464988cfcfc1af1fbcea2a3d0e5c4fb32accc3f54d93a8b5e1e890')
+
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  mkdir build
+  cd build
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
+  make DESTDIR="${pkgdir}" install
+  
+  # zsh _flameshot completion is provided by zsh-completions so exclude from packaging
+  rm -rf ${pkgdir}/usr/share/zsh/
+}

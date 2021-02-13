@@ -1,0 +1,18 @@
+# description : Karellen PyBuilder Plugin
+# depends : python-pybuild()er
+
+_commit=41d012b2f093a31596610cf14d0e1da56402e45c
+url=https://github.com/karellen/karellen-pyb-plugin
+name=python-karellen-pyb-plugin
+version=0.0.1.20160930
+release=4
+
+source="git+https://github.com/karellen/karellen-pyb-plugin.git#commit=$_commit
+options="checksum"
+
+build() {
+   cd karellen-pyb-plugin
+   cd target/dist/karellen-pyb-plugin-*
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

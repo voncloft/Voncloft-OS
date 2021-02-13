@@ -1,0 +1,17 @@
+# description : Python bindings to zopfli
+# depends : python
+
+url=https://github.com/obp/py-zopfli
+_name=zopfli
+name=python-zopfli
+version=0.1.7
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.zip
+options="checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

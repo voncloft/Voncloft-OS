@@ -1,0 +1,22 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+pkgname=vim-grammalecte
+pkgver=r31.09d4b24
+pkgrel=1
+pkgdesc="Integrates Grammalecte into Vim"
+arch=(any)
+url="https://github.com/dpelle/vim-Grammalecte"
+license=(custom:VIM)
+depends=(vim grammalecte)
+groups=(vim-plugins)
+_commit=09d4b246285cbfafa1f06248c12a229f8160360d
+source=("${url}/archive/${_commit}/${pkgname}-${pkgver}.zip")
+sha256sums=('493fb20bff4291a790bf1bf3c7d76eb8b8889e2801594cc122f2031afdff96d8')
+
+package() {
+    cd ${pkgname/-g/-G}-${_commit}
+    install -d "${pkgdir}"/usr/share/vim/vimfiles
+    cp -r doc plugin "${pkgdir}"/usr/share/vim/vimfiles/
+    # Fix default path to the cli tool
+    sed -i "s:\$HOME . '/grammalecte/pythonpath/cli.py':'/usr/bin/grammalecte-cli':" "${pkgdir}"/usr/share/vim/vimfiles/plugin/Grammalecte.vim
+}

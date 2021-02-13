@@ -1,0 +1,24 @@
+# description : 'A MutableSet that remembers its order, so that every entry has an index'
+# depends : ('python')
+
+name=python-ordered-set
+version=4.0.2
+release=3
+source=("https://pypi.io/packages/source/o/ordered-set/ordered-set-$version.tar.gz")
+
+build-remove() {
+  cd ordered-set-$version
+  python setup.py build
+}
+
+check() {
+  cd ordered-set-$version
+  pytest --doctest-modules test.py ordered_set.py README.md --doctest-glob=README.md --ignore=setup.py
+}
+
+build() {
+  cd ordered-set-$version
+  python setup.py install --root=$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

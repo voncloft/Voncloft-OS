@@ -1,0 +1,68 @@
+# description : Reimplementation of portions of the pygame API using SDL2
+# depends : 
+
+pkgbase=python-pygame-sdl2
+name=
+  python-pygame-sdl2
+
+version=2.1.0.r387.2eee9b2
+release=1
+epoch=1
+url=https://github.com/renpy/pygame_sdl2
+  LGPL2.1
+  zlib
+
+  sdl2_image
+  sdl2_mixer
+  sdl2_ttf
+
+make# depends : 
+  cython
+  cython2
+  git
+  python
+
+_commit=2eee9b25dae04cedf98c8c4c4254f3dc970354df
+source=
+  git+https://github.com/renpy/pygame_sdl2.git#commit=${_commit}
+  python-pygame-sdl2-cython2.patch
+
+b2sums=
+  SKIP
+  0d17bd3c850877dce3acd2844aabf7661ded58c494be4fcc59046a124e367efec286e314fc4319ed719d7b7691296f0ade9cbf194fde31e136a3a850dc2868ce
+
+
+prepare {
+  mv pygame_sdl2 python-pygame_sdl2
+
+  patch -Np1 -i ../python-pygame-sdl2-cython2.patch
+}
+
+version {
+   cd python-pygame_sdl2
+  version="$cat src/pygame_sdl2/version.py | grep ^vernum =  | sed s/^vernum = //; s///; s///; s/, /./g"
+  echo "${version}.r$git rev-list --count HEAD.$git rev-parse --short HEAD"
+}
+
+build()-delete {
+  for p in python{,2}; do
+    pushd $p-pygame_sdl2
+    $p setup.py build()
+    popd
+  done
+}
+
+package_python-pygame-sdl2 {
+  depends+=python
+
+   cd python-pygame_sdl2
+
+  python setup.py build
+  python setup.py install--root=$PKG  --optimize=1 
+  install -Dm 644 COPYING.ZLIB -t "${PKG}"/usr/share/licenses/python-pygame-sdl2/
+}
+
+
+
+}
+

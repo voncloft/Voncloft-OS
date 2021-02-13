@@ -1,0 +1,16 @@
+# description : A small debugging helper for Flask
+# depends : python-flask python-inflection
+
+url=https://github.com/mbr/flask-debug
+name=python-flask-debug
+version=0.4.3
+release=4
+
+source="https://github.com/mbr/flask-debug/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd Flask-Debug-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

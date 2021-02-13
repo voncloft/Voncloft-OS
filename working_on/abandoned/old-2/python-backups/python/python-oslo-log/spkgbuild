@@ -1,0 +1,39 @@
+# description : "Oslo Logging Library"
+# depends : python-six python-pbr python-oslo-config python-oslo-context python-oslo-i18n
+
+name=python-oslo-log
+version=4.4.0
+release=3
+url="https://pypi.python.org/pypi/oslo.log/$version"
+         python-oslo-utils python-oslo-serialization python-debtcollector python-pyinotify
+         python-dateutil python-monotonic
+make# depends : python-setuptools
+check# depends : python-mock python-oslotest
+options=!emptydirs
+source="$name-$version.tar.gz::https://github.com/openstack/oslo.log/archive/$version.tar.gz"
+sha512sums=a8cf7f529ce73f72ad8ae41a29cd9f606b9a193116d4ba6b9fab4a9df7079637d908dbaf9aff57ff8724c254ecff0cca63df4a0a240dbd0abae8d60c0a1cc8ac
+
+export PBR_VERSION=$version
+
+prepare {
+  sed -i s/unittest2/unittest/g oslo.log-$version/oslo_log/tests/unit/*.py
+}
+
+build()-delete {
+   cd oslo.log-$version
+  python setup.py build
+}
+
+check {
+   cd oslo.log-$version
+  stestr run
+}
+
+options="!checksum"
+
+build() {
+   cd oslo.log-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

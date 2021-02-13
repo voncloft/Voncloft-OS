@@ -1,0 +1,29 @@
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+
+pkgname=ncompress
+pkgver=4.2.4.6
+pkgrel=1
+pkgdesc="a fast, simple LZW file compressor"
+arch=('x86_64')
+url="https://github.com/vapier/${pkgname}"
+license=('custom:PublicDomain')
+provides=('compress')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('fb7b6a00060bd4c6e35ba4cc96a5ca7e78c193e6267487dd53376d80e061836b')
+b2sums=('1460fe803ed621e5e6e5ab506d8909acbfb1d3b91421cf7c7bc10b6b03b0cb6bb4ea616240a7aa500813d5fbf0a958e1e981da8a5f752d985ddcbf7fe9280d9c')
+
+build() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    make
+}
+
+package() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    make DESTDIR="${pkgdir}" PREFIX=/usr install_core
+    # an uncompress implementation which handles gzipped files is provided by gzip
+    mv "${pkgdir}"/usr/bin/uncompress{,.real}
+
+    install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LZW.INFO UNLICENSE
+}

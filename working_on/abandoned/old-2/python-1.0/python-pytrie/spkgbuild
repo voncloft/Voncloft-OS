@@ -1,0 +1,16 @@
+# description : A pure Python implementation of the trie data structure.
+# depends : python python-sortedcontainers
+
+url=https://github.com/gsakkis/pytrie/
+name=python-pytrie
+version=0.4.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/P/PyTrie/PyTrie-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd PyTrie-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

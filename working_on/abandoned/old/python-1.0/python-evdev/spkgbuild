@@ -1,0 +1,28 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+name=python-evdev
+version=1.4.0
+release=1
+pkgdesc="Python bindings for the Linux input subsystem"
+url="https://python-evdev.readthedocs.io/en/latest/"
+depends=(python)
+makedepends=(git)
+_commit=5adc2abf1ec8a02c05c80cb1b3e34ba1d4237803  # tags/v1.4.0^0
+source=("git+https://github.com/gvalkov/python-evdev#commit=$_commit")
+sha256sums=('SKIP')
+
+version() {
+  cd $name
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+build() {
+  cd $name
+  python setup.py build
+}
+
+package() {
+  cd $name
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dt "$pkgdir/usr/share/licenses/$name" -m644 LICENSE
+}

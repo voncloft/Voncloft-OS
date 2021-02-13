@@ -1,0 +1,26 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Alexander Rødseth <rodseth@gmail.com>
+# Contributor: Thomas S Hatch <thatch45@gmail.com>
+# Contributor: Jelle van der Waa <jelle@vdwaa.nl>
+
+name=python-pymongo
+version=3.11.3
+release=1
+pkgdesc='Python module for using MongoDB'
+url='https://pypi.python.org/pypi/pymongo/'
+depends=('python')
+makedepends=('python-setuptools')
+source=("https://pypi.io/packages/source/p/pymongo/pymongo-$version.tar.gz")
+sha512sums=('c4e2aa290a65f47feb62c7931469b2648c1e13f1f294ebcda42b735b076422745e59ef9595a04def1f368fe4bd073e1396a4e0baecf72e9942d3df06d0f3e7f7')
+
+build() {
+  cd "$srcdir"/pymongo-$version
+  python setup.py build
+}
+
+package() {
+  cd "pymongo-$version"
+  python setup.py install --root="$pkgdir" --skip-build --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

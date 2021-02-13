@@ -1,0 +1,19 @@
+# description : Python publish-subcribe library
+# depends : python
+
+_name=${name#python-}
+url=https://github.com/schollii/pypubsub
+name=python-pypubsub
+_name=${name#python-}
+version=4.0.3
+release=3
+
+source="$url/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_name-$version
+   cd $_name-$version/tests/suite
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

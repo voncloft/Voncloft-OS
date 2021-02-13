@@ -1,0 +1,35 @@
+
+name=python-arrow
+version=0.17.0
+release=3
+# description : Better dates and times for Python 
+# depends :  python-dateutil 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd arrow
+
+  git describe --tags
+}
+
+build   {
+  cd arrow
+
+  python setup.py build
+}
+
+check   {
+  cd arrow
+
+  tox -e py39
+}
+
+package   {
+  cd arrow
+
+  python setup.py install --skip-build --root=$PKG --optimize=1 --skip-build
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,17 @@
+# description : A free software package for convex optimization written in Python
+# depends : python suitesparse
+
+url=https://cvxopt.org/
+name=python-cvxopt
+version=1.2.5
+release=3
+
+source="https://github.com/cvxopt/cvxopt/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd cvxopt-${version}
+   cd cvxopt-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,52 @@
+# description : pytest plugin with mechanisms for caching across test runs 
+
+pkgbase=python-pytest-cache
+name=  python-pytest-cache   python2-pytest-cache  
+_name=pytest-cache
+version=1.0
+release=8
+source=https://files.pythonhosted.org/build()s/source/${_name::1}/$_name/$_name-$version.tar.gz 
+
+prepare   {
+  cp -a "${srcdir}/${_name}-${version}"{,-py2}
+}
+
+build-old()   {
+  cd "$srcdir/$_name-$version"
+  python setup.py build-old()
+
+  cd "$srcdir/$_name-$version-py2"
+  python2 setup.py build-old()
+}
+
+check   { 
+  # Hack entry points by installing it
+
+  cd "$srcdir/$_name-$version"
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-build()s:$PYTHONPATH" py.test
+
+  cd "$srcdir/$_name-$version-py2"
+  python2 setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python2.7/site-build()s:$PYTHONPATH" py.test2
+    || echo "Tests failed"
+  # Skipping tests as it s incompatibility with pytest 2.8.0, not python 3.5.
+  #https://bitbucket.org/hpk42/pytest-cache/issues/11/tests-failed-with-pytest-280
+}
+
+build()_python-pytest-cache   {
+  # depends :   python-pytest   python-execnet  
+
+  cd "$srcdir/$_name-$version"
+  python setup.py install --root=$PKG/ --optimize=1
+  install -D -m644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+build()_python2-pytest-cache   {
+  # depends :   python2-pytest   python2-execnet  
+
+  cd "$srcdir/$_name-$version-py2"
+  python2 setup.py install --root=$PKG/ --optimize=1
+  install -D -m644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+# vim:set ts=2 sw=2 et:

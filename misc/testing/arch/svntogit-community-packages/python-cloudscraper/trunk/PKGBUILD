@@ -1,0 +1,37 @@
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+
+_pkgname=cloudscraper
+pkgname=python-cloudscraper
+pkgver=1.2.56
+pkgrel=1
+pkgdesc="Python module to bypass Cloudflare's anti-bot page"
+arch=('any')
+url="https://github.com/VeNoMouS/${_pkgname}"
+license=('MIT')
+depends=('python-pyparsing' 'python-requests' 'python-requests-toolbelt')
+optdepends=('python-js2py: alternative interpreter/solver'
+            'nodejs: alternative interpreter/solver')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-responses' 'python-js2py' 'nodejs')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
+sha256sums=('303ca777ea40c542cdc9ac44acb8ccafb22fbf5a98970c5a0eb5bf14adc42091')
+b2sums=('cba3136ba1ec25ea077f21f46eed2fff5412bc31cdf967cadd0c40837fd4bc62b7c0df580a2955dcee63857bab86d7f5b6560ca3bd470192447da1449dbea493')
+
+build(){
+    cd "${srcdir}"/${_pkgname}-${pkgver}
+
+    python setup.py build
+}
+
+check() {
+    cd "${srcdir}"/${_pkgname}-${pkgver}
+
+    python -m pytest
+}
+
+package() {
+    cd "${srcdir}"/${_pkgname}-${pkgver}
+
+    python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+    install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

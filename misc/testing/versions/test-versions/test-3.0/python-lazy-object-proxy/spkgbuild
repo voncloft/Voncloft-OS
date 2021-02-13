@@ -1,0 +1,21 @@
+
+name=python-lazy-object-proxy
+# depends : ("python")
+version=1.5.2
+release=2
+# description : 'A fast and thorough lazy object proxy'
+
+build-remove() {
+  cd "$srcdir"/python-lazy-object-proxy-$version
+  python setup.py build
+}
+
+check() {
+  cd python-lazy-object-proxy-$version
+  python setup.py pytest --addopts --ignore=src
+}
+
+build() {
+  cd python-lazy-object-proxy-$version
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,31 @@
+#
+# /etc/scratchpkg.repo : scratchpkg repo file
+#
+# format:
+#    <repo directory> <repo url for sync>
+#
+
+
+/usr/Voncloft-OS/core	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/core
+/usr/Voncloft-OS/KDE	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/KDE
+/usr/Voncloft-OS/multilib	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/multilib
+/usr/Voncloft-OS/nonfree	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/nonfree
+/usr/Voncloft-OS/Qt	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/Qt
+/usr/Voncloft-OS/lxde	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/lxde
+/usr/Voncloft-OS/compilers	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/compilers
+/usr/Voncloft-OS/extra	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/extra
+/usr/Voncloft-OS/xorg	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/xorg
+/usr/Voncloft-OS/networking	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/networking
+/usr/Voncloft-OS/firewall	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/firewall
+/usr/Voncloft-OS/boot-scripts-server	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/boot-scripts-server
+/usr/Voncloft-OS/xfce	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/xfce
+/usr/Voncloft-OS/media	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/media
+/usr/Voncloft-OS/lxqt	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/lxqt
+/usr/Voncloft-OS/libs	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/libs
+/usr/Voncloft-OS/hardware	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/hardware
+/usr/Voncloft-OS/fonts	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/fonts
+/usr/Voncloft-OS/displaym	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/displaym
+/usr/Voncloft-OS/server	https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/server
+#/usr/Voncloft-OS/working_on https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/working_on
+/usr/Voncloft-OS/python     https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/python
+/usr/Voncloft-OS/perl     https://raw.githubusercontent.com/voncloft/Voncloft-OS/master/perl

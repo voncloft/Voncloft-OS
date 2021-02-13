@@ -1,0 +1,33 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_name=litejesd204b
+name=python-$_name
+version=2020.12
+release=1
+pkgdesc='Small footprint and configurable JESD204B core'
+url="https://github.com/enjoy-digital/$_name"
+depends=('python-migen' 'python-litex')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("$name-$version.tar.gz::$url/archive/$version.tar.gz")
+sha512sums=('cd71ea9eddb55949b10412604983b2f2f093f29e81ca536d1e3a522c8e6b0e3af4ac20ee07b4a351241a3059d79d56837772d02abb1b0887612f27b8838582a6')
+
+build() {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check() {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+package() {
+  cd $_name-$version
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

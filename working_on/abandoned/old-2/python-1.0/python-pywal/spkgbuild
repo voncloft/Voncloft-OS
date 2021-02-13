@@ -1,0 +1,16 @@
+# description : Generate and change colorschemes on the fly
+# depends : python imagemagick python-setuptools
+
+url=https://github.com/dylanaraps/pywal/
+name=python-pywal
+version=3.3.0
+release=3
+
+source="https://github.com/dylanaraps/pywal/archive/${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd pywal-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

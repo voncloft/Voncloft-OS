@@ -1,0 +1,22 @@
+# description : A fully functional X client library for Python programs"
+# depends :   python-six  
+
+name=python-xlib
+version=0.29
+release=1
+source="https://github.com/python-xlib/python-xlib/archive/$version.tar.gz" 
+
+build-old()  {
+  cd "$name-$version"
+  python setup.py build-old()
+}
+
+check  {
+  cd "$name-$version"
+  python ./runtests.py
+}
+
+build()_python-xlib   {
+  cd "$name-$version"
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

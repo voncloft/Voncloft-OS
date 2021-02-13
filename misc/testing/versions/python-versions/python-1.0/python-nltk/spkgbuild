@@ -1,0 +1,26 @@
+
+name=python-nltk
+version=3.5
+release=3
+# description : Natural language processing in Python 
+# depends :   python-yaml  
+	     python-numpy: used for calculations 
+	     python-matplotlib: used for plotting  
+source=  "https://github.com/nltk/nltk/archive/$version.tar.gz" 
+
+build   {
+  cd nltk-$version
+  export PYTHONHASHSEED=0
+  python setup.py build
+}
+
+# Need to fix the nltk-data split
+#check  {
+#  cd nltk-$version
+#  python ./nltk/test/runtests.py
+#}
+
+package   {
+  cd nltk-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

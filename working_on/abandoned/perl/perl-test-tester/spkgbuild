@@ -1,0 +1,29 @@
+# description : Ease testing test modules built with Test::Builder
+# depends : perl
+
+name=perl-test-tester
+version=0.109
+release=3
+url=https://search.cpan.org/dist/Test-Tester
+source="https://www.cpan.org/authors/id/F/FD/FDALY/Test-Tester-$version.tar.gz"
+options="!checksum"
+sha256sums=d3c7c85e2fcbd5bb9c9c4d2e76ddaa9b1694ed0ab2795b722904cf043e123655
+
+build-delete {
+   cd  $sr cdir/Test-Tester-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd  $sr cdir/Test-Tester-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,26 @@
+
+_pyname=colorclass
+name=python-colorclass
+version=2.2.0
+release=8
+# description : Yet another ANSI color text library for colorful worry-free console applications 
+# depends :   python  
+source= ${name}-${version}.tar.gz::https://github.com/Robpol86/colorclass/archive/v${version}.tar.gz 
+
+build   {
+  cd ${_pyname}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pyname}-${version}
+  py.test
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install --root=$PKG --prefix=/usr -O1 --skip-build
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+# vim: ts=2 sw=2 et:

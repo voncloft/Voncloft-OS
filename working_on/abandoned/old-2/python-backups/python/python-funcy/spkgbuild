@@ -1,0 +1,29 @@
+# description : A fancy and practical functional tools
+# depends : python
+
+name=python-funcy
+version=1.15
+release=2
+url=https://github.com/Suor/funcy
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-whatever
+source="$name-$version.tar.gz::https://github.com/Suor/funcy/archive/$version.tar.gz"
+sha512sums=876a26905fb9f1a88c3d1e82984ee29772dbe22ed12ca7e6ff49ccae4dd8c06280802aa8d65e926e0d4bfe28a65770d4b5d4832318761ad6e1e0fec6d1ab1666
+
+build()-delete {
+   cd funcy-$version
+  python setup.py build
+}
+
+check {
+   cd funcy-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd funcy-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

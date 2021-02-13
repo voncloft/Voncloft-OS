@@ -1,0 +1,16 @@
+# description : Python API and shell utilities to monitor file system events
+# depends : python-pathtools python-yaml python-argh
+
+url=https://pypi.python.org/pypi/watchdog
+name=python-watchdog
+version=0.10.5
+release=1
+
+source="https://github.com/gorakhargosh/watchdog/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+   cd watchdog-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

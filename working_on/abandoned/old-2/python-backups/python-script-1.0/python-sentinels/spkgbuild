@@ -1,0 +1,17 @@
+# description : Various objects to denote special meanings in python
+# depends : python
+
+url=https://github.com/vmalloc/sentinels
+name=python-sentinels
+version=1.0.0
+release=6
+
+source="https://github.com/vmalloc/sentinels/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/sentinels-$version
+   cd sentinels-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,22 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=fcitx5-nord
+pkgver=0.0.0.20210116
+_commit=28ada26f4e926a741d8645cb8fa9d9d8ab3a3b70
+pkgrel=1
+pkgdesc="Fcitx5 theme based on Nord color"
+arch=('any')
+url="https://github.com/tonyfettes/fcitx5-nord"
+license=('MIT')
+conflicts=('fcitx5-nord-dark')
+provides=('fcitx5-nord-dark')
+replaces=('fcitx5-nord-dark')
+source=("https://github.com/tonyfettes/fcitx5-nord/archive/$_commit/$pkgname-$_commit.tar.gz")
+sha512sums=('b785c66fea3ceac356649286ccf5ed21e356bc3a70f374d12b167ee228055b8848996cd625380c4db0022341d2bb8c873e69387b4b69229f1d4e6b6c950d7837')
+
+package() {
+  cd fcitx5-nord-$_commit
+  install -dm755 "$pkgdir"/usr/share/fcitx5/themes/
+  cp -r Nord-Dark Nord-Light "$pkgdir"/usr/share/fcitx5/themes/
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}

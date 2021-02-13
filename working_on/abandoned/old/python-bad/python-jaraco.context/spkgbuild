@@ -1,0 +1,34 @@
+# description : Context managers by jaraco"
+# depends :   python-jaraco   python-yg.lockfile  
+
+name=python-jaraco.context
+version=4.0.0
+release=1
+               python-pytest-flake8   python-pytest-mypy   python-jaraco.test  
+source="https://github.com/jaraco/jaraco.context/archive/v$version/$name-$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+prepare   {
+  cd jaraco.context-$version
+  sed -i  /import jaraco.apt/d  jaraco/context.py
+  # Ignore flake8 error introduced by the above apt workaround
+  echo -e  \nper-file-ignores =\n\tjaraco/context.py: F821  >> .flake8
+}
+
+build-old()   {
+  cd jaraco.context-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd jaraco.context-$version
+  python -m pytest
+}
+
+build()   {
+  cd jaraco.context-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

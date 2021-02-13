@@ -1,0 +1,32 @@
+# description : Incredibly simple helpers for testing code with exceptions
+# depends : perl-try-tiny
+
+name=perl-test-fatal
+version=0.016
+release=1
+url=https://metacpan.org/release/Test-Fatal
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Test-Fatal-$version.tar.gz"
+options="!checksum"
+sha512sums=395d56cfc62fa5888458ec124710b5333f4c7396653e2755a69b08c738ca3d7503e8e413a10c8a55042fba15e90fa5331bb0bf9c59d3677c2ae5e710435120b5
+
+build-delete {
+   cd $sr cdir/Test-Fatal-$version
+  perl Makefile.PL
+  make
+}
+
+check {
+   cd $sr cdir/Test-Fatal-$version
+  make test
+}
+
+build() {
+   cd $sr cdir/Test-Fatal-$version
+  make INSTALLDIRS=vendor DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

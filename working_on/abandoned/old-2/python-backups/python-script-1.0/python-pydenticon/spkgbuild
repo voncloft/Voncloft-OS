@@ -1,0 +1,19 @@
+# description : Library for generating identicons
+	# depends : python python-pillow
+	# depends : python2 python2-pillow
+
+url=https://pypi.python.org/pypi/pydenticon/
+name=python-pydenticon python2-pydenticon
+version=0.3.1
+release=2
+
+source="https://pypi.org/packages/source/p/pydenticon/pydenticon-$version.tar.gz"
+
+build() {
+	 cd $srcdir/pydenticon-$version
+	 cd $srcdir/pydenticon-$version-python2
+	 cd pydenticon-$version
+	 cd pydenticon-$version-python2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

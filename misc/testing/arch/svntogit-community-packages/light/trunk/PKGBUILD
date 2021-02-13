@@ -1,0 +1,29 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Fredrik Haikarainen <fredrik.haikarainen@gmail.com>
+# Contributor: Marcin (CTRL) Wieczorek <marcin@marcin.co>
+
+pkgname=light
+pkgver=1.2.2
+pkgrel=1
+pkgdesc='Program to easily change brightness on backlight-controllers.'
+arch=('x86_64')
+url='https://github.com/haikarainen/light'
+license=('GPL3')
+depends=('glibc')
+install="${pkgname}.install"
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/haikarainen/light/archive/v${pkgver}.tar.gz")
+sha256sums=('62e889ee9be80fe808a972ef4981acc39e83a20f9a84a66a82cd1f623c868d9c')
+
+build() {
+    cd "${pkgname}-${pkgver}"
+    ./autogen.sh
+    ./configure --prefix=/usr --with-udev
+    make
+}
+
+package() {
+    cd "${pkgname}-${pkgver}"
+    make DESTDIR="${pkgdir}" PREFIX=/usr install
+}
+
+# vim:set ts=4 sw=4 et:

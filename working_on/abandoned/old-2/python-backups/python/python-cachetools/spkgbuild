@@ -1,0 +1,29 @@
+# description : "Extensible memoizing collections and decorators"
+# depends : python
+
+name=python-cachetools
+version=4.2.1
+release=1
+url="https://github.com/tkem/cachetools"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="$name-$version.tar.gz::https://github.com/tkem/cachetools/archive/v$version.tar.gz"
+sha512sums=45eb71a75eb89c3cc83ccf88715e94c0520825cb64d62efede3856bb33ac1f770607736bc80085dd0cc4043399bb87ae2e1c182f5123af4c3c73e799971e7dc3
+
+build()-delete {
+   cd "$srcdir"/cachetools-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/cachetools-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd cachetools-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

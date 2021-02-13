@@ -1,0 +1,35 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Hinrich Harms <arch@hinrich.de>
+# Contributor: sylvain alborini <sylvain.alborini@gmail.com>
+
+pkgname=gpscorrelate
+pkgver=2.0
+pkgrel=1
+pkgdesc="Correlate (geotagging) digital camera photos with GPS data in GPX format"
+arch=('x86_64')
+url="https://dfandrich.github.io/gpscorrelate/"
+license=('GPL2')
+depends=('exiv2' 'gtk3')
+makedepends=('libxslt')
+source=(https://github.com/dfandrich/gpscorrelate/releases/download/$pkgver/$pkgname-$pkgver.tar.xz
+        gpscorrelate.appdata.xml)
+sha256sums=('3fba8ad72b9b42dfc870a04d1207357c2a6c28842b1ede51e28b30a93b48debe'
+            'c5915b4fdee2fd4120ca12679c471ddaa3b39e53589e7ee0b3197a0ac3784209')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -e '/^CFLAGS   =/d' -e '/^LDFLAGS  =/d' -i Makefile # Honor system build flags
+}
+
+build() {
+  cd $pkgname-$pkgver
+  make prefix=/usr
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make prefix=/usr DESTDIR="$pkgdir" install
+  install -Dm644 gpscorrelate-gui.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/gpscorrelate-gui.svg"
+  install -Dm644 gpscorrelate.desktop "$pkgdir/usr/share/applications/gpscorrelate.desktop"
+  install -Dm644 ../gpscorrelate.appdata.xml "$pkgdir/usr/share/metainfo/gpscorrelate.appdata.xml"
+}

@@ -1,0 +1,26 @@
+# description : cairocffi is a CFFI-based drop-in replacement for Pycairo, a set of Python bindings and object-oriented API for cairo."
+# depends :   python-cffi   cairo   python-xcffib  
+
+name=python-cairocffi
+version=1.2.0
+release=3
+               python-pytest-isort   python-numpy  
+source="https://github.com/Kozea/cairocffi/archive/v${version}.tar.gz" 
+
+
+build-old()   {
+  cd cairocffi-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd cairocffi-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd cairocffi-$version
+  python setup.py install --root=$PKG --prefix=/usr -O1 --skip-build-old()
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

@@ -1,0 +1,30 @@
+# description : Install and Run Python Applications in Isolated Environments 
+# depends :   python   python-userpath   python-argcomplete  
+
+_name=pipx
+name=python-$_name
+version=0.16.0.0
+release=1
+source=" $url/archive/$version.tar.gz" 
+
+build-old()   {
+  cd $_name-$version
+
+  python setup.py build-old()
+}
+
+#check   {
+#  cd $_name-$version
+#
+#  nox
+#}
+
+build()   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

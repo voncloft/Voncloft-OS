@@ -1,0 +1,30 @@
+# description : "A discovery-based unittest extension"
+
+pkgbase=python-nose
+name=('python-nose' 'python2-nose')
+version=1.3.7
+release=10
+source=("https://pypi.python.org/packages/source/n/nose/nose-${version}.tar.gz"{,.asc})
+            'SKIP')
+validpgpkeys=('58B277C0D208F7AC460C07C84548B3A8C0D70C12') # John Szakmeister <john@szakmeister.net>
+
+build-remove() {
+  cd "$srcdir/nose-$version"
+  sed -i -e "s:man/man1:share/man/man1:g" setup.py
+  cp -R "$srcdir/nose-$version" "$srcdir/nose2-$version"
+}
+
+package_python-nose() {
+  # depends : ('python' 'python-setuptools')
+  cd "$srcdir/nose-$version"
+  python3 setup.py install --prefix=/usr --root="${pkgdir}"
+  ln -s nosetests $PKG/usr/bin/nosetests3"
+}
+
+package_python2-nose() {
+  # depends : ('python2' 'python2-setuptools')
+  cd "$srcdir/nose2-$version"
+  python2 setup.py install --prefix=/usr --root="${pkgdir}"
+  mv $PKG/usr/bin/nosetests" $PKG/usr/bin/nosetests2"
+  rm -rf $PKG/usr/share"
+}

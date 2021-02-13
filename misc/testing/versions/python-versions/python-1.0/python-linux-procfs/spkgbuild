@@ -1,0 +1,25 @@
+
+name=python-linux-procfs
+version=0.6.3
+release=1
+# description : Linux /proc abstraction classes for python"
+# depends :   python-six  
+source="https://git.kernel.org/pub/scm/libs/python/${name}/${name}.git/snapshot/${name}-${version}.tar.gz" 
+
+build   {
+  cd "${name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${name}-${version}"
+  export PYTHONPATH="build/:${PYTHONPATH}"
+  python bitmasklist_test.py
+}
+
+package   {
+  cd "${name[0]}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root="${PKG}/"
+}

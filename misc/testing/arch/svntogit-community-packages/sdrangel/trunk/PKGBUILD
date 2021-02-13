@@ -1,0 +1,85 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Michal Krenek (Mikos) <m.krenek@gmail.com>
+
+pkgbase=sdrangel
+pkgname=($pkgbase $pkgbase-sse4.1)
+pkgver=4.12.1
+pkgrel=2
+pkgdesc='Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware'
+arch=('x86_64')
+url='https://github.com/f4exb/sdrangel'
+license=('GPL3')
+depends=('pkg-config' 'log4cpp' 'fftw' 'ffmpeg' 'cm256cc' 'dsdcc' 'pulseaudio' 'lz4' 'nanomsg'
+         'qt5-base' 'qt5-tools' 'qt5-multimedia' 'qt5-websockets') # 'opencv')
+makedepends=('cmake' 'doxygen' 'graphviz' 'ffmpeg' 'airspy' 'bladerf' 'hackrf' 'limesuite' 'rtl-sdr' 'soapysdr' 'boost') # 'codec2')
+optdepends=('ffmpeg: DATV demodulator'
+            'rtl-sdr: RTLSDR support'
+            'hackrf: HackRF support'
+            'limesuite: LimeSDR support'
+            'bladerf: BladeRF support'
+            'airspy: AirSPY support'
+            'soapysdr: SoapySDR backend')
+#            'codec2: Codec2 speech codec support')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha512sums=('5baa5fa3c84f17c83fe153091c22df2c7119a3ebb0b3d95513706edd9b47f35209291390657b9265c5c1faa56b4fdf437884dac34fb808e17d1a6fb5d9a57251')
+
+prepare() {
+  # Fix ffmpeg version detection
+  sed -i "s|COMMAND ffmpeg -version COMMAND grep ffmpeg COMMAND cut -d\\  -f3 COMMAND tr -d '\\n' OUTPUT_VARIABLE FFMPEG_VERSION|COMMAND ffmpeg -version COMMAND sed -e '/^ffmpeg/!d' -e 's@ffmpeg version [\|n]@@' -e 's@ Copyright.*@@' OUTPUT_VARIABLE FFMPEG_VERSION|" \
+           $pkgbase-$pkgver/plugins/channelrx/CMakeLists.txt
+
+  # Remove plugins that are causing problems, if you want them enabled send a patch
+  sed -i 's|add_subdirectory(modatv)||' $pkgbase-$pkgver/plugins/channeltx/CMakeLists.txt
+
+  # Remove dependencies needed for diabled plugins
+  sed -i '/find_package(OpenCV REQUIRED.*/d' $pkgbase-$pkgver/CMakeLists.txt
+
+  mkdir $pkgbase-$pkgver/build
+  cp -r $pkgbase-$pkgver $pkgbase-sse4.1-$pkgver
+}
+
+build() {
+  echo 'Building sdrangel...'
+  cd "$srcdir"/$pkgbase-$pkgver/build
+
+  cmake .. \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DLIBDSDCC_INCLUDE_DIR=/usr/include/dsdcc \
+    -DCM256CC_INCLUDE_DIR=/usr/include/cm256cc \
+    -DENABLE_GENERIC=True
+
+  make
+
+  echo 'Building sdrangel-sse4.1...'
+  cd "$srcdir"/$pkgbase-sse4.1-$pkgver/build
+
+  cmake .. \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DLIBDSDCC_INCLUDE_DIR=/usr/include/dsdcc \
+    -DCM256CC_INCLUDE_DIR=/usr/include/cm256cc \
+    -DFORCE_SSE41=True
+
+  make
+}
+
+package_sdrangel() {
+  install=$pkgname.install
+
+  cd $pkgname-$pkgver/build
+
+  make DESTDIR="$pkgdir" install
+}
+
+package_sdrangel-sse4.1() {
+  pkgdesc="$pkgdesc (with SSE 4.1 extensions)"
+  provides=('sdrangel')
+  conflicts=('sdrangel')
+  install=$pkgname.install
+
+  cd $pkgname-$pkgver/build
+
+  make DESTDIR="$pkgdir" install
+}
+

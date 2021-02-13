@@ -1,0 +1,17 @@
+# description : Base classes wrapping fundamental Perl data types
+# depends : perl-class-method-modifiers perl-list-moreutils perl-module-runtime
+
+_pkg=Data-Perl
+name=perl-$_pkg
+version=0.002011
+release=1
+
+source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/${_pkg}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

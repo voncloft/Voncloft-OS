@@ -1,0 +1,43 @@
+# description : "Zope testing frameworks"
+
+pkgbase=python-zc.lockfile
+_name=${pkgbase#python-}
+version=2.0
+release=5
+url="https://github.com/zopefoundation/$_name"
+source="$pkgbase-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=bdb429c506064a83cb6fe0964aef6793cc20b5c954c208497a2c3d596213687b40be6d778490d3317de87ff997dfcfc9357f6e5225f48636148f1acdc9325350
+
+prepare {
+  cp -a $_name-$version{,-py2}
+}
+
+build()-delete {
+  echo "Building python-$_name $version"
+   cd "$srcdir"/$_name-$version
+  python setup.py build
+
+   cd "$srcdir"/$_name-$version-py2
+}
+
+check {
+  echo "Running tests on python-$_name $version"
+   cd "$srcdir"/$_name-$version
+  python setup.py test -q
+
+   cd "$srcdir"/$_name-$version-py2
+}
+
+package_python-zc.lockfile {
+  # depends : python
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}
+
+   cd $_name-$version-py2
+
+
+}

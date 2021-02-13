@@ -1,0 +1,27 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-biscuits
+version=0.2.1
+release=5
+pkgdesc="Fast and tasty cookies handling"
+url="https://github.com/pyrates/biscuits"
+depends=('python')
+makedepends=('cython' 'python-setuptools')
+checkdepends=('python-pytest-runner')
+source=("$name-$version.tar.gz::https://github.com/pyrates/biscuits/archive/$version.tar.gz")
+sha512sums=('ccb8f00460f1d73eb28c44ab1a179d98109dc0427196cddcc86f97a4224e5f2230a33caaabcb10ae621f049e7097b2cd03b1cecc8a140b49ee0d68d1384895af')
+
+build() {
+  cd biscuits-$version
+  make compile
+}
+
+check() {
+  cd biscuits-$version
+  python setup.py pytest
+}
+
+package() {
+  cd biscuits-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

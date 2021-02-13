@@ -1,0 +1,20 @@
+# description : FTP transport adapter for Requests"
+# depends :   python-requests  
+
+name= python-requests-ftp 
+version=0.3.1
+release=5
+source="https://github.com/Lukasa/requests-ftp/archive/v${version}.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/requests-ftp-${version}
+
+  python setup.py build-old()_ext --inplace
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/requests-ftp-${version}
+
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+}

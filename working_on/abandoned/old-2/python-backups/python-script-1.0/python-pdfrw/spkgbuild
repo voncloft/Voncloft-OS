@@ -1,0 +1,18 @@
+# description : Convert restructured text to PDF via reportlab.
+# depends : python
+
+_pypiname=pdfrw
+url=https://github.com/pmaupin/$_pypiname
+_pypiname=pdfrw
+name=python-pdfrw
+version=0.4
+release=6
+
+source="$_pypiname-$version.tar.gz"::https://github.com/pmaupin/$_pypiname/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+     cd $srcdir/$_pypiname-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

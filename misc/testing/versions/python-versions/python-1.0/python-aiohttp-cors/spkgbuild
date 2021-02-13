@@ -1,0 +1,19 @@
+
+_name=aiohttp-cors
+name=python-aiohttp-cors
+version=0.7.0
+release=5
+# description : CORS support for aiohttp 
+# depends :   python-aiohttp  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+  export PYTHONHASHSEED=0
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

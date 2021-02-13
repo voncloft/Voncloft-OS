@@ -1,0 +1,30 @@
+# description : Python2 s stdlib csv module is nice, but it doesn t support unicode. This module is a drop-in replacement which *does*."
+# depends :   python2  
+
+pkgbase=python-unicodecsv
+name=python2-unicodecsv
+version=0.14.1
+release=4
+source="$pkgbase-$version.tar.gz::https://github.com/jdunck/python-unicodecsv/archive/$version.tar.gz" 
+
+prepare   {
+  sed -i  s/unittest2/unittest/  python-unicodecsv-$version/{runtests.py,unicodecsv/test.py}
+  sed -i  /unittest2/d  python-unicodecsv-$version/setup.py
+}
+
+build-old()   {
+  cd python-unicodecsv-$version
+  python2 setup.py build-old()
+}
+
+check   {
+  cd python-unicodecsv-$version
+  python2 setup.py test
+}
+
+build()_python2-unicodecsv   {
+  cd python-unicodecsv-$version
+  python2 setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

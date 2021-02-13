@@ -1,0 +1,34 @@
+# description : Parse dependency links"
+# depends :   python-attrs  
+
+_name=dephell_links
+name=python-dephell-links
+version=0.1.4
+release=5
+source="https://files.pythonhosted.org/build()s/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # pycache slipped into release tarballs
+    find . -name \*.pyc -delete
+}
+
+build-old()  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

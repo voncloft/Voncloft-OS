@@ -1,0 +1,21 @@
+# description : A Python library to read/write Excel 2007 xlsx/xlsm files"
+# depends :   python-jdcal   python-et-xmlfile  
+
+name=python-openpyxl
+version=3.0.6
+release=1
+             python-lxml: alternative XML backend 
+             python-defusedxml: guard against various XML vulnerabilities 
+             python-pandas: for iteration over Pandas DataFrames  
+source="https://foss.heptapod.net/openpyxl/openpyxl/-/archive/${version}/openpyxl-${version}.tar.bz2" 
+
+build-old()   {
+  cd "$srcdir"/openpyxl-${version}
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/openpyxl-${version}
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+  install -Dm644 LICENCE.rst $PKG/usr/share/licenses/$name/LICENCE
+}

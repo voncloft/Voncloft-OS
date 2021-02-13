@@ -1,0 +1,41 @@
+# description : Cycle through a list of values via a scalar
+# depends : perl
+# $ID$
+
+name=perl-tie-cycle
+_dist=Tie-Cycle
+version=1.225
+release=5
+url=https://metacpan.org/release/${_dist}
+check# depends : perl-test-pod perl-test-pod-coverage
+source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/${_dist}-${version}.tar.gz"
+options="!checksum"
+md5sums=260fd7edbfefd14b40d27234cd59b6ee
+sha256sums=f330d821694af9b269b6083570d5c10ea22e6eb3b21841048ce28252b1c03d45
+
+build-delete {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    export PERL_MM_USE_DEFAULT=1
+    make test
+}
+
+build() {
+    cd ${srcdir}/${_dist}-${version}
+    unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+    make install INSTALLDIRS=vendor DESTDIR=$PKG
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

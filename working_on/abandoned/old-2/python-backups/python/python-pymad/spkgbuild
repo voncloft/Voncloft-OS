@@ -1,0 +1,25 @@
+# description : Python interface to libmad
+# depends : libmad python
+
+name=python-pymad
+version=0.10
+release=4
+url=https://github.com/jaqx0r/pymad
+make# depends : git
+source="$name::git+https://github.com/jaqx0r/pymad.git#tag=version/${version/_/-}"
+md5sums=SKIP
+
+build()-delete {
+   cd $name
+  python config_unix.py  
+}
+
+options="!checksum"
+
+build() {
+   cd $name
+  python setup.py build
+  python setup.py install --root=$PKG
+}
+
+# getver: github.com/jaqx0r/pymad/tags

@@ -1,0 +1,26 @@
+# description : OpenStack Profiler Library"
+# depends :   python-netaddr   python-oslo-concurrency   python-oslo-serialization   python-oslo-utils 
+
+name=python-osprofiler
+version=3.4.0
+release=3
+          python-prettytable   python-requests   python-six   python-webob  
+               python-pymongo   python-redis   python-stestr  
+source="https://github.com/openstack/osprofiler/archive/$version/$name-$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd osprofiler-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd osprofiler-$version
+  stestr run
+}
+
+build()   {
+  cd osprofiler-$version
+  python setup.py install --root=$PKG --optimize=1
+}

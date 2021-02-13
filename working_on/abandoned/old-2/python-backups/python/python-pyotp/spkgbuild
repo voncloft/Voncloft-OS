@@ -1,0 +1,41 @@
+# description : Python library for generating and verifying one-time passwords
+# depends : python
+
+name=python-pyotp
+_name=pyotp
+_gitcommit=480770f6b86c6445ffa041a830532b72e45ced6c
+version=2.4.1
+release=1
+url=https://pyotp.readthedocs.io/
+make# depends : git python-setuptools python-sphinx
+options=!makeflags
+source="git+https://github.com/pyotp/pyotp#commit=${_gitcommit}?signed"
+sha512sums=SKIP
+validpgpkeys=29BCBADB4ECAAAC2382699388AFAFCD242818A52 # Andrey Kislyuk <kislyuk@gmail.com>
+
+version {
+   cd ${_name}
+  git describe --tags | sed s/^v//;s/\[^-]*-g\/r\1/;s/-/./g
+}
+
+build()-delete {
+   cd ${_name}
+  python setup.py build
+  make -C docs text man
+}
+
+check {
+   cd ${_name}
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}
+  python setup.py build
+  python setup.py install--root=$PKG  -O1 
+  install -Dm 644 ./docs/_build()/man/${_name}.1 -t "${PKG}/usr/share/man/man1"
+  ln -s /usr/share/man/man1/${_name}.1.gz "${PKG}/usr/share/man/man1/${name}.1.gz"
+}
+

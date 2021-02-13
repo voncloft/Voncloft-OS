@@ -1,0 +1,23 @@
+
+name=python-vine
+version=5.0.0
+release=3
+# description : Promises, promises, promises"
+# depends :   python-case  
+source="https://github.com/celery/vine/archive/v$version.tar.gz" 
+
+build   {
+  cd "$srcdir"/vine-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/vine-$version
+  python setup.py test
+}
+
+package   {
+  cd vine-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,18 @@
+# description : A clean customizable documentation theme for Sphinx
+# depends : python-sphinx python-beautifulsoup4
+
+_name=furo
+url=https://github.com/pradyunsg/furo
+_name=furo
+name=python-sphinx-$_name
+version=2020.11.10.beta15
+release=3
+
+source="$url/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

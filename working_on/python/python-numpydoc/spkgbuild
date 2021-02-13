@@ -1,0 +1,16 @@
+# description : Numpys Sphinx extensions
+# depends : python-sphinx python-jinja
+
+url=https://github.com/numpy/numpydoc
+name=python-numpydoc
+version=1.1.0
+release=3
+
+source="https://github.com/numpy/numpydoc/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd numpydoc-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

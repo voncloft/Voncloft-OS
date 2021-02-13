@@ -1,0 +1,16 @@
+# description : A Python library that validates OpenAPI Specs against the OpenAPI 2.0 aka Swagger and OpenAPI 3.0.0 specification
+# depends : python-six python-yaml python-jsonschema
+
+url=https://github.com/p1c2u/openapi-spec-validator
+name=python-openapi-spec-validator
+version=0.2.9
+release=3
+
+source="https://github.com/p1c2u/openapi-spec-validator/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd openapi-spec-validator-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

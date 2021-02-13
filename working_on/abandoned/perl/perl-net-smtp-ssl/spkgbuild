@@ -1,0 +1,28 @@
+# description : SSL support for Net::SMTP
+# depends : perl-io-socket-ssl
+
+name=perl-net-smtp-ssl
+version=1.04
+release=4
+url=https://search.cpan.org/dist/Net-SMTP-SSL/
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Net-SMTP-SSL-$version.tar.gz"
+options="!checksum"
+sha256sums=7b29c45add19d3d5084b751f7ba89a8e40479a446ce21cfd9cc741e558332a00
+
+build() {
+   cd ${sr cdir}/Net-SMTP-SSL-${version}
+  # Install module into the vendor directories.
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make DESTDIR=$PKG install || return 1
+
+  # Remove .packlist and perllocal.pod files.
+  find $PKG -name .packlist -delete
+  find $PKG -name perllocal.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

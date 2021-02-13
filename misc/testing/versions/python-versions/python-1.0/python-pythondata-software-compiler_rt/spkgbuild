@@ -1,0 +1,23 @@
+
+_name=pythondata-software-compiler_rt
+_pyname=${_name//-/_}
+name=python-$_name
+version=2020.08
+release=1
+# description : Python module containing data files for compiler_rt software  for use with LiteX  
+# depends :   python  
+source=" $url/archive/$version.tar.gz" 
+
+build   {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -Dm 644 $_pyname/data/LICENSE.TXT $PKG/usr/share/licenses/$name/LICENSE
+}

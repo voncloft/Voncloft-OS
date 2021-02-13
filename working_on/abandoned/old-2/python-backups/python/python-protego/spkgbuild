@@ -1,0 +1,30 @@
+# description : "A pure-Python robots.txt parser with support for modern conventions"
+# depends : python-six
+
+name=python-protego
+version=0.1.16
+release=3
+url="https://github.com/scrapy/protego"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="$name-$version.tar.gz::https://github.com/scrapy/protego/archive/$version.tar.gz"
+sha512sums=3f029f34c4da6dc612dcdd747f56d421dca60f163315e0f72497435dbd74da77a5a02ee35f15774aad431e2b6e69a582c038d435ba0c07a53b3f0c83cb1c958a
+
+build()-delete {
+   cd protego-$version
+  python setup.py build
+}
+
+check {
+   cd protego-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd protego-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+}

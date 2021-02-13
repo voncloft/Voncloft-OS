@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-csv23
+version=0.3.2
+release=4
+pkgdesc="Python 3 unicode CSV compatibility layer"
+url="https://github.com/xflr6/csv23"
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest' 'python-mock' 'python-pytest-mock')
+source=("$name-$version.tar.gz::https://github.com/xflr6/csv23/archive/v$version.tar.gz")
+sha512sums=('289386cce5de4ae5bc42fc56d1639bbd1483034e5422f63142c1d188de735b1f5f18f9f69e3cb96f4ac3e1d7d0b371b1c45e720982c4f4b539fcf0d2da893f6a')
+
+prepare() {
+  cd csv23-$version
+  sed -i '/--cov/d' setup.cfg
+}
+
+build() {
+  cd csv23-$version
+  python setup.py build
+}
+
+check() {
+  cd csv23-$version
+  python -m pytest
+}
+
+package() {
+  cd csv23-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$name/LICENSE.txt
+}

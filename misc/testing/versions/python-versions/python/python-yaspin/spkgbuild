@@ -1,0 +1,33 @@
+# description : Yet Another Terminal Spinner"
+# depends :   python  
+
+name=python-yaspin
+version=1.3.0
+release=1
+source="https://github.com/pavdmyt/yaspin/archive/v$version.tar.gz" 
+
+prepare   {
+  cd yaspin-$version
+
+  # poetry-generated setup.py is badly broken in several ways, including
+  # distribution of tests in the built build() as well as using distutils for
+  # bad metadata. Seehttps://github.com/sdispater/poetry/issues/866
+  dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build-old()   {
+  cd yaspin-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd yaspin-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd yaspin-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

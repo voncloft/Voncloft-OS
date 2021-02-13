@@ -1,0 +1,16 @@
+# description : A Python package for describing statistical models using symbolic formulas
+# depends : python-numpy
+
+url=https://github.com/pydata/patsy
+name=python-patsy
+version=0.5.1
+release=6
+
+source="https://github.com/pydata/patsy/archive/v${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir/patsy-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

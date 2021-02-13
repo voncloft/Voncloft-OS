@@ -1,0 +1,16 @@
+# description : Enhancements to the Python build-old() system 
+# depends :   intltool   python  
+
+name=python-distutils-extra
+version=2.39
+release=8
+source=https://launchpad.net/$name/trunk/$version/+download/$name-$version.tar.gz{,.asc} 
+#https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz.asc
+        #$name-$version.tar.gz.sig::http://launchpad.net/$name/trunk/$version/+download/dist-$name-$version.tar.gz.sig 
+validpgpkeys=  3DB46B55EFA59D40E6232148D14EF15DAFE11347  
+          SKIP  
+
+build()   {
+  cd "${srcdir}/$name-$version"
+  python3 setup.py install --root=$PKG
+}

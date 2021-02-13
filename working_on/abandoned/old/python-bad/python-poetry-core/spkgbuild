@@ -1,0 +1,44 @@
+# description : Poetry PEP 517 Build Backend & Core Utilities"
+# depends :  "${_deps[@]/#/python-}" 
+
+_name=poetry-core
+name=python-poetry-core
+version=1.0.0
+release=2
+_deps=  jsonschema   lark-parser   packaging   tomlkit  
+conflicts=  python-poetry<1.1.0  
+source="${_name}-${version}.tar.gz::${url}/archive/${version}.tar.gz" 
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # remove vendored dependencies
+    sed -i  /^__version__/!d  poetry/core/__init__.py
+    rm -r poetry/core/_vendor
+
+    # be a proper namespace, python3-only ; 
+    rm poetry/__init__.py
+
+    dephell deps convert --from pyproject.toml --to setup.py
+}
+
+build-old()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build-old()
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # only works inside git repositories
+    pytest \
+        -k  not test_default_with_excluded_data and not test_default_src_with_excluded_data 
+}
+
+build()   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+    install -Dm644 LICENSE $PKG/usr/share/licenses/${name}/LICENSE
+}

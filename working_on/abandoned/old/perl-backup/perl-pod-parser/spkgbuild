@@ -1,0 +1,32 @@
+# description : Modules for parsing/translating POD format documents
+# depends : perl
+
+name=perl-pod-parser
+version=1.63
+release=1
+url=https://metacpan.org/release/Pod-Parser
+source="https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-$version.tar.gz"
+options="!checksum"
+sha512sums=55f5741bb906701705f489b2314d3f11cd6d63ca5b64a60fdbda7eed0388945f2e68262735c7cc33b7089794630393049e619f9900e85c71bf9223243bc0984a
+
+build-delete {
+  cd Pod-Parser-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Pod-Parser-$version
+  make test
+}
+
+build() {
+  cd Pod-Parser-$version
+  make DESTDIR=$PKG install
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

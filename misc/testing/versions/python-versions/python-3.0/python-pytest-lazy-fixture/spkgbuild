@@ -1,0 +1,24 @@
+# description : Use fixtures in @pytest.mark.parametrize"
+# depends :  python-pytest 
+
+_pkg=pytest-lazy-fixture
+name=python-${_pkg}
+version=0.6.3
+release=3
+source=https://files.pythonhosted.org/build()s/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+
+build-old()   {
+  cd ${_pkg}-${version}
+  python setup.py build-old()
+}
+
+check   {
+  cd ${_pkg}-${version}
+  PYTHONPATH="${PWD}" pytest
+}
+
+build()   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build-old() --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}
+}

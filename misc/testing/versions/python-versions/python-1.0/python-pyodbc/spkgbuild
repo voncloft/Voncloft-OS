@@ -1,0 +1,26 @@
+
+pkgbase=python-pyodbc
+name=python-pyodbc
+_srcname=pyodbc
+version=4.0.28
+release=3
+# description : ODBC module for Python 
+# depends :   python   unixodbc  
+source="${pkgbase}-${version}.tar.gz::https://github.com/mkleehammer/pyodbc/archive/${version}.tar.gz" 
+
+prepare   {
+	echo "Version: ${version}.0" > "${srcdir}/${_srcname}-${version}/PKG-INFO"
+}
+
+build   {
+	cd "${srcdir}/${_srcname}-${version}"
+
+	python setup.py build
+}
+
+package   {
+	cd "${srcdir}/${_srcname}-${version}"
+
+	python setup.py install --root="${PKG}/" --optimize=1
+	install -Dm644 LICENSE.txt $PKG/usr/share/licenses/${name}/LICENSE.txt
+}

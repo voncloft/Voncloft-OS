@@ -1,0 +1,28 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-pyte
+version=0.8.0
+release=6
+pkgdesc='Simple VTXXX-compatible terminal emulator'
+url='https://github.com/selectel/pyte'
+depends=('python-wcwidth')
+makedepends=('python-setuptools' 'python-pytest-runner')
+source=("$name-$version.tar.gz::https://github.com/selectel/pyte/archive/$version.tar.gz")
+sha512sums=('c488fd0a61c1dc34b27e12ed9ba1109bb2c331626c982da06e7540bdd168008cb5106a17c71e60e38c493f2dd9f21ba3cf05118928744dfa192d62e511b4c4e8')
+
+build() {
+  cd "$srcdir"/pyte-$version
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/pyte-$version
+  python setup.py pytest
+}
+
+package() {
+  cd pyte-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

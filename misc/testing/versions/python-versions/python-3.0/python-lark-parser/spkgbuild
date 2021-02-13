@@ -1,0 +1,32 @@
+# description : A modern parsing library"
+# depends :   python  
+
+name=python-lark-parser
+version=0.11.1
+_nearley_commit=a46b37471db486db0f6e1ce6a2934fb238346b44
+release=1
+source="https://github.com/lark-parser/lark/archive/$version.tar.gz"
+        "nearley-$_nearley_commit.tar.gz::https://github.com/kach/nearley/archive/$_nearley_commit.tar.gz" 
+             fe14909f8a1d1626f8a632e8d48bf83602923f468b7bbb819557b85ab5e384cb042241ba15525e9850f2bbd65cad12497ed0b7ff6bc86c04d78b63d0c1bb66b4  
+
+prepare   {
+  rmdir lark-$version/tests/test_nearley/nearley
+  ln -s "$srcdir"/nearley-$_nearley_commit lark-$version/tests/test_nearley/nearley
+}
+
+build-old()   {
+  cd lark-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd lark-$version
+  python -m tests
+}
+
+build()   {
+  cd lark-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,48 @@
+# description : Keep imports and functions out of your namespace
+# depends : perl>=5.5.0 perl-b-hooks-endofscope>=0.12 perl-package-stash>=0.23
+
+_cpanname=namespace-clean
+name=perl-$_cpanname
+version=0.27
+release=6
+url=https://search.cpan.org/dist/$_cpanname
+source="https://search.cpan.org/CPAN/authors/id/R/RI/RIBASUSHI/$_cpanname-$version.tar.gz"
+options="!checksum"
+sha1sums=4aa49b40cbcc7f1ee587dc3d5ec337f77c78fc4b
+
+# Function to change to the working directory and set
+# environment variables to override undesired options.
+prepareEnvironment {
+	cd $srcdir/$_cpanname-$version
+	export \
+		PERL_MM_USE_DEFAULT=1 \
+		PERL_AUTOINSTALL=--skipdeps \
+		PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG \
+		PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+		MODULEBUILDRC=/dev/null
+}
+
+build-delete {
+	prepareEnvironment
+	/usr/bin/perl Makefile.PL
+	make
+}
+
+check {
+	prepareEnvironment
+	make test
+}
+
+build() {
+	prepareEnvironment
+	make install
+
+	# Remove perllocal.pod and .packlist.
+	find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

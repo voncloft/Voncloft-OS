@@ -1,0 +1,30 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_pkgname=tox-current-env
+pkgname=python-$_pkgname
+pkgver=0.0.5
+pkgrel=1
+pkgdesc='tox plugin to run tests in current Python environment'
+arch=('any')
+url='https://github.com/fedora-python/tox-current-env'
+license=('MIT')
+depends=('python' 'python-tox')
+makedepends=('python-setuptools')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha512sums=('682823aaa62d021ca182ca9dadc1856b507c71b4d5e1b6cab064701b9d8ff1acfa96f64a411c8ad03b0b72696b25c2f0a8298e1f1ebc26ff21954a0c0bd369af')
+
+build() {
+  cd $_pkgname-$pkgver
+
+  python setup.py build
+}
+
+package() {
+  cd $_pkgname-$pkgver
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

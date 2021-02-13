@@ -1,0 +1,23 @@
+# description : Radically simplified static file serving for WSGI applications 
+# depends :   python  
+
+name=python-whitenoise
+version=5.2.0
+release=2
+source="https://github.com/evansd/whitenoise/archive/v$version.tar.gz" 
+
+build-old()   {
+  cd whitenoise-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd whitenoise-$version
+  DJANGO_SETTINGS_MODULE=tests.django_settings pytest
+}
+
+build()   {
+  cd whitenoise-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

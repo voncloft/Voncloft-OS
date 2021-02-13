@@ -1,0 +1,34 @@
+# description : Write Perl subroutines and classes in C++
+# depends : perl-inline perl-inline-c perl-parse-recdescent
+
+name=perl-inline-cpp
+version=0.80
+release=3
+url=https://metacpan.org/release/Inline-CPP
+make# depends : perl-extutils-cppguess
+check# depends : perl-inline-filters
+source="https://cpan.metacpan.org/authors/id/D/DA/DAVIDO/Inline-CPP-$version.tar.gz"
+options="!checksum"
+sha512sums=7c86d712131306483e04b87eafcee86fea178dc791d85341cfb1c727718a3679d93f935abce5de5ef32adb627d802bbb391bc8842bcf0a1c38c688dc9182a73f
+
+build-delete {
+   cd Inline-CPP-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd Inline-CPP-$version
+  make test
+}
+
+build() {
+   cd Inline-CPP-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,22 @@
+# description : Manuel lets you build-old() tested documentation"
+# depends :   python-setuptools  
+
+name=python-manuel
+version=1.10.1
+release=5
+source="https://github.com/benji-york/manuel/archive/$version.tar.gz" 
+
+build-old()   {
+  cd manuel-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd manuel-$version
+  python setup.py test
+}
+
+build()   {
+  cd manuel-$version
+  python setup.py install --root=$PKG --optimize=1
+}

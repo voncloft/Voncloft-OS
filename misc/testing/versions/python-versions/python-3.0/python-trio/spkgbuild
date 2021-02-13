@@ -1,0 +1,39 @@
+# description : A friendly Python library for async concurrency and I/O 
+# depends :  
+
+name=python-trio
+version=0.18.0
+release=1
+  python
+  python-async_generator
+  python-attrs
+  python-idna
+  python-outcome
+  python-sniffio
+  python-sortedcontainers
+ 
+  git
+  python-setuptools
+ 
+provides= python-multio-provider 
+
+version   {
+  cd trio
+
+  git describe --tags | sed  s/^v// 
+}
+
+build-old()   {
+  cd trio
+
+  python setup.py build-old()
+}
+
+build()   {
+  cd trio
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-trio/
+}
+
+# vim: ts=2 sw=2 et:

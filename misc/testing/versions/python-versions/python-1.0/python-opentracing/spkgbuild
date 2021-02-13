@@ -1,0 +1,23 @@
+
+name=python-opentracing
+version=2.4.0
+release=1
+# description : OpenTracing API for Python"
+# depends :   python  
+source="https://github.com/opentracing/opentracing-python/archive/$version/$name-$version.tar.gz" 
+
+build   {
+  cd opentracing-python-$version
+  python setup.py build
+}
+
+check   {
+  cd opentracing-python-$version
+  pytest tests
+  python -m testbed
+}
+
+package   {
+  cd opentracing-python-$version
+  python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ukui-screensaver
+pkgver=3.0.1
+pkgrel=1
+pkgdesc="Screensaver for UKUI desktop environment"
+arch=('x86_64')
+license=('GPL')
+url="https://github.com/ukui/ukui-screensaver"
+groups=('ukui')
+depends=('dconf' 'gsettings-qt' 'libxtst' 'qt5-x11extras')
+makedepends=('cmake' 'qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ukui/ukui-screensaver/archive/v$pkgver.tar.gz")
+sha512sums=('2e1b369e15733a5efaf8c8ecf365d0da703f8674327310fd166044901b39ba86303a4f217f968cbecca2496473f219caed50bdf6add3d5077fde45064ea3da46')
+
+prepare() {
+  mkdir -p build
+  # https://github.com/ukui/ukui-screensaver/issues/65
+  cp /etc/pam.d/login $pkgname-$pkgver/data/ukui-screensaver-qt
+}
+
+build() {
+  cd build
+  cmake ../$pkgname-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

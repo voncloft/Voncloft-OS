@@ -1,0 +1,33 @@
+
+name=python-marshmallow-sqlalchemy
+version=0.24.1
+release=1
+# description : SQLAlchemy integration with marshmallow 
+# depends :  
+  python-marshmallow
+  python-sqlalchemy
+ 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd marshmallow-sqlalchemy
+
+  git describe --tags
+}
+
+build   {
+  cd marshmallow-sqlalchemy
+
+  python setup.py build
+}
+
+package   {
+  cd marshmallow-sqlalchemy
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-marshmallow-sqlalchemy/
+}
+
+# vim: ts=2 sw=2 et:

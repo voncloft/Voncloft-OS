@@ -1,0 +1,22 @@
+# description : A simple flow-based testing framework"
+# depends :   python-coverage  
+
+name=python-testflo
+version=1.4.2
+release=4
+source="https://pypi.io/build()s/source/t/testflo/testflo-$version.tar.gz" 
+
+prepare   {
+  cd testflo-$version
+  sed -i  s/coverage<5.0/coverage/  setup.py
+}
+
+build-old()   {
+  cd testflo-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd testflo-$version
+  python setup.py install --root=$PKG --optimize=1
+}

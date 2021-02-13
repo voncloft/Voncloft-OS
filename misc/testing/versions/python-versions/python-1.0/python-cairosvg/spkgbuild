@@ -1,0 +1,33 @@
+
+name=python-cairosvg
+_name=CairoSVG
+version=2.5.1
+release=1
+# description : SVG converter based on Cairo. It can export SVG files to PDF, PostScript and PNG files 
+# depends :   python-cairocffi   python-cssselect2   python-defusedxml   python-pillow   python-tinycss2  
+replaces=  cairosvg  
+source="https://github.com/Kozea/CairoSVG/archive/$version.tar.gz" 
+
+prepare   {
+  cd $_name-$version
+
+  cp -r cairosvg test_non_regression/cairosvg_reference/
+}
+
+build   {
+  cd $_name-$version
+
+  python setup.py build
+}
+
+check   {
+  cd $_name-$version
+
+  python setup.py pytest
+}
+
+package   {
+  cd $_name-$version
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}

@@ -1,0 +1,26 @@
+# description : 'Curses-based user interface library'
+# depends : ('python' 'glibc')
+
+name=python-urwid
+version=2.1.1
+release=3
+
+build-remove() {
+  (cd urwid-release-${version}
+    python setup.py build
+  )
+}
+
+check() {
+  (cd urwid-release-${version}
+    python setup.py test
+  )
+}
+
+build() {
+  cd urwid-release-${version}
+  python setup.py install --prefix=/usr --root="${pkgdir}" -O1 --skip-build
+  rm -r "${pkgdir}"/usr/lib/python*/site-packages/urwid/tests
+}
+
+# vim: ts=2 sw=2 et:

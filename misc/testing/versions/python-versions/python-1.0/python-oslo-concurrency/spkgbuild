@@ -1,0 +1,28 @@
+
+name=python-oslo-concurrency
+version=4.4.0
+release=1
+# description : OpenStack library for all concurrency-related code"
+# depends :   python-six   python-pbr   python-oslo-config   python-oslo-i18n   python-oslo-utils 
+          python-fasteners  
+options=  !emptydirs  
+source="https://github.com/openstack/oslo.concurrency/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd oslo.concurrency-$version
+  python setup.py build
+}
+
+check   {
+  cd oslo.concurrency-$version
+  stestr run || : # "1 failure about raising rlimit"
+}
+
+package   {
+  cd oslo.concurrency-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

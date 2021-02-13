@@ -1,0 +1,24 @@
+
+name=python-cvxopt
+version=1.2.5
+release=3
+# description : A free software package for convex optimization written in Python"
+# depends :  python suitesparse 
+             fftw: for FFTW interface 
+             glpk: solver for linear cone and PWL programming problems 
+             dsdp: solver for linear cone semidefinite programming problems  
+source="https://github.com/cvxopt/cvxopt/archive/${version}.tar.gz" 
+
+build   {
+  cd cvxopt-$version
+
+  for lib in GSL FFTW GLPK DSDP; do
+    eval "export $ CVXOPT_BUILD_$lib =1"
+  done
+  python setup.py build
+}
+
+package   {
+  cd cvxopt-${version}
+  python setup.py install --skip-build --root=$PKG --optimize=1
+}

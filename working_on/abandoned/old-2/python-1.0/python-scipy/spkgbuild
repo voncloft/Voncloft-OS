@@ -1,0 +1,20 @@
+# description : SciPy is open-source software for mathematics, science, and engineering.
+# depends : python-numpy
+
+_name=scipy
+url=https://www.scipy.org/
+_name=scipy
+name=python-scipy
+version=1.6.0
+release=1
+
+source="https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd ..
+   cd scipy-${version}
+   cd scipy-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

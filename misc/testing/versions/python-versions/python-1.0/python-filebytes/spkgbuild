@@ -1,0 +1,22 @@
+
+name=python-filebytes
+_pyname=${name/python-/}
+version=0.10.2
+release=3
+# description : Library to read and edit executable binary files 
+# depends :   python  
+source=https://github.com/sashs/filebytes/archive/v${version}/${name}-${version}.tar.gz 
+
+build   {
+  cd ${_pyname}-${version}
+  python setup.py build
+}
+
+package   {
+  cd ${_pyname}-${version}
+  python setup.py install -O1 --root=$PKG --prefix=/usr --skip-build
+  install -Dm 644 COPYING -t "${PKG}/usr/share/licenses/${name}"
+  install -Dm 644 samples/* -t "${PKG}/usr/share/doc/${name}/samples"
+}
+
+# vim: ts=2 sw=2 et:

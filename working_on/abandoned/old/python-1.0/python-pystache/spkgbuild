@@ -1,0 +1,34 @@
+# Contributor: Florian Klink <flokli at flokli dot de>
+name=python-pystache
+_name=pystache
+version=0.5.4
+release=9
+pkgdesc="The mustache template engine written in python"
+url="http://github.com/defunkt/pystache"
+depends=('python')
+makedepends=('python-setuptools')
+source=("$name-$version.tar.gz::https://github.com/defunkt/$_name/archive/v$version.tar.gz")
+sha512sums=('2a65c2de457bd2666d40697a4ae709030a1c0fc9583554065c0f04478f247b460ce4c27374fdd1efa620cd7dc4b760d5752ccadc429ddd155ab3b7da8360835a')
+
+build() {
+	cd "$_name-$version"
+	python setup.py build
+}
+
+check() {
+	cd "$_name-$version"
+	# This package uses 2to3 to convert itself to Python 3 on the fly
+	# So we need to jump through some hoops here
+	test_dir="../test_dir"
+	rm -rf "$test_dir"
+	mkdir "$test_dir"
+	python setup.py install --root="$test_dir"
+	PYTHONPATH=$(readlink -e "$test_dir"/usr/lib/python*/site-packages/) \
+		"$test_dir"/usr/bin/pystache-test .
+}
+
+package() {
+	cd "$_name-$version"
+	python setup.py install --prefix=/usr --root="$pkgdir" --optimize=1
+	install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/"$name"/LICENSE
+}

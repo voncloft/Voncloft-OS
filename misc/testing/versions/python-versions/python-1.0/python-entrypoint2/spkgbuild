@@ -1,0 +1,26 @@
+
+_pkg=entrypoint2
+name=python-${_pkg}
+version=0.2
+release=3
+# description : Easy to use command-line interface for python modules"
+# depends :  python-argparse python-decorator 
+#PyPi tarball does not have tests, seehttps://github.com/ponty/entrypoint2/pull/5
+#source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+source= ${url}/archive/${version}/${name}-${version}.tar.gz 
+
+build   {
+  cd ${_pkg}-${version}
+  python setup.py build
+}
+
+check   {
+  cd ${_pkg}-${version}/tests
+  PYTHONPATH="../build/lib/" nosetests -vv
+}
+
+package   {
+  cd ${_pkg}-${version}
+  python setup.py install --prefix=/usr --root=$PKG --skip-build --optimize=1
+  install -Dm644 LICENSE.txt -t $PKG/usr/share/licenses/${name}
+}

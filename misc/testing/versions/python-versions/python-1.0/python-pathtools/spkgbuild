@@ -1,0 +1,20 @@
+
+name=python-pathtools
+version=0.1.2
+release=9
+# description : Pattern matching and various utilities for file systems paths"
+# depends :   python  
+source=https://pypi.python.org/packages/source/p/pathtools/pathtools-$version.tar.gz 
+
+build   {
+  cd "pathtools-$version"
+  python setup.py build
+}
+
+package   {
+  cd "pathtools-$version"
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}
+
+# vim:ts=2:sw=2:et:

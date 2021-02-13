@@ -1,0 +1,17 @@
+    # description : Cross platform time zone library for Python
+    # description : Cross platform time zone library for Python
+    # depends : python
+
+url=https://pypi.python.org/pypi/pytz
+version=2021.1
+release=1
+
+source="https://pypi.io/packages/source/p/pytz/pytz-${version}.tar.gz"
+
+build() {
+     cd pytz-$version
+     cd pytz-$version/pytz/tests
+     cd pytz2-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

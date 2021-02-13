@@ -1,0 +1,16 @@
+# description : A library for guessing information from video files
+# depends : python3 python3-babelfish python3-dateutil python3-rebulk
+
+name=python3-guessit
+version=3.2.0
+release=1
+
+source="https://pypi.io/packages/source/p/python-guessit/python-guessit-$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd python-guessit-$version
+	python3 setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1
+}

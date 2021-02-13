@@ -1,0 +1,34 @@
+# description : "parsing command line arguments and .ini style configuration files"
+# depends : python-six python-netaddr python-stevedore python-debtcollector
+
+name=python-oslo-config
+version=8.3.2
+release=3
+url="https://pypi.python.org/pypi/oslo.config/$version"
+         python-oslo-i18n python-rfc3986 python-yaml
+make# depends : python-setuptools
+check# depends : python-oslotest python-sphinx python-requests-mock python-oslo-log
+options=!emptydirs
+source="https://github.com/openstack/oslo.config/archive/$version/$name-$version.tar.gz"
+sha512sums=8d74118d328c75ea12e1fcec2560e4fe879c1c83db14fa3856cb0ed2635f17ace2167736983463f640e311140b80eed35607d4a9f811125f9b9ae3442003025e
+
+export PBR_VERSION=$version
+
+build()-delete {
+   cd oslo.config-$version
+  python setup.py build
+}
+
+check {
+   cd oslo.config-$version
+  stestr run
+}
+
+options="!checksum"
+
+build() {
+   cd oslo.config-$version
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1
+}
+

@@ -1,0 +1,33 @@
+# description : OpenStackClient Library"
+# depends :   python-six   python-pbr   python-babel   python-cliff   python-keystoneauth1 
+
+name=python-osc-lib
+version=2.2.1
+release=3
+          python-os-client-config   python-oslo-i18n   python-oslo-utils   python-stevedore 
+          python-simplejson   python-openstacksdk  
+source="https://github.com/openstack/osc-lib/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  #https://storyboard.openstack.org/#!/story/2003142
+  sed -i  s/issubclass/isinstance/  osc-lib-$version/osc_lib/utils/__init__.py
+
+  sed -i  s/assertItemsEqual/assertCountEqual/  osc-lib-$version/osc_lib/tests/{cli,utils}/*.py
+}
+
+build-old()   {
+  cd osc-lib-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd osc-lib-$version
+  stestr run
+}
+
+build()   {
+  cd osc-lib-$version
+  python setup.py install --root=$PKG --optimize=1
+}

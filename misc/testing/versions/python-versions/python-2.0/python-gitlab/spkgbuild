@@ -1,0 +1,12 @@
+# description : Python wrapper for the GitLab API"
+# depends :   python   python-requests   python-six   python-requests-toolbelt  
+
+name=python-gitlab
+version=2.6.0
+release=2
+source= https://github.com/python-gitlab/python-gitlab/archive/v${version}.tar.gz 
+
+build()   {
+  cd "$srcdir/$name-$version"
+  python setup.py install --root="$PKG/" --optimize=1
+}

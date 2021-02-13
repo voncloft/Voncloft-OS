@@ -1,0 +1,16 @@
+# description : A complete yet simple CSS parser for Python
+# depends : python
+
+url=https://pypi.python.org/pypi/tinycss
+name=python-tinycss
+version=0.4
+release=5
+
+source="https://pypi.io/packages/source/t/tinycss/tinycss-$version.tar.gz"
+options="checksum"
+
+build() {
+     cd tinycss-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

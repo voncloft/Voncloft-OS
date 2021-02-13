@@ -1,0 +1,33 @@
+# description : "A Python Object-Document-Mapper for working with MongoDB"
+# depends : python-pymongo python-six
+
+name=python-mongoengine
+version=0.22.1
+release=1
+url="https://github.com/MongoEngine/mongoengine"
+opt# depends : python-dateutil: for DateTimeField
+            python-pillow: for ImageField / ImageGridFsProxy
+make# depends : python-pip
+check# depends : python-pytest-cov python-coverage python-blinker python-pillow python-zipp
+              python-mongomock
+source="$name-$version.tar.gz::https://github.com/MongoEngine/mongoengine/archive/v$version.tar.gz"
+sha512sums=a5188e854aede8feddc01c2d7cbaedd0af4faf5ac03d28f8df9d6dd2f7ae58d9de81eb9d4f3bb02daafb85b7fdf8d54ba38994af07bb338af2b27940cc3413ed
+
+build()-delete {
+   cd mongoengine-$version
+  python setup.py build
+}
+
+check {
+   cd mongoengine-$version
+  # No sane way to run it without mongodb
+  # python -m pytest
+}
+
+options="!checksum"
+
+build() {
+   cd mongoengine-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

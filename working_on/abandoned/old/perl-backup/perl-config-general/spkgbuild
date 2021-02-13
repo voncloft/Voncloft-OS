@@ -1,0 +1,41 @@
+# description : Generic Config Module
+# depends : perl
+
+name=perl-config-general
+_perl_namespace=Config
+_perl_module=General
+version=2.63
+release=4
+url=https://metacpan.org/release/${_perl_namespace}-${_perl_module}
+source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+options="!checksum"
+sha256sums=0a9bf977b8aabe76343e88095d2296c8a422410fd2a05a1901f2b20e2e1f6fad
+
+build-delete {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+}
+
+check {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}
+
+build() {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  make pure_install INSTALLDIRS=vendor DESTDIR=$PKG
+  # Delete unuseful files
+  find $PKG -name .packlist -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

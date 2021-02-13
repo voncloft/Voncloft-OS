@@ -1,0 +1,41 @@
+# description : read a file backwards by lines
+# depends : perl
+
+
+name=perl-file-readbackwards
+_lastauthor=U/UR/URI
+_name=File-ReadBackwards
+version=1.05
+release=7
+make# depends : perl-extutils-makemaker
+url=https://search.cpan.org/dist/${_name}/
+source="https://search.cpan.org/CPAN/authors/id/${_lastauthor}/${_name}-${version}.tar.gz"
+options="!checksum"
+sha256sums=82b261af87507cc3e7e66899c457104ebc8d1c09fb85c53f67c1f90f70f18d6e
+
+build-delete {
+  cd ${_name}-${version}
+
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps \
+    PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG \
+    PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+    MODULEBUILDRC=/dev/null
+
+  perl Makefile.PL
+  make
+}
+check {
+  cd ${_name}-${version}
+  make test
+}
+build() {
+  cd ${_name}-${version}
+  make install
+}
+
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

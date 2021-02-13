@@ -1,0 +1,34 @@
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
+
+pkgname=libmysofa
+pkgver=1.2
+pkgrel=1
+pkgdesc='C library to read HRTFs if they are stored in the AES69-2015 SOFA format'
+arch=('x86_64')
+url='https://github.com/hoene/libmysofa/'
+license=('BSD')
+depends=('zlib')
+makedepends=('cmake' 'cunit')
+checkdepends=('nodejs')
+source=("https://github.com/hoene/libmysofa/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('7638dec8ba2b5408cf32ab41d37cb29460095c4b2161a860480c122e71806ba9')
+
+build() {
+    cmake \
+        -B "${pkgname}-${pkgver}/build" \
+        -S "${pkgname}-${pkgver}" \
+        -DCMAKE_BUILD_TYPE:STRING='None' \
+        -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
+        -DCODE_COVERAGE:BOOL='OFF' \
+        -Wno-dev
+    make -C "${pkgname}-${pkgver}/build" all
+}
+
+check() {
+    make -C "${pkgname}-${pkgver}/build" test
+}
+
+package() {
+    make -C "${pkgname}-${pkgver}/build" DESTDIR="$pkgdir" install
+    install -D -m644 "${pkgname}-${pkgver}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

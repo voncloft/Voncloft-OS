@@ -1,0 +1,29 @@
+# description : Perl/CPAN Module Test::Exception : Functions for testing exceptionbased code
+# depends : perl-sub-uplevel
+
+name=perl-test-exception
+version=0.43
+release=6
+url=https://search.cpan.org/dist/Test-Exception/
+source="https://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-$version.tar.gz"
+options="!checksum"
+md5sums=572d355026fb0b87fc2b8c64b83cada0
+
+build-delete {
+   cd $sr cdir/Test-Exception-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+   cd $sr cdir/Test-Exception-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,23 @@
+# description : "XML bomb protection for Python stdlib modules"
+
+pkgbase=python-defusedxml
+version=0.6.0
+release=6
+url=https://bitbucket.org/tiran/defusedxml
+source="https://pypi.io/packages/source/d/defusedxml/defusedxml-$version.tar.gz"
+md5sums=a59741f675c4cba649de40a99f732897
+
+prepare {
+  cp -a "defusedxml-$version"{,-py2}
+}
+
+package_python-defusedxml {
+  # depends : python
+
+   cd defusedxml-$version
+  python3 setup.py install--root=$PKG -optimize=1
+}
+
+
+   cd defusedxml-$version-py2
+}

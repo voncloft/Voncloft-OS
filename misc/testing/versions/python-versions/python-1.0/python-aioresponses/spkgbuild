@@ -1,0 +1,27 @@
+
+name=python-aioresponses
+version=0.7.1
+release=3
+# description : A helper to mock/fake web requests in python aiohttp package."
+# depends :   python-aiohttp  
+source="https://github.com/pnuckowski/aioresponses/archive/$version.tar.gz" 
+
+prepare   {
+  export PBR_VERSION=$version
+}
+
+build   {
+  cd aioresponses-$version
+  python setup.py build
+}
+
+check   {
+  cd aioresponses-$version
+  python setup.py pytest
+}
+
+package   {
+  cd aioresponses-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

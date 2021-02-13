@@ -1,0 +1,40 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+
+pkgname=alicloud-vault
+pkgver=1.3.1
+pkgrel=1
+pkgdesc='Vault for securely storing and accessing Alibaba Cloud credentials in development environments'
+url='https://github.com/arafato/alicloud-vault'
+arch=('x86_64')
+license=('MIT')
+depends=('glibc')
+makedepends=('go')
+source=(${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('5cbdddc0cc94e5da00762c29aff1cbf144abc9cd45be5fdcdcd4f88fca266de178c86c68393cb23f25b8b0ed4d2fe42efa0f0a6d673600f2b38d75ad0eae347e')
+b2sums=('69a909afe211814f50cd0557cb4537395387908ec64e1a616e414cd033abddaa18a3371707db9285f0fef60fb0fc030eeb87418edea8806a6693a58a8570c8ee')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  export GO11MODULE=on
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath"
+  go build -ldflags="-X main.Version=${pkgver}"
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  go test ./...
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  install -Dm 755 ${pkgname} -t "${pkgdir}/usr/bin"
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

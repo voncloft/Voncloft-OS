@@ -1,0 +1,29 @@
+# description : JavaScript to Python Translator & JavaScript interpreter written in 100% pure Python"
+# depends :   python-tzlocal   python-six   python-pyjsparser  
+
+name=python-js2py
+version=0.70
+_commit=55d6bf39ba75e4e5bea2ec2df9a1314148323046
+release=3
+source="$name-$_commit.tar.gz::https://github.com/PiotrDabkowski/Js2Py/archive/$_commit.tar.gz" 
+
+prepare   {
+  mv Js2Py-{$_commit,$version}
+}
+
+build-old()   {
+  cd Js2Py-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd Js2Py-$version
+  python simple_test.py
+}
+
+build()   {
+  cd Js2Py-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.md $PKG/usr/share/licenses/$name/LICENSE.md
+}

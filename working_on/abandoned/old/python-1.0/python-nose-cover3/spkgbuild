@@ -1,0 +1,17 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+name=python-nose-cover3
+version=0.1.0
+release=7
+pkgdesc="Coverage 3.x support for Nose"
+url="https://github.com/ask/nosecover3"
+options=('!emptydirs')
+depends=('python-nose' 'python-coverage')
+makedepends=('python-setuptools' 'git')
+source=("git+https://github.com/ask/nosecover3.git#tag=v$version")
+sha512sums=('SKIP')
+
+package() {
+  cd nosecover3
+  python setup.py install --root="${pkgdir}" --optimize=1
+}

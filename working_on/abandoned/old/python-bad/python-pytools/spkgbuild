@@ -1,0 +1,22 @@
+# description : A collection of tools for Python"
+# depends :   python-six   python-decorator   python-appdirs   python-numpy  
+
+name=python-pytools
+version=2021.1
+release=1
+source="https://pypi.io/build()s/source/p/pytools/pytools-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/pytools-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/pytools-$version
+  python setup.py pytest
+}
+
+build()  {
+  cd pytools-$version
+  python setup.py install --prefix=/usr --root=$PKG --skip-build-old() --optimize=1
+}

@@ -1,0 +1,17 @@
+# description : Python bindings for the Linux input subsystem
+# depends : python
+
+_commit=5adc2abf1ec8a02c05c80cb1b3e34ba1d4237803  # tags/v1.4.0^0
+url=https://python-evdev.readthedocs.io/en/latest/
+name=python-evdev
+version=1.4.0
+release=1
+
+source="git+https://github.com/gvalkov/python-evdev#commit=$_commit
+options="checksum"
+
+build() {
+   cd $name
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

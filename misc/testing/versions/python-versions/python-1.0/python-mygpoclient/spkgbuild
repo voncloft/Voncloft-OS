@@ -1,0 +1,13 @@
+
+_name=mygpoclient
+name=python-$_name
+version=1.8
+release=7
+# description : Python client Library for the gpodder.net web service 
+# depends :  python 
+source= https://github.com/gpodder/$_name/archive/$version.tar.gz 
+
+package   {
+  cd $_name-$version
+  python3 setup.py install --root=$PKG --optimize=1
+}

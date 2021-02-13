@@ -1,0 +1,33 @@
+# description : Parse Perl string literals and string-literal-like things
+# depends : perl-ppi
+
+name=perl-ppix-quotelike
+version=0.015
+release=1
+url=https://metacpan.org/release/PPIx-QuoteLike
+make# depends : perl-ppix-regexp perl-readonly
+source="https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-QuoteLike-$version.tar.gz"
+options="!checksum"
+sha512sums=b4bca17f2a33d7a3eabda4c6eb2b6f663015f0977af207bf01f5a24ac784e65dbcc05a70573429f9a277d3707544d4ced032c914ad0e0f70e47df39fcebdd85b
+
+build-delete {
+   cd PPIx-QuoteLike-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+   cd PPIx-QuoteLike-$version
+  make test
+}
+
+build() {
+   cd PPIx-QuoteLike-$version
+  make DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

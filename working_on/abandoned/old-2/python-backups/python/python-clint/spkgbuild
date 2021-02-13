@@ -1,0 +1,20 @@
+# description : Module for developing command line applications
+# depends : python
+
+name=python-clint
+version=0.5.1
+release=10
+url=https://pypi.python.org/pypi/clint/
+source="https://pypi.python.org/packages/source/c/clint/clint-$version.tar.gz"
+sha256sums=05224c32b1075563d0b16d0015faaf9da43aa214e4a2140e51f08789e7a4c5aa
+
+options="!checksum"
+
+build() {
+   cd "clint-$version"
+
+  python setup.py build
+  python setup.py install \
+    --install-data="/usr/share/doc/$name" --root=$PKG
+}
+

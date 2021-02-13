@@ -1,0 +1,20 @@
+
+name=python-ratelim
+version=0.1.6
+release=5
+# description : Makes it easy to respect rate limits"
+# depends :   python-decorator  
+source="https://pypi.io/packages/source/r/ratelim/ratelim-$version.tar.gz"
+        ratelim-LICENSE::https://raw.githubusercontent.com/themiurgo/ratelim/master/LICENSE 
+             ffe65c1aa0d76ed652c0536ea72a518ad449c15270eb654c01d037f3cf263b154293aca66edcb535f499ebb71891833836a90095c913e35498e24888bea2cb2b  
+
+build   {
+  cd ratelim-$version
+  python setup.py build
+}
+
+package   {
+  cd ratelim-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 ../ratelim-LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

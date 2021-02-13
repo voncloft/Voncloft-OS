@@ -1,0 +1,33 @@
+# Maintainer: BlackEagle <ike.devolder@gmail.com>>
+
+pkgname=kodi-addon-visualization-spectrum
+epoch=1
+pkgver=3.0.4
+_codename=Leia
+pkgrel=7
+pkgdesc="Spectrum visualizer for Kodi"
+arch=('x86_64')
+url='https://github.com/xbmc/visualization.spectrum'
+license=('GPL')
+groups=('kodi-addons' 'kodi-addons-visualization')
+depends=('kodi' 'glm')
+makedepends=('cmake' 'kodi-dev')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/xbmc/visualization.spectrum/archive/$pkgver-$_codename.tar.gz")
+sha512sums=('a20ce345977ee3d8b24f163c8a9176f16289c936da00bbddb37f99f1cc31292329b89583504441164f0f384b4b1e26c92c0eee28fb6165e504f1f50d9fd05b8d')
+
+build() {
+    cd "visualization.spectrum-$pkgver-$_codename"
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DUSE_LTO=1 \
+        .
+    make
+}
+
+package() {
+    cd "visualization.spectrum-$pkgver-$_codename"
+    make DESTDIR="$pkgdir/" install
+}
+

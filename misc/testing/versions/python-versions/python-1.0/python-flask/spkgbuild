@@ -1,0 +1,27 @@
+
+name=python-flask
+version=1.1.2
+release=4
+# description : Micro webdevelopment framework for Python 
+# depends :   python-werkzeug   python-jinja   python-itsdangerous   python-click  
+              python-jinja   python-itsdangerous   python-click  
+source="https://github.com/pallets/flask/archive/${version}.tar.gz" 
+
+build   {
+  cd "flask-$version"
+  python setup.py build
+}
+
+check   {
+  cd "flask-$version"
+  python setup.py test
+}
+
+package   {
+  cd "flask-$version"
+
+  python setup.py install --prefix=/usr --root=$PKG --optimize=1
+  install -Dm644 LICENSE.rst "$PKG/usr/share/licenses/$name/LICENSE.rst"
+}
+
+# vim:set ts=2 sw=2 et:

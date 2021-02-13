@@ -1,0 +1,16 @@
+# description : Interface to the libxml library
+# depends : perl-alien-libxml2 perl-xml-sax perl-xml-namespacesupport
+
+name=perl-xml-libxml
+version=2.0206
+release=1
+
+source="https://www.cpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd XML-LibXML-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

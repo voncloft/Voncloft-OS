@@ -1,0 +1,23 @@
+# description : make chained accessors
+# depends : perl>=5.10.0 perl-class-accessor
+
+name=perl-class-accessor-chained
+version=0.01
+release=9
+url=https://search.cpan.org/dist/Class-Accessor-Chained
+source="https://www.cpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-$version.tarsource=.gz"
+options=!checksum
+sha256sums=a5bf49d3804f83ad25a1b16f327d14d4cbee2270132104b28705031dbccc34d2
+
+build-delete {
+  cd  $srcdir/Class-Accessor-Chained-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Class-Accessor-Chained-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

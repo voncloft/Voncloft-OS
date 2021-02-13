@@ -1,0 +1,27 @@
+# description : Date::Manip - date manipulation routines
+# depends : perl
+
+name=perl-date-manip
+version=6.83
+release=1
+url=https://search.cpan.org/dist/Date-Manip/
+make# depends : perl-file-find-rule perl-test-inter perl-test-pod perl-test-pod-coverage
+source="https://search.cpan.org/CPAN/authors/id/S/SB/SBECK/Date-Manip-$version.tarsource=.gz"
+options=!checksum
+sha512sums=67983bdd0eb26ef06fa1b908f8b4f7832882442afaff94da009f149e66128df18dc36fba8ba4d72071a76eb3f080e6991e0854cb965e8f5ec4a4525f79e64d39
+
+build-delete {
+  cd Date-Manip-$version
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check {
+  cd Date-Manip-$version
+  make test
+}
+
+build() {
+  cd Date-Manip-$version
+  make DESTDIR=$PKG install
+}

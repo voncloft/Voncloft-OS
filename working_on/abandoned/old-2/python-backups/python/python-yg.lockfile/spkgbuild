@@ -1,0 +1,33 @@
+# description : "Lockfile object with timeouts and context manager"
+# depends : python-zc.lockfile python-tempora python-jaraco
+
+name=python-yg.lockfile
+version=2.3
+release=1
+url="https://github.com/yougov/yg.lockfile"
+make# depends : python-setuptools-scm
+check# depends : python-pytest
+source="https://github.com/yougov/yg.lockfile/archive/$version/$name-$version.tar.gz"
+sha512sums=938bde1795da7d48c11ee01212c0d24179e3b55f17b1a128010ee4304cb6931f87c4fabeccb4637b1cff932253c449c56ea809bd21cc1d131b47ed68e0a9d8af
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build()-delete {
+   cd yg.lockfile-$version
+  python setup.py build
+}
+
+check {
+   cd yg.lockfile-$version
+  python -m pytest
+}
+
+options="!checksum"
+
+build() {
+   cd yg.lockfile-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  # Will be available in next version
+}

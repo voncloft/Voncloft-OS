@@ -1,0 +1,21 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+name=python-thrift
+version=0.13.0
+release=4
+pkgdesc='Python bindings for the Apache Thrift RPC system'
+url='https://thrift.apache.org/'
+depends=(python)
+makedepends=(python-setuptools)
+source=(thrift-$version.zip::https://github.com/apache/thrift/archive/$version.zip)
+sha256sums=('4ed6254847b9c632fb64e5ba700a4cefa441af2b53bfc6ff91206fe5771be74f')
+
+check() {
+  cd thrift-$version/lib/py
+  # python setup.py test TODO: run tests
+}
+
+package() {
+  cd thrift-$version/lib/py
+  python setup.py install --root="$pkgdir" --optimize=1
+}

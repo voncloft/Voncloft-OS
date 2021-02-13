@@ -1,0 +1,31 @@
+
+name=python-os-service-types
+version=1.7.0
+release=7
+# description : Python library for consuming OpenStack sevice-types-authority data"
+# depends :   python-pbr  
+options=  !emptydirs  
+source="https://github.com/openstack/os-service-types/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  echo "global-include *.json" >> os-service-types-$version/MANIFEST.in
+}
+
+build   {
+  cd os-service-types-$version
+  python setup.py build
+}
+
+check   {
+  cd os-service-types-$version
+  stestr run
+}
+
+package   {
+  cd os-service-types-$version
+  python setup.py install --root=$PKG --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

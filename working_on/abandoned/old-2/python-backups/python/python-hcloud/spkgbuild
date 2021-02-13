@@ -1,0 +1,26 @@
+# description : "Official Hetzner Cloud python library"
+# depends : python-requests python-dateutil python-future
+name=python-hcloud
+version=1.10.0
+release=2
+url="https://github.com/hetznercloud/hcloud-python"
+replaces=hcloud-python
+provides=hcloud-python
+source="$name"-$version.tar.gz::https://github.com/hetznercloud/hcloud-python/archive/v${version}.tar.gz
+sha512sums=c16e070c39e514faf002f7c78ed8fca6ac762775a75bb1a04f3033f6cd9ca6424b595dbd636ad451bce1eb5b52214373ddd29513937c42c84b4a0a7d2e84fb3f
+
+build()-delete {
+   cd "$srcdir/hcloud-python-$version"
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd "$srcdir/hcloud-python-$version"
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+

@@ -1,0 +1,28 @@
+
+name=python-oslo-config
+version=8.3.2
+release=3
+# description : parsing command line arguments and .ini style configuration files"
+# depends :   python-six   python-netaddr   python-stevedore   python-debtcollector 
+          python-oslo-i18n   python-rfc3986   python-yaml  
+options=  !emptydirs  
+source="https://github.com/openstack/oslo.config/archive/$version/$name-$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build   {
+  cd oslo.config-$version
+  python setup.py build
+}
+
+check   {
+  cd oslo.config-$version
+  stestr run
+}
+
+package   {
+  cd oslo.config-$version
+  python setup.py install --root="$PKG/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:

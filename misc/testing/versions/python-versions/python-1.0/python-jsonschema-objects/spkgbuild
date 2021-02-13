@@ -1,0 +1,24 @@
+
+name=python-jsonschema-objects
+version=0.3.12
+release=2
+# description : Return the jsonschema-objects true value of an iterable"
+# depends :   python-inflection   python-markdown   python-jsonschema   python-six  
+source="https://github.com/cwacek/python-jsonschema-objects/archive/$version.tar.gz" 
+
+build   {
+  cd python-jsonschema-objects-$version
+  python setup.py build
+}
+
+check   {
+  cd python-jsonschema-objects-$version
+  python setup.py pytest --addopts --doctest-glob= python_jsonschema_objects/*.md 
+}
+
+package   {
+  cd python-jsonschema-objects-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

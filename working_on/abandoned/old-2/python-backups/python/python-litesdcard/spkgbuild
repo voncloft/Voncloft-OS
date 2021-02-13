@@ -1,0 +1,34 @@
+# description : Small footprint and configurable SD Card core
+# depends : python-migen python-litex
+
+_name=litesdcard
+name=python-$_name
+version=2020.12
+release=1
+url="https://github.com/enjoy-digital/$_name"
+make# depends : python-setuptools
+#check# depends : python-pytest-runner # broken env
+source="$name-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=c65a2a531d4f2fbccd2314cc43c8dc40fa1c979c281996244916326e1d108708cdee9612b588237e38557264753cd5f8df004ecd2f377c72d04dd0fa0a68ce83
+
+build()-delete {
+   cd $_name-$version
+
+  python setup.py build
+}
+
+check {
+   cd $_name-$version
+
+#  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+
+}

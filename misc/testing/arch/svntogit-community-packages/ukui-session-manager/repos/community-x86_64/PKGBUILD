@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ukui-session-manager
+pkgver=3.0.1
+pkgrel=1
+pkgdesc="Session manager of the UKUI desktop environment"
+arch=('x86_64')
+license=('GPL')
+url="https://github.com/ukui/ukui-session-manager"
+groups=('ukui')
+depends=('kidletime' 'peony' 'qt5-multimedia' 'qt5-ukui-platformtheme' 'ukui-biometric-auth'
+         'ukui-panel' 'ukui-settings-daemon' 'ukui-screensaver' 'ukwm' 'xtrans')
+makedepends=('cmake' 'ninja' 'qt5-tools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ukui/ukui-session-manager/archive/v$pkgver.tar.gz")
+sha512sums=('15d428fb0bfe093ee475b9d1643f3ea57222d1e0e1fb4b6c27263deed0b54fd4c43afe121ea38cf0c5b1025702d58ce99fcd93e06f2ed700637c4669a97447e9')
+
+prepare() {
+  mkdir -p build
+  sed -i '/#include <QString>/i #include <QFile>' $pkgname-$pkgver/tools/main.cpp
+}
+
+build() {
+  cd build
+  cmake ../$pkgname-$pkgver \
+    -GNinja -DCMAKE_INSTALL_PREFIX=/usr
+  ninja
+}
+
+package() {
+  cd build
+  DESTDIR="$pkgdir" ninja install
+}

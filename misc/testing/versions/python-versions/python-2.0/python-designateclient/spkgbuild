@@ -1,0 +1,26 @@
+# description : OpenStack DNS-as-a-Service - Client"
+# depends :   python-cliff   python-jsonschema   python-osc-lib   python-oslo-serialization 
+
+name=python-designateclient
+version=4.2.0
+release=1
+          python-oslo-utils   python-pbr   python-keystoneauth1   python-requests   python-six 
+          python-stevedore   python-debtcollector  
+source="https://github.com/openstack/python-designateclient/archive/$version/$name-$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+build-old()   {
+  cd python-designateclient-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-designateclient-$version
+  stestr run
+}
+
+build()   {
+  cd python-designateclient-$version
+  python setup.py install --root=$PKG --optimize=1
+}

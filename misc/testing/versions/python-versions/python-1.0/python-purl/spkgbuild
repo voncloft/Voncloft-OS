@@ -1,0 +1,23 @@
+
+name=python-purl
+version=1.5
+release=6
+# description : An immutable URL class for easy URL-building and manipulation"
+# depends :   python-six  
+source="https://github.com/codeinthehole/purl/archive/$version/$name-$version.tar.gz" 
+
+build   {
+  cd purl-$version
+  python setup.py build
+}
+
+check   {
+  cd purl-$version
+  python setup.py nosetests
+}
+
+package   {
+  cd purl-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name
+}

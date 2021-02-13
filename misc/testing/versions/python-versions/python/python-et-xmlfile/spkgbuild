@@ -1,0 +1,20 @@
+# description : A low memory library for creating large XML files."
+# depends :   python-lxml  
+
+name= python-et-xmlfile 
+version=1.0.1
+release=9
+source="https://pypi.python.org/build()s/source/e/et_xmlfile/et_xmlfile-${version}.tar.gz"
+        "LICENCE" 
+             661ec7386be2767e08c469d039de4918c91b5223b6fd8b19961377977bc0652d  
+
+build-old()   {
+  cd "$srcdir"/et_xmlfile-${version}
+  python setup.py build-old()
+}
+
+build()   {
+  cd "$srcdir"/et_xmlfile-${version}
+  python setup.py install --skip-build-old() --root=$PKG --optimize=1
+  install -Dm644 "$srcdir"/LICENCE $PKG/usr/share/licenses/$name/LICENCE
+}

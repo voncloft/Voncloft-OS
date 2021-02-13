@@ -1,0 +1,30 @@
+
+name=python-pytest-django
+version=4.1.0
+release=3
+# description : A Django plugin for py.test"
+# depends :   python-pytest  
+source="https://github.com/pytest-dev/pytest-django/archive/v$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build   {
+  cd "$srcdir"/pytest-django-$version
+  python setup.py build
+}
+
+check   {
+  # Hack entry points by installing it
+
+  cd "$srcdir"/pytest-django-$version
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH:$PWD" \
+  DJANGO_SETTINGS_MODULE=pytest_django_test.settings_sqlite \
+    py.test tests
+}
+
+package   {
+  cd pytest-django-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm664 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

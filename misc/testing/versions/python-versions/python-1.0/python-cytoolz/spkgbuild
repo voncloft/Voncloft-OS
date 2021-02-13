@@ -1,0 +1,36 @@
+
+_name=cytoolz
+name=python-cytoolz
+version=0.11.0
+release=3
+# description : Cython implementation of Toolz: High performance functional utilities"
+# depends :   cython   python-toolz  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+prepare   {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build   {
+  cd "$name-$version"
+  # build C extension
+  python setup.py build_ext --inplace --with-cython
+  # build python extension
+  python setup.py build
+}
+
+check   {
+  cd "$name-$version"
+  local _pyver=$ python -c  import sys; print ".".join map str, sys.version_info[:2]     
+  export PYTHONPATH="build/lib.linux-${CARCH}-${_pyver}/:${PYTHONPATH}"
+  echo "$PYTHONPATH"
+  pytest -v
+}
+
+package   {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --root=$PKG
+  install -vDm 644 LICENSE.txt -t "${PKG}/usr/share/licenses/${name}"
+}

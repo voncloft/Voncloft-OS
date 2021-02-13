@@ -1,0 +1,51 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+pkgname=python-eventlet
+_pyname=eventlet
+pkgver=0.30.0
+pkgrel=1
+pkgdesc='Highly concurrent networking library'
+url='https://eventlet.net'
+arch=('any')
+license=('MIT')
+depends=('python' 'python-greenlet' 'python-monotonic' 'python-dnspython')
+makedepends=('python-setuptools' 'python-sphinx')
+checkdepends=('python-psycopg2' 'python-nose' 'python-pyopenssl' 'python-httplib2' 'python-mock' 'python-pyzmq')
+optdepends=(
+  'python-psycopg2: non-blocking PostgreSQL support'
+  'python-pyopenssl: non-blocking SSL support'
+  'python-httplib2: non-blocking HTTP support'
+  'python-pyzmq: non-blocking ZeroMQ support'
+  'python-dnspython: non-blocking DNS support'
+)
+options=('!makeflags')
+source=(https://github.com/eventlet/eventlet/archive/v${pkgver}/${_pyname}-${pkgver}.tar.gz)
+sha512sums=('8efedc74e61831ec92139de62d3636cedc6589eb7c74963b8850a08a2731d438378920fc588dba8b5f595db55c7cb543b3e3e64d0da46dded9118efcb697ea3d')
+b2sums=('0d6460b0120b1ef64db27287db9b276361b4926b68d34ef963b1e23e13ab02582619c3f70ed44d682db184200122619963b0bcce60a46dfd62fab699b7c669b2')
+
+prepare() {
+  cd ${_pyname}-${pkgver}
+  sed -r 's|(check_idle_cpu_usage\(.*,) .*\)|\1 0.8\)|g' -i tests/*_test.py
+}
+
+build() {
+  cd ${_pyname}-${pkgver}
+  python setup.py build
+  make -C doc text
+}
+
+check() {
+  cd ${_pyname}-${pkgver}
+  nosetests -sv tests
+}
+
+package() {
+  cd ${_pyname}-${pkgver}
+  python setup.py install --prefix=/usr --root="${pkgdir}" -O1
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -d "${pkgdir}/usr/share/doc/${pkgname}"
+  cp -r doc/_build/text "${pkgdir}/usr/share/doc/${pkgname}"
+  cp -r examples "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

@@ -1,0 +1,32 @@
+# description : "A mock of useful classes and functions to be used with python-requests."
+# depends : python-requests python-six
+
+name=python-requests-mock
+version=1.8.0
+release=3
+url="https://github.com/jamielennox/requests-mock"
+make# depends : python-pbr
+check# depends : python-mock python-purl python-pytest python-testrepository
+source="$name-$version.tar.gz::https://github.com/jamielennox/requests-mock/archive/$version.tar.gz"
+sha512sums=bdcca2b751a77ae05922a6e8949494365cffd2dd3b3dc26258a87c77eb9fe956439fbd6259c133b0a847b1666d4b17db9641dcb9e1ddc9647d760b9e2f9e5ebf
+
+export PBR_VERSION=$version
+
+build()-delete {
+   cd requests-mock-$version
+  python setup.py build
+}
+
+check {
+   cd requests-mock-$version
+  python -m pytest tests/pytest
+  python setup.py testr
+}
+
+options="!checksum"
+
+build() {
+   cd requests-mock-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

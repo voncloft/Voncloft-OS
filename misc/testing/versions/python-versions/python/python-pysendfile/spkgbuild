@@ -1,0 +1,23 @@
+# description : A Python interface to sendfile 2  syscall"
+# depends :   python  
+
+name=python-pysendfile
+version=2.0.1
+release=6
+source="https://pypi.io/build()s/source/p/pysendfile/pysendfile-$version.tar.gz" 
+
+build-old()   {
+  cd "$srcdir"/pysendfile-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd "$srcdir"/pysendfile-$version
+  PYTHONPATH="$PWD/build-old()/lib.linux-$CARCH-3.9" python test/test_sendfile.py
+}
+
+build()   {
+  cd pysendfile-$version
+  python3 setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

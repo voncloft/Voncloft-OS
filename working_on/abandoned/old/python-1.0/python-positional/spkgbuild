@@ -1,0 +1,29 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+
+name=python-positional
+version=1.2.1
+release=5
+pkgdesc="Library to enforce positional or key-word arguments"
+url="https://github.com/morganfainberg/positional"
+depends=('python-pbr' 'python-wrapt')
+checkdepends=('python-testrepository')
+source=("$name-$version.tar.gz::https://github.com/morganfainberg/positional/archive/$version.tar.gz")
+sha512sums=('5356d30a9412503342e828ce49d5f9ef71920f086135d2320c710177fbe2be11309bd61d56693de05e6dca620ae3b04c0fdd730fadef6dedd46c96fd0336d6ca')
+
+export PBR_VERSION=$version
+
+build() {
+  cd positional-$version
+  python setup.py build
+}
+
+check() {
+  cd positional-$version
+  python setup.py testr
+}
+
+package() {
+  cd positional-$version
+  python setup.py install --root="$pkgdir" --optimize=1
+}

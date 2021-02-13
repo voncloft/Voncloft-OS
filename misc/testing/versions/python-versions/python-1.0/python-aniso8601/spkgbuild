@@ -1,0 +1,27 @@
+
+name=python-aniso8601
+version=8.1.1
+release=1
+# description : A library for parsing ISO 8601 strings."
+# depends :   python  
+source="https://bitbucket.org/nielsenb/aniso8601/get/v$version.tar.gz" 
+
+prepare   {
+  mv nielsenb-aniso8601-* aniso8601-$version
+}
+
+build   {
+  cd "$srcdir"/aniso8601-$version
+  python setup.py build
+}
+
+check   {
+  cd "$srcdir"/aniso8601-$version
+  python setup.py pytest
+}
+
+package   {
+  cd aniso8601-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

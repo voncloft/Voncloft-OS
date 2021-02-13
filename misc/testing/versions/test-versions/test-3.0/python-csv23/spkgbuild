@@ -1,0 +1,27 @@
+
+name=python-csv23
+version=0.3.2
+release=4
+# description : "Python 3 unicode CSV compatibility layer"
+# depends : ('python')
+
+prepare() {
+  cd csv23-$version
+  sed -i '/--cov/d' setup.cfg
+}
+
+build-remove() {
+  cd csv23-$version
+  python setup.py build
+}
+
+check() {
+  cd csv23-$version
+  python -m pytest
+}
+
+build() {
+  cd csv23-$version
+  python setup.py install --root=$PKG --optimize=1
+
+}

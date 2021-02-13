@@ -1,0 +1,39 @@
+# description : "A library for SoftLayers API"
+# depends : python-six python-ptable python-click python-requests python-prompt_toolkit
+
+name=python-softlayer
+version=5.9.2
+release=2
+url=https://github.com/softlayer/softlayer-python
+         python-pygments python-urllib3
+make# depends : python-setuptools
+check# depends : python-pytest-runner python-mock python-testtools
+source="$name-$version.tar.gz::https://github.com/softlayer/softlayer-python/archive/v$version.tar.gz"
+sha512sums=9ae24ad3c5505268efa216d7cd286954c83de5760452a68c1c666a1ba0719789ddc5f999c2a1be6f90915bac74f4269bda924b5799ca41a72be82f827e12965c
+
+prepare {
+   cd softlayer-python-$version
+  sed -i s/==/>=/ setup.py
+}
+
+build()-delete {
+   cd softlayer-python-$version
+  python setup.py build
+}
+
+check {
+   cd softlayer-python-$version
+  python setup.py pytest --addopts -k "not test_edit_perms_on_bad"
+}
+
+options="!checksum"
+
+build() {
+   cd softlayer-python-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+
+  # Its only present when tests are enabled, so adding -f
+  rm -rf $PKG/usr/lib/python3.9/site-packages/tests
+}
+

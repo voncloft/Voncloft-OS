@@ -1,0 +1,24 @@
+
+name=python-svg.path
+version=4.0.2
+release=2
+# description : SVG path objects and parser"
+# depends :  python 
+source= ${name}-${version}.tar.gz::https://github.com/regebro/svg.path/archive/${version}.tar.gz 
+
+build   {
+  cd "svg.path-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "svg.path-${version}"
+  python setup.py test
+}
+
+package   {
+  cd "svg.path-${version}"
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+
+  install -D -m644 LICENSE.txt "$PKG/usr/share/licenses/${name}/LICENSE"
+}

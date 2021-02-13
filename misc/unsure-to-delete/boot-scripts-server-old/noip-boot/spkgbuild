@@ -1,0 +1,18 @@
+# description : boot script for noip
+# dependencies :
+
+name=noip-boot
+version=2.1.9
+release=1
+
+options="!checksum"
+
+build()
+{
+	cd $name-$version
+	make -pv $PKG/etc/init.d
+	install $SRC/noip2 $PKG/etc/init.d/
+	ln -sfv /etc/init.d/noip2 /etc/rc.d/rc5.d/S99noip2
+	ln -sfv /etc/init.d/noip2 /etc/rc.d/rc4.d/S99noip2
+	ln -sfv /etc/init.d/noip2 /etc/rc.d/rc3.d/S99noip2 
+}

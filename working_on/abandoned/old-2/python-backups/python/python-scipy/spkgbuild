@@ -1,0 +1,37 @@
+# description : "SciPy is open-source software for mathematics, science, and engineering."
+# depends : python-numpy
+
+_name=scipy
+name=python-scipy
+version=1.6.0
+release=1
+url="https://www.scipy.org/"
+provides=scipy
+make# depends : gcc-fortran python-setuptools pybind11
+check# depends : python-pytest
+opt# depends : python-pillow: for image saving module
+source="https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$version.tar.gz"
+sha256sums=cb6dc9f82dfd95f6b9032a8d7ea70efeeb15d5b5fd6ed4e8537bb3c673580566
+
+build()-delete {
+   cd scipy-${version}
+  python setup.py config_fc build()
+}
+
+check {
+   cd scipy-${version}
+  python setup.py config_fc install \
+      --root="$srcdir"/test --optimize=1
+  export PYTHONPATH="$srcdir"/test/usr/lib/python3.9/site-packages
+   cd ..
+  python -c "from scipy import test; testfull"
+}
+
+options="!checksum"
+
+build() {
+   cd scipy-$version
+  python3 setup.py config_fc install \
+      --root=$PKG --optimize=1
+
+}

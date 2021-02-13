@@ -1,0 +1,41 @@
+# description : Verifies code hasnt left circular references
+# depends : perl-devel-cycle perl-padwalker perl-cgi
+
+name=perl-test-memory-cycle
+_perl_namespace=Test
+_perl_module=Memory-Cycle
+version=1.06
+release=2
+url=https://metacpan.org/release/${_perl_namespace}-${_perl_module}
+source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+options="!checksum"
+sha256sums=9d53ddfdc964cd8454cb0da4c695b6a3ae47b45839291c34cb9d8d1cfaab3202
+
+build-delete {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+  perl Makefile.PL
+  make
+}
+
+check {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}
+
+build() {
+  cd ${_perl_namespace}-${_perl_module}-${version}
+  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+  make pure_install INSTALLDIRS=vendor DESTDIR=$PKG
+  # Delete unuseful files
+  find $PKG -name .packlist -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,40 @@
+# description : "A python library used to interact with Git repositories"
+# depends : git python-gitdb
+
+_name=gitpython
+name=python-gitpython
+version=3.1.12
+release=1
+url="https://github.com/gitpython-developers/gitpython"
+make# depends : python-setuptools
+check# depends : python-ddt python-nose python-pytest python-virtualenv
+source="git+https://github.com/gitpython-developers/gitpython.git#tag=${version}?signed"
+sha512sums=SKIP
+b2sums=SKIP
+validpgpkeys=27C50E7F590947D7273A741E85194C08421980C9 # Sebastian Thiel In Rust I trust! <byronimo@gmail.com>
+
+build()-delete {
+   cd "${_name}"
+  python setup.py build
+}
+
+check {
+   cd "${_name}"
+  export TRAVIS="VERY CONVENIENT"
+  git config --global user.name "Test User"
+  git config --global user.email "test@user.org"
+  ./init-tests-after-clone.sh
+  PYTHONDONTWRITEBYTECODE=1 pytest -v -k not test_reading and not test_writing and not test_base and not test_index_file_diffing
+}
+
+options="!checksum"
+
+build() {
+   cd "${_name}"
+  export PYTHONHASHSEED=0
+  python setup.py build
+  python setup.py install  \
+                        --optimize=1 \
+                        --root=$PKG 
+    -t "${PKG}/usr/share/doc/${name}"
+}

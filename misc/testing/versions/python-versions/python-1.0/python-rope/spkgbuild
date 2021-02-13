@@ -1,0 +1,23 @@
+
+name=python-rope
+version=0.18.0
+release=3
+# description : Refactoring library 
+source="https://github.com/python-rope/rope/archive/$version.tar.gz" 
+
+build  {
+  cd "rope-$version"
+  python setup.py build
+}
+
+check  {
+  cd "rope-$version"
+  python -m unittest
+}
+
+package   {
+  cd "rope-$version"
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+}
+
+# vim:set ts=2 sw=2 et:

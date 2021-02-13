@@ -1,0 +1,25 @@
+# description : Pathlib-compatible object wrapper for zip files"
+# depends :   python  
+
+name=python-zipp
+version=3.4.0
+release=3
+source="https://github.com/jaraco/zipp/archive/v$version.tar.gz" 
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build-old()   {
+  cd zipp-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd zipp-$version
+  python -m unittest discover
+}
+
+build()   {
+  cd zipp-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

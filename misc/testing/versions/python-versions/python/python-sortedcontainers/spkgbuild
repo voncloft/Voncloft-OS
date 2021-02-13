@@ -1,0 +1,27 @@
+# description : Python Sorted Container Types: SortedList, SortedDict, and SortedSet"
+# depends :   python  
+
+name=python-sortedcontainers
+version=2.3.0
+release=3
+source="https://github.com/grantjenks/python-sortedcontainers/archive/v$version.tar.gz" 
+
+prepare   {
+  # Don t use tox
+  sed -i  /tests_require/d  python-sortedcontainers-$version/setup.py
+}
+
+build-old()   {
+  cd python-sortedcontainers-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd python-sortedcontainers-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd python-sortedcontainers-$version
+  python setup.py install --root=$PKG --optimize=1
+}

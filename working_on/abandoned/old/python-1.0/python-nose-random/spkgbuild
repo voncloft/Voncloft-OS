@@ -1,0 +1,24 @@
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
+# Contributor: Guillaume Horel <guillaume.horel@gmail.com>
+
+name=python-nose-random
+_name=nose-random
+version=1.0.0
+release=7
+pkgdesc='Nose plugin to facilitate randomized unit testing'
+url='https://github.com/xlwings/nose-random'
+depends=(python-nose)
+makedepends=(python-setuptools)
+source=("https://github.com/xlwings/nose-random/archive/$version/$name-$version.tar.gz")
+sha256sums=('528b1c9396cfa415741afaad60ecde695a657c9364dc01240050c747192f5148')
+
+build() {
+  cd $_name-$version
+  python setup.py build
+}
+
+package() {
+  cd $_name-$version
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$name
+}

@@ -1,0 +1,48 @@
+# description : Python client library for Tarantool 1.6 Database
+
+pkgbase=python-tarantool
+version=0.6.6.r25.gb267643
+_commit=b267643a242e2e6abc013539395b89dd235b798f
+release=2
+url=https://github.com/tarantool/tarantool-python
+check# depends : tarantool
+#source="https://pypi.io/packages/source/t/tarantool/tarantool-$version.tar.gz"
+source="git+https://github.com/tarantool/tarantool-python#commit=$_commit"
+sha512sums=SKIP
+
+version {
+   cd tarantool-$version
+  git describe | sed s/\[^-]*-g\/r\1/;s/-/./g
+}
+
+prepare {
+  mv tarantool-python tarantool-$version
+  sed -i s/msgpack-python/msgpack/g tarantool-$version/setup.py
+  cp -a tarantool-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/tarantool-$version
+  python setup.py build
+
+   cd "$srcdir"/tarantool-$version-py2
+}
+
+check {
+   cd "$srcdir"/tarantool-$version
+  python setup.py test
+
+   cd "$srcdir"/tarantool-$version-py2
+}
+
+package_python-tarantool {
+  # depends : python python-msgpack python-yaml python-six
+
+   cd tarantool-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+
+
+   cd tarantool-$version-py2
+}

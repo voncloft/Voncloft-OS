@@ -1,0 +1,23 @@
+# description : Deepin desktop application engine
+# depends : python-xlib python-pyqt5
+
+name=python-dae
+version=1.0.2
+release=2
+url="https://github.com/linuxdeepin/dae"
+make# depends : git
+source="git+https://github.com/linuxdeepin/dae.git#tag=$version"
+sha256sums=SKIP
+
+build()-delete {
+   cd dae
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd dae
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

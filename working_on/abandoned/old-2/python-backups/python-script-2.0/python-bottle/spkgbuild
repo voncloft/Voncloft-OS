@@ -1,0 +1,20 @@
+# description : A fast and simple micro-framework for small web-applications
+  # depends : python
+  # depends : python2
+
+url=https://bottlepy.org
+name=python-bottle python2-bottle
+version=0.12.19
+release=2
+
+source="https://github.com/defnull/bottle/archive/$version.tar.gz"
+options=!emptydirs
+
+build() {
+   cd bottle-$version
+   cd bottle-$version-py2
+   cd bottle-$version
+   cd bottle-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

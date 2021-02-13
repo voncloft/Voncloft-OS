@@ -1,0 +1,25 @@
+# description : "A Python implementation of the JSON5 data format"
+# depends : python
+
+name=python-json5
+version=0.9.5
+release=3
+url="https://pypi.org/project/json5/"
+make# depends : python-setuptools
+source=$name-$version::"https://github.com/dpranke/pyjson5/archive/v$version.tar.gz"
+sha256sums=4631b8a6c61704b7942fe9d16a1e95f2b26a2bdcc38a1fdc3b5c984f2e861045
+
+build()-delete {
+   cd pyjson5-$version
+  
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd pyjson5-$version
+
+  python setup.py build
+  python setup.py install   --root=$PKG -optimize=1
+}

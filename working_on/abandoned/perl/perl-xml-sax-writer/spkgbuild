@@ -1,0 +1,33 @@
+# description : XML-SAX-Writer perl module SAX2 writer
+# depends : perl perl-text-iconv perl-xml-filter-buffertext
+
+name=perl-xml-sax-writer
+version=0.57
+release=2
+url=https://search.cpan.org/dist/XML-SAX-Writer/
+source="https://search.cpan.org/CPAN/authors/id/P/PE/PERIGRIN/XML-SAX-Writer-$version.tar.gz"
+options="!checksum"
+sha256sums=3d61d07ef43b0126f5b4de4f415a256fa859fa88dc4fdabaad70b7be7c682cf0
+
+build-delete {
+   cd $sr cdir/XML-SAX-Writer-${version}
+  # Install module into the vendor directories.
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+  make test
+}
+
+build() {
+   cd $sr cdir/XML-SAX-Writer-${version}
+  make DESTDIR=$PKG install
+
+  # Remove .packlist and perllocal.pod files.
+  find $PKG -name .packlist -delete
+  find $PKG -name perllocal.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Lightweight database migration tool for usage with SQLAlchemy
+# depends : python python-mako python-sqlalchemy python-editor python-dateutil
+
+name=python-alembic
+version=1.4.3
+release=3
+
+source="https://pypi.org/packages/source/a/alembic/alembic-${version}.tar.gz"
+options="!checksum"
+
+build() {
+  cd alembic-${version}
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

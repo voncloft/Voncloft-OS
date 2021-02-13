@@ -1,0 +1,28 @@
+
+_pkg=py-lmdb
+name=python-lmdb
+version=1.0.0
+release=3
+# description : Universal Python binding for the LMDB Lightning Database"
+# depends :  python python-cffi lmdb 
+source= ${url}/archive/${_pkg}_${version}.tar.gz 
+
+build   {
+  cd ${_pkg}-${_pkg}_${version}
+  LMDB_FORCE_SYSTEM=1 python setup.py build
+}
+
+check   {
+  cd ${_pkg}-${_pkg}_${version}
+  local _pyver
+  _pyver="$ python -c  import sys; print "%s.%s" %sys.version_info[0:2]   "
+  export LMDB_FORCE_SYSTEM=1
+  export PYTHONPATH="$ pwd /build/lib.linux-${CARCH}-${_pyver}"
+  pytest
+}
+
+package   {
+  cd ${_pkg}-${_pkg}_${version}
+  LMDB_FORCE_SYSTEM=1 python setup.py install --root=$PKG --skip-build --optimize=1
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/${name}
+}

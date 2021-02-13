@@ -1,0 +1,31 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Otto Sabart <seberm[at]seberm[dot]com>
+# Contributor: Mizuchi <ytj000+AUR@gmail.com>
+# Contributor: Veli-Jussi Raitila <vjr AT iki DOT fi>
+
+name=python-pysrt
+version=1.1.2
+release=2
+pkgdesc="Python parser for SubRip (srt) files"
+url="https://github.com/byroot/pysrt"
+depends=('python-chardet')
+optdepends=('python-setuptools: for srt script')
+makedepends=('python-setuptools')
+checkdepends=('python-nose')
+source=("$name-$version.tar.gz::https://github.com/byroot/pysrt/archive/v$version.tar.gz")
+sha512sums=('0d6b3a7ce4c8733221bfb5c3e434233d1b221fedda3c145fafe124093f1f9090b99c175e79de386717ec5f8b564c62719f377651db95a8d3c382e2bf8dccb0a8')
+
+build() {
+  cd pysrt-$version
+  python setup.py build
+}
+
+check() {
+  cd pysrt-$version
+  nosetests3
+}
+
+package() {
+  cd pysrt-$version  
+  python setup.py install --root="$pkgdir" --optimize=1
+}

@@ -1,0 +1,24 @@
+# description : POSIX clone of Win32::SerialPort
+# depends : perl
+
+name=perl-device-serialport
+version=1.04
+release=15
+url=https://search.cpan.org/dist/Device-SerialPort
+source="https://www.cpan.org/authors/id/C/CO/COOK/Device-SerialPort-$version.tarsource=.gz"
+options=!checksum
+sha256sums=d392567cb39b4ea606c0e0acafd8ed72320311b995336ece5fcefcf9b150e9d7
+
+build-delete {
+  cd  $srcdir/Device-SerialPort-$version
+  eval `perl -V:archname`
+  PERL_MM_USE_DEFAULT=1 /usr/bin/perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Device-SerialPort-$version
+  make DESTDIR=$PKG install
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

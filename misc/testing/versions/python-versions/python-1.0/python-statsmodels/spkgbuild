@@ -1,0 +1,25 @@
+
+# TODO: create X-12-ARIMA or X-13ARIMA-SEATS  can be used for time-series analysis 
+
+name=python-statsmodels
+version=0.12.0
+release=2
+# description : Statistical computations and models for use with SciPy"
+# depends :   python-scipy   python-pandas   python-patsy  
+             python-matplotlib: needed for plotting functions 
+	     python-joblib:  accelerate distributed estimation for certain models 
+	     jupyter: needed to run the notebooks  
+source="https://github.com/statsmodels/statsmodels/archive/v${version}.tar.gz" 
+
+build   {
+  cd "$srcdir"/statsmodels-${version}
+  python setup.py build
+}
+
+package   {
+  cd "$srcdir"/statsmodels-${version}
+
+  python setup.py install --skip-build --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE.txt $PKG/usr/share/licenses/$name/LICENSE
+}

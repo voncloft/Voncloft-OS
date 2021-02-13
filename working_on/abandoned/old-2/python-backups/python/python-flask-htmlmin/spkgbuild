@@ -1,0 +1,32 @@
+# description : Flask html response minifier
+# depends : python python-flask python-htmlmin
+
+_name=Flask-HTMLmin
+name=python-flask-htmlmin
+version=2.0.2
+release=1
+url=https://github.com/hamidfzm/Flask-HTMLmin
+make# depends : python-setuptools
+check# depends : python-pytest python-pytest-cov python-pytest-runner
+source=https://github.com/hamidfzm/Flask-HTMLmin/archive/v${version}/${pkgbase}-${version}.tar.gz
+sha256sums=549a5a191e891678e1f4d2def9056de2b354426f13857bfc2754580b94ba08e2
+sha512sums=ea863644baecdf54d6b0a920ad0cbd84880e6c029a7d5313f0964f03233a74b7d11b3e15431ecf02fc6c33b38241e472968ed1bcad5b8163d14001678a4833e2
+
+build()-delete {
+   cd ${_name}-${version}
+  python setup.py build
+}
+
+check {
+   cd ${_name}-${version}
+  python setup.py test
+}
+
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+  python setup.py build
+  python setup.py install--root=$PKG -optimize=1 
+}
+

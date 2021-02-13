@@ -1,0 +1,17 @@
+# description : Non-blocking redis client for python
+# depends : python python-twisted python-six
+
+url=https://pypi.python.org/pypi/txredisapi/
+name=python-txredisapi
+version=1.4.7
+release=2
+
+source="https://pypi.org/packages/source/t/txredisapi/txredisapi-$version.tar.gz"
+options="checksum"
+
+build() {
+	 cd $srcdir/txredisapi-$version
+	 cd txredisapi-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

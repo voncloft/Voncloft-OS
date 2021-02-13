@@ -1,0 +1,39 @@
+# description : A small library that versions your Python projects
+
+pkgbase=python-incremental
+version=17.5.0
+release=6
+url=https://github.com/hawkowl/incremental
+source="$pkgbase-$version.tar.gz::https://github.com/hawkowl/incremental/archive/incremental-$version.tar.gz"
+sha512sums=42490edf99355d6c1da0015273e92549bd72ecb2674dd4ce5d0b4a7d34ae9d425ebd1708a2420f67963b4baef5b2a12b76a23d67abb7d306e6208e08d79175d7
+
+prepare {
+  cp -a incremental-incremental-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/incremental-incremental-$version
+  python setup.py build
+
+   cd "$srcdir"/incremental-incremental-$version-py2
+}
+
+check {
+   cd "$srcdir"/incremental-incremental-$version
+  LC_CTYPE=en_US.UTF-8 python setup.py ptr
+
+   cd "$srcdir"/incremental-incremental-$version-py2
+}
+
+package_python-incremental {
+  # depends : python-click python-twisted
+
+   cd incremental-incremental-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+
+
+   cd incremental-incremental-$version-py2
+}
+

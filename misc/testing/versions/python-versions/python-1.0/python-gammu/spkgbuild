@@ -1,0 +1,23 @@
+
+name=python-gammu
+version=3.1
+release=2
+# description : Python bindings for Gammu library"
+# depends :   python   gammu  
+source=https://dl.cihar.com/python-gammu/python-gammu-$version.tar.bz2 
+
+build   {
+  cd "${srcdir}"/python-gammu-$version
+  python setup.py build
+}
+
+check   {
+  # tests can be flaky on slower hardware due to timing
+  cd "${srcdir}"/python-gammu-$version
+  python setup.py test 
+}
+
+package   {
+  cd "${srcdir}"/python-gammu-$version
+  python setup.py install --root=$PKG --optimize=1
+}

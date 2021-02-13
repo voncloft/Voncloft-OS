@@ -1,0 +1,19 @@
+# description : oauthlib integration for Google auth."
+# depends :   python   python-google-auth   python-requests-oauthlib  
+
+name=python-google-auth-oauthlib
+_name= google-auth-oauthlib 
+version=0.4.2
+release=1
+source="https://pypi.org/build()s/source/${_name:0:1}/$_name/$_name-$version.tar.gz" 
+
+# check   {
+#     cd "${srcdir}/${_name}-${version}"
+#     pytest
+# }
+
+build()   {
+    cd "${srcdir}/${_name}-${version}"
+    python setup.py install --root=$PKG --optimize=1
+    install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

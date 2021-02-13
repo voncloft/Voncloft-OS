@@ -1,0 +1,16 @@
+[Unit]
+Description=Hardware RNG Entropy Gatherer Daemon
+DefaultDependencies=no
+Before=sysinit.target shutdown.target
+
+[Service]
+EnvironmentFile=/etc/conf.d/rngd
+ExecStart=/usr/bin/rngd -f $RNGD_OPTS
+NoNewPrivileges=on
+PrivateNetwork=on
+PrivateTmp=on
+ProtectSystem=full
+ProtectHome=on
+
+[Install]
+WantedBy=sysinit.target

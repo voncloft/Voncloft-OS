@@ -1,0 +1,16 @@
+# description : Pure-Perl Core-Only replacement for pkg-config
+# depends : perl
+
+name=perl-pkgconfig
+version=0.25026
+release=1
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/PkgConfig-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd PkgConfig-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

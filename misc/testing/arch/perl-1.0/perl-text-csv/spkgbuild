@@ -1,0 +1,32 @@
+# description : comma-separated values manipulator
+# depends : perl
+
+name=perl-text-csv
+_dist=Text-CSV
+version=1.97
+release=4
+url=https://metacpan.org/release/Text-CSV
+source="https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/${_dist}-${version}.tarsource=.gz"
+options=!checksum
+md5sums=06e9ff3c867fa5ba7f8793ae06ea73ac
+sha512sums=3700acb49a563ba7e08d234a383a7d579761d67097cadac8a9cb166cc436756b58a7c4a4d2c7e690e57b3aee99ec3d36e7f05ee135ce29ad6d8034b4570583f3
+
+unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+
+build-delete {
+    cd $_dist-$version
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+    cd $_dist-$version
+    export PERL_MM_USE_DEFAULT=1
+    make test
+}
+
+build() {
+    cd $_dist-$version
+    make install INSTALLDIRS=vendor DESTDIR=$PKG
+}

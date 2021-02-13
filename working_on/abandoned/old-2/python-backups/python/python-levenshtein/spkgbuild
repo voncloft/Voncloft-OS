@@ -1,0 +1,17 @@
+# description : "Python extension for computing string edit distances and similarities"
+# depends : python
+
+name=python-levenshtein
+version=0.12.2
+release=1
+url="https://pypi.python.org/pypi/python-Levenshtein/"
+make# depends : python-setuptools
+source="https://files.pythonhosted.org/packages/source/p/python-Levenshtein/python-Levenshtein-$version.tar.gz"
+sha512sums=97eac9d19121758af7620ad3963846e48434ceabb5376a83f28452015adf1a620620bfb53edb1c4f60b0fc8ec2b0faf35a105d7e2a0fc5df7a45fce81ba0dcdb
+
+options="!checksum"
+
+build() {
+   cd python-Levenshtein-$version
+  python setup.py build install -O1   --root=$PKG
+}

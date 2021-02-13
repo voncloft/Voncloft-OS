@@ -1,0 +1,24 @@
+
+name=python-elementpath
+version=2.1.3
+release=1
+# description : XPath 1.0/2.0 parsers and selectors for ElementTree and lxml"
+# depends :   python  
+source="https://github.com/sissaschool/elementpath/archive/v$version.tar.gz" 
+
+build   {
+  cd elementpath-$version
+  python setup.py build
+}
+
+check   {
+  cd elementpath-$version
+  python -m pytest
+}
+
+package   {
+  cd elementpath-$version
+  python setup.py install --root=$PKG --optimize=1
+
+  install -Dm644 LICENSE -t $PKG/usr/share/licenses/$name/
+}

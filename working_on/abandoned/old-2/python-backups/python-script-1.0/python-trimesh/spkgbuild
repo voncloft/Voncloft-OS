@@ -1,0 +1,16 @@
+# description : Trimesh is a pure Python library for loading and using triangular meshes with an emphasis on watertight surfaces
+# depends : python python-setuptools python-numpy
+
+url=https://github.com/mikedh/trimesh
+name=python-trimesh
+version=3.9.1
+release=1
+
+source="https://github.com/mikedh/trimesh/archive/${version}.tar.gz"
+options="checksum"
+
+build() {
+   cd trimesh-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

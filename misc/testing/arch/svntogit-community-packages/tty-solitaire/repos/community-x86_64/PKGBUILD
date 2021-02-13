@@ -1,0 +1,28 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+
+pkgname=tty-solitaire
+pkgver=1.3.0
+pkgrel=1
+pkgdesc='ncurses-based klondike solitaire game'
+arch=('x86_64')
+url=https://github.com/mpereira/tty-solitaire
+license=('MIT')
+depends=('ncurses')
+source=("$url/archive/v$pkgver/tty-solitaire-$pkgver.tar.gz")
+sha512sums=('e24982cccdc4529785c01a526507fe97cdc0f415913742de26e16b3dd2da9c0492deb0a6687cd0867643bbbc6cc90d27f5b8ee05580e4beae3e5150132771528')
+
+build() {
+  cd tty-solitaire-$pkgver
+  make
+}
+
+check() {
+  cd tty-solitaire-$pkgver
+  make test
+}
+
+package() {
+  cd tty-solitaire-$pkgver
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+  install -Dm644 -t "$pkgdir"/usr/share/licenses/$pkgname LICENSE
+}

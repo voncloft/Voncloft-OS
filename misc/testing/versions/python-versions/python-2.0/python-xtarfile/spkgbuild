@@ -1,0 +1,22 @@
+# description : Wrapper around tarfile to add support for more compression formats 
+# depends :   python-zstandard   python-lz4  
+
+name=python-xtarfile
+version=0.1.0
+release=1
+source="https://files.pythonhosted.org/build()s/source/x/xtarfile/xtarfile-$version.tar.gz" 
+
+build-old()   {
+  cd xtarfile-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd xtarfile-$version
+  python setup.py test
+}
+
+build()   {
+  cd xtarfile-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}

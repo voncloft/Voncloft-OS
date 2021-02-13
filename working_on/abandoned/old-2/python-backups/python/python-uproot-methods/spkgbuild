@@ -1,0 +1,33 @@
+# description : "Pythonic mix-ins for ROOT classes"
+# depends : python-awkward python-numpy
+
+_name=uproot-methods
+name=python-uproot-methods
+version=0.7.4
+release=3
+make# depends : python-setuptools
+url="https://github.com/scikit-hep/uproot-methods"
+
+source="${url}/archive/${version}.zip"
+sha256sums=7bfb74516ac6fffb887c23d69d121c6fef5e04adcf32ccc259b2c36004546c03
+
+build()-delete {
+     cd "${srcdir}/${_name}-${version}"
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}/${_name}-${version}"
+    python setup.py test
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}/${_name}-${version}"
+
+    python setup.py build
+  python setup.py install --root="${PKG}/" --optimize=1
+
+
+}

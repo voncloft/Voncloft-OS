@@ -1,0 +1,23 @@
+# Maintainer: Thorsten Töpper <atsutane-tu@freethoughts.de>
+pkgname=glyr
+pkgver=1.0.10
+pkgrel=2
+pkgdesc="A music metadata searchengine utility and library written in C"
+arch=('x86_64')
+url="https://github.com/sahib/glyr"
+license=('GPL3')
+depends=('curl' 'glib2' 'sqlite3')
+makedepends=('cmake')
+source=("https://github.com/sahib/glyr/archive/$pkgver.tar.gz")
+md5sums=('85f5f8608bb78d4dd01c7170ea4c6997')
+
+build() {
+	cd "$pkgname-$pkgver"
+	cmake -DCMAKE_INSTALL_PREFIX=/usr
+	make
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+}

@@ -1,0 +1,24 @@
+# description : "Send file to trash natively"
+# depends : python
+
+_pkgbase=send2trash
+name=python-send2trash
+version=1.5.0
+release=6
+url="https://github.com/hsoft/send2trash"
+make# depends : python python-setuptools
+source="$pkgbase-$version.tar.gz::https://github.com/hsoft/$_pkgbase/archive/$version.tar.gz"
+sha256sums=7cebc0ffc8b6d6e553bce9c6bb915614610ba2dec17c2f0643b1b97251da2a41
+
+build()-delete {
+	 cd $_pkgbase-$version
+	python setup.py build
+}
+
+options="!checksum"
+
+build() {
+	 cd $_pkgbase-$version
+	python setup.py build
+  python setup.py install --root $PKG --optimize=1 
+}

@@ -1,0 +1,18 @@
+# description : AMQP Client using the rabbitmq-c library
+# depends : python-amqp python-six
+
+url=https://pypi.python.org/pypi/librabbitmq
+name=python-librabbitmq
+version=2.0.0
+release=5
+
+source="https://files.pythonhosted.org/packages/source/l/librabbitmq/librabbitmq-$version.tar.gz"{,.asc}
+options="checksum"
+
+build() {
+   cd librabbitmq-$version
+   cd librabbitmq-$version
+   cd librabbitmq-$version; ln -s ../rabbitmq-c-$_librabbitmqver ./rabbitmq-c
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

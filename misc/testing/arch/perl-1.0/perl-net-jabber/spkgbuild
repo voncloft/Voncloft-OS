@@ -1,0 +1,24 @@
+# description : Perl/CPAN Module Net::Jabber : Access to the Jabber protocol
+# depends : perl-net-xmpp
+
+name=perl-net-jabber
+version=2.0
+release=11
+url=https://search.cpan.org/dist/Net-Jabber
+make# depends : perl-net-xmpp
+source="https://www.cpan.org/authors/id/R/RE/REATMON/Net-Jabber-$version.tarsource=.gz"
+options=!checksum
+sha256sums=dfba394a6166a5a5e35ce763f408f97788047cc39ce5acad802e281432c88011
+
+build-delete {
+  cd $srcdir/Net-Jabber-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/Net-Jabber-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

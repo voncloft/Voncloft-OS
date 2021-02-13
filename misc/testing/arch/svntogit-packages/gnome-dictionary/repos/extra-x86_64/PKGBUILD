@@ -1,0 +1,38 @@
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=gnome-dictionary
+pkgver=3.26.1+96+gedfc2b5
+pkgrel=1
+pkgdesc="Look up words in dictionary sources"
+url="https://wiki.gnome.org/Apps/Dictionary"
+arch=(x86_64)
+license=(GPL2)
+depends=(gtk3)
+makedepends=(yelp-tools git meson appstream-glib)
+_commit=edfc2b5bee92f8569e6a47b6cf31882380daf557  # master
+source=("git+https://gitlab.gnome.org/GNOME/gnome-dictionary.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}
+
+# vim:set ts=2 sw=2 et:

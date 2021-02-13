@@ -1,0 +1,29 @@
+# description : "A tiny pythonic visitor implementation"
+# depends : python
+
+name=python-visitor
+version=0.1.3
+release=5
+url="https://github.com/mbr/visitor"
+make# depends : python-setuptools
+check# depends : python-pytest-runner
+source="$name-$version.tar.gz::https://github.com/mbr/visitor/archive/$version.tar.gz"
+sha512sums=414c77df8efcc22df5ee8073e02b8c5c28563954ef9b9a869c4ea3f7f1268a97929c1fe29142ba41e3a5acafea52599f6bf073aacd654643d7d8380cd4f41fbc
+
+build()-delete {
+   cd visitor-$version
+  python setup.py build
+}
+
+check {
+   cd visitor-$version
+  python setup.py pytest
+}
+
+options="!checksum"
+
+build() {
+   cd visitor-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

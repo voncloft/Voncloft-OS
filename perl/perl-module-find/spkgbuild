@@ -1,0 +1,20 @@
+# description : Find and use installed perl modules in a subcategory
+# depends : perl
+
+_cpanname=Module-Find
+_cpanname=Module-Find
+name=perl-module-find
+_cpanname=Module-Find
+_cpanname=Module-Find
+version=0.13
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/C/CR/CRENZ/${_cpanname}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_cpanname}-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,24 @@
+
+name=python-colour
+_pyname=colour
+version=0.1.5
+release=8
+# description : Colour representations manipulation library  RGB, HSL, web, ... "
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/${_pyname:0:1}/${_pyname}/${_pyname}-${version}.tar.gz" 
+
+build   {
+  cd $_pyname-$version
+  python setup.py build
+}
+
+check   {
+  cd $_pyname-$version
+  nosetests
+}
+
+package   {
+  cd $_pyname-$version
+  python setup.py install --root=$PKG --optimize=1
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

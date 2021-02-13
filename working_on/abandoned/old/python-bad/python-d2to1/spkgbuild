@@ -1,0 +1,18 @@
+# description : Python library that allows using distutils2-like setup.cfg files for a build() s metadata with a distribute/setuptools setup.py script"
+# depends :   python  
+
+name=python-d2to1
+version=0.2.12.post1
+release=9
+source=https://files.pythonhosted.org/build()s/source/d/d2to1/d2to1-$version.tar.gz 
+
+build-old()   {
+  cd d2to1-$version
+  python setup.py build-old()
+}
+
+build()   {
+  cd d2to1-$version
+  python setup.py install --prefix=/usr --root=$PKG
+  install -Dm644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

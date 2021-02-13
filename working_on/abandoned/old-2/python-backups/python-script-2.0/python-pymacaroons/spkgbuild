@@ -1,0 +1,17 @@
+# description : Python implementation of Macaroons. They’re better than cookies!
+# depends : python
+
+url=https://github.com/ecordell/pymacaroons
+name=python-pymacaroons
+version=0.13.0
+release=8
+
+source="pymacaroons-$version.tar.gz"::https://github.com/ecordell/pymacaroons/archive/v$version.tar.gz"
+options="checksum"
+
+build() {
+	 cd pymacaroons-$version
+	 cd pymacaroons-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

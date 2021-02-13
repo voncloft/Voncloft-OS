@@ -1,0 +1,26 @@
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+
+name=python-collada
+version=0.7.1
+release=1
+pkgdesc="python library for reading and writing collada documents"
+url="https://github.com/pycollada/pycollada"
+depends=(python python-dateutil python-numpy python-lxml)
+makedepends=(python-setuptools)
+source=(${name}-${version}.tar.gz::https://github.com/pycollada/pycollada/archive/v${version}.tar.gz)
+sha512sums=('ac4d88b2398bf0364beaaf3e2e468be9131dc0f8088bfce8be18d9eb5a7c093db84a364931884fa7c493dfae81036ec63bc7c689ebf49e961eefc0c4853a0131')
+
+build() {
+  cd "pycollada-${version}"
+  python setup.py build
+}
+
+check() {
+  cd "pycollada-${version}/collada"
+  PYTHONPATH=../ python -m unittest discover tests
+}
+
+package() {
+  cd "pycollada-${version}"
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}

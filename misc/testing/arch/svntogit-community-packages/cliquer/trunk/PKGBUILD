@@ -1,0 +1,23 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=cliquer
+pkgver=1.22
+pkgrel=1
+pkgdesc="A set of C routines for finding cliques in an arbitrary weighted graph"
+arch=(x86_64)
+url="https://users.aalto.fi/~pat/cliquer.html"
+license=(GPL)
+depends=(glibc)
+source=(https://github.com/dimpase/autocliquer/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('6ff79e1e9983ebabbca3dd276a8a310cbdeb48c7adf95f37abd83129b566340e')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

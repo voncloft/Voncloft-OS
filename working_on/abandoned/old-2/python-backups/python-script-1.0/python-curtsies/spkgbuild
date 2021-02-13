@@ -1,0 +1,19 @@
+# description : Curses-like terminal wrapper with a display based on compositing 2d arrays of text
+# depends : python-blessings python-wcwidth
+
+_name=curtsies
+url=https://pypi.python.org/pypi/curtsies
+name=python-curtsies
+_name=curtsies
+version=0.3.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source/c/curtsies/curtsies-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd $srcdir
+   cd $srcdir/curtsies-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

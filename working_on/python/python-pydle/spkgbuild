@@ -1,0 +1,16 @@
+# description : A compact, flexible and standards-abiding IRC library
+# depends : python
+
+url=https://github.com/Shizmob/pydle
+name=python-pydle
+version=0.9.4
+release=2
+
+source="https://github.com/Shizmob/pydle/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pydle-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

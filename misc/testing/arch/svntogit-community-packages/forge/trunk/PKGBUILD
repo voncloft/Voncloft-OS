@@ -1,0 +1,34 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+pkgname=forge
+pkgdesc="High Performance Visualizations"
+url='https://github.com/arrayfire/forge'
+pkgver=1.0.5
+arch=('x86_64')
+pkgrel=1
+epoch=2
+license=('BSD')
+depends=('glfw' 'freetype2' 'fontconfig' 'freeimage' 'glbinding')
+makedepends=('cmake' 'graphviz' 'git' 'python' 'glm' 'boost')
+source=($pkgname-$pkgver.tar.gz::https://github.com/arrayfire/forge/archive/v${pkgver}.tar.gz)
+sha512sums=('01dc17f202bc79734bb997065c8cbc8d950204a47f979afddd8df14e40774dc712ecb7c34b11f0e312b1598fcbc9d25dd0bb089956d86508aac5b10fe1789fc3')
+options=('!buildflags')
+
+build() {
+  cd forge-${pkgver}
+
+  cmake . \
+      -Bbuild \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DFG_BUILD_EXAMPLES=ON \
+      -DFG_BUILD_DOCS=OFF
+
+  make -C build
+}
+
+package() {
+  cd forge-${pkgver}
+
+  install -Dm644 .github/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+
+  DESTDIR="${pkgdir}/" make -C build install
+}

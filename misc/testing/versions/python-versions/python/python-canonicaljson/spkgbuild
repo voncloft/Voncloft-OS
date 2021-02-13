@@ -1,0 +1,28 @@
+# description : Canonical JSON 
+# depends :   python   python-simplejson   python-frozendict  
+
+name=python-canonicaljson
+version=1.4.0
+release=3
+
+
+
+source="python-canonicaljson-$version.tar.gz::https://github.com/matrix-org/python-canonicaljson/archive/v${version}.tar.gz" 
+
+
+build-old()   {
+	cd python-canonicaljson-$version
+	python setup.py build-old()
+}
+
+check   {
+	cd python-canonicaljson-$version
+	python setup.py test
+}
+
+build()   {
+	cd python-canonicaljson-$version
+	python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :

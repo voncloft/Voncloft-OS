@@ -1,0 +1,31 @@
+
+_name=antlr4
+name=python-${_name}
+version=4.9.1
+release=1
+# description : ANTLR4 runtime for Python"
+# depends :   python  
+source="${name}-${version}.tar.gz::https://github.com/antlr/${_name}/archive/${version}.tar.gz"
+         fix-tests.patch  
+             3a1735cafc4794b4e7c268b1de3028001cacd181c99044ae6779420d2a2f5e32  
+
+prepare   {
+  patch -Np1 -i "${srcdir}"/fix-tests.patch -d "${srcdir}/${_name}-${version}"
+}
+
+build   {
+  cd "${srcdir}/${_name}-${version}/runtime/Python3"
+  python setup.py build
+}
+
+check   {
+  cd "${srcdir}/${_name}-${version}/runtime/Python3"
+  python setup.py test
+}
+
+package   {
+  cd "${srcdir}/${_name}-${version}/runtime/Python3"
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -d "${PKG}/usr/share/licenses/${name}"
+  install -Dm644 "${srcdir}/${_name}-${version}"/LICENSE.txt "${PKG}/usr/share/licenses/${name}"/LICENSE
+}

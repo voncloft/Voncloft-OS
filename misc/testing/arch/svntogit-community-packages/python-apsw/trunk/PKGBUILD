@@ -1,0 +1,37 @@
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Brendan MacDonell <macdonellba at gmail dot com>
+# Contributor: Linmiao Xu <linmiao.xu@gmail.com>
+# Contributor: Juan Miguel Cejuela <juanmi@jmcejuela.net>
+
+pkgname=python-apsw
+pkgver=3.34.0
+pkgrel=1
+pkgdesc="Python wrapper for SQLite"
+arch=('x86_64')
+url="https://github.com/rogerbinns/apsw"
+license=('MIT')
+depends=('python' 'sqlite')
+source=("apsw-$pkgver-r1.tar.gz::https://github.com/rogerbinns/apsw/archive/$pkgver-r1.tar.gz")
+sha512sums=('0a41d8324480c9dcc7df6e570d0b3321bb07d07e97ebcc05207de8d707769e93b279da39ce14a12b46a8d999bfab19ecb1cd30149256316f5f9de43de6ed64ee')
+b2sums=('8deeb11ee54553419e66a74d0886944ec24e4e39320836f4a1f98576ca3d0977b5eff59fe7140f6262e84981b080cbcdf4bdce0b85847d628f5d720fbcdf411f')
+
+build() {
+  cd apsw-${pkgver}-r1
+
+  python setup.py build --enable=load_extension
+}
+
+check() {
+  cd "$srcdir"/apsw-${pkgver}-r1
+
+  # do glob expansion in variable assignment
+  pythonpaths=("$PWD/build/lib.linux-$CARCH"-3*)
+  PYTHONPATH="${pythonpaths[0]}" python setup.py test
+}
+
+package() {
+  cd "$srcdir"/apsw-${pkgver}-r1
+
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

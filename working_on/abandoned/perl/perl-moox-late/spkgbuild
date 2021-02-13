@@ -1,0 +1,35 @@
+# description : Easily translate Moose code to Moo
+# depends : perl-moo perl-type-tiny perl-moox-handlesvia perl-sub-handlesvia
+
+_pkg=MooX-late
+name=perl-${_pkg,,}
+version=0.100
+release=1
+url=https://metacpan.org/release/${_pkg}
+check# depends : perl-test-fatal perl-test-simple perl-test-requires
+source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/${_pkg}-${version}.tar.gz"
+options="!checksum"
+sha512sums=69450edbe7b2192094608a3ec543348d87223c9a124b86dc04a1 cdf74b697adb331e5e1498533a557e5d4eded374770086d6696bdda597afe924520cad0c229c
+
+build-delete {
+     cd ${_pkg}-${version}
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+     cd ${_pkg}-${version}
+    make test
+}
+
+build() {
+     cd ${_pkg}-${version}
+    make INSTALLDIRS=vendor DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

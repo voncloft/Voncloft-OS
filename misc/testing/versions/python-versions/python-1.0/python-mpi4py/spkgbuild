@@ -1,0 +1,28 @@
+
+_pkg=mpi4py
+name=python-${_pkg}
+version=3.0.3
+release=3
+# description : Python bindings for the Message Passing Interface  MPI  standard"
+# depends :  python openmpi 
+source=https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz 
+
+build   {
+    cd ${_pkg}-${version}
+    python setup.py build
+}
+
+check   {
+    # This is required starting with OpenMPI 3.0 when trying to run more
+    # processes than the number of available cores
+    export OMPI_MCA_rmaps_base_oversubscribe=yes
+
+    cd ${_pkg}-${version}
+    python setup.py test
+}
+
+package   {
+    cd ${_pkg}-${version}
+    python setup.py install --root=$PKG --skip-build --optimize=1
+    install -Dm644 LICENSE.rst -t $PKG/usr/share/licenses/${name}/
+}

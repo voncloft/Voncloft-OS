@@ -1,0 +1,30 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=ecb
+pkgver=2.40.1pre
+pkgrel=12
+_commit=1330a44cf3c171781083b0b926ab7622f64e6e81
+pkgdesc="Emacs Code Browser"
+arch=('any')
+url="https://github.com/ecb-home/ecb"
+depends=('emacs')
+makedepends=('git')
+license=('GPL')
+install=ecb.install
+source=("git+https://github.com/ecb-home/ecb.git#commit=${_commit}")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir"/$pkgname
+  sed -i 's|common/cedet.el|cedet.elc|' Makefile
+}
+
+package() {
+  cd "$srcdir"/$pkgname
+  _emacsver=`pacman -Q emacs | cut -f2 -d\ |cut -f1 -d-`
+  mkdir -p "$pkgdir"/usr/share/emacs/site-lisp/ecb
+  make CEDET=/usr/share/emacs/${_emacsver}/lisp/cedet ecb
+  cp -R "$srcdir"/$pkgname/* "$pkgdir"/usr/share/emacs/site-lisp/ecb
+  find "$pkgdir"/usr/share -type f -exec chmod 0644 {} \;
+  find "$pkgdir"/usr/share -type d -exec chmod 0755 {} \;
+}

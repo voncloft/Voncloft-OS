@@ -1,0 +1,23 @@
+# description : Turn 407 into four hundred and seven, etc.
+# depends : perl>=5.10.0
+
+name=perl-lingua-en-numbers
+version=2.03
+release=4
+url=https://search.cpan.org/dist/Lingua-EN-Numbers
+source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Lingua-EN-Numbers-$version.tarsource=.gz"
+options=!checksum
+md5sums=76fd79aeee74c959fd7d8bbe0f76975d
+
+build-delete {
+  cd  $srcdir/Lingua-EN-Numbers-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd  $srcdir/Lingua-EN-Numbers-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}

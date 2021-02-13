@@ -1,0 +1,27 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Stefano Esposito <ragnarok@email.it>
+
+pkgname=emacs-php-mode
+pkgver=1.23.0
+pkgrel=1
+license=("GPL")
+pkgdesc="PHP mode for emacs"
+url="https://github.com/ejmr/php-mode"
+arch=('any')
+depends=('emacs')
+options=(docs zipman)
+install=emacs-php-mode.install
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ejmr/php-mode/archive/v$pkgver.tar.gz")
+sha256sums=('d5211c187acc7f4a044b89eeed560a0e7d53345c1d05a99a3993fabfdd404f8f')
+
+build() {
+  cd "$srcdir"/php-mode-$pkgver
+  make
+}
+
+package() {
+  cd "$srcdir"/php-mode-$pkgver
+  for i in *.el{,c}; do
+    install -Dm0644 $i "$pkgdir"/usr/share/emacs/site-lisp/php-mode/$i
+  done
+}

@@ -1,0 +1,37 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=jsonrpc-glib
+pkgver=3.38.0
+pkgrel=1
+pkgdesc="A JSON-RPC library for GLib"
+url="https://gitlab.gnome.org/GNOME/jsonrpc-glib"
+arch=(x86_64)
+license=(LGPL)
+depends=(json-glib)
+makedepends=(git meson vala gobject-introspection gtk-doc)
+provides=(libjsonrpc-glib-1.0.so)
+_commit=1ef4e954414ee7886ed608bbe0b934c716cde142  # tags/3.38.0^0
+source=("git+https://gitlab.gnome.org/GNOME/jsonrpc-glib.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build -D enable_gtk_doc=true
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}

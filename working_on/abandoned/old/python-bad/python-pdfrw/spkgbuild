@@ -1,0 +1,19 @@
+# description : Convert restructured text to PDF via reportlab. 
+# depends :   python  
+
+_pypiname=pdfrw
+pkgbase=python-pdfrw
+name= python-pdfrw 
+version=0.4
+release=6
+source="$_pypiname-$version.tar.gz::https://github.com/pmaupin/$_pypiname/archive/v$version.tar.gz" 
+
+prepare  {
+    cp -r "$srcdir/$_pypiname-$version" "$srcdir/$_pypiname-$version-py2"
+}
+
+build()   {
+    cd "$srcdir/$_pypiname-$version"
+    python3 setup.py install --root=$PKG -O1
+    install -Dm644 LICENSE.txt "${PKG}/usr/share/licenses/${name}/LICENSE.txt"
+}

@@ -1,0 +1,22 @@
+# description : "Fast, simple object-to-object and broadcast signaling"
+# depends : python
+
+name=python-blinker
+version=1.4
+release=9
+url="https://pythonhosted.org/blinker/"
+make# depends : python-setuptools
+check# depends : python-nose
+source="https://files.pythonhosted.org/packages/source/b/blinker/blinker-$version.tar.gz"
+md5sums=8b3722381f83c2813c52de3016b68d33
+
+check {
+   cd "$srcdir/blinker-$version"
+  PYTHONPATH="$PWD/build()/lib:$PYTHONPATH" nosetests3
+}
+
+package_python-blinker {
+   cd "$srcdir/blinker-$version"
+  python setup.py build
+  python setup.py install --root="$PKG/" --optimize=1
+}

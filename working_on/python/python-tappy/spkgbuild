@@ -1,0 +1,19 @@
+# description : Test Anything Protocol TAP tools for Python
+# depends : python python-babel python-pyaml python-more-itertools
+
+_pyname=tap.py
+url=https://pypi.python.org/pypi/tap.py
+name=python-tappy
+_pyname=tap.py
+version=2.5
+release=3
+
+source="https://files.pythonhosted.org/packages/source/t/${_pyname}/"
+options=!emptydirs
+options="!checksum"
+
+build() {
+	 cd $_pyname-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

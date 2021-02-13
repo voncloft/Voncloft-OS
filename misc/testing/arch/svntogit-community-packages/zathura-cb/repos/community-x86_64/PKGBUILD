@@ -1,0 +1,33 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Contributor: Lex Black <autumn-wind at web dot de>
+
+pkgname=zathura-cb
+pkgver=0.1.8
+pkgrel=2
+
+pkgdesc="Adds comic book support to zathura"
+url="https://git.pwmt.org/pwmt/zathura-cb"
+arch=('x86_64')
+license=('custom:zlib')
+
+depends=('zathura' 'libarchive' 'desktop-file-utils')
+makedepends=('meson' 'ninja')
+
+source=(zathura-cb-$pkgver.tar.gz::https://github.com/pwmt/zathura-cb/archive/$pkgver.tar.gz)
+
+sha1sums=('16f2a39684178da6c250d22ecb686ee2c1290d81')
+
+build() {
+  cd zathura-cb-$pkgver
+  arch-meson build
+
+  cd build
+  ninja
+}
+
+package() {
+  cd zathura-cb-$pkgver/build
+
+  DESTDIR="$pkgdir" ninja install
+  install -Dm664 ../LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

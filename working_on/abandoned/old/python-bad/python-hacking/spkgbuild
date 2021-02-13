@@ -1,0 +1,29 @@
+# description : OpenStack Hacking Guideline Enforcement 
+# depends :   flake8  
+
+name=python-hacking
+version=4.0.0
+release=1
+source="https://github.com/openstack/hacking/archive/$version.tar.gz" 
+
+export PBR_VERSION=$version
+
+prepare   {
+  cd hacking-$version
+  sed -i  s/<.*//  requirements.txt
+}
+
+build-old()   {
+  cd "$srcdir"/hacking-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd hacking-$version
+  stestr run
+}
+
+build()_python-hacking   {
+  cd hacking-$version
+  python setup.py install --root $PKG --optimize=1
+}

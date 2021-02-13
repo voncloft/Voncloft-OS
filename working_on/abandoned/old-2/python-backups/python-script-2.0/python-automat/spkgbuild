@@ -1,0 +1,19 @@
+# description : Self-service finite-state machines for the programmer on the go.
+  # depends : python-attrs
+  # depends : python2-attrs
+
+url=https://github.com/glyph/automat
+name=python-automat python2-automat
+version=20.2.0
+release=5
+
+source="https://github.com/glyph/automat/archive/v$version.tar.gz"
+
+build() {
+   cd automat-$version
+   cd automat-$version-py2
+   cd automat-$version
+   cd automat-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

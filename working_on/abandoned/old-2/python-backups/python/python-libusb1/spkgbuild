@@ -1,0 +1,27 @@
+# description : Python ctype-based wrapper around libusb1
+# depends : python libusb
+
+_name=libusb1
+name=python-$_name
+version=1.9.1
+release=1
+url=https://github.com/vpelletier/python-libusb1
+make# depends : python-setuptools python-wheel
+source="$name-$version.tar.gz::$url/archive/$version.tar.gz"
+sha512sums=7c48315a542d2f04bf2b85b7ffdf38d966de71a299bce8562e8c41cb9f90bf15ae2a2aa47d1207bc116a646b1519d2a67d941eff1b537e749e72e19c8aefbb3c
+
+build()-delete {
+   cd $name-$version
+
+  python setup.py build
+}
+
+options="!checksum"
+
+build() {
+   cd $name-$version
+
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}
+

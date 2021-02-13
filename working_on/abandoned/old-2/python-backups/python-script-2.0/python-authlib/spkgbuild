@@ -1,0 +1,19 @@
+# description : The ultimate Python library in build()ing OAuth and OpenID Connect servers
+# depends : python-cryptography
+
+_name=authlib
+_commit=1969b567733f6426e5a8e20c5edf3371e9d23e5c
+url=https://github.com/lepture/${_name}
+_name=authlib
+name=python-authlib
+version=0.15.2
+release=3
+
+source="git+${url}.git#commit=${_commit}?signed
+options="checksum"
+
+build() {
+     cd ${_name}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

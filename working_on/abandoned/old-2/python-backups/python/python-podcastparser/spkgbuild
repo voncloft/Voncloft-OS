@@ -1,0 +1,17 @@
+# description : Simplified, fast RSS parsing library in Python
+# depends : python
+
+_name=podcastparser
+name=python-$_name
+version=0.6.6
+release=1
+url=https://github.com/gpodder/podcastparser
+source=$name-$version.tar.gz::https://github.com/gpodder/$_name/archive/$version.tar.gz
+sha256sums=b36adead23adb138aa12504740d8b875c2eda581bd72cdcb18a579cb5e1ec2fb
+
+options="!checksum"
+
+build() {
+   cd $_name-$version
+  python3 setup.py install --root=$PKG --optimize=1
+}

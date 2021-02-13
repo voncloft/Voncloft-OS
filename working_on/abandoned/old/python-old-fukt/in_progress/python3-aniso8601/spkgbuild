@@ -1,0 +1,16 @@
+# description : library for parsing 8601 strings
+# depends : python3
+
+name=python3-aniso8601
+version=8.1.1
+release=1
+
+source="https://bitbucket.org/nielsenb/aniso8601/get/v$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd aniso8601-$version
+	python3 setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1
+}

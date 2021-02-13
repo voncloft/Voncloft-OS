@@ -1,0 +1,13 @@
+
+name=python-xmltodict
+version=0.12.0
+release=6
+# description : Python module that makes working with XML feel like working with JSON"
+# depends :   python  
+source="https://files.pythonhosted.org/packages/source/x/xmltodict/xmltodict-$version.tar.gz" 
+
+package   {
+  cd "$srcdir/xmltodict-$version"
+  python setup.py install --root=$PKG
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

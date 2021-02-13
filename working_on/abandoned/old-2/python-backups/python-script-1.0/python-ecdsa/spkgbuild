@@ -1,0 +1,17 @@
+# description : Implementation of ECDSA in Python
+  # depends : python
+  # depends : python2
+
+url=https://github.com/warner/python-ecdsa
+name=python-ecdsa python2-ecdsa
+version=0.16.1
+release=1
+
+options=!emptydirs
+
+build() {
+   cd $srcdir/ecdsa-$version
+   cd $srcdir/ecdsa-$version-py2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,42 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
+# Contributor: ezzetabi <ezzetabi at gawab dot com>
+
+pkgname=ppl
+pkgver=1.2
+pkgrel=4
+pkgdesc="A modern library for convex polyhedra and other numerical abstractions"
+arch=(x86_64)
+url="https://bugseng.com/products/ppl"
+license=(GPL3)
+depends=(glpk)
+makedepends=(swi-prolog)
+optdepends=('swi-prolog: SWI Prolog interface')
+options=(!docs)
+source=(https://bugseng.com/products/ppl/download/ftp/releases/$pkgver/ppl-$pkgver.tar.gz)
+sha256sums=('6bc36dd4a87abc429d8f9c00c53e334e5041a9b0857cfc00dbad6ef14294aac8')
+validpgpkeys=('058E41DB299DE2DD0AC649CA881457CBB5944392') # Roberto Bagnara
+
+prepare() {
+  cd ppl-$pkgver
+# Adapt to SWI Prolog 8.x (Fedora)
+  sed -i 's/-dump-runtime-variables/-&/g' configure            
+# Fix detection of C++11 features (Fedora)
+  sed -i 's,== 201103L,>= 201103L,g' configure            
+}
+
+build() {
+  cd ppl-$pkgver
+  ./configure --prefix=/usr --enable-interfaces="c,cxx,swi_prolog"
+  make
+}
+
+check() {
+  cd ppl-$pkgver
+  make check || /bin/true # https://www.cs.unipr.it/mantis/view.php?id=2120
+}
+
+package() {
+  cd ppl-$pkgver
+  make DESTDIR="$pkgdir" install
+}

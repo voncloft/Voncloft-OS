@@ -1,0 +1,31 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=publicsuffix
+name=python-publicsuffix
+version=1.1.1
+release=2
+pkgdesc="Get the public suffix of a domain name using the Public Suffix List"
+url="https://publicsuffix.org/"
+depends=('python')
+makedepends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz")
+sha512sums=('eed6be3a4fbc558a6e450eb267883d0125e37e0932db3898a77eb90e3404c40b948b937d082b919dd7d89e8724b6e6eb6427ed79797bd6c006b475391893ea2f')
+
+prepare() {
+  mv -v "${_name}-${version}" "$name-$version"
+}
+
+build() {
+  cd "$name-$version"
+  python setup.py build
+}
+
+package() {
+  cd "$name-$version"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root="${pkgdir}"
+  install -vDm 644 {ChangeLog,README.rst} -t "${pkgdir}/usr/share/doc/${name}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${name}"
+}

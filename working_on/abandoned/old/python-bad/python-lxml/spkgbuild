@@ -1,0 +1,68 @@
+
+pkgbase=python-lxml
+name=('python-lxml' 'python2-lxml' 'python-lxml-docs')
+version=4.6.2
+release=1
+             'python-sphinx' 'python-sphinx_rtd_theme' 'cython' 'cython2')
+              'python-beautifulsoup4' 'python2-beautifulsoup4')
+
+prepare() {
+  mv lxml-lxml-$version lxml-$version
+  cp -a lxml-$version{,-py2}
+
+  # Setting LC_CTYPE to workaround encoding issue
+  export LC_CTYPE=en_US.UTF-8
+}
+
+build-remove() {
+  cd "$srcdir"/lxml-$version
+  python setup.py build
+  make html
+
+  cd "$srcdir"/lxml-$version-py2
+  python2 setup.py build
+}
+
+check() {
+  # TODO: Find a sane way to skip inplace build
+
+  cd "$srcdir"/lxml-$version
+  make PYTHON=python test
+
+  cd "$srcdir"/lxml-$version-py2
+  make PYTHON=python2 test
+}
+
+package_python-lxml() {
+  # description : "Python3 binding for the libxml2 and libxslt libraries"
+  # depends : ('python' 'libxslt')
+              'python-cssselect: support for cssselect'
+              'python-html5lib: support for html5lib parser'
+              'python-lxml-docs: offline docs')
+
+  cd lxml-$version
+  python setup.py install --root=$PKG --skip-build --optimize=1
+
+}
+
+package_python2-lxml() {
+  # description : "Python2 binding for the libxml2 and libxslt libraries"
+  # depends : ('python2' 'libxslt')
+              'python2-cssselect: support for cssselect'
+              'python2-html5lib: support for html5lib parser'
+              'python-lxml-docs: offline docs')
+
+  cd lxml-$version-py2
+  python2 setup.py install --root=$PKG --skip-build --optimize=1
+
+}
+
+package_python-lxml-docs() {
+  # description : "Python binding for the libxml2 and libxslt libraries (docs)"
+  options=('docs')
+
+  cd lxml-$version
+  install -d $PKG/usr/share/doc/$pkgbase
+  cp -r doc/html $PKG/usr/share/doc/$pkgbase
+
+}

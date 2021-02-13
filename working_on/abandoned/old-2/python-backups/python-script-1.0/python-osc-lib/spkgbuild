@@ -1,0 +1,16 @@
+# description : OpenStackClient Library
+# depends : python-six python-pbr python-babel python-cliff python-keystoneauth1
+
+url=https://docs.openstack.org/osc-lib/latest/
+name=python-osc-lib
+version=2.2.1
+release=3
+
+source="https://github.com/openstack/osc-lib/archive/$version.tar.gz"
+options="checksum"
+
+build() {
+   cd osc-lib-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

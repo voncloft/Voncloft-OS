@@ -1,0 +1,22 @@
+
+name=python-logilab-common
+version=1.8.1
+release=1
+# description : Useful miscellaneous modules used by Logilab projects"
+# depends :   python-setuptools   python-mypy_extensions   python-typing_extensions  
+source="https://pypi.io/packages/source/l/logilab-common/logilab-common-$version.tar.gz" 
+
+build   {
+  cd logilab-common-$version
+  python setup.py build
+}
+
+check   {
+  cd logilab-common-$version
+  PYTHONPATH="$PWD/build/lib:$PYTHONPATH" python bin/logilab-pytest
+}
+
+package   {
+  cd logilab-common-$version
+  python setup.py install --optimize=1 --skip-build --prefix=/usr --root=$PKG
+}

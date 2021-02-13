@@ -1,0 +1,15 @@
+# description : Declare constraints on function parameters and return values
+# depends : python-pyparsing python-decorator python-six python-future
+
+url=https://andreacensi.github.io/contracts
+name=python-pycontracts
+version=1.8.14
+release=4
+
+source="https://github.com/AndreaCensi/contracts/archive/v${version}.tar.gz"
+
+build() {
+   cd contracts-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

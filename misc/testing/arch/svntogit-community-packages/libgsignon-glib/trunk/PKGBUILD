@@ -1,0 +1,36 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgname=libgsignon-glib
+pkgver=2.4.1
+pkgrel=2
+pkgdesc='gSSO client library'
+arch=('x86_64')
+url='https://01.org/gsso'
+license=('LGPL2.1')
+depends=('glib2')
+makedepends=('git' 'gobject-introspection' 'gtk-doc' 'vala')
+optdepends=('python: Python bindings'
+            'vala: Vala bindings')
+_commit='a10da2694106fe6de4587278e09dc85e72b33ae2'
+source=("git+https://gitlab.com/accounts-sso/libgsignon-glib.git#commit=${_commit}")
+sha256sums=('SKIP')
+
+build() {
+  cd libgsignon-glib
+
+  export CFLAGS="$CFLAGS -Wno-unused-const-variable -Wno-deprecated-declarations"
+
+  ./autogen.sh \
+    --prefix='/usr' \
+    --enable-dbus-type='session' \
+    --enable-introspection='yes'
+  make
+}
+
+package() {
+  cd libgsignon-glib
+
+  make DESTDIR="${pkgdir}" install
+}
+
+# vim: ts=2 sw=2 et:

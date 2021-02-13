@@ -1,0 +1,24 @@
+# description : iptables sshguard addon blocks ssh attacks
+# depends : iptables
+
+name=sshguard
+version=2.4.1
+release=1
+options="!checksum"
+
+source="https://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+	sshguard.conf"
+
+build()
+{
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+
+	make DESTDIR=$PKG install
+	mkdir -pv $PKG/etc
+	
+	install $SRC/sshguard.conf $PKG/etc/sshguard.conf
+	
+}
+

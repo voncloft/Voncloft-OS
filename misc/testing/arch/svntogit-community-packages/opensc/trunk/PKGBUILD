@@ -1,0 +1,52 @@
+# Maintainer: Alad
+# Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
+# Contributor: Sébastien Luttringer
+# Contributor: kevku <kevku@msn.com>
+
+pkgname=opensc
+pkgver=0.21.0
+pkgrel=1
+pkgdesc='Tools and libraries for smart cards'
+arch=('x86_64')
+url='https://github.com/OpenSC/OpenSC/wiki'
+license=('LGPL')
+backup=('etc/opensc.conf')
+makedepends=('docbook-xsl')
+depends=('pcsclite' 'glib2' 'libltdl')
+options=('!emptydirs')
+source=("https://github.com/OpenSC/OpenSC/releases/download/$pkgver/opensc-$pkgver.tar.gz")
+sha512sums=('3511b0a04a96e62011c48667e3fd36a1611fe67a89f7626ff056c9c3614f8cabc91c9924a6ca7a8ea50076a128e3967277a0dd624b4fa27c62cefee9fab22646')
+
+build() {
+  cd $pkgname-$pkgver
+
+  _sheetdir=(/usr/share/xml/docbook/xsl-stylesheets-*-nons)
+
+  ./bootstrap
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --with-completiondir=/usr/share/bash-completion/completions \
+    --enable-man \
+    --enable-doc \
+    --enable-readline \
+    --enable-openssl \
+    --enable-pcsc \
+    --enable-zlib \
+    --enable-sm \
+    --with-xsl-stylesheetsdir="$_sheetdir"
+
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+  make
+}
+
+package(){
+  cd $pkgname-$pkgver
+
+  make DESTDIR="$pkgdir" install
+
+  install -D -m644 etc/opensc.conf "$pkgdir/etc/opensc.conf"
+}
+
+# vim:set ts=2 sw=2 et:

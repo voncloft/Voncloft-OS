@@ -1,0 +1,36 @@
+# description : NativeTrait-like behavior for Moo
+# depends : perl-class-method-modifiers perl-data-perl perl-module-runtime perl-moo perl-role-tiny
+
+_pkg=MooX-HandlesVia
+name=perl-${_pkg,,}
+version=0.001009
+release=1
+url=https://metacpan.org/release/${_pkg}
+make# depends : perl-moox-types-mooselike
+check# depends : perl-test-exception perl-test-fatal perl-test-simple
+source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/${_pkg}-${version}.tar.gz"
+options="!checksum"
+sha512sums=ea3521bf04c52db09068d4fa7cedd3642fd54fc40b5c88 cde9340f0a3bb0da03f2aabbe22788a4f33ffedc628fc510c4fb57bdf3f7c9ce1b9316dd1408c2dd40
+
+build-delete {
+     cd ${_pkg}-${version}
+    export PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL=--skipdeps
+    perl Makefile.PL
+    make
+}
+
+check {
+     cd ${_pkg}-${version}
+    make test
+}
+
+build() {
+     cd ${_pkg}-${version}
+    make INSTALLDIRS=vendor DESTDIR=$PKG install
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

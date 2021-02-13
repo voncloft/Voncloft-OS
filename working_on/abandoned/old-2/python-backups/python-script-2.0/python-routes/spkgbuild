@@ -1,0 +1,16 @@
+# description : Routing recognition and generation tools
+# depends : python-repoze.lru python-six
+
+url=https://pypi.python.org/pypi/Routes
+name=python-routes
+version=2.5.1
+release=3
+
+source="https://pypi.io/packages/source/R/Routes/Routes-$version.tar.gz"
+options="checksum"
+
+build() {
+   cd Routes-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

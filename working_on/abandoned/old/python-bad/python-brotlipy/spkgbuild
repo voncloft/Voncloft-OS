@@ -1,0 +1,36 @@
+# description : Python binding to the Brotli library 
+# depends :   brotli06   python-cffi  
+
+name=python-brotlipy
+version=0.7.0
+release=8
+source="https://github.com/python-hyper/brotlipy/archive/v$version.tar.gz"
+        shared-brotli.patch
+        brotlipy-disable-hypothesis-timeout.patch::https://github.com/python-hyper/brotlipy/pull/155.patch 
+             fc472dfb857d223f1b40edb8182a34c22ed1a8ff02953de934a0cf3b223e072699b100e63bf3ba1848b312743dc302b781b71fcafb3117223439f65f97e334de 
+             9ddc62dcbca5e33ea861f096a364e032622147c277e8a49d94ccf03ef706801b5c5d3d38da93ad39d01be87eafcde958903ac089028c190619a3f78786a11eee  
+
+prepare   {
+  patch -d brotlipy-$version -p1 -i ../shared-brotli.patch
+  patch -d brotlipy-$version -p1 -i ../brotlipy-disable-hypothesis-timeout.patch
+  sed -i  s|^TEST_DATA_DIR = .*|TEST_DATA_DIR = "/usr/share/brotli06/testdata"|  brotlipy-$version/test/conftest.py
+
+  export USE_SHARED_BROTLI=1
+  export CFLAGS="-I/usr/include/brotli06 -L/usr/lib/brotli06"
+}
+
+build-old()   {
+  cd brotlipy-$version
+  python setup.py build-old()
+}
+
+check   {
+  cd brotlipy-$version
+  python setup.py pytest
+}
+
+build()   {
+  cd brotlipy-$version
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}

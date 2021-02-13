@@ -1,0 +1,30 @@
+
+name=python-slugify
+version=4.0.1
+release=3
+# description : A Python slugify application that handles unicode 
+# depends :  python-text-unidecode 
+  git
+  python-setuptools
+ 
+
+version   {
+  cd python-slugify
+
+  git describe --tags
+}
+
+build   {
+  cd python-slugify
+
+  python setup.py build
+}
+
+package   {
+  cd python-slugify
+
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t $PKG/usr/share/licenses/python-slugify/
+}
+
+# vim: ts=2 sw=2 et:

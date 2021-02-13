@@ -1,0 +1,17 @@
+# description : Multiplatform Serial Port Module for Python
+  # depends : python
+  # depends : python2
+
+url=https://github.com/pyserial/pyserial
+name=python-pyserial python2-pyserial
+version=3.5
+release=1
+
+source="https://github.com/pyserial/pyserial/archive/v$version.tar.gz"
+
+build() {
+   cd py2serial-${version}
+   cd pyserial-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

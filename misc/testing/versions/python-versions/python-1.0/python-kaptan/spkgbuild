@@ -1,0 +1,29 @@
+_name=kaptan
+name=python-kaptan
+version=0.5.12
+release=5
+# description : Configuration manager in your pocket"
+# depends :   python-yaml  
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz" 
+
+build   {
+  cd "${_name}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${_name}-${version}"
+  python setup.py test
+}
+
+package_python-kaptan   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+  # license
+  install -vDm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+  # docs
+    -t "${PKG}/usr/share/doc/${name}"
+}

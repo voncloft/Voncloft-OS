@@ -1,0 +1,33 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: speps <speps at aur dot archlinux dot org>
+# Contributor: Andreas Schnaiter <rc.poison@gmail.com>
+
+pkgname=smtube
+pkgver=20.6.0
+pkgrel=1
+pkgdesc="An application that allows to browse, search and play YouTube videos"
+arch=('x86_64')
+url="https://www.smtube.org/"
+license=('GPL2')
+depends=('gcc-libs' 'glibc' 'hicolor-icon-theme' 'qt5-script' 'qt5-webkit')
+makedepends=('qt5-tools')
+optdepends=('mplayer: play videos with MPlayer'
+            'smplayer: play videos with SMPlayer'
+            'gnome-mplayer: play videos with GNOME MPlayer'
+            'dragon: play videos with Dragon Player'
+            'totem: play videos with Totem'
+            'vlc: play videos with VLC'
+            'mpv: play videos with MPV'
+            'youtube-dl: download videos')
+source=("https://downloads.sourceforge.net/project/${pkgname}/SMTube/${pkgver}/${pkgname}-${pkgver}.tar.bz2")
+sha512sums=('abbd868d88e9d3e87fe556f088007378fd11844b91e08fe301d548e0e80acc07b005860b571baa44236ccfa808bf61a7bb7090b8508fe3dae8159364496b34c0')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  make PREFIX=/usr
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make PREFIX=/usr DESTDIR="${pkgdir}/" install
+}

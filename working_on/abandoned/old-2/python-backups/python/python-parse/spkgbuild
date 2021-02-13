@@ -1,0 +1,33 @@
+# description : Parse strings using a specification based on the Python format syntax.
+# depends : python
+
+name=python-parse
+version=1.19.0
+release=1
+
+url=https://pypi.python.org/pypi/parse
+
+make# depends : python-setuptools
+
+source="https://pypi.org/packages/source/p/parse/parse-$version.tar.gz"
+
+sha256sums=9ff82852bcb65d139813e2a5197627a94966245c897796760a3a2a8eb66f020b
+
+build()-delete {
+   cd "$srcdir"/parse-$version
+  python setup.py build
+}
+
+check {
+   cd "$srcdir"/parse-$version
+  python test_parse.py
+}
+
+
+options="!checksum"
+
+build() {
+   cd "$srcdir"/parse-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

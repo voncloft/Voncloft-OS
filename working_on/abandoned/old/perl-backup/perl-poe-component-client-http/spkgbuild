@@ -1,0 +1,30 @@
+# description : Perl/CPAN Module POE::Component::Client::HTTP : nonblockingparallel web requests engine
+# depends : perl-uri perl-poe-component-client-keepalive  perl-poe 
+
+name=perl-poe-component-client-http
+version=0.949
+release=6
+url=https://search.cpan.org/dist/POE-Component-Client-HTTP
+make# depends : perl-uri perl-poe-component-client-keepalive   perl-poe 
+source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-HTTP-$version.tar.gz"
+options="!checksum"
+sha256sums=339e86075dbb9e8583c45d4000f1f1256102f4865ae9ec25c90f9d15432b5a14
+
+build-delete {
+  cd $srcdir/POE-Component-Client-HTTP-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/POE-Component-Client-HTTP-$version
+  make install DESTDIR=$PKG
+  find $PKG -name .packlist -delete
+  find $PKG -name *.pod -delete
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

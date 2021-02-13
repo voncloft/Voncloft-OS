@@ -1,0 +1,29 @@
+# description : Locate per-dist and per-module shared files
+# depends : perl-class-inspector
+
+name=perl-file-sharedir
+_realname=File-ShareDir
+version=1.116
+release=4
+url=https://metacpan.org/release/File-ShareDir
+_author=REHSACK
+source="https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/${_author}/$_realname-$version.tar.gz"
+options="!checksum"
+md5sums=f2a0eee9f04c93753dd56437175e5bda
+
+build-delete {
+  cd $srcdir/$_realname-$version
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+build() {
+  cd $srcdir/$_realname-$version
+  make DESTDIR=$PKG install
+}
+build() {
+   cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

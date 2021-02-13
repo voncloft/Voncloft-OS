@@ -1,0 +1,15 @@
+# description : Python client library for MQTT v3.1 and v3.1.1
+# depends : python
+
+url=https://www.eclipse.org/paho/clients/python
+name=python-paho-mqtt
+version=1.5.0
+release=2
+
+source="https://github.com/eclipse/paho.mqtt.python/archive/v${version}.tar.gz"
+
+build() {
+   cd paho.mqtt.python-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,41 @@
+
+_name=py7zr
+name=python-py7zr
+version=0.11.3
+release=1
+# description : Pure python 7-zip library"
+# depends :   python-pycryptodome   python-texttable  
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+        "0001-setup.cfg-remove-build-time-dependency-on-things-unr.patch" 
+             eb6e1b95bb2fe56889337bc3fb2ee788bfe7eb7849667bd2c193c7a9a8158908  
+         c8043f2631d783c1c4e8797fe12f517b06c1468860a32d2964b7f1e12d76728f3317f3ea76f380fe11a3c2dade52e95e492be107b537430a9ffb24b439f70ccd  
+
+prepare   {
+    cd "${srcdir}"/${_name}-${version}
+
+    # thou shalt not force coverage reports on innocent unittest users
+    sed -i  /^addopts/d  tox.ini
+
+    # don t download unneeded setup_requires from PyPI
+    #https://github.com/miurahr/py7zr/pull/286
+    patch -p1 -i ../0001-setup.cfg-remove-build-time-dependency-on-things-unr.patch
+}
+
+build  {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py build
+}
+
+check   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python -m pytest -rsx \
+        --ignore tests/test_benchmark.py
+}
+
+package   {
+    cd "${srcdir}"/${_name}-${version}
+
+    python setup.py install --root=$PKG --optimize=1 --skip-build
+}

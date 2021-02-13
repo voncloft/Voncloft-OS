@@ -1,0 +1,33 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Franco Iacomella <yaco@gnu.org>
+
+pkgname=synfigstudio
+pkgver=1.4.0
+pkgrel=1
+pkgdesc="Professional vector animation program (GUI)"
+arch=(x86_64)
+url="https://www.synfig.org/"
+license=(GPL2)
+depends=(gtkmm3 synfig)
+makedepends=(etl intltool)
+optdepends=('python: for the plugins')
+source=(https://downloads.sourceforge.net/synfig/$pkgname-$pkgver.tar.gz)
+sha256sums=('ca1eb1a3e2264c57974a576d1995e005079d96cee19d3dffaacded72c93fbd56')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -i 's|appdatadir = $(datadir)/appdata|appdatadir = $(datadir)/metainfo|' Makefile.{am,in}
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --disable-update-mimedb
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

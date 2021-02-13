@@ -1,0 +1,24 @@
+# description : A Sphinx extension for BibTeX style citations"
+# depends :   python-sphinx   python-pybtex   python-pybtex-docutils   python-docutils  
+
+_name=sphinxcontrib-bibtex
+name="python-${_name}"
+version=2.1.4
+release=1
+source="${name}-${version}.tar.gz::https://github.com/mcmtroffaes/${_name}/archive/${version}.tar.gz" 
+
+build-old()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py build-old()
+}
+
+check   {
+  cd "${srcdir}/${_name}-${version}"
+  PYTHONPATH=".:${PYTHONPATH}" pytest
+}
+
+build()   {
+  cd "${srcdir}/${_name}-${version}"
+  python setup.py install --root=$PKG --optimize=1 --skip-build-old()
+  install -Dm644 LICENSE.rst "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

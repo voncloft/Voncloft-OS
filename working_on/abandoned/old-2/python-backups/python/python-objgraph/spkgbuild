@@ -1,0 +1,41 @@
+# description : "Draws Python object reference graphs with graphviz"
+
+pkgbase=python-objgraph
+version=3.5.0
+release=3
+url="https://github.com/mgedmin/objgraph"
+source="$pkgbase-$version.tar.gz::https://github.com/mgedmin/objgraph/archive/$version.tar.gz"
+sha512sums=50bf1967d6696547598628d49f3c827f1535d6de032fb429881e523f144bb57e128d09f43d280b89a0f9205ca97ef10331e0da1dc86637af0214bfd7aa4cba3b
+
+prepare {
+  # Only for ipython support
+  sed -i "/graphviz/d" objgraph-$version/setup.py
+
+  cp -a objgraph-$version{,-py2}
+}
+
+build()-delete {
+   cd "$srcdir"/objgraph-$version
+  python setup.py build
+
+   cd "$srcdir"/objgraph-$version-py2
+}
+
+check {
+   cd "$srcdir"/objgraph-$version
+  python setup.py test
+
+   cd "$srcdir"/objgraph-$version-py2
+}
+
+package_python-objgraph {
+  # depends : python
+
+   cd objgraph-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+
+
+   cd objgraph-$version-py2
+}

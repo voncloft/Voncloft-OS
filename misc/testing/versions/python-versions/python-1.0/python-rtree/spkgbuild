@@ -1,0 +1,22 @@
+
+name=python-rtree
+version=0.9.7
+release=2
+# description : Rtree: spatial index for Python GIS"
+# depends :   python   spatialindex  
+source="https://github.com/Toblerity/rtree/archive/$version/$name-$version.tar.gz" 
+
+build   {
+  cd rtree-$version
+  python setup.py build
+}
+
+check   {
+  cd rtree-$version
+  python setup.py pytest
+}
+
+package   {
+  cd rtree-$version
+  python setup.py install --root=$PKG --optimize=1
+}

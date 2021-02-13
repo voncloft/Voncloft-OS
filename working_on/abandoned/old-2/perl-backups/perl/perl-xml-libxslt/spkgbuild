@@ -1,0 +1,16 @@
+# description : Interface to the gnome libxslt library
+# depends : perl-xml-libxml libxslt
+
+name=perl-xml-libxslt
+version=1.99
+release=2
+
+source="https://www.cpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd XML-LibXSLT-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

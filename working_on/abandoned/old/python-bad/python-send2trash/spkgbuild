@@ -1,0 +1,19 @@
+# description : Send file to trash natively"
+# depends :   python  
+
+_pkgbase=send2trash
+name=python-send2trash
+version=1.5.0
+release=6
+source="$pkgbase-$version.tar.gz::https://github.com/hsoft/$_pkgbase/archive/$version.tar.gz" 
+
+build-old()   {
+	cd $_pkgbase-$version
+	python setup.py build-old()
+}
+
+build()   {
+	cd $_pkgbase-$version
+	python setup.py install --root $PKG --optimize=1 --skip-build-old()
+	install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

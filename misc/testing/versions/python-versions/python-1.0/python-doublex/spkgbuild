@@ -1,0 +1,29 @@
+
+name=python-doublex
+version=1.9.3
+# Upstream forgot to push tags and ignored my notice
+_commit=fe03fcb4672d
+release=1
+# description : Powerful test doubles framework for Python"
+# depends :   python-pyhamcrest  
+source="$name-$version.tar.bz2::https://bitbucket.org/DavidVilla/python-doublex/get/$_commit.tar.bz2" 
+
+prepare   {
+  mv DavidVilla-python-doublex-* python-doublex-$version
+}
+
+build   {
+  cd python-doublex-$version
+  python setup.py build
+}
+
+check   {
+  cd python-doublex-$version
+  #https://bitbucket.org/DavidVilla/python-doublex/issues/6/more-failing-tests-with-python-39
+  python setup.py test || :
+}
+
+package   {
+  cd python-doublex-$version
+  python setup.py install --root=$PKG --optimize=1
+}

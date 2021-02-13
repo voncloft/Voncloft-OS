@@ -1,0 +1,31 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: eolianoe <eolianoe At GoogleMAIL DoT com>
+# Contributor: Andrey Mikhaylenko <neithere at gmail dot com>
+
+pkgname=python-pkginfo
+pkgver=1.7.0
+pkgrel=1
+pkgdesc='Query metadatdata from sdists / bdists / installed packages'
+arch=('any')
+url="https://pypi.python.org/pypi/pkginfo"
+license=('PSF')
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-nose')
+source=("https://pypi.io/packages/source/p/pkginfo/pkginfo-$pkgver.tar.gz")
+sha512sums=('0e41899fac552e6a3c401c7dab3e3cd57f31cc5f052e07537f15b699c85113800edac27d232571ecab4852fab1d73374eca381d1ab70c9a7461bb422ff03de3b')
+
+build() {
+  cd pkginfo-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd pkginfo-$pkgver
+  python setup.py nosetests
+}
+
+package_python-pkginfo() {
+  cd pkginfo-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}

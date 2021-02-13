@@ -1,0 +1,41 @@
+# description : simple data types for common serialisation formats
+# depends : perl-common-sense
+
+name=perl-types-serialiser
+version=1.0
+release=6
+make# depends : 
+url=https://search.cpan.org/dist/Types-Serialiser
+source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/Types-Serialiser-$version.tar.gz"
+options="!checksum"
+md5sums=76460a2bfbc644672499af89192e03fe
+
+build-delete {
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB=                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT=INSTALLDIRS=vendor DESTDIR=$PKG     \
+      PERL_MB_OPT=--installdirs vendor --destdir $PKG \
+      MODULEBUILDRC=/dev/null
+
+   cd $sr cdir/Types-Serialiser-$version
+  perl Makefile.PL
+  make
+}
+
+check {
+   cd $sr cdir/Types-Serialiser-$version
+  export PERL_MM_USE_DEFAULT=1 PERL5LIB=
+  make test
+}
+
+build() {
+   cd $sr cdir/Types-Serialiser-$version
+  make install
+  find $PKG -name .packlist -o -name perllocal.pod -delete
+}
+build() {
+    cd
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

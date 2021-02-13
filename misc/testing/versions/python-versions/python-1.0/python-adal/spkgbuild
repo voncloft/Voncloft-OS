@@ -1,0 +1,31 @@
+
+name=python-adal
+_pkgbase= azure-activedirectory-library-for-python 
+version=1.2.6
+release=1
+# description : ADAL for Python 
+# depends :   python-cryptography   python-dateutil   python-pyjwt   python-requests  
+source="${name}-${version}.tar.gz::https://github.com/AzureAD/${_pkgbase}/archive/${version}.tar.gz"
+         fix-broken-mex-test.patch  
+             29a9354028a9420ba883cb494688a0ecbf238d8e46fc011c4a309515a1444faa  
+
+prepare   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  patch -p1 -N -i "${srcdir}/fix-broken-mex-test.patch"
+}
+
+build   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py build
+}
+
+check   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python -m unittest discover -s tests
+}
+
+package   {
+  cd "${srcdir}/${_pkgbase}-${version}"
+  python setup.py install --root=$PKG --optimize=1
+  install -D -m644 LICENSE "${PKG}/usr/share/licenses/${name}/LICENSE"
+}

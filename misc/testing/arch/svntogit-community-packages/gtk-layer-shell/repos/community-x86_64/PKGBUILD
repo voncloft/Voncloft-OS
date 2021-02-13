@@ -1,0 +1,41 @@
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Contributor: Adrian Perez de Castro <aperez@igalia.com>
+
+pkgdesc='Library to create Wayland desktop components using the Layer Shell protocol'
+pkgname=gtk-layer-shell
+pkgver=0.5.2
+pkgrel=1
+arch=(x86_64)
+license=(LGPL3)
+url="https://github.com/wmww/gtk-layer-shell"
+depends=(
+    "gtk3"
+    "wayland"
+)
+makedepends=(
+    "gtk-doc"
+    "gobject-introspection"
+    "meson"
+    "ninja"
+)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/wmww/gtk-layer-shell/archive/v$pkgver.tar.gz")
+sha512sums=('3c8254e3812af52844e3c3aa4fe96553a33964db2234758eb734e4207ff9591f0c9541e064a348ad64e6272ec90359ba5687d557fd1693b70a9d06c541e79a58')
+
+build() {
+    meson --prefix=/usr \
+          --wrap-mode=nofallback \
+          --buildtype=plain \
+          -Dtests=true \
+          -Ddocs=true \
+          "$pkgname-$pkgver" \
+          build
+    ninja -C build
+}
+
+check() {
+    ninja -C build test
+}
+
+package() {
+    DESTDIR="$pkgdir" ninja -C build install
+}

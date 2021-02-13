@@ -1,0 +1,29 @@
+# description : "Simple framework for creating REST APIs"
+# depends : python-six python-flask python-aniso8601 python-pytz
+
+name=python-flask-restful
+version=0.3.8
+release=3
+url="https://github.com/flask-restful/flask-restful"
+make# depends : python-setuptools
+check# depends : python-nose python-mock python-blinker python-pycryptodome
+source="$name-$version.tar.gz::https://github.com/flask-restful/flask-restful/archive/$version.tar.gz"
+sha512sums=15172114fcedc2f4286cf5f583d95e42c8c8ce6553f9a44e57124f2b1417bf9f094dcb5154a6933ebebc8022f39d4d7969d29d38576111f9d5b45f630b36a66c
+
+build()-delete {
+   cd flask-restful-$version
+  python setup.py build
+}
+
+check {
+   cd flask-restful-$version
+  python setup.py nosetests || echo "Tests failed"
+}
+
+options="!checksum"
+
+build() {
+   cd flask-restful-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

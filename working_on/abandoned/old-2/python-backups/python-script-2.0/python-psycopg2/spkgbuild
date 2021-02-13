@@ -1,0 +1,16 @@
+# description : A PostgreSQL database adapter for the Python programming language.
+  # depends : python postgresql-libs
+  # depends : python2 postgresql-libs
+
+url=http://initd.org/psycopg/
+name=python-psycopg2 python2-psycopg2
+version=2.8.6
+release=3
+
+source="http://initd.org/psycopg/tarballs/PSYCOPG-2-8/psycopg2-$version.tar.gz"{,.asc}
+
+build() {
+   cd psycopg2-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

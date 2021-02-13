@@ -1,0 +1,13 @@
+
+name=python-btrfs
+version=12
+release=2
+# description : Python Btrfs module, with useful scripts to inspect btrfs internals"
+# depends :   python  
+
+package   {
+    cd "$srcdir/${name}/"
+    python ./setup.py install --root="$PKG/" --prefix=/usr --optimize=1
+    cd bin
+    install -Dm755 btrfs-* -t "$PKG/usr/bin/"
+}

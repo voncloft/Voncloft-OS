@@ -1,0 +1,21 @@
+# description : Python binding for the ALSA library"
+# depends :   alsa-lib   python  
+_name=pyalsa
+name=python-pyalsa
+version=1.1.6
+release=6
+groups=  alsa  
+source="ftp://ftp.alsa-project.org/pub/${_name}/${_name}-${version}.tar.bz2" 
+
+build-old()   {
+  cd "${_name}-${version}"
+  python setup.py build-old()
+}
+
+build()   {
+  cd "${_name}-${version}"
+  python setup.py install --skip-build-old() \
+    --optimize=1 \
+    --prefix=/usr \
+    --root=$PKG
+}

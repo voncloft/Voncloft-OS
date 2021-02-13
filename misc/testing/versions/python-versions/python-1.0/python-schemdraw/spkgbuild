@@ -1,0 +1,21 @@
+
+name=python-schemdraw
+version=0.8
+release=2
+# description : Electrical circuit schematic drawing."
+# depends :   python-numpy   python-matplotlib  
+source="https://bitbucket.org/cdelker/schemdraw/get/$version.tar.gz" 
+
+prepare   {
+  mv cdelker-schemdraw-* schemdraw-$version
+}
+
+build   {
+  cd schemdraw-$version
+  python setup.py build
+}
+
+package   {
+  cd schemdraw-$version
+  python setup.py install --root=$PKG --optimize=1
+}

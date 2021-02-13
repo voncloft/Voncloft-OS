@@ -1,0 +1,30 @@
+
+_name=sqlalchemy-utils
+name=python-sqlalchemy-utils
+version=0.36.8
+release=3
+# description : Various utility functions, new data types and helpers for SQLAlchemy 
+# depends :   python   python-sqlalchemy   python-anyjson   python-babel 
+          python-arrow   python-intervals   python-phonenumbers   python-passlib 
+          python-colour   python-dateutil   python-furl   python-cryptography 
+          python-pendulum  
+source= ${name}-${version}.tar.gz::https://github.com/kvesteri/sqlalchemy-utils/archive/${version}.tar.gz 
+
+build   {
+  cd ${_name}-${version}
+  python setup.py build
+}
+
+package   {
+  cd ${_name}-${version}
+  python setup.py install --root=$PKG --optimize=1 --skip-build
+  install -Dm 644 LICENSE -t "${PKG}/usr/share/licenses/${name}"
+}
+
+check   {
+  cd ${_name}-${version}
+  # Tests require a postgres and MySQL db
+  pytest --disable-pytest-warnings tests/test_models.py
+}
+
+# vim: ts=2 sw=2 et:

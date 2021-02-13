@@ -1,0 +1,17 @@
+# description : A tools to build C libraries
+# depends : perl
+
+name=perl-extutils-libbuilder
+version=0.08
+release=7
+
+_dist=ExtUtils-LibBuilder
+source="https://search.cpan.org/CPAN/authors/id/A/AM/AMBS/${_dist}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+     cd ${_dist}-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

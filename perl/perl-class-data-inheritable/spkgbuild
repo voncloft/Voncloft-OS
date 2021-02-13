@@ -1,0 +1,16 @@
+# description : Inheritable, overridable class data 
+# depends : perl
+
+name=perl-class-data-inheritable
+version=0.08
+release=9
+
+source="https://www.cpan.org/authors/id/T/TM/TMTM/Class-Data-Inheritable-$version.tar.gz"
+options="!checksum" 
+
+build() {
+   cd  Class-Data-Inheritable-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

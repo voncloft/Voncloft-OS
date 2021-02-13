@@ -1,0 +1,36 @@
+# description : Python binding for xxHash
+# depends : python xxhash
+
+_pyname=xxhash
+name=python-${_pyname}
+version=2.0.0
+release=3
+url="https://github.com/ifduyue/${name}"
+make# depends : python-setuptools
+source="${name}-${version}.tar.gz::https://github.com/ifduyue/${name}/archive/v${version}.tar.gz"
+sha512sums=c71fb3c7d32611663e4e8016ed05be22ec41a19ddf33157c30d97a48e0ac861e599d2cd8fef7b154edfebe6ed4a294cb52f9681cd00229112f7d76da9c52f649
+
+prepare {
+     cd "${srcdir}/${name}-${version}"
+
+    # link to xxHash
+    export XXHASH_LINK_SO=1
+}
+
+build()-delete {
+     cd "${srcdir}/${name}-${version}"
+    python setup.py build
+}
+
+check {
+     cd "${srcdir}/${name}-${version}"
+    python setup.py test
+}
+
+options="!checksum"
+
+build() {
+     cd "${srcdir}/${name}-${version}"
+    python setup.py build
+  python setup.py install--root=$PKG -optimize=1
+}

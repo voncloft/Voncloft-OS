@@ -1,0 +1,31 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+
+name=python-flask-cors
+version=3.0.10
+release=1
+
+pkgdesc='A Flask extension adding a decorator for CORS support'
+url='https://pypi.org/project/Flask-Cors'
+
+depends=('python-flask' 'python-six')
+makedepends=('python-setuptools')
+
+source=("https://pypi.org/packages/source/F/Flask-Cors/Flask-Cors-$version.tar.gz")
+
+sha256sums=('b60839393f3b84a0f3746f6cdca56c1ad7426aa738b70d6c61375857823181de')
+
+build() {
+	cd Flask-Cors-$version
+	python setup.py build
+}
+
+check() {
+	cd Flask-Cors-$version
+	python setup.py test
+}
+
+package() {
+	cd Flask-Cors-$version
+	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+	install -Dm655 LICENSE "$pkgdir"/usr/share/licenses/$name/LICENSE
+}

@@ -1,0 +1,19 @@
+# description : A simple wrapper around optparse for powerful command line utilities
+    # depends : python
+    # depends : python2
+
+_realname=click
+url=http://click.pocoo.org/
+name=python-click python2-click
+_realname=click
+version=7.1.2
+release=3
+
+source="https://github.com/pallets/click/archive/${version}.tar.gz"
+
+build() {
+     cd ${srcdir}/${_realname}-${version}
+     cd ${srcdir}/${_realname}-${version}-python2
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

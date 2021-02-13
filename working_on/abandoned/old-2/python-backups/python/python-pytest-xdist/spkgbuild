@@ -1,0 +1,37 @@
+# description : py.test xdist plugin for distributed testing and loop-on-failing modes
+# depends : python-execnet python-psutil python-pytest-forked
+
+name=python-pytest-xdist
+version=2.2.0
+release=1
+url=https://bitbucket.org/pytest-dev/pytest-xdist
+make# depends : python-setuptools_scm
+check# depends : python-filelock
+source="https://github.com/pytest-dev/pytest-xdist/archive/v$version/$name-$version.tar.gz"
+sha512sums=b462f7a569f5a2bd6a1fb1e3c84a3a7972c6375bddb7dae54db9a9551ebd7b79be038ce166ed9436ed35b10c88442824b8a626b5ef9083f7a430a82d0407f6ec
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+
+build()-delete {
+   cd pytest-xdist-$version
+  python setup.py build
+}
+
+check {
+  # Hack entry points by installing it
+
+   cd pytest-xdist-$version
+  python setup.py build
+  python setup.py install --root="$PWD/tmp_install" --optimize=1
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.9/site-packages:$PYTHONPATH" pytest \
+    --deselect testing/acceptance_test.py::TestWarnings::test_warning_captured_deprecated_in_pytest_6
+}
+
+options="!checksum"
+
+build() {
+   cd pytest-xdist-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
+

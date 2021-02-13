@@ -1,0 +1,29 @@
+# description : "Numpys Sphinx extensions"
+# depends : python-sphinx python-jinja
+
+name=python-numpydoc
+version=1.1.0
+release=3
+url="https://github.com/numpy/numpydoc"
+make# depends : python-setuptools
+check# depends : python-matplotlib python-numpy python-pytest-cov
+source="$name-$version.tar.gz::https://github.com/numpy/numpydoc/archive/v$version.tar.gz"
+sha512sums=596757521b627fe415978234d87d4f0b603ff2b488b5ecf590d00a1e1682059f02190a84d188fe122f821f54ea8ab6117bd9410f449e78d52580a0c4ff7b9e54
+
+build()-delete {
+   cd numpydoc-$version
+  python setup.py build
+}
+
+check {
+   cd numpydoc-$version
+  python -m pytest
+}
+
+options="!checksum"
+
+build() {
+   cd numpydoc-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}
