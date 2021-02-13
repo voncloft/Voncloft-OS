@@ -7,7 +7,7 @@ name=python-calmjs.parse
 version=1.2.5
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.zip"
+source="https://github.com/calmjs/calmjs.parse/archive/1.2.5.tar.gz"
 options="!checksum"
 
 build() {
