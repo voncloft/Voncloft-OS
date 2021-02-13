@@ -8,8 +8,10 @@ d:python-atomicwrites
 d:python-mako
 d:python-automat
 d:python-adal
+d:python-cftime
 d:python-bidict
 d:python-bsddb
+d:python-cffi
 d:python-setuptools
 d:python-pip
 d:python-webargs
@@ -37,9 +39,11 @@ d:python-pycryptodome
 d:python-anyio
 d:python-brotlipy
 d:python-blinker
+d:python-chameleon
 d:python-autobahn
 d:python-cachy
 d:python-bitstring
+d:python-characteristic
 d:python-geoip
 d:python-awkward
 d:python-bottle
@@ -52,6 +56,8 @@ d:python-biscuits
 d:python-aiomysql
 d:python-axolotl
 d:python-celery
+d:python-cfgv
+d:python-cfn-lint
 d:python-pafy
 d:python-argparse-manpage
 d:python-aiodns
@@ -170,6 +176,7 @@ d:python-billiard
 d:python-setproctitle
 d:python-pyopenssl
 d:python-asynctest
+d:python-chai
 d:python-build
 d:python-aiofiles
 d:python-btrfs
@@ -204,8 +211,10 @@ f:8059ee6f13019d72e152d1edc608c4e6:python-mako/.pkgfiles
 f:8f722d3d2ea5ebb4ae9836038fd42cda:python-mako/spkgbuild
 f:079c47d9f25e6493c9b3ac09e023928e:python-automat/spkgbuild
 f:4efac2190f5429e9799bcd28c2229936:python-adal/spkgbuild
+f:d5cdbe3aca8b2222e34c58dab3d28b90:python-cftime/spkgbuild
 f:217224a363bb4419341735366a508da6:python-bidict/spkgbuild
 f:59c5509c827530002a3e053a18857bc7:python-bsddb/spkgbuild
+f:8f8cc0da27bd78dafc6ab8b8cdfde51b:python-cffi/spkgbuild
 f:f160600cc0909bbea247df3851ee96bc:python-setuptools/.checksums
 f:759ef035fcdefdb16e07489ad196d828:python-setuptools/.pkgfiles
 f:755aa9dcdf01d7116269ddd5e3cf3941:python-setuptools/spkgbuild
@@ -248,14 +257,16 @@ f:9d3ccbb0e65668876f414e6038f04b6a:python-pycryptodome/.pkgfiles
 f:f4bb642baedcb97afe0e5fda240abb36:python-pycryptodome/spkgbuild
 f:24f813a19bbf557b5b78fbd67b513383:python-anyio/spkgbuild
 f:e48a013a6a650e6d35acb02fa943986f:python-brotlipy/spkgbuild
-f:f4ae5f59f5a75238897f1fdb6936aa4d:python-blinker/spkgbuild
+f:6e791223ed55ed5f7c776b18aaeb24c9:python-blinker/spkgbuild
+f:07f31533a2204802bf118330c30e7414:python-chameleon/spkgbuild
 f:d46bf0b048e3fd0925804e7748127beb:python-autobahn/spkgbuild
 f:c9fe52db35e76824b84c5b1e9f995179:python-cachy/spkgbuild
 f:699675ccd711536d0385789aa67b5394:python-bitstring/spkgbuild
+f:a0cd56befd0525c5fdf32cf3f6c88e88:python-characteristic/spkgbuild
 f:541366f8757dac63973e1842c2c3d3b1:python-geoip/spkgbuild
 f:1cd289745d5e2ead0bbd497605a518ba:python-awkward/spkgbuild
 f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
-f:ac44a971a87ecc7f6779ed963b417d97:python-btchip/spkgbuild
+f:16414382ab0d0b25fd3cee6a503c42ed:python-btchip/spkgbuild
 f:007b8a182f3ba5345cfc6129bffbbcbd:python-arpeggio/spkgbuild
 f:92dc566419dbe85f5800f0a95d5104d1:python-caja/spkgbuild
 f:a8c992d556dc6b8ddd25bd81f65dbe28:python-aiorpcx/spkgbuild
@@ -266,6 +277,8 @@ f:02d8c2ec4ef654a758d21e2cf67dbc94:python-biscuits/spkgbuild
 f:20a0c84dcff81c89fcbc46e4ef85cb09:python-aiomysql/spkgbuild
 f:64eda91635464d6b752583b098ddf3d8:python-axolotl/spkgbuild
 f:1c53949a4037842cd7e0fbd25483202c:python-celery/spkgbuild
+f:c18e9919523b06541e13d169aefb9a6a:python-cfgv/spkgbuild
+f:e082fd5cac687730d070018ba664c3dd:python-cfn-lint/spkgbuild
 f:c41ca121c490477509603d425db804b1:python-pafy/.checksums
 f:bf7b61ef6c19acf1c110cabf879a8705:python-pafy/.pkgfiles
 f:0df00557a9a875a8f812014525d3181d:python-pafy/spkgbuild
@@ -364,7 +377,7 @@ f:70fe0d3b2ae4e1249a5837abd4851682:python-aiosqlite/spkgbuild
 f:6e8a179d792fc6cf4ec950f297814472:python-aiohttp-socks/spkgbuild
 f:066f6d399ded16d1316d8641cd4bda64:python-black/spkgbuild
 f:525438cd0f7e8cbfc57f1781e63b0ce4:python-aresponses/spkgbuild
-f:a63430692d469efca8192efd85f8bb3e:python-cchardet/spkgbuild
+f:8ad9b1ad495bcd5383de724ec285c585:python-cchardet/spkgbuild
 f:914e323cd46c21a4928a0997d9453e2b:python-authlib/spkgbuild
 f:84588f6830c6ea8d078e7e0020685660:python-cairocffi/spkgbuild
 f:b2b860b0e1b46e9cb0d08741b700ccc3:python-asn1crypto/spkgbuild
@@ -378,7 +391,7 @@ f:b783199720d2407e2adeab57df7f42b9:python-calmjs.types/spkgbuild
 f:9f4069251e8291d99f96d92a22d3fa29:python-lxml/.checksums
 f:7065641e3189e3a53199c856128164d5:python-lxml/.pkgfiles
 f:ac516bac3a4e76b859428f377d838b35:python-lxml/spkgbuild
-f:a46edd9291787f27db933e21a8b4dffd:python-babel/spkgbuild
+f:9c7e687438500099fc166671e0a3de26:python-babel/spkgbuild
 f:c1c8d0cb73ec5be7c190644c511a2d88:python-argh/spkgbuild
 f:d3a772addd703229aa5b81ae695b58a3:python-aws-xray-sdk/spkgbuild
 f:fef1461be5a4af56abb78b209005da53:python-xdg/.checksums
@@ -407,7 +420,7 @@ f:319dc5cbab3259a6131c2ee5d85d6cfe:python-atspi/.pkgfiles
 f:9991f25ab15b1436213b0156e957f1a3:python-atspi/spkgbuild
 f:9c406bc5887798dc8aa88b2db1d1d9c3:python-cairo/.checksums
 f:033e1711d1148e896fe00848ba318fd0:python-cairo/.pkgfiles
-f:4f3c1da9f7ac8bb9963981a715cc7c6c:python-cairo/spkgbuild
+f:22cfd9f4ed33c59df1e40dd9eb2f5dad:python-cairo/spkgbuild
 f:6cd7575631da673f1974174e4084b8c9:python-urwid/.checksums
 f:ca9c87a6c3bf4ff8d84f9a85a706baa9:python-urwid/.pkgfiles
 f:4cb451ad99adec29325cb010ad1a5ded:python-urwid/spkgbuild
@@ -433,6 +446,7 @@ f:8cde70d07fe12cbb0b76f8d937689f4f:python-billiard/spkgbuild
 f:28e7c91660d1d314468c47f81633b5d7:python-setproctitle/spkgbuild
 f:b5bfcf1fa7adcfad05c01c2b33a068d2:python-pyopenssl/spkgbuild
 f:a12fb0e38700ecd85cfa33a0141aaa5c:python-asynctest/spkgbuild
+f:6f8b0cf5947d408cf7404e3b5db5355f:python-chai/spkgbuild
 f:2b2c6445bbd4df62b1dcfa7fe8912e84:python-build/spkgbuild
 f:64ead1152a2c52e8ee66226b81f117ae:python-aiofiles/spkgbuild
 f:4f25b6639c7cb5c1f406f5c2d52092f6:python-btrfs/spkgbuild

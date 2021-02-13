@@ -7,6 +7,7 @@ version=2.1.7
 release=2
 
 source="https://files.pythonhosted.org/packages/source/c/cchardet/cchardet-$version.tar.gz"
+options="!checksum"
 
 build() {
    cd cchardet-$version
