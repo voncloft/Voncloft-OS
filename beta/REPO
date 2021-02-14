@@ -1,7 +1,11 @@
 d:plasma-depends
 d:kf5-depends
+d:kde-deps-installer
 d:kde-deps
 f:66ee96f8a89b81a377684914ab160401:plasma-depends/spkgbuild
 f:2a5898cf765587e3873be9ee201942fb:kf5-depends/spkgbuild
-f:6c6c71c900f9c5ad17abbacee770c52a:kde-deps/spkgbuild
-f:45a4e2e7197a87968d465736c25ab704:todo.txt
+f:7908230f43a3bf18de8e37999e6e0c8e:kde-deps-installer/plasma-package-installer
+f:feb050bcef67ac94d0b677434b2bf72b:kde-deps-installer/spkgbuild
+f:b21d768a6c3846bdd03dfbb720142b9c:kde-deps-installer/kf5-package-installer
+f:120e65a1aa66c4cbbb323d098253aa6b:kde-deps/spkgbuild
+f:5a68c744023aec2530c6f3ad6a2e729c:todo.txt

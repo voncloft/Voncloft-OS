@@ -1,0 +1,15 @@
+# description : a kde installer that can be used in spkgbuild scripts
+# depends : 
+
+name=kde-package-installer
+version=1.0
+release=1
+
+source="kde-package-installer"
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install -D -m755 $SRC/kf5-package-installer $PKG/usr/bin/
+	install -D -m766 $SRC/plasma-package-installer $PKG/usr/bin/
+}
