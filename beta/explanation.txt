@@ -31,3 +31,8 @@ kf5 - keep kf5 spkgbuild's here
 plasma - keep all plasma spkgbuild's here
 kde - shouldn't have much its just the gateway for kf5 and plasma should only have the 'primer' to start a full blown installation and the 
 toolkit for the packages
+
+Version sheming:
+kde/kde5/spkgbuild - only the version will drop the decimal for example kf5 and plasma5 ...its gonna be version 5
+kf5/kf5*/spkgbuild - version will include decimal
+plasma/plasma*/spkgbuild - will include decimal 
