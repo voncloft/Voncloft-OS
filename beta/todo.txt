@@ -3,6 +3,6 @@ for each kf5 package it will need to have kf5-depends as the depends
 
 Basically get the "crap" out of the way before moving on to any packages for kde to begin with.
 
-Try to create a program called kde-install where it will PKG everythin up.....or you can do a for loop like you did for python or perl
+use a for loop script like you did for python and perl and for each kf5 and plasma package put the corresponding installer in the command line followed by make DESTDIR=$PKG install
 
 work on 'm' packages for depends of either packages
