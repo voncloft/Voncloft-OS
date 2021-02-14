@@ -21,6 +21,7 @@ d:python-pysocks
 d:python-six
 d:python-anyjson
 d:python-sip-pyqt5
+d:python-cinderclient
 d:python-websocket-client
 d:python-apscheduler
 d:python-bitvector
@@ -34,6 +35,7 @@ d:python-braintree
 d:python-bcrypt
 d:python-antlr4
 d:python-astunparse
+d:python-cherrypy
 d:python-astral
 d:python-pycryptodome
 d:python-anyio
@@ -139,8 +141,10 @@ d:python-pyqt5
 d:python-h2
 d:python-calmjs.types
 d:python-lxml
+d:python-cheroot
 d:python-babel
 d:python-argh
+d:python-cjkwrap
 d:python-aws-xray-sdk
 d:python-xdg
 d:python-pillow
@@ -180,6 +184,7 @@ d:python-chai
 d:python-build
 d:python-aiofiles
 d:python-btrfs
+d:python-ciso8601
 d:python-bleach
 d:python-sip
 d:python-cerberus
@@ -234,6 +239,7 @@ f:87d3f9e81e6271f3d704cecd18cb7780:python-anyjson/spkgbuild
 f:e9eac96fc62cda5cc43e1d064ff9659f:python-sip-pyqt5/.checksums
 f:d382eafca0e89fe3a0040afdea833ce2:python-sip-pyqt5/.pkgfiles
 f:06a323c7d5dedfd33ea808c52e87b465:python-sip-pyqt5/spkgbuild
+f:432968ccda68ba823a4f836b06e5477c:python-cinderclient/spkgbuild
 f:475a4765625dd4faea76c1c901d05d94:python-websocket-client/.checksums
 f:2946197643ee1a3f26c386508815fc1c:python-websocket-client/.pkgfiles
 f:8d5e46f1b35500f1b3515b66ec992222:python-websocket-client/spkgbuild
@@ -251,6 +257,7 @@ f:32889fd9601996e4070bb905952fda85:python-braintree/spkgbuild
 f:be439e8b4d857f0e9921465e1854f50a:python-bcrypt/spkgbuild
 f:dd0b82e90b7f80cac765ca340c217b4d:python-antlr4/spkgbuild
 f:85d80a72cfa7bb76880042ec51c7a37d:python-astunparse/spkgbuild
+f:5b97646347fb0c55c891db7bbdd6c96f:python-cherrypy/spkgbuild
 f:3503eb40f6d21ab4d2d137369bd589d5:python-astral/spkgbuild
 f:8a86746cb881ca0dd0ac0babee0944d6:python-pycryptodome/.checksums
 f:9d3ccbb0e65668876f414e6038f04b6a:python-pycryptodome/.pkgfiles
@@ -391,8 +398,10 @@ f:b783199720d2407e2adeab57df7f42b9:python-calmjs.types/spkgbuild
 f:9f4069251e8291d99f96d92a22d3fa29:python-lxml/.checksums
 f:7065641e3189e3a53199c856128164d5:python-lxml/.pkgfiles
 f:ac516bac3a4e76b859428f377d838b35:python-lxml/spkgbuild
+f:a4a67da66a2b66afd91670c8311e48c7:python-cheroot/spkgbuild
 f:9c7e687438500099fc166671e0a3de26:python-babel/spkgbuild
 f:c1c8d0cb73ec5be7c190644c511a2d88:python-argh/spkgbuild
+f:aba7eac7145a27bcb8d21fdbf329d598:python-cjkwrap/spkgbuild
 f:d3a772addd703229aa5b81ae695b58a3:python-aws-xray-sdk/spkgbuild
 f:fef1461be5a4af56abb78b209005da53:python-xdg/.checksums
 f:4fb5112045e57b6f54bbeed07eb59b2d:python-xdg/.pkgfiles
@@ -450,6 +459,7 @@ f:6f8b0cf5947d408cf7404e3b5db5355f:python-chai/spkgbuild
 f:2b2c6445bbd4df62b1dcfa7fe8912e84:python-build/spkgbuild
 f:64ead1152a2c52e8ee66226b81f117ae:python-aiofiles/spkgbuild
 f:4f25b6639c7cb5c1f406f5c2d52092f6:python-btrfs/spkgbuild
+f:2679f638b1ed8c272a98691d5dab4bd0:python-ciso8601/spkgbuild
 f:47da596c2e62d66f0fbc9bc81ee3144e:python-bleach/spkgbuild
 f:e9eac96fc62cda5cc43e1d064ff9659f:python-sip/.checksums
 f:382c9607fe1c15b291fe3a714c11a049:python-sip/.pkgfiles

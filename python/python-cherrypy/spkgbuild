@@ -4,11 +4,10 @@
 _name=${name#python-}
 url=https://cherrypy.org
 name=python-cherrypy
-_name=${name#python-}
 version=18.6.0
 release=4
 
-source="
+source="https://github.com/${_name}/${_name}/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {

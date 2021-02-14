@@ -7,9 +7,9 @@ version=2.2
 release=7
 
 source="https://pypi.io/packages/source/C/CJKwrap/CJKwrap-$version.tar.gz"
+options="!checksum"
 
 build() {
-   cd CJKwrap-$version
    cd CJKwrap-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

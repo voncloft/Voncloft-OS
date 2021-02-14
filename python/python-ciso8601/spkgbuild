@@ -6,11 +6,11 @@ name=python-ciso8601
 version=2.1.3
 release=3
 
-source="git+https://github.com/closeio/ciso8601.git#tag=42b7af38a619d0024be6a78be4efffcf33c749b0
+source="https://github.com/closeio/ciso8601/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ciso8601
+   cd ciso8601-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
