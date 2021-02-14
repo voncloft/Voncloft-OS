@@ -1,0 +1,8 @@
+kde5 - full meta of kde desktop
+kdedeps - meta of all dependencies for kde5 to event continue references kf5 and plasma depends
+kf5-depends - meta of all kf5 depends
+plasma-depends - meta of all plasma depends
+kf5-programs - all kf5 programs in the kde desktop making sure depends are satisfied first in kde5
+plasma-programs - all plasma programs in the kde desktop making sure depends are satisfied first in kde5
+
+kde-deps-installer - a quick and easy hack to install programs for kde

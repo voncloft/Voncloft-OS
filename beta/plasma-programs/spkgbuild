@@ -1,0 +1,14 @@
+# description : installs all plasma programs
+# depends : kdecoration libkscreen libksysguard breeze breeze-gtk kscreenlocker oxygen kinfocenter ksysguard kwayland-server kwin
+# depends : plasma-workspace plasma-disks bluedevil kde-gtk-config khotkeys kmenuedit kscreen kwallet-pam kwayland-integration kwrited milou
+# depends : plasma-nm plasma-pa plasma-workspace-wallpapers polkit-kde-agent powerdevil plasma-desktop kdeplasma-addons kgamma5 ksshaskpass
+# depends : sddm-kcm discover kactivitymanager plasma-integration plasma-tests xdg-desktop-portal-kde drkonqi plasma-vault 
+# depends : plasma-browser-integration kde-cli-tools systemsettings plasma-thunderbolt 
+
+name=plasma-programs
+version=5.20
+release=1
+
+build() {
+	mkdir -pv $PKG/opt
+}

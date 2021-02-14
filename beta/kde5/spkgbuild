@@ -1,0 +1,10 @@
+# description : kde meta basically installs all of kde
+# depends : kde-deps plasma-programs kf5-programs
+
+name=kde5
+version=5
+release=1
+
+build () {
+	mkdir $PKG/opt
+}
