@@ -6,9 +6,10 @@ version=5.32.0
 release=1
 
 source="https://www.cpan.org/src/5.0/$name-$version.tar.xz"
+options="!checksum"
 
 build() {
-	cd $name-$version
+   cd $name-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install
