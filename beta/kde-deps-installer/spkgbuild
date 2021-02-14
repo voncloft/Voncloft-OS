@@ -5,7 +5,8 @@ name=kde-deps-installer
 version=1.0
 release=1
 
-source="kde-package-installer"
+source="kf5-package-installer
+	plasma-package-installer"
 options="!checksum"
 
 build() {
