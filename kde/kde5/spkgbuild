@@ -53,8 +53,9 @@ build () {
         install -v -dm755           $PKG/opt/kf5/share/icons &&
         ln -sfv /usr/share/icons/hicolor $PKG/opt/kf5/share/icons
 
-	mv $PKG/opt/kf5{,-$_version}
-	ln -sfv kf5-5.73.0 $PKG/opt/kf5
+	#this should have been created in kde-depends
+	mv /opt/kf5{,-$_version}
+	ln -sfv kf5-5.73.0 /opt/kf5
 
 	install -dvm 755 $PKG/usr/share/xsessions              &&
 	cd $PKG/usr/share/xsessions/                                   &&

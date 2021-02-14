@@ -13,7 +13,6 @@ d:thunar
 d:xsetroot
 d:clipit
 d:gnu-efi
-d:solid
 d:caja-actions
 d:mksh
 d:binutils
@@ -210,7 +209,6 @@ d:faad2
 d:wpebackend-fdo
 d:bamf
 d:llvm
-d:prison
 d:xbitmaps
 d:enchant
 d:caja
@@ -615,9 +613,6 @@ f:5d4e8f73a7420ba6997eb32b940d97f7:clipit/spkgbuild
 f:ba9f7858e3ad3106f1ac13ba483f4672:gnu-efi/.checksums
 f:713077138aac07b45c9c3a93dfacff7a:gnu-efi/.pkgfiles
 f:b56d14d9a67a21e7c8a87d9cf3353756:gnu-efi/spkgbuild
-f:0c5bf3a170ecaaaf94fab36ba0b1fb3f:solid/.checksums
-f:49ad120413be4e6e0b9737fd2b04e975:solid/.pkgfiles
-f:2f3e334c217a65233082caa9fdc4d74d:solid/spkgbuild
 f:d30ad03145e2e6df66f45cf535e7731c:caja-actions/.checksums
 f:de6a3f607c2968568d4d4e40a2b16ac4:caja-actions/.pkgfiles
 f:b6ba0181f7deacc37c9961d58d256897:caja-actions/spkgbuild
@@ -1281,9 +1276,6 @@ f:d7784fd946bf89ff33cd6e41b3badb5b:llvm/.checksums
 f:3642e968c3d8458a8a590ad119b05cc8:llvm/.pkgfiles
 f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
 f:8dbbc233c48f441b3fb83cb2a786d0fe:llvm/spkgbuild
-f:ca191af8cfb63a5c60437babc4c14dd9:prison/.checksums
-f:8652b9ed1f42c1989d5c6982122003e8:prison/.pkgfiles
-f:2ea577e076c055a2e7b9bbd22f99801f:prison/spkgbuild
 f:87b17ae3653f7f6378565751ca317825:xbitmaps/.checksums
 f:44dcbc180ca323d948a1f6e7040bb702:xbitmaps/.pkgfiles
 f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild

@@ -1,7 +1,6 @@
 d:polkit-qt
 d:networkmanager-qt
 d:qterminal
-d:sonnet
 d:libdbusmenu-qt
 d:modemmanager-qt
 d:qbittorrent
@@ -10,7 +9,6 @@ d:qtwebengine
 d:qt5-webkit
 d:qca
 d:qt5-webengine-widevine
-d:qqc2-desktop-style
 d:qtermwidget
 f:b8804b12ea477a4691c9f47e547c6c53:polkit-qt/spkgbuild
 f:e3beca780637a6ec72bf2ed7c290c107:networkmanager-qt/.checksums
@@ -19,9 +17,6 @@ f:03c67f2452e32eac54f4a4b00b6fa10c:networkmanager-qt/spkgbuild
 f:a5680af293ffae9626a74e3749c6e326:qterminal/.checksums
 f:bc7e291c7a90c29f48636a73da4c2c40:qterminal/.pkgfiles
 f:6ca91afa32015f7389bd8033a837adf1:qterminal/spkgbuild
-f:67e56c2dc8386ef53b5bfaff067235da:sonnet/.checksums
-f:252b62e13edae50d9b706c01fd54c40c:sonnet/.pkgfiles
-f:0e43d0a4e74ceeaa4e1d4dcc2d544a8a:sonnet/spkgbuild
 f:601bf37f4156b229010eb9944f70d649:libdbusmenu-qt/spkgbuild
 f:4d4c332be085898fb8a1a73229dafb8b:modemmanager-qt/.checksums
 f:32f7c4aedfc3b32e02ce990c8665a362:modemmanager-qt/.pkgfiles
@@ -48,9 +43,6 @@ f:7fdbb98eee0dfc03ab48de7c8e8c2e93:qca/spkgbuild
 f:f5c0e04b9d6b7cdc339cdf10b39fb94b:qt5-webengine-widevine/.checksums
 f:a9d33297cc60aa8594d26ba0719107c0:qt5-webengine-widevine/.pkgfiles
 f:ab645dc1cf30ed038c50579c62f61dd2:qt5-webengine-widevine/spkgbuild
-f:0e9f23d8d0ed4c39c51d7ab4370c1cf2:qqc2-desktop-style/.checksums
-f:c2e81da6ae9eac11759bf860e70afefc:qqc2-desktop-style/.pkgfiles
-f:c987a0828b607c6daad92042478ae091:qqc2-desktop-style/spkgbuild
 f:6e9fe9ad592bad50b8ebb01c504d1b84:qtermwidget/.checksums
 f:221257e8ce151a4f2d50dde84df4b067:qtermwidget/.pkgfiles
 f:7cb00e6eb16895d6f31f941d2b515472:qtermwidget/spkgbuild
