@@ -1,0 +1,12 @@
+# description : these are all the kf5 dependencies
+# depends : boost extra-cmake-modules docbook-xml docbook-xsl giflib libepoxy libgcrypt libical libjpeg-turbo libpng libxslt lmdb qrencode phonon plasma-wayland-protocols shared-mime-info URI Wget  Aspell Avahi libdbusmenu-qt NetworkManager polkit-qt BlueZ ModemManager Datamatrix Oxygen-fonts Noto-fonts Doxygen Jinja2 yYAML JasPer OpenEXR MIT-Kerberos UDisks UPower GPGME Hspell Hunspell 
+
+name=kf5-depends
+version=5.77
+release=1
+
+
+build(){
+	mkdir -p $PKG/opt
+
+}
