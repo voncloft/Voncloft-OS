@@ -1,5 +1,7 @@
 # description : all plasma dependencies
-# depends : GConf GTK2 GTK3 KDE-Frameworks libpwquality libxkbcommon3 Mesa NetworkManager  pipewire PulseAudio qca sassc taglibxcb-util-cursor fftw gsettings-desktop-schemas libdbusmenu-qt libcanberra libinput Linux-PAM lm-sensors oxygen-icons pciutils smartmontools GLU ibus Xorg-Synaptics-Driver appstream-qt KDevPlatform libgps libhybris libraw1394 mockcpp packagekit-qt Qalculate Qapt SCIM socat
+# depends : gconf gtk3 gtk2 libpwquality libxkbcommon3 mesa networkmanager pipewire pulseaudio qca sassc taglibxcb-util-cursor 
+# depends : fftw gsettings-desktop-schemas libdbusmenu-qt libcanberra libinput linux-pam lm-sensors oxygen-icons pciutils smartmontools glu
+# depends : ibus xorg-synaptics-driver appstream-qt kdevplatform libgps libhybris libraw1394 mockcpp packagekit-qt qalculate qapt scim socat
 
 name=plasma-depends
 version=5.20.4
