@@ -36,3 +36,7 @@ Version sheming:
 kde/kde5/spkgbuild - only the version will drop the decimal for example kf5 and plasma5 ...its gonna be version 5
 kf5/kf5*/spkgbuild - version will include decimal
 plasma/plasma*/spkgbuild - will include decimal 
+
+
+use plasmapackageinstaller for plasma and apps
+kf5 for kf5 frameworks
