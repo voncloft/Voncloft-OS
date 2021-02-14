@@ -1,4 +1,5 @@
 d:plasma-depends
+d:plasma-wayland-protocals
 d:ksysguard
 d:breeze-plymouth
 d:plasma-nm
@@ -49,7 +50,8 @@ d:kgamma5
 d:libkscreen
 d:sddm-kcm
 d:kwallet-pam
-f:b1acc10e8842812e15ce67711194dfe4:plasma-depends/spkgbuild
+f:059f02568ce1d6b4df1e9410a92fc742:plasma-depends/spkgbuild
+f:517dc71afd1b1a1eda0ba2bc100876f3:plasma-wayland-protocals/spkgbuild
 f:28e24b3e51c9479bbd061fca36393880:ksysguard/spkgbuild
 f:5378435422411ac1c5a0585d3c1b379c:breeze-plymouth/spkgbuild
 f:e4d2c7ff457af2165a8bbc8f0955da4e:plasma-nm/spkgbuild

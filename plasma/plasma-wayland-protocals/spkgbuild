@@ -1,0 +1,17 @@
+# description : core package for kf5
+# depends extra-cmake-modules
+
+name=plasma-wayland-protocals
+version=1.1.1
+release=1
+
+source="https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.1.1.tar.xz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   mkdir build &&
+   cd    build &&
+   cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+   make DESTDIR=$PKG install
+}

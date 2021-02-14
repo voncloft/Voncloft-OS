@@ -1,6 +1,6 @@
 # description : Core components for the kde desktop all plasma dependencies
 # depends : gconf gtk3 gtk2 libpwquality libxkbcommon3 mesa networkmanager pipewire pulseaudio qca sassc taglibxcb-util-cursor 
-# depends : fftw gsettings-desktop-schemas libdbusmenu-qt libcanberra libinput linux-pam lm-sensors oxygen-icons pciutils smartmontools glu
+# depends : fftw gsettings-desktop-schemas libdbusmenu-qt libcanberra libinput linux-pam lm_sensors oxygen-icons5 pciutils smartmontools glu
 # depends : ibus xorg-synaptics-driver appstream-qt kdevplatform libgps libhybris libraw1394 mockcpp packagekit-qt qalculate qapt scim socat
 
 name=plasma-depends
