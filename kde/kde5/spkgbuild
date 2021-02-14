@@ -8,7 +8,7 @@ _version=5.73.0
 build () {
 	mkdir $PKG/opt
 
-	 cat >> $PKG/etc/profile.d/kf5.sh << "EOF"
+	 cat <<- EOF > $PKG/etc/profile.d/kf5.sh
         # Begin /etc/profile.d/kf5.sh
 
         export KF5_PREFIX=/opt/kf5
@@ -30,7 +30,7 @@ build () {
         # End /etc/profile.d/kf5.sh
         EOF
 
-        cat >> $PKG/etc/profile.d/qt5.sh << "EOF"
+        cat <<- EOF > $PKG/etc/profile.d/qt5.sh
         # Begin Qt5 changes for KF5
 
         pathappend $QT5DIR/plugins             QT_PLUGIN_PATH
@@ -39,7 +39,7 @@ build () {
         # End Qt5 changes for KF5
         EOF
 
-        cat >> $PKG/etc/ld.so.conf << "EOF"
+        cat <<-EOF > $PKG/etc/ld.so.conf
         # Begin KF5 addition
 
         /opt/kf5/lib
@@ -67,7 +67,7 @@ build () {
 	ln -sfv $PKG/opt/kf5/share/wayland-sessions/plasmawayland.desktop
 
 
-	cat > $PKG/etc/pam.d/kde << "EOF" 
+	cat <<- EOF > $PKG/etc/pam.d/kde 
 	# Begin /etc/pam.d/kde
 
 	auth     requisite      pam_nologin.so
@@ -83,7 +83,7 @@ build () {
 	# End /etc/pam.d/kde
 	EOF
 
-	cat > $PKG/etc/pam.d/kde-np << "EOF" 
+	cat <<-EOF > $PKG/etc/pam.d/kde-np 
 	# Begin /etc/pam.d/kde-np
 
 	auth     requisite      pam_nologin.so
@@ -99,7 +99,7 @@ build () {
 	# End /etc/pam.d/kde-np
 	EOF
 
-	cat > $PKG/etc/pam.d/kscreensaver << "EOF"
+	cat <<-EOF > $PKG/etc/pam.d/kscreensaver
 	# Begin /etc/pam.d/kscreensaver
 
 	auth    include system-auth
