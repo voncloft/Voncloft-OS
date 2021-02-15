@@ -7,9 +7,9 @@ version=2.2.4
 release=5
 
 source="https://files.pythonhosted.org/packages/source/p/$name/$name-$version.tar.gz"
+options="!checksum"
 
 build() {
-   cd python-daemon-$version
    cd python-daemon-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

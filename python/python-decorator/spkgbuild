@@ -3,18 +3,15 @@
 
 _name=decorator
 url=https://pypi.python.org/pypi/decorator
-_name=decorator
+name=python-decorator
 version=4.4.2
 release=3
 
 source="https://pypi.python.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd ${_name}-${version}
-   cd $_name-$version
    cd ${_name}-$version
-   cd ${_name}2-${version}
-   cd ${_name}2-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -47,12 +47,15 @@ d:python-cachy
 d:python-bitstring
 d:python-characteristic
 d:python-geoip
+d:python-decorator
+d:python-distlib
 d:python-awkward
 d:python-bottle
 d:python-btchip
 d:python-arpeggio
 d:python-caja
 d:python-aiorpcx
+d:python-dukpy
 d:python-isodate
 d:python-biscuits
 d:python-aiomysql
@@ -61,6 +64,7 @@ d:python-click-threading
 d:python-celery
 d:python-cfgv
 d:python-click-didyoumean
+d:python-dateutil
 d:python-cfn-lint
 d:python-pafy
 d:python-argparse-manpage
@@ -159,6 +163,7 @@ d:python-xdg
 d:python-pillow
 d:python-aiopg
 d:python-service-identity
+d:python-defusedxml
 d:python-args
 d:python-click-default-group
 d:python-basictracer
@@ -191,6 +196,7 @@ d:python-bottleneck
 d:python-aiohttp-cors
 d:python-blosc
 d:python-pygments
+d:python-daemon
 d:python-billiard
 d:python-setproctitle
 d:python-pyopenssl
@@ -288,12 +294,15 @@ f:c9fe52db35e76824b84c5b1e9f995179:python-cachy/spkgbuild
 f:699675ccd711536d0385789aa67b5394:python-bitstring/spkgbuild
 f:a0cd56befd0525c5fdf32cf3f6c88e88:python-characteristic/spkgbuild
 f:541366f8757dac63973e1842c2c3d3b1:python-geoip/spkgbuild
+f:fd85ae9e9acba1d1d1c82854d757e514:python-decorator/spkgbuild
+f:4b35fa8cb108f9d287c01f8c60aff4c0:python-distlib/spkgbuild
 f:1cd289745d5e2ead0bbd497605a518ba:python-awkward/spkgbuild
 f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
 f:16414382ab0d0b25fd3cee6a503c42ed:python-btchip/spkgbuild
 f:007b8a182f3ba5345cfc6129bffbbcbd:python-arpeggio/spkgbuild
 f:92dc566419dbe85f5800f0a95d5104d1:python-caja/spkgbuild
 f:a8c992d556dc6b8ddd25bd81f65dbe28:python-aiorpcx/spkgbuild
+f:3a154a7181fb141c2ae983651b2750a1:python-dukpy/spkgbuild
 f:368d0336f28c9c71abcca501c3e01270:python-isodate/.checksums
 f:7b647a8b0afc9784b11f0900dce841a0:python-isodate/.pkgfiles
 f:6476dd0d2eec11b83fc1e54e96020411:python-isodate/spkgbuild
@@ -304,6 +313,7 @@ f:190fcba72a0f582c84e76708ec662fbf:python-click-threading/spkgbuild
 f:1c53949a4037842cd7e0fbd25483202c:python-celery/spkgbuild
 f:c18e9919523b06541e13d169aefb9a6a:python-cfgv/spkgbuild
 f:d1362c98a92c12c5e59e4d06a2d76960:python-click-didyoumean/spkgbuild
+f:3d63616fc955384ad8933419832d22d4:python-dateutil/spkgbuild
 f:e082fd5cac687730d070018ba664c3dd:python-cfn-lint/spkgbuild
 f:c41ca121c490477509603d425db804b1:python-pafy/.checksums
 f:bf7b61ef6c19acf1c110cabf879a8705:python-pafy/.pkgfiles
@@ -437,6 +447,7 @@ f:a7aeb384fe3b21930192e11f71d0d138:python-pillow/.pkgfiles
 f:1906aecff36cb48cd84054e1dc8a1602:python-pillow/spkgbuild
 f:4c5d592c5db1c9bd06f6f9599ea7d0b8:python-aiopg/spkgbuild
 f:345e2d701a739ff9fbb0bf125d8ac1a6:python-service-identity/spkgbuild
+f:a15a328937ec2cec7c1fddb0cdb6de6c:python-defusedxml/spkgbuild
 f:85ec31a763384cdb8a5a48afc5f4b466:python-args/spkgbuild
 f:441f36911e04422bb16b8c6c31f2accb:python-click-default-group/spkgbuild
 f:1f316bc7350a2ed3a501d177fcc09b49:python-basictracer/spkgbuild
@@ -483,6 +494,7 @@ f:23989c1312083888bf52713fb27f5cc4:python-blosc/spkgbuild
 f:fb8fa606229b7ec0ac68e943698fdd00:python-pygments/.checksums
 f:a17ce456da7c7d9334d1e671e13643c6:python-pygments/.pkgfiles
 f:30224353e51c4b061695ba4a12bb4978:python-pygments/spkgbuild
+f:6d89ddcb8794aa06c7a4d03943415226:python-daemon/spkgbuild
 f:8cde70d07fe12cbb0b76f8d937689f4f:python-billiard/spkgbuild
 f:28e7c91660d1d314468c47f81633b5d7:python-setproctitle/spkgbuild
 f:b5bfcf1fa7adcfad05c01c2b33a068d2:python-pyopenssl/spkgbuild
