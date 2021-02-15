@@ -6,7 +6,7 @@ name=python-constantly
 version=15.1.0
 release=8
 
-source="git+https://github.com/twisted/constantly.git#tag=$version
+source="https://github.com/twisted/constantly/archive/$version.tar.gz"
 options="!checksum"
 
 build() {
