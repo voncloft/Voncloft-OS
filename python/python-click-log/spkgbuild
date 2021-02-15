@@ -1,18 +1,17 @@
-# description : Colorization of help messages in Click
+# description : Logging integration for Click
 # depends : python-click
 
-_name=click-help-colors
-url=https://github.com/click-contrib/click-help-colors
-_name=click-help-colors
-name=python-click-help-colors
-version=0.9
-release=1
+_name=click-log
+url=https://github.com/click-contrib/click-log
+name=python-click-log
+version=0.3.2
+release=7
 
 source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

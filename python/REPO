@@ -57,6 +57,7 @@ d:python-isodate
 d:python-biscuits
 d:python-aiomysql
 d:python-axolotl
+d:python-click-threading
 d:python-celery
 d:python-cfgv
 d:python-click-didyoumean
@@ -119,6 +120,7 @@ d:python-aiohttp
 d:python-yaml
 d:python-nose
 d:python-aioitertools
+d:python-click-help-colors
 d:python-constantly
 d:python-adblock
 d:python-aiogram
@@ -127,6 +129,7 @@ d:python-ansicolor
 d:python-aioresponses
 d:python-boto
 d:python-pyqtwebengine
+d:python-click-plugins
 d:python-canonicaljson
 d:python
 d:python-boto3
@@ -160,6 +163,7 @@ d:python-args
 d:python-click-default-group
 d:python-basictracer
 d:python-apispec
+d:python-contextlib2
 d:python-alembic
 d:python-pypeg2
 d:python-case
@@ -175,7 +179,9 @@ d:python-apispec-webframeworks
 d:python-botocore
 d:python-distro
 d:python-bitcoinlib
+d:python-click-repl
 d:python-cleo
+d:python-click-log
 d:python-click
 d:python-chardet
 d:python-blessed
@@ -294,6 +300,7 @@ f:6476dd0d2eec11b83fc1e54e96020411:python-isodate/spkgbuild
 f:02d8c2ec4ef654a758d21e2cf67dbc94:python-biscuits/spkgbuild
 f:20a0c84dcff81c89fcbc46e4ef85cb09:python-aiomysql/spkgbuild
 f:64eda91635464d6b752583b098ddf3d8:python-axolotl/spkgbuild
+f:190fcba72a0f582c84e76708ec662fbf:python-click-threading/spkgbuild
 f:1c53949a4037842cd7e0fbd25483202c:python-celery/spkgbuild
 f:c18e9919523b06541e13d169aefb9a6a:python-cfgv/spkgbuild
 f:d1362c98a92c12c5e59e4d06a2d76960:python-click-didyoumean/spkgbuild
@@ -378,6 +385,7 @@ f:f9134888ec5e917a8d94637d211f164f:python-yaml/.pkgfiles
 f:372ce688df5766beb0bcba74434d0851:python-yaml/spkgbuild
 f:3cfcd41f6a15d30b3f5a255170f6f94d:python-nose/spkgbuild
 f:fea11bc9bd8b31d794e57e9b3ce3469b:python-aioitertools/spkgbuild
+f:ffd4b5eb09d4183a2fd55135d117860c:python-click-help-colors/spkgbuild
 f:393870d005271ff280caaefcf4eb40d6:python-constantly/spkgbuild
 f:e2b05566cc2147416fb9d9479a68476e:python-adblock/spkgbuild
 f:74d7cfe875944e9eb91cbfc894682b58:python-aiogram/spkgbuild
@@ -388,6 +396,7 @@ f:5dc12094d51f5815dc997cfc121465b7:python-boto/spkgbuild
 f:d53bcf227e1509686fc59d4fdf47b917:python-pyqtwebengine/.checksums
 f:e9d92b858a5328be551be0b2395eadf1:python-pyqtwebengine/.pkgfiles
 f:dee9124adcb13ee132d961af3d44b647:python-pyqtwebengine/spkgbuild
+f:87a914fd28cc2a26b0bd9baafb65ed9b:python-click-plugins/spkgbuild
 f:a81f2a32e427e19ad3313da53e501e38:python-canonicaljson/spkgbuild
 f:15575a0e60f8ebcf792af6c155286e78:python/.checksums
 f:61ac27f4539b261ccfb0064fc4cc924f:python/.pkgfiles
@@ -432,6 +441,7 @@ f:85ec31a763384cdb8a5a48afc5f4b466:python-args/spkgbuild
 f:441f36911e04422bb16b8c6c31f2accb:python-click-default-group/spkgbuild
 f:1f316bc7350a2ed3a501d177fcc09b49:python-basictracer/spkgbuild
 f:7c706d61c53026f5569d23f4739730aa:python-apispec/spkgbuild
+f:21913d0cc4b397b2cd8c997ac5c6d6fe:python-contextlib2/spkgbuild
 f:954d44b588cd5925ac4e87a5b96d17f6:python-alembic/spkgbuild
 f:8ac026720cd7f22e81e46d3391b01ea1:python-pypeg2/.checksums
 f:d94987783fd178cc2214087201659056:python-pypeg2/.pkgfiles
@@ -455,7 +465,9 @@ f:11dcc0959bb08d1dd6ef1ef45ce35bec:python-apispec-webframeworks/spkgbuild
 f:13f42c5f7f2f089393f6d925a94c97c0:python-botocore/spkgbuild
 f:6a865a3db08301f631bcb3ac6ed2850b:python-distro/spkgbuild
 f:62b0150e4290538b5fc5dc03ad16bd90:python-bitcoinlib/spkgbuild
+f:46db16359e0c13715421cefb06418247:python-click-repl/spkgbuild
 f:2b04ea3d8365e131d9a1273802c65b3a:python-cleo/spkgbuild
+f:1399ce8d9931ca3b5d93db8ee69e3ce0:python-click-log/spkgbuild
 f:463fa87ab0e9bd12cc2a7af1c3fc7c55:python-click/spkgbuild
 f:7d68e08211d4733146131cf4d8d4aced:python-chardet/.checksums
 f:e6d9cb8843e3f7035b9662c78423f7bc:python-chardet/.pkgfiles

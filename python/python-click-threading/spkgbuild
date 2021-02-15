@@ -1,18 +1,17 @@
-# description : Logging integration for Click
+# description : Multithreaded Click apps made easy
 # depends : python-click
 
-_name=click-log
-url=https://github.com/click-contrib/click-log
-_name=click-log
-name=python-click-log
-version=0.3.2
-release=7
+_name=click-threading
+url=https://pypi.python.org/pypi/click-threading
+name=python-click-threading
+version=0.4.4
+release=9
 
 source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name}-${version}
+   cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
