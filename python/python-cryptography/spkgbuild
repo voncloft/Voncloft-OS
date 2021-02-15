@@ -2,13 +2,14 @@
   # depends : python-six python-cffi python-idna python-setuptools python-asn1crypto
 
 url=https://pypi.python.org/pypi/cryptography
+name=python-cryptography
 version=3.3.1
 release=1
 
 source="https://pypi.io/packages/source/c/cryptography/cryptography-$version.tar.gz"
+options="!checksum"
 
 build() {
-   cd cryptography-$version
    cd cryptography-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

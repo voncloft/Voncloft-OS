@@ -69,6 +69,7 @@ d:python-bowler
 d:python-aiohttp-apispec
 d:python-authheaders
 d:python-iso-639
+d:python-cssselect
 d:python-bluepy
 d:python-zope-interface
 d:python-cbor
@@ -77,6 +78,7 @@ d:python-amqp
 d:python-apsw
 d:python-astor
 d:python-arrow
+d:python-cryptography
 d:python-auditwheel
 d:python-blessings
 d:python-behave
@@ -89,6 +91,7 @@ d:python-distutils-extra
 d:python-argcomplete
 d:python-betamax-matchers
 d:python-jinja
+d:python-colorama
 d:python-acme
 d:python-iso3166
 d:python-atpublic
@@ -116,6 +119,7 @@ d:python-aiohttp
 d:python-yaml
 d:python-nose
 d:python-aioitertools
+d:python-constantly
 d:python-adblock
 d:python-aiogram
 d:python-astroid
@@ -201,6 +205,7 @@ d:python-appdirs
 d:python-cached-property
 d:python-requests
 d:python-authres
+d:python-coverage
 d:python-asteval
 d:python-betamax-serializers
 d:python-urllib3
@@ -307,6 +312,7 @@ f:6ed74cb1219ffe695312aca54111fd82:python-authheaders/spkgbuild
 f:40b4fa947cf61edc43a0f8575f408b39:python-iso-639/.checksums
 f:6c5791c93abe413dfc40971e755d4168:python-iso-639/.pkgfiles
 f:50f0eb4f3f1244d6516eed9e5f9b8af7:python-iso-639/spkgbuild
+f:dedb37bfe17a0377cf5f43637bdaa9c6:python-cssselect/spkgbuild
 f:45450121e6bf535947c096d1733e7b47:python-bluepy/spkgbuild
 f:42479388c543fd906a4f12ce1457624f:python-zope-interface/spkgbuild
 f:4b7426618d05d4b961155c34e980e177:python-cbor/spkgbuild
@@ -315,6 +321,7 @@ f:7e186ba710c196a6f9868d4c9498b40d:python-amqp/spkgbuild
 f:8fedcdfbf140972f0462491832e7a51f:python-apsw/spkgbuild
 f:7e3f257be1089747fcc5a13350045638:python-astor/spkgbuild
 f:79d4aad65170051e5676ede72f468318:python-arrow/spkgbuild
+f:6ad277570e70e1bcdb3fd09094c338ca:python-cryptography/spkgbuild
 f:bf836bd3bcebe1c3df9a9cea5a8062e8:python-auditwheel/spkgbuild
 f:c539351359b34c8fb3746db05be4a854:python-blessings/spkgbuild
 f:bef25fe2e7baa05bd58db12863456ec2:python-behave/spkgbuild
@@ -335,6 +342,7 @@ f:d7a04c078b4f6dddf2eabe140e6e10ca:python-betamax-matchers/spkgbuild
 f:c2e682ff585d90bd2d6eb9d8f5c51dcd:python-jinja/.checksums
 f:7d6a31d48c280ae700162cfd3e5a4ebe:python-jinja/.pkgfiles
 f:d2b1ab50533e6085760fc730080ecdaa:python-jinja/spkgbuild
+f:91cde0a0f18f6817aca06ba677ea4388:python-colorama/spkgbuild
 f:2fa4a376386963349c420baa5cefd45a:python-acme/spkgbuild
 f:e9baac001ce7422c9e7c7c134ce516f8:python-iso3166/.checksums
 f:abb2a670cbec0d8ba38e1754512f1ef4:python-iso3166/.pkgfiles
@@ -370,6 +378,7 @@ f:f9134888ec5e917a8d94637d211f164f:python-yaml/.pkgfiles
 f:372ce688df5766beb0bcba74434d0851:python-yaml/spkgbuild
 f:3cfcd41f6a15d30b3f5a255170f6f94d:python-nose/spkgbuild
 f:fea11bc9bd8b31d794e57e9b3ce3469b:python-aioitertools/spkgbuild
+f:393870d005271ff280caaefcf4eb40d6:python-constantly/spkgbuild
 f:e2b05566cc2147416fb9d9479a68476e:python-adblock/spkgbuild
 f:74d7cfe875944e9eb91cbfc894682b58:python-aiogram/spkgbuild
 f:e65e12fb394b6a263c20cb7cc4d6af46:python-astroid/spkgbuild
@@ -489,6 +498,7 @@ f:f37804522ab7de3ba3cad2fc2322ba36:python-requests/.pkgfiles
 f:8a7b00d54a6225b499f21359f8d638af:python-requests/spkgbuild
 f:2e107b09a82000280d18965b3210837f:python-requests/certs.patch
 f:b05f5a0f6ad9ec6a74125e58f8b32af9:python-authres/spkgbuild
+f:41507b9e66ab8fba22300972b9a06264:python-coverage/spkgbuild
 f:b3ab790bd53fb59693f1cde690c38f53:python-asteval/spkgbuild
 f:774c4a7c227079ecebc732839c83b261:python-betamax-serializers/spkgbuild
 f:e61d7060c20faded0a4a0bba5869c5d6:python-urllib3/.checksums

@@ -1,15 +1,16 @@
 # description : Symbolic constants in Python
-  # depends : python
+# depends : python
 
 url=https://github.com/twisted/constantly
+name=python-constantly
 version=15.1.0
 release=8
 
 source="git+https://github.com/twisted/constantly.git#tag=$version
+options="!checksum"
 
 build() {
-   cd constantly
-   cd constantly
+   cd constantly-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
