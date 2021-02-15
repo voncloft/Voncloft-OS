@@ -6,7 +6,7 @@ name=python-dukpy
 version=0.3
 release=6
 
-source="dukpy-${version}.tar.gz"::${url}/archive/v${version}.tar.gz"
+source="${url}/archive/v${version}.tar.gz"
 options="!checksum"
 
 build() {
