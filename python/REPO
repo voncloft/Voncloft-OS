@@ -59,6 +59,7 @@ d:python-aiomysql
 d:python-axolotl
 d:python-celery
 d:python-cfgv
+d:python-click-didyoumean
 d:python-cfn-lint
 d:python-pafy
 d:python-argparse-manpage
@@ -140,6 +141,7 @@ d:python-argon2-cffi
 d:python-pyqt5
 d:python-h2
 d:python-calmjs.types
+d:python-clickclick
 d:python-lxml
 d:python-cheroot
 d:python-babel
@@ -151,6 +153,7 @@ d:python-pillow
 d:python-aiopg
 d:python-service-identity
 d:python-args
+d:python-click-default-group
 d:python-basictracer
 d:python-apispec
 d:python-alembic
@@ -168,6 +171,8 @@ d:python-apispec-webframeworks
 d:python-botocore
 d:python-distro
 d:python-bitcoinlib
+d:python-cleo
+d:python-click
 d:python-chardet
 d:python-blessed
 d:python-markupsafe
@@ -189,6 +194,7 @@ d:python-bleach
 d:python-sip
 d:python-cerberus
 d:python-asyncpg
+d:python-click-completion
 d:python-rencode
 d:python-pytz
 d:python-appdirs
@@ -285,6 +291,7 @@ f:20a0c84dcff81c89fcbc46e4ef85cb09:python-aiomysql/spkgbuild
 f:64eda91635464d6b752583b098ddf3d8:python-axolotl/spkgbuild
 f:1c53949a4037842cd7e0fbd25483202c:python-celery/spkgbuild
 f:c18e9919523b06541e13d169aefb9a6a:python-cfgv/spkgbuild
+f:d1362c98a92c12c5e59e4d06a2d76960:python-click-didyoumean/spkgbuild
 f:e082fd5cac687730d070018ba664c3dd:python-cfn-lint/spkgbuild
 f:c41ca121c490477509603d425db804b1:python-pafy/.checksums
 f:bf7b61ef6c19acf1c110cabf879a8705:python-pafy/.pkgfiles
@@ -395,6 +402,7 @@ f:041765275f0692f98012def381fca08c:python-pyqt5/.pkgfiles
 f:7fc0241be4a1db52f82b3957535e75a4:python-pyqt5/spkgbuild
 f:003be5a1df6a82037c32b85e1e0f25ad:python-h2/spkgbuild
 f:b783199720d2407e2adeab57df7f42b9:python-calmjs.types/spkgbuild
+f:cab330b1be7e94df3bbd864f100ff103:python-clickclick/spkgbuild
 f:9f4069251e8291d99f96d92a22d3fa29:python-lxml/.checksums
 f:7065641e3189e3a53199c856128164d5:python-lxml/.pkgfiles
 f:ac516bac3a4e76b859428f377d838b35:python-lxml/spkgbuild
@@ -412,6 +420,7 @@ f:1906aecff36cb48cd84054e1dc8a1602:python-pillow/spkgbuild
 f:4c5d592c5db1c9bd06f6f9599ea7d0b8:python-aiopg/spkgbuild
 f:345e2d701a739ff9fbb0bf125d8ac1a6:python-service-identity/spkgbuild
 f:85ec31a763384cdb8a5a48afc5f4b466:python-args/spkgbuild
+f:441f36911e04422bb16b8c6c31f2accb:python-click-default-group/spkgbuild
 f:1f316bc7350a2ed3a501d177fcc09b49:python-basictracer/spkgbuild
 f:7c706d61c53026f5569d23f4739730aa:python-apispec/spkgbuild
 f:954d44b588cd5925ac4e87a5b96d17f6:python-alembic/spkgbuild
@@ -437,6 +446,8 @@ f:11dcc0959bb08d1dd6ef1ef45ce35bec:python-apispec-webframeworks/spkgbuild
 f:13f42c5f7f2f089393f6d925a94c97c0:python-botocore/spkgbuild
 f:6a865a3db08301f631bcb3ac6ed2850b:python-distro/spkgbuild
 f:62b0150e4290538b5fc5dc03ad16bd90:python-bitcoinlib/spkgbuild
+f:2b04ea3d8365e131d9a1273802c65b3a:python-cleo/spkgbuild
+f:463fa87ab0e9bd12cc2a7af1c3fc7c55:python-click/spkgbuild
 f:7d68e08211d4733146131cf4d8d4aced:python-chardet/.checksums
 f:e6d9cb8843e3f7035b9662c78423f7bc:python-chardet/.pkgfiles
 f:6085b471c96818f953b2ea792a209bda:python-chardet/spkgbuild
@@ -466,6 +477,7 @@ f:382c9607fe1c15b291fe3a714c11a049:python-sip/.pkgfiles
 f:5c5c6366fdb596b298ddaf8503d66af7:python-sip/spkgbuild
 f:092d453800774166a2a2b8db61961d29:python-cerberus/spkgbuild
 f:570ee30d5c3ac3db2dfb7723479073fe:python-asyncpg/spkgbuild
+f:8e1dca88b4a6179d51a9826e7c075144:python-click-completion/spkgbuild
 f:30169c6fc23383690f0aee2cf4c3b577:python-rencode/spkgbuild
 f:5e74e32a6916e810fa9b4ca0ea1c9a68:python-pytz/spkgbuild
 f:6012556e35351f2de7d21b805f522e4f:python-appdirs/.checksums

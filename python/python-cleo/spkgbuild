@@ -3,7 +3,6 @@
 
 _name=cleo
 url=https://github.com/sdispater/${_name}
-_name=cleo
 name=python-cleo
 version=0.7.6
 release=4
@@ -12,7 +11,7 @@ source="${url}/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_name}-${version}
+   cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
