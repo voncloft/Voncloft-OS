@@ -81,7 +81,6 @@ d:libfm-qt
 d:libpsl
 d:libmusicbrainz5
 d:libpciaccess
-d:libkdcraw
 d:libunique
 d:libconfig
 d:libgpg-error
@@ -384,9 +383,6 @@ f:46eddc181d031da66a40f5346ab77e18:libmusicbrainz5/spkgbuild
 f:d8d1f19f7e4c00a9318b1321af681faf:libpciaccess/.checksums
 f:89040c732748dc51b0934481482ce609:libpciaccess/.pkgfiles
 f:88a1c33e9ede5d16232d29c24c42fe4a:libpciaccess/spkgbuild
-f:7f3a9b1c454ff1c9c29013408cc3e3fd:libkdcraw/.checksums
-f:19262df4b4d2109eb4ee5b6ba2f992a3:libkdcraw/.pkgfiles
-f:924416dd6cc7e2c5fbe8a3811207851d:libkdcraw/spkgbuild
 f:75eacb91d419926b889f1c1e78b27260:libunique/.checksums
 f:1ad79256814a0c90f50dd77313cb1049:libunique/.pkgfiles
 f:4ce1bf51879a679b55be831f31bf3a2f:libunique/libunique-upstream_fixes.patch

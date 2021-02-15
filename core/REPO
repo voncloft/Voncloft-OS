@@ -107,7 +107,6 @@ d:ncurses
 d:vtclock
 d:bison
 d:icoutils
-d:threadweaver
 d:tint2
 d:fuse3
 d:lz4
@@ -417,7 +416,6 @@ d:psmisc
 d:wgetpaste
 d:i3
 d:pavucontrol-qt
-d:milou
 d:aircrack-ng
 d:apr
 d:pv
@@ -470,7 +468,6 @@ d:arc-gtk-theme
 d:cabextract
 d:flac
 d:gpgme
-d:syntax-highlighting
 d:xvinfo
 d:poppler
 d:dkms
@@ -923,9 +920,6 @@ f:066c41b213f5c7a9f6218c24b4310a3b:bison/spkgbuild
 f:af102d8b9835c1ccfae1cb34b58da62d:icoutils/.checksums
 f:19c47533a543a0455e84d8d6d10d3010:icoutils/.pkgfiles
 f:fa56ded29016f12205356ab712b9ec7f:icoutils/spkgbuild
-f:6161651e317430f4b674a3129e60bc04:threadweaver/.checksums
-f:3274ff38324cd70e60644c007f6effca:threadweaver/.pkgfiles
-f:b96b705c348a00f0de767b9dd3506ce2:threadweaver/spkgbuild
 f:2abdbf1c43c174b724591f8fcbaa7e8b:tint2/.checksums
 f:d4a766525bbf31d2ae22b18281a42f4e:tint2/.pkgfiles
 f:2dcbe017fc8a3fbb2bc75695fc0ec1c1:tint2/spkgbuild
@@ -1976,9 +1970,6 @@ f:c396b6c9edd25706cd46d7c3492ebed2:i3/spkgbuild
 f:f6072aa8c2f0aebae018aa37522118a6:pavucontrol-qt/.checksums
 f:d6f672b5382869c26ca83b470107408a:pavucontrol-qt/.pkgfiles
 f:bba6c5a0565e2240546b978fe8e1b7ab:pavucontrol-qt/spkgbuild
-f:fa727b87912d3985b1081b897a153d2f:milou/.checksums
-f:c2d19da148f91ccaa39e3375f4eb1bc4:milou/.pkgfiles
-f:ca761e05063304019cf14f761b98bac9:milou/spkgbuild
 f:8649828eb27077106508325d3ab4a11d:aircrack-ng/.checksums
 f:4db9a8ecc02205c72541bf0fc1f6f175:aircrack-ng/.pkgfiles
 f:ab58673eaee46e7d05b92900adee4a91:aircrack-ng/spkgbuild
@@ -2158,9 +2149,6 @@ f:acec581cc2cea1a22a96ce28cfe9bbbe:flac/spkgbuild
 f:dc3c56ccf1ee09f149c400da11e4c842:gpgme/.checksums
 f:08236c606105d4b704e6ef7575f03d6b:gpgme/.pkgfiles
 f:a1b78efcbca4ef0cd8a4569baacd674b:gpgme/spkgbuild
-f:d17b5b8bd38f8a47ceeeb10cf9225f8c:syntax-highlighting/.checksums
-f:6c524737a3c1166fe8f3ac7160752c51:syntax-highlighting/.pkgfiles
-f:7acd87f2a5ce4f20475e5797dcde5320:syntax-highlighting/spkgbuild
 f:74b59687fc731231de01fbc7e5b13980:xvinfo/.checksums
 f:f78d8cb2be5e9941223ab97cdadaffae:xvinfo/.pkgfiles
 f:a91f088bed8d38c7267a1430b093ecca:xvinfo/spkgbuild

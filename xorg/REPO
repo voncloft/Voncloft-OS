@@ -40,7 +40,6 @@ d:xcb-util-xrm
 d:xcb-util-keysyms
 d:libxklavier
 d:libxdamage
-d:xdg-desktop-portal-kde
 d:libxfce4util
 d:xcursorgen
 d:libxfce4ui
@@ -198,9 +197,6 @@ f:a336e8f88e9cb6a3b9841c7745979b13:libxklavier/spkgbuild
 f:13cf6738c710cfceebea2a79b4e922fe:libxdamage/.checksums
 f:6d70accea805bb7b4cf7c70ed7aa3d3d:libxdamage/.pkgfiles
 f:5995b3494e9b0b05855ff467dd9c5096:libxdamage/spkgbuild
-f:703a4bdede1f23bae6c172eacba5e612:xdg-desktop-portal-kde/.checksums
-f:80864f210493935f50b0658bca6e8ba5:xdg-desktop-portal-kde/.pkgfiles
-f:dfc787cc8f182e67f1b66aaefa56e5ab:xdg-desktop-portal-kde/spkgbuild
 f:3f2a724d5c69de68225fea3953f2d903:libxfce4util/.checksums
 f:db3dad57a0020f914c35c4d6e913721c:libxfce4util/.pkgfiles
 f:bcc58c6e08d49e5ee2de437fa4fb387d:libxfce4util/spkgbuild
