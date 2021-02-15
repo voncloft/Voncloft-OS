@@ -6,7 +6,7 @@ version=5
 release=1
 _version=5.77
 build () {
-	mkdir $PKG/opt
+	mkdir -pv $PKG/opt/kf5-$_version
 
 	 cat <<- EOF > $PKG/etc/profile.d/kf5.sh
         # Begin /etc/profile.d/kf5.sh
@@ -47,14 +47,14 @@ build () {
         # End KF5 addition
         EOF
 
-        install -v -dm755           $PKG/opt/kf5/{etc,share}
-        ln -sfv /etc/dbus-1         $PKG/opt/kf5/etc
-        ln -sfv /usr/share/dbus-1   $PKG/opt/kf5/share
-        install -v -dm755           $PKG/opt/kf5/share/icons &&
-        ln -sfv /usr/share/icons/hicolor $PKG/opt/kf5/share/icons
+        install -v -dm755           $PKG/opt/kf5-$_version/{etc,share}
+        ln -sfv /etc/dbus-1         $PKG/opt/kf5-$_version/etc
+        ln -sfv /usr/share/dbus-1   $PKG/opt/kf5-$_version/share
+        install -v -dm755           $PKG/opt/kf5-$_version/share/icons &&
+        ln -sfv /usr/share/icons/hicolor $PKG/opt/kf5-$_version/share/icons
 
  	#mkdir -pv $PKG/opt/kf5
- 	ln -sfvn /opt/kf5-$_version $PKG/opt/kf5
+ 	#ln -sfvn /opt/kf5-$_version $PKG/opt/kf5
 
 	
 
