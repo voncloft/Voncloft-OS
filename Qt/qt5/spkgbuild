@@ -100,7 +100,6 @@ EOF
 
 mkdir -p $PKG/usr/bin
 
-mkdir $PKG/opt/qt5
 ln -sfnv qt-$version $PKG/opt/qt5
 
 for file in moc uic rcc qmake lconvert lrelease lupdate; do
