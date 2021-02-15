@@ -12,7 +12,7 @@ options="!checksum"
 
 build() {
 	cd qt-everywhere-src-$version
-	./configure -prefix /opt/qt5                        \
+	./configure -prefix /opt/qt5-$version                        \
             -sysconfdir /etc/xdg                      \
             -confirm-license                          \
             -opensource                               \
@@ -26,7 +26,7 @@ build() {
 	make
 	make -j1 INSTALL_ROOT=$PKG install
 
-	find $PKG/opt/qt5 -name \*.prl \
+	find $PKG/opt/qt5-$version -name \*.prl \
 	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 
 
@@ -100,8 +100,11 @@ EOF
 
 mkdir -p $PKG/usr/bin
 
+mkdir $PKG/opt/qt5
+ln -sfnv qt-$version $PKG/opt/qt5
+
 for file in moc uic rcc qmake lconvert lrelease lupdate; do
-  ln -sfrvn $QT5BINDIR/$file /usr/bin/$file-qt5
+  ln -sfrvn /opt/qt5/bin/$file $PKG/usr/bin/$file-qt5
 done
 
 cat >> /etc/ld.so.conf << EOF
@@ -117,6 +120,4 @@ pathappend $QT5DIR/lib/pkgconfig PKG_CONFIG_PATH
 export QT5DIR
 EOF
 
-mkdir /opt/qt-5.15.2
-ln -sfnv qt-5.15.2 /opt/qt5
 }
