@@ -26,6 +26,8 @@ build() {
 	make
 	make -j1 INSTALL_ROOT=$PKG install
 
+	ln -sfnv qt5-$version $PKG/opt/qt5
+	
 	find $PKG/opt/qt5-$version -name \*.prl \
 	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 
@@ -100,7 +102,6 @@ EOF
 
 mkdir -p $PKG/usr/bin
 
-ln -sfnv qt-$version $PKG/opt/qt5
 
 for file in moc uic rcc qmake lconvert lrelease lupdate; do
   ln -sfrvn /opt/qt5/bin/$file $PKG/usr/bin/$file-qt5
