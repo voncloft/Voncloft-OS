@@ -8,7 +8,6 @@ version=0.5.1
 release=7
 
 source="https://files.pythonhosted.org/packages/source/n/ndg-httpsclient/$_name-$version.tar.gz"
-options=!emptydirs
 
 build() {
    cd $_name-$version

@@ -7,7 +7,6 @@ version=8.3.2
 release=3
 
 source="https://github.com/openstack/oslo.config/archive/$version/$name-$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {

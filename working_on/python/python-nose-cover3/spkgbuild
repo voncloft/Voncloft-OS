@@ -7,7 +7,6 @@ version=0.1.0
 release=7
 
 source="git+https://github.com/ask/nosecover3.git#tag=v$version
-options=!emptydirs
 options="!checksum"
 
 build() {

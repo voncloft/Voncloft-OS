@@ -7,7 +7,6 @@ version=3.1.1
 release=3
 
 source="https://github.com/openstack/oslo.context/archive/$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {

@@ -7,7 +7,6 @@ version=0.18.2
 release=5
 
 source="https://pypi.io/packages/source/f/future/future-$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {

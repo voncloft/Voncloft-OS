@@ -7,7 +7,6 @@ version=0.1.1
 release=6
 
 source="https://pypi.python.org/packages/source/c/${name#python-}/${name#python-}-$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {

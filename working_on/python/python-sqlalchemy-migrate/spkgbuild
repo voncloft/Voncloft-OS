@@ -7,7 +7,6 @@ version=0.13.0
 release=6
 
 source="https://opendev.org/x/sqlalchemy-migrate/archive/$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {

@@ -7,7 +7,6 @@ version=3.6.0
 release=1
 
 source="https://github.com/openstack/cliff/archive/$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {

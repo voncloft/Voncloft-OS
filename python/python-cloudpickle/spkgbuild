@@ -8,13 +8,10 @@ version=1.6.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {
-   cd ../../
    cd ${_pkg}-${version}
-   cd tests/cloudpickle_testpkg
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

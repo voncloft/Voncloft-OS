@@ -12,7 +12,6 @@ version=2.3.6
 release=2
 
 source="https://download.rethinkdb.com/dist/$_tag..gz"
-options=!emptydirs
 
 build() {
      cd ${_name}-${version}/drivers/python

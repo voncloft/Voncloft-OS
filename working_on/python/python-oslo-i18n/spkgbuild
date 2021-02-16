@@ -7,7 +7,6 @@ version=5.0.1
 release=3
 
 source="https://github.com/openstack/oslo.i18n/archive/$version.tar.gz"
-options=!emptydirs
 options="!checksum"
 
 build() {
