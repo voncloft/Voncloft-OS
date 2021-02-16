@@ -118,6 +118,7 @@ d:python-twisted
 d:python-cachetools
 d:python-browserid
 d:python-gobject3
+d:python-d2to1
 d:python-augeas
 d:python-aiosmtpd
 d:python-gobject2
@@ -401,6 +402,7 @@ f:caff92478847a886546f1ab27f30f10d:python-browserid/spkgbuild
 f:975b809e86c8aa8314a9f4d3800e87e8:python-gobject3/.checksums
 f:54f3ad98bc5652e7f852bfb0af91c70a:python-gobject3/.pkgfiles
 f:daf38878dd554fc22408c9fbe2fa4744:python-gobject3/spkgbuild
+f:b7eb0a3394ab7df48c4fd7a4486eb093:python-d2to1/spkgbuild
 f:175e865a40d9802ee871aa0f35a18a9a:python-augeas/spkgbuild
 f:bc1b4110cb49fa207aee68c6c0ecc9f4:python-aiosmtpd/spkgbuild
 f:64e4b8c01b12102241fc0acc2cf21490:python-gobject2/.checksums
@@ -555,7 +557,7 @@ f:b05f5a0f6ad9ec6a74125e58f8b32af9:python-authres/spkgbuild
 f:41507b9e66ab8fba22300972b9a06264:python-coverage/spkgbuild
 f:3590d371e351ced640f8036372146191:python-cloudflare/spkgbuild
 f:b3ab790bd53fb59693f1cde690c38f53:python-asteval/spkgbuild
-f:4c9b514fba4fdf96aaa71b39414cc2dd:python-colour/spkgbuild
+f:dd28de825de3be578c0c14874e7f981b:python-colour/spkgbuild
 f:774c4a7c227079ecebc732839c83b261:python-betamax-serializers/spkgbuild
 f:e61d7060c20faded0a4a0bba5869c5d6:python-urllib3/.checksums
 f:9c315b3558d80ab3593e9644d60084b0:python-urllib3/.pkgfiles
