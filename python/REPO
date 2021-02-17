@@ -71,6 +71,7 @@ d:python-bottle
 d:python-btchip
 d:python-arpeggio
 d:python-caja
+d:python-dae
 d:python-aiorpcx
 d:python-cliff
 d:python-dukpy
@@ -105,6 +106,7 @@ d:python-astor
 d:python-arrow
 d:python-cryptography
 d:python-auditwheel
+d:python-databases
 d:python-confuse
 d:python-pkginfo
 d:python-blessings
@@ -131,6 +133,7 @@ d:python-asgiref
 d:python-planout
 d:python-cycler
 d:python-certifi
+d:python-daiquiri
 d:python-twisted
 d:python-crayons
 d:python-cachetools
@@ -218,6 +221,7 @@ d:python-case
 d:python-anytree
 d:python-css-parser
 d:python-blist
+d:python-dask
 d:python-baron
 d:python-cram
 d:python-aws-sam-translator
@@ -255,6 +259,7 @@ d:python-asynctest
 d:python-chai
 d:python-build
 d:python-couchdb
+d:python-daemonize
 d:python-aiofiles
 d:python-btrfs
 d:python-ciso8601
@@ -375,6 +380,7 @@ f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
 f:16414382ab0d0b25fd3cee6a503c42ed:python-btchip/spkgbuild
 f:007b8a182f3ba5345cfc6129bffbbcbd:python-arpeggio/spkgbuild
 f:92dc566419dbe85f5800f0a95d5104d1:python-caja/spkgbuild
+f:a44fe1666f9748535fb56ca25cea235f:python-dae/spkgbuild
 f:a8c992d556dc6b8ddd25bd81f65dbe28:python-aiorpcx/spkgbuild
 f:0420862c1e1b64d098c4730a92157d0d:python-cliff/spkgbuild
 f:15e9e2e026db636274544f8c24f470cc:python-dukpy/spkgbuild
@@ -417,6 +423,7 @@ f:7e3f257be1089747fcc5a13350045638:python-astor/spkgbuild
 f:79d4aad65170051e5676ede72f468318:python-arrow/spkgbuild
 f:6ad277570e70e1bcdb3fd09094c338ca:python-cryptography/spkgbuild
 f:bf836bd3bcebe1c3df9a9cea5a8062e8:python-auditwheel/spkgbuild
+f:2b6300eb397e394dc12f085001438545:python-databases/spkgbuild
 f:ccd13b6b2961271d122f4b89d5ee08bc:python-confuse/spkgbuild
 f:db3d132dcb9de35b1f3f2980a635b6d6:python-pkginfo/spkgbuild
 f:c539351359b34c8fb3746db05be4a854:python-blessings/spkgbuild
@@ -453,6 +460,7 @@ f:1d425826a399dba5c24eb64ed5759478:python-asgiref/spkgbuild
 f:d60a0fa93e3b95e325275af6d9c35c52:python-planout/spkgbuild
 f:bbfb62b67bb2804dd59601b7c2f377e4:python-cycler/spkgbuild
 f:c737e3daafe98e1cdef9b2718b7a05fa:python-certifi/spkgbuild
+f:d5bd396421374c9b945c518cf6fc411a:python-daiquiri/spkgbuild
 f:c1f89f92561ecdb0eca822d7ed6d6be8:python-twisted/spkgbuild
 f:1958db58bb4da2e2ccc59b2cc5a75557:python-crayons/spkgbuild
 f:0aaeb795d2026b89dfd3b58b65f0cf24:python-cachetools/spkgbuild
@@ -561,6 +569,7 @@ f:64a5017ca44166210ac555c00c40e2ee:python-case/spkgbuild
 f:e2de7b42a8ef1cfe77180c2542a1c6fa:python-anytree/spkgbuild
 f:5f9a9a4cc9b3bfd198be2f39c9bba5d5:python-css-parser/spkgbuild
 f:378a09eab011b015c859fa6d75dfaa19:python-blist/spkgbuild
+f:9aea60969a4089e535db010967855b31:python-dask/spkgbuild
 f:f92ea2f088e9da2181bb4bd188701e43:python-baron/spkgbuild
 f:6db0db3a54b1d661623fafbc3cddb16c:python-cram/spkgbuild
 f:c39a143abb912b3cf61eed730fce9382:python-aws-sam-translator/spkgbuild
@@ -610,6 +619,7 @@ f:a12fb0e38700ecd85cfa33a0141aaa5c:python-asynctest/spkgbuild
 f:6f8b0cf5947d408cf7404e3b5db5355f:python-chai/spkgbuild
 f:2b2c6445bbd4df62b1dcfa7fe8912e84:python-build/spkgbuild
 f:f2859c8b8d1ef19ef41bdc7f233280d5:python-couchdb/spkgbuild
+f:f7c28b695458d8086570b4007f30deeb:python-daemonize/spkgbuild
 f:64ead1152a2c52e8ee66226b81f117ae:python-aiofiles/spkgbuild
 f:4f25b6639c7cb5c1f406f5c2d52092f6:python-btrfs/spkgbuild
 f:8751d015e2fbaaa2585d3a817ceab14b:python-ciso8601/spkgbuild

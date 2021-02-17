@@ -10,7 +10,7 @@ source="git+https://github.com/linuxdeepin/dae.git#tag=$version
 options="!checksum"
 
 build() {
-   cd dae
+   cd dae-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
