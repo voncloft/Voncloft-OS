@@ -2,13 +2,14 @@
   # depends : python-importlib-metadata
 
 url=https://github.com/pytest-dev/pluggy
+name=python-pluggy
 version=0.13.1
 release=4
 
 source="https://github.com/pytest-dev/pluggy/archive/$version.tar.gz"
+options="!checksum"
 
 build() {
-   cd pluggy-$version
    cd pluggy-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

@@ -12,7 +12,6 @@ options="!checksum"
 
 build() {
    cd planout-$_commit/python
-   cd planout-$_commit/python/planout/test
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
