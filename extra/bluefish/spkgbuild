@@ -5,7 +5,7 @@ name=bluefish
 version=2.2.12
 release=2
 
-source="https://www.bennewitz.com/$name/stable/source/$name-$release.tar.gz"
+source="https://www.bennewitz.com/$name/stable/source/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
