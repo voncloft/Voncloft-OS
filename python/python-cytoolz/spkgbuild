@@ -1,5 +1,5 @@
 # description : Cython implementation of Toolz: High performance functional utilities
-# depends : cython python-toolz
+# depends : cython3 python-toolz
 
 _name=cytoolz
 url=https://github.com/pytoolz/cytoolz/

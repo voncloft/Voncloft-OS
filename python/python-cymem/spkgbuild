@@ -1,5 +1,5 @@
 # description : Cython memory pool for RAII-style memory management
-# depends : cython python
+# depends : cython3 python
 
 url=https://github.com/explosion/cymem
 name=python-cymem
