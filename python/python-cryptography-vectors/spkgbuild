@@ -10,7 +10,7 @@ source="https://pypi.io/packages/source/c/cryptography-vectors/cryptography_vect
 options="!checksum"
 
 build() {
-    cd cryptography_vectors-$version
+   cd cryptography_vectors-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
