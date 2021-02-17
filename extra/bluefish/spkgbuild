@@ -1,0 +1,25 @@
+# description : an IDE program used for programming
+# depends : enchant gtk3 python
+
+name=bluefish
+version=2.2.12
+release=2
+
+source="https://www.bennewitz.com/$name/stable/source/$name-$release.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreonf -ifv
+
+	./configure --prefix=/usr \
+	--sysconfdir=/etc \
+        --localstatedir=/var \
+        --enable-spell-check \
+        --disable-update-databases \
+        --disable-xml-catalog-update
+
+	make 
+	make DESTDIR=$PKG install
+}
+

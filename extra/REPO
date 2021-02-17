@@ -12,6 +12,7 @@ d:setconf
 d:nspr
 d:vidtomp3
 d:nodejs
+d:bluefish
 d:screenfetch
 d:gtk3
 d:gtk-doc
@@ -60,6 +61,7 @@ f:0b26455ad8ff239d782f0a565bf5275b:vidtomp3/spkgbuild
 f:7bc8d2f567c18a810794243a9ae85bd3:nodejs/.checksums
 f:1f3df91d83b232130f5de5b980855e78:nodejs/.pkgfiles
 f:d8a4a93c6a056494f4e4d0b4e07f1075:nodejs/spkgbuild
+f:e12c0d45e0c9ed69f7d2f232cd327743:bluefish/spkgbuild
 f:97f49f163cfa6534ba6f6e40d216de43:screenfetch/.checksums
 f:50155442266a57f16a05672f389b9df2:screenfetch/.pkgfiles
 f:cfd0fad7eac322b340bb927aaef88edf:screenfetch/spkgbuild
