@@ -10,7 +10,7 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	autoreonf -ifv
+	autoreconf -ifv
 
 	./configure --prefix=/usr \
 	--sysconfdir=/etc \
