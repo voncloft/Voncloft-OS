@@ -10,7 +10,7 @@ source="https://pagure.io/copr/copr/archive/python-copr-$version-1/copr-python-c
 options="!checksum"
 
 build() {
-   cd copr-python-copr-$version-1/python
+   cd copr-python-copr-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -7,11 +7,11 @@ name=python-confuse
 version=1.4.0
 release=1
 
-source="git+https://github.com/beetbox/confuse.git#tag=${_tag}
+source="https://github.com/beetbox/confuse/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd confuse
+   cd confuse-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

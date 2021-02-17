@@ -9,7 +9,6 @@ version=0.30.0
 release=1
 
 source="https://github.com/eventlet/eventlet/archive/v${version}/"
-options=!makeflags
 options="!checksum"
 
 build() {

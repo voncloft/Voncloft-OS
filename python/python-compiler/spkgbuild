@@ -1,11 +1,12 @@
 # description : The compiler package from Python 2, ported to Python 3
+# depends : python
 
 url=https://github.com/pfalcon/python-compiler
 name=python-compiler
 version=1.1
 release=2
 
-source="git+https://github.com/pfalcon/python-compiler#commit=e71a47b4bf6570afe12ebb4a16fb70561c134e98 # version 1.1
+source="https://github.com/pfalcon/python-compiler/archive/master.zip"
 options="!checksum"
 
 build() {

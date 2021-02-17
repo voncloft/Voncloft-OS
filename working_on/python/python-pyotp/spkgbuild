@@ -10,7 +10,6 @@ version=2.4.1
 release=1
 
 source="git+https://github.com/pyotp/pyotp#commit=${_gitcommit}?signed
-options=!makeflags
 options="!checksum"
 
 build() {

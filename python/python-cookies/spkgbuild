@@ -12,7 +12,6 @@ options="!checksum"
 
 build() {
    cd cookies-$version
-   cd cookies-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

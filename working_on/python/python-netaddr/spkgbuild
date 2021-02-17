@@ -9,7 +9,6 @@ version=0.8.0
 release=3
 
 source="https://github.com/drkjam/${_pyname}/archive/${version}/${name}-${version}.tar.gz"
-options=!makeflags
 
 build() {
    cd ${_pyname}-${version}
