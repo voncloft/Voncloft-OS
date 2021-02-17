@@ -6,7 +6,7 @@ name=python-dae
 version=1.0.2
 release=2
 
-source="git+https://github.com/linuxdeepin/dae.git#tag=$version
+source="https://github.com/martyr-deepin/dae/archive/$version.tar.gz"
 options="!checksum"
 
 build() {
