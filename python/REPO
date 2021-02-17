@@ -4,6 +4,7 @@ d:python-configobj
 d:python-patiencediff
 d:python-beautifulsoup4
 d:python-scour
+d:python-cx-freeze
 d:python-cairosvg
 d:python-idna
 d:python-marshmallow
@@ -128,6 +129,7 @@ d:python-atom
 d:python-apipkg
 d:python-asgiref
 d:python-planout
+d:python-cycler
 d:python-certifi
 d:python-twisted
 d:python-crayons
@@ -137,6 +139,7 @@ d:python-gobject3
 d:python-d2to1
 d:python-augeas
 d:python-aiosmtpd
+d:python-cymem
 d:python-gobject2
 d:python-beaker
 d:python-ansi2html
@@ -228,6 +231,7 @@ d:python-botocore
 d:python-distro
 d:python-bitcoinlib
 d:python-click-repl
+d:python-cytoolz
 d:python-cleo
 d:python-click-log
 d:python-click
@@ -284,6 +288,7 @@ f:5601d3417be3fdb533765f2ccf8657b9:python-beautifulsoup4/spkgbuild
 f:ad4d8a5b5599b4ecb4ac3c62b4090181:python-scour/.checksums
 f:347e1a67534e31b8c71c87289940c905:python-scour/.pkgfiles
 f:c93a95b7c80a204ee8bb25f83d852755:python-scour/spkgbuild
+f:d06f3bdb2228169fd61580a7e12de9bc:python-cx-freeze/spkgbuild
 f:4f310df21740d1b7fc6fc363f4d5545c:python-cairosvg/spkgbuild
 f:1c5abefaa9b1fd99a6e5afefb1349af7:python-idna/.checksums
 f:246e48cc674e0f1d8b29fde605fe6d7c:python-idna/.pkgfiles
@@ -446,6 +451,7 @@ f:b448b2ae1d8241153074621b1d288b74:python-atom/spkgbuild
 f:557d7eac6f48d18a604396bdcf7849a6:python-apipkg/spkgbuild
 f:1d425826a399dba5c24eb64ed5759478:python-asgiref/spkgbuild
 f:d60a0fa93e3b95e325275af6d9c35c52:python-planout/spkgbuild
+f:bbfb62b67bb2804dd59601b7c2f377e4:python-cycler/spkgbuild
 f:c737e3daafe98e1cdef9b2718b7a05fa:python-certifi/spkgbuild
 f:c1f89f92561ecdb0eca822d7ed6d6be8:python-twisted/spkgbuild
 f:1958db58bb4da2e2ccc59b2cc5a75557:python-crayons/spkgbuild
@@ -457,6 +463,7 @@ f:daf38878dd554fc22408c9fbe2fa4744:python-gobject3/spkgbuild
 f:b7eb0a3394ab7df48c4fd7a4486eb093:python-d2to1/spkgbuild
 f:175e865a40d9802ee871aa0f35a18a9a:python-augeas/spkgbuild
 f:bc1b4110cb49fa207aee68c6c0ecc9f4:python-aiosmtpd/spkgbuild
+f:49e5e3e805e2e23338baf1e4830c0f49:python-cymem/spkgbuild
 f:64e4b8c01b12102241fc0acc2cf21490:python-gobject2/.checksums
 f:cf2c0ad0f0420582c058fd27b40c11e9:python-gobject2/.pkgfiles
 f:fd892325a4ea1099a94a2186537fe522:python-gobject2/spkgbuild
@@ -573,6 +580,7 @@ f:13f42c5f7f2f089393f6d925a94c97c0:python-botocore/spkgbuild
 f:6a865a3db08301f631bcb3ac6ed2850b:python-distro/spkgbuild
 f:62b0150e4290538b5fc5dc03ad16bd90:python-bitcoinlib/spkgbuild
 f:46db16359e0c13715421cefb06418247:python-click-repl/spkgbuild
+f:f16c3e5d903211441a9c7f6792d74057:python-cytoolz/spkgbuild
 f:2b04ea3d8365e131d9a1273802c65b3a:python-cleo/spkgbuild
 f:1399ce8d9931ca3b5d93db8ee69e3ce0:python-click-log/spkgbuild
 f:463fa87ab0e9bd12cc2a7af1c3fc7c55:python-click/spkgbuild
