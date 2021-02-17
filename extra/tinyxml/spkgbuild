@@ -8,7 +8,7 @@ options="!checksum"
 source="https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz"
 build()
 {
-	cd $name
+	cd $name-$version
 
 	patch -p0 -i "$SRC/entity.patch"
 	patch -p1 -i "$SRC/$name-2.5.3-st1.patch"
