@@ -1,0 +1,15 @@
+# description : an IDE to create KDE packages
+# depends : clang grantlee kcmutils kitemmodels knewstuff knotifyconfig ktexteditor libkomparediff2 libksysguard threadweaver git cmake cppcheck gdb konsole meson okteta plasma-framework purpose qt5-doc qt5-tools subversion
+
+name=kdevelop
+version=5.6.2
+release=3
+
+source="https://download.kde.org/stable/$name/$version/src/$name-$version.tar.xz"
+options="!checksum"
+
+build(){
+   cd $name-$version
+   plasma-package-installer
+   make DESTDIR=$PKG install
+}

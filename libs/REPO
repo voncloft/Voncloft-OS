@@ -92,7 +92,6 @@ d:libuninameslist
 d:libdmtx
 d:libaio
 d:libksba
-d:libksysguard
 d:libisofs
 d:libcdio-paranoia
 d:libgusb
@@ -417,9 +416,6 @@ f:361bc3178d82689c756f88571fbcf574:libaio/spkgbuild
 f:5cde5f51704b8cbb1430bf5724f92616:libksba/.checksums
 f:647b40b4c563da33f0910f4151379d06:libksba/.pkgfiles
 f:2c7a30f5bb56842742a0497a4b4c5df0:libksba/spkgbuild
-f:60a4e2c6e8d17f6754724ef35bc8cef1:libksysguard/.checksums
-f:ab3bfcb4803b21723b58d43fcc508c1e:libksysguard/.pkgfiles
-f:447b1853b71ce8a9ada1ed5035089b0e:libksysguard/spkgbuild
 f:6242cf2b7f53b42cf3068a5d15105488:libisofs/.checksums
 f:cc4170fd6b737c03e730a5e674251a7e:libisofs/.pkgfiles
 f:42d248b809615151d66c4e8ae69db140:libisofs/spkgbuild
