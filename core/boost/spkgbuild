@@ -3,7 +3,6 @@
 
 name=boost
 version=1.74.0
-_version=$(echo $version | sed 's/\./_/g')
 release=1
 source="https://dl.bintray.com/boostorg/release/$version/source/boost_${_version}.tar.bz2"
 
