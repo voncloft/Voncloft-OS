@@ -57,6 +57,7 @@ d:python-pycryptodome
 d:python-anyio
 d:python-brotlipy
 d:python-blinker
+d:python-dbus-client-gen
 d:python-chameleon
 d:python-autobahn
 d:python-cachy
@@ -189,6 +190,7 @@ d:python-cairocffi
 d:python-asn1crypto
 d:python-aiobotocore
 d:python-cogapp
+d:python-dateparser
 d:python-argon2-cffi
 d:python-pyqt5
 d:python-cson
@@ -366,6 +368,7 @@ f:f4bb642baedcb97afe0e5fda240abb36:python-pycryptodome/spkgbuild
 f:24f813a19bbf557b5b78fbd67b513383:python-anyio/spkgbuild
 f:e48a013a6a650e6d35acb02fa943986f:python-brotlipy/spkgbuild
 f:6e791223ed55ed5f7c776b18aaeb24c9:python-blinker/spkgbuild
+f:ca83d7df6078527c606a86c944e7cb29:python-dbus-client-gen/spkgbuild
 f:07f31533a2204802bf118330c30e7414:python-chameleon/spkgbuild
 f:d46bf0b048e3fd0925804e7748127beb:python-autobahn/spkgbuild
 f:c9fe52db35e76824b84c5b1e9f995179:python-cachy/spkgbuild
@@ -527,6 +530,7 @@ f:84588f6830c6ea8d078e7e0020685660:python-cairocffi/spkgbuild
 f:b2b860b0e1b46e9cb0d08741b700ccc3:python-asn1crypto/spkgbuild
 f:a1239d1c26a44413c64f0665e56e8c35:python-aiobotocore/spkgbuild
 f:b9e866f3e25bf345240cdfb2fbd6cb56:python-cogapp/spkgbuild
+f:141ba2cab7e7b7bc6191680203cf2b39:python-dateparser/spkgbuild
 f:9e089be2405f1f565baebd46b1299016:python-argon2-cffi/spkgbuild
 f:3d9951d83a2cc832efbad1904dbb8eaf:python-pyqt5/.checksums
 f:041765275f0692f98012def381fca08c:python-pyqt5/.pkgfiles

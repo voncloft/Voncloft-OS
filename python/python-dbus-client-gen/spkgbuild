@@ -7,7 +7,7 @@ _srcname=dbus-python-client-gen
 version=0.7
 release=5
 
-source="
+source="https://github.com/stratis-storage/${_srcname}/archive/v${version}.tar.gz"
 options="!checksum"
 
 build() {
