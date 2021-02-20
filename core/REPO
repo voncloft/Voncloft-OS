@@ -19,7 +19,6 @@ d:binutils
 d:make
 d:sysvinit
 d:shadow
-d:polkit-qt
 d:plank
 d:gpicview
 d:acpid
@@ -437,7 +436,6 @@ d:luit
 d:ntp
 d:transmission-cli
 d:elinks
-d:bluez-qt
 d:json-glib
 d:w3m
 d:pcre
@@ -632,9 +630,6 @@ f:c319a3b8aaabc78b2c321018976f62ab:shadow/.checksums
 f:9afe3b4289bebd67aa2cd6e704352afc:shadow/.pkgfiles
 f:11f5b3140ca4cef4dee8034091af88cc:shadow/pwck
 f:4bb2b922e31800511491fe5138829982:shadow/spkgbuild
-f:5067a3913f84af91ac4a0d584672caf3:polkit-qt/.checksums
-f:b09e7d110bd62e779292e642bafa3fd6:polkit-qt/.pkgfiles
-f:74db4bbf07ff4ff240e71ea0fe29a3d7:polkit-qt/spkgbuild
 f:f9dcc013464025ff448094199e0832cf:plank/.checksums
 f:622889120f024cb7cb542044f6cd9755:plank/.pkgfiles
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
@@ -2045,9 +2040,6 @@ f:a61224330b7dd82e6f2b8e1bc7ad3630:transmission-cli/spkgbuild
 f:7c456464cf413278d3c3d999b35c8cce:elinks/.checksums
 f:e6e290a2b84f90a6c334a35a83360091:elinks/.pkgfiles
 f:b4ae39ab442b1a522f20c67efb2ccf9f:elinks/spkgbuild
-f:cd136744d8a7ccc11111c1d97188c977:bluez-qt/.checksums
-f:78f46d7e843f7d918668ad726968689c:bluez-qt/.pkgfiles
-f:06e8e67dc35ead3301c1cbb539a416f7:bluez-qt/spkgbuild
 f:f03106809804dae2817867581fde0725:json-glib/.checksums
 f:7a35d3e5808b3713cd6e788c20484c3a:json-glib/.pkgfiles
 f:a3269b67e67ce5e44631c523457dcfc3:json-glib/spkgbuild

@@ -252,11 +252,13 @@ d:python-colander
 d:python-configclass
 d:python-cvxopt
 d:python-aiohttp-cors
+d:python-pycryptodomex
 d:python-blosc
 d:python-cpplint
 d:python-pygments
 d:python-daemon
 d:python-billiard
+d:python-pybluez
 d:python-setproctitle
 d:python-pyopenssl
 d:python-asynctest
@@ -615,6 +617,7 @@ f:d116613339a2017fd65f77ce621a4686:python-colander/spkgbuild
 f:cce1c3c692e43c7afce70abdd49d0a80:python-configclass/spkgbuild
 f:75eec9f96543a9f859843fc6fbaafd2e:python-cvxopt/spkgbuild
 f:f6c32b619f91b1936a8c025883c24c22:python-aiohttp-cors/spkgbuild
+f:5d2d81d0deb11b84e035ccfc5926f795:python-pycryptodomex/spkgbuild
 f:23989c1312083888bf52713fb27f5cc4:python-blosc/spkgbuild
 f:4b1952bd09a389e63c18385f3aeb3494:python-cpplint/spkgbuild
 f:fb8fa606229b7ec0ac68e943698fdd00:python-pygments/.checksums
@@ -622,6 +625,7 @@ f:a17ce456da7c7d9334d1e671e13643c6:python-pygments/.pkgfiles
 f:30224353e51c4b061695ba4a12bb4978:python-pygments/spkgbuild
 f:6d89ddcb8794aa06c7a4d03943415226:python-daemon/spkgbuild
 f:8cde70d07fe12cbb0b76f8d937689f4f:python-billiard/spkgbuild
+f:4d6de080198f43bf296ded1716d97ee3:python-pybluez/spkgbuild
 f:28e7c91660d1d314468c47f81633b5d7:python-setproctitle/spkgbuild
 f:b5bfcf1fa7adcfad05c01c2b33a068d2:python-pyopenssl/spkgbuild
 f:a12fb0e38700ecd85cfa33a0141aaa5c:python-asynctest/spkgbuild
