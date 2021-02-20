@@ -159,6 +159,7 @@ d:python-basemap
 d:python-aiohttp
 d:python-yaml
 d:python-nose
+d:python-simplejson
 d:python-aioitertools
 d:python-click-help-colors
 d:python-constantly
@@ -195,6 +196,7 @@ d:python-argon2-cffi
 d:python-pyqt5
 d:python-cson
 d:python-h2
+d:python-future
 d:python-calmjs.types
 d:python-clickclick
 d:python-lxml
@@ -281,6 +283,7 @@ d:python-cookies
 d:python-coverage
 d:python-cloudflare
 d:python-asteval
+d:python-mysqlclient
 d:python-colour
 d:python-betamax-serializers
 d:python-urllib3
@@ -494,6 +497,7 @@ f:608c1ab8d8e01bee3e842f9474db8022:python-yaml/.checksums
 f:f9134888ec5e917a8d94637d211f164f:python-yaml/.pkgfiles
 f:372ce688df5766beb0bcba74434d0851:python-yaml/spkgbuild
 f:3cfcd41f6a15d30b3f5a255170f6f94d:python-nose/spkgbuild
+f:b173fffca91c2df957873a3ed18747e0:python-simplejson/spkgbuild
 f:fea11bc9bd8b31d794e57e9b3ce3469b:python-aioitertools/spkgbuild
 f:ffd4b5eb09d4183a2fd55135d117860c:python-click-help-colors/spkgbuild
 f:453454fa262ea32df02151e1332f3d32:python-constantly/spkgbuild
@@ -537,6 +541,7 @@ f:041765275f0692f98012def381fca08c:python-pyqt5/.pkgfiles
 f:7fc0241be4a1db52f82b3957535e75a4:python-pyqt5/spkgbuild
 f:6adc70a09937853552b0444593bc4ab4:python-cson/spkgbuild
 f:003be5a1df6a82037c32b85e1e0f25ad:python-h2/spkgbuild
+f:62a04456732c274e99c61e7d1012f9e0:python-future/spkgbuild
 f:b783199720d2407e2adeab57df7f42b9:python-calmjs.types/spkgbuild
 f:cab330b1be7e94df3bbd864f100ff103:python-clickclick/spkgbuild
 f:9f4069251e8291d99f96d92a22d3fa29:python-lxml/.checksums
@@ -650,6 +655,7 @@ f:07b2e44121d3bac1347a411583686475:python-cookies/spkgbuild
 f:41507b9e66ab8fba22300972b9a06264:python-coverage/spkgbuild
 f:3590d371e351ced640f8036372146191:python-cloudflare/spkgbuild
 f:b3ab790bd53fb59693f1cde690c38f53:python-asteval/spkgbuild
+f:2d68b79deafb2931b8bcd2cb176a1e6e:python-mysqlclient/spkgbuild
 f:dd28de825de3be578c0c14874e7f981b:python-colour/spkgbuild
 f:774c4a7c227079ecebc732839c83b261:python-betamax-serializers/spkgbuild
 f:e61d7060c20faded0a4a0bba5869c5d6:python-urllib3/.checksums
