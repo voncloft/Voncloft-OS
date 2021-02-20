@@ -5,7 +5,7 @@ name=python-pyopenssl
 version=20.0.1
 release=1
 
-source="https://pypi.io/packages/source/p/pyopenssl/pyopenssl-$version.tar.gz"
+source="https://github.com/pyca/pyopenssl/archive/$version.tar.gz"
 options="!checksum"
 
 build()
