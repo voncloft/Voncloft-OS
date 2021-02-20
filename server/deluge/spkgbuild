@@ -1,18 +1,16 @@
-# description : torrent server user interface
-# depends : libtorrent-rasterbar openssl python3-chardet python3-dbus python3-distro python3-geoip python3 python3-idna python3-mako python3-pillow python3-pyopenssl python3-rencode python3-service-identity python3-setproctitle python3-six python3-twisted python3-xdg python3-zope-interface git gtk3 intltool libnotify librsvg python3-cairo python3-gobject3 python3-gobject2 python3-setuptools xdg-utils
+# description : torrent client
+# depends: libtorrent-rasterbar openssl python-chardet python-dbus python-distro python-geoip python-idna python-mako python-pillow python-openssl python-rencode python-service identity python-setproctitle python-six python-twisted python-xdg python-zope-interface git gtk3 intltool libappindicator-gtk3 libnotify librsvg python-cairo python-gobject python-setuptools xdg-utils
 
 name=deluge
 version=2.0.4
-release=3
+release=38
+_tag=.dev0
 
-source="https://git.deluge-torrent.org/$name/snapshot/$name-$version.dev0.tar.gz" 
+source="https://github.com/deluge-torrent/$name/archive/$name-$version$_tag.tar.gz"
 options="!checksum"
 
-build()
-{
-	cd $name
-	python setup.py build
-	python setup.py install --root=$PKG --optimize=1 --skip=build
-
-	
+build() {
+   cd $name-$name-$version$_tag
+   python setup.py build
+   python setup.py install --root=$PKG --optimize=1
 }
