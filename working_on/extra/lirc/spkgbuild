@@ -1,0 +1,18 @@
+# description : library for infrared remote controls
+# depends : alsa-lib libx11 libftdi libusb-compat
+
+name=lirc
+version=0.10.1
+release=8
+
+source="https://prdownloads.sourceforge.net/${name}/${name}-${version}.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreconf -ifv
+	autoconf
+	./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var
+	make
+	make DESTDIR=$PKG install
+}

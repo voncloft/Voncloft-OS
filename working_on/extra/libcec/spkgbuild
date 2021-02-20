@@ -1,0 +1,23 @@
+# description : library for USB-CEC adapter
+# depends : cmake
+
+name=libcec
+version=6.0.2
+release=1
+
+source="https://github.com/Pulse-Eight/$name/archive/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+  cd $name-$version
+  mkdir build
+  cd build
+  cmake .. \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DCMAKE_INSTALL_LIBDIR_NOARCH=/usr/lib
+    make
+    make DESTDIR=$PKG install
+}
