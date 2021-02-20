@@ -3,12 +3,15 @@ d:phonon
 d:mpg123
 d:phonon-backend-vlc
 d:ffmpegthumbnailer
+d:libcec
 d:ffmpegthumbs
 d:gst-plugins-good
 d:mplayer
 d:phonon-backend-gstreamer
 d:gst-plugins-bad
+d:libbluray
 d:gst-plugins-ugly
+d:libsamplerate
 d:graphite2
 d:vlc
 d:x265
@@ -17,8 +20,11 @@ d:x264
 d:mesa-demos
 d:gst-plugins-base
 d:gst-libav
+d:libiec61883
+d:mythtv
 d:pulseaudio
 d:pulseaudio-alsa
+d:libavc1394
 f:750b06b1d1cb0dbd23ad8e6ce62cf205:gstreamer/.checksums
 f:638f1861c025f641fc3113cb8426326e:gstreamer/.pkgfiles
 f:dc651f9a397fbc1c6875a04e9c15643c:gstreamer/spkgbuild
@@ -30,6 +36,7 @@ f:01b3824764ad8c80b834d36655035e26:phonon-backend-vlc/spkgbuild
 f:11751a3f235a4e16ef925e2f4396ae7b:ffmpegthumbnailer/.checksums
 f:8b6d6c1739e6c00e28e3f418095cddde:ffmpegthumbnailer/.pkgfiles
 f:b56a72b7b761edf6158eb7f813a52d4c:ffmpegthumbnailer/spkgbuild
+f:35137e7a0426dbce34424deca222a742:libcec/spkgbuild
 f:f3d36dd6872a1d2d3c370431f9d79ddf:ffmpegthumbs/.checksums
 f:08a5883ec4f866aff5bcae5f7ffbbc4c:ffmpegthumbs/.pkgfiles
 f:26a49bdf4f863217f1c49a02e2553cb5:ffmpegthumbs/spkgbuild
@@ -45,9 +52,11 @@ f:7328f08f4aced4f91464dc9364ddbe7a:phonon-backend-gstreamer/spkgbuild
 f:b01a6c8f40514a13dffcaeebbc2fbd02:gst-plugins-bad/.checksums
 f:ca0832f7016848e43c4445eaaf5199e8:gst-plugins-bad/.pkgfiles
 f:dd1ba52469f4cd75af71658d03464419:gst-plugins-bad/spkgbuild
+f:77fe7be32fda9ea3b02d3a2334b4c1a3:libbluray/spkgbuild
 f:b45433836b2093f82936174723c7688f:gst-plugins-ugly/.checksums
 f:c6574e2d563018491e332ef41e5bb9cf:gst-plugins-ugly/.pkgfiles
 f:a900b1d3b2ae2be37256a055fe136359:gst-plugins-ugly/spkgbuild
+f:4cc8e2630522ee9fbd38d43cf9a9cec5:libsamplerate/spkgbuild
 f:ddf0a62e24aa595ec647b28d39e38ba6:graphite2/.checksums
 f:83dd2e09429232fe1012a26f09310917:graphite2/.pkgfiles
 f:195e3b19b62beb26b1a438f72d3d9b46:graphite2/spkgbuild
@@ -73,6 +82,8 @@ f:b5b079cc4718f06ef5a8f02398621515:gst-plugins-base/spkgbuild
 f:2cabfa3483342ec9935d4beac40bdc8d:gst-libav/.checksums
 f:f84f0f16c68d2f9de4a744d2a0a5dc5b:gst-libav/.pkgfiles
 f:f41eeb011c2218de493fe03f475915c2:gst-libav/spkgbuild
+f:6f83a09433728aaf9b55093337c94e0a:libiec61883/spkgbuild
+f:10df91e4d576527471b45e51208bb539:mythtv/spkgbuild
 f:e6183158353fd110913fc53b4e17a507:pulseaudio/.checksums
 f:b752c32f0e68f3e3b5300a6f969eeb4d:pulseaudio/.pkgfiles
 f:77b553ba7f068ec877f8ed4eab890c03:pulseaudio/spkgbuild
@@ -80,3 +91,4 @@ f:4703dc0019932e442486942adb6c90a4:pulseaudio-alsa/asound.conf
 f:6f8533d175cd1bf80ec56e890491e437:pulseaudio-alsa/.checksums
 f:00f023ed4f37cfb8601a8b9668d3ff73:pulseaudio-alsa/.pkgfiles
 f:0274ac9ae0624a892d0d115c8377b638:pulseaudio-alsa/spkgbuild
+f:edc3e6fe6015e360e1c2591c6d188157:libavc1394/spkgbuild
