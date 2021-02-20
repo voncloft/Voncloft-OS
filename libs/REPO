@@ -49,7 +49,6 @@ d:libmpd
 d:libglade
 d:libfm-extra
 d:libwnck3
-d:libdbusmenu-qt
 d:libepoxy
 d:libassuan
 d:libpipeline
@@ -100,6 +99,7 @@ d:libnl
 d:libpcap
 d:libtiff
 d:libice
+d:libdbusmenu-glib
 d:libev
 d:libtasn1
 d:libindicator
@@ -282,9 +282,6 @@ f:aa80cd71347713fb395c605a24c1da62:libfm-extra/spkgbuild
 f:c37388c3c2dc15fd9a2d10f30a530f04:libwnck3/.checksums
 f:e9f652ba9c6e174c5dd1ff7042ea2065:libwnck3/.pkgfiles
 f:d1c6fb3a5151e94b149c2e4ea4b9d606:libwnck3/spkgbuild
-f:ad50cd53ee5da39002718fef27f570fb:libdbusmenu-qt/.checksums
-f:4eb2aece1eec63125cfd6841df5e1f27:libdbusmenu-qt/.pkgfiles
-f:b8f023b014879e1a4efb6f698074037b:libdbusmenu-qt/spkgbuild
 f:640ef5a0776ae5c053448f38909e4d58:libepoxy/.checksums
 f:fc35f26242f1a5be3908eb79619736de:libepoxy/.pkgfiles
 f:bbcb997476a04b2b5d541ff92316a2ce:libepoxy/spkgbuild
@@ -441,6 +438,7 @@ f:a8961e32982472e2fc20ee087a271dc9:libtiff/spkgbuild
 f:4192d72e4926e34e159bca3a7bcce41a:libice/.checksums
 f:653bad0a6f4fccf51c075ce26572e26c:libice/.pkgfiles
 f:c6f613ebca83e005c134ed1caae8d44b:libice/spkgbuild
+f:8e5f1ac61b1531409cc22cf1e2749b00:libdbusmenu-glib/spkgbuild
 f:65e78990af663870c07d61aba8ab50cf:libev/.checksums
 f:a99ef690813de2a9aef38a1320a116d9:libev/.pkgfiles
 f:f73bc2555810b4587344ad7fb325fef7:libev/spkgbuild
