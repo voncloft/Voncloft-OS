@@ -1,5 +1,5 @@
 # description : a PVR service to stream TV from a PVR blah blah
-# depends : glew exiv2 fftw jack lame libass libavc1394 libbluray libiec61883 pulseaudio libsamplerate libva libvdpau libvpx libxinerama libxml2 libxrandr qt5 qt5-webkit taglib x264 x265 git help2man libcdio libcec libmariadbclient libxml2 lirc perl-dbd-mysql perl-io-socket-inet6 perl-libwww perl-net-upnp perl-xml-simple perl-xml-xpath python3-future python3-lxml python3-mysqlclient python3-requests python3-simplejson yasm
+# depends : glew exiv2 fftw jack lame libass libavc1394 libbluray libiec61883 pulseaudio libsamplerate libva libvdpau libvpx libxinerama libxml2 libxrandr qt5 qt5-webkit taglib x264 x265 git help2man libcdio libcec mariadb libxml2 lirc perl-dbd-mysql perl-io-socket-inet6 perl-libwww perl-net-upnp perl-xml-simple perl-xml-xpath python-future python-lxml python-mysqlclient python-requests python-simplejson yasm
 
 name=mythtv
 version=31.0
