@@ -1,5 +1,5 @@
 # description : Toolkit for plotting data on map projections
-# depends : cpython python-matplotlib geos shapelib python-numpy python-pyproj
+# depends : cython3 python-matplotlib geos shapelib python-numpy python-pyproj
 url=https://matplotlib.org/basemap/
 name=python-basemap
 version=1.2.2
