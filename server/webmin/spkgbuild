@@ -1,5 +1,5 @@
 # description : a web UI to maintain your OS
-# depends : webmin-boot perl opensssl git perl-quthen-pam perl-encode-detect perl-net-ssleay perl-socket6
+# depends : webmin-boot perl openssl git perl-authen-pam perl-encode-detect perl-net-ssleay perl-socket6
 
 name=webmin
 version=1.780
