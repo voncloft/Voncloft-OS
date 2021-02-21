@@ -13,4 +13,4 @@ build() {
 	cd jre1.8.0_212
 	mv * $PKG/opt/java
 	
-|
+}
