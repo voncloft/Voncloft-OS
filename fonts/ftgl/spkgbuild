@@ -1,5 +1,5 @@
 # description : OpenGL library to use fonts
-# depends freetype2 glu
+# depends : freetype2 glu
 
 name=ftgl
 version=2.4.0
