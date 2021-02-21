@@ -16,6 +16,7 @@ d:harfbuzz
 d:fontforge
 d:fontconfig
 d:awesome-font
+d:ftgl
 d:terminus-font
 d:noto-fonts-extra
 d:font-ibm-type1
@@ -82,6 +83,7 @@ f:60313bb75c65180ec7cf42a46afcfca8:fontconfig/spkgbuild
 f:22de911b4b9e65167fe48bd139e5111c:awesome-font/.checksums
 f:95e5f3e9c854b3784eee1162b355ead7:awesome-font/.pkgfiles
 f:0c5f24839b52f49314d21cd63c2a78cd:awesome-font/spkgbuild
+f:fa9a5d7d3c6fae25bc09a9fa3fb70c29:ftgl/spkgbuild
 f:9563535774d1723c1d6bfb8b61b831b1:terminus-font/.checksums
 f:070d701034c94d09c873038b80f2fa3c:terminus-font/.pkgfiles
 f:a417ec2f980ecc1d1f8904e20998a2db:terminus-font/spkgbuild
