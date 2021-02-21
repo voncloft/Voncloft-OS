@@ -1,5 +1,5 @@
 # description : iptables firewall addon
-# depends : iptables 
+# depends : psad-boot iptables 
 
 name=psad
 version=2.4.6

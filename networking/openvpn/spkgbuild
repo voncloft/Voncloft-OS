@@ -1,5 +1,5 @@
 # description: VPN Client
-# depends:     lzo iproute2 pkcs11-helper
+# depends:     opoenvpn-daemon lzo iproute2 pkcs11-helper
 
 name=openvpn
 version=2.4.9

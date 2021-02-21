@@ -9,6 +9,7 @@ source="flexget"
 options="!checksum"
 build()
 {
+	useradd -m deluge
 	cd $name-$version
 	mkdir -pv $PKG/etc/init.d
 	install $SRC/flexget $PKG/etc/init.d/

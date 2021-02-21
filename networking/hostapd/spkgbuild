@@ -1,5 +1,5 @@
 # description : turn your wificard into a hotspot
-# depends : glibc libnl openssl sqlite
+# depends : hostapd-boot glibc libnl openssl sqlite
 
 name=hostapd
 version=2.9

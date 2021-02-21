@@ -1,5 +1,5 @@
 # description : dnsmasq server
-# depends : iptables
+# depends : dnsmasq-boot iptables
 
 name=dnsmasq
 version=2.82

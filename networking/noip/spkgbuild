@@ -1,5 +1,5 @@
 # description : updates IP for website
-# depends : glibc
+# depends : glibc noip-boot
 
 name=noip
 version=2.1.9

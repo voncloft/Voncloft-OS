@@ -1,5 +1,5 @@
 # description : a streaming service
-# depends : java-headless
+# depends : subsonic-boot java-headless
 
 name=subsonic
 version=6.1.6

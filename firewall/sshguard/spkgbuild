@@ -1,5 +1,5 @@
 # description : iptables sshguard addon blocks ssh attacks
-# depends : iptables
+# depends : sshguard-boot iptables
 
 name=sshguard
 version=2.4.1

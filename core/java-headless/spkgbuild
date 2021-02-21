@@ -1,0 +1,16 @@
+# description : headless java server
+# depends : 
+
+name=java-headless
+version=8
+release=u212
+
+source="https://github.com/frekele/oracle-java/releases/download/$version$release-b10/jre-$version$release-linux-x64.tar.gz"
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/opt/java
+	cd jre1.8.0_212
+	mv * $PKG/opt/java
+	
+|
