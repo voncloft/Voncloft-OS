@@ -15,5 +15,5 @@ build() {
 	./configure --prefix=/usr --with-pic --disable-static
 	make
 	make DESTDIR=$PKG install
-	install -Dt "$PKG/usr/include/FTGL" -m644 $SRC/FT{Face,Size}.h
+	install -Dt "$PKG/usr/include/FTGL" -m644 src/FT{Face,Size}.h
 }
