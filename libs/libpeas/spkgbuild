@@ -1,5 +1,5 @@
 # description	: GObject based plugins engine
-# depends	: gobject-introspection gtk3 python2-gobject3 python3-gobject3 meson
+# depends	: gobject-introspection gtk3  python-gobject3 meson
 
 name=libpeas
 version=1.28.0

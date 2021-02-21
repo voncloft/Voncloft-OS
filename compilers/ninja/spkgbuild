@@ -1,5 +1,5 @@
 # description	: Small build system with a focus on speed
-# depends	: python3
+# depends	: python
 
 name=ninja
 version=1.10.1
@@ -9,6 +9,6 @@ source="https://github.com/ninja-build/ninja/archive/v$version/ninja-$version.ta
 build() {
 	cd $name-$version
 
-	python3 ./configure.py --bootstrap
+	python ./configure.py --bootstrap
 	install -Dm755 ninja $PKG/usr/bin/ninja
 }

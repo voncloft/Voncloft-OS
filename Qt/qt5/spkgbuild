@@ -1,7 +1,7 @@
 # description	: Cross-platform application framework that is widely used for developing application
 # depends	: sqlite ca-certificates dbus harfbuzz glib icu jasper libjpeg-turbo libmng libpng libinput
 # depends	: libxrender libsm libxi libtiff libxkbcommon mesa mtdev openssl pcre2 wayland
-# depends	: xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib python3
+# depends	: xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib python
 # depends	: gst-plugins-base cups
 
 name=qt5

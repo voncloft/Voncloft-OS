@@ -1,5 +1,5 @@
 # description	: Framework providing components to allow applications to integrate with a KDE Workspace
-# depends	: kpackage knewstuff extra-cmake-modules python3 qt5
+# depends	: kpackage knewstuff extra-cmake-modules python qt5
 
 name=frameworkintegration
 version=5.68.0

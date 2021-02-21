@@ -555,7 +555,7 @@ d:lynx
 d:hugo
 f:5276adda4947bab6797c8af13a81ab13:itstool/.checksums
 f:8c29c5053791d43568c7fc5e8a1d7772:itstool/.pkgfiles
-f:f22474901f25a28cb3b0f3cd82ef208c:itstool/spkgbuild
+f:4223f85eccb2d9fe997ad2f0eecdaffa:itstool/spkgbuild
 f:699c1631895a185de63475fdc3881787:scratchpkg/install
 f:0ec9dbd79fddd179145ce7c740cab9cf:scratchpkg/scratchpkg.alias
 f:f10584c8933de4c5e78ede34741e29f6:scratchpkg/.checksums
@@ -572,7 +572,7 @@ f:a1ec4bfb2ae5116db789397aa796683a:grub/detect-venom-fallback-initrd.patch
 f:3c24c8ddb40b32dd04efdfdd287d1876:grub/.checksums
 f:9e5e1451de66998350f1770d4f087ca1:grub/.pkgfiles
 f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
-f:680f4975426b81c1e8a99455fba7c36e:grub/spkgbuild
+f:9e56ae951020f54210f3e419dd6b8929:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:4520f3243870054fb1b02ddbfc2cd300:xpr/.checksums
 f:39cd0d3af0afd6b9677bc87c07fa1b02:xpr/.pkgfiles
@@ -645,10 +645,10 @@ f:017fd7a417eef4369d2eccf46c26f2c8:acpid/spkgbuild
 f:21ae4670f3f73b268f564633fc001316:acpid/run
 f:48674c4592d9a41facd3970ae66d9970:jq/.checksums
 f:80e5ee6ea52f85d9842be2db61048407:jq/.pkgfiles
-f:546b502dd2190db028ea5ab3f8da5850:jq/spkgbuild
+f:9e0f28c60ff6da2e3ea1f9e5a7ccde32:jq/spkgbuild
 f:be618a631f7a3d2890db521fdee284e1:obkey/.checksums
 f:598538c75b89968f4abb36e8ea5ef65c:obkey/.pkgfiles
-f:f9dca90a4312150121a6a5ed2b54b463:obkey/spkgbuild
+f:4c997e3b20b13e5fd6cc9a1908e86063:obkey/spkgbuild
 f:c4584f17873c9e0917aa155c41781bf4:atkmm/.checksums
 f:297f7a649e55d2dd3e795e4719dd9adf:atkmm/.pkgfiles
 f:e479c7ba32927b2420c010335d328bb7:atkmm/spkgbuild
@@ -674,7 +674,7 @@ f:48341874e5180de894e918d80d4eae2c:imagemagick6/.pkgfiles
 f:0a6cacd084699bfcd198365f7928efc8:imagemagick6/spkgbuild
 f:220b7f46892d0b0c7f24f57e2e81f610:fbpanel/.checksums
 f:ee33346b45a6ffb4b9946eb4e186a09d:fbpanel/.pkgfiles
-f:3170b0c12778a6d5969de4961d5181f4:fbpanel/spkgbuild
+f:48692f14c80b4cee76bf409c7d389450:fbpanel/spkgbuild
 f:b5bd9648237707dc32a95e5dca1915e4:pcre2/.checksums
 f:fbc380d38e9f92d0e802b2f09bb20682:pcre2/.pkgfiles
 f:09a0996c20cf38a6ee0bf87a6f75c515:pcre2/spkgbuild
@@ -714,7 +714,7 @@ f:b9e6ae35ed724cb1c1597bbbdaffb8be:yasm/.pkgfiles
 f:b54622ee3a56686569fb8ee146fc0995:yasm/spkgbuild
 f:e70d48f29305248376e4238a40d71dba:volume_key/.checksums
 f:444cf01d5a8cd07d3e0df5f3236399fb:volume_key/.pkgfiles
-f:493af2c116ae8fcf561cd8c1416aa50e:volume_key/spkgbuild
+f:ea037aeec174cebf7e31bb924d0ee0ef:volume_key/spkgbuild
 f:0a1e9024a852ef134e039bac20006ae6:docbook-xsl/install
 f:8457bd6ee6b06fbc6dc540e1b096f766:docbook-xsl/docbook-xsl-stack_fix-1.patch
 f:e6c7e2742173dc8ca25ac860c6b3493f:docbook-xsl/.checksums
@@ -761,7 +761,7 @@ f:1542762d296136a96edf725493706224:bluez/spkgbuild
 f:f715f0b49a44a5764e9379ab3c99d9b1:bluez/run
 f:e24dc2d211911ecfee812b2cc607d6fb:recode/.checksums
 f:0206d01464ef57e649ef26bc2e251e77:recode/.pkgfiles
-f:a2bd358efee17071d8ed20d6aab47888:recode/spkgbuild
+f:70957c8696572fa0a42240d565523fbf:recode/spkgbuild
 f:86b52029d9c21a835c086f0d210e7abe:mpv/.checksums
 f:7e1b24cc733c816bae6193cac4b1df9c:mpv/.pkgfiles
 f:2e83d44b2ccd8f312107ce82a14a1174:mpv/spkgbuild
@@ -837,7 +837,7 @@ f:3ef671cabbeada23e0951b24bb3338f1:cpio/.pkgfiles
 f:18e3d5669d4376a79598badfc3f5a782:cpio/spkgbuild
 f:2ca62064d9e1e7dea945c92c2d17cf74:terminator/.checksums
 f:81344afa3289159fe26d0b2f2ec74237:terminator/.pkgfiles
-f:1abefa5d0e9fb51b1b10d5a1b4ebfc72:terminator/spkgbuild
+f:fe269c0d67598bcfc16ad936c9f1e981:terminator/spkgbuild
 f:7091f9a6d97006299a1f27a665b638b6:cowsay/cowsay.patch
 f:53d6a6e6db70c5fffd700e4b4db9d3af:cowsay/.checksums
 f:964fb1be896e90ee2d76a34a4285fe50:cowsay/.pkgfiles
@@ -865,7 +865,7 @@ f:2638f6f422d725704ec2d83b3c7d8b50:pacmixer/.pkgfiles
 f:2674bf836e74668f64876249d9ee0095:pacmixer/spkgbuild
 f:fc38ff1b0e0ff093fe3053a5c6652bf2:cython3/.checksums
 f:a597e6fe5c7cb6f09dad54e0cb82b455:cython3/.pkgfiles
-f:cb06f8b89eb44eb583e8c3270b3f1b36:cython3/spkgbuild
+f:be20fc63ac0fdfd1586bdcb07cee7883:cython3/spkgbuild
 f:0610a393fffc94e003e350b51dc9e5e7:xz/.checksums
 f:3902950fd85125b3e66bbb225f693c3b:xz/.pkgfiles
 f:219f3e517a29eb3c41b60948c89594d2:xz/spkgbuild
@@ -894,7 +894,7 @@ f:ffffef8509285bba619faf328a0e7a10:gcr/.pkgfiles
 f:476e61784a7e7ccf9c23544fb5e30749:gcr/spkgbuild
 f:1e53cf967cfa6df7bb403240d797d65c:mps-youtube/.checksums
 f:f3f978d06957c1053f7b169326ff8198:mps-youtube/.pkgfiles
-f:385d12c5e90a9cbfa0497d540dd0a4e0:mps-youtube/spkgbuild
+f:45325df757e3016b2d609774dbc2d0dc:mps-youtube/spkgbuild
 f:a6e19c6d2b4a5572e054d6040a54c347:runit-rc/.checksums
 f:07541022da52e216070b0d0339a2874a:runit-rc/.pkgfiles
 f:c0a4d43c0d27c1a1cf7e9217544478cd:runit-rc/spkgbuild
@@ -1046,7 +1046,7 @@ f:bb6c24dfdf90fa6a859596a6b66dd343:man-db/.pkgfiles
 f:41cbede132921168238bca19b3ae29f2:man-db/spkgbuild
 f:4fc842cb34037e65c110a9e64a8ee271:wifite/.checksums
 f:a4c5438b4d45beefa86201a2b1086280:wifite/.pkgfiles
-f:e9815fc74e0ed18ad5725777829bf28e:wifite/spkgbuild
+f:4fd863b91e36097497703c34bcc51ed6:wifite/spkgbuild
 f:8eb7e200473236f58c2f6de2555bc814:glib-networking/readme
 f:bf7cd0e886544bd0b396c602bf57169d:glib-networking/.checksums
 f:8b53c92468eeaf3c49555d306261a073:glib-networking/.pkgfiles
@@ -1140,7 +1140,7 @@ f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
 f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
 f:d3361e270dec35b6c16ce7ab20779069:glibc/.checksums
 f:228d151a33b1c012d76e82f4aace5823:glibc/.pkgfiles
-f:53f15c17778f21fce9ac73f6e047b021:glibc/spkgbuild
+f:d8f52b513c3c061fb8f4ec6f064637bc:glibc/spkgbuild
 f:035581ac83590b52be2657170cdc29cd:nano/.checksums
 f:8cbf78f502187efc5260a30a804e148a:nano/.pkgfiles
 f:9da874251687a3a06a358cf154f2c628:nano/spkgbuild
@@ -1156,7 +1156,7 @@ f:394a87f09a94c454300be240d918cbf2:curl/.pkgfiles
 f:bd161fab770a2959530db06b7adb5b10:curl/spkgbuild
 f:8c33bba1f711fe652818d5a19558937b:cmark/.checksums
 f:d4ab178f68c16f430b1abff1829a71ff:cmark/.pkgfiles
-f:26df9b54052cc4df70182a13c9806e9c:cmark/spkgbuild
+f:ed0b8334c2773f07156a78a2409687ed:cmark/spkgbuild
 f:5d611b547965213ea71dd5600d19ba75:luajit/.checksums
 f:9a23b97934b6c41d8a1480fc4971f489:luajit/.pkgfiles
 f:36e3df2899ac3c95e19d67fe8198fd18:luajit/spkgbuild
@@ -1179,13 +1179,13 @@ f:97792665cf9d74c62c2cbe087cd424ab:docbook-xml/.pkgfiles
 f:90f59decf5050a8cdaa1b4d6f48fc270:docbook-xml/spkgbuild
 f:f557888ab0057c95274c0867240b23fc:audacious/.checksums
 f:1c9733f9be3b7d8af9424c997f4cc4bd:audacious/.pkgfiles
-f:c92e4bdba99f4910380e0a84ad07ab21:audacious/spkgbuild
+f:4d65159d17b70219177dd884a8f956a5:audacious/spkgbuild
 f:c80cd56b29b00a026e9896d9e6a400c0:speexdsp/.checksums
 f:11ed789a2041a1b2c0f643cf5c23eb80:speexdsp/.pkgfiles
 f:da0f3c80bf85e97ad614647642facabe:speexdsp/spkgbuild
 f:a720ca7d98aa9b30cc87ebb376e91d1a:opencl-headers/.checksums
 f:cde7f69e3e584da88d00e83231a896cc:opencl-headers/.pkgfiles
-f:451f9213cb10204c6f7ac46103088fc8:opencl-headers/spkgbuild
+f:3be4cac952eb28068866325cd416ad96:opencl-headers/spkgbuild
 f:51dbe0aa0a6feb12e6ecb01e3de8b428:xapian-core/.checksums
 f:35475992db863c506dad03e79891da08:xapian-core/.pkgfiles
 f:860473d01ed41240349a65595c70378b:xapian-core/spkgbuild
@@ -1264,11 +1264,11 @@ f:07760d26fbf67363ee676fc4b57ec585:wpebackend-fdo/.pkgfiles
 f:57f635294b94270ed8552cb96ed803ff:wpebackend-fdo/spkgbuild
 f:5007f13b5e7825bf4c74787884e35647:bamf/.checksums
 f:0a10cc59ff9992a17246d1dd5b1096b8:bamf/.pkgfiles
-f:9c72a3b020cd9ba3310c6e94308157f3:bamf/spkgbuild
+f:462e64381f2cde5952a60ad3f913aebb:bamf/spkgbuild
 f:d7784fd946bf89ff33cd6e41b3badb5b:llvm/.checksums
 f:3642e968c3d8458a8a590ad119b05cc8:llvm/.pkgfiles
 f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
-f:8dbbc233c48f441b3fb83cb2a786d0fe:llvm/spkgbuild
+f:b2bce1ee443ffd6c95a5a0a8f138f6ca:llvm/spkgbuild
 f:87b17ae3653f7f6378565751ca317825:xbitmaps/.checksums
 f:44dcbc180ca323d948a1f6e7040bb702:xbitmaps/.pkgfiles
 f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild
@@ -1322,7 +1322,7 @@ f:f3888ab01b34955687d296b940e0fd3a:ssh-askpass/.pkgfiles
 f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
 f:adf325163957ff02519bd9e4a81f38bd:blueman/.checksums
 f:8e37fb3a3da8bd9d858fa91f82177f48:blueman/.pkgfiles
-f:cb14eaa70e3ab6fe3c9857166cedd4ff:blueman/spkgbuild
+f:fe4ddccca1c7b556d32dac974e2fba41:blueman/spkgbuild
 f:9f4432d207539a0a53010ff0cfdf9064:poppler-qt5/.checksums
 f:3bf7eae280ac57a3daec0bbd3d69ceb9:poppler-qt5/.pkgfiles
 f:f73616a02c512bc4281252fffb7f9002:poppler-qt5/spkgbuild
@@ -1434,7 +1434,7 @@ f:6b0d2e3be6fed99c25c7712bc26e742e:ristretto/.pkgfiles
 f:e5e2862263cc9d328c1319c6bffcf4bb:ristretto/spkgbuild
 f:e89e307a7a9d3d3cb46fb7006e0be104:iso-codes/.checksums
 f:9bd483547959d0e14419159011b30c18:iso-codes/.pkgfiles
-f:944262d7025b06c8d581f39358b0e636:iso-codes/spkgbuild
+f:06e10b64b148bb4634dc37b079e70075:iso-codes/spkgbuild
 f:e84ffeb8805eb770dbcab5a6588e5f64:sdl/.checksums
 f:432284c58d8ca44bd53e6defbdf2782d:sdl/.pkgfiles
 f:9652206f589e2e8ad5a3095af54bc5c9:sdl/spkgbuild
@@ -1500,7 +1500,7 @@ f:8dece1bfe3f04b7899e56ba50b355630:elfutils/.pkgfiles
 f:b97670b39428ec48d53dfe6fcfb10f79:elfutils/spkgbuild
 f:8c84032287d94ce13aac990b22124314:bleachbit/.checksums
 f:d6a5b875c81067ff9c0520235dc0b673:bleachbit/.pkgfiles
-f:da7f0102c643f783d46e01af34bf60d7:bleachbit/spkgbuild
+f:6d2b77d10df290140efd93ce58600ecb:bleachbit/spkgbuild
 f:527a48acc5775f0d4ed54b0e24858ea2:opensp/.checksums
 f:aa383559a1a262de3300e2a2b827f733:opensp/.pkgfiles
 f:987864f7de70b563fd66bd097b81cceb:opensp/spkgbuild
@@ -1672,7 +1672,7 @@ f:e7497e0aa1edc196af5d709a7aa4b46a:util-linux/.pkgfiles
 f:a6dd7d413eab2774176c923233a25355:util-linux/spkgbuild
 f:d29e47276c19678c6c08159f63dbe9a1:js60/.checksums
 f:f38a28eacac5ddeb72229ec3f573a77b:js60/.pkgfiles
-f:1b046fae5da6a2f82152e9a4beecb302:js60/spkgbuild
+f:29b919ccfbf7887c714cd8f3f01d6fc7:js60/spkgbuild
 f:b7016ff2bcdb256d72366aadc38286fe:optipng/.checksums
 f:c6314816c8143278760fead03ee22b23:optipng/.pkgfiles
 f:00625716d1e567071563308d31ce80d6:optipng/spkgbuild
@@ -1684,7 +1684,7 @@ f:537e0dd88ec096a63a6def105f392407:dialog/.pkgfiles
 f:19a6d2e0ae1d1b6cdccc8cb28bde4a80:dialog/spkgbuild
 f:e562669d510f5505b2cdf26048cdb648:obmenu/.checksums
 f:e98002075b9a454224e28c61ca5cae24:obmenu/.pkgfiles
-f:89fc0afe0ef2b1be8e9c64135823877c:obmenu/spkgbuild
+f:3ba1a9a24b4f0aedf59da2e46b44b425:obmenu/spkgbuild
 f:3b7803a0789464044552ecd34735b0d2:efivar/.checksums
 f:1266350bb6b23ae73cac97cb0f1b4170:efivar/.pkgfiles
 f:9f6a19ecad2a99ab167287d57368928b:efivar/spkgbuild
@@ -1765,7 +1765,7 @@ f:1ba57945681c60dfe5a546a4925ba8fa:js52/.checksums
 f:2385797198cc5bcef67e8891cdf3c32d:js52/.pkgfiles
 f:90b3f5df0c0574dc6fef34de39df02aa:js52/no-error.diff
 f:2663553ba3c6965ed5cbd85af5981aaa:js52/mozjs52-copy-headers.patch
-f:fa4c78b91d79f79fafc0f0486f3667a8:js52/spkgbuild
+f:c1cd655442965ff2f5923512c5e1e40d:js52/spkgbuild
 f:3be8140692cfc5574efb9221ac946240:smplayer-skins/.checksums
 f:386e957fbeb9c4800d3bee9c252be483:smplayer-skins/.pkgfiles
 f:76e691d0f85898f3fb5adf1ef902cb96:smplayer-skins/spkgbuild
@@ -1781,7 +1781,7 @@ f:16e2eabefb470a4e1471732d68a961b3:neomutt/.pkgfiles
 f:7bfc910bdba61120769029c980726780:neomutt/spkgbuild
 f:b4622f17b1c809531f314a23d038c37e:qutebrowser/.checksums
 f:227e8f4e7defb4e59dc9ddedb723f720:qutebrowser/.pkgfiles
-f:601c613ab0e06c134bf47752d872b917:qutebrowser/spkgbuild
+f:3e401809497e349c0ee6564736d187df:qutebrowser/spkgbuild
 f:4a286b0a84c812ce26983711ee2c4d68:alacritty/.checksums
 f:4809809b1e8b0c1cefdd7a5598d41f71:alacritty/.pkgfiles
 f:9c07a1465e0763aac9738c1f3407a646:alacritty/spkgbuild
@@ -1893,7 +1893,7 @@ f:1959221ff7d0e7d148083f080eca73e9:dosfstools/.pkgfiles
 f:607b3c9e4a28b7049418c5926f81174c:dosfstools/spkgbuild
 f:6b109e13931c60ea96d2385d902c3a92:gobject-introspection/.checksums
 f:47d1f09df611ef02eb5e0fd368e965c9:gobject-introspection/.pkgfiles
-f:9904f203353bd230d81bdaf9be90369c:gobject-introspection/spkgbuild
+f:4e1aa93eb6ce93f28d3ce4d24844a7fd:gobject-introspection/spkgbuild
 f:fefa99ead9acf0afde23355221794598:appstream-glib/.checksums
 f:da72a0d69246cce664544475e5045230:appstream-glib/.pkgfiles
 f:d6b95e173e573485ec7f80fc0ef0a73d:appstream-glib/spkgbuild
@@ -1928,7 +1928,7 @@ f:a024931a05ff1f60648dbac6e3ad89f7:sed/.pkgfiles
 f:09d44f84218e47a5f9bca17229401cdf:sed/spkgbuild
 f:a9a900d468fb80ed3063401d38d4b0b4:boost/.checksums
 f:584a977065ae8f101fe4aa6e156cf95c:boost/.pkgfiles
-f:6b552c2951c0ad33745bcc5caedde4e2:boost/spkgbuild
+f:f7d34134c896151301b660faf4aed803:boost/spkgbuild
 f:0d208f946627fc948064e611659d17d7:cmus/.checksums
 f:fc28d5c7085ab3bdf0632edfbe24be99:cmus/.pkgfiles
 f:b8641f292ec09cec1063c7c4c332b69c:cmus/spkgbuild
@@ -1946,7 +1946,7 @@ f:f49499d6425dc6fb56469f30c90120f5:neon/.pkgfiles
 f:576eb5d35ab418c459a59ed0deb41bb2:neon/spkgbuild
 f:66e2f744dc1da757c09845a89983590a:pypanel/.checksums
 f:17ba879d97a2810add7361040169a34f:pypanel/.pkgfiles
-f:8d4f1fb1db7178aa3b4793938aab30fe:pypanel/spkgbuild
+f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
 f:ba894679ac0f4bceafcb7c2bbb964685:qbittorrent-nox/.checksums
 f:97fa9a19e76bb140679111e2acaa4cd6:qbittorrent-nox/.pkgfiles
 f:1194a995c0966c0bf9beff2d21f82036:qbittorrent-nox/spkgbuild
@@ -2117,13 +2117,13 @@ f:b7ba6721241150d797569e1ae0bd857b:groff/spkgbuild
 f:315d04c2972893828dfd9e8897b0b9af:palemoon/.checksums
 f:1585d6473435077ee29af114f1a2b919:palemoon/mozconfig
 f:2cc61c454b78816a2f20a8dcde40038c:palemoon/.pkgfiles
-f:2631a1da0b1824352aae4abc6a9b63ed:palemoon/spkgbuild
+f:8bdd44dc555963714ccb146a04c246e8:palemoon/spkgbuild
 f:ac1ec5f02125db3163912b5a5b5fffc9:gettext/.checksums
 f:6f9cda8c75ea27f9e30565f3eab38220:gettext/.pkgfiles
 f:5a82be5027a7662d0d37654b9a09d037:gettext/spkgbuild
 f:96e88226b72466f394bbe89325ed42de:gimp/.checksums
 f:ceaeb8f7b7ac6aa5b5ed328aa52f5bf0:gimp/.pkgfiles
-f:2c1a777a38fed1b0f207b66dca6e572c:gimp/spkgbuild
+f:2d3ee28786026d5824e28a0fc1f57b99:gimp/spkgbuild
 f:3aa8deb3aa55af6cb4f75839014fca50:jfsutils/readme
 f:444078802d798606be9e32fda7cf7376:jfsutils/inttypes.patch
 f:6cdf25dbd48209515ff78b27e6a1b51a:jfsutils/.checksums
@@ -2235,7 +2235,7 @@ f:7ca2785b5710fba29746951e26d7d05d:sdl2/.pkgfiles
 f:493e3faa6ea44efcd5e9d91814e78502:sdl2/spkgbuild
 f:f51100c9107e549f59e5c678e6a4e3a9:streamlink/.checksums
 f:80d1aabddafaf187bcc3909347e04cb2:streamlink/.pkgfiles
-f:922da35f6c80e72333b3efa206992221:streamlink/spkgbuild
+f:f13252c56638fb9241f618639ef39d56:streamlink/spkgbuild
 f:f46ef6b1d471f08ea9abe760cddc1b42:rsync/install
 f:1f5df52bdc10bb7ea5b432377360487a:rsync/.checksums
 f:18dfdf36542bc06692bfc838ec076147:rsync/.pkgfiles
@@ -2248,7 +2248,7 @@ f:1857a6efd7793e8c176a2827f037941b:grantlee/spkgbuild
 f:dd9ac2c531f2ab9ceffff1deda89c70c:grantlee/3a5fc7662da3261be6496611900c095844e56ab1.patch
 f:34d311248121a24b87061cd10cbc1454:frameworkintegration/.checksums
 f:3624e3e623e6c046a8e9129720a20580:frameworkintegration/.pkgfiles
-f:ec44ad737cc5eb9203cb9e0831d8f0b4:frameworkintegration/spkgbuild
+f:04ad21a4a61e6d6b3b4e5aab49ffe993:frameworkintegration/spkgbuild
 f:5095cfccba7eb46a753f19a7c820f0b8:dcfldd/.checksums
 f:603c2385a955d2f7009960baa8c77277:dcfldd/.pkgfiles
 f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
@@ -2257,7 +2257,7 @@ f:fc44b2faf1cc5cfe32330fe2b573184c:apr-util/.pkgfiles
 f:b4711b17a3363e21b0bd19d45cb57372:apr-util/spkgbuild
 f:4c15e5db82f9f9f2b8ad4f31aad47de9:asciidoc/.checksums
 f:43b1c6daf67657eeb81b493a0e7a3749:asciidoc/.pkgfiles
-f:8765d6dcc1035eb3fd4ba21b407b4c3a:asciidoc/spkgbuild
+f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
 f:7911f66379d56aee7fb7e4a212355259:man-pages/.checksums
 f:b094fa30245641e5e666f948cdf11190:man-pages/.pkgfiles
 f:be3bd16afa1fd7366b7a2ef5801678b7:man-pages/spkgbuild
@@ -2277,7 +2277,7 @@ f:ad898472f7538ffc3ff511c055fee535:jwm/jwm.desktop
 f:c4c30213958521947d867445742837cf:jwm/spkgbuild
 f:c0d5d7c1639de66f7226d99cf47eca34:user-manager/.checksums
 f:5a5646d567735da7eec39efbd2436d54:user-manager/.pkgfiles
-f:cfad9e5cd7cda3e3189f74fb0a92b75b:user-manager/spkgbuild
+f:e7087fed2b10504a6c63f5b37914bbcd:user-manager/spkgbuild
 f:4c7051bedf90313f6e794956b5180dd7:patch/.checksums
 f:e172d8c904198dfee033bf3806fc1f63:patch/.pkgfiles
 f:86a520326cc265843cccc42e557d869c:patch/spkgbuild
@@ -2295,7 +2295,7 @@ f:99b1a34e5893e67a881dfec32f48344e:qemu/install
 f:e46e3051534447c70a3120b7e3bde75a:qemu/.checksums
 f:ae7caa19c3db453b132c2d4bf7c0aa12:qemu/mkdirs
 f:6202716b17a8c6ed5ad8516d35f3eaab:qemu/.pkgfiles
-f:8d50c348d9b29446f5a8306a02ebed3b:qemu/spkgbuild
+f:75aa89dde28a35bd20e5d97687b8df98:qemu/spkgbuild
 f:a3752fb1ed19c97fa8280eb04016ea90:weechat/.checksums
 f:67071334082a4bb6bf4aea22ed8e311f:weechat/.pkgfiles
 f:3fa10d72a7636168f7fbf48180fd33ba:weechat/spkgbuild
@@ -2304,7 +2304,7 @@ f:b327d0f8595c321363c09b22b5ba9239:xauth/.pkgfiles
 f:d2198d3f6b0810dbdd31d80a7d721ad3:xauth/spkgbuild
 f:8d5153599a64ddd6b84e72c90118c017:speedtest-cli/.checksums
 f:6636a508f2b4b84475d1ef7be90b7ecf:speedtest-cli/.pkgfiles
-f:6730a0128827ed61b83f4f49a5d23df0:speedtest-cli/spkgbuild
+f:c2eecbd3c281207382870b5090d1ac1e:speedtest-cli/spkgbuild
 f:2f71e13d407e45c1ee631b68183ad9e8:expat/.checksums
 f:d2c3244002ba779a4fbe1429da1247d3:expat/.pkgfiles
 f:8ffd2cc601ca59b1caa59044b660de77:expat/spkgbuild
@@ -2340,7 +2340,7 @@ f:125dfce8070b4839e03839ccd6f393b1:xdo/.pkgfiles
 f:30a1afa896286c8b68f1d65084218c05:xdo/spkgbuild
 f:bc658f8c75e54c20c6db24613f6e1fad:caja-extensions/.checksums
 f:0868f16b5e4f44a7187cc1673742cb71:caja-extensions/.pkgfiles
-f:bb3a978d09367cd71b2cd4d841b7d45d:caja-extensions/spkgbuild
+f:1093d8c205381c5d0bf19f4cb52fb260:caja-extensions/spkgbuild
 f:7e962fa7678b4444c576ced8ba4385a2:ohsnap/.checksums
 f:752500433bdf180ee0dc005868630101:ohsnap/.pkgfiles
 f:1db530f7d49d0e4c0514efaf6c257cf0:ohsnap/spkgbuild
@@ -2350,7 +2350,7 @@ f:9834b6b2410bc0e85182f6a4d1cffd6c:grub-efi/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub-efi/0006-BootHole.patch
 f:372c889f538394ff27f8c8ca2a1b2c5a:menumaker/.checksums
 f:c013685d3746b562a59e1ff6103c56e8:menumaker/.pkgfiles
-f:90ea1c01d846ce705ea02f02f3e37979:menumaker/spkgbuild
+f:f9e566f341a8b38b226d8c34472817a4:menumaker/spkgbuild
 f:e95d531b1447434e5d9cffc49b965794:i3status/.checksums
 f:21f3fb9d76870f80733607bac89c6e6b:i3status/.pkgfiles
 f:85e355a89ed4fe187b21a35392499c63:i3status/spkgbuild
@@ -2375,10 +2375,10 @@ f:67c3cba4feb1f3fa879f8e05e67e198c:neofetch/.pkgfiles
 f:037029956527103de2018901338e002d:neofetch/spkgbuild
 f:8a761d2226cbc3e025adaf33e83b502e:ranger/.checksums
 f:6282aac3052437fa72276e883e446a7b:ranger/.pkgfiles
-f:8822f7e591a2f4f675deedd35be6f1cd:ranger/spkgbuild
+f:823ba7b9ec03509c8674b6b5d43d2739:ranger/spkgbuild
 f:444fa3a8afc3f35380d3eb18630de78c:htop/.checksums
 f:ed32d2bf4c2c3010781aa9f4c0f1e152:htop/.pkgfiles
-f:5ffce964b7beccd3b58aa17db33f8e12:htop/spkgbuild
+f:180b5f13c562bce7fb9c805ac6115b0c:htop/spkgbuild
 f:5668f19b0d8b685eddb56d6393b82cc9:openbox/.checksums
 f:bbb4fbbcf53fa3c64cb9637f784a7b6f:openbox/.pkgfiles
 f:1bec1d7545aea41f2a6b3c058bb0b97c:openbox/spkgbuild

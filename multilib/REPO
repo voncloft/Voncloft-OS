@@ -35,7 +35,6 @@ d:mesa-32
 d:libxt-32
 d:wayland-32
 d:libxpm-32
-d:python2-32
 d:libxscrnsaver-32
 d:libjpeg-turbo-32
 d:util-linux-32
@@ -214,9 +213,6 @@ f:871a6d7b507d3c77f37663c81ad574e5:wayland-32/spkgbuild
 f:5bccc4e3a280390af11ba00a4cc8ad3a:libxpm-32/.checksums
 f:fc4b8bfa42b200d7dcc8280dc9065d02:libxpm-32/.pkgfiles
 f:259d3a43886ae68cbd9251b1dd0456da:libxpm-32/spkgbuild
-f:e63f80ba8773cfc20f8cf56cef204f86:python2-32/.checksums
-f:e14f99fc17490c727af4eac08a72a290:python2-32/.pkgfiles
-f:f9db5e3d7c576f0203a3354dc0e134b6:python2-32/spkgbuild
 f:058f6c1159f27724256981a80a6150af:libxscrnsaver-32/.checksums
 f:4978a0ab41f20829d85b6ffa40956743:libxscrnsaver-32/.pkgfiles
 f:b5fcf9eebe8ab863b490c7a64d3fa487:libxscrnsaver-32/spkgbuild
@@ -267,7 +263,7 @@ f:8324dafd2f396135c6514f793c06bb01:libxinerama-32/.pkgfiles
 f:f6c8ba2775bfd9c845a494dd04060220:libxinerama-32/spkgbuild
 f:04bc6ed10e2ee11834246a2f8ddbd626:libxml2-32/.checksums
 f:73b7ffc84eb62195b0b04d589be093ea:libxml2-32/.pkgfiles
-f:84359ffeae74ec3898135629cfacd603:libxml2-32/spkgbuild
+f:b93a48b1a1d49bb90090e809d48e12b8:libxml2-32/spkgbuild
 f:f0fe1a64d40c056baf2149b1efebf1b4:libxml2-32/libxml2-python3_hack-1.patch
 f:79c24d32fdc6a71fa4e9397612aa41ca:libgpg-error-32/.checksums
 f:6b693270b1c93504167f203d5e3214ef:libgpg-error-32/.pkgfiles
@@ -292,10 +288,10 @@ f:e7c8ac0918e9081ffdbef22c90fb5118:libxres-32/.pkgfiles
 f:ed19dd2c3d5a184e21d85ed8ac301a47:libxres-32/spkgbuild
 f:bbbd50f6b7bfbebd7ffacd39816c901b:playonlinux/.checksums
 f:86fa8be3169b189d945e32479443ccd4:playonlinux/.pkgfiles
-f:72738834d149df552169d0c6807c4a43:playonlinux/spkgbuild
+f:be24793648b2d4f29db8019f74cc13f1:playonlinux/spkgbuild
 f:b1f1c9f57c9349af7cb61c7e3f7b8d29:llvm-32/.checksums
 f:b0aefc5e0d685b33f4c9c95d85ec9c2b:llvm-32/.pkgfiles
-f:f90aaba18e199ec2cb20260a1b4e039c:llvm-32/spkgbuild
+f:0aaa7be76abbb25076ab9dccd1d484da:llvm-32/spkgbuild
 f:a1fcdc7eb3b93d134da185bc057273b1:gstreamer-32/.checksums
 f:350b22dca813b5c55e02cd9584c08f2b:gstreamer-32/.pkgfiles
 f:a72321501dbd3cec36136aeb9d8ac142:gstreamer-32/spkgbuild
@@ -340,7 +336,7 @@ f:27bda02f49be3d6720aa99aede9cf592:icu-32/.pkgfiles
 f:855587c0c5c4e398afcd9b5ecbb71f44:icu-32/spkgbuild
 f:92c33f28705557ad9a20aecf93494cf8:python3-32/.checksums
 f:997de27aa2096915627a82f8d5077dba:python3-32/.pkgfiles
-f:21e8450db4a209af20837baa1f6a83f3:python3-32/spkgbuild
+f:818615e0b0d8e471a274a65d960d9c14:python3-32/spkgbuild
 f:f69b0d969a7f046ffd0248ceb5d223a7:elfutils-32/.checksums
 f:bceceeb4141d53f8472af72d7feea008:elfutils-32/.pkgfiles
 f:95ebccec796a3f94280aa973d1e5153e:elfutils-32/spkgbuild

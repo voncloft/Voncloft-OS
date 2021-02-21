@@ -1,5 +1,5 @@
 # description	: The GRand Unified Bootloader
-# depends	: gettext bash xz fuse2 python3
+# depends	: gettext bash xz fuse2 python
 
 name=grub
 version=2.04

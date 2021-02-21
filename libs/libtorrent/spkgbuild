@@ -1,5 +1,5 @@
 # description	: A C++ BitTorrent library that aims to be a good alternative to all the other implementations around
-# depends	: boost python2 python3
+# depends	: boost python python
 
 name=libtorrent
 version=1.1.14
@@ -21,7 +21,7 @@ build() {
 
 	# https://github.com/qbittorrent/qBittorrent/issues/5265#issuecomment-220007436
 	CXXFLAGS="$CXXFLAGS -std=c++11" \
-	PYTHON=/usr/bin/python2 \
+	PYTHON=/usr/bin/python \
 	../libtorrent-libtorrent-${_version}/configure \
 	    --prefix=/usr \
 	    --enable-python-binding \
@@ -34,14 +34,14 @@ build() {
 	cd ../py3
 
 	CXXFLAGS="$CXXFLAGS -std=c++11" \
-	PYTHON=/usr/bin/python3 \
+	PYTHON=/usr/bin/python \
 	../libtorrent-libtorrent-${_version}/configure \
 	    --prefix=/usr \
 	    --enable-python-binding \
 	    --enable-examples \
 	    --disable-static \
 	    --with-libiconv \
-	    --with-boost-python=boost_python3
+	    --with-boost-python=boost_python
 	make DESTDIR=$PKG install
 
 	rm $PKG/usr/bin/*_test $PKG/usr/bin/*_tester $PKG/usr/bin/simple_client $PKG/usr/bin/stats_counters

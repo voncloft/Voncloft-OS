@@ -1,5 +1,5 @@
 # description	: Openbox menu editor
-# depends	: python2 python2-gtk openbox
+# depends	: python  openbox
 
 name=obmenu
 version=1.0
@@ -8,6 +8,6 @@ source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
-	python2 setup.py install --root="$PKG" --optimize=1
+	python setup.py install --root="$PKG" --optimize=1
 }
 

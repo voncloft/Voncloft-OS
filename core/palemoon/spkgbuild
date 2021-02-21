@@ -1,5 +1,5 @@
 # description	: Open source web browser based on Firefox focusing on efficiency
-# depends	: python2 autoconf2.13 gtk2 yasm gconf alsa-lib dbus-glib
+# depends	: python autoconf2.13 gtk2 yasm gconf alsa-lib dbus-glib
 
 name=palemoon
 version=28.8.4

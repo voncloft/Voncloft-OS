@@ -24,7 +24,7 @@ build () {
 
         pathappend $KF5_PREFIX/lib/qml          QML2_IMPORT_PATH
 
-        pathappend $KF5_PREFIX/lib/python3.8/site-packages PYTHONPATH
+        pathappend $KF5_PREFIX/lib/python.8/site-packages PYTHONPATH
 
         pathappend $KF5_PREFIX/share/man        MANPATH
         # End /etc/profile.d/kf5.sh

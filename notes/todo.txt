@@ -1,94 +1,13 @@
-create a mythtv package repository
 buy a tv tuner quad hd card from hauppauge install it on 'router'
-	mythtv
-    'libavc1394'
-    'libbluray'
-    'libhdhomerun'
-    'libiec61883'
-    'libpulse'
-    'libsamplerate'
-    'qt5-script'
-    'qt5-webkit'
-
-
-
-
-	'libcec'
-    'libmariadbclient'
-    'lirc'
-    'perl-dbd-mysql'
-    'perl-io-socket-inet6'
-    'perl-libwww'
-    'perl-net-upnp'
-    'perl-xml-simple'
-    'perl-xml-xpath'
-    'python-future'
-    'python-lxml'
-    'python-mysqlclient'
-    'python-requests'
-    'python-simplejson'
-    
-create missing depend instructions for kodi, also build kodi spkgbuild
-
-work on update-script on working_on to update kde, etc.
-
 
 test the following packages
 hostapd
 deluge
-[m] python3-distro
-[m] python3-geoip
-[m] python3-pyopenssl
-[m] python3-rencode
-[m] python3-service-identity
-[m] python3-setproctitle
-[m] python3-twisted
-[m] python3-zope-interface
-libtorrent-rasterbar
 
-
-build following spkgbuild scripts for:
-java-headless
-webmin
+build following spkgscripts
 projectm
-
-
-working-on
-[m] python3-feedparser
-[m] python3-sqlalchemy
-[m] python3-beautifulsoup4
-[m] python3-html5lib
-[m] python3-pyrss2gen
-[m] python3-pynzb
-[m] python3-rpyc
-[m] python3-jinja
-[m] python3-dateutil
-[m] python3-jsonschema
-[m] python3-guessit
-[m] python3-rebulk
-[m] python3-apscheduler
-[m] python3-terminaltables
-[m] python3-colorclass
-[m] python3-cherrypy
-[m] python3-flask
-[m] python3-flask-restful
-[m] python3-flask-restplus
-[m] python3-flask-compress
-[m] python3-flask-login
-[m] python3-flask-cors
-[m] python3-zxcvbn
-[m] python3-progressbar
-[m] python3-loguru
-[m] python3-guppy
-[m] python3-transmissionrpc
-[m] python3-rarfile
-[m] python3-boto3
-[m] python3-paver
-
-
-
-
-
 
 rework the following
 spkgbuild for make-ca and certificates
+
+continue working on python scripts in working_on folder

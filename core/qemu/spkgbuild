@@ -1,5 +1,5 @@
 # description	: Virtualization for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V)
-# depends	: alsa-lib sdl2 glib python3 coreutils pixman libx11
+# depends	: alsa-lib sdl2 glib python coreutils pixman libx11
 
 name=qemu
 version=5.1.0
@@ -15,7 +15,7 @@ build() {
 	../configure --prefix=/usr \
 	             --sysconfdir=/etc \
 	             --libexecdir=/usr/lib/$name \
-		     --python=python3 \
+		     --python=python \
 	             --audio-drv-list=alsa \
 		     --disable-docs \
 		     --disable-gtk \

@@ -8,7 +8,7 @@ source="http://xcb.freedesktop.org/dist/xcb-proto-$version.tar.xz"
 build() {
 	cd $name-$version
 
-  	PYTHON=python3 ./configure \
+  	PYTHON=python ./configure \
 		--prefix=/usr \
 		--sysconfdir=/etc \
 		--localstatedir=/var \

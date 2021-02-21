@@ -1,5 +1,5 @@
 # description	: File and print services to SMB/CIFS clients and Windows networking to Linux clients
-# depends	: fuse3 gpgme python3 jansson libtirpc rpcsvc-proto perl-parse-yapp gnutls linux-pam
+# depends	: fuse3 gpgme python jansson libtirpc rpcsvc-proto perl-parse-yapp gnutls linux-pam
 
 name=samba
 version=4.12.6
@@ -45,7 +45,7 @@ build() {
 	# revdep exclude
 	mkdir -p $PKG/etc/revdep.d
 	echo "/usr/lib/samba/" > $PKG/etc/revdep.d/samba.conf
-	echo "/usr/lib/python3.8/site-packages/samba/" >> $PKG/etc/revdep.d/samba.conf
+	echo "/usr/lib/python.8/site-packages/samba/" >> $PKG/etc/revdep.d/samba.conf
 
 	# runit service
         install -Dm755 $SRC/run.nmbd $PKG/etc/sv/nmbd/run

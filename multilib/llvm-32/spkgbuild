@@ -1,5 +1,5 @@
 # description	: Collection of modular and reusable compiler and toolchain technologies
-# depends	: libffi-32 python2-32 libxml2-32 llvm
+# depends	: libffi-32  libxml2-32 llvm
 
 name=llvm-32
 version=10.0.1

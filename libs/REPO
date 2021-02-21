@@ -141,7 +141,7 @@ f:b193ab1a7e3f71fafccae041c07f59fd:libwpe/.pkgfiles
 f:5191b194968d599bb07594772577039c:libwpe/spkgbuild
 f:57c928a97f4f4c2efe78e3398d9d5f6d:libpwquality/.checksums
 f:1104428234be080343d8a57328d05c58:libpwquality/.pkgfiles
-f:5b5dbda80309dc5b3c0ae9e60d8c3dd9:libpwquality/spkgbuild
+f:44673ba67967d331d994690679a984bc:libpwquality/spkgbuild
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.checksums
 f:36def77793fdcaff008c4a67b0216c55:libwebp/.pkgfiles
 f:31f8994add67247371d7e2d5981adfb9:libwebp/spkgbuild
@@ -220,7 +220,7 @@ f:5c429aac6ecab6b063dae04836ca4bbf:libdbusmenu/.pkgfiles
 f:6ebe97fe4a4298af67100890f9037fd2:libdbusmenu/spkgbuild
 f:2843bbbd0ab1756bbefc550997d79e0c:libkcddb/.checksums
 f:0504fff5e9a5f61fa94bf48bf5739aba:libkcddb/.pkgfiles
-f:cdf0a6686a1d62b79aa9ad3a147f4758:libkcddb/spkgbuild
+f:ff512132416baac96b1dcf5b16857acf:libkcddb/spkgbuild
 f:030d6cf96e8f2d296d739f9f94b80bf0:libmad/.checksums
 f:67f3c7e8ae88ecf01e44998c504e5587:libmad/.pkgfiles
 f:d531bed28d26117bd28787b724d8a3c3:libmad/spkgbuild
@@ -260,7 +260,7 @@ f:fb5aae9fa75e74b2c61e5b66171546d4:libarchive/.pkgfiles
 f:9e7217e227edb9123f625f3b858368f8:libarchive/spkgbuild
 f:03a2e4837ab14d9a247e97588dcefaea:libpeas/.checksums
 f:4a6782fc177025b07be3125ecde71247:libpeas/.pkgfiles
-f:844c8ab37336eee2fd1fd8bd702fdd8f:libpeas/spkgbuild
+f:e89d1b5e9cf6d4c6b34c5c81a1d36d93:libpeas/spkgbuild
 f:bcbb8182a624dfbb47257e279c925251:libsecret/.checksums
 f:43d0de4eb8e5493a85c478e763645d8c:libsecret/.pkgfiles
 f:373744d67738ccd830abdb592c7725e6:libsecret/spkgbuild
@@ -372,7 +372,7 @@ f:7b53dfe27090cc0546be1f6af320c30d:libfm-qt/.pkgfiles
 f:6b53215ab29144fb295db370360649a4:libfm-qt/spkgbuild
 f:f28a5999b802456767df99b67a512c03:libpsl/.checksums
 f:8665518ea18906f5b10c0aa1928cb159:libpsl/.pkgfiles
-f:549aedd0310fb4570bd3f1ae54bbb440:libpsl/spkgbuild
+f:282bdc5bfa88dda69a07407cb58a32b0:libpsl/spkgbuild
 f:485e0c5a4b4db0e2bf470e29dab10cb5:libmusicbrainz5/.checksums
 f:9505e1fdaf37bbceb0b580ddccefc2c3:libmusicbrainz5/.pkgfiles
 f:46eddc181d031da66a40f5346ab77e18:libmusicbrainz5/spkgbuild
@@ -447,7 +447,7 @@ f:bbfe0a1c74e4d62d1d22b6c0887e942a:libtasn1/.pkgfiles
 f:4e330676c02e41e44f0af2163ae63809:libtasn1/spkgbuild
 f:f6ec50a2ad94cd094d775deb10a4cb6c:libindicator/.checksums
 f:2f7657e983abec5cdd4890c6b9be80ed:libindicator/.pkgfiles
-f:35fd68b1d53673363941a0156a2dc7ed:libindicator/spkgbuild
+f:8eb02952289c7ce662ea743af6e19f34:libindicator/spkgbuild
 f:63b5c323c817110f56e9a28b4f264dea:libnotify/.checksums
 f:26cf4add84a933e1249b09f9682d8358:libnotify/.pkgfiles
 f:17f00fae5f4be8e100d5a915477ccc24:libnotify/spkgbuild
@@ -484,7 +484,7 @@ f:a377712176ea793e22313e8c8b7d930a:libva/spkgbuild
 f:e4ea060a5287b6dc181f43ab2f69d503:libtorrent/fix-build-with-boost-1.72.0.patch
 f:67ee9ec110160fcf9c3938e62e4b93db:libtorrent/.checksums
 f:74c91dbbf4a99f27834ff6fdc4a5a799:libtorrent/.pkgfiles
-f:c48d772d2ebe0701e61c0eec20c6389e:libtorrent/spkgbuild
+f:69cc81b6f601a76b52889948ad7c451f:libtorrent/spkgbuild
 f:64ed61ea7cc5207fffba838f60a27bd7:libcurl-compat/.checksums
 f:a0c3dfc4c3649513318667c4a9138ab8:libcurl-compat/.pkgfiles
 f:3965a59dbebb04051391e83daa216932:libcurl-compat/spkgbuild
@@ -502,7 +502,7 @@ f:6be3097be54ccc11f36eeaed6fc185f6:libsoup/.pkgfiles
 f:fd57b7e47339e1e434aab58fac3c7b2c:libsoup/spkgbuild
 f:abb41c223abbdd3ba92b094db1b5dc1a:libblockdev/.checksums
 f:1feb95104a1b8855c2466c964dc45afc:libblockdev/.pkgfiles
-f:0f3559ea581d90cf3b57348d902064fc:libblockdev/spkgbuild
+f:a715485c66b0a1dfa21f8a3da0f3edb9:libblockdev/spkgbuild
 f:3b101abac4a9eed4f0efed924d1e85ca:libkexiv2/.checksums
 f:de8db2eb0bbd097107d61f2a627f0ef8:libkexiv2/.pkgfiles
 f:1313685a0e377795f840cd8acef3e867:libkexiv2/spkgbuild

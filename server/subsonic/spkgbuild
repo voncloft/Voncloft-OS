@@ -11,6 +11,7 @@ source="https://sourceforge.net/projects/subsonic/files/${name}/${version}/${nam
 build()
 {
 	cd $name-$version
+	echo -e "JAVA_HOME=/opt/java\n"$(cat subsonic.sh) > subsonic.sh
 	mkdir -p $PKG/var/lib/subsonic
     	mkdir -p $PKG/var/playlists
     	sed -i 's/\/var\/subsonic/\/var\/lib\/subsonic/' subsonic.sh

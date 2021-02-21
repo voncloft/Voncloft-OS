@@ -1,5 +1,5 @@
 # description	: KDE CDDB library
-# depends	: kio libmusicbrainz5 extra-cmake-modules kdoctools python3
+# depends	: kio libmusicbrainz5 extra-cmake-modules kdoctools python
 
 name=libkcddb
 version=19.12.3

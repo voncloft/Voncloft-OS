@@ -1,5 +1,5 @@
 # description	: Documentation tool for public library API
-# depends	: docbook-xml docbook-xsl itstool libxslt python2 python3-pygments
+# depends	: docbook-xml docbook-xsl itstool libxslt python python-pygments
 
 name=gtk-doc
 version=1.32

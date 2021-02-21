@@ -1,5 +1,5 @@
 # description	: The main C library
-# depends	: linux-api-headers python3
+# depends	: linux-api-headers python
 
 name=glibc
 version=2.32

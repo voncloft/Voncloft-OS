@@ -1,5 +1,5 @@
 # description	: Deletes unneeded files to free disk space and maintain privacy
-# depends	: desktop-file-utils gtk3 hicolor-icon-theme python2-gobject3
+# depends	: desktop-file-utils gtk3 hicolor-icon-theme 
 
 name=bleachbit
 version=3.0

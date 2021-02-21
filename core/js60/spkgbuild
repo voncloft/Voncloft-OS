@@ -1,5 +1,5 @@
 # description	: Mozilla's JavaScript engine written in C
-# depends	: gcc yasm icu nspr autoconf2.13 python2
+# depends	: gcc yasm icu nspr autoconf2.13 python
 
 name=js60
 version=60.1.0

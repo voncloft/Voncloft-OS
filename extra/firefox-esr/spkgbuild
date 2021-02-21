@@ -1,5 +1,5 @@
 # description	: Standalone web browser from mozilla.org, Extended Support Release
-# depends	: gtk3 gtk2 libxt dbus-glib alsa-lib libvpx libevent nss sqlite icu unzip zip diffutils gconf python2 yasm mesa inetutils autoconf2.13 rust cbindgen nodejs nasm
+# depends	: gtk3 gtk2 libxt dbus-glib alsa-lib libvpx libevent nss sqlite icu unzip zip diffutils gconf python yasm mesa inetutils autoconf2.13 rust cbindgen nodejs nasm
 
 name=firefox-esr
 version=68.9.0

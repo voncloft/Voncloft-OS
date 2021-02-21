@@ -1,5 +1,5 @@
 # description	: A YouTube/Youku/Niconico video downloader written in Python 3
-# depends	: python3-setuptools
+# depends	: python-setuptools
 
 name=you-get
 version=0.4.1456
@@ -8,6 +8,6 @@ source="https://github.com/soimort/you-get/archive/v$version/$name-$version.tar.
 
 build() {
 	cd $name-$version
-	python3 setup.py build
-	python3 setup.py install --root="$PKG"
+	python setup.py build
+	python setup.py install --root="$PKG"
 }

@@ -1,5 +1,5 @@
 # description	: Library for accessing and resolving information from the Public Suffix List
-# depends	: libidn2 libunistring python3
+# depends	: libidn2 libunistring python
 
 name=libpsl
 version=0.21.1

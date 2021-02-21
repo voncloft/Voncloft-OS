@@ -77,6 +77,7 @@ d:perl-graphviz
 d:perl-gtk2-ex-formfactory
 d:perl-test-tester
 d:perl-test-differences
+d:perl-authen-pam
 d:perl-lingua-en-numbers-ordinate
 d:perl-ipc-run
 d:perl-tk-tablematrix
@@ -188,6 +189,7 @@ d:perl-test-exit
 d:perl-math-random-isaac
 d:perl-ppix-utilities
 d:perl-module-build
+d:perl-encode-detect
 d:perl-html-tagfilter
 d:perl-test-requiresinternet
 d:perl-probe-perl
@@ -705,6 +707,7 @@ f:e655dfdb66e0743956ad539f06ba2620:perl-graphviz/spkgbuild
 f:be40c122cb80cfd1b8dc1fd37af90d85:perl-gtk2-ex-formfactory/spkgbuild
 f:e9f367761096cba3a9f4b64e0dc6d69d:perl-test-tester/spkgbuild
 f:1367a6ce20f2deedd0ac8045458f2add:perl-test-differences/spkgbuild
+f:ffc977bcfca82a874fc922278883ccf4:perl-authen-pam/spkgbuild
 f:6703b3915c6c4bcc4aeeaef9ae946863:perl-lingua-en-numbers-ordinate/spkgbuild
 f:9479d251bf0ccc8742c31e703abdb491:perl-ipc-run/spkgbuild
 f:fde8f15d2bde5285440fc9c9e7964c79:perl-tk-tablematrix/spkgbuild
@@ -816,6 +819,7 @@ f:b37103dceb16893d0658b575accb20a5:perl-test-exit/spkgbuild
 f:a384376e9551b29d2d6b26f3ea85c903:perl-math-random-isaac/spkgbuild
 f:67290aed54bd078d8fba542b825510ef:perl-ppix-utilities/spkgbuild
 f:c7be0e22d86596c9a97bd6fafb6597c0:perl-module-build/spkgbuild
+f:9428537b4ae5cd463ba865efd640ed48:perl-encode-detect/spkgbuild
 f:dae338d2d02fd87d0b353dafd84ce4c5:perl-html-tagfilter/spkgbuild
 f:94d93b44fa3875f5fb72023408fe0dc0:perl-test-requiresinternet/spkgbuild
 f:908c6d118a7b617881e654702c37e7a4:perl-probe-perl/spkgbuild

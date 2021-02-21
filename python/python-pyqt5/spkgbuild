@@ -1,5 +1,5 @@
 # description	: A set of Python 3.x bindings for the Qt5 toolkit
-# depends	: python-sip qtwebengine qt5-webkit python-dbus python2-enum34
+# depends	: python-sip qtwebengine qt5-webkit python-dbus 
 
 name=python-pyqt5
 version=5.13.1

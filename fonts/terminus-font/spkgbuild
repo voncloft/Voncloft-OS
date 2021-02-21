@@ -1,5 +1,5 @@
 # description	: Monospace bitmap font (for X11 and console)
-# depends	: fontconfig encodings mkfontscale bdftopcf python3
+# depends	: fontconfig encodings mkfontscale bdftopcf python
 
 name=terminus-font
 version=4.48

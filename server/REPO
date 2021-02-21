@@ -6,6 +6,7 @@ d:dhcpcd
 d:deluge
 d:subsonic
 d:samba
+d:webmin
 f:23df845b1d5e02325f6de8966300bb65:apache/install
 f:19149f70c4d1cb327585866dce6ef6cd:apache/.checksums
 f:d83e3207e9de9b0b0f7ad0a46f900318:apache/mkdirs
@@ -25,9 +26,10 @@ f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
 f:e68392446a9d432115b0c30bd61109b7:dhcpcd/spkgbuild
 f:7fab4ae292b107759129290840582cf6:dhcpcd/run
 f:4b07d0e5a48cafad480c921f46878053:deluge/spkgbuild
-f:8a94d948768a51b510c47d2d9011dbaf:subsonic/spkgbuild
+f:07a1d1cb48e58c84f80f4060d2cfddd3:subsonic/spkgbuild
 f:84c455fee96d1a87ca46a8f553cbec65:samba/.checksums
 f:4bce64327c31cc59a3d1c30704c87dcf:samba/run.smbd
 f:f993571d792956328db07aa709924366:samba/.pkgfiles
-f:fe8009ce90f7d49c7a218c4ca3193a6d:samba/spkgbuild
+f:41b7b714cb888a0f25ae9ee8cafd41d9:samba/spkgbuild
 f:31491690f1a7c9d54b51823ba406b9b4:samba/run.nmbd
+f:06973f2157af51638eefbcd9a32ad954:webmin/spkgbuild

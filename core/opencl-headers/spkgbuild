@@ -1,5 +1,5 @@
 # description	: OpenCL (Open Computing Language) header files
-# depends	: python3
+# depends	: python
 
 name=opencl-headers
 version=20181101
@@ -18,7 +18,7 @@ build() {
 	done
 
 	cd $SRC/OpenCL-CLHPP-$_commit2
-	python3 gen_cl_hpp.py -i input_cl.hpp -o cl.hpp
+	python gen_cl_hpp.py -i input_cl.hpp -o cl.hpp
 	install -m 644 cl.hpp $PKG/usr/include/CL/
 	install -m 644 input_cl2.hpp $PKG/usr/include/CL/cl2.hpp
 }

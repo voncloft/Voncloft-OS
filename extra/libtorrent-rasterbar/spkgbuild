@@ -19,7 +19,7 @@ build()
     	--enable-examples \
     	--disable-static \
     	--with-libiconv \
-    	--with-boost-python=boost_python3
+    	--with-boost-python=boost_python
 
 	make
 	make DESTDIR=$PKG install

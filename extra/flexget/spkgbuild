@@ -1,5 +1,5 @@
 # description : downloads torrents 
-# depends : flexget-daemon python3 python3-feedparser python3-sqlalchemy python3-yaml python3-beautifulsoup4 python3-html5lib python3-pyrss2gen python3-pynzb python3-rpyc python3-jinja python3-requests python3-dateutil python3-jsonschema python3-guessit python3-rebulk python3-apscheduler python3-terminaltables python3-colorclass python3-cherrypy python3-flask python3-flask-restful python3-flask-restplus python3-flask-compress python3-flask-login python3-flask-cors python3-pyparsing python3-zxcvbn python3-progressbar python3-loguru python3-guppy python3-transmissionrpc python3-rarfile python3-boto3 python3-paver python3-setuptools
+# depends : flexget-daemon python python-feedparser python-sqlalchemy python-yaml python-beautifulsoup4 python-html5lib python-pyrss2gen python-pynzb python-rpyc python-jinja python-requests python-dateutil python-jsonschema python-guessit python-rebulk python-apscheduler python-terminaltables python-colorclass python-cherrypy python-flask python-flask-restful python-flask-restplus python-flask-compress python-flask-login python-flask-cors python-pyparsing python-zxcvbn python-progressbar python-loguru python-guppy python-transmissionrpc python-rarfile python-boto3 python-paver python-setuptools
 
 
 
@@ -12,7 +12,7 @@ options="!checksum"
 
 build()
 {
-	python3 setup.py build
-	python3 setup.py install --root=$PKG --prefix=/usr --optimize=1 
+	python setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1 
 }
 

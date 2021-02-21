@@ -1,5 +1,5 @@
 # description	: Terminal emulator that supports tabs and grids
-# depends	: python2-psutil vte3 gsettings-desktop-schemas keybinder3
+# depends	: python-psutil vte3 gsettings-desktop-schemas keybinder3
 
 name=terminator
 version=1.91
@@ -8,7 +8,7 @@ source="https://launchpad.net/terminator/gtk3/$version/+download/$name-$version.
 
 build() {
 	cd $name-$version
-	python2 setup.py build
-	python2 setup.py install --skip-build --root=$PKG --optimize=1
+	python setup.py build
+	python setup.py install --skip-build --root=$PKG --optimize=1
 	rm -r $PKG/usr/share/icons/hicolor/icon-theme.cache
 }

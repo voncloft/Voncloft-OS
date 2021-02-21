@@ -1,5 +1,5 @@
 # description	: Contains libraries and utilities used for parsing XML files
-# depends	: icu python3
+# depends	: icu python
 
 name=libxml2
 version=2.9.10
@@ -13,7 +13,7 @@ build() {
 		    --disable-static \
 		    --with-history \
 		    --with-icu \
-		    --with-python=/usr/bin/python3
+		    --with-python=/usr/bin/python
 	make
 	make DESTDIR=$PKG install
 }

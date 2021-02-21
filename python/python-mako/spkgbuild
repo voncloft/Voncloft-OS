@@ -11,6 +11,6 @@ build() {
 
 	python setup.py install --root=$PKG --optimize=1
 
-	# conflict with python2-mako
+	# conflict with 
 	rm $PKG/usr/bin/mako-render
 }

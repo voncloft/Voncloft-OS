@@ -1,5 +1,5 @@
 # description	: Application matching framework
-# depends	: libgtop libwnck3 python2-libxml2 gobject-introspection python2-lxml vala
+# depends	: libgtop libwnck3  gobject-introspection  vala
 
 name=bamf
 version=0.5.4
@@ -9,7 +9,7 @@ source="https://launchpad.net/bamf/${version%.*}/$version/+download/$name-$versi
 build() {
 	cd $name-$version
 
-	export PYTHON='/usr/bin/python2'
+	export PYTHON='/usr/bin/python'
 	export CFLAGS="$CFLAGS -Wno-deprecated-declarations"
 
 	sed -i configure -e '/CFLAGS=/s/ \-Werror / /'

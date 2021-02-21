@@ -1,5 +1,5 @@
 # description	: C-Extensions for Python3
-# depends	: python3
+# depends	: python
 
 name=cython3
 version=0.29.21
@@ -8,6 +8,6 @@ source="https://files.pythonhosted.org/packages/source/C/Cython/Cython-$version.
 
 build() {
 	cd Cython-$version
-	python3 setup.py build
-	python3 setup.py install --root=$PKG --optimize=1
+	python setup.py build
+	python setup.py install --root=$PKG --optimize=1
 }

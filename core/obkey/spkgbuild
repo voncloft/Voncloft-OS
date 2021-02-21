@@ -1,5 +1,5 @@
 # description	: Openbox Key Editor
-# depends	: python2 python2-gtk
+# depends	: python 
 
 name=obkey
 version=1.0
@@ -8,5 +8,5 @@ source="$name-$version.tar.gz::https://github.com/nsf/obkey/archive/v$version.ta
 
 build() {
 	cd $name-$version
-	python2 setup.py install --root=$PKG
+	python setup.py install --root=$PKG
 }

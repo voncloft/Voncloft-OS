@@ -1,5 +1,5 @@
 # description	: GNU Image Manipulation Program
-# depends	: gegl json-glib python2-gtk gtk2 mypaint-brushes gexiv2 poppler-glib glib-networking gtk3 librsvg
+# depends	: gegl json-glib  gtk2 mypaint-brushes gexiv2 poppler-glib glib-networking gtk3 librsvg
 
 name=gimp
 version=2.10.20

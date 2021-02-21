@@ -1,5 +1,5 @@
 # description	: Common functions for password quality checking and also scoring them based on their apparent randomness
-# depends	: cracklib linux-pam python2
+# depends	: cracklib linux-pam python
 
 name=libpwquality
 version=1.4.2
