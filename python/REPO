@@ -113,6 +113,7 @@ d:python-pkginfo
 d:python-blessings
 d:python-behave
 d:python-xlib
+d:python-ddt
 d:python-backcall
 d:python-backports.csv
 d:python-aioredis
@@ -148,6 +149,7 @@ d:python-gobject2
 d:python-beaker
 d:python-ansi2html
 d:python-calmjs.parse
+d:python-dephell
 d:python-crc16
 d:python-betamax
 d:python-cloudscraper
@@ -168,6 +170,7 @@ d:python-aiogram
 d:python-astroid
 d:python-ansicolor
 d:python-autoremove-torrents
+d:python-dbus-deviation
 d:python-aioresponses
 d:python-boto
 d:python-pyqtwebengine
@@ -196,10 +199,12 @@ d:python-dateparser
 d:python-argon2-cffi
 d:python-pyqt5
 d:python-cson
+d:python-dbus-signature-pyparsing
 d:python-h2
 d:python-future
 d:python-calmjs.types
 d:python-clickclick
+d:python-debtcollector
 d:python-lxml
 d:python-cheroot
 d:python-babel
@@ -212,6 +217,7 @@ d:python-pillow
 d:python-aiopg
 d:python-service-identity
 d:python-defusedxml
+d:python-dbusmock
 d:python-configargparse
 d:python-args
 d:python-click-default-group
@@ -440,6 +446,7 @@ f:bef25fe2e7baa05bd58db12863456ec2:python-behave/spkgbuild
 f:1cae548d092257c1090986fab1246e13:python-xlib/.checksums
 f:c946b284236449a18eeb473868c13e90:python-xlib/.pkgfiles
 f:f50aba516e938b48159cb4ae9442b5fb:python-xlib/spkgbuild
+f:a4d19f9153661724159a5eccceff0ed5:python-ddt/spkgbuild
 f:c7b76f0ec37f276b98395f7ce0f51867:python-backcall/spkgbuild
 f:c94c93e859dad9ab6922ed472e4c8afd:python-backports.csv/spkgbuild
 f:5043eaf3fa28e684a87ce84c80992ee8:python-aioredis/spkgbuild
@@ -487,6 +494,7 @@ f:fd892325a4ea1099a94a2186537fe522:python-gobject2/spkgbuild
 f:21c51ccae4ea6f72bdafeb2be869721d:python-beaker/spkgbuild
 f:2099ef7ef6852ce41da23524f45b7e18:python-ansi2html/spkgbuild
 f:62c15e11c084659bbcc0126143b9e5a3:python-calmjs.parse/spkgbuild
+f:86b985789777c08dcc90ce269c985864:python-dephell/spkgbuild
 f:67e0c2e1403f7f7dc715f37e806c5bab:python-crc16/spkgbuild
 f:e3eb480a3906ba08d10551adf755f448:python-betamax/spkgbuild
 f:dc52e1f8882f8308a544e2c6a999f939:python-cloudscraper/spkgbuild
@@ -511,6 +519,7 @@ f:7b2a196d8a69992d3ae219f741e1a826:python-ansicolor/spkgbuild
 f:a203125741cf9d18b1f178f2af299a0e:python-autoremove-torrents/.checksums
 f:77857712af52aa15f7930e4219ee3c0d:python-autoremove-torrents/.pkgfiles
 f:6b78b1bd9eda674bb0f0236efc6a87c0:python-autoremove-torrents/spkgbuild
+f:5e1565e2d1c58a28440c210d226a6635:python-dbus-deviation/spkgbuild
 f:100b853bb754f6223bdf7cf32c4f6db4:python-aioresponses/spkgbuild
 f:5dc12094d51f5815dc997cfc121465b7:python-boto/spkgbuild
 f:d53bcf227e1509686fc59d4fdf47b917:python-pyqtwebengine/.checksums
@@ -546,10 +555,12 @@ f:3d9951d83a2cc832efbad1904dbb8eaf:python-pyqt5/.checksums
 f:041765275f0692f98012def381fca08c:python-pyqt5/.pkgfiles
 f:b42ea14e01030e7c2173681915c6226a:python-pyqt5/spkgbuild
 f:6adc70a09937853552b0444593bc4ab4:python-cson/spkgbuild
+f:2c11cdd219e181e86ff3b5379d4a1427:python-dbus-signature-pyparsing/spkgbuild
 f:003be5a1df6a82037c32b85e1e0f25ad:python-h2/spkgbuild
 f:62a04456732c274e99c61e7d1012f9e0:python-future/spkgbuild
 f:b783199720d2407e2adeab57df7f42b9:python-calmjs.types/spkgbuild
 f:cab330b1be7e94df3bbd864f100ff103:python-clickclick/spkgbuild
+f:230d503f0c670ada3d9099960ad29775:python-debtcollector/spkgbuild
 f:9f4069251e8291d99f96d92a22d3fa29:python-lxml/.checksums
 f:7065641e3189e3a53199c856128164d5:python-lxml/.pkgfiles
 f:ac516bac3a4e76b859428f377d838b35:python-lxml/spkgbuild
@@ -568,6 +579,7 @@ f:7f6f341dc24ac18226ce70315c6a23b4:python-pillow/spkgbuild
 f:4c5d592c5db1c9bd06f6f9599ea7d0b8:python-aiopg/spkgbuild
 f:345e2d701a739ff9fbb0bf125d8ac1a6:python-service-identity/spkgbuild
 f:a15a328937ec2cec7c1fddb0cdb6de6c:python-defusedxml/spkgbuild
+f:869265d1709bc41f8585d0649bc7c11a:python-dbusmock/spkgbuild
 f:b88dd082ff9f49a94c02f66a7322bf90:python-configargparse/spkgbuild
 f:85ec31a763384cdb8a5a48afc5f4b466:python-args/spkgbuild
 f:441f36911e04422bb16b8c6c31f2accb:python-click-default-group/spkgbuild

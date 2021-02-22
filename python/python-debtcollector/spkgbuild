@@ -11,7 +11,6 @@ options="!checksum"
 
 build() {
    cd debtcollector-$version
-   cd debtcollector-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
