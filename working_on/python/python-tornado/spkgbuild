@@ -10,8 +10,8 @@ source="https://github.com/tornadoweb/tornado/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-     cd tmp_install
-     cd tornado-$version
+   cd tmp_install
+   cd tornado-$version
    cd tornado-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

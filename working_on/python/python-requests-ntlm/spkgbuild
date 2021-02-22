@@ -10,7 +10,7 @@ source="https://files.pythonhosted.org/packages/source/r/requests_ntlm/requests_
 options="!checksum"
 
 build() {
-     cd ${_module}-${version}
+   cd ${_module}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

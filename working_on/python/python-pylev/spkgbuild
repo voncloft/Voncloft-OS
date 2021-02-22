@@ -13,7 +13,7 @@ source="${_name}-${_commit}.tar.gz"::${url}/archive/${_commit}.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_name}-${_commit}
+   cd ${_name}-${_commit}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

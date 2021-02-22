@@ -10,7 +10,7 @@ source="https://github.com/jborean93/requests-credssp/archive/v${version}.tar.gz
 options="!checksum"
 
 build() {
-     cd ${_module}-${version}
+   cd ${_module}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

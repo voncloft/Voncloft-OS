@@ -9,8 +9,8 @@ source="https://files.pythonhosted.org/packages/source/g/greenlet/greenlet-${ver
 
 build() {
 	 cd greenlet-$version
-     cd greenlet-$version
-     cd greenlet-$version
+   cd greenlet-$version
+   cd greenlet-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

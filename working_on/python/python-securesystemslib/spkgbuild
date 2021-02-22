@@ -9,9 +9,9 @@ release=1
 source="git+https://github.com/secure-systems-lab/securesystemslib.git?signed#tag=v${version}
 
 build() {
-     cd securesystemslib
-     cd securesystemslib
-     cd securesystemslib/tests/
+   cd securesystemslib
+   cd securesystemslib
+   cd securesystemslib/tests/
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

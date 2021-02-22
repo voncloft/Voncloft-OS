@@ -1,18 +1,17 @@
-# description : Activate virtual environment for current shell
-# depends : python-attrs python-pexpect python-shellingham
+# description : Pathlib for archives
+# depends : python-attrs
 
-_name=dephell_shells
+_name=dephell-archive
 url=https://github.com/dephell/${_name}
-_name=dephell_shells
-name=python-dephell-shells
-version=0.1.3
+name=python-dephell-archive
+version=0.1.5
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_name}-${version}
+   cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -9,8 +9,8 @@ release=6
 source="https://github.com/gsnedders/python-webencodings/archive/v${version}.tar.gz"
 
 build() {
-     cd ${pkgbase}-${version}
-     cd ${pkgbase}-${version}/webencodings
+   cd ${pkgbase}-${version}
+   cd ${pkgbase}-${version}/webencodings
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -8,7 +8,7 @@ release=1
 source="https://pypi.io/packages/source/t/tox/tox-$version.tar.gz"
 
 build() {
-     cd tox-$version
+   cd tox-$version
    cd tox-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

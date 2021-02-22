@@ -14,8 +14,8 @@ release=2
 source="https://download.rethinkdb.com/dist/$_tag..gz"
 
 build() {
-     cd ${_name}-${version}/drivers/python
-     cd $_tag
+   cd ${_name}-${version}/drivers/python
+   cd $_tag
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

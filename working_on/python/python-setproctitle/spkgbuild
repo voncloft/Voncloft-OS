@@ -9,8 +9,8 @@ release=1
 source="https://files.pythonhosted.org/packages/source/s/setproctitle/setproctitle-$version.tar.gz"
 
 build() {
-     cd setproctitle-$version
-     cd setproctitle-$version/build()/lib.linux-$CARCH-$_pyver
+   cd setproctitle-$version
+   cd setproctitle-$version/build()/lib.linux-$CARCH-$_pyver
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

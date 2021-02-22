@@ -9,8 +9,8 @@ release=7
 source="https://pypi.io/packages/source/j/jsonpointer/jsonpointer-$version.tar.gz"
 
 build() {
-     cd jsonpointer-$version
-     cd jsonpointer-$version
+   cd jsonpointer-$version
+   cd jsonpointer-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

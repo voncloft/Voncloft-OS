@@ -12,7 +12,7 @@ source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name
 options="!checksum"
 
 build() {
-     cd dnspython-${version}
+   cd dnspython-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

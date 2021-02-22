@@ -13,7 +13,7 @@ options="!checksum"
 
 build() {
    cd ${name}-${version}
-     cd $TEST_TMPDIR
+   cd $TEST_TMPDIR
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

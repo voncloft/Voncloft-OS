@@ -10,7 +10,7 @@ source="https://pypi.io/packages/source/t/tinycss/tinycss-$version.tar.gz"
 options="!checksum"
 
 build() {
-     cd tinycss-${version}
+   cd tinycss-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

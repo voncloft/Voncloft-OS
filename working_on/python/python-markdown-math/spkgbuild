@@ -10,7 +10,7 @@ source="https://files.pythonhosted.org/packages/source/${name:0:1}/${name}/${nam
 options="!checksum"
 
 build() {
-     cd python-markdown-math-${version}
+   cd python-markdown-math-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

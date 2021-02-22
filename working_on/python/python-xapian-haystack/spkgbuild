@@ -15,9 +15,9 @@ source="git+https://github.com/notanumber/xapian-haystack#commit=2247b23
 options="!checksum"
 
 build() {
-     cd $name-$version
    cd $name-$version
-     cd django-haystack-${_haystack_version}
+   cd $name-$version
+   cd django-haystack-${_haystack_version}
    cd ../django-haystack-${_haystack_version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

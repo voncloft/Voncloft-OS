@@ -12,7 +12,7 @@ source="https://files.pythonhosted.org/packages/source/${_origname::1}/${_origna
 options="!checksum"
 
 build() {
-     cd ${_origname}-${version}
+   cd ${_origname}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

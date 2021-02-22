@@ -3,7 +3,6 @@
 
 _name=dephell_pythons
 url=https://github.com/dephell/${_name}
-_name=dephell_pythons
 name=python-dephell-pythons
 version=0.1.15
 release=2
@@ -12,7 +11,7 @@ source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_
 options="!checksum"
 
 build() {
-     cd ${_name}-${version}
+   cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

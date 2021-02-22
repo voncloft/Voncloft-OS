@@ -13,7 +13,7 @@ release=6
 source="https://github.com/manahl/pytest-plugins/archive/v$version.tar.gz"
 
 build() {
-     cd pytest-plugins-$version/$_pkg
+   cd pytest-plugins-$version/$_pkg
    cd pytest-plugins-$version; make copyfiles
    cd pytest-plugins-$version/pytest-fixture-config
    cd pytest-plugins-$version/pytest-shutil

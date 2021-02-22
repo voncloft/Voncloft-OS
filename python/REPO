@@ -63,12 +63,15 @@ d:python-autobahn
 d:python-cachy
 d:python-bitstring
 d:python-characteristic
+d:python-dephell-pythons
 d:python-geoip
 d:python-pluggy
 d:python-decorator
 d:python-distlib
 d:python-awkward
+d:python-dephell-specifier
 d:python-bottle
+d:python-dephell-venvs
 d:python-btchip
 d:python-arpeggio
 d:python-caja
@@ -82,6 +85,7 @@ d:python-aiomysql
 d:python-csscompressor
 d:python-colorclass
 d:python-axolotl
+d:python-dephell-setuptools
 d:python-click-threading
 d:python-celery
 d:python-cfgv
@@ -116,10 +120,12 @@ d:python-xlib
 d:python-ddt
 d:python-backcall
 d:python-backports.csv
+d:python-dephell-discover
 d:python-aioredis
 d:python-packaging
 d:python-distutils-extra
 d:python-argcomplete
+d:python-dephell-licenses
 d:python-betamax-matchers
 d:python-jinja
 d:python-crashtest
@@ -140,6 +146,7 @@ d:python-twisted
 d:python-crayons
 d:python-cachetools
 d:python-browserid
+d:python-dephell-archive
 d:python-gobject3
 d:python-d2to1
 d:python-augeas
@@ -159,9 +166,12 @@ d:python-cppy
 d:python-biopython
 d:python-basemap
 d:python-aiohttp
+d:python-dephell-changelogs
 d:python-yaml
 d:python-nose
+d:python-dephell-markers
 d:python-simplejson
+d:python-dephell-shells
 d:python-aioitertools
 d:python-click-help-colors
 d:python-constantly
@@ -190,6 +200,7 @@ d:python-black
 d:python-cookiecutter
 d:python-aresponses
 d:python-cchardet
+d:python-dephell-argparse
 d:python-authlib
 d:python-cairocffi
 d:python-asn1crypto
@@ -228,6 +239,7 @@ d:python-contextlib2
 d:python-alembic
 d:python-pypeg2
 d:python-csv23
+d:python-dephell-links
 d:python-case
 d:python-anytree
 d:python-css-parser
@@ -386,12 +398,15 @@ f:d46bf0b048e3fd0925804e7748127beb:python-autobahn/spkgbuild
 f:c9fe52db35e76824b84c5b1e9f995179:python-cachy/spkgbuild
 f:699675ccd711536d0385789aa67b5394:python-bitstring/spkgbuild
 f:a0cd56befd0525c5fdf32cf3f6c88e88:python-characteristic/spkgbuild
+f:533734d6ec090e95e814d65f074e1e1b:python-dephell-pythons/spkgbuild
 f:36f0e017c785c81ed0665e13d2f47a96:python-geoip/spkgbuild
 f:bdd113cddaa4d484cfcecf664e6ec58f:python-pluggy/spkgbuild
 f:fd85ae9e9acba1d1d1c82854d757e514:python-decorator/spkgbuild
 f:4b35fa8cb108f9d287c01f8c60aff4c0:python-distlib/spkgbuild
 f:1cd289745d5e2ead0bbd497605a518ba:python-awkward/spkgbuild
+f:512ffef3639b6e1d6d3a2f48ce6e1dfa:python-dephell-specifier/spkgbuild
 f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
+f:2f9bd3a098c8c7565546ded5123ef9af:python-dephell-venvs/spkgbuild
 f:16414382ab0d0b25fd3cee6a503c42ed:python-btchip/spkgbuild
 f:007b8a182f3ba5345cfc6129bffbbcbd:python-arpeggio/spkgbuild
 f:92dc566419dbe85f5800f0a95d5104d1:python-caja/spkgbuild
@@ -407,6 +422,7 @@ f:20a0c84dcff81c89fcbc46e4ef85cb09:python-aiomysql/spkgbuild
 f:748f6d087160f8f9ed685e12bc1a5590:python-csscompressor/spkgbuild
 f:08b3f686be6c8992c0ff9aa81e9e9688:python-colorclass/spkgbuild
 f:64eda91635464d6b752583b098ddf3d8:python-axolotl/spkgbuild
+f:678de99fe509c6e07b5c2b5196b7c50a:python-dephell-setuptools/spkgbuild
 f:190fcba72a0f582c84e76708ec662fbf:python-click-threading/spkgbuild
 f:1c53949a4037842cd7e0fbd25483202c:python-celery/spkgbuild
 f:c18e9919523b06541e13d169aefb9a6a:python-cfgv/spkgbuild
@@ -449,6 +465,7 @@ f:f50aba516e938b48159cb4ae9442b5fb:python-xlib/spkgbuild
 f:a4d19f9153661724159a5eccceff0ed5:python-ddt/spkgbuild
 f:c7b76f0ec37f276b98395f7ce0f51867:python-backcall/spkgbuild
 f:c94c93e859dad9ab6922ed472e4c8afd:python-backports.csv/spkgbuild
+f:cd34512a568a96c9a909b840faca46f5:python-dephell-discover/spkgbuild
 f:5043eaf3fa28e684a87ce84c80992ee8:python-aioredis/spkgbuild
 f:1cf55e3f3acf8660c75968ec0c4525d4:python-packaging/.checksums
 f:3386fb3cf15e4453a9c8be636bf17bea:python-packaging/.pkgfiles
@@ -457,6 +474,7 @@ f:5788f4f47545ee5f41d27dad148e83b1:python-distutils-extra/.checksums
 f:b163a7ada4cb285b09d626201711b092:python-distutils-extra/.pkgfiles
 f:8d9b9a7e0b4ce5b5b957fdc670d0c7e4:python-distutils-extra/spkgbuild
 f:e59d9efe90e369ed01a0233caf7af877:python-argcomplete/spkgbuild
+f:fcc157ce73e0235bb26621cddabbe1c3:python-dephell-licenses/spkgbuild
 f:d7a04c078b4f6dddf2eabe140e6e10ca:python-betamax-matchers/spkgbuild
 f:c2e682ff585d90bd2d6eb9d8f5c51dcd:python-jinja/.checksums
 f:7d6a31d48c280ae700162cfd3e5a4ebe:python-jinja/.pkgfiles
@@ -481,6 +499,7 @@ f:c1f89f92561ecdb0eca822d7ed6d6be8:python-twisted/spkgbuild
 f:1958db58bb4da2e2ccc59b2cc5a75557:python-crayons/spkgbuild
 f:0aaeb795d2026b89dfd3b58b65f0cf24:python-cachetools/spkgbuild
 f:caff92478847a886546f1ab27f30f10d:python-browserid/spkgbuild
+f:cf0f1d4f0662b9647d53b0a10068ca37:python-dephell-archive/spkgbuild
 f:975b809e86c8aa8314a9f4d3800e87e8:python-gobject3/.checksums
 f:54f3ad98bc5652e7f852bfb0af91c70a:python-gobject3/.pkgfiles
 f:daf38878dd554fc22408c9fbe2fa4744:python-gobject3/spkgbuild
@@ -504,11 +523,14 @@ f:1cb9ea3cd6f05314462c52fdc8c63444:python-cppy/spkgbuild
 f:c23dc7d4f752dab8cd7ddcb18fd92825:python-biopython/spkgbuild
 f:82acb0a9a4b164da014a972fabfb735d:python-basemap/spkgbuild
 f:22c5a05f5aea85051869154d850147a7:python-aiohttp/spkgbuild
+f:b2050a911efc35d4c817d15824d4b0ed:python-dephell-changelogs/spkgbuild
 f:608c1ab8d8e01bee3e842f9474db8022:python-yaml/.checksums
 f:f9134888ec5e917a8d94637d211f164f:python-yaml/.pkgfiles
 f:372ce688df5766beb0bcba74434d0851:python-yaml/spkgbuild
 f:3cfcd41f6a15d30b3f5a255170f6f94d:python-nose/spkgbuild
+f:3e13be3a671f92b62afa5e0d32c2f918:python-dephell-markers/spkgbuild
 f:b173fffca91c2df957873a3ed18747e0:python-simplejson/spkgbuild
+f:b4df53ff636513432c810c1a8b207141:python-dephell-shells/spkgbuild
 f:fea11bc9bd8b31d794e57e9b3ce3469b:python-aioitertools/spkgbuild
 f:ffd4b5eb09d4183a2fd55135d117860c:python-click-help-colors/spkgbuild
 f:453454fa262ea32df02151e1332f3d32:python-constantly/spkgbuild
@@ -544,6 +566,7 @@ f:066f6d399ded16d1316d8641cd4bda64:python-black/spkgbuild
 f:cc48f42b9982c947e160b07f7f97edcb:python-cookiecutter/spkgbuild
 f:525438cd0f7e8cbfc57f1781e63b0ce4:python-aresponses/spkgbuild
 f:8ad9b1ad495bcd5383de724ec285c585:python-cchardet/spkgbuild
+f:7e2198cfb9595e36d26042769399b240:python-dephell-argparse/spkgbuild
 f:914e323cd46c21a4928a0997d9453e2b:python-authlib/spkgbuild
 f:84588f6830c6ea8d078e7e0020685660:python-cairocffi/spkgbuild
 f:b2b860b0e1b46e9cb0d08741b700ccc3:python-asn1crypto/spkgbuild
@@ -592,6 +615,7 @@ f:8ac026720cd7f22e81e46d3391b01ea1:python-pypeg2/.checksums
 f:d94987783fd178cc2214087201659056:python-pypeg2/.pkgfiles
 f:ae9dad246a330ef894fd9d2cd2b4189b:python-pypeg2/spkgbuild
 f:8ae3b14e3e09a3d545b07410cb6c9814:python-csv23/spkgbuild
+f:5f97d1093fad1831afad764ad32fb32b:python-dephell-links/spkgbuild
 f:64a5017ca44166210ac555c00c40e2ee:python-case/spkgbuild
 f:e2de7b42a8ef1cfe77180c2542a1c6fa:python-anytree/spkgbuild
 f:5f9a9a4cc9b3bfd198be2f39c9bba5d5:python-css-parser/spkgbuild

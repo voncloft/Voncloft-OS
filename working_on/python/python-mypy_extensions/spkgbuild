@@ -10,7 +10,7 @@ source="https://pypi.org/packages/source/m/mypy_extensions/mypy_extensions-$vers
 options="!checksum"
 
 build() {
-     cd mypy_extensions-$version
+   cd mypy_extensions-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

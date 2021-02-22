@@ -10,7 +10,7 @@ source="https://github.com/edgewall/genshi/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
-     cd genshi-${version}
+   cd genshi-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
