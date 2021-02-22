@@ -5,7 +5,7 @@ name=python-autoremove-torrents
 version=1.5.3
 release=1
 source="https://pypi.io/packages/source/a/autoremove-torrents/autoremove-torrents-$version.tar.gz"
-
+options="!checksum"
 build() {
 	cd autoremove-torrents-$version
 	python setup.py build
