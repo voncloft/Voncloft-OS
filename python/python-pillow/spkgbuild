@@ -1,5 +1,5 @@
 # description	: Python Imaging Library (PIL) fork
-# depends	: python python-setuptools freetype2 openjpeg2
+# depends	: python lcms2 libtiff libxcb python-setuptools freetype2 openjpeg2 libimagequant
 
 name=python-pillow
 version=7.2.0

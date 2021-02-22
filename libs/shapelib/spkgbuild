@@ -1,0 +1,16 @@
+# description : Simple C API for reading and writing ESRI shapefiles
+# depends : gcc
+
+name=shapelib
+version=1.5.0
+release=3
+
+source="https://download.osgeo.org/$pkgname/$pkgname-$pkgver.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

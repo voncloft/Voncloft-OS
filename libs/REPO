@@ -40,6 +40,7 @@ d:libmpdclient
 d:libstatgrab
 d:libcroco
 d:libogg
+d:shapelib
 d:libqtxdg
 d:libical
 d:libarchive
@@ -48,6 +49,7 @@ d:libsecret
 d:libuv
 d:libmpd
 d:libglade
+d:geoip
 d:libfm-extra
 d:libwnck3
 d:libepoxy
@@ -255,6 +257,7 @@ f:b69b528488730410c45f949a4f58b57a:libcroco/spkgbuild
 f:7f9eaa2acc08d293854aebc768bd9b51:libogg/.checksums
 f:9ade1d6f6bc3c75ccf524951a2931a17:libogg/.pkgfiles
 f:ff4ed7b4c14dde892f258b806cf83eb1:libogg/spkgbuild
+f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
 f:a076c4e4e71bc088c9146645dc896fc4:libqtxdg/.checksums
 f:a2d33182864efe0548135a762cb80222:libqtxdg/.pkgfiles
 f:951b5a8f019370ec81d68728373c1dc7:libqtxdg/spkgbuild
@@ -282,6 +285,7 @@ f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:0bf05e258ee00c5bc08fe903fa624a65:libglade/.checksums
 f:c4f57ec5038be922fb627734b39131b2:libglade/.pkgfiles
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild
+f:c595bcd974b3a4ccd749b566f0f3dd81:geoip/spkgbuild
 f:e2b863425388ae54527c5436e965ee30:libfm-extra/.checksums
 f:93957829930c8c02fb77143ffed188f2:libfm-extra/.pkgfiles
 f:aa80cd71347713fb395c605a24c1da62:libfm-extra/spkgbuild

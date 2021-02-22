@@ -8,6 +8,7 @@ d:gtkmm2
 d:libtorrent-rasterbar
 d:ncdu
 d:iotop
+d:geoip-database
 d:setconf
 d:nspr
 d:vidtomp3
@@ -53,6 +54,7 @@ f:928491bf23d16ac3cb5cf31ff7687610:ncdu/.checksums
 f:4fd4984bf76b56ff3ea70420132dc7a4:ncdu/.pkgfiles
 f:1e9cbb35e93a65c518b880e8e4f07a4f:ncdu/spkgbuild
 f:ebb9a0fb2c72391a60359157bbbfe4df:iotop/spkgbuild
+f:c878a89901fc963c24801a5fe03927a8:geoip-database/spkgbuild
 f:a4ca6c810756dac60b97339d2ea29e41:setconf/spkgbuild
 f:58111f99bf4497792817b5c67860ec14:nspr/.checksums
 f:b6ba37c050fff56471caf05f9fc44884:nspr/.pkgfiles
