@@ -104,6 +104,7 @@ d:libtiff
 d:libice
 d:libdbusmenu-glib
 d:libev
+d:libimagequant
 d:libtasn1
 d:libindicator
 d:libnotify
@@ -452,6 +453,7 @@ f:f8537f793572b3e15da7f5c60a8f3b87:libdbusmenu-glib/spkgbuild
 f:65e78990af663870c07d61aba8ab50cf:libev/.checksums
 f:a99ef690813de2a9aef38a1320a116d9:libev/.pkgfiles
 f:f73bc2555810b4587344ad7fb325fef7:libev/spkgbuild
+f:ccec24909b6307832d68dceabefe7444:libimagequant/spkgbuild
 f:3d46338a68edf09e60204dc6f1e86517:libtasn1/.checksums
 f:bbfe0a1c74e4d62d1d22b6c0887e942a:libtasn1/.pkgfiles
 f:4e330676c02e41e44f0af2163ae63809:libtasn1/spkgbuild
