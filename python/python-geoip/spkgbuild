@@ -10,7 +10,7 @@ options="!checksum"
 
 build()
 {
-	cd geoip-$versioin
+	cd geoip-$version
  	python setup.py build
         python setup.py install --root=$PKG --optimize=1
 }
