@@ -8,7 +8,7 @@ release=1
 _source_base=https://sources.archlinux.org/other/packages/$name/$version
 
 source="$_source_base/GeoIP.dat.gz
-	$_source_base/GeoIPv6.date.gz
+	$_source_base/GeoIPv6.dat.gz
 	$_source_base/GeoIPCity.dat.gz
 	$_source_base/GeoIPASNum.dat.gz
 	$_source_base/GeoIPASNumv6.dat.gz"
