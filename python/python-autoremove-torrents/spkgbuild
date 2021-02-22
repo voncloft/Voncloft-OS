@@ -7,7 +7,7 @@ release=1
 source="https://pypi.io/packages/source/a/autoremove-torrents/autoremove-torrents-$version.tar.gz"
 
 build() {
-	cd six-$version
+	cd autoremove-torrents-$version
 	python setup.py build
 	python setup.py install --root=$PKG --optimize=1
 }
