@@ -18,5 +18,5 @@ build() {
 	--sysconfdir=/etc/geoip
 
 	make
-	make install=$PKG install
+	make DESTDIR=$PKG install
 }
