@@ -9,7 +9,7 @@ source="https://downloads.sourceforge.net/sourceforge/tcl/tk${version}-src.tar.g
 options="!checksum"
 
 build() {
-	cd tk-$_version/unix
+	cd tk$_version/unix
 	./configure --prefix=/usr --mandir=/usr/share/man --enable-threads --disable-rpath --enable-64bit
  	make
 	make INSTALL_ROOT=$PKG install install-private-headers
