@@ -238,6 +238,7 @@ d:python-boto
 d:python-doit
 d:python-pyqtwebengine
 d:python-copr
+d:python-sqlparse
 d:python-click-plugins
 d:python-deprecation
 d:python-canonicaljson
@@ -692,6 +693,7 @@ f:d53bcf227e1509686fc59d4fdf47b917:python-pyqtwebengine/.checksums
 f:e9d92b858a5328be551be0b2395eadf1:python-pyqtwebengine/.pkgfiles
 f:dee9124adcb13ee132d961af3d44b647:python-pyqtwebengine/spkgbuild
 f:5afadf30793ef1a36480328d8d13d5ad:python-copr/spkgbuild
+f:ce7153cbae3c95d7da5b8405dd160887:python-sqlparse/spkgbuild
 f:87a914fd28cc2a26b0bd9baafb65ed9b:python-click-plugins/spkgbuild
 f:46bdbfda6453282a84e17f6a7263d1eb:python-deprecation/spkgbuild
 f:a81f2a32e427e19ad3313da53e501e38:python-canonicaljson/spkgbuild
