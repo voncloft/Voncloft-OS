@@ -6,7 +6,7 @@ name=python-envisage
 version=4.9.2
 release=1
 
-source="envisage-$version.tar.gz"::https://github.com/enthought/envisage/archive/${version}.tar.gz"
+source="https://github.com/enthought/envisage/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
