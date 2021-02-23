@@ -10,7 +10,7 @@ source="https://github.com/lkiesow/python-feedgen/archive/v${version}/${name}-${
 options="!checksum"
 
 build() {
-   cd ${name}-${version}
+   cd feedgen-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
