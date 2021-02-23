@@ -4,12 +4,16 @@
 name=python-sgmllib
 version=5.2.1
 release=9
+_python_version=3.8
 
 source="https://github.com/kurtmckee/feedparser/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd sgmllib-$version
-	python setup.py build
-        python setup.py install --optimize=1 --root=$PKG
+	cd feedparser-$version-sgmllib
+	install -Dm644 feedparser/sgmllib3.py \
+        "${PKG}/usr/lib/python_python_version/site-packages/sgmllib.py"
+
+	 install -Dm644 feedparser/__pycache__/sgmllib3.cpython-38.pyc \
+         "${PKG}/usr/lib/python_python_version/site-packages/__pycache__/sgmllib.cpython-38.pyc"
 }
