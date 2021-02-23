@@ -13,9 +13,9 @@ build() {
 	cd feedparser-$version/feedparser
 	python /usr/lib/python3.8/compileall.py sgmlib3.py
 	
-	install -Dm644 feedparser/sgmllib3.py \
+	install -Dm644 sgmllib3.py \
         "${PKG}/usr/lib/python_python_version/site-packages/sgmllib.py"
 
-	 install -Dm644 feedparser/__pycache__/sgmllib3.cpython-38.pyc \
+	 install -Dm644 __pycache__/sgmllib3.cpython-38.pyc \
          "${PKG}/usr/lib/python_python_version/site-packages/__pycache__/sgmllib.cpython-38.pyc"
 }
