@@ -4,11 +4,10 @@
 _pyname=eventlet
 url=https://eventlet.net
 name=python-eventlet
-_pyname=eventlet
-version=0.30.0
+version=0.30.1
 release=1
 
-source="https://github.com/eventlet/eventlet/archive/v${version}/"
+source="https://github.com/eventlet/eventlet/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -1,10 +1,13 @@
 # description : Implementation of ECDSA in Python
-  # depends : python
+# depends : python
 
 url=https://github.com/warner/python-ecdsa
+name=python-ecdsa
 version=0.16.1
 release=1
 
+source="https://github.com/tlsfuzzer/python-ecdsa/archive/python-ecdsa-$version.tar.gz"
+options="!checksum"
 
 build() {
    cd ecdsa-$version

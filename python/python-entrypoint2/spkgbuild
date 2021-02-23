@@ -12,7 +12,6 @@ options="!checksum"
 
 build() {
    cd ${_pkg}-${version}
-   cd ${_pkg}-${version}/tests
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
