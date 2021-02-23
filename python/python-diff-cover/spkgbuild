@@ -7,7 +7,7 @@ name=python-diff-cover
 version=4.1.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {

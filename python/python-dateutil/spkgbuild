@@ -6,7 +6,7 @@ name=python-dateutil
 version=2.8.1
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:0:1}/$name/$name-$version.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${name:0:1}/$name/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
