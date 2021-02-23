@@ -147,6 +147,7 @@ d:python-blessings
 d:python-behave
 d:python-dnspython
 d:python-xlib
+d:python-django
 d:python-ddt
 d:python-elementpath
 d:python-backcall
@@ -582,6 +583,7 @@ f:493bb7119a97dba9eac67139ff1bc8bd:python-dnspython/spkgbuild
 f:1cae548d092257c1090986fab1246e13:python-xlib/.checksums
 f:c946b284236449a18eeb473868c13e90:python-xlib/.pkgfiles
 f:f50aba516e938b48159cb4ae9442b5fb:python-xlib/spkgbuild
+f:ef29da32c368c78ca2c950f89727c32b:python-django/spkgbuild
 f:a4d19f9153661724159a5eccceff0ed5:python-ddt/spkgbuild
 f:d5bf96e9e468d79ed65e98e8185ae1c0:python-elementpath/spkgbuild
 f:c7b76f0ec37f276b98395f7ce0f51867:python-backcall/spkgbuild
