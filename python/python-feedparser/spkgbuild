@@ -4,14 +4,14 @@
 
 url=https://github.com/kurtmckee/feedparser/
 name=python-feedparser
-version=5.2.1
+version=6.0.2
 release=9
 
 source="https://github.com/kurtmckee/feedparser/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd feedparser-$version/feedparser
+   cd feedparser-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
