@@ -57,6 +57,7 @@ d:xdgmenumaker
 d:xorgproto
 d:libxaw
 d:xdg-utils
+d:libxss
 d:xorg-video-drivers
 d:keybinder3
 d:libxscrnsaver
@@ -248,6 +249,7 @@ f:dd90407aef2416c169ee758c1a8814d5:libxaw/spkgbuild
 f:aa241f9ed4db8db0f405a169b47b90ee:xdg-utils/.checksums
 f:5ac482a6494d034f86dcc20d1f29663e:xdg-utils/.pkgfiles
 f:944f4e398b997832fd63359499adc752:xdg-utils/spkgbuild
+f:24d6325422ff582ef629c088b9850698:libxss/spkgbuild
 f:c1a5d97f6be1b463a7c0faf320eee13e:xorg-video-drivers/.checksums
 f:9adb3c934593fe2fc9d420c08c26d4c3:xorg-video-drivers/.pkgfiles
 f:52d98291d4700957019f066a9530b81e:xorg-video-drivers/spkgbuild
