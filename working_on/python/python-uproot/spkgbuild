@@ -1,7 +1,7 @@
 # description : Minimalist CERN ROOT I/O in pure Python and Numpy
 # depends : python-awkward python-cachetools python-lz4 python-numpy python-uproot-methods python-zstandard
     optdepends+=python-uproot-docs: docs
-    # depends : python-sphinx
+  # depends : python-sphinx
 
 _name=uproot
 url=https://github.com/scikit-hep/${_name}

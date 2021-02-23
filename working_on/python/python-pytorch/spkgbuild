@@ -1,7 +1,7 @@
 # description : Tensors and Dynamic neural networks in Python with strong GPU acceleration
-  # description : Tensors and Dynamic neural networks in Python with strong GPU acceleration with AVX2 CPU optimizations
-  # description : Tensors and Dynamic neural networks in Python with strong GPU acceleration with CUDA
-  # description : Tensors and Dynamic neural networks in Python with strong GPU acceleration with CUDA and AVX2 CPU optimizations
+# description : Tensors and Dynamic neural networks in Python with strong GPU acceleration with AVX2 CPU optimizations
+# description : Tensors and Dynamic neural networks in Python with strong GPU acceleration with CUDA
+# description : Tensors and Dynamic neural networks in Python with strong GPU acceleration with CUDA and AVX2 CPU optimizations
 # depends : google-glog gflags opencv openmp nccl pybind11 python python-yaml libuv
   depends+=cuda cudnn magma
   depends+=cuda cudnn magma

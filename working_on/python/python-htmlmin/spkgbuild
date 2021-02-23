@@ -1,6 +1,6 @@
 # description : Configurable HTML Minifier with safety features
-  # depends : python python-setuptools python-htmlmin
-  # depends : python
+# depends : python python-setuptools python-htmlmin
+# depends : python
 
 _name=htmlmin
 _gitcommit=220b1d16442eb4b6fafed338ee3b61f698a01e63

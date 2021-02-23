@@ -1,7 +1,7 @@
-  # description : Python3 binding for the libxml2 and libxslt libraries
-  # description : Python2 binding for the libxml2 and libxslt libraries
-  # description : Python binding for the libxml2 and libxslt libraries docs
-  # depends : python libxslt
+# description : Python3 binding for the libxml2 and libxslt libraries
+# description : Python2 binding for the libxml2 and libxslt libraries
+# description : Python binding for the libxml2 and libxslt libraries docs
+# depends : python libxslt
 
 url=https://lxml.de/
 version=4.6.2

@@ -1,6 +1,6 @@
-    # description : portable, lightweight MessagePack serializer and deserializer for Python
-    # description : portable, lightweight MessagePack serializer and deserializer for Python2
-    # depends : python
+  # description : portable, lightweight MessagePack serializer and deserializer for Python
+  # description : portable, lightweight MessagePack serializer and deserializer for Python2
+  # depends : python
 
 _name=u-msgpack-python
 url=https://github.com/vsergeev/${_name}

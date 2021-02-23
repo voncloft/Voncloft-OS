@@ -8,6 +8,7 @@ version=3.0.0
 release=3
 
 source="$url/archive/$version.tar.gz"
+options="!checksum"
 
 build() {
    cd $_name-$version

@@ -1,7 +1,7 @@
 # description : Python bindings for systemd
-  # depends : python3 libsystemd
+# depends : python3 libsystemd
 
-_commit=308ae4440c1f6ea1aff9be4cb683c52bd3a1c13a  # tags/v234^0
+_commit=308ae4440c1f6ea1aff9be4cb683c52bd3a1c13a# tags/v234^0
 url=https://github.com/systemd/python-systemd
 version=234
 release=7

@@ -1,5 +1,5 @@
-  # description : JavaScript unobfuscator and beautifier
-  # description : CSS unobfuscator and beautifier
+# description : JavaScript unobfuscator and beautifier
+# description : CSS unobfuscator and beautifier
 # depends : python-editorconfig python-six
   depends+=python-jsbeautifier
 

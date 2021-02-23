@@ -1,5 +1,5 @@
 # description : py.test plugin to store test expectations and mark tests based on them
-  # depends : python-pytest python-u-msgpack
+# depends : python-pytest python-u-msgpack
 
 _name=pytest-expect
 url=https://github.com/gsnedders/${_name}

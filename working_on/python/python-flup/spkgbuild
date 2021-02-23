@@ -7,6 +7,7 @@ version=1.0.3
 release=6
 
 source="https://pypi.io/packages/source/f/flup/flup-$version.tar.gz"
+options="!checksum"
 
 build() {
    cd flup-$version

@@ -1,5 +1,5 @@
 # description : py.test plugin for coverage reporting with support for both centralised and distributed testing, including subprocesses and multiprocessing
-  # depends : python-pytest python-coverage
+# depends : python-pytest python-coverage
 
 url=https://github.com/schlamar/pytest-cov
 version=2.11.1

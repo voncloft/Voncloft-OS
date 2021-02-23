@@ -1,6 +1,6 @@
-    # description : A Python HTML parser/tokenizer based on the WHATWG HTML5 spec
-    # description : A Python2 HTML parser/tokenizer based on the WHATWG HTML5 spec
-    # depends : ${_deps[@]/#/python-}
+  # description : A Python HTML parser/tokenizer based on the WHATWG HTML5 spec
+  # description : A Python2 HTML parser/tokenizer based on the WHATWG HTML5 spec
+  # depends : ${_deps[@]/#/python-}
 
 _test_commit=71eebd59772d1d39aced0c0582ae9c09acf3ce6e
 url=https://github.com/html5lib

@@ -11,7 +11,6 @@ options="!checksum"
 
 build() {
    cd python-fastpbkdf2
-   cd python-fastpbkdf2
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

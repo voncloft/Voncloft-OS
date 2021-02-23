@@ -1,5 +1,5 @@
 # description : Python network library that uses greenlet and libev for easy and scalable concurrency
-  # depends : c-ares libev python-greenlet python-setuptools python-zope-event python-zope-interface
+# depends : c-ares libev python-greenlet python-setuptools python-zope-event python-zope-interface
 
 url=http://www.gevent.org/
 version=21.1.2

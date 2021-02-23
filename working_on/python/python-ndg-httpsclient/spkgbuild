@@ -1,5 +1,5 @@
 # description : Provides enhanced HTTPS support for httplib and urllib2 using PyOpenSSL
-  # depends : python-pyopenssl python-pyasn1
+# depends : python-pyopenssl python-pyasn1
 
 _name=ndg_httpsclient
 url=https://pypi.python.org/pypi/ndg-httpsclient

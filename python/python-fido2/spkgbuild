@@ -3,16 +3,14 @@
 
 url=https://github.com/Yubico/python-fido2
 name=python-fido2
-_tarball_basename=fido2-${version}
-version=0.8.1
+version=0.9.1
 release=3
 
-source="git+https://github.com/Yubico/${name}.git#tag=${version}?signed
+source="https://github.com/Yubico/python-fido2/releases/download/$version/fido2-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name}
-#    cd ${name}
+   cd fido2-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
