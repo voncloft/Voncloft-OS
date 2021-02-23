@@ -10,7 +10,9 @@ source="https://github.com/kurtmckee/feedparser/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd feedparser-$version-sgmllib
+	cd feedparser-$version/feedparser
+	python /usr/lib/python3.8/compileall.py sgmlib3.py
+	
 	install -Dm644 feedparser/sgmllib3.py \
         "${PKG}/usr/lib/python_python_version/site-packages/sgmllib.py"
 
