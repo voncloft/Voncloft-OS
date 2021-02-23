@@ -1,11 +1,11 @@
 # description : Library to read and edit executable binary files
 # depends : python
 
-_pyname=${name/python-/}
 url=https://github.com/sashs/filebytes
 name=python-filebytes
 version=0.10.2
 release=3
+_pyname=${name/python-/}
 
 source="https://github.com/sashs/filebytes/archive/v${version}/${name}-${version}.tar.gz"
 options="!checksum"
