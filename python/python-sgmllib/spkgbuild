@@ -1,0 +1,15 @@
+# description : Parse RSS and Atom feeds in python
+# depends : python
+
+name=python-sgmllib
+version=5.2.1
+release=9
+
+source="https://github.com/kurtmckee/feedparser/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd sgmllib-$version
+	python setup.py build
+        python setup.py install --optimize=1 --root=$PKG
+}
