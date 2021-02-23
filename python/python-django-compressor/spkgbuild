@@ -1,0 +1,17 @@
+# description : Compresses linked and inline javascript or CSS into a single cached file
+# depends : python-django-appconf python-rcssmin python-rjsmin
+
+_name=django_compressor
+url=https://github.com/django-compressor/django-compressor
+name=python-django-compressor
+version=2.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }
