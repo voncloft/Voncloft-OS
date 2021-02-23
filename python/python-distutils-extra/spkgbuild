@@ -5,7 +5,7 @@ name=python-distutils-extra
 version=2.39
 release=1
 source="http://launchpad.net/python-distutils-extra/trunk/$version/+download/python-distutils-extra-$version.tar.gz"
-
+options="!checksum"
 build() {
 	cd python-distutils-extra-$version
 	python setup.py build
