@@ -3,7 +3,6 @@
 
 _name=flake8-black
 url=https://github.com/peterjc/flake8-black
-_name=flake8-black
 name=python-flake8-black
 version=0.2.1
 release=4
@@ -13,7 +12,6 @@ options="!checksum"
 
 build() {
    cd $_name-$version
-   cd tests
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

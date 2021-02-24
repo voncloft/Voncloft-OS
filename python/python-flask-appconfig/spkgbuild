@@ -4,10 +4,10 @@
 _commit=56528264cdc76dc1b00804b7f67908d3bb1b1b0e
 url=https://github.com/mbr/flask-appconfig
 name=python-flask-appconfig
-version=0.11.1.20151214
+version=0.11.1
 release=4
 
-source="https://github.com/mbr/flask-appconfig/archive/$_commit.tar.gz"
+source="https://github.com/mbr/flask-appconfig/archive/$version.tar.gz"
 options="!checksum"
 
 build() {
