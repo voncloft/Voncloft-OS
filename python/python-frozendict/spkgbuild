@@ -10,8 +10,7 @@ source="https://pypi.org/packages/source/f/frozendict/frozendict-$version.tar.gz
 options="!checksum"
 
 build() {
-	 cd frozendict-$version
-	 cd frozendict-$version
+   cd frozendict-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

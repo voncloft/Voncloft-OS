@@ -6,7 +6,7 @@ name=python-fonttools
 version=4.19.1
 release=1
 
-source="https://github.com/fonttools/fonttools/archive/${version}/fonttools-${version}.zip
+source="https://github.com/fonttools/fonttools/archive/${version}/fonttools-${version}.zip"
 options="!checksum"
 
 build() {

@@ -1,11 +1,10 @@
-# description : NFS-safe file locking with timeouts for POSIX systems for Python
-# depends : python-atpublic python-psutil
+# description : A high level API for internationalization
+# depends : python-atpublic
 
-_name=flufl.lock
-url=https://gitlab.com/warsaw/flufl.lock
-_name=flufl.lock
-name=python-flufl-lock
-version=5.0.4
+_name=flufl.i18n
+url=https://gitlab.com/warsaw/flufl.i18n
+name=python-flufl.i18n
+version=3.1.4
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"

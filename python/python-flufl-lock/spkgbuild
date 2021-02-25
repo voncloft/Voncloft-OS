@@ -1,12 +1,11 @@
-# description : Email bounce detectors
-# depends : python-atpublic python-zope-interface
+# description : NFS-safe file locking with timeouts for POSIX systems for Python
+# depends : python-atpublic python-psutil
 
-_name=flufl.bounce
-url=https://fluflbounce.readthedocs.io/en/latest/
-_name=flufl.bounce
-name=python-flufl.bounce
-version=3.0.1
-release=3
+_name=flufl.lock
+url=https://gitlab.com/warsaw/flufl.lock
+name=python-flufl-lock
+version=5.0.4
+release=1
 
 source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
 options="!checksum"
