@@ -11,7 +11,6 @@ options="!checksum"
 
 build() {
    cd flask-login-$version
-   cd flask-login-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

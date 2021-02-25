@@ -3,12 +3,11 @@
 
 _pyname=Flask-Compress
 url=http://pypi.python.org/pypi/Flask-Compress/
-_pyname=Flask-Compress
 name=python-flask-compress
 version=1.8.0
 release=1
 
-source="https://pypi.io/packages/source/${_pyname:0:1}/${_pyname}/"
+source="https://pypi.io/packages/source/${_pyname:0:1}/${_pyname}/${_pyname}-$version.gar.gz"
 options="!checksum"
 
 build() {
