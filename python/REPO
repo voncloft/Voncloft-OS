@@ -233,6 +233,7 @@ d:python-basemap
 d:python-aiohttp
 d:python-dephell-changelogs
 d:python-yaml
+d:python-itsdangerous
 d:python-nose
 d:python-dephell-markers
 d:python-simplejson
@@ -410,6 +411,7 @@ d:python-cmd2
 d:python-asyncpg
 d:python-factory-boy
 d:python-click-completion
+d:python-werkzeug
 d:python-rencode
 d:python-doctest-ignore-unicode
 d:python-pytz
@@ -716,6 +718,7 @@ f:b2050a911efc35d4c817d15824d4b0ed:python-dephell-changelogs/spkgbuild
 f:608c1ab8d8e01bee3e842f9474db8022:python-yaml/.checksums
 f:f9134888ec5e917a8d94637d211f164f:python-yaml/.pkgfiles
 f:372ce688df5766beb0bcba74434d0851:python-yaml/spkgbuild
+f:b570ac1f81b1f97ac31423945ddd8729:python-itsdangerous/spkgbuild
 f:3cfcd41f6a15d30b3f5a255170f6f94d:python-nose/spkgbuild
 f:3e13be3a671f92b62afa5e0d32c2f918:python-dephell-markers/spkgbuild
 f:b173fffca91c2df957873a3ed18747e0:python-simplejson/spkgbuild
@@ -924,6 +927,7 @@ f:6cbcf3f011f73b680df53b3ddecf58c8:python-cmd2/spkgbuild
 f:570ee30d5c3ac3db2dfb7723479073fe:python-asyncpg/spkgbuild
 f:a51b64d8c7aca8947466c76e51e69103:python-factory-boy/spkgbuild
 f:8e1dca88b4a6179d51a9826e7c075144:python-click-completion/spkgbuild
+f:2c5baebb0e74caad7981380ac3e10e9c:python-werkzeug/spkgbuild
 f:30169c6fc23383690f0aee2cf4c3b577:python-rencode/spkgbuild
 f:ddd73a4488a6fef5d9f26d6e09c43afe:python-doctest-ignore-unicode/spkgbuild
 f:5e74e32a6916e810fa9b4ca0ea1c9a68:python-pytz/spkgbuild

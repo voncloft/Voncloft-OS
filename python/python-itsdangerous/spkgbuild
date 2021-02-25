@@ -1,5 +1,5 @@
 # description : Various helpers to pass trusted data to untrusted environments
-depends+=python
+# depends : python
 
 url=http://pypi.python.org/pypi/itsdangerous
 name=python-itsdangerous
