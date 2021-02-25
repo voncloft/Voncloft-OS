@@ -51,6 +51,7 @@ d:python-sip-pyqt5
 d:python-cinderclient
 d:python-django-modeltranslation
 d:python-covdefaults
+d:python-gcp-devrel-py-tools
 d:python-websocket-client
 d:python-fuzzywuzzy
 d:python-apscheduler
@@ -98,6 +99,7 @@ d:python-django-picklefield
 d:python-fonttools
 d:python-dephell-pythons
 d:python-geoip
+d:python-gast03
 d:python-pluggy
 d:python-decorator
 d:python-distlib
@@ -152,6 +154,7 @@ d:python-doit-py
 d:python-flask-sqlalchemy
 d:python-iso-639
 d:python-cssselect
+d:python-gast
 d:python-bluepy
 d:python-zope-interface
 d:python-cbor
@@ -543,6 +546,7 @@ f:06a323c7d5dedfd33ea808c52e87b465:python-sip-pyqt5/spkgbuild
 f:432968ccda68ba823a4f836b06e5477c:python-cinderclient/spkgbuild
 f:30aa6e55b3ac342f78ea1d699b61576d:python-django-modeltranslation/spkgbuild
 f:f4c49da219158336fb2f1af7c3631625:python-covdefaults/spkgbuild
+f:b6873a05b8623a81e1fe9c48104779f5:python-gcp-devrel-py-tools/spkgbuild
 f:475a4765625dd4faea76c1c901d05d94:python-websocket-client/.checksums
 f:2946197643ee1a3f26c386508815fc1c:python-websocket-client/.pkgfiles
 f:8d5e46f1b35500f1b3515b66ec992222:python-websocket-client/spkgbuild
@@ -596,6 +600,7 @@ f:ad3d02b3379df27676f1fd5d9332f6e8:python-django-picklefield/spkgbuild
 f:e9310e9d29ee686eff542928cadae3d6:python-fonttools/spkgbuild
 f:533734d6ec090e95e814d65f074e1e1b:python-dephell-pythons/spkgbuild
 f:36f0e017c785c81ed0665e13d2f47a96:python-geoip/spkgbuild
+f:71ce4547135c1159b58618746bb10880:python-gast03/spkgbuild
 f:bdd113cddaa4d484cfcecf664e6ec58f:python-pluggy/spkgbuild
 f:fd85ae9e9acba1d1d1c82854d757e514:python-decorator/spkgbuild
 f:4b35fa8cb108f9d287c01f8c60aff4c0:python-distlib/spkgbuild
@@ -658,6 +663,7 @@ f:40b4fa947cf61edc43a0f8575f408b39:python-iso-639/.checksums
 f:6c5791c93abe413dfc40971e755d4168:python-iso-639/.pkgfiles
 f:50f0eb4f3f1244d6516eed9e5f9b8af7:python-iso-639/spkgbuild
 f:dedb37bfe17a0377cf5f43637bdaa9c6:python-cssselect/spkgbuild
+f:ae6fe1c238d572468546e6c1f32a6065:python-gast/spkgbuild
 f:45450121e6bf535947c096d1733e7b47:python-bluepy/spkgbuild
 f:42479388c543fd906a4f12ce1457624f:python-zope-interface/spkgbuild
 f:4b7426618d05d4b961155c34e980e177:python-cbor/spkgbuild
