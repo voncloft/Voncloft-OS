@@ -6,7 +6,7 @@ name=python-gammu
 version=3.1
 release=2
 
-source="https://dl.cihar.com/python-gammu/python-gammu-$version.tar.bz2
+source="https://dl.cihar.com/python-gammu/python-gammu-$version.tar.bz2"
 options="!checksum"
 
 build() {
