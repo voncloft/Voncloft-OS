@@ -21,6 +21,7 @@ d:python-automat
 d:python-adal
 d:python-clint
 d:python-cftime
+d:python-flask-migrate
 d:python-connexion
 d:python-bidict
 d:python-flask-babelex
@@ -72,6 +73,7 @@ d:python-cucumber-tag-expressions
 d:python-cherrypy
 d:python-astral
 d:python-pycryptodome
+d:python-flask-socketio
 d:python-anyio
 d:python-brotlipy
 d:python-discid
@@ -106,6 +108,7 @@ d:python-dae
 d:python-fasteners
 d:python-django-crispy-forms
 d:python-aiorpcx
+d:python-flask-restful
 d:python-fastnumbers
 d:python-cliff
 d:python-flask-compress
@@ -117,6 +120,7 @@ d:python-csscompressor
 d:python-colorclass
 d:python-axolotl
 d:python-feedgenerator
+d:python-flask-nav
 d:python-dephell-setuptools
 d:python-click-threading
 d:python-ewmh
@@ -135,6 +139,7 @@ d:python-django-compressor
 d:python-bowler
 d:python-aiohttp-apispec
 d:python-authheaders
+d:python-flask-security
 d:python-doit-py
 d:python-iso-639
 d:python-cssselect
@@ -151,6 +156,7 @@ d:python-cryptography
 d:python-auditwheel
 d:python-databases
 d:python-elasticsearch
+d:python-flask-paranoid
 d:python-flake8-isort
 d:python-confuse
 d:python-pkginfo
@@ -172,6 +178,7 @@ d:python-argcomplete
 d:python-dephell-licenses
 d:python-betamax-matchers
 d:python-jinja
+d:python-flask-script
 d:python-crashtest
 d:python-flask-caching
 d:python-flaky
@@ -341,6 +348,7 @@ d:python-blist
 d:python-diff-cover
 d:python-dask
 d:python-baron
+d:python-flask-marshmallow
 d:python-cram
 d:python-aws-sam-translator
 d:python-aniso8601
@@ -400,6 +408,7 @@ d:python-couchdb
 d:python-daemonize
 d:python-aiofiles
 d:python-btrfs
+d:python-flask-security-too
 d:python-flask-htmlmin
 d:python-ciso8601
 d:python-bleach
@@ -433,6 +442,7 @@ d:python-colour
 d:python-betamax-serializers
 d:python-urllib3
 d:python-cssselect2
+d:python-flask-principal
 d:python-pyparsing
 d:python-async_generator
 d:python-django-gravatar
@@ -466,6 +476,7 @@ f:079c47d9f25e6493c9b3ac09e023928e:python-automat/spkgbuild
 f:4efac2190f5429e9799bcd28c2229936:python-adal/spkgbuild
 f:eefed4b74f77640d989b420f196fffe0:python-clint/spkgbuild
 f:d5cdbe3aca8b2222e34c58dab3d28b90:python-cftime/spkgbuild
+f:9337e5db52c3ea0a6bfeb36e96faad60:python-flask-migrate/spkgbuild
 f:f2ae0d0e79ac02fc1bfe6fd40f9cafd9:python-connexion/spkgbuild
 f:217224a363bb4419341735366a508da6:python-bidict/spkgbuild
 f:afd2a3aaefedf69be058d5a3cfb963df:python-flask-babelex/spkgbuild
@@ -533,6 +544,7 @@ f:3503eb40f6d21ab4d2d137369bd589d5:python-astral/spkgbuild
 f:8a86746cb881ca0dd0ac0babee0944d6:python-pycryptodome/.checksums
 f:9d3ccbb0e65668876f414e6038f04b6a:python-pycryptodome/.pkgfiles
 f:f4bb642baedcb97afe0e5fda240abb36:python-pycryptodome/spkgbuild
+f:e19ea9cf429c6d8d9200f8b9d11eacbe:python-flask-socketio/spkgbuild
 f:24f813a19bbf557b5b78fbd67b513383:python-anyio/spkgbuild
 f:e48a013a6a650e6d35acb02fa943986f:python-brotlipy/spkgbuild
 f:fbef7a354fd274ef20472104d81c1fb2:python-discid/spkgbuild
@@ -567,6 +579,7 @@ f:94def90ed7f47ab5ee1c26d2c40f6abb:python-dae/spkgbuild
 f:a2b0ed0af14b36dacf46a83840c61c04:python-fasteners/spkgbuild
 f:54d89edab928248cf8e5708a4cb69759:python-django-crispy-forms/spkgbuild
 f:a8c992d556dc6b8ddd25bd81f65dbe28:python-aiorpcx/spkgbuild
+f:123fd657bcefc4aee7d391393a717470:python-flask-restful/spkgbuild
 f:9482a9169e24d2c2a819ef74130aa040:python-fastnumbers/spkgbuild
 f:0420862c1e1b64d098c4730a92157d0d:python-cliff/spkgbuild
 f:eafed3e4cbdc903baf57d05a8783df03:python-flask-compress/spkgbuild
@@ -580,6 +593,7 @@ f:748f6d087160f8f9ed685e12bc1a5590:python-csscompressor/spkgbuild
 f:08b3f686be6c8992c0ff9aa81e9e9688:python-colorclass/spkgbuild
 f:64eda91635464d6b752583b098ddf3d8:python-axolotl/spkgbuild
 f:72f5e30143e8d4b67d87d896474d80fb:python-feedgenerator/spkgbuild
+f:e215b56760e6199900b864061a03ae50:python-flask-nav/spkgbuild
 f:678de99fe509c6e07b5c2b5196b7c50a:python-dephell-setuptools/spkgbuild
 f:190fcba72a0f582c84e76708ec662fbf:python-click-threading/spkgbuild
 f:88e213bc9b5798e82b9bace1201e4fe3:python-ewmh/spkgbuild
@@ -602,6 +616,7 @@ f:0504ef78c3e9c7c2d932804ec4a1c8fb:python-django-compressor/spkgbuild
 f:a73787ec71fa499843409b81071ccbc5:python-bowler/spkgbuild
 f:cd668d70bd199c09aee0ae89fb5f2bd4:python-aiohttp-apispec/spkgbuild
 f:89a443da5d402d8b1e4576e140072e24:python-authheaders/spkgbuild
+f:29a2a624c9e61e8105e1e8796a82b0c5:python-flask-security/spkgbuild
 f:605074767ef8f5bdaadb54cfbd292084:python-doit-py/spkgbuild
 f:40b4fa947cf61edc43a0f8575f408b39:python-iso-639/.checksums
 f:6c5791c93abe413dfc40971e755d4168:python-iso-639/.pkgfiles
@@ -620,6 +635,7 @@ f:6ad277570e70e1bcdb3fd09094c338ca:python-cryptography/spkgbuild
 f:bf836bd3bcebe1c3df9a9cea5a8062e8:python-auditwheel/spkgbuild
 f:2b6300eb397e394dc12f085001438545:python-databases/spkgbuild
 f:b1a53eeab422cc0c0cb7c966797762fb:python-elasticsearch/spkgbuild
+f:a0448cdca7c78880e5aafb463002f55b:python-flask-paranoid/spkgbuild
 f:89a1bba36d7cbb6e47b16f0507f8f8b8:python-flake8-isort/spkgbuild
 f:ccd13b6b2961271d122f4b89d5ee08bc:python-confuse/spkgbuild
 f:db3d132dcb9de35b1f3f2980a635b6d6:python-pkginfo/spkgbuild
@@ -649,6 +665,7 @@ f:d7a04c078b4f6dddf2eabe140e6e10ca:python-betamax-matchers/spkgbuild
 f:c2e682ff585d90bd2d6eb9d8f5c51dcd:python-jinja/.checksums
 f:7d6a31d48c280ae700162cfd3e5a4ebe:python-jinja/.pkgfiles
 f:d2b1ab50533e6085760fc730080ecdaa:python-jinja/spkgbuild
+f:5de3dc475a734718131e68d8641a2b4c:python-flask-script/spkgbuild
 f:8e57c49d4a82d5fa7928e626f6bd2bf3:python-crashtest/spkgbuild
 f:9b6f8b639894b0286629aaabc0c6c7fb:python-flask-caching/spkgbuild
 f:8a2a5b2dc71d647d6cb5cc8c59862eb5:python-flaky/spkgbuild
@@ -843,6 +860,7 @@ f:378a09eab011b015c859fa6d75dfaa19:python-blist/spkgbuild
 f:1e68a0869a1a1ca9b331245aef6bd2f2:python-diff-cover/spkgbuild
 f:9aea60969a4089e535db010967855b31:python-dask/spkgbuild
 f:f92ea2f088e9da2181bb4bd188701e43:python-baron/spkgbuild
+f:5388066874abc697716dee83f876b257:python-flask-marshmallow/spkgbuild
 f:6db0db3a54b1d661623fafbc3cddb16c:python-cram/spkgbuild
 f:c39a143abb912b3cf61eed730fce9382:python-aws-sam-translator/spkgbuild
 f:e0d168335571ede78f53449d573dac46:python-aniso8601/spkgbuild
@@ -914,6 +932,7 @@ f:f2859c8b8d1ef19ef41bdc7f233280d5:python-couchdb/spkgbuild
 f:f7c28b695458d8086570b4007f30deeb:python-daemonize/spkgbuild
 f:64ead1152a2c52e8ee66226b81f117ae:python-aiofiles/spkgbuild
 f:4f25b6639c7cb5c1f406f5c2d52092f6:python-btrfs/spkgbuild
+f:2a69714e9d31eda0d02012720ef589f0:python-flask-security-too/spkgbuild
 f:ea16f2888ebf2f1b19589a53c8168e49:python-flask-htmlmin/spkgbuild
 f:8751d015e2fbaaa2585d3a817ceab14b:python-ciso8601/spkgbuild
 f:47da596c2e62d66f0fbc9bc81ee3144e:python-bleach/spkgbuild
@@ -956,6 +975,7 @@ f:e61d7060c20faded0a4a0bba5869c5d6:python-urllib3/.checksums
 f:9c315b3558d80ab3593e9644d60084b0:python-urllib3/.pkgfiles
 f:5d83896b1a9402afaf2e5fc9a8165365:python-urllib3/spkgbuild
 f:949a12f6d23972c3dc41a0f4d6b288ef:python-cssselect2/spkgbuild
+f:179878cf6bebfb3c57f8719a24da7916:python-flask-principal/spkgbuild
 f:340713ad06070603dfa78220ccca091c:python-pyparsing/.checksums
 f:a2f5a13453201952515bab0bad1a7da5:python-pyparsing/.pkgfiles
 f:b3f2362c7669c1ba34473d34c51c168e:python-pyparsing/spkgbuild

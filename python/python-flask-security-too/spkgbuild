@@ -2,18 +2,16 @@
 # depends : python python-flask python-flask-login python-flask-mail python-flask-principal
 
 _name=flask-security
-url=https://github.com/mattupstate/flask-security
-_name=flask-security
-name=python-flask-security
-version=3.0.0
-release=4
+url=https://github.com/jwag956/flask-security
+name=python-flask-security-too
+version=3.3.3
+release=3
 
-source="https://github.com/mattupstate/flask-security/archive/${version}.tar.gz"
+source="https://github.com/jwag956/flask-security/archive/${version}/${name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
    cd ${_name}-${version}
-# cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
