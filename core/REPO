@@ -351,6 +351,7 @@ d:chntpw
 d:mlt
 d:docbook2x
 d:thunar-volman
+d:linux-prereq
 d:sassc
 d:dfc
 d:geany
@@ -939,11 +940,7 @@ f:2b057b142b1eca213f4f3730ac1f751f:nss/.checksums
 f:b017231c3dfbede2e92e3a4fd4785313:nss/.pkgfiles
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:a29a101021ac76292096ceb0349ecadf:nss/spkgbuild
-f:39b8c34dd6e96414798e78540bc5396f:linux-desktop/v4l-saa7164-1.0.2.fw
-f:fd24b601fe2cf5779778da5f7521c917:linux-desktop/NXP7164-2010-03-10.1.fw
-f:ba8194afd8105969a536cb881899200b:linux-desktop/v4l-saa7164-1.0.3.fw
-f:b9fa8f284483480675d29d19e704f62c:linux-desktop/dvb-fe-tda10048-1.0.fw
-f:3681ae5ee2308efb482d219dab51a662:linux-desktop/spkgbuild
+f:233fcf528aca37f80d3eeb581fbdb5f4:linux-desktop/spkgbuild
 f:9ee5d7295e7cd2458dbf35174455687f:linux-desktop/.config
 f:f95fbf1f6ae5eccc008f1c68164eff78:dconf/.checksums
 f:16ed70e2d0e8d11e1a26f6b1637ce2b5:dconf/.pkgfiles
@@ -1632,7 +1629,7 @@ f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:7c1a27ef6837a0ad420084a684769852:iw/.checksums
 f:50173b0a5c5c4164a1ff2cf37af4a30a:iw/.pkgfiles
 f:e70460ff08dc354b256f521b8f304d21:iw/spkgbuild
-f:7f112a999ffd536e92fa5932387437ba:linux-router/spkgbuild
+f:2c4a70f792591a2ea693b868cdeeab80:linux-router/spkgbuild
 f:99c17170a669e0c5d831170b8ca86586:linux-router/.config
 f:27735732691c147cd17dd1a0b43e1d80:dwm/.checksums
 f:90eb56e3f241eeab5889699677eeec66:dwm/.pkgfiles
@@ -1751,6 +1748,11 @@ f:826fae88a435d9278c4f9614991d55a1:docbook2x/docbook2x.datadir.patch
 f:e1f127babd31aa99a008a5648d6a7388:thunar-volman/.checksums
 f:254de469d074a9fb12cceb004eae65f4:thunar-volman/.pkgfiles
 f:0564107a161bfff1376ec621605f616c:thunar-volman/spkgbuild
+f:39b8c34dd6e96414798e78540bc5396f:linux-prereq/v4l-saa7164-1.0.2.fw
+f:fd24b601fe2cf5779778da5f7521c917:linux-prereq/NXP7164-2010-03-10.1.fw
+f:ba8194afd8105969a536cb881899200b:linux-prereq/v4l-saa7164-1.0.3.fw
+f:b9fa8f284483480675d29d19e704f62c:linux-prereq/dvb-fe-tda10048-1.0.fw
+f:766e8169b048498f690be18569bc18a4:linux-prereq/spkgbuild
 f:89e22f4d7c8d9a2df3cf75acba80125a:sassc/.checksums
 f:281a8730c2048d6e17b023bba9fdf262:sassc/.pkgfiles
 f:680ca04da7aa6a8c5bccc480a2053a29:sassc/spkgbuild

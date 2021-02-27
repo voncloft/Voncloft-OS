@@ -1,0 +1,20 @@
+# description : linux kernel prerequisites needed before installing kernel
+# depends : 
+
+name=kernel-prereq
+version=1.1
+release=1
+
+source="dvb-fe-tda10048-1.0.fw
+	NXP7164-2010-03-10.1.fw  
+	v4l-saa7164-1.0.2.fw  
+	v4l-saa7164-1.0.3.fw"
+
+options="!checksum"
+
+build() {
+	#install tv tuner drivers
+	
+	mkdir -pv $PKG/lib/firmware
+        cp $SRC/*.fw $PKG/lib/firmware
+}
