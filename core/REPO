@@ -65,6 +65,7 @@ d:freeglut
 d:fltk
 d:inkscape
 d:exo
+d:kernel-prereq
 d:usbutils
 d:papirus-icon-theme
 d:i3lock
@@ -351,7 +352,6 @@ d:chntpw
 d:mlt
 d:docbook2x
 d:thunar-volman
-d:linux-prereq
 d:sassc
 d:dfc
 d:geany
@@ -786,6 +786,11 @@ f:9fd1f7edbddbf6ce63744be9736c89fb:inkscape/spkgbuild
 f:93a603999288b4faeb307e5f47f3dfcb:exo/.checksums
 f:c09e7aed6e052061b6d9cd33ff65a664:exo/.pkgfiles
 f:bb9d6629bb22329e8e3c4cc3c596135c:exo/spkgbuild
+f:39b8c34dd6e96414798e78540bc5396f:kernel-prereq/v4l-saa7164-1.0.2.fw
+f:fd24b601fe2cf5779778da5f7521c917:kernel-prereq/NXP7164-2010-03-10.1.fw
+f:ba8194afd8105969a536cb881899200b:kernel-prereq/v4l-saa7164-1.0.3.fw
+f:b9fa8f284483480675d29d19e704f62c:kernel-prereq/dvb-fe-tda10048-1.0.fw
+f:766e8169b048498f690be18569bc18a4:kernel-prereq/spkgbuild
 f:806bba25940a8cd7d4e523cdf69ea68a:usbutils/.checksums
 f:1b5f5c45ff9e885cfed0833fbc019139:usbutils/.pkgfiles
 f:e6006fd3e9a47b6c94194d488f729527:usbutils/spkgbuild
@@ -1748,11 +1753,6 @@ f:826fae88a435d9278c4f9614991d55a1:docbook2x/docbook2x.datadir.patch
 f:e1f127babd31aa99a008a5648d6a7388:thunar-volman/.checksums
 f:254de469d074a9fb12cceb004eae65f4:thunar-volman/.pkgfiles
 f:0564107a161bfff1376ec621605f616c:thunar-volman/spkgbuild
-f:39b8c34dd6e96414798e78540bc5396f:linux-prereq/v4l-saa7164-1.0.2.fw
-f:fd24b601fe2cf5779778da5f7521c917:linux-prereq/NXP7164-2010-03-10.1.fw
-f:ba8194afd8105969a536cb881899200b:linux-prereq/v4l-saa7164-1.0.3.fw
-f:b9fa8f284483480675d29d19e704f62c:linux-prereq/dvb-fe-tda10048-1.0.fw
-f:766e8169b048498f690be18569bc18a4:linux-prereq/spkgbuild
 f:89e22f4d7c8d9a2df3cf75acba80125a:sassc/.checksums
 f:281a8730c2048d6e17b023bba9fdf262:sassc/.pkgfiles
 f:680ca04da7aa6a8c5bccc480a2053a29:sassc/spkgbuild
