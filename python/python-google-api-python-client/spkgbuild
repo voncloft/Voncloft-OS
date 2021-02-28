@@ -10,7 +10,6 @@ source="google-api-python-client-${version}.tar.gz"::https://github.com/google/g
 options="!checksum"
 
 build() {
-   cd google-api-python-client-${version}
    cd google-api-python-client-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

@@ -1,17 +1,16 @@
 # description : GraphQL framework for Python
 # depends : 
 
-_tag=2e87ebe5fcd50349f9572a0b20117e9ae46b15de
 url=https://graphene-python.org/
 name=python-graphene
-version=3.0.0b7
+version=2.1.8
 release=1
 
-source="git+https://github.com/graphql-python/graphene.git#tag=${_tag}
+source="https://github.com/graphql-python/graphene/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd graphene
+   cd graphene-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -6,7 +6,7 @@ name=python-gnuplot
 version=1.8
 release=11
 
-source="git+https://github.com/yuyichao/gnuplot-py#commit=2c2218dc67
+source="https://github.com/yuyichao/gnuplot-py/archive/release-$version.tar.gz"
 options="!checksum"
 
 build() {

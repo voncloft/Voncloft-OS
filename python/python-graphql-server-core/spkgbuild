@@ -6,11 +6,11 @@ name=python-graphql-server-core
 version=2.0.0
 release=2
 
-source="git+https://github.com/graphql-python/graphql-server-core.git#tag=340236fa759917a51803583ba193074b34d584e1
+source="https://github.com/graphql-python/graphql-server/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd graphql-server-core
+   cd graphql-server-core-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

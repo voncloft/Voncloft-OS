@@ -3,14 +3,14 @@
 
 url=https://github.com/graphql-python/graphql-relay-py
 name=python-graphql-relay
-version=3.0.0
+version=3.1.0
 release=3
 
-source="git+https://github.com/graphql-python/graphql-relay-py.git#tag=dfdb6351bc5cc10847f086dee5344aa0b43ce47d
+source="https://github.com/graphql-python/graphql-relay-py/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd graphql-relay-py
+   cd graphql-relay-py-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

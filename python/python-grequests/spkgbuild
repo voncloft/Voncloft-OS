@@ -8,6 +8,7 @@ version=0.6.0
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${_libname:0:1}/$_libname/$_libname-$version.tar.gz"
+options="!checksum"
 
 build() {
    cd $_libname-$version

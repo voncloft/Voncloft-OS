@@ -28,6 +28,7 @@ d:python-adal
 d:python-clint
 d:python-cftime
 d:python-flask-migrate
+d:python-google-api-python-client
 d:python-connexion
 d:python-bidict
 d:python-flask-babelex
@@ -53,6 +54,7 @@ d:python-editdistance
 d:python-clikit
 d:python-anyjson
 d:python-sip-pyqt5
+d:python-gssapi
 d:python-cinderclient
 d:python-django-modeltranslation
 d:python-covdefaults
@@ -72,11 +74,13 @@ d:python-attrs
 d:python-cmarkgfm
 d:python-geocoder
 d:python-flask-babel
+d:python-google-api-core
 d:python-argparse
 d:python-braintree
 d:python-bcrypt
 d:python-antlr4
 d:python-colorlog
+d:python-gwebsockets
 d:python-flake8-debugger
 d:python-filebytes
 d:python-fastapi
@@ -94,6 +98,7 @@ d:python-discid
 d:python-blinker
 d:python-dbus-client-gen
 d:python-flask-httpauth
+d:python-graphene
 d:python-django-filter
 d:python-chameleon
 d:python-autobahn
@@ -105,6 +110,7 @@ d:python-bitstring
 d:python-characteristic
 d:python-django-picklefield
 d:python-gevent
+d:python-google-auth-httplib2
 d:python-fonttools
 d:python-dephell-pythons
 d:python-geoip
@@ -118,6 +124,7 @@ d:python-flask-gravatar
 d:python-django-extensions
 d:python-bottle
 d:python-dephell-venvs
+d:python-grequests
 d:python-btchip
 d:python-arpeggio
 d:python-caja
@@ -160,6 +167,7 @@ d:python-django-compressor
 d:python-bowler
 d:python-aiohttp-apispec
 d:python-authheaders
+d:python-google-auth-oauthlib
 d:python-flask-security
 d:python-doit-py
 d:python-flask-sqlalchemy
@@ -171,6 +179,7 @@ d:python-zope-interface
 d:python-geopy
 d:python-cbor
 d:python-ansiwrap
+d:python-google-auth
 d:python-amqp
 d:python-django-fake-model
 d:python-apsw
@@ -180,6 +189,7 @@ d:python-cryptography
 d:python-auditwheel
 d:python-databases
 d:python-elasticsearch
+d:python-graphviz
 d:python-flask-paranoid
 d:python-flake8-isort
 d:python-confuse
@@ -232,6 +242,7 @@ d:python-daiquiri
 d:python-fakeredis
 d:python-twisted
 d:python-crayons
+d:python-greenlet
 d:python-dkim
 d:python-entrypoints
 d:python-cachetools
@@ -240,6 +251,7 @@ d:python-browserid
 d:python-dominate
 d:python-dephell-archive
 d:python-flask-cors
+d:python-googleapis-common-protos
 d:python-dulwich
 d:python-exam
 d:python-flup
@@ -292,11 +304,13 @@ d:python-filetype
 d:python-astroid
 d:python-ansicolor
 d:python-django-appconf
+d:python-graphql-core
 d:python-autoremove-torrents
 d:python-dbus-deviation
 d:python-aioresponses
 d:python-boto
 d:python-doit
+d:python-guzzle-sphinx-theme
 d:python-pyqtwebengine
 d:python-copr
 d:python-sqlparse
@@ -317,6 +331,7 @@ d:python-aiosqlite
 d:python-envisage
 d:python-colorcet
 d:python-aiohttp-socks
+d:python-graphql-relay
 d:python-black
 d:python-cookiecutter
 d:python-django-allauth
@@ -336,6 +351,7 @@ d:python-flufl.bounce
 d:python-dateparser
 d:python-docker-pycreds
 d:python-argon2-cffi
+d:python-gnuplot
 d:python-pyqt5
 d:python-engineio
 d:python-ecdsa
@@ -397,6 +413,7 @@ d:python-curio
 d:python-feedparser
 d:python-flufl-lock
 d:python-furl
+d:python-gphoto2
 d:python-atspi
 d:python-etesync
 d:python-flickrapi
@@ -448,6 +465,7 @@ d:python-pyopenssl
 d:python-flake8
 d:python-asynctest
 d:python-chai
+d:python-graphql-server-core
 d:python-build
 d:python-couchdb
 d:python-flask-wtf
@@ -533,6 +551,7 @@ f:4efac2190f5429e9799bcd28c2229936:python-adal/spkgbuild
 f:eefed4b74f77640d989b420f196fffe0:python-clint/spkgbuild
 f:d5cdbe3aca8b2222e34c58dab3d28b90:python-cftime/spkgbuild
 f:9337e5db52c3ea0a6bfeb36e96faad60:python-flask-migrate/spkgbuild
+f:22455f12f4d4bab87f0f2d813689d068:python-google-api-python-client/spkgbuild
 f:f2ae0d0e79ac02fc1bfe6fd40f9cafd9:python-connexion/spkgbuild
 f:217224a363bb4419341735366a508da6:python-bidict/spkgbuild
 f:afd2a3aaefedf69be058d5a3cfb963df:python-flask-babelex/spkgbuild
@@ -568,6 +587,7 @@ f:87d3f9e81e6271f3d704cecd18cb7780:python-anyjson/spkgbuild
 f:e9eac96fc62cda5cc43e1d064ff9659f:python-sip-pyqt5/.checksums
 f:d382eafca0e89fe3a0040afdea833ce2:python-sip-pyqt5/.pkgfiles
 f:06a323c7d5dedfd33ea808c52e87b465:python-sip-pyqt5/spkgbuild
+f:b782a451e03ca335daaee55be347a988:python-gssapi/spkgbuild
 f:432968ccda68ba823a4f836b06e5477c:python-cinderclient/spkgbuild
 f:30aa6e55b3ac342f78ea1d699b61576d:python-django-modeltranslation/spkgbuild
 f:f4c49da219158336fb2f1af7c3631625:python-covdefaults/spkgbuild
@@ -591,11 +611,13 @@ f:5c7433462fb25bd6bf89946d2ec14df3:python-attrs/spkgbuild
 f:38cb164282f045adc664d0e2f9eae8a2:python-cmarkgfm/spkgbuild
 f:19165383988d192b6412849420853053:python-geocoder/spkgbuild
 f:73dd67c3ece4fe3768e7fba2fdb5b352:python-flask-babel/spkgbuild
+f:446e5cfb93a8c1d84724ad2b685f8436:python-google-api-core/spkgbuild
 f:277b76871d88a082c65d2c05d2558e61:python-argparse/spkgbuild
 f:32889fd9601996e4070bb905952fda85:python-braintree/spkgbuild
 f:be439e8b4d857f0e9921465e1854f50a:python-bcrypt/spkgbuild
 f:dd0b82e90b7f80cac765ca340c217b4d:python-antlr4/spkgbuild
 f:aa5fa2f3ba1987fe8d52fcb1443cce09:python-colorlog/spkgbuild
+f:47c1b1dfb79c2815f94a93e73a1665c1:python-gwebsockets/spkgbuild
 f:593f69a81bd8a06e6e7a10ebc27ae4a7:python-flake8-debugger/spkgbuild
 f:4a128459efc18207007b20e893261bed:python-filebytes/spkgbuild
 f:711f452e7b793ca4712662f9fd4e6650:python-fastapi/spkgbuild
@@ -615,6 +637,7 @@ f:fbef7a354fd274ef20472104d81c1fb2:python-discid/spkgbuild
 f:6e791223ed55ed5f7c776b18aaeb24c9:python-blinker/spkgbuild
 f:ca83d7df6078527c606a86c944e7cb29:python-dbus-client-gen/spkgbuild
 f:58872b7f57a29f69b3d1701eb0489c0a:python-flask-httpauth/spkgbuild
+f:5be5f16ab0d54d3d38b5f03ed9e13dae:python-graphene/spkgbuild
 f:06256f008d3dee71620685b4a5cdd84f:python-django-filter/spkgbuild
 f:07f31533a2204802bf118330c30e7414:python-chameleon/spkgbuild
 f:d46bf0b048e3fd0925804e7748127beb:python-autobahn/spkgbuild
@@ -626,6 +649,7 @@ f:699675ccd711536d0385789aa67b5394:python-bitstring/spkgbuild
 f:a0cd56befd0525c5fdf32cf3f6c88e88:python-characteristic/spkgbuild
 f:ad3d02b3379df27676f1fd5d9332f6e8:python-django-picklefield/spkgbuild
 f:683921c0e7d763a0d4580d932ec820ee:python-gevent/spkgbuild
+f:a4732ab16931f9c329732a262231de52:python-google-auth-httplib2/spkgbuild
 f:e9310e9d29ee686eff542928cadae3d6:python-fonttools/spkgbuild
 f:533734d6ec090e95e814d65f074e1e1b:python-dephell-pythons/spkgbuild
 f:36f0e017c785c81ed0665e13d2f47a96:python-geoip/spkgbuild
@@ -639,6 +663,7 @@ f:e43100cb57ce3b62109a126545d829d5:python-flask-gravatar/spkgbuild
 f:38ab346e988ff47ba4543edf5b634cd5:python-django-extensions/spkgbuild
 f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
 f:2f9bd3a098c8c7565546ded5123ef9af:python-dephell-venvs/spkgbuild
+f:6925e99de3a2a2fad27ba351585712ca:python-grequests/spkgbuild
 f:16414382ab0d0b25fd3cee6a503c42ed:python-btchip/spkgbuild
 f:007b8a182f3ba5345cfc6129bffbbcbd:python-arpeggio/spkgbuild
 f:92dc566419dbe85f5800f0a95d5104d1:python-caja/spkgbuild
@@ -687,6 +712,7 @@ f:0504ef78c3e9c7c2d932804ec4a1c8fb:python-django-compressor/spkgbuild
 f:a73787ec71fa499843409b81071ccbc5:python-bowler/spkgbuild
 f:cd668d70bd199c09aee0ae89fb5f2bd4:python-aiohttp-apispec/spkgbuild
 f:89a443da5d402d8b1e4576e140072e24:python-authheaders/spkgbuild
+f:d9b19d1a126b3509c2e997f34354cc4d:python-google-auth-oauthlib/spkgbuild
 f:29a2a624c9e61e8105e1e8796a82b0c5:python-flask-security/spkgbuild
 f:605074767ef8f5bdaadb54cfbd292084:python-doit-py/spkgbuild
 f:8a32343a46309bc91e19a0a15ac9d7f4:python-flask-sqlalchemy/spkgbuild
@@ -700,6 +726,7 @@ f:42479388c543fd906a4f12ce1457624f:python-zope-interface/spkgbuild
 f:2fb3c66b8f10b3b96a2a068a3c686010:python-geopy/spkgbuild
 f:4b7426618d05d4b961155c34e980e177:python-cbor/spkgbuild
 f:b185be896a5ef109f7422f24455c9259:python-ansiwrap/spkgbuild
+f:5625249649345f9b954a870e7f79977e:python-google-auth/spkgbuild
 f:7e186ba710c196a6f9868d4c9498b40d:python-amqp/spkgbuild
 f:ed5d794c45ac94c6b570be788edc404f:python-django-fake-model/spkgbuild
 f:8fedcdfbf140972f0462491832e7a51f:python-apsw/spkgbuild
@@ -709,6 +736,7 @@ f:6ad277570e70e1bcdb3fd09094c338ca:python-cryptography/spkgbuild
 f:bf836bd3bcebe1c3df9a9cea5a8062e8:python-auditwheel/spkgbuild
 f:2b6300eb397e394dc12f085001438545:python-databases/spkgbuild
 f:b1a53eeab422cc0c0cb7c966797762fb:python-elasticsearch/spkgbuild
+f:a6f89a985fab144dac3149816d5190c3:python-graphviz/spkgbuild
 f:a0448cdca7c78880e5aafb463002f55b:python-flask-paranoid/spkgbuild
 f:89a1bba36d7cbb6e47b16f0507f8f8b8:python-flake8-isort/spkgbuild
 f:ccd13b6b2961271d122f4b89d5ee08bc:python-confuse/spkgbuild
@@ -771,6 +799,7 @@ f:d5bd396421374c9b945c518cf6fc411a:python-daiquiri/spkgbuild
 f:256a13dc33887d24eb2a10b53a27ffbd:python-fakeredis/spkgbuild
 f:c1f89f92561ecdb0eca822d7ed6d6be8:python-twisted/spkgbuild
 f:1958db58bb4da2e2ccc59b2cc5a75557:python-crayons/spkgbuild
+f:9916028216bb8e350f51518390dea5f5:python-greenlet/spkgbuild
 f:8af38d19e9aa59dc7358a0494907daf6:python-dkim/spkgbuild
 f:d1088e5884a0a46b5e796296ca1fd8b5:python-entrypoints/spkgbuild
 f:0aaeb795d2026b89dfd3b58b65f0cf24:python-cachetools/spkgbuild
@@ -779,6 +808,7 @@ f:caff92478847a886546f1ab27f30f10d:python-browserid/spkgbuild
 f:2b89261a3cbaaf81f6b0ef5267e42dfa:python-dominate/spkgbuild
 f:cf0f1d4f0662b9647d53b0a10068ca37:python-dephell-archive/spkgbuild
 f:c41ff12ba4eb10da2c982b06d44a9eb5:python-flask-cors/spkgbuild
+f:b1048a570c90117eaf2f7d2a9e10fc1e:python-googleapis-common-protos/spkgbuild
 f:2b70da8ac74a071a194088502007261d:python-dulwich/spkgbuild
 f:2aed78b591a2621f21c14b2767b86c29:python-exam/spkgbuild
 f:fa916742ae6da44aea0987e8bb6e6026:python-flup/spkgbuild
@@ -837,6 +867,7 @@ f:7bbd0941592202c93b3892d2c0a0ecf2:python-filetype/spkgbuild
 f:e65e12fb394b6a263c20cb7cc4d6af46:python-astroid/spkgbuild
 f:7b2a196d8a69992d3ae219f741e1a826:python-ansicolor/spkgbuild
 f:55bd47132c35770a16b692970020aa0e:python-django-appconf/spkgbuild
+f:32a8c43f86b3d5683be10a8404e45f77:python-graphql-core/spkgbuild
 f:a203125741cf9d18b1f178f2af299a0e:python-autoremove-torrents/.checksums
 f:77857712af52aa15f7930e4219ee3c0d:python-autoremove-torrents/.pkgfiles
 f:6b78b1bd9eda674bb0f0236efc6a87c0:python-autoremove-torrents/spkgbuild
@@ -844,6 +875,7 @@ f:5e1565e2d1c58a28440c210d226a6635:python-dbus-deviation/spkgbuild
 f:100b853bb754f6223bdf7cf32c4f6db4:python-aioresponses/spkgbuild
 f:5dc12094d51f5815dc997cfc121465b7:python-boto/spkgbuild
 f:3bd13b5bb7c25ea7c9e3d7d0fd995845:python-doit/spkgbuild
+f:a63d1942fbea41d4d09b1cd3730db456:python-guzzle-sphinx-theme/spkgbuild
 f:d53bcf227e1509686fc59d4fdf47b917:python-pyqtwebengine/.checksums
 f:e9d92b858a5328be551be0b2395eadf1:python-pyqtwebengine/.pkgfiles
 f:dee9124adcb13ee132d961af3d44b647:python-pyqtwebengine/spkgbuild
@@ -869,6 +901,7 @@ f:70fe0d3b2ae4e1249a5837abd4851682:python-aiosqlite/spkgbuild
 f:7db6270f76a9009d8f3f0ea33215fb8c:python-envisage/spkgbuild
 f:db1c86a61a1efe39e967b809ba9d971b:python-colorcet/spkgbuild
 f:6e8a179d792fc6cf4ec950f297814472:python-aiohttp-socks/spkgbuild
+f:568352d4f07aed80b3fe5205fda3942c:python-graphql-relay/spkgbuild
 f:066f6d399ded16d1316d8641cd4bda64:python-black/spkgbuild
 f:cc48f42b9982c947e160b07f7f97edcb:python-cookiecutter/spkgbuild
 f:2cfe5e1fb446ee2beef73d886c20ed38:python-django-allauth/spkgbuild
@@ -888,6 +921,7 @@ f:33c0e15da2bcc7cebf14be5a60e2570f:python-flufl.bounce/spkgbuild
 f:ca343752294d63fdbf9a8c0ecc37ea6d:python-dateparser/spkgbuild
 f:7b9662af98f837579ea9e47f06386442:python-docker-pycreds/spkgbuild
 f:9e089be2405f1f565baebd46b1299016:python-argon2-cffi/spkgbuild
+f:bcfa64ef5a1ed457f845b1dda67b46f2:python-gnuplot/spkgbuild
 f:3d9951d83a2cc832efbad1904dbb8eaf:python-pyqt5/.checksums
 f:041765275f0692f98012def381fca08c:python-pyqt5/.pkgfiles
 f:b42ea14e01030e7c2173681915c6226a:python-pyqt5/spkgbuild
@@ -959,6 +993,7 @@ f:d58b147b5b55a7b0aa50a7f554989863:python-curio/spkgbuild
 f:70c53dd13b5d2ea2159cab8cb26b673a:python-feedparser/spkgbuild
 f:9103431cd2bf23ba1ddf4591883a0f53:python-flufl-lock/spkgbuild
 f:7bf23137c04e88b8e62f4e5ec87ddbfb:python-furl/spkgbuild
+f:4a18dfd7c0986528a22838a6e9df2851:python-gphoto2/spkgbuild
 f:0999a8f53f5569d9d945e7c8f92d5fbd:python-atspi/.checksums
 f:319dc5cbab3259a6131c2ee5d85d6cfe:python-atspi/.pkgfiles
 f:9991f25ab15b1436213b0156e957f1a3:python-atspi/spkgbuild
@@ -1022,6 +1057,7 @@ f:c84fa651eaf581deb5cefd054c98f94a:python-pyopenssl/spkgbuild
 f:cd8e289b095bc934b8ee3c1a3db2e3b0:python-flake8/spkgbuild
 f:a12fb0e38700ecd85cfa33a0141aaa5c:python-asynctest/spkgbuild
 f:6f8b0cf5947d408cf7404e3b5db5355f:python-chai/spkgbuild
+f:b5ce2e810fc431f54aa417edf6738677:python-graphql-server-core/spkgbuild
 f:2b2c6445bbd4df62b1dcfa7fe8912e84:python-build/spkgbuild
 f:f2859c8b8d1ef19ef41bdc7f233280d5:python-couchdb/spkgbuild
 f:bd66a069707d3b87a1cb3e3dff5362a3:python-flask-wtf/spkgbuild
