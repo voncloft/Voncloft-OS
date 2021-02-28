@@ -6,7 +6,7 @@ name=python-google-api-python-client
 version=1.12.8
 release=1
 
-source="google-api-python-client-${version}.tar.gz"::https://github.com/google/google-api-python-client/archive/v${version}.tar.gz"
+source="https://github.com/google/google-api-python-client/archive/v${version}.tar.gz"
 options="!checksum"
 
 build() {
