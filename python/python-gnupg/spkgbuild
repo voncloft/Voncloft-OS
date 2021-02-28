@@ -6,7 +6,7 @@ name=python-gnupg
 version=0.4.6
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"
 options="!checksum"
 
 build() {

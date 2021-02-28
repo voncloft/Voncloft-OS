@@ -6,11 +6,11 @@ name=python-glfw
 version=2.0.0
 release=2
 
-source="git+$url#commit=e988aa623a4a8da08b53f68246424306c4fa5982 # tag: v2.0.0
+source="https://github.com/FlorianRhiem/pyGLFW/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd pyGLFW
+   cd pyGLFW-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -3,12 +3,11 @@
 
 _name=geopy
 url=https://github.com/geopy/geopy
-_name=geopy
 name=python-geopy
 version=2.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
