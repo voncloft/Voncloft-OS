@@ -13,6 +13,7 @@ d:libnma
 d:libunistring
 d:libisoburn
 d:libjpeg-turbo
+d:snappy
 d:libmypaint
 d:libndp
 d:glm
@@ -124,6 +125,7 @@ d:libatasmart
 d:libgcrypt
 d:libatomic_ops
 d:libsoup
+d:blosc
 d:libblockdev
 d:libkexiv2
 d:libsass
@@ -173,6 +175,8 @@ f:44b2ca3723708ae20b310d9db8359b98:libisoburn/spkgbuild
 f:287c3cd02c4549393ec929ad7ef9a6c6:libjpeg-turbo/.checksums
 f:0a2b6b1df4b57a91275cae98608e0e63:libjpeg-turbo/.pkgfiles
 f:6b9d6b71bcc16b084341bb6ed0118264:libjpeg-turbo/spkgbuild
+f:4b491e29a8142fedd11472306f5c1192:snappy/snappy.pc
+f:0a85f7fcdb42720b9abd54a67cfe6c03:snappy/spkgbuild
 f:ef42a8f6e7de0b8aa50600c9569eb529:libmypaint/.checksums
 f:defe0d0537de524ac3a84553d4cc76b4:libmypaint/.pkgfiles
 f:6b2229ffdd6bde08ce168feb92d6bac6:libmypaint/spkgbuild
@@ -512,6 +516,7 @@ f:28919b66c0f569899c4fad647116f884:libatomic_ops/spkgbuild
 f:5d3a686ddbdfafdcf683b4cdf178699f:libsoup/.checksums
 f:6be3097be54ccc11f36eeaed6fc185f6:libsoup/.pkgfiles
 f:fd57b7e47339e1e434aab58fac3c7b2c:libsoup/spkgbuild
+f:b46220ab79e05148589933ae832fd3d9:blosc/spkgbuild
 f:abb41c223abbdd3ba92b094db1b5dc1a:libblockdev/.checksums
 f:1feb95104a1b8855c2466c964dc45afc:libblockdev/.pkgfiles
 f:a715485c66b0a1dfa21f8a3da0f3edb9:libblockdev/spkgbuild

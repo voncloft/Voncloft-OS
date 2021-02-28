@@ -1,0 +1,16 @@
+# description : c++ port of the Java Topology Suite
+# depends : gcc bash
+
+name=geos
+version=3.8.1
+release=1
+
+source="https://download.osgeo.org/$name/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	makde DESTDIR=$PKG install
+}

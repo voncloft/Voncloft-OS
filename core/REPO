@@ -517,6 +517,7 @@ d:gconf
 d:at-spi2-atk
 d:qemu
 d:weechat
+d:geos
 d:xauth
 d:speedtest-cli
 d:expat
@@ -2303,6 +2304,7 @@ f:75aa89dde28a35bd20e5d97687b8df98:qemu/spkgbuild
 f:a3752fb1ed19c97fa8280eb04016ea90:weechat/.checksums
 f:67071334082a4bb6bf4aea22ed8e311f:weechat/.pkgfiles
 f:3fa10d72a7636168f7fbf48180fd33ba:weechat/spkgbuild
+f:32c245188dfa61ac43d4359452ad27d9:geos/spkgbuild
 f:e0bd6cdf45f0e9ee78317d079ce0c760:xauth/.checksums
 f:b327d0f8595c321363c09b22b5ba9239:xauth/.pkgfiles
 f:d2198d3f6b0810dbdd31d80a7d721ad3:xauth/spkgbuild

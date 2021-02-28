@@ -1,0 +1,27 @@
+# description : A blocking, shuffling, and loss-less compression library
+# depends : snappy zstd
+
+name=blosc
+version=1.21.0
+release=1
+
+source="https://github.com/Blosc/c-blosc/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd c-$name-$version
+	mkdir build
+	cd build
+
+	 cmake -DCMAKE_INSTALL_PREFIX="/usr" \
+        -DDEACTIVATE_SNAPPY="OFF" \
+        -DPREFER_EXTERNAL_LZ4="ON" \
+	-DPREFER_EXTERNAL_ZLIB="ON" \
+	-DPREFER_EXTERNAL_ZSTD="ON" \
+        -DBUILD_TESTS="OFF" \
+        -Wno-dev ..
+
+        make
+
+        make DESTDIR=$PKG install
+}
