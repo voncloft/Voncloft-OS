@@ -109,7 +109,6 @@ d:python-edalize
 d:python-bitstring
 d:python-characteristic
 d:python-django-picklefield
-d:python-h5py
 d:python-gevent
 d:python-google-auth-httplib2
 d:python-fonttools
@@ -273,7 +272,6 @@ d:python-ansi2html
 d:python-calmjs.parse
 d:python-flex
 d:python-git-url-parse
-d:python-h5py-openmpi
 d:python-dephell
 d:python-crc16
 d:python-betamax
@@ -652,7 +650,6 @@ f:7480b597cfe37410e039a597aa1d101b:python-edalize/spkgbuild
 f:699675ccd711536d0385789aa67b5394:python-bitstring/spkgbuild
 f:a0cd56befd0525c5fdf32cf3f6c88e88:python-characteristic/spkgbuild
 f:ad3d02b3379df27676f1fd5d9332f6e8:python-django-picklefield/spkgbuild
-f:e51cfb8892fdfb8e666371f937e12634:python-h5py/spkgbuild
 f:683921c0e7d763a0d4580d932ec820ee:python-gevent/spkgbuild
 f:a4732ab16931f9c329732a262231de52:python-google-auth-httplib2/spkgbuild
 f:e9310e9d29ee686eff542928cadae3d6:python-fonttools/spkgbuild
@@ -838,7 +835,6 @@ f:2099ef7ef6852ce41da23524f45b7e18:python-ansi2html/spkgbuild
 f:62c15e11c084659bbcc0126143b9e5a3:python-calmjs.parse/spkgbuild
 f:4798418cd204be52bec9f319f4fcb753:python-flex/spkgbuild
 f:68b502d390e0ce9225f35d1d91bbbc67:python-git-url-parse/spkgbuild
-f:e16bb70b2069f448f83e434de36992e1:python-h5py-openmpi/spkgbuild
 f:86b985789777c08dcc90ce269c985864:python-dephell/spkgbuild
 f:67e0c2e1403f7f7dc715f37e806c5bab:python-crc16/spkgbuild
 f:e3eb480a3906ba08d10551adf755f448:python-betamax/spkgbuild
