@@ -7,6 +7,7 @@ d:libpwquality
 d:libwebp
 d:libsigc++
 d:libass
+d:libaec
 d:libvdpau-va-gl
 d:libgee
 d:libnma
@@ -159,6 +160,7 @@ f:3a7989518d35034a8742dda3da97c8a7:libsigc++/spkgbuild
 f:6972f3fc345172a98f6d3cab07677dc9:libass/.checksums
 f:1ed6d155bad7e95f87ea74fdf432aa2a:libass/.pkgfiles
 f:b3027b3574d663fd274614845102f5cc:libass/spkgbuild
+f:f9c028ef2f8bb3e0c20d47fff01e7b9a:libaec/spkgbuild
 f:3f9cecb5e03449bc2b5452db55557e03:libvdpau-va-gl/.checksums
 f:795a7b3ea1616ef5cc5bfbb485405a43:libvdpau-va-gl/.pkgfiles
 f:2b735e0b63377f2b155bfbb2093060e3:libvdpau-va-gl/spkgbuild
