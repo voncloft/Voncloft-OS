@@ -1,0 +1,21 @@
+# description : small data compressioin library
+# depends : glibc
+
+name=liblzf
+version=3.6
+release=2
+
+source="http://dist.schmorp.de/${name}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sh ./bootstrap.sh
+
+	./configure --prefix=/usr \
+		--disable-static
+
+	make
+	make DESTDIR=$PKG install
+	ln -sv lzf "${PKG}/usr/bin/unlzf"
+}

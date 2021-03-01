@@ -7,9 +7,9 @@ version=0.12.0
 release=1
 
 source="https://pypi.io/packages/source/h/h11/h11-$version.tar.gz"
+options="!checksum"
 
 build() {
-   cd h11-$version
    cd h11-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

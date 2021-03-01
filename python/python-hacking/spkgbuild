@@ -1,5 +1,5 @@
 # description : OpenStack Hacking Guideline Enforcement
-# depends : flake8
+# depends : python-flake8
 
 url=https://docs.openstack.org/developer/hacking
 name=python-hacking
@@ -7,9 +7,9 @@ version=4.0.0
 release=1
 
 source="https://github.com/openstack/hacking/archive/$version.tar.gz"
+options="!checksum"
 
 build() {
-   cd hacking-$version
    cd hacking-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

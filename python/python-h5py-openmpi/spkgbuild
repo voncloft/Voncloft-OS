@@ -1,11 +1,10 @@
-# description : General-purpose Python bindings for the HDF5 library
-# depends : hdf5 liblzf python-numpy
+# description : General-purpose Python bindings for the HDF5 library version
+# depends : hdf5-openmpi liblzf python-numpy python-mpi4py
 
 _pkg=h5py
 url=https://www.h5py.org/
-name=python-${_pkg}
+name=python-${_pkg}-openmpi
 version=3.1.0
-  local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
 release=3
 
 source="https://files.pythonhosted.org/packages/source/h/${_pkg}/${_pkg}-${version}.tar.gz"

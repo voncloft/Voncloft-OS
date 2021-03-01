@@ -29,6 +29,7 @@ d:libevdev
 d:libmtp
 d:libvorbis
 d:libressl
+d:liblzf
 d:libfilezilla
 d:libdbusmenu
 d:libkcddb
@@ -86,6 +87,7 @@ d:libmusicbrainz5
 d:libpciaccess
 d:libunique
 d:libconfig
+d:hdf5
 d:libgpg-error
 d:libdrm
 d:libgtop
@@ -225,6 +227,7 @@ f:342bc6386ee2a7ccd83ec22289a46398:libvorbis/spkgbuild
 f:7f249283db3d639a031309f0f4bc9971:libressl/.checksums
 f:bebfa77011fbe7ff11e843e8518d34c8:libressl/.pkgfiles
 f:3b246a34d2babef8806a678df5a19635:libressl/spkgbuild
+f:34d34e099d543154d1cfebb4cfb24bcc:liblzf/spkgbuild
 f:7f380fbd87c7953098c6ebd3e5fefd47:libfilezilla/.checksums
 f:b3b8b29c882f4346d39b8f7a76d402f5:libfilezilla/.pkgfiles
 f:1958f896ce583c4a0c9e656c320e7699:libfilezilla/spkgbuild
@@ -401,6 +404,7 @@ f:55fe4fee3024ee8358b0ca6be6556fbf:libunique/spkgbuild
 f:72e15024ecc14d80cae84a3e897e8f89:libconfig/.checksums
 f:586be1ef78927c4ddfe5d4e4dbaef753:libconfig/.pkgfiles
 f:abde36e79c526a346795f8ae1127876b:libconfig/spkgbuild
+f:104c25389156c85f0d9ca9df802b5c62:hdf5/spkgbuild
 f:5865a2baba94f0256773e00710c1d48d:libgpg-error/.checksums
 f:2b444c585736298b8f26a5497ee8073c:libgpg-error/.pkgfiles
 f:ba969c86168aa33ec882710af9ff19bb:libgpg-error/spkgbuild

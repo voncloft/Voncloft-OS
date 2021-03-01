@@ -109,6 +109,7 @@ d:python-edalize
 d:python-bitstring
 d:python-characteristic
 d:python-django-picklefield
+d:python-h5py
 d:python-gevent
 d:python-google-auth-httplib2
 d:python-fonttools
@@ -132,6 +133,7 @@ d:python-dae
 d:python-fasteners
 d:python-django-crispy-forms
 d:python-aiorpcx
+d:python-hacking
 d:python-flask-restful
 d:python-glfw
 d:python-fastnumbers
@@ -230,6 +232,7 @@ d:python-atpublic
 d:python-fissix
 d:python-aioconsole
 d:python-fastpbkdf2
+d:python-h11
 d:python-axolotl-curve25519
 d:python-atom
 d:python-apipkg
@@ -270,6 +273,7 @@ d:python-ansi2html
 d:python-calmjs.parse
 d:python-flex
 d:python-git-url-parse
+d:python-h5py-openmpi
 d:python-dephell
 d:python-crc16
 d:python-betamax
@@ -648,6 +652,7 @@ f:7480b597cfe37410e039a597aa1d101b:python-edalize/spkgbuild
 f:699675ccd711536d0385789aa67b5394:python-bitstring/spkgbuild
 f:a0cd56befd0525c5fdf32cf3f6c88e88:python-characteristic/spkgbuild
 f:ad3d02b3379df27676f1fd5d9332f6e8:python-django-picklefield/spkgbuild
+f:e51cfb8892fdfb8e666371f937e12634:python-h5py/spkgbuild
 f:683921c0e7d763a0d4580d932ec820ee:python-gevent/spkgbuild
 f:a4732ab16931f9c329732a262231de52:python-google-auth-httplib2/spkgbuild
 f:e9310e9d29ee686eff542928cadae3d6:python-fonttools/spkgbuild
@@ -671,6 +676,7 @@ f:94def90ed7f47ab5ee1c26d2c40f6abb:python-dae/spkgbuild
 f:a2b0ed0af14b36dacf46a83840c61c04:python-fasteners/spkgbuild
 f:54d89edab928248cf8e5708a4cb69759:python-django-crispy-forms/spkgbuild
 f:a8c992d556dc6b8ddd25bd81f65dbe28:python-aiorpcx/spkgbuild
+f:210945ad3e6d396610b953b61d3a4373:python-hacking/spkgbuild
 f:123fd657bcefc4aee7d391393a717470:python-flask-restful/spkgbuild
 f:a07a797fdc8e79005befc9421af8cdae:python-glfw/spkgbuild
 f:9482a9169e24d2c2a819ef74130aa040:python-fastnumbers/spkgbuild
@@ -787,6 +793,7 @@ f:3a4afb8c4c96e1bcd36ebac719a3cd83:python-atpublic/spkgbuild
 f:d7947cb65b25f4850a86c5174cba844d:python-fissix/spkgbuild
 f:67ce6c00896b5e3fe937cd769d0a0c77:python-aioconsole/spkgbuild
 f:f049d8fbadb73f93c612ebd058f2763b:python-fastpbkdf2/spkgbuild
+f:ac09e3a2c26fafb225f4006272ec6f98:python-h11/spkgbuild
 f:cf3c696e01a051ef0295244200744c00:python-axolotl-curve25519/spkgbuild
 f:b448b2ae1d8241153074621b1d288b74:python-atom/spkgbuild
 f:557d7eac6f48d18a604396bdcf7849a6:python-apipkg/spkgbuild
@@ -831,6 +838,7 @@ f:2099ef7ef6852ce41da23524f45b7e18:python-ansi2html/spkgbuild
 f:62c15e11c084659bbcc0126143b9e5a3:python-calmjs.parse/spkgbuild
 f:4798418cd204be52bec9f319f4fcb753:python-flex/spkgbuild
 f:68b502d390e0ce9225f35d1d91bbbc67:python-git-url-parse/spkgbuild
+f:e16bb70b2069f448f83e434de36992e1:python-h5py-openmpi/spkgbuild
 f:86b985789777c08dcc90ce269c985864:python-dephell/spkgbuild
 f:67e0c2e1403f7f7dc715f37e806c5bab:python-crc16/spkgbuild
 f:e3eb480a3906ba08d10551adf755f448:python-betamax/spkgbuild
