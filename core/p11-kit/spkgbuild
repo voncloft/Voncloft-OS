@@ -9,13 +9,22 @@ source="https://github.com/p11-glue/p11-kit/releases/download/$version/$name-$ve
 build() {
 	cd $name-$version
 
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--libexecdir=/usr/lib \
-		--with-trust-paths=/etc/pki/anchors	
+	sed '20,$ d' -i trust/trust-extract-compat
+	cat <<-EOF > trust/trust-extract-compat << "EOF"
+	# Copy existing anchor modifications to /etc/ssl/local
+	/usr/libexec/make-ca/copy-trust-modifications
+
+	# Generate a new trust store
+	/usr/sbin/make-ca -f -g
+	EOF
+	./configure --prefix=/usr     \
+            --sysconfdir=/etc \
+            --with-trust-paths=/etc/pki/anchors &&
+
 	make
 	make DESTDIR=$PKG install
 
-	rm -r $PKG/usr/share/gtk-doc
+	ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
+        $PKG/usr/bin/update-ca-certificates
+	ln -sfv ./pkcs11/p11-kit-trust.so $PKG/usr/lib/libnssckbi.so
 }

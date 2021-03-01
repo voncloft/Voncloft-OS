@@ -6,6 +6,7 @@ d:hostapd
 d:krb5
 d:libssh2
 d:you-get
+d:make-ca
 d:iptables
 d:net-tools
 d:nftables
@@ -45,6 +46,7 @@ f:9dd86b90655268c61c1bbc7f31384005:libssh2/spkgbuild
 f:0bfec49b976bed1f41ed086b32464630:you-get/.checksums
 f:f7b521b0c5ba3cb20344aec8d826bd0d:you-get/.pkgfiles
 f:17929afe7eeb0d08f0023bc13fa47ced:you-get/spkgbuild
+f:52b8091b42c0e6d274060b84e41f810b:make-ca/spkgbuild
 f:878ad761668519df0a2fff4142584fef:iptables/rc.iptables
 f:61e97ff4805ca4b4fa5e56950f404c56:iptables/spkgbuild
 f:5d7b0c1b84e406689cc4e02fd2cccd92:net-tools/.checksums
