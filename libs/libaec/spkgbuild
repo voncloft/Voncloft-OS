@@ -5,8 +5,7 @@ name=libaec
 version=1.0.4
 release=1
 
-_md5=ea0b7d197a950b0c110da8dfdecbb71f
-source="https://gitlab.dkrz.de/k202009/libaec/uploads/${_md5}/${pkgname}-${pkgver}.tar.gz"
+source="https://gitlab.dkrz.de/k202009/libaec/-/archive/v$version/libaec-v$version.tar.gz"
 options="!checksum"
 
 build() {
