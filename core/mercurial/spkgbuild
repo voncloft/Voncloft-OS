@@ -1,0 +1,21 @@
+# description : a SCM tool
+# depends : python make-ca
+
+name=mercurial
+version=5.7
+release=1
+
+source="https://www.mercurial-scm.org/release/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	make build 
+	make DESTDIR=$PKG PREFIX=/usr install-bin
+	
+	install -v -d -m755 $PKG/etc/mercurial	
+	cat <<-EOF > $PKG/etc/mercurial/hgrc 
+	cacerts = /etc/pki/tls/certs/ca-bundle.crt
+	EOF
+	
+}
