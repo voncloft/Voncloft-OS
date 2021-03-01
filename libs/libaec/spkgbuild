@@ -9,7 +9,7 @@ source="https://gitlab.dkrz.de/k202009/libaec/-/archive/v$version/libaec-v$versi
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd $name-v$version
 	mkdir build
 	cd build
 
