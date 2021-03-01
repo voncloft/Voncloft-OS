@@ -3,7 +3,6 @@
 
 _name=hawkauthlib
 url=https://github.com/mozilla-services/hawkauthlib
-_name=hawkauthlib
 name=python-hawkauthlib
 version=2.0.0
 release=7
@@ -12,7 +11,6 @@ source="https://github.com/mozilla-services/$_name/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
    cd $_name-$version 
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
