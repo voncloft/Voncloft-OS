@@ -83,6 +83,7 @@ d:python-colorlog
 d:python-gwebsockets
 d:python-flake8-debugger
 d:python-filebytes
+d:python-hjson
 d:python-fastapi
 d:python-astunparse
 d:python-cucumber-tag-expressions
@@ -122,6 +123,7 @@ d:python-awkward
 d:python-helpdev
 d:python-dephell-specifier
 d:python-flask-gravatar
+d:python-hiredis
 d:python-django-extensions
 d:python-bottle
 d:python-dephell-venvs
@@ -485,6 +487,7 @@ d:python-aiofiles
 d:python-btrfs
 d:python-flask-security-too
 d:python-flask-htmlmin
+d:python-hidapi
 d:python-ciso8601
 d:python-bleach
 d:python-fuse
@@ -631,6 +634,7 @@ f:aa5fa2f3ba1987fe8d52fcb1443cce09:python-colorlog/spkgbuild
 f:47c1b1dfb79c2815f94a93e73a1665c1:python-gwebsockets/spkgbuild
 f:593f69a81bd8a06e6e7a10ebc27ae4a7:python-flake8-debugger/spkgbuild
 f:4a128459efc18207007b20e893261bed:python-filebytes/spkgbuild
+f:348ef33cd168673dda28dbb271c0c208:python-hjson/spkgbuild
 f:711f452e7b793ca4712662f9fd4e6650:python-fastapi/spkgbuild
 f:85d80a72cfa7bb76880042ec51c7a37d:python-astunparse/spkgbuild
 f:15b43f89a0d6c1e6fd8fd3e152fd665b:python-cucumber-tag-expressions/spkgbuild
@@ -672,6 +676,7 @@ f:1cd289745d5e2ead0bbd497605a518ba:python-awkward/spkgbuild
 f:be73fe5963bc0060994187f2cb0d493b:python-helpdev/spkgbuild
 f:512ffef3639b6e1d6d3a2f48ce6e1dfa:python-dephell-specifier/spkgbuild
 f:e43100cb57ce3b62109a126545d829d5:python-flask-gravatar/spkgbuild
+f:0f0194629f9064d9badc4c1f41e2f6c7:python-hiredis/spkgbuild
 f:38ab346e988ff47ba4543edf5b634cd5:python-django-extensions/spkgbuild
 f:eb8cf136af9ee2b02aac53f9864bcd24:python-bottle/spkgbuild
 f:2f9bd3a098c8c7565546ded5123ef9af:python-dephell-venvs/spkgbuild
@@ -1088,6 +1093,7 @@ f:64ead1152a2c52e8ee66226b81f117ae:python-aiofiles/spkgbuild
 f:4f25b6639c7cb5c1f406f5c2d52092f6:python-btrfs/spkgbuild
 f:2a69714e9d31eda0d02012720ef589f0:python-flask-security-too/spkgbuild
 f:ea16f2888ebf2f1b19589a53c8168e49:python-flask-htmlmin/spkgbuild
+f:e07cc1f5ad2dc287c225a598c5141408:python-hidapi/spkgbuild
 f:8751d015e2fbaaa2585d3a817ceab14b:python-ciso8601/spkgbuild
 f:47da596c2e62d66f0fbc9bc81ee3144e:python-bleach/spkgbuild
 f:5d1ef0daef86d19d510ede1ac7766dd3:python-fuse/spkgbuild

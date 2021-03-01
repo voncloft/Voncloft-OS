@@ -5,12 +5,10 @@ url=https://github.com/trezor/cython-hidapi
 name=python-hidapi
 _pipname=hidapi
 version=0.10.1
-#_version=${version%.*}.post${version##*.}
-_version=$version
-  local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
 release=1
 
 source="https://pypi.org/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$_version.tar.gz"
+options="!checksum"
 
 build() {
    cd $_pipname-$_version

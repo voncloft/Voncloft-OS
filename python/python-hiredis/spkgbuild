@@ -10,8 +10,7 @@ source="https://pypi.org/packages/source/h/hiredis/hiredis-$version.tar.gz"
 options="!checksum"
 
 build() {
-	 cd hiredis-$version
-	 cd hiredis-$version
+   cd hiredis-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
