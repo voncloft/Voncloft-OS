@@ -7,7 +7,7 @@ name=python-${_pkg}
 version=0.7.1
 release=3
 
-source="${url}/-/archive/v${version}/${_pkg}-v${version}.tar.bz2
+source="${url}/-/archive/v${version}/${_pkg}-v${version}.tar.bz2"
 options="!checksum"
 
 build() {
