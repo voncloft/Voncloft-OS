@@ -10,7 +10,7 @@ build() {
 	cd $name-$version
 
 	sed '20,$ d' -i trust/trust-extract-compat
-	cat <<-EOF > trust/trust-extract-compat << "EOF"
+	cat <<-EOF > trust/trust-extract-compat
 	# Copy existing anchor modifications to /etc/ssl/local
 	/usr/libexec/make-ca/copy-trust-modifications
 
@@ -19,7 +19,7 @@ build() {
 	EOF
 	./configure --prefix=/usr     \
             --sysconfdir=/etc \
-            --with-trust-paths=/etc/pki/anchors &&
+            --with-trust-paths=/etc/pki/anchors
 
 	make
 	make DESTDIR=$PKG install

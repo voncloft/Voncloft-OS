@@ -2,14 +2,14 @@
 # depends	: coreutils httpup libarchive
 
 name=scratchpkg
-version=20200729
+version=20210304
 release=4
 backup="etc/scratchpkg.conf
 	etc/scratchpkg.alias
 	etc/scratchpkg.repo
 	etc/scratchpkg.mask
 	etc/revdep.conf"
-scratchpkg_url=https://github.com/venomlinux/scratchpkg
+scratchpkg_url=https://github.com/voncloft/scratchpkg
 source="$scratchpkg_url/archive/$version.tar.gz
 	$name.repo
 	$name.conf
