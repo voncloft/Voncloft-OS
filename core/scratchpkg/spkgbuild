@@ -17,7 +17,7 @@ source="$scratchpkg_url/archive/$version.tar.gz
 	$name.mask
 	$scratchpkg_url/commit/497b92c1cdeba692e0a805efa3b0a30644e10c72.patch
 	$scratchpkg_url/commit/b42c48a88cadd40d8f4f30bbffb2f8d58e99a1e0.patch"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
