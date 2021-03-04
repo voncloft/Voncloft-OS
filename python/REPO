@@ -13,6 +13,7 @@ d:python-flask
 d:python-ghp-import
 d:python-frozendict
 d:python-scour
+d:python-hypothesis-fspaths
 d:python-gevent-websocket
 d:python-cx-freeze
 d:python-cairosvg
@@ -27,6 +28,7 @@ d:python-automat
 d:python-adal
 d:python-clint
 d:python-cftime
+d:python-httpcore
 d:python-flask-migrate
 d:python-google-api-python-client
 d:python-connexion
@@ -46,6 +48,7 @@ d:python-gitdb
 d:python-cryptography-vectors
 d:python-euclid3
 d:python-binaryornot
+d:python-http-parser
 d:python-pysocks
 d:python-dotenv
 d:python-pipenv
@@ -70,6 +73,7 @@ d:python-fastimport
 d:python-ansicolors
 d:python-apptools
 d:python-binary-memcached
+d:python-hyperlink
 d:python-attrs
 d:python-cmarkgfm
 d:python-geocoder
@@ -79,6 +83,7 @@ d:python-argparse
 d:python-braintree
 d:python-bcrypt
 d:python-antlr4
+d:python-hyperframe
 d:python-colorlog
 d:python-gwebsockets
 d:python-flake8-debugger
@@ -90,6 +95,7 @@ d:python-cucumber-tag-expressions
 d:python-cherrypy
 d:python-astral
 d:python-flask-talisman
+d:python-httpretty
 d:python-geographiclib
 d:python-pycryptodome
 d:python-flask-socketio
@@ -103,6 +109,7 @@ d:python-graphene
 d:python-django-filter
 d:python-chameleon
 d:python-autobahn
+d:python-html5lib
 d:python-doublex
 d:python-cachy
 d:python-dockerpty
@@ -189,9 +196,11 @@ d:python-django-fake-model
 d:python-apsw
 d:python-astor
 d:python-arrow
+d:python-humanize
 d:python-cryptography
 d:python-auditwheel
 d:python-databases
+d:python-httplib2
 d:python-elasticsearch
 d:python-graphviz
 d:python-flask-paranoid
@@ -202,6 +211,7 @@ d:python-flexmock
 d:python-blessings
 d:python-behave
 d:python-dnspython
+d:python-httptools
 d:python-gmpy2
 d:python-xlib
 d:python-django
@@ -221,11 +231,13 @@ d:python-betamax-matchers
 d:python-fsspec
 d:python-jinja
 d:python-flask-script
+d:python-html2text
 d:python-crashtest
 d:python-flask-caching
 d:python-flaky
 d:python-colorama
 d:python-django-rest-framework
+d:python-html5-parser
 d:python-acme
 d:python-iso3166
 d:python-flasgger
@@ -290,6 +302,7 @@ d:python-gitpython
 d:python-dephell-changelogs
 d:python-yaml
 d:python-itsdangerous
+d:python-hs-dbus-signature
 d:python-nose
 d:python-hawkauthlib
 d:python-dephell-markers
@@ -301,6 +314,7 @@ d:python-fido2
 d:python-aioitertools
 d:python-click-help-colors
 d:python-digitalocean
+d:python-hstspreload
 d:python-constantly
 d:python-adblock
 d:python-flake8-typing-imports
@@ -377,6 +391,7 @@ d:python-lxml
 d:python-cheroot
 d:python-babel
 d:python-argh
+d:python-hypothesis
 d:python-flask-dance
 d:python-cjkwrap
 d:python-construct
@@ -394,6 +409,7 @@ d:python-args
 d:python-click-default-group
 d:python-basictracer
 d:python-plop
+d:python-htmlmin
 d:python-apispec
 d:python-contextlib2
 d:python-eventlet
@@ -428,6 +444,7 @@ d:python-furl
 d:python-gphoto2
 d:python-atspi
 d:python-etesync
+d:python-husl
 d:python-flickrapi
 d:python-editorconfig
 d:python-cairo
@@ -452,6 +469,7 @@ d:python-dnslib
 d:python-django-haystack
 d:python-aspectlib
 d:python-flask-mail
+d:python-hunter
 d:python-extras
 d:python-bottleneck
 d:python-colander
@@ -477,6 +495,8 @@ d:python-pyopenssl
 d:python-flake8
 d:python-asynctest
 d:python-chai
+d:python-hypothesis-auto
+d:python-httpx
 d:python-graphql-server-core
 d:python-build
 d:python-couchdb
@@ -502,12 +522,14 @@ d:python-factory-boy
 d:python-click-completion
 d:python-werkzeug
 d:python-rencode
+d:python-hpack
 d:python-doctest-ignore-unicode
 d:python-pytz
 d:python-django-environ
 d:python-flask-debug
 d:python-appdirs
 d:python-cached-property
+d:python-hypothesmith
 d:python-requests
 d:python-authres
 d:python-dropbox
@@ -546,6 +568,7 @@ f:317ef3cd98b690907beb32801b08e27a:python-frozendict/spkgbuild
 f:ad4d8a5b5599b4ecb4ac3c62b4090181:python-scour/.checksums
 f:347e1a67534e31b8c71c87289940c905:python-scour/.pkgfiles
 f:c93a95b7c80a204ee8bb25f83d852755:python-scour/spkgbuild
+f:1475a37795fe83e2eefe9d28d8530db8:python-hypothesis-fspaths/spkgbuild
 f:d549e3ab88023eca284a980d719c80e6:python-gevent-websocket/spkgbuild
 f:d06f3bdb2228169fd61580a7e12de9bc:python-cx-freeze/spkgbuild
 f:4f310df21740d1b7fc6fc363f4d5545c:python-cairosvg/spkgbuild
@@ -564,6 +587,7 @@ f:079c47d9f25e6493c9b3ac09e023928e:python-automat/spkgbuild
 f:4efac2190f5429e9799bcd28c2229936:python-adal/spkgbuild
 f:eefed4b74f77640d989b420f196fffe0:python-clint/spkgbuild
 f:d5cdbe3aca8b2222e34c58dab3d28b90:python-cftime/spkgbuild
+f:6287cea10b66ff503ae0569b2caf822d:python-httpcore/spkgbuild
 f:9337e5db52c3ea0a6bfeb36e96faad60:python-flask-migrate/spkgbuild
 f:2bbe9917855e7d731532eb9b3fb4b19f:python-google-api-python-client/spkgbuild
 f:f2ae0d0e79ac02fc1bfe6fd40f9cafd9:python-connexion/spkgbuild
@@ -587,6 +611,7 @@ f:48d0a2bb19a54cc894826f25ef7f48ea:python-gitdb/spkgbuild
 f:caad102f51c606363a93073439dc2d3f:python-cryptography-vectors/spkgbuild
 f:c7ca21e1500e5e1ee9ed105c8b5d3675:python-euclid3/spkgbuild
 f:879d0926b893b3cd2670bb68bbe85cbe:python-binaryornot/spkgbuild
+f:aa8861742920247128e827deb7a03e4a:python-http-parser/spkgbuild
 f:553e57434ea4217cf1019f43b666b47b:python-pysocks/.checksums
 f:ae3737a61e9604f19af6a991c119bacc:python-pysocks/.pkgfiles
 f:f48312cef3cb7c9157bc51d37c8eb2af:python-pysocks/spkgbuild
@@ -619,6 +644,7 @@ f:c04116483cfbdef0d2d87f9b5de408f7:python-fastimport/spkgbuild
 f:56a821f6f221ef3634c7713910a09352:python-ansicolors/spkgbuild
 f:1c8f23d1fa850e4467730e654535bc3e:python-apptools/spkgbuild
 f:bd94dfe0efec0560454849af3f38ba7f:python-binary-memcached/spkgbuild
+f:9bc17cfd47317e26a4a451af5bcb58ba:python-hyperlink/spkgbuild
 f:1f4aad6d0719322837acaa895a4e0001:python-attrs/.checksums
 f:0f6eaa7983f5f9d73a6a742b440a860b:python-attrs/.pkgfiles
 f:5c7433462fb25bd6bf89946d2ec14df3:python-attrs/spkgbuild
@@ -630,6 +656,7 @@ f:277b76871d88a082c65d2c05d2558e61:python-argparse/spkgbuild
 f:32889fd9601996e4070bb905952fda85:python-braintree/spkgbuild
 f:be439e8b4d857f0e9921465e1854f50a:python-bcrypt/spkgbuild
 f:dd0b82e90b7f80cac765ca340c217b4d:python-antlr4/spkgbuild
+f:b28ff2d837935039c185a18f5e449fee:python-hyperframe/spkgbuild
 f:aa5fa2f3ba1987fe8d52fcb1443cce09:python-colorlog/spkgbuild
 f:47c1b1dfb79c2815f94a93e73a1665c1:python-gwebsockets/spkgbuild
 f:593f69a81bd8a06e6e7a10ebc27ae4a7:python-flake8-debugger/spkgbuild
@@ -641,6 +668,7 @@ f:15b43f89a0d6c1e6fd8fd3e152fd665b:python-cucumber-tag-expressions/spkgbuild
 f:5b97646347fb0c55c891db7bbdd6c96f:python-cherrypy/spkgbuild
 f:3503eb40f6d21ab4d2d137369bd589d5:python-astral/spkgbuild
 f:2669ff2d4a6f3c211f9f11460c6cc105:python-flask-talisman/spkgbuild
+f:c6b3f1943f0534b8590cfaad8cff2fb8:python-httpretty/spkgbuild
 f:e8b0d23a960a2e4076c88bbc37e38613:python-geographiclib/spkgbuild
 f:8a86746cb881ca0dd0ac0babee0944d6:python-pycryptodome/.checksums
 f:9d3ccbb0e65668876f414e6038f04b6a:python-pycryptodome/.pkgfiles
@@ -656,6 +684,7 @@ f:5be5f16ab0d54d3d38b5f03ed9e13dae:python-graphene/spkgbuild
 f:06256f008d3dee71620685b4a5cdd84f:python-django-filter/spkgbuild
 f:07f31533a2204802bf118330c30e7414:python-chameleon/spkgbuild
 f:d46bf0b048e3fd0925804e7748127beb:python-autobahn/spkgbuild
+f:0318d466ac39dcd734a44da8fa8714e4:python-html5lib/spkgbuild
 f:67c81b2def14d45e0bd1e8b32f61e4a4:python-doublex/spkgbuild
 f:c9fe52db35e76824b84c5b1e9f995179:python-cachy/spkgbuild
 f:3fbf9c35a4322c10c199d4f4ed7886e6:python-dockerpty/spkgbuild
@@ -750,9 +779,11 @@ f:ed5d794c45ac94c6b570be788edc404f:python-django-fake-model/spkgbuild
 f:8fedcdfbf140972f0462491832e7a51f:python-apsw/spkgbuild
 f:7e3f257be1089747fcc5a13350045638:python-astor/spkgbuild
 f:79d4aad65170051e5676ede72f468318:python-arrow/spkgbuild
+f:5c52ed8e8fddde8785079decd29c55f5:python-humanize/spkgbuild
 f:6ad277570e70e1bcdb3fd09094c338ca:python-cryptography/spkgbuild
 f:bf836bd3bcebe1c3df9a9cea5a8062e8:python-auditwheel/spkgbuild
 f:2b6300eb397e394dc12f085001438545:python-databases/spkgbuild
+f:4830ee1a9b9faee6344fca3577e33af1:python-httplib2/spkgbuild
 f:b1a53eeab422cc0c0cb7c966797762fb:python-elasticsearch/spkgbuild
 f:a6f89a985fab144dac3149816d5190c3:python-graphviz/spkgbuild
 f:a0448cdca7c78880e5aafb463002f55b:python-flask-paranoid/spkgbuild
@@ -763,6 +794,7 @@ f:d0250a9dc3d06e378c731ba0e322be77:python-flexmock/spkgbuild
 f:c539351359b34c8fb3746db05be4a854:python-blessings/spkgbuild
 f:bef25fe2e7baa05bd58db12863456ec2:python-behave/spkgbuild
 f:493bb7119a97dba9eac67139ff1bc8bd:python-dnspython/spkgbuild
+f:82b3df20e3ea868ca8ae100841480859:python-httptools/spkgbuild
 f:8a2f9b0d7f0e2ec75cd0e77184ad624c:python-gmpy2/spkgbuild
 f:1cae548d092257c1090986fab1246e13:python-xlib/.checksums
 f:c946b284236449a18eeb473868c13e90:python-xlib/.pkgfiles
@@ -790,11 +822,13 @@ f:c2e682ff585d90bd2d6eb9d8f5c51dcd:python-jinja/.checksums
 f:7d6a31d48c280ae700162cfd3e5a4ebe:python-jinja/.pkgfiles
 f:d2b1ab50533e6085760fc730080ecdaa:python-jinja/spkgbuild
 f:5de3dc475a734718131e68d8641a2b4c:python-flask-script/spkgbuild
+f:b6921dc541246dd506b80453f14ac0b1:python-html2text/spkgbuild
 f:8e57c49d4a82d5fa7928e626f6bd2bf3:python-crashtest/spkgbuild
 f:9b6f8b639894b0286629aaabc0c6c7fb:python-flask-caching/spkgbuild
 f:8a2a5b2dc71d647d6cb5cc8c59862eb5:python-flaky/spkgbuild
 f:91cde0a0f18f6817aca06ba677ea4388:python-colorama/spkgbuild
 f:bd5aee0c8893ef5591085973a8fd59e0:python-django-rest-framework/spkgbuild
+f:b6e447dfa15c39480084adc1c1592a06:python-html5-parser/spkgbuild
 f:2fa4a376386963349c420baa5cefd45a:python-acme/spkgbuild
 f:e9baac001ce7422c9e7c7c134ce516f8:python-iso3166/.checksums
 f:abb2a670cbec0d8ba38e1754512f1ef4:python-iso3166/.pkgfiles
@@ -867,6 +901,7 @@ f:608c1ab8d8e01bee3e842f9474db8022:python-yaml/.checksums
 f:f9134888ec5e917a8d94637d211f164f:python-yaml/.pkgfiles
 f:372ce688df5766beb0bcba74434d0851:python-yaml/spkgbuild
 f:b570ac1f81b1f97ac31423945ddd8729:python-itsdangerous/spkgbuild
+f:eb2bf89b61c386bbaf950dc07177ffbe:python-hs-dbus-signature/spkgbuild
 f:3cfcd41f6a15d30b3f5a255170f6f94d:python-nose/spkgbuild
 f:4e13f5b2f381a5cce88eaac7fb776d2a:python-hawkauthlib/spkgbuild
 f:3e13be3a671f92b62afa5e0d32c2f918:python-dephell-markers/spkgbuild
@@ -878,6 +913,7 @@ f:df316f93900778b84f73080fd751510e:python-fido2/spkgbuild
 f:fea11bc9bd8b31d794e57e9b3ce3469b:python-aioitertools/spkgbuild
 f:ffd4b5eb09d4183a2fd55135d117860c:python-click-help-colors/spkgbuild
 f:d132b1b8a263154f6533ff8dce7235a6:python-digitalocean/spkgbuild
+f:fed84adaee0fca290ca3dfb31eca46d6:python-hstspreload/spkgbuild
 f:453454fa262ea32df02151e1332f3d32:python-constantly/spkgbuild
 f:e2b05566cc2147416fb9d9479a68476e:python-adblock/spkgbuild
 f:f309d7a0a8146d14bd068fd27eb68f57:python-flake8-typing-imports/spkgbuild
@@ -965,6 +1001,7 @@ f:ac516bac3a4e76b859428f377d838b35:python-lxml/spkgbuild
 f:a4a67da66a2b66afd91670c8311e48c7:python-cheroot/spkgbuild
 f:9c7e687438500099fc166671e0a3de26:python-babel/spkgbuild
 f:c1c8d0cb73ec5be7c190644c511a2d88:python-argh/spkgbuild
+f:b103c4d188240c6aa61a39da2416e804:python-hypothesis/spkgbuild
 f:c8e9a6405323abe41478786f73a369c6:python-flask-dance/spkgbuild
 f:aba7eac7145a27bcb8d21fdbf329d598:python-cjkwrap/spkgbuild
 f:ee750718a38fca49ffc71bd0605cf4a3:python-construct/spkgbuild
@@ -986,6 +1023,7 @@ f:85ec31a763384cdb8a5a48afc5f4b466:python-args/spkgbuild
 f:441f36911e04422bb16b8c6c31f2accb:python-click-default-group/spkgbuild
 f:1f316bc7350a2ed3a501d177fcc09b49:python-basictracer/spkgbuild
 f:d2567f8fa06541330d254efbc98bfa68:python-plop/spkgbuild
+f:f8ef5555c0bca0dff48bfb8221c9745b:python-htmlmin/spkgbuild
 f:7c706d61c53026f5569d23f4739730aa:python-apispec/spkgbuild
 f:21913d0cc4b397b2cd8c997ac5c6d6fe:python-contextlib2/spkgbuild
 f:1905f83f74a121e3f43050522876411d:python-eventlet/spkgbuild
@@ -1024,6 +1062,7 @@ f:0999a8f53f5569d9d945e7c8f92d5fbd:python-atspi/.checksums
 f:319dc5cbab3259a6131c2ee5d85d6cfe:python-atspi/.pkgfiles
 f:9991f25ab15b1436213b0156e957f1a3:python-atspi/spkgbuild
 f:c449dfcb7f7bdc44f0b922ef2bb290c5:python-etesync/spkgbuild
+f:bb45cef0f46f172e8a08836145618e6c:python-husl/spkgbuild
 f:cded070ad377d25b91103755d9a9c217:python-flickrapi/spkgbuild
 f:c8a7bcc9a7653fb301fbcdcebde11978:python-editorconfig/spkgbuild
 f:9c406bc5887798dc8aa88b2db1d1d9c3:python-cairo/.checksums
@@ -1056,6 +1095,7 @@ f:7d6d91e4e469921c185def44836a53dc:python-dnslib/spkgbuild
 f:72ea2ab3c600ce3bad3b6729cabff0d0:python-django-haystack/spkgbuild
 f:71cb9c237de6156d8c3ab7b8cae2ba80:python-aspectlib/spkgbuild
 f:08939f367c1e90730ad33905caa9a9ce:python-flask-mail/spkgbuild
+f:5159f4641c753140d4da839423691ee2:python-hunter/spkgbuild
 f:d7246027989a07e8c2a370e14d90e394:python-extras/spkgbuild
 f:fc185b6c94adc1131ce3890114df5e5f:python-bottleneck/spkgbuild
 f:d116613339a2017fd65f77ce621a4686:python-colander/spkgbuild
@@ -1083,6 +1123,8 @@ f:c84fa651eaf581deb5cefd054c98f94a:python-pyopenssl/spkgbuild
 f:cd8e289b095bc934b8ee3c1a3db2e3b0:python-flake8/spkgbuild
 f:a12fb0e38700ecd85cfa33a0141aaa5c:python-asynctest/spkgbuild
 f:6f8b0cf5947d408cf7404e3b5db5355f:python-chai/spkgbuild
+f:0cf94ebc56abf31c5fb12907a2b7a2d3:python-hypothesis-auto/spkgbuild
+f:8a215b97db43179fd092199b75935d0b:python-httpx/spkgbuild
 f:b5ce2e810fc431f54aa417edf6738677:python-graphql-server-core/spkgbuild
 f:2b2c6445bbd4df62b1dcfa7fe8912e84:python-build/spkgbuild
 f:f2859c8b8d1ef19ef41bdc7f233280d5:python-couchdb/spkgbuild
@@ -1110,6 +1152,7 @@ f:a51b64d8c7aca8947466c76e51e69103:python-factory-boy/spkgbuild
 f:8e1dca88b4a6179d51a9826e7c075144:python-click-completion/spkgbuild
 f:2c5baebb0e74caad7981380ac3e10e9c:python-werkzeug/spkgbuild
 f:30169c6fc23383690f0aee2cf4c3b577:python-rencode/spkgbuild
+f:a92e12b05502d864f91d469e0cf749cb:python-hpack/spkgbuild
 f:ddd73a4488a6fef5d9f26d6e09c43afe:python-doctest-ignore-unicode/spkgbuild
 f:5e74e32a6916e810fa9b4ca0ea1c9a68:python-pytz/spkgbuild
 f:ea68b39dd09311d2e4567dab67eacf73:python-django-environ/spkgbuild
@@ -1118,6 +1161,7 @@ f:6012556e35351f2de7d21b805f522e4f:python-appdirs/.checksums
 f:f156c0ceb8e58cb58a51db10c14f0c54:python-appdirs/.pkgfiles
 f:cc3738b6ea5eff4e70bc07077d8a261f:python-appdirs/spkgbuild
 f:0c311aa850ab62e293a47ea440f4c183:python-cached-property/spkgbuild
+f:f06f7faf8e0f4a1cb638613a01e45402:python-hypothesmith/spkgbuild
 f:0a72839bb0bafa37c42d3f204bff1561:python-requests/.checksums
 f:f37804522ab7de3ba3cad2fc2322ba36:python-requests/.pkgfiles
 f:8a7b00d54a6225b499f21359f8d638af:python-requests/spkgbuild
