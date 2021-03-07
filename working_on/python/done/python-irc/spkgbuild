@@ -1,0 +1,15 @@
+# description : IRC Internet Relay Chat protocol client library for Python
+# depends : python-six python-pytz python-more-itertools python-jaraco
+
+name=python-irc
+version=19.0.1
+release=2
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

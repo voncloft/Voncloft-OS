@@ -1,0 +1,14 @@
+# description : A collection of ASN.1-based protocols modules
+# depends : python-pyasn1
+
+version=0.2.8
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

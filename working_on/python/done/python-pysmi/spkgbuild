@@ -1,0 +1,17 @@
+# description : SNMP/SMI MIB parsing and conversion library designed to turn ASN.1 MIBs into various formats
+# depends : python python-ply
+
+_pyname=${name/*-/}
+name=python-pysmi
+_pyname=${name/*-/}
+version=0.3.4
+release=6
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

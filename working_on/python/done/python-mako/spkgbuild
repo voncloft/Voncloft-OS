@@ -1,0 +1,15 @@
+# description : A super-fast templating language that borrows the best ideas from the existing templating languages
+# depends : python-markupsafe python-beaker python-setuptools
+
+name=python-mako
+version=1.1.4
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

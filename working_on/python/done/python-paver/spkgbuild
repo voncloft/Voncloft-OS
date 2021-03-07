@@ -1,0 +1,15 @@
+# description : Python-based project scripting
+# depends : python-six
+
+name=python-paver
+version=1.3.4
+release=4
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

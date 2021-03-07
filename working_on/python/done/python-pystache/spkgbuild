@@ -1,0 +1,15 @@
+# description : The mustache template engine written in python
+# depends : python
+
+name=python-pystache
+version=0.5.4
+release=9
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

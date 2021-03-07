@@ -1,0 +1,14 @@
+# description : Cross-platform tool for adding locations to the user PATH, no elevated privileges required!
+# depends : python python-click python-distro
+
+version=1.4.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

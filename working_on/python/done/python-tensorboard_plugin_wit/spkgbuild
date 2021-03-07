@@ -1,0 +1,18 @@
+# description : The What-If Tool WIT: An easy-to-use interface for expanding understanding of a black-box classification or regression ML model.
+# description : What-If Tool Notebook Widget.
+# depends : python-werkzeug tensorboard
+_common_# depends : jupyter python-google-api-python-client python-ipywidgets
+# depends : ${_common_depends[@]} python-tensorboard_plugin_wit
+
+name=python-tensorboard_plugin_wit python-witwidget
+version=1.7.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

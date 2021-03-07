@@ -1,0 +1,15 @@
+# description : Python implementation of subunit test streaming protocol
+# depends : python-extras python-testtools
+
+name=python-subunit
+version=1.4.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Provides an uniform layer to support PyQt5, PyQt4 and PySide with a single codebase
+# depends : python
+
+name=python-qtpy
+version=1.9.0
+release=5
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

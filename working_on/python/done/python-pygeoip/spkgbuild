@@ -1,0 +1,15 @@
+# description : Pure Python GeoIP API
+# depends : python
+
+name=python-pygeoip
+version=0.3.2
+release=7
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

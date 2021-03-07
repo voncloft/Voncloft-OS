@@ -1,0 +1,15 @@
+# description : Python interface to libarchive
+# depends : python libarchive
+
+name=python-libarchive-c
+version=2.9
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

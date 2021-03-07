@@ -1,0 +1,15 @@
+# description : Manipulate and inspect Sphinx objects.inv files
+# depends : python python-attrs python-certifi python-fuzzywuzzy
+
+name=python-sphobjinv
+version=2.0.1
+release=2
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

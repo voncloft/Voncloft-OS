@@ -1,0 +1,15 @@
+# description : Resolving Swagger/OpenAPI 2.0 and 3.0 Parser
+# depends : python-chardet python-yaml python-flex python-click python-requests
+
+name=python-prance
+version=0.20.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }
