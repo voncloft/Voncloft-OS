@@ -1,0 +1,26 @@
+# description : C interface to BLAS
+# depends : cmake
+
+name=cblas
+version=3.9.0
+relese=3
+
+source="https://github.com/Reference-LAPACK/lapack/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+		-DCMAKE_SKIP_RPATH=ON \
+    		-DBUILD_SHARED_LIBS=ON \
+    		-DBUILD_TESTING=OFF \
+    		-DCMAKE_INSTALL_PREFIX=/usr \
+    		-DLAPACKE_WITH_TMG=ON \
+    		-DCBLAS=ON \
+    		-DBUILD_DEPRECATED=ON
+    	make
+    	cd BLAS
+    	make DESTDIR=$PKG install
+}

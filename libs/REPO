@@ -46,6 +46,7 @@ d:libcroco
 d:libogg
 d:shapelib
 d:libqtxdg
+d:cblas
 d:libical
 d:libarchive
 d:libpeas
@@ -273,6 +274,7 @@ f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
 f:a076c4e4e71bc088c9146645dc896fc4:libqtxdg/.checksums
 f:a2d33182864efe0548135a762cb80222:libqtxdg/.pkgfiles
 f:951b5a8f019370ec81d68728373c1dc7:libqtxdg/spkgbuild
+f:f222324a7c9d9ee07b92050ec3b3f921:cblas/spkgbuild
 f:787ac7b321c44f044f43fb77c54dc86e:libical/.checksums
 f:e6815e5fb78a7a1cd99ebdd236e89f66:libical/.pkgfiles
 f:e6e783e9295e7411a49e057ee525e7d5:libical/spkgbuild
