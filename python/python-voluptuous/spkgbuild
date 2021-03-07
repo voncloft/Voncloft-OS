@@ -1,5 +1,4 @@
 # description : A Python data validation library
-  sed -e s/w/wb/ -e s/.encodeutf-8// -e s/f.writelong_description/f.writelong_description.encodeutf-8/ -i voluptuous-$version/setup.py
 # depends : python
 
 name=python-voluptuous
