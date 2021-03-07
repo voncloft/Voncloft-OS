@@ -1,5 +1,5 @@
 # description : Scientific tools for Python
-# depends : cblas python
+# depends : lapack python
 
 name=python-numpy
 version=1.20.0

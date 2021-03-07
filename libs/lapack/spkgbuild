@@ -1,7 +1,7 @@
 # description : C interface to BLAS
 # depends : cmake
 
-name=cblas
+name=lapack
 version=3.9.0
 release=3
 
