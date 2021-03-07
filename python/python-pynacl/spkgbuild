@@ -9,7 +9,7 @@ source="https://files.pythonhosted.org/packages/source/P/PyNaCl/PyNaCl-${version
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd PyNaCl-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
