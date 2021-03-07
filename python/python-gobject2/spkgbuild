@@ -6,6 +6,8 @@ version=2.28.7
 release=2
 source="https://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz"
 
+options="!checksum"
+
 build() {
 	cd pygobject-$version
 

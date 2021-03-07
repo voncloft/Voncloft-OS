@@ -10,7 +10,7 @@ source="https://github.com/nedbat/coveragepy/archive/coverage-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${pkgbase}-$version
+   cd coverage-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

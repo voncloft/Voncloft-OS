@@ -7,6 +7,8 @@ release=5
 url="https://github.com/pytest-dev/apipkg"
 source="https://files.pythonhosted.org/packages/source/a/apipkg/apipkg-$version.tar.gz"
 
+options="!checksum"
+
 build() {
   cd apipkg-$version
   python setup.py build

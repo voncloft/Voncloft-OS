@@ -6,6 +6,8 @@ version=0.38
 release=1
 source="https://github.com/scour-project/scour/archive/v$version/scour-$version.tar.gz"
 
+options="!checksum"
+
 build() {
 	cd scour-$version
 	python setup.py build

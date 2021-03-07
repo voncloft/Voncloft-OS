@@ -6,6 +6,8 @@ version=1.4.4
 release=1
 source="https://pypi.io/packages/source/a/appdirs/appdirs-$version.tar.gz"
 
+options="!checksum"
+
 build() {
 	cd appdirs-$version
 	python setup.py build

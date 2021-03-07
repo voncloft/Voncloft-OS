@@ -6,6 +6,8 @@ version=4.19.24
 release=1
 source="https://www.riverbankcomputing.com/static/Downloads/sip/$version/sip-$version.tar.gz"
 
+options="!checksum"
+
 build() {
 	cd sip-$version
 	python configure.py CFLAGS="$CFLAGS" LFLAGS="$LDFLAGS" --sip-module PyQt5.sip --no-tools

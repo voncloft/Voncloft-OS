@@ -8,6 +8,8 @@ url="https://github.com/marshmallow-code/marshmallow"
 
 source="https://pypi.io/packages/source/m/marshmallow/marshmallow-$version.tar.gz"
 
+options="!checksum"
+
 
 build() {
   cd marshmallow-$version

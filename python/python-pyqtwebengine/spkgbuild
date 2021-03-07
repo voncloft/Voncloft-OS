@@ -6,6 +6,8 @@ version=5.13.1
 release=1
 source="https://www.riverbankcomputing.com/static/Downloads/PyQtWebEngine/$version/PyQtWebEngine_gpl-$version.tar.gz"
 
+options="!checksum"
+
 build() {
 	cd PyQtWebEngine_gpl-$version
 	python configure.py

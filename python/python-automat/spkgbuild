@@ -8,6 +8,8 @@ release=5
 
 source="https://github.com/glyph/automat/archive/v$version.tar.gz"
 
+options="!checksum"
+
 build() {
    cd automat-$version
    python setup.py build
