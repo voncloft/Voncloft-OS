@@ -47,6 +47,7 @@ d:libcroco
 d:libogg
 d:shapelib
 d:libqtxdg
+d:cblas
 d:libical
 d:libarchive
 d:libpeas
@@ -135,6 +136,7 @@ d:libblockdev
 d:libkexiv2
 d:libsass
 d:libspiro
+d:blas
 f:b32dcc5c223da1edf6dc675afe4c8481:libcanberra/.checksums
 f:6a26f9782cab67246db973720f382ddf:libcanberra/.pkgfiles
 f:1418a41e50acfa647dc6091337c51a89:libcanberra/spkgbuild
@@ -264,7 +266,7 @@ f:b1a7ed5f7bd168e4123d53756b46f653:libmpdclient/spkgbuild
 f:15f00b08e6832f319dee7c46e130c44f:libstatgrab/.checksums
 f:4e69e96049bf51f420fdd5caa0e89670:libstatgrab/.pkgfiles
 f:db84cefb9d535e18ee35b613de19e7ac:libstatgrab/spkgbuild
-f:57f04618f64c1287d995e5605940ffda:lapack/spkgbuild
+f:a7681ca08dcc2d0b4cc76855054e6dc2:lapack/spkgbuild
 f:7dfc84134e0cf9f4052a4b4b49b87a63:libcroco/.checksums
 f:bb52fe561bade0e1c3cf01676a3472da:libcroco/.pkgfiles
 f:b69b528488730410c45f949a4f58b57a:libcroco/spkgbuild
@@ -275,6 +277,7 @@ f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
 f:a076c4e4e71bc088c9146645dc896fc4:libqtxdg/.checksums
 f:a2d33182864efe0548135a762cb80222:libqtxdg/.pkgfiles
 f:951b5a8f019370ec81d68728373c1dc7:libqtxdg/spkgbuild
+f:742417c98eab7f8805e76dc569331945:cblas/spkgbuild
 f:787ac7b321c44f044f43fb77c54dc86e:libical/.checksums
 f:e6815e5fb78a7a1cd99ebdd236e89f66:libical/.pkgfiles
 f:e6e783e9295e7411a49e057ee525e7d5:libical/spkgbuild
@@ -539,3 +542,4 @@ f:fe32dad1efa5514c32a643a0da343b4d:libsass/spkgbuild
 f:73b8bd826a2a23fdfab67aaf96d21c67:libspiro/.checksums
 f:ec203227a382cdf3cb41868930e650c2:libspiro/.pkgfiles
 f:6c2b1068b5bb6a8c56f936afbf005183:libspiro/spkgbuild
+f:6cce380707e5e3fe6400d9b40c76fd08:blas/spkgbuild

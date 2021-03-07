@@ -1,7 +1,7 @@
 # description : C interface to BLAS
-# depends : cmake blas
+# depends : gcc cmake
 
-name=lapack
+name=blas
 version=3.9.0
 release=3
 
@@ -25,6 +25,6 @@ build() {
     		-DBUILD_DEPRECATED=ON
     	make
 
-	# lapack
-	make DESTDIR=$PKG install
+	cd BLAS
+  	make DESTDIR="$PKG" install
 }
