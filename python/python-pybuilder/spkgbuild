@@ -1,7 +1,5 @@
-# description : An extensible, easy to use continuous build() tool for Python
+# description : An extensible, easy to use continuous build tool for Python
 # depends : python-pip python-pypandoc python-tailer python-tblib python-twine python-wheel
-# added dependencies of distutils plugin into pybuild()ers depends
-  sed -i s/project.plugin_depends_onpypandoc, .*$/project.plugin_depends_onpypandoc/ src/main/python/pybuild()er/plugins/python/distutils_plugin.py
 
 name=python-pybuilder
 version=0.11.17
