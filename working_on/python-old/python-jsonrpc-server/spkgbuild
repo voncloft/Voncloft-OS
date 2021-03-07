@@ -1,0 +1,16 @@
+# description : Python library implementing asynchronous JSON RPC server
+# depends : python python-future python-ujson
+
+url=https://github.com/palantir/python-jsonrpc-server
+name=python-jsonrpc-server
+version=0.4.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+     cd ${name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

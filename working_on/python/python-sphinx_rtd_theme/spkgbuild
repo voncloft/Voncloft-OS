@@ -1,16 +1,15 @@
 # description : Read the Docs theme for Sphinx
 # depends : python-sphinx
 
-url=https://github.com/readthedocs/sphinx_rtd_theme
 name=python-sphinx_rtd_theme
 version=0.5.1
 release=2
 
-source="$url/archive/$version/sphinx_rtd_theme-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd sphinx_rtd_theme-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

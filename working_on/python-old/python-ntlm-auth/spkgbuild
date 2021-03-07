@@ -1,0 +1,17 @@
+# description : Creates NTLM authentication structures
+# depends : python python-six python-cryptography
+
+_module=ntlm-auth
+url=https://github.com/jborean93/ntlm-auth
+name=python-ntlm-auth
+version=1.5.0
+release=3
+
+source="https://github.com/jborean93/ntlm-auth/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_module}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

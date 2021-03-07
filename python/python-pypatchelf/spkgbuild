@@ -1,12 +1,7 @@
 # description : Patchelf utility, packaged for python/pip
 # depends : python patchelf
 
-_name=pypatchelf
-_name=pypatchelf
-_commit=c8b0b622ead44f15c68fe92e5c4606797d0dcdff
-_name=pypatchelf
-_name=pypatchelf
-name=python-$_name
+name=python-pypatchelf
 version=0.9
 release=2
 

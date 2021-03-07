@@ -1,7 +1,6 @@
 # description : Python wrapper to the C++ Parma Polyhedra Library PPL
 # depends : python-cysignals python-gmpy2 ppl
 
-_pipname=pplpy
 name=python-pplpy
 version=0.8.7
 release=1

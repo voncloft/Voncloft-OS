@@ -1,6 +1,7 @@
 # description : The PyPA recommended tool for installing Python packages
   # depends : ${_deps[@]/#/python-}
 
+name=python-pip
 version=20.3.1
 release=1
 

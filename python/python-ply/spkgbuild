@@ -1,6 +1,7 @@
 # description : Implementation of lex and yacc parsing tools
   # depends : python
 
+name=python-ply
 version=3.11
 release=7
 

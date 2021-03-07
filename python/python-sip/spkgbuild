@@ -4,13 +4,12 @@
 name=python-sip
 version=4.19.24
 release=1
-source="https://www.riverbankcomputing.com/static/Downloads/sip/$version/sip-$version.tar.gz"
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd sip-$version
-	python configure.py CFLAGS="$CFLAGS" LFLAGS="$LDFLAGS"
-	make
-	make DESTDIR=$PKG install
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

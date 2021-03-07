@@ -1,0 +1,18 @@
+# description : Parser for multipart/form-data
+# depends : python
+
+_name=multipart
+url=https://github.com/defnull/multipart
+_name=multipart
+name=python-$_name
+version=0.2.3
+release=1
+
+source="$url/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

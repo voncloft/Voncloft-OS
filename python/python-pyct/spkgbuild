@@ -1,8 +1,7 @@
 # description : Python packaging Common Tasks
 # depends : python-param
 
-_pkg=pyct
-name=python-${_pkg}
+name=python-pyct
 version=0.4.8
 release=3
 

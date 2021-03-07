@@ -1,17 +1,15 @@
 # description : A simple Python socket pool
 # depends : python
 
-url=https://github.com/benoitc/socketpool
 name=python-socketpool
 version=0.5.3
 release=7
 
-source="git+https://github.com/benoitc/socketpool.git#tag=$version
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd socketpool
-   cd socketpool
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : Send file to trash natively
 # depends : python
 
-url=https://github.com/hsoft/send2trash
 name=python-send2trash
 version=1.5.0
 release=6
 
-source="https://github.com/hsoft/$_pkgbase/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	 cd $_pkgbase-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

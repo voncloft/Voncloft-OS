@@ -1,19 +1,15 @@
 # description : A WSGI object-dispatching web framework, designed to be lean and fast with few dependencies.
 # depends : python python-webob python-mako python-webtest python-six
 
-_name=${name#python-}
-url=https://github.com/pecan/pecan
 name=python-pecan
-_name=${name#python-}
 version=1.4.0
 release=3
 
-source="https://github.com/${_name}/${_name}/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
-   cd docs
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

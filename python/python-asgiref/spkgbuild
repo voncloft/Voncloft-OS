@@ -1,16 +1,15 @@
 # description : Reference ASGI adapters and channel layers
 # depends : python
 
-url=http://github.com/django/asgiref
 name=python-asgiref
 version=3.3.1
 release=1
 
-source="https://pypi.io/packages/source/a/asgiref/asgiref-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd asgiref-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

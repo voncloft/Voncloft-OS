@@ -1,18 +1,15 @@
 # description : Experimental library aimed at consolidating a lot of our low-level code used for Enthought eggs
 # depends : python python-attrs python-jsonschema python-six
 
-_name=okonomiyaki
-url=https://github.com/enthought/okonomiyaki
-_name=okonomiyaki
-name=python-$_name
+name=python-okonomiyaki
 version=1.2.0
 release=4
 
-source="$url/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

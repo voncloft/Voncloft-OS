@@ -1,17 +1,15 @@
 # description : An idiomatic testing library for python with powerful and flexible assertions
 # depends : python-six python-mock
 
-url=https://github.com/gabrielfalcao/sure
 name=python-sure
 version=1.4.11
 release=7
 
-source="https://github.com/gabrielfalcao/sure/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd sure-$version
-   cd sure-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : python library for reading and writing collada documents
 # depends : python python-dateutil python-numpy python-lxml
 
-url=https://github.com/pycollada/pycollada
 name=python-collada
 version=0.7.1
 release=1
 
-source="https://github.com/pycollada/pycollada/archive/v${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pycollada-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

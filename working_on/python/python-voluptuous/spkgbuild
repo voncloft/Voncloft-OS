@@ -2,16 +2,15 @@
   sed -e s/w/wb/ -e s/.encodeutf-8// -e s/f.writelong_description/f.writelong_description.encodeutf-8/ -i voluptuous-$version/setup.py
 # depends : python
 
-url=https://github.com/alecthomas/voluptuous
 name=python-voluptuous
 version=0.12.1
 release=1
 
-source="https://pypi.io/packages/source/v/voluptuous/voluptuous-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd voluptuous-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

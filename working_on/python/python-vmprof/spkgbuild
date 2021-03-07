@@ -1,17 +1,15 @@
 # description : A statistical program profiler
 # depends : libunwind python python-colorama python-pytz python-requests python-six
 
-_name=vmprof
-url=https://vmprof.com/#/
 name=python-vmprof
 version=0.4.15
 release=3
 
-source="https://github.com/${_name}/${_name}-python/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

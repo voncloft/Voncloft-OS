@@ -1,16 +1,15 @@
 # description : A simple ctypes based python binding to libsodium
 # depends : python libsodium
 
-url=https://libnacl.readthedocs.org
 name=python-libnacl
 version=1.7.2
 release=3
 
-source="https://github.com/saltstack/libnacl/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd libnacl-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,6 +1,7 @@
 # description : A nose plugin to show skipped tests and their messages
   # depends : python-nose
 
+name=python-nose-show-skipped
 version=0.1
 release=7
 

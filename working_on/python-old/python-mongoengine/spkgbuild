@@ -1,0 +1,16 @@
+# description : A Python Object-Document-Mapper for working with MongoDB
+# depends : python-pymongo python-six
+
+url=https://github.com/MongoEngine/mongoengine
+name=python-mongoengine
+version=0.22.1
+release=1
+
+source="https://github.com/MongoEngine/mongoengine/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd mongoengine-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

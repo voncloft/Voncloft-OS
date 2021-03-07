@@ -5,12 +5,11 @@ name=python-apscheduler
 version=3.7.0
 release=1
 
-source="https://github.com/agronholm/apscheduler/archive/v$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd apscheduler-$version
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1
-
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

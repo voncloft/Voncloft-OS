@@ -1,19 +1,16 @@
 # description : Official timezone database for Python.
 # depends : python
 
-_name=pytzdata
-url=https://github.com/sdispater/pytzdata
-_name=pytzdata
 name=python-pytzdata
 version=2020.1
   local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
 release=3
 
-source="https://github.com/sdispater/${_name}/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

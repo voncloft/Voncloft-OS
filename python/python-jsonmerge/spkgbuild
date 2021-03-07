@@ -1,11 +1,7 @@
 # description : Merge a series of JSON documents
 # depends : python-jsonschema
 
-_name=jsonmerge
-_name=jsonmerge
-_name=jsonmerge
-_name=jsonmerge
-name=python-$_name
+name=python-jsonmerge
 version=1.7.0
 release=3
 

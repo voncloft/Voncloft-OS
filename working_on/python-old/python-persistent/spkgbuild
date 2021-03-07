@@ -1,0 +1,16 @@
+# description : Translucent persistent objects
+# depends : python-zope-interface
+
+url=http://www.zope.org/Products/ZODB
+name=python-persistent
+version=4.6.4
+release=3
+
+source="https://github.com/zopefoundation/persistent/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd persistent-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

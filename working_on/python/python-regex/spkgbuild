@@ -1,18 +1,15 @@
 # description : Alternative python regular expression module.
 # depends : python
 
-url=https://bitbucket.org/mrabarnett/mrab-regex
 name=python-regex
 version=2020.11.13
 release=2
 
-source="https://files.pythonhosted.org/packages/source/r/${_pkgbase}/${_pkgbase}-${version}.tar.gz"
-options=!emptydirs
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd build()/lib.linux-${CARCH}-3*/
-   cd regex-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

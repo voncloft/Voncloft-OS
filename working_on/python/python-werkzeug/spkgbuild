@@ -1,16 +1,15 @@
 # description : Swiss Army knife of Python web development
 # depends : python
 
-url=http://werkzeug.pocoo.org/
 name=python-werkzeug
 version=1.0.1
 release=4
 
-source="https://github.com/pallets/werkzeug/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd werkzeug-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

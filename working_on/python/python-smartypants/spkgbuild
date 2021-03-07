@@ -1,18 +1,15 @@
 # description : Python with the SmartyPants
 # depends : python
 
-_name=smartypants
-url=https://bitbucket.org/livibetter/smartypants.py
 name=python-smartypants
-_name=smartypants
 version=2.0.1
 release=7
 
-source="https://github.com/leohemsted/${_name}.py/archive/v${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}.py-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

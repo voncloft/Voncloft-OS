@@ -1,16 +1,15 @@
 # description : Strict, simple, lightweight RFC3339 functions
 # depends : python
 
-url=http://www.danielrichman.co.uk/libraries/strict-rfc3339.html
 name=python-strict-rfc3339
 version=0.7
 release=7
 
-source="https://pypi.io/packages/source/s/strict-rfc3339/strict-rfc3339-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd strict-rfc3339-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

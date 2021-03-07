@@ -1,8 +1,7 @@
 # description : Launch an application built using JupyterLab
 # depends : jupyter-server python-requests python-json5 python-babel
 
-_pipname=jupyterlab_server
-name=python-$_pipname
+name=python-jupyterlab_server
 version=2.2.0
 release=1
 

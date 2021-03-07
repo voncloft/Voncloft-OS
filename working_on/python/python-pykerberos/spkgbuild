@@ -1,17 +1,15 @@
 # description : High-level interface to Kerberos
 # depends : python krb5
 
-url=https://github.com/02strich/pykerberos
 name=python-pykerberos
 version=1.2.1
 release=7
 
-source="https://github.com/02strich/pykerberos/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pykerberos-$version
-   cd pykerberos-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

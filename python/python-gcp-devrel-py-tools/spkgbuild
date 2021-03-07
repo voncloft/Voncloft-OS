@@ -1,17 +1,15 @@
 # description : Tools for Cloud Platform Python libraries and samples
 # depends : python-setuptools python-requests python-retrying python-packaging python-pylint
 
-_commit=dbc02f5ec965a6672d47a0e8963365970d96db17
-url=https://github.com/GoogleCloudPlatform/python-repo-tools
 name=python-gcp-devrel-py-tools
 version=0.0.16
 release=3
 
-source="https://github.com/GoogleCloudPlatform/python-repo-tools/archive/$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-repo-tools-$_commit
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

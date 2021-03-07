@@ -1,0 +1,16 @@
+# description : Simple config file reader and writer
+# depends : python-six
+
+url=https://github.com/DiffSK/configobj
+name=python-configobj
+version=5.0.6
+release=1
+
+source="https://github.com/DiffSK/configobj/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd configobj-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

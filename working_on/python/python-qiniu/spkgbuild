@@ -1,16 +1,15 @@
 # description : Qiniu Resource Storage SDK for Python
 # depends : python-requests python-setuptools
 
-url=https://github.com/qiniu/python-sdk
 name=python-qiniu
 version=7.3.1
 release=1
 
-source="https://github.com/qiniu/python-sdk/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-sdk-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

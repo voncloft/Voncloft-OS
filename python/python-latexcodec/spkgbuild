@@ -1,11 +1,7 @@
 # description : A lexer and codec to work with LaTeX code in Python
 # depends : python-six
 
-_name=latexcodec
-_name=latexcodec
-_name=latexcodec
-_name=latexcodec
-name=python-${_name}
+name=python-latexcodec
 version=2.0.1
 release=3
 

@@ -1,0 +1,16 @@
+# description : XML bomb protection for Python stdlib modules
+# depends : python
+
+url=https://bitbucket.org/tiran/defusedxml
+name=python-defusedxml
+version=0.6.0
+release=6
+
+source="https://pypi.io/packages/source/d/defusedxml/defusedxml-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd defusedxml-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

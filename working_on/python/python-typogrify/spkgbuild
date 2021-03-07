@@ -1,18 +1,15 @@
 # description : filters to make caring about typography on the web a bit easier
 # depends : python python-smartypants
 
-_pyname=typogrify
-url=https://github.com/mintchaos/typogrify
 name=python-typogrify
-_pyname=typogrify
 version=2.0.7
 release=10
 
-source="https://pypi.python.org/packages/source/${_pyname:0:1}/${_pyname}/"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pyname}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

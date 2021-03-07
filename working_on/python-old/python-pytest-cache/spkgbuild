@@ -1,0 +1,16 @@
+# description : pytest plugin with mechanisms for caching across test runs
+  # depends : python-pytest python-execnet
+
+_name=pytest-cache
+url=https://pypi.org/project/pytest-cache/
+_name=pytest-cache
+version=1.0
+release=8
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

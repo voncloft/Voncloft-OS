@@ -1,15 +1,15 @@
 # description : Mocking and Patching Library for Testing
 # depends : python python-six python-pbr
 
-url=http://www.voidspace.org.uk/python/mock/
+name=python-mock
 version=3.0.5
 release=5
 
-source="mock-$version.tar.gz"::https://github.com/testing-cabal/mock/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd mock-$version
-   cd mock2-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

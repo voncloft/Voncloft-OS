@@ -1,6 +1,7 @@
 # description : Python wrapper for the BlueZ Bluetooth stack
   # depends : python bluez-libs
 
+name=python-pybluez
 version=0.22
 release=6
 

@@ -1,11 +1,7 @@
 # description : Migen/MiSoC based Core/SoC build()er that provides the infrastructure to easily create Cores/SoCs
 # depends : python-migen python-pyserial python-requests python-pythondata-software-compiler_rt
 
-_name=litex
-_name=litex
-_name=litex
-_name=litex
-name=python-$_name
+name=python-litex
 version=2020.12
 release=1
 

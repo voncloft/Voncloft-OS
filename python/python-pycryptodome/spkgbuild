@@ -2,6 +2,7 @@
   # description : Collection of cryptographic algorithms and protocols, implemented for use from Python 2.
   # depends : python gmp
 
+name=python-pycryptodome
 version=3.9.9
 release=3
 

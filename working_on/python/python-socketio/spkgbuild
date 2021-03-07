@@ -1,17 +1,15 @@
 # description : Python implementation of the Socket.IO realtime server
 # depends : python python-six python-engineio python-bidict
 
-url=https://github.com/miguelgrinberg/python-socketio
 name=python-socketio
 version=5.0.4
 release=1
 
-source="https://github.com/miguelgrinberg/python-socketio/archive/v${version}/${name}-${version}.tar.gz"
-options=!makeflags
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${pkgbase}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

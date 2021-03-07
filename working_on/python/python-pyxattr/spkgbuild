@@ -1,18 +1,15 @@
 # description : A Python extension module that allows you to manipulate the extended attributes.
 # depends : python
 
-_name=pyxattr
-url=https://pyxattr.k1024.org/
 name=python-pyxattr
-_name=pyxattr
 version=0.7.2
 release=1
 
-source="https://pyxattr.k1024.org/downloads/pyxattr-$version.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	 cd ${_name}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

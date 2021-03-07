@@ -1,17 +1,15 @@
 # description : Swagger/OpenAPI First framework for Python on top of Flask with automatic endpoint validation & OAuth2 support
 # depends : python-clickclick python-jsonschema python-pyaml python-requests
 
-_name=connexion
-url=https://github.com/zalando/connexion
-name=python-$_name
+name=python-connexion
 version=2.7.0
 release=3
 
-source="$url/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

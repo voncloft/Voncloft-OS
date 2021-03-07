@@ -1,17 +1,15 @@
 # description : Python library for arbitrary-precision floating-point arithmetic.
 # depends : python-gmpy2
 
-url=http://mpmath.org/
 name=python-mpmath
 version=1.1.0
 release=5
 
-source="https://github.com/fredrik-johansson/mpmath/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd mpmath-$version
-   cd mpmath-$version  
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

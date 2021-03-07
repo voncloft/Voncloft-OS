@@ -1,10 +1,6 @@
 # description : Official timezone database for Python.
 # depends : python
 
-_name=pytzdata
-_name=pytzdata
-_name=pytzdata
-_name=pytzdata
 name=python-pytzdata
 version=2020.1
   local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]

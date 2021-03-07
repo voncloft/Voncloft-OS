@@ -1,16 +1,15 @@
 # description : A Python2 library that parses CSS3 Selectors and translates them to XPath 1.0
 # depends : python
 
-url=https://pypi.python.org/pypi/cssselect
 name=python-cssselect
 version=1.1.0
 release=6
 
-source="https://github.com/scrapy/cssselect/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd cssselect-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

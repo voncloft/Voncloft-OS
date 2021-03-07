@@ -6,24 +6,16 @@
   depends+=cuda cudnn magma
   depends+=cuda cudnn magma
 
-_name=pytorch
-url=https://pytorch.org
-name=python-pytorch python-pytorch-opt python-pytorch-cuda python-pytorch-opt-cuda
-_name=pytorch
+name=python-pytorch
 version=1.7.1
 _version=1.7.1
 release=4
 
-source="git+https://github.com/pytorch/pytorch.git#tag=v$_version
-_options="!checksum"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd ..
-   cd ${_name}-${version}
-   cd ${_name}-${version}
-   cd ${_name}-${version}-cuda
-   cd ${_name}-${version}-opt
-   cd ${_name}-${version}-opt-cuda
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,17 +1,15 @@
 # description : OpenStack Context library
 # depends : python-pbr python-debtcollector
 
-url=https://pypi.python.org/pypi/oslo.context/$version
 name=python-oslo-context
 version=3.1.1
 release=3
 
-source="https://github.com/openstack/oslo.context/archive/$version.tar.gz"
-options=!emptydirs
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd oslo.context-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

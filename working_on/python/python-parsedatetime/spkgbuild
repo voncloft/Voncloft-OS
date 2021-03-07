@@ -1,16 +1,15 @@
 # description : Parse human-readable date/time strings.
 # depends : python-future
 
-url=https://github.com/bear/parsedatetime
 name=python-parsedatetime
 version=2.6
 release=3
 
-source="https://github.com/bear/parsedatetime/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd parsedatetime-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

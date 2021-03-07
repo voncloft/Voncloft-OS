@@ -1,0 +1,19 @@
+# description : Extension module that interfaces with the libpcap packet capture library
+# depends : python libpcap
+
+_pyname=pcapy
+url=https://github.com/CoreSecurity/pcapy
+_pyname=pcapy
+name=python-pcapy
+version=0.11.5
+release=4
+
+source="https://github.com/CoreSecurity/pcapy/archive/${version}/${pkgbase}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+   cd ${_pyname}-${version}/tests
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

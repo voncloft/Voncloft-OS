@@ -1,16 +1,15 @@
 # description : Object annotation mechanism
 # depends : python-setuptools python-zope-interface python-zope-component
 
-url=https://github.com/zopefoundation/zope.annotation
 name=python-zope-annotation
 version=4.7.0
 release=4
 
-source="https://github.com/zopefoundation/zope.annotation/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd zope.annotation-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

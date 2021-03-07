@@ -1,7 +1,6 @@
 # description : Resolving Swagger/OpenAPI 2.0 and 3.0 Parser
 # depends : python-chardet python-yaml python-flex python-click python-requests
 
-_openapi_commit=fbe62006211838a8bb7bf2433a1d15f1a5838a03
 name=python-prance
 version=0.20.2
 release=1

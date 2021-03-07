@@ -1,16 +1,15 @@
 # description : A docutils backend for pybtex
 # depends : python-six python-docutils python-pybtex
 
-url=https://github.com/mcmtroffaes/pybtex-docutils
 name=python-pybtex-docutils
 version=0.2.2
 release=4
 
-source="https://pypi.io/packages/source/p/pybtex-docutils/pybtex-docutils-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pybtex-docutils-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

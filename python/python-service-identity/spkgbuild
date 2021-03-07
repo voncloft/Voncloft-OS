@@ -1,6 +1,7 @@
 # description : Service identity verification for pyOpenSSL
   # depends : python-pyopenssl python-pyasn1 python-pyasn1-modules python-attrs
 
+name=python-service-identity
 version=18.1.0
 release=6
 

@@ -1,11 +1,7 @@
 # description : Library for fake certificate authority CA to generate fake TLS certs
 # depends : python python-cryptography
 
-_pyname=${name/python-/}
-_pyname=${name/python-/}
-_pyname=${name/python-/}
 name=python-trustme
-_pyname=${name/python-/}
 version=0.6.0
 release=3
 

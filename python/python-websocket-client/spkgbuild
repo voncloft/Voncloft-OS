@@ -1,7 +1,7 @@
 # description : WebSocket client library for Python
 # depends : python-six
 
-name=python-${_pkgbase}
+name=python-websocket-client
 version=0.57.0
 release=3
 

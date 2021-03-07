@@ -1,11 +1,7 @@
 # description : py.test plugin to test server connections locally
 # depends : python-pytest python-werkzeug
 
-_name=${name#python-}
-_name=${name#python-}
-_name=${name#python-}
 name=python-pytest-localserver
-_name=${name#python-}
 version=0.5.0
 release=6
 

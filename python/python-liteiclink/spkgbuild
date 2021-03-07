@@ -1,11 +1,7 @@
 # description : Small footprint and configurable Inter-Chip communication cores
 # depends : python-migen python-litex
 
-_name=liteiclink
-_name=liteiclink
-_name=liteiclink
-_name=liteiclink
-name=python-$_name
+name=python-liteiclink
 version=2020.12
 release=1
 

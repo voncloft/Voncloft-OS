@@ -1,14 +1,15 @@
 # description : a Python implementation of RFC6570
   # depends : python
 
-url=https://uritemplate.readthedocs.io/
+name=python-uritemplate
 version=3.0.1
 release=3
 
-source="https://github.com/sigmavirus24/uritemplate/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd uritemplate-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

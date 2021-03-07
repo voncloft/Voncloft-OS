@@ -2,15 +2,15 @@
 # description : This is a Python implementation of the WHATWG Encoding standard.
 # depends : python
 
-url=https://github.com/gsnedders/python-webencodings
+name=python-webencodings
 version=0.5.1
 release=6
 
-source="https://github.com/gsnedders/python-webencodings/archive/v${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-     cd ${pkgbase}-${version}
-     cd ${pkgbase}-${version}/webencodings
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

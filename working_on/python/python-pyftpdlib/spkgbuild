@@ -1,17 +1,15 @@
 # description : Very fast asynchronous FTP server library
 # depends : python
 
-url=https://github.com/giampaolo/pyftpdlib/
 name=python-pyftpdlib
 version=1.5.6
 release=3
 
-source="https://pypi.io/packages/source/p/pyftpdlib/pyftpdlib-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pyftpdlib-$version
-   cd pyftpdlib-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

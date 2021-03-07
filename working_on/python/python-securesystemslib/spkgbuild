@@ -1,17 +1,15 @@
 # description : Cryptographic and general-purpose routines for Secure Systems Lab projects at NYU
 # depends : python-cryptography python-pynacl python-colorama python-six python-dateutil
 
-url=https://github.com/secure-systems-lab/securesystemslib
 name=python-securesystemslib
 version=0.18.0
 release=1
 
-source="git+https://github.com/secure-systems-lab/securesystemslib.git?signed#tag=v${version}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-     cd securesystemslib
-     cd securesystemslib
-     cd securesystemslib/tests/
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

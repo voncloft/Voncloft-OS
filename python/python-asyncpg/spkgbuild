@@ -1,17 +1,15 @@
 # description : A fast PostgreSQL Database Client Library for Python/asyncio
 # depends : python
 
-_name=asyncpg
-url=https://github.com/MagicStack/asyncpg
-name=python-$_name
+name=python-asyncpg
 version=0.22.0
 release=2
 
-source="https://github.com/MagicStack/asyncpg/archive/v$versuib.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

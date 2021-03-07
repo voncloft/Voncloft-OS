@@ -1,6 +1,7 @@
 # description : Zope testrunner script
   # depends : python-setuptools python-zope-interface python-zope-exceptions python-six
 
+name=python-zope-testrunner
 version=5.2
 release=3
 

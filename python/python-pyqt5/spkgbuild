@@ -4,20 +4,12 @@
 name=python-pyqt5
 version=5.13.1
 release=1
-source="https://www.riverbankcomputing.com/static/Downloads/PyQt5/$version/PyQt5_gpl-$version.tar.gz"
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd PyQt5_gpl-$version
-	
-	python configure.py \
-	    --confirm-license \
-	    --no-sip-files \
-	    --qsci-api \
-	    -q /usr/bin/qmake
-	make
-	install -d $PKG/usr/share/sip/PyQt5
-	cp -a sip/* $PKG/usr/share/sip/PyQt5
-	make DESTDIR="$PKG" INSTALL_ROOT="$PKG" install -j1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

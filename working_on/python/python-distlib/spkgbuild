@@ -1,0 +1,17 @@
+# description : Low-level components of distutils2/packaging
+# depends : python
+
+_name=distlib
+url=https://bitbucket.org/pypa/${_name}
+name=python-distlib
+version=0.3.1
+release=2
+
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.zip"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

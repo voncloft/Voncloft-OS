@@ -1,16 +1,15 @@
 # description : Infer file type and MIME type of any file/buffer
 # depends : python
 
-url=https://github.com/h2non/filetype.py
 name=python-filetype
 version=1.0.7
 release=3
 
-source="https://github.com/h2non/filetype.py/archive/v$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd filetype.py-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

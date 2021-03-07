@@ -1,0 +1,17 @@
+# description : Small and simple gravatar usage in Flask
+# depends : python python-flask
+
+_name=Flask-Gravatar
+url=https://github.com/zzzsochi/Flask-Gravatar/
+name=python-flask-gravatar
+version=0.5.0
+release=5
+
+source="https://github.com/zzzsochi/Flask-Gravatar/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

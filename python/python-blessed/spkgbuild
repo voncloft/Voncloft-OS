@@ -1,16 +1,15 @@
 # description : A thin, practical wrapper around terminal styling, screen positioning, and keyboard input
 # depends : python-six python-wcwidth
 
-url=https://github.com/jquast/blessed
 name=python-blessed
 version=1.17.12
 release=1
 
-source="https://github.com/jquast/blessed/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd blessed-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

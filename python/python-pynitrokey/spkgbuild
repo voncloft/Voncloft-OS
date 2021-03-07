@@ -1,10 +1,6 @@
 # description : A command line interface for the Nitrokey FIDO2 and Nitrokey Start
 # depends : python-cbor python-cffi python-click python-cryptography
 
-_name=pynitrokey
-_name=pynitrokey
-_name=pynitrokey
-_name=pynitrokey
 name=python-pynitrokey
 version=0.4.1
 release=3

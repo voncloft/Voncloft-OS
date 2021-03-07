@@ -5,11 +5,11 @@ name=python-aiohttp-socks
 version=0.5.5
 release=3
 
-source="https://github.com/romis2012/aiohttp-socks/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-    cd aiohttp-socks-$version
-    python setup.py build
-    python setup.py install --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

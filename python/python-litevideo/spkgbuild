@@ -1,11 +1,7 @@
 # description : Small footprint and configurable video cores
 # depends : python-migen python-litex
 
-_name=litevideo
-_name=litevideo
-_name=litevideo
-_name=litevideo
-name=python-$_name
+name=python-litevideo
 version=2020.12
 release=1
 

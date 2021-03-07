@@ -1,0 +1,18 @@
+# description : Simple yet flexible natural sorting in Python
+# depends : python-setuptools
+
+_name=natsort
+url=https://github.com/SethMMorton/natsort
+_name=natsort
+name=python-natsort
+version=7.1.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

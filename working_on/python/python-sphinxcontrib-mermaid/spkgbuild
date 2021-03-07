@@ -1,19 +1,15 @@
 # description : Mermaid diagrams in yours sphinx powered docs
 # depends : python-sphinx
 
-_name=sphinxcontrib-mermaid
-url=https://github.com/mgaitan/sphinxcontrib-mermaid
-_name=sphinxcontrib-mermaid
-name=sphinx-$_name
+name=python-sphinxcontrib-mermaid
 version=0.3.1
 release=1
 
-source="$url/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
-   cd docs
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

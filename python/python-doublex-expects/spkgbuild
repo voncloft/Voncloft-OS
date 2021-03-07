@@ -1,16 +1,15 @@
 # description : Expects matchers for Doublex test doubles assertions
 # depends : python-doublex python-expects
 
-url=https://github.com/jaimegildesagredo/doublex-expects
 name=python-doublex-expects
 version=0.7.1
 release=5
 
-source="https://github.com/jaimegildesagredo/doublex-expects/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd doublex-expects-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

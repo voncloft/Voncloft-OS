@@ -1,16 +1,15 @@
 # description : A Python parser for Coffeescript Object Notation CSON
 # depends : python python-six python-speg
 
-url=https://github.com/avakar/pycson
 name=python-cson
 version=0.8
 release=4
 
-source="https://github.com/avakar/pycson/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pycson-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

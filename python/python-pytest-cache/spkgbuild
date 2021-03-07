@@ -1,10 +1,7 @@
 # description : pytest plugin with mechanisms for caching across test runs
   # depends : python-pytest python-execnet
 
-_name=pytest-cache
-_name=pytest-cache
-_name=pytest-cache
-_name=pytest-cache
+name=python-pytest-cache
 version=1.0
 release=8
 

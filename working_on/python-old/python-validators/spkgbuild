@@ -1,0 +1,16 @@
+# description : Python Data Validation for Humans
+# depends : python-decorator python-six
+
+url=https://github.com/kvesteri/validators
+name=python-validators
+version=0.18.1
+release=3
+
+source="https://github.com/kvesteri/validators/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd validators-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

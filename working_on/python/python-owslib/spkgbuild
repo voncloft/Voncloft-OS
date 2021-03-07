@@ -1,16 +1,15 @@
 # description : Python package for client programming with Open Geospatial Consortium OGC web service interface standards, and their related content models
 # depends : python-dateutil python-pyproj python-pytz python-requests
 
-url=https://geopython.github.io/OWSLib/
 name=python-owslib
 version=0.22.0
 release=1
 
-source="https://github.com/geopython/OWSLib/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd OWSLib-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

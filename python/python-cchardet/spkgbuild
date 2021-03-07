@@ -1,16 +1,15 @@
 # description : Universal encoding detector faster than chardet.
 # depends : python
 
-url=https://pypi.org/project/cchardet/
 name=python-cchardet
 version=2.1.7
 release=2
 
-source="https://files.pythonhosted.org/packages/source/c/cchardet/cchardet-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd cchardet-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

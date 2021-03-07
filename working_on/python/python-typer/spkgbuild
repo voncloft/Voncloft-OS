@@ -1,18 +1,15 @@
 # description : Build great CLIs. Easy to code. Based on Python type hints
 # depends : python-click
 
-_name=typer
-url=https://typer.tiangolo.com/
-_name=typer
 name=python-typer
 version=0.3.2
 release=2
 
-source="https://github.com/tiangolo/typer/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd typer-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

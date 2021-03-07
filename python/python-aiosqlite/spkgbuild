@@ -5,11 +5,11 @@ name=python-aiosqlite
 version=0.16.0
 release=3
 
-source="https://github.com/omnilib/aiosqlite/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd $_name-$version
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1 
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

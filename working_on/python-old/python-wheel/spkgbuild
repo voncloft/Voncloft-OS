@@ -1,0 +1,19 @@
+# description : A built-package format for Python
+  # depends : python-packaging
+
+_pypiname=wheel
+url=https://pypi.python.org/pypi/wheel
+_pypiname=wheel
+version=0.36.2
+release=1
+
+source="https://pypi.io/packages/source/w/wheel/$_pypiname-$version.tar.gz"
+source="https://github.com/pypa/wheel/archive/$version.tar.gz"
+
+build() {
+   cd $_pypiname-$version
+   cd wheel-$version
+   cd wheel-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

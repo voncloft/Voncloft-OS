@@ -2,17 +2,16 @@
 # depends : 
   depends+=python
 
-_commit=2eee9b25dae04cedf98c8c4c4254f3dc970354df
-url=https://github.com/renpy/pygame_sdl2
-name=
+name=python-pygame-sdl2
 version=2.1.0.r387.2eee9b2
   version=$cat src/pygame_sdl2/version.py | grep ^vernum =  | sed s/^vernum = //; s///; s///; s/, /./g
 release=1
 
-source="
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd python-pygame_sdl2
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

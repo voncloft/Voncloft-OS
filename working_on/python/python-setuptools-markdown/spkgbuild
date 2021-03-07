@@ -1,17 +1,15 @@
 # description : Use Markdown for your project description
 # depends : python-setuptools python-pypandoc
 
-_commit=34ed6276e0c8bcefcd967bd8db138546a270bdf4
-url=https://github.com/msabramo/setuptools-markdown
 name=python-setuptools-markdown
 version=0.4.1
 release=5
 
-source="https://github.com/msabramo/setuptools-markdown/archive/$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd setuptools-markdown-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

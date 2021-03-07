@@ -1,11 +1,14 @@
 # depends : python python-msgpack python-greenlet
 
+name=python-pynvim
 version=0.4.2
 release=2
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

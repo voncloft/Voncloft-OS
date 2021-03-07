@@ -1,15 +1,15 @@
 # description : General parsing module for Python
   # depends : python
 
-url=https://github.com/pyparsing/pyparsing/
 name=python-pyparsing
 version=2.4.7
 release=3
 
-source="https://github.com/pyparsing/pyparsing/archive/pyparsing_$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd pyparsing-pyparsing_$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

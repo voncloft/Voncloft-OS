@@ -1,0 +1,16 @@
+# description : ANSI colors for Python
+# depends : python
+
+name=python-ansicolors
+version=1.1.8
+_commit=c965f5b9103c5bd32a1572adb8024ebe83278fb0
+release=3
+
+source="https://github.com/jonathaneunice/colors/archive/$_commit/$name-$_commit.tar.gz"
+options="!checksum"
+
+build() {
+  cd colors-$_commit
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1
+}

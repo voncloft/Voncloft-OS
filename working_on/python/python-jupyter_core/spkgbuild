@@ -1,16 +1,15 @@
 # description : Jupyter core package. A base package on which Jupyter projects rely.
 # depends : python-traitlets
 
-url=https://pypi.python.org/pypi/jupyter_core
 name=python-jupyter_core
 version=4.6.3
 release=4
 
-source="https://github.com/jupyter/jupyter_core/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd jupyter_core-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

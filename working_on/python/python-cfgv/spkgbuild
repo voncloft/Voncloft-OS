@@ -1,0 +1,18 @@
+# description : Validate configuration and produce human readable error messages
+# depends : python
+
+_name=cfgv
+url=https://github.com/asottile/cfgv
+name=python-cfgv
+version=3.2.0
+release=3
+
+# source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+source="https://github.com/asottile/${_name}/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

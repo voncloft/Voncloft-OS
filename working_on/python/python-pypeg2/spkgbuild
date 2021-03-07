@@ -1,16 +1,15 @@
 # description : An intrinsic PEG Parser-Interpreter for Python
 # depends : python
 
-url=https://fdik.org/pyPEG/
 name=python-pypeg2
 version=2.15.2
 release=7
 
-source="https://pypi.python.org/packages/source/p/pyPEG2/pyPEG2-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	 cd pyPEG2-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

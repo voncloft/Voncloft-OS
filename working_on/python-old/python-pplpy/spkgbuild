@@ -1,0 +1,18 @@
+# description : Python wrapper to the C++ Parma Polyhedra Library PPL
+# depends : python-cysignals python-gmpy2 ppl
+
+url=https://gitlab.com/videlec/pplpy/
+_pipname=pplpy
+name=python-pplpy
+version=0.8.7
+release=1
+
+source="https://pypi.io/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_pipname-$version
+   cd $_pipname-$version 
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

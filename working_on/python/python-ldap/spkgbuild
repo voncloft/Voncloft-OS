@@ -1,16 +1,15 @@
 # description : LDAP client API for Python
 # depends : python-pyasn1 python-pyasn1-modules libldap
 
-url=https://python-ldap.readthedocs.io/
 name=python-ldap
 version=3.3.1
 release=3
 
-source="https://github.com/python-ldap/python-ldap/archive/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $pkgbase-$pkgbase-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

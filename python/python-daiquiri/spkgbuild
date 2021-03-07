@@ -1,16 +1,15 @@
 # description : Library to configure Python logging easily
 # depends : python-json-logger
 
-url=https://github.com/jd/daiquiri
 name=python-daiquiri
 version=3.0.0
 release=3
 
-source="https://github.com/jd/daiquiri/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd daiquiri-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

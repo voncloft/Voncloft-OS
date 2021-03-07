@@ -1,0 +1,17 @@
+# description : A Python library for parsing and creating TOML
+  # depends : python
+
+_name=toml
+url=https://github.com/uiri/toml
+_name=toml
+version=0.10.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+
+build() {
+   cd $name-$version
+   cd $pkgbase-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

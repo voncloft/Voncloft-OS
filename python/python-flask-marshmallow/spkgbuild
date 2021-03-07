@@ -1,16 +1,15 @@
 # description : Flask + marshmallow for beautiful APIs
 # depends : 
 
-url=https://flask-marshmallow.readthedocs.io/
 name=python-flask-marshmallow
 version=0.14.0
 release=2
 
-source="https://github.com/marshmallow-code/flask-marshmallow/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd flask-marshmallow
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

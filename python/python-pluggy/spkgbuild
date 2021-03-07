@@ -1,6 +1,7 @@
 # description : Plugin and hook calling mechanisms for python
   # depends : python-importlib-metadata
 
+name=python-pluggy
 version=0.13.1
 release=4
 

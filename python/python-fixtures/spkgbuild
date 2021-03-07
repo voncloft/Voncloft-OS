@@ -1,16 +1,15 @@
 # description : Fixtures, reusable state for writing clean tests and more
 # depends : python-pbr python-six python-testtools
 
-url=https://launchpad.net/python-fixtures
 name=python-fixtures
 version=3.0.0
 release=10
 
-source="https://pypi.io/packages/source/f/fixtures/fixtures-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd fixtures-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

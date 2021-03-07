@@ -1,17 +1,15 @@
 # description : Backport of Python 3 csv module.
 # depends : python
 
-_pkgmain=backports.csv
-url=https://github.com/ryanhiebert/backports.csv
-name=python-$_pkgmain
+name=python-backports.csv
 version=1.0.7
 release=4
 
-source="https://github.com/ryanhiebert/backports.csv/archive/${version}.zip"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_pkgmain-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

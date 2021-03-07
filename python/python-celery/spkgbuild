@@ -1,16 +1,15 @@
 # description : Distributed Asynchronous Task Queue
 # depends : python-billiard python-click-didyoumean python-click-repl python-kombu
 
-url=http://celeryproject.org/
 name=python-celery
 version=5.0.5
 release=1
 
-source="https://pypi.io/packages/source/c/celery/celery-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd celery-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

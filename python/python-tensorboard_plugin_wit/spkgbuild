@@ -4,7 +4,7 @@
 _common_# depends : jupyter python-google-api-python-client python-ipywidgets
   # depends : ${_common_depends[@]} python-tensorboard_plugin_wit
 
-name=python-tensorboard_plugin_wit python-witwidget
+name=python-tensorboard_plugin_wit
 version=1.7.0
 release=2
 

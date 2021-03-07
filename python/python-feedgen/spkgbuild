@@ -1,16 +1,15 @@
 # description : Python module to generate ATOM feeds, RSS feeds and Podcasts
 # depends : python python-dateutil python-lxml
 
-url=https://lkiesow.github.io/python-feedgen
 name=python-feedgen
 version=0.9.0
 release=2
 
-source="https://github.com/lkiesow/python-feedgen/archive/v${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd feedgen-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

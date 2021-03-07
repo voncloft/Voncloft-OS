@@ -1,8 +1,7 @@
 # description : Useful Mutable Mappings
 # depends : python python-heapdict
 
-_pkg=zict
-name=python-${_pkg}
+name=python-zict
 version=2.0.0
 release=3
 

@@ -1,16 +1,15 @@
 # description : Extremely low-level wrapper to the MediaWiki API
 # depends : python
 
-url=https://github.com/ianweller/python-simplemediawiki
 name=python-simplemediawiki
 version=1.2.0_b2
 release=7
 
-source="https://github.com/ianweller/python-simplemediawiki/archive/${version/_/}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-simplemediawiki-${version/_/}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

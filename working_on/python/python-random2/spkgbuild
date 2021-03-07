@@ -1,17 +1,15 @@
 # description : Python 3 compatible port of Python 2 random module
 # depends : python
 
-url=https://pypi.org/project/random2/
-_pipname=random2
-name=python-$_pipname
+name=python-random2
 version=1.0.1
 release=6
 
-source="https://pypi.python.org/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$version.zip
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_pipname-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

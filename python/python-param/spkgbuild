@@ -1,7 +1,6 @@
 # description : Make your Python code clearer and more reliable by declaring Parameters
 
-_pkg=param
-name=python-${_pkg}
+name=python-param
 version=1.10.0
 release=1
 

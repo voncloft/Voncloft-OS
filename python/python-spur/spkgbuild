@@ -1,8 +1,7 @@
 # description : Run commands and manipulate files locally or over SSH using the same interface
 # depends : python python-paramiko
 
-_pkg=spur
-name=python-${_pkg}
+name=python-spur
 version=0.3.22
 release=3
 

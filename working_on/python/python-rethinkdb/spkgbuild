@@ -4,19 +4,15 @@
     # depends : python
     # depends : python-rethinkdb rethinkdb
 
-_name=rethinkdb
-_tag=rethinkdb-$version
-url=https://www.rethinkdb.com/
-_name=rethinkdb
+name=python-rethinkdb
 version=2.3.6
 release=2
 
-source="https://download.rethinkdb.com/dist/$_tag..gz"
-options=!emptydirs
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-     cd ${_name}-${version}/drivers/python
-     cd $_tag
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

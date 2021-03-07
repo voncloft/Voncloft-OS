@@ -1,16 +1,15 @@
 # description : A Python library for creating and manipulating HTML documents using an elegant DOM API
 # depends : python
 
-url=https://github.com/Knio/dominate
 name=python-dominate
 version=2.6.0
 release=3
 
-source="https://github.com/Knio/dominate/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd dominate-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

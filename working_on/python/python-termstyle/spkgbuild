@@ -1,18 +1,15 @@
 # description : Console colouring for python
 # depends : python-setuptools
 
-_commit=ed18c5ed4bfee21267843f758094a5620d5f7929
-url=https://github.com/timbertson/termstyle
 name=python-termstyle
 version=0.1.11
 release=7
 
-source="https://github.com/timbertson/termstyle/archive/$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd termstyle-$version
-   cd termstyle-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

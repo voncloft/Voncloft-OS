@@ -1,0 +1,16 @@
+# description : Python module to interface with the pkg-config command line tool
+# depends : python
+
+url=https://github.com/matze/pkgconfig
+name=python-pkgconfig
+version=1.5.1
+release=6
+
+source="https://pypi.io/packages/source/p/pkgconfig/pkgconfig-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pkgconfig-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

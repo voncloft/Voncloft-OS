@@ -1,17 +1,15 @@
 # description : Simple library for creating fake Django models in the unit tests
 # depends : python-django
 
-_name=django-fake-model
-url=https://github.com/erm0l0v/django-fake-model
-name=python-$_name
+name=python-django-fake-model
 version=0.1.4
 release=3
 
-source="https://github.com/erm0l0v/django-fake-model/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

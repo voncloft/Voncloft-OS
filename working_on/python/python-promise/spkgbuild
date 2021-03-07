@@ -1,16 +1,15 @@
 # description : Ultra-performant Promise implementation in Python
 # depends : 
 
-url=https://github.com/syrusakbary/promise
 name=python-promise
 version=2.3.0
 release=3
 
-source="git+https://github.com/syrusakbary/promise.git#tag=ad8ebe68cd9c9686793e3449457f175a0fe43226
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd promise
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

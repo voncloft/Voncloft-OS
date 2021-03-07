@@ -1,16 +1,15 @@
 # description : HTTP request/response parser for Python
 # depends : python
 
-url=https://github.com/benoitc/http-parser
 name=python-http-parser
 version=0.9.0
 release=4
 
-source="https://github.com/benoitc/http-parser/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd http-parser-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : A repository of test results.
 # depends : python-testtools python-fixtures python-subunit
 
-url=https://launchpad.net/testrepository
 name=python-testrepository
 version=0.0.20
 release=8
 
-source="https://pypi.python.org/packages/source/t/testrepository/testrepository-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd testrepository-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

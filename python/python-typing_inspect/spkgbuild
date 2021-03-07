@@ -1,11 +1,7 @@
 # description : Runtime inspection utilities for Python typing module
 # depends : python-mypy_extensions python-typing_extensions
 
-_name=typing_inspect
-_name=typing_inspect
-_name=typing_inspect
-_name=typing_inspect
-name=python-$_name
+name=python-typing_inspect
 version=0.6.0
 release=4
 

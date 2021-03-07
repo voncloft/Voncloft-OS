@@ -1,16 +1,15 @@
 # description : A fast and feature-rich Python interface to LevelDB
 # depends : leveldb python
 
-url=https://github.com/wbolster/plyvel
 name=python-plyvel
 version=1.2.0
 release=3
 
-source="https://pypi.io/packages/source/p/plyvel/plyvel-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd plyvel-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

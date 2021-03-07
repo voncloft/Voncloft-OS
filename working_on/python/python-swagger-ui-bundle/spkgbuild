@@ -1,18 +1,15 @@
 # description : Bundled swagger-ui
 # depends : python-jinja
 
-_name=swagger_ui_bundle
-url=https://github.com/dtkav/swagger_ui_bundle
-_name=swagger_ui_bundle
-name=python-${_name//_/-}
+name=python-swagger-ui-bundle
 version=0.0.6
 release=2
 
-source="$url/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

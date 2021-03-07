@@ -2,16 +2,15 @@
 # depends : python keyutils
 # python-pytest-runner in makedepends due to be set in setup_requires which is wrong upstream
 
-url=https://github.com/sassoftware/python-keyutils
 name=python-keyutils
 version=0.6
 release=6
 
-source="https://github.com/sassoftware/python-keyutils/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	 cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

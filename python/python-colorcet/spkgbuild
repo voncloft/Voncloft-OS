@@ -1,17 +1,15 @@
 # description : Set of useful perceptually uniform colormaps for plotting scientific data
 # depends : python-param python-pyct
 
-_pkg=colorcet
-url=https://colorcet.holoviz.org/
-name=python-${_pkg}
+name=python-colorcet
 version=2.0.5
 release=1
 
-source="https://github.com/holoviz/colorcet/archive/v${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,0 +1,15 @@
+# description	: Attributes without boilerplate
+# depends	: python python-setuptools
+
+name=python-attrs
+version=20.1.0
+release=1
+source="https://pypi.io/packages/source/a/attrs/attrs-$version.tar.gz"
+
+options="!checksum"
+
+build() {
+	cd attrs-$version
+	python setup.py build
+	python setup.py install --root="$PKG" --optimize=1 --skip-build
+}

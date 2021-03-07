@@ -1,6 +1,7 @@
 # description : Invoke py.test as distutils command with dependency resolution
   # depends : python-pytest
 
+name=python-pytest-runner
 version=5.2
 release=3
 

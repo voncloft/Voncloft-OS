@@ -1,11 +1,7 @@
 # description : Python interfaces for ADI hardware with IIO drivers
 # depends : libiio python-numpy
 
-_name=pyadi-iio
-_name=pyadi-iio
-_name=pyadi-iio
-_name=pyadi-iio
-name=python-$_name
+name=python-pyadi-iio
 version=0.0.4
 release=2
 

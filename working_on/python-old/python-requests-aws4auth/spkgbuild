@@ -1,0 +1,18 @@
+# description : Amazon Web Services version 4 authentication for the Python Requests module
+# depends : python python-requests
+
+_name=requests-aws4auth
+url=https://github.com/sam-washington/requests-aws4auth
+_name=requests-aws4auth
+name=python-requests-aws4auth
+version=1.0.1
+release=1
+
+source="https://github.com/sam-washington/requests-aws4auth/archive/v${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

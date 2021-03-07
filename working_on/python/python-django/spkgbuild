@@ -1,0 +1,16 @@
+# description : python web framework library
+# depends : python python-asgiref python-pytz python-setuptools python-sqlparse
+
+name=python-django
+version=3.1.7
+release=1
+
+source="https://github.com/django/django/archive/3.1.7.tar.gz"
+options="!checksum"
+
+build() {
+	cd django-$version
+	python setup.py build
+   	python setup.py install --optimize=1 --root=$PKG
+
+}

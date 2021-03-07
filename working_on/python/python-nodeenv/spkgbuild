@@ -1,16 +1,15 @@
 # description : Node.js virtual environment build()er
 # depends : python make
 
-url=https://github.com/ekalinin/nodeenv
 name=python-nodeenv
 version=1.5.0
 release=3
 
-source="https://github.com/ekalinin/nodeenv/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd nodeenv-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

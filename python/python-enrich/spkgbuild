@@ -1,17 +1,15 @@
 # description : Extends rich library functionality with a set of changes that were not accepted
 # depends : python-rich
 
-_name=enrich
-url=https://github.com/pycontribs/enrich
 name=python-enrich
 version=1.2.6
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : A caching front-end based on the Dogpile lock
 # depends : python-decorator python-stevedore
 
-url=https://pypi.python.org/pypi/dogpile.cache
 name=python-dogpile.cache
 version=1.1.2
 release=1
 
-source="https://pypi.io/packages/source/d/dogpile.cache/dogpile.cache-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd dogpile.cache-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

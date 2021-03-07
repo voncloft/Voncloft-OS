@@ -1,6 +1,7 @@
 # description : Toolkit to run Python benchmarks
   # depends : python python-setuptools python-six
 
+name=python-perf
 version=1.6.0
 release=5
 

@@ -1,8 +1,7 @@
 # description : Use fixtures in @pytest.mark.parametrize
 # depends : python-pytest
 
-_pkg=pytest-lazy-fixture
-name=python-${_pkg}
+name=python-pytest-lazy-fixture
 version=0.6.3
 release=3
 

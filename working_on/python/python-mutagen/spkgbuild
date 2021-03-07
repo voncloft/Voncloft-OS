@@ -1,18 +1,15 @@
 # description : An audio metadata tag reader and writer python library
 # depends : python-setuptools
 
-_name=mutagen
-url=https://github.com/quodlibet/mutagen
-_name=mutagen
 name=python-mutagen
 version=1.45.1
 release=3
 
-source="https://github.com/quodlibet/${_name}/releases/download/release-$version/${_name}-$version.tar.gz"{,.sig}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${pkgbase}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

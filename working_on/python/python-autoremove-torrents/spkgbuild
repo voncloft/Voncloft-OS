@@ -1,0 +1,13 @@
+# description	: python compatibility library to remove torrents from deluge
+# depends	: python
+
+name=python-autoremove-torrents
+version=1.5.3
+release=1
+source="https://pypi.io/packages/source/a/autoremove-torrents/autoremove-torrents-$version.tar.gz"
+options="!checksum"
+build() {
+	cd autoremove-torrents-$version
+	python setup.py build
+	python setup.py install --root=$PKG --optimize=1
+}

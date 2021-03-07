@@ -1,17 +1,15 @@
 # description : A Python slugify application that handles unicode
 # depends : python-text-unidecode
 
-_tag=c340834bb2afb24d78151c018496f4273fb7be37
-url=https://github.com/un33k/python-slugify
 name=python-slugify
 version=4.0.1
 release=3
 
-source="git+https://github.com/un33k/python-slugify.git#tag=${_tag}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-slugify
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

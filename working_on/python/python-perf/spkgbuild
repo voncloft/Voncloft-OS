@@ -1,14 +1,15 @@
 # description : Toolkit to run Python benchmarks
   # depends : python python-setuptools python-six
 
-url=https://github.com/haypo/perf
+name=python-perf
 version=1.6.0
 release=5
 
-source="https://github.com/vstinner/perf/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd pyperf-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

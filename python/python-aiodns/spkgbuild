@@ -5,12 +5,11 @@ name=python-aiodns
 version=2.0.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/a/aiodns/aiodns-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd aiodns-$version
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1 
-}
-
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : High level compatibility layer for multiple asynchronous event loop implementations
+# depends : (python python-idna python-sniffio)
+
+name=python-anyio
+version=2.0.2
+release=4
+
+source="https://github.com/agronholm/anyio/archive/$version/anyio-$version.tar.gz"
+options="!checksum"
+
+build() {
+  cd anyio-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

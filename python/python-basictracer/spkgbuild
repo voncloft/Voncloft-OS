@@ -1,16 +1,15 @@
 # description : The Python implementation of the BasicTracer reference implementation
 # depends : python-opentracing python-protobuf python-six
 
-url=https://github.com/opentracing/basictracer
 name=python-basictracer
 version=3.1.0
 release=2
 
-source="https://github.com/opentracing/basictracer-python/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd basictracer-python-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

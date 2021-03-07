@@ -1,11 +1,7 @@
 # description : Deal PySol FC Cards
 # depends : python-pbr
 
-_pyname=pysol_cards
-_pyname=pysol_cards
-_pyname=pysol_cards
-_pyname=pysol_cards
-name=python-$_pyname
+name=python-pysol_cards
 version=0.10.1
 release=3
 

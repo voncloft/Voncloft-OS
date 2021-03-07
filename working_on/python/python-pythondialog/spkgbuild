@@ -1,16 +1,15 @@
 # description : Python package for interfacing with dialog
 # depends : python dialog
 
-url=http://pythondialog.sf.net
 name=python-pythondialog
 version=3.5.1
 release=2
 
-source="https://downloads.sourceforge.net/project/pythondialog/pythondialog/$version/python3-pythondialog-$version.tar.bz2{,.asc}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pythondialog-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

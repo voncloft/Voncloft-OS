@@ -1,16 +1,15 @@
 # description : Sacred Marriage of Pipfile, Pip, & Virtualenv.
 # depends : python python-pip python-certifi
 
-url=https://pipenv.pypa.io
 name=python-pipenv
 version=2020.11.15
 release=1
 
-source="https://github.com/pypa/pipenv/archive/v${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pipenv-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

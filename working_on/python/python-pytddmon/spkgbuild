@@ -1,17 +1,15 @@
 # description : Continuous unit testing in Python
 # depends : python
 
-_commit=4b2875cfda88050537af58a4103ea8809c27ee1c
-url=https://pytddmon.org
 name=python-pytddmon
 version=1.0.8
 release=7
 
-source="https://github.com/objarni/pytddmon/archive/$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pytddmon-$_commit
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

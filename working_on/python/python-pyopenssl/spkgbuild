@@ -1,0 +1,16 @@
+# description : cryptography for python 
+# depends : python openssl python-setuptools python-cryptography python-six
+
+name=python-pyopenssl
+version=20.0.1
+release=1
+
+source="https://github.com/pyca/pyopenssl/archive/$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd pyopenssl-$version
+ 	python setup.py build
+        python setup.py install --root=$PKG --optimize=1
+}

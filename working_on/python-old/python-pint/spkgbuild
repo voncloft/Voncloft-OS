@@ -1,0 +1,16 @@
+# description : A unit library for Python
+# depends : python
+
+url=https://pint.readthedocs.org
+name=python-pint
+version=0.16.1
+release=3
+
+source="https://pypi.io/packages/source/P/Pint/Pint-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd Pint-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

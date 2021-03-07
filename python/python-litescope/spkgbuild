@@ -1,11 +1,7 @@
 # description : Small footprint and configurable embedded FPGA logic analyzer core
 # depends : python-migen python-litex
 
-_name=litescope
-_name=litescope
-_name=litescope
-_name=litescope
-name=python-$_name
+name=python-litescope
 version=2020.12
 release=1
 

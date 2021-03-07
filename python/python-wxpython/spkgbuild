@@ -1,11 +1,7 @@
 # description : Cross-platform GUI toolkit
 # depends : wxgtk3 python-six
 
-_name=wxPython
-_name=wxPython
-_name=wxPython
 name=python-wxpython
-_name=wxPython
 version=4.0.7.2
 _version=${version%.*}
 release=5

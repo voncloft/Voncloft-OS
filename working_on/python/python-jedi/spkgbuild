@@ -1,17 +1,15 @@
 # description : Awesome autocompletion for python
 # depends : python python-parso
 
-_gitcommit=3b7106ae71cb7bd3431101d169a0110ee0c179aa
-url=https://github.com/davidhalter/jedi
 name=python-jedi
 version=0.17.2
 release=3
 
-source="git+https://github.com/davidhalter/jedi#commit=${_gitcommit}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd jedi
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,0 +1,17 @@
+# description : Async database support for Python
+# depends : python
+
+_name=databases
+url=https://github.com/encode/databases
+name=python-$_name
+version=0.4.1
+release=1
+
+source="$url/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

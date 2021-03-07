@@ -1,0 +1,17 @@
+# description : Parse D-Bus introspection XML and process it in various ways
+# depends : python-lxml
+
+_name=dbus-deviation
+url=https://github.com/pwithnall/${_name}
+name=python-dbus-deviation
+version=0.6.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

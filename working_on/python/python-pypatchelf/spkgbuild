@@ -1,19 +1,15 @@
 # description : Patchelf utility, packaged for python/pip
 # depends : python patchelf
 
-_name=pypatchelf
-_commit=c8b0b622ead44f15c68fe92e5c4606797d0dcdff
-url=https://github.com/rmcgibbo/pypatchelf
-_name=pypatchelf
-name=python-$_name
+name=python-pypatchelf
 version=0.9
 release=2
 
-source="$url/archive/$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$_commit
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

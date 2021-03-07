@@ -1,11 +1,7 @@
 # description : Scientific Graphics and GUI Library for Python
 # depends : python qt5-python-bindings python-numpy
 
-_name=pyqtgraph
-_name=pyqtgraph
-_name=pyqtgraph
-_name=pyqtgraph
-name=python-$_name
+name=python-pyqtgraph
 version=0.11.1
 release=1
 

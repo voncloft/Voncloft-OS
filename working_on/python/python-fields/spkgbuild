@@ -1,0 +1,16 @@
+# description : A totally different take on container boilerplate
+# depends : python
+
+url=https://github.com/ionelmc/python-fields
+name=python-fields
+version=5.0.0
+release=9
+
+source="https://github.com/ionelmc/python-fields/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd python-fields-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

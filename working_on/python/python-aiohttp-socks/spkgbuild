@@ -1,0 +1,15 @@
+# description : SOCKS proxy connector for aiohttp SOCKS4(a) and SOCKS5 are supported
+# depends : python-aiohttp
+
+name=python-aiohttp-socks
+version=0.5.5
+release=3
+
+source="https://github.com/romis2012/aiohttp-socks/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+    cd aiohttp-socks-$version
+    python setup.py build
+    python setup.py install --root=$PKG --optimize=1
+}

@@ -1,0 +1,17 @@
+# description : Specification that python filesystems should adhere to.
+# depends : python
+
+_pkg=filesystem_spec
+url=https://github.com/intake/filesystem_spec
+name=python-fsspec
+version=0.8.5
+release=1
+
+source="${url}/archive/${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

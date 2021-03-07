@@ -1,0 +1,17 @@
+# description : Sphinx theme used by Guzzle
+# depends : python python-sphinx>=1.1.3
+
+_name=guzzle_sphinx_theme
+url=https://github.com/guzzle/${_name}
+name=python-guzzle-sphinx-theme
+version=0.7.11
+release=8
+
+source="${url}/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

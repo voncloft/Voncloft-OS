@@ -1,17 +1,15 @@
 # description : pytest plugin to run Xvfb for tests
 # depends : python-pytest python-pyvirtualdisplay xorg-server-xvfb
 
-_pkg=pytest-xvfb
-url=https://github.com/The-Compiler/pytest-xvfb
-name=python-${_pkg}
+name=python-pytest-xvfb
 version=2.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

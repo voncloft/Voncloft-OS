@@ -1,16 +1,15 @@
 # description : a little orm
 # depends : python sqlite
 
-url=https://pypi.python.org/pypi/peewee/
 name=python-peewee
 version=3.14.0
 release=3
 
-source="https://github.com/coleifer/peewee/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd peewee-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

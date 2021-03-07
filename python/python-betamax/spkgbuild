@@ -1,16 +1,15 @@
 # description : A VCR imitation for python-requests
 # depends : python-requests
 
-url=https://github.com/sigmavirus24/betamax
 name=python-betamax
 version=0.8.1
 release=7
 
-source="https://github.com/sigmavirus24/betamax/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd betamax-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

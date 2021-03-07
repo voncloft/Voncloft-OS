@@ -1,16 +1,15 @@
 # description : Core package for using GraphQL in a custom server easily
 # depends : 
 
-url=https://github.com/graphql-python/graphql-server-core
 name=python-graphql-server-core
 version=2.0.0
 release=2
 
-source="https://github.com/graphql-python/graphql-server/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd graphql-server-core-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : A lightweight SOAP python client
 # depends : python
 
-url=https://github.com/cackharot/suds-py3
 name=python-suds
 version=1.4.1.0
 release=1
 
-source="https://pypi.io/packages/source/s/suds-py3/suds-py3-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd suds-py3-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

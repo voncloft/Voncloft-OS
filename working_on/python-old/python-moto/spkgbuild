@@ -1,0 +1,18 @@
+# description : Moto is a library to mock out the boto library.
+# depends : python-aws-xray-sdk python-boto python-boto3
+
+_name=moto
+url=https://github.com/spulec/moto
+name=python-moto
+_name=moto
+version=1.3.16
+release=5
+
+source="https://files.pythonhosted.org/packages/source/m/moto/moto-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

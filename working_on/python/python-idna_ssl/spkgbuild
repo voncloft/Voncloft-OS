@@ -1,17 +1,15 @@
 # description : Patch ssl.match_hostname for Unicodeidna_ssl domains support
 # depends : python python-idna
 
-url=https://github.com/aio-libs/idna_ssl
 name=python-idna_ssl
 version=1.1.0
 release=4
 
-source="https://github.com/aio-libs/idna-ssl/archive/v${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd idna-ssl-$version
-   cd idna-ssl-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

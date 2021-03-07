@@ -1,11 +1,7 @@
 # description : Sphinx themes for Pallets and related projects
 # depends : python python-sphinx python-importlib-metadata
 
-_pyname=${name/python-/}
-_pyname=${name/python-/}
-_pyname=${name/python-/}
 name=python-pallets-sphinx-themes
-_pyname=${name/python-/}
 version=1.2.2
 release=7
 

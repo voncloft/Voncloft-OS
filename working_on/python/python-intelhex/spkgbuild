@@ -1,18 +1,15 @@
 # description : Python library for Intel HEX files manipulations
 # depends : python
 
-_name=intelhex
-url=https://github.com/python-intelhex/intelhex
-_name=intelhex
-name=python-$_name
+name=python-intelhex
 version=2.3.0
 release=2
 
-source="$url/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

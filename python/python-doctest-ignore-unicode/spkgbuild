@@ -1,17 +1,15 @@
 # description : Nose plugin to ignore unicode literal prefixes in doctests
 # depends : python-nose
 
-_commit=ee9412fd155ebf47c42974696d31e6a1510cffa0
-url=https://github.com/gnublade/doctest-ignore-unicode
 name=python-doctest-ignore-unicode
 version=0.1.2
 release=3
 
-source="https://github.com/gnublade/doctest-ignore-unicode/archive/master.zip"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd doctest-ignore-unicode-master
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

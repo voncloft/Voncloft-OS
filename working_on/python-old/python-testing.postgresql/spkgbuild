@@ -1,0 +1,16 @@
+# description : Helpers for using temporary PostgreSQL databases in tests
+# depends : python-testing.common.database python-pg8000 postgresql
+
+url=https://github.com/tk0miya/testing.postgresql
+name=python-testing.postgresql
+version=1.3.0
+release=5
+
+source="https://github.com/tk0miya/testing.postgresql/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd testing.postgresql-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

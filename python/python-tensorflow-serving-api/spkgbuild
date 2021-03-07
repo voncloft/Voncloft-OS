@@ -1,11 +1,7 @@
 # description : Serving system for machine learning models, designed for production environments
 # depends : python python-grpcio python-tensorflow python-protobuf
 
-_name=tensorflow_serving_api
-_name=tensorflow_serving_api
-_name=tensorflow_serving_api
 name=python-tensorflow-serving-api
-_name=tensorflow_serving_api
 version=2.3.0
 release=2
 

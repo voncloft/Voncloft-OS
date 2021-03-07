@@ -1,17 +1,15 @@
 # description : A cross-platform clipboard module for Python
 # depends : python
 
-_commit=09abcb63fa5a6ac9afa3b11def604b059b943b6b
-url=https://github.com/asweigart/pyperclip
 name=python-pyperclip
 version=1.8.1
 release=3
 
-source=""::https://github.com/asweigart/pyperclip/archive/$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pyperclip-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

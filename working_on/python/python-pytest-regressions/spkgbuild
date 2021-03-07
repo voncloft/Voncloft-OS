@@ -1,18 +1,15 @@
 # description : Pytest plugin for regression testing
 # depends : python-pytest python-pytest-datadir python-yaml
 
-_name=pytest-regressions
-url=https://github.com/ESSS/pytest-regressions
-_name=pytest-regressions
-name=python-$_name
+name=python-pytest-regressions
 version=2.0.2
 release=3
 
-source="$url/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

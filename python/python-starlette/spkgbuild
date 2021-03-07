@@ -1,11 +1,7 @@
 # description : The little ASGI framework that shines
 # depends : python
 
-_name=starlette
-_name=starlette
-_name=starlette
-_name=starlette
-name=python-$_name
+name=python-starlette
 version=0.13.8
 release=3
 

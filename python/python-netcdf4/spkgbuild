@@ -1,8 +1,7 @@
 # description : Python/NumPy interface to the netCDF C library
 # depends : python-numpy python-cftime netcdf
 
-_pkg=netCDF4
-name=python-${_pkg,,}
+name=python-netcdf4
 version=1.5.5.1
     local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
 release=1

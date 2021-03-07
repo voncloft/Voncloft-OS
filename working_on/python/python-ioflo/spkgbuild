@@ -1,16 +1,15 @@
 # description : Flo based programming interface in python
 # depends : python
 
-url=https://ioflo.com
 name=python-ioflo
 version=2.0.2
 release=3
 
-source="https://github.com/ioflo/ioflo/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ioflo-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

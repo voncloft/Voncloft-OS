@@ -1,16 +1,15 @@
 # description : The official Python interface to the Flickr API
 # depends : python-six python-requests-oauthlib python-requests-toolbelt
 
-url=https://stuvel.eu/flickrapi
 name=python-flickrapi
 version=2.4.0
 release=5
 
-source="https://pypi.io/packages/source/f/flickrapi/flickrapi-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd flickrapi-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

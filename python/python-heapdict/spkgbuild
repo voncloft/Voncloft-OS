@@ -1,17 +1,15 @@
 # description : Heap with decrease-key and increase-key operations
 # depends : python
 
-_pkg=HeapDict
-url=https://github.com/DanielStutzbach/heapdict
-name=python-Heapdict
+name=python-heapdict
 version=1.0.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

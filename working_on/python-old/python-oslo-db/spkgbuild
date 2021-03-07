@@ -1,0 +1,17 @@
+# description : OpenStack Database Pattern Library
+# depends : python-six python-pbr python-alembic python-debtcollector python-oslo-i18n
+
+url=https://pypi.python.org/pypi/oslo.db/$version
+name=python-oslo-db
+version=8.5.0
+release=1
+
+source="https://github.com/openstack/oslo.db/archive/$version.tar.gz"
+options=!emptydirs
+options="!checksum"
+
+build() {
+   cd oslo.db-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

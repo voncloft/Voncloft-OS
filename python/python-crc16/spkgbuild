@@ -1,12 +1,11 @@
 # description : Python library for calculating CRC16
 # depends : python-setuptools python
 
-url=https://pypi.org/project/crc16/
 name=python-crc16
 version=0.1.1
 release=6
 
-source="https://pypi.python.org/packages/source/c/${name#python-}/${name#python-}-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

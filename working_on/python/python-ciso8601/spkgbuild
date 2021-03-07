@@ -1,0 +1,16 @@
+# description : Fast ISO8601 date time parser for Python written in C
+# depends : python
+
+url=https://github.com/closeio/ciso8601
+name=python-ciso8601
+version=2.1.3
+release=3
+
+source="https://github.com/closeio/ciso8601/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd ciso8601-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

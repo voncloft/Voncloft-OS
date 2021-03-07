@@ -1,16 +1,15 @@
 # description : Library for FIDO 2.0, including communication with a device over USBA
 # depends : python
 
-url=https://github.com/Yubico/python-fido2
 name=python-fido2
 version=0.9.1
 release=3
 
-source="https://github.com/Yubico/python-fido2/releases/download/$version/fido2-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd fido2-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

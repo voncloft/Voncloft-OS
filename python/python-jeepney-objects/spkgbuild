@@ -1,11 +1,7 @@
 # description : Create and publish pure python DBus objects using jeepney
 # depends : python-jeepney
 
-_name=jeepney-objects
-_name=jeepney-objects
-_name=jeepney-objects
-_name=jeepney-objects
-name=python-$_name
+name=python-jeepney-objects
 version=0.2.0
 release=1
 

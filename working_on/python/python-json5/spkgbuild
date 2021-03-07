@@ -1,16 +1,15 @@
 # description : A Python implementation of the JSON5 data format
 # depends : python
 
-url=https://pypi.org/project/json5/
 name=python-json5
 version=0.9.5
 release=3
 
-source="https://github.com/dpranke/pyjson5/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pyjson5-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

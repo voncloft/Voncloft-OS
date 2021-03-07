@@ -1,10 +1,7 @@
 # description : Run a subprocess in a pseudo terminal
 # depends : python
 
-_name=ptyprocess
-_name=ptyprocess
-_name=ptyprocess
-_name=ptyprocess
+name=python-ptyprocess
 version=0.7.0
 release=1
 

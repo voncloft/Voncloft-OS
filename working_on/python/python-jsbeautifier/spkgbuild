@@ -3,18 +3,15 @@
 # depends : python-editorconfig python-six
   depends+=python-jsbeautifier
 
-url=https://github.com/beautify-web/js-beautify
-name=python-jsbeautifier python-cssbeautifier
+name=python-jsbeautifier
 version=1.13.6
 release=1
 
-source="https://github.com/beautify-web/js-beautify/archive/v$version/js-beautify-v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd js-beautify-$version
-   cd js-beautify-$version/python
-   cd js-beautify-$version/python-css
-   cd ../python-css
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,11 +1,7 @@
 # description : Template system for Python which is compatible with Handlebars.js
 # depends : python python-pymeta3
 
-_name=pybars3
-_name=pybars3
-_name=pybars3
-_name=pybars3
-name=python-$_name
+name=python-pybars3
 version=0.9.7
 release=5
 

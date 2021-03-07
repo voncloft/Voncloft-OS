@@ -1,17 +1,15 @@
 # description : The Python interface to the Redis key-value store
 # depends : python
 
-url=https://github.com/andymccurdy/redis-py
 name=python-redis
 version=3.5.3
 release=3
 
-source="https://pypi.io/packages/source/r/redis/redis-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd redis-$version
-   cd redis-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,0 +1,17 @@
+# description : Identity management for Flask applications
+# depends : python python-flask
+
+_name=flask-principal
+url=https://pythonhosted.org/Flask-Principal/
+name=python-flask-principal
+version=0.4.0
+release=6
+
+source="https://github.com/mattupstate/flask-principal/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

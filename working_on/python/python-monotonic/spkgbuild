@@ -1,16 +1,15 @@
 # description : An implementation of time.monotonic for Python 2.
   # depends : python
 
-_name=monotonic
-url=https://pypi.python.org/pypi/monotonic
-_name=monotonic
+name=python-monotonic
 version=1.5
 release=6
 
-source="https://github.com/atdt/monotonic/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

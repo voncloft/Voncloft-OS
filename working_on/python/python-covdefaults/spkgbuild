@@ -1,0 +1,17 @@
+# description : A coverage plugin to provide sensible default settings
+# depends : python-coverage
+
+_name=covdefaults
+url=https://github.com/asottile/covdefaults
+name=python-$_name
+version=1.2.0
+release=2
+
+source="$url/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

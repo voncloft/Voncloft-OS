@@ -1,16 +1,15 @@
 # description : A Python JSON-RPC over HTTP that mirrors xmlrpclib syntax
 # depends : python
 
-url=https://github.com/tcalmant/jsonrpclib
 name=python-jsonrpclib-pelix
 version=0.4.2
 release=1
 
-source="https://pypi.io/packages/source/j/jsonrpclib-pelix/jsonrpclib-pelix-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd jsonrpclib-pelix-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

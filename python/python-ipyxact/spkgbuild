@@ -1,11 +1,7 @@
 # description : Python-based IP-XACT parser
 # depends : python python-yaml
 
-_name=ipyxact
-_name=ipyxact
-_name=ipyxact
-_name=ipyxact
-name=python-$_name
+name=python-ipyxact
 version=0.2.4
 release=3
 

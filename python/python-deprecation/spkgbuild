@@ -1,16 +1,15 @@
 # description : A library to handle automated deprecations
 # depends : python
 
-url=https://deprecation.readthedocs.io
 name=python-deprecation
 version=2.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/d/deprecation/deprecation-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd deprecation-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,15 +1,15 @@
 # description : A python plotting library, making publication quality plots
 # depends : freetype2 python-cycler python-dateutil python-kiwisolver python-numpy python-pillow python-pyparsing qhull
 
-url=https://matplotlib.org
 name=python-matplotlib
 version=3.3.4
 release=1
 
-source="https://github.com/matplotlib/matplotlib/archive/v${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd matplotlib-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

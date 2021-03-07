@@ -1,16 +1,15 @@
 # description : Universal Binary JSON draft-12 serializer for Python
 # depends : python
 
-url=https://github.com/Iotic-Labs/py-ubjson
 name=python-ubjson
 version=0.16.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/p/py-ubjson/py-ubjson-$version.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd py-ubjson-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

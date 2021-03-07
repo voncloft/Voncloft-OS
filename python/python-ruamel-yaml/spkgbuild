@@ -1,8 +1,7 @@
 # description : YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order
 # depends : python-ruamel.yaml.clib
 
-_pkg=ruamel.yaml
-name=python-${_pkg/./-}
+name=python-ruamel-yaml
 version=0.16.12
 release=3
 

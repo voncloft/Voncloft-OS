@@ -2,14 +2,15 @@
   # description : ASN.1 library for Python 2
   # depends : python
 
-url=https://github.com/etingof/pyasn1
+name=python-pyasn1
 version=0.4.8
 release=4
 
-source="https://pypi.io/packages/source/p/pyasn1/pyasn1-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd pyasn1-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

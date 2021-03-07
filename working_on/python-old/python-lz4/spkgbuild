@@ -1,0 +1,19 @@
+# description : LZ4 bindings for Python
+# depends : python
+
+_name=lz4
+url=https://github.com/python-lz4/python-lz4
+name=python-lz4
+_name=lz4
+version=2.2.1
+release=6
+
+source="https://pypi.org/packages/source/${_name:0:1}/$_name/$_name-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

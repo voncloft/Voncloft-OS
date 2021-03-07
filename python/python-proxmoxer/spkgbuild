@@ -1,11 +1,7 @@
 # description : Python Wrapper for the Proxmox 2.x API HTTP and SSH
 # depends : python
 
-_name=${name#python-}
-_name=${name#python-}
-_name=${name#python-}
 name=python-proxmoxer
-_name=${name#python-}
 version=1.1.1
 release=3
 

@@ -1,0 +1,16 @@
+# description : A library for SoftLayers API
+# depends : python-six python-ptable python-click python-requests python-prompt_toolkit
+
+url=https://github.com/softlayer/softlayer-python
+name=python-softlayer
+version=5.9.2
+release=2
+
+source="https://github.com/softlayer/softlayer-python/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd softlayer-python-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,7 +1,6 @@
 # description : A pure Python interface for the Telegram Bot AP
 # depends : python-apscheduler python-cryptography python-decorator python-tornado
 
-_commit=6903d58142d4be1b7c5fdda82608e66dd50ecf2b
 name=python-telegram-bot
 version=13.1.20210105
 release=1

@@ -1,11 +1,7 @@
 # description : Add inline tabbed content to your Sphinx documentation
 # depends : python-sphinx
 
-_name=sphinx-inline-tabs
-_name=sphinx-inline-tabs
-_name=sphinx-inline-tabs
-_name=sphinx-inline-tabs
-name=python-$_name
+name=python-sphinx-inline-tabs
 version=2020.10.19.beta4
 release=3
 

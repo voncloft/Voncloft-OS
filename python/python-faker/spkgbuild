@@ -1,16 +1,15 @@
 # description : Faker generates fake data for you.
 # depends : python-setuptools python-dateutil python-text-unidecode
 
-url=https://faker.readthedocs.io/en/master/
 name=python-faker
 version=6.0.0
 release=1
 
-source="https://github.com/joke2k/faker/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd faker-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

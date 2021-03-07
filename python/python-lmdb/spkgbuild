@@ -1,7 +1,6 @@
 # description : Universal Python binding for the LMDB Lightning Database
 # depends : python python-cffi lmdb
 
-_pkg=py-lmdb
 name=python-lmdb
 version=1.0.0
 release=3

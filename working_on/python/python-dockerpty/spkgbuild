@@ -1,0 +1,16 @@
+# description : Python library to use the pseudo-tty of a docker container
+# depends : python-docker-py python-six
+
+url=https://github.com/d11wtq/dockerpty
+name=python-dockerpty
+version=0.4.1
+release=8
+
+source="https://github.com/d11wtq/dockerpty/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd dockerpty-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,16 +1,15 @@
 # description : Experimental set of Matchers for Betamax that may possibly end up in the main package
 # depends : python-requests-toolbelt python-betamax
 
-url=https://github.com/sigmavirus24/betamax_matchers
 name=python-betamax-matchers
 version=0.4.0
 release=6
 
-source="https://github.com/sigmavirus24/betamax_matchers/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd betamax_matchers-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

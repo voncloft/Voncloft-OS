@@ -1,0 +1,17 @@
+# description : The most basic Text::Unidecode port
+# depends : python
+
+url=https://github.com/kmike/text-unidecode
+name=python-text-unidecode
+version=1.3
+release=6
+
+source="https://pypi.io/packages/source/t/text-unidecode/text-unidecode-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd text-unidecode-$version
+   cd text-unidecode-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

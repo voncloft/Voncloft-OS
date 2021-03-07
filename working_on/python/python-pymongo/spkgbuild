@@ -1,17 +1,15 @@
 # description : Python module for using MongoDB
 # depends : python
 
-url=https://pypi.python.org/pypi/pymongo/
 name=python-pymongo
 version=3.11.3
 release=1
 
-source="https://pypi.io/packages/source/p/pymongo/pymongo-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pymongo-$version
-   cd pymongo-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

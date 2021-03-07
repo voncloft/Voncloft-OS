@@ -1,18 +1,15 @@
 # description : A refreshed Python toolbox for build()ing complex digital hardware
 # depends : python
 
-_name=nmigen
-url=https://github.com/nmigen/nmigen
-_name=nmigen
-name=python-$_name
+name=python-nmigen
 version=0.2
 release=3
 
-source="$url/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

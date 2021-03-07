@@ -5,11 +5,11 @@ name=python-aiosmtpd
 version=1.2.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/a/aiosmtpd/aiosmtpd-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd $name-$version
-  python setup.py build
-  python setup.py install --optimize=1 --root=$PKG 
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

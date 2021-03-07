@@ -1,17 +1,15 @@
 # description : OpenStack library for all concurrency-related code
 # depends : python-six python-pbr python-oslo-config python-oslo-i18n python-oslo-utils
 
-url=https://pypi.python.org/pypi/oslo.concurrency/$version
 name=python-oslo-concurrency
 version=4.4.0
 release=1
 
-source="https://github.com/openstack/oslo.concurrency/archive/$version.tar.gz"
-options=!emptydirs
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd oslo.concurrency-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

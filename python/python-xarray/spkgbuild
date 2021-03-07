@@ -1,8 +1,7 @@
 # description : N-D labeled arrays and datasets in Python
 # depends : python-numpy python-pandas
 
-_pkg=xarray
-name=python-${_pkg}
+name=python-xarray
 version=0.16.2
 release=1
 

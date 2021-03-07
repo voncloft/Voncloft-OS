@@ -1,8 +1,7 @@
 # description : Python wrapper for Xvfb, Xephyr and Xvnc
 # depends : python-easyprocess
 
-_pkg=PyVirtualDisplay
-name=python-${_pkg,,}
+name=python-pyvirtualdisplay
 version=2.0
 release=1
 

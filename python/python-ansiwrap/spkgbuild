@@ -3,15 +3,13 @@
 
 name=python-ansiwrap
 version=0.8.4
-_commit=20e2e8c78a54bdce947e38c069c5eb9c115423ae
 release=3
-url="https://github.com/jonathaneunice/ansiwrap"
 
-source="https://github.com/jonathaneunice/ansiwrap/archive/$_commit/$name-$_commit.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd ansiwrap-$_commit
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

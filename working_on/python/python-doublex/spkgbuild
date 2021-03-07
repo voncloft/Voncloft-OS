@@ -1,0 +1,17 @@
+# description : Powerful test doubles framework for Python
+# depends : python-pyhamcrest
+
+_commit=fe03fcb4672d
+url=https://github.com/davidvilla/python-doublex
+name=python-doublex
+version=1.9.2
+release=1
+
+source="https://github.com/davidvilla/python-doublex/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd python-doublex-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

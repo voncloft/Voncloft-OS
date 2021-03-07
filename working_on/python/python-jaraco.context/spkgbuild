@@ -1,16 +1,15 @@
 # description : Context managers by jaraco
 # depends : python-jaraco python-yg.lockfile
 
-url=https://github.com/jaraco/jaraco.context
 name=python-jaraco.context
 version=4.0.0
 release=1
 
-source="https://github.com/jaraco/jaraco.context/archive/v$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd jaraco.context-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

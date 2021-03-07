@@ -1,11 +1,7 @@
 # description : Make Sphinx better at documenting Python functions and methods
 # depends : python python-sphinx
 
-_pyname=${name/python-/}
-_pyname=${name/python-/}
-_pyname=${name/python-/}
 name=python-sphinxcontrib-trio
-_pyname=${name/python-/}
 version=1.1.2
 release=1
 

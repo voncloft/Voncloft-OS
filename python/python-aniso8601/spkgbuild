@@ -5,11 +5,11 @@ name=python-aniso8601
 version=8.1.1
 release=1
 
-source="https://bitbucket.org/nielsenb/aniso8601/get/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd aniso8601-$version
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

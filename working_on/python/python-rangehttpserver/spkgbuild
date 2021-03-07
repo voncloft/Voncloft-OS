@@ -1,18 +1,15 @@
 # description : SimpleHTTPServer with support for Range requests
 # depends : python
 
-_name=RangeHTTPServer
-url=https://github.com/danvk/RangeHTTPServer/
-_name=RangeHTTPServer
 name=python-rangehttpserver
 version=1.2.0
 release=6
 
-source="https://github.com/danvk/RangeHTTPServer//archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

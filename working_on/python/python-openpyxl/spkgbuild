@@ -1,16 +1,15 @@
 # description : A Python library to read/write Excel 2007 xlsx/xlsm files
 # depends : python-jdcal python-et-xmlfile
 
-url=https://openpyxl.readthedocs.org/
 name=python-openpyxl
 version=3.0.6
 release=1
 
-source="https://foss.heptapod.net/openpyxl/openpyxl/-/archive/${version}/openpyxl-${version}.tar.bz2
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd openpyxl-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

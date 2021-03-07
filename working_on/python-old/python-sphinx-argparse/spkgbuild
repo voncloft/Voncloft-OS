@@ -1,0 +1,18 @@
+# description : Sphinx extension that automatically documents argparse commands and options
+# depends : python-sphinx
+
+_name=sphinx-argparse
+url=https://github.com/ribozz/sphinx-argparse
+_name=sphinx-argparse
+name=python-sphinx-argparse
+version=0.2.5
+release=4
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

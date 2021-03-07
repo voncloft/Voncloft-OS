@@ -1,8 +1,7 @@
 # description : Python 3 compatible port of Python 2 random module
 # depends : python
 
-_pipname=random2
-name=python-$_pipname
+name=python-random2
 version=1.0.1
 release=6
 

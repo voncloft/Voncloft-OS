@@ -1,0 +1,15 @@
+# description	: python library to access freedesktop.org standards
+# depends	: python
+
+name=python-xdg
+version=0.25
+release=1
+source="https://people.freedesktop.org/~takluyver/pyxdg-$version.tar.gz"
+
+options="!checksum"
+
+build() {
+	cd pyxdg-$version
+	python setup.py install --optimize=1 --root=$PKG
+}
+

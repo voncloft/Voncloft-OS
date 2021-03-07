@@ -1,16 +1,15 @@
 # description : A sphinx extension to include jinja based templates based documentation into a sphinx doc
 # depends : python python-docutils python-jinja python-sphinx
 
-url=https://github.com/tardyp/sphinx-jinja
 name=python-sphinx-jinja
 version=1.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/s/sphinx-jinja/sphinx-jinja-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd sphinx-jinja-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,0 +1,17 @@
+# description : A Python Library for Generating dbus-python Client Code
+# depends : python-dbus dbus-client-gen python-into-dbus
+
+url=https://stratis-storage.github.io/
+name=python-dbus-client-gen
+_srcname=dbus-python-client-gen
+version=0.7
+release=5
+
+source="https://github.com/stratis-storage/${_srcname}/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_srcname}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -4,16 +4,15 @@
 _common_# depends : jupyter python-google-api-python-client python-ipywidgets
   # depends : ${_common_depends[@]} python-tensorboard_plugin_wit
 
-url=https://pair-code.github.io/what-if-tool
-name=python-tensorboard_plugin_wit python-witwidget
+name=python-tensorboard_plugin_wit
 version=1.7.0
 release=2
 
-source="${_pkgbase}-${version}::git+https://github.com/PAIR-code/what-if-tool#commit=63bc2b9c9528bcca34313c8a0bbaf279b4102f4a
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd ${_pkgbase}-${version}
-   cd ${_pkgbase}-${version}  
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

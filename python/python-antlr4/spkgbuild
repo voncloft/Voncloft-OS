@@ -1,17 +1,15 @@
 # description : ANTLR4 runtime for Python
 # depends : python
 
-_name=antlr4
-name=python-${_name}
+name=python-antlr4
 version=4.9.1
 release=1
-url="https://www.antlr.org/"
 
-source="https://github.com/antlr/${_name}/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd ${_name}-${version}/runtime/Python3
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1 
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

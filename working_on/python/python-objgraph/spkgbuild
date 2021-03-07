@@ -1,15 +1,15 @@
 # description : Draws Python object reference graphs with graphviz
   # depends : python
 
-url=https://github.com/mgedmin/objgraph
+name=python-objgraph
 version=3.5.0
 release=3
 
-source="https://github.com/mgedmin/objgraph/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd objgraph-$version
-   cd objgraph-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -3,20 +3,17 @@
     # checkdepends+=amdgpu
     depends+=python python-numpy python-mako python-pytools pyopencl-headers python-setuptools python-cffi
 
-_pypiname=pyopencl
-url=https://mathema.tician.de/software/pyopencl
-_pypiname=pyopencl
-name=python-pyopencl pyopencl-headers
+name=python-pyopencl
     python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3
 version=2020.2.1
     python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3
 release=2
 
-source="git+https://github.com/inducer/pyopencl.git?signed#tag=v${version}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-     cd pyopencl
-     cd pyopencl
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,18 +1,15 @@
 # description : Library providing a mutable, self-balancing interval tree for Python
 # depends : python-sortedcontainers
 
-_pyname=intervaltree
-url=https://github.com/chaimleib/intervaltree
 name=python-intervaltree
-_pyname=intervaltree
 version=3.1.0
 release=3
 
-source="https://github.com/chaimleib/${_pyname}/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pyname}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

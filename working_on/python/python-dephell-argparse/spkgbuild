@@ -1,0 +1,17 @@
+# description : Argparse with groups, commands, colors, and fuzzy matching
+# depends : python
+
+_name=dephell_argparse
+url=https://github.com/dephell/${_name}
+name=python-dephell-argparse
+version=0.1.3
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

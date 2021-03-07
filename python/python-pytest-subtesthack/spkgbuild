@@ -1,11 +1,7 @@
 # description : A hack to explicitly set up and tear down fixtures
 # depends : python-pytest python-setuptools
 
-_name=pytest-subtesthack
-_name=pytest-subtesthack
-_name=pytest-subtesthack
-_name=pytest-subtesthack
-name=python-${_name}
+name=python-pytest-subtesthack
 version=0.1.1
 release=9
 

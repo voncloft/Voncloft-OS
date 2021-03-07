@@ -1,0 +1,17 @@
+# description : CBOR rfc7049 for Python
+# depends : python
+
+_commit=b3af679e7cf3e12d50acb83c3c591fc5db9a658d
+url=https://github.com/brianolson/cbor_py
+name=python-cbor
+version=1.0.0
+release=6
+
+source="https://github.com/brianolson/cbor_py/archive/$_commit.tar.gz"
+options="!checksum"
+
+build() {
+   cd cbor_py-$_commit
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,11 +1,7 @@
 # description : Small footprint and configurable Ethernet core
 # depends : python-migen python-litex python-litedram python-liteeth python-liteiclink python-litejesd204b
 
-_name=litex-boards
-_name=litex-boards
-_name=litex-boards
-_name=litex-boards
-name=python-$_name
+name=python-litex-boards
 version=2020.12
 release=1
 

@@ -3,16 +3,15 @@
 # added dependencies of distutils plugin into pybuild()ers depends
   sed -i s/project.plugin_depends_onpypandoc, .*$/project.plugin_depends_onpypandoc/ src/main/python/pybuild()er/plugins/python/distutils_plugin.py
 
-url=https://pybuild()er.github.io
-name=python-pybuild()er
+name=python-pybuilder
 version=0.11.17
 release=4
 
-source="https://github.com/pybuild()er/pybuild()er/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pybuild()er-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

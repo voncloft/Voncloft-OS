@@ -1,0 +1,17 @@
+# description : WebSocket library for the gevent networking library
+# depends : python python-gevent gunicorn python-ujson
+
+_name=gevent-websocket
+url=https://www.gitlab.com/noppo/gevent-websocket
+name=python-${_name}
+version=0.10.1
+release=6
+
+source="https://gitlab.com/noppo/gevent-websocket/-/archive/${version}/gevent-websocket-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

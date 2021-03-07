@@ -1,11 +1,7 @@
 # description : Python bindings to libudev
 # depends : python-six systemd
 
-_name=pyudev
-_name=pyudev
-_name=pyudev
-_name=pyudev
-name=python-$_name
+name=python-pyudev
 version=0.22
 release=5
 

@@ -5,12 +5,11 @@ name=python-abydos
 version=0.5.0
 release=1
 
-source="https://github.com/chrislit/abydos/archive/v${version}/abydos-$version.tar.gz"
-
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd abydos-${version}
-  python setu.py build
-  python setup.py install --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

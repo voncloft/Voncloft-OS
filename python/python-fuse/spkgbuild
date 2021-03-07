@@ -1,16 +1,15 @@
 # description : Python bindings for FUSE
 # depends : fuse2 python
 
-url=https://github.com/libfuse/python-fuse
 name=python-fuse
 version=1.0.0
 release=3
 
-source="https://github.com/libfuse/python-fuse/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-fuse-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

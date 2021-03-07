@@ -1,16 +1,15 @@
 # description : Accurately separate the TLD from the registered domain and subdomains of a URL, using the Public Suffix List
 # depends : python-idna python-requests python-requests-file python-filelock
 
-url=https://github.com/john-kurkowski/tldextract
 name=python-tldextract
 version=3.1.0
 release=1
 
-source="https://pypi.io/packages/source/t/tldextract/tldextract-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd tldextract-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

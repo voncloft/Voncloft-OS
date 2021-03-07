@@ -1,11 +1,7 @@
 # description : Small footprint and configurable SATA core
 # depends : python-migen python-litex
 
-_name=litesata
-_name=litesata
-_name=litesata
-_name=litesata
-name=python-$_name
+name=python-litesata
 version=2020.12
 release=1
 

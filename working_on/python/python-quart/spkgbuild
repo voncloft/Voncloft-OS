@@ -1,17 +1,15 @@
 # description : A Python ASGI web microframework with the same API as Flask
 # depends : 
 
-_tag=f6709c6082a3cab9dffdcd937122f4d65a5990f7
-url=https://gitlab.com/pgjones/quart
 name=python-quart
 version=0.14.1
 release=1
 
-source="git+https://gitlab.com/pgjones/quart.git#tag=${_tag}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd quart
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

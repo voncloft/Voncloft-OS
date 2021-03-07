@@ -1,8 +1,7 @@
 # description : Jupyter Packaging Utilities
 # depends : python-packaging
 
-_pipname=jupyter-packaging
-name=python-${_pipname/-/_}
+name=python-jupyter_packaging
 version=0.7.11
 release=1
 

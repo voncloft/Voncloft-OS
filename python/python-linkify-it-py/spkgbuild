@@ -1,11 +1,7 @@
 # description : Links recognition library with full unicode support
 # depends : python-uc-micro-py
 
-_name=linkify-it-py
-_name=linkify-it-py
-_name=linkify-it-py
-_name=linkify-it-py
-name=python-$_name
+name=python-linkify-it-py
 version=1.0.1
 release=1
 

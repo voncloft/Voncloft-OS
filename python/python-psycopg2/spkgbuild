@@ -1,6 +1,7 @@
 # description : A PostgreSQL database adapter for the Python programming language.
   # depends : python postgresql-libs
 
+name=python-psycopg2
 version=2.8.6
 release=3
 

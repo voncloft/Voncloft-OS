@@ -1,17 +1,15 @@
 # description : Run commands and manipulate files locally or over SSH using the same interface
 # depends : python python-paramiko
 
-_pkg=spur
-url=https://github.com/mwilliamson/spur.py
-name=python-${_pkg}
+name=python-spur
 version=0.3.22
 release=3
 
-source="${url}/archive/${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}.py-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : Transparent calculations with uncertainties on the quantities involved aka error propagation; fast calculation of derivatives.
 # depends : python-future
 
-url=https://github.com/lebigot/uncertainties
 name=python-uncertainties
 version=3.1.5
 release=1
 
-source="https://github.com/lebigot/uncertainties/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd uncertainties-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

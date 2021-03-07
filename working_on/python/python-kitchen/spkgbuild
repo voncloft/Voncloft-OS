@@ -1,16 +1,15 @@
 # description : Useful snippets of python code
 # depends : python
 
-url=https://github.com/fedora-infra/kitchen
 name=python-kitchen
 version=1.2.6
 release=5
 
-source="$url/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-     cd kitchen-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,8 +1,7 @@
 # description : Dark style sheet for QtWidgets application
 # depends : python-helpdev python-qtpy
 
-_pkg=QDarkStyle
-name=python-${_pkg,,}
+name=python-qdarkstyle
 version=2.8.1
 release=3
 

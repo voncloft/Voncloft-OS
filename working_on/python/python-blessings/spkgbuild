@@ -1,0 +1,17 @@
+# description : A thin, practical wrapper around terminal coloring, styling, and positioning
+# depends : python
+
+_name=blessings
+url=https://github.com/erikrose/blessings
+name=python-blessings
+version=1.7
+release=7
+
+source="https://files.pythonhosted.org/packages/source/b/$_name/$_name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd blessings-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

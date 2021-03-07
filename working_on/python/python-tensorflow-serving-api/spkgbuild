@@ -1,18 +1,15 @@
 # description : Serving system for machine learning models, designed for production environments
 # depends : python python-grpcio python-tensorflow python-protobuf
 
-_name=tensorflow_serving_api
-url=https://www.tensorflow.org/serving/
 name=python-tensorflow-serving-api
-_name=tensorflow_serving_api
 version=2.3.0
 release=2
 
-source="https://github.com/tensorflow/serving/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd serving-*
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

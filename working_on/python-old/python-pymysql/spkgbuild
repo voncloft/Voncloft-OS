@@ -1,0 +1,18 @@
+# description : Pure Python MySQL Client
+# depends : python
+
+_name=PyMySQL
+url=https://github.com/PyMySQL/PyMySQL/
+_name=PyMySQL
+name=python-pymysql
+version=1.0.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

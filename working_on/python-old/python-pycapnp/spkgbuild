@@ -1,0 +1,16 @@
+# description : A cython wrapping of the C++ Capn Proto library
+# depends : capnproto python
+
+url=https://github.com/capnproto/pycapnp
+name=python-pycapnp
+version=1.0.0
+release=1
+
+source="https://github.com/capnproto/pycapnp/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pycapnp-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

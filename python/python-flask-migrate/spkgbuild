@@ -1,17 +1,15 @@
 # description : SQLAlchemy database migrations for Flask applications using Alembic..
 # depends : python python-alembic python-flask python-flask-script python-flask-sqlalchemy
 
-_name=Flask-Migrate
-url=https://github.com/miguelgrinberg/Flask-Migrate/
 name=python-flask-migrate
 version=2.5.3
 release=3
 
-source="https://github.com/miguelgrinberg/Flask-Migrate/archive/v${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

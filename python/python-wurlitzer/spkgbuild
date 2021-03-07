@@ -1,8 +1,7 @@
 # description : Capture C-level stdout/stderr in Python
 # depends : python
 
-_pkg=wurlitzer
-name=python-${_pkg}
+name=python-wurlitzer
 version=2.0.0
 release=3
 

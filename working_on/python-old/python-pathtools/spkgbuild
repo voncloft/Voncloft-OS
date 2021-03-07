@@ -1,0 +1,16 @@
+# description : Pattern matching and various utilities for file systems paths
+# depends : python
+
+url=https://pypi.python.org/pypi/pathtools/
+name=python-pathtools
+version=0.1.2
+release=9
+
+source="https://pypi.python.org/packages/source/p/pathtools/pathtools-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pathtools-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

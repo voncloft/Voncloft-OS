@@ -1,16 +1,15 @@
 # description : A WSGI Proxy with various http client backends
 # depends : python-webob python-six
 
-url=https://github.com/gawel/WSGIProxy2/
 name=python-wsgiproxy2
 version=0.4.6
 release=5
 
-source="https://github.com/gawel/WSGIProxy2/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd WSGIProxy2-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

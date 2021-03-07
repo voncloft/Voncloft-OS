@@ -1,17 +1,15 @@
 # description : flake8 plugin which checks that typing imports are properly guarded
 # depends : flake8
 
-_name=flake8-typing-imports
-url=https://github.com/asottile/flake8-typing-imports
-name=python-$_name
+name=python-flake8-typing-imports
 version=1.10.1
 release=1
 
-source="$url/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

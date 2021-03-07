@@ -1,0 +1,17 @@
+# description : Universal Python binding for the LMDB Lightning Database
+# depends : python python-cffi lmdb
+
+_pkg=py-lmdb
+url=https://github.com/jnwatson/py-lmdb/
+name=python-lmdb
+version=1.0.0
+release=3
+
+source="${url}/archive/${_pkg}_${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_pkg}-${_pkg}_${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

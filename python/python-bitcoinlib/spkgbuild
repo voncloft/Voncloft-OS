@@ -1,17 +1,15 @@
 # description : Python3 library providing an easy interface to the Bitcoin data structures and protocol
 # depends: python
 
-url=https://github.com/petertodd/python-bitcoinlib
 name=python-bitcoinlib
 version=0.11.0
 release=2
-_tag=$name-v$version
 
-source="$url/archive/$_tag.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$_tag
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

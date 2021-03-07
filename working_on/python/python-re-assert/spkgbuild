@@ -1,18 +1,15 @@
 # description : Provides a helper class to make assertions of regexes simpler
 # depends : python python-regex
 
-_name=${name#python-}
-url=https://github.com/asottile/re-assert
 name=python-re-assert
-_name=${name#python-}
 version=1.1.0
 release=2
 
-source="https://github.com/asottile/re-assert/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

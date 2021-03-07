@@ -1,10 +1,6 @@
 # description : Fast, correct Python JSON library supporting dataclasses and datetimes
 # depends : python
 
-_name=orjson
-_name=orjson
-_name=orjson
-_name=orjson
 name=python-orjson
 version=3.4.8
   local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]

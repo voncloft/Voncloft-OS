@@ -1,17 +1,15 @@
 # description : A Python module for creating JUnit XML test result documents
 # depends : python python-six
 
-_commit=19d3cc333d35dfd2d17d75c506336c15e5c6685a
-url=https://github.com/kyrus/python-junit-xml
 name=python-junit-xml
 version=1.9
 release=4
 
-source="git+https://github.com/kyrus/python-junit-xml?signed#commit=$_commit
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-junit-xml
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

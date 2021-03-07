@@ -1,16 +1,15 @@
 # description : Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal
 # depends : python-colorama python-pygments python-typing_extensions python-commonmark
 
-url=https://github.com/willmcgugan/rich
 name=python-rich
 version=9.10.0
 release=1
 
-source="https://github.com/willmcgugan/rich/archive/v${version}/rich-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd rich-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

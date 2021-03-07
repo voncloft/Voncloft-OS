@@ -1,11 +1,7 @@
 # description : Small footprint and configurable JESD204B core
 # depends : python-migen python-litex
 
-_name=litejesd204b
-_name=litejesd204b
-_name=litejesd204b
-_name=litejesd204b
-name=python-$_name
+name=python-litejesd204b
 version=2020.12
 release=1
 

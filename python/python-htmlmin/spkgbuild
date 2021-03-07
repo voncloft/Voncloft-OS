@@ -2,18 +2,15 @@
 # depends : python python-setuptools python-htmlmin
 # depends : python
 
-_name=htmlmin
-_gitcommit=220b1d16442eb4b6fafed338ee3b61f698a01e63
-url=https://htmlmin.readthedocs.io/en/latest/
 name=python-htmlmin
 version=0.1.12
 release=6
 
-source="https://github.com/mankyd/htmlmin/archive/${_gitcommit}.tar.gz"
-options="!checksum" 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd ${_name}-${_gitcommit}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

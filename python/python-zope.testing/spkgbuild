@@ -1,10 +1,7 @@
 # description : Zope testing frameworks
   # depends : python
 
-_name=${pkgbase#python-}
-_name=${pkgbase#python-}
-_name=${pkgbase#python-}
-_name=${pkgbase#python-}
+name=python-zope.testing
 version=4.7
 release=1
 

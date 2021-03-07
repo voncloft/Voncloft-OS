@@ -1,17 +1,15 @@
 # description : Python module for very simple, very easy GUI programming
 # depends : python tk
 
-_pyname=easygui
-url=https://easygui.readthedocs.io
 name=python-easygui
 version=0.98.1
 release=6
 
-source="https://github.com/robertlugg/$_pyname/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_pyname-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

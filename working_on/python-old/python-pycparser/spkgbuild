@@ -1,0 +1,16 @@
+# description : C parser and AST generator written in Python
+  # depends : python-ply
+
+url=https://github.com/eliben/pycparser
+version=2.20
+release=3
+
+source="https://github.com/eliben/pycparser/archive/release_v$version.tar.gz"
+
+build() {
+   cd pycparser-release_v$version
+   cd pycparser
+   cd pycparser-release_v$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

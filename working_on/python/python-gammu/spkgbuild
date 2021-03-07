@@ -1,0 +1,16 @@
+# description : Python bindings for Gammu library
+# depends : python gammu
+
+url=https://wammu.eu/python-gammu/
+name=python-gammu
+version=3.1
+release=2
+
+source="https://dl.cihar.com/python-gammu/python-gammu-$version.tar.bz2"
+options="!checksum"
+
+build() {
+   cd python-gammu-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -4,17 +4,12 @@
 name=python-gobject3
 version=3.36.1
 release=1
-source="https://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz"
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd pygobject-$version
-
-	mkdir build
-	cd build
-
-	meson --prefix=/usr -Dpython=python ..
-	ninja
-	DESTDIR=$PKG ninja install
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

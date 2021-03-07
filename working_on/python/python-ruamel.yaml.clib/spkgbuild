@@ -1,17 +1,15 @@
 # description : C version of reader, parser and emitter for ruamel.yaml derived from libyaml
 # depends : python
 
-_pkg=ruamel.yaml.clib
-url=https://sourceforge.net/projects/ruamel-yaml-clib/
-name=python-$_pkg
+name=python-ruamel.yaml.clib
 version=0.2.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/r/${_pkg}/${_pkg}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

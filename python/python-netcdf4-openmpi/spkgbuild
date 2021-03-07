@@ -1,8 +1,7 @@
 # description : Python/NumPy interface to the netCDF C library ${_mpi} version
 # depends : python-numpy python-cftime python-mpi4py netcdf-${_mpi}
 
-_pkg=netCDF4
-name=python-${_pkg,,}-${_mpi}
+name=python-netcdf4-openmpi
 version=1.5.5.1
     local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]
 release=1

@@ -5,11 +5,11 @@ name=python-ansi2html
 version=1.6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/a/ansi2html/ansi2html-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd ansi2html-$version
-  python setup.py build
-  python setup.py install --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

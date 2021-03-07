@@ -3,13 +3,7 @@
     # checkdepends+=amdgpu
     depends+=python python-numpy python-mako python-pytools pyopencl-headers python-setuptools python-cffi
 
-_pypiname=pyopencl
-_pypiname=pyopencl
-_pypiname=pyopencl
-_pypiname=pyopencl
-name=python-pyopencl pyopencl-headers
-    python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3
-    python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3
+name=python-pyopencl
     python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3
 version=2020.2.1
     python3 ./configure.py --python-exe=python3 --cl-pretend-version=1.2 # --boost-python-libname=boost_python3

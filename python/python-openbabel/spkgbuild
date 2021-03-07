@@ -2,6 +2,7 @@
 # depends : gcc-libs openbabel=${version}
   depends+=python
 
+name=python-openbabel
 version=2.3.2
 release=6
 

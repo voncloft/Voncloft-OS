@@ -1,8 +1,7 @@
 # description : Matrix Client-Server SDK for Python
 # depends : python-requests
 
-_pkg=matrix_client
-name=python-${_pkg}
+name=python-matrix_client
 version=0.3.2
 release=3
 

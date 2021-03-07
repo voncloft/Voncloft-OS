@@ -1,0 +1,16 @@
+# description : A high-level TensorFlow API that greatly simplifies machine learning programming
+# depends : python-wrapt
+
+url=https://github.com/tensorflow/estimator
+name=python-tensorflow-estimator
+version=2.3.0
+release=4
+
+source="https://github.com/tensorflow/estimator/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd estimator-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

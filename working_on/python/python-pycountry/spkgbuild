@@ -1,16 +1,15 @@
 # description : ISO country, subdivision, language, currency and script definitions and their translations
 # depends : python python-lxml
 
-url=https://pypi.org/project/pycountry/
 name=python-pycountry
 version=20.7.3
 release=3
 
-source="https://pypi.io/packages/source/p/pycountry/pycountry-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pycountry-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

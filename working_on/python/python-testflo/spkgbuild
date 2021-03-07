@@ -1,16 +1,15 @@
 # description : A simple flow-based testing framework
 # depends : python-coverage
 
-url=https://github.com/OpenMDAO/testflo
 name=python-testflo
 version=1.4.2
 release=4
 
-source="https://pypi.io/packages/source/t/testflo/testflo-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd testflo-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

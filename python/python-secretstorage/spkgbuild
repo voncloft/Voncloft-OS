@@ -1,11 +1,7 @@
 # description : Securely store passwords and other private data using the SecretService DBus API
 # depends : python-cryptography python-jeepney
 
-_name=SecretStorage
-_name=SecretStorage
-_name=SecretStorage
 name=python-secretstorage
-_name=SecretStorage
 version=3.3.0
 release=1
 

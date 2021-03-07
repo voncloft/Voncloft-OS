@@ -4,11 +4,12 @@
 name=python-distutils-extra
 version=2.39
 release=1
-source="http://launchpad.net/python-distutils-extra/trunk/$version/+download/python-distutils-extra-$version.tar.gz"
-options="!checksum"
-build() {
-	cd python-distutils-extra-$version
-	python setup.py build
-	python setup.py install --root=$PKG --optimize=1
-}
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

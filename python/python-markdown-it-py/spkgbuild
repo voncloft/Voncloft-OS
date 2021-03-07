@@ -1,11 +1,7 @@
 # description : Python port of markdown-it. Markdown parsing, done right!
 # depends : python-attrs
 
-_name=markdown-it-py
-_name=markdown-it-py
-_name=markdown-it-py
-_name=markdown-it-py
-name=python-$_name
+name=python-markdown-it-py
 version=0.6.1
 release=1
 

@@ -1,11 +1,7 @@
 # description : Experimental library aimed at consolidating a lot of our low-level code used for Enthought eggs
 # depends : python python-attrs python-jsonschema python-six
 
-_name=okonomiyaki
-_name=okonomiyaki
-_name=okonomiyaki
-_name=okonomiyaki
-name=python-$_name
+name=python-okonomiyaki
 version=1.2.0
 release=4
 

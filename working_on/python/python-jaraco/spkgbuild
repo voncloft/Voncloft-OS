@@ -2,22 +2,15 @@
 # depends : python-six python-pytz python-more-itertools
 # And now cherrypy depends on this too :-
 
-url=https://github.com/jaraco?page=1&tab=repositories&utf8=%E2%9C%93&q=jaraco
 name=python-jaraco
 version=2020.12.29
 release=1
 
-source="$_pyhost/j/jaraco.text/jaraco.text-$_text.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd jaraco.classes-$_classes
-   cd jaraco.collections-$_collections
-   cd jaraco.functools-$_functools
-   cd jaraco.itertools-$_itertools
-   cd jaraco.logging-$_logging
-   cd jaraco.stream-$_stream
-   cd jaraco.text-$_text
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

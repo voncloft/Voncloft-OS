@@ -1,0 +1,16 @@
+# description : Command Arguments for Humans
+# depends : python
+
+url=https://github.com/kenneth-reitz/args
+name=python-args
+version=0.1.0
+release=5
+
+source="https://github.com/kennethreitz-archive/args/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd args-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

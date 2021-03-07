@@ -1,17 +1,15 @@
 # description : Various objects to denote special meanings in python
 # depends : python
 
-url=https://github.com/vmalloc/sentinels
 name=python-sentinels
 version=1.0.0
 release=6
 
-source="https://github.com/vmalloc/sentinels/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd sentinels-$version
-   cd sentinels-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

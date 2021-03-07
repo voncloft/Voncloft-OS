@@ -1,16 +1,15 @@
 # description : CSS selectors for Python ElementTree
 # depends : python-tinycss2
 
-url=https://pypi.org/project/cssselect2/
 name=python-cssselect2
 version=0.4.1
 release=1
 
-source="https://pypi.io/packages/source/c/cssselect2/cssselect2-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd cssselect2-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

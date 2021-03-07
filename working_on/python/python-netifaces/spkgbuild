@@ -1,16 +1,15 @@
 # description : Portable module to access network interface information in Python
 # depends : python
 
-url=https://alastairs-place.net/netifaces/
 name=python-netifaces
 version=0.10.9
 release=6
 
-source="https://pypi.io/packages/source/n/netifaces/netifaces-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd netifaces-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,0 +1,18 @@
+# description : Headless chrome/chromium automation library
+# depends : python-appdirs python-pyee python-tqdm python-urllib3
+
+_name=pyppeteer
+url=https://github.com/pyppeteer/pyppeteer
+_name=pyppeteer
+name=python-pyppeteer
+version=0.2.5
+release=1
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

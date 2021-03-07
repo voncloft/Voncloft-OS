@@ -1,15 +1,15 @@
 # description : Plugin and hook calling mechanisms for python
   # depends : python-importlib-metadata
 
-url=https://github.com/pytest-dev/pluggy
+name=python-pluggy
 version=0.13.1
 release=4
 
-source="https://github.com/pytest-dev/pluggy/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd pluggy-$version
-   cd pluggy-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

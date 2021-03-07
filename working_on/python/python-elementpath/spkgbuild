@@ -1,0 +1,16 @@
+# description : XPath 1.0/2.0 parsers and selectors for ElementTree and lxml
+# depends : python
+
+url=https://github.com/sissaschool/elementpath
+name=python-elementpath
+version=2.1.3
+release=1
+
+source="https://github.com/sissaschool/elementpath/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd elementpath-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

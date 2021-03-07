@@ -1,11 +1,7 @@
 # description : Python publish-subcribe library
 # depends : python
 
-_name=${name#python-}
-_name=${name#python-}
-_name=${name#python-}
 name=python-pypubsub
-_name=${name#python-}
 version=4.0.3
 release=3
 

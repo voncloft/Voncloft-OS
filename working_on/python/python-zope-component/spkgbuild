@@ -1,17 +1,15 @@
 # description : Represents the core of the Zope Component Architecture
 # depends : python-setuptools python-zope-deferredimport python-zope-deprecation
 
-url=https://github.com/zopefoundation/zope.component
 name=python-zope-component
 version=4.6.2
 release=3
 
-source="https://github.com/zopefoundation/zope.component/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd zope.component-$version
-   cd zope.component-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,8 +1,7 @@
 # description : Simple Python library to perform a 3-way merge between strings
 # depends : python-diff-match-patch
 
-_pkg=three-merge
-name=python-${_pkg}
+name=python-three-merge
 version=0.1.1
 release=1
 

@@ -1,16 +1,15 @@
 # description : Serializer for literal Python expressions
 # depends : python
 
-url=https://github.com/irmen/Serpent
 name=python-serpent
 version=1.30.2
 release=3
 
-source="git+$url#commit=60877b581069d4e592531968edd6c1468c822b0a
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd Serpent
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

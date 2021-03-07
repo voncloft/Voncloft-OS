@@ -1,16 +1,15 @@
 # description : Hypothesis extension for generating filesystem paths
 # depends : python-hypothesis
 
-url=https://github.com/lazka/hypothesis-fspaths
 name=python-hypothesis-fspaths
 version=0.1.0
 release=6
 
-source="https://github.com/lazka/hypothesis-fspaths/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd hypothesis-fspaths-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

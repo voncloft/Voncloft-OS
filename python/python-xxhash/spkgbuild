@@ -1,11 +1,7 @@
 # description : Python binding for xxHash
 # depends : python xxhash
 
-_pyname=xxhash
-_pyname=xxhash
-_pyname=xxhash
-_pyname=xxhash
-name=python-${_pyname}
+name=python-xxhash
 version=2.0.0
 release=3
 

@@ -1,15 +1,7 @@
 # description : Python module containing verilog files for vexriscv cpu for use with LiteX
 # depends : python
 
-_name=pythondata-cpu-vexriscv
-_name=pythondata-cpu-vexriscv
-_pyname=${_name//-/_}
-_pyname=${_name//-/_}
-_name=pythondata-cpu-vexriscv
-_pyname=${_name//-/_}
-_name=pythondata-cpu-vexriscv
-_pyname=${_name//-/_}
-name=python-$_name
+name=python-pythondata-cpu-vexriscv
 version=2020.08
 release=1
 

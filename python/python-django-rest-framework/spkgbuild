@@ -2,17 +2,15 @@
 # depends : python-django
 # bootstrap without python-django-filter, as it has a checkdepends on
 
-_name=django-rest-framework
-url=https://www.django-rest-framework.org/
 name=python-django-rest-framework
 version=3.12.2
 release=3
 
-source="https://github.com/encode/${_name}/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

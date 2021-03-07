@@ -1,17 +1,15 @@
 # description : A configuration system for Python applications.
 # depends : python-decorator
 
-url=https://traitlets.readthedocs.io/en/stable/
 name=python-traitlets
 version=5.0.5
 release=1
 
-source="https://files.pythonhosted.org/packages/source/t/traitlets/traitlets-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ipython_genutils-0.2.0
-   cd traitlets-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

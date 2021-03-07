@@ -1,0 +1,16 @@
+# description : A wrapper for the Gnu Privacy Guard GPG or GnuPG
+# depends : gnupg python
+
+url=https://pythonhosted.org/python-gnupg/
+name=python-gnupg
+version=0.4.6
+release=2
+
+source="https://files.pythonhosted.org/packages/source/${name::1}/${name}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

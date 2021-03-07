@@ -3,7 +3,7 @@
 # added dependencies of distutils plugin into pybuild()ers depends
   sed -i s/project.plugin_depends_onpypandoc, .*$/project.plugin_depends_onpypandoc/ src/main/python/pybuild()er/plugins/python/distutils_plugin.py
 
-name=python-pybuild()er
+name=python-pybuilder
 version=0.11.17
 release=4
 

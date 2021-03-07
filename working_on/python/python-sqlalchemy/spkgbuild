@@ -2,18 +2,15 @@
   # description : Python 2 SQL toolkit and Object Relational Mapper
   # depends : python
 
-url=https://www.sqlalchemy.org/
+name=python-sqlalchemy
 version=1.3.23
 release=1
 
-source="https://pypi.io/packages/source/S/SQLAlchemy/SQLAlchemy-$version.tar.gz"{,.asc}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd SQLAlchemy-$version
-   cd SQLAlchemy2-$version
-   cd SQLAlchemy2-$version  
-   cd SQLAlchemy-$version
-   cd SQLAlchemy2-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

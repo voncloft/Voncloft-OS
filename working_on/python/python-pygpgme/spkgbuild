@@ -1,16 +1,15 @@
 # description : A Python interface to the gpgme GnuPG library
 # depends : python gpgme
 
-url=https://launchpad.net/pygpgme
 name=python-pygpgme
 version=0.3
 release=9
 
-source="https://launchpad.net/pygpgme/trunk/${version}/+download/pygpgme-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	 cd pygpgme-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -4,15 +4,12 @@
 name=python-pyqtwebengine
 version=5.13.1
 release=1
-source="https://www.riverbankcomputing.com/static/Downloads/PyQtWebEngine/$version/PyQtWebEngine_gpl-$version.tar.gz"
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd PyQtWebEngine_gpl-$version
-	python configure.py
-	make
-	make INSTALL_ROOT=$PKG install -j1
-	install -d $PKG/usr/share/sip/PyQt5
-	cp -a sip/* $PKG/usr/share/sip/PyQt5
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

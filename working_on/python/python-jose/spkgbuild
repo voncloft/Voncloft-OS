@@ -1,16 +1,15 @@
 # description : A JOSE implementation in Python
 # depends : python-rsa python-six python-ecdsa python-future
 
-url=https://github.com/mpdavis/python-jose
 name=python-jose
 version=3.2.0
 release=4
 
-source="https://github.com/mpdavis/python-jose/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd python-jose-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

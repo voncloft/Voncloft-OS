@@ -1,16 +1,15 @@
 # description : Tornado IOLoop Backed Concurrent Futures
 # depends : python-tornado
 
-url=https://github.com/unhashable/threadloop
 name=python-threadloop
 version=1.0.2
 release=4
 
-source="https://github.com/unhashable/threadloop/archive/$version/$name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd threadloop-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

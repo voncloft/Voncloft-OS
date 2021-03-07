@@ -1,15 +1,15 @@
 # description : Simple, fast, extensible JSON encoder/decoder for Python
   # depends : python
 
-url=https://github.com/simplejson/simplejson
+name=python-simplejson
 version=3.17.2
 release=3
 
-source="https://github.com/simplejson/simplejson/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd simplejson-$version
-   cd simplejson-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

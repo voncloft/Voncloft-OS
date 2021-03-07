@@ -1,0 +1,16 @@
+# description : A pure-Python implementation of the HTTP/2 priority tree
+# depends : python
+
+url=https://github.com/python-hyper/priority
+name=python-priority
+version=1.3.0
+release=7
+
+source="https://github.com/python-hyper/priority/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd priority-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

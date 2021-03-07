@@ -1,16 +1,15 @@
 # description : Use the full Github API v3
 # depends : python-deprecated python-pyjwt python-requests
 
-url=https://github.com/PyGithub/PyGithub
 name=python-pygithub
 version=1.54.1
 release=1
 
-source="https://github.com/PyGithub/PyGithub/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd PyGithub-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,8 +1,6 @@
 # description : A statistical program profiler
 # depends : libunwind python python-colorama python-pytz python-requests python-six
 
-_name=vmprof
-_name=vmprof
 name=python-vmprof
 version=0.4.15
 release=3

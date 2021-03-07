@@ -1,0 +1,17 @@
+# description : Compress responses in your Flask app
+# depends : python python-flask
+
+_pyname=Flask-Compress
+url=http://pypi.python.org/pypi/Flask-Compress/
+name=python-flask-compress
+version=1.8.0
+release=1
+
+source="https://pypi.io/packages/source/${_pyname:0:1}/${_pyname}/${_pyname}-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${_pyname}-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

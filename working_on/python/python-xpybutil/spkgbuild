@@ -1,16 +1,15 @@
 # description : An incomplete xcb-util port plus some extras
 # depends : python-xcffib
 
-url=https://github.com/BurntSushi/xpybutil
 name=python-xpybutil
 version=0.0.6
 release=3
 
-source="https://github.com/BurntSushi/xpybutil/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd xpybutil-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

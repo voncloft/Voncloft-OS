@@ -1,0 +1,17 @@
+# description : Flake8 plugin to validate annotations complexity
+# depends : flake8 python-isort python-setuptools python-testfixtures
+
+_name=flake8-isort
+url=https://github.com/gforcada/flake8-isort
+name=python-flake8-isort
+version=4.0.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

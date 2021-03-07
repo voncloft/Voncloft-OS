@@ -1,16 +1,15 @@
 # description : Low-level communication layer for PRAW 4+.
 # depends : python-requests
 
-url=https://github.com/praw-dev/prawcore
 name=python-prawcore
 version=1.5.0
 release=3
 
-source="https://github.com/praw-dev/prawcore/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd prawcore-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

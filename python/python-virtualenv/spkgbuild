@@ -1,6 +1,7 @@
 # description : Virtual Python Environment build()er
   # depends : python-appdirs python-distlib python-filelock python-six
 
+name=python-virtualenv
 version=20.4.2
 release=1
 

@@ -1,16 +1,15 @@
 # description : The definitive testing tool for Python. Born under the banner of Behavior Driven Development.
 # depends : python-coverage python-watchdog python-clint python-setuptools
 
-url=https://nestorsalceda.github.io/mamba
 name=python-mamba
 version=0.11.2
 release=1
 
-source="https://github.com/nestorsalceda/mamba/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd mamba-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

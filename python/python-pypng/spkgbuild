@@ -1,11 +1,7 @@
 # description : Pure Python library for PNG image encoding/decoding
 # depends : python
 
-_name=pypng
-_name=pypng
-_name=pypng
-_name=pypng
-name=python-$_name
+name=python-pypng
 version=0.0.20
 release=3
 

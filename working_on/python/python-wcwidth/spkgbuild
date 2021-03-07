@@ -1,16 +1,15 @@
 # description : Measures number of Terminal column cells of wide-character codes
 # depends : python
 
-_name=wcwidth
-url=https://github.com/jquast/wcwidth
-_name=wcwidth
+name=python-wcwidth
 version=0.2.5
 release=3
 
-source="https://files.pythonhosted.org/packages/source/w/$_name/$_name-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

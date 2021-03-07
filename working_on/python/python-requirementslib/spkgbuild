@@ -1,17 +1,15 @@
 # description : A tool for converting between pip-style and pipfile requirements
 # depends : python-appdirs python-attrs python-cached-property python-distlib
 
-url=https://github.com/sarugaku/requirementslib
 name=python-requirementslib
 version=1.5.16
 release=1
 
-source="https://github.com/sarugaku/requirementslib/archive/$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd requirementslib-$version
-   cd tests/artifacts/git
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

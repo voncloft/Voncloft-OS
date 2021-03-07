@@ -1,8 +1,7 @@
 # description : Python wrapper for Nvidia CUDA
    # depends : cuda nvidia-utils python-numpy python-pytools python boost-libs pycuda-headers
 
-name=python-pycuda pycuda-headers
-                  --boost-python-libname=boost_python3
+name=python-pycuda
 version=2020.1
 release=5
 

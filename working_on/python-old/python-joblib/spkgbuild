@@ -1,0 +1,16 @@
+# description : Set of tools to provide lightweight pipelining in Python
+# depends : python
+
+url=https://joblib.readthedocs.io/
+name=python-joblib
+version=1.0.0
+release=1
+
+source="https://github.com/joblib/joblib/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd joblib-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

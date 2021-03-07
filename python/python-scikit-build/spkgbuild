@@ -1,7 +1,7 @@
 # description : Improved build() system generator for CPython C, C++, Cython and Fortran extensions
 # depends : cmake python-distro python-wheel
 
-name=python-scikit-build()
+name=python-scikit-build
 version=0.11.1
 release=3
 

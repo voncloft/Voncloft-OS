@@ -1,8 +1,7 @@
 # description : Black plugin for the Python Language Server
 # depends : python-black python-language-server python-toml
 
-_pkg=pyls-black
-name=python-${_pkg}
+name=python-pyls-black
 version=0.4.6
 release=1
 

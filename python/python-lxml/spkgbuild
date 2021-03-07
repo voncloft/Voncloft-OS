@@ -3,6 +3,7 @@
   # description : Python binding for the libxml2 and libxslt libraries docs
   # depends : python libxslt
 
+name=python-lxml
 version=4.6.2
 release=1
 

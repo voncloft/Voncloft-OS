@@ -1,16 +1,15 @@
 # description : Distributed object middleware RPC
 # depends : python python-serpent
 
-url=https://github.com/irmen/Pyro4
 name=python-pyro
 version=4.80
 release=3
 
-source="git+$url#commit=56ee8174241c644f452d2a294ade53004c41d570 # tag: 4.80
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd Pyro4
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

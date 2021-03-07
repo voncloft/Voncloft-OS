@@ -1,17 +1,15 @@
 # description : A friendly Python library for async concurrency and I/O
 # depends : 
 
-_tag=069bdd03cafdf3824c81ddf8fddc8c1359bf1ee1
-url=https://github.com/python-trio/trio
 name=python-trio
 version=0.18.0
 release=1
 
-source="git+https://github.com/python-trio/trio.git#tag=${_tag}
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd trio
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

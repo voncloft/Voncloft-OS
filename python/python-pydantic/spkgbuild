@@ -1,11 +1,7 @@
 # description : Data parsing and validation using Python type hints
 # depends : python
 
-_name=pydantic
-_name=pydantic
-_name=pydantic
-_name=pydantic
-name=python-$_name
+name=python-pydantic
 version=1.7.3
 release=1
 

@@ -1,0 +1,19 @@
+# description : Hawk authentication strategy for the requests python library
+# depends : python-mohawk python-requests
+
+_name=requests-hawk
+url=https://github.com/mozilla-services/requests-hawk
+_name=requests-hawk
+name=python-requests-hawk
+version=1.0.1
+release=2
+
+source="https://github.com/mozilla-services/$_name/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $_name-$version
+   cd $_name-$version 
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,17 +1,15 @@
 # description : Python interface for c-ares
 # depends : python-cffi # c-ares is bundled
 
-url=https://github.com/saghul/pycares
 name=python-pycares
 version=3.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/p/pycares/pycares-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pycares-$version
-#   cd pycares-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

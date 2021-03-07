@@ -1,10 +1,6 @@
 # description : Poetry PEP 517 Build Backend & Core Utilities
 # depends : ${_deps[@]/#/python-}
 
-_name=poetry-core
-_name=poetry-core
-_name=poetry-core
-_name=poetry-core
 name=python-poetry-core
 version=1.0.0
 release=2

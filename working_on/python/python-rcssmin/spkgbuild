@@ -1,18 +1,15 @@
 # description : Fast CSS minifier for Python
 # depends : python
 
-_name=rcssmin
-url=https://github.com/ndparker/rcssmin
-_name=rcssmin
 name=python-rcssmin
 version=1.0.6
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

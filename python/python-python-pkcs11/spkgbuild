@@ -1,11 +1,7 @@
 # description : PKCS#11/Cryptoki support for Python
 # depends : python python-asn1crypto python-cached-property
 
-_name=${name#python-}
-_name=${name#python-}
-_name=${name#python-}
 name=python-python-pkcs11
-_name=${name#python-}
 version=0.7.0
 release=3
 

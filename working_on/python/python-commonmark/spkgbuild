@@ -1,0 +1,16 @@
+# description : Python parser for the CommonMark Markdown spec
+# depends : python-docutils python-future
+
+url=https://pypi.org/project/commonmark/
+name=python-commonmark
+version=0.9.1
+release=3
+
+source="https://github.com/readthedocs/commonmark.py/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd commonmark-${version}
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

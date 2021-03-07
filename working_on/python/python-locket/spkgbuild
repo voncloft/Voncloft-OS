@@ -1,17 +1,15 @@
 # description : File-based locks for Python
 # depends : python
 
-_pkg=locket
-url=https://github.com/mwilliamson/locket.py
-name=python-${_pkg}
+name=python-locket
 version=0.2.1
 release=1
 
-source="${url}/archive/${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}.py-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,10 +1,7 @@
 # description : Measures number of Terminal column cells of wide-character codes
 # depends : python
 
-_name=wcwidth
-_name=wcwidth
-_name=wcwidth
-_name=wcwidth
+name=python-wcwidth
 version=0.2.5
 release=3
 

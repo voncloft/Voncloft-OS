@@ -1,11 +1,7 @@
 # description : Small footprint and configurable DRAM core
 # depends : python-migen python-litex python-yaml
 
-_name=litedram
-_name=litedram
-_name=litedram
-_name=litedram
-name=python-$_name
+name=python-litedram
 version=2020.12
 release=1
 

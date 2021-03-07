@@ -1,16 +1,15 @@
 # description : A BibTeX-compatible bibliography processor written in Python
 # depends : python python-setuptools python-six python-yaml python-latexcodec
 
-url=https://pybtex.org
 name=python-pybtex
 version=0.24.0
 release=1
 
-source="https://pypi.io/packages/source/p/pybtex/pybtex-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd pybtex-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

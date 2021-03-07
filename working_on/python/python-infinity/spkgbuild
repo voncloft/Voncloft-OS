@@ -1,18 +1,15 @@
 # description : All-in-one infinity value for Python. Can be compared to any object.
 # depends : python
 
-_name=infinity
-url=https://github.com/kvesteri/infinity
-_name=infinity
-name=python-${_name}
+name=python-infinity
 version=1.5
 release=3
 
-source="https://pypi.python.org/packages/source/i/${_name}/${_name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

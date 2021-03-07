@@ -1,0 +1,16 @@
+# description : CORS support for aiohttp
+# depends : python-aiohttp
+
+name=python-aiohttp-cors
+version=0.7.0
+release=5
+
+source="https://files.pythonhosted.org/packages/source/a/aiohttp-cors/aiohttp-cors-$version.tar.gz"
+options="!checksum"
+
+build() {
+  cd aiohttp-cors-$version
+  export PYTHONHASHSEED=0
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

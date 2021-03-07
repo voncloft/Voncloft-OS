@@ -1,17 +1,15 @@
 # description : Easy to use command-line interface for python modules
 # depends : python-argparse python-decorator
 
-_pkg=entrypoint2
-url=https://github.com/ponty/entrypoint2
-name=python-${_pkg}
+name=python-entrypoint2
 version=0.2
 release=3
 
-source="${url}/archive/${version}/${name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

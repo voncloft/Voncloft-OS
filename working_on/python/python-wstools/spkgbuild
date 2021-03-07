@@ -1,15 +1,15 @@
 # description : WSDL parsing services package for Web Services for Python
   # depends : python-six
 
-url=https://github.com/pycontribs/wstools
+name=python-wstools
 version=0.4.10
 release=3
 
-source="https://github.com/pycontribs/wstools/archive/$version/$pkgbase-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd wstools-$version
-   cd wstools-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

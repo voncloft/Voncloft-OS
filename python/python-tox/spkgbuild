@@ -1,6 +1,7 @@
 # description : Python virtualenv management and testing tool
   # depends : python-py python-virtualenv python-packaging python-pluggy python-toml
 
+name=python-tox
 version=3.21.4
 release=1
 

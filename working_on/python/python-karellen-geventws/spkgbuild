@@ -1,18 +1,15 @@
 # description : Websocket handler for the gevent pywsgi server, a Python network library
 # depends : python-gevent
 
-url=https://github.com/karellen/karellen-geventws
 name=python-karellen-geventws
 version=1.0.2
 release=3
 
-source="git+https://github.com/karellen/karellen-geventws.git#tag=$version
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd karellen-geventws
-   cd karellen-geventws
-   cd target/dist/karellen-geventws-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

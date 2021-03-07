@@ -1,6 +1,7 @@
 # description : A lint-like tool for Python to identify common errors quickly without executing code
   # depends : python-setuptools
 
+name=python-pyflakes
 version=2.2.0
 release=3
 

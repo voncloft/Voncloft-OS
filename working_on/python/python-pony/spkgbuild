@@ -1,18 +1,15 @@
 # description : Pony Object Relational Mapper
 # depends : python
 
-_name=pony
-url=https://github.com/ponyorm/pony
-_name=pony
-name=python-$_name
+name=python-pony
 version=0.7.14
 release=2
 
-source="$url/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

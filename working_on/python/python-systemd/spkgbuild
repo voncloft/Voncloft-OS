@@ -1,16 +1,15 @@
 # description : Python bindings for systemd
   # depends : python3 libsystemd
 
-_commit=308ae4440c1f6ea1aff9be4cb683c52bd3a1c13a  # tags/v234^0
-url=https://github.com/systemd/python-systemd
+name=python-systemd
 version=234
 release=7
 
-source="$pkgbase::git+${url}#commit=$_commit
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-   cd $pkgbase
-   cd python3
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

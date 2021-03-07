@@ -4,16 +4,12 @@
 name=python-gobject2
 version=2.28.7
 release=2
-source="https://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz"
 
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd pygobject-$version
-
-	./configure --prefix=/usr \
-		--disable-introspection \
-		PYTHON=/usr/bin/python
-	make
-	make DESTDIR=$PKG install
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

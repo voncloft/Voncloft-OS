@@ -1,21 +1,15 @@
 # description : Python module containing verilog files for lm32 cpu for use with LiteX
 # depends : python
 
-_name=pythondata-cpu-lm32
-_pyname=${_name//-/_}
-url=https://github.com/litex-hub/$_name
-_name=pythondata-cpu-lm32
-_pyname=${_name//-/_}
-name=python-$_name
+name=python-pythondata-cpu-lm32
 version=2020.08
 release=1
 
-source="$url/archive/$version.tar.gz"
-options=!strip
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

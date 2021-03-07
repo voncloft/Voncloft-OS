@@ -1,7 +1,7 @@
 # description : A pure Python netlink and Linux network configuration library
 # depends : python
 
-name=python-${_pkgbase}
+name=python-pyroute2
 version=0.5.14
 release=2
 

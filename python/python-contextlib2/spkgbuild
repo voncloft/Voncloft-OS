@@ -1,17 +1,15 @@
 # description : Backport of the standard librarys contextlib module to earlier Python versions
 # depends : python
 
-_name=contextlib2
 name=python-contextlib2
-url=https://github.com/jazzband/contextlib2
 version=0.6.0.post1
 release=3
 
-source="$url/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

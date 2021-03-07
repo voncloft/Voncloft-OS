@@ -1,0 +1,16 @@
+# description : Read and write PDFs with Python, powered by qpdf
+# depends : python-lxml python-pillow qpdf
+
+url=https://github.com/pikepdf/pikepdf
+name=python-pikepdf
+version=2.5.2 
+release=1
+
+source="https://pypi.python.org/packages/source/p/pikepdf/pikepdf-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pikepdf-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

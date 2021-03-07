@@ -1,0 +1,15 @@
+# description : library for accessing a PostgreSQL database from the asyncio
+# depends : python python-psycopg2
+
+name=python-aiopg
+version=1.0.0
+release=3
+
+source="https://github.com/aio-libs/aiopg/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+  cd aiopg-$version
+  python setup.py build
+  python setup.py install --root=$PKG --optimize=1 
+}

@@ -1,17 +1,15 @@
 # description : A generic system for filtering Django QuerySets based on user selections
 # depends : python-django
 
-_name=django-filter
-url=https://github.com/carltongibson/django-filter
 name=python-django-filter
 version=2.4.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : Python library that allows using distutils2-like setup.cfg files for a packages metadata with a distribute/setuptools setup.py script
 # depends : python
 
-url=https://pypi.python.org/pypi/d2to1
 name=python-d2to1
 version=0.2.12.post1
 release=9
 
-source="https://files.pythonhosted.org/packages/source/d/d2to1/d2to1-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd d2to1-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

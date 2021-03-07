@@ -1,0 +1,16 @@
+# description : A framework for managing and maintaining multi-language pre-commit hooks
+# depends : python-cfgv python-identify python-nodeenv python-yaml python-toml
+
+url=https://github.com/pre-commit/pre-commit
+name=python-pre-commit
+version=2.10.0
+release=1
+
+source="https://github.com/pre-commit/pre-commit/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd pre-commit-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

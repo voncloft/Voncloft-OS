@@ -1,17 +1,15 @@
 # description : Markdown parser for docutils
 # depends : python-docutils python-commonmark python-setuptools python-sphinx
 
-_gitcommit=48f9d1a6848c77a104854f556c053f3ed3c2c354
-url=https://github.com/readthedocs/recommonmark
 name=python-recommonmark
 version=0.6.0.194.48f9d1a
 release=3
 
-source="${name}::git+https://github.com/readthedocs/recommonmark#commit=$_gitcommit
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${pkgbase}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

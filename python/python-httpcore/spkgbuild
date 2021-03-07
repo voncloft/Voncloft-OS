@@ -1,17 +1,15 @@
 # description : A minimal HTTP client
 # depends : python-h11 python-sniffio
 
-_name=httpcore
-url=https://github.com/encode/${_name}
 name=python-httpcore
 version=0.12.0
 release=3
 
-source="${url}/archive/${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

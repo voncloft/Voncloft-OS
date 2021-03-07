@@ -1,0 +1,16 @@
+# description : A sphinx extension for embedding block diagram using blockdiag
+# depends : python blockdiag python-sphinx
+
+url=https://github.com/blockdiag/sphinxcontrib-blockdiag
+name=python-sphinxcontrib-blockdiag
+version=2.0.0
+release=3
+
+source="https://github.com/blockdiag/sphinxcontrib-blockdiag/archive/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd sphinxcontrib-blockdiag-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

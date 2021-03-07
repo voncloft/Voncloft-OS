@@ -5,14 +5,11 @@ name=python-aiogram
 version=2.11.2
 release=3
 
-source="https://github.com/aiogram/aiogram/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-  cd aiogram-$version
-   sed -e '/import certifi/d' \
-      -e 's|certifi.where()|"/etc/ssl/certs/ca-certificates.crt"|' \
-      -i aiogram/bot/base.py
-  python setup.py build    
-  python setup.py install --root=$PKG --optimize=1 
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

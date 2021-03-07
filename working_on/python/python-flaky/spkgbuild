@@ -1,0 +1,16 @@
+# description : Plugin for nose or py.test that automatically reruns flaky tests
+# depends : python
+
+url=https://github.com/box/flaky
+name=python-flaky
+version=3.7.0
+release=3
+
+source="https://github.com/box/flaky/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd flaky-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

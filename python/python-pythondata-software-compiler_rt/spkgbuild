@@ -1,15 +1,7 @@
 # description : Python module containing data files for compiler_rt software for use with LiteX
 # depends : python
 
-_name=pythondata-software-compiler_rt
-_name=pythondata-software-compiler_rt
-_pyname=${_name//-/_}
-_pyname=${_name//-/_}
-_name=pythondata-software-compiler_rt
-_pyname=${_name//-/_}
-_name=pythondata-software-compiler_rt
-_pyname=${_name//-/_}
-name=python-$_name
+name=python-pythondata-software-compiler_rt
 version=2020.08
 release=1
 

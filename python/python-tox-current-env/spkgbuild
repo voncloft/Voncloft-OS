@@ -1,11 +1,7 @@
 # description : tox plugin to run tests in current Python environment
 # depends : python python-tox
 
-_name=tox-current-env
-_name=tox-current-env
-_name=tox-current-env
-_name=tox-current-env
-name=python-$_name
+name=python-tox-current-env
 version=0.0.5
 release=1
 

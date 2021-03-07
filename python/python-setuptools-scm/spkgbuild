@@ -1,6 +1,7 @@
 # description : Handles managing your python package versions in scm metadata.
   # depends : python-setuptools
 
+name=python-setuptools-scm
 version=5.0.1
 release=1
 
