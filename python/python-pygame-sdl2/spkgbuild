@@ -1,10 +1,8 @@
 # description : Reimplementation of portions of the pygame API using SDL2
-# depends : 
-  depends+=python
+# depends : python 
 
 name=python-pygame-sdl2
 version=2.1.0.r387.2eee9b2
-  version=$cat src/pygame_sdl2/version.py | grep ^vernum =  | sed s/^vernum = //; s///; s///; s/, /./g
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

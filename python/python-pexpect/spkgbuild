@@ -1,5 +1,5 @@
 # description : For controlling and automating applications
-  depends+=python python-ptyprocess
+# depends : python python-ptyprocess
 
 name=python-pexpect
 version=4.8.0
