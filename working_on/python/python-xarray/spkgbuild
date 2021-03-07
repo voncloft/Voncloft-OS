@@ -11,7 +11,7 @@ source="https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+     cd ${_pkg}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

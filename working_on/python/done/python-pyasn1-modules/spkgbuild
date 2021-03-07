@@ -1,10 +1,10 @@
 # description : A collection of ASN.1-based protocols modules
-# depends : python-pyasn1
+  # depends : python-pyasn1
 
 version=0.2.8
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

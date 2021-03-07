@@ -10,7 +10,7 @@ source="https://github.com/holoviz/param/archive/v${version}/${_pkg}-${version}.
 options="!checksum"
 
 build() {
-   cd ${_pkg}-${version}
+     cd ${_pkg}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

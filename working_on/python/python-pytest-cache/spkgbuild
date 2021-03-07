@@ -1,5 +1,5 @@
 # description : pytest plugin with mechanisms for caching across test runs
-# depends : python-pytest python-execnet
+  # depends : python-pytest python-execnet
 
 _name=pytest-cache
 url=https://pypi.org/project/pytest-cache/

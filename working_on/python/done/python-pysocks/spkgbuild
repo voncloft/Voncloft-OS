@@ -1,10 +1,10 @@
 # description : SOCKS4, SOCKS5 or HTTP proxy Anorov fork PySocks replaces socksipy
-# depends : python
+  # depends : python
 
 version=1.7.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

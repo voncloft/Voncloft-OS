@@ -5,7 +5,7 @@ name=python-simplebayes
 version=1.5.7
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

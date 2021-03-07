@@ -466,6 +466,7 @@ d:python-django-classy-tags
 d:python-markupsafe
 d:python-gdspy
 d:python-dnslib
+d:python-redis
 d:python-django-haystack
 d:python-aspectlib
 d:python-flask-mail
@@ -1093,6 +1094,7 @@ f:2963253a6855ca7137bc96b71c701d9e:python-markupsafe/.pkgfiles
 f:4835a8c13693c44acabeff57bb6ddb27:python-markupsafe/spkgbuild
 f:1eafe85bbe0b40901c035e8e4d09127f:python-gdspy/spkgbuild
 f:7d6d91e4e469921c185def44836a53dc:python-dnslib/spkgbuild
+f:ce22798823096cd82b6df692969e85e4:python-redis/spkgbuild
 f:72ea2ab3c600ce3bad3b6729cabff0d0:python-django-haystack/spkgbuild
 f:71cb9c237de6156d8c3ab7b8cae2ba80:python-aspectlib/spkgbuild
 f:08939f367c1e90730ad33905caa9a9ce:python-flask-mail/spkgbuild
@@ -1177,7 +1179,7 @@ f:60a1de86512c943d1afccac7aab9b041:python-dogpile.cache/spkgbuild
 f:b3ab790bd53fb59693f1cde690c38f53:python-asteval/spkgbuild
 f:2d68b79deafb2931b8bcd2cb176a1e6e:python-mysqlclient/spkgbuild
 f:dd28de825de3be578c0c14874e7f981b:python-colour/spkgbuild
-f:0232a2caf9b106100b2ae490b7f70648:python-zopfli/spkgbuild
+f:98a1c6debab2d1e80274f36bbb6d9284:python-zopfli/spkgbuild
 f:774c4a7c227079ecebc732839c83b261:python-betamax-serializers/spkgbuild
 f:c2659162f61b6e0ba512c4033799d135:python-gnupg/spkgbuild
 f:e61d7060c20faded0a4a0bba5869c5d6:python-urllib3/.checksums

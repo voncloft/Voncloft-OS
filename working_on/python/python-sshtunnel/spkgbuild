@@ -1,6 +1,6 @@
 # description : Pure python SSH tunnels
-# depends : python python-sshtunnel python-setuptools
-# depends : python python-paramiko
+  # depends : python python-sshtunnel python-setuptools
+  # depends : python python-paramiko
 
 _name=sshtunnel
 _gitcommit=4461abe9037ce0b86cd6aaaaeeebe27a97ce58ca

@@ -1,10 +1,10 @@
 # description : Provides enhanced HTTPS support for httplib and urllib2 using PyOpenSSL
-# depends : python-pyopenssl python-pyasn1
+  # depends : python-pyopenssl python-pyasn1
 
 version=0.5.1
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

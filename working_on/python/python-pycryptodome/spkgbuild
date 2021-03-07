@@ -1,6 +1,6 @@
-# description : Collection of cryptographic algorithms and protocols, implemented for use from Python 3.
-# description : Collection of cryptographic algorithms and protocols, implemented for use from Python 2.
-# depends : python gmp
+  # description : Collection of cryptographic algorithms and protocols, implemented for use from Python 3.
+  # description : Collection of cryptographic algorithms and protocols, implemented for use from Python 2.
+  # depends : python gmp
 
 url=https://www.pycryptodome.org/
 version=3.9.9

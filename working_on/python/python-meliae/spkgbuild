@@ -1,5 +1,5 @@
 # description : Python Memory Usage Analyzer
-# depends : python
+  # depends : python
 
 _name=${pkgbase#python-}
 url=https://github.com/isaacl/meliae

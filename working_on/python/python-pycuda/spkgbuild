@@ -1,5 +1,5 @@
 # description : Python wrapper for Nvidia CUDA
- # depends : cuda nvidia-utils python-numpy python-pytools python boost-libs pycuda-headers
+   # depends : cuda nvidia-utils python-numpy python-pytools python boost-libs pycuda-headers
 
 url=https://mathema.tician.de/software/pycuda
 name=python-pycuda pycuda-headers

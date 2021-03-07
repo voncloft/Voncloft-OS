@@ -7,6 +7,7 @@ version=5.0.4
 release=1
 
 source="https://github.com/miguelgrinberg/python-socketio/archive/v${version}/${name}-${version}.tar.gz"
+options=!makeflags
 options="!checksum"
 
 build() {

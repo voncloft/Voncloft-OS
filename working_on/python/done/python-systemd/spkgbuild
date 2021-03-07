@@ -1,10 +1,10 @@
 # description : Python bindings for systemd
-# depends : python3 libsystemd
+  # depends : python3 libsystemd
 
 version=234
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

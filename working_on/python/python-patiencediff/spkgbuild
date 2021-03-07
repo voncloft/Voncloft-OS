@@ -1,0 +1,17 @@
+# description : Patiencediff Python and C implementations
+# depends : python
+
+_tag=1d2e7e8dd572115f59cb6ca2b791bc53ee53ece7
+url=https://www.breezy-vcs.org/
+name=python-patiencediff
+version=0.2.1
+release=3
+
+source="git+https://github.com/breezy-team/patiencediff.git#tag=${_tag}
+options="!checksum"
+
+build() {
+   cd patiencediff
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

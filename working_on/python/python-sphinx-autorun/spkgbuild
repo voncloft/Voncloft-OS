@@ -13,7 +13,7 @@ source="git+https://github.com/WhyNotHugo/sphinx-autorun#commit=${_commit}
 options="!checksum"
 
 build() {
-   cd ${_name}
+     cd ${_name}
    cd ${_name}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

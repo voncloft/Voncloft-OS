@@ -9,6 +9,7 @@ version=4.4.12
 release=3
 
 source="https://github.com/etingof/pysnmp/archive/v${version}/${_pyname}-v${version}.tar.gz"
+options=!makeflags
 options="!checksum"
 
 build() {

@@ -1,5 +1,5 @@
 # description : The PyPA recommended tool for installing Python packages
-# depends : ${_deps[@]/#/python-}
+  # depends : ${_deps[@]/#/python-}
 
 url=https://pip.pypa.io/
 version=20.3.1

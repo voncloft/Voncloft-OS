@@ -9,6 +9,7 @@ version=3.0.14
 release=1
 
 source="https://files.pythonhosted.org/packages/source/p/$_name/$_name-$version.tar.gz"
+options=!emptydirs
 options="!checksum"
 
 build() {

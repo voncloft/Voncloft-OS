@@ -1,5 +1,5 @@
 # description : Invoke py.test as distutils command with dependency resolution
-# depends : python-pytest
+  # depends : python-pytest
 
 url=https://github.com/pytest-dev/pytest-runner
 version=5.2

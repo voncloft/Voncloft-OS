@@ -1,5 +1,5 @@
 # description : Library to raise asynchronous exceptions in other thread, control the timeout of blocks or callables
-# depends : python
+  # depends : python
 
 _pyname=stopit
 name=python-stopit
@@ -7,7 +7,7 @@ _pyname=stopit
 version=1.1.2
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

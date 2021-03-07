@@ -7,6 +7,7 @@ version=5.0.2
 release=3
 
 source="https://github.com/celery/kombu/archive/v$version.tar.gz"
+options=!emptydirs
 options="!checksum"
 
 build() {

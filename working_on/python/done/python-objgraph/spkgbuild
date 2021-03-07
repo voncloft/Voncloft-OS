@@ -1,10 +1,10 @@
 # description : Draws Python object reference graphs with graphviz
-# depends : python
+  # depends : python
 
 version=3.5.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

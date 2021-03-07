@@ -9,6 +9,7 @@ version=2.5
 release=3
 
 source="https://files.pythonhosted.org/packages/source/t/${_pyname}/"
+options=!emptydirs
 options="!checksum"
 
 build() {

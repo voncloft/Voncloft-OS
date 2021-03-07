@@ -1,5 +1,5 @@
 # description : Zope testing frameworks
-# depends : python
+  # depends : python
 
 _name=${pkgbase#python-}
 url=https://github.com/zopefoundation/$_name

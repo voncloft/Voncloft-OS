@@ -10,7 +10,7 @@ source="https://pypi.io/packages/source/s/speaklater/speaklater-${version}.tar.g
 options="!checksum"
 
 build() {
-   cd speaklater-$version
+     cd speaklater-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

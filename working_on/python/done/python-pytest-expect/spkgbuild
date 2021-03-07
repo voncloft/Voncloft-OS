@@ -1,10 +1,10 @@
 # description : py.test plugin to store test expectations and mark tests based on them
-# depends : python-pytest python-u-msgpack
+  # depends : python-pytest python-u-msgpack
 
 version=1.1.0
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

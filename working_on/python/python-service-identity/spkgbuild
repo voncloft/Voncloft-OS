@@ -1,15 +1,14 @@
 # description : Service identity verification for pyOpenSSL
-# depends : python-pyopenssl python-pyasn1 python-pyasn1-modules python-attrs
+  # depends : python-pyopenssl python-pyasn1 python-pyasn1-modules python-attrs
 
 url=https://pypi.python.org/pypi/service_identity
-name=python-service-identity
 version=18.1.0
 release=6
 
 source="https://github.com/pyca/service-identity/archive/$version.tar.gz"
-options="!checksum"
 
 build() {
+   cd service-identity-$version
    cd service-identity-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG

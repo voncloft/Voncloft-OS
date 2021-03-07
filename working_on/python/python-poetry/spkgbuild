@@ -12,7 +12,7 @@ source="https://github.com/sdispater/${_name}/archive/${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+     cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,6 +1,6 @@
 # description : A complete, object-oriented language binding of OpenCL to Python
 # depends : opencl-icd-loader opencl-headers mesa boost-libs
-  # checkdepends+=amdgpu
+    # checkdepends+=amdgpu
     depends+=python python-numpy python-mako python-pytools pyopencl-headers python-setuptools python-cffi
 
 _pypiname=pyopencl
@@ -15,8 +15,8 @@ release=2
 source="git+https://github.com/inducer/pyopencl.git?signed#tag=v${version}
 
 build() {
-   cd pyopencl
-   cd pyopencl
+     cd pyopencl
+     cd pyopencl
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,5 +1,5 @@
-# description : JavaScript unobfuscator and beautifier
-# description : CSS unobfuscator and beautifier
+  # description : JavaScript unobfuscator and beautifier
+  # description : CSS unobfuscator and beautifier
 # depends : python-editorconfig python-six
   depends+=python-jsbeautifier
 
@@ -7,7 +7,7 @@ name=python-jsbeautifier python-cssbeautifier
 version=1.13.6
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

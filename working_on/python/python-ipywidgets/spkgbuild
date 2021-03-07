@@ -10,9 +10,9 @@ source="https://github.com/ipython/ipywidgets/archive/$version.tar.gz"
 options="!checksum"
 
 build() {
-# cd ..
+  # cd ..
    cd ipywidgets-$version
-# cd widgetsnbextension
+  # cd widgetsnbextension
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

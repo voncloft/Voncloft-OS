@@ -1,8 +1,8 @@
 # description : Python driver library for the RethinkDB database server.
-  # description : Python2 driver library for the RethinkDB database server.
-  # description : RethinkDB database utilities.
-  # depends : python
-  # depends : python-rethinkdb rethinkdb
+    # description : Python2 driver library for the RethinkDB database server.
+    # description : RethinkDB database utilities.
+    # depends : python
+    # depends : python-rethinkdb rethinkdb
 
 _name=rethinkdb
 _tag=rethinkdb-$version
@@ -12,10 +12,11 @@ version=2.3.6
 release=2
 
 source="https://download.rethinkdb.com/dist/$_tag..gz"
+options=!emptydirs
 
 build() {
-   cd ${_name}-${version}/drivers/python
-   cd $_tag
+     cd ${_name}-${version}/drivers/python
+     cd $_tag
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

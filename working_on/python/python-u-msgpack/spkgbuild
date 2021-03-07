@@ -1,6 +1,6 @@
-  # description : portable, lightweight MessagePack serializer and deserializer for Python
-  # description : portable, lightweight MessagePack serializer and deserializer for Python2
-  # depends : python
+    # description : portable, lightweight MessagePack serializer and deserializer for Python
+    # description : portable, lightweight MessagePack serializer and deserializer for Python2
+    # depends : python
 
 _name=u-msgpack-python
 url=https://github.com/vsergeev/${_name}
@@ -11,7 +11,7 @@ release=1
 source="https://files.pythonhosted.org/packages/source/${_name:0:1}/${_name}/${_name}-${version}.tar.gz"
 
 build() {
-   cd ${_name}-${version}
+     cd ${_name}-${version}
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

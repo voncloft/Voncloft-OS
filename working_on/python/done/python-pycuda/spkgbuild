@@ -1,12 +1,12 @@
 # description : Python wrapper for Nvidia CUDA
- # depends : cuda nvidia-utils python-numpy python-pytools python boost-libs pycuda-headers
+   # depends : cuda nvidia-utils python-numpy python-pytools python boost-libs pycuda-headers
 
 name=python-pycuda pycuda-headers
                   --boost-python-libname=boost_python3
 version=2020.1
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

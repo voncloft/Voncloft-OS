@@ -1,5 +1,5 @@
 # description : Handles managing your python package versions in scm metadata.
-# depends : python-setuptools
+  # depends : python-setuptools
 
 url=https://github.com/pypa/setuptools_scm
 version=5.0.1

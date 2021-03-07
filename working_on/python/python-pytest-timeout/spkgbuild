@@ -1,5 +1,5 @@
 # description : py.test plugin to abort hanging tests
-# depends : python-pytest
+  # depends : python-pytest
 
 url=https://bitbucket.org/pytest-dev/pytest-timeout
 version=1.4.2

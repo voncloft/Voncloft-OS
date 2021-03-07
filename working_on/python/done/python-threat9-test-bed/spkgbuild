@@ -7,7 +7,7 @@ _pyname=threat9-test-bed
 version=0.6.0+2+g1ed61b3
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

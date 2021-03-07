@@ -10,7 +10,7 @@ source="https://pypi.io/packages/source/p/pygame/pygame-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd pygame-$version
+     cd pygame-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

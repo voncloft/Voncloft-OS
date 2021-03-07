@@ -1,10 +1,10 @@
 # description : The PyPA recommended tool for installing Python packages
-# depends : ${_deps[@]/#/python-}
+  # depends : ${_deps[@]/#/python-}
 
 version=20.3.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

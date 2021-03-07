@@ -1,11 +1,11 @@
 # description : The ipython kernel for Jupyter
-# depends : python-traitlets python-tornado ipython python-jupyter_client
+  # depends : python-traitlets python-tornado ipython python-jupyter_client
 
 name=python-ipykernel
 version=5.4.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {

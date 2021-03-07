@@ -1,10 +1,10 @@
 # description : Virtual Python Environment build()er
-# depends : python-appdirs python-distlib python-filelock python-six
+  # depends : python-appdirs python-distlib python-filelock python-six
 
 version=20.4.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name::1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
