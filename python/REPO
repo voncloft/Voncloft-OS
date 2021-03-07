@@ -1533,7 +1533,7 @@ f:98895a7e7f8d7e30af2822a26b11d7c1:python-patiencediff/spkgbuild
 f:67868ecf0e0133d14af0f1ce0df5a23b:python-mpmath/spkgbuild
 f:c8ebdf65df24cf648931d4e7d378016e:python-jsonlines/spkgbuild
 f:91a4f3ce557a3368d43231cf885bc220:python-keystoneclient/spkgbuild
-f:d985abf6c1cfb1949cee11a38bd1a24d:python-pytzdata/spkgbuild
+f:981221bcca91af11817eb94909e0254e:python-pytzdata/spkgbuild
 f:92cc751867419898e53ad2a9667a3199:python-beautifulsoup4/spkgbuild
 f:0540009e284a4296308f4009dfabc142:python-genty/spkgbuild
 f:fb6661060f25c6557484c15295b28085:python-pyfakefs/spkgbuild
@@ -1568,7 +1568,7 @@ f:da1a330f11205dca4f2a6f64755ea6ab:python-networkx/spkgbuild
 f:1b97db91dacdad9836f26790c7014406:python-oauth2client/spkgbuild
 f:474c93348335b913b041828d2e18e6b4:python-gevent-websocket/spkgbuild
 f:ef3adce559f46f0b784384e1e1a9a2d5:python-jsonschema-objects/spkgbuild
-f:ae8b7cc135a8f3e3012c8b1d426f61ef:python-netcdf4-openmpi/spkgbuild
+f:ef037d487e042437deb539e17fddb96a:python-netcdf4-openmpi/spkgbuild
 f:dfd7e4b2885e08c87a31f78d0fc8a50a:python-sphinxcontrib-autoprogram/spkgbuild
 f:95f6f2cfcad910aba7aec567e35c12e1:python-cx-freeze/spkgbuild
 f:a39d472d27e660c5eda93ccc5e3e85d4:python-recommonmark/spkgbuild
@@ -1579,7 +1579,7 @@ f:49be5e17e5212a412f3f53ea09330e5e:python-sphinx-testing/spkgbuild
 f:b847773308747c930960ad5adfdc89d8:python-sphinxcontrib-serializinghtml/spkgbuild
 f:802a13ace6872dc9d5ab359d6fdddaf1:python-simplesoapy/spkgbuild
 f:b271b4f901ecf4109b03ec1dc3240d54:python-cairosvg/spkgbuild
-f:cafb49fd63383ebe6b4b40a6fdd359f2:python-reedsolo/spkgbuild
+f:47276ec381bb1002176336d916427d79:python-reedsolo/spkgbuild
 f:1c03c3db7daf475c47b97ae7fd173d8e:python-idna/spkgbuild
 f:e0d3c4235c86da7778b13ae642129b11:python-marshmallow/spkgbuild
 f:b6088c8513f4af7c912b5fa5fa14ef43:python-et-xmlfile/spkgbuild
@@ -1981,7 +1981,7 @@ f:86e4575554f67ee1643a100ded31129c:python-mpi4py/spkgbuild
 f:a06a0e0eadf7baeea01cfd3f00681af4:python-milc/spkgbuild
 f:19d1419c9d0d414d0ee000803670613b:python-pydle/spkgbuild
 f:69b27a9a105ee0eb3a5e4756fa5533ec:python-starlette/spkgbuild
-f:9160aa3a9f9fb272f7403f31a8f19ef0:python-pytest-html/spkgbuild
+f:41574d452e1b6c869bfc3d91a7ab01e3:python-pytest-html/spkgbuild
 f:212907b7de6af90946a0067096cfaf62:python-pytest-plugins/spkgbuild
 f:97b436c87ab2fd5d5e2502c3d04ec521:python-reportlab/spkgbuild
 f:57532f07aa52f16be4539e54a50245d7:python-positional/spkgbuild
@@ -2145,7 +2145,7 @@ f:e967263ee17b205a1b00d3b47537c479:python-urlobject/spkgbuild
 f:e5f42b4bc89c99eca42cb70cc77b12d7:python-podcastparser/spkgbuild
 f:20ceb8d6bcb1b5b1b79452be67ba9abc:python-pyqtgraph/spkgbuild
 f:5dc28870554b1e8692a3ed2a2fa8e40d:python-sqlalchemy-migrate/spkgbuild
-f:8fbaede2ba6328c22b96e5828133ac40:python-pytest-tap/spkgbuild
+f:f0e8fdf47faffa0c9a001fd7c160a9f3:python-pytest-tap/spkgbuild
 f:1d26f42dc307c3df2521461df7141121:python-tinycss/spkgbuild
 f:2df0140218dde3e4fc8bf31eebfe4f1e:python-argcomplete/spkgbuild
 f:7bffd087d638803d550c2aea017b5390:python-ioflo/spkgbuild
@@ -2178,7 +2178,7 @@ f:52fa80a1adb6dd8ca1fe89415ecd62e2:python-pytest-benchmark/spkgbuild
 f:c6cc3f72e92a4790468731a16badf119:python-html5-parser/spkgbuild
 f:8c81a3929945120ed7486378b58012a2:python-w3lib/spkgbuild
 f:0533f6ca0d5ceb6c556071d0845c9181:python-scipy/spkgbuild
-f:c51e19beef1a65ffb7ccb4749563c322:python-pyxdameraulevenshtein/spkgbuild
+f:a57981dbb8fa7d532bf5b80fc83bf25d:python-pyxdameraulevenshtein/spkgbuild
 f:4469027e2cbcb2ec4d4d226cc7ccb3d4:python-signedjson/spkgbuild
 f:36bb755eb6d72f83cf85012cb0d97052:python-tzlocal/spkgbuild
 f:6ec93ba9121ff42d8980575c369ffec7:python-ifaddr/spkgbuild
@@ -2217,7 +2217,7 @@ f:6ff21bfe7fd6e2349e2dc940ed8a4c06:python-pytest-metadata/spkgbuild
 f:4f919e93c2085921e60a747fd5bfd242:python-axolotl-curve25519/spkgbuild
 f:6aca572754b74924ca0d351da053d347:python-ujson/spkgbuild
 f:cf9b9e32fdb9cd14fd985d2f3d068532:python-objgraph/spkgbuild
-f:a2433f8390fd27e2bacc1ce99ec487ed:python-orjson/spkgbuild
+f:e3a9d2e68b35dd25724c5d7bd5b489dc:python-orjson/spkgbuild
 f:8eb6d0205681ebb948ab7acb74291965:python-qiniu/spkgbuild
 f:9dca4e42318f3d0c3e86709f93348328:python-ukpostcodeparser/spkgbuild
 f:1455b342fc6180e8fee515c0855e6aa8:python-pdfrw/spkgbuild
@@ -2255,7 +2255,7 @@ f:648e950b820d7d9194a4752066e24d1b:python-dkim/spkgbuild
 f:c5601b5e7d5bba6c7b9a020e6f63114e:python-xxhash/spkgbuild
 f:2ac0dc859c4477d3244f9c16d498c234:python-pbkdf2/spkgbuild
 f:442d95a79ae9a2188b3caa00d602fb7d:python-kitchen/spkgbuild
-f:bd1a42f661b0d5c77897c42ac32ad695:python-netcdf4/spkgbuild
+f:be80b7bc8071ef74d2b319210ee8eb71:python-netcdf4/spkgbuild
 f:46d3a9f371025ef0a8fbb6bc57582df7:python-requests-credssp/spkgbuild
 f:f7cdce9265e020e5204344ee1b523cad:python-xmltodict/spkgbuild
 f:5fbc304bd0019d187dad946b448c5446:python-entrypoints/spkgbuild
@@ -2427,7 +2427,7 @@ f:3a14886555c61fed5b6b5f4c667d748c:python-sphinxcontrib-bibtex/spkgbuild
 f:847d3ba4d203bb473a50f47b22716b6b:python-openmdao/spkgbuild
 f:4bd63f1ed09ff76eabd752793b9d7ed1:python-pysol_cards/spkgbuild
 f:8a927d7f33e201718dfacd425eb66d70:python-profilestats/spkgbuild
-f:f2665cce21809feb109832334bda9a11:python-py_stringmatching/spkgbuild
+f:4324a9a8e31eba7bf972cd1cb53f55a9:python-py_stringmatching/spkgbuild
 f:9fc4176410972cc869da42d07953529c:python-ansicolor/spkgbuild
 f:b33646bddfad32a0ed71975329c3da98:python-pytest-twisted/spkgbuild
 f:91501060aedbb625b14c17490406d36c:python-prawcore/spkgbuild
@@ -2487,7 +2487,7 @@ f:cfbff5ffabf74bbcffbc7e76c5daacf9:python-pygame-sdl2/spkgbuild
 f:ee0b6e18bc0a955251071e3b549824e1:python-crc8/spkgbuild
 f:0a5bb96294f2171f57f9cd90a8ef50e8:python-compiler/spkgbuild
 f:7a91b1ce1c8f98a4e8a7bdd831e1c3db:python-pep517/spkgbuild
-f:e9f0a6a8434eef32f6b9117a39589319:python-rjsmin/spkgbuild
+f:2555e2850fb99128f7d4b2db4fff9e76:python-rjsmin/spkgbuild
 f:22ae51729e98a3223c07ae4cbedf0b78:python-termcolor/spkgbuild
 f:565a4d045d762bb84087e607e8a682bc:python-mocket/spkgbuild
 f:70478427d7c54a8bb9a79d5a2cb0ee19:python-flufl.i18n/spkgbuild
@@ -2608,7 +2608,7 @@ f:783151863a7ec97608c57bca34798972:python-inet_diag/spkgbuild
 f:889122a8e2ee74d0a553cd324404d135:python-speaklater/spkgbuild
 f:39f19cc2b9addf9f77e6082c3735f50f:python-babel/spkgbuild
 f:c98b35fca3c718247f43bc612dd9c051:python-argh/spkgbuild
-f:886c19116ac72315c99a5e2be74608ee:python-pyasn1/spkgbuild
+f:d13eeec2b2001546a4157d047d0ce186:python-pyasn1/spkgbuild
 f:b69558543d44122a87795189efee7e93:python-wsgiproxy2/spkgbuild
 f:b580b6b032e96caa37b9de00d20591d2:python-hypothesis/spkgbuild
 f:c2dc7ff37d1bda6c438d73357a4b509f:python-flask-dance/spkgbuild
@@ -2723,7 +2723,7 @@ f:b3c8aecaa4f486081c1cd78bd3d0db4e:python-blist/spkgbuild
 f:9d227f654ff886e162100de9b41120aa:python-diff-cover/spkgbuild
 f:9c039fac4630fdcbfc1b98994ea35b6d:python-traitlets/spkgbuild
 f:631ba485d2bdc139844f9ce2e00c67ba:python-keystoneauth1/spkgbuild
-f:f7f90d8ae536ce04904691949bf6ec52:python-pytables/spkgbuild
+f:54d8092b5ccecb1c9e1137f902ecd858:python-pytables/spkgbuild
 f:531e98cb2e61f792f84f6500d5272ccb:python-pyproj/spkgbuild
 f:84d0b7f41cb948a40d28a4ccb1d68dae:python-translationstring/spkgbuild
 f:09ce3ea264ac27ed1f2f8f2bff597401:python-sphinx-alabaster-theme/spkgbuild
@@ -2758,7 +2758,7 @@ f:9ed541831cdb11170efb5065639f93bf:python-feedparser/spkgbuild
 f:ae83e4790944c55c31511cdad16af768:python-urwidtrees/spkgbuild
 f:802cf3140e10d17b80c77428e6a2cdbf:python-langdetect/spkgbuild
 f:343a7d93e6f2408d0263830f6b069e4a:python-flufl-lock/spkgbuild
-f:3e10b350ad52105aa0a9f4b70ecb73b0:python-pytest-helpers-namespace/spkgbuild
+f:a0855c18045428692b8c592c4559d544:python-pytest-helpers-namespace/spkgbuild
 f:527e0c2c93b5a4afeb66b1d75ac5fba7:python-furl/spkgbuild
 f:91435f7c7af95dd16761da31b8a787f1:python-gphoto2/spkgbuild
 f:57a62860cd4ae70085f32a7d6534c476:python-mailmanclient/spkgbuild
