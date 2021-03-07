@@ -1,7 +1,7 @@
 # description : Python binding to the Networking and Cryptography NaCl library
 # depends : libsodium python python-six python-cffi
 
-name=python-pynacl
+name=python-PyNaCl
 version=1.4.0
 release=3
 
