@@ -1,6 +1,7 @@
 # description : A re-implementation of the asyncio mainloop on top of Trio
 # depends : 
 
+_tag=970d81c498f857d052738a2c4db2c899910dc038
 name=python-trio-asyncio
 version=0.12.0
 release=1

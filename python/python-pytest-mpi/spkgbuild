@@ -1,6 +1,7 @@
 # description : pytest plugin for working with MPI
 # depends : python-pytest
 
+_pkg=pytest-mpi
 name=python-${_pkg}
 version=0.4
 release=3

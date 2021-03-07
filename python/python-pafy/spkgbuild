@@ -1,12 +1,15 @@
-# description	: Python API for YouTube
-# depends	: python youtube-dl python-setuptools
+# description : Python API for YouTube
+# depends : python youtube-dl
 
 name=python-pafy
 version=0.5.5
-release=1
-source="https://github.com/mps-youtube/pafy/archive/v$version/pafy-$version.tar.gz"
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-	cd pafy-$version
-	python setup.py install --root="$PKG" --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

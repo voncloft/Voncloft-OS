@@ -1,6 +1,8 @@
 # description : Python bindings to the Zstandard zstd compression library
 # depends : python
 
+_name=zstandard
+_name=zstandard
 name=python-zstandard
 version=0.15.1
 release=1

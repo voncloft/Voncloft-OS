@@ -1,6 +1,7 @@
 # description : Fast javascript parser based on esprima.js
 # depends : python
 
+_commit=5465d037b30e334cb0997f2315ec1e451b8ad4c1
 name=python-pyjsparser
 version=2.7.1
 release=7

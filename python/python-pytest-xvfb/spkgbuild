@@ -1,6 +1,7 @@
 # description : pytest plugin to run Xvfb for tests
 # depends : python-pytest python-pyvirtualdisplay xorg-server-xvfb
 
+_pkg=pytest-xvfb
 name=python-${_pkg}
 version=2.0.0
 release=3

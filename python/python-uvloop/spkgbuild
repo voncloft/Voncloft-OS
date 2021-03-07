@@ -1,6 +1,11 @@
 # description : Ultra fast asyncio event loop
 # depends : python libuv
 
+_name=uvloop
+_name=uvloop
+_name=uvloop
+_name=uvloop
+name=python-$_name
 version=0.14.0
 release=3
 

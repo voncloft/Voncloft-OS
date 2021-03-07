@@ -1,16 +1,16 @@
-# description	: Python Imaging Library (PIL) fork
-# depends	: python lcms2 libtiff libxcb python-setuptools freetype2 openjpeg2 libimagequant
+# description : Python Imaging Library PIL fork.
+# depends : python lcms2 libtiff openjpeg2 libimagequant libxcb
 
 name=python-pillow
-version=7.2.0
+_appname=Pillow
+version=8.1.0
 release=1
-source="https://files.pythonhosted.org/packages/source/P/Pillow/Pillow-$version.tar.gz"
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-	cd Pillow-$version
-	python setup.py build
-	python setup.py install --root="$PKG" --optimize=1
-
-	install -dm755 "$PKG/usr/include/python.7m/"
-	install -m644 -t "$PKG/usr/include/python.7m/" src/libImaging/*.h
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

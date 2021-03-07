@@ -2,6 +2,8 @@
 # depends : python-pytest python-tappy
 
 _pyname=${name#python-}
+_pyname=${name#python-}
+_pyname=${name#python-}
 name=python-pytest-tap
 _pyname=${name#python-}
 version=3.2

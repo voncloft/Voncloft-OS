@@ -1,16 +1,15 @@
-# description : context manager to set the current process name 
+# description : Allows a python process to change its process title
 # depends : python
 
 name=python-setproctitle
-version=0.1.5
+version=1.2.2
 release=1
 
-source="https://pypi.io/packages/source/s/setproctitle/setproctitle-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
-build()
-{
-	cd setproctitle-$version
- 	python setup.py build
-        python setup.py install --root=$PKG --optimize=1
-}
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

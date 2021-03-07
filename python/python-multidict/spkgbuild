@@ -1,6 +1,11 @@
 # description : Asyncio-based multidict implementation for Python
 # depends : python glibc
 
+_name=multidict
+_name=multidict
+_name=multidict
+_name=multidict
+name=python-${_name}
 version=5.1.0
 release=1
 

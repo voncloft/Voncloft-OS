@@ -1,6 +1,11 @@
 # description : A simple, correct PEP427 wheel installer
 # depends : python
 
+_name=install
+_name=install
+_name=install
+_name=install
+name=python-$_name
 version=0.0.3
 release=1
 

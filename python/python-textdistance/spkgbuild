@@ -1,6 +1,7 @@
 # description : Compute distance between sequences
 # depends : 
 
+_pkg=textdistance
 name=python-${_pkg}
 version=4.2.0
 release=1

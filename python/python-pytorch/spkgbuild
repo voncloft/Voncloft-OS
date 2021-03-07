@@ -6,7 +6,11 @@
   depends+=cuda cudnn magma
   depends+=cuda cudnn magma
 
+_name=pytorch
+_name=pytorch
+_name=pytorch
 name=python-pytorch python-pytorch-opt python-pytorch-cuda python-pytorch-opt-cuda
+_name=pytorch
 version=1.7.1
 _version=1.7.1
 release=4

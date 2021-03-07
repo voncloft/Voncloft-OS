@@ -1,6 +1,11 @@
 # description : Python ctype-based wrapper around libusb1
 # depends : python libusb
 
+_name=libusb1
+_name=libusb1
+_name=libusb1
+_name=libusb1
+name=python-$_name
 version=1.9.1
 release=1
 

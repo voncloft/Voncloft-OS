@@ -1,6 +1,10 @@
 # description : Enumerates all IP addresses on all network adapters of the system
 # depends : python
 
+_name=ifaddr
+_name=ifaddr
+_name=ifaddr
+_name=ifaddr
 name=python-ifaddr
 version=0.1.7
 release=3

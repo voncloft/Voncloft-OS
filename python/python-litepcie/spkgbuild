@@ -1,6 +1,11 @@
 # description : Small footprint and configurable PCIe core
 # depends : python-migen python-litex python-yaml
 
+_name=litepcie
+_name=litepcie
+_name=litepcie
+_name=litepcie
+name=python-$_name
 version=2020.12
 release=1
 

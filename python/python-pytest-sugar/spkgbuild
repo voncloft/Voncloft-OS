@@ -1,6 +1,7 @@
 # description : A plugin for py.test that changes the default look and feel of py.test
 # depends : python-pytest python-termcolor
 
+_commit=92ae9dee9f76af01a64d29de5ab07ef33fc5a15b
 name=python-pytest-sugar
 version=0.9.4
 release=3

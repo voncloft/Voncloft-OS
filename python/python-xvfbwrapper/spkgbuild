@@ -1,6 +1,10 @@
 # description : Manage headless displays with Xvfb X virtual framebuffer
 # depends : python xorg-server-xvfb
 
+_name=xvfbwrapper
+_name=xvfbwrapper
+_name=xvfbwrapper
+_name=xvfbwrapper
 name=python-xvfbwrapper
 version=0.2.9
 release=6

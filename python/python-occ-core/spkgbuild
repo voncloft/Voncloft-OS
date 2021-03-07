@@ -1,6 +1,10 @@
 # description : Python package for 3D CAD/BIM/PLM/CAM
 # depends : python opencascade libxmu libxi
 
+_name=pythonocc-core
+_commit=fcf4e6ecf8518bbfb5fb7e4c55f9e79bd319eaa7
+_name=pythonocc-core
+name=python-${_name#python}
 version=7.4.1.r16.gfcf4e6ec
 release=2
 

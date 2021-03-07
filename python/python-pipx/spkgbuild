@@ -1,6 +1,11 @@
 # description : Install and Run Python Applications in Isolated Environments
 # depends : python python-userpath python-argcomplete
 
+_name=pipx
+_name=pipx
+_name=pipx
+_name=pipx
+name=python-$_name
 version=0.16.0.0
 release=1
 

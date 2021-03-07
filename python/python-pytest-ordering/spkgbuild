@@ -1,6 +1,7 @@
 # description : pytest plugin to run your tests in a specific order
 # depends : python-pytest
 
+_pkg=pytest-ordering
 name=python-${_pkg}
 version=0.6
 release=3

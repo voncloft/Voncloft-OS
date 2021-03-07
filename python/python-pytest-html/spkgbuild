@@ -1,6 +1,10 @@
 # description : Plugin for generating HTML reports for pytest results
 # depends : python-pytest python-pytest-metadata
 
+_name=pytest-html
+_name=pytest-html
+_name=pytest-html
+_name=pytest-html
 name=python-pytest-html
 version=3.1.1
   local _python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]

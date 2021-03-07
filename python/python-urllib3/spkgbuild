@@ -1,13 +1,15 @@
-# description	: HTTP library with thread-safe connection pooling and file post support
-# depends	: python-setuptools
+# description : HTTP library with thread-safe connection pooling and file post support
+  # description : urllib3 Documentation
+  # depends : python
 
-name=python-urllib3
 version=1.26.3
 release=1
-source="https://files.pythonhosted.org/packages/source/u/${name#*-}/${name#*-}-$version.tar.gz"
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
+
 build() {
-	cd ${name#*-}-$version
-	python setup.py build
-	python setup.py install --prefix=/usr --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

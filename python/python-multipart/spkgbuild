@@ -1,6 +1,11 @@
 # description : Parser for multipart/form-data
 # depends : python
 
+_name=multipart
+_name=multipart
+_name=multipart
+_name=multipart
+name=python-$_name
 version=0.2.3
 release=1
 

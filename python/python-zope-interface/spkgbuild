@@ -1,16 +1,15 @@
-# description : zope interface 
-# depends : python
+  # description : Zope Interfaces for Python 3.x
+  # description : Zope Interfaces for Python 2.x
+  # depends : python
 
-name=python-zope
 version=5.2.0
-release=1
+release=3
 
-source="https://pypi.io/packages/source/z/zope.interface/zope.interface-$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
-build()
-{
-	cd zope.interface-$version
- 	python setup.py build
-        python setup.py install --root=$PKG --optimize=1
-}
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

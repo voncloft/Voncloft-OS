@@ -1,6 +1,7 @@
 # description : Jupyter Kernels for the Spyder console
 # depends : 
 
+_pkg=spyder-kernels
 name=python-${_pkg}
 version=1.10.1
 release=1

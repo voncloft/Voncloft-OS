@@ -1,7 +1,11 @@
 # description : Manipulate and inspect Sphinx objects.inv files
 # depends : python python-attrs python-certifi python-fuzzywuzzy
 
+_name=${name#python-}
+_name=${name#python-}
+_name=${name#python-}
 name=python-sphobjinv
+_name=${name#python-}
 version=2.0.1
 release=2
 

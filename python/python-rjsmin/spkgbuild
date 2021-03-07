@@ -1,6 +1,10 @@
 # description : Fast javascript minifier for Python
 # depends : python
 
+_name=rjsmin
+_name=rjsmin
+_name=rjsmin
+_name=rjsmin
 name=python-rjsmin
 version=1.1.0
   local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]

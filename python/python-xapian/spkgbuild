@@ -2,7 +2,11 @@
 # depends : gcc-libs glibc python zlib
   depends+=libuuid.so libxapian.so
 
+_name=xapian-bindings
+_name=xapian-bindings
+_name=xapian-bindings
 name=python-xapian
+_name=xapian-bindings
 version=1.4.18
 release=1
 

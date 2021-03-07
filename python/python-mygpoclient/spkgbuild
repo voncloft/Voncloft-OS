@@ -1,6 +1,11 @@
 # description : Python client Library for the gpodder.net web service
 # depends : python
 
+_name=mygpoclient
+_name=mygpoclient
+_name=mygpoclient
+_name=mygpoclient
+name=python-$_name
 version=1.8
 release=7
 

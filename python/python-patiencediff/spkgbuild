@@ -1,16 +1,16 @@
 # description : Patiencediff Python and C implementations
 # depends : python
 
-url=https://www.breezy-vcs.org/
+_tag=1d2e7e8dd572115f59cb6ca2b791bc53ee53ece7
 name=python-patiencediff
 version=0.2.1
 release=3
 
-source="https://github.com/breezy-team/patiencediff/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd patiencediff-$version
+   cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

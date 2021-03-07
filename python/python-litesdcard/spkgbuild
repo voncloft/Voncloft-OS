@@ -1,6 +1,11 @@
 # description : Small footprint and configurable SD Card core
 # depends : python-migen python-litex
 
+_name=litesdcard
+_name=litesdcard
+_name=litesdcard
+_name=litesdcard
+name=python-$_name
 version=2020.12
 release=1
 

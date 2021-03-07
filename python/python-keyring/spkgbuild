@@ -1,7 +1,11 @@
 # description : Store and access your passwords safely
 # depends : python-entrypoints python-secretstorage
 
+_name=keyring
+_name=keyring
+_name=keyring
 name=python-keyring
+_name=keyring
 version=22.0.1
 release=1
 

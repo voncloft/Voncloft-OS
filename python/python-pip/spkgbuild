@@ -1,13 +1,14 @@
-# description	: The PyPA recommended tool for installing Python packages
-# depends	: python python-setuptools
+# description : The PyPA recommended tool for installing Python packages
+  # depends : ${_deps[@]/#/python-}
 
-name=python-pip
-version=20.2.2
+version=20.3.1
 release=1
-source="https://pypi.io/packages/source/p/pip/pip-${version}.tar.gz"
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-	cd pip-$version
-	python setup.py build
-	python setup.py install --prefix=/usr --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

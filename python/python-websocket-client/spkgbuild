@@ -1,16 +1,15 @@
-# description	: WebSocket client library for Python
-# depends	: python-six python
+# description : WebSocket client library for Python
+# depends : python-six
 
-name=python-websocket-client
+name=python-${_pkgbase}
 version=0.57.0
-release=1
-source="https://pypi.io/packages/source/w/websocket-client/websocket_client-$version.tar.gz"
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-	cd websocket_client-$version
-
-	sed -i "s/'backports.ssl_match_hostname'//" setup.py
-	
-	python setup.py build
-	python setup.py install --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

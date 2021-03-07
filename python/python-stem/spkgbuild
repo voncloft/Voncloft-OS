@@ -2,6 +2,8 @@
 # depends : python python-cryptography python-pynacl procps-ng
 
 _pypiname=${name#*-}
+_pypiname=${name#*-}
+_pypiname=${name#*-}
 name=python-stem
 _pypiname=${name#*-}
 version=1.8.0

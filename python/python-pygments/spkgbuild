@@ -1,14 +1,15 @@
-# description	: Python syntax highlighter
-# depends	: python
+# description : Python syntax highlighter
+# depends : python-setuptools
 
 name=python-pygments
-version=2.6.1
+version=2.7.4
 release=1
-source="https://pypi.org/packages/source/P/Pygments/Pygments-$version.tar.gz"
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-	cd Pygments-$version
-	python setup.py build
-	python setup.py install --root=$PKG --optimize=1
-
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

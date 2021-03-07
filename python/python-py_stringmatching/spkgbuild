@@ -1,6 +1,7 @@
 # description : Comprehensive and scalable set of string tokenizers and similarity measures
 # depends : python-numpy python-six
 
+_pkg=py_stringmatching
 name=python-${_pkg}
 version=0.4.2
 #  local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]

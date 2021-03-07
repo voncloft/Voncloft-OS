@@ -1,6 +1,11 @@
 # description : Pythonic D-Bus library
 # depends : python python-gobject
 
+_name=pydbus
+_name=pydbus
+_name=pydbus
+_name=pydbus
+name=python-${_name}
 version=0.6.0
 release=7
 

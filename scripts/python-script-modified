@@ -8,6 +8,24 @@ do
 	echo -e "" >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
 
 
+
+        grep "_ddir=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_distdir=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_dist=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_pkg=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_name=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_perl_namespace=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_perl_module=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_realname=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_cpanname=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_pyname=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_pypiname=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_tag=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_gitcommit=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+        grep "_commit=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+
+
+
 	grep "name=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
 	grep "version=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
 	grep "release=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild

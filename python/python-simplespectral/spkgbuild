@@ -1,6 +1,11 @@
 # description : Heavily simplified scipy.signal.spectral module
 # depends : python python-numpy
 
+_name=simplespectral
+_name=simplespectral
+_name=simplespectral
+_name=simplespectral
+name=python-$_name
 version=1.0.0
 release=7
 

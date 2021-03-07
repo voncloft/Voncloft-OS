@@ -1,6 +1,7 @@
 # description : Python client library for Tarantool 1.6 Database
   # depends : python python-msgpack python-yaml python-six
 
+_commit=b267643a242e2e6abc013539395b89dd235b798f
 version=0.6.6.r25.gb267643
 release=2
 

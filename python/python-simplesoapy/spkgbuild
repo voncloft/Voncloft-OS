@@ -1,6 +1,11 @@
 # description : Simple pythonic wrapper for SoapySDR library
 # depends : python python-numpy soapysdr
 
+_name=simplesoapy
+_name=simplesoapy
+_name=simplesoapy
+_name=simplesoapy
+name=python-$_name
 version=1.5.1
 release=7
 

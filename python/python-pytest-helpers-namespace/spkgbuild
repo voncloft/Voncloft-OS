@@ -1,6 +1,10 @@
 # description : PyTest Helpers Namespace
 # depends : python-pytest
 
+_name=pytest-helpers-namespace
+_name=pytest-helpers-namespace
+_name=pytest-helpers-namespace
+_name=pytest-helpers-namespace
 name=python-pytest-helpers-namespace
 version=2019.1.8
   local python_version=$python -c import sys; print..joinmapstr, sys.version_info[:2]

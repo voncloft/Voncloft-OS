@@ -1,6 +1,7 @@
 # description : Copy the contents of the screen to a PIL or Pillow image memory
 # depends : python-easyprocess python-entrypoint2 python-mss python-jeepney
 
+_pkg=pyscreenshot
 name=python-${_pkg}
 version=2.2
 release=3

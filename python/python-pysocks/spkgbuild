@@ -1,13 +1,15 @@
-# description	: SOCKS4, SOCKS5 or HTTP proxy (Anorov fork PySocks replaces socksipy)
-# depends	: python python-setuptools
+# description : SOCKS4, SOCKS5 or HTTP proxy Anorov fork PySocks replaces socksipy
+  # depends : python
 
-name=python-pysocks
-version=1.7.0
-release=1
-source="$name-$version.tar.gz::https://github.com/Anorov/PySocks/archive/$version.tar.gz"
+_commit=f660e75d4844e64e4b162b0c01f8df8d866ee000
+version=1.7.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
 
 build() {
-	cd PySocks-$version
-	python setup.py build
-	python setup.py install --prefix=/usr --root=$PKG --optimize=1
-}
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

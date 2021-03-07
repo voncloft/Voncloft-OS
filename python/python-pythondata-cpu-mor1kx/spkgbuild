@@ -1,6 +1,15 @@
 # description : Python module containing verilog files for mor1kx cpu for use with LiteX
 # depends : python
 
+_name=pythondata-cpu-mor1kx
+_name=pythondata-cpu-mor1kx
+_pyname=${_name//-/_}
+_pyname=${_name//-/_}
+_name=pythondata-cpu-mor1kx
+_pyname=${_name//-/_}
+_name=pythondata-cpu-mor1kx
+_pyname=${_name//-/_}
+name=python-$_name
 version=2020.08
 release=1
 

@@ -1,7 +1,11 @@
 # description : A WSGI object-dispatching web framework, designed to be lean and fast with few dependencies.
 # depends : python python-webob python-mako python-webtest python-six
 
+_name=${name#python-}
+_name=${name#python-}
+_name=${name#python-}
 name=python-pecan
+_name=${name#python-}
 version=1.4.0
 release=3
 

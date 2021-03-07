@@ -1,6 +1,11 @@
 # description : Flexible test automation for Python
 # depends : python python-argcomplete python-colorlog python-py python-virtualenv
 
+_name=nox
+_name=nox
+_name=nox
+_name=nox
+name=python-$_name
 version=2020.12.31
 release=1
 

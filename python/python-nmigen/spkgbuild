@@ -1,6 +1,11 @@
 # description : A refreshed Python toolbox for build()ing complex digital hardware
 # depends : python
 
+_name=nmigen
+_name=nmigen
+_name=nmigen
+_name=nmigen
+name=python-$_name
 version=0.2
 release=3
 

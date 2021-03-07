@@ -1,6 +1,11 @@
 # description : Pytest plugin for regression testing
 # depends : python-pytest python-pytest-datadir python-yaml
 
+_name=pytest-regressions
+_name=pytest-regressions
+_name=pytest-regressions
+_name=pytest-regressions
+name=python-$_name
 version=2.0.2
 release=3
 

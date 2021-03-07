@@ -1,6 +1,7 @@
 # description : Python bindings for the Message Passing Interface MPI standard
 # depends : python openmpi
 
+_pkg=mpi4py
 name=python-${_pkg}
 version=3.0.3
 release=3

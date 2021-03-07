@@ -1,6 +1,11 @@
 # description : Python tools for handling intervals ranges of comparable objects.
 # depends : python python-infinity
 
+_name=intervals
+_name=intervals
+_name=intervals
+_name=intervals
+name=python-${_name}
 version=0.8.1
 release=5
 

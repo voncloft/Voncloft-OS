@@ -4,6 +4,11 @@
     # depends : python
     # depends : python-rethinkdb rethinkdb
 
+_name=rethinkdb
+_name=rethinkdb
+_tag=rethinkdb-$version
+_name=rethinkdb
+_name=rethinkdb
 version=2.3.6
 release=2
 

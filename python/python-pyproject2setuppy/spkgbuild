@@ -1,6 +1,11 @@
 # description : Cheap build()er for pyproject-based build() systems
 # depends : python-setuptools python-toml
 
+_name=pyproject2setuppy
+_name=pyproject2setuppy
+_name=pyproject2setuppy
+_name=pyproject2setuppy
+name=python-$_name
 version=9
 release=2
 

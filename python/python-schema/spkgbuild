@@ -1,6 +1,11 @@
 # description : Python module to validate and convert data structures.
 # depends : python python-contextlib2
 
+_name=schema
+_name=schema
+_name=schema
+_name=schema
+name=python-$_name
 version=0.7.4
 release=1
 

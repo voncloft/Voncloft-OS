@@ -1,6 +1,7 @@
 # description : Spyder extensions for the Python Language Server
 # depends : python-language-server
 
+_pkg=pyls-spyder
 name=python-${_pkg}
 version=0.3.0
 release=1

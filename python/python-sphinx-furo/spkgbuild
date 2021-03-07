@@ -1,6 +1,11 @@
 # description : A clean customizable documentation theme for Sphinx
 # depends : python-sphinx python-beautifulsoup4
 
+_name=furo
+_name=furo
+_name=furo
+_name=furo
+name=python-sphinx-$_name
 version=2020.11.10.beta15
 release=3
 

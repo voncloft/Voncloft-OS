@@ -1,6 +1,7 @@
 # description : File-based locks for Python
 # depends : python
 
+_pkg=locket
 name=python-${_pkg}
 version=0.2.1
 release=1

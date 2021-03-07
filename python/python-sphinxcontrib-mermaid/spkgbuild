@@ -1,6 +1,11 @@
 # description : Mermaid diagrams in yours sphinx powered docs
 # depends : python-sphinx
 
+_name=sphinxcontrib-mermaid
+_name=sphinxcontrib-mermaid
+_name=sphinxcontrib-mermaid
+_name=sphinxcontrib-mermaid
+name=sphinx-$_name
 version=0.3.1
 release=1
 

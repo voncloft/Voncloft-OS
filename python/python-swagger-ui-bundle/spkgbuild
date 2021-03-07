@@ -1,6 +1,11 @@
 # description : Bundled swagger-ui
 # depends : python-jinja
 
+_name=swagger_ui_bundle
+_name=swagger_ui_bundle
+_name=swagger_ui_bundle
+_name=swagger_ui_bundle
+name=python-${_name//_/-}
 version=0.0.6
 release=2
 

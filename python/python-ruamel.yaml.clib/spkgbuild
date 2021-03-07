@@ -1,6 +1,7 @@
 # description : C version of reader, parser and emitter for ruamel.yaml derived from libyaml
 # depends : python
 
+_pkg=ruamel.yaml.clib
 name=python-$_pkg
 version=0.2.2
 release=3
