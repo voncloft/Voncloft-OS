@@ -1,0 +1,16 @@
+# description : library to talk to ftdi chips
+# depends : confuse libusb
+
+name=libftdi-compat
+version=0.20
+release=8
+
+source="https://www.intra2net.com/en/developer/$name/download/${name}1-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd ${name}-$version
+	./configure --prefix=/usr --without-examples
+    make
+    make DESTDIR=$PKG install
+}

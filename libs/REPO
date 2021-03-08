@@ -86,6 +86,7 @@ d:librsvg
 d:libraw
 d:libqmi
 d:libmodplug
+d:libftdi-compat
 d:libsamplerate
 d:libexif
 d:libevent
@@ -395,6 +396,7 @@ f:8351f320665efc4a5652b57b77bcd893:libqmi/.checksums
 f:4d2d41be4ee0048818680c0ac301bd94:libqmi/.pkgfiles
 f:c6486bb0f5b0424774e30a5296cb07b7:libqmi/spkgbuild
 f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
+f:8a0881c038ea33ab22b8687dcdb03d37:libftdi-compat/spkgbuild
 f:e5f97d539217358163c88f7bc269a18d:libsamplerate/.checksums
 f:7459766fe275376852d4c6e966aceccb:libsamplerate/.pkgfiles
 f:50f6122011e32d48998bfa1997fea0e4:libsamplerate/spkgbuild
