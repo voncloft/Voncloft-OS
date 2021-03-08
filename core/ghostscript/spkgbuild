@@ -6,7 +6,7 @@ version=9.53.3
 release=1
 
 source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/$name-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-freetype_fix-1.patch
+	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-freetype_fix-1.patch"
 
 options="!checksum"
 
