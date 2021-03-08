@@ -13,4 +13,5 @@ build() {
 	install -d $PKG/usr/share/ghostscript
 	install -m644 *.afm $PKG/usr/share/ghostscript
 	install -m644 *.pfb $PKG/usr/share/ghostscript	
+	fc-cache -v $PKG/usr/share/ghostscript/fonts/
 }
