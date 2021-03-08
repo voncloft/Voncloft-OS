@@ -1,5 +1,5 @@
 # description : a versatile processor for PostScript data with the ability to render PostScript to different targets
-# depends : cups fontconfig freetype libjpeg-turbo libpng libtiff openjpeg
+# depends : cups fontconfig freetype2 libjpeg-turbo libpng libtiff openjpeg
 
 name=ghostscript
 version=9.53.3

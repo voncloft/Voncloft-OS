@@ -6,7 +6,6 @@ kf5 depends
 [m] modemmanager
 [m] datamatrix
 [m] oxygen-fonts
-[m] doxygen
 [m] jinja2
 [m] openexr
 [m] mit-kerberos
@@ -32,21 +31,3 @@ plasma-depends
 [m] scim
 [m] socat
 
-kodi depends
-afpfs-ng
-davld    
-ghostscript  
-java-runtimelibaacs  
-libmicrohttpd  
-libmpeg2  
-libplist      
-rapidjson  
-spkgbuild
-bluez-libs  
-doxygen  
-gtest        
-libgllibinput        
-libmodplug     
-libnfs    
-shairplay  
-waylandpp
