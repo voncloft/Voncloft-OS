@@ -1,0 +1,31 @@
+# description : a versatile processor for PostScript data with the ability to render PostScript to different targets
+# depends : cups fontconfig freetype libjpeg-turbo libpng libtiff openjpeg
+
+name=ghostscript
+version=9.53.3
+release=1
+
+source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/$name-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-freetype_fix-1.patch
+	https://downloads.sourceforge.net/gs-fonts/ghostscript-fonts-std-8.11.tar.gz
+	https://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz"
+
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i $SRC/ghostscript-9.53.3-freetype_fix-1.patch
+
+	rm -rf zlib &&
+
+	./configure --prefix=/usr           \
+            --disable-compile-inits \
+            --enable-dynamic        \
+            --with-system-libtiff 
+	make
+	make DESTDIR=$PKG insall
+
+	tar xvf tar -xvf $SRC/ghostscript-fonts-std-8.11.tar.gz -C $PKG/usr/share/ghostscript --no-same-owner
+	tar -xvf $SRC/gnu-gs-fonts-other-6.0.tar.gz     -C $PKG/usr/share/ghostscript --no-same-owner
+	fc-cache -v $PKG/usr/share/ghostscript/fonts/
+}

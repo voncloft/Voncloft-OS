@@ -1,0 +1,30 @@
+# description : gooogle test c++ utility
+# depends : gcc 
+
+name=gtest
+version=1.10.0
+relese=3
+
+source="https://github.com/google/googletest/archive/release-${version}.tar.gz
+	gtest-1.10.0-libversion.patch"
+	
+options="!checksum"
+
+build() {
+	cd googletest-release-$version
+	sed "s|__GOOGLETEST_VERSION__|${pkgver}|g" -i $SRC/gtest-1.10.0-libversion.patch
+	patch -Np1 -i $SRC/gtest-1.10.0-libversion.patch
+
+	sed -E "s|(GOOGLETEST_VERSION) [0-9\\.]+|\\1 ${pkgver}|" -i CMakeLists.txt
+	
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DCMAKE_INSTALL_LIBDIR=lib \
+    	-DBUILD_SHARED_LIBS=ON \
+    	-Dgtest_build_tests=ON	
+
+	make
+	make DESTDIR=$PKG install
+}

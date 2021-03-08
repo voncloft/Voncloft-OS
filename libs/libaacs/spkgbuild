@@ -1,0 +1,17 @@
+# description : advanced access content system
+# depends : libgcrypt
+
+name=libaacs
+version=0.11.0
+release=1
+
+source="ftp://ftp.videolan.org/pub/videolan/$name/$version/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./bootstrap
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

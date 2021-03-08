@@ -55,6 +55,7 @@ d:zita-resampler-libs
 d:zlib
 d:herbstluftwm
 d:mpc
+d:gtest
 d:confuse
 d:bluez
 d:recode
@@ -239,6 +240,7 @@ d:cairo
 d:parted
 d:xset
 d:xpaint
+d:doxygen
 d:linux-pam
 d:vsv
 d:openjpeg2
@@ -487,6 +489,7 @@ d:pkcs11-helper
 d:xhost
 d:irssi
 d:reaver
+d:ghostscript
 d:texinfo
 d:bitchx
 d:wget
@@ -753,6 +756,7 @@ f:7e46723411fafe3c45eb113c84c5c7a3:herbstluftwm/spkgbuild
 f:70967c0869bb78007b882f65265352ed:mpc/.checksums
 f:df37b146a4e4e0534367defad9816f74:mpc/.pkgfiles
 f:df01ca7ffc3a20d32cb168becbf60164:mpc/spkgbuild
+f:0696991643c270d22370f7cd3ee77473:gtest/spkgbuild
 f:f796f4b4e6c6f1534138038ac09dda98:confuse/.checksums
 f:3b9f53fcf8c7fa7e0113990482df07db:confuse/.pkgfiles
 f:cb935b4dd3d6cf99183951ac7075f718:confuse/spkgbuild
@@ -1390,6 +1394,7 @@ f:390dcf908a947ff00a01d0d137d4c870:xpaint/xpaint.desktop
 f:66e9b50677198dfcea36091ce37087a5:xpaint/.checksums
 f:964bc86ed8d7f8e6afbd0c27a9eb9229:xpaint/.pkgfiles
 f:fb9530f4bcabe008c67a9444251948dd:xpaint/spkgbuild
+f:26f57ee47ad4a82c5d31849fcb741e92:doxygen/spkgbuild
 f:b63d1b5c40deaced7c91339f2fa7eac1:linux-pam/musl.patch
 f:512a858777e3b64531011865cc5011d9:linux-pam/.checksums
 f:fa7c5f8834deb0daf5cc0b2d49ed6072:linux-pam/.pkgfiles
@@ -2202,6 +2207,7 @@ f:3eff4a55c3a2e57c856523adbfebb1d9:irssi/spkgbuild
 f:c77cac8cb21ac537be15753d7dd363a3:reaver/.checksums
 f:ac4cc1fb19bd3596d6a1a3953dbbddfe:reaver/.pkgfiles
 f:5839075cae19030b5de27c8b23f6249b:reaver/spkgbuild
+f:ec66f7571c243a3ab5720820355b37ad:ghostscript/spkgbuild
 f:eb9aad606f275cab3d3e61611329551a:texinfo/.checksums
 f:7c0ee34c1b0c5be16c184d7e00d24d09:texinfo/.pkgfiles
 f:b23119c1ba1ee68490e5c434a66a8a51:texinfo/spkgbuild

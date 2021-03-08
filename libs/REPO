@@ -28,6 +28,7 @@ d:libmnl
 d:libfakekey
 d:libtirpc
 d:libevdev
+d:libaacs
 d:libmtp
 d:libvorbis
 d:libressl
@@ -226,6 +227,7 @@ f:a7cccf7f4fafba1e0b0c4f127b2823ea:libevdev/readme
 f:bbb98f3b5cc0c1a401e121e998d257a4:libevdev/.checksums
 f:15b550e3fb183b4ca63518f35524dcb3:libevdev/.pkgfiles
 f:ff452d0ed42c3efed562570d324c11d7:libevdev/spkgbuild
+f:50f4283ad22f8eb4f0177bfde391d3fc:libaacs/spkgbuild
 f:5555ba14ba7080e52b499919f8241e4e:libmtp/.checksums
 f:a57abe6004594aaffe6423cca19ba148:libmtp/.pkgfiles
 f:f05102034846e92fae4e03e744b9943e:libmtp/spkgbuild
