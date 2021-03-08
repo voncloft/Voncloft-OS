@@ -1,6 +1,7 @@
 d:libcanberra
 d:libdvdread
 d:libinput
+d:libudfread
 d:libwnck2
 d:libwpe
 d:libpwquality
@@ -156,6 +157,7 @@ f:4d865e424e6419b504a8c000b4ce4a57:libdvdread/spkgbuild
 f:ebf03769ef10b389146e3fc7625d411c:libinput/.checksums
 f:0cfc8d10beda7c93802b30ace6bb1d04:libinput/.pkgfiles
 f:a0d179f2dc29d0561f6a378b1c4b03c9:libinput/spkgbuild
+f:194a66b4cf6c75e96d7c85554d4dc361:libudfread/spkgbuild
 f:ab42321b89d2b1169b3c260cb1a75826:libwnck2/.checksums
 f:c9dd00e081dafdc44d1443fa13f24147:libwnck2/.pkgfiles
 f:6fde37f3d3e98c429dd25a6ae1c7b5b6:libwnck2/spkgbuild
@@ -355,7 +357,7 @@ f:b658ad2af939b617727e2214014d31e6:libreplaygain/spkgbuild
 f:e2b863425388ae54527c5436e965ee30:libfm/.checksums
 f:b7f1002abc74058f2ff50034b50a05c9:libfm/.pkgfiles
 f:bd2298e4cb48fdcb170efcdd96de808e:libfm/spkgbuild
-f:00fde998e77d37287141c24da55b655f:libbluray/spkgbuild
+f:4dfd1c66da232dd9fec62fb6696a4cd9:libbluray/spkgbuild
 f:44a130f2f534ca66b23989dcd6f196cd:libfs/.checksums
 f:facd14e0e2c928367fd0d5a2cb89f345:libfs/.pkgfiles
 f:2f2b56de7290d4010c40cf53b428ff5b:libfs/spkgbuild

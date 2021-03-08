@@ -1,5 +1,5 @@
 # description : lib bluray playback
-# depends : fontconfig freetype2 libxml2
+# depends : fontconfig freetype2 libxml2 libudfread
 
 name=libbluray
 version=1.2.1
