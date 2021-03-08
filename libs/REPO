@@ -58,6 +58,7 @@ d:libmpd
 d:libglade
 d:geoip
 d:libfm-extra
+d:p8-platform
 d:libwnck3
 d:libepoxy
 d:libassuan
@@ -312,6 +313,7 @@ f:881b3feb662b2f8d4076bd279bf40bfb:geoip/spkgbuild
 f:e2b863425388ae54527c5436e965ee30:libfm-extra/.checksums
 f:93957829930c8c02fb77143ffed188f2:libfm-extra/.pkgfiles
 f:aa80cd71347713fb395c605a24c1da62:libfm-extra/spkgbuild
+f:f50212b0146dc3398d4b0486a2e9525d:p8-platform/spkgbuild
 f:c37388c3c2dc15fd9a2d10f30a530f04:libwnck3/.checksums
 f:e9f652ba9c6e174c5dd1ff7042ea2065:libwnck3/.pkgfiles
 f:d1c6fb3a5151e94b149c2e4ea4b9d606:libwnck3/spkgbuild

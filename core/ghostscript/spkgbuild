@@ -23,9 +23,9 @@ build() {
             --enable-dynamic        \
             --with-system-libtiff 
 	make
-	make DESTDIR=$PKG insall
+	make DESTDIR=$PKG install
 
-	tar xvf tar -xvf $SRC/ghostscript-fonts-std-8.11.tar.gz -C $PKG/usr/share/ghostscript --no-same-owner
+	tar -xvf $SRC/ghostscript-fonts-std-8.11.tar.gz -C $PKG/usr/share/ghostscript --no-same-owner
 	tar -xvf $SRC/gnu-gs-fonts-other-6.0.tar.gz     -C $PKG/usr/share/ghostscript --no-same-owner
 	fc-cache -v $PKG/usr/share/ghostscript/fonts/
 }
