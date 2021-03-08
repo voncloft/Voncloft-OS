@@ -5,7 +5,7 @@ name=libusb-compat
 version=0.1.7
 release=1
 
-source="https://github.com/libusb/$version-0.1/releases/download/v$version/$name-$version.tar.gz"
+source="https://github.com/libusb/$name-0.1/releases/download/v$version/$name-$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,14 +5,17 @@ name=lirc
 version=0.10.1
 release=8
 
-source="https://prdownloads.sourceforge.net/${name}/${name}-${version}.tar.bz2"
+source="https://prdownloads.sourceforge.net/${name}/${name}-${version}.tar.bz2
+	lirc-0.10-build-fix.patch"
 options="!checksum"
 
 build() {
 	cd $name-$version
+	 patch -p1 -i $SRC/lirc-0.10-build-fix.patch
 	autoreconf -ifv
-	autoconf
-	./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var
+	automake -ac
+	HAVE_UINPUT=1 ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var
+  	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 	make
 	make DESTDIR=$PKG install
 }
