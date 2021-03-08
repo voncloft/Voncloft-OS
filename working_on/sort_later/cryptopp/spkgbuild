@@ -1,0 +1,17 @@
+# description : c++ library of cryptographic schemes
+# depends : gcc
+
+name=cryptopp
+version=8.5.0
+release=1
+_version=8_5_0
+
+source="https://github.com/weidai11/cryptopp/archive/CRYPTOPP_$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$_version
+	make -C cryptopp dynamic cryptest.exe libcryptopp.pc
+	make DESTDIR=$PKG install
+}
+

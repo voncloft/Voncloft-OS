@@ -1,0 +1,25 @@
+# description : A modern music player and library organizer
+# depends : kde5 cmake alsa-lib chromaprint cryptopp gst-plugins-base hicolor-icon-theme libcdio libgpod liblastfm-qt5 libmtp libmygpo-qt5 libpulse projectm protobuf taglib qt5-x11extras
+
+name=clementine
+build=1.4.0rc1+347+gfc4cb6fc7
+release=1
+
+source="https://github.com/clementine-player/Clementine/releases/download/${version//+/-}/$name-${version//+/-}.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-${version//+/-} \
+	sed -e 's|CRYPTOPP cryptopp|CRYPTOPP libcryptopp|' -i $name-${version//+/-}/CMakeLists.txt # Fix crypto++ detection
+
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DUSE_SYSTEM_PROJECTM=ON \
+    	-DUSE_SYSTEM_TAGLIB=ON
+
+	make 
+	make DESTDIR=$PKG install
+}
+
