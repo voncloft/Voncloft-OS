@@ -7,8 +7,6 @@ release=1
 
 source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/$name-$version.tar.xz
 	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-freetype_fix-1.patch
-	https://downloads.sourceforge.net/gs-fonts/ghostscript-fonts-std-8.11.tar.gz
-	https://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz"
 
 options="!checksum"
 
@@ -25,7 +23,4 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-	tar -xvf $SRC/ghostscript-fonts-std-8.11.tar.gz -C $PKG/usr/share/ghostscript --no-same-owner
-	tar -xvf $SRC/gnu-gs-fonts-other-6.0.tar.gz     -C $PKG/usr/share/ghostscript --no-same-owner
-	fc-cache -v $PKG/usr/share/ghostscript/fonts/
 }

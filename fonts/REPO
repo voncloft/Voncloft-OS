@@ -25,7 +25,9 @@ d:font-adobe-75dpi
 d:harfbuzz-icu
 d:xlsfonts
 d:mkfontscale
+d:ghostscript-fonts
 d:font-jis-misc
+d:gnu-gs-fonts
 f:5140e48cd10045244c5702317f4f9bec:font-alias/.checksums
 f:bede21a9f82d12f8ae2f9840bf79ebd2:font-alias/.pkgfiles
 f:ba46f8c5487734826fbef7373830880c:font-alias/spkgbuild
@@ -109,6 +111,8 @@ f:e75e821dbbe06fb61e0abbdaa7bcc5cb:xlsfonts/spkgbuild
 f:d7cf6239b7ad550af44ff7044b6d24d4:mkfontscale/.checksums
 f:1a2c84d21d74a808348662c8f9c7f50b:mkfontscale/.pkgfiles
 f:8b1a6ace10370a62454e2dd9d1fd45aa:mkfontscale/spkgbuild
+f:86a7644dde7eff99e78d818e17dfd028:ghostscript-fonts/spkgbuild
 f:0c5f83419b58ee54cd03739a88f0a9f3:font-jis-misc/.checksums
 f:905e3d74020f85fc9bb10ac828135acd:font-jis-misc/.pkgfiles
 f:b5fea230da69f9d6611189adeeab68ea:font-jis-misc/spkgbuild
+f:4bcbad12783579d0d779b3e06362daee:gnu-gs-fonts/spkgbuild
