@@ -108,6 +108,7 @@ d:libva-intel
 d:libnl
 d:libpcap
 d:libtiff
+d:libnfs
 d:libice
 d:libdbusmenu-glib
 d:libev
@@ -463,6 +464,7 @@ f:3ee31165d569dbcf29057a9ca581878d:libpcap/libpcap-1.9.1-enable_bluetooth-1.patc
 f:65c139f65c48910ed06f167253b7924e:libtiff/.checksums
 f:6d6c1cd21a58e94d042de92861e2caa2:libtiff/.pkgfiles
 f:a8961e32982472e2fc20ee087a271dc9:libtiff/spkgbuild
+f:82172a1051fe4e77ab3d5abfb136026b:libnfs/spkgbuild
 f:4192d72e4926e34e159bca3a7bcce41a:libice/.checksums
 f:653bad0a6f4fccf51c075ce26572e26c:libice/.pkgfiles
 f:c6f613ebca83e005c134ed1caae8d44b:libice/spkgbuild

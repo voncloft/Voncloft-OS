@@ -1,0 +1,17 @@
+# description : client library for accessing NFS shares
+# depends : glibc
+
+name=libnfs
+version=4.0.0
+release=4
+
+source="https://github.com/sahlberg/$name/archive/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$name-$version
+	autoreconf -ifv
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
