@@ -10,7 +10,8 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-
+	mkdir build
+	cd build
 	cmake .. \
 	-DCMAKE_INSTALL_PREFIX=/usr \
         -DBUILD_SHARED_LIBS=ON
