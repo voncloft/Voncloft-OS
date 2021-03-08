@@ -38,6 +38,7 @@ d:libdbusmenu
 d:libkcddb
 d:libmad
 d:libburn
+d:libusb-compat
 d:libusb
 d:libvpx
 d:libcdio
@@ -74,6 +75,7 @@ d:libfm
 d:libfs
 d:libmng
 d:libmpc
+d:libftdi
 d:libfontenc
 d:libpng
 d:liberation-fonts
@@ -257,6 +259,7 @@ f:d531bed28d26117bd28787b724d8a3c3:libmad/spkgbuild
 f:78b5cb5587d59f7884dc30afec65e8f9:libburn/.checksums
 f:7c0ec0b6badfe0880bfe170a13337ef4:libburn/.pkgfiles
 f:9fa4742d4ef693bd7b4f42e3651ffc0c:libburn/spkgbuild
+f:b4802dbe59037927cffcfaee6d453f91:libusb-compat/spkgbuild
 f:f0fb51a74f33c100012792481ac54fc0:libusb/readme
 f:246d8f05fcba627c698c77bcf42e5d1a:libusb/.checksums
 f:be712bfc83cfdd53bafa56d8450c1f5b:libusb/.pkgfiles
@@ -359,6 +362,7 @@ f:19b3e00d381b6ffbde04c972044d1651:libmng/spkgbuild
 f:462c482d0ee4012ce821b3fd7e97ebcc:libmpc/.checksums
 f:c14be9a76dafe2a2ba300d55b31dd70a:libmpc/.pkgfiles
 f:772a4b7611de6572930cc2ed0e432d78:libmpc/spkgbuild
+f:12e5e2a15b4d627b78d1af6e4e10bed4:libftdi/spkgbuild
 f:35468438f991deac23417a71b3f42569:libfontenc/.checksums
 f:13304ca53845c5cdbc08fd17189d2edb:libfontenc/.pkgfiles
 f:1d8e2c99a6ea47dbca2c62def38e43ad:libfontenc/spkgbuild
