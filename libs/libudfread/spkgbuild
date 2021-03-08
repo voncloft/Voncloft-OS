@@ -9,11 +9,11 @@ source="https://code.videolan.org/videolan/libudfread/-/archive/master/$name-mas
 options="!checksum"
 
 build() {
-	cd libudfread
+	cd libudfread-master
 	mkdir -pv build
 	./bootstrap
 	cd build
-		../libudfread/configure \
+		../configure \
     		--prefix=/usr \
     		--disable-static
 
