@@ -1,0 +1,287 @@
+2020-10-25: Version 1.2.1
+- Add initial support for .fmts files.
+- Improve missing/broken playlist handling ("Star Trek Beyond 4K").
+- Improve UHD metadata support.
+- Improve BD-J compability.
+- Improve error resilience and stability.
+- Fix long delay in "Evangelion, You are (not) alone" menu.
+- Fix JVM bootstrap issues with some Java 9 versions.
+- Fix sign extended bytes when reading single bytes in BDJ.
+- Fix creating organization and disc specific BD-J BUDA directories.
+- Use external libudfread when available.
+- Rename list_titles to bd_list_titles and add it to installed programs.
+
+2020-03-22: Version 1.2.0
+- Add functions to list and read BD-ROM files.
+- Add support for separate key pressed / typed / released user input events.
+- Add support for AWT mouse events (BD-J).
+- Fix build with OpenJDK 12 / 13.
+
+2019-06-07: Version 1.1.2
+- Add libxml version to pkg-config Requires.private.
+- Improve support for NetBSD operating system.
+- Improve BD-J compability.
+- Improve Java 8+ compability.
+- Fix main playlist caching in Windows.
+- Fix mark triggering when multiple marks are passed during single read().
+- Fix seek bar pop-up at chapter boundary with some discs.
+- Fix reading resources indirectly from mounted .jar file.
+
+2019-04-05: Version 1.1.1
+- Enable playback without menus when index.bdmv is missing.
+- Improve error resilience and stability.
+- Improve BD-J compability.
+- Fix loading libraries on MacOS / hardened runtime.
+- Fix resetting user-selected streams when playing without menus.
+- Fix stack overflow when using Java9+ with debugger connection.
+- Fix polygon-based BD-J graphics primitives.
+- Fix loading libmmbd in Windows 64-bit.
+- Fix loading classes with Windows Java 8.
+- Fix build with Java 1.6.
+- Fix pkg-config Libs.private.
+
+2019-02-12: Version 1.1.0
+- Add initial support for OpenJDK 11.
+- Add initial support for UHD disc BD-J menus.
+- Add support for compiling .jar file with Java 9+ compiler.
+- Move AWT classes to separate .jar file.
+- Update libudfread submodule repository URL.
+- Improve main title selection.
+- Improve error resilience and stability.
+- Improve BD-J compability.
+- Fix playback of some broken BD-J discs.
+- Fix playback of discs without normal titles (only TopMenu / FirstPlay title).
+
+2017-12-01: Version 1.0.2
+- Add initial support for UHD BluRay discs (without BD-J menus).
+- Detect JRE (from the Java Applet plugin) on MacOS.
+- Improve error resilience and stability.
+- Improve libmmbd support.
+- Fix static build dependencies in pkgconfig file.
+- Fix creation of cache (sub-)directories on windows platforms.
+- Fix BD-J temporary storage when persistent storage is disabled.
+- Fix leaks.
+
+2017-06-07: Version 1.0.1
+- Add possibility to check whether BD-J is functional without opening a disc.
+- Improve main title selection.
+- Improve error resilience and stability.
+- Fix Windows dll loading.
+- Fix JAVA_HOME environment variable handling in Windows.
+- Fix build issues when CPPFLAGS is given in make command line.
+- Fix MSVC build issues.
+- Remove --disable-bdjava and --disable-udf configure options.
+
+2017-03-02: Version 1.0.0
+- Add support for Java VM (BD-J) on MacOS.
+- Add clip_id to BLURAY_CLIP_INFO.
+- Add a suitable JVM path for Fedora/RHEL and clones.
+- Add support for AVCHD 8.3 filenames.
+- Add player setting for disabling persistent storage.
+- Add bd_set_rate().
+- Add playback time position to BD_EVENT_SEEK.
+- Add BD_VK_ROOT_MENU handling.
+- Add support for heavily fragmented 3D .m2ts files.
+- Improve Win32 dll loading security.
+- Improve playback resume position accuracy.
+- Improve error resilience and stability.
+- Fix using libmmbd with unmounted discs.
+- Fix leaks.
+- Delay BD-J overlay opening until something visible has been drawn.
+- Close BD-J overlay when window is not visible.
+- Use temporary storage when cache or persistent root location is unknown.
+
+2016-05-15: Version 0.9.3
+- Add bd_open_files(). This function deprecates old global file system hooks.
+- Add flag for on-disc menu support to DISC_INFO.
+- Add configure argument to disable building of JAR file.
+- Add missing player settings enums.
+- Update linux Java search path list and preferred JVM.
+- Enable UDF support by default.
+- Split developer tools from examples.
+- Improve BDJ_EVENT_CHAPTER triggering.
+- Improve main title detection.
+- Improve error resilience.
+- Improve BD-J compability.
+- Improve detecting of working aacs implementation.
+- Improve libmmbd support.
+- Fix BD-J media player stop().
+- Fix restoring playback rate with some BD-J discs.
+- Fix restoring suspended playback time position.
+- Fix current chapter lookup.
+- Fix lost key focus with multi-HScene discs.
+- Fix playback of discs without Top Menu title.
+- Fix caching of some BD-J files from UDF filesystem.
+- Fix stopping playback from HDMV menus.
+- Fix possible errors in win32 .iso image reading.
+- Fix undefined values in DISC_INFO.
+- Fix memory leaks.
+
+2015-12-01: Version 0.9.2
+- Add primary audio stream to bd_select_stream().
+- Improve error resilience.
+- Fix Java 8 compability issues.
+- Fix Android build.
+- Fix SecurityException in AWTAutoShutdown.
+- Fix BD-J check when install path in Windows contains non-ASCII chars.
+- Fix jvm.dll loading in Windows ($JAVA_HOME/bin should be in dll load path).
+- Fix class translating in recent Java 8 versions.
+
+2015-11-03: Version 0.9.1
+- Improved BD-J security.
+- Improved error resilience.
+- Improved seeking (avoid skipping PAT/PMT/PCR).
+- Fix UO mask check when bd_play_title() is used for Top Menu.
+- Fix re-starting of title bound Xlets when title changes.
+- Fix loading classes with invalid debug info.
+
+2015-10-02: Version 0.9.0
+- Add functions to read files from VFS.
+- Improved error resilience.
+- Improved BD-J compability.
+- Fix Xlet-initiated font caching.
+- Fix return value when setting BLURAY_PLAYER_SETTING_DECODE_PG.
+- Fix build with C++ compiler
+
+2015-05-15: Version 0.8.1
+- Notify application when UO mask changes.
+- Improved error resilience.
+- Improved BD-J compability.
+- Fix crash after bd_open(NULL).
+- Fix compability problem with libbdplus.
+- Fix memory leak in UDF filesystem parser.
+- Fix crash in freetype.
+
+2015-04-15: Version 0.8.0
+- Add security checks to BD-J.
+- Add support for UDF image files and unmounted discs.
+- Add UDF volume identifier to DISC_INFO.
+- Add bd_init(), bd_open_disc() and bd_open_stream().
+- Add /usr/share/libbluray/lib/ to .jar file search paths.
+- Add BD_EVENT_PLAYLIST_STOP (playlist playback is interrupted).
+- Accept directory name (without .jar file name) in LIBBLURAY_CP.
+- Improved error resilience.
+- Improve BD-J compability.
+- Fix Java 8u40 compability.
+- Fix infinite loop with some broken HDMV menus.
+
+2015-01-26: Version 0.7.0
+- Add player setting for BD-J persistent storage and cache paths.
+- Add support for system fonts. BD-J fonts in jre/lib/fonts/ are not required anymore.
+- Add BD-J organization ID and disc ID to BLURAY_DISC_INFO.
+- Release still mode when BD-J terminates.
+- Implement BD-J caching.
+- Improve BD-J compability.
+- Java 8 compability fixes.
+- Fix storage size for bdjo object reference in BLURAY_DISC_INFO.
+- Fix BD-J on-disc font usage.
+- Fix animations in some BD-J menus.
+- Fix BD-J storage path charset issues in Windows.
+
+2014-09-03: Version 0.6.2
+- Fix possible subtitle corruption after seek.
+- Fix some main path embedded HDMV menus.
+- Fix reading outside of source image in BD-J drawImage().
+- Fix missing BD_EVENT_ERROR when BD-J is not supported.
+- Several stability and code quality fixes.
+
+2014-08-03: Version 0.6.1
+- Fix stream position when seamless angle change point is at clip boundary.
+- Fix Mac OS X jni compilation
+- Fix bd_seek() jumping outside of clip/playlist.
+- Fix crash when stream selection is changed after playlist end.
+- Fix J2ME build.
+- Fix seamless angle change.
+- Fix freetype2 resource leaks on shutdown.
+- Improve duplicate playlist detection.
+
+2014-05-27: Version 0.6.0
+- Improved BD-J support (Most BD-J discs are correctly played).
+- Mark BD-J titles supported in BLURAY_DISC_INFO if BD-J is functional.
+- Install .jar files to datadir (/usr/share/java/) instead of libdir.
+- Added version number to .jar file names.
+- Added JNI headers for BD-J (cross) compilation.
+- Added HDMV/BD-J title information to BLURAY_DISC_INFO.
+- Added disc application info to BLURAY_DISC_INFO.
+- Added bd_set_rate().
+- Added color keys (RED, GREEN, YELLOW, BLUE).
+- Improved error resilience.
+- Fix build without libxml.
+
+2013-12-21: Version 0.5.0
+- Portability fixes.
+- Build system updates.
+- Improved BD-J support (still alpha).
+- Improved updating of application-allocated ARGB frame buffer.
+- Get JRE library location from registry (Windows).
+- Added bd_get_main_title().
+- Added BD_EVENT_ERROR when title playback fails.
+- Added BD-J flags to disc info.
+- Added support for user timeout in HDMV menus.
+- Added cropping of RLE images. Cropping values in overlay are now always 0.
+- Added support for LIBAACS_PATH and LIBBDPLUS_PATH environment variables.
+- Added timestamp based m2ts stream filtering.
+
+2013-09-11: Version 0.4.0
+- Fixed slide shows: always cut reads at clip end boundary
+- Fixed logging with non-default mask
+- Fixed buffer overflow in bd_psr_unregister_cb()
+- Fixed IG background when button image position changes
+- Fixed BD-J tearing issues
+- Changed default PhoneME library name in Windows (cvm -> cvmi)
+- Initialize default player region code to B
+- Improved BD-J support (still alpha)
+- Improved language-based stream autoselection
+- Added missing Java files to distribution package
+- Added support for multi-clip sub paths
+- Added bd_select_stream()
+- Added menu page effects
+- Added button animations
+- Added initial support for BluRay Text Subtitles
+- Added bd_read_clpi(): use only public API in clpi_dump
+- Added reference-counted RLE images
+
+2013-04-30: Version 0.3.0
+- Build fixes
+- Fixed stopping playback from pop-up menu
+- Fixed multithreading issues in API
+- Fixed initial setting for player profile
+- Fixed stack corruption with long log strings
+- Improved configure script
+- Improved Visual Studio support
+- Improved BD-J support (still alpha)
+- Allow changing player version
+- Added PG (subtitle) decoding and rendering support
+- Added ARGB overlay interface for BD-J graphics
+- Added events for discontinuity, idle state and 3D mode
+- Added playmarks to BLURAY_TITLE_INFO
+- added start time, in time and out time to BLURAY_CLIP_INFO
+- added sub-path id to BLURAY_STREAM_INFO
+- Added bd_seek_playitem()
+- Added bd_set_scr()
+- Added 3D extension data to raw clip info
+- added 3D player settings
+- Added cropping and palette update flag to BD_OVERLAY
+
+2012-08-17: Version 0.2.3
+ - Fixed memory leaks
+ - Automatic language selection: disable subtitles when audio is in the same language
+ - Fixed accessing outside of array bounds
+ - Default to stream 0 when requested language not found
+ - Install bd_info
+ - Added disc ID and AACS MKB version to BD_DISC_INFO
+ - Added extended AACS error codes
+
+2012-03-19: Version 0.2.2
+ - Fixed displaying of single-loop animated buttons when not using animations
+ - Added events for pop-up menu availability and IG menu status
+ - Fixed resuming to interactive title
+ - Use user filesystem handler with libaacs
+ - Fixes to HDMV menu rendering
+ - Optimized HDMV menu rendering
+ - Support for sound effects in HDMV menus
+ - Fixes to HDMV menu decoding
+ - Distribute BD-J code
+
+2011-12-03: Version 0.2.1
+ - First release

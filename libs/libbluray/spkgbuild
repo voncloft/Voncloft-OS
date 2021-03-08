@@ -10,6 +10,8 @@ options="!checksum"
 
 build() {
 	cd $name-$version
+	autoreconf -ifv
+	autoconf
 	./configure --prefix=/usr
 	make
 	make DESTDIR=$PKG install
