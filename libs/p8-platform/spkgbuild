@@ -9,7 +9,7 @@ source="https://github.com/Pulse-Eight/platform/archive/$name-${version}.tar.gz"
 options="!checksum"
 
 build() {
-	cd $platform-$name-$version
+	cd platform-$name-$version
 	mkdir build
 	cd build
 	cmake .. \
