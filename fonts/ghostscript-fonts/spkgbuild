@@ -11,6 +11,6 @@ options="!checksum"
 build() {
 	cd fonts
 	install -d $PKG/usr/share/ghostscript
-	install -m644 webfonts/*.afm $PKG/usr/share/ghostscript
-	install -m644 webfonts/*.pfb $PKG/usr/share/ghostscript	
+	install -m644 *.afm $PKG/usr/share/ghostscript
+	install -m644 *.pfb $PKG/usr/share/ghostscript	
 }
