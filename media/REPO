@@ -25,6 +25,7 @@ d:gst-libav
 d:libiec61883
 d:mythtv
 d:pulseaudio
+d:kodi
 d:pulseaudio-alsa
 d:libavc1394
 f:750b06b1d1cb0dbd23ad8e6ce62cf205:gstreamer/.checksums
@@ -91,6 +92,7 @@ f:10df91e4d576527471b45e51208bb539:mythtv/spkgbuild
 f:e6183158353fd110913fc53b4e17a507:pulseaudio/.checksums
 f:b752c32f0e68f3e3b5300a6f969eeb4d:pulseaudio/.pkgfiles
 f:77b553ba7f068ec877f8ed4eab890c03:pulseaudio/spkgbuild
+f:7ae3ec03b8c7ad1b82f9a1c1b1ddacdb:kodi/spkgbuild
 f:4703dc0019932e442486942adb6c90a4:pulseaudio-alsa/asound.conf
 f:6f8533d175cd1bf80ec56e890491e437:pulseaudio-alsa/.checksums
 f:00f023ed4f37cfb8601a8b9668d3ff73:pulseaudio-alsa/.pkgfiles

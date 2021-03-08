@@ -1,0 +1,21 @@
+# description : mpeg-1 and mpeg-2 video decoder
+# depends : glibc 
+
+name=libmpeg2
+version=0.5.1
+release=7
+
+source="http://libmpeg2.sourceforge.net/files/${name}-${version}.tar.gz
+        libmpeg2-0.5.1-gcc4.6.patch"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i "$SRC/libmpeg2-0.5.1-gcc4.6.patch"
+	sed '/AC_PATH_XTRA/d' -i configure.ac
+	autoreconf --force --install
+
+	./configure --prefix=/usr --enable-shared --disable-static
+	make
+	make DESTDIR=$PKG install
+}

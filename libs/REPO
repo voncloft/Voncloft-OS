@@ -82,6 +82,7 @@ d:libcap
 d:librsvg
 d:libraw
 d:libqmi
+d:libmodplug
 d:libsamplerate
 d:libexif
 d:libevent
@@ -102,6 +103,7 @@ d:libuninameslist
 d:libdmtx
 d:libaio
 d:libksba
+d:libmicrohttpd
 d:libisofs
 d:libcdio-paranoia
 d:libgusb
@@ -122,6 +124,7 @@ d:libffi
 d:libdmx
 d:libbytesize
 d:libsndfile
+d:libmpeg2
 d:liblxqt
 d:libtheora
 d:libkscreen
@@ -385,6 +388,7 @@ f:0208c73296e1dbff77ff5b297ffcfc6d:libraw/spkgbuild
 f:8351f320665efc4a5652b57b77bcd893:libqmi/.checksums
 f:4d2d41be4ee0048818680c0ac301bd94:libqmi/.pkgfiles
 f:c6486bb0f5b0424774e30a5296cb07b7:libqmi/spkgbuild
+f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
 f:e5f97d539217358163c88f7bc269a18d:libsamplerate/.checksums
 f:7459766fe275376852d4c6e966aceccb:libsamplerate/.pkgfiles
 f:50f6122011e32d48998bfa1997fea0e4:libsamplerate/spkgbuild
@@ -444,6 +448,7 @@ f:361bc3178d82689c756f88571fbcf574:libaio/spkgbuild
 f:5cde5f51704b8cbb1430bf5724f92616:libksba/.checksums
 f:647b40b4c563da33f0910f4151379d06:libksba/.pkgfiles
 f:2c7a30f5bb56842742a0497a4b4c5df0:libksba/spkgbuild
+f:61f868ee833a1517608f87efc08e29ea:libmicrohttpd/spkgbuild
 f:6242cf2b7f53b42cf3068a5d15105488:libisofs/.checksums
 f:cc4170fd6b737c03e730a5e674251a7e:libisofs/.pkgfiles
 f:42d248b809615151d66c4e8ae69db140:libisofs/spkgbuild
@@ -499,6 +504,8 @@ f:dfb4ef4c0ca945b93b8ab5b9de44de05:libbytesize/spkgbuild
 f:42454c37f26efcdd39b317abc41b97e4:libsndfile/.checksums
 f:ee7f97b87a11bde5aa4bb854d046b53a:libsndfile/.pkgfiles
 f:12a8d9658e244d5348e514472471a2d8:libsndfile/spkgbuild
+f:8b36660297e6ffde6aa9733136bff405:libmpeg2/libmpeg2-0.5.1-gcc4.6.patch
+f:4d22f1f965ae7a12b37ecbec8de7bbc9:libmpeg2/spkgbuild
 f:f4cb0ae570a066dc4cf325175502bf87:liblxqt/.checksums
 f:b5af5f62289814172f20eded651b5bd9:liblxqt/.pkgfiles
 f:9c84a112be71940ab9654707a7ba5422:liblxqt/spkgbuild

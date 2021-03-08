@@ -243,9 +243,11 @@ d:xpaint
 d:doxygen
 d:linux-pam
 d:vsv
+d:rapidjson
 d:openjpeg2
 d:webkitgtk
 d:openjpeg
+d:pugixml
 d:hdparm
 d:xwud
 d:zita-resampler
@@ -443,6 +445,7 @@ d:elinks
 d:json-glib
 d:w3m
 d:pcre
+d:waylandpp
 d:pcmanfm-qt
 d:tcsh
 d:cdparanoia
@@ -1404,6 +1407,7 @@ f:ad0886813cda6f97d4ef5ffbe98bb45b:linux-pam/system-auth
 f:336a98ca7ae5695297c63003db80445d:vsv/.checksums
 f:6ee431636bc850b5b6c3c8e9105afc19:vsv/.pkgfiles
 f:aac6b80a6e8f22d21658faafacfc421f:vsv/spkgbuild
+f:7a66b2a5acf0f6eb04a285f3045ca822:rapidjson/spkgbuild
 f:930000148c2aa86554680d9e33aaafa3:openjpeg2/.checksums
 f:8eff79efa1f50dc73592271c27135c17:openjpeg2/.pkgfiles
 f:4a01446e007b8fcc1f4076195bb6ab34:openjpeg2/spkgbuild
@@ -1413,6 +1417,7 @@ f:1bb9cfbf9b54f55a57c72d7ae2f98b75:webkitgtk/spkgbuild
 f:85c7dec526a885d4b2ab7213381d2c9f:openjpeg/.checksums
 f:3c8c7680a931e3e86d7ac2b3c1abdc9f:openjpeg/.pkgfiles
 f:a7815b61a5a0290b04a20cda938d448e:openjpeg/spkgbuild
+f:bd8e500cdbb720ba7f13b877f09e87f4:pugixml/spkgbuild
 f:1777154aae02736b956ac186a3c75a9b:hdparm/.checksums
 f:438e4e2965018f422020046dabcb3a5c:hdparm/.pkgfiles
 f:3134f8713c5e00fb817e6b80dfe29e9e:hdparm/spkgbuild
@@ -2062,6 +2067,7 @@ f:3477c451be3304116ecd71ce41f7cff9:w3m/spkgbuild
 f:151a025aa036477ed920100fb45b3947:pcre/.checksums
 f:6d4a79d6caf365e2b25ce19402eb07a4:pcre/.pkgfiles
 f:c00d233e3921f750e02dbacefd3916d9:pcre/spkgbuild
+f:b09ebb6309ca8c40d206f824fc46c9fc:waylandpp/spkgbuild
 f:ffcace0fe1476995ece2ae3d1ce74dfc:pcmanfm-qt/.checksums
 f:fe176483575ec322c9363f0876ef5331:pcmanfm-qt/.pkgfiles
 f:ebcad3ae7f2f0737697a28ace3a5bb09:pcmanfm-qt/spkgbuild
