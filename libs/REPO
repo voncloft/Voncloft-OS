@@ -13,6 +13,7 @@ d:libaec
 d:libvdpau-va-gl
 d:libgee
 d:libnma
+d:libmygpo-qt5
 d:libunistring
 d:libisoburn
 d:libjpeg-turbo
@@ -51,6 +52,7 @@ d:libogg
 d:shapelib
 d:libqtxdg
 d:cblas
+d:liblastfm-qt5
 d:libical
 d:libarchive
 d:libpeas
@@ -187,6 +189,7 @@ f:7cbceb6db5573c20790bd6c3e640e9de:libgee/spkgbuild
 f:8c4129dadededc1d1eeded90ee33183e:libnma/.checksums
 f:f2825eae1f8d2942e071087806d9cfa0:libnma/.pkgfiles
 f:6c5baf297cf761b98ee1b7d96d52a0b3:libnma/spkgbuild
+f:1121fe2ee923b779d05590973d59df62:libmygpo-qt5/spkgbuild
 f:739262a3cecbbcb1b4036865f2cbe89b:libunistring/.checksums
 f:b857f22d125a7d679d22dcf691a04dfb:libunistring/.pkgfiles
 f:c43a0ffc805005ba4e9384af490a6c47:libunistring/spkgbuild
@@ -292,6 +295,7 @@ f:a076c4e4e71bc088c9146645dc896fc4:libqtxdg/.checksums
 f:a2d33182864efe0548135a762cb80222:libqtxdg/.pkgfiles
 f:951b5a8f019370ec81d68728373c1dc7:libqtxdg/spkgbuild
 f:742417c98eab7f8805e76dc569331945:cblas/spkgbuild
+f:e211b3a996159501d1d4e379706e76de:liblastfm-qt5/spkgbuild
 f:787ac7b321c44f044f43fb77c54dc86e:libical/.checksums
 f:e6815e5fb78a7a1cd99ebdd236e89f66:libical/.pkgfiles
 f:e6e783e9295e7411a49e057ee525e7d5:libical/spkgbuild
