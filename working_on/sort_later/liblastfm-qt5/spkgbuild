@@ -1,0 +1,23 @@
+# description : A Qt C++ library for the Last.fm webservices
+# depends : fftw libsamplerate qt5
+
+name=liblastfm-qt5
+version=1.0.9
+release=5
+
+source="https://github.com/lastfm/liblastfm/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd liblastfm-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_BUILD_TYPE=Release \
+    	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    	-DBUILD_TESTS=OFF
+
+    make
+    make DESTDIR=$PKG install
+}

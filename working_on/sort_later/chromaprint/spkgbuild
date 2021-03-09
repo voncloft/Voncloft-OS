@@ -1,0 +1,24 @@
+# description : Library for extracting fingerprints from any audio source
+# depends : gcc glibc
+
+name=chromaprint
+version=1.5.0
+release=3
+
+source="https://github.com/acoustid/${name}/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE='None' \
+        -DBUILD_TESTS=ON \
+        -DBUILD_TOOLS=ON \
+        -DGTEST_SOURCE_DIR=/usr/src/googletest/ \
+        -Wno-dev
+
+	make 
+	make DESTDIR=$PKG install
+}

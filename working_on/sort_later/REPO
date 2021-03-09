@@ -1,5 +1,15 @@
+d:qt5-x11extras
+d:libmygpo-qt5
+d:protobuf
 d:cryptopp
+d:liblastfm-qt5
+d:chromaprint
 d:clementine
+f:ee528093ad17f07e054efb3bc2656cf8:qt5-x11extras/spkgbuild
+f:1121fe2ee923b779d05590973d59df62:libmygpo-qt5/spkgbuild
+f:184640d7ae20f497ca4cc01b2567fa50:protobuf/spkgbuild
 f:3d0f022f2d0b6f89aa9a68cbb148de9b:cryptopp/spkgbuild
+f:e211b3a996159501d1d4e379706e76de:liblastfm-qt5/spkgbuild
 f:d41d8cd98f00b204e9800998ecf8427e:.place_holder
-f:443203977e7eded1810f5a521dfe9c41:clementine/spkgbuild
+f:8c2d4382a10277f941fc15543e0536a2:chromaprint/spkgbuild
+f:3b61b192350bca1aa7767ba38dca99d5:clementine/spkgbuild
