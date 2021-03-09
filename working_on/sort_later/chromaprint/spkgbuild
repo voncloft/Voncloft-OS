@@ -15,7 +15,7 @@ build() {
 	cd build
 	cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE='None' \
-        -DBUILD_TESTS=ON \
+        -DBUILD_TESTS=OFF \
         -DBUILD_TOOLS=ON \
         -DGTEST_SOURCE_DIR=/usr/src/googletest/ \
         -Wno-dev
