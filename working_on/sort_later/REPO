@@ -5,7 +5,6 @@ d:kdevplatform
 d:libdaemon
 d:nss
 d:uri
-d:mit-kerberos
 d:pygobject
 d:qapt
 d:elogind
@@ -29,7 +28,6 @@ f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:kdevplatform/spkgbuild
 f:6a576b3cee52d18f1930e8b094d99813:libdaemon/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:nss/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:uri/spkgbuild
-f:807f2837e2acd33736f96b46894ef0ac:mit-kerberos/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:pygobject/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:qapt/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:elogind/spkgbuild
