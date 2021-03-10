@@ -1,13 +1,91 @@
-# description : 
-# depends :
+# description : NetworkManager is a set of co-operative tools that make networking simple and straightforward
+# depends : qt5 jansson libndp curl dhcp gobject-introspection iptables newt nss polkit pygobject elogind upower vala wpa_supplicant
 
-name=
-version=
-release=
+name=networkmanager
+version=1.30
+release=1
 
-source=
+source="https://download.gnome.org/sources/NetworkManager/1.30/NetworkManager-1.30.0.tar.xz"
 options="!checksum"
 
 build() {
+	cd NetworkManager-$version
+	sed -e 's/-qt4/-qt5/'              \
+    	-e 's/moc_location/host_bins/' \
+    	-i examples/C/qt/meson.build   &&
+
+	sed -e 's/Qt/&5/'                  \
+    	-i meson.build
+
+
+	sed '/initrd/d' -i src/core/meson.build
+
+	grep -rl '^#!.*python$' | xargs sed -i '1s/python/&3/'
+
+	mkdir build 
+	cd    build 
+
+	CXXFLAGS+="-O2 -fPIC"            \
+	meson --prefix /usr              \
+      -Dlibaudit=no              \
+      -Dlibpsl=false             \
+      -Dnmtui=true               \
+      -Dovs=false                \
+      -Dppp=false                \
+      -Dselinux=false            \
+      -Dudev_dir=/lib/udev       \
+      -Dsession_tracking=elogind \
+      -Dmodem_manager=false      \
+      -Dsystemdsystemunitdir=no  \
+      -Dsystemd_journal=false    \
+      -Dqt=false                 \
+      ..
+
+      ninja
+      DESTDIR=$PKG ninja install
+
+
+
+	cat <<-EOF > $PKG/etc/NetworkManager/NetworkManager.conf 
+	[main]
+	plugins=keyfile
+	EOF
+
+
+	cat <<-EOF > $PKG/etc/NetworkManager/conf.d/polkit.conf
+	[main]
+	auth-polkit=true
+	EOF
+
+
+
+	cat<<-EOF > $PKG/etc/NetworkManager/conf.d/dhcp.conf
+	[main]
+	dhcp=dhclient
+	EOF
+
+
+
+	cat <<-EOF > $PKG/etc/NetworkManager/conf.d/no-dns-update.conf << "EOF"
+	[main]
+	dns=none
+	EOF
+
+
+	groupadd -fg 86 netdev &&
+	#/usr/sbin/usermod -a -G netdev <username>
+
+
+	cat <<-EOF > $PKG/usr/share/polkit-1/rules.d/org.freedesktop.NetworkManager.rules
+	polkit.addRule(function(action, subject) {
+    	if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("netdev")) {
+        	return polkit.Result.YES;
+    	}
+	});
+	EOF
+
 
 }
+
+
+

@@ -1,13 +1,65 @@
-# description : 
-# depends :
+# description : Kerberos is a network authentication protocol
+# depends : 
 
-name=
-version=
-release=
+name=mit-kerberos
+version=1.19.1
+release=1
 
-source=
+source="https://kerberos.org/dist/krb5/1.19/krb5-$version.tar.gz"
 options="!checksum"
 
 build() {
+	cd krb5-$version
+	cd src
+	sed -i -e 's@\^u}@^u cols 300}@' tests/dejagnu/config/default.exp     
+	sed -i -e '/eq 0/{N;s/12 //}'    plugins/kdb/db2/libdb2/test/run.test 
+	sed -i '/t_iprop.py/d'           tests/Makefile.in                    
+
+	./configure --prefix=/usr            \
+            --sysconfdir=/etc        \
+            --localstatedir=/var/lib \
+            --runstatedir=/run       \
+            --with-system-et         \
+            --with-system-ss         \
+            --with-system-verto=no   \
+            --enable-dns-for-realm
+	make
+	make DESTDIR=$PKG install
+	#mv -v /usr/lib/libkrb5.so.3*        /lib 
+	#mv -v /usr/lib/libk5crypto.so.3*    /lib 
+	#mv -v /usr/lib/libkrb5support.so.0* /lib 
+
+	#ln -v -sf ../../lib/libkrb5.so.3.3        /usr/lib/libkrb5.so        &&
+	#ln -v -sf ../../lib/libk5crypto.so.3.1    /usr/lib/libk5crypto.so    &&
+	#ln -v -sf ../../lib/libkrb5support.so.0.1 /usr/lib/libkrb5support.so &&
+
+	#mv -v /usr/bin/ksu /bin &&
+	#chmod -v 755 /bin/ksu   &&
+
+
+	cat <<-EOF > $PKG/etc/krb5.conf
+	# Begin /etc/krb5.conf
+
+	[libdefaults]
+    	default_realm = <voncloft.ORG>
+    	encrypt = true
+
+	[realms]
+    	<EXAMPLE.ORG> = {
+        kdc = <voncloft.org>
+        admin_server = <voncloft.org>
+        dict_file = /usr/share/dict/words
+    	}
+
+	[domain_realm]
+    	.<voncloft.org> = <voncloft.ORG>
+
+	[logging]
+    	kdc = SYSLOG:INFO:AUTH
+   	admin_server = SYSLOG:INFO:AUTH
+    	default = SYSLOG:DEBUG:DAEMON
+
+	# End /etc/krb5.conf
+	EOF
 
 }
