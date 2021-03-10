@@ -1,13 +1,20 @@
-# description : 
-# depends :
+# description : A spell checker designed to eventually replace Ispell
+# depends : gcc ncurses
 
-name=
-version=
-release
+name=aspell
+version=0.60.8
+release=2
+_pkgmajorver=0.60
 
-source=
+source="https://github.com/GNUAspell/aspell/archive/rel-$version.tar.gz"
 options="!checksum"
 
 build() {
+	cd $name-rel-$version
+ 		PERL_USE_UNSAFE_INC=1 ./autogen
+  		./configure --prefix=/usr --sysconfdir=/etc
+ 		 make	
 
+	make DESTDIR=$PKG install
+	 ln -s $name-$_pkgmajorver "$PKG"/usr/lib/$name
 }

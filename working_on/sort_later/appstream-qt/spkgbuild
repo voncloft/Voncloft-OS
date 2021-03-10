@@ -1,13 +1,20 @@
-# description : 
-# depends :
+# description : Provides a standard for creating app stores across distributions
+# depends : yaml libxml2 stemmer glib2 lmdb libsoup
 
-name=
-version=
-release
+name=appstream-qt
+version=0.14.3
+release=1
 
-source=
+source="https://www.freedesktop.org/software/appstream/releases/AppStream-$version.tar.xz"
 options="!checksum"
 
 build() {
+	cd AppStream-$version
+	meson .. --prefix=/usr \
+	-Dqt=true \
+    	-Dvapi=true \
+    	-Dcompose=true
 
+	ninja
+	DESTDIR=$PKG ninja install
 }
