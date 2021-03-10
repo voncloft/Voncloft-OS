@@ -1,5 +1,5 @@
 # description : Provides a standard for creating app stores across distributions
-# depends : yaml libxml2 stemmer glib2 lmdb libsoup
+# depends : yaml libxml2 stemmer glib lmdb libsoup
 
 name=appstream-qt
 version=0.14.3
