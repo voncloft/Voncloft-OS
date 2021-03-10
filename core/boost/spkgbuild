@@ -2,9 +2,9 @@
 # depends	: zlib bzip2 which icu python python
 
 name=boost
-version=1.74.0
+version=1.75.0
 release=1
-source="https://dl.bintray.com/boostorg/release/$version/source/boost_${_version}.tar.bz2"
+source="https://dl.bintray.com/boostorg/release/$version/source/boost_${version}.tar.bz2"
 
 build() {
 	cd boost_${version//./_}
