@@ -15,6 +15,7 @@ d:packagekit-qt
 d:scim
 d:socat
 d:qalculate
+d:bash-completion
 d:appstream-qt
 d:xorg-synaptics-driver
 d:ibus
@@ -40,6 +41,9 @@ f:d41d8cd98f00b204e9800998ecf8427e:.place_holder
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:scim/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:socat/spkgbuild
 f:8950fb8f0af0a11ba870fe09f4ab8654:qalculate/spkgbuild
+f:7102725f8b30d8f219e703c50f3548dc:bash-completion/.checksums
+f:9a0107481f68e93c261a3abf05d9a484:bash-completion/.pkgfiles
+f:3f0e0ab0574a0f32f9c50f32b1af4432:bash-completion/spkgbuild
 f:efb3893c45e4514d147801682072e5e2:appstream-qt/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:xorg-synaptics-driver/spkgbuild

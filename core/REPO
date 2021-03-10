@@ -386,7 +386,6 @@ d:galculator
 d:xrefresh
 d:gc
 d:pango
-d:bash-completion
 d:which
 d:wxgtk3
 d:pm-utils
@@ -1865,9 +1864,6 @@ f:9a60dd2358d98e49a4c0bf9c6b69d7e8:gc/spkgbuild
 f:a48175989fbb31d16df807fc71a13548:pango/.checksums
 f:482185644bc550c2ec44c0a29ae1374c:pango/.pkgfiles
 f:f9ab58296386e235320bc1370ec230be:pango/spkgbuild
-f:7102725f8b30d8f219e703c50f3548dc:bash-completion/.checksums
-f:9a0107481f68e93c261a3abf05d9a484:bash-completion/.pkgfiles
-f:3f0e0ab0574a0f32f9c50f32b1af4432:bash-completion/spkgbuild
 f:ea26de4617b90a62f1897cb8c3faaddb:which/.checksums
 f:13cb6b3fc1130ba177ee69356631ada0:which/.pkgfiles
 f:5c46211dded50961bbaac0cdfed95157:which/spkgbuild
