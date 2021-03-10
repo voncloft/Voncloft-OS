@@ -10,5 +10,54 @@ version=5.20
 release=1
 
 build() {
-	mkdir -pv $PKG/opt
+       install -dvm 755 $PKG/usr/share/xsessions              &&
+        cd $PKG/usr/share/xsessions/                                   &&
+        [ -e plasma.desktop ]                                      ||
+        ln -sfv $PKG/opt/kf5/share/xsessions/plasma.desktop &&
+        install -dvm 755 $PKG/usr/share/wayland-sessions       &&
+        cd $PKG/usr/share/wayland-sessions/                            &&
+        [ -e plasmawayland.desktop ]                               ||
+        ln -sfv $PKG/opt/kf5/share/wayland-sessions/plasmawayland.desktop
+
+        cat <<- EOF > $PKG/etc/pam.d/kde
+        # Begin /etc/pam.d/kde
+
+        auth     requisite      pam_nologin.so
+        auth     required       pam_env.so
+
+        auth     required       pam_succeed_if.so uid >= 1000 quiet
+        auth     include        system-auth
+
+        account  include        system-account
+        password include        system-password
+        session  include        system-session
+
+        # End /etc/pam.d/kde
+        EOF
+
+        cat <<-EOF > $PKG/etc/pam.d/kde-np
+        # Begin /etc/pam.d/kde-np
+
+        auth     requisite      pam_nologin.so
+        auth     required       pam_env.so
+
+        auth     required       pam_succeed_if.so uid >= 1000 quiet
+        auth     required       pam_permit.so
+
+        account  include        system-account
+        password include        system-password
+        session  include        system-session
+
+        # End /etc/pam.d/kde-np
+        EOF
+
+        cat <<-EOF > $PKG/etc/pam.d/kscreensaver
+        # Begin /etc/pam.d/kscreensaver
+
+        auth    include system-auth
+        account include system-account
+
+        # End /etc/pam.d/kscreensaver
+        EOF
+
 }
