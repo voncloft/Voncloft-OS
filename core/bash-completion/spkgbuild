@@ -1,0 +1,43 @@
+# description	: Programmable completion for the bash shell
+# depends	: bash
+
+name=bash-completion
+version=2.11
+release=1
+
+source="profile
+	bash_completion.sh
+	dircolors.sh
+	extrapaths.sh
+	readline.sh
+	umask.sh
+	i18n.sh
+	bashrc
+	.bash_profile
+	.profile
+	.bashrc
+	.bash_logout"
+options="!checksum"
+
+build() {
+	mkdir $PKG/etc
+	install -m644 $SRC/profile $PKG/etc
+	install --directory --mode=0755 --owner=root --group=root $PKG/etc/profile.d
+	install -m644 $SRC/bash_completion.sh $PKG/etc/profile.d
+	install --directory --mode=0755 --owner=root --group=root $PKG/etc/bash_completion.d
+	install -m644 $SRC/dircolors.sh $PKG/etc/profile.d
+	install -m644 $SRC/extrapaths.sh $PKG/etc/profile.d
+	install -m644 $SRC/readline.sh $PKG/etc/profile.d
+	install -m644 $SRC/umask.sh $PKG/etc/profile.d
+	install -m644 $SRC/i18n.sh $PKG/etc/profile.d
+
+	install -m644 $SRC/bashrc $PKG/etc
+	
+	mkdir -pv $PKG/etc/skel
+	install -m644 $SRC/.bash_profile $PKG/etc/skel
+	install -m644 $SRC/.profile $PKG/etc/skel
+	install -m644 $SRC/.bashrc $PKG/etc/skel
+	install -m644 $SRC/.bash_logout $PKG/etc/skel
+	
+	dircolors -pv > $PKG/etc/dircolors 
+}
