@@ -1,5 +1,5 @@
 # description : Phonon
-# depends cmake extra-cmake-modules glib qt pulseaudio
+# depends cmake extra-cmake-modules glib qt5 pulseaudio
 
 name=phonon
 version=4.11.1
