@@ -39,5 +39,5 @@ build() {
 	install -m644 $SRC/.bashrc $PKG/etc/skel
 	install -m644 $SRC/.bash_logout $PKG/etc/skel
 	
-	dircolors -pv > $PKG/etc/dircolors 
+	dircolors -p > $PKG/etc/dircolors 
 }
