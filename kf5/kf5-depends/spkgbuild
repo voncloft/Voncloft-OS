@@ -1,6 +1,6 @@
 # description : Core components for the kde desktop these are all the kf5 dependencies
 # depends : boost extra-cmake-modules docbook-xml docbook-xsl giflib libepoxy libgcrypt libical libjpeg-turbo libpng libxslt lmdb qrencode 
-# depends : phonon plasma-wayland-protocols shared-mime-info uri wget aspell avahi libdbusmenu-qt networkmanager polkit-qt bluez modemmanager
+# depends : phonon plasma-wayland-protocols shared-mime-info uri wget aspell avahi libdbusmenu-qt networkmanager polkit-qt bluez
 # depends : datamatrix oxygen-fonts noto-fonts doxygen jinja2 yaml jasper openexr mit-kerberos udisks upower gpgme hspell hunspell 
 
 name=kf5-depends
