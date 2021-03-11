@@ -44,7 +44,6 @@ d:libxfce4util
 d:xcursorgen
 d:libxfce4ui
 d:libxres
-d:libxml2
 d:libxtst
 d:libxau
 d:xterm
@@ -210,9 +209,6 @@ f:a5958bd7aa267f6fa9bd63b9d71d8063:libxfce4ui/spkgbuild
 f:62521a382bcdb6b211451a2a74c16913:libxres/.checksums
 f:cd7772fc73cba30969f5019c2a5a0580:libxres/.pkgfiles
 f:45bd22fe9c6a7aa494b6c61fc0e97c07:libxres/spkgbuild
-f:2bc8ffbc89ceb879b301d1db62e20bd6:libxml2/.checksums
-f:13b6f1826465045990d17478db1057df:libxml2/.pkgfiles
-f:66caccf684a5f00e6b27e8c4d60cc807:libxml2/spkgbuild
 f:68a27b239b69393772cb6c8b946f79ff:libxtst/.checksums
 f:348ae1307d3cc662f1c8f3307e7c1071:libxtst/.pkgfiles
 f:550fdd4d13e6167753a03fd8c09dee9f:libxtst/spkgbuild

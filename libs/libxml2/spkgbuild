@@ -7,6 +7,8 @@ release=1
 source="http://xmlsoft.org/sources/$name-$version.tar.gz
 	http://www.linuxfromscratch.org/patches/blfs/svn/libxml2-2.9.10-security_fixes-1.patch"
 
+options="!checksum"
+
 build() {
 	cd $name-$version
 	patch -p1 -i $SRC/libxml2-2.9.10-security_fixes-1.patch

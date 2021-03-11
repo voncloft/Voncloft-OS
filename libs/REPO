@@ -82,6 +82,7 @@ d:libmpc
 d:libftdi
 d:libfontenc
 d:libpng
+d:libxml2
 d:liberation-fonts
 d:libappindicator
 d:libgnome-keyring
@@ -378,6 +379,9 @@ f:1d8e2c99a6ea47dbca2c62def38e43ad:libfontenc/spkgbuild
 f:cbff255586cc37b1b6be31facda8039b:libpng/.checksums
 f:553b1df04859b2c55bfff4cdd5068bb6:libpng/.pkgfiles
 f:e10aa5eba25f1129fd0e3f2413451441:libpng/spkgbuild
+f:2bc8ffbc89ceb879b301d1db62e20bd6:libxml2/.checksums
+f:13b6f1826465045990d17478db1057df:libxml2/.pkgfiles
+f:d69bf75c069a85b7aaf7f2c21d174a53:libxml2/spkgbuild
 f:c547002fccf87aaa93a1f9cd6e1946e4:liberation-fonts/30-0-liberation-mono.conf
 f:ddebbcf5c01369c628c44d203da26107:liberation-fonts/.checksums
 f:69d9fc1593bb9344f0bc9b2cb0aa93ab:liberation-fonts/30-0-liberation-sans.conf
