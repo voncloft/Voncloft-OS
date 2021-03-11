@@ -12,7 +12,7 @@ build() {
 	mkdir build
 	cd    build
 
-	meson meson --prefix=/usr -Dbash_completion=false ..
+	meson --prefix=/usr -Dbash_completion=false ..
 	ninja
 	DESTDIR=$PKG ninja install
 }
