@@ -4,7 +4,7 @@
 name=python-pygments
 version=2.7.4
 release=1
-$pyn=python-Pygments
+pyn=python-Pygments
 
 source="https://files.pythonhosted.org/packages/source/${pyn:7:1}/${pyn#python-}/${pyn#python-}-${version}.tar.gz"
 options="!checksum"
