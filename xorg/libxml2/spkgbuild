@@ -4,16 +4,19 @@
 name=libxml2
 version=2.9.10
 release=1
-source="http://xmlsoft.org/sources/$name-$version.tar.gz"
+source="http://xmlsoft.org/sources/$name-$version.tar.gz
+	http://www.linuxfromscratch.org/patches/blfs/svn/libxml2-2.9.10-security_fixes-1.patch"
 
 build() {
 	cd $name-$version
-
-	./configure --prefix=/usr \
-		    --disable-static \
-		    --with-history \
-		    --with-icu \
-		    --with-python=/usr/bin/python
-	make
+	patch -p1 -i $SRC/libxml2-2.9.10-security_fixes-1.patch
+	sed -i '/if Py/{s/Py/(Py/;s/)/))/}' python/{types.c,libxml.c}
+	sed -i 's/ TRUE/ true/' encoding.c
+	
+	./configure --prefix=/usr    \
+            --disable-static \
+            --with-history   \
+            --with-python=/usr/bin/python3
+        make
 	make DESTDIR=$PKG install
 }
