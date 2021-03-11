@@ -1,7 +1,6 @@
 d:networkmanager
 d:kdevplatform
 d:libdaemon
-d:nss
 d:pygobject
 d:libqalculate
 d:openexr
@@ -18,7 +17,6 @@ d:oxygen-fonts
 f:6ee927811b813af3a745cf838102cfc0:networkmanager/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:kdevplatform/spkgbuild
 f:6a576b3cee52d18f1930e8b094d99813:libdaemon/spkgbuild
-f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:nss/spkgbuild
 f:b57f5549c7e06ed60ce01ba995902f3a:pygobject/spkgbuild
 f:0fb7377f7d8e1d70ba64de7cd1bc966a:libqalculate/spkgbuild
 f:adf7cc45798861a3e92e9012d1097644:openexr/spkgbuild
