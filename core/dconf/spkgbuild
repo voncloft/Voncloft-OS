@@ -1,5 +1,5 @@
 # description	: Configuration database system
-# depends	: meson vala bash-completion libxslt dbus
+# depends	: dbus glib gtk3 libxml2 libxslt vala 
 
 name=dconf
 version=0.38.0
@@ -12,7 +12,7 @@ build() {
 	mkdir build
 	cd    build
 
-	meson --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib/$name ..
+	meson meson --prefix=/usr -Dbash_completion=false ..
 	ninja
 	DESTDIR=$PKG ninja install
 }
