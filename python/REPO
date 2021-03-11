@@ -372,6 +372,7 @@ d:python-hiredis
 d:python-django-extensions
 d:python-pythondata-cpu-lm32
 d:python-pynacl
+d:python-Pygments
 d:python-bottle
 d:python-terminaltables
 d:python-simplebayes
@@ -1357,7 +1358,6 @@ d:python-musicbrainz2
 d:python-tensorflow-serving-api
 d:python-enrich
 d:python-cpplint
-d:python-pygments
 d:python-zope-location
 d:python-daemon
 d:python-validators
@@ -1887,6 +1887,7 @@ f:f11b6c0102059f5f7bb63c652fab0258:python-hiredis/spkgbuild
 f:773a976eb358ff6edd58577d85651d34:python-django-extensions/spkgbuild
 f:506aabc675713991806552bdb6240104:python-pythondata-cpu-lm32/spkgbuild
 f:c4d27ef9eab630686cc61e55eeecb109:python-pynacl/spkgbuild
+f:2fb016a3f721dbb62a1d142669e88391:python-Pygments/spkgbuild
 f:1c856c3c6647e343cf9b71478e009821:python-bottle/spkgbuild
 f:7a2ef12493e35deb4816db0da5391fe5:python-terminaltables/spkgbuild
 f:bf286ad068689bf07323e3729014dcf9:python-simplebayes/spkgbuild
@@ -2873,7 +2874,6 @@ f:6108abd065babebd8fea96f3dfb65e80:python-musicbrainz2/spkgbuild
 f:c4180ee9488c4d01e9172e6e488fa380:python-tensorflow-serving-api/spkgbuild
 f:ad81bb51aa6f43ad0ff5023fbc012b03:python-enrich/spkgbuild
 f:79f3fa003780a4c986f090524fb5fd78:python-cpplint/spkgbuild
-f:2fb016a3f721dbb62a1d142669e88391:python-pygments/spkgbuild
 f:67e4adc674011da3424a29930fe27f08:python-zope-location/spkgbuild
 f:d1aaf9a945c708b6e36a7b99eb3c49c8:python-daemon/spkgbuild
 f:10d5fddb49655f13a5279cfe3ae8e90f:python-validators/spkgbuild

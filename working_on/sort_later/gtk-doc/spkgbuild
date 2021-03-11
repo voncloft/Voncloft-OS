@@ -1,5 +1,5 @@
 # description : code documenter 
-# depends : docbook-xml docbook-xsl itstool libxslt python-pytgments
+# depends : docbook-xml docbook-xsl itstool libxslt python-Pygments
 
 name=gtk-doc
 version=1.33.2
