@@ -1,5 +1,5 @@
 # description	: Extracts messages from XML files and outputs PO template files and vice versa
-# depends	: docbook-xml python libxml2 
+# depends	: docbook-xml python python-libxml libxml2 
 
 name=itstool
 version=2.0.6
@@ -11,8 +11,8 @@ build() {
 
 	# python segfault building doc on mate-applet
 	# so, let it use default, python
-
-	./configure --prefix=/usr
+	
+	PYTHON=/usr/bin/python3 ./configure --prefix=/usr
 	make
 	make DESTDIR=$PKG install
 }
