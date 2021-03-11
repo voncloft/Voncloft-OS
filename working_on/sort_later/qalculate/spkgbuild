@@ -1,13 +1,17 @@
-# description : 
-# depends :
+# description : front end for libqalculate 
+# depends : gtk3 libqalculate
 
-name=
-version=
-release
+name=qalculate
+version=3.17.0
+release=1
 
-source=
+source="https://github.com/Qalculate/qalculate-gtk/releases/download/v$version/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
-
+	cd $name-gtk-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	
 }

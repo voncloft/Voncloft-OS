@@ -1,0 +1,15 @@
+# description : service discovery on local network
+# depends : glib gobject-introspection gtk libdaemon libglade qt5
+
+name=avahi
+version=0.8
+release=1
+
+source="https://github.com/lathiat/avahi/releases/download/v0.8/avahi-$version.tar.gz
+	http://www.linuxfromscratch.org/patches/blfs/svn/avahi-$version-ipv6_race_condition_fix-1.patch"
+
+options="!checksum"
+
+build() {
+
+}

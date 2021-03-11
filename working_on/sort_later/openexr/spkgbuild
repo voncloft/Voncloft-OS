@@ -1,13 +1,20 @@
-# description : 
-# depends :
+# description : An high dynamic-range image file format library 
+# depends : openexr
 
-name=
-version=
-release=
+name=openexr
+version=2.5.5
+release=1
 
-source=
+source="https://github.com/openexr/openexr/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr
 
+	make
+	make DESTDIR=$PKG install
 }

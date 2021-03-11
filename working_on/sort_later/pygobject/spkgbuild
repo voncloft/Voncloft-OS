@@ -1,13 +1,19 @@
-# description : 
-# depends :
+# description : gobject class for glib using python 
+# depends : object-introspection pycairo
 
-name=
-version=
-release=
+name=pygobject
+version=3.26.1
+release=1
 
-source=
+source="http://ftp.gnome.org/pub/gnome/sources/pygobject/3.26/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
-
+	cd $name-$version
+	mkdir python3
+	pushd python3
+	../configure --prefix=/usr --with-python=/usr/bin/python3
+	make
+	popd
+	make -C python3 DESTDIR=$PKG install
 }
