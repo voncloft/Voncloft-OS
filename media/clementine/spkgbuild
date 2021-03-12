@@ -2,14 +2,15 @@
 # depends : kde5 cmake alsa-lib chromaprint gst-plugins-base hicolor-icon-theme libcdio liblastfm-qt5 libmtp libmygpo-qt5 pulseaudio projectm protobuf taglib qt5-x11extras
 
 name=clementine
-build=1.4.0rc1+347+gfc4cb6fc7
+build=1.4.0
 release=1
 
-source="https://github.com/clementine-player/Clementine/releases/download/${version//+/-}/$name-${version//+/-}.tar.xz"
+_misc=rc1-494-gdfb953a78
+source="https://github.com/clementine-player/Clementine/archive/$version$_misc.tar.gz"
 options="!checksum"
 
 build() {
-	cd $name-${version//+/-} \
+	cd Clementine-$version$_misc
 	#sed -e 's|CRYPTOPP cryptopp|CRYPTOPP libcryptopp|' -i $name-${version//+/-}/CMakeLists.txt # Fix crypto++ detection
 
 	mkdir build
