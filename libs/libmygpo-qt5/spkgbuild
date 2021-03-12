@@ -12,7 +12,7 @@ build() {
 	cd libmygpo-qt.$version
 	mkdir build
 	cd build
-	cmake ../libmygpo-qt.${pkgver} \
+	cmake ..  \
     	-DCMAKE_BUILD_TYPE='Release' \
     	-DCMAKE_INSTALL_PREFIX='/usr' \
     	-DMYGPO_BUILD_TESTS=OFF
