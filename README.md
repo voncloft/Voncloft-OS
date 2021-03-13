@@ -17,5 +17,6 @@ some errors may be present will fix as a need be basis)**
 - kde - needs testing
 
 **Other:**
+
 -Everything in working_on/sort_later needs to be tested.
 -Will use a spare PC to test everything on or a virtual box
