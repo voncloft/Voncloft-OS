@@ -5,6 +5,7 @@ A Linux From Scratch Repository that I self maintain.
 _As of 3-13-2021_
 
 **Update:**
+
 **No major plans to update repository except for occasionaly python packages (all of them were built using a script
 some errors may be present will fix as a need be basis)**
 
