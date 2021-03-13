@@ -7,7 +7,6 @@ d:kpackage
 d:kcodecs
 d:krunner
 d:kio
-d:networkmanager-qt
 d:oxygen-icons5
 d:kfilemetadata
 d:kwallet
@@ -42,7 +41,6 @@ d:knotifications
 d:kf5-depends
 d:kcmutils
 d:kdesu
-d:modemmanager-qt
 d:kjs
 d:kplotting
 d:kservice
@@ -59,7 +57,6 @@ d:kitemviews
 d:kactivities-stats
 d:kpty
 d:kbookmarks
-d:bluez-qt
 d:plasma-framework
 d:kwidgetsaddons
 d:kdesignerplugin
@@ -92,7 +89,6 @@ f:a552d04e76047e0aae65339cf20e8892:kpackage/spkgbuild
 f:9996217e1692f8bd9521493f152b396c:kcodecs/spkgbuild
 f:2a18ee429fb69e5d744bfcb029d4dcd4:krunner/spkgbuild
 f:38a5041df3e3be324e298b6a2653e3a4:kio/spkgbuild
-f:01301c851f412785d80cc7d501c951dd:networkmanager-qt/spkgbuild
 f:20efbf9a243cab768aea4516657dd32c:oxygen-icons5/spkgbuild
 f:78f9bd32700bfd27b673b604010f2f72:kfilemetadata/spkgbuild
 f:547efe65c02dc905fbbe95fcfd404dcc:kwallet/spkgbuild
@@ -127,7 +123,6 @@ f:d14317e99b04b4624fb32011ceb1e9e2:knotifications/spkgbuild
 f:5fd9143de3bf0ddd9b4ba9d8902571f9:kf5-depends/spkgbuild
 f:50795ded2786b9e3ffa5f8a661904e1b:kcmutils/spkgbuild
 f:f0746d36d932ffa938d0c0862addf195:kdesu/spkgbuild
-f:1c465873c062509acf9d62235851c99d:modemmanager-qt/spkgbuild
 f:12e8fb94ca64e5b922d4a3bfc95d15eb:kjs/spkgbuild
 f:1056a79fbbd550aac9204905a8531b54:kplotting/spkgbuild
 f:4b2496784c6b7ea70e12f772a49f9d56:kservice/spkgbuild
@@ -144,7 +139,6 @@ f:4d2002beb1f0b0dc886f8f985bc90f9b:kitemviews/spkgbuild
 f:1e22330b310bc4075e45e09542d715b4:kactivities-stats/spkgbuild
 f:95298b3564b012e8f51e597ea74c4cb7:kpty/spkgbuild
 f:c4fad6567ec22a27aacc9c015f51dd4d:kbookmarks/spkgbuild
-f:5855aae24a4d7a328213561722ebc2be:bluez-qt/spkgbuild
 f:bcc10000e3848628dfc476af4e990619:plasma-framework/spkgbuild
 f:dbcfe5e56a073a58383b98704f71f9fb:kwidgetsaddons/spkgbuild
 f:aca295113d62a1bc10398945e994879b:kdesignerplugin/spkgbuild

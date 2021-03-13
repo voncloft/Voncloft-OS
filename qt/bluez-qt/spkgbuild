@@ -1,7 +1,7 @@
 # description : Core components for the kde desktop
 # depends : kde-deps
 
-name=networkmanager-qt
+name=bluez-qt
 version=5.77
 release=1
 
@@ -10,6 +10,6 @@ options="!checksum"
 
 build() {
    cd $name-$version
-   plasma-package-installer
+   kf5-package-installer
    make DESTDIR=$PKG install
 }
