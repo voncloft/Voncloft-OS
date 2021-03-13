@@ -10,8 +10,7 @@ some errors may be present will fix as a need be basis)**
 **Done:**
 
 - mythtv - needs testing
-
-clementine
+- clementine
 
 python - might have errors will fix as a need be basis
 
