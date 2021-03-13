@@ -8,7 +8,7 @@ No major plans to update repository except for occasionaly python packages (all 
 some errors may be present will fix as a need be basis)
 
 Done:
-mythtv - needs testing
+mythtv - needs testing \n
 clementine
 python - might have errors will fix as a need be basis
 perl - might have errors will fix as a need be basis
