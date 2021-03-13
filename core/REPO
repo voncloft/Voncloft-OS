@@ -215,6 +215,7 @@ d:enchant
 d:caja
 d:db
 d:exiv2
+d:aspell
 d:iceauth
 d:encodings
 d:linux-firmware
@@ -349,6 +350,7 @@ d:osx-arc-theme
 d:swig
 d:double-conversion
 d:shellcheck-static
+d:socat
 d:graphviz
 d:uthash
 d:glibmm
@@ -383,6 +385,7 @@ d:yelp-xsl
 d:glib
 d:links
 d:galculator
+d:qalculate
 d:xrefresh
 d:gc
 d:pango
@@ -457,6 +460,7 @@ d:npth
 d:thunar-archive-plugin
 d:icewm
 d:soundtouch
+d:ibus
 d:smplayer-themes
 d:opera
 d:picom
@@ -1295,6 +1299,7 @@ f:430663deafeaa37c73ce09115c66b344:db/spkgbuild
 f:876cc4d63edf7ad7f599ba28118a1e3e:exiv2/.checksums
 f:c27beb4bd9c8bd1458428bc97d769e17:exiv2/.pkgfiles
 f:dcd567fea67245fbe0a5c54836f84ef7:exiv2/spkgbuild
+f:eda0545af6a628507e33990495ec6e60:aspell/spkgbuild
 f:62a6e92ca220fdea8bf9bad8fa29fb44:iceauth/.checksums
 f:9d4640d668acc578ebbbe3e197f39ef4:iceauth/.pkgfiles
 f:d9d3a9608647c9810b63c60b740b61df:iceauth/spkgbuild
@@ -1739,6 +1744,7 @@ f:1aa05ea22487407bdaa7341be994e88d:double-conversion/spkgbuild
 f:3cd3c50c1401c2cdeda120c35b7655c7:shellcheck-static/.checksums
 f:f16ed7b9e87a91787658763a418d2daf:shellcheck-static/.pkgfiles
 f:cbf6a5420ae3ad95fad609a613c5630d:shellcheck-static/spkgbuild
+f:77299362350053988fe57d3995cdc735:socat/spkgbuild
 f:e732f541b0badea57c59201b39070696:graphviz/.checksums
 f:1d780708168c87089b92d3cce49b5aa1:graphviz/.pkgfiles
 f:7f94a0c8ba381475c0f725be322d0233:graphviz/spkgbuild
@@ -1854,6 +1860,7 @@ f:f8d71eff77234392f16a7d9a5745c2d2:links/spkgbuild
 f:d5559b5c6f2c956d4cfb420b22b73005:galculator/.checksums
 f:aaf46e9702cdb9d8bb4b0300e21cb84b:galculator/.pkgfiles
 f:d0c5955e2a6b9b221441ba1fc288ae3a:galculator/spkgbuild
+f:9cce167512d16647ef6b60fa57991f1e:qalculate/spkgbuild
 f:0377aa62129f532d422b51130957cb6f:xrefresh/.checksums
 f:a18e776918ed9ef60d423cb18234a837:xrefresh/.pkgfiles
 f:8165593d775800d307fdaaefe7860445:xrefresh/spkgbuild
@@ -2114,6 +2121,7 @@ f:3131332c0634981941dce806cfd42a92:icewm/spkgbuild
 f:7a22948c772c50dfed608ab1a6e79da9:soundtouch/.checksums
 f:adab3d459221ee21abfaf34de793ffe6:soundtouch/.pkgfiles
 f:a756073fda1c7467cdc77a1909da6f9c:soundtouch/spkgbuild
+f:9b37216d23dce9ba4bf2b5fd43ab6263:ibus/spkgbuild
 f:23f9eea5df11e4467eb5192a28069171:smplayer-themes/.checksums
 f:2b8bf3cb8eca81ba8f51b792b70894c5:smplayer-themes/.pkgfiles
 f:640027724ed03fa5384676592d1dfff9:smplayer-themes/spkgbuild

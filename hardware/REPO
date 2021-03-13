@@ -5,6 +5,7 @@ d:xf86-input-synaptics
 d:xf86-video-amdgpu
 d:xf86-video-fbdev
 d:mesa
+d:scim
 d:xf86-video-vesa
 d:xf86-input-libinput
 d:xf86-video-vmware
@@ -37,6 +38,7 @@ f:0ae2828a627e6c12f7984f6b806d3eff:xf86-video-fbdev/spkgbuild
 f:d293ddbe4fb815ab59ac3651492afc56:mesa/.checksums
 f:163e38f60aae1c57e9996d90ef4c4493:mesa/.pkgfiles
 f:4bf274e7562ea1e6537cc78acc7fe91b:mesa/spkgbuild
+f:d5143da79daabda60c293d6b0915954c:scim/spkgbuild
 f:32bd2d0aa06b6b8c6111a73092cc787d:xf86-video-vesa/.checksums
 f:dc755b025f23a878fea425286c012348:xf86-video-vesa/.pkgfiles
 f:e5c84ff248356012e7119abfad5c9f23:xf86-video-vesa/spkgbuild
