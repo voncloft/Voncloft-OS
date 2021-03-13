@@ -4,12 +4,12 @@ A Linux From Scratch Repository that I self maintain.
 
 As of 3-13-2021
 
-No major plans to update repository except for occasionaly python packages (all of them were built using a script
-some errors may be present will fix as a need be basis)
+**No major plans to update repository except for occasionaly python packages (all of them were built using a script
+some errors may be present will fix as a need be basis)**
 
-Done:
+**Done:**
 
-mythtv - needs testing
+- mythtv - needs testing
 
 clementine
 
@@ -21,7 +21,7 @@ kodi - needs testing
 
 kde - needs testing
 
-Other:
+**Other:**
 
 Everything in working_on/sort_later needs to be tested.
 
