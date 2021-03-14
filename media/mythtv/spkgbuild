@@ -12,7 +12,7 @@ options="!checksum"
 build()
 {
 	#cd $name-$version/mythtv
-	cd mythtv-master
+	cd mythtv-master/mythtv
 	./configure --prefix=/usr \
               --cpu="$ARCH" \
               --disable-altivec \
