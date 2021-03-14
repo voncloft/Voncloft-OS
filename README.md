@@ -6,8 +6,7 @@ _As of 3-13-2021_
 
 **Update:**
 
-**No major plans to update repository except for occasionaly python packages (all of them were built using a script
-some errors may be present will fix as a need be basis)**
+- Fixing bootscripts will have two for each first will install /etc/init.d second will ln -sfv
 
 **Done:**
 - mythtv - needs testing
