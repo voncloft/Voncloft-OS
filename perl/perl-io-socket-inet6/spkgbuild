@@ -12,7 +12,6 @@ source="https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/IO-Socket-INET6-$ve
 options="!checksum"
 
 build() {
-     cd $_distdir
    cd $_distdir
    perl Makefile.PL
    make
