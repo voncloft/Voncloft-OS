@@ -1,5 +1,5 @@
 # description : library to talk to ftdi chips
-# depends : confuse libusb
+# depends : gcc libusb-compat
 
 name=libftdi
 version=1.5
