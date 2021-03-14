@@ -28,6 +28,6 @@ build()
               --with-bindings=perl \
               --perl-config-opts=INSTALLDIRS=vendor
         make
-        make DESTDIR=$PKG install
+        make INSTALL_ROOT=$PKG install
         
 }
