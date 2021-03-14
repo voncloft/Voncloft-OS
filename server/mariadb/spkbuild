@@ -1,0 +1,11 @@
+# description : mariadb metapackage
+# depends : mariadb-core mariadb-setup
+
+name=mariadb
+version=1
+release=1
+
+
+build() {
+	mkdir $PKG/usr
+}

@@ -1,7 +1,7 @@
 # description : mysql database
-# depends : mariadb-boot cmake libevent
+# depends : cmake libevent
 
-name=mariadb
+name=mariadb-core
 version=10.5.8
 release=1
 
@@ -9,7 +9,7 @@ source="https://downloads.mariadb.org/interstitial/$name-$version/source/$name-$
 options="!checksum"
 build()
 {
-	cd $name-$version
+	cd mariadb-$version
 	groupadd -g 40 mysql &&
 useradd -c "MySQL Server" -d /srv/mysql -g mysql -s /bin/false -u 40 mysql
 
