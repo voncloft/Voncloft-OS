@@ -5,12 +5,11 @@ name=flexget-daemon
 version=3.1.71
 release=1
 
-source="flexget"
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/bootscripts.tar.gz"
 options="!checksum"
-build()
-{
-	useradd -m deluge
-	cd $name-$version
-	mkdir -pv $PKG/etc/init.d
-	install $SRC/flexget $PKG/etc/init.d/
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-flexget-daemon
+
 }

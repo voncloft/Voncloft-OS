@@ -5,14 +5,11 @@ name=noip-boot
 version=2.1.9
 release=1
 
-source="noip2"
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/bootscripts.tar.gz"
 options="!checksum"
 
-build()
-{
-	make -pv $PKG/etc/init.d
-	install $SRC/noip2 $PKG/etc/init.d/
-	ln -sfv /etc/init.d/noip2 /etc/rc.d/rc5.d/S99noip2
-	ln -sfv /etc/init.d/noip2 /etc/rc.d/rc4.d/S99noip2
-	ln -sfv /etc/init.d/noip2 /etc/rc.d/rc3.d/S99noip2 
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-noip-boot
+
 }

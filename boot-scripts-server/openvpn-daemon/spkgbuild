@@ -5,10 +5,11 @@ name=openvpn-daemon
 version=2.4.9
 release=1
 
-source="openvpn-torrent"
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/bootscripts.tar.gz"
 options="!checksum"
-build()
-{
-	mkdir -pv $PKG/etc/init.d
-	install $SRC/openvpn-torrent $PKG/etc/init.d/
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-openvpn-torrent
+
 }

@@ -5,13 +5,11 @@ name=hostapd-boot
 version=2.9
 release=4
 
-source="hostapd"
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/bootscripts.tar.gz"
 options="!checksum"
-build()
-{
-	mkdir $PKG/etc/init.d
-	install $SRC/hostapd /$PKG/etc/init.d/
-	ln -sfv /etc/init.d/hostapd /etc/rc.d/rc5.d/hostapd
-	ln -sfv /etc/init.d/hostapd /etc/rc.d/rc4.d/hostapd
-	ln -sfv /etc/init.d/hostapd /etc/rc.d/rc3.d/hostapd
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-hostapd-boot
+
 }
