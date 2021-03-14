@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DC/DCONWAY/Lingua-EN-Inflect-$ver
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Lingua-EN-Inflect-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

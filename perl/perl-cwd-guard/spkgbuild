@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/K/KA/KAZEBURO/Cwd-Guard-$version
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Cwd-Guard-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

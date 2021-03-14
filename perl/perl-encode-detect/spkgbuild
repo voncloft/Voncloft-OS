@@ -5,11 +5,12 @@ name=perl-encode-detect
 version=1.01
 release=7
 
+_dist=Encode-Detect
 source="https://cpan.metacpan.org/authors/id/J/JG/JGMYERS/${_dist}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_dist-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

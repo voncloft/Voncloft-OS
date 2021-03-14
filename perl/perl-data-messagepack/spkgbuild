@@ -5,11 +5,12 @@ name=perl-data-messagepack
 version=1.01
 release=1
 
+_ddir=Data-MessagePack-$version
 source="https://cpan.metacpan.org/authors/id/S/SY/SYOHEX/Data-MessagePack-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_ddir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

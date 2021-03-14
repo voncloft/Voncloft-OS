@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-$ve
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  HTTP-Cache-Transparent-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

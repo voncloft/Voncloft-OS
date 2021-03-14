@@ -5,11 +5,13 @@ name=perl-digest-bubblebabble
 version=0.02
 release=6
 
+_distdir=Digest-BubbleBabble-$version
 source="https://search.cpan.org/CPAN/authors/id/B/BT/BTROTT/Digest-BubbleBabble-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd $_distdir
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/C/CL/CLKAO/SVN-Simple-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd SVN-Simple-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

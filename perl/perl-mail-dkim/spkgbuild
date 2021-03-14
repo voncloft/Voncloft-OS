@@ -5,11 +5,12 @@ name=perl-mail-dkim
 version=1.20200907
 release=1
 
+_ddir=Mail-DKIM-$version
 source="https://cpan.metacpan.org/authors/id/M/MB/MBRADSHAW/Mail-DKIM-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_ddir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

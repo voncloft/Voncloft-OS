@@ -5,11 +5,12 @@ name=perl-config-autoconf
 version=0.317
 release=4
 
+_dist=Config-AutoConf
 source="https://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/${_dist}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_dist}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/B/BL/BLUEWIND/App-BorgRestore-$vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd App-BorgRestore-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

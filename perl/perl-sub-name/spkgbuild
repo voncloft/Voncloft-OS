@@ -5,11 +5,15 @@ name=perl-sub-name
 version=0.26
 release=2
 
+_cpanname=Sub-Name
+_cpanname=Sub-Name
+_cpanname=Sub-Name
+_cpanname=Sub-Name
 source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/$_cpanname-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_cpanname-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

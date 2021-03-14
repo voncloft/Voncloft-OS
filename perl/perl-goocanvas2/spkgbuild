@@ -5,11 +5,12 @@ name=perl-goocanvas2
 version=0.06
 release=2
 
+_perl_module=GooCanvas2
 source="https://cpan.metacpan.org/authors/id/P/PE/PERLMAX/${_perl_module}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_perl_module}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/I/IS/ISHIGAKI/JSON-$version.tar.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  JSON-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

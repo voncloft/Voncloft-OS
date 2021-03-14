@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Devel-StackTrace-$v
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Devel-StackTrace-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

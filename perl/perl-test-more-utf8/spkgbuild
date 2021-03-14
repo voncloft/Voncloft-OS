@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MO/MONS/Test-More-UTF8-$versio
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Test-More-UTF8-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

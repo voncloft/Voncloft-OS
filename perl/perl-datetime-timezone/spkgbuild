@@ -9,7 +9,7 @@ source="https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-TimeZone-$ver
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  DateTime-TimeZone-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

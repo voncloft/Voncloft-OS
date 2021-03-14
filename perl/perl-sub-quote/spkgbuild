@@ -9,7 +9,8 @@ source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Sub-Quote-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd Sub-Quote-$version
+   cd Sub-Quote-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

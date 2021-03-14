@@ -8,7 +8,7 @@ source="https://cpan.metacpan.org/authors/id/L/LE/LEEJO/String-CRC32-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd String-CRC32-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,12 @@ name=perl-number-compare
 version=0.03
 release=10
 
+_dist=Number-Compare
 source="https://search.mcpan.org/CPAN/authors/id/R/RC/RCLAMP/Number-Compare-0.03.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_dist}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

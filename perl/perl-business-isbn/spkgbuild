@@ -5,11 +5,12 @@ name=perl-business-isbn
 version=3.004
 release=7
 
+_dist=Business-ISBN
 source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/${_dist}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_dist}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

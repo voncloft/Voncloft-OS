@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RC/RCAPUTO/POE-Component-Resol
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd POE-Component-Resolver-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

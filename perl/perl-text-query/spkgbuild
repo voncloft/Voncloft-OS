@@ -5,11 +5,15 @@ name=perl-text-query
 version=0.09
 release=4
 
+_cpanname=Text-Query
+_cpanname=Text-Query
+_cpanname=Text-Query
+_cpanname=Text-Query
 source="https://search.cpan.org/CPAN/authors/id/J/JO/JONJ/Text-Query-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_cpanname}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

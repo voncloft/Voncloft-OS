@@ -5,11 +5,13 @@ name=perl-devel-leak
 version=0.03
 release=10
 
+_distdir=Devel-Leak-$version
 source="https://search.mcpan.org/CPAN/authors/id/N/NI/NI-S/Devel-Leak-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd $_distdir
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

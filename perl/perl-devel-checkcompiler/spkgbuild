@@ -5,11 +5,12 @@ name=perl-devel-checkcompiler
 version=0.07
 release=6
 
+_distdir=Devel-CheckCompiler-0.05
 source="https://search.cpan.org/CPAN/authors/id/S/SY/SYOHEX/Devel-CheckCompiler-0.05.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/B/BR/BRADFITZ/Danga-Socket-$vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Danga-Socket-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/R/RE/REHSACK/File-HomeDir-$version.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd File-HomeDir-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

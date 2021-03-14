@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Time-Duration-$versio
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Time-Duration-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

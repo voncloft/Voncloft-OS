@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/T/TL/TLOWERY/DBI-Shell-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd DBI-Shell-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

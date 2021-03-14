@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/A/AN/ANDK/Devel-Symdump-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Devel-Symdump-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

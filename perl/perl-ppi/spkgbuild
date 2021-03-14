@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/PPI-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd PPI-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

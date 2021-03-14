@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Specio-$version.tar
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Specio-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

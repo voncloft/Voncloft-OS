@@ -5,11 +5,16 @@ name=perl-module-build-tiny
 version=0.039
 release=6
 
+_name=Module-Build-Tiny
+_name=Module-Build-Tiny
+_name=Module-Build-Tiny
+_name=Module-Build-Tiny
 source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_name}-${version}
+   cd ${_name}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

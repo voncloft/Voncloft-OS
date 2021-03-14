@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/local-lib-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd local-lib-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,13 @@ name=perl-throwable
 version=0.200013
 release=6
 
+_distdir=Throwable-0.200013
 source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Throwable-0.200013.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd $_distdir
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

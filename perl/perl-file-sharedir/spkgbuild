@@ -5,11 +5,15 @@ name=perl-file-sharedir
 version=1.116
 release=4
 
+_realname=File-ShareDir
+_realname=File-ShareDir
+_realname=File-ShareDir
+_realname=File-ShareDir
 source="https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/${_author}/$_realname-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_realname-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

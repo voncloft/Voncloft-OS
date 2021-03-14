@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/S/SR/SREZIC/String-Format-$version.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd String-Format-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

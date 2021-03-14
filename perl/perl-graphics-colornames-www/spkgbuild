@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/C/CF/CFAERBER/Graphics-ColorNames-WWW-$v
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Graphics-ColorNames-WWW-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

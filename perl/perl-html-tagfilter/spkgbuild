@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/W/WR/WROSS/HTML-TagFilter-$version.tar.g
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd HTML-TagFilter-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

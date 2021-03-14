@@ -5,11 +5,13 @@ name=perl-devel-cycle
 version=1.12
 release=3
 
+_perl_namespace=Devel
+_perl_module=Cycle
 source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_perl_namespace}-${_perl_module}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

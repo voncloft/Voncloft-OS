@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/Perl-Critic-$version.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Perl-Critic-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

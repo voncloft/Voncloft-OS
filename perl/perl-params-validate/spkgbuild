@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-Validate-${version}.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Params-Validate-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

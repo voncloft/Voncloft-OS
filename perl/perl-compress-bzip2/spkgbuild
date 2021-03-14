@@ -5,11 +5,15 @@ name=perl-compress-bzip2
 version=2.28
 release=1
 
+_realname=Compress-Bzip2
+_realname=Compress-Bzip2
+_realname=Compress-Bzip2
+_realname=Compress-Bzip2
 source="https://cpan.metacpan.org/authors/id/R/RU/RURBAN/${_realname}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_realname-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Test-Fatal-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Test-Fatal-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

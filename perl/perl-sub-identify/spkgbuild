@@ -9,7 +9,7 @@ source="https://search.mcpan.org/CPAN/authors/id/R/RG/RGARCIA/Sub-Identify-$vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Sub-Identify-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -8,7 +8,7 @@ source="https://cpan.org/modules/by-module/File/File-ShareDir-Install-${version}
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+	 cd File-ShareDir-Install-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

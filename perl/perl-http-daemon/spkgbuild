@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-${version}
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd HTTP-Daemon-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

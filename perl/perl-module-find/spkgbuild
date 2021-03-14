@@ -5,11 +5,15 @@ name=perl-module-find
 version=0.13
 release=6
 
+_cpanname=Module-Find
+_cpanname=Module-Find
+_cpanname=Module-Find
+_cpanname=Module-Find
 source="https://search.cpan.org/CPAN/authors/id/C/CR/CRENZ/${_cpanname}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_cpanname}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

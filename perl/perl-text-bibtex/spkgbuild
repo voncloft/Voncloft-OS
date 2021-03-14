@@ -5,11 +5,12 @@ name=perl-text-bibtex
 version=0.85
 release=6
 
+_dist=Text-BibTeX
 source="https://search.cpan.org/CPAN/authors/id/A/AM/AMBS/${_dist}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_dist}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

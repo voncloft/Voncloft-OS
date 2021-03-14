@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/PAR-Packer-${version}.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd PAR-Packer-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

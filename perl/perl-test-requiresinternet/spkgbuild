@@ -5,11 +5,12 @@ name=perl-test-requiresinternet
 version=0.05
 release=6
 
+_distdir=Test-RequiresInternet-$version
 source="https://search.mcpan.org/CPAN/authors/id/M/MA/MALLEN/Test-RequiresInternet-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,12 @@ name=perl-crypt-random-seed
 version=0.03
 release=5
 
+_ddir=Crypt-Random-Seed-$version
 source="https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_ddir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

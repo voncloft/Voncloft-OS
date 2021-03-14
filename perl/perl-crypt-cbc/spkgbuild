@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/L/LD/LDS/Crypt-CBC-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Crypt-CBC-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

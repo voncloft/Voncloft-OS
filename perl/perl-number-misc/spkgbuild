@@ -5,11 +5,12 @@ name=perl-number-misc
 version=1.2
 release=3
 
+_distdir=Number-Misc-$version
 source="https://cpan.metacpan.org/authors/id/M/MI/MIKO/Number-Misc-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

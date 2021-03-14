@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Term-Table-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

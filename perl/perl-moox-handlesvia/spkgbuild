@@ -5,11 +5,12 @@ name=perl-moox-handlesvia
 version=0.001009
 release=1
 
+_pkg=MooX-HandlesVia
 source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/${_pkg}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_pkg}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

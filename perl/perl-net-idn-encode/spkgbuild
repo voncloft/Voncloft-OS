@@ -5,11 +5,15 @@ name=perl-net-idn-encode
 version=2.500
 release=3
 
+_cpanname=Net-IDN-Encode
+_cpanname=Net-IDN-Encode
+_cpanname=Net-IDN-Encode
+_cpanname=Net-IDN-Encode
 source="https://search.cpan.org/CPAN/authors/id/C/CF/CFAERBER/${_cpanname}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_cpanname}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

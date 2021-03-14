@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DO/DOLMEN/Pod-Spell-$version.tar.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Pod-Spell-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

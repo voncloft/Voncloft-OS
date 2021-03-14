@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/M/MA/MARKOV/Object-Realize-Later-$versio
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Object-Realize-Later-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,15 @@ name=perl-io-stringy
 version=2.113
 release=1
 
+_name=IO-Stringy
+_name=IO-Stringy
+_name=IO-Stringy
+_name=IO-Stringy
 source="https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  ${_name}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

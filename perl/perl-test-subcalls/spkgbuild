@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-SubCalls-$version.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Test-SubCalls-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

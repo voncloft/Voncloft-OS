@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Shell-Config-Generate
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Shell-Config-Generate-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

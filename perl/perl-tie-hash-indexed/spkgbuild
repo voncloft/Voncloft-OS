@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/M/MH/MHX/Tie-Hash-Indexed-${version}.tar
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Tie-Hash-Indexed-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

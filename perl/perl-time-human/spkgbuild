@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/J/JH/JHOBLITT/Time-Human-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Time-Human-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

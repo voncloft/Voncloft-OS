@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/J/JH/JHOBLITT/DateTime-Format-IS
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd DateTime-Format-ISO8601-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

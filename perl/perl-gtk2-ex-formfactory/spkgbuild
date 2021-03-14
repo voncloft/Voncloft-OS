@@ -5,11 +5,15 @@ name=perl-gtk2-ex-formfactory
 version=0.67
 release=5
 
+_realname=Gtk2-Ex-FormFactory
+_realname=Gtk2-Ex-FormFactory
+_realname=Gtk2-Ex-FormFactory
+_realname=Gtk2-Ex-FormFactory
 source="https://www.exit1.org/packages/${_realname}/dist/${_realname}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_realname}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

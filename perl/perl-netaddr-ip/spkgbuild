@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MI/MIKER/NetAddr-IP-${version}
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd NetAddr-IP-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

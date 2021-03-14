@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Task-Weaken-$version.tar
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Task-Weaken-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

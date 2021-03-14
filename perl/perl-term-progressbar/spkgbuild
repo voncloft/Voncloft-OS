@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MA/MANWAR/Term-ProgressBar-$ve
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Term-ProgressBar-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

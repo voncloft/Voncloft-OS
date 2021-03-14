@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GU/GUS/Unicode-UTF8simple-$version.tar
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Unicode-UTF8simple-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

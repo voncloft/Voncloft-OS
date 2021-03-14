@@ -9,7 +9,8 @@ source="https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-$version.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd YAML-LibYAML-$version
+   cd YAML-LibYAML-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

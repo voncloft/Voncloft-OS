@@ -5,11 +5,12 @@ name=perl-log-any-adapter-log4perl
 version=0.09
 release=3
 
+_ddir=Log-Any-Adapter-Log4perl-$version
 source="https://search.cpan.org/CPAN/authors/id/P/PR/PREACTION/Log-Any-Adapter-Log4perl-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_ddir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

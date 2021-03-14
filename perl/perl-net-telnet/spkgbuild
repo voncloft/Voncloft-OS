@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/J/JR/JROGERS/Net-Telnet-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Net-Telnet-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

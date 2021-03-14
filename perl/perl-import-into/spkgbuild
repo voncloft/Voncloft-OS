@@ -5,11 +5,13 @@ name=perl-import-into
 version=1.002005
 release=6
 
+_distdir=Import-Into-1.002004
 source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Import-Into-1.002004.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd $_distdir
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

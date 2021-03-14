@@ -5,11 +5,12 @@ name=perl-unicode-stringprep
 version=1.105
 release=6
 
+_ddir=Unicode-Stringprep-$version
 source="https://search.cpan.org/CPAN/authors/id/C/CF/CFAERBER/Unicode-Stringprep-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_ddir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

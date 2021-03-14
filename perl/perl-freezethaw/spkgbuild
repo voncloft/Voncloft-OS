@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/I/IL/ILYAZ/modules/FreezeThaw-$version.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  FreezeThaw-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

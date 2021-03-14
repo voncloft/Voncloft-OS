@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/Y/YA/YANICK/Parallel-ForkManager-$v
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Parallel-ForkManager-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

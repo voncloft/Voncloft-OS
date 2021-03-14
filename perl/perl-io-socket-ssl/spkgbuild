@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-${version}.tar.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd IO-Socket-SSL-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

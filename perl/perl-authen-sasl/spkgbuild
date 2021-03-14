@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GB/GBARR/Authen-SASL-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Authen-SASL-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

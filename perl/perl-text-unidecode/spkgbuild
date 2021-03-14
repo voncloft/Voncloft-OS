@@ -9,7 +9,7 @@ source="http://search.cpan.org/CPAN/authors/id/S/SB/SBURKE/Text-Unidecode-${vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Text-Unidecode-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

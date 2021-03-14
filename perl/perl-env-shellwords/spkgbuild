@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Env-ShellWords-$versi
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Env-ShellWords-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,15 @@ name=perl-eval-closure
 version=0.14
 release=6
 
+_name=Eval-Closure
+_name=Eval-Closure
+_name=Eval-Closure
+_name=Eval-Closure
 source="https://cpan.metacpan.org/authors/id/${_lastauthor}/${_name}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_name}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

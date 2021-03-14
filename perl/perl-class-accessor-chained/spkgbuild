@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-$vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Class-Accessor-Chained-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

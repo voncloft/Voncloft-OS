@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-$version
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Regexp-Common-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

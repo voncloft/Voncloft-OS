@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/S/ST/STEPHEN/Convert-BinHex-$ver
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Convert-BinHex-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

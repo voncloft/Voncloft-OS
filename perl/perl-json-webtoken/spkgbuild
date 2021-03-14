@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/X/XA/XAICRON/JSON-WebToken-${versio
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd JSON-WebToken-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

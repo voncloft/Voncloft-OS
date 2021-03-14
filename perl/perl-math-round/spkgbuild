@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GR/GROMMEL/Math-Round-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Math-Round-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

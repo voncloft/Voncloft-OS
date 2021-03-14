@@ -8,7 +8,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MU/MUIR/modules/Time-modules-$
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Time-modules-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/T/TI/TINITA/Inline-C-$version.tar.g
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Inline-C-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

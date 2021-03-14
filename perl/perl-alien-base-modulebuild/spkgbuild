@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Base-ModuleBuil
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Alien-Base-ModuleBuild-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

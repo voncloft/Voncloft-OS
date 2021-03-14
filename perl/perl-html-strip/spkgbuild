@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/K/KI/KILINRAX/HTML-Strip-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd HTML-Strip-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

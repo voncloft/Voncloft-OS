@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/I/IS/ISHIGAKI/DBD-SQLite-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd DBD-SQLite-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

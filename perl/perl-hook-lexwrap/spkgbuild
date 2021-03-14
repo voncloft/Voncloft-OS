@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Hook-LexWrap-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Hook-LexWrap-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

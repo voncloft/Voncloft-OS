@@ -5,11 +5,12 @@ name=perl-net-dns-sec
 version=1.18
 release=1
 
+_distdir=Net-DNS-SEC-$version
 source="https://search.mcpan.org/CPAN/authors/id/N/NL/NLNETLABS/Net-DNS-SEC-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

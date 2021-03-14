@@ -9,7 +9,8 @@ source="https://search.cpan.org/CPAN/authors/id/S/SH/SHERZODR/Config-Simple-${ve
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_distdir
+   cd Config-Simple-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

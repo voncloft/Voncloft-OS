@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/V/VP/VPARSEVAL/Mail-Transport-Dbx-${vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Mail-Transport-Dbx-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

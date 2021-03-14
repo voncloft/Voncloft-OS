@@ -5,11 +5,12 @@ name=perl-file-find-rule
 version=0.34
 release=7
 
+_dist=File-Find-Rule
 source="https://search.mcpan.org/CPAN/authors/id/R/RC/RCLAMP/${_dist}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_dist}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

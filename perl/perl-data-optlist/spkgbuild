@@ -9,7 +9,8 @@ source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Data-OptList-$version.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd Data-OptList-$version
+   cd Data-OptList-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

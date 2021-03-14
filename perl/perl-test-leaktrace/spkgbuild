@@ -5,11 +5,13 @@ name=perl-test-leaktrace
 version=0.17
 release=1
 
+_distdir=Test-LeakTrace-$version
 source="https://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/Test-LeakTrace-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd $_distdir
+   cd $_distdir
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

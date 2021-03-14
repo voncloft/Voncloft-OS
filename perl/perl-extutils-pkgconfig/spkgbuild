@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-PkgConfig-$versi
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ExtUtils-PkgConfig-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

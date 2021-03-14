@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-$version.tar.
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd Net-HTTP-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

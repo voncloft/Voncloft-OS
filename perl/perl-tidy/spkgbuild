@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Perl-Tidy-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

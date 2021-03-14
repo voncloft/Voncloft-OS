@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/UNIVERSAL-isa-$versio
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  UNIVERSAL-isa-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

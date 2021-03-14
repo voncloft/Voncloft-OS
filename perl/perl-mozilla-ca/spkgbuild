@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/A/AB/ABH/Mozilla-CA-$version.tar
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Mozilla-CA-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

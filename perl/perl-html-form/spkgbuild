@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Form-${version}.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd HTML-Form-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

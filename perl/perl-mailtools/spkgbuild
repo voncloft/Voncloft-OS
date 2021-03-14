@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/MailTools-$version.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd MailTools-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

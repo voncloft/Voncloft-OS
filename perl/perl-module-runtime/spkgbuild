@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/Z/ZE/ZEFRAM/Module-Runtime-$vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Module-Runtime-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

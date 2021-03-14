@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-$ver
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Test-Exception-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

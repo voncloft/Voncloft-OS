@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DP/DPATES/Fuse-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  Fuse-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,8 @@ source="https://search.mcpan.org/CPAN/authors/id/E/ET/ETHER/Test-Warnings-$versi
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd Test-Warnings-$version
+   cd Test-Warnings-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

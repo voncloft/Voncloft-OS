@@ -5,11 +5,15 @@ name=perl-module-scandeps
 version=1.30
 release=1
 
+_name=Module-ScanDeps
+_name=Module-ScanDeps
+_name=Module-ScanDeps
+_name=Module-ScanDeps
 source="https://search.cpan.org/CPAN/authors/id/R/RS/RSCHUPP/Module-ScanDeps-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Module-ScanDeps-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

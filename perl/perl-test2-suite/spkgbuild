@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test2-Suite-$version.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Test2-Suite-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Class-Tiny-$version.t
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Class-Tiny-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

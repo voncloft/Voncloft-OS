@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/J/JW/JWB/Proc-ProcessTable-$vers
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Proc-ProcessTable-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,13 @@ name=perl-image-sane
 version=5
 release=2
 
+_perl_namespace=Image
+_perl_module=Sane
 source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd ${_perl_namespace}-${_perl_module}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

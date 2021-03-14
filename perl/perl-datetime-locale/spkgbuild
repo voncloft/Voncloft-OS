@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-$version.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd  DateTime-Locale-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

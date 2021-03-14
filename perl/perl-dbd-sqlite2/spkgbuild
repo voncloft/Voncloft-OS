@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/DBD-SQLite2-$version
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd DBD-SQLite2-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

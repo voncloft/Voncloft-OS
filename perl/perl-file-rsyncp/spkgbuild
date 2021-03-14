@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/C/CB/CBARRATT/File-RsyncP-$versi
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd File-RsyncP-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

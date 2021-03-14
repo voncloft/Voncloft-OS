@@ -5,11 +5,15 @@ name=perl-net-ip
 version=1.26
 release=8
 
+_realname=Net-IP
+_realname=Net-IP
+_realname=Net-IP
+_realname=Net-IP
 source="https://www.cpan.org/authors/id/M/MA/MANU/Net-IP-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Net-IP-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

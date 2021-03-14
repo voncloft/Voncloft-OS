@@ -5,11 +5,12 @@ name=perl-data-uniqid
 version=0.12
 release=8
 
+_dist=Data-Uniqid
 source="https://search.cpan.org/CPAN/authors/id/M/MW/MWX/Data-Uniqid-0.12.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+     cd ${_dist}-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

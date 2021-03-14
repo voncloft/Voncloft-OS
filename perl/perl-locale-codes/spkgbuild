@@ -5,11 +5,12 @@ name=perl-locale-codes
 version=3.62
 release=2
 
+_dist=Locale-Codes
 source="http://search.cpan.org/CPAN/authors/id/SBECK/$_dist-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd $_dist-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

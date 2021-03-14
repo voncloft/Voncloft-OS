@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/N/NO/NORBU/Net-Dropbox-API-${ver
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Net-Dropbox-API-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

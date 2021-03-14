@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PA/PALI/DBD-MariaDB-${version}.ta
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd DBD-MariaDB-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

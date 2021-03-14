@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/M/MI/MIVKOVIC/Mail-Sendmail-$version.tar
 options="!checksum"
 
 build() {
-   cd ${name#perl-}-$version
+   cd Mail-Sendmail-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install
