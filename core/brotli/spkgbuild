@@ -1,0 +1,23 @@
+# description : generic purpose lossless compression algorithm
+# depends : gcc glibc
+
+name=brotli
+version=1.0.9
+release=4
+
+source="https://github.com/google/brotli/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DCMAKE_INSTALL_LIBDIR=lib \
+	-DBUILD_SHARED_LIBS=True
+
+	make 
+	make DESTDIR=$PKG install
+}	

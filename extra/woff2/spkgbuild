@@ -1,0 +1,23 @@
+# description : Web open font format 2
+# depends : brotli
+
+name=woff2
+version=1.0.2
+release=3
+
+
+source="https://github.com/google/woff2/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i 's/NOT BUILD_SHARED_LIBS/TRUE/' CMakeLists.txt
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DCMAKE_INSTALL_LIBDIR=/usr/lib
+
+	make 
+	make DESTDIR=$PKG install
+}

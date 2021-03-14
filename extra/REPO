@@ -1,5 +1,6 @@
 d:tinyxml
 d:flexget
+d:woff2
 d:flashplugin
 d:protobuf
 d:firefox-esr
@@ -33,6 +34,7 @@ f:9c6788d9e2e8485ffbd7d8e0e8da940d:tinyxml/tinyxml.pc
 f:b6cc2d9330707373d920f760793c6311:tinyxml/entity.patch
 f:53ee91c75884bacf2f042a6fa22b5850:tinyxml/spkgbuild
 f:e1fa348412f885906e495ff70148f846:flexget/spkgbuild
+f:d8e499cccb1a6fa8b6eb3732477f5eb1:woff2/spkgbuild
 f:c9a9cd4a7a1081feca03ebbdc3a18093:flashplugin/.checksums
 f:b10e5a48e8992bd3d0ddf1ffc435a8e5:flashplugin/.pkgfiles
 f:66c331be421c449c521adcbb688bb862:flashplugin/spkgbuild
