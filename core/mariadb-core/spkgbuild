@@ -4,7 +4,7 @@
 name=mariadb-core
 version=10.5.8
 release=1
-mn-mariadb
+mn=mariadb
 source="https://downloads.mariadb.org/interstitial/$mn-$version/source/$mn-$version.tar.gz"
 options="!checksum"
 build()
