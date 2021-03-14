@@ -18,13 +18,14 @@ cd $name-$version
 make
 build DESTDIR=$PKG install
 
-ln -sfv ../../sbin/xtables-legacy-multi /usr/bin/iptables-xml &&
+ln -sfv ../../sbin/xtables-legacy-multi $PKG/usr/bin/iptables-xml &&
 
 for file in ip4tc ip6tc ipq xtables
 do
-  mv -v /usr/lib/lib${file}.so.* /lib &&
-  ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
+  mv -v $PKG/usr/lib/lib${file}.so.* $PKG/lib &&
+  ln -sfv ../../lib/$(readlink $PKG/usr/lib/lib${file}.so) $PKG/usr/lib/lib${file}.so
 done
-cp $SRC/rc.iptables $PKG/etc/rc.d/rc.iptables
+install -D $PKG/etc/rc.d/
+install -m644 $SRC/rc.iptables $PKG/etc/rc.d/
 
 }

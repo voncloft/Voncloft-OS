@@ -24,6 +24,7 @@ iptables -I INPUT 1 -i wlp5s0 -j ACCEPT
 #iptables -A OUTPUT -o tun0 -j ACCEPT
 iptables -I INPUT 1 -i tun0 -j ACCEPT
 
+
 iptables -A INPUT -p UDP --dport bootps ! -i enp0s10 -j REJECT
 iptables -A INPUT -p UDP --dport domain ! -i enp0s10 -j REJECT
 iptables -A INPUT -p UDP --dport bootps ! -i wlp5s0 -j REJECT
@@ -36,14 +37,17 @@ iptables -N PSAD_BLOCK_FORWARD
 iptables -A INPUT -j PSAD_BLOCK_INPUT
 iptables -A OUTPUT -j PSAD_BLOCK_OUTPUT
 iptables -A FORWARD -j PSAD_BLOCK_FORWARD
-iptables -A INPUT -j LOG
-iptables -A FORWARD -j LOG
 
 #sshguard
 iptables -N sshguard
 #iptables -A INPUT -j sshguard
 iptables -A INPUT -p tcp --dport 712 -j sshguard
 iptables -A INPUT -p tcp --dport 80 -j sshguard
+
+#block ping 
+#iptables -A INPUT -p icmp --icmp-type echo-request -j REJECT
+iptables -A INPUT -p icmp --icmp-type echo-request -j DROP 
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
 
 #custom ports for wan below
 iptables -A INPUT -p TCP --dport 80 -i enp1s9 -j ACCEPT
@@ -75,9 +79,22 @@ iptables -A FORWARD -i enp1s9 -d 192.168.0.0/24 -j ACCEPT
 iptables -A FORWARD -d 192.168.1.0/24 -i tun0 -j ACCEPT
 iptables -A FORWARD -d 192.168.42.0/24 -i tun0 -j ACCEPT
 
+
+iptables -A OUTPUT -d 127.0.0.0/8 -j ACCEPT
+
+
 iptables -t nat -A POSTROUTING -o enp1s9 -j MASQUERADE
 iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
 ####openvpn
+
+###deluge
+iptables -A OUTPUT -m owner --uid-owner deluge ! -d 192.168.1.0/24 \! -o tun0 -j REJECT
+
+
+
+
+
+
 
 ###BLOCK IP
 iptables -A INPUT -s 81.190.208.35 -j DROP
@@ -91,3 +108,7 @@ echo 1 > /proc/sys/net/ipv4/ip_dynaddr
 
 
 ####echo 1 > /proc/sys/net/ipv6/conf/all/forwarding
+
+##logging
+iptables -A INPUT -j LOG
+iptables -A FORWARD -j LOG
