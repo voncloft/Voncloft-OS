@@ -7,6 +7,7 @@ release=1
 
 
 build() {
+mkdir -pv $PKG/usr
 install -v -m755 -o mysql -g mysql -d /run/mysqld &&
 /usr/bin/mysqld_safe --user=mysql 2>&1 >/dev/null &
 /usr/bin/mysqladmin -u root password
