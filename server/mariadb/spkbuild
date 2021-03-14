@@ -1,5 +1,5 @@
 # description : mariadb metapackage
-# depends : mariadb-core mariadb-setup
+# depends : mariadb-core mariadb-setup mariadb-boot
 
 name=mariadb
 version=1
@@ -7,5 +7,11 @@ release=1
 
 
 build() {
-	mkdir $PKG/usr
+	mkdir -pv $PKG/etc/rc.d/rc5.d/S34mysqld
+	mkdir -pv $PKG/etc/rc.d/rc4.d/S34mysqld
+	mkdir -pv $PKG/etc/rc.d/rc3.d/S34mysqld
+
+	ln -sfv /etc/init.d/mysqld $PKG/etc/rc.d/rc5.d/S34mysqld
+	ln -sfv /etc/init.d/mysqld $PKG/etc/rc.d/rc4.d/S34mysqld
+	ln -sfv /etc/init.d/mysqld $PKG/etc/rc.d/rc3.d/S34mysqld
 }

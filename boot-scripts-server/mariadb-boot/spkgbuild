@@ -11,7 +11,4 @@ build()
 {
 	mkdir -pv $PKG/etc/init.d
 	install $SRC/mysqld $PKG/etc/init.d/
-	ln -sfv /etc/init.d/mysqld /etc/rc.d/rc5.d/S34mysqld
-	ln -sfv /etc/init.d/mysqld /etc/rc.d/rc4.d/S34mysqld
-	ln -sfv /etc/init.d/mysqld /etc/rc.d/rc3.d/S34mysqld
 }
