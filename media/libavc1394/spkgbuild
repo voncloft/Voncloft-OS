@@ -1,5 +1,5 @@
 # description : library to control A/V devices using 1394ta AV/C commands
-# depends : libraw
+# depends : libraw1394
 
 name=libavc1394
 version=0.5.4

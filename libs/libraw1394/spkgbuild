@@ -1,0 +1,16 @@
+# description : API to IEEE1394
+# depends : glibc
+
+name=libraw1394
+version=2.1.2
+release=3
+
+source="https://www.kernel.org/pub/linux/libs/ieee1394/${name}-${version}.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
