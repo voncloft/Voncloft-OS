@@ -1,5 +1,6 @@
 d:qt5-x11extras
 d:polkit-qt
+d:qtsql
 d:networkmanager-qt
 d:qterminal
 d:transmission-qt
@@ -18,6 +19,7 @@ d:qt5-webengine-widevine
 d:qtermwidget
 f:f02c27424922ed87e2f83c4560eb68db:qt5-x11extras/spkgbuild
 f:87faac7563addd4e2f7adfc904e74139:polkit-qt/spkgbuild
+f:a83cb4989be211ecc753363f5fb7868e:qtsql/spkgbuild
 f:5def96215c1e07995b53e68506b2d8e4:networkmanager-qt/spkgbuild
 f:a5680af293ffae9626a74e3749c6e326:qterminal/.checksums
 f:bc7e291c7a90c29f48636a73da4c2c40:qterminal/.pkgfiles

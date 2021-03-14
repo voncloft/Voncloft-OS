@@ -1,0 +1,18 @@
+# description	: Cross-platform application framework that is widely used for developing application
+# depends : qt5 mariadb
+
+name=qtsql
+version=5.15.2
+release=1
+
+source="https://download.qt.io/archive/qt/${version%.*}/$version/single/qt-everywhere-src-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd qt-everywhere-src-$version/qtbase/src/plugins/sqldrivers
+	qmake -- MYSQL_PREFIX=/usr
+	make sub-mysql
+	make DESTDIR=$PKG install
+
+
+}

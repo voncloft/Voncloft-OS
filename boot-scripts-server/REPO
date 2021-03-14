@@ -4,6 +4,7 @@ d:sshguard-boot
 d:flexget-daemon
 d:noip-boot
 d:deluge-boot
+d:mythbackend-boot
 d:webmin-boot
 d:openvpn-daemon
 d:dnsmasq-boot
@@ -16,6 +17,7 @@ f:15b10fdd01a02a63df27d722858ce1de:sshguard-boot/spkgbuild
 f:eff99fccae08ebf6cc4641f6c4c9c00e:flexget-daemon/spkgbuild
 f:57f3af27796169d2cb31dac587ec010e:noip-boot/spkgbuild
 f:e204af423b50d5bffcc5c39edede90d5:deluge-boot/spkgbuild
+f:ee5aa8aee2c3b3bc7901c9b63e360f13:mythbackend-boot/spkgbuild
 f:ca5c75bc995be109f94f05f7df9d32ed:webmin-boot/spkgbuild
 f:863e4578f2e1395c6c4538cf5c6a15e1:openvpn-daemon/spkgbuild
 f:30977430571361509d489d6605a170ba:dnsmasq-boot/spkgbuild
