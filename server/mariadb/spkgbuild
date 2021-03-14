@@ -43,7 +43,7 @@ cmake -DCMAKE_BUILD_TYPE=Release                      \
 
 
       install -v -dm 755 /etc/mysql &&
-cat <<- EOF > /etc/mysql/my.cnf
+cat <<- EOF > $PKG/etc/mysql/my.cnf
 # Begin /etc/mysql/my.cnf
 
 # The following options will be passed to all MySQL clients
@@ -114,11 +114,11 @@ interactive-timeout
 # End /etc/mysql/my.cnf
 EOF
 
-mysql_install_db --basedir=/usr --datadir=/srv/mysql --user=mysql &&
-chown -R mysql:mysql /srv/mysql
+mysql_install_db --basedir=$PKG/usr --datadir=$PKG/srv/mysql --user=mysql
+chown -R mysql:mysql $PKG/srv/mysql
 
-install -v -m755 -o mysql -g mysql -d /run/mysqld &&
-mysqld_safe --user=mysql 2>&1 >/dev/null &
+install -v -m755 -o mysql -g mysql -d $PKG/run/mysqld &&
+mysqld_safe --user=mysql 2>&1 >$PKG/dev/null &
 
 mysqladmin -u root password
 
