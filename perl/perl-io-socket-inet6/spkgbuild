@@ -1,10 +1,12 @@
 # description : Object interface for AF_INET|AF_INET6 domain sockets
 # depends : perl-socket6
 
-_distdir=IO-Socket-INET6-$version
 name=perl-io-socket-inet6
 version=2.72
 release=7
+_distdir=IO-Socket-INET6-$version
+
+
 
 source="https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/IO-Socket-INET6-$version.tar.gz"
 options="!checksum"
