@@ -1,5 +1,5 @@
 # description : Fork of MySQL-python with support for Python 3
-# depends : python mariadb-libs
+# depends : python mariadb
 
 name=python-mysqlclient
 version=2.0.3
