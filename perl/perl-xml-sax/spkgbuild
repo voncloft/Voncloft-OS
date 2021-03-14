@@ -12,5 +12,5 @@ build() {
    cd XML-SAX-$version
    PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
    make
-   make DESTDIR=$PKG install
+   PERLLIB=blib/lib make install DESTDIR=$PKG
 }
