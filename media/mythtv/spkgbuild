@@ -5,7 +5,7 @@ name=mythtv
 version=31.0
 release=1
 
-source="https://github.com/MythTV/$name/archive/$version.tar.gz"
+source="https://github.com/MythTV/$name/archive/v$version.tar.gz"
 options="!checksum"
 
 build()
