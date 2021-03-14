@@ -8,7 +8,7 @@ source="https://cpan.metacpan.org/authors/id/P/PT/PTC/Math-Base85-$version.tar.g
 options="!checksum"
 
 build() {
-   cd Math-Base85-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

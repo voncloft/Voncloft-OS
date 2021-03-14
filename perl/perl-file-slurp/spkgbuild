@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/File-Slurp-$version.
 options="!checksum"
 
 build() {
-   cd  File-Slurp-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

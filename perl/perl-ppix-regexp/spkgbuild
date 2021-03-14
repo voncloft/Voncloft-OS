@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-Regexp-$version.tar
 options="!checksum"
 
 build() {
-   cd PPIx-Regexp-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

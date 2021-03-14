@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MS/MSCHOUT/Text-Template-$vers
 options="!checksum"
 
 build() {
-   cd Text-Template-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

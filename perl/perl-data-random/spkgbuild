@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/B/BA/BAREFOOT/Data-Random-$version.
 options="!checksum"
 
 build() {
-   cd Data-Random-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

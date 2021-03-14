@@ -1,11 +1,7 @@
 # description : Perl extension for using OpenSSL
 # depends : openssl
 
-_cpanname=Net-SSLeay
-_cpanname=Net-SSLeay
 name=perl-net-ssleay
-_cpanname=Net-SSLeay
-_cpanname=Net-SSLeay
 version=1.88
 release=2
 
@@ -13,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/C/CH/CHRISN/${_cpanname}-${version}
 options="!checksum"
 
 build() {
-   cd ${_cpanname}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

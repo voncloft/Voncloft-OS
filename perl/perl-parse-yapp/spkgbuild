@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-$version.
 options="!checksum"
 
 build() {
-   cd Parse-Yapp-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

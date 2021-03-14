@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/S/SK/SKAJI/Mouse-v$version.tar.g
 options="!checksum"
 
 build() {
-   cd Mouse-v$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

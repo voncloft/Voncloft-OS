@@ -1,0 +1,16 @@
+# description : The Perl Pkgconfig module
+# depends : perl
+
+name=perl-extutils-pkgconfig
+version=1.16
+release=7
+
+source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-PkgConfig-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd ExtUtils-PkgConfig-${version}
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

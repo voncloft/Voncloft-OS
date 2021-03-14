@@ -1,11 +1,7 @@
 # description : CPAN/Canary-Stability - canary to check perl compatability for schmorps modules
 # depends : perl
 
-_realname=Canary-Stability
-_realname=Canary-Stability
 name=perl-canary-stability
-_realname=Canary-Stability
-_realname=Canary-Stability
 version=2013
 release=3
 
@@ -13,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/${_realname}-${versio
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

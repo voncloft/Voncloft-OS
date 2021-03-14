@@ -9,8 +9,8 @@ source="https://cpan.metacpan.org/authors/id/S/SK/SKONNO/Net-UPnP-$version.tar.g
 options="!checksum"
 
 build() {
- cd Net-UPnP-$version
- perl Makefile.PL
- make
- make install DESTDIR=$PKG
+   cd ${name#perl-}-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
 }

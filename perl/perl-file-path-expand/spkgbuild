@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/R/RC/RCLAMP/File-Path-Expand-1.02.tar.gz
 options="!checksum"
 
 build() {
-   cd File-Path-Expand-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -1,11 +1,7 @@
 # description : Scan file prerequisites
 # depends : perl
 
-_name=Module-ScanDeps
-_name=Module-ScanDeps
 name=perl-module-scandeps
-_name=Module-ScanDeps
-_name=Module-ScanDeps
 version=1.30
 release=1
 
@@ -13,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RS/RSCHUPP/Module-ScanDeps-$ve
 options="!checksum"
 
 build() {
-   cd Module-ScanDeps-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

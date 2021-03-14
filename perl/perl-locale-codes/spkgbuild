@@ -1,7 +1,6 @@
 # description : Distribution of modules to handle locale codes
 # depends : perl
 
-_dist=Locale-Codes
 name=perl-locale-codes
 version=3.62
 release=2
@@ -10,7 +9,7 @@ source="http://search.cpan.org/CPAN/authors/id/SBECK/$_dist-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_dist-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

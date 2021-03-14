@@ -1,5 +1,7 @@
 # description : The Perl depends module
+# description : The Perl depends module
 # depends : perl
+name=perl-extutils-depends
 
 name=perl-extutils-depends
 version=0.8000
@@ -9,7 +11,7 @@ source="https://www.cpan.org/authors/id/X/XA/XAOC/ExtUtils-Depends-$version.tar.
 options="!checksum"
 
 build() {
-   cd ExtUtils-Depends-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

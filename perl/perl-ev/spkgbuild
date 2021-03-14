@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/EV-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd EV-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

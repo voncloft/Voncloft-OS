@@ -1,7 +1,6 @@
 # description : File-finding iterator
 # depends : perl
 
-_ddir=File-Next-$version
 name=perl-file-next
 version=1.18
 release=2
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/File-Next-$version.ta
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

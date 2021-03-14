@@ -1,0 +1,16 @@
+# description : Parse regular expressions
+# depends : perl-list-moreutils perl-ppi perl-task-weaken
+
+name=perl-ppix-regexp
+version=0.078
+release=1
+
+source="https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-Regexp-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd PPIx-Regexp-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

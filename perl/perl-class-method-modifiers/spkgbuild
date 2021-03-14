@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Class-Method-Modifiers-$
 options="!checksum"
 
 build() {
-   cd Class-Method-Modifiers-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

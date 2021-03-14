@@ -1,7 +1,6 @@
 # description : executable comments
 # depends : perl
 
-_ddir=Carp-Assert-$version
 name=perl-carp-assert
 version=0.21
 release=3
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/Carp-Assert-$version.tar
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

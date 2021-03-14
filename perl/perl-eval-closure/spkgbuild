@@ -1,11 +1,7 @@
 # description : safely and cleanly create closures via string eval
 # depends : perl-try-tiny perl-sub-exporter
 
-_name=Eval-Closure
-_name=Eval-Closure
 name=perl-eval-closure
-_name=Eval-Closure
-_name=Eval-Closure
 version=0.14
 release=6
 
@@ -13,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/${_lastauthor}/${_name}-${version}.
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

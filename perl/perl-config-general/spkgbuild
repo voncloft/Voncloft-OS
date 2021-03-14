@@ -1,8 +1,6 @@
 # description : Generic Config Module
 # depends : perl
 
-_perl_namespace=Config
-_perl_module=General
 name=perl-config-general
 version=2.63
 release=4
@@ -11,7 +9,7 @@ source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namesp
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

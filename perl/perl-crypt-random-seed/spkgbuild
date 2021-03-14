@@ -1,7 +1,6 @@
 # description : Provide strong randomness for seeding
 # depends : perl.2 perl-crypt-random-tesha2
 
-_ddir=Crypt-Random-Seed-$version
 name=perl-crypt-random-seed
 version=0.03
 release=5
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-$versi
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

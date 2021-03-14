@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-$
 options="!checksum"
 
 build() {
-   cd CPAN-Perl-Releases-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

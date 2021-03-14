@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/T/TA/TAG/Curses-UI-POE-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd Curses-UI-POE-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

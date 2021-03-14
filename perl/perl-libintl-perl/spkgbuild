@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GU/GUIDO/libintl-perl-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd libintl-perl-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

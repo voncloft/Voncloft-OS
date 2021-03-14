@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/M/MS/MSISK/HTML-TableExtract-$version.ta
 options="!checksum"
 
 build() {
-   cd HTML-TableExtract-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

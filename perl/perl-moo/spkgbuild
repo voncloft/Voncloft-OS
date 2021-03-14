@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/Moo-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd Moo-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GW/GWYN/POE-Component-IKC-$version.tar
 options="!checksum"
 
 build() {
-   cd POE-Component-IKC-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MA/MAUKE/Data-Munge-$version.tar.
 options="!checksum"
 
 build() {
-   cd Data-Munge-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

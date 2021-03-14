@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DC/DCANTRELL/Test-Differences-
 options="!checksum"
 
 build() {
-   cd Test-Differences-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -1,11 +1,7 @@
 # description : Manual text wrapping and reformatting 
 # depends : perl
 
-_realname=Text-Reform
-_realname=Text-Reform
 name=perl-text-reform
-_realname=Text-Reform
-_realname=Text-Reform
 version=1.20
 release=6
 
@@ -13,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/C/CH/CHORNY/${_realname}-$versio
 options="!checksum" 
 
 build() {
-   cd  Text-Reform-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

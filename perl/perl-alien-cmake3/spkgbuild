@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-$version
 options="!checksum"
 
 build() {
-   cd Alien-cmake3-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

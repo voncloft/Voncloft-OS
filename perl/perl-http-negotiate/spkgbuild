@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTTP-Negotiate-$versio
 options="!checksum"
 
 build() {
-   cd HTTP-Negotiate-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

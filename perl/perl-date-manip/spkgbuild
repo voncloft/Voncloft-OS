@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/S/SB/SBECK/Date-Manip-$version.t
 options="!checksum"
 
 build() {
-   cd Date-Manip-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/N/NE/NEILB/AppConfig-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd AppConfig-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

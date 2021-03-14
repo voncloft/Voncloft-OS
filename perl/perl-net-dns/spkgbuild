@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-$version.tar
 options="!checksum"
 
 build() {
-   cd Net-DNS-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

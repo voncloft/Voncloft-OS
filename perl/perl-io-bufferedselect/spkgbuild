@@ -1,7 +1,6 @@
 # description : Line-buffered select interface
 # depends : perl
 
-_ddir=IO-BufferedSelect
 name=perl-io-bufferedselect
 version=1.0
 release=9
@@ -10,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/A/AF/AFN/IO-BufferedSelect-$vers
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

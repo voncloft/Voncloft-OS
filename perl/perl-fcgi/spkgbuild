@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/FCGI-${version}.tar.g
 options="!checksum"
 
 build() {
-   cd  FCGI-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

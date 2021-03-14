@@ -1,9 +1,7 @@
 # description : module for manipulations of cpio archives
 # depends : perl
 
-_cpanname=Archive-Cpio
 name=perl-archive-cpio
-_cpanname=Archive-Cpio
 version=0.10
 release=5
 
@@ -11,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PI/PIXEL/${_cpanname}-${version}.
 options="!checksum"
 
 build() {
-   cd ${_cpanname}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

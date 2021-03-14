@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Inline-Filters-$version
 options="!checksum"
 
 build() {
-   cd Inline-Filters-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

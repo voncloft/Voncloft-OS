@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/JSON-Any-$version.tar.gz
 options="!checksum"
 
 build() {
-	 cd JSON-Any-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-$version.tar
 options="!checksum"
 
 build() {
-   cd B-Keywords-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Acme-Alien-DontPanic-
 options="!checksum"
 
 build() {
-   cd Acme-Alien-DontPanic-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

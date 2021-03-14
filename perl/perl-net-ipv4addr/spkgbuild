@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-$version.tar.
 options="!checksum"
 
 build() {
-   cd Net-IPv4Addr-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

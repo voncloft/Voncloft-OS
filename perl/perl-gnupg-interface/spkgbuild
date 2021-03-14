@@ -1,8 +1,7 @@
 # description : Object-oriented methods for interacting with GnuPG
 # depends : gnupg perl-math-bigint perl-moo perl-moox-handlesvia perl-moox-late
 
-_pkg=GnuPG-Interface
-name=perl-${_pkg,,}
+name=perl-gnupg-interface
 version=1.01
 release=1
 
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/B/BP/BPS/${_pkg}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_pkg}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

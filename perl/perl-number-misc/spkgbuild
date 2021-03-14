@@ -1,7 +1,6 @@
 # description : handy utilities for numbers
 # depends : 
 
-_distdir=Number-Misc-$version
 name=perl-number-misc
 version=1.2
 release=3
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MI/MIKO/Number-Misc-$version.tar.
 options="!checksum"
 
 build() {
-   cd $_distdir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

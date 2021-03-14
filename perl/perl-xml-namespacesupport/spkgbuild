@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-${ver
 options="!checksum"
 
 build() {
-   cd XML-NamespaceSupport-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

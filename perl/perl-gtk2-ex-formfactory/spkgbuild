@@ -1,11 +1,7 @@
 # description : Framework for perl-gtk2 development
 # depends : gtk2-perl perl
 
-_realname=Gtk2-Ex-FormFactory
-_realname=Gtk2-Ex-FormFactory
 name=perl-gtk2-ex-formfactory
-_realname=Gtk2-Ex-FormFactory
-_realname=Gtk2-Ex-FormFactory
 version=0.67
 release=5
 
@@ -13,7 +9,7 @@ source="https://www.exit1.org/packages/${_realname}/dist/${_realname}-${version}
 options="!checksum"
 
 build() {
-   cd ${_realname}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

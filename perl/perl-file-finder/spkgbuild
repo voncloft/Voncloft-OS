@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/ME/MERLYN/File-Finder-$version
 options="!checksum"
 
 build() {
-   cd File-Finder-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

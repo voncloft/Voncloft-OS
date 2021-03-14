@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/F/FR/FREW/IO-All-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd IO-All-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

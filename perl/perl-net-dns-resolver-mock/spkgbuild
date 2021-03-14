@@ -1,7 +1,6 @@
 # description : Mock a DNS Resolver object for testing
 # depends : perl-net-dns
 
-_ddir=Net-DNS-Resolver-Mock-$version
 name=perl-net-dns-resolver-mock
 version=1.20200215
 release=3
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MB/MBRADSHAW/Net-DNS-Resolver-Moc
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

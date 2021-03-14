@@ -1,11 +1,7 @@
 # description : I/O on in-core objects like strings/arrays
 # depends : perl
 
-_name=IO-Stringy
-_name=IO-Stringy
 name=perl-io-stringy
-_name=IO-Stringy
-_name=IO-Stringy
 version=2.113
 release=1
 
@@ -13,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/${_name}-${version}.
 options="!checksum"
 
 build() {
-   cd  ${_name}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

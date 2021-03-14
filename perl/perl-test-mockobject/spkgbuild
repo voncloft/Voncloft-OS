@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/C/CH/CHROMATIC/Test-MockObject-$version.
 options="!checksum"
 
 build() {
-   cd  Test-MockObject-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

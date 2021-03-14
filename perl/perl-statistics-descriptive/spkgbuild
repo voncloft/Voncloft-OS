@@ -1,7 +1,6 @@
 # description : Module of basic descriptive statistical functions.
 # depends : perl perl-list-moreutils
 
-_ddir=Statistics-Descriptive-$version
 name=perl-statistics-descriptive
 version=3.0800
 release=1
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Statistics-Descriptive
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

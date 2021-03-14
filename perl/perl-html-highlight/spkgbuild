@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/T/TR/TRIPIE/HTML-Highlight-$version.tar.
 options="!checksum"
 
 build() {
-   cd HTML-Highlight-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

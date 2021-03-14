@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/Probe-Perl-$version.
 options="!checksum"
 
 build() {
-   cd Probe-Perl-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

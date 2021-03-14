@@ -8,7 +8,7 @@ source="https://cpan.metacpan.org/authors/id/J/JP/JPIERCE/IO-Pager-$version.sour
 options="!checksum"
 
 build() {
-   cd IO-Pager-0.4
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

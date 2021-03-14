@@ -1,7 +1,6 @@
 # description : Integrate Cairo into the Glib type system
 # depends : glib-perl cairo-perl
 
-_perl_module=Cairo-GObject
 name=perl-cairo-gobject
 version=1.004
 release=10
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/${_perl_module}-${version
 options="!checksum"
 
 build() {
-   cd ${_perl_module}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

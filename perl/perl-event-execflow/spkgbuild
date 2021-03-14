@@ -1,11 +1,7 @@
 # description : Framework for perl-events
 # depends : perl-anyevent perl-libintl-perl perl
 
-_realname=Event-ExecFlow
-_realname=Event-ExecFlow
 name=perl-event-execflow
-_realname=Event-ExecFlow
-_realname=Event-ExecFlow
 version=0.64
 release=7
 
@@ -13,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/J/JR/JRED/${_realname}-${version
 options="!checksum"
 
 build() {
-   cd ${_realname}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

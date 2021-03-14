@@ -1,11 +1,7 @@
 # description : Perl extension for easily overriding subroutines
 # depends : perl
 
-_cpanname=Sub-Override
-_cpanname=Sub-Override
 name=perl-sub-override
-_cpanname=Sub-Override
-_cpanname=Sub-Override
 version=0.09
 release=2
 
@@ -13,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/O/OV/OVID/${_cpanname}-${version
 options="!checksum"
 
 build() {
-   cd ${_cpanname}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

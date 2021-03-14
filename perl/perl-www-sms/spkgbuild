@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/E/EI/EIM/WWW-SMS/WWW-SMS-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd WWW-SMS-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

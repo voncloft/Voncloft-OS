@@ -1,8 +1,7 @@
 # description : Easily translate Moose code to Moo
 # depends : perl-moo perl-type-tiny perl-moox-handlesvia perl-sub-handlesvia
 
-_pkg=MooX-late
-name=perl-${_pkg,,}
+name=perl-moox-late
 version=0.100
 release=1
 
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/${_pkg}-${version}.tar
 options="!checksum"
 
 build() {
-     cd ${_pkg}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

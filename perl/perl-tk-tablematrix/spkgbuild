@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/C/CE/CERNEY/Tk-TableMatrix-${version}.ta
 options="!checksum"
 
 build() {
-   cd Tk-TableMatrix-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

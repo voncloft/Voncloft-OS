@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Exception-Class-$ve
 options="!checksum"
 
 build() {
-   cd Exception-Class-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

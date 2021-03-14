@@ -1,7 +1,6 @@
 # description : comma-separated values manipulator
 # depends : perl
 
-_dist=Text-CSV
 name=perl-text-csv
 version=1.97
 release=4
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/${_dist}-${version}.t
 options="!checksum"
 
 build() {
-     cd $_dist-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

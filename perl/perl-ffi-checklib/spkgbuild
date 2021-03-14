@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/FFI-CheckLib-$version
 options="!checksum"
 
 build() {
-   cd FFI-CheckLib-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

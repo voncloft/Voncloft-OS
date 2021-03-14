@@ -1,7 +1,6 @@
 # description : Perl module to read TNEF files
 # depends : perl-io-stringy perl-mime-tools
 
-_distdir=Convert-TNEF-${version}
 name=perl-convert-tnef
 version=0.18
 release=8
@@ -10,8 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DO/DOUGW/Convert-TNEF-${version}.
 options="!checksum"
 
 build() {
-       cd ${_distdir}
-     cd ${_distdir}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

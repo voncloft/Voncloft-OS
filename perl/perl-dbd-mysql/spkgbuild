@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DV/DVEEDEN/DBD-mysql-${version
 options="!checksum"
 
 build() {
-   cd DBD-mysql-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

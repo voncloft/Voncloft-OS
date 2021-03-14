@@ -1,7 +1,6 @@
 # description : List all constants declared in a package
 # depends : perl
 
-_distdir=Package-Constants-$version
 name=perl-package-constants
 version=0.06
 release=6
@@ -10,7 +9,7 @@ source="https://search.mcpan.org/CPAN/authors/id/B/BI/BINGOS/Package-Constants-$
 options="!checksum"
 
 build() {
-   cd $_distdir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

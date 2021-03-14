@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MS/MSTPLBG/AnyEvent-XMPP-$vers
 options="!checksum"
 
 build() {
-   cd AnyEvent-XMPP-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

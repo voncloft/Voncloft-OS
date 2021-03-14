@@ -1,7 +1,6 @@
 # description : Ameliorated interface to the CPAN
 # depends : perl perl-log-message perl-archive-extract perl-term-ui perl-log-message-simple
 
-_ddir=CPANPLUS-$version
 name=perl-cpanplus
 version=0.9910
 release=1
@@ -10,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/CPANPLUS-$version.ta
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

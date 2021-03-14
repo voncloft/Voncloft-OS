@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/ME/MEWP/DBD-Sybase-${version}.
 options="!checksum"
 
 build() {
-   cd  DBD-Sybase-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

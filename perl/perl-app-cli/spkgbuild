@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PT/PTC/App-CLI-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd App-CLI-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -1,8 +1,7 @@
 # description : Tiny, yet Moose-compatible type constraint
 # depends : perl perl-exporter-tiny
 
-_pkg=Type-Tiny
-name=perl-${_pkg,,}
+name=perl-type-tiny
 version=1.012001
 release=1
 
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/${_pkg}-${version}.tar
 options="!checksum"
 
 build() {
-     cd ${_pkg}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

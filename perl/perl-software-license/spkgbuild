@@ -1,6 +1,5 @@
 # depends : perl perl-data-section perl-text-template
 
-_ddir=Software-License-$version
 name=perl-software-license
 version=0.103014
 release=3
@@ -9,7 +8,7 @@ source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/Software-License-$ver
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

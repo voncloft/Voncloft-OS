@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/B/BK/BKB/JSON-Parse-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd  JSON-Parse-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

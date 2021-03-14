@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GA/GAAS/IO-String-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd  IO-String-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

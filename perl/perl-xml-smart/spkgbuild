@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/T/TM/TMHARISH/XML-Smart-$version
 options="!checksum"
 
 build() {
-   cd XML-Smart-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

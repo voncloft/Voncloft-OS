@@ -4,13 +4,12 @@
 name=perl-path-tiny
 version=0.118
 release=1
-_ddir=Path-Tiny-$version
 
 source="https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

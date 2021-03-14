@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/GraphViz-$version.sour
 options="!checksum"
 
 build() {
-   cd GraphViz-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

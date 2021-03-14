@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/T/TU/TURNSTEP/DBD-Pg-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd  DBD-Pg-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

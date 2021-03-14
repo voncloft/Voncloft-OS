@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/A/AK/AKZHAN/Test-Spec-$version.t
 options="!checksum"
 
 build() {
-   cd Test-Spec-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

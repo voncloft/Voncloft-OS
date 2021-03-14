@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Path-IsDev-$version.tar
 options="!checksum"
 
 build() {
-   cd Path-IsDev-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

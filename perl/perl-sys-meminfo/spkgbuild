@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/S/SC/SCRESTO/Sys-MemInfo-${version}
 options="!checksum"
 
 build() {
-   cd Sys-MemInfo-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

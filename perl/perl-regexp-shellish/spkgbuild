@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/R/RB/RBS/Regexp-Shellish-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd Regexp-Shellish-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

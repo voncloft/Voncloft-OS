@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/S/SB/SBECK/Test-Inter-$version.t
 options="!checksum"
 
 build() {
-   cd Test-Inter-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

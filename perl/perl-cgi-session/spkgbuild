@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/M/MA/MARKSTOS/CGI-Session-$version.tar.g
 options="!checksum"
 
 build() {
-   cd CGI-Session-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MI/MICHIELB/File-MimeInfo-$versio
 options="!checksum"
 
 build() {
-   cd File-MimeInfo-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

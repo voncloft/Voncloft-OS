@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/A/AT/ATOOMIC/Clone-$version.tar.
 options="!checksum"
 
 build() {
-   cd Clone-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

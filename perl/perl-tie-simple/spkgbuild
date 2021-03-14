@@ -1,11 +1,7 @@
 # description : Variable ties made easier: much, much, much easier...
 # depends : perl
 
-_realname=Tie-Simple
-_realname=Tie-Simple
 name=perl-tie-simple
-_realname=Tie-Simple
-_realname=Tie-Simple
 version=1.04
 release=8
 
@@ -13,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/H/HA/HANENKAMP/$_realname-$version.
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-QuoteLike-$version.
 options="!checksum"
 
 build() {
-   cd PPIx-QuoteLike-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

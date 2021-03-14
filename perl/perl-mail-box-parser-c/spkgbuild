@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/M/MA/MARKOV/Mail-Box-Parser-C-${version}
 options="!checksum"
 
 build() {
-   cd Mail-Box-Parser-C-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

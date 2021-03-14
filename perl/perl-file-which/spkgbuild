@@ -1,11 +1,7 @@
 # description : Portable implementation of which
 # depends : perl
 
-_realname=File-Which
-_realname=File-Which
 name=perl-file-which
-_realname=File-Which
-_realname=File-Which
 version=1.23
 release=4
 
@@ -13,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/$_realname-$version.t
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

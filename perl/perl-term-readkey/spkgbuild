@@ -1,11 +1,7 @@
 # description : Provides simple control over terminal driver modes
 # depends : perl glibc
 
-_realname=TermReadKey
-_realname=TermReadKey
 name=perl-term-readkey
-_realname=TermReadKey
-_realname=TermReadKey
 version=2.38
 release=5
 
@@ -13,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/J/JS/JSTOWE/${_realname}-$versio
 options="!checksum"
 
 build() {
-   cd TermReadKey-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

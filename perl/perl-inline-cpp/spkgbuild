@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DA/DAVIDO/Inline-CPP-$version.tar
 options="!checksum"
 
 build() {
-   cd Inline-CPP-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

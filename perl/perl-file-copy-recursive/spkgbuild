@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DM/DMUEY/File-Copy-Recursive-$ver
 options="!checksum"
 
 build() {
-   cd File-Copy-Recursive-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

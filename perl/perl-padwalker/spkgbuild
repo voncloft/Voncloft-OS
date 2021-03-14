@@ -1,7 +1,6 @@
 # description : Play with other peoples lexical variables
 # depends : perl
 
-_perl_module=PadWalker
 name=perl-padwalker
 version=2.5
 release=1
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/R/RO/ROBIN/${_perl_module}-${versio
 options="!checksum"
 
 build() {
-   cd ${_perl_module}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RC/RCAPUTO/POE-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd  POE-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

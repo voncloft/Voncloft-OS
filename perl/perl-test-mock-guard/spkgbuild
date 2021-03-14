@@ -9,7 +9,7 @@ source="http://search.cpan.org/CPAN/authors/id/X/XA/XAICRON/Test-Mock-Guard-${ve
 options="!checksum"
 
 build() {
-   cd Test-Mock-Guard-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

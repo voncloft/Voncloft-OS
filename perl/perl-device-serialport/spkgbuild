@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/C/CO/COOK/Device-SerialPort-$version.tar
 options="!checksum"
 
 build() {
-   cd  Device-SerialPort-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

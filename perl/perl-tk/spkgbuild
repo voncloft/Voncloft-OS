@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/S/SR/SREZIC/Tk-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd Tk-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

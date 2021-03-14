@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MA/MANWAR/XML-XPath-$version.tar.
 options="!checksum"
 
 build() {
-   cd XML-XPath-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

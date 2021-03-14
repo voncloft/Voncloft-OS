@@ -1,7 +1,6 @@
 # description : OpenSSLs multiprecision integer arithmetic
 # depends : perl openssl
 
-_ddir=Crypt-OpenSSL-Bignum-$version
 name=perl-crypt-openssl-bignum
 version=0.09
 release=5
@@ -10,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/K/KM/KMX/Crypt-OpenSSL-Bignum-$v
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

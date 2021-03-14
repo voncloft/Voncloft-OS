@@ -9,8 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/P/PE/PEVANS/Scalar-List-Utils-$v
 options="!checksum"
 
 build() {
-     cd Scalar-List-Utils-$version
-   cd Scalar-List-Utils-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

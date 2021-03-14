@@ -1,0 +1,10 @@
+
+name=*
+
+
+build() {
+   cd ${name#perl-}-$version
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

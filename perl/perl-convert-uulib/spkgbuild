@@ -1,7 +1,6 @@
 # description : Perl interface to the uulib library a.k.a. uudeview/uuenview.
 # depends : perl perl-canary-stability
 
-_dist=Convert-UUlib
 name=perl-convert-uulib
 version=1.5
 release=8
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Convert-UUlib-${versi
 options="!checksum"
 
 build() {
-   cd ${_dist}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

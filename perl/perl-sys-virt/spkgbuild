@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/D/DA/DANBERR/Sys-Virt-v$version.tar
 options="!checksum"
 
 build() {
-   cd Sys-Virt-v$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

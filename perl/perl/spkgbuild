@@ -9,7 +9,7 @@ source="https://www.cpan.org/src/5.0/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
-   cd $name-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

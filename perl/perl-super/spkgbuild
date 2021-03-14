@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/C/CH/CHROMATIC/SUPER-$version.ta
 options="!checksum"
 
 build() {
-   cd SUPER-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

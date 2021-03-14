@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/Perl-MinimumVersion-$ver
 options="!checksum"
 
 build() {
-   cd Perl-MinimumVersion-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

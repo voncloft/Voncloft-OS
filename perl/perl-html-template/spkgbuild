@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/S/SA/SAMTREGAR/HTML-Template-$version.ta
 options="!checksum"
 
 build() {
-   cd HTML-Template-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

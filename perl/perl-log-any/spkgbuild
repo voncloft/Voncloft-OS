@@ -1,7 +1,6 @@
 # description : Bringing loggers and listeners together
 # depends : perl
 
-_ddir=Log-Any-$version
 name=perl-log-any
 version=1.708
 release=2
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-$version.tar
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

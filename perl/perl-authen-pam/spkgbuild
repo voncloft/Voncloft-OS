@@ -1,7 +1,6 @@
 # description : Perl interface to PAM library
 # depends : perl
 
-_dist=Authen-PAM
 name=perl-authen-pam
 version=0.16
 release=8
@@ -10,9 +9,8 @@ source="https://cpan.metacpan.org/authors/id/N/NI/NIKIP/${_dist}-${version}.tar.
 options="!checksum"
 
 build() {
-   cd $_dist-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install
 }
-

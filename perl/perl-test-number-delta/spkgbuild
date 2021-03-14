@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Test-Number-Delta-
 options="!checksum"
 
 build() {
-   cd  Test-Number-Delta-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

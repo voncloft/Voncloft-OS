@@ -10,7 +10,7 @@ options="!checksum"ip64
 options="!checksum" 
 
 build() {
-   cd  MIME-tools-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

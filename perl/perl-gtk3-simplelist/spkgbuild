@@ -1,7 +1,6 @@
 # description : Perl interface to the Gtk3s complex MVC list widget
 # depends : perl-gtk3
 
-_perl_module=Gtk3-SimpleList
 name=perl-gtk3-simplelist
 version=0.21
 release=1
@@ -10,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/T/TV/TVIGNAUD/${_perl_module}-${ver
 options="!checksum"
 
 build() {
-   cd ${_perl_module}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

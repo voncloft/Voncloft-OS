@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-$version.tar.
 options="!checksum"
 
 build() {
-   cd Test-Needs-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

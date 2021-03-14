@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/A/AT/ATOOMIC/TimeDate-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd TimeDate-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

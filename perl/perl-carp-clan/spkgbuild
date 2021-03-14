@@ -1,11 +1,7 @@
 # description : Report errors from perspective of caller of a clan of modules
 # depends : perl
 
-_realname=Carp-Clan
-_realname=Carp-Clan
 name=perl-carp-clan
-_realname=Carp-Clan
-_realname=Carp-Clan
 version=6.08
 release=3
 
@@ -13,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/$_realname-$version.t
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

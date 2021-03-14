@@ -8,7 +8,7 @@ source="https://www.cpan.org/authors/id/B/BI/BITS/DateTime-Cron-Simple-$version.
 options="!checksum"
 
 build() {
-   cd DateTime-Cron-Simple-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

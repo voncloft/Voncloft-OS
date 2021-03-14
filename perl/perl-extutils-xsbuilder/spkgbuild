@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-$versio
 options="!checksum"
 
 build() {
-   cd  ExtUtils-XSBuilder-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

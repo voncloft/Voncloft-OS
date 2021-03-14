@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MessageID-$version.tar.g
 options="!checksum"
 
 build() {
-   cd  Email-MessageID-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

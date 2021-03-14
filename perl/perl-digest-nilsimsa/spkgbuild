@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/V/VI/VIPUL/Digest-Nilsimsa-$version.tar.
 options="!checksum"
 
 build() {
-   cd Digest-Nilsimsa-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

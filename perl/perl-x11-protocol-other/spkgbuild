@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/K/KR/KRYDE/X11-Protocol-Other-${
 options="!checksum"
 
 build() {
-   cd X11-Protocol-Other-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

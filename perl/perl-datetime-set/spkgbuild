@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/F/FG/FGLOCK/DateTime-Set-$version.tar.gz
 options="!checksum"
 
 build() {
-   cd  DateTime-Set-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

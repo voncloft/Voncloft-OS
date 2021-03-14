@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/M/MA/MARKOV/MIME-Types-${version}.tar.gz
 options="!checksum"
 
 build() {
-   cd MIME-Types-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

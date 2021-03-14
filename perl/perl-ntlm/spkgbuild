@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/N/NB/NBEBOUT/NTLM-${version}.tar.gz
 options="!checksum"
 
 build() {
-   cd NTLM-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

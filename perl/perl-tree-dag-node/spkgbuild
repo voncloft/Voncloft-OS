@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/R/RS/RSAVAGE/Tree-DAG_Node-$version.sour
 options="!checksum"
 
 build() {
-   cd  Tree-DAG_Node-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

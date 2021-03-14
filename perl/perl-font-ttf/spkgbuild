@@ -7,10 +7,9 @@ release=4
 
 source="https://cpan.metacpan.org/authors/id/B/BH/BHALLISSY/Font-TTF-$version.tar.gz"
 options="!checksum"
-_perlmod='Font-TTF'
 
 build() {
-   cd ${_perlmod}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

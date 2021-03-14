@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-$version.tar.g
 options="!checksum"
 
 build() {
-   cd  Mail-Box-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

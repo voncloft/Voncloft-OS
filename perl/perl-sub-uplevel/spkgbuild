@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/Sub-Uplevel-$version.tar.g
 options="!checksum"
 
 build() {
-   cd  Sub-Uplevel-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

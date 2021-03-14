@@ -1,8 +1,6 @@
 # description : Warns and dies noisily with stack backtraces
 # depends : perl
 
-_perl_namespace=Carp
-_perl_module=Always
 name=perl-carp-always
 version=0.16
 release=1
@@ -11,7 +9,7 @@ source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namesp
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/F/FG/FGLOCK/DateTime-Event-ICal-$version
 options="!checksum"
 
 build() {
-   cd DateTime-Event-ICal-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

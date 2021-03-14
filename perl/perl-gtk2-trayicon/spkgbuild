@@ -9,7 +9,7 @@ source="https://downloads.sourceforge.net/sourceforge/gtk2-perl/Gtk2-TrayIcon-${
 options="!checksum"
 
 build() {
-   cd  Gtk2-TrayIcon-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

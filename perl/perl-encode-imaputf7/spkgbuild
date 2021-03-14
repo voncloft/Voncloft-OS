@@ -8,7 +8,7 @@ source="http://cpan.metacpan.org/authors/id/P/PM/PMAKHOLM/Encode-IMAPUTF7-${vers
 options="!checksum"
 
 build() {
-   cd Encode-IMAPUTF7-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

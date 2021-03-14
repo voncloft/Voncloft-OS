@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-Find-Rule-Perl-$ver
 options="!checksum"
 
 build() {
-   cd File-Find-Rule-Perl-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

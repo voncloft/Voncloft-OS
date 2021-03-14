@@ -9,7 +9,7 @@ source="https://www.cpan.org/CPAN/authors/id/N/NA/NANIS/Crypt-SSLeay-$version.ta
 options="!checksum"
 
 build() {
-   cd  Crypt-SSLeay-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

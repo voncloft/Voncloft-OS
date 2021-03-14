@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/K/KE/KENTNL/File-ShareDir-ProjectDi
 options="!checksum"
 
 build() {
-   cd File-ShareDir-ProjectDistDir-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MIME-Encodings-$version.
 options="!checksum"
 
 build() {
-   cd  Email-MIME-Encodings-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

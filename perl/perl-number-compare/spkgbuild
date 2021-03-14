@@ -1,7 +1,6 @@
 # description : numeric comparisons for human file sizes
 # depends : perl
 
-_dist=Number-Compare
 name=perl-number-compare
 version=0.03
 release=10
@@ -10,7 +9,7 @@ source="https://search.mcpan.org/CPAN/authors/id/R/RC/RCLAMP/Number-Compare-0.03
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

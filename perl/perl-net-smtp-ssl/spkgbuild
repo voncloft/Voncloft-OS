@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Net-SMTP-SSL-$version.
 options="!checksum"
 
 build() {
-   cd Net-SMTP-SSL-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

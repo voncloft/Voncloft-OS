@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/L/LA/LARRYL/Test-PerlTidy-$versi
 options="!checksum"
 
 build() {
-   cd Test-PerlTidy-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

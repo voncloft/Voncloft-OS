@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/B/BI/BIGPRESH/CGI-FormBuilder-$vers
 options="!checksum"
 
 build() {
-   cd CGI-FormBuilder-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

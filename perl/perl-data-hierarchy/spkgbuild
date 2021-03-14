@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/C/CL/CLKAO/Data-Hierarchy-$version.tar.g
 options="!checksum"
 
 build() {
-   cd Data-Hierarchy-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

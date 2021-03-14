@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/List-MoreUtils-${ve
 options="!checksum"
 
 build() {
-   cd List-MoreUtils-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

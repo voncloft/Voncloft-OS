@@ -1,7 +1,6 @@
 # description : Alternative interface to File::Find
 # depends : perl-number-compare perl-text-glob
 
-_dist=File-Find-Rule
 name=perl-file-find-rule
 version=0.34
 release=7
@@ -10,7 +9,7 @@ source="https://search.mcpan.org/CPAN/authors/id/R/RC/RCLAMP/${_dist}-${version}
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

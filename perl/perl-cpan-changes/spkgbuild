@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-$version.ta
 options="!checksum"
 
 build() {
-   cd CPAN-Changes-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

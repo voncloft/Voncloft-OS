@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/A/AB/ABW/Template-GD-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Template-GD-$version
+   cd ${name#perl-}-$version
    perl Makefile.PL
    make
    make DESTDIR=$PKG install
