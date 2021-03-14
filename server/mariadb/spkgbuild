@@ -42,7 +42,7 @@ cmake -DCMAKE_BUILD_TYPE=Release                      \
 
 
 
-      install -v -dm 755 /etc/mysql &&
+      install -v -dm 755 $PKG/etc/mysql &&
 cat <<- EOF > $PKG/etc/mysql/my.cnf
 # Begin /etc/mysql/my.cnf
 
