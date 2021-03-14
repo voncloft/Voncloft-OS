@@ -114,14 +114,14 @@ interactive-timeout
 # End /etc/mysql/my.cnf
 EOF
 
-mysql_install_db --basedir=$PKG/usr --datadir=$PKG/srv/mysql --user=mysql
+$PKG/usr/bin/mysql_install_db --basedir=$PKG/usr --datadir=$PKG/srv/mysql --user=mysql
 chown -R mysql:mysql $PKG/srv/mysql
 
-install -v -m755 -o mysql -g mysql -d $PKG/run/mysqld &&
-mysqld_safe --user=mysql 2>&1 >$PKG/dev/null &
+#install -v -m755 -o mysql -g mysql -d $PKG/run/mysqld &&
+#mysqld_safe --user=mysql 2>&1 >$PKG/dev/null &
 
-mysqladmin -u root password
+#mysqladmin -u root password
 
-mysqladmin -p shutdown
+#mysqladmin -p shutdown
 
 }
