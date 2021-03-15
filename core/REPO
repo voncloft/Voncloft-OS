@@ -140,6 +140,7 @@ d:nnn
 d:gnupg
 d:inxi
 d:pipewire
+d:foltotar
 d:waterfox
 d:pciutils
 d:glew
@@ -275,7 +276,6 @@ d:adapta-gtk-theme
 d:cdrtools
 d:bubblewrap
 d:xbacklight
-d:foltodir
 d:zenity
 d:xkbcomp
 d:yetris
@@ -1032,6 +1032,8 @@ f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
 f:6a5211f4c48fc054a551402f81496447:pipewire/.checksums
 f:ea4368052fb9571bfad680349c2722f0:pipewire/.pkgfiles
 f:9057256e7271de82e9f2c9d85a6c7b5f:pipewire/spkgbuild
+f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
+f:4eae8ad2a770b5314a278412fbbe8380:foltotar/spkgbuild
 f:273b5c750d665a3133804a97807b25b6:waterfox/.checksums
 f:a893e6a506d6cbb2685182b298fe7964:waterfox/mozconfig
 f:ee2645ed6d20a8c73c215f306691bac9:waterfox/.pkgfiles
@@ -1495,8 +1497,6 @@ f:8a8b09ee6b5b918c0b84f0b37d2fc02b:bubblewrap/spkgbuild
 f:17828e42cee80d0c4212824a3bf63028:xbacklight/.checksums
 f:d4cf96b03b7cb631af04960b176b536b:xbacklight/.pkgfiles
 f:089969a0565fed51c48af9a0a70d89d2:xbacklight/spkgbuild
-f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltodir/foltotar
-f:4eae8ad2a770b5314a278412fbbe8380:foltodir/spkgbuild
 f:22011501d3c8896cc83eb98f3c16b540:zenity/.checksums
 f:34a11843f106365ad53837370367befd:zenity/.pkgfiles
 f:4bc6009aac7206be273b68805acb2f7f:zenity/spkgbuild
