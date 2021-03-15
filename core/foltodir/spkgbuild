@@ -10,5 +10,5 @@ options="!checksum"
 
 build() {
 	mkdir $PKG/usr/bin
-	install -m755 $SRC/foltobar $PKG/usr/bin
+	install -m755 $SRC/foltotar $PKG/usr/bin
 }
