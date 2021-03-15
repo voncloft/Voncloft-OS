@@ -2,14 +2,13 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 3-13-2021_
+_As of 3-15-2021_
 
 **Update:**
-
-- Fixing bootscripts will have two for each first will install /etc/init.d second will ln -sfv
+- No forseeable projects in the future
 
 **Done:**
-- mythtv - needs testing
+- mythtv
 - clementine
 - python - might have errors will fix as a need be basis
 - perl - might have errors will fix as a need be basis
