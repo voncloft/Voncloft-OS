@@ -1,0 +1,67 @@
+#!/bin/sh
+########################################################################
+# Begin accounts-daemon
+#
+# Description : start accounts-daemon
+#
+# Authors     : DJ Lucas - dj@linuxfromscratch.org
+#
+# Version     : BLFS 9.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            accounts-daemon
+# Required-Start:      $local_fs dbus
+# Should-Start:        $syslog
+# Required-Stop:       $local_fs
+# Should-Stop:         $syslog
+# Default-Start:       2 3 4 5
+# Default-Stop:        0 1 6
+# Short-Description:   Starts accounts-daemon.
+# Description:         Starts accounts-daemon daemon.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+BIN_FILE="/usr/libexec/accounts-daemon"
+GVFS_DISABLE_FUSE=1
+GIO_USE_VFS=local
+GVFS_REMOTE_VOLUME_MONITOR_IGNORE=1
+
+export GVFS_DISABLE_FUSE GIO_USE_VFS GVFS_REMOTE_VOLUME_MONITOR_IGNORE
+
+#$LastChangedBy: dj $
+#$Date: 2019-05-18 23:57:03 -0500 (Sat, 18 May 2019) $
+
+case "$1" in
+   start)
+      log_info_msg "Starting accounts-daemon..."
+      start_daemon ${BIN_FILE} &
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping accounts-daemon..."
+      killproc ${BIN_FILE}
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc ${BIN_FILE}
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/accounts-daemon

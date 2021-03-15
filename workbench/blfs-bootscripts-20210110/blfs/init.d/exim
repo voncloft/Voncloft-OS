@@ -1,0 +1,60 @@
+#!/bin/sh
+########################################################################
+# Begin exim
+#
+# Description : Starts Postfix Mail Trasfer Agent
+#
+# Author      : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            exim
+# Required-Start:      $network
+# Should-Start:        networkmanager openldap mysql postgresql saslauthd wicd
+# Required-Stop:       $network
+# Should-Stop:         networkmanager openldap mysql postgresql saslauthd wicd
+# Default-Start:       3 4 5
+# Default-Stop:        0 1 2 6
+# Short-Description:   Starts the Exim MTA
+# Description:         Controls the Exim Mail Transfer Agent
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2020-08-17 01:20:21 -0500 (Mon, 17 Aug 2020) $
+
+case "$1" in
+	start)
+		log_info_msg "Starting Exim..."
+		start_daemon /usr/sbin/exim -bd -q15m
+      evaluate_retval
+		;;
+
+	stop)
+		log_info_msg "Stopping exim..."
+		killproc /usr/sbin/exim
+      evaluate_retval
+		;;
+
+	status)
+		statusproc /usr/sbin/exim
+		;;
+
+	restart)
+		$0 stop
+		sleep 1
+		$0 start
+		;;
+
+	*)
+		echo "Usage: $0 {start|stop|status|restart}"
+		exit 1
+		;;
+esac
+
+# End /etc/init.d/exim

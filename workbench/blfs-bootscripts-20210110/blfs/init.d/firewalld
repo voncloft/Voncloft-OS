@@ -1,0 +1,77 @@
+#!/bin/sh
+########################################################################
+# Begin firewalld
+#
+# Description : starts the firewall daemon
+#
+# Authors     : DJ Lucas - dj@linuxfromscratch.org
+#
+# Version     : BLFS 9.1
+#
+# Config file : /etc/firewalld/firewalld.conf
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            firewalld
+# Required-Start:      $local_fs messagebus
+# Should-Start:        $syslog
+# Required-Stop:       $local_fs messagebus
+# Should-Stop:         $syslog
+# Default-Start:       3 4 5 
+# Default-Stop:        0 1 2 6
+# Short-Description:   The Firewalld firewall daemon
+# Description:         Firewalld provides a dynamically managed firewall with
+#                      support for network/firewall zones that define the trust
+#                      level of network connections or interfaces.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+[ -e /etc/sysconfig/firewalld ] && . /etc/sysconfig/firewalld
+
+BINFILE="/usr/sbin/firewalld"
+PIDFILE="/run/firewalld.pid"
+CONFIG="/etc/firewalld/firewalld.conf"
+
+case "$1" in
+   start)
+      log_info_msg "Starting Firewalld..."
+      start_daemon -p "${PIDFILE}" ${BINFILE} ${FIREWALLD_ARGS}
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping Firewalld..."
+      killproc -p "${PIDFILE}" ${BINFILE}
+      evaluate_retval
+      ;;
+
+   reload)
+      log_info_msg "Reloading Firewalld..."
+      /usr/sbin/firewall-cmd --reload
+      evaluate_retval
+      ;;
+
+   force-reload | restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   try-restart)
+      statusproc -p "${PIDILE}" ${BINFILE} > /dev/null 2>&1 || $0 restart
+      ;;
+
+   status)
+      statusproc  -p "${PIDFILE}" ${BINFILE}
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|reload|force-reload|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End firewalld

@@ -1,0 +1,66 @@
+#!/bin/sh
+########################################################################
+# Begin cups
+#
+# Description : Start cups daemon
+#
+# Author      : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            cups
+# Required-Start:
+# Should-Start:        $syslog samba
+# Required-Stop:
+# Should-Stop:         $syslog samba
+# Default-Start:       2 3 4 5
+# Default-Stop:        0 1 6
+# Short-Description:   Starts cups print daemon.
+# Description:         Starts cups print daemon.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2019-10-30 22:22:33 -0500 (Wed, 30 Oct 2019) $
+
+case $1 in
+   start)
+      log_info_msg "Starting CUPS Printserver..."
+      start_daemon /usr/sbin/cupsd
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping CUPS Printserver..."
+      killproc /usr/sbin/cupsd
+      evaluate_retval
+      ;;
+
+   reload)
+      log_info_msg "Reloading CUPS Printserver..."
+      killproc /usr/sbin/cupsd -HUP
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc /usr/sbin/cupsd
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|reload|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/cups
