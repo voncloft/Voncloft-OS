@@ -31,7 +31,7 @@ build(){
 
         pathappend $KF5_PREFIX/share/man        MANPATH
         # End /etc/profile.d/kf5.sh
-        EOF
+	EOF
 
         cat <<- EOF > $PKG/etc/profile.d/qt5.sh
         # Begin Qt5 changes for KF5
@@ -40,7 +40,7 @@ build(){
         pathappend $QT5DIR/qml                 QML2_IMPORT_PATH
 
         # End Qt5 changes for KF5
-        EOF
+	EOF
         mkdir $PKG/etc/ld.so.conf.d
         cat <<-EOF > $PKG/etc/ld.so.conf.d/kde.conf
         # Begin KF5 addition
@@ -48,7 +48,7 @@ build(){
         /opt/kf5/lib
 
         # End KF5 addition
-        EOF
+	EOF
 
         install -v -dm755           $PKG/opt/kf5-$_version/{etc,share}
         ln -sfv /etc/dbus-1         $PKG/opt/kf5-$_version/etc
@@ -58,7 +58,4 @@ build(){
 
         #mkdir -pv $PKG/opt/kf5
         #ln -sfvn /opt/kf5-$_version $PKG/opt/kf5
-
-
-
 }
