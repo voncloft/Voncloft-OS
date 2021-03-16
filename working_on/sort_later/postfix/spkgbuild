@@ -1,13 +1,40 @@
-# description :
-# depends :
+# description : mail transport agent
+# depends : berkely-db cyrus-sasl libnsl
 
-name=
-version=
-build=
+name=postfix
+version=3.5.9
+build=1
 
-source=""
+source="ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
+	cd $name-$version
+	groupadd -g 32 postfix
+	groupadd -g 33 postdrop
+	useradd -c "Postfix Daemon User" -d $PKG/var/spool/postfix -g postfix \
+        -s /bin/false -u 32 postfix
+        chown -v postfix:postfix $PKG/var/mail
 
+	sed -i 's/.\x08//g' README_FILES/*
+
+
+     make CCARGS="-DUSE_TLS -I/usr/include/openssl/                     \
+             -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
+     AUXLIBS="-lssl -lcrypto -lsasl2"                              \
+     makefiles
+     make
+
+
+    make DESTDIR=$PKG install
+
+    cat <<-EOF > $PKG/etc/aliases
+    MAILER-DAEMON:    postmaster
+	postmaster:       root
+
+	root:             <LOGIN>
+	# End /etc/aliases
+
+    EOF
+    
 }

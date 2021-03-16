@@ -33,15 +33,16 @@ BIN_FILE="/usr/bin/mythbackend"
 case "$1" in
    start)
       log_info_msg "Starting mythbackend..."
-      /usr/bin/mythbackend -p /run/mythbackend.pid --loglevel debug -v --logpath /var/log/mythtv -d
+      /usr/bin/mythbackend -p /srv/mythbackend/mythbackend.pid -d --loglevel debug -v --logpath /var/log/mythtv
+	#/usr/bin/mythbackend -p /run/mythbackend.pid 
       evaluate_retval
       ;;
 
    stop)
       log_info_msg "Stopping mythbackend..."
-      PID_FILE=$(cat /run/mythbackend.pid)
+      PID_FILE=$(cat /srv/mythbackend/mythbackend.pid)
       kill -9 $PID_FILE
-      rm -rf /run/mythbackend.pid
+      rm -rf /srv/mythbackend/mythbackend.pid
       evaluate_retval
       ;;
 
@@ -54,8 +55,8 @@ case "$1" in
    status)
       #statusproc ${BIN_FILE}
       #statusproc /run/subsonic.pid
-      if [ -f /run/mythbackend.pid ]; then
-          PID_FILE=$(cat /run/mythbackend.pid)
+      if [ -f /srv/mythbackend/mythbackend.pid ]; then
+          PID_FILE=$(cat /srv/mythbackend/mythbackend.pid)
           echo "mythbackend is running on process:" $PID_FILE
       else
           echo "mythbackend is not running."

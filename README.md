@@ -5,9 +5,10 @@ A Linux From Scratch Repository that I self maintain.
 _As of 3-15-2021_
 
 **Update:**
-work on postfix next
+work on postfix depends
 
 **Done:**
+- postfix - needs testing
 - mythtv
 - clementine
 - python - might have errors will fix as a need be basis

@@ -1,0 +1,15 @@
+# description : postfix boot script
+# depends :
+
+name=psad-boot
+version=2.4.6
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-postfix
+
+}
