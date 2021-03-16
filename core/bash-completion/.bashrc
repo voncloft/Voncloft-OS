@@ -15,5 +15,5 @@ fi
 
 # Set up user specific i18n variables
 #export LANG=<ll>_<CC>.<charmap><@modifiers>
-
+complete -cf sudo
 # End ~/.bashrc
