@@ -1,0 +1,27 @@
+# description : database functions
+# depends :
+
+name=berkeley-db
+version=5.3.28
+release=1
+
+source="http://anduin.linuxfromscratch.org/BLFS/bdb/db-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd bd-$version
+	sed -i 's/\(__atomic_compare_exchange\)/\1_db/' src/dbinc/atomic.h
+	cd build_unix
+	../dist/configure --prefix=/usr      \
+                  --enable-compat185 \
+                  --enable-dbm       \
+                  --disable-static   \
+                  --enable-cxx
+        make
+        make DESTDIR=$PKG install
+        chown -v -R root:root                        \
+      	$PKG/usr/bin/db_*                          \
+        $PKG/usr/include/db{,_185,_cxx}.h          \
+        $PKG/usr/lib/libdb*.{so,la}                \
+        $PKG/usr/share/doc/db-$version
+}
