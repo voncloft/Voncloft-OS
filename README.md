@@ -5,7 +5,7 @@ A Linux From Scratch Repository that I self maintain.
 _As of 3-15-2021_
 
 **Update:**
-work on postfix depends
+- No updates for the forseeable future
 
 **Done:**
 - postfix - needs testing

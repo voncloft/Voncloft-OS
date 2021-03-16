@@ -10,10 +10,11 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	./autoreconf -ifv
-	./configure --sysconfdir=/etc
+	autoreconf -ifv
+	./configure --sysconfdir=/etc \
+	--prefix=/usr
 	make
 	make DESTDIR=$PKG install
-	mv $PKG/usr/lib/libnsl.so.2* $PKG/lib
-	ln -sfv $PKG/../../lib/libnsl.so.2.0.1 $PKG/usr/lib/libnsl.so
+	#mv $PKG/usr/lib/libnsl.so.2* $PKG/lib
+	#ln -sfv $PKG/../../lib/libnsl.so.2.0.1 $PKG/usr/lib/libnsl.so
 }
