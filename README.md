@@ -5,7 +5,7 @@ A Linux From Scratch Repository that I self maintain.
 _As of 3-15-2021_
 
 **Update:**
-- No updates for the forseeable future
+- No updates for the forseeable futured
 
 **Done:**
 - postfix - needs testing

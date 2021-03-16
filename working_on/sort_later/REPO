@@ -1,10 +1,8 @@
 d:networkmanager
 d:kdevplatform
-d:postfix
 d:dhcp
 f:3c1400d5d7441d11eebe9f3eacf704cb:networkmanager/spkgbuild
 f:4bb5fe7f8ce8d0f3d5e19df9a2670deb:kdevplatform/spkgbuild
-f:2f97f27b47ee0e2b55f22beb66684328:postfix/spkgbuild
 f:d41d8cd98f00b204e9800998ecf8427e:.place_holder
 f:b7b8c25296e4bb40235fa8d7d5ae6e65:notes
 f:4e35868ad012c18e0d60727a022f7150:dhcp/dhclient.conf

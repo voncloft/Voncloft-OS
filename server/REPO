@@ -3,6 +3,7 @@ d:apache
 d:php
 d:dnsmasq
 d:iptables
+d:postfix
 d:mariadb
 d:dhcpcd
 d:deluge
@@ -23,6 +24,7 @@ f:93dd530822e105632c7c45b6bf449037:dnsmasq/dnsmasq.conf
 f:bdedc24f953436ab0d52bb3e0e42fc35:dnsmasq/spkgbuild
 f:2f647df400ed113a0f4ee42108ef346a:iptables/rc.iptables
 f:8b9cf940fb36bc205f50a329d8904468:iptables/spkgbuild
+f:76afc86f11b2abb7d66c9c3d64d28275:postfix/spkgbuild
 f:9b9c16b596d7797a95ba4908b803df24:mariadb/spkgbuild
 f:912cc69f2fd941090353dc73f24fe3ea:dhcpcd/.checksums
 f:bcd8d70e4f6fb4caea68b236b9517b9a:dhcpcd/.pkgfiles
