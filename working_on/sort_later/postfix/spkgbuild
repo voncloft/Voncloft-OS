@@ -28,8 +28,8 @@ build() {
 
     make DESTDIR=$PKG install
 
-    cat <<-EOF > $PKG/etc/aliases
-    MAILER-DAEMON:    postmaster
+    cat <<- EOF > $PKG/etc/aliases
+        MAILER-DAEMON:    postmaster
 	postmaster:       root
 
 	root:             <LOGIN>
