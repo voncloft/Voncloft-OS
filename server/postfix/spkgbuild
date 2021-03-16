@@ -1,5 +1,5 @@
 # description : mail transport agent
-# depends : berkely-db cyrus-sasl libnsl
+# depends : berkeley-db cyrus-sasl libnsl
 
 name=postfix
 version=3.5.9
