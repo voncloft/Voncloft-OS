@@ -12,10 +12,12 @@ d:make-ca
 d:net-tools
 d:nftables
 d:httpup
+d:sshfs
 d:openvpn
 d:filezilla
 d:openssl
 d:nethogs
+d:pidgin
 d:noip
 d:wireshark
 d:wireless_tools
@@ -60,6 +62,8 @@ f:306f3e0eed9363013400b7f919f27b5b:nftables/spkgbuild
 f:d323c3dc47d826b9bfa06e8700e8244c:httpup/.checksums
 f:35c28446271c7e767de6ada6a887d557:httpup/.pkgfiles
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
+f:19842a866fb642f652352252670018e2:sshfs/CHANGELOG
+f:d01a5b67d32b869d28251714c7c436f9:sshfs/spkgbuild
 f:1eb2790428ddb2f92e3c6737e7958a29:openvpn/.checksums
 f:894a619d0b44fb93ec2bdd3d02998e83:openvpn/.pkgfiles
 f:992a43c46bb1002706d95bd8cb80e3ef:openvpn/spkgbuild
@@ -73,6 +77,8 @@ f:3ae60a4d2e561caaa2ee5ea8f60a4dc4:openssl/spkgbuild
 f:d4d19bf8bbac477f82b2bf658614c1f3:nethogs/.checksums
 f:b53acfbc8f415bcfec64162552e354ce:nethogs/.pkgfiles
 f:9e11b355a8b41695ee89f53e3ec8277d:nethogs/spkgbuild
+f:bd28a2cede069b0611c886765bcab942:pidgin/CHANGELOG
+f:ddc97aa9cd4a87fadbd225cc2906adab:pidgin/spkgbuild
 f:836ef1f0483fd4e856fc7f0ca03b24ff:noip/spkgbuild
 f:f73caa7b57a165ab7e73264845b60f78:wireshark/CHANGELOG
 f:cbd24e95f9406bc43b326d7184818cc4:wireshark/spkgbuild

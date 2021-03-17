@@ -1,0 +1,18 @@
+# description : mountins remote drives locally
+# depends : fuse glib openssh
+
+name=sshfs
+version=3.7.1
+release=1
+
+source="https://github.com/libfuse/sshfs/releases/download/$name-$version/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson --prefix=/usr ..
+	ninja
+	DESTDIR=$PKG ninja install
+}
