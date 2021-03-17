@@ -1,0 +1,28 @@
+# description : networking sniffing tool
+# depends : cmake glib libgcrypt qt5 libpcap
+
+name=wireshark
+version=3.4.4
+release=1
+
+source="https://www.wireshark.org/download/src/all-versions/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	groupadd -g 62 wireshark
+
+	mkdir build
+	cd build
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_BUILD_TYPE=Release  \
+	-DCMAKE_INSTALL_DOCDIR=/usr/share/doc/wireshark-3.4.4 \
+	-G Ninja \
+	..
+
+	ninja
+	DESTDIR=$PKG ninja install
+	chown -v root:wireshark $PKG/usr/bin/{tshark,dumpcap}
+	chown -v 6550 $PKG/usr/bin/{tshark,dumpcap}
+}

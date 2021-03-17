@@ -17,6 +17,7 @@ d:filezilla
 d:openssl
 d:nethogs
 d:noip
+d:wireshark
 d:wireless_tools
 d:avahi
 d:youtube-dl
@@ -73,6 +74,8 @@ f:d4d19bf8bbac477f82b2bf658614c1f3:nethogs/.checksums
 f:b53acfbc8f415bcfec64162552e354ce:nethogs/.pkgfiles
 f:9e11b355a8b41695ee89f53e3ec8277d:nethogs/spkgbuild
 f:836ef1f0483fd4e856fc7f0ca03b24ff:noip/spkgbuild
+f:f73caa7b57a165ab7e73264845b60f78:wireshark/CHANGELOG
+f:cbd24e95f9406bc43b326d7184818cc4:wireshark/spkgbuild
 f:d103a26a88a32917318febff7c2573c7:wireless_tools/.checksums
 f:991ab5000fe340c18e8e2485a73eb4e6:wireless_tools/.pkgfiles
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
