@@ -1,9 +1,9 @@
 # description : mountins remote drives locally
-# depends : fuse glib openssh
+# depends : fuse2 fuse3 glib openssh
 
 name=sshfs
 version=3.7.1
-release=1
+release=2
 
 source="https://github.com/libfuse/sshfs/releases/download/$name-$version/$name-$version.tar.xz"
 options="!checksum"
