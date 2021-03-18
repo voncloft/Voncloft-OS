@@ -17,12 +17,13 @@ build() {
     		-i client/dhclient.c              \
        		relay/dhcrelay.c
 
-	 Install ISC DHCP by running the following commands:
+	 #Install ISC DHCP by running the following commands:
+
 
 	( export CFLAGS="${CFLAGS:--g -O2} -Wall -fno-strict-aliasing                 \
         -D_PATH_DHCLIENT_SCRIPT='\"/sbin/dhclient-script\"'         \
         -D_PATH_DHCPD_CONF='\"/etc/dhcp/dhcpd.conf\"'               \
-        -D_PATH_DHCLIENT_CONF='\"/etc/dhcp/dhclient.conf\"'"       
+        -D_PATH_DHCLIENT_CONF='\"/etc/dhcp/dhclient.conf\"'"        &&
 
 	./configure --prefix=/usr                                           \
             --sysconfdir=/etc/dhcp                                  \
@@ -31,9 +32,12 @@ build() {
             --with-srv6-lease-file=/var/lib/dhcpd/dhcpd6.leases     \
             --with-cli-lease-file=/var/lib/dhclient/dhclient.leases \
             --with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases
+	)
+
+
 	make -j1
-	make -C client DESTDIR=$PKG install         &&
-	mv -v /usr/sbin/dhclient $PKG/sbin &&
+	make -C client DESTDIR=$PKG install         
+	mv -v /usr/sbin/dhclient $PKG/sbin 
 	install -v -m755 client/scripts/linux $PKG/sbin/dhclient-script
 	install -m644 "$SRC/dhclient.conf" $PKG/etc/dhcp
 	install -v -dm 755 $PKG/var/lib/dhclient
