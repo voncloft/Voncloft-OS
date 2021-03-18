@@ -37,6 +37,6 @@ build() {
 	install -v -m755 client/scripts/linux $PKG/sbin/dhclient-script
 	install -m644 "$SRC/dhclient.conf" $PKG/etc/dhcp
 	install -v -dm 755 $PKG/var/lib/dhclient
-	install -m644 "$SRC/ifconfig.eth0" $PKG/etc/sysconfig/
+	install -m644 "$SRC/ifconfig.eth0" $PKG/etc/sysconfig
 	
 }
