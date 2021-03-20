@@ -18,7 +18,8 @@ build() {
         BUILDCC=gcc ./configure \
 		--prefix=/usr \
 		--disable-opencv \
-		--disable-vpx
+		--disable-vpx \
+		--disable-lua
 	make
 	make DESTDIR=$PKG install
 }
