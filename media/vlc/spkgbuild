@@ -1,12 +1,11 @@
 # description	: A media player, streamer, and encoder
-# depends	: kde5 alsa-lib ffmpeg liba52 libgcrypt libmad lua libidn projectm
+# depends	: alsa-lib ffmpeg liba52 libgcrypt libmad lua libidn projectm
 
 name=vlc
 version=3.0.12
 release=1
-source="https://download.videolan.org/$name/$version/$name-$version.tar.xz
-	qt_5_15.patch"
-
+source="https://download.videolan.org/$name/$version/$name-$version.tar.xz"
+options="!checksum"
 build() {
 	cd $name-$version
 
