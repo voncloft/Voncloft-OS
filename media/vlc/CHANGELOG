@@ -6,3 +6,13 @@ release=1
 
 Synopsis:
 version upgrade
+
+----------------------------------------------------------------
+
+Date: Sat 20 Mar 2021 12:37:21 PM EDT
+
+version=3.0.12
+release=1
+
+Synopsis:
+disable luac due to compatible errors for version 5.4
