@@ -23,6 +23,7 @@ d:wireshark
 d:wireless_tools
 d:avahi
 d:youtube-dl
+d:firefox
 d:git
 d:openssl1.0
 d:libnetfilter_conntrack
@@ -90,6 +91,11 @@ f:54f1c53000ec174e8fad200c90e77a43:avahi/spkgbuild
 f:8e14b16f1f25881d3704011e2b3badf7:youtube-dl/.checksums
 f:f5a37b9895dada08f40e0a87a711291f:youtube-dl/.pkgfiles
 f:5fd241975088458a9cbb2f82040ed219:youtube-dl/spkgbuild
+f:d33839c3ec17948ec4fdcb05cea5c93b:firefox/CHANGELOG
+f:0f19e371ea7c28169dc7c9a667453c6d:firefox/.checksums
+f:2218d8472bcb393bb0062790d0162a04:firefox/.pkgfiles
+f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
+f:7fb531e1e00cc76e57009911a0eb212b:firefox/spkgbuild
 f:fd124bc27dc5dde4eb32a2d7b845ee6f:git/.checksums
 f:2986b8d53079174734aadf735ea54f22:git/.pkgfiles
 f:0cf93304c30574c5d44f9556a296bea5:git/spkgbuild

@@ -24,7 +24,6 @@ d:mozjs
 d:gtksourceview3
 d:gtk2
 d:gtkmm3
-d:firefox
 d:youtubemp3
 d:gtk-engines
 d:mypaint-brushes
@@ -91,10 +90,6 @@ f:13f2c9445f7358f37ebde4fd22c3a024:gtk2/spkgbuild
 f:087e9729c1c051409579c4103fcf4fbd:gtkmm3/.checksums
 f:2f00426cb22c88ddf018e619d2d8e941:gtkmm3/.pkgfiles
 f:bf89bb98ad0d06cef7a9bebda179720f:gtkmm3/spkgbuild
-f:0f19e371ea7c28169dc7c9a667453c6d:firefox/.checksums
-f:2218d8472bcb393bb0062790d0162a04:firefox/.pkgfiles
-f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
-f:209670f11ce2505ee55a7925197b4f4c:firefox/spkgbuild
 f:765e587e2e58461e1b501df7a7b7a2d0:youtubemp3/spkgbuild
 f:3f28b3e7adb567e887dad66393157914:youtubemp3/youtubemp3
 f:6681d9311e38574b177bf7bf8c2dee6c:gtk-engines/.checksums
