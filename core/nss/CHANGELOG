@@ -1,0 +1,9 @@
+Date: Sat 20 Mar 2021 01:55:50 PM EDT
+
+name=nss
+version=3.61
+_version=$(echo $version | sed 's/\./_/g')
+release=1
+
+Synopsis:
+upgraded
