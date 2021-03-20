@@ -6,6 +6,7 @@ version=3.9.1
 release=1
 #source="$name-$version.tar.gz::https://github.com/KittyKatt/screenFetch/archive/v$version.tar.gz"
 source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/$name-$version.tar.gz"
+options="!checksum"
 build() {
 	cd screenFetch
 
