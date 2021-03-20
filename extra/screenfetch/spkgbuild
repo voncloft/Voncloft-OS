@@ -4,10 +4,10 @@
 name=screenfetch
 version=3.9.1
 release=1
-source="$name-$version.tar.gz::https://github.com/KittyKatt/screenFetch/archive/v$version.tar.gz"
-
+#source="$name-$version.tar.gz::https://github.com/KittyKatt/screenFetch/archive/v$version.tar.gz"
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/$name-$version.tar.gz"
 build() {
-	cd screenFetch-$version
+	cd screenFetch
 
 	install -Dm755 $name-dev $PKG/usr/bin/$name
 	install -Dm644 $name.1   $PKG/usr/share/man/man1/$name.1 

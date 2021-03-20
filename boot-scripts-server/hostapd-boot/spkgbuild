@@ -5,7 +5,7 @@ name=hostapd-boot
 version=2.9
 release=4
 
-source="http://voncloft.dnsfor.me/software/Voncloft-OS/bootscripts.tar.gz"
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
 options="!checksum"
 
 build() {
