@@ -11,15 +11,15 @@ build() {
 	cd $name-$version
 
 	# fix build with qt5-5.15
-	patch -Np1 -i ../qt_5_15.patch
+	#patch -Np1 -i ../qt_5_15.patch
 
 	# This command allows building with the current version of Lua-5.3.4
-	sed -i '/vlc_demux.h/a #define LUA_COMPAT_APIINTCASTS' modules/lua/vlc.h
+	#sed -i '/vlc_demux.h/a #define LUA_COMPAT_APIINTCASTS' modules/lua/vlc.h
 
         BUILDCC=gcc ./configure \
 		--prefix=/usr \
 		--disable-opencv \
-		--disable-nls
+		--disable-vpx
 	make
 	make DESTDIR=$PKG install
 }
