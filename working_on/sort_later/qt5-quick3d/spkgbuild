@@ -1,0 +1,21 @@
+# description : qt module and api for defining 3d content in qt quick
+# depends : qt5-declarative
+
+name=qt5-quick3d
+version=5.15.2
+release=2
+
+source="https://download.qt.io/official_releases/qt/5.15/$version/submodules/qtquick3d-everywhere-src-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd qtquick3d-everywhere-src-$version
+	mkdir build
+	cd build
+	qmake ../
+	make
+	make INSTALL_ROOT=$PKG install
+	find "$PKG/usr/lib" -type f -name '*.prl' \
+    		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+	
+}

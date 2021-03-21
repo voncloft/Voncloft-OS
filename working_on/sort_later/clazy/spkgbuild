@@ -1,0 +1,19 @@
+# description : Qt oriented code checker based on clang framework
+# depends : clang cmake llvm
+
+name=clazy
+version=1.9
+release=2
+
+source="https://download.kde.org/stable/$name/$version/src/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+		-DCMAKE_INSTALL_PREFIX=/usr
+	make
+	make DESTDIR=$PKG install
+}

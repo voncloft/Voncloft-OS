@@ -1,5 +1,5 @@
 # description : utility to design Qt objects
-# depends : clang clazy qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 qt5-serialport qt5-svg qt5-tools qt5-webengine syntax-highlighting yaml-cpp
+# depends : clang clazy qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 qt5-svg qt5-tools syntax-highlighting yaml-cpp
 
 name=qtcreator
 version=4.14.0
