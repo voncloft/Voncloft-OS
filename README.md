@@ -8,6 +8,7 @@ _As of 3-15-2021_
 - No updates for the forseeable futured
 
 **Done:**
+- qtcreator - needs testing
 - postfix - needs testing
 - mythtv
 - clementine
