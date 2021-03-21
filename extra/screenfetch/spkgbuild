@@ -12,4 +12,5 @@ build() {
 
 	install -Dm755 $name-dev $PKG/usr/bin/$name
 	install -Dm644 $name.1   $PKG/usr/share/man/man1/$name.1 
+	#test
 }
