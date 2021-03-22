@@ -1,0 +1,19 @@
+# description : kdevplatform c++ ide 
+# depends : clang grantlee kcmutils kitemmodels knewstuff knotifyconfig ktexteditor libkomparediff2 libksysguard threadweaver
+
+name=kdevelop
+version=5.6.2
+release=3
+
+source="https://download.kde.org/stable/$pkgname/$pkgver/src/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+		-DBUILD_TESTING=OFF
+	make
+	make DESTDIR=$PKG install
+}
