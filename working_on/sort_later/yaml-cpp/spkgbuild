@@ -9,7 +9,7 @@ source="https://github.com/jbeder/$name/archive/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd $name-$name-$version
 	mkdir build
 	cd build
 	cmake .. \
