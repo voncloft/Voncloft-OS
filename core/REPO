@@ -385,6 +385,7 @@ d:arc-icon-theme
 d:parole
 d:yelp-xsl
 d:glib
+d:yaml-cpp
 d:links
 d:galculator
 d:qalculate
@@ -1855,6 +1856,8 @@ f:75d1d9f07fb31d2ed311dcca080b367c:yelp-xsl/spkgbuild
 f:4d21b50db658c949b70e6a16cf3e83a8:glib/.checksums
 f:d8f560a0c2a1edb99953843c71c97452:glib/.pkgfiles
 f:5fc74eab2812534426c8e1f423cdef90:glib/spkgbuild
+f:634916e195add97fb2aa77d8dab5f668:yaml-cpp/CHANGELOG
+f:eacf6188ff6f9c33cfda40a6aa089d2c:yaml-cpp/spkgbuild
 f:5920a21ee9d86efc885644030147d2ae:links/.checksums
 f:737ce40a58be98beca3ef2dea070911b:links/.pkgfiles
 f:f8d71eff77234392f16a7d9a5745c2d2:links/spkgbuild
