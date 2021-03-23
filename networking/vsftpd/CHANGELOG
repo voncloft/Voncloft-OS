@@ -6,3 +6,13 @@ release=1
 
 Synopsis:
 Initial creation of package in repo
+
+----------------------------------------------------------------
+
+Date: Tue 23 Mar 2021 11:54:34 AM EDT
+
+version=3.0.3
+release=1
+
+Synopsis:
+added a clause for depends and pam file to allow only users in /etc/ftpusers

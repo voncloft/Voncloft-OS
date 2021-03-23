@@ -1,5 +1,5 @@
 # description : transfer files to server outside of network
-# depends : libnsl
+# depends : libnsl linux-pam
 
 name=vsftpd
 version=3.0.3
@@ -30,8 +30,25 @@ build() {
 	secure_chroot_dir=/usr/share/vsftpd/empty
 	seccomp_sandbox=NO
 	local_enable=YES
-	EOF
+	session_support=YES
+	pam_service_name=vsftpd
+	local_root=/srv/ftp
+	write_enable=YES
 
+	EOF
+	mkdir -pv $PKG/etc/pam.d
 	
+	cat <<-OEF > $PKG/etc/pam.d/vsftpd
+	# Begin /etc/pam.d/vsftpd
+	auth       required     /lib/security/pam_listfile.so item=user sense=allow \
+                                                      file=/etc/ftpusers \
+                                                      onerr=succeed
+	auth       required     pam_shells.so
+	auth       include      system-auth
+	account    include      system-account
+	session    include      system-session
+	EOF
+	mkdir -pv $PKG/srv/ftp
+	touch $PKG/etc/ftpusers
 	
 }
