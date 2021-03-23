@@ -6,6 +6,7 @@ d:flexget-daemon
 d:noip-boot
 d:deluge-boot
 d:mythbackend-boot
+d:vsftpd-boot
 d:cyrus-sasl-boot
 d:webmin-boot
 d:openvpn-daemon
@@ -22,6 +23,7 @@ f:a74956b572361f15811b73004f7d4a6f:flexget-daemon/spkgbuild
 f:504f1c43a639001d8d7d899d31179374:noip-boot/spkgbuild
 f:38405f362170d5529bbb4ce4b6ac2d21:deluge-boot/spkgbuild
 f:ceffcc44ce19e5e290660f853847592c:mythbackend-boot/spkgbuild
+f:a0bfd96e3786caa0b3518ffd3eb1b1b3:vsftpd-boot/spkgbuild
 f:68b86beee6ac25c5971abe3fa9f3ceb2:cyrus-sasl-boot/spkgbuild
 f:f06fe91864c29e9aeeee392dc08ab852:webmin-boot/spkgbuild
 f:4227795b60e84046b8270970b78483c3:openvpn-daemon/spkgbuild

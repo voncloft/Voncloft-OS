@@ -19,8 +19,10 @@ build() {
 
 	sed -e "s/kVSFSysStrOpenUnknown;/(enum EVSFSysUtilOpenMode)&/" -i sysstr.c
 	make
+	mkdir -pv $PKG/usr/sbin
 	install -v -m 755 vsftpd        $PKG/usr/sbin/vsftpd 
-	install -v -m 644 vsftpd.conf   $PKG/etc
+
+	mkdir -pv $PKG/etc
 	cat <<-EOF > $PKG/etc/vsftpd.conf
 	background=YES
 	listen=YES
