@@ -1,0 +1,18 @@
+# description : dictionary for cracklib
+# depends : cracklib
+
+name=cracklib-dict
+version=2.9.7
+release=1
+
+source="https://github.com/cracklib/cracklib/releases/download/v$version/cracklib-words-$version.bz2"
+options="!checksum"
+
+build() {
+	install -v -D $PKG/usr/share/dict
+	ln -v -sf cracklib-words $PKG/usr/share/dict/words
+	echo $(hostname) >> $PKG/usr/share/dict/cracklib-extra-words
+	install -v -m755 -d $PKG/lib/cracklib
+	create-cracklib-dict $PKG/usr/share/dict/cracklib-words \
+	$PKG/usr/share/dict/cracklib-extra-words
+}
