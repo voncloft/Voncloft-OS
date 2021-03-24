@@ -449,6 +449,7 @@ d:transmission-cli
 d:elinks
 d:json-glib
 d:w3m
+d:logrotate
 d:pcre
 d:waylandpp
 d:tcsh
@@ -1405,7 +1406,7 @@ f:d07e5e4b896394ef087a722529599505:linux-pam/CHANGELOG
 f:8a82e837907ae2cd3334800823fc2382:linux-pam/system-password
 f:6be86e52bfbaf5f80ec7c9fc23f55bc0:linux-pam/system-session
 f:8c37ec4dba9c45b3540f990a6c1922c1:linux-pam/other
-f:93c3085a1b89c4443d304054b7eaef40:linux-pam/spkgbuild
+f:7628b9545b302a9c3bededb50e0f3fde:linux-pam/spkgbuild
 f:bc55c6d8d9cf1d31e6c39047eafde517:linux-pam/system-account
 f:b1198d9ae416bd204e53a7aeb5a7842a:linux-pam/system-auth
 f:336a98ca7ae5695297c63003db80445d:vsv/.checksums
@@ -2084,6 +2085,9 @@ f:4ac428e0b9ba56a8313fee61c408de4d:w3m/.checksums
 f:1a2eedaba387dee4f6db5048015777dc:w3m/fix-compile.patch
 f:28f979094debc6872849bfa7dbf0017d:w3m/.pkgfiles
 f:3477c451be3304116ecd71ce41f7cff9:w3m/spkgbuild
+f:1c05d984e188d86f22eda9f091d6188a:logrotate/CHANGELOG
+f:94dae4d3eded2fab9ae879533d3680db:logrotate/logrotate.conf
+f:6570656ed951f04150aab874c938daae:logrotate/spkgbuild
 f:151a025aa036477ed920100fb45b3947:pcre/.checksums
 f:6d4a79d6caf365e2b25ce19402eb07a4:pcre/.pkgfiles
 f:c00d233e3921f750e02dbacefd3916d9:pcre/spkgbuild
