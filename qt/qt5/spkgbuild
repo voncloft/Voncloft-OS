@@ -26,7 +26,7 @@ build() {
 	make
 	make -j1 INSTALL_ROOT=$PKG install
 
-	ln -sfnv qt5-$version $PKG/opt/qt5
+	ln -sfnv $PKG/opt/qt5-$version $PKG/opt/qt5
 	
 	find $PKG/opt/qt5-$version -name \*.prl \
 	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
