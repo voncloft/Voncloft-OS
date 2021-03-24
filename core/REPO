@@ -644,10 +644,14 @@ f:17967c2b4334970fbdb990c53ff4e224:sysvinit/.checksums
 f:8391a3434b86fd88ddb76e9a659acd8a:sysvinit/.pkgfiles
 f:a2eda5ab33229e690d995b7541e5ea62:sysvinit/spkgbuild
 f:7cbc50e3b0b46b8faf684ac71ff1df0d:shadow/install
+f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:c319a3b8aaabc78b2c321018976f62ab:shadow/.checksums
 f:9afe3b4289bebd67aa2cd6e704352afc:shadow/.pkgfiles
 f:11f5b3140ca4cef4dee8034091af88cc:shadow/pwck
-f:4bb2b922e31800511491fe5138829982:shadow/spkgbuild
+f:e2ecbd6743ab9d7faf5f436e9edd6265:shadow/su
+f:34888bc30805739f6932cb0d6b9f839e:shadow/spkgbuild
+f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
+f:2728914f5b2c37fc421d046ce5e5b464:shadow/chage
 f:f9dcc013464025ff448094199e0832cf:plank/.checksums
 f:622889120f024cb7cb542044f6cd9755:plank/.pkgfiles
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
