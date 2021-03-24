@@ -1,5 +1,5 @@
 # description : contains Pluggable Authentication Modules used to enable the local system administrator to choose how applications authenticate users
-# depends : libnsl libirpc libpwquality
+# depends : libnsl libtirpc libpwquality
 
 name=linux-pam
 version=1.5.1
