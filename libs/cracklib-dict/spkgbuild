@@ -9,7 +9,7 @@ source="https://github.com/cracklib/cracklib/releases/download/v$version/crackli
 options="!checksum"
 
 build() {
-	mkdir -pv  $PKG/usr/share/dict
+	mkdir -pv $PKG/usr/share/dict
 	ln -v -sf cracklib-words $PKG/usr/share/dict/words
 	echo $(hostname) >> $PKG/usr/share/dict/cracklib-extra-words
 	install -v -m755 -d $PKG/lib/cracklib
