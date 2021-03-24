@@ -690,7 +690,17 @@ install-mythbackend-boot: create-dirs
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc4.d/S97mythbackend
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc5.d/S97mythbackend
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc6.d/S97mythbackend
-	
+
+install-logrotate-boot: create-dirs
+        install -m ${MODE} blfs/init.d/logrotate     ${EXTDIR}/rc.d/init.d/
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc0.d/K11logrotate
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc1.d/K11logrotate
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc2.d/K11logrotate
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc3.d/S11logrotate
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc4.d/S11logrotate
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc5.d/S11logrotate
+        ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc6.d/S11logrotate
+        	
 uninstall-atd: 
 	rm -f ${EXTDIR}/rc.d/init.d/atd
 	rm -f ${EXTDIR}/rc.d/rc0.d/K29atd
@@ -1269,6 +1279,7 @@ uninstall-xinetd:
 	install-sshguard-boot \
 	install-subsonic-boot \
 	install-webmin-boot \
+	install-logrotate-boot
 	install-mythbackend-boot \
 	uninstall-atd \
 	uninstall-accounts-daemon \

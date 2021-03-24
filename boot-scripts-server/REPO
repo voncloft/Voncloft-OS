@@ -1,6 +1,7 @@
 d:subsonic-boot
 d:postfix-boot
 d:psad-boot
+d:logrotate-boot
 d:sshguard-boot
 d:flexget-daemon
 d:noip-boot
@@ -18,6 +19,8 @@ f:82c5a7b04b78a35143852ba1ba3fbc43:subsonic-boot/spkgbuild
 f:8faa8127e9680fd207bac42615322d52:postfix-boot/spkgbuild.save
 f:d21ec10e9452f978c8e1c5afbb8d4fa2:postfix-boot/spkgbuild
 f:c1dd87eabe9a4d7d9896ba5c65796b16:psad-boot/spkgbuild
+f:e98d2be4e1bfee88e7c3541911beb3e5:logrotate-boot/CHANGELOG
+f:9bd087b597b4a9c43464b593a477877a:logrotate-boot/spkgbuild
 f:25ebab034c9ece2ed1f064635f0649d7:sshguard-boot/spkgbuild
 f:a74956b572361f15811b73004f7d4a6f:flexget-daemon/spkgbuild
 f:504f1c43a639001d8d7d899d31179374:noip-boot/spkgbuild
