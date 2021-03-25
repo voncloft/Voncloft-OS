@@ -67,6 +67,6 @@ build() {
     		install -v -m644 $PKG/etc/pam.d/chage $PKG/etc/pam.d/${PROGRAM}
     		sed -i "s/chage/$PROGRAM/" $PKG/etc/pam.d/${PROGRAM}
 	done
-	[ -f /etc/login.access ] && mv -v /etc/login.access{,.NOUSE}
-	[ -f /etc/limits ] && mv -v /etc/limits{,.NOUSE}
+	[ -f $PKG/etc/login.access ] && mv -v $PKG/etc/login.access{,.NOUSE}
+	[ -f $PKG/etc/limits ] && mv -v $PKG/etc/limits{,.NOUSE}
 }
