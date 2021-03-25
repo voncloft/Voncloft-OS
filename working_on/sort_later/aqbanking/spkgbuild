@@ -1,0 +1,18 @@
+# description : a library for online banking and financial applications
+# depends : gwenhywfar ktoblzcheck libofx
+
+name=aqbanking
+version=6.2.10
+release=1
+
+source="https://www.aquamaniac.de/rdm/attachments/download/368/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	export PKG_CONFIG=/usr/bin/pkg-config
+  	./configure --prefix=/usr --enable-gwenhywfar \
+              --with-backends="aqhbci aqofxconnect aqpaypal"
+  	make
+	make DESTDIR=$PKG install
+}
