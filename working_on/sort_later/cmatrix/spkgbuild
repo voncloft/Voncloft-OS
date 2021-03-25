@@ -5,7 +5,7 @@ name=cmatrix
 version=2.0
 release=2
 
-source="https://github.com/abishekvashok/cmatrix/archive/v$pkgver.tar.gz"
+source="https://github.com/abishekvashok/$name/archive/v$version.tar.gz"
 options="!checksum"
 
 build() {
