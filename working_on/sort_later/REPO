@@ -8,6 +8,7 @@ d:gwenhywfar
 d:qt5-quickcontrols
 d:kdevelop
 d:qt-creator
+d:libutempter
 d:libdbi
 d:tmux
 d:gnucash
@@ -32,6 +33,7 @@ f:03f7f50f98f5a47b7fb746a31054a9cc:kdevelop/CHANGELOG
 f:91a4a7dacfa4002e0cbe62cdc4c3e4ce:kdevelop/spkgbuild
 f:a7526ccf5201bad56c46711ee515200b:qt-creator/qtcreator-fix-clang-paths.patch
 f:83b3ef991df9c7dd551347f4bc7e5c35:qt-creator/spkgbuild
+f:a0feab13ab04ef03391be01446cac024:libutempter/spkgbuild
 f:15625a5c7b2874ac21b4276b7dee75bc:libdbi/spkgbuild
 f:89ed2db4cdc2da424fcf654aab94e7d3:tmux/spkgbuild
 f:4eaadab97916b7aef5e5327d730896b2:gnucash/spkgbuild
