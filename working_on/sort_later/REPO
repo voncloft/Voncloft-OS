@@ -1,5 +1,6 @@
 d:qt5-svg
 d:networkmanager
+d:cmatrix
 d:qt5-tools
 d:aqbanking
 d:qt5-quick3d
@@ -20,6 +21,7 @@ d:dhcp
 f:78110543dd68ccb18457ed96177b842a:qt5-svg/CHANGELOG
 f:8e8bf37f6ff6ff75c4065767ec45aa92:qt5-svg/spkgbuild
 f:3c1400d5d7441d11eebe9f3eacf704cb:networkmanager/spkgbuild
+f:f495e5414f3c9a93d0528796a2627a04:cmatrix/spkgbuild
 f:8a99faa492a15c43b481fbca0f23ddcb:qt5-tools/CHANGELOG
 f:d00ee25b84722a9cfd525fad0397d4a5:qt5-tools/spkgbuild
 f:08b8e90e995948abc157a81bb98be387:aqbanking/spkgbuild
