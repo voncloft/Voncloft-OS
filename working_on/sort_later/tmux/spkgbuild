@@ -1,0 +1,17 @@
+# description : allows you to exit a script and reload it later
+# depends : libevent libutempter ncurses
+
+name=tmux
+version=3.1c
+release=1
+
+source="https://github.com/tmux/tmux/releases/download/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+	--enable-utempter
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,21 @@
+# description : personal financial application
+# depends : aqbanking boost guile gwenhywfar libdbi webkit2gtk
+
+name=gnucash
+version=4.4
+release=1
+
+source="https://downloads.sourceforge.net/$name/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	 sed -e 's|-Werror||g' -i CMakeLists.txt
+
+ 	 cmake	-DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DWITH_PYTHON=ON \
+        -DCOMPILE_GSCHEMAS=OFF
+  	make
+  	make DESTDIR=$PKG install
+}
