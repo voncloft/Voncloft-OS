@@ -12,5 +12,5 @@ build() {
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
         make
-	make DESTDIR=$PKG perllibdir=$PKG/usr/lib/perl5/5.32/site_perl install
+	make DESTDIR=$PKG perllibdir=/usr/lib/perl5/5.32/site_perl install
 }
