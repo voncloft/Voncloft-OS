@@ -1,5 +1,5 @@
 # description : personal financial application
-# depends : aqbanking boost guile gwenhywfar libdbi webkitgtk
+# depends : aqbanking boost guile gwenhywfar dbi-drivers webkitgtk
 
 name=gnucash
 version=4.4
