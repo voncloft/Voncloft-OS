@@ -1,5 +1,5 @@
 # description	: Version control system designed to handle everything from small to very large projects with speed and efficiency
-# depends	: curl openssl python
+# depends	: perl curl openssl python
 
 name=git
 version=2.31.1
@@ -12,15 +12,6 @@ build() {
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
 
+	make
         make perllibdir="$(/usr/bin/perl -MConfig -wle 'print $Config{installvendorlib}')" DESTDIR=$PKG install 
-
-
-	#make CFLAGS="$CFLAGS" \
-	#prefix=/usr \
-	#gitexecdir=/usr/lib/git-core \
-	#perllibdir="$(/usr/bin/perl -MConfig -wle 'print $Config{installvendorlib}')" \
-	#DESTDIR=$PKG install
-
-	#mkdir -p $PKG/usr/share/git/
-	#install -m644 ./contrib/completion/git-prompt.sh $PKG/usr/share/git/git-prompt.sh
 }
