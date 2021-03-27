@@ -11,8 +11,15 @@ options="!checksum"
 build() {
 	cd $name-$version
 	 sed -e 's|-Werror||g' -i CMakeLists.txt
-
- 	 cmake	-DCMAKE_INSTALL_PREFIX=/usr \
+	 find . -name CMakeLists.txt -exec sed \
+			-e '/gnc_gtest_configure()/d' \
+			-e '/add_subdirectory\s*(.*test.*)/d' \
+			-e '/^\s*scm-test-core\s*$/d' -i {} \;
+	mkdir build
+	cd build
+	
+ 	 cmake .. \
+ 	 -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=/usr/lib \
         -DWITH_PYTHON=ON \
         -DCOMPILE_GSCHEMAS=OFF
