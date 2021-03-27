@@ -7,3 +7,14 @@ release=1
 
 Synopsis:
 upgraded
+
+----------------------------------------------------------------
+
+Date: Sat 27 Mar 2021 04:30:54 PM EDT
+
+version=3.62
+_version=$(echo $version | sed 's/\./_/g')
+release=1
+
+Synopsis:
+upgrade to 3.62
