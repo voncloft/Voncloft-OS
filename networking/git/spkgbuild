@@ -8,12 +8,19 @@ source="https://www.kernel.org/pub/software/scm/$name/$name-$version.tar.xz"
 options="!checksum"
 build() {
 	cd $name-$version
-		make CFLAGS="$CFLAGS" \
-		prefix=/usr \
-		gitexecdir=/usr/lib/git-core \
-		perllibdir="$(/usr/bin/perl -MConfig -wle 'print $Config{installvendorlib}')" \
-		DESTDIR=$PKG install
+	./configure --prefix=/usr \
+            --with-gitconfig=/etc/gitconfig \
+            --with-python=python3
 
-	mkdir -p $PKG/usr/share/git/
-	install -m644 ./contrib/completion/git-prompt.sh $PKG/usr/share/git/git-prompt.sh
+        make perllibdir="$(/usr/bin/perl -MConfig -wle 'print $Config{installvendorlib}')" DESTDIR=$PKG install 
+
+
+	#make CFLAGS="$CFLAGS" \
+	#prefix=/usr \
+	#gitexecdir=/usr/lib/git-core \
+	#perllibdir="$(/usr/bin/perl -MConfig -wle 'print $Config{installvendorlib}')" \
+	#DESTDIR=$PKG install
+
+	#mkdir -p $PKG/usr/share/git/
+	#install -m644 ./contrib/completion/git-prompt.sh $PKG/usr/share/git/git-prompt.sh
 }
