@@ -1,4 +1,5 @@
 d:tinyxml
+d:cmatrix
 d:flexget
 d:woff2
 d:flashplugin
@@ -15,9 +16,11 @@ d:setconf
 d:nspr
 d:vidtomp3
 d:nodejs
+d:dbi-drivers
 d:bluefish
 d:screenfetch
 d:gtk3
+d:gnucash
 d:gtk-doc
 d:lirc
 d:mozjs
@@ -32,6 +35,7 @@ f:6db8334398e0cdad7e3c6406206ff42a:tinyxml/tinyxml-2.5.3-stl.patch
 f:9c6788d9e2e8485ffbd7d8e0e8da940d:tinyxml/tinyxml.pc
 f:b6cc2d9330707373d920f760793c6311:tinyxml/entity.patch
 f:53ee91c75884bacf2f042a6fa22b5850:tinyxml/spkgbuild
+f:2012fbff5ea332ce2b2d19b327b46c93:cmatrix/spkgbuild
 f:e1fa348412f885906e495ff70148f846:flexget/spkgbuild
 f:d8e499cccb1a6fa8b6eb3732477f5eb1:woff2/spkgbuild
 f:c9a9cd4a7a1081feca03ebbdc3a18093:flashplugin/.checksums
@@ -67,6 +71,7 @@ f:0b26455ad8ff239d782f0a565bf5275b:vidtomp3/spkgbuild
 f:7bc8d2f567c18a810794243a9ae85bd3:nodejs/.checksums
 f:1f3df91d83b232130f5de5b980855e78:nodejs/.pkgfiles
 f:c9a13319207c1b324bbb4f49902be934:nodejs/spkgbuild
+f:855a926513e4239c61a09466de81de36:dbi-drivers/spkgbuild
 f:e68b811ec7656ab0ede0546616751951:bluefish/spkgbuild
 f:923627eda6fac59809706f82d61b409e:screenfetch/CHANGELOG
 f:9922826e7a925358db3c68cd3961b157:screenfetch/spkgbuild
@@ -74,6 +79,7 @@ f:cc78b580f707a2b45eb8a425b44e4672:gtk3/install
 f:128bbb361e9bd1ba49fb19b2c8c3dcae:gtk3/.checksums
 f:7208af866d6e700f744df0f85e187166:gtk3/.pkgfiles
 f:d7bf7e9bddaf61fac4c74a5a62b9fd12:gtk3/spkgbuild
+f:6c9bef42460006eb3ecee9c5bebd5627:gnucash/spkgbuild
 f:b8fe822e9cb5cf15a901c60e41acf4a6:gtk-doc/spkgbuild
 f:d80cd25aa263531f098d0b90bde08056:lirc/lirc-0.10-build-fix.patch
 f:ef3eef62f1942bceae9b57b4615adea5:lirc/spkgbuild

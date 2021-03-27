@@ -29,6 +29,7 @@ d:liba52
 d:libidl2
 d:libmnl
 d:libdaemon
+d:aqbanking
 d:libfakekey
 d:libtirpc
 d:libevdev
@@ -48,6 +49,7 @@ d:libvpx
 d:libcdio
 d:libmpdclient
 d:libstatgrab
+d:ktoblzcheck
 d:lapack
 d:libcroco
 d:libogg
@@ -102,6 +104,7 @@ d:libevent
 d:libdvdnav
 d:libfm-qt
 d:libpsl
+d:libutempter
 d:libmusicbrainz5
 d:libpciaccess
 d:libunique
@@ -120,6 +123,7 @@ d:libksba
 d:libmicrohttpd
 d:libisofs
 d:libcdio-paranoia
+d:libdbi
 d:libgusb
 d:libva-intel
 d:libnl
@@ -144,6 +148,7 @@ d:liblxqt
 d:libtheora
 d:libkscreen
 d:libtool
+d:libofx
 d:libva
 d:libtorrent
 d:libcurl-compat
@@ -240,6 +245,7 @@ f:a2466bec566af80bc1b4072ffd9948e7:libmnl/.checksums
 f:a1a1ebaffbca237f8f4dd8a2cfffa8da:libmnl/.pkgfiles
 f:3180c2101da3b4ffd18552474fb5e6f3:libmnl/spkgbuild
 f:6a576b3cee52d18f1930e8b094d99813:libdaemon/spkgbuild
+f:08b8e90e995948abc157a81bb98be387:aqbanking/spkgbuild
 f:1c16d4f9f758aafae22a10db273e3b27:libfakekey/.checksums
 f:7e8a67c84224ab8dc1661f1a64327f15:libfakekey/.pkgfiles
 f:abc437d325fcf8622622be281c0aeb03:libfakekey/spkgbuild
@@ -293,6 +299,7 @@ f:b1a7ed5f7bd168e4123d53756b46f653:libmpdclient/spkgbuild
 f:15f00b08e6832f319dee7c46e130c44f:libstatgrab/.checksums
 f:4e69e96049bf51f420fdd5caa0e89670:libstatgrab/.pkgfiles
 f:db84cefb9d535e18ee35b613de19e7ac:libstatgrab/spkgbuild
+f:52d3e85f6ea7d824e4f05272c9909584:ktoblzcheck/spkgbuild
 f:a7681ca08dcc2d0b4cc76855054e6dc2:lapack/spkgbuild
 f:7dfc84134e0cf9f4052a4b4b49b87a63:libcroco/.checksums
 f:bb52fe561bade0e1c3cf01676a3472da:libcroco/.pkgfiles
@@ -436,6 +443,7 @@ f:6b53215ab29144fb295db370360649a4:libfm-qt/spkgbuild
 f:f28a5999b802456767df99b67a512c03:libpsl/.checksums
 f:8665518ea18906f5b10c0aa1928cb159:libpsl/.pkgfiles
 f:282bdc5bfa88dda69a07407cb58a32b0:libpsl/spkgbuild
+f:a0feab13ab04ef03391be01446cac024:libutempter/spkgbuild
 f:485e0c5a4b4db0e2bf470e29dab10cb5:libmusicbrainz5/.checksums
 f:9505e1fdaf37bbceb0b580ddccefc2c3:libmusicbrainz5/.pkgfiles
 f:46eddc181d031da66a40f5346ab77e18:libmusicbrainz5/spkgbuild
@@ -485,6 +493,7 @@ f:42d248b809615151d66c4e8ae69db140:libisofs/spkgbuild
 f:05b1dbe69623a10bcbb7c51d3830e84d:libcdio-paranoia/.checksums
 f:89a11f7e46ba33d4c5be0a3f85133ad8:libcdio-paranoia/.pkgfiles
 f:d472f4e112b787b34503fb20103eb231:libcdio-paranoia/spkgbuild
+f:15625a5c7b2874ac21b4276b7dee75bc:libdbi/spkgbuild
 f:d69a8f51fb2e81ff60c7046512f95c01:libgusb/.checksums
 f:e98c299504b1b9830ece2f5701288144:libgusb/.pkgfiles
 f:5dc7d841b6fae5bbf87177f5ee79090c:libgusb/spkgbuild
@@ -550,6 +559,7 @@ f:e35296a43f025b7d2710bd3ad2f8be67:libkscreen/spkgbuild
 f:87109ff4d320b5897546e4d927e374d5:libtool/.checksums
 f:9ea6991724a4e075bc078eb3032beb65:libtool/.pkgfiles
 f:10e7777aff2e2fdaab2a459348065b06:libtool/spkgbuild
+f:576b56c51c59067333e7a3f88ef9d37c:libofx/spkgbuild
 f:39a729d216545c55843235db045dc93f:libva/.checksums
 f:75bc77621a7f584c361900707b9b16f6:libva/.pkgfiles
 f:a377712176ea793e22313e8c8b7d930a:libva/spkgbuild

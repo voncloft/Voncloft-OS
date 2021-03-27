@@ -207,6 +207,7 @@ d:zita-alsa-pcmi
 d:vte2
 d:strace
 d:ntfs-3g
+d:gwenhywfar
 d:faad2
 d:wpebackend-fdo
 d:bamf
@@ -438,6 +439,7 @@ d:slang
 d:m4
 d:lzo
 d:iasl
+d:tmux
 d:busybox
 d:tzdata
 d:time
@@ -1275,6 +1277,7 @@ f:f3e0eb6014974090dd2593151485e75c:ntfs-3g/readme
 f:3af211d7d4a31a0c02426904d1a3f4cd:ntfs-3g/.checksums
 f:d6375cbfecef03b905a3fde16726aeca:ntfs-3g/.pkgfiles
 f:061a4780a041bee7322bec41313e01a5:ntfs-3g/spkgbuild
+f:a967ac7858bdcb1ddf6dfa05410a19b5:gwenhywfar/spkgbuild
 f:1528d6dc50c8d9a62cfbec6b8d883626:faad2/.checksums
 f:aac605e02c3a70508a17e37d51b104ba:faad2/.pkgfiles
 f:f1a24cdd0b11bc01cc510600a167f701:faad2/spkgbuild
@@ -2048,6 +2051,7 @@ f:d12025f243e321bdc550582589d37d21:lzo/spkgbuild
 f:c23345a5eb6eb8fa1a3be6775d18bfb2:iasl/.checksums
 f:82794c4d608b6e6bb732412dd15bd45c:iasl/.pkgfiles
 f:97436334399f4e562cac17df97c3cde6:iasl/spkgbuild
+f:89ed2db4cdc2da424fcf654aab94e7d3:tmux/spkgbuild
 f:015b0c6c12d5edee56efc57ce7722a3e:busybox/.checksums
 f:87151744e564e97d4063ec3b5bb5f8c2:busybox/.pkgfiles
 f:312bb663e4f975b4873b7af2944a7d70:busybox/spkgbuild
