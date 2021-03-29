@@ -1,5 +1,5 @@
 # description : disc encryption program
-# depends : device-mapper fuse libsm wxgtk3 sudo yasm
+# depends : lvm2 fuse2 fuse3 libsm wxgtk3 sudo yasm
 
 name=veracrypt
 version=1.24
