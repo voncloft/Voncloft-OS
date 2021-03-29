@@ -2,14 +2,11 @@
 # depends	: perl
 
 name=cowsay
-version=3.04
+version=1.4.0
 release=1
-source="https://github.com/tnalpgge/rank-amateur-cowsay/archive/cowsay-$version.tar.gz
-	$name.patch"
-
+source="https://github.com/piuccio/cowsay/releases/tag/v$version"
+options="!checksum"
 build() {
-	cd rank-amateur-cowsay-$name-$version
-	patch -p1 -i ../cowsay.patch
-	sed 's:/man/:/share/man/:g' -i install.sh
+	cd $name-$version
 	./install.sh $PKG/usr
 }
