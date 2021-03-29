@@ -31,4 +31,5 @@ build() {
 		--disable-precomp-headers
 	make
 	make DESTDIR=$PKG install
+	mv "$PKG"/usr/bin/wx-config{,-gtk3}
 }
