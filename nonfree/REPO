@@ -1,5 +1,6 @@
 d:discord
 d:telegram-desktop-bin
+d:veracrypt
 d:dropbox
 d:nvidia
 d:wps-office
@@ -24,6 +25,10 @@ f:fa93a0c669b5f0cd8b9be4c8eecf5cdd:telegram-desktop-bin/telegram-desktop-bin.des
 f:03979d8d6a140ba4d37d37702e2d71c6:telegram-desktop-bin/.checksums
 f:286e6b58b2b6b1f25c4eaf797c39f7b9:telegram-desktop-bin/.pkgfiles
 f:0a31f20f902f7940883b0575731e7c69:telegram-desktop-bin/spkgbuild
+f:5808f91768336b5955b5dfe2defa4b47:veracrypt/veracrypt.desktop
+f:b7a2a71d05d71db271b22dd0da43ad52:veracrypt/CHANGELOG
+f:76bc7d1b5ae9747c7800f3546cd6a3f6:veracrypt/spkgbuild
+f:6a88c6894d8e09120ef1d48004c3c550:veracrypt/no-makeself.patch
 f:efdc04ee47aafdf5998e8a3eb5595271:dropbox/.checksums
 f:a24aae63969db5cef8509b6c9f8f9415:dropbox/.pkgfiles
 f:f3350cc0fb7b5f4fb6f2c0adda7e1260:dropbox/dropbox.desktop
