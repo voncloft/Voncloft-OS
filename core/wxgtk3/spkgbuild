@@ -1,15 +1,18 @@
 # description	: GTK+3 implementation of wxWidgets API for GUI
-# depends	: gtk3 webkitgtk gst-plugins-base libnotify pango cairo glu
+# depends	: gst-plugins-base gtk3 libnotify libsm libxxf86vm wxgtk-common webkit2gtk glu
 
 name=wxgtk3
-version=3.0.4
+version=3.0.51
 release=1
 source="https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2"
+options="!checksum"
 
 build() {
 	cd wxWidgets-$version
+		
+	#./autogen.sh
+	patch -Np1 -i $SRC/make-abicheck-non-fatal.patch
 	
-	./autogen.sh
 	./configure \
 		--prefix=/usr \
 		--libdir=/usr/lib \
