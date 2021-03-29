@@ -1,5 +1,5 @@
 # description	: GTK+3 implementation of wxWidgets API for GUI
-# depends	: gst-plugins-base gtk3 libnotify libsm libxxf86vm wxgtk-common webkit2gtk glu
+# depends	: gst-plugins-base gtk3 libnotify libsm libxxf86vm glu
 
 name=wxgtk3
 version=3.0.51
