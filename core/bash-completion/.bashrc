@@ -8,12 +8,16 @@
 # ~/.bash_profile.  System wide environment variables and startup
 # programs are in /etc/profile.  System wide aliases and functions are
 # in /etc/bashrc.
-
+PATH=$PATH:/usr/sbin:/sbin
 if [ -f "/etc/bashrc" ] ; then
   source /etc/bashrc
 fi
-
+screenfetch
+fortune | cowsay
+alias reload='clear && source /home/$(whoami)/.bashrc'
 # Set up user specific i18n variables
 #export LANG=<ll>_<CC>.<charmap><@modifiers>
-complete -cf sudo
+
 # End ~/.bashrc
+complete -cf sudo
+eval "$(thefuck --alias)"
