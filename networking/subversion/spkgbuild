@@ -18,8 +18,8 @@ build() {
         make
         make swig-pl # for Perl
 	make swig-py \
-     		swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
-     		swig_pydir_extra=/usr/lib/python3.9/site-packages/svn # for Python
+     		swig_pydir=/usr/lib/python3.8/site-packages/libsvn \
+     		swig_pydir_extra=/usr/lib/python3.8/site-packages/svn # for Python
 	make swig-rb
 	make DESTDIR=$PKG install 
 	make DESTDIR=$PKG install-swig-pl 
