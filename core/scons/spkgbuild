@@ -9,6 +9,7 @@ source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
+	cd SCons-$version
 	sed -i 's/env python/&3/' SCons/Utilities/*.py              
 	sed -i 's:build/doc/man/::' setup.cfg                       
 	python setup.py build
