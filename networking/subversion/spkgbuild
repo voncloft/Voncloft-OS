@@ -1,5 +1,5 @@
 # description : version control system replacing cvs
-# depends : apr-util sqlite serf
+# depends : apr-util sqlite serf python-py3c
 
 name=subversion
 version=1.14.1
