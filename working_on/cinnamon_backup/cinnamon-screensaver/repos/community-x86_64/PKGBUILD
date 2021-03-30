@@ -1,0 +1,38 @@
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
+# Based on gnome-screensaver package:
+# Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Jan de Groot <jgc@archlinux.org>
+
+pkgname=cinnamon-screensaver
+pkgver=4.8.1
+pkgrel=1
+pkgdesc="Screensaver designed to integrate well with the Cinnamon desktop."
+arch=('x86_64')
+url="https://github.com/linuxmint/${pkgname}"
+license=('GPL')
+depends=('accountsservice' 'cinnamon-desktop' 'libgnomekbd'
+         'python-cairo' 'python-gobject' 'python-setproctitle' 'python-xapp' 'xapp')
+optdepends=('cinnamon-translations: i18n')
+makedepends=('gobject-introspection' 'meson' 'samurai')
+backup=('etc/pam.d/cinnamon-screensaver')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
+sha512sums=('5f165cddf5cd3f079192179f2308e015d7d70ce52f5214a56f8fc4318fdc6d6fc2b522b1c8eca31b4799074e58bd93bdce282d9774d1a552616c9ae1a0b46cae')
+b2sums=('73a61e28210efc58a205357abd7b1ca5efce85c542a14ba0de1688ca3c6c86cc81cf02b7eee7d7a13d015d43b6084a0e5a5a0f417a3be77771ff969381c24726')
+
+build() {
+    mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
+    cd "${srcdir}"/${pkgname}-${pkgver}/build
+
+    meson --prefix=/usr \
+          --libexecdir=lib/cinnamon-screensaver \
+          --buildtype=plain \
+          ..
+    samu
+}
+
+package() {
+    cd "${srcdir}"/${pkgname}-${pkgver}/build
+
+    DESTDIR="${pkgdir}" samu install
+}
