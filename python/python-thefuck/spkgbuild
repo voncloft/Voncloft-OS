@@ -1,0 +1,17 @@
+# description : corrects typos in commandline
+# depends : python-colorama python-decorator python-psutil python-pyte python-setuptools python-six
+
+name=python-thefuck
+version=3.30
+release=2
+
+source="https://github.com/nvbn/${name#python-}/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd ${name#python-}-$version
+   	python setup.py build
+   	python setup.py install --optimize=1 --root=$PKG
+
+	
+}
