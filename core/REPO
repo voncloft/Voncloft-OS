@@ -197,6 +197,7 @@ d:lame
 d:fribidi
 d:acpi
 d:lcms2
+d:scons
 d:gnome-common
 d:xdriinfo
 d:help2man
@@ -1241,6 +1242,8 @@ f:976e25fefcb47ade4da57d2cd6c8e1c2:acpi/spkgbuild
 f:a0eb12c4857228724791b7bf668385ba:lcms2/.checksums
 f:23929f986cf3fb27f8d1bc0274e871e0:lcms2/.pkgfiles
 f:efa86dd13f9f33496930b72e93b54311:lcms2/spkgbuild
+f:b6c74fc7d6d5651015fe1461102699af:scons/CHANGELOG
+f:d1b6d998d2efddf177af5ae9ae710e62:scons/spkgbuild
 f:53b5cfe249bf079bbd7adb032fbd18bd:gnome-common/.checksums
 f:e6ccd3d752e6fd07dc21dba73cef39e5:gnome-common/.pkgfiles
 f:83babd51fb84299511e0622cff00742b:gnome-common/spkgbuild

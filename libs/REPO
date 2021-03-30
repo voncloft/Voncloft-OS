@@ -29,6 +29,7 @@ d:liba52
 d:libidl2
 d:libmnl
 d:libdaemon
+d:serf
 d:aqbanking
 d:libfakekey
 d:libtirpc
@@ -245,6 +246,8 @@ f:a2466bec566af80bc1b4072ffd9948e7:libmnl/.checksums
 f:a1a1ebaffbca237f8f4dd8a2cfffa8da:libmnl/.pkgfiles
 f:3180c2101da3b4ffd18552474fb5e6f3:libmnl/spkgbuild
 f:6a576b3cee52d18f1930e8b094d99813:libdaemon/spkgbuild
+f:7c70cdb39d98bd9b6a49c0f32ef3d6c6:serf/CHANGELOG
+f:f270db7b00375760727f6fa70e41267b:serf/spkgbuild
 f:08b8e90e995948abc157a81bb98be387:aqbanking/spkgbuild
 f:1c16d4f9f758aafae22a10db273e3b27:libfakekey/.checksums
 f:7e8a67c84224ab8dc1661f1a64327f15:libfakekey/.pkgfiles
