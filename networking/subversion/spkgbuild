@@ -21,8 +21,12 @@ build() {
      		swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
      		swig_pydir_extra=/usr/lib/python3.9/site-packages/svn # for Python
 	make swig-rb
-	make DESTDIR=$PKG install install-swig-pl install-swig-py \
-		 swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
-      		swig_pydir_extra=/usr/lib/python3.9/site-packages/svn
-	install-swig-rb
+	make DESTDIR=$PKG install 
+	make DESTDIR=$PKG install-swig-pl 
+
+	#find way to get python version
+	make DESTDIR=$PKG install-swig-py \
+		 swig_pydir=/usr/lib/python3.8/site-packages/libsvn \
+      		 swig_pydir_extra=/usr/lib/python3.8/site-packages/svn
+	make DESTDIR=$PKG install-swig-rb
 }
