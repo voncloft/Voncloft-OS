@@ -1,6 +1,5 @@
-  # description : A cross-platform process and system utilities module for Python
-  # description : A cross-platform process and system utilities module for Python2
-  # depends : python
+# description : a cross-platform process and system utilities module for python
+# depends : python
 
 name=python-psutil
 version=5.8.0
