@@ -1,0 +1,28 @@
+# description : version control system replacing cvs
+# depends : apr-util sqlite serf
+
+name=subversion
+version=1.14.1
+release=1
+
+source="https://archive.apache.org/dist/$name/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	PYTHON=python3 ./configure --prefix=/usr             \
+            --disable-static          \
+            --with-apache-libexecdir  \
+            --with-lz4=internal       \
+            --with-utf8proc=internal
+        make
+        make swig-pl # for Perl
+	make swig-py \
+     		swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
+     		swig_pydir_extra=/usr/lib/python3.9/site-packages/svn # for Python
+	make swig-rb
+	make DESTDIR=$PKG install install-swig-pl install-swig-py \
+		 swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
+      		swig_pydir_extra=/usr/lib/python3.9/site-packages/svn
+	install-swig-rb
+}

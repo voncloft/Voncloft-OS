@@ -9,6 +9,7 @@ d:vsftpd
 d:you-get
 d:iptables-client
 d:cyrus-sasl
+d:subversion
 d:make-ca
 d:net-tools
 d:nftables
@@ -58,6 +59,8 @@ f:17929afe7eeb0d08f0023bc13fa47ced:you-get/spkgbuild
 f:9da2194edd2f85c0b83b0c3f4427e89b:iptables-client/rc.iptables
 f:e73bda3719b3e01b05b87431b4f1117f:iptables-client/spkgbuild
 f:c2ec278360f2eee1f05d164d3c20403d:cyrus-sasl/spkgbuild
+f:30796e81ab4fa5ef1a24e295a7e85bfb:subversion/CHANGELOG
+f:d820a5482a3cbf7ef7d1eff1947ffa1f:subversion/spkgbuild
 f:52b8091b42c0e6d274060b84e41f810b:make-ca/spkgbuild
 f:5d7b0c1b84e406689cc4e02fd2cccd92:net-tools/.checksums
 f:1afb41380e5e4c026a58254ee9200cfb:net-tools/.pkgfiles
