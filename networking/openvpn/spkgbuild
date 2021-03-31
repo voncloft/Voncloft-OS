@@ -19,4 +19,14 @@ build() {
 		--disable-systemd
 	make
 	make DESTDIR=$PKG install
+	mkdir -pv $PKG/etc/pia
+	cd etc/pia
+	wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
+	unzip openvpn.zip
+	rm -rfv openvpn.zip
+	echo "username" >> secrets
+	echo "password" >> secrets
+
+	grep -i -e 's/auth-users-pass/auth-users-pass \/etc\/pia\/secrets\nlog-append \/var\/log\/openvpn.log/g' us_denver.ovpn
+	#echo "log-append /var/log/openvpn.log" >> us_denver.ovpn
 }

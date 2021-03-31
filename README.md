@@ -6,6 +6,7 @@ _As of 3-30-2021_
 
 **Update:**
 - working on MATE and cinnamon desktops
+- work on all universal user passes on vpn
 
 **Done:**
 - qtcreator - needs testing
