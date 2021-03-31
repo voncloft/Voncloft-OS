@@ -1,6 +1,5 @@
 # description : Python bindings for Xapian
 # depends : gcc-libs glibc python zlib
-  depends+=libuuid.so libxapian.so
 
 name=python-xapian
 version=1.4.18
