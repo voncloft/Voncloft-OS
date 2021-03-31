@@ -1,5 +1,5 @@
 # description : PKI security
-# depends : p11-kit cronie
+# depends : p11-kit cronie log-folders
 
 name=make-ca
 version=1.7
