@@ -2,10 +2,10 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 3-15-2021_
+_As of 3-30-2021_
 
 **Update:**
-- No updates for the forseeable futured
+- working on MATE and cinnamon desktops
 
 **Done:**
 - qtcreator - needs testing
