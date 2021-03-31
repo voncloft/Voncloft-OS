@@ -158,7 +158,6 @@ d:speex
 d:i3-gaps
 d:gpm
 d:sqlite
-d:ca-certificates
 d:glu
 d:tumbler
 d:light
@@ -1076,7 +1075,7 @@ f:4fd863b91e36097497703c34bcc51ed6:wifite/spkgbuild
 f:8eb7e200473236f58c2f6de2555bc814:glib-networking/readme
 f:bf7cd0e886544bd0b396c602bf57169d:glib-networking/.checksums
 f:8b53c92468eeaf3c49555d306261a073:glib-networking/.pkgfiles
-f:c19f2b9350b70818a0935cd73ffaa417:glib-networking/spkgbuild
+f:63dac3d37da3583de253eeca64fa4444:glib-networking/spkgbuild
 f:8a246b3e74b5b5e870b227fd8b35c9ed:tcl/.checksums
 f:7d268bc3049db13ac79afafe23c01763:tcl/.pkgfiles
 f:d412cac6e5c2b953fd8d63774f1c0db4:tcl/spkgbuild
@@ -1106,9 +1105,6 @@ f:e67409039df6e8e093e7967321bbc595:gpm/run
 f:e92061b7edc7968be2f7bff5d860cafa:sqlite/.checksums
 f:7d7375e811447e921e0b1c6e020491cd:sqlite/.pkgfiles
 f:df53530091667b3e40c734cda61e3d3b:sqlite/spkgbuild
-f:2f6c1889c1a60991bcd568847186b81f:ca-certificates/.checksums
-f:5a690e44ef67cbc12f4f095e925876fa:ca-certificates/.pkgfiles
-f:a784d86c0266d93d666b918936abc500:ca-certificates/spkgbuild
 f:8eb2204f3f167d72c4d25d43f5e97b26:glu/.checksums
 f:68857ac40e875342ccdc6a614b01328c:glu/.pkgfiles
 f:155b5e6473956ff2c68ba5f0d79e5aea:glu/spkgbuild
@@ -1161,7 +1157,7 @@ f:b320dc1a6f9d1f92d035157ce2dd0714:bash/.pkgfiles
 f:02504162ac9a04e867719eab130c1897:bash/spkgbuild
 f:c5204796deeed7d1bb39785e4e406891:xbps/.checksums
 f:eebbce603e30006d60aef0c8ce555606:xbps/.pkgfiles
-f:1debf13aaeaa28d2c6697c29b4656c9e:xbps/spkgbuild
+f:40f5213a8d76656844ce0c8028a60629:xbps/spkgbuild
 f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
 f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
 f:d3361e270dec35b6c16ce7ab20779069:glibc/.checksums
@@ -1179,7 +1175,7 @@ f:d823c339b5f05744213bb7f95f1fbc5b:shared-mime-info/.pkgfiles
 f:cff3571dcd31294f38def129c5ded3b4:shared-mime-info/spkgbuild
 f:64ed61ea7cc5207fffba838f60a27bd7:curl/.checksums
 f:394a87f09a94c454300be240d918cbf2:curl/.pkgfiles
-f:bd161fab770a2959530db06b7adb5b10:curl/spkgbuild
+f:eed1209ee89092173e0cd302440d33bf:curl/spkgbuild
 f:8c33bba1f711fe652818d5a19558937b:cmark/.checksums
 f:d4ab178f68c16f430b1abff1829a71ff:cmark/.pkgfiles
 f:ed0b8334c2773f07156a78a2409687ed:cmark/spkgbuild
@@ -1619,7 +1615,7 @@ f:76cf8d0758bd0ac01a31d68a56b9a491:cracklib/.pkgfiles
 f:26773e36153d3057fe9b1926fbe4bacd:cracklib/spkgbuild
 f:0279acb1bdb8685538e0ff3ad30eb89a:gnutls/.checksums
 f:7202b82094e4b10b64d2e0dcc2a9718e:gnutls/.pkgfiles
-f:ea098eec541f9bbe3c55169fe9ed83a9:gnutls/spkgbuild
+f:4a344fcc74b0a551df30b8166e212033:gnutls/spkgbuild
 f:66a0d8c525b72501d03f4dc908157340:refind/.checksums
 f:bd06f00911815fff551142744f0b1c04:refind/.pkgfiles
 f:2e68d4ce70eef7e0349c55c7e0f1feed:refind/spkgbuild
@@ -2258,7 +2254,7 @@ f:1d175ca7571fef1668d22e589153d1dd:bitchx/.pkgfiles
 f:189eefce1f3abc8e624f51b342f9ab3a:bitchx/spkgbuild
 f:6d796d53e5ba5270cec1d82178c2729b:wget/.checksums
 f:e76fbfcd4d600450362f99cd6ce75d95:wget/.pkgfiles
-f:e538fc2a17d8aeea28e918268a308c27:wget/spkgbuild
+f:31dd8c3e3d40713579bd03ead14c4fbf:wget/spkgbuild
 f:bd3c740d0c7f2e3b42b7f856c6cb11c9:numix-themes-blue/.checksums
 f:34b7acd68163e12192d52a4698a20e12:numix-themes-blue/.pkgfiles
 f:094c25ee39999ec48ba4385265b34daa:numix-themes-blue/spkgbuild

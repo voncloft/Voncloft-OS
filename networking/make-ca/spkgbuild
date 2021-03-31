@@ -5,7 +5,9 @@ name=make-ca
 version=1.7
 release=1
 
-source="https://github.com/djlucas/make-ca/releases/download/v$version/$name-$version.tar.xz"
+source="https://github.com/djlucas/make-ca/releases/download/v$version/$name-$version.tar.xz
+	http://www.cacert.org/certs/root.crt
+	http://www.cacert.org/certs/class3.crt"
 options="!checksum"
 
 build() {
@@ -13,14 +15,12 @@ build() {
 	make DESTDIR=$PKG install
 	install -vdm755 $PKG/etc/ssl/local
 	cd $PKG/etc/ssl/local
-	wget http://www.cacert.org/certs/root.crt &&
-	wget http://www.cacert.org/certs/class3.crt
 
-	openssl x509 -in root.crt -text -fingerprint -setalias "CAcert Class 1 root" \
+	openssl x509 -in $SRC/root.crt -text -fingerprint -setalias "CAcert Class 1 root" \
         -addtrust serverAuth -addtrust emailProtection -addtrust codeSigning \
         > $PKG/etc/ssl/local/CAcert_Class_1_root.pem
 
-	openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
+	openssl x509 -in $SRC/class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
         -addtrust serverAuth -addtrust emailProtection -addtrust codeSigning \
         > $PKG/etc/ssl/local/CAcert_Class_3_root.pem
 

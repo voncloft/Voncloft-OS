@@ -1,5 +1,5 @@
 # description : Comprehensive HTTP client library, supporting many features
-# depends : python ca-certificates
+# depends : python make-ca
 
 name=python-httplib2
 version=0.18.1

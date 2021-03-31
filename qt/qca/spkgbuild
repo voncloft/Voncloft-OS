@@ -1,5 +1,5 @@
 # description	: Provide a straightforward and cross-platform crypto API, using Qt datatypes and conventions
-# depends	: ca-certificates qt5 which openssl nss cmake
+# depends	: make-ca qt5 which openssl nss cmake
 
 name=qca
 version=2.2.1

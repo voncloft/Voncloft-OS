@@ -1,5 +1,5 @@
 # description : Provide https support for LWP::UserAgent
-# depends : ca-certificates perl-io-socket-ssl perl-net-http perl-libwww
+# depends : make-ca perl-io-socket-ssl perl-net-http perl-libwww
 
 name=perl-lwp-protocol-https
 version=6.10

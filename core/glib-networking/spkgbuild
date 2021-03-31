@@ -1,5 +1,5 @@
 # description	: Network related gio modules for GLib
-# depends	: glib gnutls gsettings-desktop-schemas ca-certificates p11-kit meson
+# depends	: glib gnutls gsettings-desktop-schemas make-ca p11-kit meson
 
 name=glib-networking
 version=2.66.0

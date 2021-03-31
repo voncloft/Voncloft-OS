@@ -1,5 +1,5 @@
 # description	: Utility and a library used for transferring files
-# depends	: ca-certificates openssl zlib
+# depends	: make-ca openssl zlib
 
 name=curl
 version=7.72.0
