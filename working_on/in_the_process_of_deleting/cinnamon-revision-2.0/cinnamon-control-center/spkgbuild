@@ -1,0 +1,28 @@
+name=cinnamon-control-center
+version=4.8.2
+release=1
+# description : "The Control Center for Cinnamon"
+# depends : cinnamon-settings-daemon cinnamon-menus colord
+# depends : libgnomekbd libmm-glib nm-connection-editor)
+# depends : cinnamon-translations gnome-color-manager gnome-online-accounts
+# depends : meson samurai gnome-online-accounts
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
+options="!checksum"
+build() {
+    mkdir -p ${name}-${version}/builddir
+    cd ${name}-${version}/builddir
+
+    meson --prefix=/usr \
+          --buildtype=plain \
+        ..
+
+    samu
+
+    cd ${name}-${version}/builddir
+
+    DESTDIR="${PKG}" samu install
+
+    rm "${PKG}"/usr/bin/cinnamon-control-center
+    rm "${PKG}"/usr/share/cinnamon-control-center/ui/shell.ui
+}

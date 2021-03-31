@@ -1,0 +1,13 @@
+name=cinnamon-translations
+version=4.8.3
+release=1
+# description : Translations for Cinnamon and Nemo
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz" 
+
+build() {
+    cd ${name}-${version}
+
+    make
+
+    cp -rv usr/ "$PKG"
+}

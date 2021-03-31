@@ -1,0 +1,55 @@
+name=cinnamon
+version=4.8.6
+release=1
+# description : "Linux desktop which provides advanced innovative features and a traditional user experience"
+# depends : accountsservice caribou cinnamon-control-center cinnamon-menus cinnamon-screensaver
+# depends : cinnamon-session cinnamon-settings-daemon cjs gnome-backgrounds
+# depends : gnome-themes-extra gstreamer libcroco libgnomekbd libkeybinder3 librsvg muffin
+# depends : network-manager-applet nemo polkit-gnome python-cairo python-dbus
+# depends : python-gobject python-pam python-pexpect python-pillow python-pyinotify
+# depends : python-pytz python-tinycss2 python-xapp timezonemap xapps blueberry cinnamon-translations gnome-panel metacity system-config-printer
+# depends : meson samurai gobject-introspection intltool
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz
+        0001-cinnamon-settings-don-t-rely-on-the-presence-of-cinn.patch
+        set_wheel.diff
+        default-theme.patch"
+options="!checksum"
+
+
+build() {
+    cd ${name}-${version}
+
+    # Check for the cc-panel module path, not for the irrelevant binary
+    # https://github.com/linuxmint/cinnamon/pull/7382
+    patch --no-backup-if-mismatch -p1 -i ../0001-cinnamon-settings-don-t-rely-on-the-presence-of-cinn.patch
+
+    # Use wheel group instread of sudo (taken from Fedora)
+    patch -Np1 -i ../set_wheel.diff
+
+    # Set default theme to cinnamon
+    patch -Np1 -i ../default-theme.patch
+
+    # Replace MintInstall with GNOME Software
+    sed -i s/mintinstall.desktop/org.gnome.Software.desktop/ data/org.cinnamon.gschema.xml
+
+    # Add polkit agent to required components
+    sed -i s/RequiredComponents=\(.*\)$/RequiredComponents=\1polkit-gnome-authentication-agent-1;/ \
+        cinnamon*.session.in
+
+    # https://github.com/linuxmint/cinnamon/issues/3575#issuecomment-374887122
+    # Cinnamon has no upstream backgrounds, use GNOME backgrounds instead
+    sed -i s|/usr/share/cinnamon-background-properties|/usr/share/gnome-background-properties| \
+        files/usr/share/cinnamon/cinnamon-settings/modules/cs_backgrounds.py
+
+    mkdir -p ${name}-${version}/builddir
+    cd ${name}-${version}/builddir
+
+    meson --prefix=/usr \
+          --libexecdir=lib/cinnamon \
+          --buildtype=plain \
+          ..
+
+    samu
+    DESTDIR=$PKG samu install
+}
