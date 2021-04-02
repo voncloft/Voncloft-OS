@@ -1,5 +1,5 @@
 # description : toolkit for creating dynamic UIs
-# depends : cogl gtk3 libinput git gobject-introspection
+# depends : cogl gtk3 libinput git gobject-introspection json-glib
 
 name=clutter
 version=1.26.4
