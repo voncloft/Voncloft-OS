@@ -1,5 +1,5 @@
 # description : object oriented gles abstraction utility layer
-# depends : gdk-pibuf2 libdrm libxcomposite libxdamage libxext libxrandr mesa pango git gobject-introspection
+# depends : gdk-pixbuf libdrm libxcomposite libxdamage libxext libxrandr mesa pango git gobject-introspection
 
 name=cogl
 version=1.22.8
