@@ -5,18 +5,18 @@ name=caribou
 version=0.4.21
 release=3
 
-source="https://download.gnome.org/sources/caribou/0.4/caribou-0.4.21.tar.xz"
+source="https://download.gnome.org/sources/$name/${version:0:3}/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
 	cd $name-$version
 	./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --libexecdir=/usr/lib \
-    --disable-static \
-    --disable-schemas-compile
+    	--prefix=/usr \
+    	--sysconfdir=/etc \
+    	--localstatedir=/var \
+    	--libexecdir=/usr/lib \
+    	--disable-static \
+    	--disable-schemas-compile
 
     sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
