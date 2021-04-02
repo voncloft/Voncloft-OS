@@ -5,7 +5,7 @@ name=clutter
 version=1.26.4
 release=1
 
-source="https://download-fallback.gnome.org/sources/$name/${version:0:3}/$name-$version.tar.xz"
+source="https://download-fallback.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
