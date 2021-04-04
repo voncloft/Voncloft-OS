@@ -9,7 +9,7 @@ source="https://download.gnome.org/sources/pygobject/2.28/pygobject-$version.tar
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd pygobject-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
