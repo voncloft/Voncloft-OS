@@ -1,6 +1,6 @@
 # description : library with common api for various cinnamon modules
 # depends : accountsservice gtk3 libxkbfile libpulse
-# depends : meson samurai gobject-introspection intltool
+# depends : meson ninja gobject-introspection intltool
 
 name=cinnamon-desktop
 version=4.8.1
@@ -19,8 +19,6 @@ build() {
     cd ${name}-${version}/build
 
     meson --prefix=/usr --buildtype=plain ..
-    samu
-    cd ${name}-${version}/build
-
-    DESTDIR="${PKG}" samu install
+    ninja
+    DESTDIR="${PKG}" ninja install
 }

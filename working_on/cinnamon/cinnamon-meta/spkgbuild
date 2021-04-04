@@ -3,9 +3,9 @@
 # depends : cinnamon-session cinnamon-settings-daemon cjs gnome-backgrounds
 # depends : gnome-themes-extra gstreamer libcroco libgnomekbd libkeybinder3 librsvg muffin
 # depends : network-manager-applet nemo polkit-gnome python-cairo python-dbus
-# depends : python-gobject python-pam python-pexpect python-pillow python-pyinotify
+# depends : python-gobject2 python-gobject3 python-pam python-pexpect python-pillow python-pyinotify
 # depends : python-pytz python-tinycss2 python-xapp timezonemap xapps blueberry cinnamon-translations gnome-panel metacity system-config-printer
-# depends : meson samurai gobject-introspection intltool
+# depends : meson ninja gobject-introspection intltool
 
 name=cinnamon-meta
 version=4.8.6
@@ -51,6 +51,6 @@ build() {
           --buildtype=plain \
           ..
 
-    samu
-    DESTDIR=$PKG samu install
+    ninja
+    DESTDIR=$PKG ninja install
 }

@@ -1,6 +1,6 @@
 # description : screensaver designed to integrate well with the cinnamon desktop
 # depends : accountsservice cinnamon-desktop libgnomekbd python-cairo python-gobject2 python-gobject3 python-setproctitle python-xapp xapp
-# depends : cinnamon-translations gobject-introspection meson samurai
+# depends : cinnamon-translations gobject-introspection meson ninja
 
 name=cinnamon-screensaver
 version=4.8.1
