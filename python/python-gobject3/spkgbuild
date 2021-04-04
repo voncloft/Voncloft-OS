@@ -2,7 +2,7 @@
 # depends	: python-cairo gobject-introspection
 
 name=python-gobject3
-version=3.36.1
+version=3.40.1
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
