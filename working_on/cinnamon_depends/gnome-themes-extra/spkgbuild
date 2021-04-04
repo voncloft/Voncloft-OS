@@ -1,0 +1,20 @@
+# description : extra themes for gnome apps
+# depends : cantarell-fonts gtk2 gtk3 intltool git
+
+name=gnome-themes-extra
+version=3.28
+release=1
+
+source="https://gitlab.gnome.org/GNOME/$name/-/archive/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir m4
+	intltoolize
+	autoreonf -ifv
+	./configure --prefix=/usr
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+}
