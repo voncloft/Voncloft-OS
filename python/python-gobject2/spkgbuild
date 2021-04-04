@@ -5,7 +5,7 @@ name=python-gobject2
 version=2.28.7
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://download.gnome.org/sources/pygobject/2.28/pygobject-$version.tar.xz"
 options="!checksum"
 
 build() {
