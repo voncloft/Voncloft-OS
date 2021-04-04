@@ -2,14 +2,18 @@
 # depends	: at-spi2-core python-gobject3
 
 name=python-atspi
-version=2.36.0
+version=2.38.1
 release=1
-
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+_pverz=2_38_1
+source="https://gitlab.gnome.org/GNOME/pyatspi2/-/archive/PYATSPI_$_pverz/pyatspi2-PYATSPI_$_pverz.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
-   python setup.py build
-   python setup.py install --optimize=1 --root=$PKG
+   cd pyatspi2-PYATSPI_2_38_1
+   #python setup.py build
+   #python setup.py install --optimize=1 --root=$PKG
+
+	./configure --prefix=/usr --with-python=/usr/bin/python
+	make
+	make DESTDIR=$PKG install
  }
