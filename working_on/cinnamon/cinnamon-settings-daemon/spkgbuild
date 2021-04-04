@@ -1,9 +1,9 @@
 # description : the cinnamon settings daemon
 # depends : cinnamon-desktop colord dbus-glib libcanberra-pulse libcups
 # depends : libgnomekbd libgudev libnotify librsvg libwacom nss polkit
-# depends : pulseaudio-alsa upower)
+# depends : pulseaudio-alsa upower
 # depends : cinnamon-translations
-# depends : meson samurai xf86-input-wacom
+# depends : meson ninja xf86-input-wacom
 
 name=cinnamon-settings-daemon
 version=4.8.5
@@ -22,7 +22,7 @@ build() {
           -Dinstall_binfiles=false \
           ..
 
-    samu
+    ninja
 
-     DESTDIR="${PKG}" samu install
+     DESTDIR="${PKG}" ninja install
 }

@@ -1,7 +1,7 @@
 # description : the cinnamon session handler
 # depends : cinnamon-desktop libsm libcanberra xapps
 # depends : cinnamon-translations
-# depends : meson samurai xtrans
+# depends : meson ninja xtrans
 
 name=cinnamon-session
 version=4.8.0
@@ -20,7 +20,7 @@ build() {
           -Dgconf=false \
           -Ddocbook=false \
           ..
-    samu
+    ninja
 
-    DESTDIR="${PKG}" samu install
+    DESTDIR="${PKG}" ninja install
 }
