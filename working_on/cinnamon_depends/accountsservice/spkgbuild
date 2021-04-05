@@ -18,7 +18,8 @@ build() {
 		-D systemd=false \
 		-D docbook=false \
 		-D gtk_dock=false \
-		-D user_heuristics=false
+		-D user_heuristics=false\
+		-D systemd=false
 	ninja
         DESTDIR=$PKG ninja install
 }
