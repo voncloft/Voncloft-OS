@@ -120,6 +120,7 @@ d:libgudev
 d:libuninameslist
 d:libdmtx
 d:libaio
+d:libmatemixer
 d:libksba
 d:libmicrohttpd
 d:libisofs
@@ -128,6 +129,7 @@ d:libdbi
 d:libgusb
 d:libva-intel
 d:libnl
+d:libmateweather
 d:libpcap
 d:libtiff
 d:libnfs
@@ -159,6 +161,7 @@ d:libatomic_ops
 d:libsoup
 d:blosc
 d:libblockdev
+d:libmatekbd
 d:libkexiv2
 d:libsass
 d:libspiro
@@ -486,6 +489,9 @@ f:ca3040b57566f6e1b36148fbf404d095:libdmtx/spkgbuild
 f:cf12a0b02e7f50e77a4c2f48872d0d28:libaio/.checksums
 f:f037f9284ebeee647f9b01e2753ed8ed:libaio/.pkgfiles
 f:361bc3178d82689c756f88571fbcf574:libaio/spkgbuild
+f:951ca26d20bf4fd224c8d59362997ae0:libmatemixer/.checksums
+f:a7d253bc039b5de1ff733531e24eb3ea:libmatemixer/.pkgfiles
+f:4eec6ebad5490020e3d60d6abd80e954:libmatemixer/spkgbuild
 f:5cde5f51704b8cbb1430bf5724f92616:libksba/.checksums
 f:647b40b4c563da33f0910f4151379d06:libksba/.pkgfiles
 f:2c7a30f5bb56842742a0497a4b4c5df0:libksba/spkgbuild
@@ -506,6 +512,9 @@ f:d39ea23f13535876c58ccffc8669e2c4:libva-intel/spkgbuild
 f:ab8ff02ceeddfd362fe241d5f377b925:libnl/.checksums
 f:a7295c3e9e29e0736c55a2c033c3ecb4:libnl/.pkgfiles
 f:663e102bd7349cfbfc4aff15f395657a:libnl/spkgbuild
+f:ea93c22c8986c66c5aefd4094a77e4da:libmateweather/.checksums
+f:301ae5ad5d3f3ff5627941f60d270198:libmateweather/.pkgfiles
+f:cf603857b71db50cdea5d1dfc43b9e3d:libmateweather/spkgbuild
 f:cde322d64e5e3814d6108a45a93d824a:libpcap/.checksums
 f:d50f047608fc2e124197bdd7c943f73c:libpcap/.pkgfiles
 f:85d5747963557b419b221ef7d5dc32ad:libpcap/spkgbuild
@@ -589,6 +598,9 @@ f:b46220ab79e05148589933ae832fd3d9:blosc/spkgbuild
 f:abb41c223abbdd3ba92b094db1b5dc1a:libblockdev/.checksums
 f:1feb95104a1b8855c2466c964dc45afc:libblockdev/.pkgfiles
 f:a715485c66b0a1dfa21f8a3da0f3edb9:libblockdev/spkgbuild
+f:3c08864add1ce92512bdd9d0e09469ec:libmatekbd/.checksums
+f:40f0bebf48fa68b84a66df4cbc5544da:libmatekbd/.pkgfiles
+f:7105a46924a6a6281b409d62e2ef8626:libmatekbd/spkgbuild
 f:3b101abac4a9eed4f0efed924d1e85ca:libkexiv2/.checksums
 f:de8db2eb0bbd097107d61f2a627f0ef8:libkexiv2/.pkgfiles
 f:1313685a0e377795f840cd8acef3e867:libkexiv2/spkgbuild
