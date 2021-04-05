@@ -5,7 +5,6 @@ A Linux From Scratch Repository that I self maintain.
 _As of 3-30-2021_
 
 **Update:**
-- working on MATE DESKTOP
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
 - work on all universal user passes on vpn
 
