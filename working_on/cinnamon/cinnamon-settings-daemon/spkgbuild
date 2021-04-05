@@ -1,5 +1,5 @@
 # description : the cinnamon settings daemon
-# depends : cinnamon-desktop colord dbus-glib libcanberra-pulse libcups
+# depends : cinnamon-desktop colord dbus-glib libcanberra-pulse cups
 # depends : libgnomekbd libgudev libnotify librsvg libwacom nss polkit
 # depends : pulseaudio-alsa upower
 # depends : cinnamon-translations
