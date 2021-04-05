@@ -1,0 +1,19 @@
+# description : wacom tablet library
+# depends : glib libgudev libxml2 meson
+
+name=libwacom
+version=1.9
+release=1
+
+source="https://github.com/linuxwacom/libwacom/releases/download/${name}-${version}/${name}-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson .. \
+		--prefix=/usr
+	ninja 
+	DESTDIR=$PKG ninja install
+}

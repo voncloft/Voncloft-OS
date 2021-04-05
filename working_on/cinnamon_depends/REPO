@@ -5,6 +5,7 @@ d:gnome-themes-extra
 d:cjs
 d:clutter
 d:accountsservice
+d:libwacom
 d:gnome-backgrounds
 f:b3dc9f7d99976192bb7b7d9ca06f357d:cogl/spkgbuild
 f:de6ad45eafc690d214a306deb2e9f219:caribou/spkgbuild
@@ -13,5 +14,6 @@ f:875d62425055522a24be853f72dd57e8:gnome-themes-extra/spkgbuild
 f:2be07900c0528af184c7af8e1f7ab6c3:cjs/spkgbuild
 f:1eaad54deafe69821d53b0d6bdfa5080:clutter/spkgbuild
 f:5eca792b00179963d300c7bea75bf732:accountsservice/spkgbuild
-f:55f0faafa3ee1c54c7a2d149bbe62971:work_on_next
+f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
+f:c92109d08eaf4689d3ea822f4d40d6c1:work_on_next
 f:84696e13a8b59b3225d88a13faa7b521:gnome-backgrounds/spkgbuild
