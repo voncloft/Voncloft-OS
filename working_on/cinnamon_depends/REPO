@@ -11,6 +11,7 @@ d:nemo
 d:clutter
 d:timezonemap
 d:elogind
+d:gnome-panel
 d:accountsservice
 d:libwacom
 d:gnome-color-manager
@@ -33,12 +34,13 @@ f:1a6909b94aea7ff7e8c84dc782d37b93:nemo/spkgbuild
 f:1eaad54deafe69821d53b0d6bdfa5080:clutter/spkgbuild
 f:7324703b9015895da64e828ef3e05e29:timezonemap/spkgbuild
 f:b66e4c749592cf178aa2db4ca8908f90:elogind/spkgbuild
+f:f18c3bb6b0b21f0db2a90fa61d89333b:gnome-panel/spkgbuild
 f:a56ef31d2d3ebaa69516245055255e4d:accountsservice/spkgbuild
 f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
 f:903056f75ff24b82de69d7d84f52a6e3:gnome-color-manager/spkgbuild
 f:c63d4202785d2175812506739f099641:libmm-glib/spkgbuild
 f:fb39be706190251757644596a5987e54:xapp/spkgbuild
-f:0a6785af9bc8fba9609774686dbf792a:work_on_next
+f:d2bb296ce7d14afefbd92be59ea9b4e9:work_on_next
 f:43b0ac1716ddfa0af87886aa52bf04b7:blueberry/spkgbuild
 f:cd4b3ef3e785fdca5c10926ff28bc558:xf86-input-wacom/spkgbuild
 f:84696e13a8b59b3225d88a13faa7b521:gnome-backgrounds/spkgbuild
