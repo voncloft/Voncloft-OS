@@ -1,5 +1,5 @@
 # description : window manager gnome flashback
-# depends : dconf gsettings-desktop-schemas gtk3 libcanberra libgtop libsm libxpresent libxres startup-notifcation zenity intltool
+# depends : dconf gsettings-desktop-schemas gtk3 libcanberra libgtop libsm libxpresent libxres startup-notification zenity intltool
 
 name=metacity
 version=3.38.0
