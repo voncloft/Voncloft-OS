@@ -1,0 +1,19 @@
+# description : gnome desktop library
+# depends : gsettings-desktop-schemas gtk3 iso-codes itstool libseccomp libxml2 xkeyboard-config bubblewrap
+
+name=gnome-desktop
+version=3.38.4
+release=1
+
+source="https://download.gnome.org/sources/$name/3.38/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson --prefix=/usr \
+	-Dgnome_distributor="Voncloft-OS" ..
+	ninja
+	DESTDIR=$PKG ninja install
+}
