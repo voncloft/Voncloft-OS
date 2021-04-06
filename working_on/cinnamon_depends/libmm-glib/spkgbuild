@@ -1,0 +1,21 @@
+# description : modem manager api libraries
+# depends : libgudev elogind gobject-introspection libmbim libqmi polkit vala
+
+name=libmm-glib
+version=1.14.10
+release=1
+
+source="https://www.freedesktop.org/software/ModemManager/ModemManager-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd ModemManager-$version
+	./configure --prefix=/usr                 \
+            --sysconfdir=/etc             \
+            --localstatedir=/var          \
+            --disable-static              \
+            --with-systemd-journal=no     \
+            --with-systemd-suspend-resume
+        make
+        make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : xkb hooks used by gnome desktop
+# depends : gtk3 intltool libxklavier object-introspection
+
+name=libgnomekbd
+version=3.4.0.2
+release=1
+
+source="http://ftp.gnome.org/pub/gnome/sources/$name/3.4/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --disable-static 
+	make
+	make DESTDIR=$PKG install
+}
