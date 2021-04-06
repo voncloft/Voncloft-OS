@@ -1,0 +1,26 @@
+# description : login daemon for systemd
+# depends : dbus docbook-xml docbook-xsl libxslt linux-pam polkit systemd
+
+name=elogind
+version=246.10
+release=1
+
+source="https://github.com/elogind/elogind/archive/v246.10/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+
+	meson --prefix=/usr \
+	-Dcgroup-controller=elogind \
+	-Ddbuspolictydir=/etc/dbus-1/system.d \
+	.. 
+
+	ninja
+	DESTDIR=$PKG ninja install
+
+	ln -sfv libelogind.pc $PKG/usr/lib/pkgconfig/libsystemd.pc
+	ln -sfvn elogind /$PKG/usr/include/systemd
+}

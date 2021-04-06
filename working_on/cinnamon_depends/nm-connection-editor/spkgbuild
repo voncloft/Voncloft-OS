@@ -1,5 +1,5 @@
 # description : network manager applet
-# depends : gtk3 libnma libnotify libsecret gobject-introsepection libmm-glib polkit
+# depends : gtk3 libnma libnotify libsecret gobject-introspection libmm-glib polkit
 
 name=nm-connection-editor
 version=1.20.0

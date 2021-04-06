@@ -1,5 +1,5 @@
 # description : gnome color manager for gnome desktop environment
-# depends : colord gtk3 itstool littlecms libcanberra libexif desktop-file-utils
+# depends : colord gtk3 itstool lcms2 libcanberra libexif desktop-file-utils
 
 name=gnome-color-manager
 version=3.36.0
