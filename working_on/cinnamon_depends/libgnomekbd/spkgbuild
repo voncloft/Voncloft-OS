@@ -10,6 +10,7 @@ options="!checksum"
 
 build() {
 	cd $name-$version
+	autoreconf -ifv
 	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
       	--disable-schemas-compile --disable-static
 	make
