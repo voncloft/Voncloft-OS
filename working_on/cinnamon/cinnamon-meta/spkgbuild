@@ -2,7 +2,7 @@
 # depends : accountsservice caribou cinnamon-control-center cinnamon-menus cinnamon-screensaver
 # depends : cinnamon-session cinnamon-settings-daemon cjs gnome-backgrounds
 # depends : gnome-themes-extra gstreamer libcroco libgnomekbd keybinder3 librsvg muffin
-# depends : network-manager-applet nemo polkit-gnome python-cairo python-dbus
+# depends : nm-connection-editor nemo polkit-gnome python-cairo python-dbus
 # depends : python-gobject2 python-gobject3 python-pam python-pexpect python-pillow python-pyinotify
 # depends : python-pytz python-tinycss2 python-xapp timezonemap xapps blueberry cinnamon-translations gnome-panel metacity system-config-printer
 # depends : meson ninja gobject-introspection intltool

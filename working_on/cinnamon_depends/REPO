@@ -7,6 +7,7 @@ d:gnome-themes-extra
 d:muffin
 d:gnome-online-accounts
 d:cjs
+d:nemo
 d:clutter
 d:elogind
 d:accountsservice
@@ -26,6 +27,7 @@ f:875d62425055522a24be853f72dd57e8:gnome-themes-extra/spkgbuild
 f:72bb1c4877934bf22e80e0985669695f:muffin/spkgbuild
 f:ee05769c0810a5b5e2041022285360ec:gnome-online-accounts/spkgbuild
 f:6a174f6f610f9b6f4beb29628e253459:cjs/spkgbuild
+f:1a6909b94aea7ff7e8c84dc782d37b93:nemo/spkgbuild
 f:1eaad54deafe69821d53b0d6bdfa5080:clutter/spkgbuild
 f:b66e4c749592cf178aa2db4ca8908f90:elogind/spkgbuild
 f:a56ef31d2d3ebaa69516245055255e4d:accountsservice/spkgbuild
@@ -33,7 +35,7 @@ f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
 f:903056f75ff24b82de69d7d84f52a6e3:gnome-color-manager/spkgbuild
 f:c63d4202785d2175812506739f099641:libmm-glib/spkgbuild
 f:fb39be706190251757644596a5987e54:xapp/spkgbuild
-f:14032bc463bf4af6518dffe4e09c7fdb:work_on_next
+f:a9a9fc47afa35a9eac3effd21ed3db32:work_on_next
 f:cd4b3ef3e785fdca5c10926ff28bc558:xf86-input-wacom/spkgbuild
 f:84696e13a8b59b3225d88a13faa7b521:gnome-backgrounds/spkgbuild
 f:2e6e8153283f085d79b8e9e4f49983f6:libgnomekbd/spkgbuild
