@@ -1,5 +1,5 @@
 # description : D-Bus interface for user account query and manipulation
-# depends : glib libxcrypt polkit shadow git gobject-introspection meson
+# depends : glib libxcrypt polkit shadow git gobject-introspection meson systemd
 
 name=accountsservice
 version=0.6.55
