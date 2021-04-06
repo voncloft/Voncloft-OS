@@ -16,6 +16,7 @@ d:libwacom
 d:gnome-color-manager
 d:libmm-glib
 d:xapp
+d:blueberry
 d:xf86-input-wacom
 d:gnome-backgrounds
 d:libgnomekbd
@@ -37,7 +38,8 @@ f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
 f:903056f75ff24b82de69d7d84f52a6e3:gnome-color-manager/spkgbuild
 f:c63d4202785d2175812506739f099641:libmm-glib/spkgbuild
 f:fb39be706190251757644596a5987e54:xapp/spkgbuild
-f:c3c686c14c7df52688fb98d58d81ebae:work_on_next
+f:0a6785af9bc8fba9609774686dbf792a:work_on_next
+f:43b0ac1716ddfa0af87886aa52bf04b7:blueberry/spkgbuild
 f:cd4b3ef3e785fdca5c10926ff28bc558:xf86-input-wacom/spkgbuild
 f:84696e13a8b59b3225d88a13faa7b521:gnome-backgrounds/spkgbuild
 f:2e6e8153283f085d79b8e9e4f49983f6:libgnomekbd/spkgbuild
