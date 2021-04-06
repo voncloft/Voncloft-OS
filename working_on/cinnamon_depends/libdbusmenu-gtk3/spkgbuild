@@ -1,0 +1,22 @@
+# description : Library for passing menus over DBus
+# depends : gtk3 libdbusmenu-glib gnome-common gobject-introspection intltool vala valgrind
+
+name=libdbusmenu-gtk3
+version=16.04.0
+release=4
+
+source="https://launchpad.net/${pkgbase}/${version%.?}/${version}/+download/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i 's/-Werror//' libdbusmenu-*/Makefile.{am,in}
+	./configure --prefix=/usr \
+      	--sysconfdir=/etc \
+      	--localstatedir=/var \
+      	--disable-{dumper,static,tests} \
+      	--with-gtk=3
+
+	make
+	make libdbusmenu-gtk DESTDIR=$PKG install
+}
