@@ -1,0 +1,28 @@
+# description : cinnamon window manager
+# depends : cinnamon-desktop gobject-introspection libcanberra libinput libsm libxkbcommon startup-notification zenity
+
+name=muffin
+version=4.8.0
+release=1
+
+source="https://github.com/linuxmint/muffin/archive/refs/tags/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i 's/--warn-error//g' src/Makefile.am
+	NOCONFIGURE=1 ./autogen.sh
+	./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --libexecdir=/usr/lib/muffin \
+                --localstatedir=/var \
+                --disable-gtk-doc \
+                --disable-static \
+                --disable-schemas-compile \
+                --enable-compile-warnings=minimum
+
+        sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool clutter/libtool cogl/libtool
+        make
+        make DESTDIR=$PKG install
+        
+}

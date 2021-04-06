@@ -1,8 +1,8 @@
-# description : javascript bindings for cinnamon
-# depends : gobject-introspection gtk3 js78 meson
+# description : common library for x-apps project
+# depends : libdbusmenu-gtk3 libgnomekbd python gobject-introspection meson python-gobject vala
 
-name=cjs
-version=4.8.2
+name=xapp
+version=2.0.7
 release=1
 
 source="https://github.com/linuxmint/$name/archive/refs/tags/$version.tar.gz"
@@ -13,10 +13,10 @@ build() {
 	mkdir build
 	cd build
 	meson --prefix=/usr \
-	--libexecdir=/usr/lib \
+	--libexecdir=lib \
 	--buildtype=plain \
-	-Dinstalled_tests=false \
 	..
+
 	ninja
 	DESTDIR=$PKG ninja install
 }

@@ -1,7 +1,7 @@
 # description : linux desktop which provides advanced innovative features and a traditional user experience
 # depends : accountsservice caribou cinnamon-control-center cinnamon-menus cinnamon-screensaver
 # depends : cinnamon-session cinnamon-settings-daemon cjs gnome-backgrounds
-# depends : gnome-themes-extra gstreamer libcroco libgnomekbd libkeybinder3 librsvg muffin
+# depends : gnome-themes-extra gstreamer libcroco libgnomekbd keybinder3 librsvg muffin
 # depends : network-manager-applet nemo polkit-gnome python-cairo python-dbus
 # depends : python-gobject2 python-gobject3 python-pam python-pexpect python-pillow python-pyinotify
 # depends : python-pytz python-tinycss2 python-xapp timezonemap xapps blueberry cinnamon-translations gnome-panel metacity system-config-printer
