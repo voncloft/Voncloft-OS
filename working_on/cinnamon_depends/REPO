@@ -30,7 +30,6 @@ d:blueberry
 d:xf86-input-wacom
 d:exempi
 d:rest
-d:libdbusmenu-gtk3
 d:gnome-backgrounds
 d:libgnomekbd
 d:rarian
@@ -61,13 +60,12 @@ f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
 f:903056f75ff24b82de69d7d84f52a6e3:gnome-color-manager/spkgbuild
 f:c63d4202785d2175812506739f099641:libmm-glib/spkgbuild
 f:20a8c3e4e13d4585d647363e1af42673:libxpresent/spkgbuild
-f:7f4d558a59fbdf5d51d04969c55550a3:xapp/spkgbuild
+f:98f817ef6982183a30c79e3e320eeb1b:xapp/spkgbuild
 f:d41d8cd98f00b204e9800998ecf8427e:work_on_next
 f:43b0ac1716ddfa0af87886aa52bf04b7:blueberry/spkgbuild
 f:cd4b3ef3e785fdca5c10926ff28bc558:xf86-input-wacom/spkgbuild
 f:fda4b753028066cc1ff26d2fb805d3b7:exempi/spkgbuild
 f:f77f8cddafc7278f9148aa2b05ea7083:rest/spkgbuild
-f:dd66f8ab1e298d0cce1069bc9e72f21a:libdbusmenu-gtk3/spkgbuild
 f:84696e13a8b59b3225d88a13faa7b521:gnome-backgrounds/spkgbuild
 f:c4566e83ac25425d5a98b6bee272f2d8:libgnomekbd/spkgbuild
 f:2bd477f283951c722ed43a37222252ec:rarian/spkgbuild
