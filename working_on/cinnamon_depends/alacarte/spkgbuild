@@ -1,0 +1,17 @@
+# description : menu editor for gnome
+# depends : gnome-menus gtk3 python-gobject3
+
+name=alacarte
+version=3.36.0
+release=1
+
+source="https://gitlab.gnome.org/GNOME/$name/-/archive/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	NOCONFIGURE=1 ./autogen.sh
+	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+	make
+	make DESTDIR=$PKG install
+}

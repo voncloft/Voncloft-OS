@@ -1,5 +1,5 @@
 # description : panel for gnome flashback
-# depends : evolution-data-server gnome-desktop gnome-menus libgdm libwnck3 nautilus polkit alacarte gnome-applets autoconf-archive git intltool itstool python yelp-tools
+# depends : evolution-data-server gnome-desktop gnome-menus gdbm libwnck3 nautilus polkit alacarte gnome-applets autoconf-archive git intltool itstool python yelp-tools
 
 name=gnome-panel
 version=3.40.0

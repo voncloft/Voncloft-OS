@@ -1,0 +1,18 @@
+# description : framework for archive extraction in gnome
+# depends : libarchive gtk3 vala
+
+name=gnome-autoar
+version=0.3.1
+release=1
+
+source="https://download.gnome.org/sources/$name/0.3/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr    \
+            --disable-debug  \
+            --disable-static
+        make
+        make DESTDIR=$PKG install
+}
