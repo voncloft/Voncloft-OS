@@ -33,6 +33,7 @@ case "$1" in
       log_info_msg "Starting OPENVPN Torrent..."
         modprobe tun
 	/usr/sbin/openvpn --config /etc/pia/US\ Denver.ovpn --writepid /run/openvpn-torrent.pid --daemon
+	sh /media/Scripts/mail_me.sh "OPENVPN Torrent is up"
       evaluate_retval
       ;;
 
@@ -41,6 +42,7 @@ case "$1" in
       PID_FILE=$(cat /run/openvpn-torrent.pid)
       kill -9 $PID_FILE
       rm -rf /run/openvpn-torrent.pid
+      sh /media/Scripts/mail_me.sh "OPENVPN Torrent is down"
       evaluate_retval
       ;;
 

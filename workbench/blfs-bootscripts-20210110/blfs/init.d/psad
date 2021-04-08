@@ -11,10 +11,8 @@
 RED='\033[1;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
-restart() {
-    $0 stop
-    $0 start
-}
+
+. /lib/lsb/init-functions
 
 # See how we were called.
 case "$1" in
@@ -24,10 +22,13 @@ start)
     ### danger level assignment by default, so
     ### command line args are not necessary here.
     /usr/sbin/psad
-    echo
+	sh /media/Scripts/mail_me.sh "PSAD is up"
+    evaluate_retval
     ;;
 stop)
     /usr/sbin/psad --Kill
+    sh /media/Scripts/mail_me.sh "PSAD is down"
+	evaluate_retval
     ;;
 status)
 	 if [ -f /run/psad.pid ]; then
@@ -36,10 +37,11 @@ status)
       else
           echo -e "${RED}PSAD is not running."${NC}
       fi
-
     ;;
 restart)
-    restart
+	$0 stop
+	sleep 1
+	$0 start
     ;;
 *)
     echo "Usage: psad {start|stop|status|restart}"
