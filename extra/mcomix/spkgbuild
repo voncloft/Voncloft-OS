@@ -9,7 +9,7 @@ source="https://github.com/multiSnow/mcomix3/archive/refs/heads/gtk3.zip"
 options="!checksum"
 
 build() {
-	cd mcomix3
+	cd mcomix3-gtk3
 	python installer.py --srcdir=mcomix --target=$PKG/usr/share
 	install -dm755 "$PKG"/usr/bin
  	ln -s /usr/share/mcomix/mcomixstarter.py "$PKG"/usr/bin/mcomix
