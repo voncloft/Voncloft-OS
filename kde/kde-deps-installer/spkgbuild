@@ -14,7 +14,5 @@ build() {
 	mkdir -pv $PKG/usr/bin
 	install -D -m755 $SRC/kf5-package-installer $PKG/usr/bin/
 	install -D -m766 $SRC/plasma-package-installer $PKG/usr/bin/
-	mkdir -pv $PKG/opt/kf5-$_version
-	ln -sfvn kf5-$_version $PKG/opt/kf5
 }
 
