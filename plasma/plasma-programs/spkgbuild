@@ -19,7 +19,7 @@ build() {
         [ -e plasmawayland.desktop ]                               ||
         ln -sfv $PKG/opt/kf5/share/wayland-sessions/plasmawayland.desktop
 
-        cat <<- EOF > $PKG/etc/pam.d/kde
+        cat <<-EOF > $PKG/etc/pam.d/kde
         # Begin /etc/pam.d/kde
 
         auth     requisite      pam_nologin.so
@@ -33,7 +33,7 @@ build() {
         session  include        system-session
 
         # End /etc/pam.d/kde
-        EOF
+	EOF
 
         cat <<-EOF > $PKG/etc/pam.d/kde-np
         # Begin /etc/pam.d/kde-np
@@ -49,7 +49,7 @@ build() {
         session  include        system-session
 
         # End /etc/pam.d/kde-np
-        EOF
+	EOF
 
         cat <<-EOF > $PKG/etc/pam.d/kscreensaver
         # Begin /etc/pam.d/kscreensaver
@@ -58,6 +58,6 @@ build() {
         account include system-account
 
         # End /etc/pam.d/kscreensaver
-        EOF
+	EOF
 
 }

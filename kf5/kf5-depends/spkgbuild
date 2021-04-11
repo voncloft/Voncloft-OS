@@ -57,5 +57,6 @@ build(){
         ln -sfv /usr/share/icons/hicolor $PKG/opt/kf5-$_version/share/icons
 
         #mkdir -pv $PKG/opt/kf5
-        #ln -sfvn /opt/kf5-$_version $PKG/opt/kf5
+	###think this line is correct
+        ln -sfvn /opt/kf5-$_version $PKG/opt/kf5
 }
