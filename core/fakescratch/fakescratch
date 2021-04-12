@@ -17,7 +17,7 @@ fi
 for word in $test
 do
 	echo $word
-	if [ -f  "/var/lib/scratchpkg/index/$word/.pkinfo" ]
+	if [ -f  "/var/lib/scratchpkg/index/$word/.pkginfo" ]
 	then
 		echo "File exists"
 	else
