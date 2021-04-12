@@ -10,13 +10,12 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	autoreconf -ifv
 	./configure --prefix=/usr \
 		--without-notification \
 		--without-at-spi \
 		--with-panelapplet \
 		--with-xtst \
-		--with-docs \
+		--with-docs=no \
 		--disable-static
 	make -j1
 	make DESTDIR=$PKG install
