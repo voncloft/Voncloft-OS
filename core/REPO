@@ -338,7 +338,6 @@ d:json-c
 d:util-linux
 d:js60
 d:optipng
-d:thunderbird
 d:dialog
 d:obmenu
 d:efivar
@@ -1712,9 +1711,6 @@ f:29b919ccfbf7887c714cd8f3f01d6fc7:js60/spkgbuild
 f:b7016ff2bcdb256d72366aadc38286fe:optipng/.checksums
 f:c6314816c8143278760fead03ee22b23:optipng/.pkgfiles
 f:00625716d1e567071563308d31ce80d6:optipng/spkgbuild
-f:f28703ee3690bfcfa480ee3e62ef0ceb:thunderbird/.checksums
-f:7d6e14c29f1d2235776daba1a9ab1c3b:thunderbird/.pkgfiles
-f:66042ea28c7baa50e71ae8fb6a22fb14:thunderbird/spkgbuild
 f:3219c1b6da7c0c878a243549a16539b8:dialog/.checksums
 f:537e0dd88ec096a63a6def105f392407:dialog/.pkgfiles
 f:19a6d2e0ae1d1b6cdccc8cb28bde4a80:dialog/spkgbuild
