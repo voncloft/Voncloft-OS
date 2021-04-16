@@ -174,7 +174,6 @@ d:gperf
 d:leafpad
 d:bash
 d:xbps
-d:glibc
 d:nano
 d:hunspell
 d:shared-mime-info
@@ -356,7 +355,6 @@ d:shellcheck-static
 d:socat
 d:graphviz
 d:uthash
-d:glibmm
 d:notification-daemon
 d:chntpw
 d:mlt
@@ -386,7 +384,6 @@ d:gnome-keyring
 d:arc-icon-theme
 d:parole
 d:yelp-xsl
-d:glib
 d:yaml-cpp
 d:links
 d:galculator
@@ -641,9 +638,10 @@ f:d42162252c91aa6d8dd3e989d68e783f:mksh/install
 f:09f3cde865bb32d31389fbe0842f012e:mksh/.checksums
 f:17097c11488bb350efb8a595263d3b52:mksh/.pkgfiles
 f:caa54c2e8199d943be170a294f901e32:mksh/spkgbuild
+f:bb71c00d63a710c911f019a817681025:binutils/CHANGELOG
 f:71811aa551f5a5a1effed5de14f22a46:binutils/.checksums
 f:53e71193b67563263f4a786b71f0dfc6:binutils/.pkgfiles
-f:ab38ab041bced215a42a0de2c626911b:binutils/spkgbuild
+f:6e2f0e06756c806b966b1160bb16562a:binutils/spkgbuild
 f:86d0ce6e49ee2d2d1d9667fdf94a1c99:make/.checksums
 f:12e9d903bc993431cce19e24a5d603bc:make/.pkgfiles
 f:1c3c5b6ba36a9bd98eb820d9a0725eb0:make/spkgbuild
@@ -1165,11 +1163,6 @@ f:02504162ac9a04e867719eab130c1897:bash/spkgbuild
 f:c5204796deeed7d1bb39785e4e406891:xbps/.checksums
 f:eebbce603e30006d60aef0c8ce555606:xbps/.pkgfiles
 f:40f5213a8d76656844ce0c8028a60629:xbps/spkgbuild
-f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
-f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
-f:d3361e270dec35b6c16ce7ab20779069:glibc/.checksums
-f:228d151a33b1c012d76e82f4aace5823:glibc/.pkgfiles
-f:d8f52b513c3c061fb8f4ec6f064637bc:glibc/spkgbuild
 f:035581ac83590b52be2657170cdc29cd:nano/.checksums
 f:8cbf78f502187efc5260a30a804e148a:nano/.pkgfiles
 f:9da874251687a3a06a358cf154f2c628:nano/spkgbuild
@@ -1764,9 +1757,6 @@ f:7f94a0c8ba381475c0f725be322d0233:graphviz/spkgbuild
 f:bc638b81bdc98a57f70d31f27bade9e9:uthash/.checksums
 f:f4a2d36849c5afc087bcb69678beb6c0:uthash/.pkgfiles
 f:acc4d61edc8c5f44daabcb616d2753d7:uthash/spkgbuild
-f:f90a5890607de95f79e54c215fa3e78c:glibmm/.checksums
-f:19eadb763e4557ac2342fce5534c07bb:glibmm/.pkgfiles
-f:4d76af2da4a2f3a8032a70f91ebdd13c:glibmm/spkgbuild
 f:eeb5bc14780c9917254e1b196ab58b83:notification-daemon/.checksums
 f:fc3fab654d84f146121d7195feb390b5:notification-daemon/.pkgfiles
 f:e1e86b8aa37ef9b40ce0968d79fd5efd:notification-daemon/spkgbuild
@@ -1867,9 +1857,6 @@ f:5659ef17f509a40b96221b2dd9108fde:parole/spkgbuild
 f:3a9f1323ed1e1a7c7800dca057fd93ce:yelp-xsl/.checksums
 f:ae69847565b7253f4268b986a97e4c7b:yelp-xsl/.pkgfiles
 f:75d1d9f07fb31d2ed311dcca080b367c:yelp-xsl/spkgbuild
-f:4d21b50db658c949b70e6a16cf3e83a8:glib/.checksums
-f:d8f560a0c2a1edb99953843c71c97452:glib/.pkgfiles
-f:5fc74eab2812534426c8e1f423cdef90:glib/spkgbuild
 f:634916e195add97fb2aa77d8dab5f668:yaml-cpp/CHANGELOG
 f:eacf6188ff6f9c33cfda40a6aa089d2c:yaml-cpp/spkgbuild
 f:5920a21ee9d86efc885644030147d2ae:links/.checksums
