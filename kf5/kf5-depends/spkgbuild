@@ -4,9 +4,9 @@
 # depends : oxygen-fonts noto-fonts doxygen python-jinja yaml jasper openexr upower gpgme hunspell 
 
 name=kf5-depends
-version=5.77
+version=5.81
 release=1
-_version=5.77
+_version=5.81
 
 build(){
         mkdir -pv $PKG/opt/kf5-$_version
