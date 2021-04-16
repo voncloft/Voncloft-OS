@@ -14,6 +14,7 @@ d:openvpn-daemon
 d:dnsmasq-boot
 d:mariadb-boot
 d:iptables-boot
+d:openssh-boot
 d:hostapd-boot
 f:82c5a7b04b78a35143852ba1ba3fbc43:subsonic-boot/spkgbuild
 f:8faa8127e9680fd207bac42615322d52:postfix-boot/spkgbuild.save
@@ -35,4 +36,5 @@ f:a2ea82d689859fe3b0e8e9502a975847:mariadb-boot/spkgbuild.save
 f:e00d31a43a8010a0b0036a93678ae5a3:mariadb-boot/spkgbuild
 f:4bee971040734aa10bc66d3bff8a5ed2:.httpup-urlinfo
 f:97f9ab4eea6688d3bec9e0216a3c849f:iptables-boot/spkgbuild
+f:ea1132b969530325fa340d83a22d55ae:openssh-boot/spkgbuild
 f:163bc410c1a58a3319a88d5183150474:hostapd-boot/spkgbuild
