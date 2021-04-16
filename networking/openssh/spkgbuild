@@ -28,7 +28,7 @@ build() {
       make 
       make DESTDIR=$PKG install
       install -v -m755    contrib/ssh-copy-id $PKG/usr/bin
-
+      mkdir -pv $PKG/etc/pam.d
       sed 's@d/login@d/sshd@g' /etc/pam.d/login > $PKG/etc/pam.d/sshd
       chmod 644 $PKG/etc/pam.d/sshd
       echo "UsePAM yes" >> $PKG/etc/ssh/sshd_config 
