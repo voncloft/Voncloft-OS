@@ -2,7 +2,7 @@
 # depends	: curl cmake python llvm libssh2
 
 name=rust
-version=1.47.0
+version=1.51.0
 release=1
 _date=2020-08-27
 _rust=1.46.0
