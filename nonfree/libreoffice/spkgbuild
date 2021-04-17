@@ -5,6 +5,7 @@ name=libreoffice
 version=7.1.2
 release=1
 source="http://download.documentfoundation.org/$name/stable/$version/rpm/x86_64/LibreOffice_${version}_Linux_x86-64_rpm.tar.gz"
+options="!checksum"
 
 build() {
 	for rpm in $SRC/LibreOffice_${version}*/RPMS/*; do
