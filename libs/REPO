@@ -10,6 +10,7 @@ d:libsigc++
 d:hidapi
 d:libass
 d:libaec
+d:js78
 d:libvdpau-va-gl
 d:libgee
 d:libnma
@@ -29,6 +30,7 @@ d:liba52
 d:libidl2
 d:libmnl
 d:libdaemon
+d:libxcrypt
 d:serf
 d:aqbanking
 d:libfakekey
@@ -99,6 +101,7 @@ d:librsvg
 d:libraw
 d:libqmi
 d:libmodplug
+d:libwacom
 d:libftdi-compat
 d:libsamplerate
 d:libexif
@@ -107,10 +110,13 @@ d:libdvdnav
 d:libfm-qt
 d:libpsl
 d:libutempter
+d:libmm-glib
 d:glibmm
 d:libmusicbrainz5
 d:libpciaccess
+d:libxpresent
 d:libunique
+d:xapp
 d:libconfig
 d:hdf5
 d:libgpg-error
@@ -149,6 +155,7 @@ d:libffi
 d:libdmx
 d:libbytesize
 d:libsndfile
+d:libgnomekbd
 d:libmpeg2
 d:liblxqt
 d:libtheora
@@ -200,6 +207,7 @@ f:6972f3fc345172a98f6d3cab07677dc9:libass/.checksums
 f:1ed6d155bad7e95f87ea74fdf432aa2a:libass/.pkgfiles
 f:b3027b3574d663fd274614845102f5cc:libass/spkgbuild
 f:ef8b96b24a950058ef6ae6cb9b73e14a:libaec/spkgbuild
+f:376807bbc96d25302f36e90893d27f61:js78/spkgbuild
 f:3f9cecb5e03449bc2b5452db55557e03:libvdpau-va-gl/.checksums
 f:795a7b3ea1616ef5cc5bfbb485405a43:libvdpau-va-gl/.pkgfiles
 f:2b735e0b63377f2b155bfbb2093060e3:libvdpau-va-gl/spkgbuild
@@ -253,6 +261,7 @@ f:a2466bec566af80bc1b4072ffd9948e7:libmnl/.checksums
 f:a1a1ebaffbca237f8f4dd8a2cfffa8da:libmnl/.pkgfiles
 f:3180c2101da3b4ffd18552474fb5e6f3:libmnl/spkgbuild
 f:6a576b3cee52d18f1930e8b094d99813:libdaemon/spkgbuild
+f:21ecb0748d0f71703c798102fbadb1f1:libxcrypt/spkgbuild
 f:7c70cdb39d98bd9b6a49c0f32ef3d6c6:serf/CHANGELOG
 f:080e6c02d4cd320cea5a157b27966152:serf/spkgbuild
 f:08b8e90e995948abc157a81bb98be387:aqbanking/spkgbuild
@@ -441,6 +450,7 @@ f:8351f320665efc4a5652b57b77bcd893:libqmi/.checksums
 f:4d2d41be4ee0048818680c0ac301bd94:libqmi/.pkgfiles
 f:c6486bb0f5b0424774e30a5296cb07b7:libqmi/spkgbuild
 f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
+f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
 f:ae13bc7326af8d543d55bc1c8b130ebe:libftdi-compat/spkgbuild
 f:e5f97d539217358163c88f7bc269a18d:libsamplerate/.checksums
 f:7459766fe275376852d4c6e966aceccb:libsamplerate/.pkgfiles
@@ -461,6 +471,7 @@ f:f28a5999b802456767df99b67a512c03:libpsl/.checksums
 f:8665518ea18906f5b10c0aa1928cb159:libpsl/.pkgfiles
 f:282bdc5bfa88dda69a07407cb58a32b0:libpsl/spkgbuild
 f:a0feab13ab04ef03391be01446cac024:libutempter/spkgbuild
+f:c63d4202785d2175812506739f099641:libmm-glib/spkgbuild
 f:13cbea1c4184c209e3a064ccf285daf7:glibmm/CHANGELOG
 f:f90a5890607de95f79e54c215fa3e78c:glibmm/.checksums
 f:19eadb763e4557ac2342fce5534c07bb:glibmm/.pkgfiles
@@ -471,10 +482,12 @@ f:46eddc181d031da66a40f5346ab77e18:libmusicbrainz5/spkgbuild
 f:d8d1f19f7e4c00a9318b1321af681faf:libpciaccess/.checksums
 f:89040c732748dc51b0934481482ce609:libpciaccess/.pkgfiles
 f:88a1c33e9ede5d16232d29c24c42fe4a:libpciaccess/spkgbuild
+f:20a8c3e4e13d4585d647363e1af42673:libxpresent/spkgbuild
 f:75eacb91d419926b889f1c1e78b27260:libunique/.checksums
 f:1ad79256814a0c90f50dd77313cb1049:libunique/.pkgfiles
 f:4ce1bf51879a679b55be831f31bf3a2f:libunique/libunique-upstream_fixes.patch
 f:55fe4fee3024ee8358b0ca6be6556fbf:libunique/spkgbuild
+f:98f817ef6982183a30c79e3e320eeb1b:xapp/spkgbuild
 f:72e15024ecc14d80cae84a3e897e8f89:libconfig/.checksums
 f:586be1ef78927c4ddfe5d4e4dbaef753:libconfig/.pkgfiles
 f:abde36e79c526a346795f8ae1127876b:libconfig/spkgbuild
@@ -576,6 +589,7 @@ f:dfb4ef4c0ca945b93b8ab5b9de44de05:libbytesize/spkgbuild
 f:42454c37f26efcdd39b317abc41b97e4:libsndfile/.checksums
 f:ee7f97b87a11bde5aa4bb854d046b53a:libsndfile/.pkgfiles
 f:12a8d9658e244d5348e514472471a2d8:libsndfile/spkgbuild
+f:c4566e83ac25425d5a98b6bee272f2d8:libgnomekbd/spkgbuild
 f:8b36660297e6ffde6aa9733136bff405:libmpeg2/libmpeg2-0.5.1-gcc4.6.patch
 f:4d22f1f965ae7a12b37ecbec8de7bbc9:libmpeg2/spkgbuild
 f:f4cb0ae570a066dc4cf325175502bf87:liblxqt/.checksums
