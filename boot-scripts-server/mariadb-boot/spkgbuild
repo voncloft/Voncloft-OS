@@ -1,7 +1,7 @@
 # description : mariadb metapackage
-# depends : mariadb-core
+# depends : mariadb
 
-name=mariadb
+name=mariadb-boot
 version=10.5.8
 release=1
 

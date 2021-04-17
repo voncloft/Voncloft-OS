@@ -1,5 +1,5 @@
 # description : MariaDB and MySQL driver for the Perl5 Database Interface DBI
-# depends : mariadb-libs perl-dbi
+# depends : mariadb perl-dbi
 
 name=perl-dbd-mariadb
 version=1.21
