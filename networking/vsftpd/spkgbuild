@@ -34,7 +34,6 @@ build() {
 	pam_service_name=vsftpd
 	local_root=/srv/ftp
 	write_enable=YES
-
 	EOF
 	mkdir -pv $PKG/etc/pam.d
 	
@@ -50,5 +49,5 @@ build() {
 	EOF
 	mkdir -pv $PKG/srv/ftp
 	touch $PKG/etc/ftpusers
-	
+	EOF
 }
