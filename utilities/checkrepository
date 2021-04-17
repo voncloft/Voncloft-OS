@@ -1,0 +1,80 @@
+#!/bin/sh
+vercomp() {
+        if [ "$1" = "$2" ]; then
+                return 0 # same version
+        #elif [ "$1" = "$(echo "$1\n$2" | sort -V | head -n1)" ]; then
+        elif [ "$(printf '%s\n' "$1" "$2" | sort -V | head -n1)" = "$1" ]; then
+                return 1 # $1 lower than $2
+                #echo "1"
+        else
+                return 2 # $1 higher than $2
+                #echo "2"
+        fi
+}
+
+cd /var/log/old
+shopt -s nocaseglob
+rm test.txt
+wget http://distrowatch.org/packages.php
+
+#remove packages you dont want monitored
+sed -i -e '/option value/d' packages.php
+sed -i -e '/clementine/d' packages.php
+sed -i -e '/vlc/d' packages.php
+
+rm -rf stripped_info.txt
+grep -Po "(?<=>)[^<>]*(?=<)" packages.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+input=stripped_info.txt
+myarr=()
+list=$(cat </etc/checkrepo.conf)
+while IFS= read  -r line; do
+   myarr+=("$line")
+done < "$input"
+
+while IFS=, read -ra items; do
+		for item in "${items[@]}"; do
+			for ((index=0; index <= ${#myarr[@]}; index++)); do
+			#echo "${myarr[index]}"
+  			if [ "${myarr[index]}" == "$item" ]; 
+  			then
+    				uversion=${myarr[index+1]}
+				cversion=$(grep "version=" /Voncloft-OS/*/$item/spkgbuild | sed 's/version=//g' | grep -v version | grep -v { )
+				if [ "$uversion" != "$cversion" ];
+				then
+				vercomp $uversion $cversion
+					if [ $? = 2 ]; then #if I have a more current up to date package on my repo then leave it out of the report
+						final="<b><u>${myarr[index]}</u></b>\n"
+						final+="<br>possible upgraded version: $uversion\n"
+						final+="<br>installed version in repo: $cversion\n"
+						final+="<br><br>\n\n"
+						echo -e $final >> test.txt
+						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /var/log/old/repository_changes.log
+						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
+						
+					fi
+				fi
+  			fi
+                        done
+                        #echo $final
+		done
+		#echo $final
+done <<< "$list"
+#echo $PWD
+words=$(cat $PWD/test.txt)
+cat $PWD/test.txt
+title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
+echo $title
+mailme user@gmail.com "$words" "$title"
+rm -rfv *.php
+rm -rfv *.php.*
+rm -rfv stripped_info.txt
+
+mv -v test.txt repository_upgrade_report.log
+
+cp repository_upgrade_report.log /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
+cp repository_changes.log /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+

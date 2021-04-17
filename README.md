@@ -23,3 +23,4 @@ _As of 3-30-2021_
 - Everything in working_on/sort_later needs to be tested.
 - Will use a spare PC to test everything on or a virtual box
 - Template folder is a base for all packages as of 3/16/21
+- Packages are checked once a day in my repository against https://distrowatch.com/packages.php using a script located in utilities/checkrepository
