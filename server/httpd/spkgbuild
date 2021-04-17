@@ -1,16 +1,16 @@
 # description	: Open-source HTTP server
 # depends	: apr-util pcre openssl
 
-name=apache
+name=httpd
 version=2.4.46
 release=1
-source="https://archive.apache.org/dist/httpd/httpd-$version.tar.bz2
+source="https://archive.apache.org/dist/httpd/$name-$version.tar.bz2
 	httpd-blfs_layout-1.patch
 	rc.httpd
 	run"
 
 build() {
-	cd httpd-$version
+	cd $name-$version
 
 	# Forces the apxs utility to use absolute pathnames for modules, when instructed to do so
 	patch -Np1 -i ../httpd-blfs_layout-1.patch
