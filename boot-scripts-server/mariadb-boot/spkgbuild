@@ -1,8 +1,8 @@
 # description : mariadb metapackage
-# depends : mariadb-core mariadb-boot
+# depends : mariadb-core
 
 name=mariadb
-version=1
+version=10.5.8
 release=1
 
 source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
