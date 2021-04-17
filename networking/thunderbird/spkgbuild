@@ -1,5 +1,5 @@
 # description	: Stand-alone mail/news client based on the Mozilla codebase
-# depends	: autoconf2.13 gtk3 gtk2 rust yasm icu libevent nspr sqlite dbus-glib gconf clang startup-notification cbindgen nodejs nasm unzip zip nss
+# depends	: pulseaudio autoconf2.13 gtk3 gtk2 rust yasm icu libevent nspr sqlite dbus-glib gconf clang startup-notification cbindgen nodejs nasm unzip zip nss
 
 name=thunderbird
 version=78.9.1
@@ -16,8 +16,9 @@ build() {
 #ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi
 #ac_add_options --enable-system-hunspell
-ac_add_options --enable-startup-notification
-ac_add_options --disable-pulseaudio
+#ac_add_options --enable-startup-notification
+ac_add_options --enable-pulseaudio
+ac_add_options --disable-alsa
 #ac_add_options --disable-gconf
 #ac_add_options --enable-calendar
 ac_add_options --enable-system-sqlite
