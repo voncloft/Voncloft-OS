@@ -7,7 +7,7 @@
 # depends : python-pytz python-tinycss2 python-xapp timezonemap xapp blueberry cinnamon-translations gnome-panel metacity system-config-printer
 # depends : meson ninja gobject-introspection intltool
 
-name=cinnamon-meta
+name=cinnamon
 version=4.8.6
 release=1
 
@@ -19,7 +19,7 @@ options="!checksum"
 
 
 build() {
-    cd ${name}-${version}
+    cd ${name}-meta-${version}
 
     # Check for the cc-panel module path, not for the irrelevant binary
     # https://github.com/linuxmint/cinnamon/pull/7382
