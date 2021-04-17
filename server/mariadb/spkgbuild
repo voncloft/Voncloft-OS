@@ -2,7 +2,7 @@
 # depends : cmake libevent
 
 name=mariadb
-version=10.5.8
+version=10.5.9
 release=1
 mn=mariadb
 source="https://downloads.mariadb.org/interstitial/$mn-$version/source/$mn-$version.tar.gz"
