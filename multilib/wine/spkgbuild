@@ -5,7 +5,7 @@ name=wine
 version=6.0
 release=1
 source="https://dl.winehq.org/wine/source/${version%%.*}.0/$name-$version.tar.xz"
-
+options="!checksum"
 ### NOTE ###
 #
 ## list 64 bit dependencies package not created yet ##
