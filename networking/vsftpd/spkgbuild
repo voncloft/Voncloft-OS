@@ -37,7 +37,7 @@ build() {
 	EOF
 	mkdir -pv $PKG/etc/pam.d
 	
-	cat <<-OEF > $PKG/etc/pam.d/vsftpd
+	cat <<-EOF > $PKG/etc/pam.d/vsftpd
 	# Begin /etc/pam.d/vsftpd
 	auth       required     /lib/security/pam_listfile.so item=user sense=allow \
                                                       file=/etc/ftpusers \
@@ -49,5 +49,4 @@ build() {
 	EOF
 	mkdir -pv $PKG/srv/ftp
 	touch $PKG/etc/ftpusers
-	EOF
 }
