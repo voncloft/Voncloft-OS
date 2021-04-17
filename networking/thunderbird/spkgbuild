@@ -5,6 +5,7 @@ name=thunderbird
 version=78.9.1
 release=1
 source="https://archive.mozilla.org/pub/thunderbird/releases/$version/source/thunderbird-$version.source.tar.xz"
+options="!checksum"
 
 build() {
 	INITDIR=$PWD
