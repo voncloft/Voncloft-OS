@@ -11,19 +11,17 @@ vercomp() {
                 #echo "2"
         fi
 }
-
 cd /var/log/old
 shopt -s nocaseglob
 rm test.txt
 wget http://distrowatch.org/packages.php
 
-#remove packages you dont want monitored
-sed -i -e '/option value/d' packages.php
-sed -i -e '/clementine/d' packages.php
+#remove packages that you want out of the loop
 sed -i -e '/vlc/d' packages.php
 
 rm -rf stripped_info.txt
-grep -Po "(?<=>)[^<>]*(?=<)" packages.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
+grep -A 1 "<th><a name=" packages.php >> modified.php
+grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -68,7 +66,7 @@ words=$(cat $PWD/test.txt)
 cat $PWD/test.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
-mailme user@gmail.com "$words" "$title"
+mailme voncloft@gmail.com "$words" "$title"
 rm -rfv *.php
 rm -rfv *.php.*
 rm -rfv stripped_info.txt

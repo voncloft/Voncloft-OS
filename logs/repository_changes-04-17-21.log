@@ -1,128 +1,117 @@
-sed -i -e 's/5.32.0/5.32.1/g' /Voncloft-OS/*/perl/spkgbuild
-
-sed -i -e 's/247/248/g' /Voncloft-OS/*/systemd/spkgbuild
-
-sed -i -e 's/2.97/2.99/g' /Voncloft-OS/*/sysvinit/spkgbuild
-
-sed -i -e 's/1.0/1.0.2/g' /Voncloft-OS/*/inkscape/spkgbuild
-
-sed -i -e 's/1.32/1.34/g' /Voncloft-OS/*/tar/spkgbuild
-
-sed -i -e 's/3.6.4/3.7.6/g' /Voncloft-OS/*/bison/spkgbuild
-
-sed -i -e 's/4.9.3/4.99.0/g' /Voncloft-OS/*/tcpdump/spkgbuild
-
-sed -i -e 's/5.39/5.40/g' /Voncloft-OS/*/file/spkgbuild
-
-sed -i -e 's/2.2.23/2.3.0/g' /Voncloft-OS/*/gnupg/spkgbuild
-
-sed -i -e 's/0.3.12/dracut/g' /Voncloft-OS/*/pipewire/spkgbuild
-
-sed -i -e 's/2.9.3/2.9.4/g' /Voncloft-OS/*/man-db/spkgbuild
-
-sed -i -e 's/8.6.10/8.6.11/g' /Voncloft-OS/*/tcl/spkgbuild
-
-sed -i -e 's/3.34.0/3.35.4/g' /Voncloft-OS/*/sqlite/spkgbuild
-
-sed -i -e 's/5.0.017/5.1/g' /Voncloft-OS/*/bash/spkgbuild
-
-sed -i -e 's/4.9.3/5.6.1/g' /Voncloft-OS/*/nano/spkgbuild
-
-sed -i -e 's/7.72.0/7.76.1/g' /Voncloft-OS/*/curl/spkgbuild
-
-sed -i -e 's/4.7.0/4.8.0/g' /Voncloft-OS/*/findutils/spkgbuild
-
-sed -i -e 's/10.0.1/12.0.0/g' /Voncloft-OS/*/llvm/spkgbuild
-
-sed -i -e 's/5.3.28/18.1.40/g' /Voncloft-OS/*/db/spkgbuild
-
-sed -i -e 's/3.3/3.4/g' /Voncloft-OS/*/parted/spkgbuild
-
-sed -i -e 's/4.8.25/4.8.26/g' /Voncloft-OS/*/mc/spkgbuild
-
-sed -i -e 's/0.4.3.6/0.4.5.7/g' /Voncloft-OS/*/tor/spkgbuild
-
-sed -i -e 's/1.3.1/1.3.2/g' /Voncloft-OS/*/pcmanfm/spkgbuild
-
-sed -i -e 's/2.36/2.36.2/g' /Voncloft-OS/*/util-linux/spkgbuild
-
-sed -i -e 's/2.21/2.22/g' /Voncloft-OS/*/links/spkgbuild
-
-sed -i -e 's/1.1.0/1.2.0/g' /Voncloft-OS/*/gparted/spkgbuild
-
-sed -i -e 's/3.1c/3.2/g' /Voncloft-OS/*/tmux/spkgbuild
-
-sed -i -e 's/1.32.0/1.33.0/g' /Voncloft-OS/*/busybox/spkgbuild
-
-sed -i -e 's/3.4/3.6/g' /Voncloft-OS/*/grep/spkgbuild
-
-sed -i -e 's/1.8.3/2.3.2/g' /Voncloft-OS/*/icewm/spkgbuild
-
-sed -i -e 's/66.0.3515.36/75.0.3969.171/g' /Voncloft-OS/*/opera/spkgbuild
-
-sed -i -e 's/2.10.20/2.10.24/g' /Voncloft-OS/*/gimp/spkgbuild
-
-sed -i -e 's/9.53.3/9.54.0/g' /Voncloft-OS/*/ghostscript/spkgbuild
-
-sed -i -e 's/1.20.3/1.21.1/g' /Voncloft-OS/*/wget/spkgbuild
-
-sed -i -e 's/5.08/5.11/g' /Voncloft-OS/*/man-pages/spkgbuild
-
-sed -i -e 's/5.4.0/5.4.3/g' /Voncloft-OS/*/lua/spkgbuild
-
-sed -i -e 's/1.2.3.2/1.2.4/g' /Voncloft-OS/*/alsa-lib/spkgbuild
-
-sed -i -e 's/5.1.0/5.2.0/g' /Voncloft-OS/*/qemu/spkgbuild
-
-sed -i -e 's/27.1/27.2/g' /Voncloft-OS/*/emacs/spkgbuild
-
-sed -i -e 's/1.45.6/1.46.2/g' /Voncloft-OS/*/e2fsprogs/spkgbuild
-
-sed -i -e 's/3.38.2/40.0/g' /Voncloft-OS/*/nautilus/spkgbuild
-
-sed -i -e 's/2.7.1/3.0.1/g' /Voncloft-OS/*/ruby/spkgbuild
-
-sed -i -e 's/1.16.2/1.16.3/g' /Voncloft-OS/*/automake/spkgbuild
-
-sed -i -e 's/1.47.0/1.51.0/g' /Voncloft-OS/*/rust/spkgbuild
-
-sed -i -e 's/2.69/2.71/g' /Voncloft-OS/*/autoconf/spkgbuild
-
-sed -i -e 's/4.4/4.5/g' /Voncloft-OS/*/gnucash/spkgbuild
-
-sed -i -e 's/27/28/g' /Voncloft-OS/*/kmod/spkgbuild
-
-sed -i -e 's/20.1.8/21.0.2/g' /Voncloft-OS/*/mesa/spkgbuild
-
-sed -i -e 's/20.12.2/20.12.3/g' /Voncloft-OS/*/ktorrent/spkgbuild
-
-sed -i -e 's/20.12.2/20.12.3/g' /Voncloft-OS/*/k3b/spkgbuild
-
-sed -i -e 's/3.2.0/3.2.5/g' /Voncloft-OS/*/libressl/spkgbuild
-
-sed -i -e 's/0.10.0/0.10.1/g' /Voncloft-OS/*/lxpanel/spkgbuild
-
-sed -i -e 's/0.15.1/0.17.1/g' /Voncloft-OS/*/lxqt-panel/spkgbuild
-
-sed -i -e 's/1.18.0/1.18.4/g' /Voncloft-OS/*/gstreamer/spkgbuild
-
-sed -i -e 's/3.0.12/3.0.12.1/g' /Voncloft-OS/*/vlc/spkgbuild
-
-sed -i -e 's/4.3.1/4.4/g' /Voncloft-OS/*/ffmpeg/spkgbuild
-
-sed -i -e 's/13.0/14.2/g' /Voncloft-OS/*/pulseaudio/spkgbuild
-
-sed -i -e 's/1.1.1h/1.1.1k/g' /Voncloft-OS/*/openssl/spkgbuild
-
-sed -i -e 's/2.14.1/2.14.3/g' /Voncloft-OS/*/pidgin/spkgbuild
-
-sed -i -e 's/450.66/465.24.02/g' /Voncloft-OS/*/nvidia/spkgbuild
-
-sed -i -e 's//6.0.3/g' /Voncloft-OS/*/qt/spkgbuild
-
-sed -i -e 's/4.2.5/4.3.4.1/g' /Voncloft-OS/*/qbittorrent/spkgbuild
-
-sed -i -e 's/5.7.0/5.11.0/g' /Voncloft-OS/*/xfsprogs/spkgbuild
-
-sed -i -e 's/4.14.2/4.16.0/g' /Voncloft-OS/*/xfdesktop/spkgbuild
-
+sed -i -e 's/5.32.1/php/g' /Voncloft-OS/*/perl/spkgbuild
+sed -i -e 's/3.9.4/qbittorrent/g' /Voncloft-OS/*/python/spkgbuild
+sed -i -e 's/2.04/gstreamer/g' /Voncloft-OS/*/grub/spkgbuild
+sed -i -e 's/248/sysvinit/g' /Voncloft-OS/*/systemd/spkgbuild
+sed -i -e 's/2.36.1/bison/g' /Voncloft-OS/*/binutils/spkgbuild
+sed -i -e 's/4.3/man-db/g' /Voncloft-OS/*/make/spkgbuild
+sed -i -e 's/2.99/tar/g' /Voncloft-OS/*/sysvinit/spkgbuild
+sed -i -e 's/3.6.27/rpm/g' /Voncloft-OS/*/reiserfsprogs/spkgbuild
+sed -i -e 's/1.2.11//g' /Voncloft-OS/*/zlib/spkgbuild
+sed -i -e 's/1.0.2/iptables/g' /Voncloft-OS/*/inkscape/spkgbuild
+sed -i -e 's/2.3.3/curl/g' /Voncloft-OS/*/cups/spkgbuild
+sed -i -e 's/5.2.5/zfs/g' /Voncloft-OS/*/xz/spkgbuild
+sed -i -e 's/5.1.0/gcc/g' /Voncloft-OS/*/gawk/spkgbuild
+sed -i -e 's/1.34/tcl/g' /Voncloft-OS/*/tar/spkgbuild
+sed -i -e 's/6.2/netbeans/g' /Voncloft-OS/*/ncurses/spkgbuild
+sed -i -e 's/3.7.6/bitcoin/g' /Voncloft-OS/*/bison/spkgbuild
+sed -i -e 's/4.99.0/texinfo/g' /Voncloft-OS/*/tcpdump/spkgbuild
+sed -i -e 's/5.40/findutils/g' /Voncloft-OS/*/file/spkgbuild
+sed -i -e 's/2.3.0/gparted/g' /Voncloft-OS/*/gnupg/spkgbuild
+sed -i -e 's/2.9.4/man-pages/g' /Voncloft-OS/*/man-db/spkgbuild
+sed -i -e 's/8.6.11/tcpdump/g' /Voncloft-OS/*/tcl/spkgbuild
+sed -i -e 's/3.35.4/squid/g' /Voncloft-OS/*/sqlite/spkgbuild
+sed -i -e 's/563/lftp/g' /Voncloft-OS/*/less/spkgbuild
+sed -i -e 's/5.1/bind/g' /Voncloft-OS/*/bash/spkgbuild
+sed -i -e 's/5.6.1/nautilus/g' /Voncloft-OS/*/nano/spkgbuild
+sed -i -e 's/7.76.1/cvs/g' /Voncloft-OS/*/curl/spkgbuild
+sed -i -e 's/4.8.0/firebird/g' /Voncloft-OS/*/findutils/spkgbuild
+sed -i -e 's/2017.3.23/nvidia/g' /Voncloft-OS/*/ntfs-3g/spkgbuild
+sed -i -e 's/12.0.0/lua/g' /Voncloft-OS/*/llvm/spkgbuild
+sed -i -e 's/18.1.40/deluge/g' /Voncloft-OS/*/db/spkgbuild
+sed -i -e 's/17/emacs/g' /Voncloft-OS/*/efibootmgr/spkgbuild
+sed -i -e 's/2.6.4/fluxbox/g' /Voncloft-OS/*/flex/spkgbuild
+sed -i -e 's/3.4/pcmanfm/g' /Voncloft-OS/*/parted/spkgbuild
+sed -i -e 's/1.9.1/e2fsprogs/g' /Voncloft-OS/*/doxygen/spkgbuild
+sed -i -e 's/4.8.26/mesa/g' /Voncloft-OS/*/mc/spkgbuild
+sed -i -e 's/1.10/hexchat/g' /Voncloft-OS/*/gzip/spkgbuild
+sed -i -e 's/0.4.5.7/transmission/g' /Voncloft-OS/*/tor/spkgbuild
+sed -i -e 's/4.9.2/libdvdcss/g' /Voncloft-OS/*/lftp/spkgbuild
+sed -i -e 's/1.3.2/perl/g' /Voncloft-OS/*/pcmanfm/spkgbuild
+sed -i -e 's/2.36.2/vim/g' /Voncloft-OS/*/util-linux/spkgbuild
+sed -i -e 's/4.8.0/scribus/g' /Voncloft-OS/*/screen/spkgbuild
+sed -i -e 's/1.3.7/freecad/g' /Voncloft-OS/*/fluxbox/spkgbuild
+sed -i -e 's/2.22/linux/g' /Voncloft-OS/*/links/spkgbuild
+sed -i -e 's/1.2.0/grep/g' /Voncloft-OS/*/gparted/spkgbuild
+sed -i -e 's/1.0.8/cacti/g' /Voncloft-OS/*/bzip2/spkgbuild
+sed -i -e 's/8.32/cups/g' /Voncloft-OS/*/coreutils/spkgbuild
+sed -i -e 's/4.8/sendmail/g' /Voncloft-OS/*/sed/spkgbuild
+sed -i -e 's/1.4.18/make/g' /Voncloft-OS/*/m4/spkgbuild
+sed -i -e 's/3.2/tor/g' /Voncloft-OS/*/tmux/spkgbuild
+sed -i -e 's/1.33.0/bzip2/g' /Voncloft-OS/*/busybox/spkgbuild
+sed -i -e 's/3.6/groff/g' /Voncloft-OS/*/grep/spkgbuild
+sed -i -e 's/2.3.2/imagemagick/g' /Voncloft-OS/*/icewm/spkgbuild
+sed -i -e 's/1.5.24/icewm/g' /Voncloft-OS/*/ibus/spkgbuild
+sed -i -e 's/75.0.3969.171/parted/g' /Voncloft-OS/*/opera/spkgbuild
+sed -i -e 's/1.22.4/grub/g' /Voncloft-OS/*/groff/spkgbuild
+sed -i -e 's/0.21/ghostscript/g' /Voncloft-OS/*/gettext/spkgbuild
+sed -i -e 's/2.10.24/git/g' /Voncloft-OS/*/gimp/spkgbuild
+sed -i -e 's/9.54.0/gimp/g' /Voncloft-OS/*/ghostscript/spkgbuild
+sed -i -e 's/6.7/texlive/g' /Voncloft-OS/*/texinfo/spkgbuild
+sed -i -e 's/1.21.1/wicd/g' /Voncloft-OS/*/wget/spkgbuild
+sed -i -e 's/9.0/mod_perl/g' /Voncloft-OS/*/midori/spkgbuild
+sed -i -e 's/3.2.3/ruby/g' /Voncloft-OS/*/rsync/spkgbuild
+sed -i -e 's/5.11/mariadb/g' /Voncloft-OS/*/man-pages/spkgbuild
+sed -i -e 's/5.4.3/lumina/g' /Voncloft-OS/*/lua/spkgbuild
+sed -i -e 's/1.2.4/amarok/g' /Voncloft-OS/*/alsa-lib/spkgbuild
+sed -i -e 's/5.2.0/qpopper/g' /Voncloft-OS/*/qemu/spkgbuild
+sed -i -e 's/27.2/enlightenment/g' /Voncloft-OS/*/emacs/spkgbuild
+sed -i -e 's/1.46.2/eclipse/g' /Voncloft-OS/*/e2fsprogs/spkgbuild
+sed -i -e 's/3.6.1/openjdk/g' /Voncloft-OS/*/openbox/spkgbuild
+sed -i -e 's/3.7/digikam/g' /Voncloft-OS/*/diffutils/spkgbuild
+sed -i -e 's/2.8.9rel.1/lyx/g' /Voncloft-OS/*/lynx/spkgbuild
+sed -i -e 's/4.8.6/clementine/g' /Voncloft-OS/*/cinnamon/spkgbuild
+sed -i -e 's/40.0/ncurses/g' /Voncloft-OS/*/nautilus/spkgbuild
+sed -i -e 's/3.0.1/rust/g' /Voncloft-OS/*/ruby/spkgbuild
+sed -i -e 's/1.16.3/avidemux/g' /Voncloft-OS/*/automake/spkgbuild
+sed -i -e 's/1.51.0/samba/g' /Voncloft-OS/*/rust/spkgbuild
+sed -i -e 's/10.3.0/gettext/g' /Voncloft-OS/*/gcc/spkgbuild
+sed -i -e 's/2.71/automake/g' /Voncloft-OS/*/autoconf/spkgbuild
+sed -i -e 's/3.20.1/compiz/g' /Voncloft-OS/*/cmake/spkgbuild
+sed -i -e 's/4.5/gnumeric/g' /Voncloft-OS/*/gnucash/spkgbuild
+sed -i -e 's/28/kmymoney/g' /Voncloft-OS/*/kmod/spkgbuild
+sed -i -e 's/21.0.2/midori/g' /Voncloft-OS/*/mesa/spkgbuild
+sed -i -e 's/20.12.3/less/g' /Voncloft-OS/*/ktorrent/spkgbuild
+sed -i -e 's/20.12.3/kdevelop/g' /Voncloft-OS/*/k3b/spkgbuild
+sed -i -e 's/1.3.7/lighttpd/g' /Voncloft-OS/*/libvorbis/spkgbuild
+sed -i -e 's/3.2.5/libselinux/g' /Voncloft-OS/*/libressl/spkgbuild
+sed -i -e 's/2.33/gnome-shell/g' /Voncloft-OS/*/glibc/spkgbuild
+sed -i -e 's/2.4.6/libvirt/g' /Voncloft-OS/*/libtool/spkgbuild
+sed -i -e 's/0.10.1/lxqt-panel/g' /Voncloft-OS/*/lxpanel/spkgbuild
+sed -i -e 's/0.17.1/lynx/g' /Voncloft-OS/*/lxqt-panel/spkgbuild
+sed -i -e 's/1.24.1/mc/g' /Voncloft-OS/*/mate-desktop/spkgbuild
+sed -i -e 's/1.18.4/gtk/g' /Voncloft-OS/*/gstreamer/spkgbuild
+sed -i -e 's/1.4/mutt/g' /Voncloft-OS/*/mplayer/spkgbuild
+sed -i -e 's/4.4/file/g' /Voncloft-OS/*/ffmpeg/spkgbuild
+sed -i -e 's/20210314/nano/g' /Voncloft-OS/*/mythtv/spkgbuild
+sed -i -e 's/14.2/python/g' /Voncloft-OS/*/pulseaudio/spkgbuild
+sed -i -e 's/19.0/krita/g' /Voncloft-OS/*/kodi/spkgbuild
+sed -i -e 's/1.4.0/cmake/g' /Voncloft-OS/*/clementine/spkgbuild
+sed -i -e 's/6.0/wireshark/g' /Voncloft-OS/*/wine/spkgbuild
+sed -i -e 's/8.5p1/openssl/g' /Voncloft-OS/*/openssh/spkgbuild
+sed -i -e 's/2.14.3/httpd/g' /Voncloft-OS/*/hexchat/spkgbuild
+sed -i -e 's/1.14.1/sylpheed/g' /Voncloft-OS/*/subversion/spkgbuild
+sed -i -e 's/78.9.1/tigervnc/g' /Voncloft-OS/*/thunderbird/spkgbuild
+sed -i -e 's/1.1.1k/opera/g' /Voncloft-OS/*/openssl/spkgbuild
+sed -i -e 's/2.14.3/pitivi/g' /Voncloft-OS/*/pidgin/spkgbuild
+sed -i -e 's/3.4.4/wordpress/g' /Voncloft-OS/*/wireshark/spkgbuild
+sed -i -e 's/87.0/firejail/g' /Voncloft-OS/*/firefox/spkgbuild
+sed -i -e 's/2.31.1/glade/g' /Voncloft-OS/*/git/spkgbuild
+sed -i -e 's/465.24.02/octave/g' /Voncloft-OS/*/nvidia/spkgbuild
+sed -i -e 's/7.1.2/libressl/g' /Voncloft-OS/*/libreoffice/spkgbuild
+sed -i -e 's/6.1.18/wayland/g' /Voncloft-OS/*/virtualbox/spkgbuild
+sed -i -e 's/5.21.4/postfix/g' /Voncloft-OS/*/plasma-desktop/spkgbuild
+sed -i -e 's//qt-creator/g' /Voncloft-OS/*/qt/spkgbuild
+sed -i -e 's/4.3.4.1/qemu/g' /Voncloft-OS/*/qbittorrent/spkgbuild
+sed -i -e 's/5.11.0/xine-lib/g' /Voncloft-OS/*/xfsprogs/spkgbuild
+sed -i -e 's/4.16.0/xfsprogs/g' /Voncloft-OS/*/xfdesktop/spkgbuild
+sed -i -e 's/1.20.11/xz/g' /Voncloft-OS/*/xorg-server/spkgbuild
