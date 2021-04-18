@@ -1,12 +1,12 @@
 # description	: The Rust programming language is designed to be a safe, concurrent, practical language
-# depends	: curl cmake python llvm libssh2
+# depends	: curl cmake python3 llvm libssh2
 
 name=rust
 version=1.51.0
 release=1
-_date=2020-08-27
-_rust=1.46.0
-_cargo=0.47.0
+_date=2021-02-11
+_rust=1.50.0
+_cargo=1.50.0
 _triplet=x86_64-unknown-linux-gnu
 
 source="https://static.rust-lang.org/dist/rustc-$version-src.tar.xz
@@ -16,40 +16,16 @@ source="https://static.rust-lang.org/dist/rustc-$version-src.tar.xz
 noextract="rust-std-$_rust-$_triplet.tar.xz
 	rustc-$_rust-$_triplet.tar.xz
 	cargo-$_cargo-$_triplet.tar.xz"
-
 options="!checksum"
 build() {
 	cd rustc-$version-src
-
-	set +x
-	DATE="$(awk '/^date: / { print $2 }' src/stage0.txt)"
-	RUSTC="$(awk '/^rustc: / { print $2 }' src/stage0.txt)"
-	CARGO="$(awk '/^cargo: / { print $2 }' src/stage0.txt)"
-
-	rb_error=0
-	[ "$DATE" = "$_date" ] || {
-		echo "date error: $_date => $DATE"
-		rb_error=1
-	}
-	[ "$RUSTC" = "$_rust" ] || {
-		
-		echo "rust error: $_rust => $RUSTC"
-		rb_error=1
-	}
-	[ "$CARGO" = "$_cargo" ] || {
-		
-		echo "cargo error: $_cargo => $CARGO"
-		rb_error=1
-	}
-	[ "$rb_error" = 0 ] || return 1
-	set -x
 
 	mkdir -p build/cache/$_date
 	cp $SRC/rust-std-$_rust-$_triplet.tar.xz build/cache/$_date/
 	cp $SRC/rustc-$_rust-$_triplet.tar.xz build/cache/$_date/
 	cp $SRC/cargo-$_cargo-$_triplet.tar.xz build/cache/$_date/
 
-cat << EOF > config.toml
+cat <<-EOF > config.toml
 [build]
 build = "$_triplet"
 host = [ "$_triplet" ]
@@ -57,7 +33,7 @@ target = [ "$_triplet" ]
 docs = false
 extended = true
 submodules = false
-python = "python"
+python = "python3"
 locked-deps = true
 vendor = true
 
@@ -76,18 +52,14 @@ jemalloc = false
 [target.$_triplet]
 llvm-config = "/usr/bin/llvm-config"
 crt-static = false
-cc = "gcc"
-cxx = "g++"
-ar = "ar"
-linker = "gcc"
 EOF
 
 	mkdir "$SRC/rust"
 	export CARGO_HOME="$SRC/rust"
 	export RUST_BACKTRACE=1
 	export RUSTFLAGS="$RUSTFLAGS -C link-args=-lffi"
-	python ./x.py build --exclude src/tools/miri $MAKEFLAGS
-	DESTDIR=$PKG python ./x.py install -v
+	python3 ./x.py build $MAKEFLAGS
+	DESTDIR=$PKG python3 ./x.py install -v
 
 	rm -rf $PKG/usr/lib/rustlib/components
 	rm -rf $PKG/usr/lib/rustlib/manifest-rustc
