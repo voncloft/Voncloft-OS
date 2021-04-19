@@ -1,6 +1,7 @@
 d:openssh
 d:whois
 d:iftop
+d:iptraf-ng
 d:hexchat
 d:hostapd
 d:krb5
@@ -43,6 +44,8 @@ f:02a85b6c81cd20cd45a4667b28dc4865:whois/spkgbuild
 f:c60499aba332d667b5aae9aa64bce141:iftop/.checksums
 f:0deed7441258d7191b2045039fb3a62d:iftop/.pkgfiles
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
+f:175b2e549251358f799753ba9816697d:iptraf-ng/CHANGELOG
+f:b4bf1f4f174c64b959c2f56c70c15717:iptraf-ng/spkgbuild
 f:ef190ef09634440bd4f79d59c95819f2:hexchat/.checksums
 f:d7d5ff072c27b1a2b1eec86d642e6996:hexchat/.pkgfiles
 f:6e3d02c421961a7d7f7a745b97df8ba8:hexchat/spkgbuild
@@ -86,7 +89,7 @@ f:7a3ae429bd2ed134acad6aba2ee8f5a2:filezilla/.pkgfiles
 f:6eb2e845fc4cc15794076e14226b25d2:filezilla/missing-list-include.patch
 f:02250156b6d4427f9bd2aa35774e55da:filezilla/spkgbuild
 f:1510019b48eb05e8d57ef3881bff590a:ntopng/CHANGELOG
-f:7add916c04d4f4189cd751135487e5ab:ntopng/spkgbuild
+f:a790cde2dcf7d058495d8ab7635bdadb:ntopng/spkgbuild
 f:7a04cbdac922db74b1a20007edd34ebe:openssl/.checksums
 f:6f9ef02caf95b7810f26858307d02c5c:openssl/.pkgfiles
 f:47099e5fa9bfc1376602e4dfba67b39a:openssl/spkgbuild

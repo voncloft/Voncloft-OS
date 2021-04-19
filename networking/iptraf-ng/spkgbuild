@@ -1,0 +1,17 @@
+# description : console based network monitoring utility
+# depends : ncurses
+
+name=iptraf-ng
+version=1.2.1
+release=1
+
+source="https://github.com/iptraf-ng/iptraf-ng/archive/v$version/$Name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	make prefix=/usr sbindir_relative=bin
+	
+	make DESTDIR=$PKG install
+	
+}
