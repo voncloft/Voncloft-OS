@@ -57,6 +57,7 @@ d:lapack
 d:glibc
 d:libcroco
 d:libogg
+d:libmaxminddb
 d:shapelib
 d:libqtxdg
 d:cblas
@@ -139,7 +140,6 @@ d:libdbi
 d:libgusb
 d:libva-intel
 d:libnl
-d:libmaxinddb
 d:libmateweather
 d:libpcap
 d:libtiff
@@ -336,6 +336,8 @@ f:b69b528488730410c45f949a4f58b57a:libcroco/spkgbuild
 f:7f9eaa2acc08d293854aebc768bd9b51:libogg/.checksums
 f:9ade1d6f6bc3c75ccf524951a2931a17:libogg/.pkgfiles
 f:ff4ed7b4c14dde892f258b806cf83eb1:libogg/spkgbuild
+f:c03a72f7b479657d3758187541c18ea9:libmaxminddb/CHANGELOG
+f:c70f21860b7baed6d385126b2333ac76:libmaxminddb/spkgbuild
 f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
 f:a076c4e4e71bc088c9146645dc896fc4:libqtxdg/.checksums
 f:a2d33182864efe0548135a762cb80222:libqtxdg/.pkgfiles
@@ -549,8 +551,6 @@ f:d39ea23f13535876c58ccffc8669e2c4:libva-intel/spkgbuild
 f:ab8ff02ceeddfd362fe241d5f377b925:libnl/.checksums
 f:a7295c3e9e29e0736c55a2c033c3ecb4:libnl/.pkgfiles
 f:663e102bd7349cfbfc4aff15f395657a:libnl/spkgbuild
-f:c03a72f7b479657d3758187541c18ea9:libmaxinddb/CHANGELOG
-f:a0154020890fcfdfd356ace185e35312:libmaxinddb/spkgbuild
 f:ea93c22c8986c66c5aefd4094a77e4da:libmateweather/.checksums
 f:301ae5ad5d3f3ff5627941f60d270198:libmateweather/.pkgfiles
 f:cf603857b71db50cdea5d1dfc43b9e3d:libmateweather/spkgbuild

@@ -1,5 +1,5 @@
 # description : show all network traffic in one command
-# depends : redis mariadb libpcap sqlite libmaxinddb libpcap redis rrdtool git zeromq automake curl glib libtool libxml2 wget
+# depends : redis mariadb libpcap sqlite libmaxminddb libpcap redis rrdtool git zeromq automake curl glib libtool libxml2 wget
 
 name=ntopng
 version=4.2

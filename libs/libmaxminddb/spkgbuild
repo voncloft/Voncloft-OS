@@ -1,11 +1,11 @@
 # description : geoip2 database library
 # depends : glibc
 
-name=libmaxinddb
+name=libmaxminddb
 version=1.5.2
 release=1
 
-source="https://github.com/maxmind/libmaxminddb/releases/download/$version/$name-$version.tar.gz"
+source="https://github.com/maxmind/libmaxminddb/releases/download/1.5.2/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
