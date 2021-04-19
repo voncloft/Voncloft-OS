@@ -14,7 +14,7 @@ build() {
 	aclocal
   	automake
 	LUA=/usr/bin/lua5.1 \
-    	LUA_CFLAGS="-I/usr/include/lua5.1 -llua5.1" LUA_INSTALL_CMOD="/usr/lib/lua/5.1" \
+    	LUA_CFLAGS="-I/usr/include/lua5.1 -llua5.1" LUA_INSTALL_CMOD="/usr/lib/lua/5.4" \
     	./configure --prefix=/usr --localstatedir=/var --disable-rpath \
     	--enable-perl --enable-perl-site-install --with-perl-options='INSTALLDIRS=vendor' \
     	--enable-ruby --enable-ruby-site-install --enable-python \
