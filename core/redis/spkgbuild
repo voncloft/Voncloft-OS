@@ -1,0 +1,17 @@
+# description : in-memory daatabase
+# depends : grep jemalloc shadow
+
+name=redis
+version=6.2.1
+release=2
+
+source="https://github.com/redis/redis/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	 make BUILD_TLS=yes \
+       	USE_SYSTEMD=no \
+       	-C $name-$version
+       	make PREFIX="$PKG"/usr install
+}

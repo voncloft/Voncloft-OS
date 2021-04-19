@@ -64,6 +64,7 @@ d:mpv
 d:numix-icon-theme
 d:clang
 d:freeglut
+d:rrdtool
 d:fltk
 d:inkscape
 d:exo
@@ -262,6 +263,7 @@ d:x11perf
 d:poppler-data
 d:vte3
 d:ristretto
+d:jemalloc
 d:iso-codes
 d:sdl
 d:mercurial
@@ -443,6 +445,7 @@ d:time
 d:lmdb
 d:zsh
 d:luit
+d:redis
 d:ntp
 d:transmission-cli
 d:elinks
@@ -516,6 +519,7 @@ d:rsync
 d:grantlee
 d:frameworkintegration
 d:dcfldd
+d:zeromq
 d:apr-util
 d:asciidoc
 d:man-pages
@@ -800,6 +804,8 @@ f:7112cfd0145e449dc04da28fe8bb54ba:clang/spkgbuild
 f:66bc723b53b92187a3a5f6e18dd0366d:freeglut/.checksums
 f:20deff5cfaf465e9c14998c72d1d6671:freeglut/.pkgfiles
 f:92725c3566888e3c6eb4df87503f2929:freeglut/spkgbuild
+f:f1986aae4d403896de3a920c79d0dbb5:rrdtool/CHANGELOG
+f:efe1af6da2f19728385a8e8e1ce6d2a1:rrdtool/spkgbuild
 f:d71da3b6fa9c976c1ff4d369a575c4d0:fltk/.checksums
 f:551111a215f827f7da63c66fdd810d7d:fltk/.pkgfiles
 f:9e4c8b285a01444f43e27f1af8799a6b:fltk/fltk-fix-lib-mess.patch
@@ -1459,6 +1465,8 @@ f:7c9ae84292dc44b3606fc7dd8d21c7f5:vte3/spkgbuild
 f:548812cbeb74096ba8fce9ee0d7a515f:ristretto/.checksums
 f:6b0d2e3be6fed99c25c7712bc26e742e:ristretto/.pkgfiles
 f:e5e2862263cc9d328c1319c6bffcf4bb:ristretto/spkgbuild
+f:cf3c5f80ee381fc649927541eb7eb3c1:jemalloc/CHANGELOG
+f:e30ee3c1af1a3cc72a973defacb7dd02:jemalloc/spkgbuild
 f:e89e307a7a9d3d3cb46fb7006e0be104:iso-codes/.checksums
 f:9bd483547959d0e14419159011b30c18:iso-codes/.pkgfiles
 f:06e10b64b148bb4634dc37b079e70075:iso-codes/spkgbuild
@@ -2063,6 +2071,8 @@ f:dd42055dfe13090ae201d49ea641149a:zsh/spkgbuild
 f:aca8c748694defbdf3eeea4d9163fcba:luit/.checksums
 f:7506ad9b0473000b20176ddfb97d67c0:luit/.pkgfiles
 f:40d41c5cf0069e5bc74c74571c0a96ed:luit/spkgbuild
+f:a2bd35aed3a9a44d168900d7709dab64:redis/CHANGELOG
+f:e61cd62ca6846fe6847483700c27c916:redis/spkgbuild
 f:bdc4b9285372e405e36c3dc005804763:ntp/install
 f:282f9bb7c5be83fc4d8f9baf406313bf:ntp/.checksums
 f:00ba78f5c9cd97e34f3e223fe482d078:ntp/mkdirs
@@ -2296,6 +2306,8 @@ f:04ad21a4a61e6d6b3b4e5aab49ffe993:frameworkintegration/spkgbuild
 f:5095cfccba7eb46a753f19a7c820f0b8:dcfldd/.checksums
 f:603c2385a955d2f7009960baa8c77277:dcfldd/.pkgfiles
 f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
+f:30fb1d28c768d97652bc31228e82ad8c:zeromq/CHANGELOG
+f:a8c981949d1c52347b46cfaf6d62f9dc:zeromq/spkgbuild
 f:cdd86bf9996c5556870cec847d77495a:apr-util/.checksums
 f:fc44b2faf1cc5cfe32330fe2b573184c:apr-util/.pkgfiles
 f:b4711b17a3363e21b0bd19d45cb57372:apr-util/spkgbuild

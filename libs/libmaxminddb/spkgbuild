@@ -1,0 +1,16 @@
+# description : geoip2 database library
+# depends : glibc
+
+name=libmaxminddb
+version=1.5.2
+release=1
+
+source="https://github.com/maxmind/libmaxminddb/releases/download/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+}

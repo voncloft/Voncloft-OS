@@ -57,6 +57,7 @@ d:lapack
 d:glibc
 d:libcroco
 d:libogg
+d:libmaxminddb
 d:shapelib
 d:libqtxdg
 d:cblas
@@ -109,6 +110,7 @@ d:libevent
 d:libdvdnav
 d:libfm-qt
 d:libpsl
+d:libpgm
 d:libutempter
 d:libmm-glib
 d:glibmm
@@ -144,6 +146,7 @@ d:libtiff
 d:libnfs
 d:cracklib-dict
 d:libice
+d:libsodium
 d:libdbusmenu-glib
 d:libev
 d:libimagequant
@@ -333,6 +336,8 @@ f:b69b528488730410c45f949a4f58b57a:libcroco/spkgbuild
 f:7f9eaa2acc08d293854aebc768bd9b51:libogg/.checksums
 f:9ade1d6f6bc3c75ccf524951a2931a17:libogg/.pkgfiles
 f:ff4ed7b4c14dde892f258b806cf83eb1:libogg/spkgbuild
+f:c03a72f7b479657d3758187541c18ea9:libmaxminddb/CHANGELOG
+f:5b7ed26365adcfb6fd3bcc5105a5f0e1:libmaxminddb/spkgbuild
 f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
 f:a076c4e4e71bc088c9146645dc896fc4:libqtxdg/.checksums
 f:a2d33182864efe0548135a762cb80222:libqtxdg/.pkgfiles
@@ -470,6 +475,8 @@ f:6b53215ab29144fb295db370360649a4:libfm-qt/spkgbuild
 f:f28a5999b802456767df99b67a512c03:libpsl/.checksums
 f:8665518ea18906f5b10c0aa1928cb159:libpsl/.pkgfiles
 f:282bdc5bfa88dda69a07407cb58a32b0:libpsl/spkgbuild
+f:91fcf99fbe327b32a871b947b2135d2d:libpgm/CHANGELOG
+f:60824e1318a3b1e3205e74a70c811714:libpgm/spkgbuild
 f:a0feab13ab04ef03391be01446cac024:libutempter/spkgbuild
 f:c63d4202785d2175812506739f099641:libmm-glib/spkgbuild
 f:13cbea1c4184c209e3a064ccf285daf7:glibmm/CHANGELOG
@@ -560,6 +567,8 @@ f:a7c79a1224812816ed41ed5b6178990e:cracklib-dict/spkgbuild
 f:4192d72e4926e34e159bca3a7bcce41a:libice/.checksums
 f:653bad0a6f4fccf51c075ce26572e26c:libice/.pkgfiles
 f:c6f613ebca83e005c134ed1caae8d44b:libice/spkgbuild
+f:1f7dbaefea82a38094a832e5cb1d3550:libsodium/CHANGELOG
+f:73243ef45be84a898248c8c161620a0d:libsodium/spkgbuild
 f:f8537f793572b3e15da7f5c60a8f3b87:libdbusmenu-glib/spkgbuild
 f:65e78990af663870c07d61aba8ab50cf:libev/.checksums
 f:a99ef690813de2a9aef38a1320a116d9:libev/.pkgfiles
