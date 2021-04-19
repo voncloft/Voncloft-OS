@@ -10,7 +10,8 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	 make BUILD_TLS=yes \
+	make BUILD_TLS=yes \
        	USE_SYSTEMD=no \
-       	make PREFIX="$PKG"/usr DESTDIR=$PKG install
+	#make test
+       	make PREFIX=$PKG/usr install
 }
