@@ -1,0 +1,17 @@
+# description : show all network traffic in one command
+# depends : redis mariadb libpcap sqlite libmaxinddb libpcap redis rrdtool git zeromq automake curl glib libtool libxml2 wget
+
+name=ntopng
+version=4.2
+release=1
+
+source="https://github.com/ntop/$name/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./autogen.sh
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
