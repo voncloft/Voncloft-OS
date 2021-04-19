@@ -12,5 +12,5 @@ build() {
 	cd $name-$version
 	 make BUILD_TLS=yes \
        	USE_SYSTEMD=no \
-       	make PREFIX="$PKG"/usr install
+       	make PREFIX="$PKG"/usr DESTDIR=$PKG install
 }
