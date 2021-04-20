@@ -13,7 +13,7 @@ vercomp() {
 }
 cd /var/log/old
 shopt -s nocaseglob
-rm testing.txt
+rm test.txt
 wget http://distrowatch.org/packages.php
 
 #remove packages that you want out of the loop
@@ -26,11 +26,6 @@ grep -A 1 "<th><a name=" packages.php >> modified.php
 sed -i -e 's/qt/qt5/g' modified.php
 
 grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
-
-##get some additional packages##
-sh /Voncloft-OS/utilities/custom_progs/nss.sh
-sh /Voncloft-OS/utilities/custom_progs/nspr.sh
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -59,12 +54,14 @@ while IFS=, read -ra items; do
 						final+="<br>installed version in repo: $cversion\n"
 						final+="<br>upgraded to version: $uversion\n"
 						final+="<br><br>\n\n"
-						echo -e $final >> testing.txt
+						echo -e $final >> test.txt
 						echo -e $final >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
 						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
 					fi
+				
 				fi
+			
   			fi
                         done
                         #echo $final
@@ -72,11 +69,11 @@ while IFS=, read -ra items; do
 		#echo $final
 done <<< "$list"
 #echo $PWD
-echo -e "Packages upgraded: $count" >> $PWD/testing.txt
+echo -e "Packages upgraded: $count" >> $PWD/test.txt
 echo -e "Packages upgraded: $count" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
 echo -e "Packages upgraded: $count" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
-words=$(cat $PWD/testing.txt)
-cat $PWD/testing.txt
+words=$(cat $PWD/test.txt)
+cat $PWD/test.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
 mailme voncloft@gmail.com "$words" "$title"
@@ -84,7 +81,8 @@ rm -rfv *.php
 rm -rfv *.php.*
 rm -rfv stripped_info.txt
 
-mv -v testing.txt repository_upgrade_report.log
+mv -v test.txt repository_upgrade_report.log
 
 #cp repository_upgrade_report.log /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
 #cp repository_changes.log /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+
