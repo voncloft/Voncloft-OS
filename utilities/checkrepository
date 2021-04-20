@@ -33,6 +33,8 @@ sh /Voncloft-OS/utilities/custom_progs/nspr.sh
 sh /Voncloft-OS/utilities/custom_progs/sudo.sh
 sh /Voncloft-OS/utilities/custom_progs/bluefish.sh
 sh /Voncloft-OS/utilities/custom_progs/libgpg-error.sh
+sh /Voncloft-OS/utilities/custom_progs/libgcrypt.sh
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'

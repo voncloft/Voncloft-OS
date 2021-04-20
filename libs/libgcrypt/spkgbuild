@@ -2,9 +2,10 @@
 # depends	: libgpg-error
 
 name=libgcrypt
-version=1.8.6
+version=1.9.3
 release=1
 source="https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-$version.tar.bz2"
+options="!checksum"
 
 build() {
 	cd $name-$version
