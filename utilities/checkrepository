@@ -74,9 +74,9 @@ while IFS=, read -ra items; do
 		#echo $final
 done <<< "$list"
 #echo $PWD
-echo -e "Packages upgraded: $count" >> $PWD/testing.txt
-echo -e "Packages upgraded: $count" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
-echo -e "Packages upgraded: $count" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count\n\n" >> $PWD/testing.txt
+echo -e "Packages upgraded: $count\n\n" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count\n\n" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
 words=$(cat $PWD/testing.txt)
 cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
