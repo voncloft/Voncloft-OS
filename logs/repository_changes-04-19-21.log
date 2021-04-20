@@ -1,1 +1,6 @@
-Packages upgraded: 0
+sed -i -e 's/3.35.4/3.35.5/g' /Voncloft-OS/*/sqlite/spkgbuild
+sed -i -e 's/563/581/g' /Voncloft-OS/*/less/spkgbuild
+sed -i -e 's/8.5p1/8.6p1/g' /Voncloft-OS/*/openssh/spkgbuild
+sed -i -e 's/78.9.1/78.10.0/g' /Voncloft-OS/*/thunderbird/spkgbuild
+sed -i -e 's/87.0/88.0/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 5
