@@ -1,5 +1,5 @@
-url=
-name=
+url=https://www.bennewitz.com/bluefish/stable/source/
+name=bluefish
 
 cd /var/log/old
 
@@ -20,11 +20,11 @@ sed -i -e 's/.tar.bz2//g' test.txt
 sed -i -e '/stable/d' test.txt
 sed -i -e "/$name/d" test.txt
 ###beta###
-cat test.txt | sort -V -r | head -n 1
+#cat test.txt | sort -V -r | head -n 1
 
 ###Production###
-#echo $name >> stripped_info.txt
-#cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
+echo $name >> stripped_info.txt
+cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
 
 rm -v *.html
 rm -v *.html.*
