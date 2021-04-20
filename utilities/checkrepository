@@ -28,12 +28,10 @@ sed -i -e 's/qt/qt5/g' modified.php
 grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
 
 ##get some additional packages##
-sh /Voncloft-OS/utilities/custom_progs/nss.sh
-sh /Voncloft-OS/utilities/custom_progs/nspr.sh
-sh /Voncloft-OS/utilities/custom_progs/sudo.sh
-sh /Voncloft-OS/utilities/custom_progs/bluefish.sh
-sh /Voncloft-OS/utilities/custom_progs/libgpg-error.sh
-sh /Voncloft-OS/utilities/custom_progs/libgcrypt.sh
+for f in /Voncloft-OS/utilities/custom_progs/*
+do
+        sh $f
+done
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
