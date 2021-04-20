@@ -7,6 +7,7 @@ release=1
 backup="etc/sudoers"
 source="https://www.sudo.ws/dist/$name-$version.tar.gz
 	sudo"
+options="!checksum"
 
 build() {
 	cd $name-$version
@@ -23,12 +24,15 @@ build() {
 	make DESTDIR=$PKG install
 
 	ln -sfv libsudo_util.so.0.0.0 $PKG/usr/lib/sudo/libsudo_util.so.0
-
-	mkdir -m 755 $PKG/etc/pam.d
-	install -D -m 644 -o root -g root $SRC/sudo $PKG/etc/pam.d/sudo
-
-	sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' $PKG/etc/sudoers
-
+	if [ ! -f /etc/pam.d/sudo ];
+	then
+		mkdir -m 755 $PKG/etc/pam.d
+		install -D -m 644 -o root -g root $SRC/sudo $PKG/etc/pam.d/sudo
+	fi
+	if [ ! -f /etc/sudoers ];
+	then
+		sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' $PKG/etc/sudoers
+	fi
 	rm -fr $PKG/var/run
 	rm -fr $PKG/run/sudo
 }
