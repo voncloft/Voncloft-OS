@@ -2,3 +2,5 @@ sed -i -e 's/4.29/4.30/g' /Voncloft-OS/*/nspr/spkgbuild
 Packages upgraded: 1
 sed -i -e 's/3.63/3.64/g' /Voncloft-OS/*/nss/spkgbuild
 Packages upgraded: 1
+sed -i -e 's/1.9.2/1.9.6p1/g' /Voncloft-OS/*/sudo/spkgbuild
+Packages upgraded: 1

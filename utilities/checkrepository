@@ -30,6 +30,7 @@ grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:
 ##get some additional packages##
 sh /Voncloft-OS/utilities/custom_progs/nss.sh
 sh /Voncloft-OS/utilities/custom_progs/nspr.sh
+sh /Voncloft-OS/utilities/custom_progs/sudo.sh
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
