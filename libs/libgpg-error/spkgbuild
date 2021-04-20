@@ -1,10 +1,10 @@
 # description	: Library that defines common error values for all GnuPG components
 
 name=libgpg-error
-version=1.39
+version=1.42
 release=1
 source="ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
