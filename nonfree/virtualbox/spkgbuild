@@ -10,6 +10,8 @@ _release=135662
 source="http://download.virtualbox.org/virtualbox/$version/VirtualBox-${version}-${_release}-Linux_amd64.run
 	virtualbox.60-vboxdrv.rules"
 
+options="!checksum"
+
 build() {
 	_installdir=/opt/VirtualBox
 
