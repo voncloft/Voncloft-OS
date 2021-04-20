@@ -85,7 +85,8 @@ rm -rfv *.php
 rm -rfv *.php.*
 rm -rfv stripped_info.txt
 
-mv -v testing.txt repository_upgrade_report.log
+#mv -v testing.txt repository_upgrade_report.log
+rm testing.txt
 
-#cp repository_upgrade_report.log /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
-#cp repository_changes.log /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+cp /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
+cp /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
