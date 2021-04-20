@@ -9,6 +9,6 @@ sed -i -e 's/nss_//g' test.txt
 sed -i -e 's/_rtm\///g' test.txt
 sed -i -e 's/_/./g' test.txt
 echo "nss" >> stripped_info.txt
-cat test.txt | sort -n -r | head -n 1 >> stripped_info.txt
+cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
 rm -v *.html
 rm -v *.html.*
