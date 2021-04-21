@@ -14,8 +14,8 @@ build() {
 	cd $name-$version
 	sed -i '/o.*dhcp_type/d' server/mdb.c &&
 	sed -r '/u.*(local|remote)_port/d'    \
-    		-i client/dhclient.c              \
-       		relay/dhcrelay.c
+		-i client/dhclient.c              \
+		relay/dhcrelay.c
 
 	 #Install ISC DHCP by running the following commands:
 
@@ -41,6 +41,6 @@ build() {
 	install -v -m755 client/scripts/linux $PKG/sbin/dhclient-script
 	install -m644 "$SRC/dhclient.conf" $PKG/etc/dhcp
 	install -v -dm 755 $PKG/var/lib/dhclient
-	install -m644 "$SRC/ifconfig.eth0" $PKG/etc/sysconfig
+	install -Dm644 "$SRC/ifconfig.eth0" $PKG/etc/sysconfig
 	
 }
