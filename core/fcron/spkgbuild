@@ -20,7 +20,8 @@ build() {
             --with-systemdsystemunitdir=no
         make
 
-	if [ ! -f /var/log/scratchpkg/index/fcron/.pkginfo ]
+	if [ ! -f /var/log/scratchpkg/index/fcron/.pkginfo ];
+	then
 		cat <<-EOF > /etc/syslog.conf
 		# Begin fcron addition to /etc/syslog.conf
 
