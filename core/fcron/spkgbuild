@@ -15,12 +15,13 @@ build() {
 	./configure --prefix=/usr          \
             --sysconfdir=/etc      \
             --localstatedir=/var   \
-            --without-sendmail     \
+            --with-sendmail     \
             --with-boot-install=no \
-            --with-systemdsystemunitdir=no
+            --with-systemdsystemunitdir=no\
+            --with-editor=/usr/bin/nano
         make
 
-	if [ ! -f /var/log/scratchpkg/index/fcron/.pkginfo ];
+	if [ ! -f /var/lib/scratchpkg/index/fcron/.pkginfo ];
 	then
 		cat <<-EOF > /etc/syslog.conf
 		# Begin fcron addition to /etc/syslog.conf
