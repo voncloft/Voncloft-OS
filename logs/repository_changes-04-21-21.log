@@ -3,3 +3,8 @@ Packages upgraded: 1
 
 Packages upgraded: 0
 
+sed -i -e 's/3.4.3/3.5.1/g' /Voncloft-OS/*/libarchive/spkgbuild
+Packages upgraded: 1
+
+Packages upgraded: 0
+
