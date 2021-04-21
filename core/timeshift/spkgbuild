@@ -1,5 +1,5 @@
 # description	: A system restore utility for Linux
-# depends	: cronie libgee vte3 gtk3 vala
+# depends	: fcron libgee vte3 gtk3 vala
 
 name=timeshift
 version=20.03
