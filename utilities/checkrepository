@@ -44,7 +44,7 @@ while IFS= read  -r line; do
    myarr+=("$line")
 done < "$input"
 count=0
-while IFS=, read -ra items; do
+while IFS=$'\n' read -ra items; do
 		for item in "${items[@]}"; do
 			for ((index=0; index <= ${#myarr[@]}; index++)); do
 			#echo "${myarr[index]}"
@@ -82,9 +82,10 @@ cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
 mailme voncloft@gmail.com "$words" "$title"
+mailme 2606159678@vtext.com "Packages upgraded: $count" "Upgraded Packages"
 rm -rfv *.php
 rm -rfv *.php.*
-rm -rfv stripped_info.txt
+#rm -rfv stripped_info.txt
 
 #mv -v testing.txt repository_upgrade_report.log
 rm testing.txt
