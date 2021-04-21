@@ -1,5 +1,5 @@
 # description : scheduling program
-# depends : nano
+# depends : nano linux-pam
 
 name=fcron
 version=3.3.0
@@ -12,6 +12,7 @@ options="!checksum"
 
 build() {
 	cd $name-$version
+	mkdir -pv  $PKG/etc/pam.d
 	./configure --prefix=/usr          \
             --sysconfdir=/etc      \
             --localstatedir=/var   \
@@ -34,9 +35,11 @@ build() {
 		groupadd -g fcron
 		useradd -d /dev/null -c "Fcron User" -g fcron -s /bin/false -u 22 fcron
 		install -vdm754 $PKG/etc/cron.{hourly,daily,weekly,monthly}
-		install -vDm755 $SRC/run-parts $PKG/usr/bin
-		install -vDm644 $SRC/systab.orig $PKG/var/spool/fcron
-		
+		install -vDm755 $SRC/run-parts $PKG/usr/bin/run-parts
+		install -vDm644 $SRC/systab.orig $PKG/var/spool/fcron/systab.orig
+		install -Dm644 files/fcron.pam $PKG/etc/pam.d/fcron
+		install -Dm644 files/fcrontab.pam $PKG/etc/pam.d/fcrontab 
+		rm -rvf $PKG/etc/pam.conf
 	fi
         make DESTDIR=$PKG install
 	
