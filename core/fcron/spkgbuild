@@ -16,7 +16,7 @@ build() {
 	./configure --prefix=/usr          \
             --sysconfdir=/etc      \
             --localstatedir=/var   \
-            --with-sendmail     \
+            --without-sendmail     \
             --with-boot-install=no \
             --with-systemdsystemunitdir=no\
             --with-editor=/usr/bin/nano
