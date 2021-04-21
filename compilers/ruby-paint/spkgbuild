@@ -15,7 +15,7 @@ build() {
 	rake gems
 	cd ${_gemname}-${version}
 	local _gemdir="$(gem env gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${pkgdir}${_gemdir}" \
-		-n "${pkgdir}/usr/bin" pkg/${_gemname}-${pkgver}.gem
+	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" \
+		-n "${PKG}/usr/bin" pkg/${_gemname}-${version}.gem
 	
 }

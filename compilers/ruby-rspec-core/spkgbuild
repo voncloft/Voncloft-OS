@@ -6,10 +6,10 @@ name=ruby-rspec-core
 version=3.8.0
 release=4
 
-source="https://rubygems.org/downloads/${_gemname}-${pkgver}.gem"
+source="https://rubygems.org/downloads/${_gemname}-${version}.gem"
 options="!checksum"
 
 build() {
 	local _gemdir="$(gem environment gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" -n "${PKG}/usr/bin" ${_name}-${version}.gem	
+	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" -n "${PKG}/usr/bin" ${_gemname}-${version}.gem	
 }

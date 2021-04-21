@@ -6,11 +6,11 @@ name=ruby-bundler
 version=2.2.16
 release=4
 
-source="https://rubygems.org/downloads/$_gemname-$pkgver.gem"
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
 options="!checksum"
 
 build() {
 	local _gemdir="$(ruby -e'puts Gem.default_dir')"
 	HOME="/tmp" GEM_HOME="$_gemdir" GEM_PATH="$_gemdir" gem install --no-user-install --ignore-dependencies \
-		-i "$PKG/$_gemdir" -n "$PKG/usr/bin" "$_gemname-$pkgver.gem"
+		-i "$PKG/$_gemdir" -n "$PKG/usr/bin" "$_gemname-$version.gem"
 }
