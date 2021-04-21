@@ -82,7 +82,6 @@ cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
 mailme voncloft@gmail.com "$words" "$title"
-mailme 2606159678@vtext.com "Packages upgraded: $count" "Upgraded Packages"
 rm -rfv *.php
 rm -rfv *.php.*
 #rm -rfv stripped_info.txt
