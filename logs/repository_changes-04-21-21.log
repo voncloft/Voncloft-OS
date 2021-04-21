@@ -19,3 +19,7 @@ Packages upgraded: 0
 sed -i -e 's/81.0/88.0/g' /Voncloft-OS/*/firefox/spkgbuild
 Packages upgraded: 1
 
+sed -i -e 's/3.4.1/3.5.1/g' /Voncloft-OS/*/libarchive/spkgbuild
+sed -i -e 's/82.0/88.0/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 2
+

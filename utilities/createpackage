@@ -75,7 +75,7 @@ for dir in /Voncloft-OS/*/$name/; do
 				echo "Do you have another config file needed? <Y/N>"
 				read configs
                         done
-			echo ","$name >> /etc/checkrepo.conf
+			echo $name >> /etc/checkrepo.conf
 			
 			#nano $dirs$name/spkgbuild
 			####open configuration files after editing spkgbuild#####
