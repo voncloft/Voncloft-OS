@@ -1,0 +1,22 @@
+# description : commandline option parser for ruby
+# depends : ruby
+
+name=ruby-optimist
+version=3.0.1
+release=2
+_gemname=optimist
+
+source="https://github.com/ManageIQ/optimist/archive/v${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd ${_gemname}-${version}
+	sed -r 's|~>|>=|g' -i ${_gemname}.gemspec
+	sed 's|git ls-files -z|find -print0|' -i ${_gemname}.gemspec
+
+	gem build ${_gemname}.gemspec
+
+	local _gemdir="$(gem env gemdir)"
+	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" \
+		-n "${PKG}/usr/bin" ${_gemname}-${version}.gem
+}

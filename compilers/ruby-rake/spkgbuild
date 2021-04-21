@@ -1,0 +1,15 @@
+# description : make like build tool implemented by ruby
+# depends : ruby
+
+_gemname=rake
+name=ruby-rake
+version=13.0.3
+release=2
+
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
+options="!checksum"
+
+build() {
+	 local _gemdir="$(ruby -e'puts Gem.default_dir')"
+	 gem install --ignore-dependencies --no-user-install --no-document -i "$PKG/$_gemdir" -n "$PKG/usr/bin" $_gemname-$version.gem
+}

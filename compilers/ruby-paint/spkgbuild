@@ -1,0 +1,21 @@
+# description : manages terminal colors and effects in ruby
+# depends : ruby ruby-rainbow ruby-rspec ruby-term-ansicolor ruby-rake
+
+_gemname=paint
+name=ruby-paint
+version=2.2.1
+release=2
+
+source="https://github.com/janlelis/paint/archive/v${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd ${_gemname}-${version}
+	sed -r 's|~>|>=|g' -i paint.gemspec
+	rake gems
+	cd ${_gemname}-${version}
+	local _gemdir="$(gem env gemdir)"
+	gem install --ignore-dependencies --no-user-install -i "${pkgdir}${_gemdir}" \
+		-n "${pkgdir}/usr/bin" pkg/${_gemname}-${pkgver}.gem
+	
+}

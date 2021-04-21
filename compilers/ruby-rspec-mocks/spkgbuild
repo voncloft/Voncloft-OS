@@ -1,0 +1,15 @@
+# description : rspecs mocking utility
+# depends : ruby-diff-lcs ruby-rspec-support
+
+_gemname=rspec-mocks
+name=ruby-rspec-mocks
+version=3.8.0
+release=4
+
+source="https://rubygems.org/downloads/${_gemname}-${version}.gem"
+options="!checksum"
+
+build() {
+	local _gemdir="$(ruby -e'puts Gem.default_dir')"
+	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" -n "${PKG}/usr/bin" ${_gemname}-${version}.gem
+}

@@ -1,5 +1,5 @@
 # description	: Programmable completion for the bash shell
-# depends	: bash
+# depends	: bash nano screenfetch cowsay lolcat fortune-mod
 
 name=bash-completion
 version=2.11
@@ -16,8 +16,9 @@ source="profile
 	.bash_profile
 	.profile
 	.bashrc
-	.bash_logout"
-	.nanorc
+	.bash_logout
+	.nanorc"
+	
 options="!checksum"
 
 build() {

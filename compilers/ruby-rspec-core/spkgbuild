@@ -1,0 +1,15 @@
+# description : formatting lib for ruby
+# depends : ruby-rspec-support
+
+_gemname=rspec-core
+name=ruby-rspec-core
+version=3.8.0
+release=4
+
+source="https://rubygems.org/downloads/${_gemname}-${pkgver}.gem"
+options="!checksum"
+
+build() {
+	local _gemdir="$(gem environment gemdir)"
+	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" -n "${PKG}/usr/bin" ${_name}-${version}.gem	
+}

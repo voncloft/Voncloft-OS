@@ -1,0 +1,18 @@
+# description : ruby core
+# depends : ruby
+
+_gemname=diff-lcs
+name=ruby-diff-lcs
+version=1.4.4
+release=1
+
+source="https://github.com/halostatue/diff-lcs/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd ${_gemname}-${version}
+	gem build ${_gemname}.gemspec
+
+	local _gemdir="$(gem env gemdir)"
+	gem install --ignore-dependencies --no-user-install -i "${PKG}/${_gemdir}" -n "${PKG}/usr/bin" ${_gemname}-${version}.gem
+}

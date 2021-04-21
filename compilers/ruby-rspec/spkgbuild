@@ -1,0 +1,17 @@
+# description : ruby core package
+# depends : ruby-rspec-core ruby-rspec-expectations ruby-rspec-mocks
+
+_gemname=rspec
+name=ruby-rspec
+version=3.8.0
+release=4
+
+source="https://rubygems.org/downloads/${_gemname}-${version}.gem"
+options="!checksum"
+
+build() {
+	#cd ${_gemdir}-$version
+	local _gemdir="$(ruby -e'puts Gem.default_dir')"
+
+	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" -n "${PKG}/usr/bin" ${_gemname}-${version}.gem
+}
