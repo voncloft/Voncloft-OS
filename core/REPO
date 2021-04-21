@@ -64,6 +64,7 @@ d:mpv
 d:numix-icon-theme
 d:clang
 d:freeglut
+d:fcron
 d:rrdtool
 d:fltk
 d:inkscape
@@ -804,6 +805,10 @@ f:7112cfd0145e449dc04da28fe8bb54ba:clang/spkgbuild
 f:66bc723b53b92187a3a5f6e18dd0366d:freeglut/.checksums
 f:20deff5cfaf465e9c14998c72d1d6671:freeglut/.pkgfiles
 f:92725c3566888e3c6eb4df87503f2929:freeglut/spkgbuild
+f:6553bde2a4d3b29eeba69ecb5d7bceff:fcron/CHANGELOG
+f:7246a9d80a21215a2ec23c38e933a3d2:fcron/run-parts
+f:12c9b92ec8d94cfe36be8879e219839f:fcron/spkgbuild
+f:1f75f7a13435adab64ca48b6e8e84870:fcron/systab.orig
 f:f1986aae4d403896de3a920c79d0dbb5:rrdtool/CHANGELOG
 f:b7a0ab96d71d4aa53581b6a98bd7091d:rrdtool/spkgbuild
 f:d71da3b6fa9c976c1ff4d369a575c4d0:fltk/.checksums

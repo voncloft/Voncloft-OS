@@ -1,0 +1,41 @@
+# description : scheduling program
+# depends : nano
+
+name=fcron
+version=3.2.0
+release=1
+
+source="http://fcron.free.fr/archives/$name-$version.src.tar.gz\
+	systab.orig
+	run-parts"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr          \
+            --sysconfdir=/etc      \
+            --localstatedir=/var   \
+            --without-sendmail     \
+            --with-boot-install=no \
+            --with-systemdsystemunitdir=no
+        make
+
+	if [ ! -f /var/log/scratchpkg/index/fcron/.pkginfo ]
+		cat <<-EOF > /etc/syslog.conf
+		# Begin fcron addition to /etc/syslog.conf
+
+		cron.* -/var/log/cron.log
+
+		# End fcron addition
+		EOF
+		/etc/rc.d/init.d/sysklogd reload
+		groupadd -g fcron
+		useradd -d /dev/null -c "Fcron User" -g fcron -s /bin/false -u 22 fcron
+		install -vdm754 $PKG/etc/cron.{hourly,daily,weekly,monthly}
+		install -vDm755 $SRC/run-parts $PKG/usr/bin
+		install -vDm644 $SRC/systab.orig $PKG/var/spool/fcron
+		
+	fi
+        make DESTDIR=$PKG install
+	
+}
