@@ -6,7 +6,7 @@ version=3.0.0
 release=6
 _gemname=rainbow
 
-source="https://github.com/sickill/rainbow/archive/v${version.tar.gz"
+source="https://github.com/sickill/rainbow/archive/v${version}.tar.gz"
 options="!checksum"
 
 build() {
