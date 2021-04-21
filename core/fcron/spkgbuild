@@ -24,7 +24,7 @@ build() {
 
 	if [ ! -f /var/lib/scratchpkg/index/fcron/.pkginfo ];
 	then
-		cat <<-EOF > /etc/syslog.conf
+		cat <<-EOF >> /etc/syslog.conf
 		# Begin fcron addition to /etc/syslog.conf
 
 		cron.* -/var/log/cron.log
@@ -40,6 +40,7 @@ build() {
 		install -Dm644 files/fcron.pam $PKG/etc/pam.d/fcron
 		install -Dm644 files/fcrontab.pam $PKG/etc/pam.d/fcrontab 
 		rm -rvf $PKG/etc/pam.conf
+		
 	fi
         make DESTDIR=$PKG install
 	
