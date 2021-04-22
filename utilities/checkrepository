@@ -58,7 +58,7 @@ while IFS=$'\n' read -ra items; do
 				vercomp $uversion $cversion
 					if [ $? = 2 ]; then #if I have a more current up to date package on my repo then leave it out of the report
 						((count=count+1))
-						final="<b><u>${myarr[index]}</u></b>\n"
+						final="$(date +%H)<br>\n<b><u>${myarr[index]}</u></b>\n"
 						final+="<br>installed version in repo: $cversion\n"
 						final+="<br>upgraded to version: $uversion\n"
 						final+="<br><br>\n\n"
