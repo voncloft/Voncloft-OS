@@ -1,4 +1,0 @@
-post_remove() {
-    echo "openra downloaded data files to ~/.openra/Content and you might want"
-    echo "to delete those."
-}

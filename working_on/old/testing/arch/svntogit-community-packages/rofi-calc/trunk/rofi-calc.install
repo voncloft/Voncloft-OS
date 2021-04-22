@@ -1,7 +1,0 @@
-post_upgrade() {
-    echo "Recommended way to launching rofi-calc: rofi -show calc -modi calc -no-show-match -no-sort"
-}
-
-post_install() {
-    post_upgrade
-}

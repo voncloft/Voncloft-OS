@@ -1,9 +1,0 @@
-#!/bin/bash
-
-while read -r d; do
-  if [[ ! -d $d ]]; then
-    rm -f "${d%.d/}"
-  fi
-done
-
-dconf update
