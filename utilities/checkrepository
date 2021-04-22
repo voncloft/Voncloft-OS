@@ -47,8 +47,8 @@ done < "$input"
 count=0
 #final="$(date +%H)<br>\n"
 
-echo -e "$(date +%H)<br>\n" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
-echo -e "$(date +%H)<br>\n" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+echo -e "$(date +%H)<br>" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "$(date +%H)" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
 
 while IFS=$'\n' read -ra items; do
 		for item in "${items[@]}"; do
