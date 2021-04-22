@@ -13,7 +13,7 @@ vercomp() {
 }
 cd /var/log/old
 shopt -s nocaseglob
-foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+foltotar repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 rm testing.txt
 wget http://distrowatch.org/packages.php
 

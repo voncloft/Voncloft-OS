@@ -12,3 +12,6 @@ Packages upgraded: 0
 sed -i -e 's/1/2.2.12/g' /Voncloft-OS/*/bluefish/spkgbuild
 Packages upgraded: 1
 
+sed -i -e 's/5.79.0/5.81/g' /Voncloft-OS/*/extra-cmake-modules/spkgbuild
+Packages upgraded: 1
+
