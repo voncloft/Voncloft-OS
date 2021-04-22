@@ -1,0 +1,14 @@
+sed -i -e 's/2.2.12/fcron/g' /Voncloft-OS/*/bluefish/spkgbuild
+Packages upgraded: 1
+
+sed -i -e 's/21.0.2/21.0.3/g' /Voncloft-OS/*/mesa/spkgbuild
+sed -i -e 's/3.4.4/3.4.5/g' /Voncloft-OS/*/wireshark/spkgbuild
+Packages upgraded: 2
+
+Packages upgraded: 0
+
+Packages upgraded: 0
+
+sed -i -e 's/1/2.2.12/g' /Voncloft-OS/*/bluefish/spkgbuild
+Packages upgraded: 1
+
