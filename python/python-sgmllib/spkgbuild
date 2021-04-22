@@ -3,7 +3,7 @@
 
 name=python-sgmllib
 version=5.2.1
-_python_version=3.8
+_pythonverzion=3.8
 release=9
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

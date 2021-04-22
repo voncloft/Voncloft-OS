@@ -700,7 +700,7 @@ f:411c009a4daafcda3333f4c23184c678:pinentry/spkgbuild
 f:1f1d8a6a27b292d083a61231bb4099c4:imagemagick6/ImageMagick-libs_only-1.patch
 f:e58a01d79c61059f961bf7f45764c57a:imagemagick6/.checksums
 f:48341874e5180de894e918d80d4eae2c:imagemagick6/.pkgfiles
-f:0a6cacd084699bfcd198365f7928efc8:imagemagick6/spkgbuild
+f:80e55a5e3a46326aa47559fe6af368bb:imagemagick6/spkgbuild
 f:220b7f46892d0b0c7f24f57e2e81f610:fbpanel/.checksums
 f:ee33346b45a6ffb4b9946eb4e186a09d:fbpanel/.pkgfiles
 f:48692f14c80b4cee76bf409c7d389450:fbpanel/spkgbuild
@@ -928,11 +928,11 @@ f:0a97031928e49ec598e4d937acd25c36:gvfs/.pkgfiles
 f:ea5fb78ab518aa149eb640038646e587:gvfs/spkgbuild
 f:98aed45e13d373ed6052011b820c0a35:gnustep-make/.checksums
 f:c8cf5e2fbd17eec7eae2bbf13258228e:gnustep-make/.pkgfiles
-f:d2d24395eeeacf23e6fad8d478fdfa40:gnustep-make/spkgbuild
+f:1dc3f1d96794fd9918c70323da8dcb29:gnustep-make/spkgbuild
 f:2d9a0f74267d93752db84fa823052f86:spectrwm/.checksums
 f:d1cd583320735e43b7f5751ac805121a:spectrwm/.pkgfiles
 f:9347bd50fd10e00ca0d122d35a95fdee:spectrwm/baraction.sh
-f:59967581df7cf1a8b486148aad30f27b:spectrwm/spkgbuild
+f:dcf82d1b1d7b8afef542220702bd3e47:spectrwm/spkgbuild
 f:c7046d20e7a3c6f2b8c6c7c26e43b1b1:gawk/.checksums
 f:2ee1e82d31aa2661ea41aad2c20886db:gawk/.pkgfiles
 f:c80e8acc8617bfd326b53cb60a600c0c:gawk/spkgbuild
@@ -983,7 +983,7 @@ f:5efdbab04b013046232056d76ad2c2c1:nss/CHANGELOG
 f:2b057b142b1eca213f4f3730ac1f751f:nss/.checksums
 f:b017231c3dfbede2e92e3a4fd4785313:nss/.pkgfiles
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:e9ae43673dcbec147e516de4442a043c:nss/spkgbuild
+f:960f0524a18a9fbc817fde64be137d4d:nss/spkgbuild
 f:9ea13d2d7f3066033c6260f15bd741f1:linux-desktop/spkgbuild
 f:9ee5d7295e7cd2458dbf35174455687f:linux-desktop/.config
 f:f95fbf1f6ae5eccc008f1c68164eff78:dconf/.checksums
@@ -994,7 +994,7 @@ f:cca5fd73a80d80afdf3de642feff4e8b:icon-naming-utils/.pkgfiles
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
 f:a08721afba37991ed171c0d4409e215b:lsb-release/.checksums
 f:842e3469a1860411ccb6bf882057a7a1:lsb-release/.pkgfiles
-f:f2035538ed3b7bf46684fcbf07abf1b5:lsb-release/spkgbuild
+f:bc654e4b189eada9cd46fa5ab763bcb4:lsb-release/spkgbuild
 f:8752329e962b54e3222d098db1dae38e:dbus-glib/.checksums
 f:5490620057d8f69e8654033615bd7c1c:dbus-glib/.pkgfiles
 f:f246603cbfc2fd40f0aabe7064e64708:dbus-glib/spkgbuild
@@ -1033,7 +1033,7 @@ f:1fa5475fd2a2a61ec7c6a9cb857aef63:mtools/.pkgfiles
 f:8dcea259838eba38f5219bb93a8dfa58:mtools/spkgbuild
 f:461a2185849a08a6a781915f1759edc5:unzip/.checksums
 f:e60ddfce15e3d978530276516911b864:unzip/.pkgfiles
-f:7d71a0cfc15b630d6d48e921f9dfd3a0:unzip/spkgbuild
+f:d594f98bfc59eb0d416042712acdc2fb:unzip/spkgbuild
 f:672c21635b6d5bbfaddfb000b5cf5abe:stfl/.checksums
 f:ea51253fc3430cac1aab37dda2e72725:stfl/.pkgfiles
 f:59583b7acb6b7c62c73c6410d29b30ad:stfl/spkgbuild
@@ -1121,7 +1121,7 @@ f:43a8d92baf828940747573ef975b00fd:gpm/spkgbuild
 f:e67409039df6e8e093e7967321bbc595:gpm/run
 f:e92061b7edc7968be2f7bff5d860cafa:sqlite/.checksums
 f:7d7375e811447e921e0b1c6e020491cd:sqlite/.pkgfiles
-f:1ecaaa1db8587d479a90d2fadf98f18d:sqlite/spkgbuild
+f:71c92c546d39ffee26c41c893857cd06:sqlite/spkgbuild
 f:8eb2204f3f167d72c4d25d43f5e97b26:glu/.checksums
 f:68857ac40e875342ccdc6a614b01328c:glu/.pkgfiles
 f:155b5e6473956ff2c68ba5f0d79e5aea:glu/spkgbuild
@@ -1333,7 +1333,7 @@ f:e4cb70433285f4127a712932f5e6812c:linux-firmware/.pkgfiles
 f:15eadc6535975de890e2f022569ec59a:linux-firmware/spkgbuild
 f:fe6b0c533c99730ef410872866fae17b:gnustep-base/.checksums
 f:98e6cb29134db63d8233721722ba71e3:gnustep-base/.pkgfiles
-f:6bd46a52acb5527da5506f4b4c5e7dd3:gnustep-base/spkgbuild
+f:fe388fe3d6f5382ba01594690566bd2f:gnustep-base/spkgbuild
 f:1abbf13614f2310101200a881dbddbf5:xcmsdb/.checksums
 f:5983904d483ac92a5cd8665b27984049:xcmsdb/.pkgfiles
 f:a4ac09bb8f4e39eb690761670f1d90cc:xcmsdb/spkgbuild
@@ -1342,7 +1342,7 @@ f:c2fe31db79cab3bbc04e9762fa2f7380:pnmixer/.pkgfiles
 f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:c2c3c7fead72fcce885de61b4f54a308:zip/.checksums
 f:9c0fa98903026e4f2d3080e07db74466:zip/.pkgfiles
-f:2682e57707af252636b8bc5fd603f99e:zip/spkgbuild
+f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
 f:169863aabf7d45ead6ecba9415bdd708:efibootmgr/.checksums
 f:b80bd50ad18095713eb72ddf77918cf3:efibootmgr/.pkgfiles
@@ -1721,7 +1721,7 @@ f:c6314816c8143278760fead03ee22b23:optipng/.pkgfiles
 f:00625716d1e567071563308d31ce80d6:optipng/spkgbuild
 f:3219c1b6da7c0c878a243549a16539b8:dialog/.checksums
 f:537e0dd88ec096a63a6def105f392407:dialog/.pkgfiles
-f:19a6d2e0ae1d1b6cdccc8cb28bde4a80:dialog/spkgbuild
+f:e4d8363d73f0aeceea39441b61c251b8:dialog/spkgbuild
 f:e562669d510f5505b2cdf26048cdb648:obmenu/.checksums
 f:e98002075b9a454224e28c61ca5cae24:obmenu/.pkgfiles
 f:3ba1a9a24b4f0aedf59da2e46b44b425:obmenu/spkgbuild
@@ -1951,7 +1951,7 @@ f:47d1f09df611ef02eb5e0fd368e965c9:gobject-introspection/.pkgfiles
 f:4e1aa93eb6ce93f28d3ce4d24844a7fd:gobject-introspection/spkgbuild
 f:fefa99ead9acf0afde23355221794598:appstream-glib/.checksums
 f:da72a0d69246cce664544475e5045230:appstream-glib/.pkgfiles
-f:d6b95e173e573485ec7f80fc0ef0a73d:appstream-glib/spkgbuild
+f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
 f:b4a79214473a2db59d8876c792e54ad7:parcellite/.checksums
 f:f08c315c074e08d39af974b7a188d0d2:parcellite/.pkgfiles
 f:b888477e29219f1b8ce40184edcd1bd6:parcellite/spkgbuild
@@ -1983,7 +1983,7 @@ f:a024931a05ff1f60648dbac6e3ad89f7:sed/.pkgfiles
 f:09d44f84218e47a5f9bca17229401cdf:sed/spkgbuild
 f:a9a900d468fb80ed3063401d38d4b0b4:boost/.checksums
 f:584a977065ae8f101fe4aa6e156cf95c:boost/.pkgfiles
-f:35ba39fd548841a5d3bbc7d026b8a32f:boost/spkgbuild
+f:254d9b260bfe933a15e0cf16257e3b5c:boost/spkgbuild
 f:0d208f946627fc948064e611659d17d7:cmus/.checksums
 f:fc28d5c7085ab3bdf0632edfbe24be99:cmus/.pkgfiles
 f:b8641f292ec09cec1063c7c4c332b69c:cmus/spkgbuild
@@ -2178,7 +2178,7 @@ f:8bdd44dc555963714ccb146a04c246e8:palemoon/spkgbuild
 f:ac1ec5f02125db3163912b5a5b5fffc9:gettext/.checksums
 f:6f9cda8c75ea27f9e30565f3eab38220:gettext/.pkgfiles
 f:5a82be5027a7662d0d37654b9a09d037:gettext/spkgbuild
-f:968d29594876c7b82dd4249bc5ea8a3f:tk/spkgbuild
+f:870d7997a1b6c1a582cbe6e58968528c:tk/spkgbuild
 f:96e88226b72466f394bbe89325ed42de:gimp/.checksums
 f:ceaeb8f7b7ac6aa5b5ed328aa52f5bf0:gimp/.pkgfiles
 f:25ad1d5333d9abf287eaa74f525738bd:gimp/spkgbuild
@@ -2291,7 +2291,7 @@ f:3b3e8e9784b944bd6aa5700c313b3509:lhasa/CHANGELOG
 f:580998485d792458124e4877b0a07912:lhasa/spkgbuild
 f:35de549f87e4c933388ff630c6717c10:icu/.checksums
 f:aeeff72fec5ae20af1573848a23ccd4a:icu/.pkgfiles
-f:f463ad02e50f61dc8815b1e7cba2de3c:icu/spkgbuild
+f:c00756f302813dab8eba87fcda8e160d:icu/spkgbuild
 f:ce8c8d40c374a0fed2f86c9d44471a41:sdl2/.checksums
 f:7ca2785b5710fba29746951e26d7d05d:sdl2/.pkgfiles
 f:493e3faa6ea44efcd5e9d91814e78502:sdl2/spkgbuild
@@ -2411,7 +2411,7 @@ f:752500433bdf180ee0dc005868630101:ohsnap/.pkgfiles
 f:1db530f7d49d0e4c0514efaf6c257cf0:ohsnap/spkgbuild
 f:7f90fbebbfaf3fe0442e2553d6463944:grub-efi/.checksums
 f:de37c537586d60f92941284e356c70de:grub-efi/.pkgfiles
-f:9834b6b2410bc0e85182f6a4d1cffd6c:grub-efi/spkgbuild
+f:4fd75d974f74cf1808382ed0fa83a807:grub-efi/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub-efi/0006-BootHole.patch
 f:372c889f538394ff27f8c8ca2a1b2c5a:menumaker/.checksums
 f:c013685d3746b562a59e1ff6103c56e8:menumaker/.pkgfiles

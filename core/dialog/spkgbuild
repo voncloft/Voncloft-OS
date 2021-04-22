@@ -3,12 +3,12 @@
 
 name=dialog
 version=1.3_20200327
-_version=$(echo $version | sed 's/_/-/')
+verzion=$(echo $version | sed 's/_/-/')
 release=1
-source="https://invisible-mirror.net/archives/$name/$name-$_version.tgz"
+source="https://invisible-mirror.net/archives/$name/$name-$verzion.tgz"
 
 build () {
-	cd $name-$_version
+	cd $name-$verzion
 
 	./configure \
 		--prefix=/usr \

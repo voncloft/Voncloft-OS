@@ -3,12 +3,12 @@
 
 name=libtorrent
 version=1.1.14
-_version=$(echo $version | tr '.' '_')
+verzion=$(echo $version | tr '.' '_')
 release=1
-source="https://github.com/arvidn/libtorrent/archive/libtorrent-${_version}.tar.gz"
+source="https://github.com/arvidn/libtorrent/archive/libtorrent-${verzion}.tar.gz"
 
 build() {
-	cd libtorrent-libtorrent-${_version}
+	cd libtorrent-libtorrent-${verzion}
 
 	# Avoid depending on newer processors
 	sed -i 's/-msse4.2//' configure.ac
@@ -22,7 +22,7 @@ build() {
 	# https://github.com/qbittorrent/qBittorrent/issues/5265#issuecomment-220007436
 	CXXFLAGS="$CXXFLAGS -std=c++11" \
 	PYTHON=/usr/bin/python \
-	../libtorrent-libtorrent-${_version}/configure \
+	../libtorrent-libtorrent-${verzion}/configure \
 	    --prefix=/usr \
 	    --enable-python-binding \
 	    --enable-examples \
@@ -35,7 +35,7 @@ build() {
 
 	CXXFLAGS="$CXXFLAGS -std=c++11" \
 	PYTHON=/usr/bin/python \
-	../libtorrent-libtorrent-${_version}/configure \
+	../libtorrent-libtorrent-${verzion}/configure \
 	    --prefix=/usr \
 	    --enable-python-binding \
 	    --enable-examples \

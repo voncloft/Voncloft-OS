@@ -3,9 +3,9 @@
 
 name=nss
 version=3.64
-_version=$(echo $version | sed 's/\./_/g')
+verzion=$(echo $version | sed 's/\./_/g')
 release=1
-source="https://archive.mozilla.org/pub/security/nss/releases/NSS_${_version}_RTM/src/$name-$version.tar.gz
+source="https://archive.mozilla.org/pub/security/nss/releases/NSS_${verzion}_RTM/src/$name-$version.tar.gz
 	nss-standalone.patch"
 options="!checksum"
 build() {

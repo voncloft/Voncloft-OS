@@ -3,14 +3,14 @@
 
 name=imagemagick6
 version=6.9.11.29
-_version=${version%.*}-${version##*.}
+verzion=${version%.*}-${version##*.}
 release=1
 options="libtool"
-source="https://www.imagemagick.org/download/releases/ImageMagick-$_version.tar.xz
+source="https://www.imagemagick.org/download/releases/ImageMagick-$verzion.tar.xz
 	ImageMagick-libs_only-1.patch"
 
 build() {
-	cd ImageMagick-$_version
+	cd ImageMagick-$verzion
 	
 	patch -Np1 -i ../ImageMagick-libs_only-1.patch
 	autoreconf -fi

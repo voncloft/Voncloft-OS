@@ -6,7 +6,7 @@ version=60.7.0
 release=1
 
 _name=icecat
-_version=$version-gnu1
+verzion=$version-gnu1
 
 source="https://ftp.gnu.org/gnu/gnuzilla/$version/$_name-$version.en-US.gnulinux-x86_64.tar.bz2
 	$_name.desktop

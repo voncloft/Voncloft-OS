@@ -4,18 +4,18 @@
 name=tk
 version=8.6.11.1
 release=1
-_version=8.6.11
+verzion=8.6.11
 source="https://downloads.sourceforge.net/sourceforge/tcl/tk${version}-src.tar.gz"
 options="!checksum"
 
 build() {
-	cd tk$_version/unix
+	cd tk$verzion/unix
 	./configure --prefix=/usr --mandir=/usr/share/man --enable-threads --disable-rpath --enable-64bit
  	make
 	make INSTALL_ROOT=$PKG install install-private-headers
 
-	ln -sf wish${_version%.*} "${PKG}/usr/bin/wish"
-  	ln -sf libtk${_version%.*}.so "${PKG}/usr/lib/libtk.so"
+	ln -sf wish${verzion%.*} "${PKG}/usr/bin/wish"
+  	ln -sf libtk${verzion%.*}.so "${PKG}/usr/lib/libtk.so"
 
   	cd ..
 
@@ -25,7 +25,7 @@ build() {
   	done
 
   	# remove buildroot traces
-  	sed -e "s#${SRC}/tk${_version}/unix#/usr/lib#" \
-      	-e "s#${SRC}/tk${_version}#/usr/include#" \
+  	sed -e "s#${SRC}/tk${verzion}/unix#/usr/lib#" \
+      	-e "s#${SRC}/tk${verzion}#/usr/include#" \
       	-i "${PKG}/usr/lib/tkConfig.sh"
 }

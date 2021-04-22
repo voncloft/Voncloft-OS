@@ -3,13 +3,13 @@
 
 name=spectrwm
 version=3.4.1
-_version=$(echo $version | tr '.' '_')
+verzion=$(echo $version | tr '.' '_')
 release=1
-source="https://github.com/conformal/spectrwm/archive/SPECTRWM_$_version.tar.gz
+source="https://github.com/conformal/spectrwm/archive/SPECTRWM_$verzion.tar.gz
 	baraction.sh"
 
 build() {
-	cd $name-SPECTRWM_$_version
+	cd $name-SPECTRWM_$verzion
 	make -C linux PREFIX=/usr SYSCONFDIR=/etc
 	make -C linux PREFIX=/usr SYSCONFDIR=/etc DESTDIR=$PKG install
 	install -d $PKG/usr/share/$name

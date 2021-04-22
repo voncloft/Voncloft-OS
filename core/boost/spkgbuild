@@ -4,9 +4,9 @@
 name=boost
 version=1.75.0
 release=1
-_version=1_75_0
+verzion=1_75_0
 
-source="https://dl.bintray.com/boostorg/release/$version/source/boost_${_version}.tar.bz2"
+source="https://dl.bintray.com/boostorg/release/$version/source/boost_${verzion}.tar.bz2"
 options="!checksum"
 
 build() {

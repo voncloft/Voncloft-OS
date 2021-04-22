@@ -4,7 +4,7 @@
 name=kde5
 version=5
 release=1
-_version=5.77
+verzion=5.77
 build () {
 	mkdir -pv $PKG/opt
 

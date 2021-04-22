@@ -7,12 +7,12 @@ _maj=${version%%.*}
 _mid=${version#*.}
 _mid=${_mid%%.*}
 _min=${version##*.}
-_version=${_maj}${_mid}0${_min}00
+verzion=${_maj}${_mid}0${_min}00
 release=1
-source="https://sqlite.org/2021/$name-autoconf-$_version.tar.gz"
+source="https://sqlite.org/2021/$name-autoconf-$verzion.tar.gz"
 options="!checksum"
 build() {
-	cd $name-autoconf-$_version
+	cd $name-autoconf-$verzion
 
   	./configure --prefix=/usr --disable-static        \
 	            --enable-fts5 CFLAGS="$CFLAGS -g      \
