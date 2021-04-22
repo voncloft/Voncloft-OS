@@ -23,8 +23,10 @@ sed -i -e "/$name/d" test.txt
 cat test.txt | sort -V -r | head -n 1
 
 ###Production###
-echo $name >> stripped_info.txt
-cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
-
+if [ -f index.html ];
+then
+	echo $name >> stripped_info.txt
+	cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
+fi
 rm -v *.html
 rm -v *.html.*
