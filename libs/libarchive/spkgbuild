@@ -5,6 +5,7 @@ name=libarchive
 version=3.5.1
 release=1
 source="https://github.com/libarchive/libarchive/releases/download/$version/libarchive-$version.tar.gz"
+options="!checksum"
 
 build() {
 	cd $name-$version
