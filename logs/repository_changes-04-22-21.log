@@ -29,3 +29,8 @@ Packages upgraded: 0
 16
 Packages upgraded: 0
 
+20
+sed -i -e 's/20.12.3/21.04.0/g' /Voncloft-OS/*/ktorrent/spkgbuild
+sed -i -e 's/20.12.3/21.04.0/g' /Voncloft-OS/*/k3b/spkgbuild
+Packages upgraded: 2
+
