@@ -10,6 +10,13 @@ source="https://rubygems.org/downloads/${_gemname}-${version}.gem"
 options="!checksum"
 
 build() {
-	local _gemdir="$(gem environment gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" -n "${PKG}/usr/bin" ${_gemname}-${version}.gem	
+	_gemdir="$(gem env gemdir)"
+
+	gem install \
+		--ignore-dependencies \
+		--no-user-install \
+		--no-document \
+		-i "$PKG/$_gemdir" \
+		-n "$PKG"/usr/bin \
+		$_gemname-$version.gem
 }

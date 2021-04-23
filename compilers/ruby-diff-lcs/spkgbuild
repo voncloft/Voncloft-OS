@@ -6,13 +6,17 @@ name=ruby-diff-lcs
 version=1.4.4
 release=1
 
-source="https://github.com/halostatue/diff-lcs/archive/v${version}.tar.gz"
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
 options="!checksum"
 
 build() {
-	cd ${_gemname}-${version}
-	gem build ${_gemname}.gemspec
+        _gemdir="$(gem env gemdir)"
 
-	local _gemdir="$(gem env gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${PKG}/${_gemdir}" -n "${PKG}/usr/bin" ${_gemname}-${version}.gem
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
 }

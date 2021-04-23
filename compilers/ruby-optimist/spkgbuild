@@ -6,17 +6,17 @@ version=3.0.1
 release=2
 _gemname=optimist
 
-source="https://github.com/ManageIQ/optimist/archive/v${version}/${name}-${version}.tar.gz"
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
 options="!checksum"
 
 build() {
-	cd ${_gemname}-${version}
-	sed -r 's|~>|>=|g' -i ${_gemname}.gemspec
-	sed 's|git ls-files -z|find -print0|' -i ${_gemname}.gemspec
+        _gemdir="$(gem env gemdir)"
 
-	gem build ${_gemname}.gemspec
-
-	local _gemdir="$(gem env gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" \
-		-n "${PKG}/usr/bin" ${_gemname}-${version}.gem
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
 }

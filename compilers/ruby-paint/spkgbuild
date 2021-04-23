@@ -6,16 +6,17 @@ name=ruby-paint
 version=2.2.1
 release=2
 
-source="https://github.com/janlelis/paint/archive/v${version}/${name}-${version}.tar.gz"
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
 options="!checksum"
 
 build() {
-	cd ${_gemname}-${version}
-	sed -r 's|~>|>=|g' -i paint.gemspec
-	rake gems
-	cd ${_gemname}-${version}
-	local _gemdir="$(gem env gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" \
-		-n "${PKG}/usr/bin" pkg/${_gemname}-${version}.gem
-	
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem	
 }

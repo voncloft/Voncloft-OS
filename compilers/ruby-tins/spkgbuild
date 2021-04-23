@@ -1,6 +1,6 @@
 # description : real big library
 # depends : ruby
-
+_name=tins
 name=ruby-tins
 version=1.26.0
 release=2
@@ -9,6 +9,14 @@ source="https://rubygems.org/downloads/tins-${version}.gem"
 options="!checksum"
 
 build() {
-	local _gemdir="$(ruby -e'puts Gem.default_dir')"
-	gem install --ignore-dependencies --no-user-install -N -i "${PKG}"/${_gemdir} tins-${version}.gem
+
+	_gemdir="$(gem env gemdir)"
+
+	gem install \
+		--ignore-dependencies \
+		--no-user-install \
+		--no-document \
+		-i "$PKG/$_gemdir" \
+		-n "$PKG"/usr/bin \
+		$_name-$version.gem
 }

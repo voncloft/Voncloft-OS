@@ -6,17 +6,17 @@ version=3.0.0
 release=6
 _gemname=rainbow
 
-source="https://github.com/sickill/rainbow/archive/v${version}.tar.gz"
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
 options="!checksum"
 
 build() {
-	cd ${_gemname}-${version}
-	sed -r 's|~>|>=|g' -i rainbow.gemspec
-	sed -r 's|git ls-files|find|g' -i rainbow.gemspec
-	
-	gem build rainbow.gemspec
-	
-	local _gemdir="$(gem env gemdir)"
-	gem install --ignore-dependencies --no-user-install -i "${PKG}/${_gemdir}" -n "${PKG}/usr/bin" rainbow*.gem
-	
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
 }

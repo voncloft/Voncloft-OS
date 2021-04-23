@@ -1,6 +1,6 @@
 url=http://www.sudo.ws/dist/
 name=sudo
-
+file=index.html
 cd /var/log/old
 
 #GRAB WEBSITE
@@ -11,7 +11,7 @@ then
 	rm test.txt
 fi
 
-grep -Po "(?<=>)[^<>]*(?=<)" index.html | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name- | grep -v sig | grep -v patch  >> test.txt
+grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name- | grep -v sig | grep -v patch  >> test.txt
 
 ###CUSTOM COMMANDS FOR WEBSITE STRIPPING###
 sed -i -e 's/sudo-//g' test.txt
@@ -21,8 +21,10 @@ sed -i -e 's/.tar.gz//g' test.txt
 #cat test.txt | sort -V -r | head -n 1
 
 ###Production###
+if [ -f $file ];
+then
 echo $name >> stripped_info.txt
 cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
-
+fi
 rm -v *.html
 rm -v *.html.*
