@@ -5,20 +5,17 @@ name=lolcat
 version=100.0.0
 release=3
 
-source="https://github.com/busyloop/lolcat/archive/v${version}/${name}-${version}.tar.gz"
+source="https://rubygems.org/downloads/$name-$version.gem"
 options="!checksum"
 
 build() {
-	cd $name-$version
-	sed -r 's|~>|>=|g' -i lolcat.gemspec
-	sed 's|git ls-files -- bin/\*|find bin -type f|' -i lolcat.gemspec
-	sed 's|git ls-files -- {test,spec,features}/*|echo|' -i lolcat.gemspec
-	sed 's|git ls-files|find -type f|' -i lolcat.gemspec
+        _gemdir="$(gem env gemdir)"
 
-	gem build lolcat.gemspec
-	local _gemdir="$(gem env gemdir)"
-
-	gem install --ignore-dependencies --no-user-install -i "${PKG}${_gemdir}" \
-	-n "${PKG}/usr/bin" ${name}-${version}.gem
-
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $name-$version.gem
 }
