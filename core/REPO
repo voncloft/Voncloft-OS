@@ -477,7 +477,6 @@ d:groff
 d:palemoon
 d:gettext
 d:tk
-d:gimp
 d:jfsutils
 d:p7zip
 d:arc-gtk-theme
@@ -2179,9 +2178,6 @@ f:ac1ec5f02125db3163912b5a5b5fffc9:gettext/.checksums
 f:6f9cda8c75ea27f9e30565f3eab38220:gettext/.pkgfiles
 f:5a82be5027a7662d0d37654b9a09d037:gettext/spkgbuild
 f:870d7997a1b6c1a582cbe6e58968528c:tk/spkgbuild
-f:96e88226b72466f394bbe89325ed42de:gimp/.checksums
-f:ceaeb8f7b7ac6aa5b5ed328aa52f5bf0:gimp/.pkgfiles
-f:25ad1d5333d9abf287eaa74f525738bd:gimp/spkgbuild
 f:3aa8deb3aa55af6cb4f75839014fca50:jfsutils/readme
 f:444078802d798606be9e32fda7cf7376:jfsutils/inttypes.patch
 f:6cdf25dbd48209515ff78b27e6a1b51a:jfsutils/.checksums
