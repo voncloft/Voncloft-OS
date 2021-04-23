@@ -5,6 +5,7 @@ name=less
 version=581
 release=1
 source="http://www.greenwoodsoftware.com/$name/$name-$version.tar.gz"
+options="!checksum"
 
 build() {
 	cd $name-$version
