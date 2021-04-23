@@ -29,14 +29,14 @@ egrep -o "([0-9]{1,}\.)+[0-9]{1,}" download.jsp >> test.txt
 #sed -i -e "/$name/d" test.txt
 
 ###beta###
-#cat test.txt | sort -V -r | head -n 1
+cat test.txt | sort -V -r | head -n 1
 
 ##Production###
-if [ -f $file ];
-then
-	echo $name >> stripped_info.txt
-	cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
-	rm -v $file
-fi
+#if [ -f $file ];
+#then
+#	echo $name >> stripped_info.txt
+#	cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
+#	rm -v $file
+#fi
 
 
