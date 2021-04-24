@@ -21,7 +21,7 @@ egrep -o "([0-9]{1,}\.)+[0-9]{1,}" $file >> test.txt
 
 ###beta###
 latest=$(cat test.txt | sort -V -r | head -n 1)
-cat test.txt | sort -V -r 
+#cat test.txt | sort -V -r 
 rm $file
 wget $url$latest
 
