@@ -10,7 +10,6 @@ d:chrpath
 d:sxhkd
 d:lm_sensors
 d:intltool
-d:thunar
 d:xsetroot
 d:clipit
 d:gnu-efi
@@ -20,7 +19,6 @@ d:make
 d:sysvinit
 d:shadow
 d:plank
-d:gpicview
 d:acpid
 d:jq
 d:obkey
@@ -67,7 +65,6 @@ d:fcron
 d:rrdtool
 d:fltk
 d:inkscape
-d:exo
 d:kernel-prereq
 d:usbutils
 d:papirus-icon-theme
@@ -158,7 +155,6 @@ d:i3-gaps
 d:gpm
 d:sqlite
 d:glu
-d:tumbler
 d:light
 d:attr
 d:oniguruma
@@ -186,7 +182,6 @@ d:speexdsp
 d:opencl-headers
 d:xapian-core
 d:yad
-d:garcon
 d:procps-ng
 d:popt
 d:slim
@@ -227,7 +222,6 @@ d:conky
 d:flex
 d:ssh-askpass
 d:blueman
-d:poppler-qt5
 d:vimix-gtk-themes
 d:surf
 d:dzen2
@@ -256,18 +250,15 @@ d:makeself
 d:x11perf
 d:poppler-data
 d:vte3
-d:ristretto
 d:jemalloc
 d:iso-codes
 d:sdl
 d:mercurial
 d:rxvt-unicode
 d:papirus-icon-theme-light
-d:thunar-media-tags-plugin
 d:setxkbmap
 d:pixman
 d:mc
-d:menu-cache
 d:fdupes
 d:squashfs-tools
 d:adapta-gtk-theme
@@ -294,7 +285,6 @@ d:ck4up
 d:dontpanic
 d:tor
 d:newt
-d:sessreg
 d:geany-themes
 d:faenza-icon-theme
 d:monit
@@ -323,9 +313,7 @@ d:linux-router
 d:dwm
 d:acl
 d:sgml-common
-d:tty-clock
 d:xmlto
-d:orage
 d:intel-ucode
 d:sudo
 d:transmission-gtk
@@ -355,7 +343,6 @@ d:notification-daemon
 d:chntpw
 d:mlt
 d:docbook2x
-d:thunar-volman
 d:sassc
 d:dfc
 d:geany
@@ -373,11 +360,9 @@ d:fakescratch
 d:xkbutils
 d:consolekit2
 d:fdk-aac
-d:xkeyboard-config
 d:audacious-plugins
 d:gnome-keyring
 d:arc-icon-theme
-d:parole
 d:yelp-xsl
 d:yaml-cpp
 d:links
@@ -392,7 +377,6 @@ d:wxgtk3
 d:pm-utils
 d:ccache
 d:gparted
-d:mousepad
 d:bzip2
 d:dmenu
 d:xwd
@@ -415,7 +399,6 @@ d:pavucontrol
 d:hyphen
 d:neon
 d:pypanel
-d:qbittorrent-nox
 d:iproute2
 d:xlsclients
 d:psmisc
@@ -455,7 +438,6 @@ d:zstd
 d:grep
 d:yajl
 d:npth
-d:thunar-archive-plugin
 d:icewm
 d:soundtouch
 d:ibus
@@ -509,7 +491,6 @@ d:sdl2
 d:streamlink
 d:rsync
 d:grantlee
-d:frameworkintegration
 d:dcfldd
 d:zeromq
 d:apr-util
@@ -519,7 +500,6 @@ d:dunst
 d:xdpyinfo
 d:lua
 d:jwm
-d:user-manager
 d:patch
 d:alsa-lib
 d:gconf
@@ -557,7 +537,6 @@ d:nettle
 d:scrot
 d:jack
 d:diffutils
-d:bdftopcf
 d:util-macros
 d:unrar
 d:frei0r-plugins
@@ -613,9 +592,6 @@ f:37ac3fc4141f0d12a5da70a668f3b462:lm_sensors/run
 f:b94e771c6fdb24e752c4d152c59d4cbb:intltool/.checksums
 f:7f87d680e58f109b054ce99d87d50108:intltool/.pkgfiles
 f:fa96f6abf49b9378bf6f7c48979379d0:intltool/spkgbuild
-f:5fa9d4705b5de8daadb446e481bcb93d:thunar/.checksums
-f:1542037c8c492f8aa5a8e7d23d376f00:thunar/.pkgfiles
-f:912f287bc8dcdbecc39a2541bb7861ba:thunar/spkgbuild
 f:be681d40582544c68f7224c59eeeb593:xsetroot/.checksums
 f:14d8edbed4200b63468bbf07fbf3e931:xsetroot/.pkgfiles
 f:05dd28ad6ee5e5d081965462e21d2605:xsetroot/spkgbuild
@@ -651,10 +627,6 @@ f:2728914f5b2c37fc421d046ce5e5b464:shadow/chage
 f:f9dcc013464025ff448094199e0832cf:plank/.checksums
 f:622889120f024cb7cb542044f6cd9755:plank/.pkgfiles
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
-f:09ee15827149e670f10d77d5295d044d:gpicview/readme
-f:f453faa944e6bfa143c87cc32d4848f7:gpicview/.checksums
-f:066d43dc8595d462289c01533b4ef48f:gpicview/.pkgfiles
-f:a991fa4061008196bb33c3ab56365dc3:gpicview/spkgbuild
 f:9533eab7074b557b1ff4a5b5fe6b13d7:acpid/.checksums
 f:b8f0a026b3855cc6923097da5fa776fc:acpid/.pkgfiles
 f:d22a8b6910dcf4f4d08fb658fa78e999:acpid/rc.acpid
@@ -807,9 +779,6 @@ f:45089330cbce38d405f890633f6a36c4:fltk/spkgbuild
 f:74da19430facabe6e9e97213b8c88e0f:inkscape/.checksums
 f:22dcfa0cce57f51c6858cb91789f8df1:inkscape/.pkgfiles
 f:d827845ab0c8d35327530306e41e0d02:inkscape/spkgbuild
-f:93a603999288b4faeb307e5f47f3dfcb:exo/.checksums
-f:c09e7aed6e052061b6d9cd33ff65a664:exo/.pkgfiles
-f:bb9d6629bb22329e8e3c4cc3c596135c:exo/spkgbuild
 f:39b8c34dd6e96414798e78540bc5396f:kernel-prereq/v4l-saa7164-1.0.2.fw
 f:fd24b601fe2cf5779778da5f7521c917:kernel-prereq/NXP7164-2010-03-10.1.fw
 f:ba8194afd8105969a536cb881899200b:kernel-prereq/v4l-saa7164-1.0.3.fw
@@ -1099,9 +1068,6 @@ f:71c92c546d39ffee26c41c893857cd06:sqlite/spkgbuild
 f:8eb2204f3f167d72c4d25d43f5e97b26:glu/.checksums
 f:68857ac40e875342ccdc6a614b01328c:glu/.pkgfiles
 f:155b5e6473956ff2c68ba5f0d79e5aea:glu/spkgbuild
-f:973dd9240a2c49e31f76817cf70da0b9:tumbler/.checksums
-f:e07bbd91f72c8004da8e7d4f8de61a4e:tumbler/.pkgfiles
-f:514a5929dfd0050c4550241be1ecf4c8:tumbler/spkgbuild
 f:1cc4984ee64448ca7f55c37f28b83019:light/finish
 f:1057f9cfda93baaba03c16767c14f16d:light/.checksums
 f:42402f3b0ef0961b2156bf8da0e46dd1:light/.pkgfiles
@@ -1198,9 +1164,6 @@ f:860473d01ed41240349a65595c70378b:xapian-core/spkgbuild
 f:464cbd864400eb87dc16291607435034:yad/.checksums
 f:50bdbcd3279a9149f7827dbcd3ce82b9:yad/.pkgfiles
 f:ace30860ea002e7c9691fa651625a2b5:yad/spkgbuild
-f:45961727934f9b69908a94538a6bbc31:garcon/.checksums
-f:bc646152b1bfd858dfe73af938faddb3:garcon/.pkgfiles
-f:d5c7a60932dda91e6b80dfe21896cb3f:garcon/spkgbuild
 f:7baf7bb80b341966d06d13e35636fc42:procps-ng/.checksums
 f:5e95602c61523aa91d9ce7981484975c:procps-ng/.pkgfiles
 f:223652e5c2498f0df1ef5a0131be3644:procps-ng/spkgbuild
@@ -1330,9 +1293,6 @@ f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
 f:adf325163957ff02519bd9e4a81f38bd:blueman/.checksums
 f:8e37fb3a3da8bd9d858fa91f82177f48:blueman/.pkgfiles
 f:fe4ddccca1c7b556d32dac974e2fba41:blueman/spkgbuild
-f:9f4432d207539a0a53010ff0cfdf9064:poppler-qt5/.checksums
-f:3bf7eae280ac57a3daec0bbd3d69ceb9:poppler-qt5/.pkgfiles
-f:f73616a02c512bc4281252fffb7f9002:poppler-qt5/spkgbuild
 f:4a167dbcedada9d90d97927da9a59de7:vimix-gtk-themes/.checksums
 f:3bae9d7eff432ec72743b86d3267c090:vimix-gtk-themes/.pkgfiles
 f:f9adb31b0ddce53fff522d2d8888d7ab:vimix-gtk-themes/spkgbuild
@@ -1437,9 +1397,6 @@ f:7ac01c464a20b819f83658dc47184430:vte3/fix-W_EXITCODE.patch
 f:a7149b94d8d507b09e6e0b43bd8edc75:vte3/.checksums
 f:72d0a50728834750a2c29613463128b1:vte3/.pkgfiles
 f:7c9ae84292dc44b3606fc7dd8d21c7f5:vte3/spkgbuild
-f:548812cbeb74096ba8fce9ee0d7a515f:ristretto/.checksums
-f:6b0d2e3be6fed99c25c7712bc26e742e:ristretto/.pkgfiles
-f:e5e2862263cc9d328c1319c6bffcf4bb:ristretto/spkgbuild
 f:cf3c5f80ee381fc649927541eb7eb3c1:jemalloc/CHANGELOG
 f:e30ee3c1af1a3cc72a973defacb7dd02:jemalloc/spkgbuild
 f:e89e307a7a9d3d3cb46fb7006e0be104:iso-codes/.checksums
@@ -1456,9 +1413,6 @@ f:f1c311b167576b23cb952e82d9cf8622:rxvt-unicode/spkgbuild
 f:bf7599d5fb02492744c1eb1a8a32f3ae:papirus-icon-theme-light/.checksums
 f:7ac3e3a3924af714eb19b3c461308f02:papirus-icon-theme-light/.pkgfiles
 f:71bbcc9ba1218a8413e0430b851b33c2:papirus-icon-theme-light/spkgbuild
-f:563f96024132b1ace4ddd85ecf1dfc9a:thunar-media-tags-plugin/.checksums
-f:8e62d08477c92d3c95a20ac06e5081de:thunar-media-tags-plugin/.pkgfiles
-f:edba1ca7ec2164eb33a70e62dc05e761:thunar-media-tags-plugin/spkgbuild
 f:0b0f2a73a58fff6bb53c6df657bec916:setxkbmap/.checksums
 f:c6fdcf88e4ed924feef40dc5d724e0b3:setxkbmap/.pkgfiles
 f:38ffbef22c18d49bba2cef75cdcf4d0e:setxkbmap/spkgbuild
@@ -1468,10 +1422,6 @@ f:28639b517fa9d01f3ca91eb4a99b5b5a:pixman/spkgbuild
 f:7619649c9249efb95a9f880377096147:mc/.checksums
 f:26ca9def1a20ed5e3e963988ec9f2b95:mc/.pkgfiles
 f:330f407be1c26208ffc89156a87bfd22:mc/spkgbuild
-f:1980e7bf4f360e1d9b80261382083932:menu-cache/menu-cache-1.1.0-0001-Support-gcc10-compilation.patch
-f:2a85d5fd7e6a0e95e3b467f1e6d14aa5:menu-cache/.checksums
-f:d1d3e95f8cb45f3c8e4bf9f89371f59d:menu-cache/.pkgfiles
-f:1ddbcbe2f4dcea4d3ec6c6edb3a67214:menu-cache/spkgbuild
 f:815e4a2cd91dd267e94a7461405e5ad4:fdupes/.checksums
 f:8633f74eef2c0e508073747c61eabf65:fdupes/.pkgfiles
 f:55f6697a506fc85073ef5cd484227991:fdupes/spkgbuild
@@ -1557,9 +1507,6 @@ f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:187987513ae51d0f86950a569757e189:newt/.checksums
 f:636fa90d51a54817e896eee3fd4e7f2c:newt/.pkgfiles
 f:f4f20cadbfde63b8615b51fec99e2c40:newt/spkgbuild
-f:074584971a7edd1d7423d45b53b9f8f0:sessreg/.checksums
-f:f97ce1af7beaa3fedfded5f16c474415:sessreg/.pkgfiles
-f:550d996c7bad928c6d6379fa2192c2e5:sessreg/spkgbuild
 f:ba77030a019aa8a89126584f3b6277bd:geany-themes/.checksums
 f:5c542131e12a1c3e8099377420cf0e81:geany-themes/.pkgfiles
 f:5e4b4ef8a42d6599f7b523b8285b8288:geany-themes/spkgbuild
@@ -1655,16 +1602,9 @@ f:16f882db8340430205e776fc6602cdfd:sgml-common/install
 f:aa3425eb26e590691a34f6650d5a567d:sgml-common/.checksums
 f:b8b7ae8d04b80c75606c26a03fa3e6a2:sgml-common/.pkgfiles
 f:d1b79cbb49bec55ba708dd3f86e542b4:sgml-common/spkgbuild
-f:62bd377cff93b922e9bbbf1f81cc1234:tty-clock/.checksums
-f:1a6ff7144ffbc2b7237c517182937758:tty-clock/.pkgfiles
-f:4a8475e4f748aa08f0a0552ca6eaff57:tty-clock/spkgbuild
 f:e29d90d8bc2cf3122c452b83cb0676c6:xmlto/.checksums
 f:5022132a98e62215878ecbe007d6f995:xmlto/.pkgfiles
 f:34ee68483c67dba61ca3ad1de6f7f5e7:xmlto/spkgbuild
-f:46a029d1007c1d9f7fb854f77cc76255:orage/libical3.patch
-f:0bb5d0f703ebc19469ce9aa41a18a1e7:orage/.checksums
-f:b7c71f8ce4c426f35cdd5891bbf04253:orage/.pkgfiles
-f:f4ed88a088fce257e0e99143390a7f92:orage/spkgbuild
 f:c818371af827a410a0cdd474a34a7f94:intel-ucode/.checksums
 f:c39558fc16ddeb661c8f34a3543baf0b:intel-ucode/.pkgfiles
 f:5ee1dbafea18b01536d7b962af59a139:intel-ucode/spkgbuild
@@ -1753,9 +1693,6 @@ f:cae492f7ed25de4c09d0a199cc690307:docbook2x/.checksums
 f:df2a23dee8f1cf182d663703bd97e16a:docbook2x/.pkgfiles
 f:9afb4d6be4545c15210f05302f24b8b4:docbook2x/spkgbuild
 f:826fae88a435d9278c4f9614991d55a1:docbook2x/docbook2x.datadir.patch
-f:e1f127babd31aa99a008a5648d6a7388:thunar-volman/.checksums
-f:254de469d074a9fb12cceb004eae65f4:thunar-volman/.pkgfiles
-f:0564107a161bfff1376ec621605f616c:thunar-volman/spkgbuild
 f:89e22f4d7c8d9a2df3cf75acba80125a:sassc/.checksums
 f:281a8730c2048d6e17b023bba9fdf262:sassc/.pkgfiles
 f:680ca04da7aa6a8c5bccc480a2053a29:sassc/spkgbuild
@@ -1820,9 +1757,6 @@ f:3054743e7172c22d01fff22983e302f6:consolekit2/spkgbuild
 f:fa98a3de225080388cfa5f97525fa906:fdk-aac/.checksums
 f:4cefccfb4c7d542331cd5ea43541f666:fdk-aac/.pkgfiles
 f:c22d7dd32f4652e082377fdc59dade95:fdk-aac/spkgbuild
-f:6ca6739b424a5c6dd6e8249be9d4cd60:xkeyboard-config/.checksums
-f:58efed6913e7c093c929e66c0816c458:xkeyboard-config/.pkgfiles
-f:edf382c296926b0f9fe33abd56268169:xkeyboard-config/spkgbuild
 f:41e4b4bd11d93b09123db03c075a0c29:audacious-plugins/.checksums
 f:7ff6fcb62b655e2a97423cc9c7096f3e:audacious-plugins/.pkgfiles
 f:4632595e76250da3b971089a34a6fc1c:audacious-plugins/spkgbuild
@@ -1832,9 +1766,6 @@ f:8f6c655786d6cf6b85bd34d3dd27a3c9:gnome-keyring/spkgbuild
 f:dd6db2c9d637c53546ee139bcfd6573d:arc-icon-theme/.checksums
 f:1868b07dafca903628375b95aa27daab:arc-icon-theme/.pkgfiles
 f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
-f:b8c5512b0a870ce6f426ed4dce230879:parole/.checksums
-f:52912f75450cf338ec6bc3b693d92623:parole/.pkgfiles
-f:5659ef17f509a40b96221b2dd9108fde:parole/spkgbuild
 f:3a9f1323ed1e1a7c7800dca057fd93ce:yelp-xsl/.checksums
 f:ae69847565b7253f4268b986a97e4c7b:yelp-xsl/.pkgfiles
 f:75d1d9f07fb31d2ed311dcca080b367c:yelp-xsl/spkgbuild
@@ -1892,9 +1823,6 @@ f:39d078b25bbc15fb1ec5bc8bc50dd7aa:ccache/spkgbuild
 f:f63af3d178b62ba454576518c7579ba4:gparted/.checksums
 f:7ff4a0d9a4d282597f6dc6c809b479f8:gparted/.pkgfiles
 f:9bcb45c42f503f4541a92711cdf330e4:gparted/spkgbuild
-f:d457fa8d4c0eb0650241b1368e05203f:mousepad/.checksums
-f:969341801afd1ad42470ad64c7d76a34:mousepad/.pkgfiles
-f:649facf95d5eb88fa9f2bc9562de2f6b:mousepad/spkgbuild
 f:dd597cafa6084341977d7e2c214757f7:bzip2/.checksums
 f:da05f96aafe19a6988c8acc94d04b422:bzip2/.pkgfiles
 f:5de358b52fc36d7c86a9511928e079e7:bzip2/spkgbuild
@@ -1970,9 +1898,6 @@ f:576eb5d35ab418c459a59ed0deb41bb2:neon/spkgbuild
 f:66e2f744dc1da757c09845a89983590a:pypanel/.checksums
 f:17ba879d97a2810add7361040169a34f:pypanel/.pkgfiles
 f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
-f:ba894679ac0f4bceafcb7c2bbb964685:qbittorrent-nox/.checksums
-f:97fa9a19e76bb140679111e2acaa4cd6:qbittorrent-nox/.pkgfiles
-f:1194a995c0966c0bf9beff2d21f82036:qbittorrent-nox/spkgbuild
 f:584e4145e93d8fee874fc70e646bdb89:iproute2/.checksums
 f:de2eda8b9d58ce4aa9ff1d872973262f:iproute2/.pkgfiles
 f:e4b7fd18ae353fbaf2cb84bbd93aebe6:iproute2/spkgbuild
@@ -2102,9 +2027,6 @@ f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
 f:2dc9d626228874dbc79f33869eda7ed6:npth/.checksums
 f:24ccf743a43c5699637a46919b64cc60:npth/.pkgfiles
 f:152626c3058b3f4b018f6aaad0747430:npth/spkgbuild
-f:ca057c640e932cf328a9821526fd2f86:thunar-archive-plugin/.checksums
-f:c582f5e4641eb1bca1910542e6ffa8d4:thunar-archive-plugin/.pkgfiles
-f:0c20eef1b90236ef8d7f7b5fdea8b579:thunar-archive-plugin/spkgbuild
 f:540bed9ee3e0bcac900c08fe69502e98:icewm/.checksums
 f:07f74215f5f5e3bdc783d7c8558bee43:icewm/.pkgfiles
 f:cc0a9bca485236d81c61e590c22b1a85:icewm/spkgbuild
@@ -2270,9 +2192,6 @@ f:6d104c5bd6b9778a5cae373dc3267cae:grantlee/.checksums
 f:d35d0029146a03e9aba609d8c92d00f5:grantlee/.pkgfiles
 f:1857a6efd7793e8c176a2827f037941b:grantlee/spkgbuild
 f:dd9ac2c531f2ab9ceffff1deda89c70c:grantlee/3a5fc7662da3261be6496611900c095844e56ab1.patch
-f:34d311248121a24b87061cd10cbc1454:frameworkintegration/.checksums
-f:3624e3e623e6c046a8e9129720a20580:frameworkintegration/.pkgfiles
-f:04ad21a4a61e6d6b3b4e5aab49ffe993:frameworkintegration/spkgbuild
 f:5095cfccba7eb46a753f19a7c820f0b8:dcfldd/.checksums
 f:603c2385a955d2f7009960baa8c77277:dcfldd/.pkgfiles
 f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
@@ -2301,9 +2220,6 @@ f:991310bef9b432d0d390347ef1892f0c:jwm/.checksums
 f:774c7463890666a238e5f4688a8f98a1:jwm/.pkgfiles
 f:ad898472f7538ffc3ff511c055fee535:jwm/jwm.desktop
 f:c4c30213958521947d867445742837cf:jwm/spkgbuild
-f:c0d5d7c1639de66f7226d99cf47eca34:user-manager/.checksums
-f:5a5646d567735da7eec39efbd2436d54:user-manager/.pkgfiles
-f:e7087fed2b10504a6c63f5b37914bbcd:user-manager/spkgbuild
 f:4c7051bedf90313f6e794956b5180dd7:patch/.checksums
 f:e172d8c904198dfee033bf3806fc1f63:patch/.pkgfiles
 f:86a520326cc265843cccc42e557d869c:patch/spkgbuild
@@ -2424,9 +2340,6 @@ f:4926fb6d83b03f9ff1a2122ff6d774e4:jack/spkgbuild
 f:4637817e491e89372a421ba50d9c5b1f:diffutils/.checksums
 f:8dd39fbb01b32f08be30291923def45b:diffutils/.pkgfiles
 f:bde6cb5b6abdde9dadd8236d3e92ee90:diffutils/spkgbuild
-f:fd34b35f787d8df0fc88eaf32f5fd721:bdftopcf/.checksums
-f:0dbb99e8dec1fbd225cea5f46a85d026:bdftopcf/.pkgfiles
-f:21a114cd239d20ced7a11c4169d22514:bdftopcf/spkgbuild
 f:9dc154ce35595a035fe8dbd2a73f3928:util-macros/.checksums
 f:9762392a0cdd5ef84b9efdcadd83f600:util-macros/.pkgfiles
 f:f7dee2f6206d83f22d29df38ec11e4ad:util-macros/spkgbuild

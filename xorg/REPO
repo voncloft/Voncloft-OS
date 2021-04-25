@@ -44,13 +44,16 @@ d:libxfce4util
 d:xcursorgen
 d:libxfce4ui
 d:libxres
+d:sessreg
 d:libxtst
 d:libxau
 d:xterm
 d:xcb-util-image
+d:tty-clock
 d:libxpm
 d:xorg-libraries
 d:xcb-util
+d:xkeyboard-config
 d:libx11
 d:xdgmenumaker
 d:xorgproto
@@ -63,6 +66,7 @@ d:libxscrnsaver
 d:libxshmfence
 d:libxft
 d:libxfont2
+d:bdftopcf
 d:xrandr
 f:5d0a0dd7b957425b2c8ac14dfba38a6c:libxrender/.checksums
 f:0030ed2a851ff90256a6282804190348:libxrender/.pkgfiles
@@ -209,6 +213,9 @@ f:a5958bd7aa267f6fa9bd63b9d71d8063:libxfce4ui/spkgbuild
 f:62521a382bcdb6b211451a2a74c16913:libxres/.checksums
 f:cd7772fc73cba30969f5019c2a5a0580:libxres/.pkgfiles
 f:45bd22fe9c6a7aa494b6c61fc0e97c07:libxres/spkgbuild
+f:074584971a7edd1d7423d45b53b9f8f0:sessreg/.checksums
+f:f97ce1af7beaa3fedfded5f16c474415:sessreg/.pkgfiles
+f:550d996c7bad928c6d6379fa2192c2e5:sessreg/spkgbuild
 f:68a27b239b69393772cb6c8b946f79ff:libxtst/.checksums
 f:348ae1307d3cc662f1c8f3307e7c1071:libxtst/.pkgfiles
 f:550fdd4d13e6167753a03fd8c09dee9f:libxtst/spkgbuild
@@ -221,6 +228,9 @@ f:163262ef9e9432adc6af45af5189eb09:xterm/spkgbuild
 f:d142ffe147453118447033b86cd74cfc:xcb-util-image/.checksums
 f:e2a18f6cc15b4437e2d4fc740075c681:xcb-util-image/.pkgfiles
 f:a09bfae61e89df84cf3786399dc97d68:xcb-util-image/spkgbuild
+f:62bd377cff93b922e9bbbf1f81cc1234:tty-clock/.checksums
+f:1a6ff7144ffbc2b7237c517182937758:tty-clock/.pkgfiles
+f:4a8475e4f748aa08f0a0552ca6eaff57:tty-clock/spkgbuild
 f:5bccc4e3a280390af11ba00a4cc8ad3a:libxpm/.checksums
 f:0e0544ea6cdf51ce30b774734823b708:libxpm/.pkgfiles
 f:53e64757fb50427f24303690a0aa2d65:libxpm/spkgbuild
@@ -230,6 +240,9 @@ f:5b7ff8a1cf9b688dc73d30b9bd0f27cb:xorg-libraries/spkgbuild
 f:7062a4c15e3bdb0af0935a4465cc8364:xcb-util/.checksums
 f:787e05b2e002d3ca92f5fcc621a4d1a4:xcb-util/.pkgfiles
 f:be275d459db993afe0e5c57c23b2f415:xcb-util/spkgbuild
+f:6ca6739b424a5c6dd6e8249be9d4cd60:xkeyboard-config/.checksums
+f:58efed6913e7c093c929e66c0816c458:xkeyboard-config/.pkgfiles
+f:edf382c296926b0f9fe33abd56268169:xkeyboard-config/spkgbuild
 f:a45f654ebb30e3b95fcaf8b8ff405dac:libx11/.checksums
 f:fafabde584b001ea7c9b5bbe610c961b:libx11/.pkgfiles
 f:eaf7228847ff2d2c172f9284cc5596f4:libx11/spkgbuild
@@ -264,6 +277,9 @@ f:00da7d84cb8655394fd8e3d7d62a2280:libxft/spkgbuild
 f:3c8447a8346456882eee6df37041e012:libxfont2/.checksums
 f:0ddfcf1047753f4f2c5848ab7393ddc7:libxfont2/.pkgfiles
 f:4e42721f3a4cc2132ddbabde13256d2a:libxfont2/spkgbuild
+f:fd34b35f787d8df0fc88eaf32f5fd721:bdftopcf/.checksums
+f:0dbb99e8dec1fbd225cea5f46a85d026:bdftopcf/.pkgfiles
+f:21a114cd239d20ced7a11c4169d22514:bdftopcf/spkgbuild
 f:391906fb69f24470786b229b3747ad40:xrandr/.checksums
 f:6f9263e57181ccc5f161b351a4dbf809:xrandr/.pkgfiles
 f:a0733a92259838dfee8acf4923b54e76:xrandr/spkgbuild

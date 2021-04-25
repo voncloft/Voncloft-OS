@@ -1,5 +1,6 @@
 d:lxappearance-obconf
 d:lxterminal
+d:gpicview
 d:lxinput
 d:lxrandr
 d:lximage-qt
@@ -8,6 +9,7 @@ d:lxsession
 d:lxtask
 d:lxappearance
 d:lxmenu-data
+d:menu-cache
 d:lxde-common
 d:lxdm
 d:lxmusic
@@ -19,6 +21,10 @@ f:4cad2e3d9b4acab7021b6e2097dedeec:lxappearance-obconf/spkgbuild
 f:1addbb3847d89629a8f778636f51aeea:lxterminal/.checksums
 f:192438f92f879e953916b0cbd40761e5:lxterminal/.pkgfiles
 f:33b3385dae5097d796fa6c7379963c8e:lxterminal/spkgbuild
+f:09ee15827149e670f10d77d5295d044d:gpicview/readme
+f:f453faa944e6bfa143c87cc32d4848f7:gpicview/.checksums
+f:066d43dc8595d462289c01533b4ef48f:gpicview/.pkgfiles
+f:a991fa4061008196bb33c3ab56365dc3:gpicview/spkgbuild
 f:c8ad6526c036327a7d42a9876727ed07:lxinput/.checksums
 f:8f283a078cfb04ad2adb3ab4760d7de7:lxinput/.pkgfiles
 f:2872ac14312be922849df88ef85b816e:lxinput/spkgbuild
@@ -43,6 +49,10 @@ f:5175a0504c0b32eac242ca9d07ab185d:lxappearance/spkgbuild
 f:6d3991baa62373ef839bc5d76e38b2cc:lxmenu-data/.checksums
 f:27c942dadffcc3441f2f0dce1ac394c1:lxmenu-data/.pkgfiles
 f:696a3af39df217a710210b9a28263509:lxmenu-data/spkgbuild
+f:1980e7bf4f360e1d9b80261382083932:menu-cache/menu-cache-1.1.0-0001-Support-gcc10-compilation.patch
+f:2a85d5fd7e6a0e95e3b467f1e6d14aa5:menu-cache/.checksums
+f:d1d3e95f8cb45f3c8e4bf9f89371f59d:menu-cache/.pkgfiles
+f:1ddbcbe2f4dcea4d3ec6c6edb3a67214:menu-cache/spkgbuild
 f:03c54079e84b5634051caa7090f9dad7:lxde-common/readme
 f:c3a0de19939da6b0d5e817184e0772af:lxde-common/.checksums
 f:4e8081a8be09ff255c58cd807b0ff083:lxde-common/.pkgfiles
