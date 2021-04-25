@@ -301,3 +301,7 @@ sed -i -e 's/5.77/5.81.0/g' /Voncloft-OS/*/modemmanager-qt/spkgbuild
 sed -i -e 's/5.77/5.81.0/g' /Voncloft-OS/*/bluez-qt/spkgbuild
 Packages upgraded: 291
 
+12
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/frameworkintegration/spkgbuild
+Packages upgraded: 1
+
