@@ -14,7 +14,6 @@ d:thunar
 d:xsetroot
 d:clipit
 d:gnu-efi
-d:caja-actions
 d:mksh
 d:binutils
 d:make
@@ -73,7 +72,6 @@ d:kernel-prereq
 d:usbutils
 d:papirus-icon-theme
 d:i3lock
-d:mozo
 d:giflib
 d:log-folders
 d:brotli
@@ -89,7 +87,6 @@ d:xmodmap
 d:cpio
 d:terminator
 d:cowsay
-d:pluma
 d:xmessage
 d:go
 d:linux-api-headers
@@ -99,7 +96,6 @@ d:pacmixer
 d:cython3
 d:xz
 d:qrencode
-d:engrampa
 d:gvfs
 d:gnustep-make
 d:spectrwm
@@ -138,7 +134,6 @@ d:mtools
 d:unzip
 d:stfl
 d:xlsatoms
-d:atril
 d:guile
 d:nnn
 d:gnupg
@@ -217,7 +212,6 @@ d:bamf
 d:llvm
 d:xbitmaps
 d:enchant
-d:caja
 d:db
 d:exiv2
 d:aspell
@@ -258,7 +252,6 @@ d:hdparm
 d:xwud
 d:zita-resampler
 d:volumeicon
-d:marco
 d:makeself
 d:x11perf
 d:poppler-data
@@ -495,7 +488,6 @@ d:java-headless
 d:p11-kit
 d:rfkill
 d:dash
-d:eom
 d:pkcs11-helper
 d:xhost
 d:irssi
@@ -547,7 +539,6 @@ d:gdk-pixbuf
 d:emacs
 d:iucode-tool
 d:xdo
-d:caja-extensions
 d:ohsnap
 d:grub-efi
 d:menumaker
@@ -634,9 +625,6 @@ f:5d4e8f73a7420ba6997eb32b940d97f7:clipit/spkgbuild
 f:ba9f7858e3ad3106f1ac13ba483f4672:gnu-efi/.checksums
 f:713077138aac07b45c9c3a93dfacff7a:gnu-efi/.pkgfiles
 f:b56d14d9a67a21e7c8a87d9cf3353756:gnu-efi/spkgbuild
-f:d30ad03145e2e6df66f45cf535e7731c:caja-actions/.checksums
-f:de6a3f607c2968568d4d4e40a2b16ac4:caja-actions/.pkgfiles
-f:b6ba0181f7deacc37c9961d58d256897:caja-actions/spkgbuild
 f:d42162252c91aa6d8dd3e989d68e783f:mksh/install
 f:09f3cde865bb32d31389fbe0842f012e:mksh/.checksums
 f:17097c11488bb350efb8a595263d3b52:mksh/.pkgfiles
@@ -836,9 +824,6 @@ f:5f17f5f991b28b73de1050edcc6410c6:papirus-icon-theme/spkgbuild
 f:b30c6608b226ad3aef9b6846a8010ad8:i3lock/.checksums
 f:d6ba90768c5425353b272a27e0678749:i3lock/.pkgfiles
 f:daa04bda975dd5105c014290ebabd7e5:i3lock/spkgbuild
-f:711f0374d8df5ea3f3c6dc2013126d1a:mozo/.checksums
-f:bb9395d48170b1bcf1b31f11c8076eb1:mozo/.pkgfiles
-f:43f666ed1d7f1b6882d336f5c3776a74:mozo/spkgbuild
 f:ee48d99c9a7b74a0409f42583b429930:giflib/.checksums
 f:26ebb295463981f09143b15d1a6d7147:giflib/.pkgfiles
 f:6ee130265ad6e97992195cecca1cc46b:giflib/spkgbuild
@@ -889,9 +874,6 @@ f:7091f9a6d97006299a1f27a665b638b6:cowsay/cowsay.patch
 f:53d6a6e6db70c5fffd700e4b4db9d3af:cowsay/.checksums
 f:964fb1be896e90ee2d76a34a4285fe50:cowsay/.pkgfiles
 f:2754d951cff391b6efb8f02374c5f4f1:cowsay/spkgbuild
-f:37022e46151e6547efacb00880aaee9e:pluma/.checksums
-f:884433bd7ea1f6ded72eda2e31da4ea3:pluma/.pkgfiles
-f:c4ea2a609fa5d41ce14f2f9e7a2f4924:pluma/spkgbuild
 f:19d6986768cde1be6afeee1562d532b5:xmessage/.checksums
 f:af176fbb1aaa4b62045716252fc0d4c8:xmessage/.pkgfiles
 f:66158d98ba1688edba9621669ccfbe33:xmessage/spkgbuild
@@ -919,9 +901,6 @@ f:219f3e517a29eb3c41b60948c89594d2:xz/spkgbuild
 f:bb0a68199e594b078f57ce508bf6466c:qrencode/.checksums
 f:357a05363e615fe010863e9d01aa8457:qrencode/.pkgfiles
 f:bcc53d7d76edf4cf758a05d76787a845:qrencode/spkgbuild
-f:0f347bb1cb137b07c6e9ee7816c585e9:engrampa/.checksums
-f:20240b663c87f4f5b36b88babe440a24:engrampa/.pkgfiles
-f:72ae459cd330f1cc3fce0c9697261779:engrampa/spkgbuild
 f:54f9728062ed68a529ae3d337d5da4d0:gvfs/.checksums
 f:0a97031928e49ec598e4d937acd25c36:gvfs/.pkgfiles
 f:ea5fb78ab518aa149eb640038646e587:gvfs/spkgbuild
@@ -1039,10 +1018,6 @@ f:59583b7acb6b7c62c73c6410d29b30ad:stfl/spkgbuild
 f:35da3f05aa0b3b036deec75de1e95010:xlsatoms/.checksums
 f:28e800c542492ea1cf77a7bf02915554:xlsatoms/.pkgfiles
 f:85f4df280a4dedfe41e62d0635df02ab:xlsatoms/spkgbuild
-f:c713e5594c1701d0d0541e941b742c4d:atril/.checksums
-f:98b7198f2afd5ce1ab2e6258c631d054:atril/.pkgfiles
-f:e74c14e291b0cdeee73206a07f517db8:atril/disable-synctex.patch
-f:ee643f094a72423da3a8116b6720b94b:atril/spkgbuild
 f:208d4111f2bfc41d39f171b0eaef3497:guile/.checksums
 f:da97eefdb0e043aed361c1a1bacc40ec:guile/.pkgfiles
 f:0058f6b99e4462af9627607e278b7faf:guile/spkgbuild
@@ -1309,9 +1284,6 @@ f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild
 f:7ab4db5528689b6336a12d76aaed8752:enchant/.checksums
 f:03fe455c18559bad6892de8a81e17579:enchant/.pkgfiles
 f:39cc34e7b00b985f19c39186b0c29365:enchant/spkgbuild
-f:e71f9ad4b8258ae726a37eb1764b55d7:caja/.checksums
-f:349b54c3f982315656eb44920818c584:caja/.pkgfiles
-f:e2bd1c0e9fed3ce9fa877fe5f3e5745b:caja/spkgbuild
 f:e0d65f63d59f1730c999d92b0fbefd6c:db/.checksums
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:58f2caab9391f9358842890be9ee2b19:db/.pkgfiles
@@ -1454,9 +1426,6 @@ f:52950248766f45a613108ca0879cac5a:zita-resampler/spkgbuild
 f:eb3e99adc07ba37593bb5635e134a31c:volumeicon/.checksums
 f:63c804ccf4690973c41ce790fa20c3ec:volumeicon/.pkgfiles
 f:8cee058f2d8e511e3df31bf543e05819:volumeicon/spkgbuild
-f:ba80edbdbdb3a168ecd575541fd0753d:marco/.checksums
-f:7760b06e45ef94f6d3d04f7813a100d9:marco/.pkgfiles
-f:d88ce78c1bb3d327599daa6e1109bd33:marco/spkgbuild
 f:36c2e6830eba51909fa19755d2ccfd54:makeself/spkgbuild
 f:9768a8813a40dd36621d6d7269091256:x11perf/.checksums
 f:627b0f4c5fd8a2eb245e7dab98467297:x11perf/.pkgfiles
@@ -2234,9 +2203,6 @@ f:e9f65edf579572857f49b831c42371a8:dash/install
 f:1a75d22b7e048dcc26ff1c5abd607685:dash/.checksums
 f:55810c5b7509ea4d51a0a4d03603a962:dash/.pkgfiles
 f:40a20adad3b63321f7d87a37c09dd35f:dash/spkgbuild
-f:0d9e3bdb03d899738a17ca5806fb28d0:eom/.checksums
-f:f1804fb635e7323b40181651885175bf:eom/.pkgfiles
-f:91117a844194a03d90b8eb74be7561a7:eom/spkgbuild
 f:e1ab27e73167ed2520644619bc68c576:pkcs11-helper/.checksums
 f:857693216fc92d83599297412cfafea5:pkcs11-helper/.pkgfiles
 f:0609898dd10faaf9004b38d4af04f4b0:pkcs11-helper/spkgbuild
@@ -2399,9 +2365,6 @@ f:38aa4e01298d1ed0da4e20a2cb26edbc:iucode-tool/spkgbuild
 f:2bebd8770832b3e2925e3a26400fd883:xdo/.checksums
 f:125dfce8070b4839e03839ccd6f393b1:xdo/.pkgfiles
 f:30a1afa896286c8b68f1d65084218c05:xdo/spkgbuild
-f:bc658f8c75e54c20c6db24613f6e1fad:caja-extensions/.checksums
-f:0868f16b5e4f44a7187cc1673742cb71:caja-extensions/.pkgfiles
-f:1093d8c205381c5d0bf19f4cb52fb260:caja-extensions/spkgbuild
 f:7e962fa7678b4444c576ced8ba4385a2:ohsnap/.checksums
 f:752500433bdf180ee0dc005868630101:ohsnap/.pkgfiles
 f:1db530f7d49d0e4c0514efaf6c257cf0:ohsnap/spkgbuild
