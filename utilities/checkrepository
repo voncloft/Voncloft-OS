@@ -91,9 +91,9 @@ mailme voncloft@gmail.com "$words" "$title"
 rm -rfv *.php
 rm -rfv *.php.*
 #rm -rfv stripped_info.txt
-
+rm -v test.txt
 #mv -v testing.txt repository_upgrade_report.log
-rm testing.txt
+rm -v testing.txt
 
 cp /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
 cp /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
