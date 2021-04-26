@@ -12,6 +12,8 @@ vercomp() {
         fi
 }
 cd /var/log/old
+rm -v index.html
+rm -v index.html.*
 shopt -s nocaseglob
 foltotar repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 rm testing.txt
