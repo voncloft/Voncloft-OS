@@ -7,3 +7,7 @@ Packages upgraded: 0
 08
 Packages upgraded: 0
 
+12
+sed -i -e 's/10.3.0/11.1.0/g' /Voncloft-OS/*/gcc/spkgbuild
+Packages upgraded: 1
+
