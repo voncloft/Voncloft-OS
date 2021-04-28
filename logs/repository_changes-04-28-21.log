@@ -13,3 +13,7 @@ Packages upgraded: 0
 sed -i -e 's/75.0.3969.218/76.0.4017.94/g' /Voncloft-OS/*/opera/spkgbuild
 Packages upgraded: 1
 
+16
+sed -i -e 's/581/581.2/g' /Voncloft-OS/*/less/spkgbuild
+Packages upgraded: 1
+
