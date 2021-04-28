@@ -23,11 +23,15 @@ sed -i -e 's/fcron //g' test.txt
 
 #cat test.txt  | sort -V -r | head -n 1
 
+
 ###Production###
+if [ -f allarchives.php ];
+then
 echo $name >> stripped_info.txt
 cat test.txt | sort -V -r | head -n 1 >> stripped_info.txt
-
+fi
 rm -v *.html
 rm -v *.html.*
 rm -v *.php
 rm -v *.php.*
+
