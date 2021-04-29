@@ -32,7 +32,7 @@ build() {
 		# End fcron addition
 		EOF
 		/etc/rc.d/init.d/sysklogd reload
-		groupadd -g fcron
+		groupadd -g 22 fcron
 		useradd -d /dev/null -c "Fcron User" -g fcron -s /bin/false -u 22 fcron
 		install -vdm754 $PKG/etc/cron.{hourly,daily,weekly,monthly}
 		install -vDm755 $SRC/run-parts $PKG/usr/bin/run-parts

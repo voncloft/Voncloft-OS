@@ -5,7 +5,7 @@ name=e2fsprogs
 version=1.46.2
 release=1
 source="https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v$version/e2fsprogs-$version.tar.xz"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
