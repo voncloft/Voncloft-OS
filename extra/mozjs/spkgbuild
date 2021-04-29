@@ -1,11 +1,11 @@
 # description	: Mozilla's JavaScript engine written in C
-# depends	: autoconf icu rustc which
+# depends	: autoconf icu rust which
 
 name=mozjs
 version=78.9.0
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz"
-
+options="!checksum"
 build() {
 	cd firefox-$version
 
