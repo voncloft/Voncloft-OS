@@ -5,13 +5,8 @@ name=util-linux
 version=2.36.2
 release=1
 
-case $version in
-	*.*.*) _ver=${version%.*};;
-	*.*) _ver=$version;;
-esac
-
 source="https://www.kernel.org/pub/linux/utils/$name/v$_ver/$name-$version.tar.xz"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
