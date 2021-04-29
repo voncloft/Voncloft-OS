@@ -1,5 +1,5 @@
 # description	: Fetches system/theme information in terminal for Linux desktop screenshots
-# optdepends	: scrot
+# optdepends	: scrot lsb-release
 
 name=screenfetch
 version=3.9.1
