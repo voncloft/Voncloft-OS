@@ -3,7 +3,8 @@
 name=lsb-release
 version=1.4
 release=1
-source="https://downloads.sourceforge.net/lsb/$name-$version.tar.gz"
+source="https://downloads.sourceforge.net/lsb/$name-$version.tar.gz
+	lsb-release"
 
 build() {
 	cd $name-$version
@@ -13,7 +14,8 @@ build() {
 	./help2man -N --include ./lsb_release.examples \
               --alt_version_key=program_version ./lsb_release > lsb_release.1
 
-
+	mkdir -p $PKG/etc
+	install -m644 $SRC/lsb-release $PKG/etc/lsb-release
 	mkdir -p $PKG/usr/bin
 	mkdir -p $PKG/usr/share/man/man1
 	install -v -m 644 lsb_release.1 $PKG/usr/share/man/man1/lsb_release.1
