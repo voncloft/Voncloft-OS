@@ -7,3 +7,7 @@ Packages upgraded: 0
 08
 Packages upgraded: 0
 
+12
+sed -i -e 's/5.6.1/5.7/g' /Voncloft-OS/*/nano/spkgbuild
+Packages upgraded: 1
+
