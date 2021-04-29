@@ -9,6 +9,7 @@ source="https://www.cpan.org/src/5.0/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
+	cd $name-$version
 	export BUILD_ZLIB=False
 	export BUILD_BZIP2=0
 
