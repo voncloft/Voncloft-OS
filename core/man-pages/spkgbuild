@@ -4,7 +4,7 @@ name=man-pages
 version=5.11
 release=1
 source="https://www.kernel.org/pub/linux/docs/$name/$name-$version.tar.xz"
-
+options="!checksum"
 build() {
 	cd $name-$version
 	make DESTDIR=$PKG install
