@@ -1,8 +1,8 @@
 # description	: Mozilla's JavaScript engine written in C
-# depends	: yasm icu nspr autoconf2.13 python
+# depends	: autoconf icu rustc which
 
 name=mozjs
-version=68.11.0
+version=78.9.0
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz"
 
