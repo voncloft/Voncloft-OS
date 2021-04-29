@@ -1,5 +1,5 @@
 # description : A MutableSet that remembers its order, so that every entry has an index
-# depends : python
+# depends : python python-setuptools
 
 name=python-ordered-set
 version=4.0.2
