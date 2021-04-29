@@ -17,14 +17,8 @@ build() {
 	            --enable-shared     \
 	            --with-system-expat \
 	            --with-system-ffi   \
-	            --without-ensurepip
+	            --with-ensurepip=yes
 	make
 	make DESTDIR=$PKG install
 
-	chmod -v 755 $PKG/usr/lib/libpython${version%.*}.so
-	chmod -v 755 $PKG/usr/lib/libpython.so
-
-	mv $PKG/usr/include/python${version%.*}/pyconfig.h \
-	   $PKG/usr/include/python${version%.*}/pyconfig-64.h
-	install -m 0644 $SRC/pyconfig.h $PKG/usr/include/python${version%.*}/
 }
