@@ -2,31 +2,29 @@
 # depends	: autoconf icu rust which
 
 name=mozjs
-version=78.9.0
+version=78.10.0
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz"
 options="!checksum"
 build() {
 	cd firefox-$version
 
-	sed '21,+4d' -i js/moz.configure
+	#sed '21,+4d' -i js/moz.configure
 
-	mkdir mozjs-build
-	cd    mozjs-build
+	mkdir obj
+	cd    obj
 
-	export SHELL=/bin/sh
+	#export SHELL=/bin/sh
 
-	CC=gcc CXX=g++ LLVM_OBJDUMP=/bin/false \
-	../js/src/configure \
-		--prefix=/usr \
-		--with-intl-api \
-		--with-system-zlib \
-		--with-system-nspr \
-		--with-system-icu \
-		--disable-jemalloc \
-		--disable-debug-symbols \
-		--enable-readline
-	make
+	CC=gcc \
+	../js/src/configure --prefix=/usr            \
+                    --with-intl-api          \
+                    --with-system-zlib       \
+                    --with-system-icu        \
+                    --disable-jemalloc       \
+                    --disable-debug-symbols  \
+                    --enable-readline
+	make -j1
 	make DESTDIR=$PKG install
 
 	rm $PKG/usr/lib/libjs_static.ajs
