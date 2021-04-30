@@ -1,0 +1,15 @@
+# description : wayland depends
+# depends : wayland
+
+name=wayland-protocols
+version=1.20
+release=1
+
+source="https://wayland.freedesktop.org/releases/wayland-protocols-$version.tar.xz"
+options="!checksum"
+
+build() {
+	./configure --prefix=/usr &&
+	make
+	make DESTDIR=$PKG install
+}	

@@ -1,5 +1,6 @@
 d:tinyxml
 d:cmatrix
+d:wayland-protocols
 d:flexget
 d:woff2
 d:flashplugin
@@ -10,6 +11,7 @@ d:extra-cmake-modules
 d:gtk-engine-murrine
 d:gtkmm2
 d:libtorrent-rasterbar
+d:wayland
 d:ncdu
 d:iotop
 d:geoip-database
@@ -40,6 +42,7 @@ f:b6cc2d9330707373d920f760793c6311:tinyxml/entity.patch
 f:53ee91c75884bacf2f042a6fa22b5850:tinyxml/spkgbuild
 f:6b6870e6abf4653794ad75099451329d:cmatrix/CHANGELOG
 f:2012fbff5ea332ce2b2d19b327b46c93:cmatrix/spkgbuild
+f:6ac07c6409a9181afb5e80221e728138:wayland-protocols/spkgbuild
 f:e1fa348412f885906e495ff70148f846:flexget/spkgbuild
 f:d8e499cccb1a6fa8b6eb3732477f5eb1:woff2/spkgbuild
 f:c9a9cd4a7a1081feca03ebbdc3a18093:flashplugin/.checksums
@@ -63,6 +66,7 @@ f:7b45cc3dc2e519cd448d8060bfa47051:gtkmm2/.checksums
 f:3e7c6068606991a8113b923bded34c32:gtkmm2/.pkgfiles
 f:5a3c86e8ed520b973293ab599a3df213:gtkmm2/spkgbuild
 f:cfe3b24d83be5464d2acfaf1f87ae36b:libtorrent-rasterbar/spkgbuild
+f:73f38b2289b1f957b2a97eb7507651a9:wayland/spkbuild
 f:928491bf23d16ac3cb5cf31ff7687610:ncdu/.checksums
 f:4fd4984bf76b56ff3ea70420132dc7a4:ncdu/.pkgfiles
 f:1e9cbb35e93a65c518b880e8e4f07a4f:ncdu/spkgbuild
