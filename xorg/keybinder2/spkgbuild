@@ -1,5 +1,5 @@
 # description	: Utility library registering global X keyboard shortcuts
-# depends	: gtk2 gobject-introspection pygtk python2
+# depends	: gtk2 gobject-introspection pyython-gtk2 python2
 
 name=keybinder2
 version=0.3.1
