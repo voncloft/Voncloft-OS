@@ -3,6 +3,7 @@ d:xorg
 d:libxslt
 d:libxt
 d:xdg-user-dirs
+d:xorg-pre
 d:libxinerama
 d:libxkbcommon
 d:libxxf86vm
@@ -73,7 +74,7 @@ f:0030ed2a851ff90256a6282804190348:libxrender/.pkgfiles
 f:182aa85fa281794108bd6e013ac554dc:libxrender/spkgbuild
 f:c1a5d97f6be1b463a7c0faf320eee13e:xorg/.checksums
 f:9adb3c934593fe2fc9d420c08c26d4c3:xorg/.pkgfiles
-f:f7beffc4a88aa59be2c97436c597820d:xorg/spkgbuild
+f:dc3a0432d519408968fdc204be46b0c6:xorg/spkgbuild
 f:efc112d212f643e0b457b2dbba9082c4:libxslt/.checksums
 f:56e020af0f5c7a1cd1b72a48c9c21139:libxslt/.pkgfiles
 f:0568b5d2068f0e7227c32d1d48c65529:libxslt/spkgbuild
@@ -83,6 +84,7 @@ f:9254fdfcd1ad6fc8e0befd45b6084cf0:libxt/spkgbuild
 f:0b6605854b16c1825c0e0a73a0b48ecf:xdg-user-dirs/.checksums
 f:35f5ce260a0255762d08c67142b058e3:xdg-user-dirs/.pkgfiles
 f:fcaf2cb69d31bdc20246f39a8b6e10a5:xdg-user-dirs/spkgbuild
+f:388b517acc0bd8ab0ee7e3a1a6f45a0a:xorg-pre/spkgbuild
 f:a9fbe90a4bd6341404aa1d666753e3b5:libxinerama/.checksums
 f:e2dc58127d4cde116fb64f658b10ca02:libxinerama/.pkgfiles
 f:f96020d51c0966f21548f4a1dde053d1:libxinerama/spkgbuild
