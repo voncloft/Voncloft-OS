@@ -9,7 +9,7 @@ build() {
 	XORG_PREFIX=/usr
 	 XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc \
     		--localstatedir=/var --disable-static"
-
+	mkdir -pv $PKG/etc/profile.d
 	cat <<-EOF > $PKG/etc/profile.d/xorg.sh
 	XORG_PREFIX="$XORG_PREFIX"
 	XORG_CONFIG="--prefix=\$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"
