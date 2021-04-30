@@ -10,6 +10,6 @@ options="!checksum"
 
 build() {
         cd blfs-bootscripts-20210110
-        make DESTDIR=$PKG fcron
+        make DESTDIR=$PKGinstall-fcron
 
 }
