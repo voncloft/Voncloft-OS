@@ -17,6 +17,7 @@ build() {
 	EOF
 
 	chmod 644 $PKG/etc/profile.d/xorg.sh
+	mkdir -pv $PKG/etc/sudoers.d
 	cat <<-EOF > $PKG/etc/sudoers.d/xorg 
 	Defaults env_keep += XORG_PREFIX
 	Defaults env_keep += XORG_CONFIG
