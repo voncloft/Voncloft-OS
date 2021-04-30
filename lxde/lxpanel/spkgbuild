@@ -6,7 +6,7 @@ version=0.10.1
 release=1
 source="https://downloads.sourceforge.net/lxde/$name-$version.tar.xz
 	10-devproc-lxpanel.patch"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
