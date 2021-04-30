@@ -1,0 +1,15 @@
+# description : postfix boot script
+# depends :
+
+name=fcron-boot
+version=3.3.0
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG fcron
+
+}
