@@ -1,5 +1,5 @@
 # description	: Default session manager for LXDE
-# depends	: dbus-glib libunique lsb-release polkit gtk2 vala
+# depends	: dbus-glib lsb-release polkit gtk2 vala
 
 name=lxsession
 version=0.5.5
