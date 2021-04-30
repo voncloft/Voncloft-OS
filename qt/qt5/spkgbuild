@@ -26,7 +26,7 @@ build() {
 	make
 	make -j1 INSTALL_ROOT=$PKG install
 
-	ln -sfnv $PKG/opt/qt5-$version $PKG/opt/qt5
+	ln -sfnv opt/qt5-$version $PKG/opt/qt5
 	
 	find $PKG/opt/qt5-$version -name \*.prl \
 	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
@@ -108,7 +108,7 @@ for file in moc uic rcc qmake lconvert lrelease lupdate; do
 done
 
 mkdir -pv $PKG/etc/ld.so.conf.d/
-cat <<-EOF > $PKG/etc/ld.so.conf.d/qt5.sh << EOF
+cat <<-EOF > $PKG/etc/ld.so.conf.d/qt5.sh
 /opt/qt5/lib
 EOF
 
@@ -118,7 +118,7 @@ Defaults env_keep += QT5DIR
 EOF
 
 mkdir $PKG/etc/profile.d
-cat > $PKG/etc/profile.d/qt5.sh << EOF
+cat > $PKG/etc/profile.d/qt5.sh
 QT5DIR=/opt/qt5
 
 pathappend $QT5DIR/bin           PATH
