@@ -9,6 +9,7 @@ source="https://wayland.freedesktop.org/releases/wayland-1.19.0.tar.xz"
 options="!checksum"
 
 build() {
+	cd $name-$version
 	./configure --prefix=/usr    \
             --disable-static \
             --disable-documentation
