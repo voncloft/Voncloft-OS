@@ -12,7 +12,7 @@ options="!checksum"
 
 build() {
 	cd qt-everywhere-src-$version
-	./configure -prefix /opt/qt5-$version                        \
+	./configure -prefix /opt/qt5                        \
             -sysconfdir /etc/xdg                      \
             -confirm-license                          \
             -opensource                               \
@@ -25,8 +25,8 @@ build() {
             -skip qtwebengine
 	make
 	make -j1 INSTALL_ROOT=$PKG install
-
-	ln -sfnv opt/qt5-$version $PKG/opt/qt5
+	mkdir /opt/qt-$version
+	ln -sfnv qt-$version $PKG/opt/qt5
 	
 	find $PKG/opt/qt5-$version -name \*.prl \
 	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
