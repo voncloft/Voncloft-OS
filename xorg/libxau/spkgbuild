@@ -9,11 +9,7 @@ source="http://ftp.x.org/pub/individual/lib/libXau-$version.tar.bz2"
 build() {
 	cd libXau-$version
 
- 	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--localstatedir=/var \
-		--disable-static
+	./configure $XORG_CONFIG
 	make
 	make DESTDIR=$PKG install
 }

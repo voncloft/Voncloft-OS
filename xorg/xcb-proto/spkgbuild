@@ -7,12 +7,7 @@ source="http://xcb.freedesktop.org/dist/xcb-proto-$version.tar.xz"
 
 build() {
 	cd $name-$version
-
-  	PYTHON=python ./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--localstatedir=/var \
-		--disable-static
+	PYTHON=python3 ./configure $XORG_CONFIG
 	make DESTDIR=$PKG install
 }
 

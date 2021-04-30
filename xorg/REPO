@@ -67,6 +67,7 @@ d:libxscrnsaver
 d:libxshmfence
 d:libxft
 d:libxfont2
+d:xtrans
 d:bdftopcf
 d:xrandr
 f:5d0a0dd7b957425b2c8ac14dfba38a6c:libxrender/.checksums
@@ -126,10 +127,10 @@ f:14d325074439cbd167296807d64a6a82:keybinder2/.pkgfiles
 f:174cea29af161316afdd68581fb18aa8:keybinder2/spkgbuild
 f:abd66730642ca0bcd0ad9a6e264fbd71:xcb-proto/.checksums
 f:0baf521c7435c33936dbc5e00e6c9336:xcb-proto/.pkgfiles
-f:e28fa5ae687e64fda0fc757c505ffd75:xcb-proto/spkgbuild
+f:12af80e70ad4bef2383cdfbd67085cb2:xcb-proto/spkgbuild
 f:8612b3514765267f1921c76873fba570:libxcb/.checksums
 f:ceaf2f4b8fd89e46544b60491abafd4b:libxcb/.pkgfiles
-f:bb6de4603372902b00b510048790554d:libxcb/spkgbuild
+f:a730526825c1e4549253f39d8ca13bce:libxcb/spkgbuild
 f:2a3670ec13357c4e3c8d55f07d1ec699:libxdg-basedir/xdgGetRelativeHome-overflow.patch
 f:a980acd941a6d4a18eec30e1a651d40d:libxdg-basedir/.checksums
 f:4fe2bab85ca1a445f6daaed2254f48e4:libxdg-basedir/.pkgfiles
@@ -175,7 +176,7 @@ f:2470a6886bcf64913449c8613a1ab327:libxrandr/.pkgfiles
 f:98738e2009c8973bf6300a21bca8b740:libxrandr/spkgbuild
 f:ab41d5b5ebd9f612056eebf68c468105:libxdmcp/.checksums
 f:780fe7085336a8a8bb8cffa67dedbf11:libxdmcp/.pkgfiles
-f:3f36f77ec779be76abd25bb1c7410f1c:libxdmcp/spkgbuild
+f:0ed2ce4878794da15eb24a81e4557628:libxdmcp/spkgbuild
 f:b0e194dd133025e277e5fc1ac92a4ea4:libxaw3dxft/.checksums
 f:28d12fc7552712a301bf0b575948269a:libxaw3dxft/.pkgfiles
 f:4c6f9b74b72d3561b8ce8b37e1ce269d:libxaw3dxft/spkgbuild
@@ -223,7 +224,7 @@ f:348ae1307d3cc662f1c8f3307e7c1071:libxtst/.pkgfiles
 f:550fdd4d13e6167753a03fd8c09dee9f:libxtst/spkgbuild
 f:ddae87d1061a4cc3adc5715ad0fc5c6d:libxau/.checksums
 f:9a0588578bb52a05538d83bfefff1e37:libxau/.pkgfiles
-f:adcbaba5f6f648898db4608dd75c9d7d:libxau/spkgbuild
+f:183c4391c91227b72ff5b3d266a98400:libxau/spkgbuild
 f:c61fdf92b4e51a3bded21f90c1a5e5a5:xterm/.checksums
 f:c50e3cc35cecd06b2dd538f567ac9fb5:xterm/.pkgfiles
 f:163262ef9e9432adc6af45af5189eb09:xterm/spkgbuild
@@ -253,7 +254,7 @@ f:a85eea742071f43b29bb1f4e0cae66e5:xdgmenumaker/.pkgfiles
 f:df895703acf06b142dbede90f2b42b34:xdgmenumaker/spkgbuild
 f:40c13ce40d0bd0862b1202f5e333fef6:xorgproto/.checksums
 f:43d1ac1eceb37fd39e0c9268678315e4:xorgproto/.pkgfiles
-f:ec1564772dc442d1ab4cb02c02b0ce94:xorgproto/spkgbuild
+f:1e096e969274f5042b5067be08d27084:xorgproto/spkgbuild
 f:a1e14ec7345890b0600d04a4f702ef00:libxaw/.checksums
 f:024213a13a2ec8d90d7c625146b82520:libxaw/.pkgfiles
 f:dd90407aef2416c169ee758c1a8814d5:libxaw/spkgbuild
@@ -279,6 +280,9 @@ f:00da7d84cb8655394fd8e3d7d62a2280:libxft/spkgbuild
 f:3c8447a8346456882eee6df37041e012:libxfont2/.checksums
 f:0ddfcf1047753f4f2c5848ab7393ddc7:libxfont2/.pkgfiles
 f:4e42721f3a4cc2132ddbabde13256d2a:libxfont2/spkgbuild
+f:e264b861ef3fe7d1280ab5def36166fb:xtrans/.checksums
+f:44ffc15f052802b16af756dafc6fdcbd:xtrans/.pkgfiles
+f:e2e4618837e5e94fed2b5a06f7a6d8f1:xtrans/spkgbuild
 f:fd34b35f787d8df0fc88eaf32f5fd721:bdftopcf/.checksums
 f:0dbb99e8dec1fbd225cea5f46a85d026:bdftopcf/.pkgfiles
 f:21a114cd239d20ced7a11c4169d22514:bdftopcf/spkgbuild

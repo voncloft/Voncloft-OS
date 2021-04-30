@@ -1,5 +1,5 @@
 # description	: Combined X.Org X11 Protocol headers
-# depends	: meson
+# depends	: util-macros meson
 
 name=xorgproto
 version=2020.1
@@ -12,7 +12,7 @@ build() {
 	mkdir build
 	cd build
 	
-	meson --prefix=/usr
+	meson --prefix=$XORG_PREFIX -Dlegacy=true .. 
 	ninja
 	DESTDIR=$PKG ninja install
 }

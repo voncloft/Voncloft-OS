@@ -1,5 +1,5 @@
 # description	: X11 client-side library
-# depends	: libxau libxdmcp xcb-proto libxcb
+# depends	: libxau libxdmcp xcb-proto
 
 name=libxcb
 version=1.14
@@ -9,16 +9,9 @@ source="http://xcb.freedesktop.org/dist/libxcb-$version.tar.xz"
 build() {
 	cd $name-$version
 	
-	# removes dependency on libpthread-stubs package which is useless on Linux
-	sed -i "s/pthread-stubs//" configure
-
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--localstatedir=/var \
-		--disable-static     \
-		--without-doxygen \
-		--docdir='${datadir}'/doc/libxcb
+	CFLAGS="${CFLAGS:--O2 -g} -Wno-error=format-extra-args" ./configure $XORG_CONFIG      \
+            --without-doxygen \
+            --docdir='${datadir}'/doc/libxcb-$version
 	make
 	make DESTDIR=$PKG install
 }

@@ -525,7 +525,6 @@ d:menumaker
 d:i3status
 d:babl
 d:fwis
-d:xtrans
 d:grsync
 d:e2fsprogs
 d:neofetch
@@ -2300,9 +2299,6 @@ f:338ff3dc8cafb75aff99d4d2e49b7c85:babl/.pkgfiles
 f:d8c669dcada04c36d45269911e93e360:babl/spkgbuild
 f:45484282ae8907771368163e28f3688c:fwis/spkgbuild
 f:a433b40ab4416774d201314c1e4ae8f2:fwis/fwis
-f:e264b861ef3fe7d1280ab5def36166fb:xtrans/.checksums
-f:44ffc15f052802b16af756dafc6fdcbd:xtrans/.pkgfiles
-f:e2e4618837e5e94fed2b5a06f7a6d8f1:xtrans/spkgbuild
 f:aca44d53a6078824331ac96b897a4e10:grsync/.checksums
 f:304b13f017ccc3126a0a6fc7a17e61db:grsync/gtk3-port.patch
 f:373bec705f54e0fd5b8b2037e4c8dc04:grsync/.pkgfiles
