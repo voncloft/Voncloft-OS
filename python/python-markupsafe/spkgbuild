@@ -9,7 +9,7 @@ source="https://files.pythonhosted.org/packages/source/M/MarkupSafe/MarkupSafe-$
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd MarkupSafe-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
