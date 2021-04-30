@@ -4,7 +4,7 @@
 name=x265
 version=3.4
 release=1
-source="https://bitbucket.org/multicoreware/$name/downloads/${name}_${version}.tar.gz"
+source="http://anduin.linuxfromscratch.org/BLFS/$name/$name_$version.tar.gz"
 
 build() {
 	cd ${name}_${version}
