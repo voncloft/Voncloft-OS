@@ -4,14 +4,22 @@
 name=libxcb
 version=1.14
 release=1
-source="http://xcb.freedesktop.org/dist/libxcb-$version.tar.xz"
+source="https://xorg.freedesktop.org/archive/individual/xcb/libxcb-$version.tar.xz"
 
 build() {
 	cd $name-$version
 	
-	CFLAGS="${CFLAGS:--O2 -g} -Wno-error=format-extra-args" ./configure $XORG_CONFIG      \
-            --without-doxygen \
-            --docdir='${datadir}'/doc/libxcb-$version
+	# removes dependency on libpthread-stubs package which is useless on Linux
+	sed -i "s/pthread-stubs//" configure
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--disable-static     \
+		--without-doxygen \
+		--docdir='${datadir}'/doc/libxcb
 	make
 	make DESTDIR=$PKG install
+
 }
