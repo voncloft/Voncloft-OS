@@ -10,6 +10,7 @@ options="!checksum"
 
 build() {
    cd pygobject-$version
-   python2 setup.py build
-   python2 setup.py install --optimize=1 --root=$PKG
+	./configure --prefix=/usr --disable-introspection
+	make
+	make DESTDIR=$PKG install
  }
