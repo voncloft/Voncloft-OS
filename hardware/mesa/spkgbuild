@@ -2,7 +2,7 @@
 # depends	: libdrm llvm expat zlib zstd elfutils libxcb libxshmfence libx11 wayland libxvmc libxv libxext libxfixes libxdamage libxxf86vm python-mako libglvnd xrandr wayland-protocols
 
 name=mesa
-version=21.0.3
+version=20.3.4
 release=1
 source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz"
 options="!checksum"
