@@ -7,7 +7,7 @@ release=1
 source="https://www.lua.org/ftp/$name-$version.tar.gz
 	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-shared_library-1.patch
 	lua.pc"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
