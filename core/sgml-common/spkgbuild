@@ -5,7 +5,7 @@ version=0.6.3
 release=2
 source="https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/sgml-common-$version.tgz
 	http://www.linuxfromscratch.org/patches/blfs/svn/sgml-common-$version-manpage-1.patch"
-
+options="!checksum"
 build() {
 	cd $name-$version
 
