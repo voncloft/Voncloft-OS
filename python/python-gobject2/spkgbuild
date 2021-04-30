@@ -1,5 +1,5 @@
 # description	: Python 3 bindings to the GObject class from GLib
-# depends	: python2 glib
+# depends	: glib
 
 name=python-gobject2
 version=2.28.7

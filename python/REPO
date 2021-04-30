@@ -1221,7 +1221,6 @@ d:python-aws-sam-translator
 d:python-jsbeautifier
 d:python-aniso8601
 d:python-u-msgpack
-d:python-gtk2
 d:python-gammu
 d:python-sysv_ipc
 d:python-micawber
@@ -2317,7 +2316,7 @@ f:904e831514e952a4cdcb1e9b3b663dbd:python-aiosmtpd/spkgbuild
 f:4da4828db10c1064ed57f7702ffe8a4c:python-vobject/spkgbuild
 f:e4f2764b926ef35bd39cc4e06c39f81c:python-cymem/spkgbuild
 f:c46f55275a2d6cef813a36cd2e993d76:python-justbytes/spkgbuild
-f:f9ee54661c692a3a142c36added9103a:python-gobject2/spkgbuild
+f:4388271f0800b8890737df18365e707b:python-gobject2/spkgbuild
 f:4294206c3aea59c8212df14d492bbd2a:python-beaker/spkgbuild
 f:2961b344446a4c3033bfea4feb2b1439:python-ansi2html/spkgbuild
 f:147d4e0f7f520cf4bb1bd24df5b9bb3f:python-calmjs.parse/spkgbuild
@@ -2743,8 +2742,6 @@ f:6e8e529d85c6449942d2d8ee39f15ec0:python-aws-sam-translator/spkgbuild
 f:bfc4e321f81f88453a97b06692285c30:python-jsbeautifier/spkgbuild
 f:3c0a486a75e155128b8fdac013efe060:python-aniso8601/spkgbuild
 f:1de6a362bcb006a710878c36ae826449:python-u-msgpack/spkgbuild
-f:6d8b1a7ee1f39f2e335dc7a50393a77b:python-gtk2/CHANGELOG
-f:f471419865a0bf6209ed62e60e52bb45:python-gtk2/spkgbuild
 f:cf7bbc0454ae5d0e417d20d5dcd69855:python-gammu/spkgbuild
 f:6f7838b3591805d57ee44fe6bae22793:python-sysv_ipc/spkgbuild
 f:d087c9a31c9aaf2def849908acfab7fe:python-micawber/spkgbuild
@@ -2788,7 +2785,7 @@ f:9ec0e82990a7344f953be29c7fddc4f7:python-jsonrpclib-pelix/spkgbuild
 f:b808a3a09062705b1977d75a364fea37:python-multidict/spkgbuild
 f:decdc15a56d6bf7bd608d8259d949db2:python-pycontracts/spkgbuild
 f:76bf9a8c2939e0565136a4dcc5ffceec:python-ubjson/spkgbuild
-f:28b491008a3f15bc425970d00b810755:python-cairo/spkgbuild
+f:3453f27247180995b5c74b7a33420653:python-cairo/spkgbuild
 f:dfce2215c85aa257255ec5a3a5e35fdd:python-pyvcd/spkgbuild
 f:45f3cbb97ee3b5e18b1534a6238b4f70:python-zope-testing/spkgbuild
 f:cdc0b561a480a567957ac6494677e3e0:python-speg/spkgbuild

@@ -8,3 +8,7 @@ Packages upgraded: 1
 08
 Packages upgraded: 0
 
+12
+sed -i -e 's/40.0/40.1/g' /Voncloft-OS/*/nautilus/spkgbuild
+Packages upgraded: 1
+

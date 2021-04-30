@@ -12,9 +12,4 @@ build() {
    cd pycairo-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
-
-   python2 setup.py build
-   python2 setup.py install --optimize=1 --root=$PKG
-   #python2 setup.py install_pycairo_header --root=$PKG
-   #python2 setup.py install_pkgconfig --root=$PKG
  }
