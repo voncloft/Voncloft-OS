@@ -12,4 +12,7 @@ build() {
    cd ${name#python-}-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
+
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
  }
