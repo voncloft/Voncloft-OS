@@ -10,15 +10,8 @@ build() {
 	cd $name-$version
 	
 	# removes dependency on libpthread-stubs package which is useless on Linux
-	sed -i "s/pthread-stubs//" configure
-
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--localstatedir=/var \
-		--disable-static     \
-		--without-doxygen \
-		--docdir='${datadir}'/doc/libxcb
+	CFLAGS="${CFLAGS:--O2 -g} -Wno-error=format-extra-args" ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static      \
+            --without-doxygen 
 	make
 	make DESTDIR=$PKG install
 
