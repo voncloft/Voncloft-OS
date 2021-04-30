@@ -22,6 +22,8 @@ wget http://distrowatch.org/packages.php
 #remove packages that you want out of the loop
 sed -i -e '/vlc/d' packages.php
 sed -i -e '/llvm/d' packages.php ##not yet supported
+sed -i -e '/mesa/d' packages.php
+
 rm -rf stripped_info.txt
 grep -A 1 "<th><a name=" packages.php >> modified.php
 
