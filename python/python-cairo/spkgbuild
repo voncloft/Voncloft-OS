@@ -2,17 +2,19 @@
 # depends	: python cairo
 
 name=python-cairo
-version=1.19.1
+version=1.18.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://github.com/pygobject/pycairo/releases/download/v$version/pycairo-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd pycairo-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
 
-   python setup.py build
-   python setup.py install --optimize=1 --root=$PKG
+   python2 setup.py build
+   python2 setup.py install --optimize=1 --root=$PKG
+   #python2 setup.py install_pycairo_header --root=$PKG
+   #python2 setup.py install_pkgconfig --root=$PKG
  }
