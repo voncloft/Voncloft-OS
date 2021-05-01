@@ -1,10 +1,10 @@
 # description	: Unix command-line port of 7-Zip, a file archiver that archives with high compression ratios
 
 name=p7zip
-version=16.02
+version=17.03
 release=1
 source="https://downloads.sourceforge.net/$name/${name}_${version}_src_all.tar.bz2"
-
+options="!checksum"
 build() {
 	cd ${name}_${version}
 
