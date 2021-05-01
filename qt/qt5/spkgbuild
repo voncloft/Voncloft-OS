@@ -12,7 +12,7 @@ options="!checksum"
 
 build() {
 	cd qt-everywhere-src-$version
-	./configure -prefix /opt/qt5                        \
+	./configure -prefix /usr                        \
             -sysconfdir /etc/xdg                      \
             -confirm-license                          \
             -opensource                               \
@@ -22,7 +22,16 @@ build() {
             -system-sqlite                            \
             -nomake examples                          \
             -no-rpath                                 \
-            -skip qtwebengine
+            -skip qtwebengine \
+             -archdatadir    /usr/lib/qt5                \
+            -bindir         /usr/bin                    \
+            -plugindir      /usr/lib/qt5/plugins        \
+            -importdir      /usr/lib/qt5/imports        \
+            -headerdir      /usr/include/qt5            \
+            -datadir        /usr/share/qt5              \
+            -docdir         /usr/share/doc/qt5          \
+            -translationdir /usr/share/qt5/translations \
+            -examplesdir    /usr/share/doc/qt5/examples
 	make
 	make -j1 INSTALL_ROOT=$PKG install
 	#mkdir $PKG/opt/qt-$version
@@ -107,10 +116,10 @@ for file in moc uic rcc qmake lconvert lrelease lupdate; do
   ln -sfrvn /opt/qt5/bin/$file $PKG/usr/bin/$file-qt5
 done
 
-mkdir -pv $PKG/etc/ld.so.conf.d/
-cat <<-EOF > $PKG/etc/ld.so.conf.d/qt5.sh
-/opt/qt5/lib
-EOF
+#mkdir -pv $PKG/etc/ld.so.conf.d/
+#cat <<-EOF > $PKG/etc/ld.so.conf.d/qt5.sh
+#/opt/qt5/lib
+#EOF
 
 mkdir -pv $PKG/etc/sudoers.d
 cat <<-EOF > $PKG/etc/sudoers.d/qt
@@ -119,10 +128,9 @@ EOF
 
 mkdir $PKG/etc/profile.d
 cat <<-EOF > $PKG/etc/profile.d/qt5.sh
-QT5DIR=/opt/qt5
-
-pathappend $QT5DIR/bin           PATH
-pathappend $QT5DIR/lib/pkgconfig PKG_CONFIG_PATH
+QT5DIR=/usr
+export QT5DIR
+pathappend $QT5DIR/bin
 
 export QT5DIR
 EOF
