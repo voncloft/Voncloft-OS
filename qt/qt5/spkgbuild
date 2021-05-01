@@ -37,7 +37,7 @@ build() {
 	#mkdir $PKG/opt/qt-$version
 	#ln -sfnv $PKG/qt-$version $PKG/opt/qt5
 	
-	find $PKG/opt/qt5 -name \*.prl \
+	find $PKG/usr -name \*.prl \
 	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 
 
