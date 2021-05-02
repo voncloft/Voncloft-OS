@@ -8,7 +8,8 @@ source="http://ftp.x.org/pub/individual/lib/libXdmcp-$version.tar.bz2"
 build() {
 	cd libXdmcp-$version
 
-	./configure $XORG_CONFIG --docdir=/usr/share/doc/libXdmcp-$version
+	./configure --prefix=/usr --sysconfdir=/etc \
+	    --localstatedir=/var --disable-static --docdir=/usr/share/doc/libXdmcp-$version
 	make
 	make DESTDIR=$PKG install
 }

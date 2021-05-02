@@ -9,7 +9,8 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	./configure $XORG_CONFIG
+	./configure --prefix=/usr --sysconfdir=/etc \
+    		--localstatedir=/var --disable-static
 	make DESTDIR=$PKG install
 	
 }

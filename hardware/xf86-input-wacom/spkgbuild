@@ -10,7 +10,8 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	./configure $XORG_CONFIG --with-systemd-unit-dir=no \
+	./configure --prefix=/usr --sysconfdir=/etc \
+    		--localstatedir=/var --disable-static --with-systemd-unit-dir=no \
             --with-udev-rules-dir=/lib/udev/rules.d
         make
         make DESTDIR=$PKG install
