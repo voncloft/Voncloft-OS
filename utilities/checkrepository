@@ -91,7 +91,10 @@ words=$(cat $PWD/testing.txt)
 cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
+if [ $count -gt 0 ];
+then
 mailme voncloft@gmail.com "$words" "$title"
+fi
 rm -rfv *.php
 rm -rfv *.php.*
 #rm -rfv stripped_info.txt
