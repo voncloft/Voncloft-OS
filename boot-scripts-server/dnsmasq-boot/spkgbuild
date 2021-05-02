@@ -1,5 +1,5 @@
 # description : dnsmasq-boot-script
-# dependencies : dnsmasq
+# depends : dnsmasq
 
 name=dnsmasq-boot
 version=2.82

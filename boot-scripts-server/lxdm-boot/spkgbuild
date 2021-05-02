@@ -1,5 +1,5 @@
 # description : ftp boot script
-# dependencies: lxdm
+# depends: lxdm
 
 name=lxdm-boot
 version=2.0.4
