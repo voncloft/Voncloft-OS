@@ -1,4 +1,5 @@
 d:subsonic-boot
+d:lxdm-boot
 d:postfix-boot
 d:psad-boot
 d:logrotate-boot
@@ -18,6 +19,7 @@ d:iptables-boot
 d:openssh-boot
 d:hostapd-boot
 f:82c5a7b04b78a35143852ba1ba3fbc43:subsonic-boot/spkgbuild
+f:4f86b7865c6d4a62fc959734871451fc:lxdm-boot/spkgbuild
 f:8faa8127e9680fd207bac42615322d52:postfix-boot/spkgbuild.save
 f:d21ec10e9452f978c8e1c5afbb8d4fa2:postfix-boot/spkgbuild
 f:c1dd87eabe9a4d7d9896ba5c65796b16:psad-boot/spkgbuild

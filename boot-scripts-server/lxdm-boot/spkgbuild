@@ -1,0 +1,15 @@
+# description : ftp boot script
+# dependencies: lxdm
+
+name=lxdm-boot
+version=2.0.4
+release=38
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-lxdm
+
+}
