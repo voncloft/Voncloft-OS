@@ -1,5 +1,5 @@
 # description	: Mozilla's JavaScript engine written in C
-# depends	: autoconf icu rust which
+# depends	: autoconf2.13 icu rust which
 
 name=mozjs
 version=78.10.0
