@@ -2,13 +2,14 @@
 # depends	: pcre2 ncurses zlib readline eudev
 
 name=util-linux
-version=2.36.2
+version=2.37
 release=1
-
+_special=rc1
 source="https://www.kernel.org/pub/linux/utils/$name/v$_ver/$name-$version.tar.xz"
+source="https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v$version/$name-$version-rc1.tar.xz"
 options="!checksum"
 build() {
-	cd $name-$version
+	cd $name-$version-$_special
 
 	mkdir -pv $PKG/var/lib/hwclock
 

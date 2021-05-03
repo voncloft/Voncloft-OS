@@ -10,3 +10,10 @@ Packages upgraded: 0
 12
 Packages upgraded: 0
 
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/4.3.4.1/4.3.5/g' /Voncloft-OS/*/qbittorrent/spkgbuild
+Packages upgraded: 1
+
