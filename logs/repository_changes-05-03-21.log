@@ -7,3 +7,9 @@ Packages upgraded: 0
 08
 Packages upgraded: 0
 
+12
+sed -i -e 's/20.12.2/21.04.0/g' /Voncloft-OS/*/ffmpegthumbs/spkgbuild
+sed -i -e 's/20.12.2/21.04.0/g' /Voncloft-OS/*/libkcddb/spkgbuild
+sed -i -e 's/20.12.2/21.04.0/g' /Voncloft-OS/*/libkexiv2/spkgbuild
+Packages upgraded: 3
+
