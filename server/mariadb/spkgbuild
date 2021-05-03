@@ -1,5 +1,5 @@
 # description : mysql database
-# depends : cmake libevent
+# depends : cmake libevent mariadb-boot
 
 name=mariadb
 version=10.5.9

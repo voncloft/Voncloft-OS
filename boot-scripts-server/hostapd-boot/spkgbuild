@@ -1,5 +1,5 @@
 # description : daemon to start wifi for router
-# depends : hostapd
+# depends : 
 
 name=hostapd-boot
 version=2.9

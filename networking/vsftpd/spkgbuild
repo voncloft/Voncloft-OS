@@ -1,5 +1,5 @@
 # description : transfer files to server outside of network
-# depends : libnsl linux-pam
+# depends : libnsl linux-pam vsftpd-boot
 
 name=vsftpd
 version=3.0.3

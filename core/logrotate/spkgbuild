@@ -1,5 +1,5 @@
 # description : rotate system logs automatically
-# depends : acl gzip popt log-folders
+# depends : acl gzip popt log-folders logrotate-boot
 
 name=logrotate
 version=3.18.0

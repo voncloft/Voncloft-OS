@@ -9,7 +9,6 @@ d:dhcpcd
 d:deluge
 d:subsonic
 d:samba
-d:webmin
 f:23df845b1d5e02325f6de8966300bb65:httpd/install
 f:19149f70c4d1cb327585866dce6ef6cd:httpd/.checksums
 f:d83e3207e9de9b0b0f7ad0a46f900318:httpd/mkdirs
@@ -25,10 +24,10 @@ f:bdedc24f953436ab0d52bb3e0e42fc35:dnsmasq/spkgbuild
 f:2f647df400ed113a0f4ee42108ef346a:iptables/rc.iptables
 f:8b9cf940fb36bc205f50a329d8904468:iptables/spkgbuild
 f:6440c7f77c3559e0577fba94bb6f3c32:postfix/CHANGELOG
-f:531f053d36d856e52c7b5262b6dc3af0:postfix/spkgbuild
+f:415649de0bc537f3bbb1a82a6c071c62:postfix/spkgbuild
 f:0ac83f4d502247224df9f020b15f924a:mariadb/CHANGELOG
 f:cb9aa4efad1f996c4b9ef211239e410c:mariadb/spkgbuild.save
-f:74093c2b9fd92b8b91ea36444cbcede2:mariadb/spkgbuild
+f:67224b3020dd794698085d6778cca47b:mariadb/spkgbuild
 f:912cc69f2fd941090353dc73f24fe3ea:dhcpcd/.checksums
 f:bcd8d70e4f6fb4caea68b236b9517b9a:dhcpcd/.pkgfiles
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
@@ -42,4 +41,3 @@ f:4bce64327c31cc59a3d1c30704c87dcf:samba/run.smbd
 f:f993571d792956328db07aa709924366:samba/.pkgfiles
 f:41b7b714cb888a0f25ae9ee8cafd41d9:samba/spkgbuild
 f:31491690f1a7c9d54b51823ba406b9b4:samba/run.nmbd
-f:4b0bd778a9b7462da4c291669e1ba870:webmin/spkgbuild
