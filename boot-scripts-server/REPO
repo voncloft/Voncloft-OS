@@ -9,7 +9,6 @@ d:noip-boot
 d:deluge-boot
 d:mythbackend-boot
 d:vsftpd-boot
-d:cyrus-sasl-boot
 d:openvpn-daemon
 d:dnsmasq-boot
 d:mariadb-boot
@@ -30,7 +29,6 @@ f:a84f159fea806a96e98df5540132a445:noip-boot/spkgbuild
 f:7a202abad44b7774555509a1b1da4b31:deluge-boot/spkgbuild
 f:ceffcc44ce19e5e290660f853847592c:mythbackend-boot/spkgbuild
 f:b729800fa6b37cd3479bebc61ac98c5f:vsftpd-boot/spkgbuild
-f:68b86beee6ac25c5971abe3fa9f3ceb2:cyrus-sasl-boot/spkgbuild
 f:4227795b60e84046b8270970b78483c3:openvpn-daemon/spkgbuild
 f:663b1d57ba50c2454b507e08d485e8a1:dnsmasq-boot/spkgbuild
 f:a2ea82d689859fe3b0e8e9502a975847:mariadb-boot/spkgbuild.save
