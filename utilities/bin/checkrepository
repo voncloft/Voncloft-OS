@@ -1,3 +1,6 @@
+#Maintainer: Voncloft
+#Checks package updaates automatically
+
 #!/bin/sh
 vercomp() {
         if [ "$1" = "$2" ]; then

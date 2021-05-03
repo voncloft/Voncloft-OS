@@ -1,3 +1,4 @@
+#Creates .pkginfo in /var/lib/scratchpkg/index/(package name) - used for testing purposes
 #test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
 #echo "/usr/Voncloft-OS/*/$1/spkgbuild"
 if [ -f /usr/Voncloft-OS/*/$1/spkgbuild ]
