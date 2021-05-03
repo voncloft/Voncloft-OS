@@ -43,7 +43,6 @@ d:libressl
 d:liblzf
 d:libfilezilla
 d:libdbusmenu
-d:libkcddb
 d:libmad
 d:libburn
 d:libusb-compat
@@ -104,7 +103,6 @@ d:libqmi
 d:libmodplug
 d:libwacom
 d:libftdi-compat
-d:libsamplerate
 d:libexif
 d:libevent
 d:libdvdnav
@@ -162,7 +160,6 @@ d:libgnomekbd
 d:libmpeg2
 d:liblxqt
 d:libtheora
-d:libkscreen
 d:libtool
 d:libofx
 d:libva
@@ -175,7 +172,6 @@ d:libsoup
 d:blosc
 d:libblockdev
 d:libmatekbd
-d:libkexiv2
 d:libsass
 d:libspiro
 d:blas
@@ -296,9 +292,6 @@ f:1958f896ce583c4a0c9e656c320e7699:libfilezilla/spkgbuild
 f:87359d402092712aaef738af0248777e:libdbusmenu/.checksums
 f:5c429aac6ecab6b063dae04836ca4bbf:libdbusmenu/.pkgfiles
 f:6ebe97fe4a4298af67100890f9037fd2:libdbusmenu/spkgbuild
-f:2843bbbd0ab1756bbefc550997d79e0c:libkcddb/.checksums
-f:0504fff5e9a5f61fa94bf48bf5739aba:libkcddb/.pkgfiles
-f:ff512132416baac96b1dcf5b16857acf:libkcddb/spkgbuild
 f:030d6cf96e8f2d296d739f9f94b80bf0:libmad/.checksums
 f:67f3c7e8ae88ecf01e44998c504e5587:libmad/.pkgfiles
 f:d531bed28d26117bd28787b724d8a3c3:libmad/spkgbuild
@@ -447,7 +440,7 @@ f:229003f6c9694952d72769cbad438761:libcap/.pkgfiles
 f:e2adb92f49f041651d69afd55987beb0:libcap/spkgbuild
 f:ab9068e20ea6601a0e313a5dda0fd037:librsvg/.checksums
 f:f3c946ca22ffe4739039f9d1114b2e57:librsvg/.pkgfiles
-f:c1689565c49ac4aee01de968f00066de:librsvg/spkgbuild
+f:a74ca8c18603b30272bde45d7b5ffb27:librsvg/spkgbuild
 f:44e186ffc84f22395fe418e60b368f6d:libraw/.checksums
 f:e405fdfba8866ff7a18c8fa9f82bfbf8:libraw/.pkgfiles
 f:0208c73296e1dbff77ff5b297ffcfc6d:libraw/spkgbuild
@@ -457,9 +450,6 @@ f:c6486bb0f5b0424774e30a5296cb07b7:libqmi/spkgbuild
 f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
 f:739cb37b3f925e0e197f6dc4c921c94f:libwacom/spkgbuild
 f:ae13bc7326af8d543d55bc1c8b130ebe:libftdi-compat/spkgbuild
-f:e5f97d539217358163c88f7bc269a18d:libsamplerate/.checksums
-f:7459766fe275376852d4c6e966aceccb:libsamplerate/.pkgfiles
-f:50f6122011e32d48998bfa1997fea0e4:libsamplerate/spkgbuild
 f:7cf21d984bc031298643f3367b564517:libexif/.checksums
 f:7c0acf687a1418771a8c174f063d4d59:libexif/.pkgfiles
 f:303816b3ff77e02723a38d101867e7ba:libexif/spkgbuild
@@ -607,9 +597,6 @@ f:9c84a112be71940ab9654707a7ba5422:liblxqt/spkgbuild
 f:044af184a4cd855f1ec59b14df9e5929:libtheora/.checksums
 f:0ec45b12ad0a19af6f22fc6710757b5d:libtheora/.pkgfiles
 f:dd6ad16ac8d42935847832cb4402e60c:libtheora/spkgbuild
-f:eb8fe82db603988a07aa6ebd348c64b9:libkscreen/.checksums
-f:e4e9398d32dbceec9aad29c5b7db5a9b:libkscreen/.pkgfiles
-f:e35296a43f025b7d2710bd3ad2f8be67:libkscreen/spkgbuild
 f:87109ff4d320b5897546e4d927e374d5:libtool/.checksums
 f:9ea6991724a4e075bc078eb3032beb65:libtool/.pkgfiles
 f:10e7777aff2e2fdaab2a459348065b06:libtool/spkgbuild
@@ -643,9 +630,6 @@ f:a715485c66b0a1dfa21f8a3da0f3edb9:libblockdev/spkgbuild
 f:3c08864add1ce92512bdd9d0e09469ec:libmatekbd/.checksums
 f:40f0bebf48fa68b84a66df4cbc5544da:libmatekbd/.pkgfiles
 f:7105a46924a6a6281b409d62e2ef8626:libmatekbd/spkgbuild
-f:3b101abac4a9eed4f0efed924d1e85ca:libkexiv2/.checksums
-f:de8db2eb0bbd097107d61f2a627f0ef8:libkexiv2/.pkgfiles
-f:1313685a0e377795f840cd8acef3e867:libkexiv2/spkgbuild
 f:ee9c9b2754cc05d44e0d4640852ed25d:libsass/.checksums
 f:ea1b049aeaa7e830d14d77692de868d5:libsass/.pkgfiles
 f:fe32dad1efa5514c32a643a0da343b4d:libsass/spkgbuild

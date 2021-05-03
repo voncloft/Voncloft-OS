@@ -1,5 +1,5 @@
 # description	: The Rust programming language is designed to be a safe, concurrent, practical language
-# depends	: curl cmake python3 llvm libssh2
+# depends	: curl cmake python llvm libssh2
 
 name=rust
 version=1.51.0

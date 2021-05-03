@@ -1,5 +1,5 @@
 # description	: Library and tools used to manipulate, convert and view Scalable Vector Graphic (SVG) images
-# depends	: gdk-pixbuf cairo pango rustc
+# depends	: gdk-pixbuf cairo pango rust
 
 name=librsvg
 version=2.50.4

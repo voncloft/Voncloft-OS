@@ -5,7 +5,6 @@ d:mpg123
 d:phonon-backend-vlc
 d:ffmpegthumbnailer
 d:libcec
-d:ffmpegthumbs
 d:gst-plugins-good
 d:mplayer
 d:projectm
@@ -42,9 +41,6 @@ f:11751a3f235a4e16ef925e2f4396ae7b:ffmpegthumbnailer/.checksums
 f:8b6d6c1739e6c00e28e3f418095cddde:ffmpegthumbnailer/.pkgfiles
 f:b56a72b7b761edf6158eb7f813a52d4c:ffmpegthumbnailer/spkgbuild
 f:77ce677cff025e4be94a2cf2a06d6c66:libcec/spkgbuild
-f:f3d36dd6872a1d2d3c370431f9d79ddf:ffmpegthumbs/.checksums
-f:08a5883ec4f866aff5bcae5f7ffbbc4c:ffmpegthumbs/.pkgfiles
-f:26a49bdf4f863217f1c49a02e2553cb5:ffmpegthumbs/spkgbuild
 f:3585ec0ce666f135367e73bfb5d5e531:gst-plugins-good/.checksums
 f:f4d3768354a24567bb0675c5c9cd2aed:gst-plugins-good/.pkgfiles
 f:e8837ea8e9746866d28244041f65b8c0:gst-plugins-good/spkgbuild
