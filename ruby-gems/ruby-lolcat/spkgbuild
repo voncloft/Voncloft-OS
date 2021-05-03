@@ -1,12 +1,12 @@
 # description : rainbow text
-# depends : ruby ruby-optimist ruby-paint
+# depends : ruby ruby-optimist ruby-paint ruby-manpages
 
 _gemname=lolcat
 name=ruby-lolcat
 version=100.0.0
 release=3
 
-source="https://rubygems.org/downloads/$name-$version.gem"
+source="https://rubygems.org/downloads/lolcat-$version.gem"
 options="!checksum"
 
 build() {

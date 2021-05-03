@@ -1,10 +1,10 @@
 # description : manages terminal colors and effects in ruby
 # depends : ruby ruby-rainbow ruby-rspec ruby-term-ansicolor ruby-rake
 
-_gemname=paint
+_gemname=manpages
 name=ruby-paint
-version=2.1.0
-release=2
+version=0.6.1
+release=1
 
 source="https://rubygems.org/downloads/$_gemname-$version.gem"
 options="!checksum"
