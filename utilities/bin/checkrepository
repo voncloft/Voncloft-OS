@@ -1,6 +1,3 @@
-#Maintainer: Voncloft
-#Checks package updaates automatically
-
 #!/bin/sh
 vercomp() {
         if [ "$1" = "$2" ]; then
@@ -24,9 +21,9 @@ wget http://distrowatch.org/packages.php
 
 #remove packages that you want out of the loop
 sed -i -e '/vlc/d' packages.php
-sed -i -e '/llvm/d' packages.php ##not yet supported
+sed -i -e '/llvm/d' packages.php #not yet supported
 sed -i -e '/mesa/d' packages.php
-sed -i -e '/qt/d/' packages.php
+sed -i -e '/qt/d' packages.php
 rm -rf stripped_info.txt
 grep -A 1 "<th><a name=" packages.php >> modified.php
 
@@ -78,7 +75,7 @@ while IFS=$'\n' read -ra items; do
 						echo -e $final >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
 						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
-						changelog "$item" "Upgraded Version"
+						changelog "$item" "Upgraded from version $iversion to version $uversion"
 					fi
 				fi
   			fi
@@ -97,14 +94,14 @@ title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
 if [ $count -gt 0 ];
 then
-mailme voncloft@gmail.com "$words" "$title"
+	mailme voncloft@gmail.com "$words" "$title"
 fi
 rm -rfv *.php
 rm -rfv *.php.*
 #rm -rfv stripped_info.txt
-rm -v test.txt
+
 #mv -v testing.txt repository_upgrade_report.log
 rm -v testing.txt
-
+rm -v test.txt
 cp /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
 cp /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
