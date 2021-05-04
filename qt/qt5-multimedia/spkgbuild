@@ -1,5 +1,5 @@
 # description : qt media
-# depends : gst-plugins-base libpulse openal qt5
+# depends : gst-plugins-base pulseaudio openal qt5
 
 name=qt5-multimedia
 _qtver=5.15.2
