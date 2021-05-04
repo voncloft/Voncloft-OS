@@ -17,7 +17,7 @@ for dir in /Voncloft-OS/*/$1/; do
 			echo -e "\nDate: $(date)\n\n$version\n$release\n\nSynopsis:\n$2" >> $changelog
 
                 else
-                        echo -e "Date: $(date)\n\n$name\n$version\n$release\n\nSynopsis:\nAdded Changelog to package" >> $changelog
+                        echo -e "Date: $(date)\n\n$name\n$version\n$release\n\nSynopsis:\nAdded Changelog to package\n$2" >> $changelog
                 fi
         echo "Added Changelog successfully"
 	break
