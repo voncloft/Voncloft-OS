@@ -1,5 +1,6 @@
 d:qt5-x11extras
 d:polkit-qt
+d:qt5-svg
 d:qtsql
 d:networkmanager-qt
 d:qterminal
@@ -19,8 +20,11 @@ d:pcmanfm-qt
 d:qca
 d:qt5-webengine-widevine
 d:qtermwidget
+d:qt5-multimedia
 f:f02c27424922ed87e2f83c4560eb68db:qt5-x11extras/spkgbuild
 f:87faac7563addd4e2f7adfc904e74139:polkit-qt/spkgbuild
+f:d41208e0808891abc99d8cdaa3231f51:qt5-svg/CHANGELOG
+f:56cb8ea1648bb395472aa4aa627c7971:qt5-svg/spkgbuild
 f:a83cb4989be211ecc753363f5fb7868e:qtsql/spkgbuild
 f:72deb4c54bf9a98c5ab286e3b1dcf743:networkmanager-qt/spkgbuild
 f:a5680af293ffae9626a74e3749c6e326:qterminal/.checksums
@@ -70,3 +74,5 @@ f:ab645dc1cf30ed038c50579c62f61dd2:qt5-webengine-widevine/spkgbuild
 f:6e9fe9ad592bad50b8ebb01c504d1b84:qtermwidget/.checksums
 f:221257e8ce151a4f2d50dde84df4b067:qtermwidget/.pkgfiles
 f:7cb00e6eb16895d6f31f941d2b515472:qtermwidget/spkgbuild
+f:afecb8dc83f0b407dd0b6886d16c1dec:qt5-multimedia/CHANGELOG
+f:935a209370327a88239fd17798c59d69:qt5-multimedia/spkgbuild

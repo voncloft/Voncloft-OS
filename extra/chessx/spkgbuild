@@ -1,0 +1,19 @@
+# description : Cross-platform chess database and PGN viewer
+# depends : qt5-speech qt5-svg qt5
+
+name=chessx
+version=1.5.4
+release=1
+
+source="https://sourceforge.net/projects/$pkgname/files/$name/$pkgver/$name-$version.tgz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	  lrelease i18n/*
+  	qmake
+  	make
+	  desktop-file-install unix/$name.desktop --dir "$PKG/usr/share/applications/"
+  install -Dm644 data/images/$name.png "$PKG/usr/share/pixmaps/$name.png"
+  install -Dm755 release/$name $PKG/usr/bin/$name
+}
