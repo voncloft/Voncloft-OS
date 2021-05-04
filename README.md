@@ -27,3 +27,4 @@ _As of 3-30-2021_
 
 **Testing:**
 - chessx needs testing and its dependencies
+- scid_vs_pc
