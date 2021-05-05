@@ -60,3 +60,11 @@ sed -i -e 's/5.21.4/5.21.5/g' /Voncloft-OS/*/sddm-kcm/spkgbuild
 sed -i -e 's/5.21.4/5.21.5/g' /Voncloft-OS/*/kwallet-pam/spkgbuild
 Packages upgraded: 49
 
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/78.10.0/78.10.1/g' /Voncloft-OS/*/thunderbird/spkgbuild
+sed -i -e 's/88.0/88.0.1/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 2
+
