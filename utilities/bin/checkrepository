@@ -72,8 +72,8 @@ while IFS=$'\n' read -ra items; do
 						final+="<br>upgraded to version: $uversion\n"
 						final+="<br><br>\n\n"
 						echo -e $final >> testing.txt
-						echo -e $final >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
-						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+						echo -e $final >> /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
 						changelog "$item" "Upgraded from version $cversion to version $uversion"
 					fi
