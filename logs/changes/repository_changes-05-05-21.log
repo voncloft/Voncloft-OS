@@ -12,3 +12,6 @@ sed -i -e 's/1.8.5/1.8.7/g' /Voncloft-OS/*/iptables/spkgbuild
 sed -i -e 's/3.5.9/3.6.0/g' /Voncloft-OS/*/postfix/spkgbuild
 sed -i -e 's/10.5.9/10.6.0/g' /Voncloft-OS/*/mariadb/spkgbuild
 sed -i -e 's/4.12.6/4.14.4/g' /Voncloft-OS/*/samba/spkgbuild
+12
+Packages upgraded: 0
+

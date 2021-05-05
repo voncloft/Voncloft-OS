@@ -5,8 +5,8 @@ name=php
 version=8.0.6
 release=1
 
-source="http://www.php.net/distributions/php-8.0.6.tar.xz"
-
+source="http://www.php.net/distributions/$name-$version.tar.xz"
+options="!checksum"
 build()
 {
 	cd $name-$version
