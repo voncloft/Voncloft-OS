@@ -51,8 +51,8 @@ done < "$input"
 count=0
 #final="$(date +%H)<br>\n"
 
-echo -e "$(date +%H)<br>" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
-echo -e "$(date +%H)" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+echo -e "$(date +%H)<br>" >> /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "$(date +%H)" >> /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log
 
 while IFS=$'\n' read -ra items; do
 		for item in "${items[@]}"; do
@@ -76,6 +76,8 @@ while IFS=$'\n' read -ra items; do
 						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
 						changelog "$item" "Upgraded from version $cversion to version $uversion"
+					else
+						echo "$item is: $cversion in my repository - internet says should be $uversion"
 					fi
 				fi
   			fi
@@ -86,8 +88,8 @@ while IFS=$'\n' read -ra items; do
 done <<< "$list"
 #echo $PWD
 echo -e "Packages upgraded: $count\n" >> $PWD/testing.txt
-echo -e "Packages upgraded: $count\n" >> /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log
-echo -e "Packages upgraded: $count\n" >> /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count\n" >> /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count\n" >> /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log
 words=$(cat $PWD/testing.txt)
 cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
@@ -95,6 +97,7 @@ echo $title
 if [ $count -gt 0 ];
 then
 	mailme voncloft@gmail.com "$words" "$title"
+	mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
 fi
 rm -rfv *.php
 rm -rfv *.php.*
@@ -103,5 +106,5 @@ rm -rfv *.php.*
 #mv -v testing.txt repository_upgrade_report.log
 rm -v testing.txt
 rm -v test.txt
-cp /Voncloft-OS/logs/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
-cp /Voncloft-OS/logs/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
+cp /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
+cp /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
