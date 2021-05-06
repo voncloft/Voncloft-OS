@@ -8,3 +8,8 @@ Packages upgraded: 0
 sed -i -e 's/76.0.4017.94/76.0.4017.107/g' /Voncloft-OS/*/opera/spkgbuild
 Packages upgraded: 1
 
+10
+sed -i -e 's/248/248.1/g' /Voncloft-OS/*/systemd/spkgbuild
+sed -i -e 's/7.1.2/7.1.3/g' /Voncloft-OS/*/libreoffice/spkgbuild
+Packages upgraded: 2
+

@@ -102,7 +102,10 @@ fi
 #mailme voncloft@gmail.com "$(grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V)" "Packages not being checked"
 
 ##MISSING PACKES KEPT OUT OF LOOP
-mailme voncloft@gmail.com "$(grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g')" "Missing Packages not in the loop to be checked"
+grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
+echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
+missing=$(cat missing.txt)
+mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked"
 
 rm -rfv *.php
 rm -rfv *.php.*
