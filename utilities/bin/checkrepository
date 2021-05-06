@@ -97,11 +97,20 @@ echo $title
 if [ $count -gt 0 ];
 then
 	mailme voncloft@gmail.com "$words" "$title"
-	mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
 fi
+###OLD
+#mailme voncloft@gmail.com "$(grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V)" "Packages not being checked"
+
+##MISSING PACKES KEPT OUT OF LOOP
+mailme voncloft@gmail.com "$(grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g')" "Missing Packages not in the loop to be checked"
+
 rm -rfv *.php
 rm -rfv *.php.*
 #rm -rfv stripped_info.txt
+
+####what is missing for update checks
+#grep -vxf stripped_info.txt checkrepo.conf | sort -V
+
 
 #mv -v testing.txt repository_upgrade_report.log
 rm -v testing.txt
