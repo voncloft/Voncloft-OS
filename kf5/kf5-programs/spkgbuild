@@ -1,4 +1,4 @@
-# description : Core components for the kde desktop kf5 packages needed to install kde
+\# description : Core components for the kde desktop kf5 packages needed to install kde
 # depends : attica kapidox karchive kcodecs kconfig kcoreaddons kdbusaddons kdnssd kguiaddons ki18n kidletime kimageformats kitemmodels 
 # depends : kitemviews kplotting kwidgetsaddons kwindowsystem networkmanager-qt solid sonnet threadweaver kauth kcompletion kcrash kdoctools
 # depends : kpty kunitconversion kconfigwidgets kservice kglobalaccel kpackage kdesu kemoticons kiconthemes kjobwidgets knotifications 
@@ -12,5 +12,5 @@ version=5.81
 release=1
 
 build () {
-	mkdir -pv $PKG/opt
+	mkdir -pv $PKG/usr
 }

@@ -10,6 +10,6 @@ options="!checksum"
 
 build() {
    cd $name-$version
-   plasma-package-installer
+   kf5-package-installer
    make DESTDIR=$PKG install
 }

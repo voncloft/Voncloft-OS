@@ -93,3 +93,7 @@ Packages upgraded: 83
 12
 Packages upgraded: 0
 
+16
+sed -i -e 's/19.0/19.1/g' /Voncloft-OS/*/kodi/spkgbuild
+Packages upgraded: 1
+
