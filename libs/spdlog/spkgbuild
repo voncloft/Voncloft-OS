@@ -13,11 +13,6 @@ build() {
 	mkdir build
 	cd build 
 	cmake .. \
-	-DSPDLOG_BUILD_BENCH=OFF \
-        -DSPDLOG_FMT_EXTERNAL=ON \
-        -DSPDLOG_BUILD_SHARED=ON \
-        -DSPDLOG_BUILD_TESTS=ON \
-        -DCMAKE_BUILD_TYPE=None \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib \
         -Wno-dev
