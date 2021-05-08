@@ -4,7 +4,7 @@
 name=kodi
 version=19.1
 release=Matrix
-source="https://github.com/xbmc/xbmc/archive/refs/tags/$version-$release.tar.gz"
+source="https://github.com/xbmc/xbmc/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build()
