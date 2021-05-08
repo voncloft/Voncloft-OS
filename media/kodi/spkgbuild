@@ -11,7 +11,7 @@ build()
 {
 
 	#run commands except make install that is replaced by below
-	cd $version-$release
+	cd $name-$version
 	mkdir build
 	cd build
 	cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCORE_PLATFORM_NAME=x11 -DAPP_RENDER_SYSTEM=gl
