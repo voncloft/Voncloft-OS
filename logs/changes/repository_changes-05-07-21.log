@@ -1,0 +1,28 @@
+00
+Packages upgraded: 0
+
+04
+sed -i -e 's/2.3.3/2.3.4/g' /Voncloft-OS/*/icewm/spkgbuild
+Packages upgraded: 1
+
+08
+Packages upgraded: 0
+
+09
+sed -i -e 's/87/88.0.1/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 1
+
+09
+sed -i -e 's/1.0/31.0/g' /Voncloft-OS/*/mythtv/spkgbuild
+Packages upgraded: 1
+
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/248.1/248.2/g' /Voncloft-OS/*/systemd/spkgbuild
+Packages upgraded: 1
+
