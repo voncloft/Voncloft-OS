@@ -14,10 +14,9 @@ build() {
 	cd build
 	cmake .. \
 	-DCMAKE_BUILD_TYPE=None \
-	_DCMAKE_POSITION_INDEPENDENT_CODE=true \
+	-DCMAKE_POSITION_INDEPENDENT_CODE=true \
     	-DCMAKE_INSTALL_PREFIX=/usr \
     	-DCMAKE_INSTALL_LIBDIR=/usr/lib \
-    	-DBUILD_SHARED_LIBS=1
     
 	make
 	make DESTDIR=$PKG install
