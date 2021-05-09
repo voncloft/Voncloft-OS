@@ -9,14 +9,16 @@ source="https://github.com/fmtlib/fmt/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {
+
+###may need to get from github
 	cd $name-$version
 	mkdir build
 	cd build
 	cmake .. \
 	-DCMAKE_BUILD_TYPE=None \
-	-DCMAKE_POSITION_INDEPENDENT_CODE=true \
     	-DCMAKE_INSTALL_PREFIX=/usr \
     	-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    	-DBUILD_SHARED_LIBS=1
     
 	make
 	make DESTDIR=$PKG install
