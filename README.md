@@ -8,14 +8,15 @@ _As of 3-30-2021_
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
 - work on all universal user passes on vpn
 
-**Done:**
-- qtcreator - needs testing
-- postfix - needs testing
+**Needs Testing:**
+- qtcreator
+- postfix
 - mythtv
-- clementine
 - python - might have errors will fix as a need be basis
 - perl - might have errors will fix as a need be basis
 - kde - needs testing
+- chessx - needs testing and its dependencies
+- scid_vs_pc - needs testing
 
 **Other:**
 - Everything in workbench is files that continuously get changed and tarballed for later
@@ -23,7 +24,3 @@ _As of 3-30-2021_
 - Will use a spare PC to test everything on or a virtual box
 - Template folder is a base for all packages as of 3/16/21
 - Packages are checked once a day in my repository against https://distrowatch.com/packages.php using a script located in utilities/checkrepository
-
-**Testing:**
-- chessx needs testing and its dependencies
-- scid_vs_pc
