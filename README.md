@@ -2,7 +2,7 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 3-30-2021_
+_As of 05-11-2021_
 
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
@@ -17,6 +17,8 @@ _As of 3-30-2021_
 - kde - needs testing
 - chessx - needs testing and its dependencies
 - scid_vs_pc - needs testing
+
+**Programs to be added in the future**
 
 **Other:**
 - Everything in workbench is files that continuously get changed and tarballed for later
