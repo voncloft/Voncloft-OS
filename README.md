@@ -15,7 +15,6 @@ _As of 3-30-2021_
 - clementine
 - python - might have errors will fix as a need be basis
 - perl - might have errors will fix as a need be basis
-- kodi - needs testing
 - kde - needs testing
 
 **Other:**

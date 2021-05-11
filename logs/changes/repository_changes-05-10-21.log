@@ -19,3 +19,11 @@ Packages upgraded: 0
 12
 Packages upgraded: 0
 
+16
+sed -i -e 's/0.4.5.7/0.4.5.8/g' /Voncloft-OS/*/tor/spkgbuild
+Packages upgraded: 1
+
+20
+sed -i -e 's/1.52.0/1.52.1/g' /Voncloft-OS/*/rust/spkgbuild
+Packages upgraded: 1
+
