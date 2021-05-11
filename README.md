@@ -18,7 +18,8 @@ _As of 05-11-2021_
 - chessx - needs testing and its dependencies
 - scid_vs_pc - needs testing
 
-**Programs to be added in the future**
+**Programs to be added in the future:**
+- None at the moment
 
 **Other:**
 - Everything in workbench is files that continuously get changed and tarballed for later
