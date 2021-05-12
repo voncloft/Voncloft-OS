@@ -14,3 +14,10 @@ Packages upgraded: 0
 sed -i -e 's/3.0.12/3.0.14/g' /Voncloft-OS/*/vlc/spkgbuild
 Packages upgraded: 1
 
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/1.9.6p1/1.9.7/g' /Voncloft-OS/*/sudo/spkgbuild
+Packages upgraded: 1
+
