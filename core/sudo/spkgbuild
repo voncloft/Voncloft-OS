@@ -31,7 +31,9 @@ build() {
 	fi
 	if [ ! -f /etc/sudoers ];
 	then
-		sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' $PKG/etc/sudoers
+		sed -i -e 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' $PKG/etc/sudoers
+	else
+		rm $PKG/etc/sudoers
 	fi
 	rm -fr $PKG/var/run
 	rm -fr $PKG/run/sudo
