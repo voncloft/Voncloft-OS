@@ -1,6 +1,8 @@
+d:gavl
 d:xf86-video-nouveau
 d:xf86-video-intel
 d:xf86-input-vmmouse
+d:glu
 d:xf86-input-synaptics
 d:xf86-video-amdgpu
 d:xf86-video-fbdev
@@ -12,6 +14,9 @@ d:xf86-input-wacom
 d:xf86-video-vmware
 d:xf86-video-ati
 d:xf86-input-evdev
+f:526b553cd80ae7f01a60b3851d5bf3da:gavl/.checksums
+f:5241ed26ecc181f47ea5e7e7b29df87c:gavl/.pkgfiles
+f:8b6c79b5055f99289b6927f44cfca71e:gavl/spkgbuild
 f:6912799edf45bc2421a7e81d646fdf0d:xf86-video-nouveau/readme
 f:a6d6724a2ae545dc4db85dee9a169cf5:xf86-video-nouveau/.checksums
 f:23618db6dbd75fef2a43c410fccc07ba:xf86-video-nouveau/.pkgfiles
@@ -24,6 +29,9 @@ f:c6ef6f33520abab19da3bd3429648377:xf86-input-vmmouse/readme
 f:e9f1f0f97014773d89e932c3838bb302:xf86-input-vmmouse/.checksums
 f:2204e298840cb6bfea44e2ee6424b43e:xf86-input-vmmouse/.pkgfiles
 f:7763be8bb22e35f90bbd74ef513cde80:xf86-input-vmmouse/spkgbuild
+f:8eb2204f3f167d72c4d25d43f5e97b26:glu/.checksums
+f:68857ac40e875342ccdc6a614b01328c:glu/.pkgfiles
+f:155b5e6473956ff2c68ba5f0d79e5aea:glu/spkgbuild
 f:49041864525cd999d552c2eff35e758b:xf86-input-synaptics/.checksums
 f:dc8c8184fcf6cd48442ef5fd1e7e4959:xf86-input-synaptics/.pkgfiles
 f:8e3e55061c94c08c868ea45ebe082444:xf86-input-synaptics/50-synaptics.conf

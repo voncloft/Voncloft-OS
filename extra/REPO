@@ -6,6 +6,7 @@ d:flexget
 d:woff2
 d:flashplugin
 d:protobuf
+d:waterfox
 d:firefox-esr
 d:mcomix
 d:extra-cmake-modules
@@ -53,6 +54,11 @@ f:c9a9cd4a7a1081feca03ebbdc3a18093:flashplugin/.checksums
 f:b10e5a48e8992bd3d0ddf1ffc435a8e5:flashplugin/.pkgfiles
 f:66c331be421c449c521adcbb688bb862:flashplugin/spkgbuild
 f:184640d7ae20f497ca4cc01b2567fa50:protobuf/spkgbuild
+f:273b5c750d665a3133804a97807b25b6:waterfox/.checksums
+f:a893e6a506d6cbb2685182b298fe7964:waterfox/mozconfig
+f:ee2645ed6d20a8c73c215f306691bac9:waterfox/.pkgfiles
+f:ae7a2882092719b68e78ca8a0c4290e5:waterfox/spkgbuild
+f:cd463125b53a1a25c1b559721934aa90:waterfox/waterfox.desktop
 f:b5457f590333f1015e206d127e39c1f5:firefox-esr/.checksums
 f:76fa65e448925793523c404c488b6048:firefox-esr/.pkgfiles
 f:cf6971669f70b440cb6ff8df8b2722ae:firefox-esr/firefox.desktop

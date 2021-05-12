@@ -9,6 +9,7 @@ d:font-adobe-utopia-type1
 d:font-util
 d:ttf-wps-fonts
 d:font-adobe-100dpi
+d:freetype2
 d:siji-font
 d:font-bh-type1
 d:font-misc-ethiopic
@@ -64,6 +65,9 @@ f:33b9d0bf91b0605e2342fefda2b08c1b:ttf-wps-fonts/spkgbuild
 f:6fa3c1e2e7e2a538f57b16ec7580402b:font-adobe-100dpi/.checksums
 f:acb49e86f3b889cc0166471515e4e17e:font-adobe-100dpi/.pkgfiles
 f:bd284249c0ad9f7ac1ebe4773a41065a:font-adobe-100dpi/spkgbuild
+f:7fb60313e9a68563b407c292a65cdc8d:freetype2/.checksums
+f:0ee8a31ea7098d5109df1a759290864c:freetype2/.pkgfiles
+f:ed1d29dd838aa66c9580f68ec2c2b747:freetype2/spkgbuild
 f:801a6eff8fcc9d976c5fdbf4e9642e6e:siji-font/.checksums
 f:9d957b7bb7398dd82716e427f0bcf591:siji-font/.pkgfiles
 f:2d9046f08694dcfac89ab8cc4bcf7958:siji-font/spkgbuild
