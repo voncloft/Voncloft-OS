@@ -108,7 +108,6 @@ d:dbus-glib
 d:cronie
 d:obconf
 d:fakeroot
-d:tcpdump
 d:file
 d:parallel
 d:xkill
@@ -319,7 +318,6 @@ d:neomutt
 d:qutebrowser
 d:alacritty
 d:epdfview
-d:wpa_supplicant
 d:fakescratch
 d:xkbutils
 d:consolekit2
@@ -863,9 +861,6 @@ f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
 f:2d8943d9305757de9c8d88aa3e039fe2:fakeroot/.checksums
 f:111c1404e04e7d6a961130485aa66a35:fakeroot/.pkgfiles
 f:542e6e39abb60d8b48d25b1c1f2b211f:fakeroot/spkgbuild
-f:e555672bfdc96bba02c83415d31f2387:tcpdump/.checksums
-f:92d1a535e17c72daf3618c6f12bec98e:tcpdump/.pkgfiles
-f:5fd94afbcba9589b1db36fe849345f5c:tcpdump/spkgbuild
 f:5b2e2d12fc21417cfe9c88d520b50a34:file/.checksums
 f:3f7d99e0a9eafce8a2252d0a4116fabe:file/.pkgfiles
 f:e87e0cb5b7a9a3fcf4e067adb88c7737:file/spkgbuild
@@ -1572,14 +1567,6 @@ f:f1b7c1e596c8bdd60dec43ecf38ca212:epdfview/epdfview-fixes-2.patch
 f:e30a0607956c359c49c738fb2dc6d77d:epdfview/.checksums
 f:f0f56d6daf9f8ad743728f6298c93b6a:epdfview/.pkgfiles
 f:8c1895f1d0c1ce554e4aa5c39ae87c66:epdfview/spkgbuild
-f:0cdf14159e784730f33488e2e80fe565:wpa_supplicant/readme
-f:dace26d9323391e9bc9f647964536f4a:wpa_supplicant/wpa_supplicant.conf
-f:1e8ca3bb29ab10a61df6326f7ab20c7b:wpa_supplicant/.checksums
-f:463f717515ab0f27e22f9a6166063f1e:wpa_supplicant/rc.wpa
-f:20a3bc188dc16983077b6eeb05db8dc3:wpa_supplicant/.pkgfiles
-f:64d22c68fd52aaea378dde9d844872a2:wpa_supplicant/conf
-f:2801b982fc2c2e7ad003636b8b8247cb:wpa_supplicant/spkgbuild
-f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:5318b147b3ff077d5a04734392fb5e69:fakescratch/CHANGELOG
 f:58f44da6cca821f8732cf308275f7256:fakescratch/fakescratch
 f:04c9d89de29bb1aaf93ab91424fa7f00:fakescratch/spkgbuild

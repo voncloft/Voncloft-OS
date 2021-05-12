@@ -5,6 +5,7 @@ d:iptraf-ng
 d:hexchat
 d:hostapd
 d:krb5
+d:tcpdump
 d:libssh2
 d:vsftpd
 d:you-get
@@ -24,6 +25,7 @@ d:openssl
 d:nethogs
 d:pidgin
 d:noip
+d:wpa_supplicant
 d:wireshark
 d:wireless_tools
 d:avahi
@@ -54,6 +56,9 @@ f:cf3a59ae96b669c5594901ff821a0449:hostapd/spkgbuild
 f:38b3100a6cb309a97006009077023f70:krb5/.checksums
 f:0aa7bda90af885936932043af062fd8e:krb5/.pkgfiles
 f:0598548037fd43a6cdd9e72ecf5ed832:krb5/spkgbuild
+f:e555672bfdc96bba02c83415d31f2387:tcpdump/.checksums
+f:92d1a535e17c72daf3618c6f12bec98e:tcpdump/.pkgfiles
+f:5fd94afbcba9589b1db36fe849345f5c:tcpdump/spkgbuild
 f:d1de410a8e4a7ce00d8a0e70ef4838ad:libssh2/.checksums
 f:163dca9c18a15636d857c3805abb4185:libssh2/.pkgfiles
 f:9dd86b90655268c61c1bbc7f31384005:libssh2/spkgbuild
@@ -100,6 +105,14 @@ f:9e11b355a8b41695ee89f53e3ec8277d:nethogs/spkgbuild
 f:bd28a2cede069b0611c886765bcab942:pidgin/CHANGELOG
 f:cf63ce844b75c8ac46c1e0c3128eef9c:pidgin/spkgbuild
 f:836ef1f0483fd4e856fc7f0ca03b24ff:noip/spkgbuild
+f:0cdf14159e784730f33488e2e80fe565:wpa_supplicant/readme
+f:dace26d9323391e9bc9f647964536f4a:wpa_supplicant/wpa_supplicant.conf
+f:1e8ca3bb29ab10a61df6326f7ab20c7b:wpa_supplicant/.checksums
+f:463f717515ab0f27e22f9a6166063f1e:wpa_supplicant/rc.wpa
+f:20a3bc188dc16983077b6eeb05db8dc3:wpa_supplicant/.pkgfiles
+f:64d22c68fd52aaea378dde9d844872a2:wpa_supplicant/conf
+f:2801b982fc2c2e7ad003636b8b8247cb:wpa_supplicant/spkgbuild
+f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:f73caa7b57a165ab7e73264845b60f78:wireshark/CHANGELOG
 f:384d062e4b3f811e3f940c92f5aa145b:wireshark/spkgbuild
 f:d103a26a88a32917318febff7c2573c7:wireless_tools/.checksums
