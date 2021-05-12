@@ -5,12 +5,13 @@ name=sudo
 version=1.9.7
 release=1
 backup="etc/sudoers"
-source="https://www.sudo.ws/dist/$name-$version.tar.gz
+url=https://github.com/sudo-project/sudo/archive/refs/tags/SUDO_1_9_7.tar.gz
+source="https://github.com/sudo-project/sudo/archive/refs/tags/SUDO_${version//./_}.tar.gz
 	sudo"
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd $name-SUDO_${version//./_}
 
 	./configure \
 	    --prefix=/usr \
@@ -32,8 +33,6 @@ build() {
 	if [ ! -f /etc/sudoers ];
 	then
 		sed -i -e 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' $PKG/etc/sudoers
-	else
-		rm $PKG/etc/sudoers
 	fi
 	rm -fr $PKG/var/run
 	rm -fr $PKG/run/sudo
