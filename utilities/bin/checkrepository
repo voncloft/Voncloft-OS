@@ -12,6 +12,10 @@ vercomp() {
         fi
 }
 cd /var/log/old
+logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
+mkdir -pv $logpath/changes
+mkdir -pv $logpath/reports
+
 rm -v index.html
 rm -v index.html.*
 shopt -s nocaseglob
@@ -20,7 +24,7 @@ rm testing.txt
 wget http://distrowatch.org/packages.php
 
 #remove packages that you want out of the loop
-sed -i -e '/vlc/d' packages.php
+#sed -i -e '/vlc/d' packages.php
 sed -i -e '/llvm/d' packages.php #not yet supported
 sed -i -e '/mesa/d' packages.php
 sed -i -e '/qt/d' packages.php
@@ -72,8 +76,8 @@ while IFS=$'\n' read -ra items; do
 						final+="<br>upgraded to version: $uversion\n"
 						final+="<br><br>\n\n"
 						echo -e $final >> testing.txt
-						echo -e $final >> /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
-						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log
+						echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").log
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
 						changelog "$item" "Upgraded from version $cversion to version $uversion"
 					else
@@ -88,24 +92,38 @@ while IFS=$'\n' read -ra items; do
 done <<< "$list"
 #echo $PWD
 echo -e "Packages upgraded: $count\n" >> $PWD/testing.txt
-echo -e "Packages upgraded: $count\n" >> /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
-echo -e "Packages upgraded: $count\n" >> /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").log
 words=$(cat $PWD/testing.txt)
 cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
+
+
+###get missing package info not in the loop
+grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
+
 if [ $count -gt 0 ];
 then
+	###if I have outdated packages let me know
+	#mail me the packages updated in repo automatically
 	mailme voncloft@gmail.com "$words" "$title"
+	mailme phoneemail@vtext.com "Updated packages: $count" "Upgrade Report"
+
+	#message me outdated packages not in the loop
+	mailme phoneemail@vtext.com "Total Missing: $(cat missing.txt | wc -l)" "Total Outdated Packages"
+	echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
+	missing=$(cat missing.txt)
+	mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
+
 fi
 ###OLD
-#mailme voncloft@gmail.com "$(grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V)" "Packages not being checked"
 
 ##MISSING PACKES KEPT OUT OF LOOP
-grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
-echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
-missing=$(cat missing.txt)
-mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked"
+#grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
+#echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
+#missing=$(cat missing.txt)
+#mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked"
 
 rm -rfv *.php
 rm -rfv *.php.*
@@ -118,5 +136,5 @@ rm -rfv *.php.*
 #mv -v testing.txt repository_upgrade_report.log
 rm -v testing.txt
 rm -v test.txt
-cp /Voncloft-OS/logs/reports/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
-cp /Voncloft-OS/logs/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
+cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
+cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
