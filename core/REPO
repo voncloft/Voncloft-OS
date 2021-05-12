@@ -166,7 +166,6 @@ d:fribidi
 d:acpi
 d:lcms2
 d:scons
-d:gnome-common
 d:xdriinfo
 d:help2man
 d:numactl
@@ -203,7 +202,6 @@ d:dzen2
 d:colord
 d:xwininfo
 d:cdw
-d:gnome-icon-theme
 d:filesystem
 d:parted
 d:xset
@@ -297,7 +295,6 @@ d:gmrun
 d:fortune-mod
 d:rpcsvc-proto
 d:screen
-d:gnome-menus
 d:fluxbox
 d:potrace
 d:osx-arc-theme
@@ -327,7 +324,6 @@ d:fakescratch
 d:xkbutils
 d:consolekit2
 d:audacious-plugins
-d:gnome-keyring
 d:arc-icon-theme
 d:yelp-xsl
 d:yaml-cpp
@@ -350,7 +346,6 @@ d:dosfstools
 d:gobject-introspection
 d:appstream-glib
 d:parcellite
-d:gnome-bluetooth
 d:mpfr
 d:coreutils
 d:alsa-plugins
@@ -498,7 +493,7 @@ f:807ba4a8ddca0882e92a65bbbe5ee062:scratchpkg/CHANGELOG
 f:f10584c8933de4c5e78ede34741e29f6:scratchpkg/.checksums
 f:b57ccd5e99f47eb21a48183c3df0665a:scratchpkg/scratchpkg.conf
 f:ee57c17c776153be26674dafd42cb983:scratchpkg/scratchpkg.mask
-f:28e8ae538e91b429b1060d70cf0430e4:scratchpkg/scratchpkg.repo
+f:34e87674c72e6c2c77bbf451b8c3bf09:scratchpkg/scratchpkg.repo
 f:f3690d119025754db39a37dee77d1f92:scratchpkg/.pkgfiles
 f:ceb2592d66eac6e0162cd80ebe504c02:scratchpkg/revdep
 f:bde45a7072836ade9d6a4e16a8531079:scratchpkg/spkgbuild
@@ -1066,9 +1061,6 @@ f:23929f986cf3fb27f8d1bc0274e871e0:lcms2/.pkgfiles
 f:efa86dd13f9f33496930b72e93b54311:lcms2/spkgbuild
 f:b6c74fc7d6d5651015fe1461102699af:scons/CHANGELOG
 f:a5a5b4d7d51edd364d5b1356a7b99a7d:scons/spkgbuild
-f:53b5cfe249bf079bbd7adb032fbd18bd:gnome-common/.checksums
-f:e6ccd3d752e6fd07dc21dba73cef39e5:gnome-common/.pkgfiles
-f:83babd51fb84299511e0622cff00742b:gnome-common/spkgbuild
 f:7a9e4ed32f1005d0d18091a45e722cb5:xdriinfo/.checksums
 f:cb95eb0c7889b59b1b01a5aad5e6cd72:xdriinfo/.pkgfiles
 f:41470aaf59ec0e3e04eb33b3318b7a28:xdriinfo/spkgbuild
@@ -1187,9 +1179,6 @@ f:09a4f9f5e7fa9539f56b70a0d208385f:xwininfo/spkgbuild
 f:d673ddd526848cbdbc96b87f86f1a7cf:cdw/.checksums
 f:716a3c96f1d358e746d021a024bb5b2a:cdw/.pkgfiles
 f:9ed07e6225e626478096997d020d0ca2:cdw/spkgbuild
-f:d4e26d1c00b957d322ad67ee146a052b:gnome-icon-theme/.checksums
-f:02f2c64d8bf172efd623b202b0ccc367:gnome-icon-theme/.pkgfiles
-f:0ca52048d53ccdbaa7e31cb2984d6b53:gnome-icon-theme/spkgbuild
 f:5cbb5efc6adba814bafb91e534b09836:filesystem/locale.conf
 f:42f4400ed2314bd7519c020d0187edc5:filesystem/bash_logout.skel
 f:aa116741c76ab220567c0771d2c7d718:filesystem/passwd
@@ -1506,9 +1495,6 @@ f:dd0f54e36684f968437aa64f44c7171e:rpcsvc-proto/spkgbuild
 f:0465b16d507beec22d9491815179fd48:screen/.checksums
 f:e8c70dcd145fef29ba8d9bff5958f14b:screen/.pkgfiles
 f:9b607ff08eda3891dfd168f5b7faf7be:screen/spkgbuild
-f:3a5c7d3d7ebabfebb4784fcbb121d9bf:gnome-menus/.checksums
-f:22581255d50fd4ca56bf1e287e047403:gnome-menus/.pkgfiles
-f:90d4bd271c5e7f83805e30894b368051:gnome-menus/spkgbuild
 f:5fd806bb25563d273e8a7abaeb31c1a1:fluxbox/.checksums
 f:bd55e70e1bf01e8b70ed715b954f3509:fluxbox/.pkgfiles
 f:195211db8f74de47473f906d0e6a6a22:fluxbox/spkgbuild
@@ -1608,9 +1594,6 @@ f:3054743e7172c22d01fff22983e302f6:consolekit2/spkgbuild
 f:41e4b4bd11d93b09123db03c075a0c29:audacious-plugins/.checksums
 f:7ff6fcb62b655e2a97423cc9c7096f3e:audacious-plugins/.pkgfiles
 f:4632595e76250da3b971089a34a6fc1c:audacious-plugins/spkgbuild
-f:cbdf15ebd1848f031eb49d5653c04284:gnome-keyring/.checksums
-f:749ce21f881f830fdc884ee0dca4dc78:gnome-keyring/.pkgfiles
-f:8f6c655786d6cf6b85bd34d3dd27a3c9:gnome-keyring/spkgbuild
 f:dd6db2c9d637c53546ee139bcfd6573d:arc-icon-theme/.checksums
 f:1868b07dafca903628375b95aa27daab:arc-icon-theme/.pkgfiles
 f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
@@ -1700,9 +1683,6 @@ f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
 f:b4a79214473a2db59d8876c792e54ad7:parcellite/.checksums
 f:f08c315c074e08d39af974b7a188d0d2:parcellite/.pkgfiles
 f:b888477e29219f1b8ce40184edcd1bd6:parcellite/spkgbuild
-f:40e42aacc4f3307004a7296c9e615ba2:gnome-bluetooth/.checksums
-f:1ce2afe7ff1c28492e6e5af68b652b56:gnome-bluetooth/.pkgfiles
-f:8942113c45372d5b30bdabb2ac759233:gnome-bluetooth/spkgbuild
 f:4ce85671d9986216bd853d7381c0fd1d:mpfr/.checksums
 f:02fad115db35c6f1a953015b38d50d21:mpfr/.pkgfiles
 f:0ffae7bed396419428b15e8adb9b952d:mpfr/spkgbuild
