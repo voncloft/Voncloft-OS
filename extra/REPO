@@ -12,8 +12,6 @@ d:mcomix
 d:extra-cmake-modules
 d:gtk-engine-murrine
 d:gtkmm2
-d:libtorrent-rasterbar
-d:wayland
 d:ncdu
 d:iotop
 d:geoip-database
@@ -29,7 +27,6 @@ d:gtk3
 d:gnucash
 d:gtk-doc
 d:gimp
-d:lirc
 d:mozjs
 d:gtksourceview3
 d:gtk2
@@ -76,8 +73,6 @@ f:5b67a82e4956df3ef8e2a07ff1974f35:gtk-engine-murrine/spkgbuild
 f:7b45cc3dc2e519cd448d8060bfa47051:gtkmm2/.checksums
 f:3e7c6068606991a8113b923bded34c32:gtkmm2/.pkgfiles
 f:5a3c86e8ed520b973293ab599a3df213:gtkmm2/spkgbuild
-f:cfe3b24d83be5464d2acfaf1f87ae36b:libtorrent-rasterbar/spkgbuild
-f:5cd29f0c8f4e49197bc19a6399f0ad9b:wayland/spkgbuild
 f:928491bf23d16ac3cb5cf31ff7687610:ncdu/.checksums
 f:4fd4984bf76b56ff3ea70420132dc7a4:ncdu/.pkgfiles
 f:1e9cbb35e93a65c518b880e8e4f07a4f:ncdu/spkgbuild
@@ -109,8 +104,6 @@ f:b806a392dc9030ef3ac16a105910359a:gtk-doc/spkgbuild
 f:96e88226b72466f394bbe89325ed42de:gimp/.checksums
 f:ceaeb8f7b7ac6aa5b5ed328aa52f5bf0:gimp/.pkgfiles
 f:a232c959cdf1f377e7bcf607bd419dd8:gimp/spkgbuild
-f:d80cd25aa263531f098d0b90bde08056:lirc/lirc-0.10-build-fix.patch
-f:ef3eef62f1942bceae9b57b4615adea5:lirc/spkgbuild
 f:31ca4ac3b853cd4690daf5caf1eef62f:mozjs/.checksums
 f:a88115d812632e518baa97f53b38c404:mozjs/.pkgfiles
 f:059af5f2140bdf9a41b275a9325dd149:mozjs/spkgbuild
