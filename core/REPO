@@ -436,6 +436,7 @@ d:wmderland
 d:lhasa
 d:streamlink
 d:rsync
+d:wxwidgets
 d:grantlee
 d:dcfldd
 d:zeromq
@@ -1968,6 +1969,8 @@ f:18dfdf36542bc06692bfc838ec076147:rsync/.pkgfiles
 f:8596e2539b37dd638a10418ba7168b57:rsync/rc.rsyncd
 f:cf05db3be4409aea065a281207696224:rsync/spkgbuild
 f:19f06afc0a351605c10242252ad7ab9e:rsync/run
+f:4c69bd6897a68872b9526e72a04a22e9:wxwidgets/CHANGELOG
+f:27cdb1fc9aff74d3dde2a781d636b8cd:wxwidgets/spkgbuild
 f:6d104c5bd6b9778a5cae373dc3267cae:grantlee/.checksums
 f:d35d0029146a03e9aba609d8c92d00f5:grantlee/.pkgfiles
 f:1857a6efd7793e8c176a2827f037941b:grantlee/spkgbuild
