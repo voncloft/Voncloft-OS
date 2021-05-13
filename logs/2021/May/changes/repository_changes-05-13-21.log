@@ -227,3 +227,10 @@ Packages upgraded: 223
 04
 Packages upgraded: 0
 
+08
+Packages upgraded: 0
+
+10
+sed -i -e 's/3.50.0/3.54.1/g' /Voncloft-OS/*/filezilla/spkgbuild
+Packages upgraded: 1
+

@@ -1,6 +1,6 @@
-url=
-name=
-file=
+url=https://download.filezilla-project.org/client/
+name=filezilla
+file=index.html
 
 cd /var/log/old
 
@@ -13,7 +13,7 @@ then
 fi
 
 ###to get rid of <> tags in html
-#grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name > test.txt
+grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name | grep "tar.bz2" > test.txt
 
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
@@ -29,14 +29,14 @@ fi
 #sed -i -e "/$name/d" test.txt
 
 ###beta###
-cat test.txt | sort -V -r | head -n 1
+cat test.txt | sort -V -r | head -n 1 | egrep -o "([0-9]{1,}\.)+[0-9]{1,}"
 
 ##Production###
-#if [ -f $file ];
-#then
-#	echo $name >> stripped_info.txt
-#	cat test.txt | sort -V -r | head -n 1 | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" >> stripped_info.txt
-#	rm -v $file
-#fi
+if [ -f $file ];
+then
+	echo $name >> stripped_info.txt
+	cat test.txt | sort -V -r | head -n 1 | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" >> stripped_info.txt
+	rm -v $file
+fi
 
 
