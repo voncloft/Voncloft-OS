@@ -16,7 +16,7 @@ build() {
 	    --prefix=/usr \
 	    --disable-manualupdatecheck \
 	    --disable-autoupdatecheck \
-	    --with-pugixml=builtin
+	    --with-pugixml=builtin \
 	    --with-wx-config=/usr/bin/wx-config-gtk3
 	make
 	make DESTDIR=$PKG install
