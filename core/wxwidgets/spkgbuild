@@ -9,7 +9,7 @@ source="https://github.com/wxWidgets/wxWidgets/archive/refs/tags/v$version.tar.g
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd wxWidgets-$version
 	autoreconf -ifv
 	./configure --prefix=/usr
 	make
