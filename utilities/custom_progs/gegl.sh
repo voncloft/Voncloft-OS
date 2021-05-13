@@ -1,7 +1,7 @@
 url=https://download.gimp.org/pub/gegl/
 name=gegl
 file=index.html
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

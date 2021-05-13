@@ -1,6 +1,6 @@
 url=https://github.com/libarchive/libarchive/releases/
 name=libarchive
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

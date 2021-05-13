@@ -1,7 +1,7 @@
 url=https://download.kde.org/stable/plasma/
 #name=
 file=index.html
-
+echo "Plasma"
 cd /var/log/old
 
 #GRAB WEBSITE

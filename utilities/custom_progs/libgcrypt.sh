@@ -1,6 +1,6 @@
 url=https://www.gnupg.org/ftp/gcrypt/libgcrypt/
 name=libgcrypt
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

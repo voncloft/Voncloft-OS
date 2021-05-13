@@ -1,3 +1,4 @@
+echo "NSS"
 cd /var/log/old
 wget https://archive.mozilla.org/pub/security/nss/releases/
 if [ -f test.txt ];

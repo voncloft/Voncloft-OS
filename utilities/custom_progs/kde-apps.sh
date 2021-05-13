@@ -2,6 +2,7 @@ url=https://download.kde.org/stable/release-service/
 #name=
 file=index.html
 
+echo "KDE-APPS"
 cd /var/log/old
 
 #GRAB WEBSITE

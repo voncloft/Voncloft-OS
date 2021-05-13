@@ -2,6 +2,7 @@ url=https://download.kde.org/stable/frameworks/
 #name=
 file=index.html
 
+echo "Frameworks"
 cd /var/log/old
 
 #GRAB WEBSITE

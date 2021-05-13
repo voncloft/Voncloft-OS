@@ -1,6 +1,7 @@
 url=https://download.kde.org/stable/frameworks/
 name=extra-cmake-modules
 
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

@@ -1,6 +1,6 @@
 url=https://archive.mozilla.org/pub/nspr/releases/
 name=nspr
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

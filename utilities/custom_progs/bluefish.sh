@@ -1,6 +1,6 @@
 url=https://www.bennewitz.com/bluefish/stable/source/
 name=bluefish
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

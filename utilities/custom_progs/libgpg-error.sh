@@ -1,6 +1,6 @@
 url=https://www.gnupg.org/ftp/gcrypt/libgpg-error/
 name=libgpg-error
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

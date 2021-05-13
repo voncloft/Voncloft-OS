@@ -1,6 +1,7 @@
 url=http://www.sudo.ws/dist/
 name=sudo
 file=index.html
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

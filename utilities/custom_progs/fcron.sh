@@ -1,6 +1,6 @@
 url=http://fcron.free.fr/allarchives.php
 name=fcron
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

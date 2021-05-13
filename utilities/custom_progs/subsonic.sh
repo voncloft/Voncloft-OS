@@ -1,6 +1,6 @@
 url=http://www.subsonic.org/pages/download.jsp
 name=subsonic
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE

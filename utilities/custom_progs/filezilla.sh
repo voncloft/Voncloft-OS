@@ -1,7 +1,7 @@
 url=https://download.filezilla-project.org/client/
 name=filezilla
 file=index.html
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE
