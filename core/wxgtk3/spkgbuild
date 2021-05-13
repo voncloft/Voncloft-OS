@@ -2,9 +2,10 @@
 # depends	: gst-plugins-base gtk3 libnotify libsm libxxf86vm glu
 
 name=wxgtk3
-version=3.1.4
+version=3.0.5.1
 release=1
-source="https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2
+#source="https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2
+source="https://github.com/wxWidgets/wxWidgets/archive/refs/tags/v$version.tar.gz
 	make-abicheck-non-fatal.patch"
 options="!checksum"
 

@@ -436,7 +436,6 @@ d:wmderland
 d:lhasa
 d:streamlink
 d:rsync
-d:wxwidgets
 d:grantlee
 d:dcfldd
 d:zeromq
@@ -1630,7 +1629,7 @@ f:5c46211dded50961bbaac0cdfed95157:which/spkgbuild
 f:e71ac89e0ed2562d821cfbf1263ce4cb:wxgtk3/make-abicheck-non-fatal.patch
 f:6265b42660f345642aeb2822cb1ab026:wxgtk3/.checksums
 f:6922631981e03db169f2a0f53bdf5004:wxgtk3/.pkgfiles
-f:eda8c3ab3fed2f6f7066b9351cc8ff23:wxgtk3/spkgbuild
+f:68ec8708b9098b60456ea6adfd73425f:wxgtk3/spkgbuild
 f:81aa555388c5747bc8b0de42f1d6d364:pm-utils/readme
 f:4744442bf406e3979bb77e33c7c7b389:pm-utils/.checksums
 f:c9a6cab6964121149b97d0bcc6225671:pm-utils/.pkgfiles
@@ -1969,8 +1968,6 @@ f:18dfdf36542bc06692bfc838ec076147:rsync/.pkgfiles
 f:8596e2539b37dd638a10418ba7168b57:rsync/rc.rsyncd
 f:cf05db3be4409aea065a281207696224:rsync/spkgbuild
 f:19f06afc0a351605c10242252ad7ab9e:rsync/run
-f:4c69bd6897a68872b9526e72a04a22e9:wxwidgets/CHANGELOG
-f:4063ef33b4a309fade7e9eec9b4ba655:wxwidgets/spkgbuild
 f:6d104c5bd6b9778a5cae373dc3267cae:grantlee/.checksums
 f:d35d0029146a03e9aba609d8c92d00f5:grantlee/.pkgfiles
 f:1857a6efd7793e8c176a2827f037941b:grantlee/spkgbuild
