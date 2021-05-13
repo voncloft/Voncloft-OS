@@ -19,7 +19,7 @@ _As of 05-11-2021_
 - scid_vs_pc - needs testing
 
 **Programs to be added in the future:**
-- None at the moment
+- libfilezilla script
 
 **System Changes:**
 - Qt5 has been moved from /opt/qt5 to /usr
