@@ -20,6 +20,7 @@ _As of 05-11-2021_
 
 **Programs to be added in the future:**
 - libfilezilla script
+- wXwidgets
 
 **System Changes:**
 - Qt5 has been moved from /opt/qt5 to /usr
