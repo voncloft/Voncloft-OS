@@ -1,5 +1,5 @@
 # description	: Fast and reliable FTP, FTPS and SFTP client
-# depends	: libfilezilla gnutls dbus wxgtk3 libidn xdg-utils
+# depends	: libfilezilla gnutls dbus wxgtk3 libidn xdg-utils wxwidgets
 
 name=filezilla
 version=3.54.1
