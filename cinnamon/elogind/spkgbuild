@@ -1,5 +1,5 @@
 # description : login daemon for systemd
-# depends : dbus docbook-xml docbook-xsl libxslt linux-pam polkit systemd
+# depends : dbus docbook-xml docbook-xsl libxslt linux-pam polkit
 
 name=elogind
 version=246.10
