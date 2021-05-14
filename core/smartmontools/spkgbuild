@@ -10,9 +10,11 @@ source="https://sourceforge.net/projects/$name/files/$name/$version/$name-$versi
 build() {
 	cd $name-$version
 
-  	./configure --prefix=/usr           \
-	            --sysconfdir=/etc       \
-	            --with-initscriptdir=no
+	./configure --prefix=/usr           \
+            --sysconfdir=/etc       \
+            --with-initscriptdir=no \
+            --with-libsystemd=no    \
+            --docdir=/usr/share/doc/smartmontools-7.2
 	make
 	make DESTDIR=$PKG install
 
