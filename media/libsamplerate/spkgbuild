@@ -10,12 +10,9 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	mkdir build
-	cd build
-	cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_BUILD_TYPE='None' \
-        -DBUILD_SHARED_LIBS=ON \
-        -Wno-dev \
+	./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/libsamplerate-0.2.1
   	make
   	make DESTDIR=$PKG install
 }
