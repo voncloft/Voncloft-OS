@@ -7,6 +7,7 @@ _As of 05-11-2021_
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
 - work on all universal user passes on vpn
+- need to fix lsdm pamd.d file
 
 **Needs Testing:**
 - qtcreator
