@@ -2,11 +2,11 @@
 # depends	: zlib bzip2 which icu python python
 
 name=boost
-version=1.75.0
+version=1.76.0
 release=1
-verzion=1_75_0
+verzion=1_76_0
 
-source="https://dl.bintray.com/boostorg/release/$version/source/boost_${verzion}.tar.bz2"
+source="https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_$verzion.tar.bz2"
 options="!checksum"
 
 build() {
