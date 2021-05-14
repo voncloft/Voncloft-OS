@@ -36,8 +36,15 @@ build() {
 
 
 	make -j1
-	make -C client DESTDIR=$PKG install         
-	mv -v /usr/sbin/dhclient $PKG/sbin 
+	make -C client DESTDIR=$PKG install
+	mkdir $PKG/sbin
+	         
+	mv -v $PKG/usr/sbin/dhclient $PKG/sbin
+	
+	#mkdir -pv $PKG/client/scripts/linux
+	#mkdir -pv $PKG/sbin
+
+	#dir $SRC/*/*/*
 	install -v -m755 client/scripts/linux $PKG/sbin/dhclient-script
 	install -m644 "$SRC/dhclient.conf" $PKG/etc/dhcp
 	install -v -dm 755 $PKG/var/lib/dhclient
