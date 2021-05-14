@@ -1,0 +1,18 @@
+# description : library needed for conntrack
+# depends : 
+
+name=libnftnl
+version=1.1.9
+release=1
+
+source="https://www.netfilter.org/pub/$name/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreconf -ifv
+	autoconf
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

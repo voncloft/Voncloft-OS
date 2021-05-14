@@ -1,5 +1,5 @@
 # description : nftables
-# depends : 
+# depends : libnftnl 
 
 name=nftables
 version=0.9.6

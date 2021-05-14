@@ -27,6 +27,7 @@ d:pidgin
 d:noip
 d:wpa_supplicant
 d:wireshark
+d:libnftnl
 d:wireless_tools
 d:libnfnetlink
 d:avahi
@@ -78,7 +79,7 @@ f:92afff73a511c0d62330007695686451:make-ca/spkgbuild
 f:5d7b0c1b84e406689cc4e02fd2cccd92:net-tools/.checksums
 f:1afb41380e5e4c026a58254ee9200cfb:net-tools/.pkgfiles
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
-f:306f3e0eed9363013400b7f919f27b5b:nftables/spkgbuild
+f:1d2cb94c3bec786a783b29c11f16f297:nftables/spkgbuild
 f:d323c3dc47d826b9bfa06e8700e8244c:httpup/.checksums
 f:35c28446271c7e767de6ada6a887d557:httpup/.pkgfiles
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
@@ -117,6 +118,8 @@ f:2801b982fc2c2e7ad003636b8b8247cb:wpa_supplicant/spkgbuild
 f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:f73caa7b57a165ab7e73264845b60f78:wireshark/CHANGELOG
 f:384d062e4b3f811e3f940c92f5aa145b:wireshark/spkgbuild
+f:240a2b011739f2190afab0d2236351ba:libnftnl/CHANGELOG
+f:b23c76a3e1655af8570cba7ce6b21f43:libnftnl/spkgbuild
 f:d103a26a88a32917318febff7c2573c7:wireless_tools/.checksums
 f:991ab5000fe340c18e8e2485a73eb4e6:wireless_tools/.pkgfiles
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
