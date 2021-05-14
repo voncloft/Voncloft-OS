@@ -10,5 +10,5 @@ source="http://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscript
 build()
 {
 	cd blfs-bootscripts-20201002
-	make install-iptables
+	make DESTDIR=$PKG install-iptables
 }
