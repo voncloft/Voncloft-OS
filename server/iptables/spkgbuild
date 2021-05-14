@@ -5,8 +5,8 @@ name=iptables
 version=1.8.7
 release=1
 
-source="http://www.netfilter.org/projects/iptables/files/$iptables-$version.tar.bz2"
-
+source="http://www.netfilter.org/projects/iptables/files/iptables-$version.tar.bz2"
+options="!checksum"
 build()
 {
 cd $name-$version
