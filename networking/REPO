@@ -28,6 +28,7 @@ d:noip
 d:wpa_supplicant
 d:wireshark
 d:wireless_tools
+d:libnfnetlink
 d:avahi
 d:youtube-dl
 d:firefox
@@ -119,6 +120,8 @@ f:384d062e4b3f811e3f940c92f5aa145b:wireshark/spkgbuild
 f:d103a26a88a32917318febff7c2573c7:wireless_tools/.checksums
 f:991ab5000fe340c18e8e2485a73eb4e6:wireless_tools/.pkgfiles
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
+f:701e5a1c53fca733a1518cdf1b0698e4:libnfnetlink/CHANGELOG
+f:b5baf200546fbdd7267416f39f3f9d96:libnfnetlink/spkgbuild
 f:b20bf4462f5ef1359de78c7c3c33af16:avahi/spkgbuild.save
 f:54f1c53000ec174e8fad200c90e77a43:avahi/spkgbuild
 f:8e14b16f1f25881d3704011e2b3badf7:youtube-dl/.checksums
@@ -137,4 +140,4 @@ f:b94d4b17b2fdddf8bfe422041320e174:openssl1.0/openssl-compat_versioned_symbols-1
 f:7858d6895f1ece6eddd8d7cc77fa4014:openssl1.0/.checksums
 f:a274cdfb1d84e06ebf9bfc67f25fe273:openssl1.0/.pkgfiles
 f:8d7bd327b21a79be08fac73661082cd7:openssl1.0/spkgbuild
-f:e7497cd09b89fc965534c6d2e3e676e2:libnetfilter_conntrack/spkgbuild
+f:00845211938384e09fcdf5e62747257d:libnetfilter_conntrack/spkgbuild

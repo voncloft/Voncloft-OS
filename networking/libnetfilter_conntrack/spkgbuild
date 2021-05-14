@@ -1,12 +1,12 @@
 # description : netfilter for connlabel support
-# depends 
+# depends libnfnetlink
 
 name=libnetfilter_conntrack
-version=1.08
+version=1.0.8
 release=1
 
-source="https://netfilter.org/projects/libnetfilter_conntrack/files/libnetfilter_conntrack-1.0.8.tar.bz2"
-
+source="https://netfilter.org/projects/$name/files/$name-$version.tar.bz2"
+options="!checksum"
 build()
 {
 	cd $name-$version
