@@ -5,27 +5,31 @@ name=iptables
 version=1.8.7
 release=1
 
-source="http://www.netfilter.org/projects/iptables/files/iptables-$version.tar.bz2"
+source="http://www.netfilter.org/projects/iptables/files/iptables-$version.tar.bz2
+	rc.iptables"
 options="!checksum"
+
 build()
 {
-cd $name-$version
-./configure --prefix=/usr      \
+	cd iptables-$version
+	
+	./configure --prefix=/usr      \
             --sbindir=/sbin    \
             --disable-nftables \
             --enable-libipq    \
-            --with-xtlibdir=/lib/xtables &&
+            --with-xtlibdir=/lib/xtables
 make
-build DESTDIR=$PKG install
+make DESTDIR=$PKG install
 
-ln -sfv ../../sbin/xtables-legacy-multi $PKG/usr/bin/iptables-xml &&
+ln -sfv ../../sbin/xtables-legacy-multi $PKG/usr/bin/iptables-xml
 
 for file in ip4tc ip6tc ipq xtables
 do
-  mv -v $PKG/usr/lib/lib${file}.so.* $PKG/lib &&
+  mv -v $PKG/usr/lib/lib${file}.so.* $PKG/lib && 
   ln -sfv ../../lib/$(readlink $PKG/usr/lib/lib${file}.so) $PKG/usr/lib/lib${file}.so
 done
-install -D $PKG/etc/rc.d/
+#install -D $PKG/etc/rc.d/
+mkdir -pv $PKG/etc/rc.d
 install -m644 $SRC/rc.iptables $PKG/etc/rc.d/
 
 }
