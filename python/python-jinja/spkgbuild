@@ -2,14 +2,14 @@
   # depends : python-setuptools python-markupsafe
 
 name=python-jinja
-version=2.11.3
+version=3.0.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd Jinja2-$version
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
