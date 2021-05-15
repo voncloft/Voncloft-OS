@@ -11,22 +11,23 @@ options="!checksum"
 build() {
 	cd NetworkManager-$version
 	sed -e 's/-qt4/-qt5/'              \
-    	-e 's/moc_location/host_bins/' \
-    	-i examples/C/qt/meson.build   &&
+    -e 's/moc_location/host_bins/' \
+    -i examples/C/qt/meson.build   &&
 
-	sed -e 's/Qt/&5/'                  \
-    	-i meson.build
+sed -e 's/Qt/&5/'                  \
+    -i meson.build
 
+sed '/initrd/d' -i src/core/meson.build
 
-	sed '/initrd/d' -i src/core/meson.build
+grep -rl '^#!.*python$' | xargs sed -i '1s/python/&3/'
 
-	grep -rl '^#!.*python$' | xargs sed -i '1s/python/&3/'
+sed -i 's/str, 0/str ?: "", 0/' src/core/nm-core-utils.c
 
-	mkdir build 
-	cd    build 
+mkdir build &&
+cd    build &&
 
-	CXXFLAGS+="-O2 -fPIC"            \
-	meson --prefix /usr              \
+CXXFLAGS+="-O2 -fPIC"            \
+meson --prefix /usr              \
       -Dlibaudit=no              \
       -Dlibpsl=false             \
       -Dnmtui=true               \
@@ -34,7 +35,7 @@ build() {
       -Dppp=false                \
       -Dselinux=false            \
       -Dudev_dir=/lib/udev       \
-      -Dsession_tracking=elogind=no \
+      -Dsession_tracking=elogind \
       -Dmodem_manager=false      \
       -Dsystemdsystemunitdir=no  \
       -Dsystemd_journal=false    \
