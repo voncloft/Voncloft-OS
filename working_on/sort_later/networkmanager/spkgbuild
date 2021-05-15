@@ -76,7 +76,7 @@ meson --prefix /usr              \
 	groupadd -fg 86 netdev &&
 	#/usr/sbin/usermod -a -G netdev <username>
 
-	mkdir -pv sr/share/polkit-1/rules.d/
+	mkdir -pv $PKG/usr/share/polkit-1/rules.d/
 	cat <<-EOF > $PKG/usr/share/polkit-1/rules.d/org.freedesktop.NetworkManager.rules
 	polkit.addRule(function(action, subject) {
     	if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("netdev")) {
