@@ -2,27 +2,28 @@
 # depends	: libdrm llvm expat zlib zstd elfutils libxcb libxshmfence libx11 wayland libxvmc libxv libxext libxfixes libxdamage libxxf86vm python-mako libglvnd xrandr wayland-protocols
 
 name=mesa
-version=21.1.0
+version=20.1.5
 release=1
 source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz"
 options="!checksum"
 build() {
 	cd $name-$version
+	sed '1s/python/&3/' -i bin/symbols-check.py
 	GALLIUM_DRV="i915,iris,nouveau,r600,radeonsi,svga,swrast,virgl"
 	DRI_DRIVERS="i965,nouveau"
 
 	mkdir build &&
 	cd    build &&
 
-	meson --prefix=$XORG_PREFIX          \
+	meson --prefix=/usr         \
       -Dbuildtype=release            \
       -Ddri-drivers=$DRI_DRIVERS     \
       -Dgallium-drivers=$GALLIUM_DRV \
       -Dgallium-nine=false           \
       -Dglx=dri                      \
-      -Dosmesa=true                  \
-      -Dvalgrind=disabled            \
-      -Dlibunwind=disabled           \
+      -Dosmesa=gallium               \
+      -Dvalgrind=false               \
+      -Dlibunwind=false
       ..
       
 	unset GALLIUM_DRV DRI_DRIVERS
