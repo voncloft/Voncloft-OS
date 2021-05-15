@@ -1,5 +1,5 @@
 # description : netfilter for connlabel support
-# depends libnfnetlink libmnl
+# depends libmnl libnfnetlink
 
 name=libnetfilter_conntrack
 version=1.0.8
