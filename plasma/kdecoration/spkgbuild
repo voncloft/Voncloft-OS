@@ -12,6 +12,5 @@ build() {
    cd $name-$version
    plasma-package-installer
    cd build
-   cd build
    make DESTDIR=$PKG install
 }
