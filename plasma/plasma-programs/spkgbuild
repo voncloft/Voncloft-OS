@@ -11,7 +11,7 @@ release=1
 
 build() {
 
-	mkdir $PKG/etc/pam.d
+	mkdir -pv $PKG/etc/pam.d
         cat <<-EOF > $PKG/etc/pam.d/kde
         # Begin /etc/pam.d/kde
 
