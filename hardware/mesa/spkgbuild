@@ -23,7 +23,7 @@ build() {
       -Dglx=dri                      \
       -Dosmesa=gallium               \
       -Dvalgrind=false               \
-      -Dlibunwind=false
+      -Dlibunwind=false	\
       ..
       
 	unset GALLIUM_DRV DRI_DRIVERS
