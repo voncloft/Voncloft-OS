@@ -2,10 +2,10 @@
 # depends extra-cmake-modules
 
 name=plasma-wayland-protocols
-version=1.1.1
+version=1.2.0
 release=1
 
-source="https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.1.1.tar.xz"
+source="https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.2.0.tar.xz"
 options="!checksum"
 
 build() {
