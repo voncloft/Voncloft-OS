@@ -12,6 +12,5 @@ build() {
    cd $name-$version
    kf5-package-installer
    cd build
-   cd build
    make DESTDIR=$PKG install
 }
