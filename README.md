@@ -38,4 +38,4 @@ _As of 05-11-2021_
 - After program to compile package is complete add cd build to do the make install (will fix eventually taking a break as of 5/14)
 
 **bugs:**
-- plasma-nm fails
+- mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
