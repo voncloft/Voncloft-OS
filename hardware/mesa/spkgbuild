@@ -1,13 +1,15 @@
 # description	: OpenGL compatible 3D graphics library
-# depends	: libdrm llvm expat zlib zstd elfutils libxcb libxshmfence libx11 wayland libxvmc libxv libxext libxfixes libxdamage libxxf86vm python-mako libglvnd xrandr wayland-protocols
+# depends : xorg libdrm python-mako libva libvdpau llvm wayland-protocols
 
 name=mesa
-version=21.1.0
+version=20.3.4
 release=1
-source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz"
+source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/blfs/10.1/mesa-20.3.4-add_xdemos-1.patch"
 options="!checksum"
 build() {
 	cd $name-$version
+	patch -Np1 -i $SRC/mesa-20.3.4-add_xdemos-1.patch
 	sed '1s/python/&3/' -i bin/symbols-check.py
 	GALLIUM_DRV="i915,iris,nouveau,r600,radeonsi,svga,swrast,virgl"
 	DRI_DRIVERS="i965,nouveau"
@@ -16,16 +18,17 @@ build() {
 	cd    build &&
 
 	meson --prefix=/usr         \
-      -Dbuildtype=release            \
-      -Ddri-drivers=$DRI_DRIVERS     \
-      -Dgallium-drivers=$GALLIUM_DRV \
-      -Dgallium-nine=false           \
-      -Dglx=dri                      \
-      -Dosmesa=gallium               \
-      -Dvalgrind=false               \
-      -Dlibunwind=false	\
-      ..
-      
+      	-Dbuildtype=release            \
+      	-Ddri-drivers=$DRI_DRIVERS     \
+      	-Dgallium-drivers=$GALLIUM_DRV \
+      	-Dgallium-nine=false           \
+      	-Dglx=dri                      \
+      	-Dosmesa=gallium               \
+      	-Dvalgrind=disabled            \
+      	-Dlibunwind=disabled           \
+      	..                             &&
+
+
 	unset GALLIUM_DRV DRI_DRIVERS
 	ninja
 	DESTDIR=$PKG ninja install
