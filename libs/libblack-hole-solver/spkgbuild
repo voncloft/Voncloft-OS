@@ -9,7 +9,7 @@ source="https://fc-solve.shlomifish.org/downloads/fc-solve/black-hole-solver-$ve
 options="!checksum"
 
 build() {
-	cd black-hole-server-$version
+	cd black-hole-solver-$version
 	mkdir build
 	cd build
 	cmake .. \
