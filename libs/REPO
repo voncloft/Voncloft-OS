@@ -112,6 +112,7 @@ d:libmpd
 d:libxcursor
 d:libqalculate
 d:libtorrent-rasterbar
+d:libblack-hole-server
 d:libglade
 d:geoip
 d:wayland
@@ -581,6 +582,8 @@ f:7198fc1ed0f651d808b53fcba2ae9533:libxcursor/.pkgfiles
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
 f:0fb7377f7d8e1d70ba64de7cd1bc966a:libqalculate/spkgbuild
 f:cfe3b24d83be5464d2acfaf1f87ae36b:libtorrent-rasterbar/spkgbuild
+f:66e9544fe68abcb398ab60087620a3ea:libblack-hole-server/CHANGELOG
+f:f2950754c490853e96c2f1a092e95429:libblack-hole-server/spkgbuild
 f:0bf05e258ee00c5bc08fe903fa624a65:libglade/.checksums
 f:c4f57ec5038be922fb627734b39131b2:libglade/.pkgfiles
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild
