@@ -3,6 +3,7 @@ d:ksysguard
 d:breeze-plymouth
 d:plasma-nm
 d:plasma-workspace
+d:qqc2-desktop-breeze
 d:breeze-grub
 d:polkit-kde-agent-1
 d:kwayland-server
@@ -62,6 +63,8 @@ f:8dc755d41a5a14520b2fe47522a84099:plasma-nm/CHANGELOG
 f:948a88a755feaddcedf0bee957cfcf87:plasma-nm/spkgbuild
 f:32bba221ab17ae567a5368f09d64f999:plasma-workspace/CHANGELOG
 f:60a485df5237a48f3f682c4d9536717e:plasma-workspace/spkgbuild
+f:4a0c73d9e2e36ae6615b5d3b0a060982:qqc2-desktop-breeze/CHANGELOG
+f:234df4310af2da8cca362f9657503d42:qqc2-desktop-breeze/spkgbuild
 f:caf786a2acbc934d9eb3433f63b2d01e:breeze-grub/CHANGELOG
 f:cb969ccdac2561cf15bf0dd99f6da4f8:breeze-grub/spkgbuild
 f:4c33cfc6fa75305c54d8fc7c8a5f7720:polkit-kde-agent-1/CHANGELOG
