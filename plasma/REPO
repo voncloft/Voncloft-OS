@@ -19,6 +19,7 @@ d:plasma-phone-components
 d:kmenuedit
 d:drkonqi
 d:kinfocenter
+d:plasma-firewall
 d:plasma-browser-integration
 d:kde-cli-tools
 d:breeze
@@ -27,6 +28,7 @@ d:xdg-desktop-portal-kde
 d:kwin
 d:kactivitymanagerd
 d:systemsettings
+d:plasma-systemmonitor
 d:plasma-desktop
 d:kscreenlocker
 d:plasma-disks
@@ -91,6 +93,8 @@ f:b4cb454f99ce3a9e78f66275611f536e:drkonqi/CHANGELOG
 f:dc017e62d52cc289b1fb4e3da6c2982d:drkonqi/spkgbuild
 f:dc4c5a925defef4ed39995f24a78620e:kinfocenter/CHANGELOG
 f:aa632898dc5182f31ed6b9efc4c1e753:kinfocenter/spkgbuild
+f:8dc755d41a5a14520b2fe47522a84099:plasma-firewall/CHANGELOG
+f:cfc9fc4f077c6eb8e840a108ada21dc9:plasma-firewall/spkgbuild
 f:dd901aa63b64533d3d2bba535daf9b76:plasma-browser-integration/CHANGELOG
 f:7bb542fc3202b993304e39494d364fab:plasma-browser-integration/spkgbuild
 f:1f6361fd2aa9b666c273210371928002:kde-cli-tools/CHANGELOG
@@ -107,6 +111,8 @@ f:7327fbc6b95f6d79bb30fa0a2953f9c0:kactivitymanagerd/CHANGELOG
 f:0d698b249017267d4fdc7c12cec97278:kactivitymanagerd/spkgbuild
 f:691bbe6bb787e88e5dbf46f261cd3234:systemsettings/CHANGELOG
 f:68efbe30937e399d373042a7c069f93e:systemsettings/spkgbuild
+f:8dc755d41a5a14520b2fe47522a84099:plasma-systemmonitor/CHANGELOG
+f:77a229fff354eb48d4457afc086f9c6f:plasma-systemmonitor/spkgbuild
 f:896d4bb93d098c10dcc250c28a08e10d:plasma-desktop/CHANGELOG
 f:a2af6c6c46ab47e56522ff4ce3636ac3:plasma-desktop/spkgbuild
 f:43e20ff843f73d47d5893ac2bfee604c:kscreenlocker/CHANGELOG
