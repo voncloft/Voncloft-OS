@@ -1,5 +1,5 @@
 # description : core package for the kde desktop
-# depends extra-cmake-modules
+# depends : extra-cmake-modules
 
 name=plasma-wayland-protocols
 version=1.3.0
