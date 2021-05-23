@@ -10,7 +10,7 @@ source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz
 options="!checksum"
 build() {
 	cd $name-$version
-	patch -Np1 -i $SRC/mesa-20.3.4-add_xdemos-1.patch
+	patch -Np1 -i $SRC/mesa-21.1.1-add_xdemos-1.patch
 	sed '1s/python/&3/' -i bin/symbols-check.py
 	GALLIUM_DRV="i915,iris,nouveau,r600,radeonsi,svga,swrast,virgl"
 	DRI_DRIVERS="i965,nouveau"
