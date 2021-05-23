@@ -5,7 +5,8 @@ name=mesa
 version=21.1.1
 release=1
 source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/blfs/10.1/mesa-20.3.4-add_xdemos-1.patch"
+	https://www.linuxfromscratch.org/patches/blfs/svn/mesa-21.1.1-add_xdemos-1.patch"
+
 options="!checksum"
 build() {
 	cd $name-$version
