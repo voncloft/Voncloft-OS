@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps libblack-hole-solver
+# depends : kde-deps libblack-hole-solver freecell-solver hicolor-icon-theme libkdegames extra-cmake-modules
 
 name=kpat
 version=21.04.1
