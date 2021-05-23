@@ -1,4 +1,5 @@
 d:openssh
+d:networkmanager
 d:whois
 d:iftop
 d:iptraf-ng
@@ -35,6 +36,7 @@ d:youtube-dl
 d:firefox
 d:git
 d:openssl1.0
+d:dhcp
 d:libnetfilter_conntrack
 f:f87b3722ad4520270e2e109db4756184:openssh/install
 f:3004ff052b62b9f37c1ead8739e6b6f3:openssh/CHANGELOG
@@ -44,6 +46,7 @@ f:01bc5c7b101c377cc996728b6040c493:openssh/.pkgfiles
 f:5fc098b42855753708d80de922be2a5a:openssh/spkgbuild
 f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
+f:1b764401fc97c20f2bc42e9c1ac1eb30:networkmanager/spkgbuild
 f:02a85b6c81cd20cd45a4667b28dc4865:whois/spkgbuild
 f:c60499aba332d667b5aae9aa64bce141:iftop/.checksums
 f:0deed7441258d7191b2045039fb3a62d:iftop/.pkgfiles
@@ -143,4 +146,7 @@ f:b94d4b17b2fdddf8bfe422041320e174:openssl1.0/openssl-compat_versioned_symbols-1
 f:7858d6895f1ece6eddd8d7cc77fa4014:openssl1.0/.checksums
 f:a274cdfb1d84e06ebf9bfc67f25fe273:openssl1.0/.pkgfiles
 f:8d7bd327b21a79be08fac73661082cd7:openssl1.0/spkgbuild
+f:4e35868ad012c18e0d60727a022f7150:dhcp/dhclient.conf
+f:7c1831c84b58dead21f820cfaa712f75:dhcp/ifconfig.eth0
+f:e1b925efb928ceb38fa5c11d5bf62d86:dhcp/spkgbuild
 f:800b273fd8d5d9049cedafa1ae4b965a:libnetfilter_conntrack/spkgbuild
