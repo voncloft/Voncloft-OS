@@ -453,6 +453,7 @@ d:weechat
 d:geos
 d:xauth
 d:speedtest-cli
+d:clazy
 d:argon2
 d:bc
 d:base
@@ -2022,6 +2023,8 @@ f:d2198d3f6b0810dbdd31d80a7d721ad3:xauth/spkgbuild
 f:8d5153599a64ddd6b84e72c90118c017:speedtest-cli/.checksums
 f:6636a508f2b4b84475d1ef7be90b7ecf:speedtest-cli/.pkgfiles
 f:c2eecbd3c281207382870b5090d1ac1e:speedtest-cli/spkgbuild
+f:e10125f78449ccedbf2b06f976ed31c0:clazy/CHANGELOG
+f:36bdf7180586d2e28d35d6f424c3fe11:clazy/spkgbuild
 f:2508877d5ed2964be1d54a33e53dd913:argon2/spkgbuild
 f:15695abbce576f3e32ec7273b02eec8d:bc/.checksums
 f:b9664e3aa8dbd46c7d7eee830042dbc0:bc/.pkgfiles
