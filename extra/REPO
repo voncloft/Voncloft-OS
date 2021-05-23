@@ -31,6 +31,7 @@ d:mozjs
 d:gtksourceview3
 d:gtk2
 d:gtkmm3
+d:clazy
 d:florence
 d:youtubemp3
 d:gtk-engines
@@ -117,6 +118,8 @@ f:13f2c9445f7358f37ebde4fd22c3a024:gtk2/spkgbuild
 f:087e9729c1c051409579c4103fcf4fbd:gtkmm3/.checksums
 f:2f00426cb22c88ddf018e619d2d8e941:gtkmm3/.pkgfiles
 f:bf89bb98ad0d06cef7a9bebda179720f:gtkmm3/spkgbuild
+f:e10125f78449ccedbf2b06f976ed31c0:clazy/CHANGELOG
+f:36bdf7180586d2e28d35d6f424c3fe11:clazy/spkgbuild
 f:b13fb88e9ef3731e5374c3ad2f672146:florence/CHANGELOG
 f:5274c93f806e7a05246bda256f31da63:florence/spkgbuild
 f:765e587e2e58461e1b501df7a7b7a2d0:youtubemp3/spkgbuild
