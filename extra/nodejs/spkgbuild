@@ -5,7 +5,7 @@ name=nodejs
 version=14.16.1
 release=1
 source="https://nodejs.org/dist/v$version/node-v$version.tar.xz"
-
+options="!checksum"
 build() {
 	cd node-v$version
 
