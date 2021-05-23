@@ -2,7 +2,7 @@
 # depends : xorg libdrm python-mako libva libvdpau llvm wayland-protocols
 
 name=mesa
-version=20.3.4
+version=21.1.1
 release=1
 source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz
 	http://www.linuxfromscratch.org/patches/blfs/10.1/mesa-20.3.4-add_xdemos-1.patch"
