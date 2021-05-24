@@ -2,7 +2,7 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 05-11-2021_
+_As of 05-24-2021_
 
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
@@ -15,12 +15,11 @@ _As of 05-11-2021_
 - mythtv
 - python - might have errors will fix as a need be basis
 - perl - might have errors will fix as a need be basis
-- kde - needs testing
 - chessx - needs testing and its dependencies
 - scid_vs_pc - needs testing
 
 **Programs to be added in the future:**
-- libfilezilla script
+- libfilezilla upgrade script
 - KDEVELOP
 
 **System Changes:**
@@ -34,8 +33,7 @@ _As of 05-11-2021_
 - Packages are checked six times a day in my repository against https://distrowatch.com/packages.php (amongst other scripts located in Utilities/custom_progs) using a script located in utilities/bin/checkrepository
 
 **Workon next:**
-- Fix version errors in kf5-programs with ${version%.*}
-- After program to compile package is complete add cd build to do the make install (will fix eventually taking a break as of 5/14)
+- PHP: needs to not overwrite httpd existing config files upon upgrading
 
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why

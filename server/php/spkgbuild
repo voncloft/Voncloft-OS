@@ -34,24 +34,21 @@ build()
             --with-readline              &&
 make
 make DESTDIR=$PKG install
-install -v -m644 php.ini-production /etc/php.ini
+install -v -Dm644 $SRC/php.ini-production $PKG/etc/php.ini
 if [ -f /etc/php-fpm.conf.default ]; then
   mv -v /etc/php-fpm.conf{.default,} &&
   mv -v /etc/php-fpm.d/www.conf{.default,}
 fi
 
 sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
-    /etc/php.ini
+    $PKG/etc/php.ini
+###needed for httpd - figure out how to not overwrite existing configs
+#sed -i -e '/proxy_module/s/^#//'      \
+#       -e '/proxy_fcgi_module/s/^#//' \
+#       $PKG/etc/httpd/httpd.conf
 
-sed -i -e '/proxy_module/s/^#//'      \
-       -e '/proxy_fcgi_module/s/^#//' \
-       /etc/httpd/httpd.conf
-
-echo \
-'ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/srv/www/$1' >> \
-/etc/httpd/httpd.conf
-
-echo \
-'AddType application/x-httpd-php-source .phps' >> \
-/etc/httpd/httpd.conf
+#cat <<-EOF > $PKG/etc/httpd/httpd.conf
+#ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/srv/www/$1
+#AddType application/x-httpd-php-source .phps
+#EOF
 }
