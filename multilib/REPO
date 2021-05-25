@@ -54,6 +54,7 @@ d:libxinerama-32
 d:libxml2-32
 d:libgpg-error-32
 d:libtool-32
+d:template
 d:gst-plugins-base-32
 d:libxext-32
 d:wine
@@ -271,6 +272,7 @@ f:c5cdec9813678cff457172a31a9bce7a:libgpg-error-32/spkgbuild
 f:87109ff4d320b5897546e4d927e374d5:libtool-32/.checksums
 f:65d1d68f19047feefd927849001f7922:libtool-32/.pkgfiles
 f:df3388ac2a1a521cf7aa259f1afb06a0:libtool-32/spkgbuild
+f:33a9308e184fcbb847b34233050d1091:template/spkgbuild
 f:544a431393f96080057e55cdf0163d15:gst-plugins-base-32/.checksums
 f:aa92f572e956558fb6b3684ebad6af66:gst-plugins-base-32/.pkgfiles
 f:868ca26cbf03e2d14786755db5acf092:gst-plugins-base-32/spkgbuild

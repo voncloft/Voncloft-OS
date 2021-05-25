@@ -8,3 +8,13 @@ Packages upgraded: 0
 08
 Packages upgraded: 0
 
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/5.11.0/5.12.0/g' /Voncloft-OS/*/xfsprogs/spkgbuild
+Packages upgraded: 1
+
