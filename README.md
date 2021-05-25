@@ -34,11 +34,6 @@ _As of 05-24-2021_
 
 **Workon next:**
 - PHP: needs to not overwrite httpd existing config files upon upgrading
-- upgrade scratchpkg 
-- use:  TEST="$(grep version yaml/.pkginfo | sed 's/version = //g') 1" in a script write to db/name_of_file
-- then grep from .files to name_of_file
-- fix color codes in scratchpkg after upgrading
-- add changelog
 
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
