@@ -8,3 +8,10 @@ Packages upgraded: 0
 sed -i -e 's/7.76.1/7.77.0/g' /Voncloft-OS/*/curl/spkgbuild
 Packages upgraded: 1
 
+12
+Packages upgraded: 0
+
+16
+sed -i -e 's/4.30/4.31/g' /Voncloft-OS/*/nspr/spkgbuild
+Packages upgraded: 1
+
