@@ -14,7 +14,7 @@ build() {
                     --enable-threaded-resolver \
                     --with-openssl \
                     --with-libssh2 \
-                    --with-ca-bundle=/etc/ssl/certs
+                    --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
                     
 	make
 	make DESTDIR=$PKG install
