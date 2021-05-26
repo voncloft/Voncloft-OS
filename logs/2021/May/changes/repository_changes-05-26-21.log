@@ -1,0 +1,10 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+sed -i -e 's/7.76.1/7.77.0/g' /Voncloft-OS/*/curl/spkgbuild
+Packages upgraded: 1
+
