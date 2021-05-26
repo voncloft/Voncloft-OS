@@ -9,12 +9,12 @@ options="!checksum"
 build() {
 	cd $name-$version
 
-	        ./configure --prefix=/usr              \
-                    --disable-static           \
-                    --enable-threaded-resolver \
-                    --with-openssl \
-                    --with-libssh2 \
-                    --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
+	./configure --prefix=/usr              \
+	--disable-static           \
+        --enable-threaded-resolver \
+        --with-openssl \
+        --with-libssh2 \
+        --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
                     
 	make
 	make DESTDIR=$PKG install
