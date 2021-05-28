@@ -1,0 +1,20 @@
+00
+Packages upgraded: 0
+
+04
+sed -i -e 's/76.0.4017.123/76.0.4017.154/g' /Voncloft-OS/*/opera/spkgbuild
+Packages upgraded: 1
+
+08
+Packages upgraded: 0
+
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/3.20.2/3.20.3/g' /Voncloft-OS/*/cmake/spkgbuild
+Packages upgraded: 1
+
