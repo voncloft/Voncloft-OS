@@ -1,7 +1,7 @@
 url=
 name=
 file=
-
+echo $name
 cd /var/log/old
 
 #GRAB WEBSITE
