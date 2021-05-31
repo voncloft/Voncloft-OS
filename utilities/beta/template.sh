@@ -13,7 +13,7 @@ then
 fi
 
 ###to get rid of <> tags in html
-#grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep v > test.txt
+#grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name > test.txt
 
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
