@@ -8,3 +8,17 @@ Packages upgraded: 0
 sed -i -e 's/6.0/6.10/g' /Voncloft-OS/*/wine/spkgbuild
 Packages upgraded: 1
 
+04
+Packages upgraded: 0
+
+08
+Packages upgraded: 0
+
+12
+Packages upgraded: 0
+
+13
+sed -i -e 's/4.4.2/4.4.2-p1/g' /Voncloft-OS/*/dhcp/spkgbuild
+sed -i -e 's/1.30.2/1.30.4/g' /Voncloft-OS/*/networkmanager/spkgbuild
+Packages upgraded: 2
+
