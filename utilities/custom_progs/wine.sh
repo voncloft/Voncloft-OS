@@ -1,6 +1,6 @@
-url=
-name=
-file=
+url=https://dl.winehq.org/wine/source/
+name=wine
+file=index.html
 echo $name
 cd /var/log/old
 
@@ -19,7 +19,7 @@ fi
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
 
 #####more efficient to get version numbers
-#egrep -o "([0-9]{1,}\.)+[0-9]{1,}" $file > test.txt
+egrep -o "([0-9]{1,}\.)+[0-9]{1,}" $file > test.txt
 
 ###CUSTOM COMMANDS FOR WEBSITE STRIPPING###
 #sed -i -e "s/$name-//g" test.txt
@@ -31,15 +31,18 @@ fi
 #sed -i -e 's/v//g' test.txt
 
 ###beta###
-command="cat test.txt | sort -V -r | head -n 1 | sed 's/v//g'"
-eval $command
+command="cat test.txt | sort -V -r | head -n 1 | sed 's/.0/.x/g'"
+new_website=$(eval $command)
+echo $url$new_website
+wget $url$new_website
 
+egrep -o "([0-9]{1,}\.)+[0-9]{1,}" $new_website > test.txt
+final_command="cat test.txt | sort -V -r | head -n 1"
+eval $final_command
 ##Production###
-#if [ -f $file ];
-#then
-#	echo $name >> stripped_info.txt
-#	eval $command >> stripped_info.txt
-#	rm -v $file
-#fi
-
-
+if [ -f $file ];
+then
+	echo $name >> stripped_info.txt
+	eval $final_command >> stripped_info.txt
+	rm -v $file
+fi
