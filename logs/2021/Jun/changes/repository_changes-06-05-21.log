@@ -22,3 +22,10 @@ sed -i -e 's/4.4.2/4.4.2-p1/g' /Voncloft-OS/*/dhcp/spkgbuild
 sed -i -e 's/1.30.2/1.30.4/g' /Voncloft-OS/*/networkmanager/spkgbuild
 Packages upgraded: 2
 
+16
+sed -i -e 's/2021.05.16/2021.06.06/g' /Voncloft-OS/*/youtube-dl/spkgbuild
+Packages upgraded: 1
+
+20
+Packages upgraded: 0
+
