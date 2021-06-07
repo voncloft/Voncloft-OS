@@ -1,0 +1,4 @@
+00
+sed -i -e 's/2.3.4/2.4.0/g' /Voncloft-OS/*/icewm/spkgbuild
+Packages upgraded: 1
+
