@@ -11,3 +11,7 @@ Packages upgraded: 0
 12
 Packages upgraded: 0
 
+13
+sed -i -e 's/2.82/2.85/g' /Voncloft-OS/*/dnsmasq/spkgbuild
+Packages upgraded: 1
+
