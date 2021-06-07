@@ -39,6 +39,8 @@ if [ -f $file ];
 then
 	echo $name >> stripped_info.txt
 	eval $command >> stripped_info.txt
+	echo $name-boot >> stripped_info.txt
+	eval $command >> stripped_info.txt
 	rm -v $file
 fi
 

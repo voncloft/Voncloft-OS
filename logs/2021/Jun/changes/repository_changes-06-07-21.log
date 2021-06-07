@@ -15,3 +15,7 @@ Packages upgraded: 0
 sed -i -e 's/2.82/2.85/g' /Voncloft-OS/*/dnsmasq/spkgbuild
 Packages upgraded: 1
 
+13
+sed -i -e 's/2.82/2.85/g' /Voncloft-OS/*/dnsmasq-boot/spkgbuild
+Packages upgraded: 1
+
