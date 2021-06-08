@@ -58,3 +58,10 @@ sed -i -e 's/5.21.5/5.22.0/g' /Voncloft-OS/*/systemsettings/spkgbuild
 sed -i -e 's/5.21.5/5.22.0/g' /Voncloft-OS/*/xdg-desktop-portal-kde/spkgbuild
 Packages upgraded: 51
 
+12
+Packages upgraded: 0
+
+16
+sed -i -e 's/2.04/2.06/g' /Voncloft-OS/*/grub/spkgbuild
+Packages upgraded: 1
+
