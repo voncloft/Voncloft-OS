@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=polkit-kde-agent-1
-version=5.21.5
+version=5.22.0
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
