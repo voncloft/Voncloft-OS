@@ -5,7 +5,7 @@ name=layer-shell-qt
 version=5.22.0
 release=1
 
-source="https://download.kde.org/stable/plasma/$pkgver/$name-$version.tar.xz"
+source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
