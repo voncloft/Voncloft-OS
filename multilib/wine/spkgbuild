@@ -19,7 +19,7 @@ options="!checksum"
 # libgphoto2_port 64-bit development files not found, digital cameras won't be auto-detected.
 # OSS sound system found but too old (OSSv4 needed), OSS won't be supported.
 # libcapi20 64-bit development files not found, ISDN won't be supported.
-# libgsm 64-bit development files not found, gsm 06.10 codec won't be supported.
+# libgsm 64-bit development files not found, gsm 0youtube-dl codec won't be supported.
 # libkrb5 64-bit development files not found, Kerberos won't be supported.
 # libopenal 64-bit development files not found (or too old), OpenAL won't be supported.
 # openal-soft 64-bit development files not found (or too old), XAudio2 won't be supported.
@@ -38,7 +38,7 @@ options="!checksum"
 # OSS sound system found but too old (OSSv4 needed), OSS won't be supported.
 # libcapi20 32-bit development files not found, ISDN won't be supported.
 # libcups 32-bit development files not found, CUPS won't be supported.
-# libgsm 32-bit development files not found, gsm 06.10 codec won't be supported.
+# libgsm 32-bit development files not found, gsm 0youtube-dl codec won't be supported.
 # libkrb5 32-bit development files not found, Kerberos won't be supported.
 # libopenal 32-bit development files not found (or too old), OpenAL won't be supported.
 # openal-soft 32-bit development files not found (or too old), XAudio2 won't be supported.
