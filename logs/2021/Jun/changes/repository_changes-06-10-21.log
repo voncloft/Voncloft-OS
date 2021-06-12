@@ -238,3 +238,10 @@ sed -i -e 's/3.66/3.67/g' /Voncloft-OS/*/nss/spkgbuild
 sed -i -e 's/7.1.3/7.1.4/g' /Voncloft-OS/*/libreoffice/spkgbuild
 Packages upgraded: 2
 
+16
+sed -i -e 's/77.0.4054.60/77.0.4054.64/g' /Voncloft-OS/*/opera/spkgbuild
+Packages upgraded: 1
+
+20
+Packages upgraded: 0
+
