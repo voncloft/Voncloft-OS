@@ -4,6 +4,7 @@ d:xf86-video-intel
 d:xf86-input-vmmouse
 d:glu
 d:xf86-input-synaptics
+d:vdpauinfo
 d:xf86-video-amdgpu
 d:xf86-video-fbdev
 d:mesa
@@ -36,6 +37,8 @@ f:49041864525cd999d552c2eff35e758b:xf86-input-synaptics/.checksums
 f:dc8c8184fcf6cd48442ef5fd1e7e4959:xf86-input-synaptics/.pkgfiles
 f:8e3e55061c94c08c868ea45ebe082444:xf86-input-synaptics/50-synaptics.conf
 f:5bc782408286f758c879fa6bf2b707b9:xf86-input-synaptics/spkgbuild
+f:96307e312af5b7cbe71d3fc330040032:vdpauinfo/CHANGELOG
+f:cd8f3eadd44dbbf8e131e6c83aaa6407:vdpauinfo/spkgbuild
 f:0f84efa5846f77ebf2b060b1080d446f:xf86-video-amdgpu/readme
 f:bd31997776b65c11a7b061f39c8871d4:xf86-video-amdgpu/.checksums
 f:d7d420978438c6d674884f7cbf2e855f:xf86-video-amdgpu/.pkgfiles
