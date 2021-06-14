@@ -2,7 +2,7 @@
 # depends : berkeley-db cyrus-sasl libnsl postfix-boot
 
 name=postfix
-version=3.6.0
+version=3.6.1
 release=1
 
 source="ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz"
