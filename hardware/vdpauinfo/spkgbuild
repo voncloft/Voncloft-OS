@@ -9,9 +9,9 @@ source="https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/$version/$name-
 options="!checksum"
 
 build() {
-	cd vdpauinfo
+	cd $name-$version
 	autoreconf -ifv
 	./configure --prefix=/usr
 	make
-	make DESTDIR=$PKG -C vdpauinfo install
+	make DESTDIR=$PKG install
 }
