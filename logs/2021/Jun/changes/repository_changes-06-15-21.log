@@ -60,3 +60,21 @@ sed -i -e 's/5.22.0/5.22.1/g' /Voncloft-OS/*/xdg-desktop-portal-kde/spkgbuild
 sed -i -e 's/5.22.0/5.22.1/g' /Voncloft-OS/*/layer-shell-qt/spkgbuild
 Packages upgraded: 53
 
+12
+Packages upgraded: 0
+
+12
+sed -i -e 's/89.0/89.0.1/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 1
+
+12
+sed -i -e 's/87.0/89.0.1/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 1
+
+12
+sed -i -e 's/8/89.0.1/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 1
+
+12
+Packages upgraded: 0
+
