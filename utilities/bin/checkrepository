@@ -27,8 +27,9 @@ wget http://distrowatch.org/packages.php
 #sed -i -e '/vlc/d' packages.php
 #sed -i -e '/llvm/d' packages.php #not yet supported
 sed -i -e '/mesa/d' packages.php
-sed -i -e '/wine/d' packages.php #using another script
 sed -i -e '/qt/d' packages.php
+sed -i -e '/wine/d' packages.php
+
 rm -rf stripped_info.txt
 grep -A 1 "<th><a name=" packages.php >> modified.php
 
@@ -56,7 +57,7 @@ done < "$input"
 count=0
 #final="$(date +%H)<br>\n"
 
-echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e "$(date +%H)" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").log
 
 while IFS=$'\n' read -ra items; do
@@ -77,7 +78,7 @@ while IFS=$'\n' read -ra items; do
 						final+="<br>upgraded to version: $uversion\n"
 						final+="<br><br>\n\n"
 						echo -e $final >> testing.txt
-						echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+						echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").log
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
 						changelog "$item" "Upgraded from version $cversion to version $uversion"
@@ -93,12 +94,14 @@ while IFS=$'\n' read -ra items; do
 done <<< "$list"
 #echo $PWD
 echo -e "Packages upgraded: $count\n" >> $PWD/testing.txt
-echo -e "Packages upgraded: $count\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log
+echo -e "Packages upgraded: $count<br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").log
 words=$(cat $PWD/testing.txt)
 cat $PWD/testing.txt
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 echo $title
+log_html_path="http://voncloft.dnsfor.me/updated/"$(date +"%Y")"/"$(date +"%b")"/reports/"repository_upgrade_report-$(date +"%m-%d-%y").html
+
 
 
 ###get missing package info not in the loop
@@ -109,10 +112,10 @@ then
 	###if I have outdated packages let me know
 	#mail me the packages updated in repo automatically
 	mailme voncloft@gmail.com "$words" "$title"
-	mailme phoneemail@vtext.com "Updated packages: $count" "Upgrade Report"
-
+	mailme phonenumber@vtext.com "Updated packages: $count" "Upgrade Report"
+	mailme phonenumber@vtext.com "$log_html_path" "Upgrade Report"
 	#message me outdated packages not in the loop
-	mailme phoneemail@vtext.com "Total Missing: $(cat missing.txt | wc -l)" "Total Outdated Packages"
+	mailme phoonenumber@vtext.com "Total Missing: $(cat missing.txt | wc -l)" "Total Outdated Packages"
 	echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
 	missing=$(cat missing.txt)
 	mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
@@ -137,5 +140,5 @@ rm -rfv *.php.*
 #mv -v testing.txt repository_upgrade_report.log
 rm -v testing.txt
 rm -v test.txt
-cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").log
+cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").log /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
 cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
