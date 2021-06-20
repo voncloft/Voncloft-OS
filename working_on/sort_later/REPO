@@ -4,6 +4,7 @@ d:qt5-quick3d
 d:qt5-quickcontrols
 d:kdevelop
 d:qt-creator
+d:qt6
 d:qt5-declarative
 d:qt5-quickcontrols2
 f:78110543dd68ccb18457ed96177b842a:qt5-svg/CHANGELOG
@@ -18,6 +19,13 @@ f:03f7f50f98f5a47b7fb746a31054a9cc:kdevelop/CHANGELOG
 f:91a4a7dacfa4002e0cbe62cdc4c3e4ce:kdevelop/spkgbuild
 f:a7526ccf5201bad56c46711ee515200b:qt-creator/qtcreator-fix-clang-paths.patch
 f:83b3ef991df9c7dd551347f4bc7e5c35:qt-creator/spkgbuild
+f:aadd40347642d4a60f78270664b2d369:qt6/main.patch
+f:87719b71fc17dccb96f069d0322122ef:qt6/spkgbuild-backup
+f:b82cce80d978eb0b0b6222c0da2d6ecd:qt6/CHANGELOG
+f:af3a7093ca9f5f3ee85f45ce85615569:qt6/webengine.patch
+f:fe7137311e5b834c411e2c61df0e570f:qt6/.checksums
+f:1aacb15bb0abe7d40ddec0fead549a9b:qt6/.pkgfiles
+f:c773cdd1d409c863e2c2d640a880b9c0:qt6/spkgbuild
 f:f04672cb8147e437619e3bf026ea4198:qt5-declarative/spkgbuild
 f:2d074c2b851ed407c3868628a4acc13b:qt5-quickcontrols2/CHANGELOG
 f:b3e15b22ef8e37f55d5cde797073cd5f:qt5-quickcontrols2/spkgbuild

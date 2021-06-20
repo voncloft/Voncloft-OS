@@ -1,0 +1,138 @@
+# description	: Cross-platform application framework that is widely used for developing application
+# depends	: sqlite make-ca dbus harfbuzz glib icu jasper libjpeg-turbo libmng libpng libinput
+# depends	: libxrender libsm libxi libtiff libxkbcommon mesa mtdev openssl pcre2 wayland
+# depends	: xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm alsa-lib python
+# depends	: gst-plugins-base cups
+
+name=qt6
+version=6.1.1
+release=1
+source="https://download.qt.io/archive/qt/${version%.*}/$version/single/qt-everywhere-src-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd qt-everywhere-src-$version
+	./configure -prefix /usr                        \
+            -sysconfdir /etc/xdg                      \
+            -confirm-license                          \
+            -opensource                               \
+            -dbus-linked                              \
+            -openssl-linked                           \
+            -system-harfbuzz                          \
+            -system-sqlite                            \
+            -nomake examples                          \
+            -no-rpath                                 \
+            -skip qtwebengine \
+             -archdatadir    /usr/lib/qt5                \
+            -bindir         /usr/bin                    \
+            -plugindir      /usr/lib/qt5/plugins        \
+            -importdir      /usr/lib/qt5/imports        \
+            -headerdir      /usr/include/qt5            \
+            -datadir        /usr/share/qt5              \
+            -docdir         /usr/share/doc/qt5          \
+            -translationdir /usr/share/qt5/translations \
+            -examplesdir    /usr/share/doc/qt5/examples
+	make
+	make -j1 INSTALL_ROOT=$PKG install
+	#mkdir $PKG/opt/qt-$version
+	#ln -sfnv $PKG/qt-$version $PKG/opt/qt5
+	
+	find $PKG/usr -name \*.prl \
+	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+
+install -v -dm755 $PKG/usr/share/pixmaps/
+
+install -v -Dm644 qttools/src/assistant/assistant/images/assistant-128.png \
+                  $PKG/usr/share/pixmaps/assistant-qt5.png
+
+install -v -Dm644 qttools/src/designer/src/designer/images/designer.png \
+                  $PKG/usr/share/pixmaps/designer-qt5.png
+
+install -v -Dm644 qttools/src/linguist/linguist/images/icons/linguist-128-32.png \
+                  $PKG/usr/share/pixmaps/linguist-qt5.png
+
+install -v -Dm644 qttools/src/qdbus/qdbusviewer/images/qdbusviewer-128.png \
+                  $PKG/usr/share/pixmaps/qdbusviewer-qt5.png
+
+install -dm755 $PKG/usr/share/applications
+
+cat > $PKG/usr/share/applications/assistant-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Assistant
+Comment=Shows Qt5 documentation and examples
+Exec=/usr/bin/assistant
+Icon=assistant-qt5.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;Documentation;
+EOF
+
+cat > $PKG/usr/share/applications/designer-qt5.desktop << EOF
+[Desktop Entry]
+Name=Qt5 Designer
+GenericName=Interface Designer
+Comment=Design GUIs for Qt5 applications
+Exec=/usr/bin/designer
+Icon=designer-qt5.png
+MimeType=application/x-designer;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
+EOF
+
+cat > $PKG/usr/share/applications/linguist-qt6.desktop << EOF
+[Desktop Entry]
+Name=Qt6 Linguist
+Comment=Add translations to Qt6 applications
+Exec=/usr/bin/linguist
+Icon=linguist-qt6.png
+MimeType=text/vnd.trolltech.linguist;application/x-linguist;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
+EOF
+
+cat > $PKG/usr/share/applications/qdbusviewer-qt6.desktop << EOF
+[Desktop Entry]
+Name=Qt6 QDbusViewer
+GenericName=D-Bus Debugger
+Comment=Debug D-Bus applications
+Exec=/usr/bin/qdbusviewer
+Icon=qdbusviewer-qt6.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;Debugger;
+EOF
+
+mkdir -p $PKG/usr/bin
+
+
+for file in moc uic rcc qmake lconvert lrelease lupdate; do
+  ln -sfrvn /usr/bin/$file $PKG/usr/bin/$file-qt6
+done
+
+#mkdir -pv $PKG/etc/ld.so.conf.d/
+#cat <<-EOF > $PKG/etc/ld.so.conf.d/qt5.sh
+#/opt/qt5/lib
+#EOF
+
+mkdir -pv $PKG/etc/sudoers.d
+cat <<-EOF > $PKG/etc/sudoers.d/qt
+Defaults env_keep += QT6DIR
+EOF
+
+mkdir $PKG/etc/profile.d
+cat <<-EOF > $PKG/etc/profile.d/qt6.sh
+QT6DIR=/usr
+export QT6DIR
+pathappend $QT6DIR/bin
+
+export QT5DIR
+EOF
+
+}
