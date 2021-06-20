@@ -14,3 +14,7 @@ Packages upgraded: 0
 sed -i -e 's/6.10/6.11/g' /Voncloft-OS/*/wine/spkgbuild
 Packages upgraded: 1
 
+20
+sed -i -e 's/3.35.5/3.36.0/g' /Voncloft-OS/*/sqlite/spkgbuild
+Packages upgraded: 1
+
