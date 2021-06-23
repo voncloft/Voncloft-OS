@@ -2,7 +2,7 @@
 # depends	: alsa-lib pulseaudio pulseaudio-alsa  gtk2 gtk3 nss nspr icu libevent dbus-glib unzip zip autoconf2.13 yasm rust cbindgen nodejs clang nasm
 
 name=firefox
-version=89.0.1
+version=89.0.2
 options="!checksum"
 
 release=1
@@ -54,7 +54,7 @@ EOF
 	mkdir -pv    $PKG/usr/lib/mozilla/plugins
 	ln    -sfv   ../../mozilla/plugins $PKG/usr/lib/$name/browser
 
-	for i in 16 22 24 32 489.0.1 64 1289.0.1 256; do
+	for i in 16 22 24 32 489.0.2 64 1289.0.2 256; do
 	install -Dm644 browser/branding/official/default$i.png \
 		$PKG/usr/share/icons/hicolor/${i}x${i}/apps/$name.png
 	done
