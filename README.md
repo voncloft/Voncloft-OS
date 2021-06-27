@@ -31,7 +31,7 @@ _As of 05-24-2021_
 - Will use a spare PC to test everything on or a virtual box
 - Template folder is a base for all packages as of 3/16/21
 - Packages are checked six times a day in my repository against https://distrowatch.com/packages.php (amongst other scripts located in Utilities/custom_progs) using a script located in utilities/bin/checkrepository
-
+- Updates can be viewed here: http://voncloft.dnsfor.me/updated
 **Workon next:**
 - PHP: needs to not overwrite httpd existing config files upon upgrading
 
