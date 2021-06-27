@@ -2,7 +2,7 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 05-24-2021_
+_As of 06-27-2021_
 
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
