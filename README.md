@@ -30,6 +30,9 @@ _As of 06-27-2021_
 - Everything in working_on/sort_later needs to be tested.
 - Will use a spare PC to test everything on or a virtual box
 - Template folder is a base for all packages as of 3/16/21
+
+**Updates:**
+- Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
 - Packages are checked six times a day in my repository against https://distrowatch.com/packages.php (amongst other scripts located in Utilities/custom_progs) using a script located in utilities/bin/checkrepository
 - Updates can be viewed here: http://voncloft.dnsfor.me/updated
 
