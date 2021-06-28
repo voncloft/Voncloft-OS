@@ -7,3 +7,8 @@ Packages upgraded: 0
 08
 Packages upgraded: 0
 
+08
+sed -i -e 's/5.81/5.83.0/g' /Voncloft-OS/*/kf5-programs/spkgbuild
+sed -i -e 's/5.20/5.22.2.1/g' /Voncloft-OS/*/plasma-programs/spkgbuild
+Packages upgraded: 2
+
