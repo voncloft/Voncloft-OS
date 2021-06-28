@@ -49,6 +49,8 @@ then
 
 
 	grep "tar.xz" $latest | grep -Po "(?<=>)[^<>]*(?=<)" | grep -v sig | grep "tar.xz" | sed 's/-5/\n5/g' | sed 's/.tar.xz//g' >> stripped_info.txt
+	echo "plasma-programs" >> stripped_info.txt
+	echo $latest >> stripped_info.txt
 	rm -v $latest
 	rm -v $latest.*
 	rm -v index.html

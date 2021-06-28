@@ -52,6 +52,8 @@ if [ -f $latest ];
 then
 	grep "tar.xz" $latest | grep -Po "(?<=>)[^<>]*(?=<)" | grep -v sig | grep "tar.xz" | sed 's/-5/\n5/g' | sed 's/.tar.xz//g' >> stripped_info.txt
 	grep -e "tar.xz" portingAids | grep -Po "(?<=>)[^<>]*(?=<)" | grep "tar.xz" | grep -v tar.xz.sig | sed "s/-$latest/\n$latest/g" | sed 's/.tar.xz//g' >> stripped_info.txt
+	echo "kf5-programs" >> stripped_info.txt
+	echo "$latest.0" >> stripped_info.txt
 	rm -v $latest
 	rm -v $latest.*
 	rm -v index.html
