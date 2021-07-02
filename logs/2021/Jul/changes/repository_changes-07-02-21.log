@@ -1,0 +1,17 @@
+00
+Packages upgraded: 0
+
+04
+sed -i -e 's/77.0.4054.146/77.0.4054.172/g' /Voncloft-OS/*/opera/spkgbuild
+Packages upgraded: 1
+
+08
+Packages upgraded: 0
+
+12
+sed -i -e 's/3.54.1/3.55.0/g' /Voncloft-OS/*/filezilla/spkgbuild
+Packages upgraded: 1
+
+16
+sed -i -e 's/5.0.3/5.0.4/g' /Voncloft-OS/*/cinnamon/spkgbuild
+sed -i -e 's/6.11/6.12/g' /Voncloft-OS/*/wine/spkgbuild
