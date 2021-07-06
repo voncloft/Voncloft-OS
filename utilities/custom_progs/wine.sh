@@ -33,6 +33,9 @@ egrep -o "([0-9]{1,}\.)+[0-9]{1,}" $file > test.txt
 ###beta###
 command="cat test.txt | sort -V -r | head -n 1 | sed 's/.0/.x/g'"
 new_website=$(eval $command)
+#echo "URL" $url "\n"
+#echo "New website" $new_website
+
 echo $url$new_website
 wget $url$new_website
 
@@ -45,4 +48,5 @@ then
 	echo $name >> stripped_info.txt
 	eval $final_command >> stripped_info.txt
 	rm -v $file
+	rm -rv $new_website
 fi
