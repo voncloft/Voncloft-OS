@@ -60,3 +60,13 @@ sed -i -e 's/5.22.2.1/5.22.3/g' /Voncloft-OS/*/xdg-desktop-portal-kde/spkgbuild
 sed -i -e 's/5.22.2.1/5.22.3/g' /Voncloft-OS/*/layer-shell-qt/spkgbuild
 Packages upgraded: 53
 
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/10.6.0/10.6.3/g' /Voncloft-OS/*/mariadb/spkgbuild
+Packages upgraded: 1
+
