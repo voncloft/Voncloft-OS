@@ -58,7 +58,7 @@ EOF
 	export CARGO_HOME="$SRC/rust"
 	export RUST_BACKTRACE=1
 	export RUSTFLAGS="$RUSTFLAGS -C link-args=-lffi"
-	python3 ./x.py build $MAKEFLAGS --exclude src/tools/miri
+	python3 ./x.py build --exclude src/tools/miri
 	DESTDIR=$PKG python3 ./x.py install -v
 
 	rm -rf $PKG/usr/lib/rustlib/components
