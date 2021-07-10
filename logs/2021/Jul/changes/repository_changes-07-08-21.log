@@ -231,3 +231,13 @@ sed -i -e 's/21.04.2/21.04.3/g' /Voncloft-OS/*/yakuake/spkgbuild
 sed -i -e 's/21.04.2/21.04.3/g' /Voncloft-OS/*/zeroconf-ioslave/spkgbuild
 Packages upgraded: 223
 
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/1.20.11/1.20.12/g' /Voncloft-OS/*/xorg-server/spkgbuild
+Packages upgraded: 1
+
