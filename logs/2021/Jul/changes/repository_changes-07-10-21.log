@@ -92,3 +92,13 @@ sed -i -e 's/5.83.0/5.84.0/g' /Voncloft-OS/*/modemmanager-qt/spkgbuild
 sed -i -e 's/5.83.0/5.84.0/g' /Voncloft-OS/*/networkmanager-qt/spkgbuild
 Packages upgraded: 85
 
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/581.2/590/g' /Voncloft-OS/*/less/spkgbuild
+Packages upgraded: 1
+
