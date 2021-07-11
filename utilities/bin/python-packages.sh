@@ -44,8 +44,8 @@ then
 ##Production###
 	if [ -f $file ];
 	then
-		echo python-$1 >> stripped_beta.txt
-		eval $command >> stripped_beta.txt
+		echo python-$1 >> stripped_info.txt
+		eval $command >> stripped_info.txt
 		rm -v $file
 	fi
 fi

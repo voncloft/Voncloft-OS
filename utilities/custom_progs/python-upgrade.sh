@@ -6,5 +6,5 @@ do
 	filename=${f##*/}
 	#$filename=$f
 	final=${filename#python-}
-	./python-packages.sh $final
+	../bin/python-packages.sh $final
 done
