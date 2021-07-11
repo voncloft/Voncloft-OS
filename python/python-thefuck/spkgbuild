@@ -2,7 +2,7 @@
 # depends : python-colorama python-decorator python-psutil python-pyte python-setuptools python-six
 
 name=python-thefuck
-version=3.30
+version=3.31
 release=2
 
 source="https://github.com/nvbn/${name#python-}/archive/$version.tar.gz"

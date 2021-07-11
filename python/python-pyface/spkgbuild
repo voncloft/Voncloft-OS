@@ -2,7 +2,7 @@
 # depends : python-traits
 
 name=python-pyface
-version=7.0.0
+version=7.3.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

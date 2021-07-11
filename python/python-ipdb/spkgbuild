@@ -2,7 +2,7 @@
 # depends : ipython
 
 name=python-ipdb
-version=0.13.4
+version=0.13.9
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

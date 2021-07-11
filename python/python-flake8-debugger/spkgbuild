@@ -2,7 +2,7 @@
 # depends : flake8
 
 name=python-flake8-debugger
-version=3.2.1
+version=4.0.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

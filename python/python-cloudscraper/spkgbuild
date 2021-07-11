@@ -2,7 +2,7 @@
 # depends : python-pyparsing python-requests python-requests-toolbelt
 
 name=python-cloudscraper
-version=1.2.56
+version=1.2.58
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

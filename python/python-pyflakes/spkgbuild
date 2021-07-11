@@ -2,7 +2,7 @@
   # depends : python-setuptools
 
 name=python-pyflakes
-version=2.2.0
+version=2.3.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

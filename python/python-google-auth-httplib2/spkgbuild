@@ -2,7 +2,7 @@
 # depends : python-google-auth python-httplib2 python-six
 
 name=python-google-auth-httplib2
-version=0.0.4
+version=0.1.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-cmd2 python-prettytable python-pyparsing
 
 name=python-cliff
-version=3.6.0
+version=3.8.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python python-netifaces python-six python-ifaddr
 
 name=python-zeroconf
-version=0.28.8
+version=0.32.1
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

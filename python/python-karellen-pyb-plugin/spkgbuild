@@ -2,7 +2,7 @@
 # depends : python-pybuild()er
 
 name=python-karellen-pyb-plugin
-version=0.0.1.20160930
+version=0.0.2
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

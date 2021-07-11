@@ -2,7 +2,7 @@
 # depends : python python-tempora
 
 name=python-portend
-version=2.7.0
+version=2.7.1
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-attrs python-iniconfig python-more-itertools python-packaging python-pluggy
 
 name=python-pytest
-version=6.2.1
+version=6.2.4
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

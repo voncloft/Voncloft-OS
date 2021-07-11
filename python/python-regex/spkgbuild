@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-regex
-version=2020.11.13
+version=2021.7.6
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

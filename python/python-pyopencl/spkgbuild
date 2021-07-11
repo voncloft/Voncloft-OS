@@ -2,7 +2,7 @@
 # depends : opencl-icd-loader opencl-headers mesa boost-libs
 
 name=python-pyopencl
-version=2020.2.1
+version=2021.2.6
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

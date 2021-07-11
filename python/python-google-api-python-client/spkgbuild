@@ -2,7 +2,7 @@
 # depends : python-google-auth-httplib2 python-uritemplate python-google-api-core
 
 name=python-google-api-python-client
-version=1.12.8
+version=2.12.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

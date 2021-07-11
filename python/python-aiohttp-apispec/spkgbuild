@@ -2,7 +2,7 @@
 # depends : python-aiohttp python-apispec python-webargs python-jinja
 
 name=python-aiohttp-apispec
-version=2.2.1
+version=2.2.2
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

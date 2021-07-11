@@ -2,7 +2,7 @@
 # depends : python-mohawk python-requests
 
 name=python-requests-hawk
-version=1.0.1
+version=1.1.1
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

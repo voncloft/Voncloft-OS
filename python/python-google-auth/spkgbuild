@@ -2,7 +2,7 @@
 # depends : make-ca python-pyasn1-modules python-rsa python-setuptools
 
 name=python-google-auth
-version=1.25.0
+version=2.0.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

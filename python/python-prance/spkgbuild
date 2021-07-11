@@ -2,7 +2,7 @@
 # depends : python-chardet python-yaml python-flex python-click python-requests
 
 name=python-prance
-version=0.20.2
+version=0.21.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

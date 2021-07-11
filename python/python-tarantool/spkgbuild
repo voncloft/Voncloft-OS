@@ -2,7 +2,7 @@
   # depends : python python-msgpack python-yaml python-six
 
 name=python-tarantool
-version=0.6.6.r25.gb267643
+version=0.7.1
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

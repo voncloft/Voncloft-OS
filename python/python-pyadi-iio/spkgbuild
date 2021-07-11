@@ -2,7 +2,7 @@
 # depends : libiio python-numpy
 
 name=python-pyadi-iio
-version=0.0.4
+version=0.0.8
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

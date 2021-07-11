@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-unpaddedbase64
-version=1.1.0
+version=2.1.0
 release=7
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

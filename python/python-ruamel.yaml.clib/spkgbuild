@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-ruamel.yaml.clib
-version=0.2.2
+version=0.2.6
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

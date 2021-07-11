@@ -2,7 +2,7 @@
 # depends : python-colorama python-pygments python-typing_extensions python-commonmark
 
 name=python-rich
-version=9.10.0
+version=10.5.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-colorama python-cymem python-manhole
 
 name=python-hunter
-version=3.3.1
+version=3.3.8
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-astroid python-mccabe python-isort python-setuptools python-toml
 
 name=python-pylint
-version=2.6.0
+version=3.0.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

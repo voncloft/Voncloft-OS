@@ -2,7 +2,7 @@
   # depends : python-pyopenssl python-pyasn1 python-pyasn1-modules python-attrs
 
 name=python-service-identity
-version=18.1.0
+version=21.1.0
 release=6
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python python-tox
 
 name=python-tox-current-env
-version=0.0.5
+version=0.0.6
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

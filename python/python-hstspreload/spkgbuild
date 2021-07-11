@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-hstspreload
-version=2020.7.7
+version=2021.7.5
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

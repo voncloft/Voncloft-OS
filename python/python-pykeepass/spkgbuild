@@ -2,7 +2,7 @@
 # depends : python-argon2_cffi python-construct python-dateutil python-future python-lxml python-pycryptodomex
 
 name=python-pykeepass
-version=3.2.1
+version=4.0.1
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

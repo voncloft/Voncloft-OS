@@ -2,7 +2,7 @@
 # depends	: python-setuptools
 
 name=python-scour
-version=0.38
+version=0.38.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

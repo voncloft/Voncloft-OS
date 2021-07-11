@@ -2,7 +2,7 @@
 # depends : python-attrs python-dephell-pythons
 
 name=python-dephell-venvs
-version=0.1.16
+version=0.1.18
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-cffi python-twisted python-txaio python-wsaccel
 
 name=python-autobahn
-version=21.1.1
+version=21.3.1
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

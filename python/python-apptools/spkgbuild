@@ -2,7 +2,7 @@
 # depends : python-traits
 
 name=python-apptools
-version=4.5.0
+version=5.1.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

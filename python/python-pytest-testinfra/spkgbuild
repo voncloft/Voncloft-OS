@@ -3,7 +3,7 @@
 # TODO: add salt to optdepends, after it has been ported to python3
 
 name=python-pytest-testinfra
-version=6.1.0
+version=6.4.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

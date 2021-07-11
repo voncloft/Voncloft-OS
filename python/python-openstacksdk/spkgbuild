@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-yaml python-jsonpatch python-appdirs
 
 name=python-openstacksdk
-version=0.53.0
+version=0.57.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

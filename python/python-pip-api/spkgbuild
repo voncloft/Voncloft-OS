@@ -2,7 +2,7 @@
 # depends : python-packaging python-pyparsing python-pip
 
 name=python-pip-api
-version=0.0.14
+version=0.0.20
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

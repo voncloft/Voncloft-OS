@@ -2,7 +2,7 @@
 # depends : python-six python-docutils python-pybtex
 
 name=python-pybtex-docutils
-version=0.2.2
+version=1.0.0
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

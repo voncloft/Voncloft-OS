@@ -3,7 +3,7 @@
   depends+=python
 
 name=python-openbabel
-version=2.3.2
+version=3.1.1.1
 release=6
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

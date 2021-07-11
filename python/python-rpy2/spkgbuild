@@ -2,7 +2,7 @@
 # depends : python-cffi python-numpy python-tzlocal r
 
 name=python-rpy2
-version=3.4.2
+version=3.4.5
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

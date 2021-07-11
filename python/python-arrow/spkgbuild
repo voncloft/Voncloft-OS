@@ -2,7 +2,7 @@
 # depends : python-dateutil
 
 name=python-arrow
-version=0.17.0
+version=1.1.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

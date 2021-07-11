@@ -2,7 +2,7 @@
 # depends : python-billiard python-click-didyoumean python-click-repl python-kombu
 
 name=python-celery
-version=5.0.5
+version=5.1.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -5,7 +5,7 @@
     # depends : python-rethinkdb rethinkdb
 
 name=python-rethinkdb
-version=2.3.6
+version=2.4.8
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-simplebayes
-version=1.5.7
+version=1.5.8
 release=6
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-scipy python-joblib python-threadpoolctl
 
 name=python-scikit-learn
-version=0.24.0
+version=0.24.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python python-appdirs python-click python-mypy_extensions
 
 name=python-black
-version=20.8b1
+version=21.6
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

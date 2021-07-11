@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-ansicolor
-version=0.2.6
+version=0.3.2
 release=9
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

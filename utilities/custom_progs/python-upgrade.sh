@@ -6,5 +6,5 @@ do
 	filename=${f##*/}
 	#$filename=$f
 	final=${filename#python-}
-	../bin/python-packages.sh $final
+	sh /Voncloft-OS/utilities/bin/python-packages.sh $final
 done

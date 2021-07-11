@@ -2,7 +2,7 @@
 # depends : python python-argcomplete python-colorlog python-py python-virtualenv
 
 name=python-nox
-version=2020.12.31
+version=2021.6.12
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

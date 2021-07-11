@@ -2,7 +2,7 @@
 # depends : python python-parso
 
 name=python-jedi
-version=0.17.2
+version=0.18.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

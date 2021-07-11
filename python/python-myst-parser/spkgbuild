@@ -2,7 +2,7 @@
 # depends : python-markdown-it-py python-mdit_py_plugins python-yaml python-docutils python-sphinx python-jinja
 
 name=python-myst-parser
-version=0.13.3
+version=0.15.1
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

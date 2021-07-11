@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-json5
-version=0.9.5
+version=0.9.6
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

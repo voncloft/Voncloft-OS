@@ -2,7 +2,7 @@
 # depends : python-six systemd
 
 name=python-pyudev
-version=0.22
+version=0.22.0
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

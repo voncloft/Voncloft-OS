@@ -1,7 +1,7 @@
 # depends : python-bleach python-docutils python-pygments python-six
 
 name=python-readme-renderer
-version=28.0
+version=29.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

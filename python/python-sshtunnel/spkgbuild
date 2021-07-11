@@ -3,7 +3,7 @@
   # depends : python python-paramiko
 
 name=python-sshtunnel
-version=0.1.5
+version=0.4.0
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

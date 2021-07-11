@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-evdev
-version=0.7.0
+version=1.4.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

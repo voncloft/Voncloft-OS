@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-starlette
-version=0.13.8
+version=0.15.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-sqlalchemy
 
 name=python-ibm-db-sa
-version=0.3.5
+version=0.3.6
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

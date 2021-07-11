@@ -2,7 +2,7 @@
 # depends : python-clikit
 
 name=python-cleo
-version=0.7.6
+version=1.0.0
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

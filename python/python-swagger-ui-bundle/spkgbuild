@@ -2,7 +2,7 @@
 # depends : python-jinja
 
 name=python-swagger-ui-bundle
-version=0.0.6
+version=0.0.8
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

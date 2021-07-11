@@ -2,7 +2,7 @@
   # depends : python-toml
 
 name=python-pep517
-version=0.9.1
+version=0.10.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

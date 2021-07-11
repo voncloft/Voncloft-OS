@@ -2,7 +2,7 @@
 # depends : python-django-appconf python-rcssmin python-rjsmin
 
 name=python-django-compressor
-version=2.4
+version=2.4.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

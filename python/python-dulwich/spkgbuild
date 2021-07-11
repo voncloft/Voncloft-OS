@@ -2,7 +2,7 @@
 # depends : python-certifi python-setuptools python-urllib3
 
 name=python-dulwich
-version=0.20.18
+version=0.20.23
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

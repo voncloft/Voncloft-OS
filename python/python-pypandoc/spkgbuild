@@ -2,7 +2,7 @@
 # depends : python-setuptools pandoc
 
 name=python-pypandoc
-version=1.5
+version=1.6.3
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-cfgv python-identify python-nodeenv python-yaml python-toml
 
 name=python-pre-commit
-version=2.10.0
+version=2.13.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

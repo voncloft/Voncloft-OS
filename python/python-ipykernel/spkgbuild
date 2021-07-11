@@ -2,7 +2,7 @@
   # depends : python-traitlets python-tornado ipython python-jupyter_client
 
 name=python-ipykernel
-version=5.4.2
+version=6.0.1
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

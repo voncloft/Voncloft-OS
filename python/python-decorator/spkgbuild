@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-decorator
-version=4.4.2
+version=5.0.9
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

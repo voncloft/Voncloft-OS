@@ -2,7 +2,7 @@
 # depends : python-attrs python-dephell-specifier python-packaging
 
 name=python-dephell-markers
-version=1.0.1
+version=1.0.3
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

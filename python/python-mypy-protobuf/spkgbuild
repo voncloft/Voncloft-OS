@@ -2,7 +2,7 @@
 # depends : mypy protobuf python python-protobuf
 
 name=python-mypy-protobuf
-version=1.23
+version=2.6
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

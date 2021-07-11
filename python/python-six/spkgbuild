@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-six
-version=1.15.0
+version=1.16.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

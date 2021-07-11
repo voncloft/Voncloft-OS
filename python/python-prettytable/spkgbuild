@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-prettytable
-version=0.7.2
+version=2.1.0
 release=14
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
   # depends : python-importlib-metadata
 
 name=python-pluggy
-version=0.13.1
+version=1.0.0
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

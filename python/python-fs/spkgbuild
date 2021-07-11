@@ -2,7 +2,7 @@
 # depends : python-appdirs python-pytz python-setuptools python-six
 
 name=python-fs
-version=2.4.12
+version=2.4.13
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

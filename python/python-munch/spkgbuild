@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-munch
-version=2.5.0
+version=2.5.1
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

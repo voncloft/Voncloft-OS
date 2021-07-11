@@ -2,7 +2,7 @@
 # depends : python enchant
 
 name=python-pyenchant
-version=3.2.0
+version=3.2.1
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

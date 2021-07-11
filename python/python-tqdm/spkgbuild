@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-tqdm
-version=4.56.0
+version=4.61.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

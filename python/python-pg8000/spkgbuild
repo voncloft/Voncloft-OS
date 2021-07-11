@@ -2,7 +2,7 @@
 # depends : python python-scramp
 
 name=python-pg8000
-version=1.16.6
+version=1.20.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

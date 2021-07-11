@@ -2,7 +2,7 @@
 # depends : python-decorator python-six
 
 name=python-validators
-version=0.18.1
+version=0.18.2
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

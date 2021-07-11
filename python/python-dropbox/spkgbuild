@@ -2,7 +2,7 @@
 # depends : python python-urllib3 python-requests
 
 name=python-dropbox
-version=10.10.0
+version=11.13.2
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

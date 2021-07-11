@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-certifi
-version=2020.6.20
+version=2021.5.30
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

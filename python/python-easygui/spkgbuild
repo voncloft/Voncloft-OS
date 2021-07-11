@@ -2,7 +2,7 @@
 # depends : python tk
 
 name=python-easygui
-version=0.98.1
+version=0.98.2
 release=6
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

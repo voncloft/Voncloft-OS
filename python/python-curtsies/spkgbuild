@@ -2,7 +2,7 @@
 # depends : python-blessings python-wcwidth
 
 name=python-curtsies
-version=0.3.4
+version=0.3.5
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

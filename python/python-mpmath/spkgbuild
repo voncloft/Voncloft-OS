@@ -2,7 +2,7 @@
 # depends : python-gmpy2
 
 name=python-mpmath
-version=1.1.0
+version=1.2.1
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

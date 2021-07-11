@@ -2,7 +2,7 @@
 # depends : python-orderedmultidict python-six
 
 name=python-furl
-version=2.1.0
+version=2.1.2
 release=6
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

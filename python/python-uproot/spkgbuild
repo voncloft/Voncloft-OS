@@ -3,7 +3,7 @@
 # depends : python-sphinx
 
 name=python-uproot
-version=3.12.0
+version=4.0.11
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-sphinx
 
 name=python-sphinx-inline-tabs
-version=2020.10.19.beta4
+version=2021.4.11
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

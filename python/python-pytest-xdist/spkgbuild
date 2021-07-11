@@ -2,7 +2,7 @@
 # depends : python-execnet python-psutil python-pytest-forked
 
 name=python-pytest-xdist
-version=2.2.0
+version=2.3.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

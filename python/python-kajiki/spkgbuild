@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-kajiki
-version=0.8.2
+version=0.8.3
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

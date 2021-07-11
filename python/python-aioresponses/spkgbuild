@@ -2,7 +2,7 @@
 # depends : python-aiohttp
 
 name=python-aioresponses
-version=0.7.1
+version=0.7.2
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

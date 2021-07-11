@@ -2,7 +2,7 @@
 # depends : python-pytest
 
 name=python-pytest-mpi
-version=0.4
+version=0.5
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

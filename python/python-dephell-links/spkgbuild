@@ -2,7 +2,7 @@
 # depends : python-attrs
 
 name=python-dephell-links
-version=0.1.4
+version=0.1.5
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

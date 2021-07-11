@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-sortedcontainers
-version=2.3.0
+version=2.4.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

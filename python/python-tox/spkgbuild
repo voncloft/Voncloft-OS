@@ -2,7 +2,7 @@
   # depends : python-py python-virtualenv python-packaging python-pluggy python-toml
 
 name=python-tox
-version=3.21.4
+version=4.0.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

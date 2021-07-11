@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-geographiclib
-version=1.50
+version=1.52
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

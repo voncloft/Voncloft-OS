@@ -2,7 +2,7 @@
 # depends : python-atpublic python-zope-interface
 
 name=python-flufl.bounce
-version=3.0.1
+version=4.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

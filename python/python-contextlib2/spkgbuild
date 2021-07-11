@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-contextlib2
-version=0.6.0.post1
+version=21.6.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

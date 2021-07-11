@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-distlib
-version=0.3.1
+version=0.3.2
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

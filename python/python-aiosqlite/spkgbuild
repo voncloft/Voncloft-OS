@@ -2,7 +2,7 @@
 # depends : python-typing_extensions python-pydantic
 
 name=python-aiosqlite
-version=0.16.0
+version=0.17.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

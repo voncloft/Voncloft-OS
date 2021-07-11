@@ -2,7 +2,7 @@
 # depends : python-lxml
 
 name=python-et-xmlfile
-version=1.0.1
+version=1.1.0
 release=9
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

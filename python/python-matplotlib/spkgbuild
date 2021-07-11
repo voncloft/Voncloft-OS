@@ -2,7 +2,7 @@
 # depends : freetype2 python-cycler python-dateutil python-kiwisolver python-numpy python-pillow python-pyparsing qhull
 
 name=python-matplotlib
-version=3.3.4
+version=3.4.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-six python-lazy-object-proxy python-wrapt
 
 name=python-astroid
-version=2.4.2
+version=2.6.2
 release=4
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
