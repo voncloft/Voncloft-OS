@@ -30,27 +30,27 @@ sed -i -e 's/.tar.gz//g' test.txt
 #sed -i -e "s/v//g" test.txt
 #sed -i -e 's/v//g' test.txt
 sed -i -e 's/^/perl-/' test.txt
-sed -i -e 's/-0/\n0/g' test.txt
-sed -i -e 's/-1/\n1/g' test.txt
-sed -i -e 's/-2/\n2/g' test.txt
-sed -i -e 's/-3/\n3/g' test.txt
-sed -i -e 's/-4/\n4/g' test.txt
-sed -i -e 's/-5/\n5/g' test.txt
-sed -i -e 's/-6/\n6/g' test.txt
-sed -i -e 's/-7/\n7/g' test.txt
-sed -i -e 's/-8/\n8/g' test.txt
-sed -i -e 's/-9/\n9/g' test.txt
+#sed -i -e 's/-0/\n0/g' test.txt
+#sed -i -e 's/-1/\n1/g' test.txt
+#sed -i -e 's/-2/\n2/g' test.txt
+#sed -i -e 's/-3/\n3/g' test.txt
+#sed -i -e 's/-4/\n4/g' test.txt
+#sed -i -e 's/-5/\n5/g' test.txt
+#sed -i -e 's/-6/\n6/g' test.txt
+#sed -i -e 's/-7/\n7/g' test.txt
+#sed -i -e 's/-8/\n8/g' test.txt
+#sed -i -e 's/-9/\n9/g' test.txt
 
-sed -i -e 's/-v0/\n0/g' test.txt
-sed -i -e 's/-v1/\n1/g' test.txt
-sed -i -e 's/-v2/\n2/g' test.txt
-sed -i -e 's/-v3/\n3/g' test.txt
-sed -i -e 's/-v4/\n4/g' test.txt
-sed -i -e 's/-v5/\n5/g' test.txt
-sed -i -e 's/-v6/\n6/g' test.txt
-sed -i -e 's/-v7/\n7/g' test.txt
-sed -i -e 's/-v8/\n8/g' test.txt
-sed -i -e 's/-v9/\n9/g' test.txt
+#sed -i -e 's/-v0/\n0/g' test.txt
+#sed -i -e 's/-v1/\n1/g' test.txt
+#sed -i -e 's/-v2/\n2/g' test.txt
+##sed -i -e 's/-v3/\n3/g' test.txt
+#sed -i -e 's/-v4/\n4/g' test.txt
+#sed -i -e 's/-v5/\n5/g' test.txt
+#sed -i -e 's/-v6/\n6/g' test.txt
+#sed -i -e 's/-v7/\n7/g' test.txt
+#sed -i -e 's/-v8/\n8/g' test.txt
+#sed -i -e 's/-v9/\n9/g' test.txt
 
 ###beta###
 command="cat test.txt"

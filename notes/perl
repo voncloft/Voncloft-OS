@@ -1,3 +1,5 @@
 grep -Fxf file1 file2
 
+grep -Ff test.txt /var/log/old/stripped_info.txt
+
 compare files to text file....and go from there
