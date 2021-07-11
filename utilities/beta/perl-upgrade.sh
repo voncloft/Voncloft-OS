@@ -1,3 +1,10 @@
+####################################################################################################################
+#To Do: download the list of perl modules
+#grep it against file of whats on my system
+#format below in main script
+#write to stripped_info.txt
+#done
+
 name=
 url=https://www.cpan.org/modules/01modules.index.html
 file=01modules.index.html
