@@ -41,5 +41,3 @@ eval $command
 #	eval $command >> stripped_info.txt
 #	rm -v $file
 #fi
-
-
