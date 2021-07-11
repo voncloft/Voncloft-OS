@@ -35,14 +35,18 @@ grep $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}
 
 ###beta###
 command="cat test.txt | sort -V -r | head -n 1"
-eval $command
+size=$(eval $command)
 
+check=${#size}
+
+if [ $check -ge 1 ];
+then
 ##Production###
-#if [ -f $file ];
-#then
-#	echo $name >> stripped_info.txt
-#	eval $command >> stripped_info.txt
-#	rm -v $file
-#fi
-
+	if [ -f $file ];
+	then
+		echo python-$1 >> stripped_beta.txt
+		eval $command >> stripped_beta.txt
+		rm -v $file
+	fi
+fi
 
