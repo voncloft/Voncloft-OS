@@ -5,11 +5,11 @@ name=python-pybtex-docutils
 version=1.0.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c3/2f/01e252f737a261df321e0ec1ebef87876e751288fa2290f05640105cf2d4/pybtex-docutils-1.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

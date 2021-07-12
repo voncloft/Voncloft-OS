@@ -5,11 +5,11 @@ name=python-pkgconfig
 version=1.5.4
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4f/97/911b58ba0edcb2fb4342b2456f4be2f7619860c8ec9c58432f6b64d30124/pkgconfig-1.5.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-xarray
 version=0.18.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6c/3f/fee12087871642bce75e1e1a88363e709e6feb3a01050dd381b1977fc981/xarray-0.18.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-kombu
 version=5.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/de/e1/0410ca7f47494c979b7d479884eb36c36feec45af3b0dfc050c3611a0a85/kombu-5.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

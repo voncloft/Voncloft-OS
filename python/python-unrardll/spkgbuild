@@ -5,11 +5,11 @@ name=python-unrardll
 version=0.1.4
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/60/c0/e76498af0bf0376a8a8e0d98c6e7508ed8837434df54525d9bcb14427f19/unrardll-0.1.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-requirementslib
 version=1.5.16
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f7/65/1300c12f85d08e85b472b14508d03e22d76e2219a90ed742ef28f008c1fa/requirementslib-1.5.16.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

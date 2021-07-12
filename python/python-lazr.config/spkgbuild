@@ -5,11 +5,11 @@ name=python-lazr.config
 version=2.2.3
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cd/33/0095b8fd0879ad9b80f3e3d30655c309a0319ce34df3c984ac316bce1ea5/lazr.config-2.2.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

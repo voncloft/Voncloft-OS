@@ -5,11 +5,11 @@ name=python-linkify-it-py
 version=1.0.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/24/a0/e2b8387666787b7ef04c98fcbe2602d1e0d02d8c4fff774a0d5fd1a3b5ab/linkify-it-py-1.0.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-django-fake-model
 version=0.1.4
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/0f/e1/8f330ca5dfb930850b1f232a0eaba6576befa890ac3e7e4ea950b54ad411/django-fake-model-0.1.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-jaraco.envs
 version=2.1.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6a/d5/b296a79adb6557415d72b8c53191e38a13bd17ab9af38e284384e7864634/jaraco.envs-2.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

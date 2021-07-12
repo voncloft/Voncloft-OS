@@ -5,11 +5,11 @@ name=python-igraph
 version=0.8.3
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/3b/fd/094062d4eb0067ab3d61295814ac40b843bc9d0f7b6ddc44e95dd0d289bd/igraph-0.1.14.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

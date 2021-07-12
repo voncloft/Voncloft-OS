@@ -5,11 +5,11 @@ name=python-pyface
 version=7.3.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cf/36/6f65252f601fe422106f0d8dffbe9afce9212bda81de9ab5377879c8b947/pyface-7.3.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

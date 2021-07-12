@@ -5,11 +5,11 @@ name=python-btrees
 version=4.9.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7b/8a/f2d88402585fa6676dfa0ec5a21c5c3e38e7926e72094d73672b420a78b8/BTrees-4.9.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

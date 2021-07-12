@@ -5,11 +5,11 @@ name=python-pytest-expect
 version=1.1.0
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8b/3d/c5fcbb8a693dcde00ecc3d69639b2b2b3f385b305bc76a06f94f1030b2dc/pytest-expect-1.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

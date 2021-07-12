@@ -5,11 +5,11 @@ name=python-pytddmon
 version=1.0.8
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/63/bf/27910c0abfd8651d30b0e1b89246ad75686d0948183574cefb63f23949cf/pytddmon-1.0.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

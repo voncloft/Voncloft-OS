@@ -5,11 +5,11 @@ name=python-kivy
 version=2.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/12/96/091ddacafb84dd18555a32d860dbfaf9c806147aa30c6f3c8b93cb7bab97/Kivy-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

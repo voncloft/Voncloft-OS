@@ -5,11 +5,11 @@ name=python-jeepney
 version=0.7.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8e/9b/72259ccc9c49cf830f60289c841d57a449d993f48de0df5e76b3f9d929ae/jeepney-0.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

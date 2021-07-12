@@ -5,11 +5,11 @@ name=python-intervals
 version=0.9.2
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/24/eb/2d36474125c41b8fbb1c052a329b38fd726ef4c08529564518adcc5836e5/intervals-0.9.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

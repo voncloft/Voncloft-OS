@@ -5,11 +5,11 @@ name=python-dbus-deviation
 version=0.6.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/01/dc/047feaa6a81545e10c37d4eeff86443c90dd114c5ce13d6937c5ed38854d/dbus-deviation-0.6.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

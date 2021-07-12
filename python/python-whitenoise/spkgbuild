@@ -5,11 +5,11 @@ name=python-whitenoise
 version=5.2.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ac/8a/cd6346ffd78f5ff9aa9ce750f3e8d75cde7c60fbe197ac10bdea49d61cff/whitenoise-5.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

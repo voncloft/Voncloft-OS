@@ -5,11 +5,11 @@ name=python-vmprof
 version=0.4.15
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/db/f7/f07e859a0239690668e9a39d699b32f9d683563b16317e6c86c49a32fb92/vmprof-0.4.15.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

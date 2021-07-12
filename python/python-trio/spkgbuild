@@ -5,11 +5,11 @@ name=python-trio
 version=0.19.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9e/27/c2d5106a97bfe441d19343edcf6c32d61dcc4bf1cae0f1f6f7ed9a635dd0/trio-0.19.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

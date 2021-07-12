@@ -5,11 +5,11 @@ name=python-scramp
 version=1.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/69/d5/69632dfab1806d0dad816311733694768d8f205691cbad2dc7cca4159bb5/scramp-1.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

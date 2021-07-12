@@ -5,11 +5,11 @@ name=python-sphinxcontrib-blockdiag
 version=2.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ad/7a/d9e57607522d414e1a089f8da982750ded0e100b1bfc210b17f0fe98db47/sphinxcontrib-blockdiag-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

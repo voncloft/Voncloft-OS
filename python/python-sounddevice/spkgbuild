@@ -5,11 +5,11 @@ name=python-sounddevice
 version=0.4.1
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a6/85/ee58c8a210f8ce7823e92c6698e48c6ca381bbbf74c6b92493ed6cef8319/sounddevice-0.4.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

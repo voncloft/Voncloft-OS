@@ -5,11 +5,11 @@ name=python-discid
 version=1.2.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/d5/fa/c8856ae3eb53393445d84589afbd49ded85527563a7c0457f4e967d5b7af/discid-1.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

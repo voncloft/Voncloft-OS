@@ -5,11 +5,11 @@ name=python-pallets-sphinx-themes
 version=2.0.1
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/da/ff/dc403f870b3e7886aabc4abab24feeeae0ca8b6278cca2a402d3249ed4f3/Pallets-Sphinx-Themes-2.0.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

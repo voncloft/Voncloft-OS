@@ -5,11 +5,11 @@ name=python-flake8-debugger
 version=4.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/85/23/f1440f466c497ba094095bafea933c8f810554b1e326f1cdcb000dd25818/flake8-debugger-4.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

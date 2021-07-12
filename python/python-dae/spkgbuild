@@ -5,11 +5,11 @@ name=python-dae
 version=1.0.2
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f1/f9/3f8d96905f76d1532b57cfd93cbddb7ef0d68db9454b4421499bdc2cf43e/dae-0.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

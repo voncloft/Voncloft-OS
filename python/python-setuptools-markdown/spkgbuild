@@ -5,11 +5,11 @@ name=python-setuptools-markdown
 version=0.4.1
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/3e/3a/b41c33a0253830bc2e2970c9437174892507eba3289f693073e8b77e1f99/setuptools-markdown-0.4.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

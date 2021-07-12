@@ -5,11 +5,11 @@ name=python-aiobotocore
 version=1.3.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4a/90/6178b879185bc841fb383e4188e7a945f2f1f17acaa0d9e58ca9ddc71f5d/aiobotocore-1.3.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -4,11 +4,11 @@ name=python-rope
 version=0.19.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/49/b9/f53c6d375a79ce12e0dd710b832a1e7660ab24d37d922f1963253449ee5a/rope-0.19.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

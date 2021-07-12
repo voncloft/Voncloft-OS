@@ -5,11 +5,11 @@ name=python-seaborn
 version=0.11.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ef/f4/1927dc0e07f34d54617ce7d31e83b0e3345f14e893b138e44eddd5fad806/seaborn-0.11.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

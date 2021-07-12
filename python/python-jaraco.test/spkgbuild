@@ -5,11 +5,11 @@ name=python-jaraco.test
 version=5.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4f/ee/27e062740c445dd630106c8d7e49d47bcf3d3e05d9bb1908e28890a46d84/jaraco.test-5.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

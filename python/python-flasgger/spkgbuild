@@ -5,11 +5,11 @@ name=python-flasgger
 version=0.9.5
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4a/6b/0884acc545f131c82700834e8f48cf0fca7f9925163ce2f56cc57db49c23/flasgger-0.9.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

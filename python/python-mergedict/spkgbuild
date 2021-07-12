@@ -5,11 +5,11 @@ name=python-mergedict
 version=1.0.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/aa/f2/27542b17a2f3d0b15957684467b9617a518caaf340c5ab86b8e8023945e4/mergedict-1.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

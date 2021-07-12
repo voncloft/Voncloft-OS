@@ -5,11 +5,11 @@ name=python-pytest-helpers-namespace
 version=2021.4.29
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/1a/5a/729a5778652b50bead23d5dce704ab98edad76d8bd801a1cf8c040aada0e/pytest-helpers-namespace-2021.4.29.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

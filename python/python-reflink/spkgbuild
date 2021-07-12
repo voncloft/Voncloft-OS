@@ -5,11 +5,11 @@ name=python-reflink
 version=0.2.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6f/f3/9b59f07d3add9e34e97f3e29ab863ab13c0c01aa1f6cccdbabda9fd957f2/reflink-0.2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

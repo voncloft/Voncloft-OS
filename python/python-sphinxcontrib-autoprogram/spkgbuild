@@ -5,11 +5,11 @@ name=python-sphinxcontrib-autoprogram
 version=0.1.7
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/23/ca/ffb97adb8938774c0746490d0e6fb1391bf04dc9b32902eff84e2a263d44/sphinxcontrib-autoprogram-0.1.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

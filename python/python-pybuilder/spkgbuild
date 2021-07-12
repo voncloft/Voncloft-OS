@@ -5,11 +5,11 @@ name=python-pybuilder
 version=0.12.11
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ce/39/25bdab736be24981fd8f7a234d9376740dcb324692d969b0659ce3343488/pybuilder-0.12.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

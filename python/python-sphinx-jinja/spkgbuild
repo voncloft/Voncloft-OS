@@ -5,11 +5,11 @@ name=python-sphinx-jinja
 version=1.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fe/70/1cf45d0d33b0cbb36d5a2ea1ae6545a3f5151e239f43572d057458e18b87/sphinx-jinja-1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

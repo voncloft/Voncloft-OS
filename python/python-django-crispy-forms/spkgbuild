@@ -5,11 +5,11 @@ name=python-django-crispy-forms
 version=1.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/49/d9/8430c16b7281a803828330be00294831dbc2a673bb29ea42fab4476ec66e/django-crispy-forms-1.12.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

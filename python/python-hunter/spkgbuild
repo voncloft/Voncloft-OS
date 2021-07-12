@@ -5,11 +5,11 @@ name=python-hunter
 version=3.3.8
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/90/6f/dbc61bc941c742dbe5ea17f982c46635466013beac360bda79e01536c3e7/hunter-3.3.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-parsel
 version=1.6.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/57/20/8e7aef69de46de1c991d7880ffb6c046e0cb94ad41e20dcd6a74d02c1c1a/parsel-1.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-python-pkcs11
 version=0.7.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/3e/24/9d55a78b3501201d2dfeb035ce1b139f8846505b3ddb9cadb4c2254259d0/python-pkcs11-0.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

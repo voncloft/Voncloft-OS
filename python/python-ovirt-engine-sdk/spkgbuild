@@ -5,11 +5,11 @@ name=python-ovirt-engine-sdk
 version=4.4.8
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/27/1f/7bcfc1282a7c6e4cb0ca2f6c6925eb6d435b139f7664bbb04e22320b3f91/ovirt-engine-sdk-3.2.0.11-SNAPSHOT.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

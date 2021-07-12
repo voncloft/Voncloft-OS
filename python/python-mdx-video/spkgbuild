@@ -5,11 +5,11 @@ name=python-mdx-video
 version=0.1.8
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/19/7d/87affe59f05aa62717b5ef7a79af57e6725c3cdf089e6b0f5d422a73e09b/mdx_video-0.1.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

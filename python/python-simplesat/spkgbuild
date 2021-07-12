@@ -5,11 +5,11 @@ name=python-simplesat
 version=0.8.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a9/66/5b3f8b53e5b3231eb13e319def26ff28ffdc4928ceb7bed7910cd0debd3f/simplesat-0.8.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

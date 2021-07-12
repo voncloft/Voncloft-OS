@@ -5,11 +5,11 @@ name=python-expects
 version=0.9.0
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/86/9a/4944ecc222f24d18e8d2819800472ffc2668e52986afd5c7bc41ecaf897b/expects-0.9.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

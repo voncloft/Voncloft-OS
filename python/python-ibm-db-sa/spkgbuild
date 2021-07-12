@@ -5,11 +5,11 @@ name=python-ibm-db-sa
 version=0.3.6
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/62/af/88781f8dc7a414507ab94a2b91319bdbd3b5375e38353446c113c548adcb/ibm_db_sa-0.3.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

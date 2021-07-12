@@ -5,11 +5,11 @@ name=python-flask-debug
 version=0.4.3
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e3/a9/e54d3ea6a04a809e83eb547bcec65f82a6e77570fbb0c7831e903000b969/Flask-Debug-0.4.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

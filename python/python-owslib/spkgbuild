@@ -5,11 +5,11 @@ name=python-owslib
 version=0.24.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/eb/7f/57f3a3ae20b88411f88abe31a922c6b1a95faa60b915bf4e94fc28137cbf/OWSLib-0.24.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

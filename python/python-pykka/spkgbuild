@@ -5,11 +5,11 @@ name=python-pykka
 version=3.0.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/88/1a/cc62cf94a653bdc507e515f9610fc4f90714eb52629872d94007a30fed9b/pykka-3.0.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

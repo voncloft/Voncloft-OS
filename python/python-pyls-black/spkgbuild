@@ -5,11 +5,11 @@ name=python-pyls-black
 version=0.4.7
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/5b/be/3295df9635f7059e1229a3d6770284306dd295ea653fba5ce5b278af3d79/pyls-black-0.4.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

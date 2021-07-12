@@ -5,11 +5,11 @@ name=python-pyfix
 version=0.2.3
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/97/af/75035d7ff856c8e038bf913cec2155e21a9083d878fee639931bf04643ab/pyfix-0.2.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

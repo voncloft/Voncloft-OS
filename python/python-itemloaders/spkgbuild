@@ -5,11 +5,11 @@ name=python-itemloaders
 version=1.0.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/d6/d8/ef278aa9ff8cb1daf5707206f0bc5f39c1e6113213882fb6a53dcaa21d1d/itemloaders-1.0.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

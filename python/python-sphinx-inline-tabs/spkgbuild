@@ -5,11 +5,11 @@ name=python-sphinx-inline-tabs
 version=2021.4.11
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/00/be/816125424b1aaa4ba8f1d196923e93f61392dc1bdc205b54c67abe14b0cd/sphinx_inline_tabs-2021.4.11b9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

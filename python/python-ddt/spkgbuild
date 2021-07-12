@@ -5,11 +5,11 @@ name=python-ddt
 version=1.4.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/61/b0/1fdf4716bc34ecff19810a34e2e3511d60d632981cafa142eac52505aeac/ddt-1.4.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

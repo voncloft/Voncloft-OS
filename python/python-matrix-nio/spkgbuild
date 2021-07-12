@@ -5,11 +5,11 @@ name=python-matrix-nio
 version=0.18.3
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/68/82654db6e313ef13296410e7b7dfd1a0849673d8b0b5f5ec137875ed39ad/matrix-nio-0.18.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

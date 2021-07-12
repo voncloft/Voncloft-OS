@@ -5,11 +5,11 @@ name=python-hypothesis
 version=6.14.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/24/04/1014a5f00c0412dcc18f80b4bb7653daa4cfc059cf7753c79ed3c27f0607/hypothesis-6.14.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

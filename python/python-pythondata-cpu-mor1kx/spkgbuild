@@ -5,11 +5,11 @@ name=python-pythondata-cpu-mor1kx
 version=2020.08
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fa/d2/6ef9874165becbbe3f79c3cfe33d35306234c98e199f15f25dc99511b8c6/pythondata-cpu-mor1kx-5.0.post182.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

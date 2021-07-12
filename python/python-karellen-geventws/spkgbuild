@@ -5,11 +5,11 @@ name=python-karellen-geventws
 version=1.0.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fe/34/d94d67151e9bb7761c3280f2a53639176a47c41913886a9f9f5ee50ff2a6/karellen-geventws-1.0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

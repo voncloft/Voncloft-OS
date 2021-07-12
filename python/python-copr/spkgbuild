@@ -5,11 +5,11 @@ name=python-copr
 version=1.111
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/98/01/a19455fd7c99c89709bb9613ec9a47d7562d9ffdff7bf9da0728e015b5ce/copr-1.111.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

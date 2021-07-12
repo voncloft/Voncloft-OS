@@ -5,11 +5,11 @@ name=python-fissix
 version=21.6.6
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/45/0f/d2d0a61c5b3bb1a2d5e677996ee12f3a3505551f70c3bad17cc1a2a631bb/fissix-21.6.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-factory-boy
 version=3.2.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7e/37/b046abce36a5fc19827e3662fd6c63ae3489b93f96dbd099cd412bbff6c3/factory_boy-3.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pycontracts
 version=1.8.14
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4e/7a/0f79370e4e3a6741396d76d1f76586c2924bed049fb38597799b72a24081/PyContracts-1.8.12.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-boto3
 version=1.17.109
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/bb/b3/5754c92eda61314394960007cc2a8ffa91ac4c3136e20580672ad2dd8506/boto3-1.17.110.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

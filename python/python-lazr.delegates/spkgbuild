@@ -5,11 +5,11 @@ name=python-lazr.delegates
 version=2.0.4
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e7/23/c3f5e887055b4f238cf07b47d2ff72731b88858d36ef6095380515dcb8d1/lazr.delegates-2.0.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

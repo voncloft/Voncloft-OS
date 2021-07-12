@@ -5,11 +5,11 @@ name=python-biscuits
 version=0.3.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/84/9d/e69b0e01b21d73d1997d1065bafb54d218234114c82eb49e4e5703bfac8a/biscuits-0.3.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

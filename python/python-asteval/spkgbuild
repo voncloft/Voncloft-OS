@@ -5,11 +5,11 @@ name=python-asteval
 version=0.9.25
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f0/81/c1385350267c5c02be74acba7167fd6608083324a51421c6b8a57240eb35/asteval-0.9.25.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

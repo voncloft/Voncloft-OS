@@ -5,11 +5,11 @@ name=python-pyxdameraulevenshtein
 version=1.7.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/aa/e8/53d212009d6d40fdd98ef41585e5442812323d145aa47f507996093567f2/pyxDamerauLevenshtein-1.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

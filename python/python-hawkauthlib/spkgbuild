@@ -5,11 +5,11 @@ name=python-hawkauthlib
 version=2.0.0
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/26/b7/0ec2846e5e2b3591ca867d7b06b67b5242f73bfe6da164b7232b8bffc657/hawkauthlib-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-senf
 version=1.5.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/1d/37/16be2d40e2347348b78eb1bd35a87a807499f4f7dda898ad2424aa706b3b/senf-1.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

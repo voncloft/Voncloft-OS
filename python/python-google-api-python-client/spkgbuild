@@ -5,11 +5,11 @@ name=python-google-api-python-client
 version=2.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8e/3d/b858fa54e6240a76f9075978f71a6e5a7792a7e115ffb4308061cb9224ec/google-api-python-client-2.12.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

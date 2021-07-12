@@ -5,11 +5,11 @@ name=python-ipip-ipdb
 version=1.6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/24/2b/bb0e39a0443917d74d31b27ef950bc35bc67d93e7646188531f5ea00a1b6/ipip-ipdb-1.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

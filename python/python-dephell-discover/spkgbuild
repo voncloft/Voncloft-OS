@@ -5,11 +5,11 @@ name=python-dephell-discover
 version=0.2.10
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c0/4c/8a4bcccd4b11d3a84825eccb44122b83137b0acc1a317c2ce3b324deb1b2/dephell_discover-0.2.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

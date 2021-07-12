@@ -5,11 +5,11 @@ name=python-proxmoxer
 version=1.2.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/85/f2/bd6882b28c706efbd79127606a2cf86b4650af9394104ecc265e9b5acb55/proxmoxer-1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

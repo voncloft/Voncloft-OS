@@ -5,11 +5,11 @@ name=python-micawber
 version=0.5.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fa/10/a85c2cf54f011bfbb0f9f6a8206976db695d1725dc8a4199247b7e2b1138/micawber-0.5.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

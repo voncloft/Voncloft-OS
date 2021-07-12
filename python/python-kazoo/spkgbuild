@@ -5,11 +5,11 @@ name=python-kazoo
 version=2.8.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/49/fb/4f1d6890e2b1aa9fe7a7d9c42b5ef32732bc7b02e6bacc556ab1cc41aba3/kazoo-2.8.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-graphql-server-core
 version=2.0.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/2d/c4/911e0c61640a84b6f4929c854c6a16701a61bfc87e9af02ef17de4d699d7/graphql-server-core-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

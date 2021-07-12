@@ -5,11 +5,11 @@ name=python-infinity
 version=1.5
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cd/55/09840b5789d7bda972ae9f2ecd94d2df06b5aeac193505013fbaf6ddc648/infinity-1.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

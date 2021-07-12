@@ -5,11 +5,11 @@ name=python-elementpath
 version=2.2.3
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a9/4a/0e07cd8098bf41fc3909432893c0f38132346f3764369342db62f7ee1cb6/elementpath-2.2.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

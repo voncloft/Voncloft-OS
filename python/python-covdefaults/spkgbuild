@@ -5,11 +5,11 @@ name=python-covdefaults
 version=1.2.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/59/e9/2365a968818d0c92efe47065b2984f77b866f303ddcc6a2eea9354c6f965/covdefaults-1.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

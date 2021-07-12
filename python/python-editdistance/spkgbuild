@@ -5,11 +5,11 @@ name=python-editdistance
 version=0.5.3
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/12/b6/98874ea5f6280bf63f899827978d99635de91f5e9af60cc290715cd192e3/editdistance-0.5.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

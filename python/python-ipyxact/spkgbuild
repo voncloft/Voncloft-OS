@@ -5,11 +5,11 @@ name=python-ipyxact
 version=0.2.4
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/41/1b/83377ab380f4a255deb31209797824415ea0f856ed3a6593caebc1314173/ipyxact-0.2.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

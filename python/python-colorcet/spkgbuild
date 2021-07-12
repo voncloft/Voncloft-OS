@@ -5,11 +5,11 @@ name=python-colorcet
 version=2.0.6
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/64/de/0a008d12e098bf83128b8c797e13d8946bb61affa0c9aa894d99cf309efe/colorcet-2.0.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

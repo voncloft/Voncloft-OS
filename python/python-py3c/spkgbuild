@@ -5,11 +5,11 @@ name=python-py3c
 version=1.3
 release=1
 
-source="https://github.com/encukou/py3c/archive/v$version.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/f1/7cdf86dfe1fc8c7a01d4c5baaca1c4ade36437ec7de4ec27fe5889ab0cfb/py3c-1.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    sed -i 's/install: py3c.pc/install:/' Makefile
    python setup.py build
    make prefix=/usr py3c.pc

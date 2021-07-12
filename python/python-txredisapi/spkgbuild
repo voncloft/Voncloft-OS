@@ -5,11 +5,11 @@ name=python-txredisapi
 version=1.4.7
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f2/f6/73f70a74627f1016bd7753a9c948c85dc986793d4dac55d7872e6d0b939e/txredisapi-1.4.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

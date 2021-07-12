@@ -5,11 +5,11 @@ name=python-flask-dance
 version=5.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e4/0f/fa58271ed76c8fbefe1c639121362c80ab5a4560be5912b84a3e761463b3/Flask-Dance-5.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

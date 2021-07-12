@@ -5,11 +5,11 @@ name=python-txrequests
 version=0.9.6
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ed/97/1524061c7fe257092c25c1cf2cd9a8f19662a05ccf31a3d825476eda75ac/txrequests-0.9.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

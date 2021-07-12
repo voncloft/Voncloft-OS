@@ -5,11 +5,11 @@ name=python-watchgod
 version=0.7
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fc/95/ae723eb1450763e1b2b9e70488054099c661f3b65f0c41d86b868cd6eb16/watchgod-0.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pastedeploy
 version=2.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/3f/98/179626030d6b3f04e4471aae01f1eae7539347fa7bb8f1228ea4ed600054/PasteDeploy-2.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

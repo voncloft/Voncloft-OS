@@ -5,11 +5,11 @@ name=python-signedjson
 version=1.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dc/f2/2b3c5574ab77e086597cdc85781fa1d2ef1b4e55bd53d47308bbd2ad7596/signedjson-1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

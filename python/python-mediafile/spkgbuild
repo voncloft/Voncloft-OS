@@ -5,11 +5,11 @@ name=python-mediafile
 version=0.6.0.r12.d7bea5e
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a0/68/8f352a13f06202d5cec305a55880d00620f31ac9c05c84c466495ef4a485/mediafile-0.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

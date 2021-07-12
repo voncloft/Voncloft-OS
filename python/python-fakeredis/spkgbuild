@@ -5,11 +5,11 @@ name=python-fakeredis
 version=1.5.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7b/0d/02f45aacde2c142127db64b786aadb6d34f941ed89dcadfb4ae906e24e35/fakeredis-1.5.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

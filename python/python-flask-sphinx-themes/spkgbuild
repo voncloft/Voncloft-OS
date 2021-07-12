@@ -5,11 +5,11 @@ name=python-flask-sphinx-themes
 version=1.0.2
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ae/66/5e84bfe3168295c9c806d87eebf65f4cfc07d9c2d4f27d80e026c69046e6/Flask-Sphinx-Themes-1.0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

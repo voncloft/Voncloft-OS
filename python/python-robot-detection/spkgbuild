@@ -5,11 +5,11 @@ name=python-robot-detection
 version=0.4.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6e/a0/4afb31841384d2947acbca543281b41d12280c51a372cde5c8e69436a640/robot-detection-0.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

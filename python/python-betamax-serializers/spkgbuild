@@ -5,11 +5,11 @@ name=python-betamax-serializers
 version=0.2.1
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/19/41/bb325c131204a3feb7f4cf1611d38e6fa676a31615e9513427b115bb0cfa/betamax-serializers-0.2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

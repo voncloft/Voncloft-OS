@@ -5,11 +5,11 @@ name=python-nose-fixes
 version=1.3
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/1a/3b/faf1c258741b4fd096c8489c5916a356c5ca4a9aa2df184cc326c4c8f117/nose_fixes-1.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-jack-client
 version=0.5.3
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/14/b3/d87b6535f51b3a2fafe92b98113a63f4a07d1f358554d5f545ed04dc5c85/JACK-Client-0.5.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-baron
 version=0.9
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a7/51/19d574b7ab82c1bb883d932150a285f9c5ffed87883fb1996894cb5d7e4a/baron-0.9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-queuelib
 version=1.6.1
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/28/c3/c4371429aac06c9d6e1eae84a711b0ba61219b2ca7722db075c8abe9e088/queuelib-1.6.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

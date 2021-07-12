@@ -5,11 +5,11 @@ name=python-qrcode
 version=7.1
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c8/1b/d5e0ad4ca933213fa1491c1038cbcdca14906618b339d29c380f6e3b6d01/qrcode-7.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

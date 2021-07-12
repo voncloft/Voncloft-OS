@@ -5,11 +5,11 @@ name=python-prance
 version=0.21.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/db/b6/77abfd303f34620fa12a998de814eef4b85fe21552d6ebe94bd48fc5a3bf/prance-0.21.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

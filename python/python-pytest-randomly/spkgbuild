@@ -5,11 +5,11 @@ name=python-pytest-randomly
 version=3.8.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e6/04/8d27d8a439c4499d68355a7aa7121f3b315812157bc180ed7646fde9d89b/pytest-randomly-3.8.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-adblock
 version=0.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a4/22/8b1ab68f68de445d9fb8c4bf67e4d8023faf03706ce196a4af28abed3dd8/adblock-0.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

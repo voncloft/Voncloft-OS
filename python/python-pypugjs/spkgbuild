@@ -5,11 +5,11 @@ name=python-pypugjs
 version=5.9.9
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ba/f1/f73d7982ebf18cb164dceb1ee34eb29a449e27b0f029354a16762d5a4ba2/pypugjs-5.9.9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

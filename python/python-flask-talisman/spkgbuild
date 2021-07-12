@@ -5,11 +5,11 @@ name=python-flask-talisman
 version=0.8.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dd/1a/9f21ccb72a0d09594eb704da7f87a6d373ad7e9d4ac18693d1a3c275afb2/flask-talisman-0.8.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

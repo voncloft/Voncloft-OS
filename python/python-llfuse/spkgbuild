@@ -5,11 +5,11 @@ name=python-llfuse
 version=1.4.1
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/b1/d4/44443fbaac6d5b878da99e7c0948ee93c7934fa3b00e48c5363823b583d0/llfuse-1.4.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

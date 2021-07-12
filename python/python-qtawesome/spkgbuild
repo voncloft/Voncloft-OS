@@ -5,11 +5,11 @@ name=python-qtawesome
 version=1.0.3
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/2f/85/756267627b8978ecad4655a99c8f29798d3611d85a1728c658f495b1f37a/QtAwesome-1.0.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

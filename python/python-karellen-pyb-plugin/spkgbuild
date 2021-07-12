@@ -5,11 +5,11 @@ name=python-karellen-pyb-plugin
 version=0.0.2
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cd/5a/f7a7d64017e4ecf4196c5581a06c38bb2d0133bce28e419f8c2409146614/karellen-pyb-plugin-0.0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

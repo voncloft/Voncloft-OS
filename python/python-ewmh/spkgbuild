@@ -5,11 +5,11 @@ name=python-ewmh
 version=0.1.6
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/33/e8/5f65226b2724347642b823b9fe4f35e80aad4fc69e61111977140bc9b633/ewmh-0.1.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

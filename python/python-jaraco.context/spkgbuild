@@ -5,11 +5,11 @@ name=python-jaraco.context
 version=4.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e8/a9/341bef9636b02e62a16b30fd0bdfba3fc2a55316e6c3f6249953f3c8c320/jaraco.context-4.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

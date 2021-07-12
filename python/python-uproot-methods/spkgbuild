@@ -5,11 +5,11 @@ name=python-uproot-methods
 version=0.9.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c7/93/ac9bc7f0c953ccdc617cfb92c69c7e65a015bde555069c35619d7bc3d999/uproot-methods-0.9.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-http-parser
 version=0.9.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/04/b2/c98d0a2b759fcf91ae0a3e7691e840e4c861dac2c7f5a4e36220129d0cc8/http-parser-0.9.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

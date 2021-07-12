@@ -5,11 +5,11 @@ name=python-cmarkgfm
 version=0.6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c7/c7/bcf75fb779ef299b0923a92b1621dde1092a459246cdb4d3613e0388eb0c/cmarkgfm-0.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

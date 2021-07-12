@@ -5,11 +5,11 @@ name=python-aioresponses
 version=0.7.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/95/e1/215d08e8ae83b769f24854b5839980124e9c128eea6ea8c7b542337f87cf/aioresponses-0.7.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

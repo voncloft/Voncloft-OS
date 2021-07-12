@@ -5,11 +5,11 @@ name=python-prctl
 version=1.8
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/41/6b/78579a0a35eeb160cce572bcf975cecd29421f4bbb6c56ee0d16ecdf9e8e/prctl-1.0.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

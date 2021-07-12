@@ -5,11 +5,11 @@ name=python-fastimport
 version=0.9.13
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a2/3f/071a77b196ea8f034f8e71789e0cc572f83deef986610e727c28442b7841/fastimport-0.9.13.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

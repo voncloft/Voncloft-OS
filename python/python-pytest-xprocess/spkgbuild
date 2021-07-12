@@ -5,11 +5,11 @@ name=python-pytest-xprocess
 version=0.17.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f7/1f/fd9366a9430ed3f6693d1dcaa90df872e39052c9ce53f7c0732bf85a54b6/pytest-xprocess-0.17.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

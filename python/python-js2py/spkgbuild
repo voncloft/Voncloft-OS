@@ -5,11 +5,11 @@ name=python-js2py
 version=0.71
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/36/61/3c6a930ffcee1026a495406dd3c156ae400cf7aa14d26bfbbd0df638b4b9/Js2Py-0.71.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-meilisearch
 version=0.15.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ec/3c/5a157a77ea44c07b52b8d2e6c430f821510b74f750ddf2ed27ba07eb665c/meilisearch-0.15.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

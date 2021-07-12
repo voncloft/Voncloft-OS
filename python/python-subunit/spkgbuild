@@ -5,11 +5,11 @@ name=python-subunit
 version=1.4.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e4/29/f1e7113ca4632283a76cdbe40b62be860d268fdc0e8eab7216ffaf2aa0ef/subunit-0.0.0a0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

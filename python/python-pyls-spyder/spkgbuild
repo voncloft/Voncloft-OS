@@ -5,11 +5,11 @@ name=python-pyls-spyder
 version=0.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/94/e0/17ebfbc3cdd9d2bed54f4904672d8c766b5f48c930d699e20566061b6720/pyls-spyder-0.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

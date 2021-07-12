@@ -5,11 +5,11 @@ name=python-arpeggio
 version=1.10.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8d/4b/042f027e6b818350f4863509884559f0fc744df8c5c36f4a084511b9457a/Arpeggio-1.10.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

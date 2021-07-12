@@ -5,11 +5,11 @@ name=python-testing.common.database
 version=2.0.3
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/25/3c/5f7eef6ce8a16314a39f2b905ebd5cd2bfdcbaabafb7fd71dc10c3f32c4d/testing.common.database-2.0.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

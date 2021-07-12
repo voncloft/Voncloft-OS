@@ -5,11 +5,11 @@ name=python-oslo-concurrency
 version=4.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c1/f1/5e089ae314331988c580f2e8119c2dc80a65548a3b60984218c0f059d6e7/oslo.concurrency-4.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-xvfbwrapper
 version=0.2.9
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/57/b6/4920eabda9b49630dea58745e79f9919aba6408d460afe758bf6e9b21a04/xvfbwrapper-0.2.9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

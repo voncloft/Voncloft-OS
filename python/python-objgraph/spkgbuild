@@ -5,11 +5,11 @@ name=python-objgraph
 version=3.5.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/08/f9/05c2b413d39e86772a4dda63f78232a3fc62f2545cf5f3e23acc6cabaef7/objgraph-3.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pony
 version=0.7.14
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/51/e3/6186f12eb13c3ccac25a744296865e55b2bdb4d3bebc4bffedecf5fe1586/pony-0.7.14.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

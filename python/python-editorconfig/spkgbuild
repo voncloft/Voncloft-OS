@@ -5,11 +5,11 @@ name=python-editorconfig
 version=0.12.3
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/13/31/8382c65fb54ef19b8335f8e05e9ed9f62e33122f9619d989a151cc7e5152/EditorConfig-0.12.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

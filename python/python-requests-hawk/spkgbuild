@@ -5,11 +5,11 @@ name=python-requests-hawk
 version=1.1.1
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ed/e8/eefb1c0cef7219cb550ea83f39b8f20ff450a5dee635b3a54f71afb58d61/requests-hawk-1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

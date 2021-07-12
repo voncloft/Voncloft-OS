@@ -5,11 +5,11 @@ name=python-emoji
 version=1.2.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/d6/56/484163d2f941f8c96de24fecf4885e3101913a2f4b31a1d50b4eb8eb244a/emoji-1.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

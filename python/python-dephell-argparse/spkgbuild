@@ -5,11 +5,11 @@ name=python-dephell-argparse
 version=0.1.3
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ea/28/7048531b7e51390336b83053992590cb23db7339bb117a0cdd9b9a058139/dephell_argparse-0.1.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

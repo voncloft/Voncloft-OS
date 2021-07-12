@@ -5,11 +5,11 @@ name=python-k5test
 version=0.9.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/eb/cb/587a217db2ff9f662b618eb257112c0199ca6338d8dd7729ac416c15a601/k5test-0.9.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

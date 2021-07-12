@@ -5,11 +5,11 @@ name=python-authheaders
 version=0.13.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7a/51/30679bf967d0574eea5f29a4433de5ff5ab8fd448c2e1f4cf923f16f8f8e/authheaders-0.13.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-mailmanclient
 version=3.3.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a2/d7/6471b2c1f9de93b4322b8cc64383e9ed3b848d8c948380cc713ba2d93681/mailmanclient-3.3.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

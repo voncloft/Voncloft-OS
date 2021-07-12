@@ -5,11 +5,11 @@ name=python-zope.testing
 version=4.9
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/28/2c/91b2082cba956e28433785bc3cd67ab51bfc9b2965fa9b62216c16bf6239/zope.testing-4.9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

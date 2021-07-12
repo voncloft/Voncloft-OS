@@ -5,11 +5,11 @@ name=python-marshmallow
 version=3.12.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/bc/98/a0fb5d042908cf787831ae23c5b2c33cc023d52c8e11847a3ebd44f33162/marshmallow-3.12.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

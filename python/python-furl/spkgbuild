@@ -5,11 +5,11 @@ name=python-furl
 version=2.1.2
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/76/72/87c701c35700603742b09567ca701bb51715eb3d201a99b19285cb14856c/furl-2.1.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

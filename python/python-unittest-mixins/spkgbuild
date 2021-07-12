@@ -5,11 +5,11 @@ name=python-unittest-mixins
 version=1.6
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/2a/d7/f9495d60cbd42c19ef174e150130a38b351afd437eb32e9b28e45931fffd/unittest-mixins-1.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

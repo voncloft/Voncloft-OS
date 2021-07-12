@@ -5,11 +5,11 @@ name=python-pecan
 version=1.4.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4d/8e/da71e4e23b720805106b58e0351dcd75d8ffc7c7ac3ad2961b20b98a44a7/pecan-1.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

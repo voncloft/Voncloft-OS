@@ -5,11 +5,11 @@ name=python-spur
 version=0.3.22
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/03/8a/8c0810dbf8140cb4765f770a2a45f118abcca38188427cb06bab83a42900/spur-0.3.22.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-rstr
 version=2.2.6
 release=10
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/be/52/f87d6a9c691329dc71eaa6263f63cc262bd818df89e2dc981720db9dc9c5/rstr-2.2.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

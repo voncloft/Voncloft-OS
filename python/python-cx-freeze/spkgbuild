@@ -9,7 +9,7 @@ source="https://files.pythonhosted.org/packages/5f/e5/af76fa30798600aab8ab9d535d
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

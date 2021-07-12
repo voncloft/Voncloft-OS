@@ -5,11 +5,11 @@ name=python-aws-sam-translator
 version=1.37.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/91/b3/49d596e4317abf21a3ccc18056c1f2f3ef136fb16deb139f696401f49d84/aws-sam-translator-1.37.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

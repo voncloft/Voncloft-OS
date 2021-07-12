@@ -5,11 +5,11 @@ name=python-browserid
 version=1.4
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/58/7d/e81ac447e6394a88ce8f067428398aa3b44a7c486e8e56721e1df79edc60/browserid-1.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

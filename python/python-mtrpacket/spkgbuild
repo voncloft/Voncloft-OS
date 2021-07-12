@@ -5,11 +5,11 @@ name=python-mtrpacket
 version=1.0.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/63/9a/d72b20661cc347405217e54442940fdac9b0411f50680ae4e7bee3505f7e/mtrpacket-1.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

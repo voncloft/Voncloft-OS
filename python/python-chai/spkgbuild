@@ -5,11 +5,11 @@ name=python-chai
 version=1.1.2
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/d5/7d43d6ff9078ab235c23143beda57b40b862b1313980d80c8be06675752a/chai-1.1.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

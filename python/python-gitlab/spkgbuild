@@ -5,11 +5,11 @@ name=python-gitlab
 version=2.6.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ad/c5/91cb054390cafd6739eab83dfb5d739b699f10b4ff139602f98345e787ef/gitlab-1.0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

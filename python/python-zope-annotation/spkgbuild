@@ -5,11 +5,11 @@ name=python-zope-annotation
 version=4.7.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/0d/ca/39dda7cd429857ffd5e87c5f4d61ce857e176c8d61bd0c2b22862fb7d805/zope.annotation-4.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

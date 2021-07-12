@@ -5,11 +5,11 @@ name=python-pg8000
 version=1.20.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/37/34/3f1399a1e1dc37e3175d79bd16adf6bc7e74d7368c71481165f8a063db0b/pg8000-1.20.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

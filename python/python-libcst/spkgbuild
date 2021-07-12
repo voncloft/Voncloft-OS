@@ -5,11 +5,11 @@ name=python-libcst
 version=0.3.19
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/72/56/52e396bc827303f56c92268ca06d989f71a7dfaca0c7276de2c8d1e24821/libcst-0.3.19.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pysolr
 version=3.9.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9c/c6/9f0b80f17747db12acbdf421a22acdad23c93eea7046181ae6ebdf427bfd/pysolr-3.9.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

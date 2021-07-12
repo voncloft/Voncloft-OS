@@ -5,11 +5,11 @@ name=python-pytest-socket
 version=0.4.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f7/3c/5d56fcb4a42ac058e2f9c43c5e761888fd58fc47c8044ddc046b278aa31f/pytest-socket-0.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

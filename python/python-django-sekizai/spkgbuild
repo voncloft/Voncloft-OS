@@ -5,11 +5,11 @@ name=python-django-sekizai
 version=2.0.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/30/e2/2f51f0e8abf87967f06e817cfd183de8933874dc48302ca263107c3143be/django-sekizai-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

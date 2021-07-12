@@ -5,11 +5,11 @@ name=python-pytest-tornado
 version=0.8.1
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f7/85/a7b43fb46dbd7d6c28e798491e5f7dc902e0fbbd1630b03307529faebf79/pytest-tornado-0.8.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

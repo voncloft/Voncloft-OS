@@ -5,11 +5,11 @@ name=python-easygui
 version=0.98.2
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/91/d1/817a117333850b85d2a31767c8be8120a8f9492432e7b4c9c1c17699c979/easygui-0.98.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

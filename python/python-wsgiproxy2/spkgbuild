@@ -5,11 +5,11 @@ name=python-wsgiproxy2
 version=0.4.6
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9e/db/3e8d6877cc12de58ff67eecfab58acc50b2e2803381a06e21c78fa99713c/WSGIProxy2-0.4.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

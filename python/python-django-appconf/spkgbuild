@@ -5,11 +5,11 @@ name=python-django-appconf
 version=1.0.4
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/11/17/3093cd487d17e54d7d25ede33b0c7694982bf5f2a3d8055059f25eb9f90c/django-appconf-1.0.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

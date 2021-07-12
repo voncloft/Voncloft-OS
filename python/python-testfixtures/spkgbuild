@@ -5,11 +5,11 @@ name=python-testfixtures
 version=6.17.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ee/7b/0bcd797f4d75348bd123ef3b5760edef1767a9dd1e3f2e6b2098f51a5102/testfixtures-6.17.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

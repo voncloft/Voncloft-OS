@@ -5,11 +5,11 @@ name=python-cson
 version=0.8
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8c/14/461bdde1d712dae3c14e139dd4b37085085fd75f01d44f888767bfc6d313/cson-0.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

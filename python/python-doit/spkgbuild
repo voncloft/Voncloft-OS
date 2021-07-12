@@ -5,11 +5,11 @@ name=python-doit
 version=0.33.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/0a/b3/fcbb2e07f36e6a1c32b897c4bdc2db0e6da4a85a4fec820a5a01fd7fc2cd/doit-0.33.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

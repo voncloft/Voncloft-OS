@@ -5,11 +5,11 @@ name=python-pytesseract
 version=0.3.8
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a3/c9/d6e8903482bd6fb994c32722831d15842dd8b614f94ad9ca735807252671/pytesseract-0.3.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

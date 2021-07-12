@@ -5,11 +5,11 @@ name=python-mohawk
 version=1.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/25/78/d5f91e80676e4363c0747a97af6531e78edf2e248a98ce7baf85631653da/mohawk-1.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-betamax
 version=0.8.1
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/1b/bc/9df1643837a62481a32d515606fb2edcabb467e51b0c47797d3f56e21568/betamax-0.8.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

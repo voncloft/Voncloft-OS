@@ -5,11 +5,11 @@ name=python-amqp
 version=5.0.6
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dd/a8/b00824f9be6eb4e15f565a82731c39962d71ba6e692659d22b61991b884a/amqp-5.0.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-openstacksdk
 version=0.57.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cb/d7/0baa7641361328bc0b00a68f3187398e7ba6bce22c3c2f534ebf7e8cf6cd/openstacksdk-0.57.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

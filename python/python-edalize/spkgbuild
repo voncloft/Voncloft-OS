@@ -5,11 +5,11 @@ name=python-edalize
 version=0.2.5
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e2/b3/3da0bf4450be58779dc8fab25bf4738c4734df5065a6ec9f393e848a9053/edalize-0.2.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

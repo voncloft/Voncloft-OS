@@ -5,11 +5,11 @@ name=python-sphinx-testing
 version=1.0.1
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/30/c5/2f46418041e31fdc36338b03e2aacc7bf42f699d67d424753db7e04a655a/sphinx-testing-1.0.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

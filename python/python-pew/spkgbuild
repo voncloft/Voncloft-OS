@@ -5,11 +5,11 @@ name=python-pew
 version=1.2.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c9/a5/5119ae10168a8dc26e0475b4be3b14eb005ffc2bce0e021681322b3a8754/pew-1.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

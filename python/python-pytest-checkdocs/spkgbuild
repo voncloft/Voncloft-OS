@@ -4,11 +4,11 @@ name=python-pytest-checkdocs
 version=2.7.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/d2/f0/66ea08b3416260640d17fcb2b8efcafc38f0ec72a298abd140f618100196/pytest-checkdocs-2.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

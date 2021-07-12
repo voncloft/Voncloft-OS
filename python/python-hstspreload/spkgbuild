@@ -5,11 +5,11 @@ name=python-hstspreload
 version=2021.7.5
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dc/23/c9a4efe790b4fba899f6161676804a509c22c967ebdc7be4eb6345981004/hstspreload-2021.7.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

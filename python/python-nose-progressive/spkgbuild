@@ -5,11 +5,11 @@ name=python-nose-progressive
 version=1.5.2
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dc/bc/0f55ba957109922c31ef22444c899004b1221eacff030300de74ad0e04fb/nose-progressive-1.5.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

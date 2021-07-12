@@ -5,11 +5,11 @@ name=python-aresponses
 version=2.1.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f9/5b/ffba4d3db6b73393e2a79d783df08faea26e5f0655239dcd342198cb57dc/aresponses-2.1.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

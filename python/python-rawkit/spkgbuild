@@ -5,11 +5,11 @@ name=python-rawkit
 version=0.6.0
 release=9
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f2/9e/52474bf01628fdaf47c830cc808c3ccec441c2c1816704a982e44476ff24/rawkit-0.6.0.linux-x86_64.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

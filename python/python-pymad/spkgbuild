@@ -5,11 +5,11 @@ name=python-pymad
 version=0.10
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/d6/2d/2d59c1c8f5409cdf486d4dab7f0e181244d59b7c4ce6f2b0d1f1238c89b5/pymad-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

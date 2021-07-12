@@ -5,11 +5,11 @@ name=python-traits
 version=6.2.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/44/f3/2fd5d25717536009cbc967449b5598fab7fe9466b84a758fc2f83ebd2c7e/traits-6.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

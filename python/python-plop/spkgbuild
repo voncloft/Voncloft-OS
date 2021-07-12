@@ -5,11 +5,11 @@ name=python-plop
 version=0.4.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/86/ff/254b6e955c913316c4b226ae2a6d5bc53eaf4a21756b8a3458db568a3c25/plop-0.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

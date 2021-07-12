@@ -5,11 +5,11 @@ name=python-pytest-xvfb
 version=2.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/07/a5/78bbf89d95bdcf9c391c9ccab136fada0ad9bb8d5b8f467bbab7c4b5217e/pytest-xvfb-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pyqtgraph
 version=0.12.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c2/47/267147744f25e515fc6f12de051c8b74945369db693ebae154d6180dc44b/pyqtgraph-0.12.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

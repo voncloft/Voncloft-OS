@@ -5,11 +5,11 @@ name=python-justbytes
 version=0.15
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/24/a9/d32a8838f7aae390ee24f944a091625cb65b0c4ff38d2fa1f19a5360f601/justbytes-0.15.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

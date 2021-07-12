@@ -5,11 +5,11 @@ name=python-hcloud
 version=1.12.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/67/54/cc4c310795c05e87bbfeaecc48fe1fce6e21341f46595779f162dbb9d779/hcloud-1.12.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

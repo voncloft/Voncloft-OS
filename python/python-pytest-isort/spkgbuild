@@ -5,11 +5,11 @@ name=python-pytest-isort
 version=2.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/06/ea/3b4191eb904f2a922397a669f2dff6a184e195848068f2b71d5ee4d3e4c7/pytest-isort-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

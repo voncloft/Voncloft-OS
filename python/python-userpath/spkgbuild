@@ -5,11 +5,11 @@ name=python-userpath
 version=1.6.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/54/ff/48ddc6562a06c38db208ba347512af3d366232333d30a91538f14335a8b9/userpath-1.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

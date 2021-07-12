@@ -5,11 +5,11 @@ name=python-pysimplesoap
 version=1.16.2
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/5f/ec/d320a12196d104819fd1f1c47db15ebd8a5cbaf0226091b339a312efefd4/PySimpleSOAP-1.16.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

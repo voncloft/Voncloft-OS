@@ -5,11 +5,11 @@ name=python-aiohttp-apispec
 version=2.2.2
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/16/15/3533f24869bd8cdbb3e3751448c798b037f369cced62492f729064016396/aiohttp-apispec-2.2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

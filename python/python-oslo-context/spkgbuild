@@ -5,11 +5,11 @@ name=python-oslo-context
 version=3.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/00/3b/9088add726eb883c3e7950c9875a3a1b3f88801b738c00ef8c585f9cb402/oslo.context-3.3.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

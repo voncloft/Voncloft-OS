@@ -5,11 +5,11 @@ name=python-pilkit
 version=2.0
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/5c/318d9c20f309e6a79ea4d4605f86597d05f3e007d3d1925ff02474808659/pilkit-2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

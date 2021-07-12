@@ -5,11 +5,11 @@ name=python-compiler
 version=1.1
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ca/49/6b1ee1aec8b590e52306f5b6d2d903c2b16ae0f99e160418c41d372ffc11/compiler-0.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-voluptuous-serialize
 version=2.4.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c5/70/e9248a3dfe1bb8fbc8ee2befb45bfe724989f2db943a4d2033623b0518c8/voluptuous-serialize-2.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

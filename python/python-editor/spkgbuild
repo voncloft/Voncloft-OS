@@ -5,11 +5,11 @@ name=python-editor
 version=1.2.1
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ac/fe/bc67786094d3f068bf342198bdac6b55764c64e795e2c10981ee28f1e1a8/editor-1.2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

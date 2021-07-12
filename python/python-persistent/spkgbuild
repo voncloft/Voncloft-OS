@@ -5,11 +5,11 @@ name=python-persistent
 version=4.7.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/63/19/f95ae3d20840823754dacad879d0adf03bb290a2b763c6d9d85b020c0a2d/persistent-4.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

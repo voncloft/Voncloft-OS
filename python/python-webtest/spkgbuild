@@ -5,11 +5,11 @@ name=python-webtest
 version=2.0.35
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/97/87/73f7db7be3a33c5a7aa3772a4cdb309995dba28bddf7a41a56229f3b1507/WebTest-2.0.35.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

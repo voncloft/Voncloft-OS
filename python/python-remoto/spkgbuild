@@ -5,11 +5,11 @@ name=python-remoto
 version=1.2.1
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/42/02/a9e5b25538bd12d98c7ea6d277c33e472d1d1d4ec50a4d42be3ca73f6023/remoto-1.2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

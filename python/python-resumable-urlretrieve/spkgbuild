@@ -5,11 +5,11 @@ name=python-resumable-urlretrieve
 version=0.1.6
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/02/25/a4383ab4f771a8e1e24f167ecece37fb147d8c766bd8ef3b3bd59836f236/resumable-urlretrieve-0.1.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-connexion
 version=2.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dd/56/b0be9268cf7466f0b8a717893e6bbab88e46af878118a2062666d5a043cf/connexion-2.8.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

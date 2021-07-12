@@ -5,11 +5,11 @@ name=python-pytest-httpx
 version=0.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/1e/b7/6406e48cfaee2f19e8df9fb2f0584cceac0067ded59701fec8746a970531/pytest_httpx-0.12.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

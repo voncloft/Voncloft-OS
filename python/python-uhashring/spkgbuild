@@ -5,11 +5,11 @@ name=python-uhashring
 version=2.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/b5/39/1d56c749f455f9a6439492cfa35aa2e34e76a2d3a33718273b665c96eaf2/uhashring-2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

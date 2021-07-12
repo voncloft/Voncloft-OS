@@ -5,11 +5,11 @@ name=python-canonicaljson
 version=1.4.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f5/24/a18b5a8cec3c90bd85d8428493268034c8be81939d99c065c62a1f78f999/canonicaljson-1.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

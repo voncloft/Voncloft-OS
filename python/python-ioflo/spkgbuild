@@ -5,11 +5,11 @@ name=python-ioflo
 version=2.0.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/33/08/c87ceb67f1eaf4a7391c98d5ec130fe133ed0db7604d1dd992c5e2f1d4f6/ioflo-2.0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

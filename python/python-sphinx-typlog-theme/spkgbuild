@@ -4,11 +4,11 @@ name=python-sphinx-typlog-theme
 version=0.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cd/db/b0552602f20a375094bcb3d4cb9d11167f931ed08f0af782af13b9007216/sphinx_typlog_theme-0.8.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

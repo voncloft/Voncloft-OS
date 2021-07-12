@@ -5,11 +5,11 @@ name=python-pytest-regressions
 version=2.2.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/46/e1/5a639b55cafd2498a1e88b5b4431157cf1d9859040fd7cc7182b0447737a/pytest-regressions-2.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-eventlet
 version=0.31.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/2a/f4/740fe3b6696f30e39f62c306c9880daf7cec0ba19f82e62cf98ce9f8995b/eventlet-0.31.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pysol_cards
 version=0.10.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/2a/d5/52713c749186b7728558fa8111c7f7f77e8e34eb252498c0ee148d15f9d0/pysol_cards-0.10.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

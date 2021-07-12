@@ -5,11 +5,11 @@ name=python-nox
 version=2021.6.12
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/29/6c/e3dc69ea5ef8150f859315e2abf56cb5bb110d65d628d727bd67df514432/nox-2021.6.12.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

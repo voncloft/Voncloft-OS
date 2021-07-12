@@ -5,7 +5,7 @@ name=python-pillow
 version=8.3.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/P/Pillow/Pillow-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8f/7d/1e9c2d8989c209edfd10f878da1af956059a1caab498e5bc34fa11b83f71/Pillow-8.3.1.tar.gz"
 options="!checksum"
 
 build() {

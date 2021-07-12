@@ -5,11 +5,11 @@ name=python-natsort
 version=7.1.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/06/73/132e1986f7d37826e39825097e09f2c86b1339609926210ebdaec74a3b72/natsort-7.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

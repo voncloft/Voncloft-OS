@@ -5,11 +5,11 @@ name=python-mamba
 version=0.11.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f6/91/2fda06c9fa628a27bebebab6d8c078f1c048124d5c626283ee0edf47b577/mamba-0.11.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

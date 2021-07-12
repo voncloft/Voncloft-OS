@@ -5,11 +5,11 @@ name=python-pytest-subtesthack
 version=0.1.2
 release=9
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/05/2b/4dc909365dbcaa50b1fa8be3a857aee23e6b2742b55b6fa03a6efa67ad3c/pytest-subtesthack-0.1.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

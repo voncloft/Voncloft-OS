@@ -5,11 +5,11 @@ name=python-argparse-manpage
 version=1.5
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fe/5d/b761efd95520e79c8d6376d4088be6d69ca56eac6e410b140a05d35f5684/argparse-manpage-1.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

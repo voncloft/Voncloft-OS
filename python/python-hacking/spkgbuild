@@ -5,11 +5,11 @@ name=python-hacking
 version=4.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/27/c8/0db2f4dae333d6d480d5c67388064ecf1a9f158a7ac6c8ed005c26691d4b/hacking-4.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

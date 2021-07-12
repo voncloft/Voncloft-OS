@@ -5,7 +5,7 @@ name=python-jinja
 version=3.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/J/Jinja2/Jinja2-$version.tar.gz"
+source="http://dev.pocoo.org/hg/jinja-main/archive/tip.tar.gz#egg=Jinja-dev"
 options="!checksum"
 
 build() {

@@ -5,11 +5,11 @@ name=python-pymongo
 version=3.11.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/2f/79e933655adcf6dbd00738b556cecae5f8ec709301ac10df6f488d83bb53/pymongo-3.11.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

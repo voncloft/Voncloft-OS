@@ -6,11 +6,11 @@ version=2.1.1
 _haystackverzion=2.8.1.r109.g7773b7f9
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e5/13/9ce2a800eb9b6d3d1e91db058216c2dd3817bc8f80a971544f413f0eaab4/xapian-haystack-2.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-vistir
 version=0.5.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4f/82/aea5cb3f4153a66c24437290b06a0dd16acf56b49075f8381b136aba716b/vistir-0.5.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

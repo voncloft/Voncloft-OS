@@ -5,11 +5,11 @@ name=python-logilab-common
 version=1.8.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/be/41/12085bd231695571d1c0544474ba2909f00d3d8082fc3c6bbc4be27b2c8f/logilab-common-1.8.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

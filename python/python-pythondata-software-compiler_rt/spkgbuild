@@ -5,11 +5,11 @@ name=python-pythondata-software-compiler_rt
 version=2020.08
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ee/46/5d2fddbb929be50e85bdddcb3ae5d82eaa51b12810bd1324dd9286b0dc68/pythondata-software-compiler_rt-0.0.post6206.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

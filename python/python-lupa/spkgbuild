@@ -5,11 +5,11 @@ name=python-lupa
 version=1.9
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e4/44/85d9a962dd135c74d82edec606691f1f4db664f11fe8393eef4146bb98d7/lupa-1.9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

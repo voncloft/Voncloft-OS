@@ -5,11 +5,11 @@ name=python-pyct
 version=0.4.8
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fc/05/e071eac4d592da1cccacd26faa05cb32cccf5bb864c8312f159e92bf0962/pyct-0.4.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

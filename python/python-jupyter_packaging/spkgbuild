@@ -5,11 +5,11 @@ name=python-jupyter_packaging
 version=0.7.11
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/93/e8/73bdad18d07fe080fd6651d860083b8e2c51adf907c6d3d32d934f9e5934/jupyter_packaging-0.10.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

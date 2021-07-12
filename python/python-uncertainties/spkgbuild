@@ -5,11 +5,11 @@ name=python-uncertainties
 version=3.1.6
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/48/71/d1392a92cca49cabbfeac198ab8d779222d27aa79985ac7be187f1957af5/uncertainties-3.1.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

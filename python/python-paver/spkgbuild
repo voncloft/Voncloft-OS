@@ -5,11 +5,11 @@ name=python-paver
 version=1.3.4
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7f/df/c2aba0e68432471a252dc0d344f0a55f63104a1eeb83440e8e6b01cec47d/Paver-1.3.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

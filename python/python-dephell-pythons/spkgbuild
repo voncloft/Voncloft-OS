@@ -5,11 +5,11 @@ name=python-dephell-pythons
 version=0.1.15
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6d/fa/d0a59abf5b4b30445efb13ea3168a0f2b0371f156adcc17d80bacceb9c10/dephell_pythons-0.1.15.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-dephell-versioning
 version=0.1.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/70/a2/a84d89721fc35a05ae08388161f79eecfb1c6fab333f5a42eb4924968c47/dephell_versioning-0.1.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

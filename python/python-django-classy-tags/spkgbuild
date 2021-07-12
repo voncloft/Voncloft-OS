@@ -5,11 +5,11 @@ name=python-django-classy-tags
 version=2.0.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ca/10/bd3eaa4225bb6dfc3d6d875d2f8f4a6dfa5d2d430685dd8f1e93184cd9a0/django-classy-tags-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

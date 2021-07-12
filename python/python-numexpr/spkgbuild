@@ -5,11 +5,11 @@ name=python-numexpr
 version=2.7.3
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/17/91/688234440a7b45a4f6a9931d2541de5e9e48b2c54b8fcd5951ab14bd6a12/numexpr-2.7.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

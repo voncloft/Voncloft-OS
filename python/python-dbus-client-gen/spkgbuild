@@ -5,11 +5,11 @@ name=python-dbus-client-gen
 version=0.7
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/14/3e/070b0d1e7b7df1a75752a31065ef59442861902a91a0857a8095b8f2b2eb/dbus-client-gen-0.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

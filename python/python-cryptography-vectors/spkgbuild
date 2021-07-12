@@ -5,11 +5,11 @@ name=python-cryptography-vectors
 version=3.4.7
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/31/4e/c65f43cb4d05ed3637a3bf3a0c28c7f2426781950f65b0f350fd7d268a35/cryptography_vectors-3.4.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

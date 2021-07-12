@@ -4,11 +4,11 @@ name=python-pyvcd
 version=0.2.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6f/ea/65ee888ce42978eae3073f00afa2686222b7f2e092cbda269a87f251388a/pyvcd-0.2.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

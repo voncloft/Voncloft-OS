@@ -5,11 +5,11 @@ name=python-gcp-devrel-py-tools
 version=0.0.16
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/20/e3/0772fa34b0111cf750c215468413e53f85c3f3fa3eb53099c7cb49962c11/gcp-devrel-py-tools-0.0.16.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

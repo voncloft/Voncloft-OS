@@ -5,11 +5,11 @@ name=python-waitress
 version=2.0.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4d/b9/212595d3a011f2b508ab571872ffc300162c9e530b3043a50665b9ada2f0/waitress-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

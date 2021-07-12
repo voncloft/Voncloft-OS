@@ -5,11 +5,11 @@ name=python-mt-940
 version=4.23.0
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/1c/11/86964d856e774c3594a865c0874bd86e22cad691d2e29be84b117c806c92/mt-940-4.23.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

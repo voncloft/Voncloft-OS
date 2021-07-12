@@ -5,11 +5,11 @@ name=python-pre-commit
 version=2.13.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4d/ca/1a1d2049851bd45e89916e03a3faaf32743cbf0cb7e4587d89f66915988e/pre_commit-2.13.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

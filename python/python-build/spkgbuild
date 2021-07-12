@@ -5,11 +5,11 @@ name=python-build
 version=0.5.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/70/56/1a8b602376520cfae7759289595032923c8cdb65821ecc6b87c3e0edcddb/build-0.5.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

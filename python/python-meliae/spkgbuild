@@ -5,11 +5,11 @@ name=python-meliae
 version=0.5.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/3d/ee/62a9262225e1f093419cda015c3942392d4056ebfeec4c98a71a35c63fe2/meliae-0.5.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-flufl-lock
 version=5.0.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8e/1a/9d859f0d1aae8e9cd547e7f15c302a5e24cc9ad1d1d09061b7f18cabdacd/flufl.lock-5.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

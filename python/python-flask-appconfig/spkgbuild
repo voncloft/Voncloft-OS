@@ -5,11 +5,11 @@ name=python-flask-appconfig
 version=0.11.1
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a6/52/8e331479219648b850abfa570d09ff962580800b39f017cbd529e267acae/flask-appconfig-0.11.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

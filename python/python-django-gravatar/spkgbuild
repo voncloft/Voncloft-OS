@@ -5,11 +5,11 @@ name=python-django-gravatar
 version=1.4.4
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fb/b7/143da6a5e20104beeaad1b21f73aeb29d45f3608c0de9c78e3621f733499/django-gravatar-0.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

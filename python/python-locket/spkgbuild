@@ -5,11 +5,11 @@ name=python-locket
 version=0.2.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/0c/09/c2b9f6ba4fe2aa4e7ca7bb2c2938adcf9731dd22f4ad570ff1188417a080/locket-0.2.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-trio-asyncio
 version=0.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4f/3a/81a237ce611c4c807cf50646858db413c8a99597dc6a8ddd5f1da3a3f3ef/trio_asyncio-0.12.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

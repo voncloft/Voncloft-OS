@@ -5,11 +5,11 @@ name=python-dephell-links
 version=0.1.5
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/45/6f/80d590a36c99712999b2cb1703c26c45a97f906713dcfba22933194b2f4e/dephell_links-0.1.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

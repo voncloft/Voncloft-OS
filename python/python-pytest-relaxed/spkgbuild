@@ -5,11 +5,11 @@ name=python-pytest-relaxed
 version=1.1.5
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/50/8b/a01443d08903d1026c51de5272eaa072a96294d1b1b40d53e5f70d51ae0c/pytest-relaxed-1.1.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

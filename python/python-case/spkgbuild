@@ -5,11 +5,11 @@ name=python-case
 version=1.5.3
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/31/5a/9f1040ffb91e62c7ed6068dab6da5e1cb9ca3642d9b63c2254c3393af483/case-1.5.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

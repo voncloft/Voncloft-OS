@@ -5,11 +5,11 @@ name=python-pyproject2setuppy
 version=9
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dd/62/f6a0ad2e692cb0e65ee0f6f6a134d7f3654b720cf99356df46d6195b48d3/pyproject2setuppy-9.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

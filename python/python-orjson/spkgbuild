@@ -5,11 +5,11 @@ name=python-orjson
 version=3.6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f0/09/0d284129fd64026d3cedb704d3ffb31b692895dce118951e6fa7bfd4ae2c/orjson-3.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

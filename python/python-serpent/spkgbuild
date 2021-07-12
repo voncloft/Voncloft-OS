@@ -5,11 +5,11 @@ name=python-serpent
 version=1.40
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/16/c3/e42362d4d3853fbd407fdd21e1d31c4aea363ebec9950d36dbada4522293/serpent-1.40.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

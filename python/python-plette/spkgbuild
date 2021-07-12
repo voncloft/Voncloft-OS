@@ -5,11 +5,11 @@ name=python-plette
 version=0.2.3
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cf/c8/579f4a1175d16107cc94961b0b601e9e1d27b8a7abd85cbc116f3d5407ac/plette-0.2.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-slip
 version=0.6.5
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/5f/65/fd79088e1810675c8934703cfe7d7bd34190c0a5a2a621252e785b8e6802/SLIP-20191113.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

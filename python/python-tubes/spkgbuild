@@ -5,11 +5,11 @@ name=python-tubes
 version=0.2.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/3d/ef/4fe9354d0939ade0a9a6c8f343aed7797c7a109f8ca9097da627ca3f610f/Tubes-0.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

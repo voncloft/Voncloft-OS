@@ -6,11 +6,11 @@ name=python-pytest-testinfra
 version=6.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ca/b2/0a1a26bf50b705f423ae0215230b08221e57556711fe46c8dcaa051cbf10/pytest-testinfra-6.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

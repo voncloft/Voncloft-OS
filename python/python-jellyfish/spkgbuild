@@ -5,11 +5,11 @@ name=python-jellyfish
 version=0.8.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/04/3f/d03cb056f407ef181a45569255348457b1a0915fc4eb23daeceb930a68a4/jellyfish-0.8.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

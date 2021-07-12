@@ -5,11 +5,11 @@ name=python-doctest-ignore-unicode
 version=0.1.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9a/b5/bd095f63ad96bef0ee0d8a561a23033bcf522060f149b8c12781e12cc38a/doctest-ignore-unicode-0.1.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

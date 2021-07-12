@@ -5,11 +5,11 @@ name=python-poetry
 version=1.2.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/24/66/a4b8bf9c4a989f6c1c38824207f6f6882badee19a6c59cd86573ef49b5b7/poetry-1.1.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

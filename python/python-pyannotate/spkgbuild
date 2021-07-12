@@ -5,11 +5,11 @@ name=python-pyannotate
 version=1.2.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/0d/26/2f68c02fae0b88d9cefdbc632edad190d61621b5660c72c920be1e52631e/pyannotate-1.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

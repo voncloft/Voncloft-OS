@@ -5,11 +5,11 @@ name=python-hglib
 version=2.6.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f4/15/06d8794f71f59d9343b41fa796cabfcef1c828a9daf748c7a55bf788c124/hglib-2.6.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

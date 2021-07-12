@@ -6,7 +6,7 @@ version=1.11.0
 release=6
 pyn=python-Beaker
 
-source="https://files.pythonhosted.org/packages/source/${pyn:7:1}/${pyn#python-}/${pyn#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/04/7b/a3eb9939d931a55c69e4bcaa82dbc64f6df9612c374e782f4ab3c176910e/Beaker-1.11.0.tar.gz"
 options="!checksum"
 
 build() {

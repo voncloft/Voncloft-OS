@@ -5,11 +5,11 @@ name=python-ldap
 version=3.3.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/79/f2/9b0739316a3af8a336e18dd705c48d0c4dd0d50fe3a94976bd6372a3695b/ldap-2.0.0.404.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

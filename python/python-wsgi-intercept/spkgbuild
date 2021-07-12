@@ -5,11 +5,11 @@ name=python-wsgi-intercept
 version=1.9.2
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8b/a2/2dec56a11e174d3ad6397a01118f6d7eaf3cc0fd3387f1b60d0f9df6ff96/wsgi_intercept-1.9.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

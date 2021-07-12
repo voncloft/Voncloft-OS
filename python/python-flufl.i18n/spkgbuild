@@ -5,11 +5,11 @@ name=python-flufl.i18n
 version=3.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6d/f8/fe25ed92e5b86b1d0fdfd3b0d84fca42eefece48f18dfe94ee1ed57a0bb4/flufl.i18n-3.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

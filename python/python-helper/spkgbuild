@@ -5,11 +5,11 @@ name=python-helper
 version=2.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/0b/c2/b4e0286e492b4551c1890a7445a1b85f3f10032673566d4c20c14dd0a280/helper-2.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

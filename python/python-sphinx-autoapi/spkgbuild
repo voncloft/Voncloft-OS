@@ -5,11 +5,11 @@ name=python-sphinx-autoapi
 version=1.8.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/79/e9/778b1a00182964373541f185619e4839ff36e602208737a639f6a73b2eeb/sphinx-autoapi-1.8.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

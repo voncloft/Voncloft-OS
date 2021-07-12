@@ -5,11 +5,11 @@ name=python-myst-parser
 version=0.15.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/cc/ca/b60b369b77a6d533543170f492874d5421e9b5285e6d51796e71061047c8/myst-parser-0.15.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

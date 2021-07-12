@@ -5,11 +5,11 @@ name=python-fastpbkdf2
 version=0.2
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7f/8e/70a4421826d967e3d68be32c2b913a283c7ffa65d897c83746dfd169febc/fastpbkdf2-0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

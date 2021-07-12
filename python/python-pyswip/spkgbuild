@@ -5,11 +5,11 @@ name=python-pyswip
 version=0.2.10
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9d/96/46583f9940a6fbeaecad9a7cbe441b1aebe44b17d3f3e72dd7da215b954c/pyswip-0.2.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

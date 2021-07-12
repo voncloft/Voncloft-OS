@@ -5,11 +5,11 @@ name=python-pasta
 version=0.2.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/38/a0/3d58d6c900a5aaf9f3539434b4faee986d5e6fc5d6aa941cf1c8563cb2fd/pasta-0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

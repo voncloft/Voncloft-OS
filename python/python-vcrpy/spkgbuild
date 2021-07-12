@@ -5,11 +5,11 @@ name=python-vcrpy
 version=4.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c5/08/38f7af57d0d40c2aa292a6d3221a9dbb6a2733d33a4d77e4942b0791213e/vcrpy-4.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

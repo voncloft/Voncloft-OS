@@ -5,11 +5,11 @@ name=python-mockito
 version=1.2.2
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9a/e7/e8283ee5d884e817da52fb766ef190b7cadc8d2aa0e0e077af3da1db4824/mockito-1.2.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

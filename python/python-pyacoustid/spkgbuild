@@ -5,11 +5,11 @@ name=python-pyacoustid
 version=1.2.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/e4/b7/ed40f4acfb3946dc22f08ec12888c207e87babaf0d0798368ba3fb6b9bc4/pyacoustid-1.2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-pytest-verbose-parametrize
 version=1.7.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ff/46/86cf758cd0a402ffd96162921da1fc6d5997973b969ea7b9a55233b83a57/pytest-verbose-parametrize-1.7.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

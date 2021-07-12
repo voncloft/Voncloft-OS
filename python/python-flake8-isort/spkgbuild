@@ -5,11 +5,11 @@ name=python-flake8-isort
 version=4.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/62/3d/886cd18de8b407d35130f8a120d1a8a1ce8995900e6463e1176276760101/flake8-isort-4.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

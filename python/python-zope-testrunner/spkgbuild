@@ -5,11 +5,11 @@ name=python-zope-testrunner
 version=5.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/5b/20/dd4713d6467112ed3efb8dd7b106d54818ae10a30c2ba0364e67e13f7d0b/zope.testrunner-5.3.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

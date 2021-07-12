@@ -5,11 +5,11 @@ name=python-pythondata-cpu-vexriscv
 version=2020.08
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8f/07/54352cf5fae52e0bb21edc7ef65999e9c0d611eb51346ad63473edd35db7/pythondata-cpu-vexriscv-1.0.1.post360.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

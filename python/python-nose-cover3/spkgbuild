@@ -5,11 +5,11 @@ name=python-nose-cover3
 version=0.1.0
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f0/17/8c55242e86830a006bbaa0463f4a1da44f332ef7cd5a402f459c8dbaaf84/nose-cover3-0.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

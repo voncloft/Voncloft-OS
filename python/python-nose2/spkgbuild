@@ -5,11 +5,11 @@ name=python-nose2
 version=0.10.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/b5/6d/26c2edff2c51bbb266c17d3c402e0ca3624fee8786c1329bcc59d1d7e879/nose2-0.10.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

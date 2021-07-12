@@ -5,11 +5,11 @@ name=python-xlsxwriter
 version=1.4.4
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a9/90/66d5e3578a79fbc6d4d6d48246880f5ce941a5c41689b8bc7274cb6c1918/XlsxWriter-1.4.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-libnacl
 version=1.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/db/ab/1111466244a682121a86cf5360fb7c804e6c21edaf0b439bfd898f4a11fe/libnacl-1.8.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

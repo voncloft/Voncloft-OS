@@ -5,11 +5,11 @@ name=python-py7zr
 version=0.16.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/5c/06/65626f8150a33fd6d5cccf43392e3324ce23e03061fad611a050fe7f1fb0/py7zr-0.16.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

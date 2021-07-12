@@ -5,11 +5,11 @@ name=python-braintree
 version=4.10.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fc/79/8dfb387701a7ff4ec01b1777c7617428739a4d6a289b9a5af7d5f85f516f/braintree-4.10.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

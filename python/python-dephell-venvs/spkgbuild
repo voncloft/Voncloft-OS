@@ -5,11 +5,11 @@ name=python-dephell-venvs
 version=0.1.18
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/76/79/646c78687f459deb5e7a03568907039cd0c87403540571633b044e53b184/dephell_venvs-0.1.18.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

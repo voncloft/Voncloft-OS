@@ -5,11 +5,11 @@ name=python-sphinxcontrib-seqdiag
 version=2.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ed/35/2840fc985760ea5dd170b5e08a20cdb681a3e53431861e8190fa3adbfa48/sphinxcontrib-seqdiag-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-inflect
 version=5.3.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a8/da/0d51c307544f4cde8d5aeadc2ff6b4d51f8fcd768467f62013b16a8002b5/inflect-5.3.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-wand
 version=0.6.6
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9c/da/15a1a58bb1da1b78f183661f5c2711c11e2cf55cf157e6948a113137953f/Wand-0.6.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

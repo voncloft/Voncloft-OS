@@ -5,11 +5,11 @@ name=python-fastnumbers
 version=3.1.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c9/8c/eb150c91beabdf4ac44d1aec8237709ca1593c615f6cd677914d4c3a2bdb/fastnumbers-3.1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

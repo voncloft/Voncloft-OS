@@ -5,11 +5,11 @@ name=python-pprofile
 version=2.0.5
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/dd/db/198fd60559f77c5334f520e2a94cde5c8c6f5f4e65f82f5b22269e6e5ff2/pprofile-2.0.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

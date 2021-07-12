@@ -5,11 +5,11 @@ name=python-sphinx-autorun
 version=1.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ac/55/c7283eb6bdf38a937f7f7858f957f1899bd670082b7b1156dcadb29b9c07/sphinx-autorun-1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

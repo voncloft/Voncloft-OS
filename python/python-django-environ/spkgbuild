@@ -5,11 +5,11 @@ name=python-django-environ
 version=0.4.5
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/a5/b4/22015ec543bc33a68885eb1244d7928d851d7430d30372fb2c046a65e947/django-environ-0.4.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

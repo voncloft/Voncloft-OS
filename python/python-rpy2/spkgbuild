@@ -5,11 +5,11 @@ name=python-rpy2
 version=3.4.5
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/6d/c0/cc5fc7704f50e3af89fc4381afcb1faaa691cf0ec8a452fcbdc41cf85fc8/rpy2-3.4.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

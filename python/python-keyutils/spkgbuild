@@ -6,11 +6,11 @@ name=python-keyutils
 version=0.6
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/fe/bc/b30a947305d3b47982a5c72df623ba4d42396c5869dce2942f1eaa83f546/keyutils-0.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-zope-copy
 version=4.2
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/be/a2/34723ac2c60a69156bce8111ddbf60f1b69794099df94522faa180cde23b/zope.copy-4.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

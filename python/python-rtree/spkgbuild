@@ -5,11 +5,11 @@ name=python-rtree
 version=0.9.7
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/ff/6f/1dcfc62cd3f0347a67b5e302250271837860ea4973c5df512dc6347fb070/Rtree-0.9.7.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

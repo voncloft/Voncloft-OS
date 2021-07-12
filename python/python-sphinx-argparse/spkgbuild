@@ -5,11 +5,11 @@ name=python-sphinx-argparse
 version=0.2.5
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/06/2b/dfad6a1831c3aeeae25d8d3d417224684befbf45e10c7f2141631616a6ed/sphinx-argparse-0.2.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

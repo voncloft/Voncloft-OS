@@ -5,11 +5,11 @@ name=python-pikepdf
 version=2.14.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/07/d6/4fda075ee91a6232e3fe45266412a5023152f9f2d55d41bce7847a016422/pikepdf-2.14.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-simplemediawiki
 version=1.2.0_b2
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/74/ce/ef1017cc09a6887c5c0352d69dfef274749da9a1aabe8200445fcad40cba/simplemediawiki-1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

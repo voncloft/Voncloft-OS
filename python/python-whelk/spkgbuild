@@ -5,11 +5,11 @@ name=python-whelk
 version=3.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/e1/19b84a2bfc184cf7214d1063e7dcc9116cf5ada6408488b4f37ff7e068a8/whelk-3.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

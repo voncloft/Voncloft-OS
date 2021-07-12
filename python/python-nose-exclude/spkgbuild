@@ -5,11 +5,11 @@ name=python-nose-exclude
 version=0.5.0
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/63/cf/90c4be56bf11b7bc8801086d9445baf731aa36b8e8fc5791731e8e604dcd/nose-exclude-0.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

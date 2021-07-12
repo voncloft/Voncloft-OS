@@ -5,11 +5,11 @@ name=python-black
 version=21.6
 release=5
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/26/37/66b198a6a660c72a85386592643b2911052c4feaa33b99681ed8c267bf1a/black-21.6b0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

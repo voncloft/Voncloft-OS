@@ -5,11 +5,11 @@ name=python-genshi
 version=0.7.5
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/f4/f2/0aaba26ccc1cee8cd5e585121d7d6a761d9950b37abd8ceeabe0f6e406ee/Genshi-0.7.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

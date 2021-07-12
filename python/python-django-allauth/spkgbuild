@@ -5,11 +5,11 @@ name=python-django-allauth
 version=0.45.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/17/26/bf1826a8bc1d4c3cbd8fbe29899ea85663294cbccdbb4d47fcf42f76d437/django-allauth-0.45.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

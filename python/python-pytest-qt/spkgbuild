@@ -5,11 +5,11 @@ name=python-pytest-qt
 version=4.0.2
 release=4
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/00/05/28a2b0a12446c6bf3852d445f28d2a3ce31155dc072af103e58f42fe7e8d/pytest-qt-4.0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -1,16 +1,15 @@
 # description : Python bindings for the openbabel library
-# depends : gcc-libs openbabel=${version}
-  depends+=python
+# depends : gcc-libs python3
 
 name=python-openbabel
 version=3.1.1.1
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/9d/3f/f08f5d1422d74ed0e1e612870b343bfcc26313bdf9efec9165c3ea4b3ae2/openbabel-3.1.1.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

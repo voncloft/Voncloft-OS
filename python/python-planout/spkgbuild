@@ -5,11 +5,11 @@ name=python-planout
 version=0.6.0
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c0/3c/0762580f6f733a5addc8085c27e8d0c061fe530e0f12571d5950742b668a/PlanOut-0.6.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

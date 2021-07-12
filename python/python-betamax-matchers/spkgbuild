@@ -5,11 +5,11 @@ name=python-betamax-matchers
 version=0.4.0
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/7e/31/71e2badb382bddd7521f2c2effaac7b2de01ae25b816b02459c2986aef0e/betamax-matchers-0.4.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

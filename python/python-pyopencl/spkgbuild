@@ -5,11 +5,11 @@ name=python-pyopencl
 version=2021.2.6
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/d1/44/e5a726c0fbe74bac4ed7542fbd499216bd2f0db88e86136aacf2d9b23896/pyopencl-2021.2.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

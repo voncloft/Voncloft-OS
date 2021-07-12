@@ -5,11 +5,11 @@ name=python-harparser
 version=0.4
 release=6
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/b7/67/2b114c5c33bb20922511dc181c07e92438c3a11fdae48b2ce772a80bb122/harparser-0.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

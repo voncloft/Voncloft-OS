@@ -5,11 +5,11 @@ name=python-breathe
 version=4.30.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/95/76/0c9adb4b20082091a0236e558797455ce819b0d9db86570c9a01139c66e2/breathe-4.30.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

@@ -5,11 +5,11 @@ name=python-simplespectral
 version=1.0.0
 release=7
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/8d/ef/cf739f7ba571e336189a4a704b844ae08eaf3641a4eb0d24b2c04db3eea5/SimpleSpectral-1.0.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

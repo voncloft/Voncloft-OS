@@ -5,11 +5,11 @@ name=python-bitcoinlib
 version=0.11.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/20/d2/8547580b1b9e265f99123cfd518c0b3dc1dbe5acb534076b65a5a967fa60/bitcoinlib-0.5.3.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }

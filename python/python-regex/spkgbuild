@@ -5,11 +5,11 @@ name=python-regex
 version=2021.7.6
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/c0/d1/ad6afa6000ab869f6af2c85985d40558ffb298d9fcb2ab04c0648436008f/regex-2021.7.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
