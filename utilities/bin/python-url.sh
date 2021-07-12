@@ -41,19 +41,36 @@ grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
 
 ###beta###
 
-geturl="cat url.txt | head -n 1" 
+geturl="cat url.txt | head -n 1 | sed 's/\//\\\\\//g'" 
 #eval $command
-eval $geturl
+#eval $geturl
 size=$(eval $geturl)
+new_repo=$(eval $geturl)
 check=${#size}
+
+
+get_repo_url="grep source /Voncloft-OS/python/python-$1/spkgbuild | sed 's/source=//g' | sed 's/\"//g' | sed 's/\//\\\\\//g'"
+my_repo=$(eval $get_repo_url)
+
+#eval $get_repo_url
+echo "Check: " $check
+
+
+echo "My url: "  $my_repo
+echo "New url: " $new_repo
+echo "Command to be ran"
 
 if [ $check -ge 1 ];
 then
 ##Production###
 	if [ -f $file ];
 	then
-		echo python-$1 >> python_url.txt
-		eval $geturl >> python_url.txt
+		#echo python-$1 >> python_url.txt
+		#eval $geturl >> python_url.txt
+		#sed -i -e 's/$my_repo/$new_repo/g' /Voncloft-OS/python/python-$1/spkgbuild
+		echo "sed -i -e 's/$my_repo/$new_repo/g' /Voncloft-OS/python/python-$1/spkgbuild"
+		sed -i -e "s/$my_repo/$new_repo/g" /Voncloft-OS/python/python-$1/spkgbuild
+		echo "new url written"
 		rm -v $file
 		rm -v $file.*
 	fi
