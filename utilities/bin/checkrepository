@@ -144,4 +144,6 @@ rm -v testing.txt
 rm -v test.txt
 cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
 cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
+echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+
 cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
