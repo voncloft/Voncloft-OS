@@ -15,6 +15,7 @@ cd /var/log/old
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
+mkdir -pv $logpath/over_updated
 
 rm -v index.html
 rm -v index.html.*
@@ -59,7 +60,7 @@ count=0
 
 echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e "$(date +%H)" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").log
-
+echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 while IFS=$'\n' read -ra items; do
 		for item in "${items[@]}"; do
 			for ((index=0; index <= ${#myarr[@]}; index++)); do
@@ -84,6 +85,7 @@ while IFS=$'\n' read -ra items; do
 						changelog "$item" "Upgraded from version $cversion to version $uversion"
 					else
 						echo "$item is: $cversion in my repository - internet says should be $uversion"
+						echo -e "$item is: $cversion in my repository - internet says should be $uversion<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 					fi
 				fi
   			fi
@@ -142,3 +144,4 @@ rm -v testing.txt
 rm -v test.txt
 cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
 cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").log
+cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
