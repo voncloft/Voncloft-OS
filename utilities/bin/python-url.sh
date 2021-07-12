@@ -1,7 +1,4 @@
 name=$1
-url=https://pypi.org/project/$name/#history
-url_capital=https://pypi.org/project/${name^}/#history
-
 download_link=https://pypi.org/project/$name/#files
 download_link_capital=https://pypi.org/project/${name^}/#files
 file=index.html
@@ -11,9 +8,7 @@ cd /var/log/old
 
 rm -rfv $file
 rm -rfv $file.*
-#GRAB WEBSITE
-wget $url
-wget $url_capital
+
 if [ -f test.txt ];
 then
 	rm test.txt
@@ -21,10 +16,10 @@ fi
 
 ###to get rid of <> tags in html
 #grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
-grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
+#grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
 
-rm -rfv $file
-rm -rfv $file.*
+#rm -rfv $file
+#rm -rfv $file.*
 wget $download_link
 wget $download_link_capital
 
@@ -45,21 +40,22 @@ grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
 #sed -i -e 's/v//g' test.txt
 
 ###beta###
-command="cat test.txt | sort -V -r | head -n 1"
-size=$(eval $command)
-check=${#size}
 
 geturl="cat url.txt | head -n 1" 
+#eval $command
 eval $geturl
+size=$(eval $geturl)
+check=${#size}
 
 if [ $check -ge 1 ];
 then
 ##Production###
 	if [ -f $file ];
 	then
-		echo python-$1 >> stripped_info.txt
-		eval $command >> stripped_info.txt
+		echo python-$1 >> python_url.txt
+		eval $geturl >> python_url.txt
 		rm -v $file
+		rm -v $file.*
 	fi
 fi
 
