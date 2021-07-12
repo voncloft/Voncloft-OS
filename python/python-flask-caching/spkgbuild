@@ -5,11 +5,11 @@ name=python-flask-caching
 version=1.10.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/4f/20/4a17847f37b31f24ff20d9e2731f9a947c5ea4fc8a5e410dc44fd40ff6fc/Flask-Caching-1.10.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${name#python-}-$version
+   cd *
    python setup.py build
    python setup.py install --optimize=1 --root=$PKG
  }
