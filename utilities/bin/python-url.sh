@@ -71,6 +71,8 @@ then
 		echo "sed -i -e 's/$my_repo/$new_repo/g' /Voncloft-OS/python/python-$1/spkgbuild"
 		sed -i -e "s/$my_repo/$new_repo/g" /Voncloft-OS/python/python-$1/spkgbuild
 		echo "new url written"
+		###Find way to change cd command
+		changelog python-$1 "Fixed URL"
 		rm -v $file
 		rm -v $file.*
 	fi
