@@ -2,7 +2,7 @@
 # depends : python python-alembic python-flask python-flask-script python-flask-sqlalchemy
 
 name=python-flask-migrate
-version=2.5.3
+version=3.0.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

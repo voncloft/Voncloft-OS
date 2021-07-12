@@ -2,7 +2,7 @@
 # depends : imagemagick libxml2 python
 
 name=python-wand
-version=0.6.5
+version=0.6.6
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-cairocffi python-cssselect2 python-defusedxml python-pillow python-tinycss2
 
 name=python-cairosvg
-version=2.5.1
+version=2.5.2
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

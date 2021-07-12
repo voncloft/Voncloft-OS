@@ -2,7 +2,7 @@
 # depends : perl-dbi perl freetds
 
 name=perl-dbd-sybase
-version=1.16
+version=1.18
 release=5
 
 source="https://search.cpan.org/CPAN/authors/id/M/ME/MEWP/DBD-Sybase-${version}.tar.gz"

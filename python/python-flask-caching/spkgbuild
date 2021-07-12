@@ -2,7 +2,7 @@
 # depends : python-flask
 
 name=python-flask-caching
-version=1.9.0
+version=1.10.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

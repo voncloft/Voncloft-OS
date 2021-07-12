@@ -2,7 +2,7 @@
 # depends : python python-asgiref python-pytz python-setuptools python-sqlparse
 
 name=python-django
-version=3.1.7
+version=3.2.5
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

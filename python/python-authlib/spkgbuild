@@ -2,7 +2,7 @@
 # depends : python-cryptography
 
 name=python-authlib
-version=0.15.3
+version=1.0.0
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

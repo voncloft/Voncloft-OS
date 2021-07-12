@@ -2,7 +2,7 @@
 # depends : python-flask python-sqlalchemy
 
 name=python-flask-sqlalchemy
-version=2.4.4
+version=2.5.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

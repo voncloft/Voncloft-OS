@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-configargparse
-version=1.2.3
+version=1.5.1
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

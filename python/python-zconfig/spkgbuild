@@ -1,7 +1,7 @@
 # description : Structured Configuration Library
 
 name=python-zconfig
-version=3.5.0
+version=3.6.0
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

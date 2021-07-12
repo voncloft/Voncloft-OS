@@ -2,7 +2,7 @@
 # depends : python-tzlocal python-six python-pyjsparser
 
 name=python-js2py
-version=0.70
+version=0.71
 release=3
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-six python-qtpy
 
 name=python-qtawesome
-version=0.6.0
+version=1.0.3
 release=5
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

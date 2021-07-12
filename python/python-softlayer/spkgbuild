@@ -2,7 +2,7 @@
 # depends : python-six python-ptable python-click python-requests python-prompt_toolkit
 
 name=python-softlayer
-version=5.9.2
+version=5.9.6
 release=2
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-wrapt
 
 name=python-deprecated
-version=1.2.11
+version=1.2.12
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

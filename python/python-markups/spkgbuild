@@ -2,7 +2,7 @@
 # depends : python-markdown-math python-setuptools
 
 name=python-markups
-version=3.0.0
+version=3.1.1
 release=10
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
