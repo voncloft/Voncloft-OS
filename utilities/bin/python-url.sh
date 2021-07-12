@@ -60,6 +60,7 @@ echo "My url: "  $my_repo
 echo "New url: " $new_repo
 echo "Command to be ran"
 
+#get_directory=
 if [ $check -ge 1 ];
 then
 ##Production###
@@ -72,7 +73,10 @@ then
 		sed -i -e "s/$my_repo/$new_repo/g" /Voncloft-OS/python/python-$1/spkgbuild
 		echo "new url written"
 		###Find way to change cd command
-		changelog python-$1 "Fixed URL"
+		#######changelog python-$1 "Fixed URL"
+		sed -i -e 's/cd ${name#python-}-$version/cd */g' /Voncloft-OS/python/python-$1/spkgbuild
+		changelog python-$1 "Fixed URL and directory install"
+
 		rm -v $file
 		rm -v $file.*
 	fi
