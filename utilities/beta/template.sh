@@ -12,6 +12,9 @@ then
 	rm test.txt
 fi
 
+###show url in tags
+#grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
+
 ###to get rid of <> tags in html
 #grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name > test.txt
 
@@ -33,11 +36,17 @@ fi
 ###beta###
 command="cat test.txt | sort -V -r | head -n 1 | sed 's/v//g'"
 eval $command
+size=$(eval $command)
 
-##Production###
-#if [ -f $file ];
-#then
-#	echo $name >> stripped_info.txt
-#	eval $command >> stripped_info.txt
-#	rm -v $file
-#fi
+check=${#size}
+
+if [ $check -ge 1 ];
+then
+	##Production###
+	#if [ -f $file ];
+	#then
+	#	echo $name >> stripped_info.txt
+	#	eval $command >> stripped_info.txt
+	#	rm -v $file
+	#fi
+fi
