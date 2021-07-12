@@ -5,3 +5,9 @@ Packages upgraded: 1
 04
 Packages upgraded: 0
 
+08
+sed -i -e 's/3.67/3.68/g' /Voncloft-OS/*/nss/spkgbuild
+sed -i -e 's/89.0.2/90.0/g' /Voncloft-OS/*/firefox/spkgbuild
+sed -i -e 's/8.0.0/8.0.1/g' /Voncloft-OS/*/python-tenacity/spkgbuild
+Packages upgraded: 3
+
