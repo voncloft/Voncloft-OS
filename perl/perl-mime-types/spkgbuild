@@ -2,7 +2,7 @@
 # depends : perl
 
 name=perl-mime-types
-version=2.18
+version=2.21
 release=1
 
 source="https://www.cpan.org/authors/id/M/MA/MARKOV/MIME-Types-${version}.tar.gz"

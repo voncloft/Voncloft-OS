@@ -2,7 +2,7 @@
 # depends : perl-dbi perl unixodbc
 
 name=perl-dbd-odbc
-version=1.60
+version=1.61
 release=4
 
 source="https://search.cpan.org/CPAN/authors/id/M/MJ/MJEVANS/DBD-ODBC-${version}.tar.gz"

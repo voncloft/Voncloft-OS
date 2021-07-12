@@ -1,14 +1,14 @@
-# description : Perl/CPAN Module String::CRC32 : ZMODEMlike CRC32 generation
+# description : Perl/CPAN Module String::CRC32.100 : ZMODEMlike CRC32.100 generation
 
-name=perl-string-crc32
-version=2
+name=perl-string-crc32.100
+version=2.100
 release=1
 
-source="https://cpan.metacpan.org/authors/id/L/LE/LEEJO/String-CRC32-$version.tar.gz"
+source="https://cpan.metacpan.org/authors/id/L/LE/LEEJO/String-CRC32.100-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd String-CRC32-${version}
+   cd String-CRC32.100-${version}
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

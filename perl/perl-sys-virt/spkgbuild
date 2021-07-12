@@ -2,7 +2,7 @@
 # depends : libvirt perl
 
 name=perl-sys-virt
-version=6.8.0
+version=7.5.0
 release=1
 
 source="https://cpan.metacpan.org/authors/id/D/DA/DANBERR/Sys-Virt-v$version.tar.gz"

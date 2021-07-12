@@ -2,7 +2,7 @@
 # depends : perl-capture-tiny perl-ffi-checklib perl-file-chdir perl-file-which
 
 name=perl-alien-build
-version=2.38
+version=2.41
 release=1
 
 source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-$version.tar.gz"

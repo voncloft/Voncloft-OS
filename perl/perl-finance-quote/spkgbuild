@@ -2,7 +2,7 @@
 # depends : perl-html-tree perl-html-tableextract perl-crypt-ssleay
 
 name=perl-finance-quote
-version=1.49
+version=1.51
 release=3
 
 source="https://search.cpan.org/CPAN/authors/id/E/EC/ECOCODE/Finance-Quote-$version.tar.gz"

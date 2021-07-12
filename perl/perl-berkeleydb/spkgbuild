@@ -2,7 +2,7 @@
 # depends : perl db
 
 name=perl-berkeleydb
-version=0.55
+version=0.64
 release=9
 
 source="https://search.cpan.org/CPAN/authors/id/P/PM/PMQS/BerkeleyDB-$version.tar.gz"

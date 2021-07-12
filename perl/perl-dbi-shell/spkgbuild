@@ -2,7 +2,7 @@
 # depends : perl-text-reform perl-io-tee
 
 name=perl-dbi-shell
-version=11.95
+version=11.97
 release=9
 
 source="https://www.cpan.org/authors/id/T/TL/TLOWERY/DBI-Shell-$version.tar.gz"

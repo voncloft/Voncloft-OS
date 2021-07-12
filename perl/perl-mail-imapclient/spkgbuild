@@ -2,7 +2,7 @@
 # depends : perl-parse-recdescent perl-digest-hmac
 
 name=perl-mail-imapclient
-version=3.42
+version=3.43
 release=3
 
 source="https://cpan.metacpan.org/authors/id/P/PL/PLOBBES/Mail-IMAPClient-${version}.tar.gz"

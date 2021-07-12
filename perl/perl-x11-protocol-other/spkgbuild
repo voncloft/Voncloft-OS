@@ -2,7 +2,7 @@
 # depends : perl-x11-protocol
 
 name=perl-x11-protocol-other
-version=30
+version=31
 release=6
 
 source="https://search.cpan.org/CPAN/authors/id/K/KR/KRYDE/X11-Protocol-Other-${version}.tar.gz"

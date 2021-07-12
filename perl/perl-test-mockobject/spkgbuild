@@ -2,7 +2,7 @@
 # depends : perl-universal-can.11 perl-universal-isa
 
 name=perl-test-mockobject
-version=1.20180705
+version=1.20200122
 release=2
 
 source="https://www.cpan.org/authors/id/C/CH/CHROMATIC/Test-MockObject-$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : perl-device-serialport
 
 name=perl-device-modem
-version=1.57
+version=1.59
 release=4
 
 source="https://search.cpan.org/CPAN/authors/id/C/CO/COSIMO/Device-Modem-$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : perl perl-common-sense perl-types-serialiser
 
 name=perl-json-xs
-version=4.0
+version=4.03
 release=4
 
 source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/JSON-XS-$version.tar.gz"

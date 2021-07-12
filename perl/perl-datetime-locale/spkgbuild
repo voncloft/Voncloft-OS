@@ -2,7 +2,7 @@
 # depends : perl-params-validate perl-list-moreutils
 
 name=perl-datetime-locale
-version=1.22
+version=1.32
 release=2
 
 source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : perl perl-class-data-inheritable perl-devel-stacktrace
 
 name=perl-exception-class
-version=1.44
+version=1.45
 release=4
 
 source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Exception-Class-$version.tar.gz"

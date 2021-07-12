@@ -2,7 +2,7 @@
 # depends : openssl
 
 name=perl-crypt-openssl-dsa
-version=0.19
+version=0.20
 release=9
 
 source="https://search.cpan.org/CPAN/authors/id/K/KM/KMX/Crypt-OpenSSL-DSA-$version.tar.gz"

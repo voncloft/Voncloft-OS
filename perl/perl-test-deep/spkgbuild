@@ -2,7 +2,7 @@
 # depends : perl-test-nowarnings perl-test-simple
 
 name=perl-test-deep
-version=1.128
+version=1.130
 release=3
 
 source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Test-Deep-$version.tar.gz"
