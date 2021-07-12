@@ -31,6 +31,7 @@ grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | gr
 
 ###CUSTOM COMMANDS FOR WEBSITE STRIPPING###
 sed -i -e 's/.tar.gz//g' test.txt
+sed -i -e 's/.tgz//g' test.txt
 sed -i -e 's/^/perl-/' test.txt
 
 ###beta###
