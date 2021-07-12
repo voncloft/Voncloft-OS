@@ -9,7 +9,6 @@ source="https://www.cpan.org/authors/id/J/JO/JOSEPHW/XML-Writer-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd  XML-Writer-$version
    cd XML-Writer-$version
    perl Makefile.PL
    make
