@@ -1,6 +1,8 @@
 name=$1
 url=https://pypi.org/project/$name/#history
+url_capital=https://pypi.org/project/${name^}/#history
 file=index.html
+
 echo $name
 cd /var/log/old
 
@@ -8,7 +10,7 @@ rm -rfv $file
 
 #GRAB WEBSITE
 wget $url
-
+wget $url_capital
 if [ -f test.txt ];
 then
 	rm test.txt
@@ -16,7 +18,7 @@ fi
 
 ###to get rid of <> tags in html
 #grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
-grep $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
+grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
 
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
