@@ -1,0 +1,12 @@
+00
+Packages upgraded: 0
+
+04
+sed -i -e 's/1.3.2/1.3.3/g' /Voncloft-OS/*/python-aiobotocore/spkgbuild
+Packages upgraded: 1
+
+08
+sed -i -e 's/2.12.0/2.13.0/g' /Voncloft-OS/*/python-google-api-python-client/spkgbuild
+sed -i -e 's/20.4.7/20.5.0/g' /Voncloft-OS/*/python-virtualenv/spkgbuild
+Packages upgraded: 2
+
