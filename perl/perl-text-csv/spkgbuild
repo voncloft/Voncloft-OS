@@ -2,9 +2,10 @@
 # depends : perl
 
 name=perl-text-csv
-version=0.4
+version=2.01
 release=4
 
+source="https://www.cpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.01.tar.gz"
 options="!checksum"
 
 build() {
