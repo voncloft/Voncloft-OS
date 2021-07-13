@@ -5,15 +5,11 @@ name=perl-sub-info
 version=0.002
 release=7
 
-_cpanname=Sub-Info
-_cpanname=Sub-Info
-_cpanname=Sub-Info
-_cpanname=Sub-Info
-source="https://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/$_cpanname-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/EX/EXODIST/Sub-Info-0.002.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_cpanname-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

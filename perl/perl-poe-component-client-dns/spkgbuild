@@ -5,11 +5,11 @@ name=perl-poe-component-client-dns
 version=1.054
 release=6
 
-source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-DNS-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-DNS-1.054.tar.gz"
 options="!checksum"
 
 build() {
-   cd POE-Component-Client-DNS-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

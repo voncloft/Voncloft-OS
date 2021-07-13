@@ -4,11 +4,11 @@ name=perl-gettext
 version=1.07
 release=10
 
-source="https://www.cpan.org/authors/id/J/JB/JBRIGGS/Gettext-1.07.tar.gz"
+source="https://www.cpan.org/authors/id/P/PV/PVANDRY/gettext-1.07.tar.gz"
 options="!checksum"
 
 build() {
-   cd Gettext-1.07
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

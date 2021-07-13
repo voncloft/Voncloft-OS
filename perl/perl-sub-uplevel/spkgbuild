@@ -5,11 +5,11 @@ name=perl-sub-uplevel
 version=0.2800
 release=4
 
-source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/Sub-Uplevel-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/Sub-Uplevel-0.2800.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Sub-Uplevel-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

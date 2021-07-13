@@ -4,11 +4,11 @@ name=perl-math-base85
 version=0.5
 release=3
 
-source="https://cpan.metacpan.org/authors/id/P/PT/PTC/Math-Base85-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PT/PTC/Math-Base85-0.5.tar.gz"
 options="!checksum"
 
 build() {
-   cd Math-Base85-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

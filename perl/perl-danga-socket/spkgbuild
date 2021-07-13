@@ -5,11 +5,11 @@ name=perl-danga-socket
 version=1.62
 release=9
 
-source="https://search.cpan.org/CPAN/authors/id/B/BR/BRADFITZ/Danga-Socket-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NM/NML/Danga-Socket-1.62.tar.gz"
 options="!checksum"
 
 build() {
-   cd Danga-Socket-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

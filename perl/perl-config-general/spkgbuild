@@ -5,13 +5,11 @@ name=perl-config-general
 version=2.63
 release=4
 
-_perl_namespace=Config
-_perl_module=General
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/T/TL/TLINDEN/Config-General-2.63.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

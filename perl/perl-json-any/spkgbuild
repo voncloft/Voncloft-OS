@@ -5,11 +5,11 @@ name=perl-json-any
 version=1.39
 release=5
 
-source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/JSON-Any-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/JSON-Any-1.39.tar.gz"
 options="!checksum"
 
 build() {
-	 cd JSON-Any-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

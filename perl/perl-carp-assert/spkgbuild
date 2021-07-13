@@ -5,12 +5,11 @@ name=perl-carp-assert
 version=0.21
 release=3
 
-_ddir=Carp-Assert-$version
-source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/Carp-Assert-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/Carp-Assert-0.21.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

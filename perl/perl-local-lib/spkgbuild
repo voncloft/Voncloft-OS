@@ -5,11 +5,11 @@ name=perl-local-lib
 version=2.000024
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/local-lib-$version.tar.gz"
+source="https://www.cpan.org/authors/id/H/HA/HAARG/local-lib-2.000024.tar.gz"
 options="!checksum"
 
 build() {
-   cd local-lib-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

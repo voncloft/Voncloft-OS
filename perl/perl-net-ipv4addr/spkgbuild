@@ -5,11 +5,11 @@ name=perl-net-ipv4addr
 version=0.10
 release=12
 
-source="https://www.cpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-$version.tar.gz"
+source="https://www.cpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd Net-IPv4Addr-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

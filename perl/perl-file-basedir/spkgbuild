@@ -5,11 +5,11 @@ name=perl-file-basedir
 version=0.09
 release=5
 
-source="https://search.cpan.org/CPAN/authors/id/K/KI/KIMRYAN/File-BaseDir-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/File-BaseDir-0.09.tar.gz"
 options="!checksum"
 
 build() {
-   cd File-BaseDir-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

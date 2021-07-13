@@ -5,11 +5,11 @@ name=perl-file-sharedir-projectdistdir
 version=1.000009
 release=3
 
-source="https://cpan.metacpan.org/authors/id/K/KE/KENTNL/File-ShareDir-ProjectDistDir-$version.tar.gz"
+source="https://www.cpan.org/authors/id/K/KE/KENTNL/File-ShareDir-ProjectDistDir-1.000009.tar.gz"
 options="!checksum"
 
 build() {
-   cd File-ShareDir-ProjectDistDir-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

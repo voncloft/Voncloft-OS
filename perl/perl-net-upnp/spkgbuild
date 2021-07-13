@@ -5,11 +5,11 @@ name=perl-net-upnp
 version=1.4.6
 release=1
 
-source="https://cpan.metacpan.org/authors/id/S/SK/SKONNO/Net-UPnP-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SK/SKONNO/Net-UPnP-1.4.6.tar.gz"
 options="!checksum"
 
 build() {
- cd Net-UPnP-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

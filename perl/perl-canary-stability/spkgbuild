@@ -5,15 +5,10 @@ name=perl-canary-stability
 version=2013
 release=3
 
-_realname=Canary-Stability
-_realname=Canary-Stability
-_realname=Canary-Stability
-_realname=Canary-Stability
-source="https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/${_realname}-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

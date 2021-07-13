@@ -5,11 +5,11 @@ name=perl-color-calc
 version=1.074
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/C/CF/CFAERBER/Color-Calc-$version.tar.gz"
+source="https://www.cpan.org/authors/id/C/CF/CFAERBER/Color-Calc-1.074.tar.gz"
 options="!checksum"
 
 build() {
-   cd Color-Calc-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

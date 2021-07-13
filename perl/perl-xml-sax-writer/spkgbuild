@@ -5,11 +5,11 @@ name=perl-xml-sax-writer
 version=0.57
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/P/PE/PERIGRIN/XML-SAX-Writer-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PE/PERIGRIN/XML-SAX-Writer-0.57.tar.gz"
 options="!checksum"
 
 build() {
-   cd XML-SAX-Writer-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

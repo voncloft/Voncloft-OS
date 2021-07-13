@@ -5,11 +5,11 @@ name=perl-pod-spell
 version=1.20
 release=3
 
-source="https://cpan.metacpan.org/authors/id/D/DO/DOLMEN/Pod-Spell-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DO/DOLMEN/Pod-Spell-1.20.tar.gz"
 options="!checksum"
 
 build() {
-   cd Pod-Spell-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

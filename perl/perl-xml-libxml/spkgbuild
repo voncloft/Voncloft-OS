@@ -5,11 +5,11 @@ name=perl-xml-libxml
 version=2.0207
 release=1
 
-source="https://www.cpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0207.tar.gz"
 options="!checksum"
 
 build() {
-   cd XML-LibXML-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

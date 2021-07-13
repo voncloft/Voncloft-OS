@@ -4,11 +4,11 @@ name=perl-user-identity
 version=1.00
 release=3
 
-source="https://www.cpan.org/authors/id/M/MA/MARKOV/User-Identity-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/User-Identity-1.00.tar.gz"
 options="!checksum"
 
 build() {
-   cd User-Identity-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

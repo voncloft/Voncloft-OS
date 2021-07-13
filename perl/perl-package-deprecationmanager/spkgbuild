@@ -5,11 +5,11 @@ name=perl-package-deprecationmanager
 version=0.17
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Package-DeprecationManager-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Package-DeprecationManager-0.17.tar.gz"
 options="!checksum"
 
 build() {
-   cd Package-DeprecationManager-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

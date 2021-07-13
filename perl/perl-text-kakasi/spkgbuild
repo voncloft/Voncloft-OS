@@ -5,11 +5,11 @@ name=perl-text-kakasi
 version=2.04
 release=20
 
-source="https://www.cpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DANKOGAI/Text-Kakasi-2.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Text-Kakasi-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

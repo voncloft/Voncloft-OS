@@ -5,11 +5,11 @@ name=perl-inline-cpp
 version=0.80
 release=3
 
-source="https://cpan.metacpan.org/authors/id/D/DA/DAVIDO/Inline-CPP-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DAVIDO/Inline-CPP-0.80.tar.gz"
 options="!checksum"
 
 build() {
-   cd Inline-CPP-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

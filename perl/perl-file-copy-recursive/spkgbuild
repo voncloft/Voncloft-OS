@@ -5,11 +5,11 @@ name=perl-file-copy-recursive
 version=0.45
 release=3
 
-source="https://cpan.metacpan.org/authors/id/D/DM/DMUEY/File-Copy-Recursive-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DM/DMUEY/File-Copy-Recursive-0.45.tar.gz"
 options="!checksum"
 
 build() {
-   cd File-Copy-Recursive-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

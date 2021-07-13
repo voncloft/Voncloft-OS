@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/A/AG/AGROLMS/GSSAPI-${version}.tar.gz"
 options="!checksum"
 
 build() {
-   cd GSSAPI-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

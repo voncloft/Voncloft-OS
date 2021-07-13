@@ -5,11 +5,11 @@ name=perl-object-event
 version=1.23
 release=7
 
-source="https://search.cpan.org/CPAN/authors/id/E/EL/ELMEX/Object-Event-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/EL/ELMEX/Object-Event-1.23.tar.gz"
 options="!checksum"
 
 build() {
-   cd Object-Event-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

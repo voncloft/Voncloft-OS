@@ -5,12 +5,11 @@ name=perl-file-next
 version=1.18
 release=2
 
-_ddir=File-Next-$version
-source="https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/File-Next-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PE/PETDANCE/File-Next-1.18.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

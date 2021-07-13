@@ -5,11 +5,11 @@ name=perl-perl-minimumversion
 version=1.40
 release=3
 
-source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/Perl-MinimumVersion-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DB/DBOOK/Perl-MinimumVersion-1.40.tar.gz"
 options="!checksum"
 
 build() {
-   cd Perl-MinimumVersion-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

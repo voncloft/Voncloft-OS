@@ -5,11 +5,11 @@ name=perl-class-autouse
 version=2.01
 release=5
 
-source="https://www.cpan.org/authors/id/A/AD/ADAMK/Class-Autouse-$version.tar.gz"
+source="https://www.cpan.org/authors/id/A/AD/ADAMK/Class-Autouse-2.01.tar.gz"
 options="!checksum" 
 
 build() {
-   cd  Class-Autouse-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

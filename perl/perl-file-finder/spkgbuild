@@ -5,11 +5,11 @@ name=perl-file-finder
 version=0.53
 release=7
 
-source="https://search.cpan.org/CPAN/authors/id/M/ME/MERLYN/File-Finder-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/ME/MERLYN/File-Finder-0.53.tar.gz"
 options="!checksum"
 
 build() {
-   cd File-Finder-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

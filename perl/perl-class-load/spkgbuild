@@ -5,11 +5,11 @@ name=perl-class-load
 version=0.25
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Class-Load-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Class-Load-0.25.tar.gz"
 options="!checksum"
 
 build() {
-   cd Class-Load-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -4,11 +4,11 @@ name=perl-io-tee
 version=0.66
 release=3
 
-source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/IO-Tee-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/IO-Tee-0.66.tar.gz"
 options="!checksum"
 
 build() {
-   cd IO-Tee-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

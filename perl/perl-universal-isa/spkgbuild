@@ -5,11 +5,11 @@ name=perl-universal-isa
 version=1.20171012
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/UNIVERSAL-isa-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/UNIVERSAL-isa-1.20171012.tar.gz"
 options="!checksum"
 
 build() {
-   cd  UNIVERSAL-isa-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

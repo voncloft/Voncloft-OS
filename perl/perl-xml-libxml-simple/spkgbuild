@@ -5,12 +5,11 @@ name=perl-xml-libxml-simple
 version=1.01
 release=4
 
-_dist=XML-LibXML-Simple
-source="https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-1.01.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

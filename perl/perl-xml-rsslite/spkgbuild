@@ -9,7 +9,7 @@ source="https://www.cpan.org/authors/id/J/JP/JPIERCE/XML-RSSLite-$version.source
 options="!checksum"
 
 build() {
-   cd XML-RSSLite-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

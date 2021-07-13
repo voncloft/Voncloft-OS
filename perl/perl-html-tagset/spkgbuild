@@ -5,11 +5,11 @@ name=perl-html-tagset
 version=3.20
 release=10
 
-source="https://www.cpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.20.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTML-Tagset-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

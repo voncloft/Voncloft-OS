@@ -5,11 +5,11 @@ name=perl-test-script
 version=1.29
 release=2
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Test-Script-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Test-Script-1.29.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Script-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-alien-base-modulebuild
 version=1.15
 release=1
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Base-ModuleBuild-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Alien-Base-ModuleBuild-1.15.tar.gz"
 options="!checksum"
 
 build() {
-   cd Alien-Base-ModuleBuild-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

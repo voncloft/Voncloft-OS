@@ -5,11 +5,11 @@ name=perl-email-abstract
 version=3.009
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-Abstract-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Abstract-3.009.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Email-Abstract-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -4,11 +4,11 @@ name=perl-time-human
 version=1.03
 release=11
 
-source="https://www.cpan.org/authors/id/J/JH/JHOBLITT/Time-Human-$version.tar.gz"
+source="https://www.cpan.org/authors/id/J/JH/JHOBLITT/Time-Human-1.03.tar.gz"
 options="!checksum"
 
 build() {
-   cd Time-Human-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

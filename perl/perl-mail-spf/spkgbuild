@@ -2,14 +2,14 @@
 # depends : perl-error perl-netaddr-ip perl-uri perl-net-dns perl
 
 name=perl-mail-spf
-version=2.9.0
+version=v2.9.0
 release=7
 
-source="https://search.cpan.org/CPAN/authors/id/J/JM/JMEHNLE/mail-spf/Mail-SPF-v${version}.tar.gz"
+source="https://www.cpan.org/authors/id/S/SH/SHEVEK/Mail-SPF-2.00.tar.gz"
 options="!checksum"
 
 build() {
-   cd Mail-SPF-v${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

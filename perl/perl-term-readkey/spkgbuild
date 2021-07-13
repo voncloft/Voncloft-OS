@@ -5,15 +5,10 @@ name=perl-term-readkey
 version=2.38
 release=5
 
-_realname=TermReadKey
-_realname=TermReadKey
-_realname=TermReadKey
-_realname=TermReadKey
-source="https://search.cpan.org/CPAN/authors/id/J/JS/JSTOWE/${_realname}-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd TermReadKey-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

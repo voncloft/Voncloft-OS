@@ -5,11 +5,11 @@ name=perl-test-perltidy
 version=20210709
 release=5
 
-source="https://search.cpan.org/CPAN/authors/id/L/LA/LARRYL/Test-PerlTidy-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SH/SHLOMIF/Test-PerlTidy-20210709.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-PerlTidy-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

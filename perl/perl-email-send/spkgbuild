@@ -5,11 +5,11 @@ name=perl-email-send
 version=2.201
 release=4
 
-source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Send-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Send-2.201.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Email-Send-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/common-sense-$vers
 options="!checksum"
 
 build() {
-   cd common-sense-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

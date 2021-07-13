@@ -5,11 +5,11 @@ name=perl-bit-vector
 version=7.4
 release=11
 
-source="https://search.cpan.org/CPAN/authors/id/S/ST/STBEY/Bit-Vector-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/S/ST/STBEY/Bit-Vector-7.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd Bit-Vector-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

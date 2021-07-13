@@ -5,15 +5,11 @@ name=perl-net-ssleay
 version=1.90
 release=2
 
-_cpanname=Net-SSLeay
-_cpanname=Net-SSLeay
-_cpanname=Net-SSLeay
-_cpanname=Net-SSLeay
-source="https://cpan.metacpan.org/authors/id/C/CH/CHRISN/${_cpanname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.90.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_cpanname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

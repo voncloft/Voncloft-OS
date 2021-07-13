@@ -5,11 +5,11 @@ name=perl-email-mime-contenttype
 version=1.026
 release=2
 
-source="https://www.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-MIME-ContentType-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MIME-ContentType-1.026.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Email-MIME-ContentType-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

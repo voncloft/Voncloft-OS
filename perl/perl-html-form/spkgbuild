@@ -5,11 +5,11 @@ name=perl-html-form
 version=6.07
 release=7
 
-source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Form-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/HTML-Form-6.07.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTML-Form-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

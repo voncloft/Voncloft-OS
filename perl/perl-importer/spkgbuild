@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Importer-$version.tar.
 options="!checksum"
 
 build() {
-   cd Importer-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

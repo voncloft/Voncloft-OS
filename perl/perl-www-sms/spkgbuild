@@ -5,11 +5,11 @@ name=perl-www-sms
 version=0.09
 release=12
 
-source="https://www.cpan.org/authors/id/E/EI/EIM/WWW-SMS/WWW-SMS-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/EI/EIM/WWW-SMS/WWW-SMS-0.09.tar.gz"
 options="!checksum"
 
 build() {
-   cd WWW-SMS-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

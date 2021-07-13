@@ -2,14 +2,14 @@
 # depends : libvirt perl
 
 name=perl-sys-virt
-version=7.5.0
+version=v7.5.0
 release=1
 
-source="https://cpan.metacpan.org/authors/id/D/DA/DANBERR/Sys-Virt-v$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DANBERR/Sys-Virt-vv7.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd Sys-Virt-v$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-datetime-format-strptime
 version=1.79
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-1.79.tar.gz"
 options="!checksum"
 
 build() {
-   cd DateTime-Format-Strptime-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

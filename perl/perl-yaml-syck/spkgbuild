@@ -5,11 +5,11 @@ name=perl-yaml-syck
 version=1.34
 release=1
 
-source="https://www.cpan.org/authors/id/T/TO/TODDR/YAML-Syck-$version.tar.gz"
+source="https://www.cpan.org/authors/id/T/TO/TODDR/YAML-Syck-1.34.tar.gz"
 options="!checksum"
 
 build() {
-   cd YAML-Syck-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

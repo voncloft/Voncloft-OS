@@ -5,11 +5,11 @@ name=perl-super
 version=1.20190531
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/C/CH/CHROMATIC/SUPER-$version.tar.gz"
+source="https://www.cpan.org/authors/id/C/CH/CHROMATIC/SUPER-1.20190531.tar.gz"
 options="!checksum"
 
 build() {
-   cd SUPER-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

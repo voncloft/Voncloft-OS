@@ -5,11 +5,11 @@ name=perl-net-ldap-server
 version=0.43
 release=8
 
-source="https://search.cpan.org/CPAN/authors/id/A/AA/AAR/Net-LDAP-Server-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/A/AA/AAR/Net-LDAP-Server-0.43.tar.gz"
 options="!checksum"
 
 build() {
-	 cd Net-LDAP-Server-${version}/
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

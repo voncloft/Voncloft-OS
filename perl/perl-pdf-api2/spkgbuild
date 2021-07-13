@@ -5,13 +5,11 @@ name=perl-pdf-api2
 version=2.040
 release=1
 
-_perl_namespace=PDF
-_perl_module=API2
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/S/SS/SSIMMS/PDF-API2-2.040.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

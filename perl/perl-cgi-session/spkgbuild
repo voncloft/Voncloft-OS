@@ -4,11 +4,11 @@ name=perl-cgi-session
 version=4.48
 release=7
 
-source="https://www.cpan.org/authors/id/M/MA/MARKSTOS/CGI-Session-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SH/SHERZODR/CGI-Session-4.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd CGI-Session-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

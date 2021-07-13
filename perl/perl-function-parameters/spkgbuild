@@ -5,12 +5,11 @@ name=perl-function-parameters
 version=2.001003
 release=4
 
-_ddir=Function-Parameters-$version
 source="https://search.cpan.org/CPAN/authors/id/M/MA/MAUKE/Function-Parameters-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

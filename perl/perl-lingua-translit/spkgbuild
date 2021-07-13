@@ -5,12 +5,11 @@ name=perl-lingua-translit
 version=0.28
 release=5
 
-_dist=Lingua-Translit
-source="https://search.cpan.org/CPAN/authors/id/A/AL/ALINKE/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/A/AL/ALINKE/Lingua-Translit-0.28.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

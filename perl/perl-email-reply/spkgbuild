@@ -5,11 +5,11 @@ name=perl-email-reply
 version=1.204
 release=4
 
-source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Reply-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Reply-1.204.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Email-Reply-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

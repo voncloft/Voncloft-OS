@@ -5,11 +5,11 @@ name=perl-sort-versions
 version=1.62
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/$_author/$_perlmod-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/Sort-Versions-1.62.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_perlmod-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

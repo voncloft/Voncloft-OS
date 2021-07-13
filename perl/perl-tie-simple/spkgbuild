@@ -5,15 +5,11 @@ name=perl-tie-simple
 version=1.04
 release=8
 
-_realname=Tie-Simple
-_realname=Tie-Simple
-_realname=Tie-Simple
-_realname=Tie-Simple
-source="https://cpan.metacpan.org/authors/id/H/HA/HANENKAMP/$_realname-$version.tar.gz"
+source="https://www.cpan.org/authors/id/H/HA/HANENKAMP/Tie-Simple-1.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

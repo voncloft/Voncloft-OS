@@ -5,11 +5,11 @@ name=perl-sort-naturally
 version=1.03
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Sort-Naturally-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BINGOS/Sort-Naturally-1.03.tar.gz"
 options="!checksum"
 
 build() {
-   cd Sort-Naturally-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

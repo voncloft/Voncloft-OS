@@ -5,11 +5,11 @@ name=perl-test-simple
 version=1.302185
 release=1
 
-source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302185.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Simple-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

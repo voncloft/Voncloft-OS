@@ -5,11 +5,11 @@ name=perl-fcgi
 version=0.79
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/FCGI-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/FCGI-0.79.tar.gz"
 options="!checksum"
 
 build() {
-   cd  FCGI-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

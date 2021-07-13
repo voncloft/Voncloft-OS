@@ -5,16 +5,11 @@ name=perl-extutils-helpers
 version=0.026
 release=6
 
-_name=ExtUtils-Helpers
-_name=ExtUtils-Helpers
-_name=ExtUtils-Helpers
-_name=ExtUtils-Helpers
-source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/${_name}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/L/LE/LEONT/ExtUtils-Helpers-0.026.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_name}-${version}
-   cd ${_name}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

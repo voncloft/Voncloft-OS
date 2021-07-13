@@ -2,10 +2,10 @@
 # depends : python-pandas python-lxml python-requests
 
 name=python-pandas-datareader
-version=0.9.0
+version=0.10.0
 release=2
 
-source="https://files.pythonhosted.org/packages/3e/60/233346865ffbac1d8bd0af01eeb5dba7f84be640cf3206a85722b735a972/pandas-datareader-0.9.0.tar.gz"
+source="https://files.pythonhosted.org/packages/3e/60/233346865ffbac1d8bd0af01eeb5dba7f84be640cf3206a85722b735a972/pandas-datareader-0.10.0.tar.gz"
 options="!checksum"
 
 build() {

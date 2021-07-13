@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/M/MA/MAUKE/Return-MultiLevel-$versi
 options="!checksum"
 
 build() {
-   cd Return-MultiLevel-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

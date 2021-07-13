@@ -5,11 +5,11 @@ name=perl-tie-hash-indexed
 version=0.08
 release=19
 
-source="https://www.cpan.org/authors/id/M/MH/MHX/Tie-Hash-Indexed-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/M/MH/MHX/Tie-Hash-Indexed-0.08.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Tie-Hash-Indexed-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

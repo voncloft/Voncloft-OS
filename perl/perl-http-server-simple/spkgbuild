@@ -5,11 +5,11 @@ name=perl-http-server-simple
 version=0.52
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/B/BP/BPS/HTTP-Server-Simple-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BP/BPS/HTTP-Server-Simple-0.52.tar.gz"
 options="!checksum"
 
 build() {
-   cd  HTTP-Server-Simple-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

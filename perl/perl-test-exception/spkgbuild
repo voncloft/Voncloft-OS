@@ -5,11 +5,11 @@ name=perl-test-exception
 version=0.43
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Exception-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

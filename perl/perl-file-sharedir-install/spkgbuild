@@ -4,11 +4,11 @@ name=perl-file-sharedir-install
 version=0.13
 release=4
 
-source="https://cpan.org/modules/by-module/File/File-ShareDir-Install-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.13.tar.gz"
 options="!checksum"
 
 build() {
-	 cd File-ShareDir-Install-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

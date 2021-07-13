@@ -5,12 +5,11 @@ name=perl-net-openssh
 version=0.80
 release=1
 
-_ddir=Net-OpenSSH-$version
-source="https://cpan.metacpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-0.80.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

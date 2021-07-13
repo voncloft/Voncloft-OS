@@ -5,12 +5,11 @@ name=perl-authen-pam
 version=0.16
 release=8
 
-_dist=Authen-PAM
-source="https://cpan.metacpan.org/authors/id/N/NI/NIKIP/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/N/NI/NIKIP/Authen-PAM-0.16.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_dist-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

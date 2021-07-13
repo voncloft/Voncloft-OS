@@ -5,11 +5,11 @@ name=perl-text-unidecode
 version=1.30
 release=3
 
-source="http://search.cpan.org/CPAN/authors/id/S/SB/SBURKE/Text-Unidecode-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/S/SB/SBURKE/Text-Unidecode-1.30.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Text-Unidecode-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

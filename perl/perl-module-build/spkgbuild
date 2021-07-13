@@ -5,11 +5,11 @@ name=perl-module-build
 version=0.4231
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/Module-Build-$version.tar.gz"
+source="https://www.cpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
 options="!checksum"
 
 build() {
-   cd Module-Build-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

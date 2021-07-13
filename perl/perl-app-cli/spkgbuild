@@ -5,11 +5,11 @@ name=perl-app-cli
 version=0.52
 release=3
 
-source="https://cpan.metacpan.org/authors/id/P/PT/PTC/App-CLI-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PT/PTC/App-CLI-0.52.tar.gz"
 options="!checksum"
 
 build() {
-   cd App-CLI-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

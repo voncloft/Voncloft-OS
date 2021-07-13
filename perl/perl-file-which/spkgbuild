@@ -5,15 +5,11 @@ name=perl-file-which
 version=1.27
 release=4
 
-_realname=File-Which
-_realname=File-Which
-_realname=File-Which
-_realname=File-Which
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/$_realname-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/File-Which-1.27.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

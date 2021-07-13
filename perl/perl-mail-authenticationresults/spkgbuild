@@ -5,12 +5,11 @@ name=perl-mail-authenticationresults
 version=2.20210112
 release=1
 
-_ddir=Mail-AuthenticationResults-$version
-source="https://cpan.metacpan.org/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-2.20210112.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

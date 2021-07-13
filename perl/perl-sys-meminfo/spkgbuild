@@ -5,11 +5,11 @@ name=perl-sys-meminfo
 version=0.99
 release=2
 
-source="https://cpan.metacpan.org/authors/id/S/SC/SCRESTO/Sys-MemInfo-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/S/SC/SCRESTO/Sys-MemInfo-0.99.tar.gz"
 options="!checksum"
 
 build() {
-   cd Sys-MemInfo-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

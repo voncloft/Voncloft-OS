@@ -5,11 +5,11 @@ name=perl-exception-class
 version=1.45
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Exception-Class-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Exception-Class-1.45.tar.gz"
 options="!checksum"
 
 build() {
-   cd Exception-Class-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

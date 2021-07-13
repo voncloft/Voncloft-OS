@@ -5,12 +5,11 @@ name=perl-cgi
 version=4.53
 release=1
 
-_ddir=CGI-$version
-source="https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-$version.tar.gz"
+source="https://www.cpan.org/authors/id/L/LE/LEEJO/CGI-4.53.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-specio
 version=0.47
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Specio-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Specio-0.47.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Specio-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

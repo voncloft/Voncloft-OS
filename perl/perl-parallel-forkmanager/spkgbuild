@@ -5,11 +5,11 @@ name=perl-parallel-forkmanager
 version=2.02
 release=2
 
-source="https://cpan.metacpan.org/authors/id/Y/YA/YANICK/Parallel-ForkManager-$version.tar.gz"
+source="https://www.cpan.org/authors/id/Y/YA/YANICK/Parallel-ForkManager-2.02.tar.gz"
 options="!checksum"
 
 build() {
-   cd Parallel-ForkManager-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

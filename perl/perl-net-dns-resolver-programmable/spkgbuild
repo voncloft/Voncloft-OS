@@ -5,15 +5,11 @@ name=perl-net-dns-resolver-programmable
 version=0.009
 release=6
 
-_realname=Net-DNS-Resolver-Programmable
-_realname=Net-DNS-Resolver-Programmable
-_realname=Net-DNS-Resolver-Programmable
-_realname=Net-DNS-Resolver-Programmable
-source="https://search.cpan.org/CPAN/authors/id/B/BI/BIGPRESH/${_realname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BIGPRESH/Net-DNS-Resolver-Programmable-0.009.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_realname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

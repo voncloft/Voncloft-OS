@@ -5,11 +5,11 @@ name=perl-pod-parser
 version=1.63
 release=1
 
-source="https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.63.tar.gz"
 options="!checksum"
 
 build() {
-   cd Pod-Parser-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-json-webtoken
 version=0.10
 release=5
 
-source="https://cpan.metacpan.org/authors/id/X/XA/XAICRON/JSON-WebToken-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/X/XA/XAICRON/JSON-WebToken-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd JSON-WebToken-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

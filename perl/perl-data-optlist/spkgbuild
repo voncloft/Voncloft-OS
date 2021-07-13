@@ -5,12 +5,11 @@ name=perl-data-optlist
 version=0.112
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Data-OptList-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Data-OptList-0.112.tar.gz"
 options="!checksum"
 
 build() {
-     cd Data-OptList-$version
-   cd Data-OptList-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

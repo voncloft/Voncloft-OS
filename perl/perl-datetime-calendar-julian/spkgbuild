@@ -5,12 +5,11 @@ name=perl-datetime-calendar-julian
 version=0.104
 release=6
 
-_dist=DateTime-Calendar-Julian
-source="https://search.cpan.org/CPAN/authors/id/P/PI/PIJLL/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/W/WY/WYANT/DateTime-Calendar-Julian-0.104.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

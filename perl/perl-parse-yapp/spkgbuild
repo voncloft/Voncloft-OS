@@ -5,11 +5,11 @@ name=perl-parse-yapp
 version=1.21
 release=3
 
-source="https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-$version.tar.gz"
+source="https://www.cpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz"
 options="!checksum"
 
 build() {
-   cd Parse-Yapp-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

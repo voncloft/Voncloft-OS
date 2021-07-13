@@ -5,11 +5,11 @@ name=perl-term-animation
 version=2.6
 release=7
 
-source="https://www.cpan.org/authors/id/K/KB/KBAUCOM/Term-Animation-$version.tar.gz"
+source="https://www.cpan.org/authors/id/K/KB/KBAUCOM/Term-Animation-2.6.tar.gz"
 options="!checksum"
 
 build() {
-   cd Term-Animation-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

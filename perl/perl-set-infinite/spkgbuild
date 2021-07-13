@@ -5,11 +5,11 @@ name=perl-set-infinite
 version=0.65
 release=6
 
-source="https://www.cpan.org/authors/id/F/FG/FGLOCK/Set-Infinite-$version.tar.gz"
+source="https://www.cpan.org/authors/id/F/FG/FGLOCK/Set-Infinite-0.65.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Set-Infinite-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

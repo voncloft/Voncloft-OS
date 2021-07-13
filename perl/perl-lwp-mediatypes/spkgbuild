@@ -5,11 +5,11 @@ name=perl-lwp-mediatypes
 version=6.04
 release=8
 
-source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd LWP-MediaTypes-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

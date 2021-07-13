@@ -5,11 +5,11 @@ name=perl-http-daemon
 version=6.12
 release=2
 
-source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-6.12.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTTP-Daemon-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,15 +5,11 @@ name=perl-event-execflow
 version=0.64
 release=7
 
-_realname=Event-ExecFlow
-_realname=Event-ExecFlow
-_realname=Event-ExecFlow
-_realname=Event-ExecFlow
-source="https://search.cpan.org/CPAN/authors/id/J/JR/JRED/${_realname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/J/JR/JRED/Event-ExecFlow-0.64.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_realname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

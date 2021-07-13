@@ -5,11 +5,11 @@ name=perl-x11-protocol
 version=0.56
 release=11
 
-source="https://www.cpan.org/authors/id/S/SM/SMCCAM/X11-Protocol-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SM/SMCCAM/X11-Protocol-0.56.tar.gz"
 options="!checksum"
 
 build() {
-   cd X11-Protocol-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

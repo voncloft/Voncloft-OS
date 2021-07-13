@@ -5,11 +5,11 @@ name=perl-x11-protocol-other
 version=31
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/K/KR/KRYDE/X11-Protocol-Other-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/K/KR/KRYDE/X11-Protocol-Other-31.tar.gz"
 options="!checksum"
 
 build() {
-   cd X11-Protocol-Other-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

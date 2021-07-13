@@ -5,11 +5,11 @@ name=perl-cache-memcached
 version=1.30
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/D/DO/DORMANDO/Cache-Memcached-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DO/DORMANDO/Cache-Memcached-1.30.tar.gz"
 options="!checksum"
 
 build() {
-   cd Cache-Memcached-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

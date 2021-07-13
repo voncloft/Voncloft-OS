@@ -5,11 +5,11 @@ name=perl-env-shellwords
 version=0.02
 release=3
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Env-ShellWords-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Env-ShellWords-0.02.tar.gz"
 options="!checksum"
 
 build() {
-   cd Env-ShellWords-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

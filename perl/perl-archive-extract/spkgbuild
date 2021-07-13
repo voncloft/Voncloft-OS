@@ -5,12 +5,11 @@ name=perl-archive-extract
 version=0.88
 release=2
 
-_ddir=Archive-Extract-$version
-source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Archive-Extract-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BINGOS/Archive-Extract-0.88.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

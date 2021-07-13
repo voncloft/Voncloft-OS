@@ -5,11 +5,11 @@ name=perl-sort-key
 version=1.33
 release=9
 
-source="https://search.cpan.org/CPAN/authors/id/$_author/$_perlmod-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SA/SALVA/Sort-Key-1.33.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_perlmod}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

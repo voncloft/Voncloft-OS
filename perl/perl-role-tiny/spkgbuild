@@ -9,8 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Role-Tiny-$version.ta
 options="!checksum"
 
 build() {
-     cd Role-Tiny-$version
-   cd Role-Tiny-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

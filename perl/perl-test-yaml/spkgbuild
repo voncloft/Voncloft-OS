@@ -5,11 +5,11 @@ name=perl-test-yaml
 version=1.07
 release=4
 
-source="https://www.cpan.org/authors/id/T/TI/TINITA/Test-YAML-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/T/TI/TINITA/Test-YAML-1.07.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-YAML-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

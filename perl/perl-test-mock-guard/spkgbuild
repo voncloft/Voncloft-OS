@@ -5,11 +5,11 @@ name=perl-test-mock-guard
 version=0.10
 release=3
 
-source="http://search.cpan.org/CPAN/authors/id/X/XA/XAICRON/Test-Mock-Guard-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/X/XA/XAICRON/Test-Mock-Guard-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Mock-Guard-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

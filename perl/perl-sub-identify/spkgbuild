@@ -5,11 +5,11 @@ name=perl-sub-identify
 version=0.14
 release=8
 
-source="https://search.mcpan.org/CPAN/authors/id/R/RG/RGARCIA/Sub-Identify-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RG/RGARCIA/Sub-Identify-0.14.tar.gz"
 options="!checksum"
 
 build() {
-   cd Sub-Identify-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

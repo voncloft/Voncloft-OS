@@ -5,12 +5,11 @@ name=perl-mime-charset
 version=1.012.2
 release=7
 
-_dist=MIME-Charset
-source="https://search.cpan.org/CPAN/authors/id/N/NE/NEZUMI/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEZUMI/MIME-Charset-1.012.2.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

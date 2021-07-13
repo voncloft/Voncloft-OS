@@ -5,11 +5,11 @@ name=perl-cwd-guard
 version=0.05
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/K/KA/KAZEBURO/Cwd-Guard-$version.tar.gz"
+source="https://www.cpan.org/authors/id/K/KA/KAZEBURO/Cwd-Guard-0.05.tar.gz"
 options="!checksum"
 
 build() {
-   cd Cwd-Guard-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

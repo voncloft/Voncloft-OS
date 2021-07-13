@@ -2,14 +2,14 @@
 # depends : perl
 
 name=perl-graphics-colornames
-version=3.5.0
+version=v3.5.0
 release=9
 
-source="https://search.cpan.org/CPAN/authors/id/R/RR/RRWO/Graphics-ColorNames-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/R/RR/RRWO/Graphics-ColorNames-vv3.5.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd Graphics-ColorNames-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

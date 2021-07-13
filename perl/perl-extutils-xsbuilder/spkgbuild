@@ -5,11 +5,11 @@ name=perl-extutils-xsbuilder
 version=0.28
 release=9
 
-source="https://www.cpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-0.28.tar.gz"
 options="!checksum"
 
 build() {
-   cd  ExtUtils-XSBuilder-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

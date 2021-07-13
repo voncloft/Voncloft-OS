@@ -5,11 +5,11 @@ name=perl-test-spec
 version=0.54
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/A/AK/AKZHAN/Test-Spec-$version.tar.gz"
+source="https://www.cpan.org/authors/id/A/AK/AKZHAN/Test-Spec-0.54.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Spec-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

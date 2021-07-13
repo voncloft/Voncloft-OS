@@ -5,11 +5,11 @@ name=perl-dbi
 version=1.643
 release=2
 
-source="https://www.cpan.org/authors/id/T/TI/TIMB/DBI-$version.tar.gz"
+source="https://www.cpan.org/authors/id/T/TI/TIMB/DBI-1.643.tar.gz"
 options="!checksum"
 
 build() {
-   cd DBI-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

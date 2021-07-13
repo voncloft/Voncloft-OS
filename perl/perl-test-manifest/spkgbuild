@@ -5,11 +5,11 @@ name=perl-test-manifest
 version=2.022
 release=2
 
-source="https://www.cpan.org/authors/id/B/BD/BDFOY/Test-Manifest-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.022.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Test-Manifest-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-extutils-cppguess
 version=0.23
 release=2
 
-source="https://cpan.metacpan.org/authors/id/E/ET/ETJ/ExtUtils-CppGuess-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETJ/ExtUtils-CppGuess-0.23.tar.gz"
 options="!checksum"
 
 build() {
-   cd ExtUtils-CppGuess-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

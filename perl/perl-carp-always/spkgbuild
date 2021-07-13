@@ -5,13 +5,11 @@ name=perl-carp-always
 version=0.16
 release=1
 
-_perl_namespace=Carp
-_perl_module=Always
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/F/FE/FERREIRA/Carp-Always-0.16.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

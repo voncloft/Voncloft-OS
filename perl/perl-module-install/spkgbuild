@@ -5,11 +5,11 @@ name=perl-module-install
 version=1.19
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz"
 options="!checksum"
 
 build() {
-   cd Module-Install-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

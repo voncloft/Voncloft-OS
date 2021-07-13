@@ -5,11 +5,11 @@ name=perl-params-validate
 version=1.30
 release=5
 
-source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-Validate-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-Validate-1.30.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Params-Validate-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

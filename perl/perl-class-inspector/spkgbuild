@@ -5,11 +5,11 @@ name=perl-class-inspector
 version=1.36
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/P/PL/PLICEASE/Class-Inspector-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Class-Inspector-1.36.tar.gz"
 options="!checksum"
 
 build() {
-   cd Class-Inspector-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

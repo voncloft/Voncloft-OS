@@ -5,12 +5,11 @@ name=perl-log-any
 version=1.709
 release=2
 
-_ddir=Log-Any-$version
-source="https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PR/PREACTION/Log-Any-1.709.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

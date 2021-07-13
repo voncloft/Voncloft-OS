@@ -5,12 +5,11 @@ name=perl-xml-sax
 version=1.02
 release=1
 
-source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-1.02.tar.gz"
 options="!checksum" 
 
 build() {
-   cd XML-SAX-$version
-   PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+   cd *
    make
    PERLLIB=blib/lib make install DESTDIR=$PKG
 

@@ -5,11 +5,11 @@ name=perl-sdl
 version=2.548
 release=5
 
-source="https://cpan.metacpan.org/authors/id/${_author::1}/${_author::2}/$_author/SDL-$version.tar.gz"
+source="https://www.cpan.org/authors/id/F/FR/FROGGS/SDL-2.548.tar.gz"
 options="!checksum"
 
 build() {
-   cd SDL-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

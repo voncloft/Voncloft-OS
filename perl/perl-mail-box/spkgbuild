@@ -5,11 +5,11 @@ name=perl-mail-box
 version=3.009
 release=2
 
-source="https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/Mail-Box-3.009.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Mail-Box-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

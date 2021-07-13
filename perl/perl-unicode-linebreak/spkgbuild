@@ -5,12 +5,11 @@ name=perl-unicode-linebreak
 version=2019.001
 release=3
 
-_dist=Unicode-LineBreak
-source="https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEZUMI/Unicode-LineBreak-2019.001.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

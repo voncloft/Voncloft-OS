@@ -5,12 +5,11 @@ name=perl-statistics-descriptive
 version=3.0800
 release=1
 
-_ddir=Statistics-Descriptive-$version
-source="https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Statistics-Descriptive-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SH/SHLOMIF/Statistics-Descriptive-3.0800.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

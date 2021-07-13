@@ -5,11 +5,11 @@ name=perl-email-address
 version=1.912
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-Address-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Address-1.912.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Email-Address-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

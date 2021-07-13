@@ -5,11 +5,11 @@ name=perl-alien-cmake3
 version=0.06
 release=3
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-0.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd Alien-cmake3-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

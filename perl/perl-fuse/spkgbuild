@@ -5,11 +5,11 @@ name=perl-fuse
 version=0.16.1
 release=11
 
-source="https://search.cpan.org/CPAN/authors/id/D/DP/DPATES/Fuse-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DP/DPATES/Fuse-0.16.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Fuse-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

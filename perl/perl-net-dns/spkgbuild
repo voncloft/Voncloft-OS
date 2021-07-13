@@ -5,11 +5,11 @@ name=perl-net-dns
 version=1.31
 release=1
 
-source="https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.31.tar.gz"
 options="!checksum"
 
 build() {
-   cd Net-DNS-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

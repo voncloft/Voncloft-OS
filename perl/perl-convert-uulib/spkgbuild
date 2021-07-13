@@ -5,12 +5,11 @@ name=perl-convert-uulib
 version=1.8
 release=8
 
-_dist=Convert-UUlib
-source="https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Convert-UUlib-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/M/ML/MLEHMANN/Convert-UUlib-1.8.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

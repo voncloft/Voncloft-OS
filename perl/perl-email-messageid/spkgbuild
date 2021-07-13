@@ -5,11 +5,11 @@ name=perl-email-messageid
 version=1.406
 release=4
 
-source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MessageID-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MessageID-1.406.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Email-MessageID-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

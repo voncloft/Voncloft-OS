@@ -5,11 +5,11 @@ name=perl-appconfig
 version=1.71
 release=7
 
-source="https://www.cpan.org/authors/id/N/NE/NEILB/AppConfig-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/AppConfig-1.71.tar.gz"
 options="!checksum"
 
 build() {
-   cd AppConfig-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

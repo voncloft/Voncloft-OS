@@ -5,11 +5,11 @@ name=perl-clone
 version=0.45
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/A/AT/ATOOMIC/Clone-$version.tar.gz"
+source="https://www.cpan.org/authors/id/A/AT/ATOOMIC/Clone-0.45.tar.gz"
 options="!checksum"
 
 build() {
-   cd Clone-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

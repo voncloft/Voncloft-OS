@@ -5,12 +5,11 @@ name=perl-tie-cycle
 version=1.226
 release=5
 
-_dist=Tie-Cycle
-source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/B/BD/BDFOY/Tie-Cycle-1.226.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

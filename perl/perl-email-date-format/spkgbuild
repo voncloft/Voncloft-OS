@@ -5,11 +5,11 @@ name=perl-email-date-format
 version=1.005
 release=7
 
-source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Date-Format-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Date-Format-1.005.tar.gz"
 options="!checksum"
 
 build() {
-   cd Email-Date-Format-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

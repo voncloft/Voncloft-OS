@@ -5,15 +5,11 @@ name=perl-list-compare
 version=0.55
 release=1
 
-_name=List-Compare
-_name=List-Compare
-_name=List-Compare
-_name=List-Compare
-source="http://search.cpan.org/CPAN/authors/id/J/JK/JKEENAN/${_name}-$version.tar.gz"
+source="https://www.cpan.org/authors/id/J/JK/JKEENAN/List-Compare-0.55.tar.gz"
 options="!checksum" 
 
 build() {
-   cd $_name-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

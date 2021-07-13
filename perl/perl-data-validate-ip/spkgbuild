@@ -5,11 +5,11 @@ name=perl-data-validate-ip
 version=0.30
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Data-Validate-IP-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Data-Validate-IP-0.30.tar.gz"
 options="!checksum"
 
 build() {
-   cd Data-Validate-IP-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

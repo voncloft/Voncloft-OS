@@ -5,11 +5,11 @@ name=perl-html-parser
 version=3.76
 release=1
 
-source="https://www.cpan.org/authors/id/C/CA/CAPOEIRAB/HTML-Parser-$version.tar.gz"
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.76.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTML-Parser-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

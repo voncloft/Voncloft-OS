@@ -5,12 +5,11 @@ name=perl-linux-pid
 version=0.04
 release=13
 
-source="https://search.cpan.org/CPAN/authors/id/R/RG/RGARCIA/Linux-Pid-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RG/RGARCIA/Linux-Pid-0.04.tar.gz"
 options="!checksum"
 
 build() {
-     cd Linux-Pid-$version
-   cd Linux-Pid-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

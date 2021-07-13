@@ -5,15 +5,11 @@ name=perl-string-shellquote
 version=1.04
 release=6
 
-_realname=String-ShellQuote
-_realname=String-ShellQuote
-_realname=String-ShellQuote
-_realname=String-ShellQuote
-source="https://search.cpan.org/CPAN/authors/id/R/RO/ROSCH/$_realname-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_realname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

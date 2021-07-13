@@ -5,11 +5,11 @@ name=perl-text-iconv
 version=1.7
 release=19
 
-source="https://www.cpan.org/authors/id/M/MP/MPIOTR/Text-Iconv-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MP/MPIOTR/Text-Iconv-1.7.tar.gz"
 options="!checksum" 
 
 build() {
-   cd Text-Iconv-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

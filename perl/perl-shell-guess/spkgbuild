@@ -5,11 +5,11 @@ name=perl-shell-guess
 version=0.09
 release=3
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Shell-Guess-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Shell-Guess-0.09.tar.gz"
 options="!checksum"
 
 build() {
-   cd Shell-Guess-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

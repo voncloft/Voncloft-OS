@@ -9,7 +9,7 @@ source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/PkgConfig-$version.ta
 options="!checksum"
 
 build() {
-   cd PkgConfig-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

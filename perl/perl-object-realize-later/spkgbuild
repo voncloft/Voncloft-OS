@@ -4,11 +4,11 @@ name=perl-object-realize-later
 version=0.21
 release=3
 
-source="https://www.cpan.org/authors/id/M/MA/MARKOV/Object-Realize-Later-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/Object-Realize-Later-0.21.tar.gz"
 options="!checksum"
 
 build() {
-   cd Object-Realize-Later-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

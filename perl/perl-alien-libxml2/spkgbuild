@@ -5,11 +5,11 @@ name=perl-alien-libxml2
 version=0.17
 release=1
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Libxml2-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Alien-Libxml2-0.17.tar.gz"
 options="!checksum"
 
 build() {
-   cd Alien-Libxml2-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

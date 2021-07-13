@@ -5,11 +5,11 @@ name=perl-algorithm-diff
 version=1.1903
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/T/TY/TYEMQ/Algorithm-Diff-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Algorithm-Diff-1.201.tar.gz"
 options="!checksum"
 
 build() {
-   cd Algorithm-Diff-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

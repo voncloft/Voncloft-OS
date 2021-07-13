@@ -5,11 +5,11 @@ name=perl-cgi-formbuilder
 version=3.10
 release=3
 
-source="https://cpan.metacpan.org/authors/id/B/BI/BIGPRESH/CGI-FormBuilder-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BIGPRESH/CGI-FormBuilder-3.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd CGI-FormBuilder-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

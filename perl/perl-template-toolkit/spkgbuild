@@ -5,11 +5,11 @@ name=perl-template-toolkit
 version=3.009
 release=1
 
-source="https://search.cpan.org/CPAN/authors/id/A/AT/ATOOMIC/Template-Toolkit-$version.tar.gz"
+source="https://www.cpan.org/authors/id/A/AT/ATOOMIC/Template-Toolkit-3.009.tar.gz"
 options="!checksum"
 
 build() {
-   cd Template-Toolkit-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

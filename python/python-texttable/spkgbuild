@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-texttable
-version=1.6.3
+version=1.6.4
 release=3
 
-source="https://github.com/foutaise/texttable/archive/v1.6.3.tar.gz"
+source="https://github.com/foutaise/texttable/archive/v1.6.4.tar.gz"
 options="!checksum"
 
 build() {

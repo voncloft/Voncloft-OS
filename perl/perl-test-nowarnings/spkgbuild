@@ -5,11 +5,11 @@ name=perl-test-nowarnings
 version=1.04
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/Test-NoWarnings-$version.tar.gz"
+source="https://www.cpan.org/authors/id/A/AD/ADAMK/Test-NoWarnings-1.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Test-NoWarnings-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

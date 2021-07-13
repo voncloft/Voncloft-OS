@@ -5,15 +5,11 @@ name=perl-carp-clan
 version=6.08
 release=3
 
-_realname=Carp-Clan
-_realname=Carp-Clan
-_realname=Carp-Clan
-_realname=Carp-Clan
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/$_realname-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Carp-Clan-6.08.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_realname-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

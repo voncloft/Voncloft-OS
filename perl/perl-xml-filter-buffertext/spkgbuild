@@ -5,11 +5,11 @@ name=perl-xml-filter-buffertext
 version=1.01
 release=9
 
-source="https://search.cpan.org/CPAN/authors/id/R/RB/RBERJON/XML-Filter-BufferText-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RB/RBERJON/XML-Filter-BufferText-1.01.tar.gz"
 options="!checksum"
 
 build() {
-   cd XML-Filter-BufferText-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

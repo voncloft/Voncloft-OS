@@ -5,11 +5,11 @@ name=perl-net-jabber
 version=2.0
 release=11
 
-source="https://www.cpan.org/authors/id/R/RE/REATMON/Net-Jabber-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RE/REATMON/Net-Jabber-2.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd Net-Jabber-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

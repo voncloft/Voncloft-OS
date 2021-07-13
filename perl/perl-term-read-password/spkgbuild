@@ -9,7 +9,7 @@ source="https://cpan.org/modules/by-module/Term/Term-ReadPassword-$version.tar.g
 options="!checksum"
 
 build() {
-   cd Term-ReadPassword-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

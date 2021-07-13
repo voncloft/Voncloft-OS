@@ -5,11 +5,11 @@ name=perl-data-hexdump
 version=0.04
 release=7
 
-source="https://www.cpan.org/authors/id/F/FT/FTASSIN/Data-HexDump-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/Data-HexDump-0.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Data-HexDump-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

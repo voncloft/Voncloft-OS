@@ -5,12 +5,11 @@ name=perl-package-constants
 version=0.06
 release=6
 
-_distdir=Package-Constants-$version
-source="https://search.mcpan.org/CPAN/authors/id/B/BI/BINGOS/Package-Constants-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BINGOS/Package-Constants-0.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_distdir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

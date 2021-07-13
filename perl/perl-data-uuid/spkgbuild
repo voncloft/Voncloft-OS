@@ -5,13 +5,11 @@ name=perl-data-uuid
 version=1.226
 release=8
 
-_perl_namespace=Data
-_perl_module=UUID
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Data-UUID-1.226.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

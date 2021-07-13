@@ -5,12 +5,11 @@ name=perl-module-pluggable
 version=5.2
 release=6
 
-_ddir=Module-Pluggable-$version
-source="https://search.cpan.org/CPAN/authors/id/S/SI/SIMONW/Module-Pluggable-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

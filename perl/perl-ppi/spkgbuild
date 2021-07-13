@@ -5,11 +5,11 @@ name=perl-ppi
 version=1.270
 release=2
 
-source="https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/PPI-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MI/MITHALDU/PPI-1.270.tar.gz"
 options="!checksum"
 
 build() {
-   cd PPI-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

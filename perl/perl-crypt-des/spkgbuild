@@ -5,11 +5,11 @@ name=perl-crypt-des
 version=2.07
 release=11
 
-source="https://www.cpan.org/authors/id/D/DP/DPARIS/Crypt-DES-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DP/DPARIS/Crypt-DES-2.07.tar.gz"
 options="!checksum"
 
 build() {
-   cd Crypt-DES-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

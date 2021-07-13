@@ -4,13 +4,12 @@
 name=perl-xml-simple
 version=2.25
 release=5
-_prn=perl-XML-Simple
 
-source="https://www.cpan.org/authors/id/G/GR/GRANTM/${_realname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-Simple-2.25.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${prn#perl-}-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

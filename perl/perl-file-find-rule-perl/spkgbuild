@@ -5,11 +5,11 @@ name=perl-file-find-rule-perl
 version=1.15
 release=3
 
-source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-Find-Rule-Perl-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/File-Find-Rule-Perl-1.15.tar.gz"
 options="!checksum"
 
 build() {
-   cd File-Find-Rule-Perl-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

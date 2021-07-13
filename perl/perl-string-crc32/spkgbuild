@@ -4,11 +4,11 @@ name=perl-string-crc32.100
 version=2.100
 release=1
 
-source="https://cpan.metacpan.org/authors/id/L/LE/LEEJO/String-CRC32.100-$version.tar.gz"
+source="https://www.cpan.org/authors/id/L/LE/LEEJO/String-CRC32-2.100.tar.gz"
 options="!checksum"
 
 build() {
-   cd String-CRC32.100-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

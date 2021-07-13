@@ -5,11 +5,11 @@ name=perl-dbd-pg
 version=3.15.0
 release=2
 
-source="https://www.cpan.org/authors/id/T/TU/TURNSTEP/DBD-Pg-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/T/TU/TURNSTEP/DBD-Pg-3.15.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd  DBD-Pg-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

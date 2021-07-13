@@ -4,11 +4,11 @@ name=perl-ipc-shareable
 version=1.04
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/M/MS/MSOUTH/IPC-Shareable-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/ST/STEVEB/IPC-Shareable-1.04.tar.gz"
 options="!checksum"
 
 build() {
-   cd IPC-Shareable-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

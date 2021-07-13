@@ -5,11 +5,11 @@ name=perl-poe-component-client-keepalive
 version=0.272
 release=7
 
-source="https://search.cpan.org/CPAN/authors/id/R/RC/RCAPUTO/POE-Component-Client-Keepalive-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-Keepalive-0.272.tar.gz"
 options="!checksum"
 
 build() {
-   cd POE-Component-Client-Keepalive-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

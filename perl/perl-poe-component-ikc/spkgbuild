@@ -5,11 +5,11 @@ name=perl-poe-component-ikc
 version=0.2402
 release=6
 
-source="https://www.cpan.org/authors/id/G/GW/GWYN/POE-Component-IKC-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GW/GWYN/POE-Component-IKC-0.2402.tar.gz"
 options="!checksum"
 
 build() {
-   cd POE-Component-IKC-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

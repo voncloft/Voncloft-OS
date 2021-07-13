@@ -5,11 +5,11 @@ name=perl-html-tableextract
 version=2.15
 release=4
 
-source="https://www.cpan.org/authors/id/M/MS/MSISK/HTML-TableExtract-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MS/MSISK/HTML-TableExtract-2.15.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTML-TableExtract-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

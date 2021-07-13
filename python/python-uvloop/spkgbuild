@@ -2,10 +2,10 @@
 # depends : python libuv
 
 name=python-uvloop
-version=0.15.2
+version=0.15.3
 release=3
 
-source="https://files.pythonhosted.org/packages/44/6e/0cb292e4e6ee1382e2ede458f90c94b4f990b261f738403ac45cb8183bc2/uvloop-0.15.2.tar.gz"
+source="https://files.pythonhosted.org/packages/44/6e/0cb292e4e6ee1382e2ede458f90c94b4f990b261f738403ac45cb8183bc2/uvloop-0.15.3.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,11 +5,11 @@ name=perl-net-http
 version=6.21
 release=1
 
-source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-$version.tar.gz"
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.21.tar.gz"
 options="!checksum"
 
 build() {
-     cd Net-HTTP-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

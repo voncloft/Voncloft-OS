@@ -5,11 +5,11 @@ name=perl-math-round
 version=0.07
 release=4
 
-source="https://www.cpan.org/authors/id/G/GR/GROMMEL/Math-Round-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GR/GROMMEL/Math-Round-0.07.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Math-Round-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

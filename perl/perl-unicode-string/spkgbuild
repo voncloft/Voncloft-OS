@@ -5,15 +5,11 @@ name=perl-unicode-string
 version=2.10
 release=4
 
-_realname=Unicode-String
-_realname=Unicode-String
-_realname=Unicode-String
-_realname=Unicode-String
-source="https://cpan.metacpan.org/authors/id/G/GA/GAAS/GAAS/Unicode-String-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/G/GA/GAAS/GAAS/Unicode-String-2.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd Unicode-String-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

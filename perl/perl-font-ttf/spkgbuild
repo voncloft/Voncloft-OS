@@ -5,11 +5,11 @@ name=perl-font-ttf
 version=1.06
 release=4
 
-source="https://cpan.metacpan.org/authors/id/B/BH/BHALLISSY/Font-TTF-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BH/BHALLISSY/Font-TTF-1.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perlmod}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

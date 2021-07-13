@@ -5,15 +5,11 @@ name=perl-sgmls
 version=1.1
 release=7
 
-_cpanname=SGMLSpm
-_cpanname=SGMLSpm
-_cpanname=SGMLSpm
-_cpanname=SGMLSpm
 source="https://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-$version.tar.gz"
 options="!checksum"
 
 build() {
-	 cd $_cpanname-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

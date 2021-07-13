@@ -5,11 +5,11 @@ name=perl-http-response-encoding
 version=0.06
 release=6
 
-source="https://www.cpan.org/authors/id/D/DA/DANKOGAI/HTTP-Response-Encoding-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DANKOGAI/HTTP-Response-Encoding-0.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTTP-Response-Encoding-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,12 +5,11 @@ name=perl-crypt-random-tesha2
 version=0.01
 release=6
 
-_ddir=Crypt-Random-TESHA2-$version
-source="https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-TESHA2-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DANAJ/Crypt-Random-TESHA2-0.01.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

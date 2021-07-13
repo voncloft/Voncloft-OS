@@ -5,11 +5,11 @@ name=perl-sub-install
 version=0.928
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Sub-Install-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Sub-Install-0.928.tar.gz"
 options="!checksum"
 
 build() {
-   cd Sub-Install-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

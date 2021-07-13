@@ -5,11 +5,11 @@ name=perl-test-mockobject
 version=1.20200122
 release=2
 
-source="https://www.cpan.org/authors/id/C/CH/CHROMATIC/Test-MockObject-$version.tar.gz"
+source="https://www.cpan.org/authors/id/C/CH/CHROMATIC/Test-MockObject-1.20200122.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Test-MockObject-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

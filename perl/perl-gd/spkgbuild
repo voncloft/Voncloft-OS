@@ -5,11 +5,11 @@ name=perl-gd
 version=3dbargrapher
 release=1
 
-source="https://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/GD-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RU/RURBAN/GD-2.73.tar.gz"
 options="!checksum"
 
 build() {
-   cd  GD-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,12 @@ name=perl-acme-alien-dontpanic
 version=2.2900
 release=1
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Acme-Alien-DontPanic-$version.tarsource=.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Acme-Alien-DontPanic-2.2900.tar.gz"
 options="!checksum"
 
 build() {
-   cd Acme-Alien-DontPanic-$version
+   cd *
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

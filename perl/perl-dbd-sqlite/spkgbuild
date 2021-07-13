@@ -5,11 +5,11 @@ name=perl-dbd-sqlite
 version=1.66
 release=1
 
-source="https://www.cpan.org/authors/id/I/IS/ISHIGAKI/DBD-SQLite-$version.tar.gz"
+source="https://www.cpan.org/authors/id/I/IS/ISHIGAKI/DBD-SQLite-1.66.tar.gz"
 options="!checksum"
 
 build() {
-   cd DBD-SQLite-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

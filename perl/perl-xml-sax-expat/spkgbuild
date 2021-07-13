@@ -5,12 +5,11 @@ name=perl-xml-sax-expat
 version=0.51
 release=7
 
-source="https://www.cpan.org/authors/id/B/BJ/BJOERN/XML-SAX-Expat-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BJ/BJOERN/XML-SAX-Expat-0.51.tar.gz"
 options="!checksum"
 
 build() {
-   cd  XML-SAX-Expat-$version
-   PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+   cd *
    make
    make DESTDIR=$PKG install
 

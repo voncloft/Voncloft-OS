@@ -5,11 +5,11 @@ name=perl-par-packer
 version=1.052
 release=1
 
-source="https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/PAR-Packer-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/R/RS/RSCHUPP/PAR-Packer-1.052.tar.gz"
 options="!checksum"
 
 build() {
-   cd PAR-Packer-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

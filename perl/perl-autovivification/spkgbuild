@@ -5,12 +5,11 @@ name=perl-autovivification
 version=0.18
 release=6
 
-_dist=autovivification
 source="https://www.cpan.org/authors/id/V/VP/VPIT/autovivification-$version.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

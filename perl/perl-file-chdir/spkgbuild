@@ -5,11 +5,11 @@ name=perl-file-chdir
 version=0.1011
 release=4
 
-source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/File-chdir-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/File-chdir-0.1010.tar.gz"
 options="!checksum"
 
 build() {
-   cd  File-chdir-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-alien-sdl
 version=1.446
 release=10
 
-source="https://cpan.metacpan.org/authors/id/F/FR/FROGGS/Alien-SDL-$version.tar.gz"
+source="https://www.cpan.org/authors/id/F/FR/FROGGS/Alien-SDL-1.446.tar.gz"
 options="!checksum"
 
 build() {
-   cd Alien-SDL-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

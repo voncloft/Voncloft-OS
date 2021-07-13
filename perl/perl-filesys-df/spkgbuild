@@ -5,13 +5,11 @@ name=perl-filesys-df
 version=0.92
 release=11
 
-_perl_namespace=Filesys
-_perl_module=Df
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/I/IG/IGUTHRIE/Filesys-Df-0.92.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

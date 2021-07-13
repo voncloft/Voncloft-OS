@@ -5,11 +5,11 @@ name=perl-io-socket-ssl
 version=2.071
 release=2
 
-source="https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.071.tar.gz"
 options="!checksum"
 
 build() {
-   cd IO-Socket-SSL-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

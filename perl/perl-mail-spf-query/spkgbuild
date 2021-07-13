@@ -5,15 +5,11 @@ name=perl-mail-spf-query
 version=1.999.1
 release=11
 
-_realname=Mail-SPF-Query
-_realname=Mail-SPF-Query
-_realname=Mail-SPF-Query
-_realname=Mail-SPF-Query
-source="https://search.cpan.org/CPAN/authors/id/J/JM/JMEHNLE/mail-spf-query/${_realname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/J/JM/JMEHNLE/mail-spf-query/Mail-SPF-Query-1.999.1.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_realname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

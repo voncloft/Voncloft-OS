@@ -5,11 +5,11 @@ name=perl-time-duration
 version=1.21
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Time-Duration-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/Time-Duration-1.21.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Time-Duration-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

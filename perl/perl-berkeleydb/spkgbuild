@@ -5,11 +5,11 @@ name=perl-berkeleydb
 version=0.64
 release=9
 
-source="https://search.cpan.org/CPAN/authors/id/P/PM/PMQS/BerkeleyDB-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PM/PMQS/BerkeleyDB-0.64.tar.gz"
 options="!checksum"
 
 build() {
-   cd BerkeleyDB-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

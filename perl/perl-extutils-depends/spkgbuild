@@ -7,11 +7,11 @@ name=perl-extutils-depends
 version=0.8001
 release=4
 
-source="https://www.cpan.org/authors/id/X/XA/XAOC/ExtUtils-Depends-$version.tar.gz"
+source="https://www.cpan.org/authors/id/X/XA/XAOC/ExtUtils-Depends-0.8001.tar.gz"
 options="!checksum"
 
 build() {
-   cd ExtUtils-Depends-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

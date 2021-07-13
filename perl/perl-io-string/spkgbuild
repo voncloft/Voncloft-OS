@@ -5,11 +5,11 @@ name=perl-io-string
 version=1.08
 release=12
 
-source="https://www.cpan.org/authors/id/G/GA/GAAS/IO-String-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GA/GAAS/IO-String-1.08.tar.gz"
 options="!checksum"
 
 build() {
-   cd  IO-String-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

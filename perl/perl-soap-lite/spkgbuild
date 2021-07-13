@@ -5,11 +5,11 @@ name=perl-soap-lite
 version=1.27
 release=5
 
-source="https://search.cpan.org/CPAN/authors/id/P/PH/PHRED/SOAP-Lite-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/B/BY/BYRNE/SOAP/SOAP-Lite-0.60a.tar.gz"
 options="!checksum"
 
 build() {
-   cd  SOAP-Lite-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

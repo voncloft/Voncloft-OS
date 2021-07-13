@@ -5,12 +5,11 @@ name=perl-net-dns-resolver-mock
 version=1.20200215
 release=3
 
-_ddir=Net-DNS-Resolver-Mock-$version
-source="https://cpan.metacpan.org/authors/id/M/MB/MBRADSHAW/Net-DNS-Resolver-Mock-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MB/MBRADSHAW/Net-DNS-Resolver-Mock-1.20200215.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-lingua-en-numbers
 version=2.03
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Lingua-EN-Numbers-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/Lingua-EN-Numbers-2.03.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Lingua-EN-Numbers-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-alien-build
 version=2.41
 release=1
 
-source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-$version.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Alien-Build-2.41.tar.gz"
 options="!checksum"
 
 build() {
-   cd Alien-Build-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

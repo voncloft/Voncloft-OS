@@ -5,11 +5,11 @@ name=perl-io-captureoutput
 version=1.1105
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/IO-CaptureOutput-$version.tar.gz"
+source="https://www.cpan.org/authors/id/S/SI/SIMONFLK/IO-CaptureOutput-1.03.tar.gz"
 options="!checksum"
 
 build() {
-   cd IO-CaptureOutput-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

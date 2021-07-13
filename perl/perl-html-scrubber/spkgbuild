@@ -5,11 +5,11 @@ name=perl-html-scrubber
 version=0.19
 release=3
 
-source="https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-0.19.tar.gz"
 options="!checksum"
 
 build() {
-   cd  HTML-Scrubber-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

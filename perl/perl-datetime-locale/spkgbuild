@@ -5,11 +5,11 @@ name=perl-datetime-locale
 version=1.32
 release=2
 
-source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.32.tar.gz"
 options="!checksum"
 
 build() {
-   cd  DateTime-Locale-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

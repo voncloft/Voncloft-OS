@@ -5,11 +5,11 @@ name=perl-mime-types
 version=2.21
 release=1
 
-source="https://www.cpan.org/authors/id/M/MA/MARKOV/MIME-Types-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.21.tar.gz"
 options="!checksum"
 
 build() {
-   cd MIME-Types-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

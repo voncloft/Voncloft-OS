@@ -5,11 +5,11 @@ name=perl-cpan-meta-check
 version=0.014
 release=6
 
-source="https://cpan.metacpan.org/authors/id/L/LE/LEONT/CPAN-Meta-Check-$version.tar.gz"
+source="https://www.cpan.org/authors/id/L/LE/LEONT/CPAN-Meta-Check-0.014.tar.gz"
 options="!checksum"
 
 build() {
-   cd CPAN-Meta-Check-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

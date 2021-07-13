@@ -5,11 +5,11 @@ name=perl-lingua-preferred
 version=0.2.4
 release=8
 
-source="https://www.cpan.org/authors/id/E/ED/EDAVIS/Lingua-Preferred-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ED/EDAVIS/Lingua-Preferred-0.2.4.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Lingua-Preferred-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

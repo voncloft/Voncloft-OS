@@ -5,11 +5,11 @@ name=perl-algorithm-annotate
 version=0.10
 release=11
 
-source="https://www.cpan.org/authors/id/C/CL/CLKAO/Algorithm-Annotate-$version.tar.gz"
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/Algorithm-Annotate-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd Algorithm-Annotate-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,12 +5,11 @@ name=perl-mail-message
 version=3.010
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/Mail-Message-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/Mail-Message-3.010.tar.gz"
 options="!checksum"
 
 build() {
-     cd Mail-Message-$version
-   cd Mail-Message-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,12 +5,11 @@ name=perl-cpanplus
 version=0.9910
 release=1
 
-_ddir=CPANPLUS-$version
-source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/CPANPLUS-$version.tar.gz"
+source="https://www.cpan.org/authors/id/K/KA/KANE/CPANPLUS-0.84.tar.gz"
 options="!checksum"
 
 build() {
-   cd $_ddir
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,15 +5,11 @@ name=perl-params-validationcompiler
 version=0.30
 release=3
 
-_name=Params-ValidationCompiler
-_name=Params-ValidationCompiler
-_name=Params-ValidationCompiler
-_name=Params-ValidationCompiler
-source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_name}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

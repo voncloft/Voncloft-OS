@@ -5,11 +5,11 @@ name=perl-b-hooks-endofscope
 version=0.24
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/B-Hooks-EndOfScope-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/B-Hooks-EndOfScope-0.24.tar.gz"
 options="!checksum"
 
 build() {
-   cd B-Hooks-EndOfScope-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

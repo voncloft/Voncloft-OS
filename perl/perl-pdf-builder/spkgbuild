@@ -5,13 +5,11 @@ name=perl-pdf-builder
 version=3.022
 release=1
 
-_perl_namespace=PDF
-_perl_module=Builder
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/P/PM/PMPERRY/PDF-Builder-3.022.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

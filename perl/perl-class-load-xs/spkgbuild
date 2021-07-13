@@ -5,15 +5,11 @@ name=perl-class-load-xs
 version=0.10
 release=8
 
-_name=Class-Load-XS
-_name=Class-Load-XS
-_name=Class-Load-XS
-_name=Class-Load-XS
-source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Class-Load-XS-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Class-Load-XS-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd Class-Load-XS-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

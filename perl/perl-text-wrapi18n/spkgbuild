@@ -5,16 +5,11 @@ name=perl-text-wrapi18n
 version=0.06
 release=9
 
-_realname=Text-WrapI18N
-_realname=Text-WrapI18N
-_realname=Text-WrapI18N
-_realname=Text-WrapI18N
-source="https://search.cpan.org/CPAN/authors/id/K/KU/KUBOTA/${_realname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/K/KU/KUBOTA/Text-WrapI18N-0.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd  ${_realname}-${version}
-   cd ${_realname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-mail-domainkeys
 version=1.0
 release=8
 
-source="https://www.cpan.org/authors/id/A/AN/ANTHONYU/Mail-DomainKeys-$version.tar.gz"
+source="https://www.cpan.org/authors/id/A/AN/ANTHONYU/Mail-DomainKeys-1.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Mail-DomainKeys-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-anyevent
 version=7.17
 release=3
 
-source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/AnyEvent-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/ML/MLEHMANN/AnyEvent-7.17.tar.gz"
 options="!checksum"
 
 build() {
-   cd AnyEvent-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

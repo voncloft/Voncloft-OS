@@ -4,11 +4,11 @@ name=perl-net-ipv6addr
 version=1.02
 release=12
 
-source="https://www.cpan.org/authors/id/T/TM/TMONROE/Net-IPv6Addr-1.02.tar.gz"
+source="https://www.cpan.org/authors/id/B/BK/BKB/Net-IPv6Addr-1.02.tar.gz"
 options="!checksum"
 
 build() {
-   cd Net-IPv6Addr-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

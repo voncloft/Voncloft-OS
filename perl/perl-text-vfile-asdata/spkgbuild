@@ -5,11 +5,11 @@ name=perl-text-vfile-asdata
 version=0.08
 release=7
 
-source="https://www.cpan.org/authors/id/R/RC/RCLAMP/Text-vFile-asData-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RC/RCLAMP/Text-vFile-asData-0.08.tar.gz"
 options="!checksum"
 
 build() {
-   cd Text-vFile-asData-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

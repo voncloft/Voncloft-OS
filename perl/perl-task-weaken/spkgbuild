@@ -5,11 +5,11 @@ name=perl-task-weaken
 version=1.06
 release=3
 
-source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Task-Weaken-$version.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Task-Weaken-1.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd Task-Weaken-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

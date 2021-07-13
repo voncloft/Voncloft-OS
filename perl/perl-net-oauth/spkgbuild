@@ -5,11 +5,11 @@ name=perl-net-oauth
 version=0.28
 release=10
 
-source="https://search.cpan.org/CPAN/authors/id/K/KG/KGRENNAN/Net-OAuth-$version.tar.gz"
+source="https://www.cpan.org/authors/id/K/KG/KGRENNAN/Net-OAuth-0.28.tar.gz"
 options="!checksum"
 
 build() {
-   cd Net-OAuth-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

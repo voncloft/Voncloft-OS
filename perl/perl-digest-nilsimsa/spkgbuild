@@ -5,11 +5,11 @@ name=perl-digest-nilsimsa
 version=0.06
 release=20
 
-source="https://www.cpan.org/authors/id/V/VI/VIPUL/Digest-Nilsimsa-$version.tar.gz"
+source="https://www.cpan.org/authors/id/V/VI/VIPUL/Digest-Nilsimsa-0.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd Digest-Nilsimsa-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

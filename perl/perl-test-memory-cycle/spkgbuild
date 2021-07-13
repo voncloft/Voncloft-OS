@@ -5,13 +5,11 @@ name=perl-test-memory-cycle
 version=1.06
 release=2
 
-_perl_namespace=Test
-_perl_module=Memory-Cycle
-source="https://www.cpan.org/modules/by-module/${_perl_namespace}/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/P/PE/PETDANCE/Test-Memory-Cycle-1.06.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

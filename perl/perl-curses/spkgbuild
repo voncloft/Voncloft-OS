@@ -5,11 +5,11 @@ name=perl-curses
 version=1.37
 release=8
 
-source="https://search.cpan.org/CPAN/authors/id/G/GI/GIRAFFED/Curses-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GI/GIRAFFED/Curses-1.37.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Curses-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,13 +5,11 @@ name=perl-archive-cpio
 version=0.10
 release=5
 
-_cpanname=Archive-Cpio
-_cpanname=Archive-Cpio
-source="https://cpan.metacpan.org/authors/id/P/PI/PIXEL/${_cpanname}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/P/PI/PIXEL/Archive-Cpio-0.10.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_cpanname}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

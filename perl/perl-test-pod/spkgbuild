@@ -5,11 +5,11 @@ name=perl-test-pod
 version=1.52
 release=5
 
-source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-Pod-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Test-Pod-1.52.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Pod-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

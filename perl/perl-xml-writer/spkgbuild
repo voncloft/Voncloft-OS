@@ -5,11 +5,11 @@ name=perl-xml-writer
 version=0.900
 release=6
 
-source="https://www.cpan.org/authors/id/J/JO/JOSEPHW/XML-Writer-$version.tar.gz"
+source="https://www.cpan.org/authors/id/J/JO/JOSEPHW/XML-Writer-0.900.tar.gz"
 options="!checksum"
 
 build() {
-   cd XML-Writer-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

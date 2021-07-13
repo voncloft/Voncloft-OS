@@ -9,7 +9,7 @@ source="https://search.cpan.org/CPAN/authors/id/M/MA/MART/DJabberd-$version.tar.
 options="!checksum"
 
 build() {
-   cd DJabberd-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

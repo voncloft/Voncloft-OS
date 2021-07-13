@@ -5,11 +5,11 @@ name=perl-par
 version=1.017
 release=1
 
-source="https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/PAR-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/A/AU/AUTRIJUS/PAR-0.88.tar.gz"
 options="!checksum"
 
 build() {
-   cd PAR-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

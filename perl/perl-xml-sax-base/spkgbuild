@@ -5,11 +5,11 @@ name=perl-xml-sax-base
 version=1.09
 release=4
 
-source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-Base-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-Base-1.09.tar.gz"
 options="!checksum"
 
 build() {
-   cd XML-SAX-Base-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

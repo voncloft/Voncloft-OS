@@ -5,12 +5,12 @@ name=perl-mime-tools
 version=5.509
 release=8
 
-source="https://www.cpan.org/authors/id/D/DS/DSKOLL/MIME-tools-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/D/DS/DSKOLL/MIME-tools-5.509.tar.gz"
 options="!checksum"ip64
 options="!checksum" 
 
 build() {
-   cd  MIME-tools-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -2,14 +2,13 @@
 # depends : perl-lwp-protocol-https perl-try-tiny perl-path-class perl-bytes-random-secure
 
 name=perl-crypt-ssleay
-version=0.73_04
 release=14
 
-source="https://www.cpan.org/CPAN/authors/id/N/NA/NANIS/Crypt-SSLeay-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NA/NANIS/Crypt-SSLeay-0.72.tar.gz"
 options="!checksum"
 
 build() {
-   cd  Crypt-SSLeay-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

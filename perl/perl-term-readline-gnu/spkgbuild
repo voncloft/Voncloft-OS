@@ -5,12 +5,11 @@ name=perl-term-readline-gnu
 version=1.42
 release=4
 
-source="https://search.cpan.org/CPAN/authors/id/H/HA/HAYASHI/Term-ReadLine-Gnu-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/H/HA/HAYASHI/Term-ReadLine-Gnu-1.42.tar.gz"
 options="!checksum"
 
 build() {
-     cd Term-ReadLine-Gnu-$version
-   cd Term-ReadLine-Gnu-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

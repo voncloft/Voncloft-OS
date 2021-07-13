@@ -5,13 +5,11 @@ name=perl-glib-object-introspection
 version=0.049
 release=5
 
-_perl_namespace=Glib
-_perl_module=Object-Introspection
-source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/${_perl_namespace}-${_perl_module}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.049.tar.gz"
 options="!checksum"
 
 build() {
-   cd ${_perl_namespace}-${_perl_module}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

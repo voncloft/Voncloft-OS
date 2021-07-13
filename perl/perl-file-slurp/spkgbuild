@@ -5,11 +5,11 @@ name=perl-file-slurp
 version=9999.32
 release=2
 
-source="https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/File-Slurp-$version.tar.gz"
+source="https://www.cpan.org/authors/id/C/CA/CAPOEIRAB/File-Slurp-9999.32.tar.gz"
 options="!checksum"
 
 build() {
-   cd  File-Slurp-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

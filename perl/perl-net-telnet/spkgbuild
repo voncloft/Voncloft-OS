@@ -4,11 +4,11 @@ name=perl-net-telnet
 version=3.05
 release=6
 
-source="https://www.cpan.org/authors/id/J/JR/JROGERS/Net-Telnet-$version.tar.gz"
+source="https://www.cpan.org/authors/id/J/JR/JROGERS/Net-Telnet-3.05.tar.gz"
 options="!checksum"
 
 build() {
-   cd Net-Telnet-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

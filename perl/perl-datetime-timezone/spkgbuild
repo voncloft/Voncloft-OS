@@ -5,11 +5,11 @@ name=perl-datetime-timezone
 version=2.47
 release=1
 
-source="https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-TimeZone-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.47.tar.gz"
 options="!checksum"
 
 build() {
-   cd  DateTime-TimeZone-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

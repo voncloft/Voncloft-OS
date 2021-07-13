@@ -5,12 +5,11 @@ name=perl-ipc-run3
 version=0.048
 release=8
 
-_dist=IPC-Run3
-source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/${_dist}-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/IPC-Run3-0.048.tar.gz"
 options="!checksum"
 
 build() {
-     cd ${_dist}-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

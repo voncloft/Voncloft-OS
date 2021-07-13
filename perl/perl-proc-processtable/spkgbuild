@@ -5,11 +5,11 @@ name=perl-proc-processtable
 version=0.59
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/J/JW/JWB/Proc-ProcessTable-$version.tar.gz"
+source="https://www.cpan.org/authors/id/J/JW/JWB/Proc-ProcessTable-0.59.tar.gz"
 options="!checksum"
 
 build() {
-   cd Proc-ProcessTable-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

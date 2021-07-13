@@ -5,11 +5,11 @@ name=perl-json
 version=4.03
 release=2
 
-source="https://search.cpan.org/CPAN/authors/id/I/IS/ISHIGAKI/JSON-$version.tar.gz"
+source="https://www.cpan.org/authors/id/M/MA/MAKAMAKA/JSON-2.90.tar.gz"
 options="!checksum"
 
 build() {
-   cd  JSON-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

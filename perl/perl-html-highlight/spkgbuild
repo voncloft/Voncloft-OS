@@ -4,11 +4,11 @@ name=perl-html-highlight
 version=0.20
 release=11
 
-source="https://www.cpan.org/authors/id/T/TR/TRIPIE/HTML-Highlight-$version.tar.gz"
+source="https://www.cpan.org/authors/id/T/TR/TRIPIE/HTML-Highlight-0.20.tar.gz"
 options="!checksum"
 
 build() {
-   cd HTML-Highlight-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

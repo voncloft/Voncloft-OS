@@ -4,11 +4,11 @@ name=perl-mail-sendmail
 version=0.80
 release=11
 
-source="https://www.cpan.org/authors/id/M/MI/MIVKOVIC/Mail-Sendmail-$version.tar.gz"
+source="https://www.cpan.org/authors/id/N/NE/NEILB/Mail-Sendmail-0.80.tar.gz"
 options="!checksum"
 
 build() {
-   cd Mail-Sendmail-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

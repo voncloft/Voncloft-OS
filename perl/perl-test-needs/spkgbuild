@@ -5,11 +5,11 @@ name=perl-test-needs
 version=0.002009
 release=3
 
-source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-$version.tar.gz"
+source="https://www.cpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002009.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-Needs-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-poe-component-client-http
 version=0.949
 release=6
 
-source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-HTTP-$version.tar.gz"
+source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-HTTP-0.949.tar.gz"
 options="!checksum"
 
 build() {
-   cd POE-Component-Client-HTTP-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-cpan-changes
 version=0.400002
 release=4
 
-source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-$version.tar.gz"
+source="https://www.cpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz"
 options="!checksum"
 
 build() {
-   cd CPAN-Changes-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -5,11 +5,11 @@ name=perl-class-tiny
 version=1.008
 release=1
 
-source="https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Class-Tiny-$version.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/Class-Tiny-1.008.tar.gz"
 options="!checksum"
 
 build() {
-   cd Class-Tiny-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

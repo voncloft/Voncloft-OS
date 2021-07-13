@@ -5,11 +5,11 @@ name=perl-authen-sasl
 version=2.16
 release=8
 
-source="https://www.cpan.org/authors/id/G/GB/GBARR/Authen-SASL-$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GB/GBARR/Authen-SASL-2.16.tar.gz"
 options="!checksum"
 
 build() {
-   cd Authen-SASL-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

@@ -4,11 +4,11 @@ name=perl-datetime-cron-simple
 version=0.2
 release=11
 
-source="https://www.cpan.org/authors/id/B/BI/BITS/DateTime-Cron-Simple-$version.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BITS/DateTime-Cron-Simple-0.2.tar.gz"
 options="!checksum"
 
 build() {
-   cd DateTime-Cron-Simple-$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

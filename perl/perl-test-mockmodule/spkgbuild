@@ -2,14 +2,14 @@
 # depends : perl-super
 
 name=perl-test-mockmodule
-version=0.176.0
+version=v0.176.0
 release=1
 
-source="https://search.cpan.org/CPAN/authors/id/G/GF/GFRANKS/Test-MockModule-v$version.tar.gz"
+source="https://www.cpan.org/authors/id/G/GF/GFRANKS/Test-MockModule-vv0.176.0.tar.gz"
 options="!checksum"
 
 build() {
-   cd Test-MockModule-v$version
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install

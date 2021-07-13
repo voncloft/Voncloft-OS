@@ -5,11 +5,11 @@ name=perl-anyevent-i3
 version=0.17
 release=6
 
-source="https://search.cpan.org/CPAN/authors/id/M/MS/MSTPLBG/AnyEvent-I3-${version}.tar.gz"
+source="https://www.cpan.org/authors/id/M/MS/MSTPLBG/AnyEvent-I3-0.17.tar.gz"
 options="!checksum"
 
 build() {
-   cd AnyEvent-I3-${version}
+   cd *
    perl Makefile.PL
    make
    make DESTDIR=$PKG install
