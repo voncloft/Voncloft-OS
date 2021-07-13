@@ -2,6 +2,7 @@
 # depends : perl-lwp-protocol-https perl-try-tiny perl-path-class perl-bytes-random-secure
 
 name=perl-crypt-ssleay
+version=0.72
 release=14
 
 source="https://www.cpan.org/authors/id/N/NA/NANIS/Crypt-SSLeay-0.72.tar.gz"
