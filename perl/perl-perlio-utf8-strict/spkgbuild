@@ -5,6 +5,7 @@ name=perl-perlio-utf8-strict
 version=0.007
 release=6
 
+source="filler"
 options="!checksum"
 
 build() {

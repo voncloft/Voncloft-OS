@@ -5,6 +5,7 @@ name=perl-gtk3
 version=0.037
 release=1
 
+source="filler"
 options="!checksum"
 
 build() {

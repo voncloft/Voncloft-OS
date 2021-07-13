@@ -74,6 +74,9 @@ then
 		echo "New URL: " $new_version
 		#echo 'sed -i -e s/'$my_version'/'$new_version'/g '$path_test/spkgbuild
 		sed -i -e "s/$my_version/$new_version/g" $path_test/spkgbuild
+		package_for_changelog=$(echo $path_test | sed 's/\/Voncloft-OS\/perl\///g')
+		echo $package_for_changelog
+		changelog $package_for_changelog "Fixed URL"
 	fi
 	done < $input
 fi

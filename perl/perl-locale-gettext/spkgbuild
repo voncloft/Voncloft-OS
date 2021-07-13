@@ -5,6 +5,7 @@ name=perl-locale-gettext
 version=1.07
 release=10
 
+source="fillinlater"
 options="!checksum"
 
 build() {

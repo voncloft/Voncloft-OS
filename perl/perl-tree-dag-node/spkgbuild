@@ -5,6 +5,7 @@ name=perl-tree-dag-node
 version=1.31
 release=2
 
+source="filler"
 options="!checksum"
 
 build() {

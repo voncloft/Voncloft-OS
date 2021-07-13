@@ -5,6 +5,7 @@ name=perl-eval-closure
 version=0.14
 release=6
 
+source="filler"
 options="!checksum"
 
 build() {

@@ -5,6 +5,7 @@ name=perl-goocanvas2
 version=0.06
 release=2
 
+source="Filler"
 options="!checksum"
 
 build() {

@@ -5,6 +5,7 @@ name=perl-padwalker
 version=2.5
 release=1
 
+source="filler"
 options="!checksum"
 
 build() {

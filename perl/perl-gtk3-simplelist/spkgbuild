@@ -5,6 +5,7 @@ name=perl-gtk3-simplelist
 version=0.21
 release=1
 
+source="filler"
 options="!checksum"
 
 build() {

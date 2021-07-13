@@ -5,6 +5,7 @@ name=perl-canary-stability
 version=2013
 release=3
 
+source="filler"
 options="!checksum"
 
 build() {

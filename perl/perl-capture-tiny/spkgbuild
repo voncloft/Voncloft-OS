@@ -5,6 +5,7 @@ name=perl-capture-tiny
 version=0.48
 release=4
 
+source="filler"
 options="!checksum"
 
 build() {

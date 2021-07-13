@@ -5,6 +5,7 @@ name=perl-cairo-gobject
 version=1.004
 release=10
 
+source="filelr"
 options="!checksum"
 
 build() {

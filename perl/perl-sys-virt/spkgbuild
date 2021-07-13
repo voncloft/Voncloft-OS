@@ -5,7 +5,7 @@ name=perl-sys-virt
 version=v7.5.0
 release=1
 
-source="https://www.cpan.org/authors/id/D/DA/DANBERR/Sys-Virt-vv7.5.0.tar.gz"
+source="https://www.cpan.org/authors/id/D/DA/DANBERR/Sys-Virt-v7.5.0.tar.gz"
 options="!checksum"
 
 build() {

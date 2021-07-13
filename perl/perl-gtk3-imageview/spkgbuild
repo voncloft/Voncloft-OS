@@ -5,6 +5,7 @@ name=perl-gtk3-imageview
 version=6
 release=1
 
+source="filler"
 options="!checksum"
 
 build() {
