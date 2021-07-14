@@ -713,7 +713,6 @@ d:python-llfuse
 d:python-uncertainties
 d:python-unpaddedbase64
 d:python-pyinotify
-d:python-jinja_pluralize
 d:python-atom
 d:python-jeepney-objects
 d:python-selectors2
@@ -1221,6 +1220,7 @@ d:python-aws-sam-translator
 d:python-jsbeautifier
 d:python-aniso8601
 d:python-u-msgpack
+d:python-jinja2_pluralize
 d:python-gammu
 d:python-sysv_ipc
 d:python-micawber
@@ -2892,7 +2892,6 @@ f:78d83183cc98477dccb9e158374efcd6:python-unpaddedbase64/CHANGELOG
 f:2535b55b56b0d7ff9d9483fa37bff882:python-unpaddedbase64/spkgbuild
 f:1969013a54efa5afe5c78fb3cb19b432:python-pyinotify/CHANGELOG
 f:8f8b8d46ffa23ad385979c1080043dbe:python-pyinotify/spkgbuild
-f:bb5e265cc0f6642063b72f906ebb12b8:python-jinja_pluralize/spkgbuild
 f:2ad5c86e4c430c7d79e9ba9c9675b671:python-atom/CHANGELOG
 f:b447faa6f225fd4d494a80ce721835b6:python-atom/spkgbuild
 f:4e9344220dcdd490e36083245064a151:python-jeepney-objects/spkgbuild
@@ -3834,7 +3833,7 @@ f:744602b34bbab96dd477bae80b819362:python-pykerberos/spkgbuild
 f:7595645856725d1a9245dabe0e206ad3:python-blist/CHANGELOG
 f:ed3fcafd0a67e9711b210b280467f2ea:python-blist/spkgbuild
 f:3365c70d3287d2001c72bb783f390525:python-diff-cover/CHANGELOG
-f:bce839df10ee5cbba2c3db91dcb0d68f:python-diff-cover/spkgbuild
+f:154bc8ff471a014a5b4d854754eefc09:python-diff-cover/spkgbuild
 f:2e198567add4a61a54e5f72a0307c690:python-traitlets/CHANGELOG
 f:6e362429ce0f6a1f25cb316a11f00726:python-traitlets/spkgbuild
 f:a0b36f299efc02b636095322cc623794:python-keystoneauth1/CHANGELOG
@@ -3864,6 +3863,8 @@ f:d012c3e28ae366bd1b5b4adfe91759dd:python-jsbeautifier/spkgbuild
 f:6e7bcfb5188792e8bada279a5b8ca637:python-aniso8601/CHANGELOG
 f:7f3227d2fead5c2a495d5b1e78c2cdde:python-aniso8601/spkgbuild
 f:1de6a362bcb006a710878c36ae826449:python-u-msgpack/spkgbuild
+f:dccc5b420dfa3af75780cd49419373df:python-jinja2_pluralize/CHANGELOG
+f:bab14737c6fb5260e7d9d4953fca4205:python-jinja2_pluralize/spkgbuild
 f:cf7bbc0454ae5d0e417d20d5dcd69855:python-gammu/spkgbuild
 f:89889c05b75960af22f8833b1ded87e0:python-sysv_ipc/CHANGELOG
 f:995a759e4a1c55f8e7abd586b5faef1b:python-sysv_ipc/spkgbuild
