@@ -2,10 +2,10 @@
 # depends : python python-aiofiles python-aiohttp python-atomicwrites python-cachetools
 
 name=python-matrix-nio
-version=0.18.3
+version=0.18.4
 release=1
 
-source="https://files.pythonhosted.org/packages/c4/68/82654db6e313ef13296410e7b7dfd1a0849673d8b0b5f5ec137875ed39ad/matrix-nio-0.18.3.tar.gz"
+source="https://files.pythonhosted.org/packages/d0/3d/f7b614e0ed1590f95c2fdbf35572ff58ba8bcc336fb33da7f7d214091501/matrix-nio-0.18.4.tar.gz"
 options="!checksum"
 
 build() {
