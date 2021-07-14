@@ -5,7 +5,7 @@ name=python-elasticsearch
 version=7.14.0
 release=3
 
-source="https://files.pythonhosted.org/packages/1f/21/c7fc7cfb0e4d5838e2202c8bce194a7c229249f2c312c265e0f107383e92/elasticsearch-7.14.0.tar.gz"
+source="https://files.pythonhosted.org/packages/1f/21/c7fc7cfb0e4d5838e2202c8bce194a7c229249f2c312c265e0f107383e92/elasticsearch-7.13.3.tar.gz"
 options="!checksum"
 
 build() {

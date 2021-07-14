@@ -5,7 +5,7 @@ name=python-pikepdf
 version=2.15.0
 release=1
 
-source="https://files.pythonhosted.org/packages/07/d6/4fda075ee91a6232e3fe45266412a5023152f9f2d55d41bce7847a016422/pikepdf-2.15.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f4/72/8fb625a17f548bc67ef103a830962d0c4af6a45edff8f4d22534b84d44fd/pikepdf-2.15.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pwntools
 version=4.7.0
 release=3
 
-source="https://files.pythonhosted.org/packages/25/08/d1bb1b92916d012d9597ca13239015bfee20543f625bd2a7280250f55bb7/pwntools-4.5.1.tar.gz"
+source="https://files.pythonhosted.org/packages/87/ea/08f8330ff56040736ed0778264b37d9a5bc7c5c3dc52e005812882d5d791/pwntools-4.6.0.tar.gz"
 options="!checksum"
 
 build() {

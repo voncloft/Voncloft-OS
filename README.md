@@ -33,7 +33,7 @@ _As of 06-27-2021_
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
-- Packages are checked six times a day in my repository against https://distrowatch.com/packages.php (amongst other scripts located in Utilities/custom_progs) using a script located in utilities/bin/checkrepository
+- Packages are checked one time a day at 3:01 PM CST in my repository against https://distrowatch.com/packages.php (amongst other scripts located in Utilities/custom_progs) using a script located in utilities/bin/checkrepository
 - Updates can be viewed here: http://voncloft.dnsfor.me/updated
 
 **Workon next:**
