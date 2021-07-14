@@ -1,0 +1,9 @@
+00
+sed -i -e 's/0.030/0.031/g' /Voncloft-OS/*/perl-test-warnings/spkgbuild
+sed -i -e 's/6.1.1/6.2.0/g' /Voncloft-OS/*/python-diff-cover/spkgbuild
+Packages upgraded: 2
+
+04
+sed -i -e 's/0.16/0.17/g' /Voncloft-OS/*/python-graphviz/spkgbuild
+Packages upgraded: 1
+

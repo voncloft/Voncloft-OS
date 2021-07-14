@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-pymongo
-version=3.11.4
+version=3.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/c4/2f/79e933655adcf6dbd00738b556cecae5f8ec709301ac10df6f488d83bb53/pymongo-3.11.4.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/2f/79e933655adcf6dbd00738b556cecae5f8ec709301ac10df6f488d83bb53/pymongo-3.12.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-test-warnings
-version=0.030
+version=0.031
 release=6
 
-source="https://www.cpan.org/authors/id/E/ET/ETHER/Test-Warnings-0.030.tar.gz"
+source="https://www.cpan.org/authors/id/E/ET/ETHER/Test-Warnings-0.031.tar.gz"
 options="!checksum"
 
 build() {

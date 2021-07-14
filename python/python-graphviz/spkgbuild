@@ -2,7 +2,7 @@
 # depends : graphviz python
 
 name=python-graphviz
-version=0.16
+version=0.17
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
