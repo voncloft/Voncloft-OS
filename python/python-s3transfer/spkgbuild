@@ -2,10 +2,10 @@
 # depends : python-botocore
 
 name=python-s3transfer
-version=0.4.2
+version=0.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/27/90/f467e516a845cf378d85f0a51913c642e31e2570eb64b352c4dc4c6cbfc7/s3transfer-0.4.2.tar.gz"
+source="https://files.pythonhosted.org/packages/88/ef/4d1b3f52ae20a7e72151fde5c9f254cd83f8a49047351f34006e517e1655/s3transfer-0.5.0.tar.gz"
 options="!checksum"
 
 build() {

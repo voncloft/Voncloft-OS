@@ -2,10 +2,10 @@
 # depends : python-packaging
 
 name=python-bleach
-version=3.3.0
+version=3.3.1
 release=1
 
-source="https://files.pythonhosted.org/packages/70/84/2783f734240fab7815a00b419c4281d2d0984971de30b08176aae2acff10/bleach-3.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/61/f0/39ba27d82f7f5c8b4a8002876ea0c3465bc8a0c067e043d9b1bcbb8bfb3e/bleach-3.3.1.tar.gz"
 options="!checksum"
 
 build() {
