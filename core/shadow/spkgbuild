@@ -13,7 +13,7 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	if [ -d /var/lib/scratchpkg/index/linux-pam ];
+	if [ -f /var/lib/scratchpkg/db/linux-pam ];
 	then
 		sed -i 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' etc/login.defs
 	fi

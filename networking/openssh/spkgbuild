@@ -9,7 +9,7 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	if [ ! -f /var/lib/scratchpkg/index/openssh/.pkginfo ];
+	if [ ! -f /var/lib/scratchpkg/db/openssh ];
 	# if openssh is not installed then install this once - if file does exist move on to the next line
 	then
 		install -v -m700 -d $PKG/var/lib/sshd

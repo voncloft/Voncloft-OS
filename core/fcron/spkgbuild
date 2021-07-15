@@ -22,7 +22,7 @@ build() {
             --with-editor=/usr/bin/nano
         make
 
-	if [ ! -f /var/lib/scratchpkg/index/fcron/.pkginfo ];
+	if [ ! -f /var/lib/scratchpkg/db/fcron ];
 	then
 		cat <<-EOF >> /etc/syslog.conf
 		# Begin fcron addition to /etc/syslog.conf

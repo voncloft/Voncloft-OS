@@ -2,7 +2,7 @@
 # depends : libnsl linux-pam vsftpd-boot
 
 name=vsftpd
-version=3.0.3
+version=3.0.4
 release=1
 
 source="https://security.appspot.com/downloads/$name-$version.tar.gz"
@@ -10,13 +10,18 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	install -v -d -m 0755 $PKG/usr/share/vsftpd/empty
-	install -v -d -m 0755 $PKG/home/ftp
-	groupadd -g 47 vsftpd 
-	groupadd -g 45 ftp 
-	useradd -c "vsftpd User"  -d /dev/null -g vsftpd -s /bin/false -u 47 vsftpd
-	useradd -c anonymous_user -d /home/ftp -g ftp    -s /bin/false -u 45 ftp
-
+	if [ ! -f /var/lib/scratchpkg/db/vsftpd ];
+	then
+		install -v -d -m 0755 $PKG/usr/share/vsftpd/empty
+		install -v -d -m 0755 $PKG/home/ftp
+		groupadd -g 47 vsftpd 
+		groupadd -g 45 ftp 
+		useradd -c "vsftpd User"  -d /dev/null -g vsftpd -s /bin/false -u 47 vsftpd
+		useradd -c anonymous_user -d /home/ftp -g ftp    -s /bin/false -u 45 ftp
+		mkdir -pv $PKG/etc
+		touch $PKG/etc/ftpusers
+	fi
+	
 	sed -e "s/kVSFSysStrOpenUnknown;/(enum EVSFSysUtilOpenMode)&/" -i sysstr.c
 	make
 	mkdir -pv $PKG/usr/sbin
@@ -48,5 +53,4 @@ build() {
 	session    include      system-session
 	EOF
 	mkdir -pv $PKG/srv/ftp
-	touch $PKG/etc/ftpusers
 }
