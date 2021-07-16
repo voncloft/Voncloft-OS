@@ -2,10 +2,10 @@
 # depends : cmake perl-alien-build
 
 name=perl-alien-cmake3
-version=0.06
+version=0.08
 release=3
 
-source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-0.06.tar.gz"
+source="https://www.cpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-0.08.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-clickclick python-jsonschema python-pyaml python-requests
 
 name=python-connexion
-version=2.8.0
+version=2.9.0
 release=3
 
-source="https://files.pythonhosted.org/packages/dd/56/b0be9268cf7466f0b8a717893e6bbab88e46af878118a2062666d5a043cf/connexion-2.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/93/70/3cf72e9642a9d07de7137048f64f5ad56fb138ef29ed45e195995d675c6a/connexion-2.9.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -1,10 +1,10 @@
 # description : Perl/CPAN Module IPC::Shareable : Tie a variable to shared memory
 
 name=perl-ipc-shareable
-version=1.04
+version=1.05
 release=6
 
-source="https://www.cpan.org/authors/id/S/ST/STEVEB/IPC-Shareable-1.04.tar.gz"
+source="https://www.cpan.org/authors/id/S/ST/STEVEB/IPC-Shareable-1.05.tar.gz"
 options="!checksum"
 
 build() {

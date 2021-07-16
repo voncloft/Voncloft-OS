@@ -2,10 +2,10 @@
 # depends : perl-digest-hmac perl-net-ip
 
 name=perl-net-dns
-version=1.31
+version=1.32
 release=1
 
-source="https://www.cpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.31.tar.gz"
+source="https://www.cpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.32.tar.gz"
 options="!checksum"
 
 build() {

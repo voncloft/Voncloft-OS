@@ -2,10 +2,10 @@
 # depends : python-opentracing python-threadloop python-thrift python-tornado
 
 name=python-jaeger-client
-version=4.5.0
+version=4.6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/82/19/697868035f0e5d12d1f6ad5e7f7c62c35fe28f91261e0bebad377627762d/jaeger-client-4.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/be/07/e553ec449450e0cc41aca9fc3ce9f44d6fa3e8d9c7661fc100b16928fd44/jaeger-client-4.6.0.tar.gz"
 options="!checksum"
 
 build() {

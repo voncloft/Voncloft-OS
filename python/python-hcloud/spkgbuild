@@ -2,10 +2,10 @@
 # depends : python-requests python-dateutil python-future
 
 name=python-hcloud
-version=1.12.0
+version=1.13.0
 release=2
 
-source="https://files.pythonhosted.org/packages/67/54/cc4c310795c05e87bbfeaecc48fe1fce6e21341f46595779f162dbb9d779/hcloud-1.12.0.tar.gz"
+source="https://files.pythonhosted.org/packages/7f/fb/7bcd1621149a5247214886ab25148739169cda188dbe6ebb50afcfe03023/hcloud-1.13.0.tar.gz"
 options="!checksum"
 
 build() {
