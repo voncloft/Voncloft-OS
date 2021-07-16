@@ -75,7 +75,7 @@ then
 		###Find way to change cd command
 		#######changelog python-$1 "Fixed URL"
 		sed -i -e 's/cd ${name#python-}-$version/cd */g' /Voncloft-OS/python/python-$1/spkgbuild
-		changelog python-$1 "Fixed URL and directory install"
+		#changelog python-$1 "Fixed URL and directory install"
 
 		rm -v $file
 		rm -v $file.*
