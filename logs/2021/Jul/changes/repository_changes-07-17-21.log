@@ -1,0 +1,5 @@
+15
+sed -i -e 's/1.2.0/1.4.0/g' /Voncloft-OS/*/python-emoji/spkgbuild
+sed -i -e 's/0.2.1/0.2.3/g' /Voncloft-OS/*/python-flake8-black/spkgbuild
+Packages upgraded: 2
+

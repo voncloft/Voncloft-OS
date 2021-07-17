@@ -2,10 +2,10 @@
 # depends : flake8 python-black python-setuptools
 
 name=python-flake8-black
-version=0.2.1
+version=0.2.3
 release=4
 
-source="https://files.pythonhosted.org/packages/3d/98/1990a36b53c7b5a882b002b8739137dc3a1399a5a3f08ede5aedf444e33a/flake8-black-0.2.1.tar.gz"
+source="https://files.pythonhosted.org/packages/1e/a7/aa384e771e614d69475ce273d80472115a4619df1d97390d9f185cea6f52/flake8-black-0.2.3.tar.gz"
 options="!checksum"
 
 build() {

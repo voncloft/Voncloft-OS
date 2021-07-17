@@ -5,7 +5,7 @@ name=python-graphene
 version=3.0
 release=1
 
-source="https://files.pythonhosted.org/packages/53/49/3533ea1317a3d32d6ddf9cfa55df6883394195d40b88eb7589d665df887c/graphene-2.1.8.tar.gz"
+source="https://files.pythonhosted.org/packages/0a/9d/5a8890c7d14adbeda55e2d5f28120b4be2a7bfa0131674c340db1c162072/graphene-2.1.9.tar.gz"
 options="!checksum"
 
 build() {
