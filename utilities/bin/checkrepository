@@ -155,3 +155,4 @@ echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 
 cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
 cp missing.txt $logpath/missing/missing-(date +"%m-%d-%y").html
+find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
