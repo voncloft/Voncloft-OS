@@ -35,7 +35,7 @@ rm -rf stripped_info.txt
 grep -A 1 "<th><a name=" packages.php >> modified.php
 
 #fix a few packages
-sed -i -e 's/qt/qt5/g' modified.php
+#sed -i -e 's/qt/qt5/g' modified.php
 
 grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
 
