@@ -42,7 +42,14 @@ grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:
 ##get some additional packages##
 for f in /Voncloft-OS/utilities/custom_progs/*
 do
-        sh $f
+	##uncomment below to run python and perl upgrade scripts
+        #filenames=${f##*/}
+
+        #if [ "$filenames" != "python-upgrade.sh" ] && [ "$filenames" != "perl-upgrade.sh" ];
+        #then
+                echo $filenames
+                sh $f
+        #fi
 done
 
 RED='\033[0;31m'
