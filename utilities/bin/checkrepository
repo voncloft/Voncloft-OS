@@ -16,7 +16,7 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
 mkdir -pv $logpath/over_updated
-
+mkdir -pv $logpath/missing
 rm -v index.html
 rm -v index.html.*
 shopt -s nocaseglob
@@ -154,3 +154,4 @@ cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repo
 echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 
 cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
+cp missing.txt $logpath/missing/missing-(date +"%m-%d-%y").html
