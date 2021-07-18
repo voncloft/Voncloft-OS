@@ -1,6 +1,6 @@
-url=
-name=
-file=
+url=https://download.filezilla-project.org/libfilezilla/
+name=libfilezilla
+file=index.html
 echo $name
 cd /var/log/old
 
@@ -13,7 +13,7 @@ then
 fi
 
 ###show url in tags
-#grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > test.txt
+grep -i "href" $file | grep .tar.bz2 | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
 
 ###to get rid of <> tags in html
 #grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name > test.txt
@@ -40,13 +40,13 @@ size=$(eval $command)
 
 check=${#size}
 
-#if [ $check -ge 1 ];
-#then
+if [ $check -ge 1 ];
+then
 	##Production###
-	#if [ -f $file ];
-	#then
-	#	echo $name >> stripped_info.txt
-	#	eval $command >> stripped_info.txt
-	#	rm -v $file
-	#fi
-#fi
+	if [ -f $file ];
+	then
+		echo $name >> stripped_info.txt
+		eval $command >> stripped_info.txt
+		rm -v $file
+	fi
+fi

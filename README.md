@@ -19,7 +19,6 @@ _As of 06-27-2021_
 - scid_vs_pc - needs testing
 
 **Programs to be added in the future:**
-- libfilezilla upgrade script
 - KDEVELOP
 
 **System Changes:**
