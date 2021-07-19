@@ -2,10 +2,10 @@
 # depends : python-pyasn1
 
 name=python-ldap3
-version=2.9
+version=2.9.1
 release=3
 
-source="https://files.pythonhosted.org/packages/69/ca/38c8d3c44d89b7a6461fe83750854f94053474b1390c31dba187d2d512dd/ldap3-2.9.tar.gz"
+source="https://files.pythonhosted.org/packages/43/ac/96bd5464e3edbc61595d0d69989f5d9969ae411866427b2500a8e5b812c0/ldap3-2.9.1.1.tar.gz"
 options="!checksum"
 
 build() {

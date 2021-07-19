@@ -1,11 +1,17 @@
 11
-11
-11
-11
-11
-11
-11
-11
 sed -i -e 's/0.24.1/0.30.0/g' /Voncloft-OS/*/libfilezilla/spkgbuild
 Packages upgraded: 1
+
+15
+sed -i -e 's/3.1.7/3.1.8/g' /Voncloft-OS/*/python-bitstring/spkgbuild
+sed -i -e 's/5.6/6.0/g' /Voncloft-OS/*/python-coverage/spkgbuild
+sed -i -e 's/0.20.23/0.20.24/g' /Voncloft-OS/*/python-dulwich/spkgbuild
+sed -i -e 's/1.4.0/1.4.1/g' /Voncloft-OS/*/python-emoji/spkgbuild
+sed -i -e 's/6.14.2/6.14.3/g' /Voncloft-OS/*/python-hypothesis/spkgbuild
+sed -i -e 's/2.9/2.9.1/g' /Voncloft-OS/*/python-ldap3/spkgbuild
+sed -i -e 's/0.8.1/0.9.0/g' /Voncloft-OS/*/python-pathspec/spkgbuild
+sed -i -e 's/0.10.0/0.11.0/g' /Voncloft-OS/*/python-pep517/spkgbuild
+sed -i -e 's/0.4.1/0.4.2/g' /Voncloft-OS/*/python-sounddevice/spkgbuild
+sed -i -e 's/0.7/0.7.1/g' /Voncloft-OS/*/python-sphinxcontrib-mermaid/spkgbuild
+Packages upgraded: 10
 

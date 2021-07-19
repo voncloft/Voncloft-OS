@@ -2,10 +2,10 @@
 # depends : portaudio python-cffi
 
 name=python-sounddevice
-version=0.4.1
+version=0.4.2
 release=2
 
-source="https://files.pythonhosted.org/packages/a6/85/ee58c8a210f8ce7823e92c6698e48c6ca381bbbf74c6b92493ed6cef8319/sounddevice-0.4.1.tar.gz"
+source="https://files.pythonhosted.org/packages/cc/34/009fbaa0de444dbc53a2fb1fd268bb31f8f7a7454b5fa5bc218f78332571/sounddevice-0.4.2.tar.gz"
 options="!checksum"
 
 build() {

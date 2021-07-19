@@ -2,10 +2,10 @@
 # depends : python-setuptools
 
 name=python-coverage
-version=5.6
+version=6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/38/df/d5e67851e83948def768d7fb1a0fd373665b20f56ff63ed220c6cd16cb11/coverage-5.5.tar.gz"
+source="https://files.pythonhosted.org/packages/38/df/d6.07851e83948def768d7fb1a0fd373665b20f56ff63ed220c6cd16cb11/coverage-5.5.tar.gz"
 options="!checksum"
 
 build() {
