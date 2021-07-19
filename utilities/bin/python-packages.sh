@@ -10,7 +10,7 @@ rm -rfv $file
 
 #GRAB WEBSITE
 wget $url
-wget $url_capital
+#wget $url_capital
 if [ -f test.txt ];
 then
 	rm test.txt
@@ -19,7 +19,11 @@ fi
 ###to get rid of <> tags in html
 #grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
 grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
+rm -rfv $file
 
+wget $url_capital
+grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
+rm -rfv $file
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
 
@@ -40,7 +44,8 @@ command="cat test.txt | sort -V -r | head -n 1"
 size=$(eval $command)
 
 check=${#size}
-
+#rm -rfv $file
+#rm -rfv $file.*
 if [ $check -ge 1 ];
 then
 ##Production###
@@ -52,3 +57,5 @@ then
 	fi
 fi
 
+#rm -rfv $file
+#rm -rfv $file.*
