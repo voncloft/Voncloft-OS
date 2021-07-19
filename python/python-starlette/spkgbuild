@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-starlette
-version=0.15.0
+version=0.16.0
 release=3
 
-source="https://files.pythonhosted.org/packages/38/75/8b3bdd2129c89ef31a0a211ba4f33cc5ed084cb9bbdf361569b0184fab71/starlette-0.15.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f8/df/a8d016fd23b72cd0264f48bdf9897179156e8c30118978b40460a1e18bd2/starlette-0.16.0.tar.gz"
 options="!checksum"
 
 build() {

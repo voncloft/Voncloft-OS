@@ -5,7 +5,7 @@ name=python-bitstring
 version=3.1.8
 release=3
 
-source="https://files.pythonhosted.org/packages/f6/0a/0c9240d16d1cbe0009d27113c29d4c80b38779cc52b0512c2a9eb35f913f/bitstring-3.1.8.tar.gz"
+source="https://files.pythonhosted.org/packages/c3/fc/ffac2c199d2efe1ec5111f55efeb78f5f2972456df6939fea849f103f9f5/bitstring-3.1.7.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python python-boto3 python-jsonschema python-six
 
 name=python-aws-sam-translator
-version=1.37.0
+version=1.38.0
 release=1
 
-source="https://files.pythonhosted.org/packages/91/b3/49d596e4317abf21a3ccc18056c1f2f3ef136fb16deb139f696401f49d84/aws-sam-translator-1.37.0.tar.gz"
+source="https://files.pythonhosted.org/packages/77/42/30a9106f3e712f530cc93f8510364cde417b42acb6b64096a7b34eb0c1b8/aws-sam-translator-1.38.0.tar.gz"
 options="!checksum"
 
 build() {

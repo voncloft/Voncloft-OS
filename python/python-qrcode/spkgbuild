@@ -2,10 +2,10 @@
 # depends : python-pillow python-six python-setuptools
 
 name=python-qrcode
-version=7.1
+version=7.2
 release=6
 
-source="https://files.pythonhosted.org/packages/c8/1b/d5e0ad4ca933213fa1491c1038cbcdca14906618b339d29c380f6e3b6d01/qrcode-7.1.tar.gz"
+source="https://files.pythonhosted.org/packages/99/6f/3914ab406164775a6293ebe001e57d23e38c09d51f3909c45bd132684927/qrcode-7.2.tar.gz"
 options="!checksum"
 
 build() {

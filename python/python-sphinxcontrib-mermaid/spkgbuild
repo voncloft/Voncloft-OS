@@ -5,7 +5,7 @@ name=python-sphinxcontrib-mermaid
 version=0.7.1
 release=1
 
-source="https://files.pythonhosted.org/packages/4b/d4/9914d4ce0.7.169060b4034caa02f6d61605d4469cb5437dafb1cfb30.7.1792/sphinxcontrib-mermaid-0.7.1.1.tar.gz"
+source="https://files.pythonhosted.org/packages/4b/d4/9914d4ce0d769060b4034caa02f6d61605d4469cb5437dafb1cfb3077792/sphinxcontrib-mermaid-0.7.1.tar.gz"
 options="!checksum"
 
 build() {

@@ -44,18 +44,20 @@ command="cat test.txt | sort -V -r | head -n 1"
 size=$(eval $command)
 
 check=${#size}
+echo "Check: " $check
 #rm -rfv $file
 #rm -rfv $file.*
 if [ $check -ge 1 ];
 then
 ##Production###
-	if [ -f $file ];
-	then
+	#if [ -f $file ];
+	#then
 		echo python-$1 >> stripped_info.txt
 		eval $command >> stripped_info.txt
-		rm -v $file
-	fi
+		#rm -v $file
+	#fi
 fi
+rm -rfv $file
 
 #rm -rfv $file
 #rm -rfv $file.*
