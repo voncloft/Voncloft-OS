@@ -19,11 +19,11 @@ fi
 ###to get rid of <> tags in html
 #grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
 grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
-rm -rfv $file
+#rm -rfv $file
 
-wget $url_capital
-grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
-rm -rfv $file
+#wget $url_capital
+#grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
+#rm -rfv $file
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
 
@@ -50,12 +50,12 @@ echo "Check: " $check
 if [ $check -ge 1 ];
 then
 ##Production###
-	#if [ -f $file ];
-	#then
+	if [ -f $file ];
+	then
 		echo python-$1 >> stripped_info.txt
 		eval $command >> stripped_info.txt
 		#rm -v $file
-	#fi
+	fi
 fi
 rm -rfv $file
 

@@ -24,13 +24,13 @@ wget $download_link
 #wget $download_link_capital
 ###get non capital shit
 grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
-rm -rfv $file
+#rm -rfv $file
 
 #get capital shit - seriously python what the fuck are you thinking not having a uniformed website.
 
-wget $download_link_capital
-grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
-rm -rfv $file
+#wget $download_link_capital
+#grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
+#rm -rfv $file
 
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
@@ -72,8 +72,8 @@ echo "Command to be ran"
 if [ $check -ge 1 ];
 then
 ##Production###
-	#if [ -f $file ];
-	#then
+	if [ -f $file ];
+	then
 		#echo python-$1 >> python_url.txt
 		#eval $geturl >> python_url.txt
 		#sed -i -e 's/$my_repo/$new_repo/g' /Voncloft-OS/python/python-$1/spkgbuild
@@ -87,6 +87,6 @@ then
 
 		rm -v $file
 		rm -v $file.*
-	#fi
+	fi
 fi
 
