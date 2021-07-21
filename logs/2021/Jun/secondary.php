@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-<link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/include/sitecolors.css" />
+<link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" />
 </head>
 <body>
 <center>
@@ -40,7 +40,7 @@ function formatSize( $bytes )
    }
    else
    {
-   print("<br>All files listed below will be transfered to the main video folder after I watch them.<br><table border='1' width='710px' id='menu' height='100%'><tr><td width='690' ><center><b>File Name</b></center></td><td width='100'><center><b>Size</b></center></td><td>File Type</td></tr>");
+   print("<br><table border='1' width='710px' id='menu' height='100%'><tr><td width='690' ><center><b>File Name</b></center></td><td width='100'><center><b>Size</b></center></td><td>File Type</td></tr>");
 
     for($i=0;$i<count($file_array);$i++)/*5*/{
 
