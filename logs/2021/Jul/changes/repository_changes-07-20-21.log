@@ -1,0 +1,13 @@
+15
+sed -i -e 's/1.32.2/1.32.4/g' /Voncloft-OS/*/networkmanager/spkgbuild
+sed -i -e 's/465.31/470.57.02/g' /Voncloft-OS/*/nvidia/spkgbuild
+sed -i -e 's/6.1.22/6.1.24/g' /Voncloft-OS/*/virtualbox/spkgbuild
+sed -i -e 's/2.6.3/2.6.4/g' /Voncloft-OS/*/python-astroid/spkgbuild
+sed -i -e 's/3.1.8/3.1.9/g' /Voncloft-OS/*/python-bitstring/spkgbuild
+sed -i -e 's/0.10.4/0.10.5/g' /Voncloft-OS/*/python-flexmock/spkgbuild
+sed -i -e 's/2.13.0/2.14.0/g' /Voncloft-OS/*/python-google-api-python-client/spkgbuild
+sed -i -e 's/2.15.0/2.15.1/g' /Voncloft-OS/*/python-pikepdf/spkgbuild
+sed -i -e 's/5.0.0/6.0.0/g' /Voncloft-OS/*/python-rdflib/spkgbuild
+sed -i -e 's/0.5.4/0.5.5/g' /Voncloft-OS/*/python-virtualenv-clone/spkgbuild
+Packages upgraded: 10
+

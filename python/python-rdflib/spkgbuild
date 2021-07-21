@@ -2,10 +2,10 @@
 # depends : python-isodate python-pyparsing
 
 name=python-rdflib
-version=5.0.0
+version=6.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/2f/ae/a50934a7ed4f9d80bbc0e0cf725c7fd2208f2e433efbf881ed0c0317a7f1/rdflib-5.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f5/7d/576c6c19a3edefbfac63d375ab5c821c178f9299e134cde252e495cba998/rdflib-6.0.0.tar.gz"
 options="!checksum"
 
 build() {
