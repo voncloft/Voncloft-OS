@@ -123,3 +123,4 @@ sed -i -e 's/5.7.0/5.11.0/g' /Voncloft-OS/*/xfsprogs/spkgbuild
 sed -i -e 's/4.14.2/4.16.0/g' /Voncloft-OS/*/xfdesktop/spkgbuild
 
 sed -i -e 's/5.15.2/6.0.3/g' /Voncloft-OS/*/qt5/spkgbuild
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

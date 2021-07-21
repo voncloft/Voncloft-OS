@@ -26,3 +26,4 @@ sed -i -e 's/248.2/248.3/g' /Voncloft-OS/*/systemd/spkgbuild
 sed -i -e 's/20.1.5/21.1.0/g' /Voncloft-OS/*/mesa/spkgbuild
 Packages upgraded: 2
 
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

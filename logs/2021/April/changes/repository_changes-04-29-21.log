@@ -21,3 +21,4 @@ sed -i -e 's/465.24.02/465.27/g' /Voncloft-OS/*/nvidia/spkgbuild
 sed -i -e 's/6.1.20/6.1.22/g' /Voncloft-OS/*/virtualbox/spkgbuild
 Packages upgraded: 4
 
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

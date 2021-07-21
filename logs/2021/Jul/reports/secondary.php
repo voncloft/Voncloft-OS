@@ -133,3 +133,6 @@ $test</center></TD><TD>Video File</TD></TR>\n");
 <footer>
 </footer>
 </HTML>
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>
