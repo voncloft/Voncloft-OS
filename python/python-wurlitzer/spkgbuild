@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-wurlitzer
-version=2.1.0
+version=2.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/77/88/2775689c67bf78248161cdfd2111726d11f0fc78c6d015dc98ce1299f560/wurlitzer-2.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/96/48/a38a9d731c879ac04d6dac24dc802a9f0eb6a8de1c82b948eacee7c36bea/wurlitzer-2.1.1.tar.gz"
 options="!checksum"
 
 build() {

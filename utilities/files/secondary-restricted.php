@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-<link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" />
+<link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/include/sitecolors.css" />
 </head>
 <body>
 <center>
@@ -12,9 +12,21 @@
 </td></tr><tr><td>
 
 <br>
+<a href="http://voncloft.dnsfor.me/include/logout.php?logout">Sign Out</a>
 <?php
 error_reporting(E_ERROR | E_PARSE);
 session_start();
+include_once 'dbconnect.php';
+
+if(!isset($_SESSION['user']))
+{
+        header("Location: http://voncloft.dnsfor.me/index.php");
+}
+$res=mysqli_query($conn,"SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+$userRow=mysqli_fetch_array($res);
+
+//echo $_SESSION['user'];
+echo "<br><br>Access Level: ".$_SESSION['clearance'];
 function formatSize( $bytes )
 {
         $types = array( 'B', 'KB', 'MB', 'GB', 'TB', 'PB' );
@@ -34,6 +46,13 @@ function formatSize( $bytes )
     }/*2*/
     sort($file_array);
     reset($file_array);
+
+    if ($_SESSION['clearance']<>1)
+    {
+	echo "<br><br>Access Denied";
+    }
+    else
+    {
    if(count($file_array)==1)
    {
       print("<br><b><u>No new downloads at the moment - please check back later</u></b>");
@@ -46,10 +65,10 @@ function formatSize( $bytes )
 
       $npart=$file_array[$i];
 
-      if (!strstr($npart,".flv") && !strstr($npart,".css") && !strstr($npart,".inc.php") && 
+      if (!strstr($npart,".flv") && !strstr($npart,".css") && !strstr($npart,".html") && !strstr($npart,".inc.php") && 
 !strstr($npart,".php") && 
 !strstr($npart,"secondary.php")&& 
-!strstr($npart,".db")&& !strstr($npart,".sh")&& !strstr($npart,"$")&& !strstr($npart,"System Volume Information")&& !strstr($npart,"Recycled")&& !strstr($npart,"network password.txt")&& !strstr($npart,"App_Data")&& !strstr($npart,"Hidden Stuff")&& !strstr($npart,".htaccess")&&!strstr($npart,".jpg")&&!strstr($npart,".jpeg")&&!strstr($npart,".bmp")&&!strstr($npart,".gif")&&!strstr($npart,".BMP")&&!strstr($npart,".JPG")&&!strstr($npart,".JPEG")&&!strstr($npart,".GIF")&&!strstr($npart,".png")&&!strstr($npart,".PNG")&&!strstr($npart,".mp3")&&!strstr($npart,".wav")&&!strstr($npart,".avi")&&!strstr($npart,".AVI")&&!strstr($npart,".hidden")&&!strstr($npart,".windows-serial") && !strstr($npart,".mkv") && !strstr($npart,"mp4") && !strstr($npart,".html") && !strstr($npart,".log"))
+!strstr($npart,".db")&& !strstr($npart,".sh")&& !strstr($npart,"$")&& !strstr($npart,"System Volume Information")&& !strstr($npart,"Recycled")&& !strstr($npart,"network password.txt")&& !strstr($npart,"App_Data")&& !strstr($npart,"Hidden Stuff")&& !strstr($npart,".htaccess")&&!strstr($npart,".jpg")&&!strstr($npart,".jpeg")&&!strstr($npart,".bmp")&&!strstr($npart,".gif")&&!strstr($npart,".BMP")&&!strstr($npart,".JPG")&&!strstr($npart,".JPEG")&&!strstr($npart,".GIF")&&!strstr($npart,".png")&&!strstr($npart,".PNG")&&!strstr($npart,".mp3")&&!strstr($npart,".wav")&&!strstr($npart,".avi")&&!strstr($npart,".AVI")&&!strstr($npart,".hidden")&&!strstr($npart,".windows-serial") && !strstr($npart,".mkv") && !strstr($npart,"mp4"))
 	/*6*/{
         //$fsize = filesize($dir."/".$npart)/1000;
         if (is_dir($npart)) 
@@ -81,27 +100,6 @@ $test</center></TD><TD>Misc</TD></TR>\n");
 $test</center></TD><TD>Image</TD></TR>\n");
 
 	}
-	elseif(strstr($npart,".html"))
-        {
-
-                $fsize = filesize($dir."/".$npart);
-                $test=formatSize($fsize);
-
-                print("<tr class='imagefile'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center>
-$test</center></TD><TD>html</TD></TR>\n");
-
-        }
-       elseif(strstr($npart,".log"))
-        {
-
-                $fsize = filesize($dir."/".$npart);
-                $test=formatSize($fsize);
-
-                print("<tr class='imagefile'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center>
-$test</center></TD><TD>log</TD></TR>\n");
-
-        }
-
 	elseif(strstr($npart,".mp3")||strstr($npart,".wav"))
 	{
 
@@ -124,6 +122,7 @@ $test</center></TD><TD>Video File</TD></TR>\n");
     }/*5*/
 
   }/*1*/
+}
 }
 ?>
     </table>

@@ -2,10 +2,10 @@
 # depends : python-starlette python-pydantic
 
 name=python-fastapi
-version=0.66.1
+version=0.67.0
 release=1
 
-source="https://files.pythonhosted.org/packages/f3/84/ca8505d899255f00eb5c8b21817b3a77a946b22c0c469f20b54c03fb47e2/fastapi-0.66.1.tar.gz"
+source="https://files.pythonhosted.org/packages/49/48/26f1b57a5742b364e33ba2908faf794b024658cf26ac340ae692edd4e677/fastapi-0.67.0.tar.gz"
 options="!checksum"
 
 build() {

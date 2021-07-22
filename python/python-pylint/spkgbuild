@@ -5,7 +5,7 @@ name=python-pylint
 version=3.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/49/31/b4c4272664d4c5576c0d8b30dc01fb159561e5ee026a390de24461735f46/pylint-2.9.4.tar.gz"
+source="https://files.pythonhosted.org/packages/cb/f4/41c130d3efb1cbc8dc34a7b8f38ea3f753820a1c74b5c19bc965033e031c/pylint-2.9.5.tar.gz"
 options="!checksum"
 
 build() {
