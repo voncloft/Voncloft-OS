@@ -48,5 +48,5 @@ then
 	echo $name >> stripped_info.txt
 	eval $final_command >> stripped_info.txt
 	rm -v $file
-	rm -rv $new_website
+	rm -v $new_website
 fi
