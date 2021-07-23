@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-marshmallow
-version=3.12.2
+version=3.13.0
 release=1
 
-source="https://files.pythonhosted.org/packages/bc/98/a0fb5d042908cf787831ae23c5b2c33cc023d52c8e11847a3ebd44f33162/marshmallow-3.12.2.tar.gz"
+source="https://files.pythonhosted.org/packages/88/92/8aac4cb538002d38ae068b8d7bc9fabc2964eb97672e3cb6e16682cdc5be/marshmallow-3.13.0.tar.gz"
 options="!checksum"
 
 build() {

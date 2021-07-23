@@ -2,10 +2,10 @@
 # depends : python python-urllib3 python-requests
 
 name=python-dropbox
-version=11.13.3
+version=11.14.0
 release=2
 
-source="https://files.pythonhosted.org/packages/81/5b/a542f4d218b3c621818a44503a4570322d381488cd914542f2930b53465c/dropbox-11.13.3.tar.gz"
+source="https://files.pythonhosted.org/packages/79/30/f69a07ee829ee66973c3105bda5bdcfac3603539a5b4e10a4d4d9bfb36ec/dropbox-11.14.0.tar.gz"
 options="!checksum"
 
 build() {

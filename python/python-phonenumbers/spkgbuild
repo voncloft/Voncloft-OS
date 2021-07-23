@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-phonenumbers
-version=8.12.27
+version=8.12.28
 release=1
 
-source="https://files.pythonhosted.org/packages/5b/bc/4c270246072e448a43c699714f4d317a42fc9948104e6398e8ed2a623f40/phonenumbers-8.12.27.tar.gz"
+source="https://files.pythonhosted.org/packages/4e/1f/55cb0d522b12808c79747c10ca0ac206c37bd3db9f5e11901657f6aae8ef/phonenumbers-8.12.28.tar.gz"
 options="!checksum"
 
 build() {

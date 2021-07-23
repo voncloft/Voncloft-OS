@@ -2,7 +2,7 @@
 # depends	: pcre2 ncurses zlib readline eudev
 
 name=util-linux
-version=2.37
+version=2.37.1
 release=1
 _special=rc1
 source="https://www.kernel.org/pub/linux/utils/$name/v$_ver/$name-$version.tar.xz"
