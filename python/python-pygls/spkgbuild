@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-pygls
-version=0.11.1
+version=0.11.2
 release=4
 
-source="https://files.pythonhosted.org/packages/3a/7d/b98b6f2f1ce749ec30080a8efb512fe463ed29718661593420ff7ffb7d48/pygls-0.11.1.tar.gz"
+source="https://files.pythonhosted.org/packages/de/46/72b0d734c2786667e17ff3ffec63aa0bebe7d8ff246d4d585f9de965e4c3/pygls-0.11.2.tar.gz"
 options="!checksum"
 
 build() {

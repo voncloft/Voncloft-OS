@@ -2,10 +2,10 @@
 # depends : python python-flask python-flask-login python-flask-mail python-flask-principal
 
 name=python-flask-security-too
-version=4.0.1
+version=4.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/6e/72/3992c924f48cb96885333492632033a9a17dbacd6e4f20af4b8bd28d1cc8/Flask-Security-Too-4.0.1.tar.gz"
+source="https://files.pythonhosted.org/packages/59/14/f2d21541f95b8d3f8cef42e88c718eaf5bc3f3dd35a0917550294576eb8b/Flask-Security-Too-4.1.0.tar.gz"
 options="!checksum"
 
 build() {

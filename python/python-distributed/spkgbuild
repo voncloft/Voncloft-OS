@@ -2,10 +2,10 @@
 # depends : 
 
 name=python-distributed
-version=2021.7.0
+version=2021.7.1
 release=2
 
-source="https://files.pythonhosted.org/packages/ac/d4/c36282774efe0063af2b7034405e6d7c375bfc3b55c5268898fe689dff6a/distributed-2021.7.0.tar.gz"
+source="https://files.pythonhosted.org/packages/b7/be/6e075f7c4787ef7627983c5f63a78edf400f9c90083450a53bf4cc329f4a/distributed-2021.7.1.tar.gz"
 options="!checksum"
 
 build() {

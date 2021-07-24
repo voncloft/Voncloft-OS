@@ -2,10 +2,10 @@
 # depends : mypy protobuf python python-protobuf
 
 name=python-mypy-protobuf
-version=2.7
+version=2.8
 release=3
 
-source="https://github.com/dropbox/mypy-protobuf/archive/v2.7.tar.gz"
+source="https://github.com/dropbox/mypy-protobuf/archive/v2.8.tar.gz"
 options="!checksum"
 
 build() {

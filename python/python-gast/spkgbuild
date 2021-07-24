@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-gast
-version=0.5.0
+version=0.5.1
 release=3
 
-source="https://files.pythonhosted.org/packages/a6/fb/7ff6a4ee66673c5964d3cf515ae85ba2076bc64bc2dcbbbd0153718b005f/gast-0.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/b7/9c/45b706be126aebf3491b07450f3ba419039b6d0b5a9cc0991b5598eedddd/gast-0.5.1.tar.gz"
 options="!checksum"
 
 build() {
