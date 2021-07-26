@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-path
-version=16.0.0
+version=16.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/a3/b7/ade734a39f34a01f42581fe1ef04abb3dd50e92f706fe4acc76a79c6729c/path-16.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/49/22/f217df97c2975aa4c2eb6f875931075c4c904e93edcb500d9d3e6ae43e52/path-16.1.0.tar.gz"
 options="!checksum"
 
 build() {

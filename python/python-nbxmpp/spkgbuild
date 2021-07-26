@@ -2,10 +2,10 @@
 # depends : libsoup python-gobject python-idna python-precis_i18n
 
 name=python-nbxmpp
-version=2.0.2
+version=2.0.3
 release=3
 
-source="https://files.pythonhosted.org/packages/e8/1d/d55a238547f838a4a874171778f60b451f8b6076abd72360067bed8b3689/nbxmpp-2.0.2.tar.gz"
+source="https://files.pythonhosted.org/packages/8b/5a/aa87650d786b59d6a59ea1d2df3cb1a2f42f76247dcd6b3fa497c6028be1/nbxmpp-2.0.3.tar.gz"
 options="!checksum"
 
 build() {
