@@ -123,7 +123,7 @@ echo $title
 
 
 ###get missing package info not in the loop
-grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
+grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' >> missing.txt
 
 if [ $count -gt 0 ];
 then
