@@ -2,10 +2,10 @@
 # depends : python-babel
 
 name=python-sphinx
-version=4.1.1
+version=4.1.2
 release=1
 
-source="https://files.pythonhosted.org/packages/a9/7b/dd334e8d8178986b47760743b5fcee4a9796e10e1fc0ebe2bf6ac59c3a2e/Sphinx-4.1.1.tar.gz"
+source="https://files.pythonhosted.org/packages/6c/47/d6d0785b2a2317ced13da29e9993ff0ee971e9bdbb8a8c699360d8197e76/Sphinx-4.1.2.tar.gz"
 options="!checksum"
 
 build() {

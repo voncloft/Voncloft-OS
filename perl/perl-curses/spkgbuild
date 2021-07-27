@@ -2,10 +2,10 @@
 # depends : perl ncurses
 
 name=perl-curses
-version=1.37
+version=1.38
 release=8
 
-source="https://www.cpan.org/authors/id/G/GI/GIRAFFED/Curses-1.37.tar.gz"
+source="https://www.cpan.org/authors/id/G/GI/GIRAFFED/Curses-1.38.tar.gz"
 options="!checksum"
 
 build() {

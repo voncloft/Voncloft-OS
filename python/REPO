@@ -1541,8 +1541,8 @@ f:49de5bb00abecdc25012eb60136d23e5:python-curtsies/CHANGELOG
 f:87667e64ac42953e8c451949726c771f:python-curtsies/spkgbuild
 f:90e6a6bc4184e9761519b00b4a54315b:python-qrcode/CHANGELOG
 f:7dce81fa43d418b67f8a6ee22ea43486:python-qrcode/spkgbuild
-f:6b2c5b3f53c325317b255e53b7c43a55:python-faker/CHANGELOG
-f:eef8f1cb4f2b12bd9310d30a4cf348fb:python-faker/spkgbuild
+f:ef50d073b580cdbb99891609f3da5fbe:python-faker/CHANGELOG
+f:37508bee21bbba34f443e4263ba26fa0:python-faker/spkgbuild
 f:57f28c2346245a9af432ce83329178ea:python-configobj/CHANGELOG
 f:7cb95dcf5c8fbca90620c20b88145c94:python-configobj/spkgbuild
 f:8230fd4636cb1190e8ef3318b42f8e7e:python-patiencediff/CHANGELOG
@@ -1735,8 +1735,8 @@ f:dd5d3e7d48fca5bfc65dc737880ba6d9:python-pyaudio/CHANGELOG
 f:9379f396582fa27af6827aaa1e1a7ad3:python-pyaudio/spkgbuild
 f:6b01cbd46641cb611f0c15782db218f8:python-param/CHANGELOG
 f:52f510140a31452c0c0c51240f208239:python-param/spkgbuild
-f:e264707dcc58bbce938ae15134d2870e:python-google-api-python-client/CHANGELOG
-f:6fe0068b49d2261962959d1600190d02:python-google-api-python-client/spkgbuild
+f:c37ab80beb4d581974183b8bdcc4f7c3:python-google-api-python-client/CHANGELOG
+f:f46a56f1f4917261be055b90a386b9d3:python-google-api-python-client/spkgbuild
 f:3408a46c72da6d0f360d86ca3030ef37:python-connexion/CHANGELOG
 f:04ff6e8fa3a557a798f89cf1b394d9a1:python-connexion/spkgbuild
 f:3e8669c5e013556911856e75f863eaf9:python-setuptools-git/CHANGELOG
@@ -1779,7 +1779,7 @@ f:550a3465c5315c4c9ab21573b6e3a084:python-oslotest/spkgbuild
 f:a801212cbb5c0c469e26be7fbb1a143c:python-rcssmin/CHANGELOG
 f:9bf33aa227cdf9e996e26ef2b6c51de9:python-rcssmin/spkgbuild
 f:62b01e606d1bbf51216f7909eb862b83:python-pip/CHANGELOG
-f:cc083f6e1e7738a8f2868bd558155873:python-pip/spkgbuild
+f:50f897d862a7d8573394955cfbdcb36d:python-pip/spkgbuild
 f:8beee1c963df3daf7e6ffd599bdcedf7:python-pystache/CHANGELOG
 f:6e5dff7b56655b11fe30ab37ceea5bc3:python-pystache/spkgbuild
 f:177816d7bdbe522fe402619581438c6f:python-commentjson/CHANGELOG
@@ -2151,8 +2151,8 @@ f:492bc627d408f29185b1e71b79bf545f:python-ptyprocess/CHANGELOG
 f:5fd321dd7773139d5a467908a8e34de6:python-ptyprocess/spkgbuild
 f:e3edc8f5174f5c77ed1b0c8b7cbc89ec:python-google-auth-httplib2/CHANGELOG
 f:59f1c2378448157e1f306bef0f39e4a5:python-google-auth-httplib2/spkgbuild
-f:0a4034b932e291d471e661510b90f41e:python-fonttools/CHANGELOG
-f:7e601c71cc84146de3fa021b714d8ab0:python-fonttools/spkgbuild
+f:54715697861163d580b75218c7cda94a:python-fonttools/CHANGELOG
+f:6daf38f2e7c5cf2e7c7eb746416b9102:python-fonttools/spkgbuild
 f:540080f7a66c19c219cb3c69306465db:python-i3ipc/CHANGELOG
 f:36685f3d280c2e370bcc6c4eb3143076:python-i3ipc/spkgbuild
 f:c3d142d25bcbcfec2ec1b4059126859b:python-dephell-pythons/CHANGELOG
@@ -2301,7 +2301,7 @@ f:669b6cd51ecb70db4f706748ad737e44:python-qrencode/CHANGELOG
 f:88b06731a4eaedcc592ae1b17295fe67:python-qrencode/spkgbuild
 f:f6ef65c1e83c369ee82150b38c914b08:python-nose-random/spkgbuild
 f:fc16b19000911ad1dc78498c4bf949ef:python-pandas/CHANGELOG
-f:ae9f54355208cecdbc4a02df294c9969:python-pandas/spkgbuild
+f:6945050e57b3f815e66259f0300e0c82:python-pandas/spkgbuild
 f:213c2f916364cfab6519b40b059df232:python-infinity/CHANGELOG
 f:2cd895fb6ccda60113e55810f3867a37:python-infinity/spkgbuild
 f:ae00f0f637ad4bb6fe0dafb1a1e05ec5:python-jsonpointer/CHANGELOG
@@ -3122,8 +3122,8 @@ f:47769b97d171d19bb478cc36ada69242:python-pytest-flake8/CHANGELOG
 f:fbf507200d70b9d3c991f861670d2855:python-pytest-flake8/spkgbuild
 f:51b2990c13752fe562dc1815f150ea7a:python-pytest-xvfb/CHANGELOG
 f:8efe2995c5fd74f6cd300ac0d43d32f1:python-pytest-xvfb/spkgbuild
-f:34d0c1ceaf709d357b13843d7357b9fa:python-matrix-nio/CHANGELOG
-f:21845167d24c90390c6d0eeedd9ba9ed:python-matrix-nio/spkgbuild
+f:70c3d78ae76a178fc960c9698eec1aef:python-matrix-nio/CHANGELOG
+f:c93ef7a66e6c61c29ca1978424d3cf0d:python-matrix-nio/spkgbuild
 f:db4a3875d856712963c0486c2712dbab:python-testing.common.database/CHANGELOG
 f:f315177e69f803f2ed696e29cb30eefe:python-testing.common.database/spkgbuild
 f:8a0d024e24d63640d0f976a65d51fda8:python-gitpython/CHANGELOG
@@ -3418,8 +3418,8 @@ f:d050f1eaa0f1ab7f3aaf85c1830363a4:python-stevedore/CHANGELOG
 f:40288a3afcb515de8101c6dc8f9f8f3c:python-stevedore/spkgbuild
 f:dc27353e6d83ae28a7bf01d2456c12c9:python-jmespath/CHANGELOG
 f:f4063133e1ed6935a35f96dde5d12f2a:python-jmespath/spkgbuild
-f:65c1a6f7b038827d22d57a1953763270:python-sphinx/CHANGELOG
-f:a930a1ff8628daf3610798a1e575c2f7:python-sphinx/spkgbuild
+f:4b809a70a67a2138ef59e9f2f36e064b:python-sphinx/CHANGELOG
+f:5771ffc5a208f0a1b9f7e4232b556682:python-sphinx/spkgbuild
 f:ac7aaf624a1a41ff1d6d349df158a826:python-zita-audiotools/spkgbuild
 f:62083c2eaf8b3b093987ce057dacc087:python-graphql-relay/CHANGELOG
 f:db5f4b30009314fd6860d53c9f771d82:python-graphql-relay/spkgbuild
@@ -3621,8 +3621,8 @@ f:4f5d400d7b9c2b423c164b8ac7d2fdce:python-pyasn1/CHANGELOG
 f:572afcd33f6511b6a7ba95c32b3f6323:python-pyasn1/spkgbuild
 f:8fa792e137bf7cfe17f7934980b619ef:python-wsgiproxy2/CHANGELOG
 f:0c9f7260f29f26cb3970c160fba1eaf0:python-wsgiproxy2/spkgbuild
-f:e72681b926b172ef1b469f46b46eeafb:python-hypothesis/CHANGELOG
-f:364f671abab2c5be68914772dcc26089:python-hypothesis/spkgbuild
+f:14b9c3e89523efd13ebca0e96c76f729:python-hypothesis/CHANGELOG
+f:1f27126d4a387df6382659d7c4e96a4f:python-hypothesis/spkgbuild
 f:b25a306f3e03ce67a6c7293070d8d420:python-flask-dance/CHANGELOG
 f:2789647d46f99ffcc22522e3f0bd2068:python-flask-dance/spkgbuild
 f:f8cf2cf51922ee09dc3db130db4fd5e9:python-cjkwrap/CHANGELOG
@@ -3688,7 +3688,7 @@ f:8726b65065001c7c8b3bb71a6d3f38b2:python-traitsui/spkgbuild
 f:860951bf553ccd41f88780c3fafc838c:python-requests-ntlm/CHANGELOG
 f:db1c4266c2cd3f807c668175532134ff:python-requests-ntlm/spkgbuild
 f:2bce4fd20ed603e0480e9d83e8292d5a:python-matrix_client/CHANGELOG
-f:e30cff8ef9d374825ced0b939df474b3:python-matrix_client/spkgbuild
+f:ed0ebb13a3743998b5211d9d7947f627:python-matrix_client/spkgbuild
 f:7ebcb7c33dfaa9a901494cf2dfd1e42c:python-pytest-subtests/CHANGELOG
 f:e8ba9e098f4e520b4698ac75db184a73:python-pytest-subtests/spkgbuild
 f:d098ae576db1f5b996a109f138df93be:python-tailer/CHANGELOG
@@ -3790,8 +3790,8 @@ f:ea63f318ff9f80035447807f6cda9f95:python-terminado/CHANGELOG
 f:3ce042fbecf89294cb064da6ddccf4ec:python-terminado/spkgbuild
 f:bc056df6d6d251d7f5e9ac41bf107793:python-dephell-links/CHANGELOG
 f:e995136d8e11df4fd7e82f47d60d36c5:python-dephell-links/spkgbuild
-f:d658c7bcd026354b2923c03f669561db:python-moto/CHANGELOG
-f:39c5d79cafdb9da59c167a58a6cc1191:python-moto/spkgbuild
+f:7c22e061467b07a1e23b47e71c7065d9:python-moto/CHANGELOG
+f:1ac3a11e25105b83cd4baeac78142322:python-moto/spkgbuild
 f:eb140dc33cc7c87dc44809a47e6047a3:python-designateclient/spkgbuild
 f:e14166e1e198527d055ef7bca11fb955:python-simplespectral/CHANGELOG
 f:1e595d63708137b2b2193194c9eb7f50:python-simplespectral/spkgbuild
