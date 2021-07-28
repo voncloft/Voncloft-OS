@@ -96,7 +96,7 @@ while IFS=$'\n' read -ra items; do
 						final+="<br><br>\n\n"
 						echo -e $final >> testing.txt
 						echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
 						changelog "$item" "Upgraded from version $cversion to version $uversion"
 					else
