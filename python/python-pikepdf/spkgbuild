@@ -2,10 +2,10 @@
 # depends : python-lxml python-pillow qpdf
 
 name=python-pikepdf
-version=2.15.1
+version=2.16.0
 release=1
 
-source="https://files.pythonhosted.org/packages/08/87/d32883d08e899b59c96361417d588c4fddfbab6ae6b76811658973a5df46/pikepdf-2.15.1.tar.gz"
+source="https://files.pythonhosted.org/packages/4a/26/b0aafc966bc89079ef6ab421ac0849ebd4dd931dcc9367526b531b8d0675/pikepdf-2.16.0.tar.gz"
 options="!checksum"
 
 build() {

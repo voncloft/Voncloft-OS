@@ -2,10 +2,10 @@
 # depends : python-requests
 
 name=python-prawcore
-version=2.2.0
+version=2.3.0
 release=3
 
-source="https://files.pythonhosted.org/packages/6f/88/77d9f302a8935e7bf4e63dbd60441f4ce42d9bed79d8055bec17a6ddcebb/prawcore-2.2.0.tar.gz"
+source="https://files.pythonhosted.org/packages/ed/85/13e76be737f3159514cce609b29e95499ba6d2cfa0b88761bab318b5f63e/prawcore-2.3.0.tar.gz"
 options="!checksum"
 
 build() {

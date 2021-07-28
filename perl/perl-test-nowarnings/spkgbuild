@@ -2,10 +2,10 @@
 # depends : perl-test-simple
 
 name=perl-test-nowarnings
-version=1.04
+version=1.06
 release=6
 
-source="https://www.cpan.org/authors/id/A/AD/ADAMK/Test-NoWarnings-1.04.tar.gz"
+source="https://www.cpan.org/authors/id/H/HA/HAARG/Test-NoWarnings-1.06.tar.gz"
 options="!checksum"
 
 build() {
