@@ -133,8 +133,9 @@ then
 	mailme phone@vtext.com "Updated packages: $count" "Upgrade Report"
 	#mailme phonenumber@vtext.com "$log_html_path" "Upgrade Report"
 	#message me outdated packages not in the loop
-	mailme phone@vtext.com "Total Missing: $(cat missing.txt | wc -l)" "Total Outdated Packages"
-	echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
+	missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
+	mailme phone@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
+	echo "<br><br>Total Missing: $missing_packages" >> missing.txt
 	missing=$(cat missing.txt)
 	mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
 
