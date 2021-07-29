@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-virtualenv-clone
-version=0.5.5
+version=0.5.6
 release=4
 
-source="https://files.pythonhosted.org/packages/d9/f8/2bdcdd527819d9efdb40f650cb52a521403f8f6aaaac9792cab81584d33d/virtualenv-clone-0.5.5.tar.gz"
+source="https://files.pythonhosted.org/packages/a9/bb/ab59bdb1dc8e14add54c70e9bccb8d54379bdf73ec8cebbbf638ab76590f/virtualenv-clone-0.5.6.tar.gz"
 options="!checksum"
 
 build() {

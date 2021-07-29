@@ -2,10 +2,10 @@
 # depends : python-psutil python-pytest python-setuptools
 
 name=python-pytest-xprocess
-version=0.17.1
+version=0.18.1
 release=1
 
-source="https://files.pythonhosted.org/packages/f7/1f/fd9366a9430ed3f6693d1dcaa90df872e39052c9ce53f7c0732bf85a54b6/pytest-xprocess-0.17.1.tar.gz"
+source="https://files.pythonhosted.org/packages/c3/9a/8681347cfbbc073a25ee4e62c2c82f4bbcbbd2976a47da7ab36b8a768d23/pytest-xprocess-0.18.1.tar.gz"
 options="!checksum"
 
 build() {
