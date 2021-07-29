@@ -5,14 +5,9 @@
 </head>
 <body>
 <center>
-<table border = '0' height='100%'>
-<tr>
-<td>
+<table border = '2' height='100%'>
+<tr><td>
 
-</td></tr><tr><td>
-
-<br>
-<a href="http://voncloft.dnsfor.me/include/logout.php?logout">Sign Out</a>
 <?php
 error_reporting(E_ERROR | E_PARSE);
 session_start();
@@ -26,7 +21,10 @@ $res=mysqli_query($conn,"SELECT * FROM users WHERE user_id=".$_SESSION['user']);
 $userRow=mysqli_fetch_array($res);
 
 //echo $_SESSION['user'];
-echo "<br><br>Access Level: ".$_SESSION['clearance'];
+print("<table border=2 width=100%><tr><td align='left' width='105'>Access Level: ".$_SESSION['clearance']."</td>");
+print("<td align='center'><a href='http://voncloft.dnsfor.me/secondary.php'>Home</a></td>");
+print("<td align='right' width='60'><a href='http://voncloft.dnsfor.me/include/logout.php?logout'>Sign Out</a></td>");
+print("</tr></table></td></tr><tr><td>");
 function formatSize( $bytes )
 {
         $types = array( 'B', 'KB', 'MB', 'GB', 'TB', 'PB' );
@@ -49,7 +47,7 @@ function formatSize( $bytes )
 
     if ($_SESSION['clearance']<>1)
     {
-	echo "<br><br>Access Denied";
+	echo "Access Denied</td></tr>";
     }
     else
     {
@@ -59,7 +57,7 @@ function formatSize( $bytes )
    }
    else
    {
-   print("<br><table border='1' width='710px' id='menu' height='100%'><tr><td width='690' ><center><b>File Name</b></center></td><td width='100'><center><b>Size</b></center></td><td>File Type</td></tr>");
+   print("<table border='1' width='710px' id='menu' height='100%'><tr><td width='690' ><center><b>File Name</b></center></td><td width='100'><center><b>Size</b></center></td><td>File Type</td></tr>");
 
     for($i=0;$i<count($file_array);$i++)/*5*/{
 
