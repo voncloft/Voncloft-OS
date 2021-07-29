@@ -75,7 +75,7 @@ echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsf
 
 
 echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e "$(date +%H)" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 while IFS=$'\n' read -ra items; do
 		for item in "${items[@]}"; do
