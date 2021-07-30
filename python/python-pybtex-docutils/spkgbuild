@@ -2,10 +2,10 @@
 # depends : python-six python-docutils python-pybtex
 
 name=python-pybtex-docutils
-version=1.0.0
+version=1.0.1
 release=4
 
-source="https://files.pythonhosted.org/packages/c3/2f/01e252f737a261df321e0ec1ebef87876e751288fa2290f05640105cf2d4/pybtex-docutils-1.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/41/3b/69c21deab7974b76018124b441c059edc6d6cec970ac038e5f62682eac8a/pybtex-docutils-1.0.1.tar.gz"
 options="!checksum"
 
 build() {

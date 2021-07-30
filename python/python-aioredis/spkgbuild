@@ -5,7 +5,7 @@ name=python-aioredis
 version=2.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/2c/2a/662e5e79dde5d00964b995d50e38ecdefeeeb09b37edafff193c7e850f46/aioredis-1.3.1.tar.gz"
+source="https://files.pythonhosted.org/packages/92/60/a3cb5fadc254cc6e709ba14a02531870b02386b8c7bb147bf80a2be93f76/aioredis-2.0.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-xlsxwriter
-version=1.4.4
+version=1.4.5
 release=1
 
-source="https://files.pythonhosted.org/packages/a9/90/66d5e3578a79fbc6d4d6d48246880f5ce941a5c41689b8bc7274cb6c1918/XlsxWriter-1.4.4.tar.gz"
+source="https://files.pythonhosted.org/packages/15/72/75b6c904ebabb3fc22965dd78e080252d5950af652a34cd3e0ed538ab1ff/XlsxWriter-1.4.5.tar.gz"
 options="!checksum"
 
 build() {

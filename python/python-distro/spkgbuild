@@ -2,10 +2,10 @@
 # depends : python python-sphinx
 
 name=python-distro
-version=1.5.0
+version=1.6.0
 release=1
 
-source="https://files.pythonhosted.org/packages/a6/a4/75064c334d8ae433445a20816b788700db1651f21bdb0af33db2aab142fe/distro-1.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/a5/26/256fa167fe1bf8b97130b4609464be20331af8a3af190fb636a8a7efd7a2/distro-1.6.0.tar.gz"
 options="!checksum"
 
 build() {

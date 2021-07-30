@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-emoji
-version=1.4.1
+version=1.4.2
 release=1
 
-source="https://files.pythonhosted.org/packages/1a/88/790b944f1769cfcd7e84f745ac2a0d543fede42442ca100931e6466d01b0/emoji-1.4.1.tar.gz"
+source="https://files.pythonhosted.org/packages/75/eb/e09f7986f83c4bd711f0c81482f12a48742b9a7473a7ac0a97b8bcc9dd4b/emoji-1.4.2.tar.gz"
 options="!checksum"
 
 build() {

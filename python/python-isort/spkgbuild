@@ -2,10 +2,10 @@
 # depends : python-toml
 
 name=python-isort
-version=5.9.2
+version=5.9.3
 release=1
 
-source="https://files.pythonhosted.org/packages/ac/2a/87e6a7d3c3953ddfb37c6da3fd951490425a60d2ab0be059b321d5788dc8/isort-5.9.2.tar.gz"
+source="https://files.pythonhosted.org/packages/1c/34/ed9178b5b23ade4561bf77b91856e0e3bc094620fd81bd74d535817a0f0d/isort-5.9.3.tar.gz"
 options="!checksum"
 
 build() {

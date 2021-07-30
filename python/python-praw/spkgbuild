@@ -2,10 +2,10 @@
 # depends : python-prawcore python-update-checker python-websocket-client
 
 name=python-praw
-version=7.3.0
+version=7.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/24/df/5a2a80e853b281da4dfe7decd09ba55cdf654005859532516e1c911e33b4/praw-7.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/6e/11/cdcd2f15e3ae6fabd577946d05b4bdab929180cb33153b7326e774b9cf77/praw-7.4.0.tar.gz"
 options="!checksum"
 
 build() {
