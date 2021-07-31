@@ -2,10 +2,10 @@
 # depends : python python-flit-core python-requests python-docutils python-pytoml
 
 name=python-flit
-version=3.2.0
+version=3.3.0
 release=3
 
-source="https://files.pythonhosted.org/packages/76/72/19162eb5c1a34ad073f708d50dbd6b6f83bc4275c32dce348f135546daf9/flit-3.2.0.tar.gz"
+source="https://files.pythonhosted.org/packages/b6/86/4f55f5476c1b4aeb8825e4dcac71038b60bad8feb9d3635b5ecfcbbf98dd/flit-3.3.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-class-data-inheritable
-version=0.08
+version=0.09
 release=9
 
-source="https://www.cpan.org/authors/id/T/TM/TMTM/Class-Data-Inheritable-0.08.tar.gz"
+source="https://www.cpan.org/authors/id/R/RS/RSHERER/Class-Data-Inheritable-0.09.tar.gz"
 options="!checksum" 
 
 build() {

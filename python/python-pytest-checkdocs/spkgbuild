@@ -1,10 +1,10 @@
 # depends : python-docutils python-more-itertools
 
 name=python-pytest-checkdocs
-version=2.7.0
+version=2.7.1
 release=1
 
-source="https://files.pythonhosted.org/packages/d2/f0/66ea08b3416260640d17fcb2b8efcafc38f0ec72a298abd140f618100196/pytest-checkdocs-2.7.0.tar.gz"
+source="https://files.pythonhosted.org/packages/79/8b/0e170cdcc59d15b53ab2ff06bbf514222f961d5702b6b7327e620cf61aaf/pytest-checkdocs-2.7.1.tar.gz"
 options="!checksum"
 
 build() {

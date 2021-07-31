@@ -2,10 +2,10 @@
 # depends : python python-scramp
 
 name=python-pg8000
-version=1.20.0
+version=1.21.0
 release=3
 
-source="https://files.pythonhosted.org/packages/37/34/3f1399a1e1dc37e3175d79bd16adf6bc7e74d7368c71481165f8a063db0b/pg8000-1.20.0.tar.gz"
+source="https://files.pythonhosted.org/packages/5a/9d/6efaa60cbbcaf0ddd7f3ea139e098550b0ce7ae0f91f60f02bd59b8f63fb/pg8000-1.21.0.tar.gz"
 options="!checksum"
 
 build() {

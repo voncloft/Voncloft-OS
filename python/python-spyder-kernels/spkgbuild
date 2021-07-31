@@ -2,10 +2,10 @@
 # depends : 
 
 name=python-spyder-kernels
-version=2.0.5
+version=2.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/ed/3c/a7318d8377323aeeeb7cb35e2a8bc85e8d571aa3d964409f4d1a73ae3dea/spyder-kernels-2.0.5.tar.gz"
+source="https://files.pythonhosted.org/packages/d5/37/167a792c02866bd582434c0c0ff74f7350af6cffd8b7abac1f026757cbff/spyder-kernels-2.1.0.tar.gz"
 options="!checksum"
 
 build() {
