@@ -1,7 +1,6 @@
 d:httpd
 d:berkeley-db
 d:php
-d:plex-media-server
 d:dnsmasq
 d:iptables
 d:postfix
@@ -23,8 +22,6 @@ f:7e60804d707ff7fb84369ed46419e6b7:httpd/run
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:0b5bfffae0d6e7929cb4c4cdd21bd78a:php/CHANGELOG
 f:ab2688fd8eaa2ceff6bba69f3f0b51f7:php/spkgbuild
-f:60fcacd21ae8390d3d2ba4ff284781c6:plex-media-server/CHANGELOG
-f:0dc66e2982501341d3f7e70368ffaea6:plex-media-server/spkgbuild
 f:93832792c0bb7331a6fd48137a14e60c:dnsmasq/CHANGELOG
 f:93dd530822e105632c7c45b6bf449037:dnsmasq/dnsmasq.conf
 f:2f02383c0226cb3abcb93cb53a935c75:dnsmasq/spkgbuild
