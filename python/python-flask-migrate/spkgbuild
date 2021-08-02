@@ -2,10 +2,10 @@
 # depends : python python-alembic python-flask python-flask-script python-flask-sqlalchemy
 
 name=python-flask-migrate
-version=3.0.1
+version=3.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/2a/22/b6eb81869c89c1120b47dc316a056236ea0438ad082b80f3c0a29fecc9fd/Flask-Migrate-3.0.1.tar.gz"
+source="https://files.pythonhosted.org/packages/e2/65/cca3c4fa6dcdf7a3c4fe8aa0822944f8f9f20961f831a04b7a0685ab000a/Flask-Migrate-3.1.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-aiohttp python-babel
 
 name=python-aiogram
-version=2.14.3
+version=3.0.0
 release=3
 
-source="https://files.pythonhosted.org/packages/0c/63/28bd04c7b8ab4796d5c6da4e637cb6ae53b2afac84e421285b5571858a8d/aiogram-2.14.3.tar.gz"
+source="https://files.pythonhosted.org/packages/0c/63/28bd04c7b8ab4796d5c6da4e637cb6ae53b2afac84e421285b5571858a8d/aiogram-3.0.0.tar.gz"
 options="!checksum"
 
 build() {

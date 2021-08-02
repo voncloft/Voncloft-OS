@@ -2,10 +2,10 @@
 # depends : perl perl-exporter-tiny
 
 name=perl-type-tiny
-version=1.012003
+version=1.012004
 release=1
 
-source="https://www.cpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-1.012003.tar.gz"
+source="https://www.cpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-1.012004.tar.gz"
 options="!checksum"
 
 build() {
