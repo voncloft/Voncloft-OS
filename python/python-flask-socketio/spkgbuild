@@ -2,10 +2,10 @@
 # depends : python python-flask python-eventlet python-socketio
 
 name=python-flask-socketio
-version=5.1.0
+version=5.1.1
 release=1
 
-source="https://files.pythonhosted.org/packages/e3/4f/b15fe65971e3d6c449429d340344bcde9fb37a05f3a3dc2dd7f129852b49/Flask-SocketIO-5.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/5f/a5/5c03d62fdbdf0343345c8cca19d4961d8958eba54449230df2b0080b7011/Flask-SocketIO-5.1.1.tar.gz"
 options="!checksum"
 
 build() {

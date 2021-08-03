@@ -2,10 +2,10 @@
 # depends : python libnl
 
 name=python-ethtool
-version=0.14
+version=0.15
 release=6
 
-source="https://files.pythonhosted.org/packages/81/41/e6cb9026374771e3bdb4c0fe8ac0c51c693a14b4f72f26275da15f7a4d8b/ethtool-0.14.tar.gz"
+source="https://files.pythonhosted.org/packages/d2/59/2137996ee2da077e9369ac323830938bfc14083049081d89fdd7f3cf20a5/ethtool-0.15.tar.gz"
 options="!checksum"
 
 build() {

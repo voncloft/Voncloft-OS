@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-test-simple
-version=1.302185
+version=1.302186
 release=1
 
-source="https://www.cpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302185.tar.gz"
+source="https://www.cpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302186.tar.gz"
 options="!checksum"
 
 build() {

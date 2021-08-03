@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-rstr
-version=2.2.6
+version=3.0.0
 release=10
 
-source="https://files.pythonhosted.org/packages/be/52/f87d6a9c691329dc71eaa6263f63cc262bd818df89e2dc981720db9dc9c5/rstr-2.2.6.tar.gz"
+source="https://files.pythonhosted.org/packages/f2/71/38092c3bdca7a4faed233c577fd5c11c7a351bce671e743b30e67e7a22c3/rstr-3.0.0.tar.gz"
 options="!checksum"
 
 build() {

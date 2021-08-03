@@ -2,7 +2,7 @@
 # depends	: rust
 
 name=cbindgen
-version=0.20.0
+version=iew all tags
 release=1
 source="https://github.com/eqrion/cbindgen/archive/v$version/cbindgen-$version.tar.gz"
 options="!checksum"
