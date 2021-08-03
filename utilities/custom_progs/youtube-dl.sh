@@ -1,6 +1,6 @@
-url=https://github.com/ytdl-org/youtube-dl/releases
+url=https://github.com/ytdl-org/youtube-dl/tags
 name=youtube-dl
-file=releases
+file=tags
 
 cd /var/log/old
 echo $name
