@@ -13,7 +13,7 @@ then
 fi
 
 ###to get rid of <> tags in html
-grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep v > test.txt
+grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep v | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" > test.txt
 
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
@@ -31,17 +31,17 @@ grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | gr
 #sed -i -e 's/v//g' test.txt
 
 ###beta###
-command="cat test.txt | sort -V -r | head -n 1 | sed 's/v//g'"
+command="cat test.txt | sort -r -V | head -n 1"
 eval $command
 
 
 ##Production###
-if [ -f $file ];
-then
-	echo $name >> stripped_info.txt
-	#cat test.txt | sort -V -r | head -n 1 | sed 's/v//g' >> stripped_info.txt
-	eval $command >> stripped_info.txt
-	rm -v $file
-fi
+#if [ -f $file ];
+#then
+#	echo $name >> stripped_info.txt
+#	#cat test.txt | sort -V -r | head -n 1 | sed 's/v//g' >> stripped_info.txt
+#	eval $command >> stripped_info.txt
+#	rm -v $file
+#fi
 
 
