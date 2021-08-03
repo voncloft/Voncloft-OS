@@ -36,12 +36,12 @@ eval $command
 
 
 ##Production###
-#if [ -f $file ];
-#then
-#	echo $name >> stripped_info.txt
-#	#cat test.txt | sort -V -r | head -n 1 | sed 's/v//g' >> stripped_info.txt
-#	eval $command >> stripped_info.txt
-#	rm -v $file
-#fi
+if [ -f $file ];
+then
+	echo $name >> stripped_info.txt
+	#cat test.txt | sort -V -r | head -n 1 | sed 's/v//g' >> stripped_info.txt
+	eval $command >> stripped_info.txt
+	rm -v $file
+fi
 
 
