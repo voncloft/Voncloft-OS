@@ -386,6 +386,7 @@ d:w3m
 d:logrotate
 d:pcre
 d:waylandpp
+d:android-tools
 d:tcsh
 d:cdparanoia
 d:polkit-gnome
@@ -454,6 +455,7 @@ d:geos
 d:xauth
 d:speedtest-cli
 d:argon2
+d:android-udev
 d:bc
 d:base
 d:lvm2
@@ -1819,6 +1821,8 @@ f:151a025aa036477ed920100fb45b3947:pcre/.checksums
 f:6d4a79d6caf365e2b25ce19402eb07a4:pcre/.pkgfiles
 f:c00d233e3921f750e02dbacefd3916d9:pcre/spkgbuild
 f:b09ebb6309ca8c40d206f824fc46c9fc:waylandpp/spkgbuild
+f:a18a2f8739b159262ab8532ba2efabf6:android-tools/CHANGELOG
+f:524464e65b6d1c86de9449e9d0ee6cd4:android-tools/spkgbuild
 f:371c5e3eb660cc6a93a24dca5d6c0dbe:tcsh/install
 f:7ca0fe6d1a1b9a0093f632499d4fb112:tcsh/csh.cshrc
 f:8bbdcde1a99aac612c9ad1894fcbb62e:tcsh/.checksums
@@ -2035,6 +2039,8 @@ f:8d5153599a64ddd6b84e72c90118c017:speedtest-cli/.checksums
 f:6636a508f2b4b84475d1ef7be90b7ecf:speedtest-cli/.pkgfiles
 f:c2eecbd3c281207382870b5090d1ac1e:speedtest-cli/spkgbuild
 f:2508877d5ed2964be1d54a33e53dd913:argon2/spkgbuild
+f:acdc141f39b6fc71c8083819d9cb90e5:android-udev/CHANGELOG
+f:f6c241dbcea9007a09f56a9586e7eede:android-udev/spkgbuild
 f:15695abbce576f3e32ec7273b02eec8d:bc/.checksums
 f:b9664e3aa8dbd46c7d7eee830042dbc0:bc/.pkgfiles
 f:b0ba41a14e8873dfe21474b8af98c42c:bc/spkgbuild
