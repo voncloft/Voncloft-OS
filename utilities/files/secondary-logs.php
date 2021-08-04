@@ -73,8 +73,8 @@ align='center'><i>N/A</i></TD><TD>Directory</TD></TR>\n");
 
 		$fsize = filesize($dir."/".$npart);
 		$test=formatSize($fsize);
-
-		print("<tr class='default'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center> 
+                $url=str_replace("'","%27",$npart);
+		print("<tr class='default'><TD><a href='$url'>$npart</a></TD><TD align='right'><center> 
 $test</center></TD><TD>Misc</TD></TR>\n");
 
 
@@ -87,8 +87,8 @@ $test</center></TD><TD>Misc</TD></TR>\n");
 
 		$fsize = filesize($dir."/".$npart);
 		$test=formatSize($fsize);
-
-		print("<tr class='imagefile'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center> 
+                $url=str_replace("'","%27",$npart);
+		print("<tr class='imagefile'><TD><a href='$url'>$npart</a></TD><TD align='right'><center> 
 $test</center></TD><TD>Image</TD></TR>\n");
 
 	}
@@ -98,8 +98,8 @@ $test</center></TD><TD>Image</TD></TR>\n");
 
 		$fsize = filesize($dir."/".$npart);
 		$test=formatSize($fsize);
-
-		print("<tr class='musicfile'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center> 
+                $url=str_replace("'","%27",$npart);
+		print("<tr class='musicfile'><TD><a href='$url'>$npart</a></TD><TD align='right'><center> 
 $test</center></TD><TD>Audio File</TD></TR>\n");
 	}
 
@@ -110,8 +110,8 @@ $test</center></TD><TD>Audio File</TD></TR>\n");
 
                 $fsize = filesize($dir."/".$npart);
                 $test=formatSize($fsize);
-
-                print("<tr class='musicfile'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center>
+                $url=str_replace("'","%27",$npart);
+                print("<tr class='musicfile'><TD><a href='$url'>$npart</a></TD><TD align='right'><center>
 $test</center></TD><TD>Server log</TD></TR>\n");
         }
 
@@ -120,8 +120,8 @@ strstr($npart,".mp4")||strstr($npart,".MP4") || strstr($npart,".MKV")||strstr($n
 	{
 		$fsize = filesize($dir."/".$npart);
 		$test=formatSize($fsize);
-
-		print("<tr class='vidfile'><TD><a href='$npart'>$npart</a></TD><TD align='right'><center> 
+                $url=str_replace("'","%27",$npart);
+		print("<tr class='vidfile'><TD><a href='$url'>$npart</a></TD><TD align='right'><center> 
 $test</center></TD><TD>Video File</TD></TR>\n");
 	}
     }/*5*/
