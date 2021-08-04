@@ -2,10 +2,10 @@
 # depends : python-toml python-pep517 python-packaging
 
 name=python-build
-version=0.5.1
+version=0.6.1
 release=1
 
-source="https://files.pythonhosted.org/packages/70/56/1a8b602376520cfae7759289595032923c8cdb65821ecc6b87c3e0edcddb/build-0.5.1.tar.gz"
+source="https://files.pythonhosted.org/packages/45/9a/ee95fd7dcb51b6fbb12a08e362dba0d02158ca4fd599ab4e61d0853c2974/build-0.6.0.tar.gz"
 options="!checksum"
 
 build() {
