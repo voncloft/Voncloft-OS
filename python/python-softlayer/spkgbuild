@@ -2,10 +2,10 @@
 # depends : python-six python-ptable python-click python-requests python-prompt_toolkit
 
 name=python-softlayer
-version=5.9.6
+version=5.9.7
 release=2
 
-source="https://files.pythonhosted.org/packages/29/56/8e359fc429eb16a8e37cbf2f6b081ff3e324c785f24af9ac679550d2cb27/SoftLayer-5.9.6.tar.gz"
+source="https://files.pythonhosted.org/packages/f6/2c/2e25b41acb7d3f619d215aec4178572d638dccd35982cbb55083e56a31c5/SoftLayer-5.9.7.tar.gz"
 options="!checksum"
 
 build() {
