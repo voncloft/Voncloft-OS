@@ -5,7 +5,7 @@ name=python-moto
 version=2.2.2
 release=5
 
-source="https://files.pythonhosted.org/packages/3c/c3/cd9ee8cf0c520ed2b5e98b11049a281fd1a1bec2871a9ab6e1da6183b64f/moto-2.2.2.tar.gz"
+source="https://files.pythonhosted.org/packages/3c/c3/cd9ee8cf0c520ed2b5e98b11049a281fd1a1bec2871a9ab6e1da6183b64f/moto-2.2.1.tar.gz"
 options="!checksum"
 
 build() {

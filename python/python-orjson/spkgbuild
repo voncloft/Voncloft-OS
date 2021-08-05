@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-orjson
-version=3.6.0
+version=3.6.1
 release=1
 
-source="https://files.pythonhosted.org/packages/f0/09/0d284129fd64026d3cedb704d3ffb31b692895dce118951e6fa7bfd4ae2c/orjson-3.6.0.tar.gz"
+source="https://files.pythonhosted.org/packages/92/97/895dfe0c2e7820fd5453d0efab6a9036de7f97b4edfd157a6a414dd3b0ee/orjson-3.6.1.tar.gz"
 options="!checksum"
 
 build() {

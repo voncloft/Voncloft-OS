@@ -5,7 +5,7 @@ name=python-google-api-core
 version=2.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/84/10/8e2eef7293e29f223aea3a67186aea0f42bc219ecb415edfffaa798ea804/google-api-core-2.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/84/10/8e2eef7293e29f223aea3a67186aea0f42bc219ecb415edfffaa798ea804/google-api-core-1.31.1.tar.gz"
 options="!checksum"
 
 build() {
