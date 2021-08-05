@@ -41,12 +41,15 @@ grep -i $name $file | grep "card release__card" | egrep -o "([0-9]{1,}\.)+[0-9]{
 
 ###beta###
 command="cat test.txt | sort -V -r | head -n 1"
+#command="cat test.txt | sort -V -r"
+
 size=$(eval $command)
 
 check=${#size}
 echo "Check: " $check
 #rm -rfv $file
 #rm -rfv $file.*
+eval $command
 if [ $check -ge 1 ];
 then
 ##Production###

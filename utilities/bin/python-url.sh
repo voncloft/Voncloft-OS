@@ -49,7 +49,7 @@ grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > url.txt
 
 ###beta###
 
-geturl="cat url.txt | head -n 1 | sed 's/\//\\\\\//g'" 
+geturl="cat url.txt | head -n 1 |  sed 's/\//\\\\\//g'" 
 #eval $command
 #eval $geturl
 size=$(eval $geturl)
