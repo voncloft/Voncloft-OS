@@ -17,7 +17,6 @@ build() {
 	    --prefix=/usr \
             --libexecdir=/usr/lib \
             --with-secure-path \
-            --with-all-insults \
             --with-env-editor \
 	    --with-insults \
 	    --with-all-insults \
