@@ -2,10 +2,10 @@
 # depends : python-chardet python-yaml python-flex python-click python-requests
 
 name=python-prance
-version=0.21.2
+version=0.21.8.0
 release=1
 
-source="https://files.pythonhosted.org/packages/db/b6/77abfd303f34620fa12a998de814eef4b85fe21552d6ebe94bd48fc5a3bf/prance-0.21.2.tar.gz"
+source="https://files.pythonhosted.org/packages/07/13/ae94094d5a017e838b67631811c66104ec54fb9ede3a604cd8c1b492d39b/prance-0.21.8.0.tar.gz"
 options="!checksum"
 
 build() {

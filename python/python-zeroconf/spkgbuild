@@ -2,10 +2,10 @@
 # depends : python python-netifaces python-six python-ifaddr
 
 name=python-zeroconf
-version=0.33.2
+version=0.33.4
 release=1
 
-source="https://files.pythonhosted.org/packages/11/28/70305dcdd02dd279dc48a6ef938a3166e9f7cf8b824e419aba722ab0b5ab/zeroconf-0.33.2.tar.gz"
+source="https://files.pythonhosted.org/packages/8e/52/8cb1d5fdd6ff773c7e8a7c7038a1dc1a698688821472b0e7c82c9bf93b27/zeroconf-0.33.4.tar.gz"
 options="!checksum"
 
 build() {

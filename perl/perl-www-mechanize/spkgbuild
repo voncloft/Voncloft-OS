@@ -2,10 +2,10 @@
 # depends : perl-libwww perl-html-parser perl-uri perl-http-response-encoding
 
 name=perl-www-mechanize
-version=2.03
+version=2.04
 release=1
 
-source="https://www.cpan.org/authors/id/O/OA/OALDERS/WWW-Mechanize-2.03.tar.gz"
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/WWW-Mechanize-2.04.tar.gz"
 options="!checksum"
 
 build() {

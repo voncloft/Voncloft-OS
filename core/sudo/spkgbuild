@@ -19,6 +19,8 @@ build() {
             --with-secure-path \
             --with-all-insults \
             --with-env-editor \
+	    --with-insults \
+	    --with-all-insults \
 	    --disable-nls \
             --with-passprompt="[sudo] password for %p: "
 	make

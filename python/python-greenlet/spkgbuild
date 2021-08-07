@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-greenlet
-version=1.1.0
+version=1.1.1
 release=1
 
-source="https://files.pythonhosted.org/packages/47/6d/be10df2b141fcb1020c9605f7758881b5af706fb09a05b737e8eb7540387/greenlet-1.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/72/7e/d8586068d47adba73afc085249712bd266cd7ffbf27d8bc260c33e9d6133/greenlet-1.1.1.tar.gz"
 options="!checksum"
 
 build() {

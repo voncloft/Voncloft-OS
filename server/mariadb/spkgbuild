@@ -2,7 +2,7 @@
 # depends : cmake libevent mariadb-boot
 
 name=mariadb
-version=10.6.3
+version=10.6.4
 release=1
 mn=mariadb
 source="https://downloads.mariadb.org/interstitial/$mn-$version/source/$mn-$version.tar.gz"
