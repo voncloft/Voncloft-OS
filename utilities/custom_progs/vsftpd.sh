@@ -7,6 +7,10 @@ cd /var/log/old
 #GRAB WEBSITE
 wget $url
 
+###decrypt the file
+mv vsftpd.html vsftpd.html.gz
+gunzip vsftpd.html.gz
+
 if [ -f test.txt ];
 then
 	rm test.txt
@@ -39,7 +43,7 @@ eval $command
 size=$(eval $command)
 
 check=${#size}
-
+#echo $check
 ##production
 if [ $check -ge 1 ];
 then

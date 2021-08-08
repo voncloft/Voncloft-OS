@@ -19,7 +19,7 @@ sed -i -e 's/sudo-//g' test.txt
 sed -i -e 's/.tar.gz//g' test.txt
 
 ###beta###
-#cat test.txt | sort -V -r | head -n 1
+cat test.txt | sort -V -r | head -n 1
 
 ###Production###
 if [ -f $file ];
