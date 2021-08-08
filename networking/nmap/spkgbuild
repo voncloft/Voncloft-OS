@@ -5,7 +5,7 @@ name=nmap
 version=7.92
 release=1
 
-source="https://nmap.org/dist/nmap-$version.tar.bz2"
+source="https://nmap.org/dist/$name-$version.tar.bz2"
 options="!checksum"
 
 build() {
