@@ -11,6 +11,8 @@ options="!checksum"
 build() {
 	cd $name-$version
 	make lib
+	mkdir $PKG/usr/include
+	mkdir $PKG/usr/lib
 	install -vm644 linear.h $PKG/usr/include 
 	install -vm755 liblinear.so.4 $PKG/usr/lib 
 	ln -sfv liblinear.so.4 $PKG/usr/lib/liblinear.so
