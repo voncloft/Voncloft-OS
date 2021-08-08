@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-configargparse
-version=1.5.1
+version=1.5.2
 release=3
 
-source="https://files.pythonhosted.org/packages/d9/ad/d82750ad3a9e3419425eeeef7fbb5c8381dc8ec64a9894ddc3854837b10f/ConfigArgParse-1.5.1.tar.gz"
+source="https://files.pythonhosted.org/packages/42/1c/3e40ae017361f30b01b391b1ee263ec93e4c2666221c69ebba297ff33be6/ConfigArgParse-1.5.2.tar.gz"
 options="!checksum"
 
 build() {
