@@ -26,7 +26,7 @@ egrep -o "([0-9]{1,}\.)+[0-9]{1,}" download.jsp >> test.txt
 #sed -i -e '/stable/d' test.txt
 #sed -i -e "/$name/d" test.txt
 ###beta###
-#cat test.txt | sort -V -r | head -n 1
+cat test.txt | sort -V -r | head -n 1
 
 ##Production###
 if [ -f download.jsp ];
