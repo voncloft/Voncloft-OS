@@ -16,7 +16,7 @@ fi
 #grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' > test.txt
 
 ###to get rid of <> tags in html
-#grep -Po "(?<=>)[^<>]*(?=<)" $file | grep -v : | tr '[:upper:]' '[:lower:]' | grep $name > test.txt
+#grep -Po "(?<=>)[^<>]*(?=<)" $file > test.txt
 
 ###return only numbers
 #grep -E -o '\<[0-9]{1,2}\.[0-9]{2,5}\>' $file >> test.txt
@@ -34,7 +34,7 @@ fi
 #sed -i -e 's/v//g' test.txt
 
 ###beta###
-command="cat test.txt | sort -V -r | head -n 1"
+command="cat test.txt | sort -V -r "
 eval $command
 size=$(eval $command)
 
