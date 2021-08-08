@@ -79,6 +79,7 @@ d:fftw
 d:libvpx
 d:guile
 d:libxi
+d:liblinear
 d:imlib2
 d:libxext
 d:libxvmc
@@ -491,6 +492,8 @@ f:0058f6b99e4462af9627607e278b7faf:guile/spkgbuild
 f:e8f5354f7b0dbe7851f83262197ea49c:libxi/.checksums
 f:391b5156da91cf7051094ba75568ae4f:libxi/.pkgfiles
 f:790202964ccf22842e20d5b441dd17b1:libxi/spkgbuild
+f:3931a1ad50aceb15c485be6c2d32f55a:liblinear/CHANGELOG
+f:03281003bfe67e0a610e540fe63bb049:liblinear/spkgbuild
 f:e83148f08deba057947ae75ae27c367d:imlib2/.checksums
 f:d809bae458b2ea6ba43e72beb0fbaa66:imlib2/.pkgfiles
 f:e3c2681e2dd0398a5c78385daa57ab5a:imlib2/spkgbuild
