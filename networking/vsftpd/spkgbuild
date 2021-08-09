@@ -5,16 +5,19 @@ name=vsftpd
 version=3.0.5
 release=1
 
-source="https://security.appspot.com/downloads/$name-$version.tar.gz"
 backup="etc/vsftpd.conf
-	etc/pam.d/vsftpd
-	etc/ftpusers"
+        etc/pam.d/vsftpd
+        etc/ftpusers"
+
+source="https://security.appspot.com/downloads/$name-$version.tar.gz
+	vsftpd.conf
+	vsftpd
+	ftpusers"
 	
 options="!checksum"
 
 build() {
 	cd $name-$version
-        mkdir -pv $PKG/etc
 	if [ ! -f /var/lib/scratchpkg/db/vsftpd ];
 	then
 		install -v -d -m 0755 $PKG/usr/share/vsftpd/empty
@@ -29,30 +32,9 @@ build() {
 	make
 	mkdir -pv $PKG/usr/sbin
 	install -v -m 755 vsftpd        $PKG/usr/sbin/vsftpd 
-	touch $PKG/etc/ftpusers
-	cat <<-EOF > $PKG/etc/vsftpd.conf
-	background=YES
-	listen=YES
-	nopriv_user=vsftpd
-	secure_chroot_dir=/usr/share/vsftpd/empty
-	seccomp_sandbox=NO
-	local_enable=YES
-	session_support=YES
-	pam_service_name=vsftpd
-	local_root=/srv/ftp
-	write_enable=YES
-	EOF
 	mkdir -pv $PKG/etc/pam.d
-	
-	cat <<-EOF > $PKG/etc/pam.d/vsftpd
-	# Begin /etc/pam.d/vsftpd
-	auth       required     /lib/security/pam_listfile.so item=user sense=allow \
-                                                      file=/etc/ftpusers \
-                                                      onerr=succeed
-	auth       required     pam_shells.so
-	auth       include      system-auth
-	account    include      system-account
-	session    include      system-session
-	EOF
+	install -Dm644 $SRC/ftpusers $PKG/etc/
+	install -Dm644 $SRC/vsftpd.conf $PKG/etc
+	install -Dm644 $SRC/vsftpd $PKG/etc/pam.d/
 	mkdir -pv $PKG/srv/ftp
 }
