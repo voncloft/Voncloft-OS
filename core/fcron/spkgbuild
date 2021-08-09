@@ -5,6 +5,7 @@ name=fcron
 version=3.3.0
 release=1
 
+backup="var/spool/fcron/systab.orig"
 source="http://fcron.free.fr/archives/$name-$version.src.tar.gz\
 	systab.orig
 	run-parts"
@@ -12,7 +13,6 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	mkdir -pv  $PKG/etc/pam.d
 	./configure --prefix=/usr          \
             --sysconfdir=/etc      \
             --localstatedir=/var   \
@@ -21,27 +21,9 @@ build() {
             --with-systemdsystemunitdir=no\
             --with-editor=/usr/bin/nano
         make
-
-	if [ ! -f /var/lib/scratchpkg/db/fcron ];
-	then
-		cat <<-EOF >> /etc/syslog.conf
-		# Begin fcron addition to /etc/syslog.conf
-
-		cron.* -/var/log/cron.log
-
-		# End fcron addition
-		EOF
-		/etc/rc.d/init.d/sysklogd reload
-		groupadd -g 22 fcron
-		useradd -d /dev/null -c "Fcron User" -g fcron -s /bin/false -u 22 fcron
-		install -vdm754 $PKG/etc/cron.{hourly,daily,weekly,monthly}
-		install -vDm755 $SRC/run-parts $PKG/usr/bin/run-parts
-		install -vDm644 $SRC/systab.orig $PKG/var/spool/fcron/systab.orig
-		install -Dm644 files/fcron.pam $PKG/etc/pam.d/fcron
-		install -Dm644 files/fcrontab.pam $PKG/etc/pam.d/fcrontab 
-		rm -rvf $PKG/etc/pam.conf
-		
-	fi
         make DESTDIR=$PKG install
-	
+	mkdir -pv $PKG/usr/bin
+	install -Dm644 $SRC/run-parts $PKG/usr/bin/run-parts
+	mkdir -pv $PKG/var/spool/fcron
+	install -Dm644 $SRC/systab.orig $PKG/var/spool/fcron/systab.orig	
 }

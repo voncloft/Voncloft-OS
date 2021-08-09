@@ -677,9 +677,11 @@ f:66bc723b53b92187a3a5f6e18dd0366d:freeglut/.checksums
 f:20deff5cfaf465e9c14998c72d1d6671:freeglut/.pkgfiles
 f:92725c3566888e3c6eb4df87503f2929:freeglut/spkgbuild
 f:70b22b107370852af463b83756935eb4:fcron/fcron
+f:db4a935c600b026f5ea921e88696ea66:fcron/post-install.sh
 f:6553bde2a4d3b29eeba69ecb5d7bceff:fcron/CHANGELOG
-f:7246a9d80a21215a2ec23c38e933a3d2:fcron/run-parts
-f:27007038e08e100056f047de17b8750e:fcron/spkgbuild
+f:c74208c9099b486638c16cf4ccaf29a7:fcron/pre-install.sh
+f:79908f33790e696da307ee4e52210a6e:fcron/run-parts
+f:a6d95e0dbc740bc7a4fc8fc600f27f3e:fcron/spkgbuild
 f:1f75f7a13435adab64ca48b6e8e84870:fcron/systab.orig
 f:a4e6f75e5a8efe668a97abae653cf69e:fcron/fcrontab
 f:f1986aae4d403896de3a920c79d0dbb5:rrdtool/CHANGELOG
