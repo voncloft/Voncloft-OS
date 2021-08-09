@@ -2,10 +2,10 @@
 # depends : python-yaml
 
 name=python-pyaml
-version=20.4.0
+version=21.8.3
 release=4
 
-source="https://files.pythonhosted.org/packages/f1/cc/01712c4fa0e5b6f9f90d01d5adc46c9ad14bb6284406d13cde3ed7392082/pyaml-20.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/cc/c8/70d6b275de6ab108d9e210d73463e4523b633917e9223a56f8442ce44110/pyaml-21.8.3.tar.gz"
 options="!checksum"
 
 build() {

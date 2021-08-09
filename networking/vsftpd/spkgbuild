@@ -2,7 +2,7 @@
 # depends : libnsl linux-pam vsftpd-boot
 
 name=vsftpd
-version=3.0.4
+version=3.0.5
 release=1
 
 source="https://security.appspot.com/downloads/$name-$version.tar.gz"

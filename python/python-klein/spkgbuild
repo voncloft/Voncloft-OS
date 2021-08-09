@@ -2,10 +2,10 @@
 # depends : python python-attrs python-hyperlink python-incremental python-six
 
 name=python-klein
-version=20.6.0
+version=21.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/83/b4/3642700d37b513ef1574e18f89aa545a9dca8986ab5d137e743623e24797/klein-20.6.0.tar.gz"
+source="https://files.pythonhosted.org/packages/6c/e3/829c28e1cac2430777d47043b09bc18be25945adf1b6804278a25e7f7af9/klein-21.8.0.tar.gz"
 options="!checksum"
 
 build() {

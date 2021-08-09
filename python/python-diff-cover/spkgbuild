@@ -2,10 +2,10 @@
 # depends : python-jinja python-jinja2_pluralize python-pluggy
 
 name=python-diff-cover
-version=6.2.1
+version=6.2.2
 release=1
 
-source="https://files.pythonhosted.org/packages/56/82/d184a0f73f561f6ae041af6fdadb5f43cac7e5366323ff8ed9af1b9febe0/diff_cover-6.2.1.tar.gz"
+source="https://files.pythonhosted.org/packages/de/06/a59b0d79a65018f7955f7f47bb6ddbed81b6d6f9e97ebe87c7f060562195/diff_cover-6.2.2.tar.gz"
 options="!checksum"
 
 build() {
