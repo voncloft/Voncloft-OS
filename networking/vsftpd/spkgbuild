@@ -6,6 +6,9 @@ version=3.0.5
 release=1
 
 source="https://security.appspot.com/downloads/$name-$version.tar.gz"
+backup="/etc/vsftpd.conf
+	/etc/pam.d/vsftpd"
+	
 options="!checksum"
 
 build() {
