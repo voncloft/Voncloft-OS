@@ -10,5 +10,5 @@ EOF
 scratch install -y fcron-boot
 /etc/rc.d/init.d/fcron start
 fcrontab -z -u systab
-
+rm /var/spool/fcron/systab.orig.spkgnew
 
