@@ -1,10 +1,4 @@
-# package install script
-
-action=$1
-newversion=$2
-oldversion=$3
-
-post_install() {
+#!/binsh
 	if [ ! -e /etc/xml/catalog ]; then
 		xmlcatalog --noout --create /etc/xml/catalog
 	fi
@@ -24,13 +18,3 @@ post_install() {
 		"http://www.oasis-open.org/docbook/" \
 		"file:///etc/xml/docbook" \
 		/etc/xml/catalog
-}
-
-post_remove() {
-	xmlcatalog --noout --del file:///etc/xml/docbook /etc/xml/catalog
-}
-
-case $action in
-	post-install) post_install ;;
-	post-remove) post_remove ;;
-esac

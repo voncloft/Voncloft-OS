@@ -630,7 +630,7 @@ f:b54622ee3a56686569fb8ee146fc0995:yasm/spkgbuild
 f:e70d48f29305248376e4238a40d71dba:volume_key/.checksums
 f:444cf01d5a8cd07d3e0df5f3236399fb:volume_key/.pkgfiles
 f:ea037aeec174cebf7e31bb924d0ee0ef:volume_key/spkgbuild
-f:0a1e9024a852ef134e039bac20006ae6:docbook-xsl/install
+f:0448705cc4f3680da4c637c24be389d0:docbook-xsl/post-install.sh
 f:8457bd6ee6b06fbc6dc540e1b096f766:docbook-xsl/docbook-xsl-stack_fix-1.patch
 f:e6c7e2742173dc8ca25ac860c6b3493f:docbook-xsl/.checksums
 f:a86560eb0670b53dd783a93b26ff71c8:docbook-xsl/.pkgfiles
@@ -916,7 +916,7 @@ f:26bdee005991162166a6f930f4e1d70d:glew/spkgbuild
 f:7b6fc864d757578e1b1495294101b74c:xgamma/.checksums
 f:c04c96aaff4990772f803edf0e10f7b4:xgamma/.pkgfiles
 f:55a021566192d0545ecfd2a8d9f74a05:xgamma/spkgbuild
-f:e690ff7a09b281a5b5c4e323d092d9f6:desktop-file-utils/install
+f:2b23300f3e388995a86d89970ec0114a:desktop-file-utils/post-install.sh
 f:01583883553c6d355240238422e7909c:desktop-file-utils/.checksums
 f:9dbf34b9d53dad00d99c21cddeb15f59:desktop-file-utils/.pkgfiles
 f:d184f51eadd79efd912e528af3ad6291:desktop-file-utils/spkgbuild
@@ -1027,7 +1027,7 @@ f:b4160d15d7c4e6de958f01b4c596da39:findutils/spkgbuild
 f:1357fa659544a40a2a58129f222bab57:twm/.checksums
 f:3fd1c1d8cb2c9f04c740c19d6b7e7c70:twm/.pkgfiles
 f:2509c54bbd1de6b26800862b2183fbbe:twm/spkgbuild
-f:fb29c0ba6a48928b61dbc615239df1bb:docbook-xml/install
+f:cb39462d84f62b2194834538eec298f0:docbook-xml/post-install.sh
 f:3f725f2687bf1683f8b0c6842f370a1a:docbook-xml/.checksums
 f:97792665cf9d74c62c2cbe087cd424ab:docbook-xml/.pkgfiles
 f:90f59decf5050a8cdaa1b4d6f48fc270:docbook-xml/spkgbuild
@@ -1927,7 +1927,7 @@ f:721e4a3f1702999a0228aa71a07b570d:p11-kit/spkgbuild
 f:866891a772d95c8ef9c00711714fca25:rfkill/.checksums
 f:582d7bf2361001b185b82589e9bcfddd:rfkill/.pkgfiles
 f:1a3bde6f8e32e7c78cd9673c4422bae4:rfkill/spkgbuild
-f:c25805e4cbf943cbf9ecb8cc186aef65:dash/post-install.sh
+f:31f63820e56357cd9fd659e617c04f21:dash/post-install.sh
 f:1a75d22b7e048dcc26ff1c5abd607685:dash/.checksums
 f:55810c5b7509ea4d51a0a4d03603a962:dash/.pkgfiles
 f:40a20adad3b63321f7d87a37c09dd35f:dash/spkgbuild
@@ -2056,7 +2056,7 @@ f:f7a1ab788fb5b66a9b2f0fb8c451c763:lvm2/mlockall-default-config.patch
 f:8d328c99bd719deebaa6f400799037ae:lvm2/.pkgfiles
 f:61be67b6337ba017fdeba029383bc41b:lvm2/spkgbuild
 f:18d6d9f4f875f5a0c6b12736e9d5ffbc:lvm2/portability.patch
-f:b5d4d4b699569f1c03e55703030a4094:gdk-pixbuf/install
+f:9ea9a6fb278858afa379a9474e8d6740:gdk-pixbuf/post-install.sh
 f:cfc5230bd5337cc4720a1714ed55bf73:gdk-pixbuf/.checksums
 f:f9f6807fe3b303ce0da80b70f821472c:gdk-pixbuf/.pkgfiles
 f:d1147ab3204d26693f112780759b9801:gdk-pixbuf/spkgbuild
