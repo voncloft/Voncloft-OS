@@ -1132,7 +1132,6 @@ f:d9d3a9608647c9810b63c60b740b61df:iceauth/spkgbuild
 f:c0185657ca318aa2c5c6116ab616dc04:encodings/.checksums
 f:021f83aa69747c60165df7dd945a9b5f:encodings/.pkgfiles
 f:efbccf84e899047f325e0b93e2b05f92:encodings/spkgbuild
-f:dfa9b4a24a383f42ae5c3128570e2ff3:linux-firmware/install
 f:277cf3537d39c6eb8b904b75a9c3091e:linux-firmware/.checksums
 f:e4cb70433285f4127a712932f5e6812c:linux-firmware/.pkgfiles
 f:15eadc6535975de890e2f022569ec59a:linux-firmware/spkgbuild
@@ -2112,7 +2111,7 @@ f:df0ca7a5c9df86fb6e307b96b12386b4:scrot/.checksums
 f:1749ec89ec7d93257ff5d8efc0132c64:scrot/.pkgfiles
 f:211c5eda5af1f4a36b894fcc8072e715:scrot/spkgbuild
 f:091fae075c53f8e79bd5585230939a9b:jack/40-hpet-permissions.rules
-f:90f17f48c2c30a2925077cd242c6facd:jack/install
+f:73060059c06ed7739211b8f47e55b70c:jack/post-upgrade.sh
 f:fc134da99f1d308915296823d08b5ffd:jack/.checksums
 f:59c3734515e5e6ccb0ea274802671e16:jack/99-audio.conf
 f:d5bd98f9a3c627673a9a096525488ef6:jack/.pkgfiles
