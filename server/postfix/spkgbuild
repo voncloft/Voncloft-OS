@@ -5,35 +5,21 @@ name=postfix
 version=3.6.2
 release=1
 
+backup="etc/postfix/main.cf
+	etc/postfix/saslpasswd
+	etc/postfix/master.cf"
+
 source="ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
 	cd $name-$version
-	groupadd -g 32 postfix
-	groupadd -g 33 postdrop
-	useradd -c "Postfix Daemon User" -d /var/spool/postfix -g postfix \
-        -s /bin/false -u 32 postfix
-        chown -v postfix:postfix /var/mail
-
 	sed -i 's/.\x08//g' README_FILES/*
-
-
-     make CCARGS="-DUSE_TLS -I/usr/include/openssl/                     \
-             -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
-     AUXLIBS="-lssl -lcrypto -lsasl2"                              \
+	make CCARGS="-DUSE_TLS -I/usr/include/openssl/                     \
+                -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
+		AUXLIBS="-lssl -lcrypto -lsasl2"                              \
      makefiles
      make
-
-
-    make DESTDIR=$PKG install
-
-    cat <<- EOF > $PKG/etc/aliases
-        MAILER-DAEMON:    postmaster
-	postmaster:       root
-
-	root:             <LOGIN>
-	# End /etc/aliases
-	EOF
-    
+     sh postfix-install -non-interactive install_root="${PKG}"\
+     daemon_directory=/usr/lib/postfix
 }

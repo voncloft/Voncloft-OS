@@ -681,6 +681,7 @@ f:2d9a8748399fceb1175163578732cc85:fcron/post-install.sh
 f:6553bde2a4d3b29eeba69ecb5d7bceff:fcron/CHANGELOG
 f:2e4c0c1b4452c86be9d475471ac84a8c:fcron/post-upgrade.sh
 f:c74208c9099b486638c16cf4ccaf29a7:fcron/pre-install.sh
+f:af70865c0a0d3fcc377012155cc46cca:fcron/spkgbuild.save
 f:79908f33790e696da307ee4e52210a6e:fcron/run-parts
 f:a6d95e0dbc740bc7a4fc8fc600f27f3e:fcron/spkgbuild
 f:1f75f7a13435adab64ca48b6e8e84870:fcron/systab.orig
@@ -1855,10 +1856,10 @@ f:9b37216d23dce9ba4bf2b5fd43ab6263:ibus/spkgbuild
 f:23f9eea5df11e4467eb5192a28069171:smplayer-themes/.checksums
 f:2b8bf3cb8eca81ba8f51b792b70894c5:smplayer-themes/.pkgfiles
 f:640027724ed03fa5384676592d1dfff9:smplayer-themes/spkgbuild
-f:6fa11369977c745cb7ff53093eebc043:opera/CHANGELOG
+f:7a4b4da3d9628aee4589cc824e61e08e:opera/CHANGELOG
 f:0eac638394b8ebcc669bb9cd25cbe224:opera/.checksums
 f:4282c3de36dec918741ed4c4cffcc33a:opera/.pkgfiles
-f:2543a15506e0803893792c26bd18c53f:opera/spkgbuild
+f:f64a782ba3da5777bd595af9eb3882cf:opera/spkgbuild
 f:d23fcb98b83b3deae74524c235ebd412:picom/picom.conf
 f:7dc8233c69c2cbd8082e2e265226c4d3:picom/.checksums
 f:8879131201ad9b9ee43a441711c52571:picom/.pkgfiles

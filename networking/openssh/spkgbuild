@@ -4,35 +4,24 @@
 name=openssh
 version=8.6p1
 release=1
+
+backup="etc/ssh/sshd_config"
 source="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz"
 options="!checksum"
 
 build() {
 	cd $name-$version
-	if [ ! -f /var/lib/scratchpkg/db/openssh ];
-	# if openssh is not installed then install this once - if file does exist move on to the next line
-	then
-		install -v -m700 -d $PKG/var/lib/sshd
-		chown -v root:sys $PKG/var/lib/sshd
-		groupadd -g 50 sshd 
-		useradd  -c 'sshd PrivSep' \
-        	-d /var/lib/sshd  \
-         	-g sshd           \
-         	-s /bin/false     \
-         	-u 50 sshd
-	fi
-       ./configure --prefix=/usr                     \
-            --sysconfdir=/etc/ssh             \
-            --with-md5-passwords              \
-            --with-privsep-path=/var/lib/sshd
-
+	mkdir -pv $PKG/var/lib/sshd
+	./configure --prefix=/usr                            \
+            --sysconfdir=/etc/ssh                    \
+            --with-md5-passwords                     \
+            --with-privsep-path=/var/lib/sshd        \
+            --with-default-path=/usr/bin             \
+            --with-superuser-path=/usr/sbin:/usr/bin \
+            --with-pid-dir=/run
       make 
       make DESTDIR=$PKG install
-
+      mkdir $PKG/usr/bin
       install -v -m755    contrib/ssh-copy-id $PKG/usr/bin
-	###Broken
-      #mkdir -pv $PKG/etc/pam.d
-      #sed 's@d/login@d/sshd@g' /etc/pam.d/login > $PKG/etc/pam.d/sshd
-      #chmod 644 $PKG/etc/pam.d/sshd
-      #echo "UsePAM yes" >> $PKG/etc/ssh/sshd_config 
+      
 }

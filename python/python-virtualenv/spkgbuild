@@ -2,10 +2,10 @@
   # depends : python-appdirs python-distlib python-filelock python-six
 
 name=python-virtualenv
-version=20.7.0
+version=20.7.1
 release=1
 
-source="https://files.pythonhosted.org/packages/e2/04/878273c00ec63df9acf76d1657155243c8874ca38833c62eface20ce15cd/virtualenv-20.7.0.tar.gz"
+source="https://files.pythonhosted.org/packages/91/37/cfff3b23392ae6a774f4cb7ed22c00566cdc50ee25b6305480cf48f1741c/virtualenv-20.7.1.tar.gz"
 options="!checksum"
 
 build() {
