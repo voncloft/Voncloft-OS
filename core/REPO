@@ -732,17 +732,16 @@ f:0abf5e784b5bef21bc0b83cb42f4aa33:runit/.checksums
 f:74ac614a63cdf1feae72b19d1f52e5ea:runit/.pkgfiles
 f:18d7ddd71d3e0c3ddb5c50668f6466f1:runit/spkgbuild
 f:324848d098be356a18083b0a02c3c842:cups/rc.cupsd
-f:a10849eebf083d280cddf90c50d96a2d:cups/install
+f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
 f:8cef470ba50f3c196dccaced9d300620:cups/.checksums
 f:4886585d72b23d2322c8c736b148fc79:cups/.pkgfiles
 f:7977cc81f2869ac5f28c93c4ffc83348:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
-f:d4d157c95951a147270a6363f23b6ca9:dbus/install
+f:373bab266478101ca81a651ee2a47dae:dbus/post-install.sh
+f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
 f:dfe2fdba7343f7c3c07199bf94ce4043:dbus/.checksums
 f:a75223567720385ff576dd64e67ff901:dbus/.pkgfiles
-f:6689f7b75191aafcf6be52cc11a5c9aa:dbus/spkgbuild
-f:fe2bdfbce1fc35a1f49b04e03764a8d7:dbus/rc.dbus
-f:ee03b556be619fe0dc3365103ca52ebf:dbus/run
+f:b06e85492ce99f128e374eb0347eb4ac:dbus/spkgbuild
 f:d1e476de98422e9a14cfa831a2b04eef:readline/.checksums
 f:5c0115c10ddfcc4bafa5b8e2fdad2dad:readline/.pkgfiles
 f:2c8e6f24b4c8ff3194ab54e8f4af86ed:readline/spkgbuild
@@ -1176,7 +1175,7 @@ f:41731562065a553a023e0b0608b74dc2:surf/spkgbuild
 f:051af4bba424417dc6bccfede16cf179:dzen2/.checksums
 f:24cce05818360f0d50bac71a5d01eef6:dzen2/.pkgfiles
 f:63e69a28c75fd5233c75615e65757079:dzen2/spkgbuild
-f:13a7ddbc0b1d6e448fa7ee6a5c319033:colord/install
+f:561181f4c3e83bb6affa8fad85d0981c:colord/pre-install.sh
 f:80f889b81ad95d85e15833c9500e7376:colord/.checksums
 f:371a660dae1b590d86edc86de1565e11:colord/mkdirs
 f:0f9e44c656ffdf55c50da9f9bed2d3db:colord/.pkgfiles
@@ -1383,7 +1382,6 @@ f:a43b6776d10d9565a592c37441763a28:cryptsetup/spkgbuild
 f:40d44846190d09d444e17ced9d517fdd:xev/.checksums
 f:8a286ed6d8c4a78edcd57a238993541a:xev/.pkgfiles
 f:1b09f5e6174f72ab04eb3eba98ca660a:xev/spkgbuild
-f:47c701bd086e6376d3cfe885959efcd1:alsa-utils/install
 f:43186d2b4108b9c0455753af8b7fad17:alsa-utils/finish
 f:6604c5992f5f0fc6b1d5c16aa2d81132:alsa-utils/.checksums
 f:911d2befcbb52fdd62e79c954c9a537c:alsa-utils/rc.alsa
@@ -1929,7 +1927,7 @@ f:721e4a3f1702999a0228aa71a07b570d:p11-kit/spkgbuild
 f:866891a772d95c8ef9c00711714fca25:rfkill/.checksums
 f:582d7bf2361001b185b82589e9bcfddd:rfkill/.pkgfiles
 f:1a3bde6f8e32e7c78cd9673c4422bae4:rfkill/spkgbuild
-f:e9f65edf579572857f49b831c42371a8:dash/install
+f:c25805e4cbf943cbf9ecb8cc186aef65:dash/post-install.sh
 f:1a75d22b7e048dcc26ff1c5abd607685:dash/.checksums
 f:55810c5b7509ea4d51a0a4d03603a962:dash/.pkgfiles
 f:40a20adad3b63321f7d87a37c09dd35f:dash/spkgbuild
