@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-apispec
-version=5.0.0
+version=5.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/e3/d8/6ce8ae00be94079b551243c4ec34a442021634a0a95fb2ca8152a4bbe73d/apispec-5.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/53/37/e471e9f6c2c9157059b832f215c12b24be115a236540079eb15516dca270/apispec-5.1.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-appdirs python-argcomplete python-colorama
 
 name=python-milc
-version=1.4.2
+version=1.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/3d/a0/6efa3893172a788b17a2642f77f6c77e32813aa882b1e0c23fcb13e67557/milc-1.4.2.tar.gz"
+source="https://files.pythonhosted.org/packages/dd/26/4eb377f718ba7cdda62c8a50a0fc28e3cea35cb8edec89a5fab6502fb921/milc-1.5.0.tar.gz"
 options="!checksum"
 
 build() {

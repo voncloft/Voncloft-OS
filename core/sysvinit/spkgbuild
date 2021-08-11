@@ -2,7 +2,7 @@
 # depends	: sysvinit
 
 name=sysvinit
-version=2.95
+version=2.99
 release=1
 
 source="http://download.savannah.gnu.org/releases/sysvinit/$name-$version.tar.xz
@@ -10,7 +10,7 @@ source="http://download.savannah.gnu.org/releases/sysvinit/$name-$version.tar.xz
 
 build() {
 	cd $name-$version
-	patch -Np1 -i $SRC/sysvinit-2.95-consolidated-1.patch
+	patch -Np1 -i $SRC/sysvinit-2.99-consolidated-1.patch
 	make
 	make DESTDIR=$PKG install	
 }

@@ -5,7 +5,7 @@ name=python-frozendict
 version=2.0.4
 release=8
 
-source="https://files.pythonhosted.org/packages/e2/98/d785a3a22a82.0.4f4df82331ac6c20d25b7dfd143bacad6c536b2e126cb/frozendict-2.0.4.tar.gz"
+source="https://files.pythonhosted.org/packages/e2/98/d785a3a22a829093f4df82331ac6c20d25b7dfd143bacad6c536b2e126cb/frozendict-2.0.4.tar.gz"
 options="!checksum"
 
 build() {

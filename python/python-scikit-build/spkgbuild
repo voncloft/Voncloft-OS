@@ -2,10 +2,10 @@
 # depends : cmake python-distro python-wheel
 
 name=python-scikit-build
-version=0.11.1
+version=0.12.0
 release=3
 
-source="https://files.pythonhosted.org/packages/71/02/1e94506b7bee5739317f2d141cebab7dab5bb5731b377e718fddd3b3e7e7/scikit-build-0.11.1.tar.gz"
+source="https://files.pythonhosted.org/packages/ab/8d/fc770eb732553ae0af68d276865524cc17efd667f9e71da6c5a2ac876817/scikit-build-0.12.0.tar.gz"
 options="!checksum"
 
 build() {
