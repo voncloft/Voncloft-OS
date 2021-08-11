@@ -250,7 +250,6 @@ d:openjade
 d:adwaita-icon-theme
 d:ck4up
 d:dontpanic
-d:tor
 d:geany-themes
 d:faenza-icon-theme
 d:monit
@@ -889,13 +888,6 @@ f:fa11264f453c84b59982662b47d42997:openjade/spkgbuild
 f:f3775f8b5c407afc512889c9f7b6183b:adwaita-icon-theme/spkgbuild
 f:4dfadd89659626e19dfef7c74768ec57:ck4up/spkgbuild
 f:e3bd5b06dde61c5aaf4d411141532b6f:dontpanic/spkgbuild
-f:5066b8d9b2a48c124a4c54197143d1e9:tor/CHANGELOG
-f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
-f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
-f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
-f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
-f:a0f173299a9c5284ade508960796d78a:tor/spkgbuild
-f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:5e4b4ef8a42d6599f7b523b8285b8288:geany-themes/spkgbuild
 f:319cff9289d60dfecd4c2f09da70695a:faenza-icon-theme/spkgbuild
 f:2efe487b57254fbd22740b6b5f01d464:monit/spkgbuild
