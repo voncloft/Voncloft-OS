@@ -5,9 +5,9 @@ d:lightdm-gtk-greeter-settings
 f:8c0f7828a4f274292648946d0c9b6aee:lightdm-gtk-greeter/.checksums
 f:cfa7cfadca7ed96c87da37e849960dab:lightdm-gtk-greeter/.pkgfiles
 f:55333d23084dd92a26d8e7cce26c51fa:lightdm-gtk-greeter/spkgbuild
-f:5e6d25c4e64e19c442a1410553b61776:lightdm/install
 f:3f11c7f5ad31b7b6e13b2e622527e3b7:lightdm/lightdm.pam
 f:fa29ca45998185aac748ea1668c11eaf:lightdm/rc.lightdm
+f:3f617bf61a0099186419715f14a755c0:lightdm/pre-install.sh
 f:4a4f56b1e3d8f8c39fce635de206688b:lightdm/Xsession
 f:7bc192985372f81ffd2f073759ca0b3a:lightdm/.checksums
 f:fa0ce6c77f10b1efd0b63c530881f5b1:lightdm/mkdirs
@@ -16,8 +16,8 @@ f:af6bd6cd7a179fd7116f81c6ca1ba038:lightdm/lightdm-autologin.pam
 f:2a7326f4de1d949b8c96749b62cc5021:lightdm/lightdm.rules
 f:47b4d1f66f157435dc506335dc91dd83:lightdm/spkgbuild
 f:c6e5b3e8b439f5c5b44f61f71b038142:lightdm/run
-f:562f21c60dd9761ef911d2b421a41a83:sddm/install
 f:fa4a39188ff891688ebe642c3d7998fb:sddm/rc.sddm
+f:f8c2f76698f0ca436c7dfe078bca195f:sddm/pre-install.sh
 f:0cddaaf2467493879753fd7ca392346e:sddm/.checksums
 f:d0a40ec5b6e1e18d26911e2e0df16701:sddm/mkdirs
 f:1d8ec95a9dec8fb6b15587b1ca0e2ed2:sddm/.pkgfiles

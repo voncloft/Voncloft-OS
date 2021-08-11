@@ -1347,8 +1347,8 @@ f:5312707228be1af9c68156c1b955684d:ck4up/.checksums
 f:acdf58bdd8b64c76169d22205ee9ba9a:ck4up/.pkgfiles
 f:4dfadd89659626e19dfef7c74768ec57:ck4up/spkgbuild
 f:e3bd5b06dde61c5aaf4d411141532b6f:dontpanic/spkgbuild
-f:d65194406ace409c92ae3474f8278dab:tor/install
 f:5066b8d9b2a48c124a4c54197143d1e9:tor/CHANGELOG
+f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
 f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
 f:cae2e04d29cfc9990eb77910274d7ee6:tor/.checksums
 f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
@@ -1782,7 +1782,7 @@ f:83c2b00728b23c48a939c762fb0c6c3d:time/spkgbuild
 f:49a40d374e06ab6f3a2612913ae83853:lmdb/.checksums
 f:48beb1c3554eccf06202093124524761:lmdb/.pkgfiles
 f:0eff06c7ae6d5e802765ccb493430427:lmdb/spkgbuild
-f:0b67011fc5ba30913e9ddf6ce5635724:zsh/install
+f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:1e2e2d3516b1a3621a95f8570d22c3d2:zsh/.checksums
 f:8cbc75661cba6e13071ae57214a0c1f1:zsh/.pkgfiles
 f:dd42055dfe13090ae201d49ea641149a:zsh/spkgbuild
@@ -1798,7 +1798,7 @@ f:693683d9ef69397bf5f022a4895c075d:ntp/.pkgfiles
 f:0b371501d534ace7dab3bf6256cd8217:ntp/rc.ntpd
 f:437727eb49ba8f4903e608698ac41134:ntp/spkgbuild
 f:4c1718bc27f66742ada77cfd3cdc94d1:ntp/run
-f:e8bb54d9d90b60499ef4881ef56d71b0:transmission-cli/install
+f:710ac7970f5b4c963f70c15a86cb3b3d:transmission-cli/pre-install.sh
 f:0b03b848a00cffa13d70fd1d498a323b:transmission-cli/.checksums
 f:aa6a059e3d70db2211067900501a7619:transmission-cli/mkdirs
 f:a2fc823744ee9fdaf8aba39c1748832c:transmission-cli/.pkgfiles

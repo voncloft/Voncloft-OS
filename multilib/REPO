@@ -173,7 +173,7 @@ f:d1e476de98422e9a14cfa831a2b04eef:readline-32/.checksums
 f:3def586546f22c40b9801c7a924e3f9f:readline-32/.pkgfiles
 f:3c7d76b4c5bf84e0b751b579d5025fd2:readline-32/spkgbuild
 f:a9973e349f901a2d207188202aef2f94:virtualbox-ose/005-gsoap-build.patch
-f:dbd34df1b7ed8a1dcffdea462cfc3938:virtualbox-ose/install
+f:4ea4d95b17dceb9dec7b5645405627a3:virtualbox-ose/post-install.sh
 f:05784940fcc8f72c1021b3d9bf7202f0:virtualbox-ose/008-no-vboxvideo.patch
 f:7ad9414609e7b6b383e298837150e734:virtualbox-ose/.checksums
 f:6e2722bfd7013c1b0174382626ac1b8d:virtualbox-ose/virtualbox.60-vboxdrv.rules
@@ -314,8 +314,8 @@ f:0901abdbc59f9ea5e380680edcea0fbd:libxmu-32/spkgbuild
 f:ff202bac3591427a8a7f51fab55bd879:libxcursor-32/.checksums
 f:90757a5488a23bc9d0e07e0ff68d41fe:libxcursor-32/.pkgfiles
 f:d4acbdb51845b0362f97ae36ba7a3cd9:libxcursor-32/spkgbuild
-f:e30b8948de8cdb26e8d8ef104a82befd:virtualbox-ose-guest/install
 f:14653d50a96be06e5d14cd0c5990c82d:virtualbox-ose-guest/VBoxClient-all
+f:be6cfec467eb1d7364c2822ec6ee96db:virtualbox-ose-guest/post-install.sh
 f:157ee547f0853a8f063e6a205e0721b3:virtualbox-ose-guest/.checksums
 f:3d1787facdbcdcff7eb0219eefdff496:virtualbox-ose-guest/.pkgfiles
 f:f8e85d7f62491f791f5cdd78a36ee4df:virtualbox-ose-guest/vboxclient.desktop

@@ -46,7 +46,7 @@ f:75aae82b7b33d79bcec25c8783f3ed5c:spotify/spotify
 f:79133752686bb420e1d4100e18ede939:spotify/.checksums
 f:cac65f6aba6bfa311af95676d640191b:spotify/.pkgfiles
 f:9fc66cc2eb0d4ef8ff58c4bab85b6a79:spotify/spkgbuild
-f:293f5cd0de5f8d75267264c07d52fec7:nvidia-modules/install
+f:181c0f90eb98ab33abcc3a3494df3e79:nvidia-modules/post-install.sh
 f:b232b2c08c73de68cb3f296993a3fbd6:nvidia-modules/.checksums
 f:82b8db2d47df443f0489dbaac1cb0d88:nvidia-modules/.pkgfiles
 f:00f940bd6c78db5ca1fd169b41d2cd2a:nvidia-modules/spkgbuild
@@ -72,7 +72,7 @@ f:520e12fc708559d6d8b27513902e67d3:vscode-bin/.checksums
 f:893d63e191bf450550d28cdb864170f0:vscode-bin/visual-studio-code-url-handler.desktop
 f:e0d77d303664b949ea3b1fe4e7fd5937:vscode-bin/.pkgfiles
 f:e82ccec0dc5cf3907687d17142bb5e8a:vscode-bin/spkgbuild
-f:2de4c2c28ee6e324188f16f5cef17532:virtualbox-guest-utils/install
+f:119f437d4911f637fa586b5eda9aab29:virtualbox-guest-utils/pre-install.sh
 f:5902cd0eea799759db1893d1001499f8:virtualbox-guest-utils/.pkgfiles
 f:46e6c35a81efdc2bc50ef72993d0cf7e:virtualbox-guest-utils/spkgbuild
 f:9710904e9e86ec3da272cbe9fe48dbf8:virtualbox-guest-utils/60-vboxguest.rules
@@ -82,14 +82,14 @@ f:748c31f991e58bee5a398aaafc3e0920:icecat-bin/.pkgfiles
 f:a1c020386c7a705c164049ca56139b8f:icecat-bin/icecat-launcher.sh
 f:5c498b31bd52c1f1d92c8d7da27c5d6f:icecat-bin/icecat-safe.desktop
 f:9bfb1a3d27c415a664d634baf28fd2ee:icecat-bin/spkgbuild
-f:e07462bc3adf7ebde579e201bd524bff:virtualbox-guest-modules/install
+f:6f75c7a8dcbbce7b0dab4ad40f04fed0:virtualbox-guest-modules/post-install.sh
 f:e650b77ce990d690e2ea4452a34bc1b1:virtualbox-guest-modules/.checksums
 f:8743b1276535189c7989be78b955a9f8:virtualbox-guest-modules/.pkgfiles
 f:501ab7b371ea0ac9bbebc886be9f3027:virtualbox-guest-modules/vboxvideo-upstream.conf
 f:10b37859cafc7b75fb8b383b80675a86:virtualbox-guest-modules/spkgbuild
 f:e04163ce7c7c186c87c80cf5da9d6736:virtualbox-guest-modules/vboxguest.hook
-f:dbd34df1b7ed8a1dcffdea462cfc3938:virtualbox/install
 f:f05f6d8e3500a5a8880b524c2c425a02:virtualbox/CHANGELOG
+f:4ea4d95b17dceb9dec7b5645405627a3:virtualbox/pre-install.sh
 f:988d663510f9329680075dc432d4a678:virtualbox/.checksums
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules
 f:9e894842a3fd9ea68affb073bda59423:virtualbox/.pkgfiles
@@ -98,7 +98,7 @@ f:99fa93d5e7fb5d622cef0f9621f3ffa3:google-chrome/google-chrome-stable.sh
 f:d8b130df76f466bbc7471e7aa1737495:google-chrome/.checksums
 f:0b3c272efdf815e57027d5116b665f3f:google-chrome/.pkgfiles
 f:aa2c3d8e1e9eb2cef7d76a1b96d8aab1:google-chrome/spkgbuild
-f:e07462bc3adf7ebde579e201bd524bff:virtualbox-modules/install
+f:6f75c7a8dcbbce7b0dab4ad40f04fed0:virtualbox-modules/post-install.sh
 f:cf53975eb0974f7ecb894911855e20b9:virtualbox-modules/.checksums
 f:31f8530ff16d626d6633a975202d97d5:virtualbox-modules/.pkgfiles
 f:8acec9638ae8d594840ab4cda06ec506:virtualbox-modules/spkgbuild

@@ -39,10 +39,9 @@ d:git
 d:openssl1.0
 d:dhcp
 d:libnetfilter_conntrack
-f:f87b3722ad4520270e2e109db4756184:openssh/install
 f:d3ac1f5a3d8570c04462dc3ce4aa1c18:openssh/post-install.sh
 f:3004ff052b62b9f37c1ead8739e6b6f3:openssh/CHANGELOG
-f:fc1357907692a2c5e63344cc78ebc7f0:openssh/pre-install.sh
+f:375bc8bcfb157208c9c5d9700c7c6b69:openssh/pre-install.sh
 f:48d33785587ce5a9ca987a95508f9d2b:openssh/.checksums
 f:7fe73bf8ea8559f4d74a0848c244db1a:openssh/mkdirs
 f:01bc5c7b101c377cc996728b6040c493:openssh/.pkgfiles

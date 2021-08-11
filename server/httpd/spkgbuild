@@ -4,10 +4,10 @@
 name=httpd
 version=2.4.48
 release=1
+
+backup="etc/httpd/httpd.conf"
 source="https://archive.apache.org/dist/httpd/$name-$version.tar.bz2
-	httpd-blfs_layout-1.patch
-	rc.httpd
-	run"
+	https://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.48-blfs_layout-1.patch"
 
 build() {
 	cd $name-$version
@@ -16,8 +16,9 @@ build() {
 	patch -Np1 -i ../httpd-blfs_layout-1.patch
 
 	# Adapt the Lua module to API changes in Lua-5.4
-	sed -i 's/lua_resume(a, NULL, b)/lua_resume(a, NULL, b, NULL)/' modules/lua/mod_lua.h
-	
+	#sed -i 's/lua_resume(a, NULL, b)/lua_resume(a, NULL, b, NULL)/' modules/lua/mod_lua.h
+
+	sed '/dir.*CFG_PREFIX/s@^@#@' -i support/apxs.in
 	./configure --enable-authnz-fcgi                              \
 	            --enable-layout=BLFS                              \
 	            --enable-mods-shared="all cgi"                    \
@@ -33,15 +34,4 @@ build() {
 	            --with-suexec-userdir=public_html
 	make
 	make DESTDIR=$PKG install
-
-	mv -v $PKG/usr/sbin/suexec $PKG/usr/lib/httpd/suexec
-
-	rm -fr $PKG/var/run
-
-	# rc service
-	install -Dm755 $SRC/rc.httpd $PKG/etc/rc.d/httpd
-
-	# runit service
-        install -Dm755 $SRC/run $PKG/etc/sv/httpd/run
-        ln -s /run/runit/supervise.httpd $PKG/etc/sv/httpd/supervise
 }

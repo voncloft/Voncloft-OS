@@ -96,7 +96,7 @@ f:855a926513e4239c61a09466de81de36:dbi-drivers/spkgbuild
 f:e68b811ec7656ab0ede0546616751951:bluefish/spkgbuild
 f:4f4a324a8ddaea736240853fecfc314d:screenfetch/CHANGELOG
 f:a666051d1c798d6ca8afa17d162bf95f:screenfetch/spkgbuild
-f:cc78b580f707a2b45eb8a425b44e4672:gtk3/install
+f:9372232bb0848110fe8e837484c6c039:gtk3/post-install.sh
 f:128bbb361e9bd1ba49fb19b2c8c3dcae:gtk3/.checksums
 f:7208af866d6e700f744df0f85e187166:gtk3/.pkgfiles
 f:d7bf7e9bddaf61fac4c74a5a62b9fd12:gtk3/spkgbuild
@@ -114,7 +114,7 @@ f:9fe4d82f6c3b48afd70e480df3fe38aa:freecell-solver/spkgbuild
 f:843d32daf6be8093d06a6a6993c5168c:gtksourceview3/.checksums
 f:3fd2a19c024ef7394f695118e5203f21:gtksourceview3/.pkgfiles
 f:be8cc806f4e2de98bb99f41d7f8d8b91:gtksourceview3/spkgbuild
-f:8d340f5c23399de08ada36defed16437:gtk2/install
+f:bb0ad7d077d5a01e5aa061e1662d37fa:gtk2/post-install.sh
 f:ff7d4818c544d7b3a35a29198555f60d:gtk2/.checksums
 f:3481a7c8acd4ba7d40b9509b410d9584:gtk2/.pkgfiles
 f:13f2c9445f7358f37ebde4fd22c3a024:gtk2/spkgbuild
