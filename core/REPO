@@ -246,7 +246,6 @@ d:xrdb
 d:tree
 d:inetutils
 d:hicolor-icon-theme
-d:svboots
 d:openjade
 d:adwaita-icon-theme
 d:ck4up
@@ -545,7 +544,7 @@ f:12e9d903bc993431cce19e24a5d603bc:make/.pkgfiles
 f:1c3c5b6ba36a9bd98eb820d9a0725eb0:make/spkgbuild
 f:17967c2b4334970fbdb990c53ff4e224:sysvinit/.checksums
 f:8391a3434b86fd88ddb76e9a659acd8a:sysvinit/.pkgfiles
-f:83b0078744150dfb636fbb1c745f12cb:sysvinit/spkgbuild
+f:1868fb05079495ff96d1d4c92d1c408b:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:627c2917ac3828c3ed168d3b7e67dbe5:shadow/post-upgrade.sh
 f:c319a3b8aaabc78b2c321018976f62ab:shadow/.checksums
@@ -1336,10 +1335,6 @@ f:d4896831ec14c4e847c828caba0dc9e4:inetutils/spkgbuild
 f:94bccb069c53d4b9068e0188012e6257:hicolor-icon-theme/.checksums
 f:5ae5289187b75335c434b1123a9eae69:hicolor-icon-theme/.pkgfiles
 f:a89f52befc48c9b8c69c122bab6f4aa2:hicolor-icon-theme/spkgbuild
-f:cabe4730e4c736b6e18fdce9fa07f974:svboots/install
-f:67abcdd33d39c7aa908677ad27ffa9cf:svboots/.checksums
-f:1c69bc270951e98d408a58660c5ca54d:svboots/.pkgfiles
-f:1f1a9a2fbb6739b6ac762d6d904851cf:svboots/spkgbuild
 f:e8a3e22ada3ba6af100072490fa3ba04:openjade/post-install.sh
 f:89c84497d14dae69ba50448ee9262be0:openjade/openjade-upstream-1.patch
 f:aa65270b785b956f092438a669a7cf12:openjade/.checksums
@@ -1824,7 +1819,7 @@ f:c00d233e3921f750e02dbacefd3916d9:pcre/spkgbuild
 f:b09ebb6309ca8c40d206f824fc46c9fc:waylandpp/spkgbuild
 f:a18a2f8739b159262ab8532ba2efabf6:android-tools/CHANGELOG
 f:524464e65b6d1c86de9449e9d0ee6cd4:android-tools/spkgbuild
-f:371c5e3eb660cc6a93a24dca5d6c0dbe:tcsh/install
+f:d85332a55cf2795efc89dbf30af9a3d8:tcsh/post-install.sh
 f:7ca0fe6d1a1b9a0093f632499d4fb112:tcsh/csh.cshrc
 f:8bbdcde1a99aac612c9ad1894fcbb62e:tcsh/.checksums
 f:8ee766d8ae0ae567606850628888d37f:tcsh/.pkgfiles

@@ -1,26 +1,16 @@
-# description	: programs for controlling the startup, running, and shutdown of the system
+# description	: Bootscripts for SysV init
+# depends	: sysvinit
 
 name=sysvinit
-version=2.99
+version=2.95
 release=1
-source="https://download.savannah.gnu.org/releases/$name/$name-$version.tar.xz"
+
+source="http://download.savannah.gnu.org/releases/sysvinit/$name-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/lfs/9.0/$name-$version-consolidated-1.patch"
 
 build() {
 	cd $name-$version
-
-	make -C src
-	make -C src ROOT=$PKG install
-
-	for xx in last lastb readbootlog mesg utmpdump wall; do
-		rm $PKG/usr/bin/$xx
-	done
-	rm $PKG/bin/pidof
-	rm $PKG/sbin/sulogin
-	rm $PKG/sbin/logsave
-	for xx in last lastb readbootlog mesg utmpdump wall; do
-		rm $PKG/usr/share/man/man1/$xx.1
-	done
-	for xx in pidof logsave sulogin; do
-		rm $PKG/usr/share/man/man8/$xx.8
-	done
+	patch -Np1 -i $SRC/sysvinit-2.95-consolidated-1.patch
+	make
+	make DESTDIR=$PKG install	
 }
