@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-asyncpg
-version=0.23.0
+version=0.24.0
 release=2
 
-source="https://files.pythonhosted.org/packages/97/b0/acacd8496670b24bad90b92c105fd2f66e83051bf5e23b978a059e5f9608/asyncpg-0.23.0.tar.gz"
+source="https://files.pythonhosted.org/packages/ba/29/cca39b99164d9e99a2b30c207e1a8fb682d062b39cef0f214a293bba113c/asyncpg-0.24.0.tar.gz"
 options="!checksum"
 
 build() {

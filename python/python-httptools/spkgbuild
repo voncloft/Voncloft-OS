@@ -2,10 +2,10 @@
 # depends : python http-parser
 
 name=python-httptools
-version=0.2.0
+version=0.3.0
 release=4
 
-source="https://files.pythonhosted.org/packages/96/82/08c5ee0191ea7f765e9a44cc66827c0ba35b896f72b4d31f9cd9d180b08f/httptools-0.2.0.tar.gz"
+source="https://files.pythonhosted.org/packages/5b/0c/649c671aaf8c22bffd48e2c5e3fdd1fe24be5cb10042073ed6f6183e2cd3/httptools-0.3.0.tar.gz"
 options="!checksum"
 
 build() {
