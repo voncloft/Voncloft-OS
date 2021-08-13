@@ -2,10 +2,10 @@
 # depends : freetype2 python-cycler python-dateutil python-kiwisolver python-numpy python-pillow python-pyparsing qhull
 
 name=python-matplotlib
-version=3.4.2
+version=3.4.3
 release=1
 
-source="https://files.pythonhosted.org/packages/60/d3/286925802edaeb0b8834425ad97c9564ff679eb4208a184533969aa5fc29/matplotlib-3.4.2.tar.gz"
+source="https://files.pythonhosted.org/packages/21/37/197e68df384ff694f78d687a49ad39f96c67b8d75718bc61503e1676b617/matplotlib-3.4.3.tar.gz"
 options="!checksum"
 
 build() {

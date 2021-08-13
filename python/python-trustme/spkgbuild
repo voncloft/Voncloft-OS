@@ -2,10 +2,10 @@
 # depends : python python-cryptography
 
 name=python-trustme
-version=0.8.0
+version=0.9.0
 release=3
 
-source="https://files.pythonhosted.org/packages/70/d0/4dbfc0b607456cd07f763d73f824a919dbae5b87e538f2f015c7afbaf4a6/trustme-0.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/34/8e/66203d0c8c4557db28772678359e0878610624db8438b1ed9361ceeaad1d/trustme-0.9.0.tar.gz"
 options="!checksum"
 
 build() {
