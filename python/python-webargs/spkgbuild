@@ -2,10 +2,10 @@
 # depends : python-marshmallow
 
 name=python-webargs
-version=8.0.0
+version=8.0.1
 release=3
 
-source="https://files.pythonhosted.org/packages/16/64/8add6d00de43337a3c52d065fca21689f0387d635544dbabeda45b0adf7c/webargs-8.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/d9/58/24538fd2bf7164abea0d9e53b3dddb49fda3ff7008e2bfd1309aaf8244f5/webargs-8.0.1.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-podcastparser
-version=0.6.6
+version=0.6.7
 release=1
 
-source="https://files.pythonhosted.org/packages/be/0d/f2be8e4a79c3102b7ae85d59fe7bd1f037a414efb48c81cd314ddeb11b71/podcastparser-0.6.6.tar.gz"
+source="https://files.pythonhosted.org/packages/4d/a2/a4a17ea6c89ac3b1c82c0210513a961997dc8bb6e792fb6b832db0cb0076/podcastparser-0.6.7.tar.gz"
 options="!checksum"
 
 build() {

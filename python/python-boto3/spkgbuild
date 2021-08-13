@@ -2,10 +2,10 @@
 # depends : python-botocore python-jmespath python-s3transfer
 
 name=python-boto3
-version=1.18.18
+version=1.18.19
 release=1
 
-source="https://files.pythonhosted.org/packages/b7/ca/6a3d592e46e1a23bd23bd4a8b88daf92bdf97d7a4426d055fd52f07e1ade/boto3-1.18.18.tar.gz"
+source="https://files.pythonhosted.org/packages/aa/84/8fa7c802c32ebcfcc061d44a1daaba40510ed08ec496e96044b572844a58/boto3-1.18.19.tar.gz"
 options="!checksum"
 
 build() {
