@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-yaspin
-version=2.0.0
+version=2.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/7b/30/9239a63c561dc0483151473cb24b4d6a4dba7dbc40d4630c0f56ed2718a5/yaspin-2.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/6a/b2/144d100c915784ab551e0f7809aaecdd103786a227b0f30db341ffe649be/yaspin-2.1.0.tar.gz"
 options="!checksum"
 
 build() {

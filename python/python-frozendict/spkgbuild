@@ -2,10 +2,10 @@
 # depends : python python-setuptools
 
 name=python-frozendict
-version=2.0.5
+version=2.0.6
 release=8
 
-source="https://files.pythonhosted.org/packages/90/29/84e579b3d217117eca436db9172696bbe9c69604e89f3b2b000657594bd7/frozendict-2.0.5.tar.gz"
+source="https://files.pythonhosted.org/packages/5d/3f/ca9b1077593d30375580d675d7c38333259c6ed49b75cbe873a4cf0a3058/frozendict-2.0.6.tar.gz"
 options="!checksum"
 
 build() {

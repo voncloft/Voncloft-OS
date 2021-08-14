@@ -2,10 +2,10 @@
 # depends : python qt5-python-bindings
 
 name=python-qasync
-version=0.18.0
+version=0.18.1
 release=1
 
-source="https://files.pythonhosted.org/packages/07/bc/e1c1e23ec15ea30bcaafe534965c6c7d947b46a6b426b1bd02624d6afdd0/qasync-0.18.0.tar.gz"
+source="https://files.pythonhosted.org/packages/fb/e0/59f36fa0e97aa9cd70300a04e386f1f21cdb58ca5582facaa637ddae8852/qasync-0.18.1.tar.gz"
 options="!checksum"
 
 build() {
