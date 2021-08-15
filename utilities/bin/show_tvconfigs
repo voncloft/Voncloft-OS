@@ -1,0 +1,21 @@
+grep export /media/Scripts/transfer.sh | sed 's/export //g' | sed 's/\"//g'
+echo ""
+echo "Current Shows downloaded"
+for d in /temp/Stripped\ Files/*;
+do
+	no_files=$(dir "$d" | wc -l)
+	FOLDER="$d"
+	if [ $no_files -ge 2 ];
+	then
+		echo "$d"
+		for f in "$FOLDER/"*;
+		do
+			if [[ ${f##*/} != "index.php" ]] &&  [[ ${f##*/} != "secondary.php" ]];
+			then
+
+				echo ${f##*/}
+			fi
+		done
+	fi
+done
+# && dir /temp/Stripped\ Files/* | grep -v index.php | grep -v secondary.php"
