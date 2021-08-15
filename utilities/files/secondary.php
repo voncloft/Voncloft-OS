@@ -71,7 +71,8 @@ function formatSize( $bytes )
         //$fsize = filesize($dir."/".$npart)/1000;
         if (is_dir($npart)) 
 	{/*7*/
-          print("<tr class='directory'><TD><a href='$npart/secondary.php'>$npart</a></TD><TD 
+	$url=str_replace("'","%27",$npart);
+          print("<tr class='directory'><TD><a href='$url/secondary.php'>$npart</a></TD><TD 
 align='center'><i>N/A</i></TD><TD>Directory</TD></TR>\n");
         } /*7*/
 	else 
