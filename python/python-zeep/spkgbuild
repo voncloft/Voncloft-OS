@@ -2,10 +2,10 @@
 # depends : python-appdirs python-attrs python-cached-property python-defusedxml
 
 name=python-zeep
-version=4.0.0
+version=4.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/e0/b3/74af84729530468b98f503f439c81f60a2f95178d6edbd3f77b02b89331f/zeep-4.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f8/d2/9c40fc50fa8d8ac2a744403e3c5eb64548daa9783c6ca060f74f911c006d/zeep-4.1.0.tar.gz"
 options="!checksum"
 
 build() {

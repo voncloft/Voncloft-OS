@@ -1770,7 +1770,7 @@ f:1e615a707629a6f372625d1d48b2b2c6:python-cffi/spkgbuild
 f:35ba2f8d8462100a3a872677cc37f29e:python-pykeepass/CHANGELOG
 f:be0fe7e4e8152ef4d1778868d3898024:python-pykeepass/spkgbuild
 f:9cecd3d715bef622aab51c7039998d51:python-pikepdf/CHANGELOG
-f:a8183f7a823869efc0c62705872de205:python-pikepdf/spkgbuild
+f:3e06970008ef0e6e58281a8f5ba389a7:python-pikepdf/spkgbuild
 f:b06cdc397dfed07bbb55630b80826777:python-octaviaclient/spkgbuild
 f:893c2ce8418d7173d35de7b951a4b38a:python-setuptools/CHANGELOG
 f:e802abaf76bdb26f72d4587128944932:python-setuptools/spkgbuild
@@ -2300,8 +2300,8 @@ f:c63f604300176e80823677f975ef541b:python-fastnumbers/spkgbuild
 f:669b6cd51ecb70db4f706748ad737e44:python-qrencode/CHANGELOG
 f:88b06731a4eaedcc592ae1b17295fe67:python-qrencode/spkgbuild
 f:f6ef65c1e83c369ee82150b38c914b08:python-nose-random/spkgbuild
-f:fc16b19000911ad1dc78498c4bf949ef:python-pandas/CHANGELOG
-f:6945050e57b3f815e66259f0300e0c82:python-pandas/spkgbuild
+f:7fc0044e003a2a688c13dc23fa3acdba:python-pandas/CHANGELOG
+f:07cc168f1ffd99b167afa4b5355ddb95:python-pandas/spkgbuild
 f:213c2f916364cfab6519b40b059df232:python-infinity/CHANGELOG
 f:2cd895fb6ccda60113e55810f3867a37:python-infinity/spkgbuild
 f:ae00f0f637ad4bb6fe0dafb1a1e05ec5:python-jsonpointer/CHANGELOG
@@ -2594,8 +2594,8 @@ f:59db5cef545005b83030442f575e7626:python-ldap/CHANGELOG
 f:0c31b7704f9b3d541ebcdb0e83508857:python-ldap/spkgbuild
 f:c0f91a15c95e36032646c8a31dd6b242:python-ipdb/CHANGELOG
 f:832798e87a567275c88640ca8d3ece9b:python-ipdb/spkgbuild
-f:3ed8c5a17ef3f086ec8aa691e2945731:python-pyee/CHANGELOG
-f:e44b10794e6767701d59ac41d9e992f1:python-pyee/spkgbuild
+f:04a8cd5026b96e85b185abd26d65e3d4:python-pyee/CHANGELOG
+f:5ba46a6155cdd5dd962ad3959ba30334:python-pyee/spkgbuild
 f:d16467064f4cdc18e7b2bc206138d568:python-icalendar/CHANGELOG
 f:ad821d2437810a6bee76f8b7e2f5c61a:python-icalendar/spkgbuild
 f:e1b9b24c1071a8bc3bd78b88bfa5f244:python-httplib2/CHANGELOG
@@ -2798,7 +2798,7 @@ f:41cb144790d44eedbaa7b1da8ed3e3fc:python-pyxdameraulevenshtein/spkgbuild
 f:2f9d0278dda80ea0bff5001547d3eafa:python-signedjson/CHANGELOG
 f:501f300851e52af24b222592dd1e1a6b:python-signedjson/spkgbuild
 f:911ca47902aa256f0473664fdfb2a3ab:python-tzlocal/CHANGELOG
-f:3dde056fccf64fed5a43f61f0d6047bc:python-tzlocal/spkgbuild
+f:7233e56f1ece2f2c58c98913d25947d1:python-tzlocal/spkgbuild
 f:f5b386afd527e0e12a24396e5bf70bfc:python-ifaddr/CHANGELOG
 f:275704de4dabb208afb6c79c355bf31b:python-ifaddr/spkgbuild
 f:18f03a1df504b416c3082d4d05166c67:python-pyx/CHANGELOG
@@ -3847,8 +3847,8 @@ f:f3a85a00e38b96415c49c25c2a714ab7:python-translationstring/spkgbuild
 f:09ce3ea264ac27ed1f2f8f2bff597401:python-sphinx-alabaster-theme/spkgbuild
 f:87a993f2a55dd3cb04c3b53b2fec1973:python-dask/CHANGELOG
 f:565c32599a413e4fd0a57247cd7b54c3:python-dask/spkgbuild
-f:cab5a61153257c67d95911f8363f6d5b:python-tqdm/CHANGELOG
-f:61da2df3cd1a87f18d362d8ab61f31ae:python-tqdm/spkgbuild
+f:14204e613316778e013cea041b110bb8:python-tqdm/CHANGELOG
+f:ba457db02dbaac463bea4fc86b5d34da:python-tqdm/spkgbuild
 f:f4ee6031e032b1afa10daccb3629cd17:python-baron/CHANGELOG
 f:e7d93bb3454bb39ae5faf4e959b63c1e:python-baron/spkgbuild
 f:3d71c0ab79b2677a27fd4dd5f3104f43:python-flask-marshmallow/CHANGELOG
@@ -3877,10 +3877,10 @@ f:2ea1d406c9d234907e62127be092d062:python-hglib/CHANGELOG
 f:34c604442a9c8936ee592812009d276a:python-hglib/spkgbuild
 f:65cbb4e3e51406014c9b36f9d1bca707:python-gitlab/CHANGELOG
 f:ebefaafc463c2ef2b908dd026378ca09:python-gitlab/spkgbuild
-f:2b920ab6cf0d3dc39895a574d47efaab:python-levenshtein/CHANGELOG
-f:6be8eceee5072f829c5389a450aa7099:python-levenshtein/spkgbuild
-f:961f346e17e98b8b922296715fdab25d:python-zeep/CHANGELOG
-f:4a6b39e9224c97e5d56f9f166e269de8:python-zeep/spkgbuild
+f:734d7b1a9d236f9385549e814e3df06f:python-levenshtein/CHANGELOG
+f:ef89b817d7a9064684dca3288ea83dca:python-levenshtein/spkgbuild
+f:e79b9768fd721d5959eb6daf2fb57477:python-zeep/CHANGELOG
+f:250d7820f4d6f9fb93287a522a2bdd9e:python-zeep/spkgbuild
 f:a73013433fb0c955c769a30439325ce7:python-pytest-xdist/CHANGELOG
 f:e5a15f6d53495f5bea3db605d23ba18e:python-pytest-xdist/spkgbuild
 f:c50edbb5b276ba3ee9b0fb788038b761:python-karellen-geventws/CHANGELOG
@@ -4131,8 +4131,8 @@ f:903f4a549512b6a358a6ea4e8bea9801:python-enrich/CHANGELOG
 f:23fb0c7c094ee4d531c9e136fbde8049:python-enrich/spkgbuild
 f:c7bd8bae0fac9b079ffeef421d9d9f8b:python-cpplint/CHANGELOG
 f:02f22b6964aad75a1f7c45a9b7672120:python-cpplint/spkgbuild
-f:d140fa782a64fcbc90896b0b475df1b2:python-pygments/CHANGELOG
-f:1f3ad64a782785ca991eae1c1b513e36:python-pygments/spkgbuild
+f:ac30a21b833c0bc0d6df4155bb582fae:python-pygments/CHANGELOG
+f:bf5471a604ed78f18f2412ae9282f543:python-pygments/spkgbuild
 f:d29566617781d2b71d33918a087a2443:python-zope-location/CHANGELOG
 f:21cb35e972fade45fc1799922c38e615:python-zope-location/spkgbuild
 f:94e8ffa2bfd5761e86f80d54e13f0ef6:python-daemon/CHANGELOG

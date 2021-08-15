@@ -2,10 +2,10 @@
 # depends : python-trio python-twisted
 
 name=python-pyee
-version=8.1.0
+version=8.2.2
 release=2
 
-source="https://files.pythonhosted.org/packages/fd/f8/d1c597ce15f3fd32ebdec9695da97a1af6e102c1ad8f9de32db84b05986c/pyee-8.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/e6/88/a917aaa0da1915292022745184275e095516b490a85d89fc48fd4de1c01a/pyee-8.2.2.tar.gz"
 options="!checksum"
 
 build() {

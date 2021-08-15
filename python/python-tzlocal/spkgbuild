@@ -5,7 +5,7 @@ name=python-tzlocal
 version=4.0
 release=3
 
-source="https://files.pythonhosted.org/packages/89/e7/5fc01b31d9df0b914d5bbbea6f5d80ff76c6b5cf11bf23a8beca8407a0f1/tzlocal-4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/89/e7/5fc01b31d9df0b914d5bbbea6f5d80ff76c6b5cf11bf23a8beca8407a0f1/tzlocal-3.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-levenshtein
-version=0.12.2
+version=0.13.0
 release=1
 
-source="https://files.pythonhosted.org/packages/c3/0b/9cecc379de5320dd8bcb420a315aae1aa9e5d898320ed5a3fe9d1f02d634/levenshtein-0.12.0.tar.gz"
+source="https://files.pythonhosted.org/packages/ea/eb/16cc6cb985aa9ab6af724a3025490cd83bf7b4fdc6486f4759ce26b02f48/Levenshtein-0.13.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pikepdf
 version=3.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/d0/ef/fa6757e307049680f23ac03cc9f677354b4839302459b5d60198f72d89a4/pikepdf-3.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/d0/ef/fa6757e307049680f23ac03cc9f677354b4839302459b5d60198f72d89a4/pikepdf-2.16.1.tar.gz"
 options="!checksum"
 
 build() {
