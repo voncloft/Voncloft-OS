@@ -1,6 +1,4 @@
 #!/bin/bash
-# Maintener: Voncloft
-# contact: Voncloft@gmail.com
 
 echo "Name of package you would like to create"
 read name
@@ -78,7 +76,30 @@ for dir in /Voncloft-OS/*/$name/; do
 				read configs
                         done
 			echo $name >> /etc/checkrepo.conf
-			
+                        echo "Do you need any pre-install scripts? <Y/N>"
+                        read pre_install
+                        if [[ $pre_install == ["Yy"] ]];
+                        then
+                                echo -e "#!/bin/sh\n" >> $dirs$name/pre-install.sh
+                                nano $dirs$name/pre-install.sh
+                        fi
+
+			echo "Do you need any post-install scripts? <Y/N>"
+                        read post_install
+                        if [[ $post_install == ["Yy"] ]];
+                        then
+                        	echo -e "#!/bin/sh\n" >> $dirs$name/post-install.sh
+				nano $dirs$name/post-install.sh
+                        fi
+                        echo "Do you need any post-install scripts? <Y/N>"
+                        read post_upgrade
+
+                        if [[ $post_upgrade == ["Yy"] ]];
+                        then
+                                echo -e "#!/bin/sh\n" >> $dirs$name/post-upgrade.sh
+                                nano $dirs$name/post-upgrade.sh
+                        fi
+
 			#nano $dirs$name/spkgbuild
 			####open configuration files after editing spkgbuild#####
 		else
