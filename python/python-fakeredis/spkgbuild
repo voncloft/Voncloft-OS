@@ -2,10 +2,10 @@
 # depends : python-redis python-six python-sortedcontainers
 
 name=python-fakeredis
-version=1.5.2
+version=1.6.0
 release=3
 
-source="https://files.pythonhosted.org/packages/7b/0d/02f45aacde2c142127db64b786aadb6d34f941ed89dcadfb4ae906e24e35/fakeredis-1.5.2.tar.gz"
+source="https://files.pythonhosted.org/packages/49/35/c2581218fff43a71e798ce774fbf20d5af4521c45172aa46e5e54eedc77a/fakeredis-1.6.0.tar.gz"
 options="!checksum"
 
 build() {

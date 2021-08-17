@@ -2,10 +2,10 @@
 # depends : python-six python-decorator python-appdirs python-numpy
 
 name=python-pytools
-version=2021.2.7
+version=2021.2.8
 release=1
 
-source="https://files.pythonhosted.org/packages/52/26/c7ab098ceb4e4e3f0e66e21257a286bb455ea22af7afefbd704d9ccf324c/pytools-2021.2.7.tar.gz"
+source="https://files.pythonhosted.org/packages/d9/75/5aa0f6275da839b756e88107ea347d486877d69dd98840c824117d7d6c93/pytools-2021.2.8.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-ujson
-version=4.0.2
+version=4.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/86/0a/80d87aa4ee79980bddabef13cb7d95de330f85355cf08dfdaf874889b02b/ujson-4.0.2.tar.gz"
+source="https://files.pythonhosted.org/packages/2c/8d/63b4afe82d646a606cef838855a6110c7a3a012622e656bd29fb2d15f1d1/ujson-4.1.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : perl-net-ssleay perl perl-uri
 
 name=perl-io-socket-ssl
-version=2.071
+version=2.072
 release=2
 
-source="https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.071.tar.gz"
+source="https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.072.tar.gz"
 options="!checksum"
 
 build() {

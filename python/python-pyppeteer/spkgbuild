@@ -2,10 +2,10 @@
 # depends : python-appdirs python-pyee python-tqdm python-urllib3
 
 name=python-pyppeteer
-version=0.2.5
+version=0.2.6
 release=1
 
-source="https://files.pythonhosted.org/packages/07/67/a7eca24bf7620e11ba8be87a8c8eee5f3be0b2416aa942526b30d0348800/pyppeteer-0.2.5.tar.gz"
+source="https://files.pythonhosted.org/packages/d9/bd/aee9896b82f5c74612586743a006fbdc02515277ffb62409b57e68934f6a/pyppeteer-0.2.6.tar.gz"
 options="!checksum"
 
 build() {
