@@ -2,10 +2,10 @@
 # depends : python-urllib3
 
 name=python-httpretty
-version=1.1.3
+version=1.1.4
 release=1
 
-source="https://files.pythonhosted.org/packages/7b/18/7965683a30147b642aed40f82c28bd8507323b3e7572708eee489c22e13f/httpretty-1.1.3.tar.gz"
+source="https://files.pythonhosted.org/packages/6e/19/850b7ed736319d0c4088581f4fc34f707ef14461947284026664641e16d4/httpretty-1.1.4.tar.gz"
 options="!checksum"
 
 build() {

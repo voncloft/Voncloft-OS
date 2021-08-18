@@ -2,10 +2,10 @@
 # depends : python-aws-xray-sdk python-boto python-boto3
 
 name=python-moto
-version=2.2.3
+version=2.2.4
 release=5
 
-source="https://files.pythonhosted.org/packages/eb/7c/f40a10267acf08869dab0014a5a80deca289e30df251efdd4bf562824feb/moto-2.2.3.tar.gz"
+source="https://files.pythonhosted.org/packages/eb/7c/f40a10267acf08869dab0014a5a80deca289e30df251efdd4bf562824feb/moto-2.2.4.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : imagemagick libxml2 python
 
 name=python-wand
-version=0.6.6
+version=0.6.7
 release=1
 
-source="https://files.pythonhosted.org/packages/9c/da/15a1a58bb1da1b78f183661f5c2711c11e2cf55cf157e6948a113137953f/Wand-0.6.6.tar.gz"
+source="https://files.pythonhosted.org/packages/a8/74/e544ba1f77d381d76992905c319f3564f7a05a66e18c5490542159833707/Wand-0.6.7.tar.gz"
 options="!checksum"
 
 build() {

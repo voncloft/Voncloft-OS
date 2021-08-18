@@ -2,10 +2,10 @@
 # depends : python-sphinx
 
 name=python-sphinx-inline-tabs
-version=2021.4.11
+version=2021.8.17
 release=3
 
-source="https://files.pythonhosted.org/packages/00/be/816125424b1aaa4ba8f1d196923e93f61392dc1bdc205b54c67abe14b0cd/sphinx_inline_tabs-2021.4.11b9.tar.gz"
+source="https://files.pythonhosted.org/packages/47/a2/0c7446af6f1b771036a080c857bd62c2bd36b5111b784f179b28eb4f8db6/sphinx_inline_tabs-2021.8.17b10.tar.gz"
 options="!checksum"
 
 build() {

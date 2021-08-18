@@ -5,7 +5,7 @@ name=python-google-auth
 version=2.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/92/3e/ec7db6ef82a8563cca87c1f7381fda5a528d83cd9710e9cba5b75e6f7074/google-auth-1.34.0.tar.gz"
+source="https://files.pythonhosted.org/packages/a9/0a/96f0691211d9293cdd29ade3fb844da92a56baae95dd9417e5ff5fbb6159/google-auth-2.0.0.tar.gz"
 options="!checksum"
 
 build() {
