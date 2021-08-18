@@ -2,10 +2,10 @@
 # depends : python krb5
 
 name=python-k5test
-version=0.9.2
+version=0.10.0
 release=1
 
-source="https://files.pythonhosted.org/packages/eb/cb/587a217db2ff9f662b618eb257112c0199ca6338d8dd7729ac416c15a601/k5test-0.9.2.tar.gz"
+source="https://files.pythonhosted.org/packages/83/1e/c6b81b1743c5a5b9fbda41db419f10feb25641410b7eefbcf2c666dc131a/k5test-0.10.0.tar.gz"
 options="!checksum"
 
 build() {

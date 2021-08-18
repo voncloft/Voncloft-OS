@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-markdown2
-version=2.4.0
+version=2.4.1
 release=1
 
-source="https://files.pythonhosted.org/packages/bc/03/7e156a4da266e5db4fbaa8b4efc3187f14f6944d9f89f56c62b1537133b9/markdown2-2.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/fb/10/4f327f4517fa5dda90021618fe174d1f4aff3c4e06abcd7f77685a455511/markdown2-2.4.1.tar.gz"
 options="!checksum"
 
 build() {

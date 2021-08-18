@@ -2,10 +2,10 @@
 # depends : python-webob python-six
 
 name=python-wsgiproxy2
-version=0.4.6
+version=0.5.0
 release=5
 
-source="https://files.pythonhosted.org/packages/9e/db/3e8d6877cc12de58ff67eecfab58acc50b2e2803381a06e21c78fa99713c/WSGIProxy2-0.4.6.tar.gz"
+source="https://files.pythonhosted.org/packages/02/0e/24011d49d54d488d473b2ac84b9761f2a9808ff568f1c9619b19da7fa252/WSGIProxy2-0.5.0.tar.gz"
 options="!checksum"
 
 build() {
