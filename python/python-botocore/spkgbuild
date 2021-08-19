@@ -5,7 +5,7 @@ name=python-botocore
 version=1.21.23
 release=1
 
-source="https://files.pythonhosted.org/packages/a6/74/c4f3118df00ef7b7d975571ed2f3cbac71e87b396b2171be9879d7b57ffb/botocore-1.21.23.tar.gz"
+source="https://files.pythonhosted.org/packages/ad/57/b42c1660647506c1af106f7c1b1fc9eac9de53ce2310089d5f38b8a472cf/botocore-1.21.24.tar.gz"
 options="!checksum"
 
 build() {

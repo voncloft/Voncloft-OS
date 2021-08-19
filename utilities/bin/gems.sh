@@ -45,7 +45,7 @@ then
 	##Production###
 	if [ -f $file ];
 	then
-		echo $1 >> stripped_info.txt
+		echo ruby-$1 >> stripped_info.txt
 		eval $command >> stripped_info.txt
 		rm -v $file
 	fi
