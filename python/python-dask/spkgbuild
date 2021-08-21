@@ -2,10 +2,10 @@
 # depends : python python-yaml mpdecimal
 
 name=python-dask
-version=2021.8.0
+version=2021.8.1
 release=1
 
-source="https://files.pythonhosted.org/packages/2e/c3/2f9be30972264175aa078df3b79ed7c41cf02d322fbbd10609669ab32519/dask-2021.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/70/bb/8e114593a0ddc1f2ee6095c411035340627ee69c14d942371a3ede58b952/dask-2021.8.1.tar.gz"
 options="!checksum"
 
 build() {

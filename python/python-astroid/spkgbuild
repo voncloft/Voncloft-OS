@@ -2,10 +2,10 @@
 # depends : python-six python-lazy-object-proxy python-wrapt
 
 name=python-astroid
-version=2.7.1
+version=2.7.2
 release=4
 
-source="https://files.pythonhosted.org/packages/85/da/fa27652240694b8d87b06a873e6df47c43635a70d0fb9f66f5a38ba5c775/astroid-2.7.1.tar.gz"
+source="https://files.pythonhosted.org/packages/6f/94/88d24ff14d5e00e78ad7f940dec22d9e95234a2bbf1c16ebcfa19d761ac6/astroid-2.7.2.tar.gz"
 options="!checksum"
 
 build() {

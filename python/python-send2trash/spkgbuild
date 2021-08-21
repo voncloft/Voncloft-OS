@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-send2trash
-version=1.8.0
+version=1.8.1
 release=6
 
-source="https://files.pythonhosted.org/packages/49/2c/d990b8d5a7378dde856f5a82e36ed9d6061b5f2d00f39dc4317acd9538b4/Send2Trash-1.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/49/2c/d990b8d5a7378dde856f5a82e36ed9d6061b5f2d00f39dc4317acd9538b4/Send2Trash-1.8.1.tar.gz"
 options="!checksum"
 
 build() {

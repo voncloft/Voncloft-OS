@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-cpan-perl-releases
-version=5.20210722
+version=5.20210821
 release=2
 
-source="https://www.cpan.org/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-5.20210722.tar.gz"
+source="https://www.cpan.org/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-5.20210821.tar.gz"
 options="!checksum"
 
 build() {
