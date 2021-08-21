@@ -2,10 +2,10 @@
 # depends : python-dateutil python-jmespath python-docutils python-urllib3
 
 name=python-botocore
-version=1.21.23
+version=1.21.25
 release=1
 
-source="https://files.pythonhosted.org/packages/ad/57/b42c1660647506c1af106f7c1b1fc9eac9de53ce2310089d5f38b8a472cf/botocore-1.21.24.tar.gz"
+source="https://files.pythonhosted.org/packages/67/82/6b0c667330a91c04d546a4f8f38bac7f73fe4df36b0446b1eb01cc795bf1/botocore-1.21.25.tar.gz"
 options="!checksum"
 
 build() {

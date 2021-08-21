@@ -2,10 +2,10 @@
 # depends : python-httpx python-pytest
 
 name=python-pytest-httpx
-version=0.12.1
+version=0.13.0
 release=1
 
-source="https://files.pythonhosted.org/packages/7e/57/e0e05dd72d2087a68543b79a0605343870607fee75e0fe5175132accbb4b/pytest_httpx-0.12.1.tar.gz"
+source="https://files.pythonhosted.org/packages/45/9b/b52e5cbe91915c98036b659b428d2580a41d0a1c0c0e9ad24565eca2e054/pytest_httpx-0.13.0.tar.gz"
 options="!checksum"
 
 build() {

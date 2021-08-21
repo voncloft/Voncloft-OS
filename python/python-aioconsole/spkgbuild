@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-aioconsole
-version=0.3.1
+version=0.3.2
 release=2
 
-source="https://files.pythonhosted.org/packages/5a/12/fce04ddc0a8ebd6482e5ec293d8bda47c9e05c82826b061f7b73523b8601/aioconsole-0.3.1.tar.gz"
+source="https://files.pythonhosted.org/packages/7a/b2/747ab3cb965596cd84c5159941613d901d8771acad3c51c4f5da362aa9f0/aioconsole-0.3.2.tar.gz"
 options="!checksum"
 
 build() {

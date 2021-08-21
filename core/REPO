@@ -835,7 +835,8 @@ f:b5286b041c0836d842e3f4528f7943f0:parted/spkgbuild
 f:1b412280d6e15338ef18b7e163242f4f:xset/spkgbuild
 f:390dcf908a947ff00a01d0d137d4c870:xpaint/xpaint.desktop
 f:fb9530f4bcabe008c67a9444251948dd:xpaint/spkgbuild
-f:26f57ee47ad4a82c5d31849fcb741e92:doxygen/spkgbuild
+f:74419a59dacc41aec1752624273b5731:doxygen/CHANGELOG
+f:2baf2c82ac57f855de3e2191fe39e10f:doxygen/spkgbuild
 f:d07e5e4b896394ef087a722529599505:linux-pam/CHANGELOG
 f:8a82e837907ae2cd3334800823fc2382:linux-pam/system-password
 f:6be86e52bfbaf5f80ec7c9fc23f55bc0:linux-pam/system-session
@@ -1081,8 +1082,8 @@ f:ed0d9386fc726acbf3706c5e86a5d28c:m4/spkgbuild
 f:97436334399f4e562cac17df97c3cde6:iasl/spkgbuild
 f:35878c643cf80467d52bdaa655de2429:tmux/CHANGELOG
 f:8be4972dbadc2b622271035369986f74:tmux/spkgbuild
-f:cf5c6a4fe6ecca3bee640f69ba59c747:busybox/CHANGELOG
-f:9f1f33dc6ea120dfb49ff05c76402fda:busybox/spkgbuild
+f:15969beed2e3980f7c31356ca3eedb56:busybox/CHANGELOG
+f:e24b1f7cf9a52a9d4c26d72508f7c362:busybox/spkgbuild
 f:45de326e439ed1393f20b9cd5c55fa22:busybox/config
 f:1fc4241c3ad27cffdc9a26a571744ed8:tzdata/spkgbuild
 f:83c2b00728b23c48a939c762fb0c6c3d:time/spkgbuild
@@ -1122,7 +1123,8 @@ f:4da1ca0f003ee4743d49e7234fed3090:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
 f:d7fb3614ac5bf5cc47bef189a3656c1a:icewm/CHANGELOG
 f:008426d1c17a7ab810f90b196fb7a5bd:icewm/spkgbuild
-f:9b37216d23dce9ba4bf2b5fd43ab6263:ibus/spkgbuild
+f:381637cf43f244bd8fd0bf48cd436530:ibus/CHANGELOG
+f:cc777d640e3598e91573d240611af1f9:ibus/spkgbuild
 f:640027724ed03fa5384676592d1dfff9:smplayer-themes/spkgbuild
 f:b4238bc3fb55104d8224ac261760dee9:opera/CHANGELOG
 f:65df9046e9d2b36d5a5ffb41f458f4f9:opera/spkgbuild
@@ -1230,8 +1232,8 @@ f:45484282ae8907771368163e28f3688c:fwis/spkgbuild
 f:a433b40ab4416774d201314c1e4ae8f2:fwis/fwis
 f:304b13f017ccc3126a0a6fc7a17e61db:grsync/gtk3-port.patch
 f:4ee8c392be898cc5a316c90446ba81eb:grsync/spkgbuild
-f:6c1873a8fa30521e89eaa8c2482a2f69:e2fsprogs/CHANGELOG
-f:7bd7ff9ba59b243140d9e380e823729b:e2fsprogs/spkgbuild
+f:138e36be367fa251b5273d14da17f876:e2fsprogs/CHANGELOG
+f:f2c83fa91491ccbfbab8a5adc9dc51dc:e2fsprogs/spkgbuild
 f:9ae497ee24bb3de188a4791c731de6b1:neofetch/venom-ascii.patch
 f:037029956527103de2018901338e002d:neofetch/spkgbuild
 f:823ba7b9ec03509c8674b6b5d43d2739:ranger/spkgbuild

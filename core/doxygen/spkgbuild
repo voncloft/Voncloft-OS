@@ -2,7 +2,7 @@
 # depends : cmake git 
 
 name=doxygen
-version=1.9.1
+version=1.9.2
 release=1
 
 source="http://doxygen.nl/files/$name-$version.src.tar.gz"

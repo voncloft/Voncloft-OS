@@ -5,7 +5,7 @@ name=python-oslo-utils
 version=4.7.0
 release=3
 
-source="https://files.pythonhosted.org/packages/4c/8d/53957d87c9aa14bdad33858c5c3dd79c2131679b871f18de837e4a6b2e8a/oslo.utils-4.9.2.tar.gz"
+source="https://files.pythonhosted.org/packages/81/18/1ff06ea155e0902c329bcc096c4649b49b3d45d4e70b248704c180cbf27c/oslo.utils-4.10.0.tar.gz"
 options="!checksum"
 
 build() {

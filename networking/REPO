@@ -41,10 +41,10 @@ d:openssl1.0
 d:dhcp
 d:libnetfilter_conntrack
 f:d3ac1f5a3d8570c04462dc3ce4aa1c18:openssh/post-install.sh
-f:3004ff052b62b9f37c1ead8739e6b6f3:openssh/CHANGELOG
+f:d655483f332ef0ba6fa65620f99fa995:openssh/CHANGELOG
 f:375bc8bcfb157208c9c5d9700c7c6b69:openssh/pre-install.sh
 f:7fe73bf8ea8559f4d74a0848c244db1a:openssh/mkdirs
-f:4a43da5c99c9eddc82996c7044ed6968:openssh/spkgbuild
+f:f1c6b1ccabcf93e6b9c9c520865e7492:openssh/spkgbuild
 f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
 f:56bf236cedb211f09e8739d87b9ded04:networkmanager/CHANGELOG

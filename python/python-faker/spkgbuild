@@ -2,10 +2,10 @@
 # depends : python-setuptools python-dateutil python-text-unidecode
 
 name=python-faker
-version=8.11.0
+version=8.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/08/9a/a46dc1f0bb5d6a7efdf5f39cda1400af451cc5e8fa850b584b85d1bb3ada/Faker-8.11.0.tar.gz"
+source="https://files.pythonhosted.org/packages/78/3a/920c76381204aa39b4c515493908d795108f09e6d520ae37ff34ef31aa27/Faker-8.12.0.tar.gz"
 options="!checksum"
 
 build() {

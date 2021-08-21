@@ -2,10 +2,10 @@
 # depends : python-requests
 
 name=python-braintree
-version=4.11.0
+version=4.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/51/ab/d849b0a1f5c8e81b8e4f756ac0653a6c9008254649ae1d90d147f2850bbd/braintree-4.11.0.tar.gz"
+source="https://files.pythonhosted.org/packages/24/dc/64fedfd0083e8dbba31e8de8c79b7cebfc6a1e0e7bd21b1bf40db7017ddb/braintree-4.12.0.tar.gz"
 options="!checksum"
 
 build() {

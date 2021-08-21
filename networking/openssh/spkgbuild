@@ -2,7 +2,7 @@
 # depends	: linux-pam xorg-server openssh-boot 
 
 name=openssh
-version=8.6p1
+version=8.7p1
 release=1
 
 backup="etc/ssh/sshd_config"

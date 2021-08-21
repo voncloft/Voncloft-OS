@@ -2,7 +2,7 @@
 # depends	: bash bc
 
 name=e2fsprogs
-version=1.46.3
+version=1.46.4
 release=1
 source="https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v$version/e2fsprogs-$version.tar.xz"
 options="!checksum"

@@ -5,7 +5,7 @@ name=python-jupyter_client
 version=6.1.7
 release=3
 
-source="https://files.pythonhosted.org/packages/de/05/6b1809dbe46e21c4018721c14a989a150ff73b4ecf631fe6e22d02cac579/jupyter_client-6.1.12.tar.gz"
+source="https://files.pythonhosted.org/packages/0e/9e/9356c9a71ab5a5355b609b02f4ff939d20d8c8a7fb5edde26bda3207a74c/jupyter_client-7.0.1.tar.gz"
 options="!checksum"
 
 build() {

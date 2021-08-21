@@ -2,10 +2,10 @@
 # depends : python python-setuptools python-numpy
 
 name=python-trimesh
-version=3.9.28
+version=3.9.29
 release=1
 
-source="https://files.pythonhosted.org/packages/7e/f1/36dfed0d0493621b5b7dac63b0d948ac6cf87a9199e46abf90f0c89c0412/trimesh-3.9.28.tar.gz"
+source="https://files.pythonhosted.org/packages/20/42/f1db702f818ab5a2f5aa7d707a642045ccfbe244ee751948f736cb85f04e/trimesh-3.9.29.tar.gz"
 options="!checksum"
 
 build() {

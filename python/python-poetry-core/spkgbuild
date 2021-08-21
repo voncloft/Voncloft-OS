@@ -5,7 +5,7 @@ name=python-poetry-core
 version=1.1.0
 release=2
 
-source="https://files.pythonhosted.org/packages/d0/b3/1017f2f6d801f1e3e4ffee3f058a10d20df1a9560aba9c5b49e92cdd9912/poetry-core-1.0.3.tar.gz"
+source="https://files.pythonhosted.org/packages/05/a5/87320d85c550bfaed61bd9bdd6c8b7170147995a7513c9defd8df24982fd/poetry-core-1.0.4.tar.gz"
 options="!checksum"
 
 build() {

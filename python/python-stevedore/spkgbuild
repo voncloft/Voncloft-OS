@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-stevedore
-version=3.3.0
+version=3.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/95/bc/dc386a920942dbdfe480c8a4d953ff77ed3dec99ce736634b6ec4f2d97c1/stevedore-3.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f9/57/328653fd8a631d81b2d71261e471a102d5b64a95c1b1dda1a55b053bf0db/stevedore-3.4.0.tar.gz"
 options="!checksum"
 
 build() {

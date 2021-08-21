@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-testfixtures
-version=6.18.0
+version=6.18.1
 release=1
 
-source="https://files.pythonhosted.org/packages/e1/45/624067f6c2a1416c70d19d4c6bd442fae5211ed6847887b46a73874f343d/testfixtures-6.18.0.tar.gz"
+source="https://files.pythonhosted.org/packages/08/94/a1e5a02d28017270f944d06fad43d8ece12227435c7d4d8b1f27b0cfaab0/testfixtures-6.18.1.tar.gz"
 options="!checksum"
 
 build() {
