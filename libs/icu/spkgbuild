@@ -11,8 +11,8 @@ build() {
 	cd icu/source
 
 	# icu tries to use clang by default
-	[ "$CC" ] || export CC=gcc
-	[ "$CXX" ] || export CXX=g++
+	#[ "$CC" ] || export CC=gcc
+	#[ "$CXX" ] || export CXX=g++
 
 	./configure --prefix=/usr
 	make
