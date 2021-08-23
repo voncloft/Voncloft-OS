@@ -43,7 +43,7 @@ echo $date_output
 
 
 
-scratchpkg_rust=$(grep "date=" /Voncloft-OS/compilers/rust/spkgbuild | sed "s/_date=//g")
+scratchpkg_rust=$(grep "_date=" /Voncloft-OS/compilers/rust/spkgbuild | sed "s/_date=//g")
 echo $scratchpkg_rust
 size=$(eval $command)
 
