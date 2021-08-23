@@ -61,4 +61,5 @@ then
 	#fi
 	#Fix the date
 	sed -i -e "s/$scratchpkg_rust/$date_output/g"  /Voncloft-OS/compilers/rust/spkgbuild
+	rm -v $file
 fi
