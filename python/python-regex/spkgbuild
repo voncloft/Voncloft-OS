@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-regex
-version=2021.8.3
+version=2021.8.21
 release=2
 
-source="https://files.pythonhosted.org/packages/e7/76/825c82d90e02713827b8cd62ac7879a6b71eea6af6753e9babbdada05f00/regex-2021.8.3.tar.gz"
+source="https://files.pythonhosted.org/packages/61/50/ab503a22bcca35ffccfeab0d9bed59a10e78459bec9cf46709a2417e4cc4/regex-2021.8.21.tar.gz"
 options="!checksum"
 
 build() {
