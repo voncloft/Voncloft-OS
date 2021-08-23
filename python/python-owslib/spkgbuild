@@ -2,10 +2,10 @@
 # depends : python-dateutil python-pyproj python-pytz python-requests
 
 name=python-owslib
-version=0.24.1
+version=0.25.0
 release=1
 
-source="https://files.pythonhosted.org/packages/eb/7f/57f3a3ae20b88411f88abe31a922c6b1a95faa60b915bf4e94fc28137cbf/OWSLib-0.24.1.tar.gz"
+source="https://files.pythonhosted.org/packages/e4/47/f8e5b579da7a3a5b44e0a2efa952c1d66e9a13090e1b051fd2203d1f20e2/OWSLib-0.25.0.tar.gz"
 options="!checksum"
 
 build() {

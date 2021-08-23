@@ -2,10 +2,10 @@
 # depends : python-pathtools python-yaml python-argh
 
 name=python-watchdog
-version=2.1.4
+version=2.1.5
 release=1
 
-source="https://files.pythonhosted.org/packages/0e/7e/799a121f862fcaaf90de1dfb542e88c9113a3e2823ce80f0f755e41203c9/watchdog-2.1.4.tar.gz"
+source="https://files.pythonhosted.org/packages/c5/e9/fb0f9775c82b4df1815bb97ebac13383adddff4cf014aceefb7c02262675/watchdog-2.1.5.tar.gz"
 options="!checksum"
 
 build() {

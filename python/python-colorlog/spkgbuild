@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-colorlog
-version=6.3.0
+version=6.4.1
 release=1
 
-source="https://files.pythonhosted.org/packages/07/d4/ac5127f7d7e022caf740b9f624e5b9fe9a69fefc0f4f9c047b1e9298c87a/colorlog-5.0.1.tar.gz"
+source="https://files.pythonhosted.org/packages/d6/4a/840f6cb7e922a717c765a3cdc6988aff22a6ef211d88c8d16701dfbd664f/colorlog-6.4.1.tar.gz"
 options="!checksum"
 
 build() {

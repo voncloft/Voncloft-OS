@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-flexmock
-version=0.10.6
+version=0.10.7
 release=6
 
-source="https://files.pythonhosted.org/packages/f2/57/4811e7bb0f91bf8287feff138ddae32af44a0a2316cce5509c87b6926523/flexmock-0.10.6.tar.gz"
+source="https://files.pythonhosted.org/packages/db/0a/90bbc8b570d837afbb9fa3c8612bbcb8a6999f7dbdd2ab997d329de82efe/flexmock-0.10.7.tar.gz"
 options="!checksum"
 
 build() {

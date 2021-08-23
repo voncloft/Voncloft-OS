@@ -2,10 +2,10 @@
 # depends : python-certifi python-setuptools python-urllib3
 
 name=python-dulwich
-version=0.20.24
+version=0.20.25
 release=1
 
-source="https://files.pythonhosted.org/packages/7c/d2/a361b4831494531d5112e000d92762fc2926ed45ca7f9e9013f2e90c011c/dulwich-0.20.24.tar.gz"
+source="https://files.pythonhosted.org/packages/8a/ee/105b06f79efb7cf041d88267aa5027f0ac89e8650635e29ae1973638445b/dulwich-0.20.25.tar.gz"
 options="!checksum"
 
 build() {

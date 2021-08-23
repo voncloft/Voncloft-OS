@@ -5,7 +5,7 @@ name=python-oslo-db
 version=8.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/af/e5/720fe97c4883c84ed5fea8ebe6bea8195267f16d0bb606ad1027a0cb3c13/oslo.db-10.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/e1/87/ed074673bb2b4cda2d4b898c2f4f7e60a5a195beb45eb3572bb4f30ff51b/oslo.db-11.0.0.tar.gz"
 options="!checksum"
 
 build() {
