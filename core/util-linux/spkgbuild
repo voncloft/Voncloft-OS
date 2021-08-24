@@ -7,7 +7,7 @@ release=1
 source="https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v${version%.*}/util-linux-${version%.*}.tar.gz"
 options="!checksum"
 build() {
-	cd $name-$version-$_special
+	cd *
 
 	mkdir -pv $PKG/var/lib/hwclock
 
