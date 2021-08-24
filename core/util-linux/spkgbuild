@@ -4,7 +4,7 @@
 name=util-linux
 version=2.37.2
 release=1
-source="https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/${version%.*}/util-linux-${version%.*}.tar.gz"
+source="https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/${version%.*}/util-linux-${version%.*}.tar.xz"
 options="!checksum"
 build() {
 	cd $name-$version-$_special
