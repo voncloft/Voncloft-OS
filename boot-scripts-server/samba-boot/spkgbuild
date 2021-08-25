@@ -1,0 +1,15 @@
+# description : httpd boot script
+# depends: 
+
+name=samba-boot
+version=4.14.7
+release=38
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-samba
+
+}

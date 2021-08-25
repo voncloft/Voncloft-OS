@@ -4,9 +4,9 @@
 name=samba
 version=4.14.7
 release=1
-source="https://www.samba.org/ftp/samba/stable/$name-$version.tar.gz
-	run.smbd
-	run.nmbd"
+backup="etc/samba/smb.conf"
+source="https://www.samba.org/ftp/samba/stable/$name-$version.tar.gz"
+
 
 build() {
 	cd $name-$version
@@ -41,15 +41,4 @@ build() {
 	ln -v -sf ../../lib/libnss_wins.so.2    $PKG/usr/lib/libnss_wins.so
 
 	install -v -m644 examples/smb.conf.default $PKG/etc/samba
-
-	# revdep exclude
-	mkdir -p $PKG/etc/revdep.d
-	echo "/usr/lib/samba/" > $PKG/etc/revdep.d/samba.conf
-	echo "/usr/lib/python.8/site-packages/samba/" >> $PKG/etc/revdep.d/samba.conf
-
-	# runit service
-        install -Dm755 $SRC/run.nmbd $PKG/etc/sv/nmbd/run
-        ln -s /run/runit/supervise.nmbd $PKG/etc/sv/nmbd/supervise
-        install -Dm755 $SRC/run.smbd $PKG/etc/sv/smbd/run
-        ln -s /run/runit/supervise.smbd $PKG/etc/sv/smbd/supervise
 }

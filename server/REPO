@@ -43,7 +43,7 @@ f:e68392446a9d432115b0c30bd61109b7:dhcpcd/spkgbuild
 f:7fab4ae292b107759129290840582cf6:dhcpcd/run
 f:4b07d0e5a48cafad480c921f46878053:deluge/spkgbuild
 f:07a1d1cb48e58c84f80f4060d2cfddd3:subsonic/spkgbuild
+f:c3d3a1a2a1520401ce5c91b9b9cf431d:samba/post-install.sh
 f:cc49a328a6058cbfb3f5cf4c58986f1a:samba/CHANGELOG
-f:4bce64327c31cc59a3d1c30704c87dcf:samba/run.smbd
-f:ecd52bce63406c500a215723e5b19fad:samba/spkgbuild
-f:31491690f1a7c9d54b51823ba406b9b4:samba/run.nmbd
+f:c65f2e42ce19954986906299c2b8851f:samba/post-upgrade.sh
+f:bf955256b9ff6a8751939fba27b5a2e2:samba/spkgbuild

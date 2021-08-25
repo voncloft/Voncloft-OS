@@ -18,6 +18,7 @@ d:iptables-boot
 d:openssh-boot
 d:hostapd-boot
 d:httpd-boot
+d:samba-boot
 f:82c5a7b04b78a35143852ba1ba3fbc43:subsonic-boot/spkgbuild
 f:c0146462581a3a20617550101c8547aa:lxdm-boot/spkgbuild
 f:8faa8127e9680fd207bac42615322d52:postfix-boot/spkgbuild.save
@@ -44,3 +45,4 @@ f:f49bb9e94ff22f5048834123dfd0268c:iptables-boot/spkgbuild
 f:193d367f5ebfefec85fe0c8de2e27bb4:openssh-boot/spkgbuild
 f:40dfe3673a6edd75826ed00b65326cad:hostapd-boot/spkgbuild
 f:91326c18a723a50f1247b335bd82646b:httpd-boot/spkgbuild
+f:b95abe7b7a4765cafdead476f56aebd5:samba-boot/spkgbuild
