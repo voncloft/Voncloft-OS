@@ -4,7 +4,6 @@
 name=samba
 version=4.14.7
 release=1
-backup="etc/samba/smb.conf"
 source="https://www.samba.org/ftp/samba/stable/$name-$version.tar.gz"
 
 
