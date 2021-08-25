@@ -2,10 +2,10 @@
 # depends : python qt5-python-bindings
 
 name=python-qt.py
-version=1.3.5
+version=1.3.6
 release=5
 
-source="https://files.pythonhosted.org/packages/70/3e/12522feb4b60542997d16d2efe3090dee9d8d74f1f90e1ac279f12af7e16/Qt.py-1.3.5.tar.gz"
+source="https://files.pythonhosted.org/packages/20/9d/49353c7cd4812dc8578e954deee7ac0aca4bbbcf434c310c2dbd6772e3b2/Qt.py-1.3.6.tar.gz"
 options="!checksum"
 
 build() {
