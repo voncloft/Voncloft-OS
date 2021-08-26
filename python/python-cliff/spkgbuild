@@ -2,10 +2,10 @@
 # depends : python-six python-pbr python-cmd2 python-prettytable python-pyparsing
 
 name=python-cliff
-version=3.8.0
+version=3.9.0
 release=1
 
-source="https://files.pythonhosted.org/packages/cd/ba/da7f1c8f63e6171b3cdf38afc103574d27c885e007352e35bba01b235263/cliff-3.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/a4/c3/b9c47664219610a890edeb74d0c47e304e4324d2e1e283705d9a4e8eda3a/cliff-3.9.0.tar.gz"
 options="!checksum"
 
 build() {

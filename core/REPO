@@ -680,7 +680,8 @@ f:d594f98bfc59eb0d416042712acdc2fb:unzip/spkgbuild
 f:59583b7acb6b7c62c73c6410d29b30ad:stfl/spkgbuild
 f:85f4df280a4dedfe41e62d0635df02ab:xlsatoms/spkgbuild
 f:a6e29b5cb6d15a1a48fe441edd19b5fd:nnn/spkgbuild
-f:5f069257165118e207ee2e0b54d20f41:gnupg/spkgbuild
+f:4b05061671e0c3a7eb9c1c565e63c5e0:gnupg/CHANGELOG
+f:fe8960eb9432b61d88f000b007f18d21:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
 f:9057256e7271de82e9f2c9d85a6c7b5f:pipewire/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
@@ -1126,8 +1127,8 @@ f:008426d1c17a7ab810f90b196fb7a5bd:icewm/spkgbuild
 f:381637cf43f244bd8fd0bf48cd436530:ibus/CHANGELOG
 f:cc777d640e3598e91573d240611af1f9:ibus/spkgbuild
 f:640027724ed03fa5384676592d1dfff9:smplayer-themes/spkgbuild
-f:b4238bc3fb55104d8224ac261760dee9:opera/CHANGELOG
-f:65df9046e9d2b36d5a5ffb41f458f4f9:opera/spkgbuild
+f:7261c8913816f17d64b9ae5563f22c38:opera/CHANGELOG
+f:f023941053a1ca2063616739491b7e1d:opera/spkgbuild
 f:d23fcb98b83b3deae74524c235ebd412:picom/picom.conf
 f:81265170a276cfc7480c237ca02253c5:picom/spkgbuild
 f:5791378f6f86dd25a302ad8586292dd6:gcolor2/gcolor2-0.4-amd64.patch
@@ -1201,9 +1202,10 @@ f:c4c30213958521947d867445742837cf:jwm/spkgbuild
 f:86a520326cc265843cccc42e557d869c:patch/spkgbuild
 f:f6e621be6c7e9228e4daf40520901483:gconf/spkgbuild
 f:da3acd3a32c6f5ce2a4333dbf3a6a2b5:at-spi2-atk/spkgbuild
+f:1403fb54604eaee71abcdaae5e6ec475:qemu/CHANGELOG
 f:47e04c4dbd133ff51aa7547ce8e9e56b:qemu/pre-install.sh
 f:ae7caa19c3db453b132c2d4bf7c0aa12:qemu/mkdirs
-f:6e5763ac6f9e94ab52014438f1211719:qemu/spkgbuild
+f:5b00c828f2906cf3824e7af4071c1c0e:qemu/spkgbuild
 f:3fa10d72a7636168f7fbf48180fd33ba:weechat/spkgbuild
 f:32c245188dfa61ac43d4359452ad27d9:geos/spkgbuild
 f:d2198d3f6b0810dbdd31d80a7d721ad3:xauth/spkgbuild

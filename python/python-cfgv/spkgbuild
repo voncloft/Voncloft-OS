@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-cfgv
-version=3.3.0
+version=3.3.1
 release=3
 
-source="https://files.pythonhosted.org/packages/02/a9/19a33d254b54fbf105208bfbb4ecbce1b42a40f970e39db8f8186fdcc171/cfgv-3.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/c4/bf/d0d622b660d414a47dc7f0d303791a627663f554345b21250e39e7acb48b/cfgv-3.3.1.tar.gz"
 options="!checksum"
 
 build() {

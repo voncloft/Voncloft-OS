@@ -2,10 +2,10 @@
 # depends : python python-aiohttp python-botocore python-wrapt python-aioitertools
 
 name=python-aiobotocore
-version=1.4.0
+version=1.4.1
 release=1
 
-source="https://files.pythonhosted.org/packages/15/0e/bd904de27b80243cb13b885eb272420a46be2aafa6ba6fe6f085a0f10990/aiobotocore-1.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/07/60/64d666c149d7087d619c1eef8c23bece6068a61fa3c4c033c7f4f2e6452d/aiobotocore-1.4.1.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-packaging
 
 name=python-bleach
-version=4.0.0
+version=4.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/ed/0c/0acbc89b1c229f5bb1b89b63af4ad60a49603a7933e2939f4e6cdbe00e14/bleach-4.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/6a/a3/217842324374fd3fb33db0eb4c2909ccf3ecc5a94f458088ac68581f8314/bleach-4.1.0.tar.gz"
 options="!checksum"
 
 build() {

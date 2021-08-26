@@ -2,10 +2,10 @@
 # depends : python-six python-pbr python-babel python-cliff python-keystoneauth1
 
 name=python-osc-lib
-version=2.4.1
+version=2.4.2
 release=3
 
-source="https://files.pythonhosted.org/packages/68/7f/9acfaf98c2073a5104716983db550d6422e7307d0211243387c162bb760e/osc-lib-2.4.1.tar.gz"
+source="https://files.pythonhosted.org/packages/ca/9f/8ba3627e2ebebb663aaa8874e3c218cbb3ec9509624665823fa8acc1edf6/osc-lib-2.4.2.tar.gz"
 options="!checksum"
 
 build() {

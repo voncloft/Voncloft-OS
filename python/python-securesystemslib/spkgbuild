@@ -2,10 +2,10 @@
 # depends : python-cryptography python-pynacl python-colorama python-six python-dateutil
 
 name=python-securesystemslib
-version=0.20.1
+version=0.21.0
 release=1
 
-source="https://files.pythonhosted.org/packages/bb/80/37d8d8819ce5aacadea5c266b6800c9c614ef1e001d3c0b308e08ffa49b4/securesystemslib-0.20.1.tar.gz"
+source="https://files.pythonhosted.org/packages/ff/57/8e84388648518e10341d9178f509591b54a379a34c72c588a35776df8dde/securesystemslib-0.21.0.tar.gz"
 options="!checksum"
 
 build() {
