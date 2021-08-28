@@ -5,7 +5,7 @@ name=python-ruamel-yaml
 version=0.16.12
 release=3
 
-source="https://files.pythonhosted.org/packages/6e/ac/a4c038a2e48a8930a7b04711fec48f779875ed3a3d3941663413454b8fa7/ruamel.yaml-0.17.14.tar.gz"
+source="https://files.pythonhosted.org/packages/13/7a/e712608d82687cd3b01855c87c4c30ce9155f3781ef5e27e8ea093529bb0/ruamel.yaml-0.17.15.tar.gz"
 options="!checksum"
 
 build() {
