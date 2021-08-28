@@ -2,10 +2,10 @@
 # depends : python-six python-pbr python-yaml python-jsonpatch python-appdirs
 
 name=python-openstacksdk
-version=0.58.0
+version=0.59.0
 release=1
 
-source="https://files.pythonhosted.org/packages/9c/11/1d366df84f002de860754becea31b21455437a56532c3cbffed0c59a407f/openstacksdk-0.58.0.tar.gz"
+source="https://files.pythonhosted.org/packages/c3/23/30cd6b7e710980234be264270a60b0b26ed9eca88119d23cd50de404dd1d/openstacksdk-0.59.0.tar.gz"
 options="!checksum"
 
 build() {

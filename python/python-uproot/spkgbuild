@@ -3,10 +3,10 @@
 # depends : python-sphinx
 
 name=python-uproot
-version=4.0.11
+version=4.1.0
 release=2
 
-source="https://files.pythonhosted.org/packages/65/83/9eebaf2bd8c4a0ee81c9d639dd564b9d1a447d5134ae55e98a7b03c07b6a/uproot-4.0.11.tar.gz"
+source="https://files.pythonhosted.org/packages/90/69/dbe47a769d2477da7fd65dec85ba34f870d6b898808da0eb304fa333c9f6/uproot-4.1.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-markdown-it-py python-mdit_py_plugins python-yaml python-docutils python-sphinx python-jinja
 
 name=python-myst-parser
-version=0.15.1
+version=0.15.2
 release=1
 
-source="https://files.pythonhosted.org/packages/cc/ca/b60b369b77a6d533543170f492874d5421e9b5285e6d51796e71061047c8/myst-parser-0.15.1.tar.gz"
+source="https://files.pythonhosted.org/packages/91/33/e2ff1d4675d9f6fae51e03b0ad99ab9276773424006191c1057609b543db/myst-parser-0.15.2.tar.gz"
 options="!checksum"
 
 build() {

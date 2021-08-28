@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-queuelib
-version=1.6.1
+version=1.6.2
 release=7
 
-source="https://files.pythonhosted.org/packages/28/c3/c4371429aac06c9d6e1eae84a711b0ba61219b2ca7722db075c8abe9e088/queuelib-1.6.1.tar.gz"
+source="https://files.pythonhosted.org/packages/4d/11/94d3a5c1a03fa984b3f793ceecfac4b685ca9fc7a3af03f806dbb973555b/queuelib-1.6.2.tar.gz"
 options="!checksum"
 
 build() {

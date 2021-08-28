@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-itemadapter
-version=0.3.0
+version=0.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/c8/3c/c0b46b25f2d14e0dfd069549a88e152380c768c466a47e6c31369657b0a9/itemadapter-0.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/e5/20/73a32660def7eb6eb4a87a62b4a3949a2c487e69c1e947af59a73c6d76ae/itemadapter-0.4.0.tar.gz"
 options="!checksum"
 
 build() {

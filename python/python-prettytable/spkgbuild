@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-prettytable
-version=2.1.0
+version=2.2.0
 release=14
 
-source="https://files.pythonhosted.org/packages/d4/c6/d388b3d4992acf413d1b67101107b7f4651cc2835abd0bbd6661678eb2c1/prettytable-2.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/00/8d/95441120aa870aa800f8b4c6cf650bf0739d7a41883fe81769ab593556c9/prettytable-2.2.0.tar.gz"
 options="!checksum"
 
 build() {

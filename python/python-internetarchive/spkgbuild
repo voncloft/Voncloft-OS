@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-internetarchive
-version=2.0.3
+version=2.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/d5/3f/924b6b400a3f1fb32a5e080509b3f39590ecc73111033dcc397f1917e5a9/internetarchive-2.0.3.tar.gz"
+source="https://files.pythonhosted.org/packages/9f/30/edd23ef4968ac86f587ec7d152887e8005ee9ca7e058fe2c90c38157274e/internetarchive-2.1.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,7 +2,7 @@
 # depends : cmake glib libgcrypt qt5 libpcap
 
 name=wireshark
-version=3.4.7
+version=3.4.8
 release=1
 
 source="https://www.wireshark.org/download/src/all-versions/$name-$version.tar.xz"
@@ -17,7 +17,7 @@ build() {
 
 	cmake -DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_BUILD_TYPE=Release  \
-	-DCMAKE_INSTALL_DOCDIR=/usr/share/doc/wireshark-3.4.7 \
+	-DCMAKE_INSTALL_DOCDIR=/usr/share/doc/wireshark-3.4.8 \
 	-G Ninja \
 	..
 
