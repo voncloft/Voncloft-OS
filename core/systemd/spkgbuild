@@ -2,7 +2,7 @@
 # depends : 
 
 name=systemd
-version=249.3
+version=249.4
 release=1
 
 source="https://github.com/systemd/systemd/archive/v$version/$name-$version.tar.gz
@@ -41,7 +41,7 @@ build() {
       	-Duserdb=false                \
       	-Dman=false                   \
      	-Dmode=release                \
-      	-Ddocdir=/usr/share/doc/systemd-249.3 \
+      	-Ddocdir=/usr/share/doc/systemd-249.4 \
       	..
 
 	LANG=en_US.UTF-8 ninja

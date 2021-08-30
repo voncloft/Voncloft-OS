@@ -2,10 +2,10 @@
 # depends : python-click
 
 name=python-typer
-version=0.3.2
+version=0.4.0
 release=2
 
-source="https://files.pythonhosted.org/packages/d5/74/40abdad73bc8b5b17a5a6e442fc57b20f5cc2ee869632625083762490de6/typer-0.3.2.tar.gz"
+source="https://files.pythonhosted.org/packages/41/50/2f5ec9e22ae5298bc8bc5ae9009bc3fe150a5110e81243a7e0b841f06bae/typer-0.4.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-lark-parser
-version=0.11.3
+version=0.12.0
 release=1
 
-source="https://files.pythonhosted.org/packages/cd/55/8951788003c9f65dfcf9c51d7ba7952c6c5ae72685aa3cf9c66e925bd538/lark-parser-0.11.3.tar.gz"
+source="https://files.pythonhosted.org/packages/5a/ee/fd1192d7724419ddfe15b6f17d1c8742800d4de917c0adac3b6aaf22e921/lark-parser-0.12.0.tar.gz"
 options="!checksum"
 
 build() {

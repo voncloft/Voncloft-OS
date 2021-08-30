@@ -2,10 +2,10 @@
 # depends : python python-mako python-sqlalchemy python-editor python-dateutil
 
 name=python-alembic
-version=1.6.5
+version=1.7.0
 release=3
 
-source="https://files.pythonhosted.org/packages/2b/cc/5e450e60509b9a68fd761f2fa9ccb6fb9e63d7f9c2b60703bec2e5fd1840/alembic-1.6.5.tar.gz"
+source="https://files.pythonhosted.org/packages/9f/e9/d2386565534e003076ffa6df11b5ce52d021ce3960ce2b1a15b7c21d469b/alembic-1.7.0.tar.gz"
 options="!checksum"
 
 build() {
