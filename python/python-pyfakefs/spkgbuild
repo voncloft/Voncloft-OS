@@ -2,10 +2,10 @@
 # depends : python-pytest
 
 name=python-pyfakefs
-version=4.5.0
+version=4.5.1
 release=1
 
-source="https://files.pythonhosted.org/packages/7f/37/e137891af2fbeacd49ffc6fe45ff1953d35bb53517f189a6868c4a7ca655/pyfakefs-4.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/48/af/57c14b8b4bfa83472c306cfa27c041f370f58fa3e4fcc4b0cc6b4564c73a/pyfakefs-4.5.1.tar.gz"
 options="!checksum"
 
 build() {

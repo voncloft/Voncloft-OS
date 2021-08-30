@@ -2,10 +2,10 @@
 # depends : python-zipp
 
 name=python-importlib-metadata
-version=4.7.1
+version=4.8.1
 release=1
 
-source="https://files.pythonhosted.org/packages/d5/e7/b716bf428edb23df5b04a15ac1c2c1acbae8bca3a84991805261f6f47577/importlib_metadata-4.7.1.tar.gz"
+source="https://files.pythonhosted.org/packages/f0/70/ca3dd67cdd368b957e73a8156f7e1a10339f9813e314cb8b4549526070da/importlib_metadata-4.8.1.tar.gz"
 options="!checksum"
 
 build() {

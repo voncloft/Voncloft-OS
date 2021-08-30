@@ -2,10 +2,10 @@
 # depends : python-colorama python-pygments python-typing_extensions python-commonmark
 
 name=python-rich
-version=10.8.0
+version=10.9.0
 release=1
 
-source="https://files.pythonhosted.org/packages/ed/0d/6872f983d4c164c1bdbcd2bb9a3ea08ac8bd83abb11f98b622040d42aef0/rich-10.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/55/84/7edede78686a4ca67a1bb9d8eba31a99d4a2a0a670e80c9febbbc18a7076/rich-10.9.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-pytest
 
 name=python-pytest-socket
-version=0.4.0
+version=0.4.1
 release=2
 
-source="https://files.pythonhosted.org/packages/f7/3c/5d56fcb4a42ac058e2f9c43c5e761888fd58fc47c8044ddc046b278aa31f/pytest-socket-0.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/77/60/56429d871e9c6604d20d00.4.16ccc60753f81623c28b6084f75e9a69c66/pytest-socket-0.4.1.tar.gz"
 options="!checksum"
 
 build() {
