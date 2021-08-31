@@ -649,9 +649,9 @@ f:31818835dd48c6eaa647e09231397afe:fuse3/spkgbuild
 f:08e91aba373a73cce1591bfde10f4618:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:6f3a1d682d9306b6cff941cc5cdc4cb1:nss/CHANGELOG
+f:eaee6b02222bd7f10d1ed781524b05a3:nss/CHANGELOG
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:299b2d96c21a15ceb0da6c2271f4c895:nss/spkgbuild
+f:7c6a9bc3403b4283b343f902642a1ca2:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
 f:c38b474c1fc5adfff1214ad36c63451f:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
@@ -776,7 +776,8 @@ f:bfcf9dfd6050bc951dc2a882d571cb04:vte2/spkgbuild
 f:e387c8852030bbb16c94d1665936f47f:strace/spkgbuild
 f:b45f7d933eaefbfb55a6a4d345cc2262:ntfs-3g/ntfs-3g-2016.2.22-security_fix-1.patch
 f:f3e0eb6014974090dd2593151485e75c:ntfs-3g/readme
-f:061a4780a041bee7322bec41313e01a5:ntfs-3g/spkgbuild
+f:eb2a5a71bf61ea7554f33409ec8d98d6:ntfs-3g/CHANGELOG
+f:36d82aeb003144c79a0bdbb5c30513fa:ntfs-3g/spkgbuild
 f:a967ac7858bdcb1ddf6dfa05410a19b5:gwenhywfar/spkgbuild
 f:f1a24cdd0b11bc01cc510600a167f701:faad2/spkgbuild
 f:57f635294b94270ed8552cb96ed803ff:wpebackend-fdo/spkgbuild

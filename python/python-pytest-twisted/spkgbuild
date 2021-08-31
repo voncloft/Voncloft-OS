@@ -2,10 +2,10 @@
 # depends : python-pytest python-greenlet python-decorator python-twisted
 
 name=python-pytest-twisted
-version=1.13.3
+version=1.13.4
 release=3
 
-source="https://files.pythonhosted.org/packages/2b/05/fb4addd4e1f86fad3bb52064139db15174f56b00df4ff8c2ad3c5edb01b6/pytest-twisted-1.13.3.tar.gz"
+source="https://files.pythonhosted.org/packages/59/6c/3c9e4c74c31a84c3e1887907ef0f5793453e33b94dbdeb432b48d80722e4/pytest-twisted-1.13.4.tar.gz"
 options="!checksum"
 
 build() {

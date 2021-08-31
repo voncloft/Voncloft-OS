@@ -2,10 +2,10 @@
 # depends : python-decorator
 
 name=python-traitlets
-version=5.0.5
+version=5.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/b8/24/e6dfe45ecfc4c2b0d6774565e631dc1b9e50de2c3536625d377963d56cae/traitlets-5.0.5.tar.gz"
+source="https://files.pythonhosted.org/packages/d5/bc/37d490908e7ac949614d62767db3c86f37bc5adb6129d378c35859a75b87/traitlets-5.1.0.tar.gz"
 options="!checksum"
 
 build() {

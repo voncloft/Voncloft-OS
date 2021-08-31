@@ -2,10 +2,10 @@
 # depends : python-google-auth-httplib2 python-uritemplate python-google-api-core
 
 name=python-google-api-python-client
-version=2.18.0
+version=2.19.0
 release=1
 
-source="https://files.pythonhosted.org/packages/0d/50/bf423e79631a522633070385508dc3e04f861dce91e821dab5b48402e8e7/google-api-python-client-2.18.0.tar.gz"
+source="https://files.pythonhosted.org/packages/9a/55/43111cd55fecb20579ff55bf037959ecc96bb68957429187598fb1d07771/google-api-python-client-2.19.0.tar.gz"
 options="!checksum"
 
 build() {

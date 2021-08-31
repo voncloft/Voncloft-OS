@@ -2,10 +2,10 @@
 # depends : python-decorator python-http-parser python-magic python-urllib3
 
 name=python-mocket
-version=3.9.42
+version=3.9.44
 release=1
 
-source="https://files.pythonhosted.org/packages/6a/92/beb21fbbcf5558bd5bbb9390523aa3e289bdc7c914f4888b6517604866b0/mocket-3.9.42.tar.gz"
+source="https://files.pythonhosted.org/packages/7c/48/9298bfb1f8104b0e9fccf5cd79aa09c7b4e3ec9514ee5306b1052c826c53/mocket-3.9.44.tar.gz"
 options="!checksum"
 
 build() {

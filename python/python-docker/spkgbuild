@@ -2,10 +2,10 @@
 # depends : python-requests python-six python-websocket-client python-docker-pycreds python-paramiko
 
 name=python-docker
-version=5.0.0
+version=5.0.1
 release=1
 
-source="https://files.pythonhosted.org/packages/fa/a2/e46d7c1b51394a09271a3b07c3a68deb3a669429beafd444d9553ed52868/docker-5.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/e6/c9/e0148cb23c2f521d4297458f10c7063743eafbfb78b4490bf9cf731f60be/docker-5.0.1.tar.gz"
 options="!checksum"
 
 build() {

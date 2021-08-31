@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-fsspec
-version=2021.7.0
+version=2021.8.1
 release=1
 
-source="https://files.pythonhosted.org/packages/af/82/f93a6a6ad077465f88a6af0107e4db3ddbccaf13402cf135ac9e3c84669c/fsspec-2021.7.0.tar.gz"
+source="https://files.pythonhosted.org/packages/bf/f9/a2e0e7458f070686196661e8047e4bf3e4080d7412d486347dfdd24bfc56/fsspec-2021.8.1.tar.gz"
 options="!checksum"
 
 build() {
