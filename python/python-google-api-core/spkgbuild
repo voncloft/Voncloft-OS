@@ -2,10 +2,10 @@
 # depends : python-setuptools python-pytz python-requests python-googleapis-common-protos python-google-auth
 
 name=python-google-api-core
-version=2.0.0
+version=2.0.1
 release=1
 
-source="https://files.pythonhosted.org/packages/ae/63/fa452e4eb5b3f2881ab8bb2faab6e5eda3a82c0631cd92560b3a3cabb976/google-api-core-2.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/0e/da/ef554f617f9ba6bdf02c584ed1f31f7c2c417330aa478902fbef9e21e133/google-api-core-2.0.1.tar.gz"
 options="!checksum"
 
 build() {

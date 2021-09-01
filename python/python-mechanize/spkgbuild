@@ -2,10 +2,10 @@
 # depends : python-html5lib
 
 name=python-mechanize
-version=0.4.5
+version=0.4.6
 release=4
 
-source="https://pypi.python.org/packages/source/m/mechanize/mechanize-0.4.5.tar.gz"
+source="https://pypi.python.org/packages/source/m/mechanize/mechanize-0.4.6.tar.gz"
 options="!checksum"
 
 build() {

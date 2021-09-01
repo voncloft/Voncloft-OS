@@ -2,10 +2,10 @@
 # depends : python python-greenlet python-monotonic python-dnspython
 
 name=python-eventlet
-version=0.31.1
+version=0.32.0
 release=1
 
-source="https://files.pythonhosted.org/packages/2a/f4/740fe3b6696f30e39f62c306c9880daf7cec0ba19f82e62cf98ce9f8995b/eventlet-0.31.1.tar.gz"
+source="https://files.pythonhosted.org/packages/0c/4a/7f94ff0eed09c2bb1bae81edfca51e402b92e5939f60f7c01f96be7c4616/eventlet-0.32.0.tar.gz"
 options="!checksum"
 
 build() {

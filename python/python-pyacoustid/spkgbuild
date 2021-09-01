@@ -2,10 +2,10 @@
 # depends : 
 
 name=python-pyacoustid
-version=1.2.1
+version=1.2.2
 release=2
 
-source="https://files.pythonhosted.org/packages/09/36/d7e9a2c1cb4d9e7c2fa6868d8a7eaa8e902f5920a9d1c2469eb2ee7d7fea/pyacoustid-1.2.1.tar.gz"
+source="https://files.pythonhosted.org/packages/97/e6/aeada0cc05e510d655f17a4336d5a108e4bdfa95eb7d3cc0ca5415bbe568/pyacoustid-1.2.2.tar.gz"
 options="!checksum"
 
 build() {

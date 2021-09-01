@@ -2,10 +2,10 @@
 # depends : python-urllib3
 
 name=python-elasticsearch
-version=7.14.0
+version=7.14.1
 release=3
 
-source="https://files.pythonhosted.org/packages/fb/24/d795d3029833ad4fc7b7b62d55ab17496f7db21e8ff0125076b57be1f4ff/elasticsearch-7.14.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f9/31/4004b291edf5eb7f4b81e3cfd453384357a743f6f8bdc61a39ee19474024/elasticsearch-7.14.1.tar.gz"
 options="!checksum"
 
 build() {

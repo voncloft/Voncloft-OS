@@ -2,10 +2,10 @@
 # depends : perl perl-cgi perl-fcgi
 
 name=perl-cgi-fast
-version=2.15
+version=2.16
 release=3
 
-source="https://www.cpan.org/authors/id/L/LE/LEEJO/CGI-Fast-2.15.tar.gz"
+source="https://www.cpan.org/authors/id/L/LE/LEEJO/CGI-Fast-2.16.tar.gz"
 options="!checksum"
 
 build() {

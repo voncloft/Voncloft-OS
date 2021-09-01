@@ -2,10 +2,10 @@
 # depends : python-idna python-requests python-requests-file python-filelock
 
 name=python-tldextract
-version=3.1.1
+version=3.1.2
 release=1
 
-source="https://files.pythonhosted.org/packages/ed/8e/719a8f4c5450c49450dd771d527e198238e1dd26c28b955ec438b16f3c26/tldextract-3.1.1.tar.gz"
+source="https://files.pythonhosted.org/packages/6c/aa/ddf3d8f064887d5b4ae2c0ba7c688baa6cb48717db001abd340b72350069/tldextract-3.1.2.tar.gz"
 options="!checksum"
 
 build() {
