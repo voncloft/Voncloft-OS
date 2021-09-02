@@ -11,6 +11,7 @@ options="!checksum"
 build() {
    cd dbus-python-$version
    autoreconf -ifv
+   ./configure --prefix=/usr
    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
    make
    make DESTDIR=$PKG install   
