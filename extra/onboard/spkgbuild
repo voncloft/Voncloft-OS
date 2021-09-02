@@ -1,5 +1,5 @@
 # description : Virtual Keyboard
-# depends : gtk3 hunspell iso-codes libcanberra libxkbfile python-cairo python-dbus python-gobject
+# depends : gtk3 hunspell iso-codes libcanberra libxkbfile python-cairo python-dbus python-gobject3
 
 name=onboard
 version=1.4.1
