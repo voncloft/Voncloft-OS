@@ -5,6 +5,7 @@ d:wayland-protocols
 d:flexget
 d:woff2
 d:flashplugin
+d:onboard
 d:protobuf
 d:waterfox
 d:firefox-esr
@@ -50,6 +51,8 @@ f:8a4c52e38d1146bbcba75a2e11eaeddd:wayland-protocols/spkgbuild
 f:e1fa348412f885906e495ff70148f846:flexget/spkgbuild
 f:d8e499cccb1a6fa8b6eb3732477f5eb1:woff2/spkgbuild
 f:66c331be421c449c521adcbb688bb862:flashplugin/spkgbuild
+f:1622181a205950786bc4c695003feff9:onboard/CHANGELOG
+f:97d45395ffd93730767585a107dc8c5a:onboard/spkgbuild
 f:184640d7ae20f497ca4cc01b2567fa50:protobuf/spkgbuild
 f:a893e6a506d6cbb2685182b298fe7964:waterfox/mozconfig
 f:ae7a2882092719b68e78ca8a0c4290e5:waterfox/spkgbuild
