@@ -1,13 +1,13 @@
+#Creates .pkginfo in /var/lib/scratchpkg/index/(package name) - used for testing purposes
 #test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
 #echo "/usr/Voncloft-OS/*/$1/spkgbuild"
 if [ -f /usr/Voncloft-OS/*/$1/spkgbuild ]
 then
 	test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
-	#mkdir -pv /var/lib/scratchpkg/index/$1
+	#mkdir -pv /var/lib/scratchpk/db/$1
 	cat <<- EOF > /var/lib/scratchpkg/db/$1
 	$(grep version= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-) $(grep release= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
 	EOF
-	echo "$1 fake installed"
 else
 	echo "Package not in repository"
 fi
@@ -18,13 +18,11 @@ do
 	echo $word
 	if [ -f  "/var/lib/scratchpkg/db/$word" ]
 	then
-		echo "$word already installed"
+		echo "File exists"
 	else
-		#mkdir -pv /var/lib/scratchpkg/index/$word
-		cat <<- EOF > /var/lib/scratchpkg/db/$1
-		$(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)	$(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
+		cat <<- EOF > /var/lib/scratchpkg/db/$word
+		$(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-) $(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
 		EOF
-		echo "$1 fake installed"
 	fi
 done
 #echo $1 $2
