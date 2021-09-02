@@ -4,11 +4,11 @@
 if [ -f /usr/Voncloft-OS/*/$1/spkgbuild ]
 then
 	test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
-	mkdir -pv /var/lib/scratchpkg/index/$1
-	cat <<- EOF > /var/lib/scratchpkg/index/$1/.pkginfo
-	name = $1
-	version = $(grep version= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
-	release = $(grep release= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
+	#mkdir -pv /var/lib/scratchpk/db/$1
+	cat <<- EOF > /var/lib/scratchpkg/db/$1
+	#name = $1
+	$(grep version= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
+	$(grep release= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
 	EOF
 else
 	echo "Package not in repository"
@@ -18,15 +18,15 @@ fi
 for word in $test
 do
 	echo $word
-	if [ -f  "/var/lib/scratchpkg/index/$word/.pkinfo" ]
+	if [ -f  "/var/lib/scratchpkg/db/$word" ]
 	then
 		echo "File exists"
 	else
-		mkdir -pv /var/lib/scratchpkg/index/$word
-		cat <<- EOF > /var/lib/scratchpkg/index/$word/.pkginfo
-		name = $(grep name= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 6-)
-		version = $(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
-		release = $(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
+		#_26mkdir -pv /var/lib/scratchpkg/db/$word
+		cat <<- EOF > /var/lib/scratchpkg/db/$word
+		#name = $(grep name= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 6-)
+		$(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
+		$(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
 		EOF
 	fi
 done
