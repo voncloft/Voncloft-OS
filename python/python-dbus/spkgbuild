@@ -5,7 +5,7 @@ name=python-dbus
 version=1.2.16
 release=2
 
-source="https://dbus.freedesktop.org/releases/${name}/${name}-${version}.tar.gz"
+source="https://dbus.freedesktop.org/releases/dbus-python/dbus-python-${version}.tar.gz"
 options="!checksum"
 
 build() {
