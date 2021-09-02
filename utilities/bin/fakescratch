@@ -6,9 +6,7 @@ then
 	test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
 	#mkdir -pv /var/lib/scratchpk/db/$1
 	cat <<- EOF > /var/lib/scratchpkg/db/$1
-	#name = $1
-	$(grep version= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
-	$(grep release= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
+	$(grep version= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-) $(grep release= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
 	EOF
 else
 	echo "Package not in repository"
@@ -22,11 +20,8 @@ do
 	then
 		echo "File exists"
 	else
-		#_26mkdir -pv /var/lib/scratchpkg/db/$word
 		cat <<- EOF > /var/lib/scratchpkg/db/$word
-		#name = $(grep name= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 6-)
-		$(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
-		$(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
+		$(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-) $(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
 		EOF
 	fi
 done
