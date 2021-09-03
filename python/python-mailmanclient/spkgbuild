@@ -2,10 +2,10 @@
 # depends : python-requests
 
 name=python-mailmanclient
-version=3.3.2
+version=3.3.3
 release=1
 
-source="https://files.pythonhosted.org/packages/a2/d7/6471b2c1f9de93b4322b8cc64383e9ed3b848d8c948380cc713ba2d93681/mailmanclient-3.3.2.tar.gz"
+source="https://files.pythonhosted.org/packages/dc/f0/9e2807d10dc7b99de760d8be84e85e11466df4a8d2608a47a03b62fefa7c/mailmanclient-3.3.3.tar.gz"
 options="!checksum"
 
 build() {

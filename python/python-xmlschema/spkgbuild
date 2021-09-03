@@ -2,10 +2,10 @@
 # depends : python-elementpath
 
 name=python-xmlschema
-version=1.7.0
+version=1.7.1
 release=3
 
-source="https://files.pythonhosted.org/packages/33/ba/5136a63ed89f9d2234f43ffbbb85dd99856a956109541c771c0e15687be1/xmlschema-1.7.0.tar.gz"
+source="https://files.pythonhosted.org/packages/e5/f7/2edf59659525cf300f2e3e41e4278907a75db2c4ff50bdd9bc77f12e56a5/xmlschema-1.7.1.tar.gz"
 options="!checksum"
 
 build() {

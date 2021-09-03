@@ -2,10 +2,10 @@
   # depends : python-setuptools
 
 name=python-setuptools-scm
-version=6.2.0
+version=6.3.1
 release=1
 
-source="https://files.pythonhosted.org/packages/57/38/930b1241372a9f266a7df2b184fb9d4f497c2cef2e016b014f82f541fe7c/setuptools_scm-6.0.1.tar.gz"
+source="https://files.pythonhosted.org/packages/4e/62/056c0127bf45c493168167aed15c4ccb70d2c69154fb1f4acaffc2bab761/setuptools_scm-6.3.1.tar.gz"
 options="!checksum"
 
 build() {

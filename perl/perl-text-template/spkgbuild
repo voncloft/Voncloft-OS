@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-text-template
-version=1.59
+version=1.60
 release=1
 
-source="https://www.cpan.org/authors/id/M/MS/MSCHOUT/Text-Template-1.59.tar.gz"
+source="https://www.cpan.org/authors/id/M/MS/MSCHOUT/Text-Template-1.60.tar.gz"
 options="!checksum"
 
 build() {

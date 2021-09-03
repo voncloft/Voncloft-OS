@@ -2,10 +2,10 @@
 # depends : python-cfgv python-identify python-nodeenv python-yaml python-toml
 
 name=python-pre-commit
-version=2.14.1
+version=2.15.0
 release=1
 
-source="https://files.pythonhosted.org/packages/f9/3e/14f27cbad8703a2bb3229bf94926582509c190d750afb3ac3d318551829b/pre_commit-2.14.1.tar.gz"
+source="https://files.pythonhosted.org/packages/63/9e/f139fe6176b417e8c725f0ecfe5021e2edc88c5e00358aacbf812f3224ed/pre_commit-2.15.0.tar.gz"
 options="!checksum"
 
 build() {
