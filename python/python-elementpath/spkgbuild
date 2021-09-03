@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-elementpath
-version=2.2.3
+version=2.3.0
 release=1
 
-source="https://files.pythonhosted.org/packages/a9/4a/0e07cd8098bf41fc3909432893c0f38132346f3764369342db62f7ee1cb6/elementpath-2.2.3.tar.gz"
+source="https://files.pythonhosted.org/packages/0d/4c/df4930a41e45c0f0699ff458cb1d6987120a2ffb74394680909d6ef8f0cb/elementpath-2.3.0.tar.gz"
 options="!checksum"
 
 build() {

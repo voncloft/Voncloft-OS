@@ -2,10 +2,10 @@
 # depends : 
 
 name=python-mediafile
-version=0.7.0
+version=0.8.0
 release=1
 
-source="https://files.pythonhosted.org/packages/ea/52/daaabff03f831b6e77fe68cac723800c8e124f383338856b1974c0e8d47f/mediafile-0.7.0.tar.gz"
+source="https://files.pythonhosted.org/packages/63/88/3a4c88d95123720478abc39f97a39196b3395f52a382b1ee6ad691589bc2/mediafile-0.8.0.tar.gz"
 options="!checksum"
 
 build() {

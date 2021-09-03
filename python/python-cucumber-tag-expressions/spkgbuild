@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-cucumber-tag-expressions
-version=3.0.1
+version=4.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/f4/db/b482f5c1969017f2a4a0c065111809c3696501e76f16cc56a49710eaf034/cucumber-tag-expressions-3.0.1.tar.gz"
+source="https://files.pythonhosted.org/packages/5d/66/3384490ac5f7a1061907b230690eda1a135ce2c3eabbf4ec992ff0fbf398/cucumber-tag-expressions-4.0.0.tar.gz"
 options="!checksum"
 
 build() {

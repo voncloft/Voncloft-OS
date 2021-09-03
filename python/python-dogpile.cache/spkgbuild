@@ -2,10 +2,10 @@
 # depends : python-decorator python-stevedore
 
 name=python-dogpile.cache
-version=1.1.3
+version=1.1.4
 release=1
 
-source="https://files.pythonhosted.org/packages/99/d3/36efc44d13ec2eca3fb3aa918844a941a4d3bb6619d46d609a641c0ab3d6/dogpile.cache-1.1.3.tar.gz"
+source="https://files.pythonhosted.org/packages/a4/5a/2735b2db3b704f4fa134360842560456e7aea509c4519ada9a0333b6c236/dogpile.cache-1.1.4.tar.gz"
 options="!checksum"
 
 build() {

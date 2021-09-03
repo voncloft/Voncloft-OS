@@ -5,7 +5,7 @@ name=python-django
 version=3.2.7
 release=1
 
-source="https://files.pythonhosted.org/packages/59/45/c6fbb3.2.7df0b7dc3e6e8fae738e042c63d4ddf828c6e1ba10d7417a1d9/Django-3.2.7.tar.gz"
+source="https://files.pythonhosted.org/packages/59/45/c6fbb3a206df0b7dc3e6e8fae738e042c63d4ddf828c6e1ba10d7417a1d9/Django-3.2.7.tar.gz"
 options="!checksum"
 
 build() {
