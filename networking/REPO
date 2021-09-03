@@ -90,6 +90,7 @@ f:f910b05b587c527bb9a590554f1ae72e:sshfs/CHANGELOG
 f:3b06bde232eb72159d75775c1a040804:sshfs/spkgbuild
 f:8af524faedade9af237044e9e814a5bb:thunderbird/CHANGELOG
 f:ab84f5a5eab9a5a8022cbd43c04485d3:thunderbird/spkgbuild
+f:23f972884a1af9aa0e619db553ae14bb:thunderbird/pre-upgrade.sh
 f:4bbdde77a65e4f9ac5f0f514bb4eabf9:openvpn/spkgbuild
 f:82bf846c7f96266299920d9ede006ab7:filezilla/CHANGELOG
 f:6eb2e845fc4cc15794076e14226b25d2:filezilla/missing-list-include.patch
@@ -125,6 +126,7 @@ f:8e468c1eee8f7b0f3e9de9d024789edf:youtube-dl/spkgbuild
 f:e39e0066dc2cabe88c506dcc23afc0fc:firefox/CHANGELOG
 f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
 f:3490a01857679cd8770f84accbccf35d:firefox/spkgbuild
+f:23f972884a1af9aa0e619db553ae14bb:firefox/pre-upgrade.sh
 f:e4f8420871da8cab30924fb9dcb02747:git/CHANGELOG
 f:0ca758f9eb8a196ae36bf6d4ec74e74a:git/spkgbuild
 f:b94d4b17b2fdddf8bfe422041320e174:openssl1.0/openssl-compat_versioned_symbols-1.patch
