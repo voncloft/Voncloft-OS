@@ -2,10 +2,10 @@
 # depends : perl-datetime
 
 name=perl-datetime-calendar-julian
-version=0.104
+version=0.105
 release=6
 
-source="https://www.cpan.org/authors/id/W/WY/WYANT/DateTime-Calendar-Julian-0.104.tar.gz"
+source="https://www.cpan.org/authors/id/W/WY/WYANT/DateTime-Calendar-Julian-0.105.tar.gz"
 options="!checksum"
 
 build() {

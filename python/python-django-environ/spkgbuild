@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-django-environ
-version=0.5.0
+version=0.6.0
 release=5
 
-source="https://files.pythonhosted.org/packages/e2/06/dc779e85245631529f121a263ad2dabe4016efb55aa62134ee44bf4f9cc9/django-environ-0.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/83/16/386e7f0f43d1bd1539266120da3c4de740fc0e1e949c817df6ab38780c5f/django-environ-0.6.0.tar.gz"
 options="!checksum"
 
 build() {

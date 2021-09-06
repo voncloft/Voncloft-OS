@@ -2,10 +2,10 @@
 # depends : python-wrapt
 
 name=python-deprecated
-version=1.2.12
+version=1.2.13
 release=1
 
-source="https://files.pythonhosted.org/packages/52/ab/30ae1f10e27385b3d2a4120b8edbcb187ba9ae2c4daf811f4f823aa4f0e2/Deprecated-1.2.12.tar.gz"
+source="https://files.pythonhosted.org/packages/c8/d1/e412abc2a358a6b9334250629565fe12697ca1cdee4826239eddf944ddd0/Deprecated-1.2.13.tar.gz"
 options="!checksum"
 
 build() {
