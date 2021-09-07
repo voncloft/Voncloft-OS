@@ -5,7 +5,7 @@ name=python-subprocess-tee
 version=0.3.3
 release=1
 
-source="https://files.pythonhosted.org/packages/82/bb/3b9894590d6d90b89c94cb4734206ace694a23740acaa536d91026933b10/subprocess-tee-0.3.3.tar.gz"
+source="https://files.pythonhosted.org/packages/3d/a6/3cb11b15c3f5abc8f5159272a4db0f60492570e9b4eefbad3d36876ea40a/subprocess-tee-0.3.2.tar.gz"
 options="!checksum"
 
 build() {

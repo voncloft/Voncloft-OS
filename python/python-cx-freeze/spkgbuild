@@ -5,7 +5,7 @@ name=python-cx-freeze
 version=6.8
 release=1
 
-source="https://files.pythonhosted.org/packages/5f/e5/af76fa30798600aab8ab9d535d630f6eb8fd46bff8e35c8303f4a5dfdb70/cx_Freeze-6.7.tar.gz"
+source="https://files.pythonhosted.org/packages/8f/fe/33230bb35c40b3ad1bfa42a3e87552d79c33093616957dab74bb39df86ce/cx_Freeze-6.8.tar.gz"
 options="!checksum"
 
 build() {

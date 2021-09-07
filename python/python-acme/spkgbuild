@@ -2,10 +2,10 @@
 # depends : python-setuptools python-pyopenssl python-pyrfc3339 python-pytz python-requests python-six python-josepy python-requests-toolbelt
 
 name=python-acme
-version=1.18.0
+version=1.19.0
 release=1
 
-source="https://files.pythonhosted.org/packages/f2/92/90e11aca04a6d2a11e355c2ac8e14debf7224c1d7d71e472405eb06db0c2/acme-1.18.0.tar.gz"
+source="https://files.pythonhosted.org/packages/e7/eb/2e3099968ca3f1747c04bd0fab26bf21b6d15ffda0a25af51d95aa59800b/acme-1.19.0.tar.gz"
 options="!checksum"
 
 build() {

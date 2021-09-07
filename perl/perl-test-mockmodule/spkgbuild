@@ -2,10 +2,10 @@
 # depends : perl-super
 
 name=perl-test-mockmodule
-version=v0.176.0
+version=v0.177.0
 release=1
 
-source="https://www.cpan.org/authors/id/G/GF/GFRANKS/Test-MockModule-v0.176.0.tar.gz"
+source="https://www.cpan.org/authors/id/G/GF/GFRANKS/Test-MockModule-v0.177.0.tar.gz"
 options="!checksum"
 
 build() {

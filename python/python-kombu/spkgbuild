@@ -2,10 +2,10 @@
 # depends : python-amqp
 
 name=python-kombu
-version=5.1.0
+version=5.2.0
 release=3
 
-source="https://files.pythonhosted.org/packages/de/e1/0410ca7f47494c979b7d479884eb36c36feec45af3b0dfc050c3611a0a85/kombu-5.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/de/e1/0410ca7f47494c979b7d479884eb36c36feec45af3b0dfc050c3611a0a85/kombu-5.2.0.tar.gz"
 options="!checksum"
 
 build() {

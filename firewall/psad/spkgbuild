@@ -6,7 +6,8 @@ version=2.4.6
 release=1
 options="!checksum"
 
-source="https://cipherdyne.org/$name/download/$name-$version.tar.bz2"
+source="https://cipherdyne.org/$name/download/$name-$version.tar.bz2
+	hosts-ip"
 
 build()
 {
