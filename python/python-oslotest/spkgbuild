@@ -2,10 +2,10 @@
 # depends : python-fixtures python-subunit python-stestr python-testscenarios
 
 name=python-oslotest
-version=4.4.1
+version=4.5.0
 release=4
 
-source="https://files.pythonhosted.org/packages/e0/d7/22941439a79d24d6cf354cf812d971f30ddcf627b364ccdcd144f8010b58/oslotest-4.4.1.tar.gz"
+source="https://files.pythonhosted.org/packages/57/d7/dbd4e2eaa441043b4a11230ff98c85152bff5d56b9a88f663f1e0c02aff3/oslotest-4.5.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-six python-pbr python-babel python-wrapt
 
 name=python-debtcollector
-version=2.2.0
+version=2.3.0
 release=3
 
-source="https://files.pythonhosted.org/packages/43/db/878dd456ccdbba6e466fc91e2534fd183a345a3fe261c4780a0e46c6dab0/debtcollector-2.2.0.tar.gz"
+source="https://files.pythonhosted.org/packages/23/6f/9fc10962c01ff8935df8a41f16776a1cce5f4c2aea4300a6f752d4c0fd7b/debtcollector-2.3.0.tar.gz"
 options="!checksum"
 
 build() {
