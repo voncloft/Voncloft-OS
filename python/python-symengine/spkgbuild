@@ -2,10 +2,10 @@
 # depends : python symengine
 
 name=python-symengine
-version=0.7.2
+version=0.8.1
 release=1
 
-source="https://files.pythonhosted.org/packages/6d/a7/33f8dcd963f3d7fb5dfc0c292c60c09fdda577b03bdd602d08ef4254ae62/symengine-0.7.2.tar.gz"
+source="https://files.pythonhosted.org/packages/f2/1f/67b68cbf2bc78a521d619bef7ce3fc699aacd48f678fe42058c61a85221e/symengine-0.8.1.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python python-yaml python-six python-aws-sam-translator
 
 name=python-cfn-lint
-version=0.54.0
+version=0.54.1
 release=1
 
-source="https://files.pythonhosted.org/packages/d2/8a/10d38f8633d1028fbe01f3947c99bd77d2ec50ae461346f10ea325349d3f/cfn-lint-0.54.0.tar.gz"
+source="https://files.pythonhosted.org/packages/bc/f6/62a7768f90f4b4e113b6decdd3136b33820f279a79f4937490be0b266eb6/cfn-lint-0.54.1.tar.gz"
 options="!checksum"
 
 build() {

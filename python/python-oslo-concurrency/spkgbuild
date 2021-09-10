@@ -5,7 +5,7 @@ name=python-oslo-concurrency
 version=4.4.0
 release=1
 
-source="https://files.pythonhosted.org/packages/c1/f1/5e089ae314331988c580f2e8119c2dc80a65548a3b60984218c0f059d6e7/oslo.concurrency-4.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/29/98/e494941aea82de0f155e89641ea911ea447eed773dec9ac0f8d8f547209b/oslo.concurrency-4.4.1.tar.gz"
 options="!checksum"
 
 build() {

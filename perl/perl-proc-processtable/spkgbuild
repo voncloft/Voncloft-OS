@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-proc-processtable
-version=0.611
+version=0.612
 release=2
 
-source="https://www.cpan.org/authors/id/J/JW/JWB/Proc-ProcessTable-0.611.tar.gz"
+source="https://www.cpan.org/authors/id/J/JW/JWB/Proc-ProcessTable-0.612.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : glfw python
 
 name=python-glfw
-version=2.1.0
+version=2.2.0
 release=2
 
-source="https://files.pythonhosted.org/packages/44/4b/b6d7e7269257c1e98cf30b49be392a929be14907c69a352bdea761b3068d/glfw-2.1.0.tar.gz"
+source="https://files.pythonhosted.org/packages/55/8b/86989f767b0d65e7b7fabeffdb2343cc1ebb4bae4878db5ab37fdf130a0d/glfw-2.2.0.tar.gz"
 options="!checksum"
 
 build() {

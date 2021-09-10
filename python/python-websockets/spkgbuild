@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-websockets
-version=9.1
+version=10.0
 release=3
 
-source="https://files.pythonhosted.org/packages/0d/bd/5262054455ab2067e51de331bfbc53a1dfa9071af7c424cf7c0793c4349a/websockets-9.1.tar.gz"
+source="https://files.pythonhosted.org/packages/1c/f4/61aee1eb4baadf8477fb7f3bc6b04a50fe683ef8ad2f60282806821e4b3b/websockets-10.0.tar.gz"
 options="!checksum"
 
 build() {

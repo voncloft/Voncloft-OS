@@ -2,10 +2,10 @@
 # depends : python-sphinx python-pybtex python-pybtex-docutils python-docutils
 
 name=python-sphinxcontrib-bibtex
-version=2.3.0
+version=2.4.1
 release=1
 
-source="https://files.pythonhosted.org/packages/43/dd/a39656ffa496ddb611990929d68629e961cf985d218bae9c62aa31b96003/sphinxcontrib-bibtex-2.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/f4/10/ecad27f98f3ba90830c9b0d017a69b8fd491e036c10419e6ff5f042cc91b/sphinxcontrib-bibtex-2.4.1.tar.gz"
 options="!checksum"
 
 build() {

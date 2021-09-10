@@ -2,10 +2,10 @@
 # depends : python-furl python-jsonschema python-xmltodict
 
 name=python-pook
-version=1.0.1
+version=1.0.2
 release=4
 
-source="https://files.pythonhosted.org/packages/5f/85/bac00cd9f6d96207035d00ac3ceda7718ee12d83d0391dd66680812f9808/pook-1.0.1.tar.gz"
+source="https://files.pythonhosted.org/packages/04/cb/f66f77f44929adcc8cb2f162e7c65cab247ce5e2f8d671abf81518a9d79e/pook-1.0.2.tar.gz"
 options="!checksum"
 
 build() {

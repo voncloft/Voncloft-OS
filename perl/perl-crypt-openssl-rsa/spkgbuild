@@ -2,10 +2,10 @@
 # depends : perl perl-crypt-openssl-random
 
 name=perl-crypt-openssl-rsa
-version=0.31
+version=0.32
 release=5
 
-source="https://www.cpan.org/authors/id/T/TO/TODDR/Crypt-OpenSSL-RSA-0.31.tar.gz"
+source="https://www.cpan.org/authors/id/T/TO/TODDR/Crypt-OpenSSL-RSA-0.32.tar.gz"
 options="!checksum"
 
 build() {

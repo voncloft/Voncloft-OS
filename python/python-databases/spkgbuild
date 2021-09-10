@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-databases
-version=0.5.1
+version=0.5.2
 release=1
 
-source="https://files.pythonhosted.org/packages/a3/ac/2bd56de8003b3be921ccfe7918aec580129de3ad51ee95cbfe770a6479cc/databases-0.5.1.tar.gz"
+source="https://files.pythonhosted.org/packages/f1/b3/aca6009596f42113bd5a43055a0bbad82c5f08967094f4b43d5f20300edc/databases-0.5.2.tar.gz"
 options="!checksum"
 
 build() {

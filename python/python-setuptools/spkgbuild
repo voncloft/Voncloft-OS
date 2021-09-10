@@ -2,10 +2,10 @@
 # depends : python-appdirs python-packaging python-ordered-set
 
 name=python-setuptools
-version=58.0.2
+version=58.0.4
 release=1
 
-source="https://files.pythonhosted.org/packages/11/c6/9e16df5a5526f7dd2ad17284928e36fc341305fe74c7ab06bb5960a5da94/setuptools-58.0.2.tar.gz"
+source="https://files.pythonhosted.org/packages/9a/74/de4d8c69466b6413b1616048b39f8b73d65f98c15f6202b68ccfc9550f1f/setuptools-58.0.4.tar.gz"
 options="!checksum"
 
 build() {

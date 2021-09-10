@@ -2,10 +2,10 @@
   # depends : python-traitlets python-tornado ipython python-jupyter_client
 
 name=python-ipykernel
-version=6.3.1
+version=6.4.1
 release=1
 
-source="https://files.pythonhosted.org/packages/79/fc/89a1f0f560cf082226ed404d7a876c77519f6af84fd482551c862183c509/ipykernel-6.3.1.tar.gz"
+source="https://files.pythonhosted.org/packages/4f/fe/2e411e2f2fba2318957e34694867e9d9b63811cd1aecff25984f31e35de0/ipykernel-6.4.1.tar.gz"
 options="!checksum"
 
 build() {
