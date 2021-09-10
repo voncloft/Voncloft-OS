@@ -17,7 +17,9 @@ f:5323dd69870b27c4deb4b9128439d094:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:bfbd35856e6b50e1098fc0af9fc4409d:php/CHANGELOG
 f:251d23715e2ae0ac8399c9dc0b735d6c:php/spkgbuild
+f:0bf4af4aa1a5832838b097ac3619dc8a:dnsmasq/post-install.sh
 f:28272840d321a80d0f68b8a04fe77e15:dnsmasq/CHANGELOG
+f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
 f:5de538543759ea3c2cd6c9fd11af4b88:dnsmasq/dnsmasq.conf
 f:2a52a9c8f86e577d80ff874cd56e7e47:dnsmasq/spkgbuild
 f:2f647df400ed113a0f4ee42108ef346a:iptables/rc.iptables
