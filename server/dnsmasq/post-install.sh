@@ -1,3 +1,3 @@
 #!/bin/sh
-scratch install dnsmasq-boot
+scratch install -y dnsmasq-boot
 /etc/init.d/dhcpd start
