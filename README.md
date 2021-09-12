@@ -2,7 +2,7 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 06-27-2021_
+_As of 09-12-2021_
 
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
@@ -37,6 +37,6 @@ _As of 06-27-2021_
 
 **Workon next:**
 - PHP: needs to not overwrite httpd existing config files upon upgrading
-
+- universal upgrade script insteadof utilities/custom_progs currently in utilities/beta
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
