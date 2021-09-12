@@ -2,10 +2,10 @@
 # depends : python-rdflib
 
 name=python-rdflib-jsonld
-version=0.5.0
+version=0.6.0
 release=3
 
-source="https://files.pythonhosted.org/packages/f5/17/45e137be0d93b70827fe5529c0400731344a978bc792193d7d9152e6dbe4/rdflib-jsonld-0.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/64/3f/4616c62eba959507d2898a87940c0ff23ea5592d449031bec5227ada78fe/rdflib-jsonld-0.6.0.tar.gz"
 options="!checksum"
 
 build() {

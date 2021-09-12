@@ -5,7 +5,7 @@ name=python-unidecode
 version=1.3.1
 release=1
 
-source="https://files.pythonhosted.org/packages/df/11/60a304d3bfa841.3.1bfb64f81e26ac5b0bff4c657d8fb6c26ff89ab8240/Unidecode-1.3.1.tar.gz"
+source="https://files.pythonhosted.org/packages/df/11/60a304d3bfa84173f0bfb64f81e26ac5b0bff4c657d8fb6c26ff89ab8240/Unidecode-1.3.1.tar.gz"
 options="!checksum"
 
 build() {

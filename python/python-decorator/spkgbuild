@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-decorator
-version=5.0.9
+version=5.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/4f/51/15a4f6b8154d292e130e5e566c730d8ec6c9802563d58760666f1818ba58/decorator-5.0.9.tar.gz"
+source="https://files.pythonhosted.org/packages/92/3c/34f8448b61809968052882b830f7d8d9a8e1c07048f70deb039ae599f73c/decorator-5.1.0.tar.gz"
 options="!checksum"
 
 build() {
