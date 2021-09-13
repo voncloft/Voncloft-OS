@@ -2,10 +2,10 @@
 # depends : perl
 
 name=perl-scalar-list-utils
-version=1.57
+version=1.59
 release=2
 
-source="https://www.cpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.57.tar.gz"
+source="https://www.cpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.59.tar.gz"
 options="!checksum"
 
 build() {

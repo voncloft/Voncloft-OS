@@ -2,10 +2,10 @@
 # depends : python-setuptools pandoc
 
 name=python-pypandoc
-version=1.6.3
+version=1.6.4
 release=4
 
-source="https://files.pythonhosted.org/packages/56/4b/1962e8b460e509b5e23d47491a11a182e9a2eca3206bb3ce8dad0633ecaa/pypandoc-1.6.3.tar.gz"
+source="https://files.pythonhosted.org/packages/87/1f/19ccb013cd5fe5dc0bf201a34892b0aedb583a029bda321204809a5759ea/pypandoc-1.6.4.tar.gz"
 options="!checksum"
 
 build() {

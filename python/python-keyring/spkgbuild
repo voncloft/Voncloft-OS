@@ -2,10 +2,10 @@
 # depends : python-entrypoints python-secretstorage
 
 name=python-keyring
-version=23.2.0
+version=23.2.1
 release=1
 
-source="https://files.pythonhosted.org/packages/0a/13/c08a8670b34fe5bf37e10726999077050105f97edbe4edd3038c0357549d/keyring-23.2.0.tar.gz"
+source="https://files.pythonhosted.org/packages/cc/24/c5402ba0c6380cc058980e2b73f0597ab6875692f185054a94244b7161ab/keyring-23.2.1.tar.gz"
 options="!checksum"
 
 build() {
