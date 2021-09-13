@@ -1,2 +1,2 @@
 #!/bin/sh
-scratch -y upgrade nss nspr
+scratch upgrade -y nss nspr
