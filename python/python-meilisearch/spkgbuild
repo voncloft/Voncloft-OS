@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-meilisearch
-version=0.16.0
+version=0.16.1
 release=1
 
-source="https://files.pythonhosted.org/packages/e8/5b/123c6ba9d018a92de5df143890b1bfd44b551ce8e832ec3673f93ca7a11e/meilisearch-0.16.0.tar.gz"
+source="https://files.pythonhosted.org/packages/cd/69/bc503328de15b9585097297591815be9cfa82c3417a31a194571cdaccc47/meilisearch-0.16.1.tar.gz"
 options="!checksum"
 
 build() {

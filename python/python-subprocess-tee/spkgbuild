@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-subprocess-tee
-version=0.3.3
+version=0.3.4
 release=1
 
-source="https://files.pythonhosted.org/packages/3d/a6/3cb11b15c3f5abc8f5159272a4db0f60492570e9b4eefbad3d36876ea40a/subprocess-tee-0.3.2.tar.gz"
+source="https://files.pythonhosted.org/packages/20/0a/aae37d9ec3f5688b9d42d95465c9807731f23601d3cfb18da88b9bf45f50/subprocess-tee-0.3.4.tar.gz"
 options="!checksum"
 
 build() {

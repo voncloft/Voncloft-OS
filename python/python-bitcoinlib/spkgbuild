@@ -5,7 +5,7 @@ name=python-bitcoinlib
 version=0.11.0
 release=2
 
-source="https://files.pythonhosted.org/packages/20/d2/8547580b1b9e265f99123cfd518c0b3dc1dbe5acb534076b65a5a967fa60/bitcoinlib-0.5.3.tar.gz"
+source="https://files.pythonhosted.org/packages/c9/37/7e8f81a06f8a6faf175eed697b801f7d544cf6a04d9091fd8a69d3f28fdb/bitcoinlib-0.6.0.tar.gz"
 options="!checksum"
 
 build() {

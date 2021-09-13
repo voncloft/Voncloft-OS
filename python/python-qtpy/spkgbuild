@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-qtpy
-version=1.11.0
+version=1.11.1
 release=5
 
-source="https://files.pythonhosted.org/packages/7f/28/a76640d928cc74bd6d36791d1e4cccf1c37a4e590d326dbfe437ae49daf5/QtPy-1.11.0.tar.gz"
+source="https://files.pythonhosted.org/packages/0b/09/db517eebc57145c738c280d0555490a4c06594593988f12fef2f3d139bb3/QtPy-1.11.1.tar.gz"
 options="!checksum"
 
 build() {

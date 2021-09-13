@@ -5,7 +5,7 @@ name=python-phonenumbers
 version=8.12.32
 release=1
 
-source="https://files.pythonhosted.org/packages/93/c6/c287f84f2a97c773bf23768a901055d99a51cc882c7a2d914a1cbd007496/phonenumbers-8.12.32.tar.gz"
+source="https://files.pythonhosted.org/packages/19/0a/67a2485754fe192d8d7352c97c7fc5d906daae216f0e402056f26bc1ae91/phonenumbers-8.12.31.tar.gz"
 options="!checksum"
 
 build() {

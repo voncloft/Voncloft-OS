@@ -5,7 +5,7 @@ name=python-awkward
 version=1.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/92/36/78e8569019febaa660dfd5ce93196c03c100c31cdae5f2bdbe805f75be4a/awkward-1.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/eb/86/05088fc5305ff69beace67d784f3b5a566ad2ac1fdd8825dfec13405ed0f/awkward-1.5.0.tar.gz"
 options="!checksum"
 
 build() {

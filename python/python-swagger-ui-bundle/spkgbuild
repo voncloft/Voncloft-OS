@@ -2,10 +2,10 @@
 # depends : python-jinja
 
 name=python-swagger-ui-bundle
-version=0.0.8
+version=0.0.9
 release=2
 
-source="https://files.pythonhosted.org/packages/40/1e/75dd5ccc4bbf1086f3a46d52ac7766d5766836874c2de49351f5d4cccbed/swagger_ui_bundle-0.0.8.tar.gz"
+source="https://files.pythonhosted.org/packages/77/da/a2448ccfe19d58c49a8bceda47dc960d8622f5dfa86ecf3b730ffa67b0e3/swagger_ui_bundle-0.0.9.tar.gz"
 options="!checksum"
 
 build() {

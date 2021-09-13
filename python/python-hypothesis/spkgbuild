@@ -2,10 +2,10 @@
 # depends : python-attrs python-sortedcontainers
 
 name=python-hypothesis
-version=6.21.0
+version=6.21.1
 release=1
 
-source="https://files.pythonhosted.org/packages/a7/e2/ec6094232a770d21d6d13fb32dfbb9e4170c467e7e24063c1744a5868adb/hypothesis-6.21.0.tar.gz"
+source="https://files.pythonhosted.org/packages/55/e0/f30ddf19d892319df39db26f734b7dda95334a8af07656fc7b5eb826c7a5/hypothesis-6.21.1.tar.gz"
 options="!checksum"
 
 build() {

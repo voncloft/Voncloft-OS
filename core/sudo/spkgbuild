@@ -2,7 +2,7 @@
 # depends	: linux-pam
 
 name=sudo
-version=1.9.7p2
+version=1.9.8
 release=1
 backup="etc/sudoers"
 url=https://github.com/sudo-project/sudo/archive/refs/tags/SUDO_1.9.7p2.tar.gz
