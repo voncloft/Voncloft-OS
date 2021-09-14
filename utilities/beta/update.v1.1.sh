@@ -13,12 +13,16 @@ fetch() {
 }
 main()
 {
+	rm index.html
+	echo "Ignoring: $ignoring"
+	echo ""
 	get_url $1
-
-
 	echo "URL:       $url_finalized"
 	echo "Filename:  $name"
 	echo "Version:   $version"
 	fetch
+
+	
 }
+ignoring="kf5 plasma kde-apps python perl"
 main $@
