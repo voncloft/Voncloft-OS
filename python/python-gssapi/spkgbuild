@@ -2,10 +2,10 @@
 # depends : python python-decorator krb5
 
 name=python-gssapi
-version=1.6.14
+version=1.7.0
 release=2
 
-source="https://files.pythonhosted.org/packages/b5/87/f12db218b0cfba2e31ae791d65c8109ee1f25c77f29dfa174fa000684eb9/gssapi-1.6.14.tar.gz"
+source="https://files.pythonhosted.org/packages/2d/f2/2a5bf44f878921c92d69f9e8edf6f5f382365e49c34c2764ec2a5bda5639/gssapi-1.7.0.tar.gz"
 options="!checksum"
 
 build() {

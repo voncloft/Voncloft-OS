@@ -2,10 +2,10 @@
 # depends : perl perl-json
 
 name=perl-mail-authenticationresults
-version=2.20210112
+version=2.20210914
 release=1
 
-source="https://www.cpan.org/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-2.20210112.tar.gz"
+source="https://www.cpan.org/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-2.20210914.tar.gz"
 options="!checksum"
 
 build() {

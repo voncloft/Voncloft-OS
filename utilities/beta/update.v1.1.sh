@@ -16,13 +16,38 @@ get_url()
 {
 	source $1
 	url="${source[0]}"
-	url_finalized=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
-	
+	#url_finalized=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
+	url=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
 }
 fetch() {
-	echo $PWD
-        wget $url_finalized
-        echo "wget $url_finalized"
+	#echo $PWD
+        wget $url
+        echo "wget $url"
+}
+alter_per_url() {
+        case $url in
+                *github.com*)
+                        url=https://github.com/$(echo $url | cut -d / -f4,5)/tags;;
+                *downloads.sourceforge.net*)
+                        url="https://sourceforge.net/projects/$(echo $url | cut -d / -f4)/rss?limit=200";;
+                *sourceforge.net*)
+                        url="https://sourceforge.net/projects/$(echo $url | cut -d / -f5)/rss?limit=200";;
+                *gitlab.com*)
+                        url=$(echo $url | cut -d/ -f1-5)/tags;;
+                *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
+                        url=https://pypi.org/simple/${name#python-};;
+                *rubygems.org*)
+                        url=https://rubygems.org/gems/${name/ruby-/};;
+                *launchpad.net*)
+                        url=https://launchpad.net/$(echo $url | cut -d / -f4)/+download;;
+                *ftp.gnome.org*)
+                        url=https://ftp.gnome.org/pub/gnome/sources/$filename/cache.json;;
+                *archive.xfce.org*)
+                        url=http://archive.xfce.org/src/$(echo $url | cut -d / -f5)/$name/;;
+                *)
+                	url="wee";;
+
+        esac
 }
 main()
 {
@@ -31,24 +56,26 @@ main()
 	echo "Ignoring: $ignoring"
 	echo ""
 	get_url $1
-	echo "URL:       $url_finalized"
+	echo "URL:       $url"
 	echo "Filename:  $name"
 	echo "Version:   $version"
 	echo "Upgraded:  $uversion"
-	fetch
+	alter_per_url
+	echo "New URL: $url"
+	#fetch
         #find upgraded version from fetch code compare and then upgrade package using uversion as variable name
-        if [ "$uversion" != "$version" ];
-        then
-        	vercomp $uversion $version
-        	if [ $? = 2 ]; then
-        		#do things
-        		echo "NEW"
-        	elif [ $? = 1 ];then
-        		echo "OLD"
-        	else
-        		echo "Same"
-        	fi
-        fi
+        #if [ "$uversion" != "$version" ];
+        #then
+        #	vercomp $uversion $version
+        #	if [ $? = 2 ]; then
+        #		#do things
+        #		echo "NEW"
+        #	elif [ $? = 1 ];then
+        #		echo "OLD"
+        #	else
+        #		echo "Same"
+        #	fi
+        #fi
 }
 ignoring="kf5 plasma kde-apps python perl"
 main $@

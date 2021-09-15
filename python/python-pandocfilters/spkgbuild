@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-pandocfilters
-version=1.4.3
+version=1.5.0
 release=3
 
-source="https://files.pythonhosted.org/packages/28/78/bd59a9adb72fa139b1c9c186e6f65aebee52375a747e4b6a6dcf0880956f/pandocfilters-1.4.3.tar.gz"
+source="https://files.pythonhosted.org/packages/62/42/c32476b110a2d25277be875b82b5669f2cdda7897c165bd22b78f366b3cb/pandocfilters-1.5.0.tar.gz"
 options="!checksum"
 
 build() {

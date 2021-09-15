@@ -2,10 +2,10 @@
 # depends : make-ca python-pyasn1-modules python-rsa python-setuptools
 
 name=python-google-auth
-version=2.0.2
+version=2.1.0
 release=1
 
-source="https://files.pythonhosted.org/packages/b3/a8/23d17642bd87fb896ba035a36c84aeb81af359f2ee7f1cf2eae6999c277f/google-auth-2.0.2.tar.gz"
+source="https://files.pythonhosted.org/packages/0c/7a/df12c4ca71f2b39169cd8d4fb4e5082471e100503b26d340c0ff6e3a2d7e/google-auth-2.1.0.tar.gz"
 options="!checksum"
 
 build() {

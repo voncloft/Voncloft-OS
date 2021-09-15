@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-fonttools
-version=4.26.2
+version=4.27.0
 release=1
 
 source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"

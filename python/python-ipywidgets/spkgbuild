@@ -5,7 +5,7 @@ name=python-ipywidgets
 version=8.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/f1/d9/4b5729f6e2876a8a61be2b00b04fce18c15d807d4360a4b70496a5b20fe9/ipywidgets-7.6.4.tar.gz"
+source="https://files.pythonhosted.org/packages/e8/72/f0d916a7d38e0af3aa428dce726b2f694bae9b779e7a52376c18fee4f224/ipywidgets-7.6.5.tar.gz"
 options="!checksum"
 
 build() {

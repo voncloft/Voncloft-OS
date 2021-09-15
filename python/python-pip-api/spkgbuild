@@ -2,10 +2,10 @@
 # depends : python-packaging python-pyparsing python-pip
 
 name=python-pip-api
-version=0.0.20
+version=0.0.21
 release=3
 
-source="https://files.pythonhosted.org/packages/ea/54/6a3f8f53eac1f2266e9ee3fa5bad5784e6219de03f6af13b0f5dbf1c3899/pip-api-0.0.20.tar.gz"
+source="https://files.pythonhosted.org/packages/3f/43/bfdaaccd7aae062666c2da5629ed3fe9673da31b87f051656a1c0c0d46a3/pip-api-0.0.21.tar.gz"
 options="!checksum"
 
 build() {
