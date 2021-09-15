@@ -22,7 +22,7 @@ get_url()
 }
 fetch() {
 	#echo $PWD
-        wget -q $url
+        wget -q -O index.html $url
 }
 alter_per_url() {
         case $url in
@@ -84,7 +84,8 @@ cmd_torun()
                 *rubygems.org*)
                 	cmd="ruby"
                 	fetch
-                	;;
+			uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | head -n1)
+			;;
                 *launchpad.net*)
                 	cmd="launchpad"
 			fetch
@@ -99,25 +100,24 @@ cmd_torun()
                 	;;
 		*/plasma/*)
 			cmd="plasma"
-			rm test.txt
 			fetch 
-			egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html >> test.txt
-                        uversion=$(cat test.txt | sort -V -r | head -n 1)
+			uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+			| sort -V -r \
+                        | head -n1)
 			;;
                 */frameworks/*)
                 	cmd="frameworks"
                 	fetch
-                	rm test.txt
-                	egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html >> test.txt
-                	uversion=$(cat test.txt | sort -V -r | head -n 1)
-                	uversion=${uversion}.0
+                	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                	| sort -V -r \
+                	| head -n1).0
                 	;;
                 *.kde.*/*/release-service/*)
                 	cmd="kde-apps"
                 	fetch
-                	rm test.txt
-                	egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html >> test.txt
-                	uversion=$(cat test.txt | sort -V -r | head -n 1)
+                	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                	| sort -V -r \
+                	| head -n1)
                 	;;
                 *)
                 	cmd="generic"
