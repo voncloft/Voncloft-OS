@@ -1,8 +1,4 @@
 #!/bin/sh
-#TODO: WORK ON REPORT SYSTEM
-print_progress() {
-        echo -ne " $@\033[0K\r"
-}
 vercomp() {
         if [ "$1" = "$2" ]; then
                 return 0 # same version
@@ -69,12 +65,11 @@ cmd_torun()
                 *github.com*)
                 	cmd="github"
                 	fetch
-                	uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
-			| sed "s/.tar.*//g"	\
-			| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                	uversion=$(grep ".tar." index.html \
+                	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
                 	| sort -V -r \
                 	| uniq \
-                	| head -n1)
+                	| head -n1) 
                 	;;
                 *downloads.sourceforge.net*)
                 	cmd="sourceforge"
@@ -139,29 +134,26 @@ cmd_torun()
 				fetch
 				get_generic
 			else
-				echo "ERROR:     Update script does not exist for $name trying manually"
-				fetch
-        			uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
-        			| sed "s/$name[-_]//;s/\.tar.*//" \
-        			| grep -Evi '(alpha|beta|rc|pre)' \
-        			| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-        			| sort -V -r \
-        			| uniq \
-        			| head -n1)
+				echo "Update script does not exist for $name"
 			fi
+			#uversion=$(grep $name index.html \
+			#| grep .tar.gz \
+			#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+			#| sort -V -r \
+			#| uniq \
+			#| head -n1)
                 	;;
+
         esac
 }
 main()
 {
 	rm index.html
-	for f in $repos;
-	do
-	#print_progress "Checking $name"	
-	echo "-----------------------------------------------------------------------------------"
-	#$get_url $1
-	if [ "${f##*/}" != "REPO" ];then
-	get_url $f/spkgbuild
+	#options="-q"
+	#uversion="7.0"
+	echo "Ignoring: $ignoring"
+	echo ""
+	get_url $1
 	echo "PPath:     $ppath"
 	echo "URL:       $url"
 	echo "Filename:  $name"
@@ -182,15 +174,8 @@ main()
         		if [ $? = 2 ]; then
         		#do things
         			echo "NEW"
-        			((count=count+1))
-                                final="<b><u>${myarr[index]}</u></b>\n"
-                                final+="<br>installed version in repo: $version\n"
-                                final+="<br>upgraded to version: $uversion\n"
-                                final+="<br><br>\n\n"
-				echo -e $final >> testing.txt
-				echo -e '"s/version=$version/version=$uversion/g" $ppath<br>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-				sed -i -e "s/version=$version/version=$uversion/g" $ppath
-				changelog "$item" "Upgraded from version $version to version $uversion"
+        			sed -i -e "s/version=$version/version=$uversion/g" $ppath
+        		
         		elif [ $? = 1 ];then
         			echo "OLD"
         		else
@@ -198,54 +183,6 @@ main()
         		fi
         	fi
 	fi
-	#echo "-----------------------------------------------------------------------------------"
-	fi
-	done
-echo -e "Packages upgraded: $count\n" >> /var/log/old/testing.txt
-echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-words=$(cat /var/log/old/testing.txt)
-title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
-
-if [ $count -gt 0 ];
-then
-        mailme voncloft@gmail.com "$words" "$title"
-        mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
-        missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
-        mailme 2606159678@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
-        echo "<br><br>Total Missing: $missing_packages" >> missing.txt
-        missing=$(cat missing.txt)
-        mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
-fi
-
-rm -v testing.txt
-rm -v test.txt
-cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
-cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").html
-echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
-cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
-cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
-#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
-find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
 }
 ignoring="kf5 plasma kde-apps python perl"
-echo "Ignoring: $ignoring"
-
-repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/*"
-logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
-mkdir -pv $logpath/changes
-mkdir -pv $logpath/reports
-mkdir -pv $logpath/over_updated
-mkdir -pv $logpath/missing
-foltotar repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
-mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> missing.txt
-echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-
-
 main $@

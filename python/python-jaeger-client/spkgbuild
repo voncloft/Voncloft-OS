@@ -2,7 +2,7 @@
 # depends : python-opentracing python-threadloop python-thrift python-tornado
 
 name=python-jaeger-client
-version=4.7.0
+version=4.8.0
 release=1
 
 source="https://files.pythonhosted.org/packages/c6/03/39a1190c987635e2293e59ff462ee9884fdd6184d2c5a25c867b250e6609/jaeger-client-4.8.0.tar.gz"

@@ -654,9 +654,9 @@ f:6c3e8b496961f6c4dbec8d347e03b58d:nss/CHANGELOG
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:a957ba807430bb5494a60a48f8eb9a5f:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
-f:54caeeb263fc21558170ee2434838b3b:linux-desktop/CHANGELOG
+f:aab15903c835642081bbaf4c9aeec8a7:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
-f:3e71307ad66ab9116671bb7b2f5dafac:linux-desktop/spkgbuild
+f:dbe8aa1313f4c5a305f57d04301ac393:linux-desktop/spkgbuild
 f:9ee5d7295e7cd2458dbf35174455687f:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -738,8 +738,8 @@ f:36c65d9e9a9b5e6f9476f8bba81994e2:hunspell/spkgbuild
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-install.sh
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-upgrade.sh
 f:cff3571dcd31294f38def129c5ded3b4:shared-mime-info/spkgbuild
-f:02e73d5ef1caa52f7ab4e4cd64584f78:curl/CHANGELOG
-f:fe55c37a9e7addb3647a8074ff033f7a:curl/spkgbuild
+f:caf6e704cd4ccb912ecb39159c0d8be6:curl/CHANGELOG
+f:2c2cc038100510ec7696e21200fd4c30:curl/spkgbuild
 f:36e3df2899ac3c95e19d67fe8198fd18:luajit/spkgbuild
 f:3f1370d9ad233b9c717f14d5ae9859c1:syslinux/syslinux-6.03-sysmacros.patch
 f:b56631b817e26139f47a4d0039e7e90d:syslinux/spkgbuild
@@ -930,9 +930,9 @@ f:f68691ada1f18ad778e58aefc192f404:gnu-netcat/spkgbuild
 f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:e70460ff08dc354b256f521b8f304d21:iw/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh
-f:b1d67223f5161dfbf715d46eb69eb878:linux-router/CHANGELOG
+f:0991a6df360fea31353c4a8c1c8aac41:linux-router/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
-f:bc144f4d91906443f417106ca312f90c:linux-router/spkgbuild
+f:c98fc77ee026973b0e00a384253f3936:linux-router/spkgbuild
 f:99c17170a669e0c5d831170b8ca86586:linux-router/.config
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh.save
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
