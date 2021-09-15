@@ -5,7 +5,7 @@ name=python-hypothesis
 version=6.21.1
 release=1
 
-source="https://files.pythonhosted.org/packages/55/e0/f30ddf19d892319df39db26f734b7dda95334a8af07656fc7b5eb826c7a5/hypothesis-6.21.1.tar.gz"
+source="https://files.pythonhosted.org/packages/b7/86/925d55ce81d6a3f0577990f87af253beddc7551069a9e3deddab24a26847/hypothesis-6.21.3.tar.gz"
 options="!checksum"
 
 build() {

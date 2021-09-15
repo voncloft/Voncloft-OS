@@ -5,7 +5,7 @@ name=python-boto3
 version=1.18.41
 release=1
 
-source="https://files.pythonhosted.org/packages/18/56/e11f23bc3d5bc768a25135e79a3a301debbacd3b7800ca2e70a1e576f5f8/boto3-1.18.41.tar.gz"
+source="https://files.pythonhosted.org/packages/2d/49/49095603932627231e5514c944b4d6163518dbf40e7be32d57f882d2fba7/boto3-1.18.42.tar.gz"
 options="!checksum"
 
 build() {

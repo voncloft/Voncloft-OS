@@ -5,7 +5,7 @@ name=python-faker
 version=8.12.1
 release=1
 
-source="https://files.pythonhosted.org/packages/ee/52/1ce107d0dce28f236ad70c359c0c5fc5c16d70dab6ea3f62e34b3c57e348/Faker-8.12.1.tar.gz"
+source="https://files.pythonhosted.org/packages/35/23/8f8361df9a1637d85235f3d62d5ab3462c1678cd6d0ccc8869595b728176/Faker-8.13.2.tar.gz"
 options="!checksum"
 
 build() {

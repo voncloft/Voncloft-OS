@@ -65,6 +65,11 @@ cmd_torun()
                 *github.com*)
                 	cmd="github"
                 	fetch
+                	uversion=$(grep ".tar." index.html \
+                	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                	| sort -V -r \
+                	| uniq \
+                	| head -n1) 
                 	;;
                 *downloads.sourceforge.net*)
                 	cmd="sourceforge"
@@ -121,7 +126,22 @@ cmd_torun()
                 	;;
                 *)
                 	cmd="generic"
-			fetch
+                	update=$(echo $ppath | sed 's/spkgbuild/update/g')
+			#source $update
+			if [ -f $update ];
+			then
+				source $update
+				fetch
+				get_generic
+			else
+				echo "Update script does not exist for $name"
+			fi
+			#uversion=$(grep $name index.html \
+			#| grep .tar.gz \
+			#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+			#| sort -V -r \
+			#| uniq \
+			#| head -n1)
                 	;;
 
         esac
