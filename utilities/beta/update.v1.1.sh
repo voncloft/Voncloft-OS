@@ -49,6 +49,23 @@ alter_per_url() {
 
         esac
 }
+scan_packages
+{
+        case $url in
+		#under each function maybe have a .sh ran and eval it
+                *github.com*)
+                *downloads.sourceforge.net*)
+                *sourceforge.net*)
+                *gitlab.com*)
+                *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
+                *rubygems.org*)
+                *launchpad.net*)
+                *ftp.gnome.org*)
+                *archive.xfce.org*)
+                *)
+
+        esac
+}
 main()
 {
 	rm index.html
