@@ -76,47 +76,37 @@ cmd_torun()
                 	| uniq \
                 	| head -n1)
                 	;;
-                #*downloads.sourceforge.net*)
-                #	cmd="sourceforge"
-                #	fetch
-                #	;;
-                #*sourceforge.net*)
-                #	cmd="sourcefoge"
-                #	fetch
-                #	;;
-                #*gitlab.com*)
-                #	cmd="gitlab"
-		#	fetch
-                #	;;
-                #*python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
-                #	cmd="python"
-                #	fetch;;
+                *downloads.sourceforge.net*)
+                	cmd="sourceforge"
+                	fetch
+                	;;
+                *sourceforge.net*)
+                	cmd="sourcefoge"
+                	fetch
+                	;;
+                *gitlab.com*)
+                	cmd="gitlab"
+			fetch
+                	;;
+                *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
+                	cmd="python"
+                	fetch;;
                 *rubygems.org*)
                 	cmd="ruby"
                 	fetch
 			uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | head -n1)
 			;;
-                #*launchpad.net*)
-                #	cmd="launchpad"
-		#	fetch
-                #	;;
-                #*ftp.gnome.org*)
-                #	cmd="gnome"
-                #	fetch
-                #	;;
+                *launchpad.net*)
+                	cmd="launchpad"
+			fetch
+                	;;
+                *ftp.gnome.org*)
+                	cmd="gnome"
+                	fetch
+                	;;
                 *archive.xfce.org*)
                 	cmd="xfce"
                 	fetch
-                	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-                	| sort -V -r \
-                        | head -n1)
-                        url=$url$uversion/
-                        echo $url
-                        rm index.html
-                        fetch
-                        uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-                        | sort -V -r \
-                        | head -n1)
                 	;;
 		*/plasma/*)
 			cmd="plasma"
@@ -165,15 +155,15 @@ cmd_torun()
 main()
 {
 	
-	for f in $repos;
-	do
+	#for f in $repos;
+	#do
 	#rm index.html
 	unset $version $uversion $ppath
 	#print_progress "Checking $name"	
 	echo "-----------------------------------------------------------------------------------"
-	#$get_url $1
-	if [ "${f##*/}" != "REPO" ];then
-	get_url $f/spkgbuild
+	get_url $1
+	#if [ "${f##*/}" != "REPO" ];then
+	#get_url $f/spkgbuild
 	echo "PPath:     $ppath"
 	echo "URL:       $url"
 	echo "Filename:  $name"
@@ -211,20 +201,20 @@ main()
         			echo "Same"
         		fi
         	fi
-	fi
+	#fi
 	unset $version $uversion $ppath
 	rm index.html
 	#echo "-----------------------------------------------------------------------------------"
 	fi
-	#rm index.html
-	done
+	rm index.html
+	#done
 echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 
-if [ $count -gt 0 ];
-then
+#if [ $count -gt 0 ];
+#then
         mailme voncloft@gmail.com "$words" "$title"
         mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
         #missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
@@ -232,7 +222,7 @@ then
         #echo "<br><br>Total Missing: $missing_packages" >> missing.txt
         #missing=$(cat missing.txt)
         #mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
-fi
+#fi
 
 #rm -v /var/log/old/testing.txt
 #rm -v test.txt
@@ -248,7 +238,7 @@ ignoring="kf5 plasma kde-apps python perl"
 echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="xfce/*"
+repos="server/* xfce/*"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
