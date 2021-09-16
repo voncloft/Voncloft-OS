@@ -111,7 +111,7 @@ cmd_torun()
                 	| sort -V -r \
                         | head -n1)
                         url=$url$uversion/
-                        echo $url
+                        #echo $url
                         rm index.html
                         fetch
                         uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
@@ -202,7 +202,7 @@ main()
 				echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 				echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 				sed -i -e "s/version=$version/version=$uversion/g" $ppath
-				changelog "$item" "Upgraded from version $version to version $uversion"
+				changelog "$ppath" "Upgraded from version $version to version $uversion"
 				unset $version $uversion $ppath
 				#cp index.html $name-index.html
         		elif [ $? = 1 ];then
@@ -248,7 +248,7 @@ ignoring="kf5 plasma kde-apps python perl"
 echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="xfce/*"
+repos="server/* xfce/* xorg/*"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")

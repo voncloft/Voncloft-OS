@@ -13,7 +13,7 @@ d:samba
 f:57d715e1f1daf558e527c846df116ffc:httpd/post-install.sh
 f:ae45b0ffdc6e9aecb44ba0da96d9c247:httpd/CHANGELOG
 f:2a424710304fdd98868c6511c4814d41:httpd/pre-install.sh
-f:5323dd69870b27c4deb4b9128439d094:httpd/spkgbuild
+f:e81c05c3a8f1426ddfb6d5a1ea1a89ea:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:bfbd35856e6b50e1098fc0af9fc4409d:php/CHANGELOG
 f:251d23715e2ae0ac8399c9dc0b735d6c:php/spkgbuild
@@ -41,9 +41,9 @@ f:fd239cd91a93f260739ffb195a6746ed:monitor_process/process_monitor.sh
 f:52092704f4f4d20f1f38fe0c455e60b8:monitor_process/spkgbuild
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
-f:e68392446a9d432115b0c30bd61109b7:dhcpcd/spkgbuild
+f:ff01848ad9f1e830dcb47022f29ac823:dhcpcd/spkgbuild
 f:7fab4ae292b107759129290840582cf6:dhcpcd/run
-f:4b07d0e5a48cafad480c921f46878053:deluge/spkgbuild
+f:8c0e9052b0b28b2ff7256998d4bad67c:deluge/spkgbuild
 f:07a1d1cb48e58c84f80f4060d2cfddd3:subsonic/spkgbuild
 f:c3d3a1a2a1520401ce5c91b9b9cf431d:samba/post-install.sh
 f:cc49a328a6058cbfb3f5cf4c58986f1a:samba/CHANGELOG
