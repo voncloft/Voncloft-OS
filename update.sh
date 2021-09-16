@@ -201,10 +201,10 @@ main()
                                 final+="<br><br>\n\n"
 				echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 				echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-				#sed -i -e "s/version=$version/version=$uversion/g" $ppath
-				#changelog "$item" "Upgraded from version $version to version $uversion"
+				sed -i -e "s/version=$version/version=$uversion/g" $ppath
+				changelog "$item" "Upgraded from version $version to version $uversion"
 				unset $version $uversion $ppath
-				cp index.html $name-index.html
+				#cp index.html $name-index.html
         		elif [ $? = 1 ];then
         			echo "OLD"
         		else
