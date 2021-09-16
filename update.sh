@@ -1,5 +1,6 @@
 #!/bin/bash
-#TODO: WORK ON REPORT SYSTEM
+#TODO:  WORK ON REPORT SYSTEM
+#	Fix the no source in spkgbuild bug....if no source= then it will not update properly
 print_progress() {
         echo -ne " $@\033[0K\r"
 }
@@ -62,18 +63,42 @@ alter_per_url() {
 
         esac
 }
+check_manual_upd()
+{
+	update=$(echo $ppath | sed 's/spkgbuild/update/g')
+	if [ -f $update ];then
+		return 1
+	else
+		return 0
+	fi
+}
+run_manual_upd()
+{
+	update=$(echo $ppath | sed 's/spkgbuild/update/g')
+	update_script=$(echo $ppath | sed "s/spkgbuild/update/g")
+	echo "ALERT:     Update script found in $update_script"
+	source $update
+	echo $url
+	fetch
+	get_generic
+}
 cmd_torun()
 {
         case $url in
                 *github.com*)
                 	cmd="github"
-                	fetch
-                	uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
-			| sed "s/.tar.*//g"	\
-			| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-                	| sort -V -r \
-                	| uniq \
-                	| head -n1)
+			check_manual_upd
+			if [ $? = 1 ]; then
+				run_manual_upd
+			else
+                		fetch
+                		uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
+				| sed "s/.tar.*//g"	\
+				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        	        	| sort -V -r \
+                		| uniq \
+                		| head -n1)
+                	fi
                 	;;
                 #*downloads.sourceforge.net*)
                 #	cmd="sourceforge"
@@ -91,9 +116,14 @@ cmd_torun()
                 #	cmd="python"
                 #	fetch;;
                 *rubygems.org*)
-                	cmd="ruby"
-                	fetch
-			uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | head -n1)
+			cmd="ruby"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+                	else
+	                	fetch
+				uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | head -n1)
+			fi
 			;;
                 #*launchpad.net*)
                 #	cmd="launchpad"
@@ -105,50 +135,65 @@ cmd_torun()
                 #	;;
                 *archive.xfce.org*)
                 	cmd="xfce"
-                	fetch
-                	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-                	| sort -V -r \
-                        | head -n1)
-                        url=$url$uversion/
-                        #echo $url
-                        rm index.html
-                        fetch
-                        uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-                        | sort -V -r \
-                        | head -n1)
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+                	else
+ 		               	fetch
+                		uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                		| sort -V -r \
+                        	| head -n1)
+                        	url=$url$uversion/
+                        	#echo $url
+                        	rm index.html
+                        	fetch
+                        	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                        	| sort -V -r \
+                        	| head -n1)
+                        fi
                 	;;
-		*/plasma/*)
+		*plasma*)
 			cmd="plasma"
-			fetch 
-			uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-			| sort -V -r \
-                        | head -n1)
+			check_manual_upd
+			if [ $? = 1 ];then
+				run_manual_upd
+			else
+				fetch 
+				uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+				| sort -V -r \
+                        	| head -n1)
+                        fi
 			;;
-                */frameworks/*)
+                *frameworks*)
                 	cmd="frameworks"
-                	fetch
-                	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-                	| sort -V -r \
-                	| head -n1).0
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+                	else
+                		fetch
+                		uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                		| sort -V -r \
+                		| head -n1).0
+                	fi
                 	;;
                 *.kde.*/*/release-service/*)
                 	cmd="kde-apps"
-                	fetch
-                	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
-                	| sort -V -r \
-                	| head -n1)
+			check_manual_upd
+			if [ $? = 1 ];then
+				run_manual_upd
+			else
+                		fetch
+                		uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                		| sort -V -r \
+                		| head -n1)
+                	fi
                 	;;
                 *)
                 	cmd="generic"
-                	update=$(echo $ppath | sed 's/spkgbuild/update/g')
-			#source $update
-			if [ -f $update ];
+			check_manual_upd
+			if [ $? = 1 ];
 			then
-				update_script=$(echo $ppath | sed "s/spkgbuild/update/g")
-				echo "ALERT:     Update script found in $update_script"
-				source $update
-				fetch
-				get_generic
+				run_manual_upd
 			else
 				echo "ERROR:     Update script does not exist for $name trying manually"
 				fetch
@@ -251,7 +296,7 @@ ignoring="kf5 plasma kde-apps python perl"
 echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="core/wget core/nano"
+repos="kf5/knewstuff plasma/plasma-depends"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
@@ -259,7 +304,7 @@ mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
 mkdir -pv $logpath/over_updated
 mkdir -pv $logpath/missing
-foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
