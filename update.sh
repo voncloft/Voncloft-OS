@@ -145,6 +145,8 @@ cmd_torun()
 			#source $update
 			if [ -f $update ];
 			then
+				update_script=$(echo $ppath | sed "s/spkgbuild/update/g")
+				echo "ALERT:     Update script found in $update_script"
 				source $update
 				fetch
 				get_generic
@@ -164,7 +166,7 @@ cmd_torun()
 }
 main()
 {
-	
+	check=0
 	for f in $repos;
 	do
 	#rm index.html
@@ -186,7 +188,7 @@ main()
 	echo "Upgraded:  $uversion"
         #find upgraded version from fetch code compare and then upgrade package using uversion as variable name
 	check=${#uversion}
-	if [ $check -ge 1 ];
+	if [[ $check -ge 1 ]];
 	then
         	if [ "$uversion" != "$version" ];
         	then
@@ -208,9 +210,11 @@ main()
         		elif [ $? = 1 ];then
         			echo "OLD"
         		else
-        			echo "Same"
+        			echo "SAME"
         		fi
         	fi
+        else
+        	echo "SAME"
 	fi
 	unset $version $uversion $ppath
 	rm index.html
@@ -248,7 +252,7 @@ ignoring="kf5 plasma kde-apps python perl"
 echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="server/* xfce/* xorg/*"
+repos="core/wget core/nano"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
@@ -265,6 +269,5 @@ echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsf
 echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-
 
 main $@
