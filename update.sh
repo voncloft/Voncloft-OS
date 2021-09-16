@@ -260,7 +260,7 @@ mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
 mkdir -pv $logpath/over_updated
 mkdir -pv $logpath/missing
-#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
