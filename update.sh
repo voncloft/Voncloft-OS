@@ -65,7 +65,6 @@ alter_per_url() {
 cmd_torun()
 {
         case $url in
-		#under each function maybe have a .sh ran and eval it
                 *github.com*)
                 	cmd="github"
                 	fetch
