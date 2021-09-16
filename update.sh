@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #TODO: WORK ON REPORT SYSTEM
 print_progress() {
         echo -ne " $@\033[0K\r"
@@ -166,7 +166,6 @@ cmd_torun()
 }
 main()
 {
-	check=0
 	for f in $repos;
 	do
 	#rm index.html
@@ -188,7 +187,8 @@ main()
 	echo "Upgraded:  $uversion"
         #find upgraded version from fetch code compare and then upgrade package using uversion as variable name
 	check=${#uversion}
-	if [[ $check -ge 1 ]];
+	#echo $check
+	if [ $check -ge 1 ];
 	then
         	if [ "$uversion" != "$version" ];
         	then
@@ -226,8 +226,8 @@ echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upg
 echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
 title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
-
-if [ $count -gt 0 ];
+#echo "COUNT" $count
+if [ ! -z $count ];
 then
         mailme voncloft@gmail.com "$words" "$title"
         mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
