@@ -1,6 +1,5 @@
 #!/bin/bash
 #TODO:  WORK ON REPORT SYSTEM
-#	Fix the no source in spkgbuild bug....if no source= then it will not update properly
 print_progress() {
         echo -ne " $@\033[0K\r"
 }
@@ -78,7 +77,6 @@ run_manual_upd()
 	update_script=$(echo $ppath | sed "s/spkgbuild/update/g")
 	echo "ALERT:     Update script found in $update_script"
 	source $update
-	echo $url
 	fetch
 	get_generic
 }
@@ -296,7 +294,7 @@ ignoring="kf5 plasma kde-apps python perl"
 echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="kf5/knewstuff plasma/plasma-depends"
+repos="kf5/kf5-depends plasma/plasma-depends"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")

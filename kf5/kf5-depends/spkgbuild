@@ -7,7 +7,7 @@ name=kf5-depends
 version=5.86.0
 release=1
 verzion=5.81
-
+source="https://download.kde.org/stable/frameworks/"
 build(){
         mkdir -pv $PKG/usr
 	mkdir -pv $PKG/etc/profile.d
