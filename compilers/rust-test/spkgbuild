@@ -2,7 +2,7 @@
 # depends	: curl cmake python llvm libssh2
 
 name=rust
-version=1.53.0
+version=1.55.0
 release=1
 
 source="https://github.com/rust-lang/rust/archive/refs/tags/$versiontar.gz"
