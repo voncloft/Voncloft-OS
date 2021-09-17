@@ -297,7 +297,6 @@ main()
 	for f in $repos;
 	do
 	echo "-----------------------------------------------------------------------------------"
-	#$get_url $1
 	if [ "${f##*/}" != "REPO" ];then
 		get_url $f/spkgbuild
 		check_override=$(echo $ppath | sed 's/spkgbuild/override/g')
