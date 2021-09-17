@@ -1,19 +1,15 @@
 #!/bin/sh
-#TODO:  WORK ON REPORT SYSTEM
+#TODO:  INTEGRATE ENTIRE REPO - DISABLE THE sed that upgrades the spkgbuild for testing
 print_progress() {
         echo -ne " $@\033[0K\r"
 }
 vercomp() {
         if [ "$1" = "$2" ]; then
-                return 0 # same version
-		echo "0"
-        #elif [ "$1" = "$(echo "$1\n$2" | sort -V | head -n1)" ]; then
+		echo "0" #same version
         elif [ "$(printf '%s\n' "$1" "$2" | sort -V | head -n1)" = "$1" ]; then
                 return 1 # $1 lower than $2
-                echo "1"
         else
                 return 2 # $1 higher than $2
-                echo "2"
         fi
 }
 get_url()
@@ -24,7 +20,6 @@ get_url()
 	url=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
 }
 fetch() {
-	#echo $PWD
         wget -q -O index.html $url
 }
 alter_per_url() {
