@@ -1,0 +1,9 @@
+source=https://download.kde.org/stable/plasma/
+
+get_generic()
+{
+	uversion=$(grep -i "href" index.html \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	| sort -V -r \
+	| head -n1)
+}

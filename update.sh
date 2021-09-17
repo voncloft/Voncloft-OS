@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #TODO:  WORK ON REPORT SYSTEM
 print_progress() {
         echo -ne " $@\033[0K\r"
@@ -58,7 +58,7 @@ alter_per_url() {
 			url="$(echo $url | cut -d / -f1-5)/"
 			;;
                 *)
-                	
+                		
 
         esac
 }
@@ -70,6 +70,15 @@ check_manual_upd()
 	else
 		return 0
 	fi
+}
+check_override_src()
+{
+	override=$(echo $ppath | sed 's/spkgbuild/override/g')
+        if [ -f $override ];then
+                return 1
+        else
+                return 0
+        fi
 }
 run_manual_upd()
 {
@@ -211,22 +220,39 @@ main()
 	for f in $repos;
 	do
 	#rm index.html
-	unset $version $uversion $ppath
 	#print_progress "Checking $name"	
 	echo "-----------------------------------------------------------------------------------"
 	#$get_url $1
 	if [ "${f##*/}" != "REPO" ];then
 	get_url $f/spkgbuild
-	echo "PPath:     $ppath"
-	echo "URL:       $url"
-	echo "Filename:  $name"
-	echo "Version:   $version"
+	check_override=$(echo $ppath | sed 's/spkgbuild/override/g')
+        if [ -f $check_override ];then
+                #source $check_override
+		get_url $check_override
+		#ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
+	        echo "PPath:     $ppath"
+        	echo "URL:       $url"
+	        echo "Filename:  $name"
+        	echo "Version:   $version"
+        	alter_per_url
+        	echo "New URL:   $url"
 
-	alter_per_url
-	echo "New URL:   $url"
-	cmd_torun
-	echo "Command:   $cmd"
-	echo "Upgraded:  $uversion"
+        	cmd_torun
+        	ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
+        	echo "Command:   $cmd"
+        	echo "Upgraded:  $uversion"
+        else	
+		echo "PPath:     $ppath"
+		echo "URL:       $url"
+		echo "Filename:  $name"
+		echo "Version:   $version"
+		alter_per_url
+		echo "New URL:   $url"
+	
+		cmd_torun
+		echo "Command:   $cmd"
+		echo "Upgraded:  $uversion"
+	fi
         #find upgraded version from fetch code compare and then upgrade package using uversion as variable name
 	check=${#uversion}
 	#echo $check
@@ -244,10 +270,9 @@ main()
                                 final+="<br>upgraded to version: $uversion\n"
                                 final+="<br><br>\n\n"
 				echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-				echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+				echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html	
 				sed -i -e "s/version=$version/version=$uversion/g" $ppath
 				changelog "$ppath" "Upgraded from version $version to version $uversion"
-				unset $version $uversion $ppath
 				#cp index.html $name-index.html
         		elif [ $? = 1 ];then
         			echo "OLD"
@@ -258,7 +283,6 @@ main()
         else
         	echo "SAME"
 	fi
-	unset $version $uversion $ppath
 	rm index.html
 	#echo "-----------------------------------------------------------------------------------"
 	fi
@@ -294,7 +318,7 @@ ignoring="kf5 plasma kde-apps python perl"
 echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="kf5/kf5-depends plasma/plasma-depends"
+repos="core/nano kf5/kf5-depends plasma/plasma-depends core/wget"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
