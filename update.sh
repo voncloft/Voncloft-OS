@@ -280,7 +280,7 @@ alerts_and_logs()
 	if [ ! -z $count ];
 	then
         	mailme voncloft@gmail.com "$words" "$title"
-        	mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
+        	mailme phone@vtext.com "Updated packages: $count" "Upgrade Report"
         	#missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
         	#mailme 2606159678@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
         	#echo "<br><br>Total Missing: $missing_packages" >> missing.txt
