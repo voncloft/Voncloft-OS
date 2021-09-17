@@ -1,0 +1,4 @@
+Files in folders explanation
+override: for when there is no "source" in spkgbuild
+update:	for when a specific way is needed to update spkgbuild
+spkgbuild: the main script for the install

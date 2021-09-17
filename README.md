@@ -2,7 +2,7 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 09-12-2021_
+_As of 09-16-2021_
 
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
@@ -21,9 +21,6 @@ _As of 09-12-2021_
 **Programs to be added in the future:**
 - KDEVELOP
 
-**System Changes:**
-- Qt5 has been moved from /opt/qt5 to /usr
-
 **Other:**
 - Everything in workbench is files that continuously get changed and tarballed for later
 - Everything in working_on/sort_later needs to be tested.
@@ -32,11 +29,11 @@ _As of 09-12-2021_
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
-- Packages are checked one time a day at 3:01 PM CST in my repository against https://distrowatch.com/packages.php (amongst other scripts located in Utilities/custom_progs) using a script located in utilities/bin/checkrepository
+- Packages are checked via the "updates.sh" in /Voncloft-OS (WORK IN PROGRESS not ready for production)
 - Updates can be viewed here: http://voncloft.dnsfor.me/updated
 
 **Workon next:**
 - PHP: needs to not overwrite httpd existing config files upon upgrading
-- universal upgrade script insteadof utilities/custom_progs currently in utilities/beta
+
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
