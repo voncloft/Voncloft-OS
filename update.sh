@@ -21,7 +21,6 @@ get_url()
 	source $1
 	ppath=$1
 	url="${source[0]}"
-	#url_finalized=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
 	url=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
 }
 fetch() {
@@ -58,8 +57,6 @@ alter_per_url() {
 			url="$(echo $url | cut -d / -f1-5)/"
 			;;
                 *)
-                		
-
         esac
 }
 check_manual_upd()
@@ -215,107 +212,113 @@ cmd_torun()
                 	;;
         esac
 }
-main()
+perform_override()
 {
-	for f in $repos;
-	do
-	#rm index.html
-	#print_progress "Checking $name"	
-	echo "-----------------------------------------------------------------------------------"
-	#$get_url $1
-	if [ "${f##*/}" != "REPO" ];then
-	get_url $f/spkgbuild
-	check_override=$(echo $ppath | sed 's/spkgbuild/override/g')
-        if [ -f $check_override ];then
-                #source $check_override
-		get_url $check_override
-		#ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
-	        echo "PPath:     $ppath"
-        	echo "URL:       $url"
-	        echo "Filename:  $name"
-        	echo "Version:   $version"
-        	alter_per_url
-        	echo "New URL:   $url"
-
-        	cmd_torun
-        	ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
-        	echo "Command:   $cmd"
-        	echo "Upgraded:  $uversion"
-        else	
-		echo "PPath:     $ppath"
-		echo "URL:       $url"
-		echo "Filename:  $name"
-		echo "Version:   $version"
-		alter_per_url
-		echo "New URL:   $url"
-	
-		cmd_torun
-		echo "Command:   $cmd"
-		echo "Upgraded:  $uversion"
-	fi
+        get_url $check_override
+	fix_spkgbuild=$(echo $ppath | sed 's/override/spkgbuild/g')
+        echo "PPath:     $fix_spkgbuild"
+        echo "URL:       $url"
+        echo "Filename:  $name"
+        echo "Version:   $version"
+        alter_per_url
+        echo "New URL:   $url"
+	cmd_torun
+        ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
+        echo "Command:   $cmd"
+        echo "Upgraded:  $uversion"
+}
+upgrade_normally()
+{
+	echo "PPath:     $ppath"
+        echo "URL:       $url"
+        echo "Filename:  $name"
+        echo "Version:   $version"
+        alter_per_url
+        echo "New URL:   $url"
+        cmd_torun
+        echo "Command:   $cmd"
+        echo "Upgraded:  $uversion"
+}
+upgrade_process()
+{
         #find upgraded version from fetch code compare and then upgrade package using uversion as variable name
-	check=${#uversion}
-	#echo $check
-	if [ $check -ge 1 ];
-	then
-        	if [ "$uversion" != "$version" ];
-        	then
-        	vercomp $uversion $version
-        		if [ $? = 2 ]; then
-        		#do things
-        			echo "NEW"
-        			((count=count+1))
+        check=${#uversion}
+        if [ $check -ge 1 ];
+        then
+                if [ "$uversion" != "$version" ];
+                then
+                vercomp $uversion $version
+                        if [ $? = 2 ]; then
+                                echo "NEW"
+                                ((count=count+1))
                                 final="<b><u>$ppath</u></b>\n"
                                 final+="<br>installed version in repo: $version\n"
                                 final+="<br>upgraded to version: $uversion\n"
                                 final+="<br><br>\n\n"
-				echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-				echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html	
-				sed -i -e "s/version=$version/version=$uversion/g" $ppath
-				changelog "$ppath" "Upgraded from version $version to version $uversion"
-				#cp index.html $name-index.html
-        		elif [ $? = 1 ];then
-        			echo "OLD"
-        		else
-        			echo "SAME"
-        		fi
-        	fi
+                                echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                                echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
+                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                #cp index.html $name-index.html
+                        elif [ $? = 1 ];then
+                                echo "OLD"
+                        else
+                                echo "SAME"
+                        fi
+                fi
         else
-        	echo "SAME"
-	fi
-	rm index.html
-	#echo "-----------------------------------------------------------------------------------"
-	fi
-	#rm index.html
-	done
-echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
-title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
-#echo "COUNT" $count
-if [ ! -z $count ];
-then
-        mailme voncloft@gmail.com "$words" "$title"
-        mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
-        #missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
-        #mailme 2606159678@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
-        #echo "<br><br>Total Missing: $missing_packages" >> missing.txt
-        #missing=$(cat missing.txt)
-        #mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
-fi
-
-#rm -v /var/log/old/testing.txt
-#rm -v test.txt
-cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
-cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").html /var/log/old/repository_changes-$(date +"%m-%d-%y").html
-echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
-cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
-cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
-#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
-find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
+                echo "SAME"
+        fi
+        rm index.html
 }
-ignoring="kf5 plasma kde-apps python perl"
-echo "Ignoring: $ignoring"
+alerts_and_logs()
+{
+	echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+	echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+	words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
+	title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
+	if [ ! -z $count ];
+	then
+        	mailme voncloft@gmail.com "$words" "$title"
+        	mailme 2606159678@vtext.com "Updated packages: $count" "Upgrade Report"
+        	#missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
+        	#mailme 2606159678@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
+        	#echo "<br><br>Total Missing: $missing_packages" >> missing.txt
+        	#missing=$(cat missing.txt)
+        	#mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
+	fi
+	#rm -v /var/log/old/testing.txt
+	#rm -v test.txt
+	cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
+	cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").html /var/log/old/repository_changes-$(date +"%m-%d-%y").html
+	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
+	cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
+	cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
+	#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
+	find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
+}
+main()
+{
+	for f in $repos;
+	do
+	echo "-----------------------------------------------------------------------------------"
+	#$get_url $1
+	if [ "${f##*/}" != "REPO" ];then
+		get_url $f/spkgbuild
+		check_override=$(echo $ppath | sed 's/spkgbuild/override/g')
+        	if [ -f $check_override ];then
+			perform_override
+        	else	
+			upgrade_normally
+		fi
+			upgrade_process
+	fi
+	done
+	alerts_and_logs
+}
+####GLOBAL VARIABLES##############
+#ignoring="kf5 plasma kde-apps python perl"
+#echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
 repos="core/nano kf5/kf5-depends plasma/plasma-depends core/wget"
