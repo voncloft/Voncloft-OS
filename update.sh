@@ -93,7 +93,6 @@ cmd_torun()
                 		fetch
                 		uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
 				| sed "s/.tar.*//g"	\
-				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
         	        	| sort -V -r \
                 		| uniq \
                 		| head -n1)
@@ -315,7 +314,7 @@ main()
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="core/nano kf5/kf5-depends plasma/plasma-depends core/wget"
+repos="extra/solaar core/nano kf5/kf5-depends plasma/plasma-depends core/wget"
 #repos="compilers/*"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
