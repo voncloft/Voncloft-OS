@@ -1,0 +1,9 @@
+source="https://archive.mozilla.org/pub/firefox/releases/"
+
+get_generic()
+{
+	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+	| sort -V -r \
+	| head -n1)
+
+}

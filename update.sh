@@ -85,6 +85,7 @@ cmd_torun()
                 		uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
 				| sed "s/.tar.*//g"	\
         	        	| sort -V -r \
+				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
                 		| uniq \
                 		| head -n1)
 			fi
@@ -247,12 +248,8 @@ upgrade_process()
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
-                        else
-                                echo "SAME"
                         fi
                 fi
-        else
-                echo "SAME"
         fi
         rm index.html
 }
@@ -290,10 +287,9 @@ main()
 	if [ "${f##*/}" != "REPO" ];then
 		get_url $f/spkgbuild
 		check_override=$(echo $f/spkgbuild | sed 's/spkgbuild/override/g')
-		check_manual=$(echo $f/spkgbuild | sed 's/spkgbuild/update/g')
-		if [ ! -f $check_override ] && [ ! -f $check_manual ];then
+		if [ ! -f $check_override ];then
 			upgrade_normally
-		elif [ -f $check_override ];then
+		else
 			perform_override
 		fi
 			upgrade_process
@@ -306,8 +302,8 @@ main()
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="extra/solaar core/nano kf5/kf5-depends plasma/plasma-depends core/wget"
-#repos="compilers/*"
+#repos="networking/firefox core/nano kf5/* plasma/* kde-apps/* core/wget extra/*"
+repos="compilers/rust"
 #repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
