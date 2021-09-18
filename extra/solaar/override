@@ -1,0 +1,10 @@
+source="https://github.com/pwr-Solaar/Solaar/"
+
+get_generic()
+{
+        uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
+        | sed "s/.tar.*//g"     \
+        | sort -V -r \
+        | uniq \
+        | head -n1)
+}

@@ -56,28 +56,19 @@ alter_per_url() {
 }
 check_manual_upd()
 {
-	update=$(echo $ppath | sed 's/spkgbuild/update/g')
+	update=$(echo $ppath | sed "s/spkgbuild/override/g")
 	if [ -f $update ];then
 		return 1
 	else
 		return 0
 	fi
 }
-check_override_src()
-{
-	override=$(echo $ppath | sed 's/spkgbuild/override/g')
-        if [ -f $override ];then
-                return 1
-        else
-                return 0
-        fi
-}
 run_manual_upd()
 {
-	update=$(echo $ppath | sed 's/spkgbuild/update/g')
-	update_script=$(echo $ppath | sed "s/spkgbuild/update/g")
+	#update=$(echo $ppath | sed 's/spkgbuild/update/g')
+	update_script=$(echo $ppath)
 	echo "ALERT:     Update script found in $update_script"
-	source $update
+	source $update_script
 	fetch
 	get_generic
 }
@@ -86,17 +77,17 @@ cmd_torun()
         case $url in
                 *github.com*)
                 	cmd="github"
-			check_manual_upd
-			if [ $? = 1 ]; then
-				run_manual_upd
-			else
+                        check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
                 		fetch
                 		uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
 				| sed "s/.tar.*//g"	\
         	        	| sort -V -r \
                 		| uniq \
                 		| head -n1)
-                	fi
+			fi
                 	;;
                 #*downloads.sourceforge.net*)
                 #	cmd="sourceforge"
@@ -298,11 +289,12 @@ main()
 	echo "-----------------------------------------------------------------------------------"
 	if [ "${f##*/}" != "REPO" ];then
 		get_url $f/spkgbuild
-		check_override=$(echo $ppath | sed 's/spkgbuild/override/g')
-        	if [ -f $check_override ];then
-			perform_override
-        	else	
+		check_override=$(echo $f/spkgbuild | sed 's/spkgbuild/override/g')
+		check_manual=$(echo $f/spkgbuild | sed 's/spkgbuild/update/g')
+		if [ ! -f $check_override ] && [ ! -f $check_manual ];then
 			upgrade_normally
+		elif [ -f $check_override ];then
+			perform_override
 		fi
 			upgrade_process
 	fi
