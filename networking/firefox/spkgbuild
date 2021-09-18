@@ -12,7 +12,7 @@ source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox
 build() {
 	INITDIR=$PWD
 
-	cd $name-$version
+	cd *
 
 cat <<- EOF > .mozconfig
 	mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-shared
