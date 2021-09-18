@@ -302,9 +302,9 @@ main()
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-#repos="networking/firefox core/nano kf5/* plasma/* kde-apps/* core/wget extra/*"
-repos="compilers/rust"
-#repos="compilers/*"
+#repos="networking/firefox core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/*"
+#repos="compilers/rust"
+repos="compilers/*"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
