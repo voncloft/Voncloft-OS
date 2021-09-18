@@ -1,5 +1,5 @@
 # description : Check battery level of logitech devices
-# depends : gtk3 libnotify python-dbus python-gobject python-psutil python-pyudev python-xlib python-yaml git
+# depends : gtk3 libnotify python-dbus python-gobject2 python-gobject3 python-psutil python-pyudev python-xlib python-yaml git
 
 name=solaar
 version=1.0.7rc2
