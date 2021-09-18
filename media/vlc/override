@@ -1,0 +1,10 @@
+source="http://download.videolan.org/vlc/"
+
+get_generic()
+{
+	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| grep -i "^[1-9]" \
+	| sort -V -r \
+	| head -n1 \
+	| sed "s/\///g")
+}
