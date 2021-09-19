@@ -252,17 +252,17 @@ upgrade_process()
                                 final+="<br>installed version in repo: $version\n"
                                 final+="<br>upgraded to version: $uversion\n"
                                 final+="<br><br>\n\n"
-                                #echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                                #echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                #sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                #changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                                echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
+                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
                         fi
                 fi
         fi
-        #rm index.html
+        rm index.html
 }
 alerts_and_logs()
 {
