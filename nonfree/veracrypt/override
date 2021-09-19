@@ -1,0 +1,10 @@
+source="https://launchpad.net/$name/trunk/"
+
+get_generic()
+{
+	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| sort -V -r \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	| head -n1)
+
+}
