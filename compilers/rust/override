@@ -15,6 +15,6 @@ get_generic(){
 	#echo $month-$day-$year
 	sed -i -e "s/_date=$_date/_date=$year-$month-$day/g" $new_file
 	spkg=$(echo $new_file | sed "s/\/Voncloft-OS\///g")
-	echo "Notice:    Upgraded cargo, rust, and date flags for $spkg"
+	echo -e "${CYAN}Notice:    Upgraded cargo, rust, and date flags for $spkg${NC}"
 
 }

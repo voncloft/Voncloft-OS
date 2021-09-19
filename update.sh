@@ -66,7 +66,7 @@ check_manual_upd()
 run_manual_upd()
 {
 	update_script=$(echo $ppath)
-	echo "ALERT:     Update script found in $update_script"
+	echo -e "${CYAN}ALERT:     Update script found in $update_script${NC}"
 	source $update_script
 	fetch
 	get_generic
@@ -184,7 +184,7 @@ cmd_torun()
 			then
 				run_manual_upd
 			else
-				echo "ERROR:     Update script does not exist for $name trying manually"
+				echo -e "${CYAN}ERROR:     Update script does not exist for $name trying manually${NC}"
 				fetch
         			uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
         			| sed "s/$name[-_]//;s/\.tar.*//" \
@@ -201,28 +201,28 @@ perform_override()
 {
         get_url $check_override
 	fix_spkgbuild=$(echo $ppath | sed 's/override/spkgbuild/g')
-        echo "PPath:     $fix_spkgbuild"
-        echo "URL:       $url"
-        echo "Filename:  $name"
-        echo "Version:   $version"
+        echo -e "${WHITE}PPath:     $fix_spkgbuild${NC}"
+        echo -e "${YELLOW}URL:       $url${NC}"
+        echo -e "${GREEN}Filename:  $name${NC}"
+        echo -e "${BLUE}Version:   $version${NC}"
         alter_per_url
-        echo "New URL:   $url"
+        echo -e "${RED}New URL:   $url${NC}"
 	cmd_torun
         ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
-        echo "Command:   $cmd"
-        echo "Upgraded:  $uversion"
+        echo -e "${PURPLE}Command:   $cmd${NC}"
+        echo -e "${DBLUE}Upgraded:  $uversion${NC}"
 }
 upgrade_normally()
 {
-	echo "PPath:     $ppath"
-        echo "URL:       $url"
-        echo "Filename:  $name"
-        echo "Version:   $version"
+	echo -e "${WHITE}PPath:     $ppath${NC}"
+        echo -e "${YELLOW}URL:       $url${NC}"
+        echo -e "${GREEN}Filename:  $name${NC}"
+        echo -e "${BLUE}Version:   $version${NC}"
         alter_per_url
-        echo "New URL:   $url"
+        echo -e "${RED}New URL:   $url${NC}"
         cmd_torun
-        echo "Command:   $cmd"
-        echo "Upgraded:  $uversion"
+        echo -e "${PURPLE}Command:   $cmd${NC}"
+        echo -e "${DBLUE}Upgraded:  $uversion${NC}"
 }
 upgrade_process()
 {
@@ -254,6 +254,7 @@ upgrade_process()
 }
 alerts_and_logs()
 {
+	echo "-----------------------------------------------------------------------------------"
 	if [ ! -z $count ];
 	then
 	echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
@@ -285,9 +286,10 @@ alerts_and_logs()
 	else
 		message="packages updated"
 	fi
-	echo "$count $message"
+	echo -e "${BLUE}$count $message${NC}"
 	else
-		echo "No new updates"
+	
+		echo -e "${BLUE}No new updates${NC}"
 	fi
 }
 main()
@@ -309,13 +311,22 @@ main()
 	alerts_and_logs
 }
 ####GLOBAL VARIABLES##############
+RED='\e[0;31;40m'
+YELLOW='\e[0;33;40m'
+GREEN='\e[0;32;40m'
+BLUE='\e[0;34;40m'
+WHITE='\e[0;37;40m'
+PURPLE='\e[0;35;40m'
+DBLUE='\e[1;34;40m'
+CYAN='\e[0;36;40m'
+NC='\033[0m'
 #ignoring="kf5 plasma kde-apps python perl"
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
 #repos="compilers/rust"
-repos="media/vlc"
+repos="media/vlc core/nano compilers/rust"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
