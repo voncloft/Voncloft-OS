@@ -51,6 +51,9 @@ alter_per_url() {
 		*.kde.*/*/release-service/*)
 			url="$(echo $url | cut -d / -f1-5)/"
 			;;
+		*..subsonic.*)
+			url="http://www.subsonic.org/pages/download.jsp"
+			;;
                 *)
         esac
 }
@@ -177,6 +180,14 @@ cmd_torun()
                 		| head -n1)
                 	fi
                 	;;
+                *.subsonic.*)
+                	cmd="custom"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		url="http://www.subsonic.org/pages/download.jsp"
+                		run_manual_upd
+                	fi
+                	;;
                 *)
                 	cmd="generic"
 			check_manual_upd
@@ -241,17 +252,17 @@ upgrade_process()
                                 final+="<br>installed version in repo: $version\n"
                                 final+="<br>upgraded to version: $uversion\n"
                                 final+="<br><br>\n\n"
-                                echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                                echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                #echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                                #echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
+                                #sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                #changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
                         fi
                 fi
         fi
-        rm index.html
+        #rm index.html
 }
 alerts_and_logs()
 {
@@ -353,12 +364,12 @@ NC='\033[0m'
 
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
-repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/*"
+repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #echo "Ignoring: $ignoring"
-#repos="nonfree/*"
+#repos="server/*"
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
 #repos="plasma/ksysguard core/nano"
 

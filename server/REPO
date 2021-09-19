@@ -35,6 +35,7 @@ f:41363cceaba8869e89e712eba4d426b2:mariadb/my.cnf
 f:c1d7ef228fdb232c1e11c2796aae68c8:mariadb/CHANGELOG
 f:7b305ff4127525649f08eac0e370e1a8:mariadb/pre-install.sh
 f:cb9aa4efad1f996c4b9ef211239e410c:mariadb/spkgbuild.save
+f:443c9f78e00a86ce5aa52d0252f129d3:mariadb/override
 f:3d298f870fe5ae041512e8914cb8a6ce:mariadb/spkgbuild
 f:de7ddea34fb734b8e82acb25e56bf00a:monitor_process/CHANGELOG
 f:fd239cd91a93f260739ffb195a6746ed:monitor_process/process_monitor.sh
@@ -44,6 +45,7 @@ f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
 f:ff01848ad9f1e830dcb47022f29ac823:dhcpcd/spkgbuild
 f:7fab4ae292b107759129290840582cf6:dhcpcd/run
 f:8c0e9052b0b28b2ff7256998d4bad67c:deluge/spkgbuild
+f:2bb9b178ab9e4424b10f7a2a0290cb05:subsonic/override
 f:07a1d1cb48e58c84f80f4060d2cfddd3:subsonic/spkgbuild
 f:c3d3a1a2a1520401ce5c91b9b9cf431d:samba/post-install.sh
 f:cc49a328a6058cbfb3f5cf4c58986f1a:samba/CHANGELOG
