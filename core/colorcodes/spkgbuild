@@ -9,5 +9,6 @@ source="colorcodes"
 options="!checksum"
 
 build() {
+	mkdir -pv $PKG/usr/bin
 	install -Dm755 $SRC/colorcodes $PKG/usr/bin/
 }
