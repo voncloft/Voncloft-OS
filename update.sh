@@ -292,8 +292,27 @@ alerts_and_logs()
 		echo -e "${BLUE}No new updates${NC}"
 	fi
 }
+prepare_backup_and_logs()
+{
+	#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
+	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
+		mkdir -pv $logpath/changes
+		mkdir -pv $logpath/reports
+		mkdir -pv $logpath/over_updated
+		mkdir -pv $logpath/missing
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> missing.txt
+		echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+		echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+		echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+	fi
+}
 main()
 {
+	prepare_backup_and_logs
 	for f in $repos;
 	do
 	echo "-----------------------------------------------------------------------------------"
@@ -311,6 +330,7 @@ main()
 	alerts_and_logs
 }
 ####GLOBAL VARIABLES##############
+###COLORS###
 RED='\e[0;31;40m'
 YELLOW='\e[0;33;40m'
 GREEN='\e[0;32;40m'
@@ -321,27 +341,17 @@ DBLUE='\e[1;34;40m'
 CYAN='\e[0;36;40m'
 FRED='\e[5;31;40m'
 NC='\033[0m'
+
+###GLOBAL VARIABLE###
+logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
+#repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
+
+###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-#repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
 repos="plasma/ksysguard"
-#repos="compilers/rust"
-#repos="media/vlc core/nano compilers/rust"
-logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
-mkdir -pv $logpath/changes
-mkdir -pv $logpath/reports
-mkdir -pv $logpath/over_updated
-mkdir -pv $logpath/missing
-#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
-mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> missing.txt
-echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 
+###Start Checking###
 main $@
