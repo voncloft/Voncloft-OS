@@ -170,6 +170,7 @@ d:help2man
 d:numactl
 d:recordmydesktop
 d:eudev
+d:colorcodes
 d:zita-alsa-pcmi
 d:vte2
 d:strace
@@ -769,6 +770,9 @@ f:b0794a769efd287e9e8c5fb8c3299b35:recordmydesktop/recordmydesktop-bitrate.patch
 f:211a1773f223b3f281520aa1056395e6:recordmydesktop/shmstr-to-shmproto.patch
 f:27a8ebb6201396e29ff9fa078c00f8c6:recordmydesktop/spkgbuild
 f:a94d51372be7c796c5a8f2f8385fd68f:eudev/spkgbuild
+f:6680d36f84e7e17cff1285bf3e071786:colorcodes/CHANGELOG
+f:f611f1cbf4bdddef06baa730789855e9:colorcodes/colorcodes
+f:566bc3db135d45e2ef70cf74c28fd9ee:colorcodes/spkgbuild
 f:9880701929134a7ad7d56d504b3e374e:zita-alsa-pcmi/spkgbuild
 f:bb8cb7127106c869de2bffe65b6db1b2:vte2/alt-key.patch
 f:e3e79e14b8ad8fd78160bf02ddc312f2:vte2/fix-includes.patch
@@ -992,7 +996,7 @@ f:3e401809497e349c0ee6564736d187df:qutebrowser/spkgbuild
 f:9c07a1465e0763aac9738c1f3407a646:alacritty/spkgbuild
 f:f1b7c1e596c8bdd60dec43ecf38ca212:epdfview/epdfview-fixes-2.patch
 f:8c1895f1d0c1ce554e4aa5c39ae87c66:epdfview/spkgbuild
-f:c6cebb9e1da078c0e995eb9d5f9f159d:fakescratch/CHANGELOG
+f:8675ce8c2c219f5031a09af1e961e050:fakescratch/CHANGELOG
 f:3d2e3f2cfe26282b6053c712fba0dd25:fakescratch/fakescratch
 f:bde6290ea341b4c95b3d48c14cc6d656:fakescratch/spkgbuild
 f:f339b945f8bb4b40ca3726fa1c0d516d:xkbutils/spkgbuild

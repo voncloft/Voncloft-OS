@@ -1,0 +1,13 @@
+# description : show all color codes for bash
+# depends : 
+
+name=colorcodes
+version=1
+release=1
+
+source="colorcodes"
+options="!checksum"
+
+build() {
+	install -Dm755 $src/colorcodes $PKG/usr/bin
+}

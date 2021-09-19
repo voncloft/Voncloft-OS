@@ -313,9 +313,9 @@ main()
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
+#repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
 #repos="compilers/rust"
-#repos="media/vlc"
+repos="media/vlc"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
