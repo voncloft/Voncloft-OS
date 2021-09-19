@@ -236,6 +236,7 @@ upgrade_process()
                         if [ $? = 2 ]; then
                                 echo "NEW"
                                 ((count=count+1))
+				timestamp_log
                                 final="<b><u>$ppath</u></b>\n"
                                 final+="<br>installed version in repo: $version\n"
                                 final+="<br>upgraded to version: $uversion\n"
@@ -308,11 +309,14 @@ prepare_backup_and_logs()
 		echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 		echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 		echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-	else
-                echo -e "\n$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                echo -e "\n$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-                echo -e "\n$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-		
+	fi
+}
+timestamp_log()
+{
+	if [ ! -z $count ] && [ $count -eq 1 ];then
+                        echo -e "\n<br>$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                        echo -e "\n$<br>(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+                        echo -e "\n$<br>(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 	fi
 }
 main()
@@ -349,14 +353,14 @@ NC='\033[0m'
 
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
-#repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
+repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-repos="plasma/ksysguard"
+#repos="plasma/ksysguard core/nano"
 
 ###Start Checking###
 main $@
