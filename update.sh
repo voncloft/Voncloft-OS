@@ -184,7 +184,7 @@ cmd_torun()
 			then
 				run_manual_upd
 			else
-				echo -e "${CYAN}ERROR:     Update script does not exist for $name trying manually${NC}"
+				echo -e "${FRED}ERROR:     Update script does not exist for $name trying manually${NC}"
 				fetch
         			uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
         			| sed "s/$name[-_]//;s/\.tar.*//" \
@@ -319,14 +319,15 @@ WHITE='\e[0;37;40m'
 PURPLE='\e[0;35;40m'
 DBLUE='\e[1;34;40m'
 CYAN='\e[0;36;40m'
+FRED='\e[5;31;40m'
 NC='\033[0m'
 #ignoring="kf5 plasma kde-apps python perl"
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-#repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
+repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
 #repos="compilers/rust"
-repos="media/vlc core/nano compilers/rust"
+#repos="media/vlc core/nano compilers/rust"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
