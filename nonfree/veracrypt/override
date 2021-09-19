@@ -1,10 +1,12 @@
-source="https://launchpad.net/$name/trunk/"
+source="https://github.com/veracrypt/VeraCrypt/"
 
 get_generic()
 {
-	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
-	| sort -V -r \
-	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-	| head -n1)
+	uversion=$( grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
+                                 | sed "s/.tar.*//g"     \
+                                 | sort -V -r \
+                                 | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                                 | uniq \
+                                 | head -n1)
 
 }

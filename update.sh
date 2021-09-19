@@ -37,7 +37,7 @@ alter_per_url() {
                 *rubygems.org*)
                         url=https://rubygems.org/gems/${name/ruby-/};;
                 *launchpad.net*)
-                        url=https://launchpad.net/$(echo $url | cut -d / -f4)/+download;;
+                        url=https://launchpad.net/$(echo $url | cut -d / -f4)/;;
                 *ftp.gnome.org*)
                         url=https://ftp.gnome.org/pub/gnome/sources/$filename/cache.json;;
                 *archive.xfce.org*)
@@ -261,6 +261,9 @@ upgrade_process()
                                 echo "OLD"
                         fi
                 fi
+	else
+                ((missing=missing+1))
+                log_missing
         fi
         rm index.html
 }
@@ -289,7 +292,7 @@ alerts_and_logs()
 	cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").html /var/log/old/repository_changes-$(date +"%m-%d-%y").html
 	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
 	cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
-	cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
+	#cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
 	#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
 	find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
 	if [ $count = 1 ];
@@ -316,7 +319,7 @@ prepare_backup_and_logs()
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> missing.txt
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/missing/missing-$(date +"%m-%d-%y").html
 		echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 		echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 		echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
@@ -326,8 +329,29 @@ timestamp_log()
 {
 	if [ ! -z $count ] && [ $count -eq 1 ];then
                         echo -e "\n<br>$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                        echo -e "\n$<br>(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-                        echo -e "\n$<br>(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+                        echo -e "\n<br>$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+                        echo -e "\n<br>$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+
+	fi
+}
+log_missing()
+{
+	if [ ! -z $missing ] && [ $missing -eq 1 ];then
+		echo -e "\n$(date +%H)<br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+	fi
+	if [ -z $uversion ];then
+                echo $ppath"<br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+       	fi
+}
+finish_logs()
+{
+	if [ ! -z $missing ];then
+		echo "<br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+	fi
+	if [ ! -z $count ];then
+        	echo -e "<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+        	echo -e "<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+        	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 	fi
 }
 main()
@@ -347,7 +371,9 @@ main()
 			upgrade_process
 	fi
 	done
+	finish_logs	
 	alerts_and_logs
+
 }
 ####GLOBAL VARIABLES##############
 ###COLORS###
@@ -369,7 +395,8 @@ repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-ap
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #echo "Ignoring: $ignoring"
-#repos="server/*"
+#repos="extra/*"
+#repos="core/wget"
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
 #repos="plasma/ksysguard core/nano"
 
