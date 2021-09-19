@@ -254,6 +254,8 @@ upgrade_process()
 }
 alerts_and_logs()
 {
+	if [ ! -z $count ];
+	then
 	echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 	echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 	words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
@@ -277,6 +279,16 @@ alerts_and_logs()
 	cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
 	#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
 	find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
+	if [ $count = 1 ];
+	then
+		message="package updated"
+	else
+		message="packages updated"
+	fi
+	echo "$count $message"
+	else
+		echo "No new updates"
+	fi
 }
 main()
 {
@@ -301,9 +313,9 @@ main()
 #echo "Ignoring: $ignoring"
 
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-#repos="networking/firefox core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/*"
+repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc"
 #repos="compilers/rust"
-repos="media/vlc"
+#repos="media/vlc"
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 mkdir -pv $logpath/changes
 mkdir -pv $logpath/reports
