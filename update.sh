@@ -346,7 +346,8 @@ log_missing()
 finish_logs()
 {
 	if [ ! -z $missing ];then
-		echo "<br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+		echo "<br>Total missing packages: $missing" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+		echo "<br><br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
 	fi
 	if [ ! -z $count ];then
         	echo -e "<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
