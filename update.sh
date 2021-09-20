@@ -400,7 +400,7 @@ repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-ap
 #repos="extra/*"
 #repos="core/wget"
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-#repos="plasma/ksysguard core/nano"
+#repos="extra/chessx"
 
 ###Start Checking###
 main $@
