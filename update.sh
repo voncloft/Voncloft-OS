@@ -1,6 +1,7 @@
 #!/bin/sh
 #Written: 09-19-21
-#TODO:  Create tables instead of lists for reports showing ppath, url, and previous version, maybe even repo classification
+#TODO: Create tables instead of lists for reports showing ppath, url, and previous version, maybe even repo classification
+#TODO: Find way to fix python and perl repos using this script
 
 print_progress() {
         echo -ne " $@\033[0K\r"
