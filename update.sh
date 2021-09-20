@@ -107,9 +107,19 @@ cmd_torun()
                 #	cmd="gitlab"
 		#	fetch
                 #	;;
-                #*python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
-                #	cmd="python"
-                #	fetch;;
+                *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
+                	cmd="python"
+                        check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
+                        	fetch
+                        	uversion=$(grep "tar.gz" index.html | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
+                        	echo "URL FROM SPKGBUILD $source"
+				url2=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*')
+				echo "URL from website $url2"
+			fi
+			;;
                 *rubygems.org*)
 			cmd="ruby"
                 	check_manual_upd
@@ -255,10 +265,10 @@ upgrade_process()
                                 final+="<br>installed version in repo: $version\n"
                                 final+="<br>upgraded to version: $uversion\n"
                                 final+="<br><br>\n\n"
-                                cho -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                                cho -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                                echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
+                                #sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                #changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
@@ -312,7 +322,7 @@ alerts_and_logs()
 }
 prepare_backup_and_logs()
 {
-	foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
 		mkdir -pv $logpath/changes
@@ -396,10 +406,11 @@ NC='\033[0m'
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
-repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/*"
+#repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/*"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
+repos="python/python-babel"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
