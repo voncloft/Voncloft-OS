@@ -1,6 +1,7 @@
 #!/bin/sh
 #Written: 09-19-21
-#TODO:  INTEGRATE ENTIRE REPO - DISABLE THE sed that upgrades the spkgbuild for testing
+#TODO:  Create tables instead of lists for reports showing ppath, url, and previous version, maybe even repo classification
+
 print_progress() {
         echo -ne " $@\033[0K\r"
 }
@@ -253,8 +254,8 @@ upgrade_process()
                                 final+="<br>installed version in repo: $version\n"
                                 final+="<br>upgraded to version: $uversion\n"
                                 final+="<br><br>\n\n"
-                                echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                                echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
+                                cho -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                                cho -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
                                 sed -i -e "s/version=$version/version=$uversion/g" $ppath
                                 changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
@@ -310,7 +311,7 @@ alerts_and_logs()
 }
 prepare_backup_and_logs()
 {
-	#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
 		mkdir -pv $logpath/changes
@@ -321,9 +322,10 @@ prepare_backup_and_logs()
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/missing/missing-$(date +"%m-%d-%y").html
-		echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-		echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-		echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+
+		#echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+		#echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+		#echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 	fi
 }
 timestamp_log()
@@ -392,7 +394,8 @@ NC='\033[0m'
 
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
-repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
+#repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
+repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/*"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
