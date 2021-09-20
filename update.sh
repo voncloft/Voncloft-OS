@@ -114,9 +114,10 @@ cmd_torun()
                                 run_manual_upd
                         else
                         	fetch
-                        	uversion=$(grep "tar.gz" index.html | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
+                        	uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | cut -d '#' -f1 | grep tar.gz | cut -d / -f8 | sed "s/.tar.gz//g" | cut -d - -f2 | sort -V -r | head -n1)
                         	echo "URL FROM SPKGBUILD $source"
-				url2=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*')
+				url2=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | grep tar.gz | cut -d '#' -f1 | grep $uversion | sort -V -r)
+
 				echo "URL from website $url2"
 			fi
 			;;
