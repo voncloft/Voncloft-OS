@@ -134,8 +134,9 @@ cmd_torun()
                                         | sed "s/.tar.gz//g" \
                                         | sed "s/$filename-//g" \
                                         | sed "s/${fullurl##*/}-//g" \
-                                        | sed "s/[a-zA-Z-]//g" \
-                                        | sort -V -r  
+                                        | sed 's/.*-//' \
+                                        | sort -V -r \
+                                        | head -n1 
                                         
                         )
                         #echo "UVERSION: $uversion"
@@ -453,7 +454,7 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
-repos="python/python-cheroot"
+repos="python/*"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
