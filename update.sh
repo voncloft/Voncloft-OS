@@ -113,41 +113,10 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-				fetch
-				filename=${name#python-}
-				fullurl=$(grep -i "href" index.html \
-                                        | grep -Po '(?<=href=")[^"]*' \
-                                        | cut -d "#" -f1 \
-                                        | grep "tar.gz" \
-                                        | sed "s/.tar.gz//g" \
-                                        | sed "s/[[:digit:].-]//g" \
-                                        | head -n1)
-                               	echo "Full URL: ${fullurl##*/}"
-                               	capital=${fullurl##*/}
-                               	capital_revised=${capital^}
-				echo "Capital $capital_revised"
-				uversion=$(grep -i "href" index.html \
-                                        | grep -Po '(?<=href=")[^"]*' \
-                                        | grep .tar.gz \
-                                        | cut -d "#" -f1 \
-                                        | sed 's#.*/##' \
-                                        | sed "s/.tar.gz//g" \
-                                        | sed "s/$filename-//g" \
-                                        | sed "s/${fullurl##*/}-//g" \
-                                        | sed 's/.*-//' \
-                                        | sort -V -r \
-                                        | head -n1 
-                                        
-                        )
-                        #echo "UVERSION: $uversion"
-                        new_url=$(grep -i "href" index.html \
-                        		| grep -Po '(?<=href=")[^"]*' \
-                        		| cut -d "#" -f1 \
-					| grep "$uversion" \
-					| grep tar.gz \
-					| head -n1
-                        )
-                        echo "NEW URL3: $new_url"
+				url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
+				wget -q -O index.html $url_lazy
+				source /Voncloft-OS/index.html
+				uversion=$pkgver
 			fi
 			;;
                 *rubygems.org*)
@@ -454,7 +423,7 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
-repos="python/*"
+repos="python/python-bottleneck"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
