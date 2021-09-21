@@ -113,40 +113,14 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-				fetch
-				filename=${name#python-}
-				fullurl=$(grep -i "href" index.html \
-                                        | grep -Po '(?<=href=")[^"]*' \
-                                        | cut -d "#" -f1 \
-                                        | grep "tar.gz" \
-                                        | sed "s/.tar.gz//g" \
-                                        | sed "s/[[:digit:].-]//g" \
-                                        | head -n1)
-                               	echo "Full URL: ${fullurl##*/}"
-                               	capital=${fullurl##*/}
-                               	capital_revised=${capital^}
-				echo "Capital $capital_revised"
-				uversion=$(grep -i "href" index.html \
-                                        | grep -Po '(?<=href=")[^"]*' \
-                                        | grep .tar.gz \
-                                        | cut -d "#" -f1 \
-                                        | sed 's#.*/##' \
-                                        | sed "s/.tar.gz//g" \
-                                        | sed "s/$filename-//g" \
-                                        | sed "s/${fullurl##*/}-//g" \
-                                        | sed "s/[a-zA-Z-]//g" \
-                                        | sort -V -r  
-                                        
-                        )
-                        #echo "UVERSION: $uversion"
-                        new_url=$(grep -i "href" index.html \
-                        		| grep -Po '(?<=href=")[^"]*' \
-                        		| cut -d "#" -f1 \
-					| grep "$uversion" \
-					| grep tar.gz \
-					| head -n1
-                        )
-                        echo "NEW URL3: $new_url"
+                        	fetch
+                        	uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | cut -d '#' -f1 | grep tar.gz | cut -d / -f8 | sed "s/.tar.gz//g" | cut -d - -f2 | sort -V -r | head -n1)
+                        	echo "URL FROM SPKGBUILD $source"
+				url2=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | grep tar.gz | cut -d '#' -f1 | grep $uversion | sort -V -r)
+				source2=$(echo $source | sed "s/\//\/\//g")
+				echo $ppath
+				sed -i -e 's/$source2/$url2/g' $ppath
+				echo "URL from website $url2"
 			fi
 			;;
                 *rubygems.org*)
@@ -348,19 +322,6 @@ alerts_and_logs()
 	
 		echo -e "${BLUE}No new updates${NC}"
 	fi
-	if [ ! -z $missing ];
-	then
-		if [ $missing = 1 ];
-		then
-			message="package missed"
-		else
-			message="packages missing"
-		fi
-	echo -e "${BLUE}$missing $message${NC}"
-	else
-	message="No missing packages"
-	echo -e "${BLUE}$message${NC}"
-	fi
 }
 prepare_backup_and_logs()
 {
@@ -452,8 +413,7 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
-#repos="python/python-apsw"
-repos="python/python-cheroot"
+repos="python/python-babel"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
