@@ -36,7 +36,8 @@ alter_per_url() {
                 *gitlab.com*)
                         url=$(echo $url | cut -d/ -f1-5)/tags;;
                 *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
-                        url=https://pypi.org/simple/${name#python-};;
+                        #url=https://pypi.org/simple/${name#python-};;
+			url=https://pypi.org;;
                 *rubygems.org*)
                         url=https://rubygems.org/gems/${name/ruby-/};;
                 *launchpad.net*)
@@ -114,9 +115,29 @@ cmd_torun()
                                 run_manual_upd
                         else
 				url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
-				wget -q -O index.html $url_lazy
-				source /Voncloft-OS/index.html
-				uversion=$pkgver
+				wget -q -O index.html "$url_lazy"
+				wget -q -O index2.html "$url_lazy"
+				echo $url_lazy
+				if [ -f /Voncloft-OS/index.html ];then
+					grep "pkgver=" index.html > /Voncloft-OS/test.txt
+					sed "s/v//g" /Voncloft-OS/test.txt
+					grep "url=" index.html >> /Voncloft-OS/test.txt
+					grep "name=" index.html >> /Voncloft-OS/test.txt
+					grep "pkgname=" index.html >> /Voncloft-OS/test.txt
+					grep "source=" index.html >> /Voncloft-OS/test.txt
+					sed -i -e "s/(//g" /Voncloft-OS/test.txt
+					sed -i -e "s/)//g" /Voncloft-OS/test.txt
+					
+					new_url=$source 
+					source /Voncloft-OS/test.txt
+					uversion=$pkgver					
+					echo "New URL2 $new_url"
+					if [ -z $uversion ];then
+						echo "NO PACKAGE FOUND AT ARCH"
+						#put sed command here
+					fi
+				fi
+				
 			fi
 			;;
                 *rubygems.org*)
@@ -423,7 +444,7 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
-repos="python/python-bottleneck"
+repos="python/python"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
