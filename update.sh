@@ -418,9 +418,9 @@ prepare_backup_and_logs()
 timestamp_log()
 {
 	if [ ! -z $count ] && [ $count -eq 1 ];then
-                        echo -e "\n<br>$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                        echo -e "\n<br>$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-                        echo -e "\n<br>$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+                        echo -e "\n$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                        echo -e "\n$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+                        echo -e "\n$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 
 	fi
 }
@@ -482,13 +482,14 @@ NC='\033[0m'
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
-#repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/*"
+repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/* python/* perl/*"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
 #repos="perl/* python/*"
-repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
+#repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
+#repos="core/curl"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
