@@ -155,19 +155,21 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
+				unset uversion
+				rm test.txt
 				url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
-				wget -q -O index.html "$url_lazy"
-				wget -q -O index2.html "$url_lazy"
+				curl -f "$url_lazy" -o index.html -s
 				echo $url_lazy
 				if [ -f /Voncloft-OS/index.html ];then
 					grep "pkgver=" index.html > /Voncloft-OS/test.txt
 					sed "s/v//g" /Voncloft-OS/test.txt
 					grep "url=" index.html >> /Voncloft-OS/test.txt
-					grep "name=" index.html >> /Voncloft-OS/test.txt
-					grep "pkgname=" index.html >> /Voncloft-OS/test.txt
+					grep "name=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
+					grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
 					grep "source=" index.html >> /Voncloft-OS/test.txt
 					sed -i -e "s/(//g" /Voncloft-OS/test.txt
 					sed -i -e "s/)//g" /Voncloft-OS/test.txt
+					sed -i -e "s/'//g" /Voncloft-OS/test.txt
 					
 					new_url=$source 
 					source /Voncloft-OS/test.txt
@@ -485,7 +487,8 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
-repos="perl/perl-a*"
+#repos="perl/* python/*"
+repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
