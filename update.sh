@@ -116,7 +116,7 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-				unset uversion
+				unset uversion url_lazy new_url
                                 url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
                                 curl -f "$url_lazy" -o index.html -s
                                         if [ ! -f /Voncloft-OS/index.html ];then
@@ -130,7 +130,7 @@ cmd_torun()
                                         #sed "s/pkger/pkgver/g" /Voncloft-OS/test.txt
                                         grep "url=" index.html >> /Voncloft-OS/test.txt
                                         grep "name=" index.html >> /Voncloft-OS/test.txt
-                                        grep "pkgname=" index.html >> /Voncloft-OS/test.txt
+                                        grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
                                         grep "source=" index.html >> /Voncloft-OS/test.txt
                                         sed -i -e "s/(//g" /Voncloft-OS/test.txt
                                         sed -i -e "s/)//g" /Voncloft-OS/test.txt
@@ -155,7 +155,7 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-				unset uversion
+				unset uversion url_lazy new_url
 				rm test.txt
 				url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
 				curl -f "$url_lazy" -o index.html -s
