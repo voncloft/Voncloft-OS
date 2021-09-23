@@ -479,7 +479,7 @@ NC='\033[0m'
 cd /Voncloft-OS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
-bare_essentials="networking/firefox networking/thunderbird"
+bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
 #repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/* python/* perl/*"
 
