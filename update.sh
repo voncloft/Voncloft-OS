@@ -23,7 +23,8 @@ get_url()
 	url=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
 }
 fetch() {
-        wget -q -O index.html $url
+	curl -f "$url" -o index.html -s
+	#wget -O index.html $url -q
 }
 alter_per_url() {
         case $url in
@@ -116,37 +117,8 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-				unset uversion url_lazy new_url
-                                url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
-                                curl -f "$url_lazy" -o index.html -s
-                                        if [ ! -f /Voncloft-OS/index.html ];then
-                                               	url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/$name/trunk/PKGBUILD"
-						curl -f "$url_lazy" -o index.html -s
-                                        fi
-                                #echo $url_lazy
-                                if [ -f /Voncloft-OS/index.html ];then
-                                        grep "pkgver=" index.html > /Voncloft-OS/test.txt
-                                        #sed "s/v//g" /Voncloft-OS/test.txt
-                                        #sed "s/pkger/pkgver/g" /Voncloft-OS/test.txt
-                                        grep "url=" index.html >> /Voncloft-OS/test.txt
-                                        grep "name=" index.html >> /Voncloft-OS/test.txt
-                                        grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
-                                        grep "source=" index.html >> /Voncloft-OS/test.txt
-                                        sed -i -e "s/(//g" /Voncloft-OS/test.txt
-                                        sed -i -e "s/)//g" /Voncloft-OS/test.txt
-
-                                        new_url=$source 
-                                        source /Voncloft-OS/test.txt
-                                        uversion="$pkgver"
-                                        #echo "NEW VERSION $uversion"
-                                        #echo "New URL2 $new_url"
-                                        if [ ! -f /Voncloft-OS/index.html ];then
-                                                echo "NO PACKAGE FOUND AT ARCH"
-                                                #put sed command here
-                                        fi
-					#echo $new_url
-                                fi
-
+				retry_index
+				grep_retry
                         fi
                 ;;
                 *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
@@ -155,32 +127,8 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-				unset uversion url_lazy new_url
-				rm test.txt
-				url_lazy="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
-				curl -f "$url_lazy" -o index.html -s
-				echo $url_lazy
-				if [ -f /Voncloft-OS/index.html ];then
-					grep "pkgver=" index.html > /Voncloft-OS/test.txt
-					sed "s/v//g" /Voncloft-OS/test.txt
-					grep "url=" index.html >> /Voncloft-OS/test.txt
-					grep "name=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
-					grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
-					grep "source=" index.html >> /Voncloft-OS/test.txt
-					sed -i -e "s/(//g" /Voncloft-OS/test.txt
-					sed -i -e "s/)//g" /Voncloft-OS/test.txt
-					sed -i -e "s/'//g" /Voncloft-OS/test.txt
-					
-					new_url=$source 
-					source /Voncloft-OS/test.txt
-					uversion=$pkgver					
-					echo "New URL2 $new_url"
-					if [ -z $uversion ];then
-						echo "NO PACKAGE FOUND AT ARCH"
-						#put sed command here
-					fi
-				fi
-				
+                                retry_index
+                                grep_retry
 			fi
 			;;
                 *rubygems.org*)
@@ -273,16 +221,63 @@ cmd_torun()
 			else
 				echo -e "${FRED}ERROR:     Update script does not exist for $name trying manually${NC}"
 				fetch
-        			uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
-        			| sed "s/$name[-_]//;s/\.tar.*//" \
-        			| grep -Evi '(alpha|beta|rc|pre)' \
-        			| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-        			| sort -V -r \
-        			| uniq \
-        			| head -n1)
+				if [ ! -f index.html ];then
+					retry_index
+					grep_retry
+				else
+				uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
+        				| sed "s/$name[-_]//;s/\.tar.*//" \
+        				| grep -Evi '(alpha|beta|rc|pre)' \
+        				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        				| sort -V -r \
+        				| uniq \
+        				| head -n1)
+        			fi
 			fi
                 	;;
         esac
+}
+retry_index()
+{
+url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
+fetch
+if [ ! -f /Voncloft-OS/index.html ];then
+	url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
+	fetch
+fi
+if [ ! -f /Voncloft-OS/index.html ];then
+	url="https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/$name/trunk/PKGBUILD"
+	fetch
+fi
+}
+grep_retry()
+{
+                                unset uversion url_lazy new_url
+				if [ -f test.txt ];then
+                                	rm test.txt
+				fi
+				if [ -f /Voncloft-OS/index.html ];then
+                                        grep "pkgver=" index.html > /Voncloft-OS/test.txt
+                                        #sed "s/v//g" /Voncloft-OS/test.txt
+                                        #sed "s/pkger/pkgver/g" /Voncloft-OS/test.txt
+                                        grep "url=" index.html >> /Voncloft-OS/test.txt
+                                        grep "name=" index.html >> /Voncloft-OS/test.txt
+                                        grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
+                                        grep "source=" index.html >> /Voncloft-OS/test.txt
+                                        sed -i -e "s/(//g" /Voncloft-OS/test.txt
+                                        sed -i -e "s/)//g" /Voncloft-OS/test.txt
+
+                                        new_url=$source
+                                        source /Voncloft-OS/test.txt
+                                        uversion="$pkgver"
+                                        #echo "NEW VERSION $uversion"
+                                        #echo "New URL2 $new_url"
+                                        if [ ! -f /Voncloft-OS/index.html ];then
+                                                echo "NO PACKAGE FOUND AT ARCH"
+                                                #put sed command here
+                                        fi
+                                        #echo $new_url
+                                fi
 }
 perform_override()
 {
@@ -341,7 +336,9 @@ upgrade_process()
                 ((missing=missing+1))
                 log_missing
         fi
-        rm index.html
+	if [ -f index.html ];then
+        	rm index.html
+	fi
 }
 alerts_and_logs()
 {
@@ -479,17 +476,18 @@ CYAN='\e[0;36;40m'
 FRED='\e[5;31;40m'
 NC='\033[0m'
 
+cd /Voncloft-OS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
-repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/* python/* perl/*"
+#repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/* python/* perl/*"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
 #repos="perl/* python/*"
 #repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
-#repos="core/curl"
+repos="core/wget core/iasl python/python-aiopg perl/perl-a*"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
