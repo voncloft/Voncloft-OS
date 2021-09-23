@@ -325,8 +325,8 @@ upgrade_process()
                                 final+="<br><br>\n\n"
                                 echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
                                 echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                #sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                #changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
@@ -479,6 +479,7 @@ NC='\033[0m'
 cd /Voncloft-OS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
+bare_essentials="networking/firefox networking/thunderbird"
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
 #repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/* python/* perl/*"
 
@@ -487,7 +488,8 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 #repos="python/python-apsw"
 #repos="perl/* python/*"
 #repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
-repos="core/wget core/iasl python/python-aiopg perl/perl-a*"
+#repos="core/wget core/iasl python/python-aiopg perl/perl-a*"
+repos="$bare_essentials"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
