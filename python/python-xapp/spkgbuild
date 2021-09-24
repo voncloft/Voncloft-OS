@@ -5,7 +5,7 @@ name=python-xapp
 version=2.0.2
 release=2
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source=python3-xapp-2.2.1.tar.gz::https://github.com/linuxmint//archive/2.2.1.tar.gz
 options="!checksum"
 
 build() {

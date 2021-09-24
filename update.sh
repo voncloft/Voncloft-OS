@@ -117,6 +117,7 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
+                        	#spkg_url=$source
 				retry_index
 				grep_retry
                         fi
@@ -239,6 +240,10 @@ cmd_torun()
 }
 retry_index()
 {
+echo "PPath $ppath"
+spkg_src=$(grep "source=" $ppath | sed "s/source=//g")
+
+echo "spkgbuild $spkg_src"
 url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
 fetch
 if [ ! -f /Voncloft-OS/index.html ];then
@@ -267,9 +272,11 @@ grep_retry()
                                         sed -i -e "s/(//g" /Voncloft-OS/test.txt
                                         sed -i -e "s/)//g" /Voncloft-OS/test.txt
 
-                                        new_url=$source
+                                        new_url=$spkg_url
                                         source /Voncloft-OS/test.txt
                                         uversion="$pkgver"
+                                        echo "new url $source"
+					sed -i -e "s,$spkg_src,$source,g" $ppath
                                         #echo "NEW VERSION $uversion"
                                         #echo "New URL2 $new_url"
                                         if [ ! -f /Voncloft-OS/index.html ];then
@@ -325,8 +332,8 @@ upgrade_process()
                                 final+="<br><br>\n\n"
                                 echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
                                 echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                #sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                #changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
@@ -486,15 +493,19 @@ bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
+repos="python/python-wheezy-template perl/perl-tidy"
 #repos="perl/* python/*"
 #repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
 #repos="core/wget core/iasl python/python-aiopg perl/perl-a*"
-repos="$bare_essentials"
+#repos="$bare_essentials"
 #echo "Ignoring: $ignoring"
 #repos="extra/*"
 #repos="core/wget"
 #repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
 #repos="extra/chessx"
-
+start_time="$(date -u +%s)"
 ###Start Checking###
 main $@
+end_time="$(date -u +%s)"
+elapsed="$(($end_time-$start_time))"
+echo "Total of $elapsed seconds elapsed for process"
