@@ -1,5 +1,7 @@
-pkgver=20210402
-url="https://search.cpan.org/dist/Perl-Tidy"
-pkgname=perl-tidy
-pkgname=perl-tidy
-source=https://www.cpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-$pkgver.tar.gz
+pkgver=4.2.0
+pkgname=python-ujson
+_pkgname=ultrajson
+pkgname=python-ujson
+_pkgname=ultrajson
+url="https://github.com/ultrajson/ultrajson"
+source=https://github.com/ultrajson/ultrajson/archive/$pkgver/$pkgname-$pkgver.tar.gz

@@ -240,10 +240,10 @@ cmd_torun()
 }
 retry_index()
 {
-echo "PPath $ppath"
+#echo "PPath $ppath"
 spkg_src=$(grep "source=" $ppath | sed "s/source=//g")
 
-echo "spkgbuild $spkg_src"
+#echo "spkgbuild $spkg_src"
 url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
 fetch
 if [ ! -f /Voncloft-OS/index.html ];then
@@ -265,9 +265,10 @@ grep_retry()
                                         grep "pkgver=" index.html > /Voncloft-OS/test.txt
                                         #sed "s/v//g" /Voncloft-OS/test.txt
                                         #sed "s/pkger/pkgver/g" /Voncloft-OS/test.txt
-                                        grep "url=" index.html >> /Voncloft-OS/test.txt
+                                        #grep "url=" index.html >> /Voncloft-OS/test.txt
                                         grep "name=" index.html >> /Voncloft-OS/test.txt
                                         grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
+                                        grep "url=" index.html >> /Voncloft-OS/test.txt
                                         grep "source=" index.html >> /Voncloft-OS/test.txt
                                         sed -i -e "s/(//g" /Voncloft-OS/test.txt
                                         sed -i -e "s/)//g" /Voncloft-OS/test.txt
@@ -275,7 +276,7 @@ grep_retry()
                                         new_url=$spkg_url
                                         source /Voncloft-OS/test.txt
                                         uversion="$pkgver"
-                                        echo "new url $source"
+                                        #echo "new url $source"
 					sed -i -e "s,$spkg_src,$source,g" $ppath
                                         #echo "NEW VERSION $uversion"
                                         #echo "New URL2 $new_url"
@@ -332,8 +333,8 @@ upgrade_process()
                                 final+="<br><br>\n\n"
                                 echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
                                 echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                #sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                #changelog "$ppath" "Upgraded from version $version to version $uversion"
+                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
                         elif [ $? = 1 ];then
                                 echo "OLD"
@@ -493,7 +494,7 @@ bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
-repos="python/python-virtualenv perl/perl-tidy"
+repos="python/python-xapp python/python-wheezy-template python/python-ujson"
 #repos="perl/* python/*"
 #repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
 #repos="core/wget core/iasl python/python-aiopg perl/perl-a*"

@@ -2,10 +2,10 @@
 # depends : python python-psutil
 
 name=python-xapp
-version=2.0.2
+version=2.2.1
 release=2
 
-source=python3-xapp-2.2.1.tar.gz::https://github.com/linuxmint//archive/2.2.1.tar.gz
+source=python3-xapp-2.2.1.tar.gz::https://github.com/linuxmint/python3-xapp/archive/2.2.1.tar.gz
 options="!checksum"
 
 build() {
