@@ -462,7 +462,7 @@ create_table()
 	fi
 	spkg_dir=$(echo $1 | sed "s/\/spkgbuild//g")
 	changelog="http://voncloft.dnsfor.me/repository/$spkg_dir/CHANGELOG"
-        echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td><a href=http://voncloft.dnsfor.me/repository/'$1'>spkgbuild</a></tr>' >> $table_log	
+        echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td><a href=http://voncloft.dnsfor.me/repository/'$1'>spkgbuild</a></td></tr>' >> $table_log	
 
 }
 main()
