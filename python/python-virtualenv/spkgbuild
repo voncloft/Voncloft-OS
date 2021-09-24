@@ -5,7 +5,7 @@ name=python-virtualenv
 version=20.7.2
 release=1
 
-source="https://files.pythonhosted.org/packages/6d/89/9691b0d0521c069bd238585ccb7f4035b8393d843a50491270e7dae0209e/virtualenv-20.7.2.tar.gz"
+source=https://github.com/pypa/virtualenv/archive/20.8.0/-20.8.0.tar.gz
 options="!checksum"
 
 build() {

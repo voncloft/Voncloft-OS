@@ -493,7 +493,7 @@ bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="python/python-apsw"
-repos="python/python-wheezy-template perl/perl-tidy"
+repos="python/python-virtualenv perl/perl-tidy"
 #repos="perl/* python/*"
 #repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
 #repos="core/wget core/iasl python/python-aiopg perl/perl-a*"
