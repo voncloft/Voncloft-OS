@@ -277,7 +277,7 @@ grep_retry()
                                         source /Voncloft-OS/test.txt
                                         uversion="$pkgver"
                                         #echo "new url $source"
-					sed -i -e "s,$spkg_src,$source,g" $ppath
+					#sed -i -e "s,$spkg_src,$source,g" $ppath
                                         #echo "NEW VERSION $uversion"
                                         #echo "New URL2 $new_url"
                                         if [ ! -f /Voncloft-OS/index.html ];then
@@ -326,13 +326,14 @@ upgrade_process()
                         if [ $? = 2 ]; then
                                 echo "NEW"
                                 ((count=count+1))
-				timestamp_log
-                                final="<b><u>$ppath</u></b>\n"
-                                final+="<br>installed version in repo: $version\n"
-                                final+="<br>upgraded to version: $uversion\n"
-                                final+="<br><br>\n\n"
-                                echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-                                echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
+				#timestamp_log
+                                #final="<b><u>$ppath</u></b>\n"
+                                #final+="<br>installed version in repo: $version\n"
+                                #final+="<br>upgraded to version: $uversion\n"
+                                #final+="<br><br>\n\n"
+                                #echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+				create_table $ppath $version $uversion
+                                #echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
                                 sed -i -e "s/version=$version/version=$uversion/g" $ppath
                                 changelog "$ppath" "Upgraded from version $version to version $uversion"
                                 #cp index.html $name-index.html
@@ -403,7 +404,7 @@ alerts_and_logs()
 }
 prepare_backup_and_logs()
 {
-	#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
 		mkdir -pv $logpath/changes
@@ -448,7 +449,21 @@ finish_logs()
         	echo -e "<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
         	echo -e "<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
         	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+		echo -e "</table>" >> $table_log
 	fi
+}
+create_table()
+{
+	
+	echo "<CENTER>" >> $table_log
+	if [ $count = 1 ];then
+		echo -e '<table border = "2"><caption>Updates for' $(date +"%m-%d-%y") $(date "+%H")'</caption>' >> $table_log
+		echo '<tr><td align=center>Package Path</td><td>Old Version</td><td>New Version</td><td>Changelog</td><td>spkgbuild</td></tr>' >> $table_log
+	fi
+	spkg_dir=$(echo $1 | sed "s/\/spkgbuild//g")
+	changelog="http://voncloft.dnsfor.me/repository/$spkg_dir/CHANGELOG"
+        echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td><a href=http://voncloft.dnsfor.me/repository/'$1'>spkgbuild</a></tr>' >> $table_log	
+
 }
 main()
 {
@@ -487,6 +502,7 @@ NC='\033[0m'
 cd /Voncloft-OS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
+table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
 #repos="networking/firefox networking/thunderbird core/nano kf5/* plasma/* kde-apps/* core/wget extra/* compilers/* media/vlc nonfree/* server/*"
 #repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* plasma/* qt/* ruby-gems/* server/* xfce/* xorg/* python/* perl/*"
