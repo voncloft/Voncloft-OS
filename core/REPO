@@ -49,7 +49,6 @@ d:bluez
 d:recode
 d:mpv
 d:numix-icon-theme
-d:clang
 d:freeglut
 d:fcron
 d:rrdtool
@@ -149,7 +148,6 @@ d:nano
 d:hunspell
 d:shared-mime-info
 d:curl
-d:luajit
 d:syslinux
 d:findutils
 d:twm
@@ -179,7 +177,6 @@ d:gwenhywfar
 d:faad2
 d:wpebackend-fdo
 d:bamf
-d:llvm
 d:xbitmaps
 d:enchant
 d:db
@@ -236,9 +233,7 @@ d:cdrtools
 d:bubblewrap
 d:xbacklight
 d:zenity
-d:xkbcomp
 d:yetris
-d:pkgconf
 d:gzip
 d:elfutils
 d:bleachbit
@@ -334,7 +329,6 @@ d:bash-completion
 d:which
 d:wxgtk3
 d:pm-utils
-d:ccache
 d:gparted
 d:bzip2
 d:dmenu
@@ -369,7 +363,6 @@ d:fuse2
 d:atk
 d:slang
 d:m4
-d:iasl
 d:tmux
 d:busybox
 d:tzdata
@@ -575,7 +568,6 @@ f:f715f0b49a44a5764e9379ab3c99d9b1:bluez/run
 f:70957c8696572fa0a42240d565523fbf:recode/spkgbuild
 f:2e83d44b2ccd8f312107ce82a14a1174:mpv/spkgbuild
 f:591c31c34f7f94d73573ce993d81a510:numix-icon-theme/spkgbuild
-f:7112cfd0145e449dc04da28fe8bb54ba:clang/spkgbuild
 f:92725c3566888e3c6eb4df87503f2929:freeglut/spkgbuild
 f:70b22b107370852af463b83756935eb4:fcron/fcron
 f:2d9a8748399fceb1175163578732cc85:fcron/post-install.sh
@@ -741,7 +733,6 @@ f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-upgrade.sh
 f:cff3571dcd31294f38def129c5ded3b4:shared-mime-info/spkgbuild
 f:caf6e704cd4ccb912ecb39159c0d8be6:curl/CHANGELOG
 f:2c2cc038100510ec7696e21200fd4c30:curl/spkgbuild
-f:36e3df2899ac3c95e19d67fe8198fd18:luajit/spkgbuild
 f:3f1370d9ad233b9c717f14d5ae9859c1:syslinux/syslinux-6.03-sysmacros.patch
 f:b56631b817e26139f47a4d0039e7e90d:syslinux/spkgbuild
 f:b4160d15d7c4e6de958f01b4c596da39:findutils/spkgbuild
@@ -787,9 +778,6 @@ f:a967ac7858bdcb1ddf6dfa05410a19b5:gwenhywfar/spkgbuild
 f:f1a24cdd0b11bc01cc510600a167f701:faad2/spkgbuild
 f:57f635294b94270ed8552cb96ed803ff:wpebackend-fdo/spkgbuild
 f:462e64381f2cde5952a60ad3f913aebb:bamf/spkgbuild
-f:6dff1504339a5a949d6c48888f7f56c8:llvm/CHANGELOG
-f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
-f:808826458ca3be69933ceb961ebc7068:llvm/spkgbuild
 f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild
 f:39cc34e7b00b985f19c39186b0c29365:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
@@ -884,9 +872,7 @@ f:8a4f36f00251349b11930d02186308c6:cdrtools/spkgbuild
 f:8a8b09ee6b5b918c0b84f0b37d2fc02b:bubblewrap/spkgbuild
 f:089969a0565fed51c48af9a0a70d89d2:xbacklight/spkgbuild
 f:4bc6009aac7206be273b68805acb2f7f:zenity/spkgbuild
-f:030187b8260e2388a4100a6d93585456:xkbcomp/spkgbuild
 f:969a61c5436fd96104c8bb6505d83315:yetris/spkgbuild
-f:9945171618d543fa0d48ecf9fa967cb6:pkgconf/spkgbuild
 f:e036b6f9f6e73a23260da9ecd0c7cf3f:gzip/CHANGELOG
 f:11e1f478416541894c1b40e127fe8df6:gzip/spkgbuild
 f:b97670b39428ec48d53dfe6fcfb10f79:elfutils/spkgbuild
@@ -1036,8 +1022,6 @@ f:e71ac89e0ed2562d821cfbf1263ce4cb:wxgtk3/make-abicheck-non-fatal.patch
 f:68ec8708b9098b60456ea6adfd73425f:wxgtk3/spkgbuild
 f:81aa555388c5747bc8b0de42f1d6d364:pm-utils/readme
 f:343af8cec1cdd1dc06a8151323aaa52c:pm-utils/spkgbuild
-f:7d6740ee5358d7181c6f49a4141cacf4:ccache/readme
-f:39d078b25bbc15fb1ec5bc8bc50dd7aa:ccache/spkgbuild
 f:0c926bde9ad5ee7a3f320bad54276f01:gparted/CHANGELOG
 f:85eab9749734923ab1917ce8dec13812:gparted/spkgbuild
 f:5de358b52fc36d7c86a9511928e079e7:bzip2/spkgbuild
@@ -1088,7 +1072,6 @@ f:f33493c2e24e3e99e25426fee70fe67d:atk/spkgbuild
 f:0525934045e28ff2ea49da401878294a:slang/spkgbuild
 f:a9c5426cedad28b06c9b1002fcc35bc4:m4/CHANGELOG
 f:ed0d9386fc726acbf3706c5e86a5d28c:m4/spkgbuild
-f:97436334399f4e562cac17df97c3cde6:iasl/spkgbuild
 f:35878c643cf80467d52bdaa655de2429:tmux/CHANGELOG
 f:8be4972dbadc2b622271035369986f74:tmux/spkgbuild
 f:15969beed2e3980f7c31356ca3eedb56:busybox/CHANGELOG
