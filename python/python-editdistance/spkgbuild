@@ -1,0 +1,15 @@
+# description : Fast implementation of the edit distanceLevenshtein distance
+# depends : python
+
+name=python-editdistance
+version=0.5.3
+release=5
+
+source="python-editdistance-0.5.3.tar.gz::https://github.com/aflc/editdistance/archive/v0.5.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

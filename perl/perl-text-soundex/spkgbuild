@@ -1,0 +1,16 @@
+# description : Implementation of the soundex algorithm
+# depends : perl
+
+name=perl-text-soundex
+version=3.05
+release=8
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Text-Soundex-3.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

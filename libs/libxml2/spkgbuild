@@ -1,0 +1,24 @@
+# description	: Contains libraries and utilities used for parsing XML files
+# depends	: icu python
+
+name=libxml2
+version=2.9.10
+release=1
+source="http://xmlsoft.org/sources/$name-$version.tar.gz
+	http://www.linuxfromscratch.org/patches/blfs/svn/libxml2-2.9.10-security_fixes-1.patch"
+
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -p1 -i $SRC/libxml2-2.9.10-security_fixes-1.patch
+	sed -i '/if Py/{s/Py/(Py/;s/)/))/}' python/{types.c,libxml.c}
+	sed -i 's/ TRUE/ true/' encoding.c
+	
+	./configure --prefix=/usr    \
+            --disable-static \
+            --with-history   \
+            --with-python=/usr/bin/python3
+        make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Work with environment markers PEP-496
+# depends : python-attrs python-dephell-specifier python-packaging
+
+name=python-dephell-markers
+version=1.0.3
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_markers/dephell_markers-1.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

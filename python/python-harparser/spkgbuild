@@ -1,0 +1,15 @@
+# description : Python HAR Parser Utility
+# depends : python
+
+name=python-harparser
+version=0.4
+release=6
+
+source="python-gnuplot-0.4.tar.gz::https://github.com/JustusW/harparser/archive/0.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

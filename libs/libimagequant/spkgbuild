@@ -1,0 +1,16 @@
+# description : library for high quality conversion of RGBA images
+# depends : gcc
+
+name=libimagequant
+version=2.13.1
+release=1
+
+source="https://github.com/ImageOptim/libimagequant/archive/$version/libimagequant-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --with-openmp
+	make shared imagequant.pc
+	make DESTDIR=$PKG PREFIX=/usr install
+}

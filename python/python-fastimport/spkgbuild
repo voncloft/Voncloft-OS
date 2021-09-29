@@ -1,0 +1,15 @@
+# description : VCS fastimport/fastexport parser
+# depends : python
+
+name=python-fastimport
+version=0.9.14
+release=5
+
+source="git+https://github.com/jelmer/python-fastimport.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

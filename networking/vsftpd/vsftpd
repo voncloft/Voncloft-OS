@@ -1,0 +1,6 @@
+# Begin /etc/pam.d/vsftpd
+auth       required     /lib/security/pam_listfile.so item=user sense=allow                                                       file=/etc/ftpusers                                                       onerr=succeed
+auth       required     pam_shells.so
+auth       include      system-auth
+account    include      system-account
+session    include      system-session

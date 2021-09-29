@@ -1,0 +1,12 @@
+# description	: Intel ACPI Source Language compiler
+
+name=iasl
+version=20200717
+release=1
+source="https://acpica.org/sites/acpica/files/acpica-unix-20180105.tar.gz"
+
+build() {
+	cd acpica-unix-$version
+	make
+	make DESTDIR=$PKG install
+}

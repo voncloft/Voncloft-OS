@@ -1,0 +1,15 @@
+# description : A simple Python socket pool
+# depends : python
+
+name=python-socketpool
+version=0.5.3
+release=7
+
+source="git+https://github.com/benoitc/socketpool.git#tag=0.5.3"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

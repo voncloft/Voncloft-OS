@@ -1,0 +1,16 @@
+# description	: Bootscripts for SysV init
+# depends	: sysvinit
+
+name=sysvinit
+version=3.00
+release=1
+
+source="http://download.savannah.gnu.org/releases/sysvinit/$name-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/lfs/9.0/$name-$version-consolidated-1.patch"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i $SRC/sysvinit-2.99-consolidated-1.patch
+	make
+	make DESTDIR=$PKG install	
+}

@@ -1,0 +1,31 @@
+# description : transfer files to server outside of network
+# depends : libnsl linux-pam vsftpd-boot
+
+name=vsftpd
+version=3.0.5
+release=1
+
+backup="etc/vsftpd.conf
+        etc/pam.d/vsftpd
+        etc/ftpusers"
+
+source="https://security.appspot.com/downloads/$name-$version.tar.gz
+	vsftpd.conf
+	vsftpd
+	ftpusers"
+	
+options="!checksum"
+
+build() {
+	cd $name-$version
+
+	sed -e "s/kVSFSysStrOpenUnknown;/(enum EVSFSysUtilOpenMode)&/" -i sysstr.c
+	make
+	mkdir -pv $PKG/usr/sbin
+	install -v -m 755 vsftpd        $PKG/usr/sbin/vsftpd 
+	mkdir -pv $PKG/etc/pam.d
+	install -Dm644 $SRC/ftpusers $PKG/etc/
+	install -Dm644 $SRC/vsftpd.conf $PKG/etc
+	install -Dm644 $SRC/vsftpd $PKG/etc/pam.d/
+	mkdir -pv $PKG/srv/ftp
+}

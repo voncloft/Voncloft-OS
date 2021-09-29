@@ -1,0 +1,16 @@
+# description : ExtUtils::Config - A wrapper for perls configuration
+# depends : perl-data-dumper
+
+name=perl-extutils-config
+version=0.008
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/ExtUtils-Config-0.008.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

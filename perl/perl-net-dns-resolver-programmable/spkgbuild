@@ -1,0 +1,16 @@
+# description : A Net::DNS::Resolver descendant class for offline emulation of DNS
+# depends : perl-net-dns perl
+
+name=perl-net-dns-resolver-programmable
+version=0.009
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BIGPRESH/Net-DNS-Resolver-Programmable-0.009.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

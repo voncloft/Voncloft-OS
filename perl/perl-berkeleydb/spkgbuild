@@ -1,0 +1,16 @@
+# description : Interface to Berkeley DB version 2, 3 or 4
+# depends : perl db
+
+name=perl-berkeleydb
+version=0.64
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/P/PM/PMQS/BerkeleyDB-0.55.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

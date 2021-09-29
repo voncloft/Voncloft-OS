@@ -1,0 +1,16 @@
+# description : Business chart widget collection
+# depends : perl-gd
+
+name=perl-chart
+version=2.4.10
+release=4
+
+source="https://www.cpan.org/authors/id/C/CH/CHARTGRP/Chart-2.4.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

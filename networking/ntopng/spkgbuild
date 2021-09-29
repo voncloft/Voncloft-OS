@@ -1,0 +1,25 @@
+# description : show all network traffic in one command
+# depends : redis mariadb libpcap sqlite libmaxminddb libpcap redis rrdtool git zeromq automake curl glib libtool libxml2 wget json-c
+
+name=ntopng
+version=5.0
+release=1
+_ndpiver=3.4
+
+source="https://github.com/ntop/$name/archive/$version.tar.gz
+	https://github.com/ntop/nDPI/archive/$_ndpiver.tar.gz"
+options="!checksum"
+
+build() {
+	cd nDPI-$_ndpiver
+	./autogen.sh
+	./configure
+	make
+	cd ..
+	export NDPI_HOME=$SRC/nDPI-$_ndpiver
+	cd $name-$version
+	./autogen.sh
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Python bindings for the snappy compression library.
+# depends : python snappy
+
+name=python-snappy
+version=3.0.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/python-snappy/python-snappy-0.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

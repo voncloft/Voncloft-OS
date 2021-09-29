@@ -1,0 +1,15 @@
+# description : A repository of test results.
+# depends : python-testtools python-fixtures python-subunit
+
+name=python-testrepository
+version=0.0.20
+release=8
+
+source="https://pypi.python.org/packages/source/t/testrepository/testrepository-0.0.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

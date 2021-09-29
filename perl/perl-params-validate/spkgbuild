@@ -1,0 +1,16 @@
+# description : Validate sub params against a spec
+# depends : perl perl-module-implementation
+
+name=perl-params-validate
+version=1.30
+release=5
+
+source="https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-Validate-1.30.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

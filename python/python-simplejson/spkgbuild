@@ -1,0 +1,15 @@
+# description : Simple, fast, extensible JSON encoder/decoder for Python
+  # depends : python
+
+name=python-simplejson
+version=3.17.5
+release=3
+
+source="python-simplejson-3.17.5.tar.gz::https://github.com/simplejson/simplejson/archive/v3.17.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

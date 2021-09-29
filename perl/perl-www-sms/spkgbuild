@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module WWW::SMS : A Perl framework for sending SMS messages
+# depends : perl
+
+name=perl-www-sms
+version=0.09
+release=12
+
+source="https://www.cpan.org/authors/id/E/EI/EIM/WWW-SMS/WWW-SMS-0.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

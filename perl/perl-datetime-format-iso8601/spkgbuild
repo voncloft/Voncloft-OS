@@ -1,0 +1,16 @@
+# description : Parses ISO8601 formats
+# depends : perl-datetime-format-builder perl-datetime
+
+name=perl-datetime-format-iso8601
+version=0.16
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-ISO8601-0.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Conversions to/from UTF8 from/to characterse
+# depends : perl
+
+name=perl-unicode-utf8simple
+version=1.06
+release=8
+
+source="https://www.cpan.org/authors/id/G/GU/GUS/Unicode-UTF8simple-1.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

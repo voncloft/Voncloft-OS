@@ -1,0 +1,15 @@
+# description : Python bindings for the ethtool kernel interface.
+# depends : python libnl
+
+name=python-ethtool
+version=0.15
+release=6
+
+source="https://files.pythonhosted.org/packages/source/e/ethtool/ethtool-0.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

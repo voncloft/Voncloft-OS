@@ -1,0 +1,15 @@
+# description : Manipulation and analysis of geometric objects in the Cartesian plane
+# depends : geos python
+
+name=python-shapely
+version=1.8
+release=3
+
+source="https://pypi.io/packages/source/S/Shapely/Shapely-1.7.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,63 @@
+#!/bin/sh
+########################################################################
+# Begin nftables
+#
+# Description : Start/Stop nftables
+#
+# Authors     : DJ Lucas - dj@linuxfromscratch.org
+#
+# Version     : BLFS 9.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            nftables
+# Required-Start:      localnet
+# Should-Start:        $syslog
+# Required-Stop:       localnet
+# Should-Stop:         $syslog
+# Default-Start:       3 4 5
+# Default-Stop:        0 1 2 6
+# Short-Description:   Enables/disables kernel nf_tables netfilter
+# Description:         Enables/disables kernel nf_tables netfilter
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+#$LastChangedBy: dj $
+#$Date: 2020-08-17 01:20:21 -0500 (Mon, 17 Aug 2020) $
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+    start)
+        log_info_msg "Loading nftables ruleset..."
+        start_daemon /sbin/nft -f /etc/nftables/nftables.conf
+        evaluate_retval
+    ;;
+
+    stop)
+        log_info_msg "Flughing nftables ruleset..."
+        /sbin/nft flush ruleset
+        evaluate_retval
+    ;;
+
+    reload)
+        ${0} restart
+    ;;
+
+    restart)
+        ${0} stop
+        sleep 1
+        ${0} start
+    ;;
+
+    *)
+        echo "Usage: ${0} {start|stop|restart}"
+        exit 1
+    ;;
+
+esac
+
+exit 0
+
+# End nftables

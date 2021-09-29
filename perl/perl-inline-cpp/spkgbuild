@@ -1,0 +1,16 @@
+# description : Write Perl subroutines and classes in C++
+# depends : perl-inline perl-inline-c perl-parse-recdescent
+
+name=perl-inline-cpp
+version=0.80
+release=3
+
+source="https://cpan.metacpan.org/authors/id/D/DA/DAVIDO/Inline-CPP-0.80.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

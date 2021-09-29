@@ -1,0 +1,15 @@
+# description : Testing support by jaraco
+# depends : python-jaraco python-jaraco.context python-toml python-more-itertools
+
+name=python-jaraco.test
+version=5.0.0
+release=1
+
+source="https://github.com/jaraco/jaraco.test/archive/v5.0.0/python-jaraco.test-5.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

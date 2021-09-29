@@ -1,0 +1,15 @@
+# description : Python parser that supports error recovery and round-trip parsing for different Python versions
+# depends : python
+
+name=python-parso
+version=0.8.2
+release=3
+
+source="https://github.com/davidhalter/parso/archive/v0.8.2/parso-0.8.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

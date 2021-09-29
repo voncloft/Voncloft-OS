@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Mail::Box::Parser::C : extends MailBox with the speed of C
+
+name=perl-mail-box-parser-c
+version=3.010
+release=8
+
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/Mail-Box-Parser-C-3.010.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

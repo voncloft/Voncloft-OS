@@ -1,0 +1,16 @@
+# description : Install subroutines into packages easily
+# depends : perl
+
+name=perl-sub-install
+version=0.928
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Sub-Install-0.928.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

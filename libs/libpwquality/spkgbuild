@@ -1,0 +1,24 @@
+# description	: Common functions for password quality checking and also scoring them based on their apparent randomness
+# depends	: cracklib linux-pam python
+
+name=libpwquality
+version=1.4.4
+release=1
+source="https://github.com/libpwquality/libpwquality/releases/download/$name-$version/$name-$version.tar.bz2
+	system-password"
+options="!checksum"
+build() {
+	cd $name-$version
+	./configure --prefix=/usr                  \
+            --disable-static               \
+            --with-securedir=/lib/security \
+            --with-python-binary=python3
+            
+	make
+	make DESTDIR=$PKG install
+	mv -v $PKG/usr/lib/libpwquality.so.* $PKG/lib &&
+	ln -sfv ../../lib/$(readlink $PKG/usr/lib/libpwquality.so) $PKG/usr/lib/libpwquality.so
+
+	mkdir -pv $PKG/etc/pam.d
+	install -m644 $SRC/system-password $PKG/etc/pam.d/system-password
+}

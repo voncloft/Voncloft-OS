@@ -1,0 +1,15 @@
+# description : Making it easy to write async iterators
+# depends : python
+
+name=python-async_generator
+version=1.10
+release=5
+
+source="python-async_generator-1.10.tar.gz::https://github.com/python-trio/async_generator/archive/v1.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

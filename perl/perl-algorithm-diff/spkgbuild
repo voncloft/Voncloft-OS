@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Algorithm::Diff : Diff also Longest Common Subsequence
+# depends : perl
+
+name=perl-algorithm-diff
+version=1.1903
+release=6
+
+source="https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Algorithm-Diff-1.201.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

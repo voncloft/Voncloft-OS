@@ -1,0 +1,16 @@
+# description : Perl SSH client package implemented on top of OpenSSH
+# depends : perl
+
+name=perl-net-openssh
+version=0.80
+release=1
+
+source="https://cpan.metacpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-0.80.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

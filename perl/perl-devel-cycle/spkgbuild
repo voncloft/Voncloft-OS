@@ -1,0 +1,16 @@
+# description : Find memory cycles in objects
+# depends : perl
+
+name=perl-devel-cycle
+version=1.12
+release=3
+
+source="https://www.cpan.org/modules/by-module//--1.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

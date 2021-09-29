@@ -1,0 +1,15 @@
+# description : Fuzzy string matching like a boss
+# depends : python
+
+name=python-fuzzywuzzy
+version=0.18.0
+release=3
+
+source="https://github.com/seatgeek/fuzzywuzzy/archive/0.18.0/python-fuzzywuzzy-0.18.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

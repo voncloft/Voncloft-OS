@@ -1,0 +1,15 @@
+# description : digitalocean.com API to manage Droplets and Images
+# depends : python-requests python-jsonpickle
+
+name=python-digitalocean
+version=1.16.0
+release=1
+
+source="python-digitalocean-1.16.0.tar.gz::https://github.com/koalalorenzo/python-digitalocean/archive/v1.16.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Work with python versions
+# depends : python-attrs python-dephell-specifier python-packaging
+
+name=python-dephell-pythons
+version=0.1.15
+release=2
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_pythons/dephell_pythons-0.1.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

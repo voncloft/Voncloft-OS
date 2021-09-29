@@ -1,0 +1,15 @@
+# description : Helper to test WSGI applications
+# depends : python-webob python-six python-beautifulsoup4 python-waitress
+
+name=python-webtest
+version=3.0.0
+release=4
+
+source="https://pypi.io/packages/source/W/WebTest/WebTest-3.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

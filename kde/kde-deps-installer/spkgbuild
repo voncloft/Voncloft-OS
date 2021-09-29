@@ -1,0 +1,17 @@
+# description : a kde installer that can be used in spkgbuild scripts
+# depends : 
+
+name=kde-deps-installer
+version=5
+release=1
+
+source="kf5-package-installer
+	plasma-package-installer"
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/kf5-package-installer $PKG/usr/bin/
+	install -Dm755 $SRC/plasma-package-installer $PKG/usr/bin/
+}
+

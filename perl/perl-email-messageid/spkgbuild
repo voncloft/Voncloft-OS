@@ -1,0 +1,16 @@
+# description : Generate world unique message-ids. 
+# depends : perl-email-address0
+
+name=perl-email-messageid
+version=1.406
+release=4
+
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MessageID-1.406.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

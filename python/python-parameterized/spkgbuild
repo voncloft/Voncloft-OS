@@ -1,0 +1,15 @@
+# description : Parameterized testing with any Python test framework
+# depends : python
+
+name=python-parameterized
+version=0.8.1
+release=1
+
+source="https://github.com/wolever/parameterized/archive/v0.8.1/python-parameterized-0.8.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

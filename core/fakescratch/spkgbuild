@@ -1,0 +1,15 @@
+# description : tell the system you installed a program even tho you didn't
+# depends :
+
+name=fakescratch
+version=1.1
+release=2
+
+options="!checksum"
+source="fakescratch"
+
+build()
+{
+        mkdir -p $PKG/usr/bin
+        install -D -m755 $SRC/fakescratch $PKG/usr/bin/
+}

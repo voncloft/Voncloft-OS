@@ -1,0 +1,15 @@
+# description : Jaeger Python OpenTracing Tracer implementation
+# depends : python-opentracing python-threadloop python-thrift python-tornado
+
+name=python-jaeger-client
+version=4.8.0
+release=1
+
+source="https://github.com/jaegertracing/jaeger-client-python/archive/4.8.0/python-jaeger-client-4.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Awesome autocompletion for python
+# depends : python python-parso
+
+name=python-jedi
+version=0.18.0
+release=3
+
+source="git+https://github.com/davidhalter/jedi#commit="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

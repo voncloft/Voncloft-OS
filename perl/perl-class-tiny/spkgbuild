@@ -1,0 +1,16 @@
+# description : Minimalist class construction
+# depends : perl
+
+name=perl-class-tiny
+version=1.008
+release=1
+
+source="https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Class-Tiny-1.008.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

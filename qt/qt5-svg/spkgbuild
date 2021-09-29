@@ -1,0 +1,20 @@
+# description : classes for displaying svg files
+# depends : qt5
+
+name=qt5-svg
+version=5.15.2+kde+r7
+release=1
+
+source="git+https://invent.kde.org/qt/qt/qtspeech-everywhere-src-5.15.2#commit=b3e935355afcfb5240bac5a99707ffecc35772a2"
+options="!checksum"
+
+build() {
+cd qtsvg
+mkdir -p build
+cd build
+qmake ..
+make
+make INSTALL_ROOT=$PKG install
+ find "$PKG/usr/lib" -type f -name '*.prl' \
+    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}

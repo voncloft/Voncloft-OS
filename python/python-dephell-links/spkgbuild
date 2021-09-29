@@ -1,0 +1,15 @@
+# description : Parse dependency links
+# depends : python-attrs
+
+name=python-dephell-links
+version=0.1.5
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_links/dephell_links-0.1.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python bindings for Augeas
+# depends : augeas python-cffi
+
+name=python-augeas
+version=1.1.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/python-augeas/python-augeas-1.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : NLP/IR library for Python
+# depends : python-numpy
+
+name=python-abydos
+version=0.5.0
+release=1
+
+source="https://github.com/chrislit/abydos/archive/v0.5.0/-0.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

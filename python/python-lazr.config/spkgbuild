@@ -1,0 +1,15 @@
+# description : Create configuration schemas, and process and validate configurations
+# depends : python-lazr.delegates python-zope-interface
+
+name=python-lazr.config
+version=2.2.3
+release=1
+
+source="https://files.pythonhosted.org/packages/cd/33/0095b8fd0879ad9b80f3e3d30655c309a0319ce34df3c984ac316bce1ea5/lazr.config-2.2.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

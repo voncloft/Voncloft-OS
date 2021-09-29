@@ -1,0 +1,15 @@
+# description : For controlling and automating applications
+# depends : python python-ptyprocess
+
+name=python-pexpect
+version=4.8.0
+release=3
+
+source="git+https://github.com/pexpect/pexpect#commit=5eed1a31a2853a09b7367c59fbd1a4a0b53341df"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

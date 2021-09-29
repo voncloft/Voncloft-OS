@@ -1,0 +1,16 @@
+# description : Regular expressions for XML tokens
+# depends : perl
+
+name=perl-xml-regexp
+version=0.04
+release=5
+
+source="https://www.cpan.org/authors/id/T/TJ/TJMATHER/XML-RegExp-0.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

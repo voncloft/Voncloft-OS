@@ -1,0 +1,17 @@
+# description : corrects typos in commandline
+# depends : python-colorama python-decorator python-psutil python-pyte python-setuptools python-six
+
+name=python-thefuck
+version=3.31
+release=2
+
+source="https://files.pythonhosted.org/packages/21/d2/f5194c2d51b2aab4bda6de97c5eb1ca5a547ad9b9f778ab5bf4ce19fba88/thefuck-3.31.tar.gz"
+options="!checksum"
+
+build() {
+	cd *
+   	python setup.py build
+   	python setup.py install --optimize=1 --root=$PKG
+
+	
+}

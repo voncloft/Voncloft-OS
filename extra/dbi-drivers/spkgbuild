@@ -1,0 +1,19 @@
+# description : database drivers for libdbi
+# depends : libdbi sqlite
+
+name=dbi-drivers
+version=0.9.0
+release=10
+
+source="https://sourceforge.net/projects/libdbi-drivers/files/libdbi-drivers/libdbi-drivers-$version/libdbi-drivers-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd libdbi-drivers-$version
+	autoreconf -ifv
+	./configure --prefix=/usr --localstatedir=/var \
+	--with-sqlite3
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+}

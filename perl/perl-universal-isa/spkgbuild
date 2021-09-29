@@ -1,0 +1,16 @@
+# description : Attempt to recover from people calling UNIVERSAL::isa as a function 
+# depends : perl
+
+name=perl-universal-isa
+version=1.20171012
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/UNIVERSAL-isa-1.20171012.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

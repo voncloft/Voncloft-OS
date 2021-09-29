@@ -1,0 +1,13 @@
+source=https://ftp.gnu.org/gnu/wget/
+
+get_generic()
+{
+	uversion=$(grep -i "href" index.html \
+	| grep -Po '(?<=href=")[^"]*' \
+	| grep wget \
+	| grep -v latest \
+	| grep -v wget2 \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	| sort -V -r \
+	| head -n1)
+}

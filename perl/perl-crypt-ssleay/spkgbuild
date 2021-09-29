@@ -1,0 +1,16 @@
+# description : OpenSSL glue that provides LWP https support
+# depends : perl-lwp-protocol-https perl-try-tiny perl-path-class perl-bytes-random-secure
+
+name=perl-crypt-ssleay
+version=0.73_04
+release=14
+
+source="https://www.cpan.org/CPAN/authors/id/N/NA/NANIS/Crypt-SSLeay-0.73_04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

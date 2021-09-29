@@ -1,0 +1,15 @@
+# description : simple yet effective caching library
+# depends : python
+
+name=python-cachy
+version=0.3.0
+release=4
+
+source="https://files.pythonhosted.org/packages/source/c/cachy/cachy-0.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

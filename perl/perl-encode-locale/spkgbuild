@@ -1,0 +1,16 @@
+# description : Determine the locale encoding
+# depends : perl
+
+name=perl-encode-locale
+version=1.05
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/Encode-Locale-1.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

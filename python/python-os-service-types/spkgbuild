@@ -1,0 +1,15 @@
+# description : Python library for consuming OpenStack sevice-types-authority data
+# depends : python-pbr
+
+name=python-os-service-types
+version=1.7.0
+release=7
+
+source="python-os-service-types-1.7.0.tar.gz::https://github.com/openstack/os-service-types/archive/1.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A collection of ASN.1-based protocols modules
+  # depends : python-pyasn1
+
+name=python-pyasn1-modules
+version=0.2.8
+release=3
+
+source="https://pypi.io/packages/source/p/pyasn1-modules/pyasn1-modules-0.2.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

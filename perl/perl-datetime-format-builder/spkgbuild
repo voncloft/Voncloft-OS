@@ -1,0 +1,16 @@
+# description : Create DateTime parser classes and objects
+# depends : perl perl-class-factory-util perl-datetime perl-datetime-format-strptime perl-params-validate
+
+name=perl-datetime-format-builder
+version=0.8100
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.80.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

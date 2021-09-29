@@ -1,0 +1,16 @@
+# description : Perl interface to rsync file list encoding and decoding
+# depends : perl
+
+name=perl-file-rsyncp
+version=0.76
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/C/CB/CBARRATT/File-RsyncP-0.76.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

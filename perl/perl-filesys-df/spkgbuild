@@ -1,0 +1,16 @@
+# description : Perl extension for filesystem disk space information
+# depends : perl
+
+name=perl-filesys-df
+version=0.92
+release=11
+
+source="https://www.cpan.org/modules/by-module//--0.92.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

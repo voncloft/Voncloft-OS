@@ -1,0 +1,16 @@
+# description : Convert between DateTime and RFC2822/822 formats 
+# depends : perl perl-datetime perl-params-validate
+
+name=perl-datetime-format-mail
+version=0.403
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/B/BO/BOOK/DateTime-Format-Mail-0.403.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

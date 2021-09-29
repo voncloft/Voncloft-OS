@@ -1,0 +1,16 @@
+# description : Commonly requested regular expressions
+# depends : perl
+
+name=perl-regexp-common
+version=2017060201
+release=3
+
+source="https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Add or enhance bash, fish, zsh and powershell completion in Click
+# depends : python-click python-jinja python-six python-shellingham
+
+name=python-click-completion
+version=0.5.2
+release=5
+
+source="https://files.pythonhosted.org/packages/source/c/click-completion/click-completion-0.5.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

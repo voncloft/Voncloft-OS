@@ -1,0 +1,15 @@
+# description : Reflink support for Python
+# depends : python-cffi
+
+name=python-reflink
+version=0.2.1
+release=1
+
+source="git+https://gitlab.com/rubdos/pyreflink.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

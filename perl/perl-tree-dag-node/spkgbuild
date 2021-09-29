@@ -1,0 +1,16 @@
+# description : base class for trees
+# depends : perl-file-slurp-tiny
+
+name=perl-tree-dag-node
+version=1.32
+release=2
+
+source="https://www.cpan.org/authors/id/R/RS/RSAVAGE/Tree-DAG_Node-1.32.tgz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

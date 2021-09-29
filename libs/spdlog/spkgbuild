@@ -1,0 +1,22 @@
+# description : c logs
+# depends : fmt cmake
+
+name=spdlog
+version=1.8.5
+release=1
+
+source="https://github.com/gabime/spdlog/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build 
+	cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -Wno-dev
+
+        make
+        make DESTDIR=$PKG install
+}

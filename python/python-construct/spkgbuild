@@ -1,0 +1,15 @@
+# description : A powerful declarative parser/builder for binary data
+# depends : python
+
+name=python-construct
+version=2.10.67
+release=1
+
+source="python-construct-2.10.67.tar.gz::https://github.com/construct/construct/archive/v2.10.67.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

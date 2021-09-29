@@ -1,0 +1,29 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+sed -i -e 's/88.0.1/89.0/g' /Voncloft-OS/*/firefox/spkgbuild
+Packages upgraded: 1
+
+08
+sed -i -e 's/0.18.0/0.19.0/g' /Voncloft-OS/*/cbindgen/spkgbuild
+Packages upgraded: 1
+
+11
+sed -i -e 's/1.2.4/1.2.5/g' /Voncloft-OS/*/alsa-lib/spkgbuild
+sed -i -e 's/2020.07.28/2021.05.16/g' /Voncloft-OS/*/youtube-dl/spkgbuild
+Packages upgraded: 2
+
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+Packages upgraded: 0
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

@@ -1,0 +1,22 @@
+# description : javascript bindings for cinnamon
+# depends : gobject-introspection gtk3 js78 meson
+
+name=cjs
+version=5.0.0
+release=1
+
+source="https://github.com/linuxmint/$name/archive/refs/tags/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson --prefix=/usr \
+	--libexecdir=/usr/lib \
+	--buildtype=plain \
+	-Dinstalled_tests=false \
+	..
+	ninja
+	DESTDIR=$PKG ninja install
+}

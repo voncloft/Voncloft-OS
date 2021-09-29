@@ -1,0 +1,15 @@
+# description : Google Drive API Python wrapper library
+# depends : python-google-api-python-client python-oauth2client python-yaml
+
+name=python-pydrive
+version=1.3.1
+release=4
+
+source="python-pydrive-1.3.1.tar.gz::https://github.com/gsuitedevs/PyDrive/archive/1.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

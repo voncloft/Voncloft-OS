@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module IO::Tee : Multiplex output to multiple handles
+
+name=perl-io-tee
+version=0.66
+release=3
+
+source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/IO-Tee-0.65.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

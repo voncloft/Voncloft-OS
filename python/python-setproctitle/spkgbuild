@@ -1,0 +1,15 @@
+# description : Allows a python process to change its process title
+# depends : python
+
+name=python-setproctitle
+version=1.2.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/s/setproctitle/setproctitle-1.2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

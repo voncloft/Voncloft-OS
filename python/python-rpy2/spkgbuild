@@ -1,0 +1,15 @@
+# description : A very simple, yet robust, Python interface to the R Programming Language.
+# depends : python-cffi python-numpy python-tzlocal r
+
+name=python-rpy2
+version=3.4.5
+release=1
+
+source="https://pypi.io/packages/source/r/rpy2/rpy2-3.4.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

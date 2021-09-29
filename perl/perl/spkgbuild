@@ -1,0 +1,24 @@
+# description	: The Practical Extraction and Report Language
+# depends	: gdbm
+
+name=perl
+version=5.34.0
+release=1
+
+source="https://www.cpan.org/src/5.0/perl-5.34.0.tar.xz"
+options="!checksum"
+
+build() {
+   cd *
+
+	sh Configure -des -Dprefix=/usr                 \
+	                  -Dvendorprefix=/usr           \
+	                  -Dprivlib=/usr/lib/perl5/${version%.*} \
+	                  -Dman1dir=/usr/share/man/man1 \
+	                  -Dman3dir=/usr/share/man/man3 \
+	                  -Dpager="/usr/bin/less -isR"  \
+	                  -Duseshrplib                  \
+                  	  -Dusethreads
+	make
+	make DESTDIR=$PKG install
+}

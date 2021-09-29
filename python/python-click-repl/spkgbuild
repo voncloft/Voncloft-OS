@@ -1,0 +1,15 @@
+# description : Subcommand REPL for click apps
+# depends : python-click python-prompt_toolkit python-six
+
+name=python-click-repl
+version=0.2.0
+release=4
+
+source="python-click-repl-0.2.0.tar.gz::https://github.com/click-contrib/click-repl/archive/refs/tags/0.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

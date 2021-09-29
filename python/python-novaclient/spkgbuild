@@ -1,0 +1,15 @@
+# description : Client library for OpenStack Compute API
+# depends : python-six python-pbr python-babel python-prettytable python-keystoneauth1
+
+name=python-novaclient
+version=17.6.0
+release=1
+
+source="python-novaclient-17.6.0.tar.gz::https://github.com/openstack/python-novaclient/archive/17.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

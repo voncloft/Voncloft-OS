@@ -1,0 +1,15 @@
+# description : Simplifies to build() parse types based on the parse module
+# depends : python-parse python-six
+
+name=python-parse-type
+version=0.5.6
+release=1
+
+source="https://github.com/jenisys/parse_type/archive/v0.5.6/python-parse-type-0.5.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

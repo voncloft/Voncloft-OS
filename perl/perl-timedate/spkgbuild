@@ -1,0 +1,16 @@
+# description : Date formating subroutines
+# depends : perl
+
+name=perl-timedate
+version=2.33
+release=2
+
+source="https://www.cpan.org/authors/id/A/AT/ATOOMIC/TimeDate-2.33.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

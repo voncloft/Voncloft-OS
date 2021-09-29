@@ -1,0 +1,15 @@
+# description : HTTP client mock for Python
+# depends : python-urllib3
+
+name=python-httpretty
+version=1.1.4
+release=1
+
+source="https://github.com/gabrielfalcao/HTTPretty/archive/1.1.4/python-httpretty-1.1.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

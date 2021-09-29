@@ -1,0 +1,16 @@
+# description : Multipurpose desktop calculator 
+# depends : curl libxml2 mpfr
+
+name=libqalculate
+version=3.17.0
+release=1
+
+source="https://github.com/Qalculate/libqalculate/releases/download/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,25 @@
+# description : library for c
+# depends : gcc cmake ninja
+
+name=fmt
+version=7.1.3
+release=1
+
+source="https://github.com/fmtlib/fmt/archive/refs/tags/$version.tar.gz"
+options="!checksum"
+
+build() {
+
+###may need to get from github
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_BUILD_TYPE=None \
+    	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    	-DBUILD_SHARED_LIBS=1
+    
+	make
+	make DESTDIR=$PKG install
+}

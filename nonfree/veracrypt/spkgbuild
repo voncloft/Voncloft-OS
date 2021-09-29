@@ -1,0 +1,22 @@
+# description : disc encryption program
+# depends : lvm2 fuse2 fuse3 libsm wxgtk3 sudo yasm
+
+name=veracrypt
+version=1.24
+release=1
+
+source="https://launchpad.net/$name/trunk/$version-update7/+download/VeraCrypt_$version-Update7_Source.tar.bz2
+	no-makeself.patch
+	veracrypt.desktop"
+options="!checksum"
+
+build() {
+	cd src
+	patch -Np1 < $SRC/no-makeself.patch
+	make PKG_CONFIG_PATH=/usr/lib/pkgconfig \
+	WX_CONFIG=/usr/bin/wx-config-gtk3
+
+	install -Dm 755 Main/$name $PKG/usr/bin/$name
+	install -Dm 644 $SRC/veracrypt.desktop -t $PKG/usr/share/applications
+	install -Dm 644 Resources/Icons/VeraCrypt-256x256.xpm "${PKG}/usr/share/pixmaps/veracrypt.xpm"
+}

@@ -1,0 +1,16 @@
+# description : Type constraints and coercions for Perl
+# depends : perl-role-tiny perl-test-fatal perl-mro-compat perl-devel-stacktrace
+
+name=perl-specio
+version=0.47
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Specio-0.47.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

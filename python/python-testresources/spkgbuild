@@ -1,0 +1,15 @@
+# description : Testresources, a pyunit extension for managing expensive test resources
+# depends : python
+
+name=python-testresources
+version=2.0.1
+release=8
+
+source="https://pypi.io/packages/source/t/testresources/testresources-2.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

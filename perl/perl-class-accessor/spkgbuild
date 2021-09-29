@@ -1,0 +1,16 @@
+# description : Automated accessor generation
+# depends : perl
+
+name=perl-class-accessor
+version=0.51
+release=2
+
+source="https://www.cpan.org/authors/id/K/KA/KASEI/Class-Accessor-0.51.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

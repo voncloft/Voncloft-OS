@@ -1,0 +1,15 @@
+# description : A hack to explicitly set up and tear down fixtures
+# depends : python-pytest python-setuptools
+
+name=python-pytest-subtesthack
+version=0.1.2
+release=9
+
+source="https://github.com/untitaker/pytest-subtesthack/archive/0.1.2/pytest-subtesthack-0.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

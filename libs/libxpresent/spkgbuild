@@ -1,0 +1,17 @@
+# description : x present extension library
+# depends : libxfixes libxrandr
+
+name=libxpresent
+version=1.0.0
+release=2
+
+source="https://gitlab.freedesktop.org/xorg/lib/libxpresent/-/archive/libXpresent-$version/libxpresent-libXpresent-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-libXpresent-$version
+	./autogen.sh --prefix=/usr --disable-dependency-tracking
+	sed -i -e '/\$CC/s/-shared/\0 -Wl,--as-needed/' libtool
+	make
+	make DESTDIR=$PKG install
+}

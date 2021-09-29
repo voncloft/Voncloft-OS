@@ -1,0 +1,16 @@
+# description : x11 screensavers
+# depends : libxext
+
+name=libxss
+version=1.2.3
+release=3
+
+source="https://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-${version}.tar.bz2"
+options="!checksum"
+
+build() {
+	cd libXScrnSaver-$version
+	./configure --prefix=/usr --sysconfdir=/etc
+	make
+	make DESTDIR=$PKG install
+}

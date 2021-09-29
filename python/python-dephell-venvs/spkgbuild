@@ -1,0 +1,15 @@
+# description : Manage Python virtual environments
+# depends : python-attrs python-dephell-pythons
+
+name=python-dephell-venvs
+version=0.1.18
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_venvs/dephell_venvs-0.1.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

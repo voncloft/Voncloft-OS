@@ -1,0 +1,29 @@
+# description : toolkit for creating dynamic UIs
+# depends : cogl gtk3 libinput git gobject-introspection json-glib
+
+name=clutter
+version=1.26.4
+release=1
+
+source="https://download-fallback.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreconf -ifv
+
+	./configure --prefix=/usr \
+    	--enable-introspection \
+    	--enable-egl-backend \
+    	--enable-gdk-backend \
+    	--enable-wayland-backend \
+    	--enable-x11-backend \
+    	--enable-evdev-input \
+    	--enable-wayland-compositor 
+
+    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+  make
+
+  make DESTDIR=$PKG install
+}

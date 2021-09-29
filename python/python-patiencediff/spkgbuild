@@ -1,0 +1,15 @@
+# description : Patiencediff Python and C implementations
+# depends : python
+
+name=python-patiencediff
+version=0.2.2
+release=3
+
+source="git+https://github.com/breezy-team/patiencediff.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

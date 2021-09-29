@@ -1,0 +1,16 @@
+# description : Recursive copy of nested objects.
+# depends : perl
+
+name=perl-clone
+version=0.45
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/A/AT/ATOOMIC/Clone-0.45.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Python wrapper for Tesseract and Cuneiform
+# depends : python-pillow python-six
+
+name=python-pyocr
+version=0.8
+release=1
+
+source="git+https://gitlab.gnome.org/World/OpenPaperwork/pyocr.git#commit=b3e935355afcfb5240bac5a99707ffecc35772a2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

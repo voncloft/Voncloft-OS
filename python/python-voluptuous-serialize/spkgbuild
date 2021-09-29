@@ -1,0 +1,15 @@
+# description : Convert voluptuous schemas to JSON
+# depends : python-voluptuous
+
+name=python-voluptuous-serialize
+version=2.4.0
+release=3
+
+source="git+https://github.com/balloob/voluptuous-serialize.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

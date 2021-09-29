@@ -1,0 +1,21 @@
+# description : cinnamon menu specifications
+# depends : glib
+# depends : gobject-introspection meson ninja
+name=cinnamon-menus
+version=5.0.0
+release=1
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+    mkdir -p ${name}-${version}/build
+    cd ${name}-${version}/build
+
+    meson --prefix=/usr \
+          --buildtype=plain \
+          ..
+    ninja
+
+    DESTDIR="${PKG}" ninja install
+}

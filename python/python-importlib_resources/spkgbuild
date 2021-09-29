@@ -1,0 +1,15 @@
+# description : Design and implementation for a planned importlib.resources
+# depends : python
+
+name=python-importlib_resources
+version=5.2.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/i/importlib_resources/importlib_resources-5.2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

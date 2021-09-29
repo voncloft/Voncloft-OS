@@ -1,0 +1,15 @@
+# description	: Python 3 bindings for QtWebEngine
+# depends	: qtwebengine python-pyqt5 python-sip-pyqt5
+
+name=python-pyqtwebengine
+version=5.15.4
+release=1
+
+source="https://files.pythonhosted.org/packages/fb/5d/4c5bb7adca4f2436545a391fe311dcb4ccc711f1ce2ab7adb87475ec566e/PyQtWebEngine-5.15.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

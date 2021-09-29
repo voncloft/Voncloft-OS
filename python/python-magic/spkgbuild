@@ -1,0 +1,15 @@
+# description : Python bindings to the magic library
+# depends : python
+
+name=python-magic
+version=5.40
+release=3
+
+source="ftp://ftp.astron.com/pub/file/file-5.40.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

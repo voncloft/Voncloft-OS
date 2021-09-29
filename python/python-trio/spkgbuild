@@ -1,0 +1,15 @@
+# description : A friendly Python library for async concurrency and I/O
+# depends : 
+
+name=python-trio
+version=0.19.0
+release=1
+
+source="git+https://github.com/python-trio/trio.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

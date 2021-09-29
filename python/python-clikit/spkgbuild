@@ -1,0 +1,15 @@
+# description : clikit allows you to create beautiful and testable command-line interfaces
+# depends : python-crashtest python-pastel python-pylev
+
+name=python-clikit
+version=0.6.2
+release=1
+
+source="clikit-0.6.2.tar.gz::https://github.com/sdispater/clikit/archive/0.6.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

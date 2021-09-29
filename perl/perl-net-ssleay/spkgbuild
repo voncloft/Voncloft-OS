@@ -1,0 +1,16 @@
+# description : Perl extension for using OpenSSL
+# depends : openssl
+
+name=perl-net-ssleay
+version=1.90
+release=2
+
+source="https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.90.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

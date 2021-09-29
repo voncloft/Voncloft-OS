@@ -1,0 +1,16 @@
+# description : Simple, compact and correct param-checking functions
+# depends : perl
+
+name=perl-params-util
+version=1.102
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/Params-Util-1.102.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

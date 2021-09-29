@@ -1,0 +1,15 @@
+# description : Manage OSS licenses: retrieve information, generate
+# depends : python-attrs python-requests
+
+name=python-dephell-licenses
+version=0.1.7
+release=3
+
+source="https://files.pythonhosted.org/packages/source/d/dephell-licenses/dephell-licenses-0.1.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

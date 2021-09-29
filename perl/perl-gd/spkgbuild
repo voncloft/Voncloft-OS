@@ -1,0 +1,16 @@
+# description : Interface to Gd Graphics Library
+# depends : perl gd
+
+name=perl-gd
+version=3dbargrapher
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/GD-2.73.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

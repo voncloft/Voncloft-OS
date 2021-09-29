@@ -1,0 +1,15 @@
+# description : Sign JSON with Ed25519 signatures
+# depends : python python-canonicaljson python-unpaddedbase64 python-pynacl
+
+name=python-signedjson
+version=1.1.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/s/signedjson/signedjson-1.1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

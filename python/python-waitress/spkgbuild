@@ -1,0 +1,15 @@
+# description : Waitress WSGI server
+# depends : python
+
+name=python-waitress
+version=2.0.0
+release=5
+
+source="https://github.com/Pylons/waitress/archive/v2.0.0/python-waitress-2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

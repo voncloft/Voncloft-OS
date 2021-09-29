@@ -1,0 +1,15 @@
+# description	: python library to access freedesktop.org standards
+# depends	: python
+
+name=python-xdg
+version=5.1.1
+release=1
+
+source="https://files.pythonhosted.org/packages/33/fe/67bc1f8ee2782bca3cdc63558a64f843bb9f88e15793475350809fbd8e01/xdg-5.1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

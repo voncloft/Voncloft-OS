@@ -1,0 +1,15 @@
+# description : Python bindings for interacting with Vagrant virtual machines.
+# depends : python
+
+name=python-vagrant
+version=0.5.15
+release=5
+
+source="python-vagrant-0.5.15.tar.gz::https://github.com/todddeluca/python-vagrant/archive/0.5.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

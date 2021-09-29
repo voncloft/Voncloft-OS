@@ -1,0 +1,16 @@
+# description : Parse and validate simple name/value option pairs
+# depends : perl-params-util perl-scalar-list-utils perl-sub-install
+
+name=perl-data-optlist
+version=0.112
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Data-OptList-0.112.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

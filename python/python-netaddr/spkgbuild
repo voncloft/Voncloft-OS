@@ -1,0 +1,15 @@
+# description : Pure Python network address representation and manipulation library
+# depends : python
+
+name=python-netaddr
+version=0.8.0
+release=3
+
+source="https://github.com/drkjam/netaddr/archive/0.8.0/python-netaddr-0.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

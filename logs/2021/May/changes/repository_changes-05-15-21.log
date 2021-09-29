@@ -1,0 +1,29 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+Packages upgraded: 0
+
+12
+Packages upgraded: 0
+
+15
+Packages upgraded: 0
+
+15
+sed -i -e 's/10.0.1/12.0.0/g' /Voncloft-OS/*/llvm/spkgbuild
+sed -i -e 's/20.3.4/21.1.0/g' /Voncloft-OS/*/mesa/spkgbuild
+Packages upgraded: 2
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/248.2/248.3/g' /Voncloft-OS/*/systemd/spkgbuild
+sed -i -e 's/20.1.5/21.1.0/g' /Voncloft-OS/*/mesa/spkgbuild
+Packages upgraded: 2
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

@@ -1,0 +1,15 @@
+# description : Library for generating identicons
+	# depends : python python-pillow
+
+name=python-pydenticon
+version=0.3.1
+release=2
+
+source="https://pypi.org/packages/source/p/pydenticon/pydenticon-0.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

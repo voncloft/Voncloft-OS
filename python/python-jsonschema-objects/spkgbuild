@@ -1,0 +1,15 @@
+# description : Return the jsonschema-objects true value of an iterable
+# depends : python-inflection python-markdown python-jsonschema python-six
+
+name=python-jsonschema-objects
+version=0.3.15
+release=2
+
+source="python-jsonschema-objects-0.3.15.tar.gz::https://github.com/cwacek/python-jsonschema-objects/archive/0.3.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

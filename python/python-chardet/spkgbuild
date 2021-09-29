@@ -1,0 +1,15 @@
+# description	: Python module for character encoding auto-detection
+# depends	: python
+
+name=python-chardet
+version=4.0.0
+release=1
+
+source="https://pypi.io/packages/source/c/chardet/chardet-4.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

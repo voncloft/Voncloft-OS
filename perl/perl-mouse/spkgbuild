@@ -1,0 +1,16 @@
+# description : Moose minus the antlers
+# depends : perl
+
+name=perl-mouse
+version=v2.5.10
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/S/SK/SKAJI/Mouse-v2.5.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

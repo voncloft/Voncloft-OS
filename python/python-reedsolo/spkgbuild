@@ -1,0 +1,15 @@
+# description : A pure-python universal errors-and-erasures Reed-Solomon Codec
+# depends : python
+
+name=python-reedsolo
+version=1.5.4
+release=1
+
+source="python-reedsolo-1.5.4.tar.gz::https://github.com/tomerfiliba/reedsolomon/archive/v1.5.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

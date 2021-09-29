@@ -1,0 +1,15 @@
+# description : Provides a simple event system
+  # depends : python
+
+name=python-zope-event
+version=4.5.0
+release=3
+
+source="https://github.com/zopefoundation/zope.event/archive/4.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

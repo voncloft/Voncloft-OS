@@ -1,0 +1,16 @@
+# description : comma-separated values manipulator
+# depends : perl
+
+name=perl-text-csv
+version=UniqueColumns_0.4
+release=4
+
+source="https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/-2.00.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

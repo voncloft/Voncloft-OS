@@ -1,0 +1,21 @@
+# description : libdbusmenu-qt
+# depends : qt5
+
+name=libdbusmenu-qt
+version=0.9.3
+release=16.04.20160218
+
+source="http://launchpad.net/ubuntu/+archive/primary/+files/libdbusmenu-qt_0.9.3+16.04.20160218.orig.tar.gz"
+build()
+{
+	cd $name-$version+$release
+	mkdir build &&
+	cd    build &&
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	      -DCMAKE_BUILD_TYPE=Release  \
+	            -DWITH_DOC=OFF              \
+	                  -Wno-dev .. &&
+	                  make
+	make DESTDIR=$PKG install
+}

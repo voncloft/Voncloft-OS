@@ -1,0 +1,21 @@
+# description	: JSON implementation in C
+# depends	: cmake
+
+name=json-c
+version=0.15
+release=1
+source="git+https://github.com/json-c/json-c#commit=2379c6981fe257f779b214c0c54bf11fde2d75e8"
+
+build() {
+	cd $name-$version
+		
+	cmake . \
+	        -DCMAKE_INSTALL_PREFIX=/usr \
+	        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+	        -DCMAKE_BUILD_TYPE=Release \
+	        -DBUILD_TESTING=OFF \
+	        -DBUILD_SHARED_LIBS=ON
+	make
+	make DESTDIR=$PKG install
+}
+

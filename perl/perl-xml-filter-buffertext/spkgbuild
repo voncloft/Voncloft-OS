@@ -1,0 +1,16 @@
+# description : XML-Filter-BufferText perl module filter to put all characters in one event
+# depends : perl perl-xml-sax
+
+name=perl-xml-filter-buffertext
+version=1.01
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/R/RB/RBERJON/XML-Filter-BufferText-1.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

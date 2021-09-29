@@ -1,0 +1,15 @@
+# description : USB access on Python
+# depends : python libusb
+
+name=python-pyusb
+version=1.2.1
+release=3
+
+source="git+https://github.com/pyusb/pyusb.git?signed#tag=v1.2.1"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

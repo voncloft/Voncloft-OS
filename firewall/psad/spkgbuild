@@ -1,0 +1,21 @@
+# description : iptables firewall addon
+# depends : psad-boot iptables 
+
+name=psad
+version=2.4.6
+release=1
+options="!checksum"
+
+source="https://cipherdyne.org/$name/download/$name-$version.tar.bz2
+	hosts-ip"
+
+build()
+{
+	cd $name-$version
+	./install.pl --init-dir=$PKG
+	mkdir $PKG/etc/psad
+	install $SRC/psad.conf $PKG/etc/psad/psad.conf
+	mkdir -pv  $PKG/srv/www/ip/text
+	install $SRC/hosts-ip $PKG/srv/www/ip/text/hosts-ip
+
+}

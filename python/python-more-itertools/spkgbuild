@@ -1,0 +1,15 @@
+# description : More routines for operating on iterables, beyond itertools
+# depends : python
+
+name=python-more-itertools
+version=8.10.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/m/more-itertools/more-itertools-8.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

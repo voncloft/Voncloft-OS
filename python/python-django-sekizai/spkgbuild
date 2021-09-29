@@ -1,0 +1,15 @@
+# description : Django Template Blocks with extra functionality
+# depends : python-django python-django-classy-tags
+
+name=python-django-sekizai
+version=2.0.0
+release=5
+
+source="python-django-sekizai-2.0.0.tar.gz::https://github.com/divio/django-sekizai/archive/2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

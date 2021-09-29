@@ -1,0 +1,15 @@
+# description : Simple integration of Flask and WTForms
+# depends : python-flask python-wtforms python-werkzeug
+
+name=python-flask-wtf
+version=0.15.1
+release=3
+
+source="python-flask-wtf-0.14.3.tar.gz::https://github.com/lepture/flask-wtf/archive/0.14.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

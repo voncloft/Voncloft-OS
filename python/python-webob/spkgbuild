@@ -1,0 +1,15 @@
+# description : WSGI request and response object
+# depends : python
+
+name=python-webob
+version=1.8.7
+release=3
+
+source="https://pypi.io/packages/source/W/WebOb/WebOb-1.8.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

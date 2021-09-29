@@ -1,0 +1,16 @@
+# description : Preparation of Internationalized Strings RFC 3454
+# depends : perl
+
+name=perl-unicode-stringprep
+version=1.105
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/C/CF/CFAERBER/Unicode-Stringprep-1.105.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

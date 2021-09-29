@@ -1,0 +1,15 @@
+# description : Robust algorithms to perform the operations required for synchronizing plain text
+# depends : python
+
+name=python-diff-match-patch
+version=20200713
+release=3
+
+source="https://files.pythonhosted.org/packages/source///-20200713.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

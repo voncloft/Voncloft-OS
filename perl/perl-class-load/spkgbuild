@@ -1,0 +1,16 @@
+# description : a working require Class::Name and more
+# depends : perl perl-module-runtime perl-data-optlist perl-package-stash
+
+name=perl-class-load
+version=0.25
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Class-Load-0.25.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

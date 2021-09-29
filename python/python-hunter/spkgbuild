@@ -1,0 +1,15 @@
+# description : Hunter is a flexible code tracing toolkit
+# depends : python-colorama python-cymem python-manhole
+
+name=python-hunter
+version=3.3.8
+release=2
+
+source="python-hunter-3.3.8.tar.gz::https://github.com/ionelmc/python-hunter/archive/v3.3.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

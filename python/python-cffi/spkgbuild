@@ -1,0 +1,15 @@
+# description : Foreign Function Interface for Python calling C code
+# depends : python-pycparser
+
+name=python-cffi
+version=1.14.6
+release=1
+
+source="https://foss.heptapod.net/pypy/cffi/-/archive/v1.14.6/cffi-v1.14.6.tar.bz2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

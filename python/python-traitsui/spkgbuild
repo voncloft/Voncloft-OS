@@ -1,0 +1,15 @@
+# description : Traits-capable user interfaces
+# depends : python-pyface
+
+name=python-traitsui
+version=7.2.1
+release=3
+
+source="traitsui-7.2.1.tar.gz::https://github.com/enthought/traitsui/archive/7.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

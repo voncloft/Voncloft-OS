@@ -1,0 +1,16 @@
+# description : An object representing a stack trace
+# depends : perl
+
+name=perl-devel-stacktrace
+version=2.04
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Devel-StackTrace-2.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : The DBI of event loop programming
+# depends : perl
+
+name=perl-anyevent
+version=7.17
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/AnyEvent-7.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

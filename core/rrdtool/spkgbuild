@@ -1,0 +1,25 @@
+# description : data logging and graphing application
+# depends : libxml2 pango dejavu-fonts perl ruby python lua automake
+
+name=rrdtool
+version=1.7.2
+release=7
+lua=5.4
+
+source="https://oss.oetiker.ch/rrdtool/pub/rrdtool-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -e 's/$(RUBY) ${abs_srcdir}\/ruby\/extconf.rb/& --vendor/' -i bindings/Makefile.am
+	aclocal
+  	automake
+	#LUA=/usr/bin/$lua \
+    	#LUA_CFLAGS="-I/usr/include/lua$lua -llua$lua" LUA_INSTALL_CMOD="/usr/lib/lua/$lua" \
+    	./configure --prefix=/usr --localstatedir=/var --disable-rpath \
+    	--enable-perl --enable-perl-site-install --with-perl-options='INSTALLDIRS=vendor' \
+    	--enable-ruby --enable-ruby-site-install --enable-python \
+    	--disable-lua --disable-lua-site-install --enable-tcl --disable-libwrap
+
+	make DESTDIR=$PKG includedir=/usr/include install
+}

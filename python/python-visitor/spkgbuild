@@ -1,0 +1,15 @@
+# description : A tiny pythonic visitor implementation
+# depends : python
+
+name=python-visitor
+version=0.1.3
+release=5
+
+source="python-visitor-0.1.3.tar.gz::https://github.com/mbr/visitor/archive/0.1.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A library to manipulate font files from Python
+# depends : python
+
+name=python-fonttools
+version=4.27.1
+release=1
+
+source="https://github.com/fonttools/fonttools/archive/4.27.1/fonttools-4.27.1.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

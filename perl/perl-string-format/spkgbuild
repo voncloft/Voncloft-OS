@@ -1,0 +1,16 @@
+# description : sprintf-like string formatting capabilities with arbitrary format definitions
+# depends : perl
+
+name=perl-string-format
+version=1.18
+release=3
+
+source="https://cpan.metacpan.org/authors/id/S/SR/SREZIC/String-Format-1.18.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

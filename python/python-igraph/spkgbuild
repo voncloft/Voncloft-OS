@@ -1,0 +1,15 @@
+# description : Python bindings for the igraph library
+# depends : igraph python-texttable
+
+name=python-igraph
+version=0.9.6
+release=2
+
+source="https://pypi.python.org/packages/source/p/python-igraph/python-igraph-0.9.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

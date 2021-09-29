@@ -1,0 +1,16 @@
+# description : Create charts using GD
+# depends : perl-gd perl-gdtextutil
+
+name=perl-gdgraph
+version=1.54
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/R/RU/RUZ/GDGraph-1.54.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

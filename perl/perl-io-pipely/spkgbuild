@@ -1,0 +1,16 @@
+# description : Portably create pipe or pipe-like handles, one way or another.
+# depends : perl
+
+name=perl-io-pipely
+version=0.005
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/R/RC/RCAPUTO/IO-Pipely-0.005.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

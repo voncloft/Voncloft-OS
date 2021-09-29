@@ -1,0 +1,16 @@
+# description : Simple configuration file class to create and read config files
+# depends : perl
+
+name=perl-config-simple
+version=4.59
+release=12
+
+source="https://search.cpan.org/CPAN/authors/id/S/SH/SHERZODR/Config-Simple-4.59.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

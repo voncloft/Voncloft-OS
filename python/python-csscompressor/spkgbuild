@@ -1,0 +1,15 @@
+# description : Port of YUI CSS Compressor to Python
+# depends : python
+
+name=python-csscompressor
+version=0.9.5
+release=3
+
+source="https://files.pythonhosted.org/packages/source/c/csscompressor/csscompressor-0.9.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

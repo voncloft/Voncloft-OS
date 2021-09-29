@@ -1,0 +1,15 @@
+# description : Sphinx default theme
+# depends : python
+
+name=python-sphinx-alabaster-theme
+version=0.7.12
+release=6
+
+source="https://pypi.org/packages/source/a/alabaster/alabaster-0.7.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

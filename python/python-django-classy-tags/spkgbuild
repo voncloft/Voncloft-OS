@@ -1,0 +1,15 @@
+# description : Class based template tags for django
+# depends : python-django python-six
+
+name=python-django-classy-tags
+version=2.0.0
+release=4
+
+source="python-django-classy-tags-2.0.0.tar.gz::https://github.com/divio/django-classy-tags/archive/2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

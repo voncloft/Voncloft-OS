@@ -1,0 +1,16 @@
+# description : handy utf8 tests
+# depends : perl
+
+name=perl-test-utf8
+version=1.02
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MARKF/Test-utf8-1.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

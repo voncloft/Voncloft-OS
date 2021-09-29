@@ -1,0 +1,15 @@
+# description : Python library that implements DKIM and ARC email signing and verification
+# depends : python-dnspython
+
+name=python-dkim
+version=1.0.5
+release=4
+
+source="https://files.pythonhosted.org/packages/source/d/dkimpy/dkimpy-1.0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

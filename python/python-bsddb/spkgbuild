@@ -1,0 +1,15 @@
+# description : Python interface for BerkeleyDB
+# depends : db python
+
+name=python-bsddb
+version=6.2.9
+release=3
+
+source="https://files.pythonhosted.org/packages/source/b/bsddb3/bsddb3-6.2.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

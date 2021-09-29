@@ -1,0 +1,16 @@
+# description : Self-contained RDBMS in a DBI driver
+# depends : perl-dbi sqlite
+
+name=perl-dbd-sqlite
+version=1.70
+release=1
+
+source="https://www.cpan.org/authors/id/I/IS/ISHIGAKI/DBD-SQLite-1.70.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

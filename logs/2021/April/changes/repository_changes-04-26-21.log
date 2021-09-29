@@ -1,0 +1,31 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+Packages upgraded: 0
+
+09
+sed -i -e 's/2.2.12/extra-cmake-modules/g' /Voncloft-OS/*/bluefish/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/khtml/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kross/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kmediaplayer/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kjsembed/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kjs/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kxmlrpcclient/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kdewebkit/spkgbuild
+sed -i -e 's/5.81/5.81.0/g' /Voncloft-OS/*/kdelibs4support/spkgbuild
+Packages upgraded: 9
+
+12
+Packages upgraded: 0
+
+16
+Packages upgraded: 0
+
+20
+Packages upgraded: 0
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

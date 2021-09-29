@@ -1,0 +1,16 @@
+# description : Time zone object base class and factory 
+# depends : perl-class-singleton3 perl-params-validate perl-class-load
+
+name=perl-datetime-timezone
+version=2.47
+release=1
+
+source="https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.47.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

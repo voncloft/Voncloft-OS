@@ -1,0 +1,15 @@
+# description : Generate random strings in Python
+# depends : python
+
+name=python-rstr
+version=3.0.0
+release=10
+
+source="https://files.pythonhosted.org/packages/source/r/rstr/rstr-3.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

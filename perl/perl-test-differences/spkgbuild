@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Test::Differences
+# depends : perl-text-diff
+
+name=perl-test-differences
+version=0.68
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DC/DCANTRELL/Test-Differences-0.68.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

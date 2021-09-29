@@ -1,0 +1,15 @@
+# description : universal Python project management: convert between formats, build(), manage venvs
+# depends : ${_deps[@]/#/python-} m2r
+
+name=python-dephell
+version=0.8.3
+release=3
+
+source="https://files.pythonhosted.org/packages/source/d/dephell/dephell-0.8.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

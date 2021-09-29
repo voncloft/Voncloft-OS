@@ -1,0 +1,15 @@
+# description : Python library to parse, read and write Microsoft OLE2 files formerly OleFileIO_PL
+  # depends : python
+
+name=python-olefile
+version=0.47
+release=3
+
+source="olefile-0.46.tar.gz::https://github.com/decalage2/olefile/archive/v0.46.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

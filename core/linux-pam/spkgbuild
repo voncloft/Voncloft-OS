@@ -1,0 +1,41 @@
+# description : contains Pluggable Authentication Modules used to enable the local system administrator to choose how applications authenticate users
+# depends : libnsl libtirpc libpwquality
+
+name=linux-pam
+version=1.5.2
+release=1
+
+source="https://github.com/linux-pam/linux-pam/releases/download/v$version/Linux-PAM-$version.tar.xz
+	other
+	system-account
+	system-auth
+	system-session
+	system-password
+	"
+options="!checksum"
+
+build() {
+	cd Linux-PAM-$version
+	sed -e /service_DATA/d \
+    		-i modules/pam_namespace/Makefile.am &
+	./configure --prefix=/usr                    \
+            --sysconfdir=/etc                \
+            --libdir=/usr/lib                \
+            --enable-securedir=/lib/security 
+            
+        make
+	mkdir -pv $PKG/etc/pam.d
+	install -v -m755 $SRC/other $PKG/etc/pam.d/other
+	install -v -m755 $SRC/system-account $PKG/etc/pam.d/system-account
+	install -v -m755 $SRC/system-auth $PKG/etc/pam.d/system-auth
+	install -v -m755 $SRC/system-session $PKG/etc/pam.d/system-session
+	install -v -m755 $SRC/system-password $PKG/etc/pam.d/system-password
+	
+	make DESTDIR=$PKG install
+	for file in pam pam_misc pamc
+	do
+	  mv -v $PKG/usr/lib/lib${file}.so.* $PKG/lib 
+  	  ln -sfv ../../lib/$(readlink $PKG/usr/lib/lib${file}.so) $PKG/usr/lib/lib${file}.so
+	done
+	
+}

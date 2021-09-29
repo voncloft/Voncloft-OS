@@ -1,0 +1,15 @@
+# description : Authentication Library for OpenStack Identity
+# depends : python-pbr python-iso8601 python-stevedore python-os-service-types python-requests
+
+name=python-keystoneauth1
+version=4.4.0
+release=1
+
+source="python-keystoneauth1-4.4.0.tar.gz::https://github.com/openstack/keystoneauth/archive/4.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

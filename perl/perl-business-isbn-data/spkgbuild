@@ -1,0 +1,16 @@
+# description : Data pack for Business::ISBN
+# depends : perl
+
+name=perl-business-isbn-data
+version=20210112.006
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/-20140910.003.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

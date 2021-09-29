@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Mail::IMAPClient : An IMAP Client API
+# depends : perl-parse-recdescent perl-digest-hmac
+
+name=perl-mail-imapclient
+version=3.43
+release=3
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLOBBES/Mail-IMAPClient-3.43.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Mypy static type checker plugin for Pytest
+# depends : mypy python-filelock python-pytest
+
+name=python-pytest-mypy
+version=0.8.1
+release=1
+
+source="python-pytest-mypy-0.8.1.tar.gz::https://github.com/dbader/pytest-mypy/archive/v0.8.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

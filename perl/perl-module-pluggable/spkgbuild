@@ -1,0 +1,16 @@
+# description : automatically give your module the ability to have plugins
+# depends : perl
+
+name=perl-module-pluggable
+version=5.2
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Analyzes Python code looking for bugs and signs of poor quality
+# depends : python-astroid python-mccabe python-isort python-setuptools python-toml
+
+name=python-pylint
+version=3.0.0
+release=3
+
+source="https://github.com/PyCQA/pylint/archive/v2.11.1/.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

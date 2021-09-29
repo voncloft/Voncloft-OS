@@ -1,0 +1,19 @@
+# description : gtk3 timezone map widget
+# depends : gtk3 libsoup gobject-introspection
+
+name=timezonemap
+version=0.4.5.1
+release=1
+
+source="https://github.com/dashea/$name/releases/tag/$version"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreconf -ifv
+	./configure --prefix=/usr
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+	make
+	make DESTDIR=$PKG install
+}

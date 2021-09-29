@@ -1,0 +1,14 @@
+# description : log folders for Voncloft-OS
+# depends : 
+
+name=log-folders
+version=1
+release=1
+
+source=""
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/var/log/backups
+	mkdir -pv $PKG/var/log/old
+}

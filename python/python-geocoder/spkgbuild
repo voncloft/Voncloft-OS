@@ -1,0 +1,15 @@
+# description : A simple and consistent geocoding library
+# depends : python-requests python-ratelim python-click python-six python-future
+
+name=python-geocoder
+version=1.38.1
+release=3
+
+source="https://pypi.io/packages/source/g/geocoder/geocoder-1.38.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Turn 407 into four hundred and seven, etc.
+# depends : perl
+
+name=perl-lingua-en-numbers
+version=2.03
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Lingua-EN-Numbers-2.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

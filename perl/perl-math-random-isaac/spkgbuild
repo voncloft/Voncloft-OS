@@ -1,0 +1,16 @@
+# description : Perl interface to the ISAAC PRNG algorithm
+# depends : perl
+
+name=perl-math-random-isaac
+version=1.004
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/J/JA/JAWNSY/Math-Random-ISAAC-1.004.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

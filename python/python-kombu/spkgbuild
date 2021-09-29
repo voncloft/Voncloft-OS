@@ -1,0 +1,15 @@
+# description : A messaging library for Python
+# depends : python-amqp
+
+name=python-kombu
+version=5.2.0
+release=3
+
+source="https://github.com/celery/kombu/archive/v5.1.0/python-kombu-5.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

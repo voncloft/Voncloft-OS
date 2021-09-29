@@ -1,0 +1,23 @@
+# description : manages applications dependencies through its entire life
+# depends : ruby
+
+_gemname=bundler
+name=ruby-bundler
+version=2.2.28
+release=4
+
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
+options="!checksum"
+
+build() {
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
+
+}

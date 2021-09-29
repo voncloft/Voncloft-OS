@@ -1,0 +1,24 @@
+# description : A text entry and UI navigation application
+# depends : at-spi2-atk clutter dconf gtk3 libgee libxklavier python-atspi python-gobject3
+
+name=caribou
+version=0.4.21
+release=3
+
+source="https://download.gnome.org/sources/$name/${version:0:3}/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure \
+    	--prefix=/usr \
+    	--sysconfdir=/etc \
+    	--localstatedir=/var \
+    	--libexecdir=/usr/lib \
+    	--disable-static \
+    	--disable-schemas-compile
+
+    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,22 @@
+# description : screensaver designed to integrate well with the cinnamon desktop
+# depends : accountsservice cinnamon-desktop libgnomekbd python-cairo python-gobject2 python-gobject3 python-setproctitle python-xapp xapp
+# depends : cinnamon-translations gobject-introspection meson ninja
+
+name=cinnamon-screensaver
+version=5.0.6
+release=1
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+    mkdir -p ${name}-${version}/build
+    cd ${name}-${version}/build
+
+    meson --prefix=/usr \
+          --libexecdir=lib/cinnamon-screensaver \
+          --buildtype=plain \
+          ..
+    ninja
+    DESTDIR="${PKG}" ninja install
+}

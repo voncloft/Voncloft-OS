@@ -1,0 +1,16 @@
+# description : Roles. Like a nouvelle cuisine portion size slice of Moose.
+# depends : perl
+
+name=perl-role-tiny
+version=2.002004
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Role-Tiny-2.002004.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

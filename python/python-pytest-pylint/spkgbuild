@@ -1,0 +1,15 @@
+# description : pytest plugin to check source code with pylint
+# depends : python-pytest python-pylint python-toml
+
+name=python-pytest-pylint
+version=0.18.0
+release=3
+
+source="python-pytest-pylint-0.18.0.tar.gz::https://github.com/carsongee/pytest-pylint/archive/v0.18.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

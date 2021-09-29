@@ -1,0 +1,15 @@
+# description : An unobtrusive argparse wrapper with natural syntax
+# depends : python
+
+name=python-argh
+version=0.26.2
+release=8
+
+source="https://github.com/neithere/argh/archive/v0.26.2/python-argh-0.26.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

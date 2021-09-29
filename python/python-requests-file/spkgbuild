@@ -1,0 +1,15 @@
+# description : File transport adapter for Requests
+# depends : python-six python-requests
+
+name=python-requests-file
+version=1.5.1
+release=3
+
+source="python-requests-file-1.5.1.tar.gz::https://github.com/dashea/requests-file/archive/1.5.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,27 @@
+# description	: Free version of the SSH connectivity tools
+# depends	: linux-pam xorg-server openssh-boot 
+
+name=openssh
+version=8.8
+release=1
+
+backup="etc/ssh/sshd_config"
+source="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir -pv $PKG/var/lib/sshd
+	./configure --prefix=/usr                            \
+            --sysconfdir=/etc/ssh                    \
+            --with-md5-passwords                     \
+            --with-privsep-path=/var/lib/sshd        \
+            --with-default-path=/usr/bin             \
+            --with-superuser-path=/usr/sbin:/usr/bin \
+            --with-pid-dir=/run
+      make 
+      make DESTDIR=$PKG install
+      mkdir $PKG/usr/bin
+      install -v -m755    contrib/ssh-copy-id $PKG/usr/bin
+      
+}

@@ -1,0 +1,15 @@
+# description : A helper to mock/fake web requests in python aiohttp package
+# depends : python-aiohttp
+
+name=python-aioresponses
+version=0.7.2
+release=3
+
+source="python-aioresponses-0.7.2.tar.gz::https://github.com/pnuckowski/aioresponses/archive/0.7.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

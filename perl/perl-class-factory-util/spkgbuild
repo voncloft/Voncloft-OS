@@ -1,0 +1,16 @@
+# description : Provide utility methods for factory classes
+# depends : perl
+
+name=perl-class-factory-util
+version=1.7
+release=10
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Class-Factory-Util-1.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

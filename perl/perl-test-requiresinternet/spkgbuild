@@ -1,0 +1,16 @@
+# description : Easily test network connectivity
+# depends : perl
+
+name=perl-test-requiresinternet
+version=0.05
+release=6
+
+source="https://search.mcpan.org/CPAN/authors/id/M/MA/MALLEN/Test-RequiresInternet-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

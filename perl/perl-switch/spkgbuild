@@ -1,0 +1,16 @@
+# description : A switch statement for Perl
+# depends : perl
+
+name=perl-switch
+version=2.17
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/C/CH/CHORNY/Switch-2.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

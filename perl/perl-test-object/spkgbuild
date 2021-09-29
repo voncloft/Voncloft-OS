@@ -1,0 +1,16 @@
+# description : Thoroughly testing objects via registered handlers
+# depends : perl
+
+name=perl-test-object
+version=0.08
+release=3
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-Object-0.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

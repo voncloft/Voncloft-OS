@@ -1,0 +1,24 @@
+#/bin/sh
+
+for f in /Voncloft-OS/working_on/python/*
+do
+	mkdir /Voncloft-OS/working_on/python/done/${f##*/}
+	grep "description" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	grep "depends" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e "" >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+
+
+
+	echo "name=${f##*/}" >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	grep "version=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	grep "release=" $f/spkgbuild >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e "" >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+
+	echo -e  'source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"' >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e  'options="!checksum"' >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e "" >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e 'build() {' >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e '   cd ${name#python-}-$version' >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+	echo -e '   python setup.py build\n   python setup.py install --optimize=1 --root=$PKG\n }' >> /Voncloft-OS/working_on/python/done/${f##*/}/spkgbuild
+
+done

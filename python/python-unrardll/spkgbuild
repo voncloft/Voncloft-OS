@@ -1,0 +1,15 @@
+# description : Python wrapper for UnRAR DLL
+# depends : libunrar python
+
+name=python-unrardll
+version=0.1.5
+release=5
+
+source="https://files.pythonhosted.org/packages/ac/83/76ec4623be48c38c5c7db3dcaaf9f57139c75df327734c99085db8fc8ac8/unrardll-0.1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

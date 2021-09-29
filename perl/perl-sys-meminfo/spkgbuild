@@ -1,0 +1,16 @@
+# description : Perl extension for return the total amount of physical memory
+# depends : perl
+
+name=perl-sys-meminfo
+version=0.99
+release=2
+
+source="https://cpan.metacpan.org/authors/id/S/SC/SCRESTO/Sys-MemInfo-0.99.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Temporary changing working directory chdir
+# depends : perl
+
+name=perl-cwd-guard
+version=0.05
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/K/KA/KAZEBURO/Cwd-Guard-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

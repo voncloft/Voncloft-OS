@@ -1,0 +1,15 @@
+# description : Composable style cycles
+# depends : python-six
+
+name=python-cycler
+version=0.10.0
+release=8
+
+source="https://github.com/matplotlib/cycler/archive/v0.10.0/python-cycler-0.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

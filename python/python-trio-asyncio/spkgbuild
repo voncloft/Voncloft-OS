@@ -1,0 +1,15 @@
+# description : A re-implementation of the asyncio mainloop on top of Trio
+# depends : 
+
+name=python-trio-asyncio
+version=0.12.0
+release=1
+
+source="git+https://github.com/python-trio/trio-asyncio.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

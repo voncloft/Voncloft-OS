@@ -1,0 +1,22 @@
+# description : updates IP for website
+# depends : glibc noip-boot
+
+name=noip
+version=2.1.9
+release=1
+
+source="http://www.no-ip.com/client/linux/$name-duc-linux.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd $name-$version-$release
+	#make
+	#make DESTDIR=$PKG install BINDIR=/usr/bin
+	sed -i '/^#define CONFIG_FILEPATH/s/PREFIX//' noip2.c
+ 	sed -i '/^#define CONFIG_FILENAME/s/PREFIX//' noip2.c
+
+	cc -Wall $CLFAGS $LDFLAGS -g -Dlinux -DPREFIX=/usr noip2.c -o noip2 -Wno-unused-but-set-variable
+	install -Dm755 noip2 "$PKG/usr/bin/noip2"
+	
+}

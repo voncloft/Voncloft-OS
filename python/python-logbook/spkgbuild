@@ -1,0 +1,15 @@
+# description : Logging sytem for Python that replaces the standard library’s logging module
+# depends : python-six
+
+name=python-logbook
+version=1.5.3
+release=8
+
+source="python-logbook-1.5.3.tar.gz::https://github.com/mitsuhiko/logbook/archive/1.5.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

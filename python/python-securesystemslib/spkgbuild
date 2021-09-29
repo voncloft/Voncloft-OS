@@ -1,0 +1,15 @@
+# description : Cryptographic and general-purpose routines for Secure Systems Lab projects at NYU
+# depends : python-cryptography python-pynacl python-colorama python-six python-dateutil
+
+name=python-securesystemslib
+version=0.21.0
+release=1
+
+source="git+https://github.com/secure-systems-lab/securesystemslib.git?signed#tag=v0.21.0"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

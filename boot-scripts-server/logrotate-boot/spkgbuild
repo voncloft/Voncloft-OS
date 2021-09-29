@@ -1,0 +1,15 @@
+# description : bootscript for log rotate
+# depends : 
+
+name=logrotate-boot
+version=3.18
+release=1
+
+source=""
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-logrotate-boot
+
+}

@@ -1,0 +1,16 @@
+# description : Perl bindings for GNU Libidn2
+# depends : libidn2 perl
+
+name=perl-net-libidn2
+version=1.01
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/T/TH/THOR/Net-LibIDN2-1.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Simple DNS resolver for asyncio
+# depends : python-pycares
+
+name=python-aiodns
+version=3.0.0
+release=4
+
+source="https://files.pythonhosted.org/packages/source/a/aiodns/aiodns-3.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A lightweight SOAP python client
+# depends : python
+
+name=python-suds
+version=1.4.1.0
+release=1
+
+source="https://pypi.io/packages/source/s/suds-py3/suds-py3-1.4.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

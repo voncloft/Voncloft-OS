@@ -1,0 +1,16 @@
+# description : Net::IDN::Encode provides an easy-to-use interface for encoding and decoding Internationalized Domain Names IDNs.
+# depends : perl
+
+name=perl-net-idn-encode
+version=2.500
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/C/CF/CFAERBER/Net-IDN-Encode-2.500.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

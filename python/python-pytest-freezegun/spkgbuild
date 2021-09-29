@@ -1,0 +1,15 @@
+# description : Easily freeze time in pytest test + fixtures
+# depends : python-black python-pytest python-freezegun
+
+name=python-pytest-freezegun
+version=0.4.2
+release=3
+
+source="pytest-forked-0.4.2.tar.gz::https://github.com/ktosiek/pytest-freezegun/archive/0.4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : asyncio (PEP 3156) Redis client library
+# depends : python-async-timeout python-hiredis
+
+name=python-aioredis
+version=2.0.0
+release=1
+
+source="https://github.com/aio-libs/aioredis-py/archive/v2.0.0/python-aioredis-2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

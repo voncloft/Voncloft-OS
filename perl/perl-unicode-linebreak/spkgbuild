@@ -1,0 +1,16 @@
+# description : UAX #14 Unicode Line Breaking Algorithm
+# depends : perl perl-mime-charset libthai
+
+name=perl-unicode-linebreak
+version=2019.001
+release=3
+
+source="https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/-2019.001.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

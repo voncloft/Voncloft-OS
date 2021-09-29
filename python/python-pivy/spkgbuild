@@ -1,0 +1,15 @@
+# description : Bindings to Coin3D
+# depends : python soqt
+
+name=python-pivy
+version=0.6.6
+release=3
+
+source="git+https://github.com/coin3d/pivy#commit=55e659de7ea346d3caf176d7fe254224d36e4791"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

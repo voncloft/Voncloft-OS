@@ -1,0 +1,15 @@
+# description : A fast and modern Python SOAP client
+# depends : python-appdirs python-attrs python-cached-property python-defusedxml
+
+name=python-zeep
+version=4.1.0
+release=3
+
+source="https://github.com/mvantellingen/python-zeep/archive/4.1.0/python-zeep-4.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

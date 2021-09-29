@@ -1,0 +1,16 @@
+# description : rename a sub
+# depends : perl
+
+name=perl-sub-name
+version=0.26
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Sub-Name-0.26.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

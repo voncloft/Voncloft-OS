@@ -1,0 +1,15 @@
+# description : Implements a topological sort algorithm
+# depends : python
+
+name=python-toposort
+version=1.6
+release=1
+
+source="https://pypi.io/packages/source/t/toposort/toposort-1.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Various e-mail related modules
+# depends : perl-timedate
+
+name=perl-mailtools
+version=2.21
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/MailTools-2.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

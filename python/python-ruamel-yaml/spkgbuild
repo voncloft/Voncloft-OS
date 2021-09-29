@@ -1,0 +1,15 @@
+# description : YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order
+# depends : python-ruamel.yaml.clib
+
+name=python-ruamel-yaml
+version=0.17.16
+release=3
+
+source="https://files.pythonhosted.org/packages/source/r//-0.17.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

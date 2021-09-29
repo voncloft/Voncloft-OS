@@ -1,0 +1,15 @@
+# description : Python implementation of SAML Version 2
+# depends : python
+
+name=python-pysaml2
+version=7.0.1
+release=1
+
+source="https://pypi.org/packages/source/p/pysaml2/pysaml2-6.5.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

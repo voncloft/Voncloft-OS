@@ -1,0 +1,20 @@
+# description : Classes for displaying the contents of svg files
+# depends : qt5
+
+name=qt5-svg
+version=5.15.2
+release=1
+
+source="https://download.qt.io/official_releases/qt/5.12/$version/submodules/qtsvg-everywhere-src-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd qtsvg-everywhere-src-$version
+	mkdir build
+	cd build
+	qmake ../
+	make
+	make DESTDIR=$PKG install
+	find "$PKG/usr/lib" -type f -name '*.prl' \
+    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}

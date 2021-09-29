@@ -1,0 +1,21 @@
+# description : 3d audio library
+# depends : gcc
+
+name=openal
+version=1.21.1
+release=1
+
+source="https://github.com/kcat/openal-soft/archive/refs/tags/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-soft-$version
+	mkdir build
+	cd build
+	cmake .. \
+	    -DCMAKE_INSTALL_PREFIX=/usr \
+    	-DCMAKE_BUILD_TYPE=None \
+    	-DCMAKE_INSTALL_LIBDIR=lib
+	make
+	make DESTDIR=$PKG install
+}

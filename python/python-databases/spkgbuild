@@ -1,0 +1,15 @@
+# description : Async database support for Python
+# depends : python
+
+name=python-databases
+version=0.5.2
+release=1
+
+source="python-databases-0.4.3.tar.gz::https://github.com/encode/databases/archive/0.4.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Extensions to L<PPI|PPI>
+# depends : perl-exception-class perl-ppi perl-readonly perl-task-weaken
+
+name=perl-ppix-utilities
+version=1.001000
+release=3
+
+source="https://cpan.metacpan.org/authors/id/E/EL/ELLIOTJS/PPIx-Utilities-1.001000.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

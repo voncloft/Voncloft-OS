@@ -1,0 +1,15 @@
+# description : A standardized database driver for Python platforms and development
+# depends : python python-dnspython
+
+name=python-mysql-connector
+version=8.0.22
+release=2
+
+source="https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-8.0.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

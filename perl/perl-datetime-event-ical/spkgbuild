@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module DateTime::Event::ICal
+# depends : perl-datetime-event-recurrence
+
+name=perl-datetime-event-ical
+version=0.13
+release=6
+
+source="https://www.cpan.org/authors/id/F/FG/FGLOCK/DateTime-Event-ICal-0.13.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

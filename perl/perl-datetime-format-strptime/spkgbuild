@@ -1,0 +1,16 @@
+# description : Parse and Format DateTimes using Strptime
+# depends : perl-datetime perl-datetime-locale
+
+name=perl-datetime-format-strptime
+version=1.79
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-1.75.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

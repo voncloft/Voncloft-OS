@@ -1,0 +1,16 @@
+# description : write filesystems in Perl using FUSE
+# depends : perl fuse2
+
+name=perl-fuse
+version=0.16.1
+release=11
+
+source="https://search.cpan.org/CPAN/authors/id/D/DP/DPATES/Fuse-0.16.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

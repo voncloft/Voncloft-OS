@@ -1,0 +1,16 @@
+# description : Extra extransions for perl-x11-protocol
+# depends : perl-x11-protocol
+
+name=perl-x11-protocol-other
+version=31
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/K/KR/KRYDE/X11-Protocol-Other-30.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

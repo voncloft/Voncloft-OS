@@ -1,0 +1,23 @@
+# description : network manager applet
+# depends : gtk3 libnma libnotify libsecret gobject-introspection libmm-glib polkit
+
+name=nm-connection-editor
+version=1.20.0
+release=1
+
+source="https://download.gnome.org/sources/network-manager-applet/1.20/network-manager-applet-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd NetworkManager-$version
+	mkdir build
+	cd build
+
+	meson --prefix=/usr \
+	-Dappindicator=no \
+	-Dselinux=false \
+	-Dteam=false ..
+
+	ninja
+	DESTDIR=$PKG ninja install
+}

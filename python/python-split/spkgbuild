@@ -1,0 +1,15 @@
+# description : Functions to split or partition sequences
+# depends : python
+
+name=python-split
+version=0.4
+release=6
+
+source="https://pypi.io/packages/source/s/split/split-0.4.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

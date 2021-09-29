@@ -1,0 +1,16 @@
+# description : Compare elements of two or more lists
+# depends : perl
+
+name=perl-list-compare
+version=0.55
+release=1
+
+source="http://search.cpan.org/CPAN/authors/id/J/JK/JKEENAN/List-Compare-0.55.tar.gz"
+options="!checksum" 
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

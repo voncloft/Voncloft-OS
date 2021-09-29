@@ -1,0 +1,26 @@
+# description : simple authentication and security layer
+# depends : berkeley-db
+
+name=cyrus-sasl
+version=2.1.27
+release=1
+
+source="https://github.com/cyrusimap/cyrus-sasl/releases/download/$name-$version/$name-$version.tar.gz
+	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-doc_fixes-1.patch"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i $SRC/cyrus-sasl-2.1.27-doc_fixes-1.patch
+	./configure --prefix=/usr        \
+            --sysconfdir=/etc    \
+            --enable-auth-sasldb \
+            --with-dbpath=/var/lib/sasl/sasldb2 \
+            --with-saslauthd=/var/run/saslauthd
+        make
+	make DESTDIR=$PKG install
+	install -v -dm755                          $PKG/usr/share/doc/$name-$version/html
+	install -v -m644  saslauthd/LDAP_SASLAUTHD $PKG/usr/share/doc/$name-$version
+	install -v -m644  doc/legacy/*.html        $PKG/usr/share/doc/$name-$version/html
+	install -v -dm700 $PKG/var/lib/sasl
+}

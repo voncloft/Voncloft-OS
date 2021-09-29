@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module DBD::SQLite2
+# depends : perl-dbi
+
+name=perl-dbd-sqlite2
+version=0.38
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/DBD-SQLite2-0.38.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

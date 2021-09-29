@@ -1,0 +1,18 @@
+# description	: Combined X.Org X11 Protocol headers
+# depends	: util-macros meson
+
+name=xorgproto
+version=2021.5
+release=1
+source="https://xorg.freedesktop.org/archive/individual/proto/$name-$version.tar.bz2"
+
+build() {
+	cd $name-$version
+
+	mkdir build
+	cd build
+	
+	meson --prefix=/usr -Dlegacy=true .. 
+	ninja
+	DESTDIR=$PKG ninja install
+}

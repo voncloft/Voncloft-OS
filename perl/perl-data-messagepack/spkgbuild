@@ -1,0 +1,16 @@
+# description : MessagePack serializing/deserializing
+# depends : perl
+
+name=perl-data-messagepack
+version=1.01
+release=1
+
+source="https://cpan.metacpan.org/authors/id/S/SY/SYOHEX/Data-MessagePack-1.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

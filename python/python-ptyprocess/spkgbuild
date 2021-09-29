@@ -1,0 +1,15 @@
+# description : Run a subprocess in a pseudo terminal
+# depends : python
+
+name=python-ptyprocess
+version=0.7.0
+release=1
+
+source="https://pypi.io/packages/source/p/ptyprocess/ptyprocess-0.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

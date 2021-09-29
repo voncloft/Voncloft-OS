@@ -1,0 +1,16 @@
+# description : IO::All of it to Graham and Damian!
+# depends : perl.1 perl-io-string
+
+name=perl-io-all
+version=0.87
+release=3
+
+source="https://cpan.metacpan.org/authors/id/F/FR/FREW/IO-All-0.87.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

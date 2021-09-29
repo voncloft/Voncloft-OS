@@ -1,0 +1,15 @@
+# description : Python client Library for the gpodder.net web service
+# depends : python
+
+name=python-mygpoclient
+version=1.8
+release=7
+
+source="http://gpodder.org/mygpoclient/mygpoclient-1.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Lockfile object with timeouts and context manager
+# depends : python-zc.lockfile python-tempora python-jaraco
+
+name=python-yg.lockfile
+version=2.3
+release=1
+
+source="https://github.com/yougov/yg.lockfile/archive/2.3/python-yg.lockfile-2.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A pickled object field for Django
+# depends : python-django
+
+name=python-django-picklefield
+version=3.0.1
+release=3
+
+source="git+https://github.com/gintas/django-picklefield.git#tag=4d5e3b2995df6597d45ad59d92ead38abc5c34af"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

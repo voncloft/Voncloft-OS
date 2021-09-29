@@ -1,0 +1,37 @@
+# description	: Open-source HTTP server
+# depends	: apr-util pcre openssl
+
+name=httpd
+version=2.4.49
+release=1
+
+backup="etc/httpd/httpd.conf"
+source="https://archive.apache.org/dist/httpd/$name-$version.tar.bz2
+	https://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.48-blfs_layout-1.patch"
+
+build() {
+	cd $name-$version
+
+	# Forces the apxs utility to use absolute pathnames for modules, when instructed to do so
+	patch -Np1 -i ../httpd-blfs_layout-1.patch
+
+	# Adapt the Lua module to API changes in Lua-5.4
+	#sed -i 's/lua_resume(a, NULL, b)/lua_resume(a, NULL, b, NULL)/' modules/lua/mod_lua.h
+
+	sed '/dir.*CFG_PREFIX/s@^@#@' -i support/apxs.in
+	./configure --enable-authnz-fcgi                              \
+	            --enable-layout=BLFS                              \
+	            --enable-mods-shared="all cgi"                    \
+	            --enable-mpms-shared=all                          \
+	            --enable-suexec=shared                            \
+	            --with-apr=/usr/bin/apr-1-config                  \
+	            --with-apr-util=/usr/bin/apu-1-config             \
+	            --with-suexec-bin=/usr/lib/httpd/suexec           \
+	            --with-suexec-caller=apache                       \
+	            --with-suexec-docroot=/srv/www                    \
+	            --with-suexec-logfile=/var/log/httpd/suexec.log   \
+	            --with-suexec-uidmin=100                          \
+	            --with-suexec-userdir=public_html
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,32 @@
+# description: VPN Client
+# depends:     openvpn-daemon lzo iproute2 pkcs11-helper
+
+name=openvpn
+version=2.5.3
+release=1
+source="https://github.com/OpenVPN/openvpn/archive/$version/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+
+	autoreconf -ifv
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--enable-iproute2 \
+		--enable-plugins \
+		--enable-pkcs11 \
+		--disable-systemd
+	make
+	make DESTDIR=$PKG install
+	mkdir -pv $PKG/etc/pia
+	cd etc/pia
+	wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
+	unzip openvpn.zip
+	rm -rfv openvpn.zip
+	echo "username" >> secrets
+	echo "password" >> secrets
+
+	grep -i -e 's/auth-users-pass/auth-users-pass \/etc\/pia\/secrets\nlog-append \/var\/log\/openvpn.log/g' us_denver.ovpn
+	#echo "log-append /var/log/openvpn.log" >> us_denver.ovpn
+}

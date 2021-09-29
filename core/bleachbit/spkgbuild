@@ -1,0 +1,13 @@
+# description	: Deletes unneeded files to free disk space and maintain privacy
+# depends	: desktop-file-utils gtk3 hicolor-icon-theme 
+
+name=bleachbit
+version=4.4.0
+release=1
+source="git+https://github.com/bleachbit/bleachbit.git#tag=v4.4.0?signed"
+
+build() {
+	cd $name-$version
+	sed -i '/make -C po install/d' Makefile
+	make prefix=/usr DESTDIR="$PKG" install
+}

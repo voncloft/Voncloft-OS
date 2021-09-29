@@ -1,0 +1,15 @@
+# description : Reader for the MaxMind DB format
+# depends : python libmaxminddb
+
+name=python-maxminddb
+version=2.1.0
+release=3
+
+source="python-maxminddb-2.1.0.tar.gz::https://github.com/maxmind/MaxMind-DB-Reader-python/archive/v2.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

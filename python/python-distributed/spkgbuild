@@ -1,0 +1,15 @@
+# description : Distributed task scheduler for Dask
+# depends : 
+
+name=python-distributed
+version=2021.9.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source///-2021.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

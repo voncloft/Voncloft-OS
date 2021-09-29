@@ -1,0 +1,15 @@
+# description : Capture C-level stdout/stderr in Python
+# depends : python
+
+name=python-wurlitzer
+version=3.0.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source///-2.1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module POE::Component::IKC
+# depends : perl-poe
+
+name=perl-poe-component-ikc
+version=0.2402
+release=6
+
+source="https://www.cpan.org/authors/id/G/GW/GWYN/POE-Component-IKC-0.2402.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

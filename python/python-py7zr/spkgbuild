@@ -1,0 +1,15 @@
+# description : Pure python 7-zip library
+# depends : python-pycryptodome python-texttable
+
+name=python-py7zr
+version=0.16.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/py7zr/py7zr-0.11.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

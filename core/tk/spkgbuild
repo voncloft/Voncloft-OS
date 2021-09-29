@@ -1,0 +1,31 @@
+# description : windowing toolkit with tcl
+# depends : libxft libxss tcl
+
+name=tk
+version=8.6.11.1
+release=1
+verzion=8.6.11
+source="https://downloads.sourceforge.net/sourceforge/tcl/tk${version}-src.tar.gz"
+options="!checksum"
+
+build() {
+	cd tk$verzion/unix
+	./configure --prefix=/usr --mandir=/usr/share/man --enable-threads --disable-rpath --enable-64bit
+ 	make
+	make INSTALL_ROOT=$PKG install install-private-headers
+
+	ln -sf wish${verzion%.*} "${PKG}/usr/bin/wish"
+  	ln -sf libtk${verzion%.*}.so "${PKG}/usr/lib/libtk.so"
+
+  	cd ..
+
+	for dir in compat generic generic/ttk unix; do
+    		install -dm755 "${PKG}"/usr/include/tk-private/$dir
+    		install -m644 -t "${PKG}"/usr/include/tk-private/$dir $dir/*.h
+  	done
+
+  	# remove buildroot traces
+  	sed -e "s#${SRC}/tk${verzion}/unix#/usr/lib#" \
+      	-e "s#${SRC}/tk${verzion}#/usr/include#" \
+      	-i "${PKG}/usr/lib/tkConfig.sh"
+}

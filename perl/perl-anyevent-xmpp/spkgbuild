@@ -1,0 +1,16 @@
+# description : An implementation of the XMPP Protocol
+# depends : perl perl-anyevent perl-xml-parser perl-digest-sha1 perl-object-event perl-authen-sasl perl-net-libidn perl-xml-writer perl-net-ssleay
+
+name=perl-anyevent-xmpp
+version=0.55
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/M/MS/MSTPLBG/AnyEvent-XMPP-0.55.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Chromium HSTS Preload list as a Python package
+# depends : python
+
+name=python-hstspreload
+version=2021.9.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/h/hstspreload/hstspreload-2020.12.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

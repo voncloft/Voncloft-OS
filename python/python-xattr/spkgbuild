@@ -1,0 +1,15 @@
+# description : Python wrapper for extended filesystem attributes
+# depends : python-cffi
+
+name=python-xattr
+version=0.9.7
+release=5
+
+source="https://github.com/xattr/xattr/archive/v0.9.7/python-xattr-0.9.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

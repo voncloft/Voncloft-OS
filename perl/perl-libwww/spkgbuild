@@ -1,0 +1,16 @@
+# description : The World-Wide Web library for Perl
+# depends : perl perl-encode-locale perl-file-listing
+
+name=perl-libwww
+version=6.57
+release=1
+
+source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.57.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

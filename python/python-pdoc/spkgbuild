@@ -1,0 +1,15 @@
+# description : A simple program and library to auto generate API documentation for Python modules.
+# depends : python-mako python-markdown
+
+name=python-pdoc
+version=7.4.0
+release=7
+
+source="https://github.com/mitmproxy/pdoc/archive/v7.4.0/python-pdoc-7.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

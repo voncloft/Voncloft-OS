@@ -1,0 +1,15 @@
+# description : Multithreaded Click apps made easy
+# depends : python-click
+
+name=python-click-threading
+version=0.5.0
+release=9
+
+source="https://files.pythonhosted.org/packages/source/c/click-threading/click-threading-0.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

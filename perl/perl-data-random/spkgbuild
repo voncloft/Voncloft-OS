@@ -1,0 +1,16 @@
+# description : Data::Random - Perl module to generate random data
+# depends : perl-gd perl-yaml-tiny
+
+name=perl-data-random
+version=0.13
+release=4
+
+source="https://cpan.metacpan.org/authors/id/B/BA/BAREFOOT/Data-Random-0.13.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

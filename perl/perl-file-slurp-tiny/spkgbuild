@@ -1,0 +1,16 @@
+# description : A simple, sane and efficient file slurper
+# depends : perl
+
+name=perl-file-slurp-tiny
+version=0.004
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/File-Slurp-Tiny-0.004.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

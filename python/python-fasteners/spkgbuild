@@ -1,0 +1,15 @@
+# description : A python package that provides useful locks.
+# depends : python-six python-monotonic
+
+name=python-fasteners
+version=0.16.3
+release=5
+
+source="python-fasteners-0.16.tar.gz::https://github.com/harlowja/fasteners/archive/0.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

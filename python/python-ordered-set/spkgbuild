@@ -1,0 +1,15 @@
+# description : A MutableSet that remembers its order, so that every entry has an index
+# depends : python python-setuptools
+
+name=python-ordered-set
+version=4.0.2
+release=3
+
+source="https://pypi.io/packages/source/o/ordered-set/ordered-set-4.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

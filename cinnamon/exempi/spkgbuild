@@ -1,0 +1,19 @@
+# description : implementation of XMP
+# depends : boost valgrind
+
+name=exempi
+version=2.5.2
+release=1
+
+source="git+https://anongit.freedesktop.org/git/exempi#commit="
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i -r '/^\s?testadobesdk/d' exempi/Makefile.am &&
+	autoreconf -fiv
+
+	./configure --prefix=/usr --disable-static
+	make
+	make DESTDIR=$PKG install
+}

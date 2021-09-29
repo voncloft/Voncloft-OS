@@ -1,0 +1,16 @@
+# description : Classes for string handling with GD
+# depends : perl-gd
+
+name=perl-gdtextutil
+version=0.86
+release=7
+
+source="https://www.cpan.org/authors/id/M/MV/MVERB/GDTextUtil-0.86.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

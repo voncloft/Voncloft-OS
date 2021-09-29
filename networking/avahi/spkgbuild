@@ -1,0 +1,30 @@
+# description : local discovery on network 
+# depends : glib gobject-introspection gtk2 gtk3 libdaemon libglade qt5
+
+name=avahi
+version=0.8
+release=1
+
+source="https://github.com/lathiat/avahi/releases/download/v0.8/avahi-$version.tar.gz
+	http://www.linuxfromscratch.org/patches/blfs/svn/avahi-$version-ipv6_race_condition_fix-1.patch"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i $SRC/avahi-0.8-ipv6_race_condition_fix-1.patch
+	./configure --prefix=/usr        \
+            --sysconfdir=/etc    \
+            --localstatedir=/var \
+            --disable-static     \
+            --disable-libevent   \
+            --disable-mono       \
+            --disable-monodoc    \
+            --disable-python     \
+            --disable-qt3        \
+            --disable-qt4        \
+            --enable-core-docs   \
+            --with-distro=none   \
+            --with-systemdsystemunitdir=no
+        make
+        make DESTDIR=$PKG install
+}

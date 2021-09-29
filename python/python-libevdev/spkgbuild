@@ -1,0 +1,15 @@
+# description : Python wrapper for libevdev
+# depends : python libevdev
+
+name=python-libevdev
+version=0.9
+release=3
+
+source="https://gitlab.freedesktop.org/libevdev/python-libevdev/-/archive/0.9/python-libevdev-0.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

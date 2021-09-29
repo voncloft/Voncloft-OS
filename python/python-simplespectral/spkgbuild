@@ -1,0 +1,15 @@
+# description : Heavily simplified scipy.signal.spectral module
+# depends : python python-numpy
+
+name=python-simplespectral
+version=1.0.0
+release=7
+
+source="python-simplespectral-1.0.0.tar.gz::https://github.com/xmikos/simplespectral/archive/v1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Interface to Bzip2 compression library
+# depends : perl bzip2
+
+name=perl-compress-bzip2
+version=2.28
+release=1
+
+source="https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.28.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

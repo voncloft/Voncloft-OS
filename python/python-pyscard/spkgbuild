@@ -1,0 +1,15 @@
+# description : Framework for build()ing smart card aware applications in Python
+# depends : python pcsclite
+
+name=python-pyscard
+version=2.0.1
+release=2
+
+source="http://sourceforge.net/projects/pyscard/files/pyscard/pyscard%202.0.1/pyscard-2.0.1.tar.gz/download"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

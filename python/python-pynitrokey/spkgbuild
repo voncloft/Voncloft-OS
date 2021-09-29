@@ -1,0 +1,15 @@
+# description : A command line interface for the Nitrokey FIDO2 and Nitrokey Start
+# depends : python-cbor python-cffi python-click python-cryptography
+
+name=python-pynitrokey
+version=0.4.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/pynitrokey/pynitrokey-0.4.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

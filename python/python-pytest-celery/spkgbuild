@@ -1,0 +1,15 @@
+# description : A shim pytest plugin to enable celery.contrib.pytest
+# depends : python-celery
+
+name=python-pytest-celery
+version=0.0.0a1
+release=4
+
+source="https://pypi.io/packages/source/p/pytest-celery/pytest-celery-0.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python wrapper for Nvidia CUDA
+   # depends : cuda nvidia-utils python-numpy python-pytools python boost-libs pycuda-headers
+
+name=python-pycuda
+version=2021.1
+release=5
+
+source="https://pypi.io/packages/source/p/pycuda/pycuda-2021.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

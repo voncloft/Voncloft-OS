@@ -1,0 +1,15 @@
+# description : Serializer for literal Python expressions
+# depends : python
+
+name=python-serpent
+version=1.40
+release=3
+
+source="git+https://github.com/irmen/Serpent#commit=29b2b7696bc89f589142f80b818533afdd59e544"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

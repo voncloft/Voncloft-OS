@@ -1,0 +1,16 @@
+# description : Provide strong randomness for seeding
+# depends : perl.2 perl-crypt-random-tesha2
+
+name=perl-crypt-random-seed
+version=0.03
+release=5
+
+source="https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

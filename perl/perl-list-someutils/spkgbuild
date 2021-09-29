@@ -1,0 +1,16 @@
+# description : Perl package that combines List::Util and List::MoreUtils in one bite-sized package
+# depends : perl perl-module-implementation
+
+name=perl-list-someutils
+version=0.58
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/List-SomeUtils-0.56.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

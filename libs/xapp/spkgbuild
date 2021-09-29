@@ -1,0 +1,22 @@
+# description : common library for x-apps project
+# depends : libdbusmenu-glib libgnomekbd python gobject-introspection meson python-gobject3 vala
+
+name=xapp
+version=2.0.7
+release=1
+
+source="https://github.com/linuxmint/$name/archive/refs/tags/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson --prefix=/usr \
+	--libexecdir=lib \
+	--buildtype=plain \
+	..
+
+	ninja
+	DESTDIR=$PKG ninja install
+}

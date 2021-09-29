@@ -1,0 +1,15 @@
+# description : A code generator for executing Python snippets in source files
+# depends : python
+
+name=python-cogapp
+version=3.1.0
+release=5
+
+source="https://pypi.io/packages/source/c/cogapp/cogapp-3.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

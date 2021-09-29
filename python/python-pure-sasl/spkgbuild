@@ -1,0 +1,15 @@
+# description : Pure Python client SASL implementation
+# depends : python
+
+name=python-pure-sasl
+version=0.6.2
+release=2
+
+source="https://github.com/thobbs/pure-sasl/archive/0.6.2/python-pure-sasl-0.6.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

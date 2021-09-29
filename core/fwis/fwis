@@ -1,0 +1,5 @@
+#A program to find missing words in spkgbuild, what do you expect I am only human occasinoally I forget words.
+#$1=string to look for
+#$2=narrow down folders
+
+find . -name spkgbuild | xargs grep -H -c $1 | grep 0$ | cut -d ':' -f1 | grep $2

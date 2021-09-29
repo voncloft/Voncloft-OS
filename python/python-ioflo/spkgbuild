@@ -1,0 +1,15 @@
+# description : Flo based programming interface in python
+# depends : python
+
+name=python-ioflo
+version=2.0.2
+release=3
+
+source="python-ioflo-2.0.2.tar.gz::https://github.com/ioflo/ioflo/archive/v2.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Critique Perl source code for best-practices
+# depends : perl-b-keywords perl-config-tiny perl-exception-class perl-file-homedir
+
+name=perl-perl-critic
+version=1.140
+release=2
+
+source="https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/Perl-Critic-1.140.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

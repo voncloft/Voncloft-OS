@@ -1,0 +1,16 @@
+# description : Faciliates the creation and modification of PDF files
+# depends : perl perl-font-ttf
+
+name=perl-pdf-api2
+version=2.041
+release=1
+
+source="https://www.cpan.org/modules/by-module//--2.041.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Net::Telnet : Interact with TELNET port or other TCP ports
+
+name=perl-net-telnet
+version=3.05
+release=6
+
+source="https://www.cpan.org/authors/id/J/JR/JROGERS/Net-Telnet-3.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

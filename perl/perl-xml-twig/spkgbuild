@@ -1,0 +1,16 @@
+# description : A module for easy processing of XML
+# depends : perl-xml-parser perl-text-iconv perl
+
+name=perl-xml-twig
+version=3.52
+release=7
+
+source="https://www.cpan.org/authors/id/M/MI/MIROD/XML-Twig-3.52.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

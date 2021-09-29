@@ -1,0 +1,15 @@
+# description : Official Python bindings for the GNU Mailman 3 REST API
+# depends : python-requests
+
+name=python-mailmanclient
+version=3.3.3
+release=1
+
+source="https://files.pythonhosted.org/packages/dc/f0/9e2807d10dc7b99de760d8be84e85e11466df4a8d2608a47a03b62fefa7c/mailmanclient-3.3.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

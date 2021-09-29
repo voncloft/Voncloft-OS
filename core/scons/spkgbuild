@@ -1,0 +1,17 @@
+# description : tool for building software
+# depends : 
+
+name=scons
+version=4.2.0
+release=1
+
+source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd SCons-$version
+	sed -i 's/env python/&3/' SCons/Utilities/*.py              
+	sed -i 's:build/doc/man/::' setup.cfg                       
+	python setup.py build
+   	python setup.py install --optimize=1 --root=$PKG
+}

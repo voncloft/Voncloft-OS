@@ -1,0 +1,15 @@
+# description : Python wrapper for Xvfb, Xephyr and Xvnc
+# depends : python-easyprocess
+
+name=python-pyvirtualdisplay
+version=2.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source///-2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

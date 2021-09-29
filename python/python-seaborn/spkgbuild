@@ -1,0 +1,15 @@
+# description : Statistical data visualization
+# depends : python-pandas python-matplotlib python-scipy
+
+name=python-seaborn
+version=0.11.2
+release=3
+
+source="python-seaborn-0.11.2.tar.gz::https://github.com/mwaskom/seaborn/archive/v0.11.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Read the dimensions of an image in several popular formats
+# depends : perl
+
+name=perl-image-size
+version=3.300
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJRAY/Image-Size-3.300.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,53 @@
+# description : dhclient service 
+# depends : 
+
+name=dhcp
+version=4.4.2-p1
+release=1
+
+source="ftp://ftp.isc.org/isc/dhcp/4.4.2-p1/dhcp-4.4.2-p1.tar.gz
+	dhclient.conf
+	ifconfig.eth0"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i '/o.*dhcp_type/d' server/mdb.c &&
+	sed -r '/u.*(local|remote)_port/d'    \
+		-i client/dhclient.c              \
+		relay/dhcrelay.c
+
+	 #Install ISC DHCP by running the following commands:
+
+
+	( export CFLAGS="${CFLAGS:--g -O2} -Wall -fno-strict-aliasing                 \
+        -D_PATH_DHCLIENT_SCRIPT='\"/sbin/dhclient-script\"'         \
+        -D_PATH_DHCPD_CONF='\"/etc/dhcp/dhcpd.conf\"'               \
+        -D_PATH_DHCLIENT_CONF='\"/etc/dhcp/dhclient.conf\"'"        &&
+
+	./configure --prefix=/usr                                           \
+            --sysconfdir=/etc/dhcp                                  \
+            --localstatedir=/var                                    \
+            --with-srv-lease-file=/var/lib/dhcpd/dhcpd.leases       \
+            --with-srv6-lease-file=/var/lib/dhcpd/dhcpd6.leases     \
+            --with-cli-lease-file=/var/lib/dhclient/dhclient.leases \
+            --with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases
+	)
+
+
+	make -j1
+	make -C client DESTDIR=$PKG install
+	mkdir $PKG/sbin
+	         
+	mv -v $PKG/usr/sbin/dhclient $PKG/sbin
+	
+	#mkdir -pv $PKG/client/scripts/linux
+	#mkdir -pv $PKG/sbin
+
+	#dir $SRC/*/*/*
+	install -v -m755 client/scripts/linux $PKG/sbin/dhclient-script
+	install -m644 "$SRC/dhclient.conf" $PKG/etc/dhcp
+	install -v -dm 755 $PKG/var/lib/dhclient
+	install -m644 "$SRC/ifconfig.eth0" $PKG/etc/sysconfig
+	
+}

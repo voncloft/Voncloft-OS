@@ -1,0 +1,15 @@
+# description : High-performance, easy-to-use data structures and data analysis tools for Python
+# depends : python-numpy python-dateutil python-pytz python-setuptools
+
+name=python-pandas
+version=1.3.3
+release=1
+
+source="https://github.com/pandas-dev/pandas/releases/download/v1.3.3/pandas-1.3.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

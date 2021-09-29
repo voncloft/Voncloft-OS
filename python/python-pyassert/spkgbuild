@@ -1,0 +1,15 @@
+# description : Rich assertions library for Python
+# depends : python-six
+
+name=python-pyassert
+version=0.4.2
+release=6
+
+source="python-pyassert-0.4.2.tar.gz::https://github.com/pyclectic/pyassert/archive/v0.4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

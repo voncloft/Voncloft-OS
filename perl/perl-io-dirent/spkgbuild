@@ -1,0 +1,15 @@
+# description : Perl IO::Dirent module - Access to dirent structs returned by readdir
+
+name=perl-io-dirent
+version=0.05
+release=13
+
+source="https://search.cpan.org/CPAN/authors/id/S/SC/SCOTTW/IO-Dirent-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

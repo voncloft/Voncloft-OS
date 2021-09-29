@@ -1,0 +1,15 @@
+# description : Python module which allows you to specify timeouts when calling any existing function. Also provides support for stoppable-threads
+# depends : python
+
+name=python-func-timeout
+version=4.3.5
+release=3
+
+source="python-func-timeout-4.3.5.tar.gz::https://github.com/kata198/func_timeout/archive/4.3.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

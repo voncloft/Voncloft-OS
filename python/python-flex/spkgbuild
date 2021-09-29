@@ -1,0 +1,15 @@
+# description : Swagger schema validator
+# depends : python-six python-yaml python-validate-email python-rfc3987 python-requests
+
+name=python-flex
+version=6.14.1
+release=5
+
+source="python-flex-6.14.1.tar.gz::https://github.com/pipermerriam/flex/archive/v6.14.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

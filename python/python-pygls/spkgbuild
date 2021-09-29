@@ -1,0 +1,15 @@
+# description : Pythonic generic implementation of the Language Server Protocol
+# depends : python
+
+name=python-pygls
+version=0.11.2
+release=4
+
+source="https://files.pythonhosted.org/packages/source/p/pygls/pygls-0.11.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

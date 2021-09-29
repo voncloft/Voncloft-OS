@@ -1,0 +1,16 @@
+# description : Module to check if other perl modules are installed
+# depends : perl
+
+name=perl-devel-checklib
+version=1.14
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MATTN/Devel-CheckLib-1.14.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

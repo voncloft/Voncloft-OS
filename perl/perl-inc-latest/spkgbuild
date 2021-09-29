@@ -1,0 +1,16 @@
+# description : Build, test, and install Perl modules
+# depends : perl
+
+name=perl-inc-latest
+version=0.500
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/inc-latest-0.500.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

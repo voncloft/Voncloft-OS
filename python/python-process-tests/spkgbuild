@@ -1,0 +1,15 @@
+# description : Tools for testing processes
+  # depends : python
+
+name=python-process-tests
+version=2.1.2
+release=3
+
+source="https://pypi.io/packages/source/p/process-tests/process-tests-2.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

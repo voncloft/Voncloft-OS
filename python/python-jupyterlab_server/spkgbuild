@@ -1,0 +1,15 @@
+# description : Launch an application built using JupyterLab
+# depends : jupyter-server python-requests python-json5 python-babel
+
+name=python-jupyterlab_server
+version=2.8.2
+release=1
+
+source="https://pypi.io/packages/source/j/jupyterlab_server/jupyterlab_server-2.8.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

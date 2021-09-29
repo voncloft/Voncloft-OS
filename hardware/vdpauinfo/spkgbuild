@@ -1,0 +1,17 @@
+# description : command line utility to query capabilities of vdpau device
+# depends : gcc libvdpau libx11
+
+name=vdpauinfo
+version=1.4
+release=1
+
+source="https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreconf -ifv
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

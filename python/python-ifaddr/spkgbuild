@@ -1,0 +1,15 @@
+# description : Enumerates all IP addresses on all network adapters of the system
+# depends : python
+
+name=python-ifaddr
+version=0.1.7
+release=3
+
+source="https://github.com/pydron/ifaddr/archive/0.1.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

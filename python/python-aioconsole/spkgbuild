@@ -1,0 +1,15 @@
+# description : Asynchronous console and interfaces for asyncio
+# depends : python
+
+name=python-aioconsole
+version=0.3.2
+release=2
+
+source="https://github.com/vxgmichel/aioconsole/archive/v0.3.2/python-aioconsole-0.3.2.tar.gz.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

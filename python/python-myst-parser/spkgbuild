@@ -1,0 +1,15 @@
+# description : An extended commonmark compliant parser, with bridges to docutils/sphinx
+# depends : python-markdown-it-py python-mdit_py_plugins python-yaml python-docutils python-sphinx python-jinja
+
+name=python-myst-parser
+version=0.15.2
+release=1
+
+source="python-myst-parser-0.15.1.tar.gz::https://github.com/executablebooks/MyST-Parser/archive/v0.15.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A package designed to expose cryptographic recipes and primitives to Python developers
+  # depends : python-six python-cffi python-idna python-setuptools python-asn1crypto
+
+name=python-cryptography
+version=3.4.8
+release=1
+
+source="https://pypi.io/packages/source/c/cryptography/cryptography-3.4.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

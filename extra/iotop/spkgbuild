@@ -1,0 +1,17 @@
+# description : check for process information
+# depends : ncurses 
+
+name=iotop
+version=1.19
+release=1
+
+source="https://github.com/Tomas-M/iotop/releases/download/v${version}/$name-$version.tar.xz"
+
+options="!checksum"
+
+build()
+{
+	cd $name-$version
+	sed -i 's/sbin/bin/g' Makefile
+	make DESTDIR=$PKG install
+}

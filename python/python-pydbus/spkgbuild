@@ -1,0 +1,15 @@
+# description : Pythonic D-Bus library
+# depends : python python-gobject
+
+name=python-pydbus
+version=0.6.0
+release=7
+
+source="pydbus-0.6.0.tar.gz::https://github.com/LEW21/pydbus/archive/v0.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

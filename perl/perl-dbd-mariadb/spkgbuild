@@ -1,0 +1,16 @@
+# description : MariaDB and MySQL driver for the Perl5 Database Interface DBI
+# depends : mariadb perl-dbi
+
+name=perl-dbd-mariadb
+version=1.21
+release=1
+
+source="https://cpan.metacpan.org/authors/id/P/PA/PALI/DBD-MariaDB-1.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : A CSS Cascading Style Sheets library for Python
+# depends : python
+
+name=python-css-parser
+version=1.0.6
+release=3
+
+source="https://files.pythonhosted.org/packages/79/a5/4c11875f4adc8a3a37b79546dcba6304efdf1ca944e390aeb0fced4ee2ff/css-parser-1.0.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Reader and rewriter of EXIF informations that supports raw files
+# depends : perl
+
+name=perl-image-exiftool
+version=12.30
+release=1
+
+source="https://exiftool.org/Image-ExifTool-12.30.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

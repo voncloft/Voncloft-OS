@@ -1,0 +1,103 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+Packages upgraded: 0
+
+12
+Packages upgraded: 0
+
+16
+sed -i -e 's/5.82.0/5.83/g' /Voncloft-OS/*/extra-cmake-modules/spkgbuild
+sed -i -e 's/5.83/5.83.0/g' /Voncloft-OS/*/extra-cmake-modules/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/attica/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/baloo/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/breeze-icons/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/frameworkintegration/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kactivities/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kactivities-stats/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kapidox/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/karchive/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kauth/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kbookmarks/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcalendarcore/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcmutils/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcodecs/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcompletion/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kconfig/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kconfigwidgets/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcontacts/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcoreaddons/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kcrash/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdav/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdbusaddons/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdeclarative/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kded/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdelibs4support/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdesignerplugin/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdesu/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdewebkit/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdnssd/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kdoctools/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kemoticons/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kfilemetadata/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kglobalaccel/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kguiaddons/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kholidays/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/khtml/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/ki18n/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kiconthemes/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kidletime/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kimageformats/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kinit/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kio/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kirigami2/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kitemmodels/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kitemviews/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kjobwidgets/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kjs/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kjsembed/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kmediaplayer/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/knewstuff/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/knotifications/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/knotifyconfig/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kpackage/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kparts/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kpeople/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kplotting/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kpty/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kquickcharts/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kross/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/krunner/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kservice/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/ktexteditor/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/ktextwidgets/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kunitconversion/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kwallet/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kwayland/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kwidgetsaddons/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kwindowsystem/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kxmlgui/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/kxmlrpcclient/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/oxygen-icons5/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/plasma-framework/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/prison/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/purpose/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/qqc2-desktop-style/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/solid/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/sonnet/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/syndication/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/syntax-highlighting/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/threadweaver/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/bluez-qt/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/modemmanager-qt/spkgbuild
+sed -i -e 's/5.82.0/5.83.0/g' /Voncloft-OS/*/networkmanager-qt/spkgbuild
+Packages upgraded: 84
+
+20
+Packages upgraded: 0
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

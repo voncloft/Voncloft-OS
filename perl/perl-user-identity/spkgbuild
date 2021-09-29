@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module User::Identity : Define a person
+
+name=perl-user-identity
+version=1.00
+release=3
+
+source="https://www.cpan.org/authors/id/M/MA/MARKOV/User-Identity-0.99.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

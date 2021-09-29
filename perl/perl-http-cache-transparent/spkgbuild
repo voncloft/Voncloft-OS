@@ -1,0 +1,16 @@
+# description : Cache the result of http-gets persistently
+# depends : perl perl-libwww
+
+name=perl-http-cache-transparent
+version=1.4
+release=4
+
+source="https://www.cpan.org/authors/id/M/MA/MATTIASH/HTTP-Cache-Transparent-1.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Net::XMPP
+# depends : perl-digest-sha1 perl-xml-stream perl-digest-hmac perl-module-install
+
+name=perl-net-xmpp
+version=1.05
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DA/DAPATRICK/Net-XMPP-1.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

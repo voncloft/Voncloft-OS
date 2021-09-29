@@ -1,0 +1,15 @@
+# description : AMF support for Python
+# depends : python-defusedxml
+
+name=python-pyamf
+version=0.8.0
+release=4
+
+source="https://files.pythonhosted.org/packages/source/P/PyAMF/PyAMF-0.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

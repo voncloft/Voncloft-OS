@@ -1,0 +1,16 @@
+# description : a role for classes that can be thrown
+# depends : perl-devel-stacktrace perl-module-runtime perl-moo
+
+name=perl-throwable
+version=0.200013
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Throwable-0.200013.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

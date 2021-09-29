@@ -1,0 +1,23 @@
+# description : dnsmasq server
+# depends : dnsmasq-boot iptables
+
+name=dnsmasq
+version=2.86
+release=1
+
+source="http://www.thekelleys.org.uk/dnsmasq/$name-$version.tar.xz
+	dnsmasq.conf"
+
+build()
+{
+	cd $name-$version
+	make \
+	PREFIX=/usr \
+	BINDIR=/usr/bin
+
+	make DESTDIR=$PKG install
+
+	install -Dm644 $SRC/dnsmasq.conf $PKG/etc/dnsmasq.conf
+	
+
+}

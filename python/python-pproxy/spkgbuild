@@ -1,0 +1,15 @@
+# description : Versatile TCP/UDP asynchronous tunnel proxy implemented in Python 3 asyncio
+# depends : python
+
+name=python-pproxy
+version=2.7.8
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pproxy/pproxy-2.7.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

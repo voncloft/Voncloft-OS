@@ -1,0 +1,15 @@
+# description : Copy your docs directly to the gh-pages branch
+# depends : python
+
+name=python-ghp-import
+version=2.0.1
+release=1
+
+source="ghp-import-1.1.0.tar.gz::https://pypi.python.org/packages/source/g/ghp-import/ghp-import-1.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

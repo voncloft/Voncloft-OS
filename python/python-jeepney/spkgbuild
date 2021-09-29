@@ -1,0 +1,15 @@
+# description : Low-level, pure Python DBus protocol wrapper
+# depends : python
+
+name=python-jeepney
+version=0.7.1
+release=4
+
+source="https://pypi.io/packages/source/j/jeepney/jeepney-0.7.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

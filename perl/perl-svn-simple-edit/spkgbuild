@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module SVN::Simple::Edit
+
+name=perl-svn-simple-edit
+version=0.28
+release=6
+
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/SVN-Simple-0.28.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

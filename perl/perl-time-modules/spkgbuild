@@ -1,0 +1,15 @@
+# description : Perl time related modules
+
+name=perl-time-modules
+version=2013.0912
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/M/MU/MUIR/modules/Time-modules-2013.0912.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

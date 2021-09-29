@@ -1,0 +1,15 @@
+# description : A simple, correct PEP427 wheel installer
+# depends : python
+
+name=python-install
+version=1.3.4
+release=1
+
+source="git+https://github.com/FFY00/python-install#tag=0.0.3?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

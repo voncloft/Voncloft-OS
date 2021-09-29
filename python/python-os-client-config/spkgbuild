@@ -1,0 +1,15 @@
+# description : OpenStack Client Configuation Library
+# depends : python-openstacksdk
+
+name=python-os-client-config
+version=2.1.0
+release=4
+
+source="python-os-client-config-2.1.0.tar.gz::https://github.com/openstack/os-client-config/archive/2.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

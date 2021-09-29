@@ -1,0 +1,16 @@
+# description : GraphViz - Interface to AT&Ts GraphViz. Deprecated. See GraphViz2
+# depends : graphviz perl-file-which perl-ipc-run perl-libwww perl-parse-recdescent
+
+name=perl-graphviz
+version=2.24
+release=6
+
+source="https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/GraphViz-2.24.tgz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

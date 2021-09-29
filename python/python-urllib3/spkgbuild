@@ -1,0 +1,16 @@
+# description : HTTP library with thread-safe connection pooling and file post support
+  # description : urllib3 Documentation
+  # depends : python
+
+name=python-urllib3
+version=1.26.7
+release=1
+
+source="https://github.com/urllib3/urllib3/archive/1.26.7/python-urllib3-1.26.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

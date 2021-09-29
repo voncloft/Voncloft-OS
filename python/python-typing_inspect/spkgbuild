@@ -1,0 +1,15 @@
+# description : Runtime inspection utilities for Python typing module
+# depends : python-mypy_extensions python-typing_extensions
+
+name=python-typing_inspect
+version=0.7.1
+release=4
+
+source="python-typing_inspect-0.7.1.tar.gz::https://github.com/ilevkivskyi/typing_inspect/archive/0.7.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

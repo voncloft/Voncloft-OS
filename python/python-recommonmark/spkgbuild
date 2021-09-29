@@ -1,0 +1,15 @@
+# description : Markdown parser for docutils
+# depends : python-docutils python-commonmark python-setuptools python-sphinx
+
+name=python-recommonmark
+version=0.7.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/r/recommonmark/.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

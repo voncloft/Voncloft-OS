@@ -1,0 +1,16 @@
+# description : Make sure you didnt emit any warnings while testing 
+# depends : perl-test-simple
+
+name=perl-test-nowarnings
+version=1.06
+release=6
+
+source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-NoWarnings-1.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,17 @@
+# description : lightweight C library for writing UNIX daemons
+# depends : doxygen lynx
+
+name=libdaemon
+version=0.14
+release=1
+
+source="http://0pointer.de/lennart/projects/$name/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --disable-static &&
+	make
+
+	make DESTDIR=$PKG install
+}

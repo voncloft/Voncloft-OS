@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Data::Hierarchy
+# depends : perl-test-exception
+
+name=perl-data-hierarchy
+version=0.34
+release=11
+
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/Data-Hierarchy-0.34.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

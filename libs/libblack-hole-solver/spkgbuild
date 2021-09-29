@@ -1,0 +1,21 @@
+# description : solvers for solitaire
+# depends : glibc cmake python
+
+name=libblack-hole-solver
+version=1.10.1
+release=1
+
+source="https://fc-solve.shlomifish.org/downloads/fc-solve/black-hole-solver-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd black-hole-solver-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DBUILD_STATIC_LIBRARY=OFF
+
+	make
+	make DESTDIR=$PKG install
+}

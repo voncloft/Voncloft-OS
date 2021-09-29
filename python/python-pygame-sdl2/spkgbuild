@@ -1,0 +1,15 @@
+# description : Reimplementation of portions of the pygame API using SDL2
+# depends : python 
+
+name=python-pygame-sdl2
+version=2.1.0.r399.5777335
+release=1
+
+source=""
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

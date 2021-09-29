@@ -1,0 +1,28 @@
+# description : the cinnamon settings daemon
+# depends : cinnamon-desktop colord dbus-glib libcanberra cups
+# depends : libgnomekbd libgudev libnotify librsvg libwacom nss polkit
+# depends : pulseaudio-alsa upower
+# depends : cinnamon-translations
+# depends : meson ninja xf86-input-wacom
+
+name=cinnamon-settings-daemon
+version=5.0.4
+release=1
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+    mkdir ${name}-${version}/builddir
+    cd ${name}-${version}/builddir
+
+    meson --prefix=/usr \
+          --libexecdir="/usr/lib/${name}" \
+          --buildtype=plain \
+          -Dinstall_binfiles=false \
+          ..
+
+    ninja
+
+     DESTDIR="${PKG}" ninja install
+}

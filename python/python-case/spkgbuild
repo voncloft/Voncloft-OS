@@ -1,0 +1,15 @@
+# description : Python unittest Utilities
+# depends : python-nose
+
+name=python-case
+version=1.5.3
+release=6
+
+source="https://files.pythonhosted.org/packages/source/c/case/case-1.5.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

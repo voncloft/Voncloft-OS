@@ -1,0 +1,16 @@
+# description : configure which test files to run
+# depends : perl
+
+name=perl-test-manifest
+version=2.022
+release=2
+
+source="https://www.cpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

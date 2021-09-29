@@ -1,0 +1,15 @@
+# description : A JOSE implementation in Python
+# depends : python-rsa python-six python-ecdsa python-future
+
+name=python-jose
+version=3.3.0
+release=4
+
+source="https://github.com/mpdavis/python-jose/archive/3.3.0/python-jose-3.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

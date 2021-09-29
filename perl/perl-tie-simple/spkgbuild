@@ -1,0 +1,16 @@
+# description : Variable ties made easier: much, much, much easier...
+# depends : perl
+
+name=perl-tie-simple
+version=1.04
+release=8
+
+source="https://cpan.metacpan.org/authors/id/H/HA/HANENKAMP/Tie-Simple-1.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,22 @@
+# description : commandline option parser for ruby
+# depends : ruby
+
+name=ruby-optimist
+version=3.0.1
+release=2
+_gemname=optimist
+
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
+options="!checksum"
+
+build() {
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
+}

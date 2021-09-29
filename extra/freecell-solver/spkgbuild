@@ -1,0 +1,22 @@
+# description : depends for kpat
+# depends : perl-moo
+
+name=freecell-solver
+version=6.4.0
+release=1
+
+source="https://fc-solve.shlomifish.org/downloads/fc-solve/freecell-solver-6.4.0.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DFCS_WITH_TEST_SUITE=OFF \
+    	-DBUILD_STATIC_LIBRARY=OFF
+
+	make
+	make DESTDIR=$PKG install
+}

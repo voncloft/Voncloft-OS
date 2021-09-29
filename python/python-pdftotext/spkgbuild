@@ -1,0 +1,15 @@
+# description : Simple PDF text extraction
+# depends : poppler python
+
+name=python-pdftotext
+version=2.2.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source/p/pdftotext/pdftotext-2.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

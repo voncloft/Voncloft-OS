@@ -1,0 +1,15 @@
+# description : Return the first true value of an iterable
+# depends : python
+
+name=python-first
+version=2.0.2
+release=4
+
+source="python-first-2.0.2.tar.gz::https://github.com/hynek/first/archive/2.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

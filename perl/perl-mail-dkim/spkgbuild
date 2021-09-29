@@ -1,0 +1,16 @@
+# description : Signs/verifies Internet mail with DKIM/DomainKey signatures
+# depends : perl-crypt-openssl-rsa perl-mail-authenticationresults perl-mailtools
+
+name=perl-mail-dkim
+version=1.20200907
+release=1
+
+source="https://cpan.metacpan.org/authors/id/M/MB/MBRADSHAW/Mail-DKIM-1.20200907.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

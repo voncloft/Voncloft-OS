@@ -1,0 +1,15 @@
+# description : Modification of UTF-7 encoding for IMAP
+
+name=perl-encode-imaputf7
+version=1.05
+release=4
+
+source="http://cpan.metacpan.org/authors/id/P/PM/PMAKHOLM/Encode-IMAPUTF7-1.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

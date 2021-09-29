@@ -1,0 +1,15 @@
+# description : Python wrapper for curve25519 library with ed25519 signatures
+# depends : python zlib glibc
+
+name=python-axolotl-curve25519
+version=0.4.1.2
+release=6
+
+source="python-axolotl-curve25519-0.4.1.2.tar.gz::https://github.com/tgalal/python-axolotl-curve25519/archive/0.4.1-2.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

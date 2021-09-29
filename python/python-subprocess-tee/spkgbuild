@@ -1,0 +1,15 @@
+# description : A subprocess.run that works like tee
+# depends : python
+
+name=python-subprocess-tee
+version=0.3.4
+release=1
+
+source="https://files.pythonhosted.org/packages/source/s/subprocess-tee/subprocess-tee-0.3.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

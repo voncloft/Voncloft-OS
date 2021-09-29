@@ -1,0 +1,15 @@
+# description : oauthlib integration for Google auth.
+# depends : python python-google-auth python-requests-oauthlib
+
+name=python-google-auth-oauthlib
+version=0.4.6
+release=1
+
+source="https://pypi.org/packages/source/g/google-auth-oauthlib/google-auth-oauthlib-0.4.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

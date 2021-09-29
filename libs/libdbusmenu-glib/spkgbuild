@@ -1,0 +1,25 @@
+# description : library for passing menus over DBus
+# depends : glib
+
+_pkgname=libdbusmenu
+name=libdbusmenu-glib
+version=16.04.0
+release=4
+
+source="https://launchpad.net/${_pkgname}/${version%.?}/${version}/+download/${_pkgname}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	export HAVE_VALGRIND_TRUE='#'
+        export HAVE_VALGRIND_FALSE=''
+	cd $_pkgname-$version
+	sed -i 's/-Werror//' libdbusmenu-*/Makefile.{am,in}
+
+    ./configure --prefix=/usr \
+      --sysconfdir=/etc \
+      --localstatedir=/var \
+      --disable-{dumper,static,tests} \
+      --with-gtk=3
+    make
+    make DESTDIR=$PKG install
+}

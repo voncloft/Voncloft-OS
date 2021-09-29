@@ -1,0 +1,16 @@
+# description : Common source code filters for Inline Modules
+# depends : perl-inline perl-inline-c
+
+name=perl-inline-filters
+version=0.20
+release=3
+
+source="https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Inline-Filters-0.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

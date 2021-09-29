@@ -1,0 +1,17 @@
+# description : background images for gnome
+# depends : glib meson
+
+name=gnome-backgrounds
+version=40.1
+release=1
+_verz=40
+source="https://download.gnome.org/sources/gnome-backgrounds//gnome-backgrounds-.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson compile ..
+	DESTDIR=$PKG meson install ..
+}

@@ -1,0 +1,15 @@
+# description : Authentication, registration, account management and 3rd party account authentication
+# depends : python-django python-openid python-requests
+
+name=python-django-allauth
+version=0.45.0
+release=1
+
+source="django-allauth-0.45.0.tar.gz::https://github.com/pennersr/django-allauth/archive/0.45.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : cairocffi is a CFFI-based drop-in replacement for Pycairo, a set of Python bindings and object-oriented API for cairo.
+# depends : python-cffi cairo python-xcffib
+
+name=python-cairocffi
+version=1.2.0
+release=3
+
+source="python-cairocffi-1.2.0.tar.gz::https://github.com/Kozea/cairocffi/archive/v1.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

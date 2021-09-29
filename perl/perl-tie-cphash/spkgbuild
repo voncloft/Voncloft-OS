@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Tie::CPHash : Case preserving but case insensitive hash
+# depends : perl
+
+name=perl-tie-cphash
+version=2.000
+release=6
+
+source="https://www.cpan.org/authors/id/C/CJ/CJM/Tie-CPHash-2.000.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module POE::Component::Client::DNS
+# depends : perl-net-dns perl-poe
+
+name=perl-poe-component-client-dns
+version=1.054
+release=6
+
+source="https://www.cpan.org/authors/id/R/RC/RCAPUTO/POE-Component-Client-DNS-1.054.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

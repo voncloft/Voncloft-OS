@@ -1,0 +1,19 @@
+# description : framework for gnome online accounts
+# depends : gcr json-glib rest vala webkitgtk gobject-introspection
+
+name=gnome-online-accounts
+version=3.38.2
+release=1
+
+source="https://download.gnome.org/sources/$name/3.38/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+            --disable-static \
+            --with-google-client-secret=5ntt6GbbkjnTVXx-MSxbmx5e \
+            --with-google-client-id=595013732528-llk8trb03f0ldpqq6nprjp1s79596646.apps.googleusercontent.com &&
+	make
+	make DESTDIR=$PKG install
+}

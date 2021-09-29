@@ -1,0 +1,16 @@
+# description : Minimalist CERN ROOT I/O in pure Python and Numpy
+# depends : python-awkward python-cachetools python-lz4 python-numpy python-uproot-methods python-zstandard
+# depends : python-sphinx
+
+name=python-uproot
+version=4.1.2
+release=2
+
+source="uproot-3.14.4::https://github.com/scikit-hep/uproot/archive/3.14.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Go from cardinal 53 to ordinal 53rd
+# depends : perl
+
+name=perl-lingua-en-numbers-ordinate
+version=1.05
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Lingua-EN-Numbers-Ordinate-1.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

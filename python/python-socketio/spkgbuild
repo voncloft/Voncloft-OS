@@ -1,0 +1,15 @@
+# description : Python implementation of the Socket.IO realtime server
+# depends : python python-six python-engineio python-bidict
+
+name=python-socketio
+version=5.4.0
+release=1
+
+source="https://github.com/miguelgrinberg/python-socketio/archive/v5.4.0/python-socketio-5.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

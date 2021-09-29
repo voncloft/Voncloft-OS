@@ -1,0 +1,16 @@
+# description : I/O on in-core objects like strings/arrays
+# depends : perl
+
+name=perl-io-stringy
+version=2.113
+release=1
+
+source="https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/IO-Stringy-2.113.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

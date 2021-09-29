@@ -1,0 +1,15 @@
+# description : library with cross-python path, ini-parsing, io, code, log facilities
+  # depends : python-iniconfig python-apipkg
+
+name=python-py
+version=1.10.0
+release=1
+
+source="python-py-1.10.0.tar.gz::https://github.com/pytest-dev/py/archive/1.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

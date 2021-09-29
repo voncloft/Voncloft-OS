@@ -1,0 +1,16 @@
+# description : Perl extension for LDAP server side protocol handling
+# depends : perl perl-ldap perl-convert-asn1
+
+name=perl-net-ldap-server
+version=0.43
+release=8
+
+source="https://search.cpan.org/CPAN/authors/id/A/AA/AAR/Net-LDAP-Server-0.43.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

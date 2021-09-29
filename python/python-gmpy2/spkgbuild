@@ -1,0 +1,15 @@
+# description : Provides C-coded Python modules for fast multiple-precision arithmetic.
+# depends : python libmpc
+
+name=python-gmpy2
+version=2.1.0rc1
+release=3
+
+source="https://github.com/aleaxit/gmpy/releases/download/gmpy2-2.1.0rc1/gmpy2-2.1.0rc1.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

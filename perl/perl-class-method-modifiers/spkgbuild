@@ -1,0 +1,16 @@
+# description : provides Moose-like method modifiers
+# depends : perl
+
+name=perl-class-method-modifiers
+version=2.13
+release=6
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Class-Method-Modifiers-2.13.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

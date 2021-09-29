@@ -1,0 +1,26 @@
+# description : the cinnamon session handler
+# depends : cinnamon-desktop libsm libcanberra xapps
+# depends : cinnamon-translations
+# depends : meson ninja xtrans
+
+name=cinnamon-session
+version=5.0.1
+release=1
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
+options="!checksum"
+
+build() {
+    mkdir -p ${name}-${version}/build
+    cd ${name}-${version}/build
+
+    meson --prefix=/usr \
+          --libexecdir=lib/${name} \
+          --buildtype=plain \
+          -Dgconf=false \
+          -Ddocbook=false \
+          ..
+    ninja
+
+    DESTDIR="${PKG}" ninja install
+}

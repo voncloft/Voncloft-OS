@@ -1,0 +1,15 @@
+# description : Uncompromising Python code formatter
+# depends : python python-appdirs python-click python-mypy_extensions
+
+name=python-black
+version=21.9
+release=5
+
+source="https://files.pythonhosted.org/packages/source/b/black/black-21.8b0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

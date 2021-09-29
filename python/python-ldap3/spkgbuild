@@ -1,0 +1,15 @@
+# description : A strictly RFC 4510 conforming LDAP V3 pure Python client library
+# depends : python-pyasn1
+
+name=python-ldap3
+version=2.9.1
+release=3
+
+source="python-ldap3-2.9.1.tar.gz::https://github.com/cannatag/ldap3/archive/v2.9.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python bindings for the duktape embeddable JavaScript engine
+# depends : python
+
+name=python-dukpy
+version=0.3
+release=6
+
+source="dukpy-0.3.tar.gz::https://github.com/kovidgoyal/dukpy/archive/v0.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Linux /proc abstraction classes for python
+# depends : python-six
+
+name=python-linux-procfs
+version=0.6.3
+release=1
+
+source="https://git.kernel.org/pub/scm/libs/python/python-linux-procfs/python-linux-procfs.git/snapshot/python-linux-procfs-0.6.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

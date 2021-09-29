@@ -1,0 +1,27 @@
+# description : centralized access to appointments and contacts
+# depends : db gnome-online-accounts krb5 libgdata libgweather libical libphonenumber nss boost cmake git gobject-introspection gperf gtk-doc intltool ninja vala
+
+name=evolution-data-server
+version=3.40.4
+release=1
+
+source="git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#commit="
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+    	-DLIBEXEC_INSTALL_DIR=/usr/lib \
+    	-DSYSCONF_INSTALL_DIR=/etc \
+    	-DENABLE_INTROSPECTION=ON \
+    	-DENABLE_VALA_BINDINGS=ON \
+    	-DENABLE_GTK_DOC=ON \
+    	-DWITH_PHONENUMBER=ON \
+    	..
+
+    	make
+    	make DESTDIR=$PKG install
+}

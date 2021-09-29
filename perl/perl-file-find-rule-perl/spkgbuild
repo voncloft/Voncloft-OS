@@ -1,0 +1,16 @@
+# description : Common rules for searching for Perl things
+# depends : perl-file-find-rule perl-params-util
+
+name=perl-file-find-rule-perl
+version=1.15
+release=3
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-Find-Rule-Perl-1.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

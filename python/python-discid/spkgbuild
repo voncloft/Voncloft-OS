@@ -1,0 +1,15 @@
+# description : Python binding of MusicBrainz libdiscid
+# depends : libdiscid python
+
+name=python-discid
+version=1.2.0
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/discid/discid-1.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

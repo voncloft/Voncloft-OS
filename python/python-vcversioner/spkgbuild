@@ -1,0 +1,15 @@
+# description : Use version control tags to discover version numbers
+# depends : python
+
+name=python-vcversioner
+version=2.16.0.0
+release=5
+
+source="python-vcversioner-2.16.0.0.tar.bz2::https://github.com/habnabit/vcversioner/archive/2.16.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

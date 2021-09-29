@@ -1,0 +1,16 @@
+# description : argument type classification
+# depends : perl
+
+name=perl-params-classify
+version=0.015
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/Z/ZE/ZEFRAM/Params-Classify-0.015.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

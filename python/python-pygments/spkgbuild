@@ -1,0 +1,16 @@
+# description : Python syntax highlighter
+# depends : python-setuptools
+
+name=python-pygments
+version=2.10.0
+release=1
+pyn=python-Pygments
+
+source="https://pypi.org/packages/source/P/Pygments/Pygments-2.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${pyn#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

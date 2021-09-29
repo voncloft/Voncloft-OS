@@ -1,0 +1,28 @@
+#Creates .pkginfo in /var/lib/scratchpkg/index/(package name) - used for testing purposes
+#test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
+#echo "/usr/Voncloft-OS/*/$1/spkgbuild"
+if [ -f /usr/Voncloft-OS/*/$1/spkgbuild ]
+then
+	test="$(grep depends /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 12-)"
+	#mkdir -pv /var/lib/scratchpk/db/$1
+	cat <<- EOF > /var/lib/scratchpkg/db/$1
+	$(grep version= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-) $(grep release= /usr/Voncloft-OS/*/$1/spkgbuild | cut -c 9-)
+	EOF
+else
+	echo "Package not in repository"
+fi
+
+
+for word in $test
+do
+	echo $word
+	if [ -f  "/var/lib/scratchpkg/db/$word" ]
+	then
+		echo "File exists"
+	else
+		cat <<- EOF > /var/lib/scratchpkg/db/$word
+		$(grep version= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-) $(grep release= /usr/Voncloft-OS/*/$word/spkgbuild | cut -c 9-)
+		EOF
+	fi
+done
+#echo $1 $2

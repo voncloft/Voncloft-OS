@@ -1,0 +1,15 @@
+# description : httplib2 caching for requests
+# depends : python-msgpack python-requests
+
+name=python-cachecontrol
+version=0.12.6
+release=3
+
+source="cachecontrol-0.12.6.tar.gz::https://github.com/ionrock/cachecontrol/archive/v0.12.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

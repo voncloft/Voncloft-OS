@@ -1,0 +1,15 @@
+# description : JSON-LD parser and serializer plugins for RDFLib
+# depends : python-rdflib
+
+name=python-rdflib-jsonld
+version=0.6.1
+release=3
+
+source="python-rdflib-jsonld-0.5.0.tar.gz::https://github.com/RDFLib/rdflib-jsonld/archive/0.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

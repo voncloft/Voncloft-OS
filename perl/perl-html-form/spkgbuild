@@ -1,0 +1,16 @@
+# description : Class that represents an HTML form element
+# depends : perl perl-html-parser perl-http-message perl-uri.10
+
+name=perl-html-form
+version=6.07
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Form-6.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

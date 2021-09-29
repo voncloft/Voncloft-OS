@@ -1,0 +1,15 @@
+# description : Python/NumPy interface to the netCDF C library ${_mpi} version
+# depends : python-numpy python-cftime python-mpi4py netcdf-${_mpi}
+
+name=python-netcdf4-openmpi
+version=1.5.6
+release=1
+
+source="https://files.pythonhosted.org/packages/source///-1.5.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

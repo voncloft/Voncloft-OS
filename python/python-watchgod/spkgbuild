@@ -1,0 +1,15 @@
+# description : Simple, modern file watching and code reload in python
+# depends : python
+
+name=python-watchgod
+version=0.7
+release=2
+
+source="git+https://github.com/samuelcolvin/watchgod#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Data parsing and validation using Python type hints
+# depends : python
+
+name=python-pydantic
+version=1.8.2
+release=1
+
+source="https://github.com/samuelcolvin/pydantic/issues/358"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

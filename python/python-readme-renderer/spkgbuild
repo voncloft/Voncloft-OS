@@ -1,0 +1,14 @@
+# depends : python-bleach python-docutils python-pygments python-six
+
+name=python-readme-renderer
+version=29.0
+release=3
+
+source="python-readme-renderer-29.0.tar.gz::https://github.com/pypa/readme_renderer/archive/29.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

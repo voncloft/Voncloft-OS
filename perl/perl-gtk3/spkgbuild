@@ -1,0 +1,16 @@
+# description : Perl interface to the 3.x series of the GTK+ toolkit
+# depends : gtk3 perl-cairo-gobject perl-glib-object-introspection
+
+name=perl-gtk3
+version=0.038
+release=1
+
+source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/-0.038.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

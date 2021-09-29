@@ -1,0 +1,15 @@
+# description : News Feed extension for Sphinx
+# depends : python-sphinx
+
+name=python-sphinxcontrib-newsfeed
+version=0.1.4
+release=11
+
+source="https://files.pythonhosted.org/packages/source/s/sphinxcontrib-newsfeed/sphinxcontrib-newsfeed-0.1.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

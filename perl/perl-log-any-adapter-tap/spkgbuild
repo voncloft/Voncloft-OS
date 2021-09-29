@@ -1,0 +1,16 @@
+# description : Logger suitable for use with TAP test files
+# depends : perl perl-log-any perl-try-tiny
+
+name=perl-log-any-adapter-tap
+version=0.003003
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/N/NE/NERDVANA/Log-Any-Adapter-TAP-0.003003.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

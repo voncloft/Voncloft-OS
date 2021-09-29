@@ -1,0 +1,16 @@
+# description : Find a minimum required version of perl for Perl code
+# depends : perl-file-find-rule perl-file-find-rule-perl perl-ppi perl-ppix-regexp
+
+name=perl-perl-minimumversion
+version=1.40
+release=3
+
+source="https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Perl-MinimumVersion-1.40.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

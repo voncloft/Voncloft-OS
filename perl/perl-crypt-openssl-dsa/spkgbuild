@@ -1,0 +1,16 @@
+# description : Digital Signature Algorithm using OpenSSL
+# depends : openssl
+
+name=perl-crypt-openssl-dsa
+version=0.20
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/K/KM/KMX/Crypt-OpenSSL-DSA-0.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,27 @@
+# description : ncurses matrix like screen
+# depends : ncurses cmake
+
+name=cmatrix
+version=2.0
+release=2
+
+source="https://github.com/abishekvashok/$name/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-D CMAKE_BUILD_TYPE=Release \
+    	-D CMAKE_INSTALL_PREFIX=/usr 
+	make
+	make DESTDIR=$PKG install
+	cd ..
+	install -D -m644 mtx.pcf $PKG/usr/share/fonts/misc/mtx.pcf
+
+	#install -D -m644 matrix.fnt $PKG/usr/share/kdbd/consolefonts/matrix.fnt
+	#install -D -m644 matrix.psf.gz $PKG/usr/share/kbd/consolefonts/matrix.psf.gz
+
+	
+}

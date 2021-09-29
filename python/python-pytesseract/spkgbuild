@@ -1,0 +1,15 @@
+# description : Python wrapper for Google Tesseract
+# depends : python-pillow python-setuptools tesseract
+
+name=python-pytesseract
+version=0.3.8
+release=1
+
+source="https://github.com/madmaze/pytesseract/archive/v0.3.8/pytesseract-v0.3.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

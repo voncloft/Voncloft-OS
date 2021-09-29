@@ -1,0 +1,16 @@
+# description : Perl bindings for GooCanvas2 widget using Glib::Object::Introspection
+# depends : perl-gtk3 goocanvas
+
+name=perl-goocanvas2
+version=0.06
+release=2
+
+source="https://cpan.metacpan.org/authors/id/P/PE/PERLMAX/-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

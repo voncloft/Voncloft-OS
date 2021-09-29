@@ -1,0 +1,16 @@
+# description : Lists of reserved barewords and symbol names
+# depends : perl
+
+name=perl-b-keywords
+version=1.22
+release=2
+
+source="https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

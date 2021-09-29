@@ -1,0 +1,15 @@
+# description : A Python library to create SVG drawings
+# depends : python python-pyparsing
+
+name=python-svgwrite
+version=1.4.1
+release=3
+
+source="python-svgwrite-1.4.1.tar.gz::https://github.com/mozman/svgwrite/archive/v1.4.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

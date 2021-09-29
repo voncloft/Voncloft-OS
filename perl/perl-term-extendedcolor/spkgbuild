@@ -1,0 +1,16 @@
+# description : Like Term::ANSIColor, but for the extended colorset
+# depends : perl
+
+name=perl-term-extendedcolor
+version=0.504
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/W/WO/WOLDRICH/Term-ExtendedColor-0.504.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

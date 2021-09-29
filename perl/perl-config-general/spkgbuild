@@ -1,0 +1,16 @@
+# description : Generic Config Module
+# depends : perl
+
+name=perl-config-general
+version=2.63
+release=4
+
+source="https://www.cpan.org/modules/by-module//--2.63.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Pure-Python HPACK header compression
+# depends : python
+
+name=python-hpack
+version=4.0.0
+release=1
+
+source="https://github.com/python-hyper/hpack/archive/v4.0.0/python-hpack-4.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

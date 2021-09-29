@@ -1,0 +1,16 @@
+# description : Guess the media type of a file or a URL
+# depends : perl
+
+name=perl-lwp-mediatypes
+version=6.04
+release=8
+
+source="https://search.cpan.org/CPAN/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

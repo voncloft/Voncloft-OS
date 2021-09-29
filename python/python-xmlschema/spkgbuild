@@ -1,0 +1,15 @@
+# description : An XML Schema validator and decoder
+# depends : python-elementpath
+
+name=python-xmlschema
+version=1.7.1
+release=3
+
+source="python-xmlschema-1.2.5.tar.gz::https://github.com/sissaschool/xmlschema/archive/v1.2.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

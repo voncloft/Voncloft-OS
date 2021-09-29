@@ -1,0 +1,15 @@
+# description : A high level API for internationalization
+# depends : python-atpublic
+
+name=python-flufl.i18n
+version=3.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/f/flufl.i18n/flufl.i18n-3.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,25 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+Packages upgraded: 0
+
+08
+sed -i -e 's/5.81/5.83.0/g' /Voncloft-OS/*/kf5-programs/spkgbuild
+sed -i -e 's/5.20/5.22.2.1/g' /Voncloft-OS/*/plasma-programs/spkgbuild
+Packages upgraded: 2
+
+12
+sed -i -e 's/3.9.5/3.9.6/g' /Voncloft-OS/*/python/spkgbuild
+Packages upgraded: 1
+
+16
+Packages upgraded: 0
+
+20
+Packages upgraded: 0
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

@@ -1,0 +1,16 @@
+# description : Perl/CPAN module JSON WebToken
+# depends : perl-json
+
+name=perl-json-webtoken
+version=0.10
+release=5
+
+source="https://cpan.metacpan.org/authors/id/X/XA/XAICRON/JSON-WebToken-0.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

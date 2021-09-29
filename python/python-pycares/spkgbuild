@@ -1,0 +1,15 @@
+# description : Python interface for c-ares
+# depends : python-cffi # c-ares is bundled
+
+name=python-pycares
+version=4.0.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/pycares/pycares-4.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

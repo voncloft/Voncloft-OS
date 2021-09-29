@@ -1,0 +1,15 @@
+# description : Utility library for gitignore style pattern matching of file paths
+# depends : python
+
+name=python-pathspec
+version=0.9.0
+release=4
+
+source="https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.9.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

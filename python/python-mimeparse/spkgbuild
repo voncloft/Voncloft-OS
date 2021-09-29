@@ -1,0 +1,15 @@
+# description : Module of basic functions for parsing mime-type names and matching them against a list of media-ranges
+# depends : python
+
+name=python-mimeparse
+version=1.6.0
+release=8
+
+source="git+https://github.com/dbtsai/python-mimeparse#tag=1.6.0"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

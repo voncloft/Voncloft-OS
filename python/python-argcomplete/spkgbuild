@@ -1,0 +1,15 @@
+# description : Easy extensible command line tab completion of arguments for your Python script
+# depends : python
+
+name=python-argcomplete
+version=1.12.3
+release=1
+
+source="argcomplete::git+https://github.com/kislyuk/argcomplete#commit=?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Make parse trees out of HTML source
+# depends : perl perl-html-tagset.02 perl-html-parser.46
+
+name=perl-html-tree
+version=5.07
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/K/KE/KENTNL/HTML-Tree-5.07.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

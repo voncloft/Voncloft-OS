@@ -1,0 +1,15 @@
+# description : A collection of Python deprecation patterns and strategies that help you collect your technical debt in a non-destructive manner.
+# depends : python-six python-pbr python-babel python-wrapt
+
+name=python-debtcollector
+version=2.3.0
+release=3
+
+source="python-debtcollector-2.3.0.tar.gz::https://github.com/openstack/debtcollector/archive/2.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

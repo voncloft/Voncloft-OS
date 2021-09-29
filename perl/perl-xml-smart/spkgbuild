@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module XML::Smart
+# depends : perl-object-multitype
+
+name=perl-xml-smart
+version=1.79
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/T/TM/TMHARISH/XML-Smart-1.79.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

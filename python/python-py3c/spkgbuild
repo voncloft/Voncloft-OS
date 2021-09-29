@@ -1,0 +1,19 @@
+# description : A Python 2/3 compatibility layer for C extensions
+# depends : python
+
+name=python-py3c
+version=1.3.1
+release=1
+
+source="python-py3c-1.3.1.tar.gz::https://github.com/encukou/py3c/archive/v1.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   sed -i 's/install: py3c.pc/install:/' Makefile
+   python setup.py build
+   make prefix=/usr py3c.pc
+
+   make prefix="$PKG"/usr install
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : An analogue of XML::Simple using libxml
+# depends : perl perl-xml-libxml perl-file-slurp-tiny
+
+name=perl-xml-libxml-simple
+version=1.01
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/-0.99.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

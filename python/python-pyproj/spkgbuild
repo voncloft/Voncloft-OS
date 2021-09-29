@@ -1,0 +1,15 @@
+# description : Python interfaces to PROJ.4 library
+# depends : proj python
+
+name=python-pyproj
+version=3.2.0
+release=3
+
+source="python-pyproj-3.0.1.tar.gz::https://github.com/pyproj4/pyproj/archive/3.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

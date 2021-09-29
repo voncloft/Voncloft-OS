@@ -1,0 +1,15 @@
+# description : Python binding to the Networking and Cryptography NaCl library
+# depends : libsodium python python-six python-cffi
+
+name=python-pynacl
+version=1.4.0
+release=3
+
+source="https://pypi.org/packages/source/P/PyNaCl/PyNaCl-1.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd PyNaCl-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

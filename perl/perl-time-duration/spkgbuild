@@ -1,0 +1,16 @@
+# description : rounded or exact English expression of durations
+# depends : perl
+
+name=perl-time-duration
+version=1.21
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/N/NE/NEILB/Time-Duration-1.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

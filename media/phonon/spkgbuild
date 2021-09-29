@@ -1,0 +1,21 @@
+# description : Phonon
+# depends : cmake extra-cmake-modules glib qt5 pulseaudio
+
+name=phonon
+version=4.11.1
+release=1
+
+source="https://download.kde.org/stable/phonon/4.11.1/phonon-4.11.1.tar.xz"
+
+build()
+{
+	cd $name-$version
+	mkdir build &&
+	cd    build &&
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	      -DCMAKE_BUILD_TYPE=Release  \
+	            .. &&
+	            make
+	make DESTDIR=$PKG install
+}

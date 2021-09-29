@@ -1,0 +1,16 @@
+# description : compare perl data structures
+# depends : perl-file-find-rule
+
+name=perl-data-compare
+version=1.27
+release=8
+
+source="https://search.cpan.org/CPAN/authors/id/D/DC/DCANTRELL/Data-Compare-1.25.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

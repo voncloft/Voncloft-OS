@@ -1,0 +1,15 @@
+# description : JACK Audio Connection Kit JACK Client for Python
+# depends : jack python-cffi
+
+name=python-jack-client
+version=0.5.3
+release=2
+
+source="https://files.pythonhosted.org/packages/source/J/JACK-Client/JACK-Client-0.5.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

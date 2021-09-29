@@ -1,0 +1,15 @@
+# description : A Sphinx extension for BibTeX style citations
+# depends : python-sphinx python-pybtex python-pybtex-docutils python-docutils
+
+name=python-sphinxcontrib-bibtex
+version=2.4.1
+release=1
+
+source="python-sphinxcontrib-bibtex-2.4.1.tar.gz::https://github.com/mcmtroffaes/sphinxcontrib-bibtex/archive/2.4.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

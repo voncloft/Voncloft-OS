@@ -1,0 +1,15 @@
+# description : The fastest markdown parser in pure Python with renderer feature.
+# depends : python
+
+name=python-mistune
+version=2.0.0
+release=5
+
+source="python-meliae-0.8.4.tgz::https://github.com/lepture/mistune/archive/v0.8.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Simplified interface to Log::Message
+# depends : perl perl-log-message
+
+name=perl-log-message-simple
+version=0.10
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Log-Message-Simple-0.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

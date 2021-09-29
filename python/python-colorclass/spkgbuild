@@ -1,0 +1,15 @@
+# description : Yet another ANSI color text library for colorful worry-free console applications
+# depends : python
+
+name=python-colorclass
+version=2.2.0
+release=8
+
+source="python-colorclass-2.2.0.tar.gz::https://github.com/Robpol86/colorclass/archive/v2.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

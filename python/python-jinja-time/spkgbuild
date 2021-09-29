@@ -1,0 +1,15 @@
+# description : Jinja2 Extension for Dates and Times
+# depends : python-arrow python-jinja
+
+name=python-jinja-time
+version=0.2.0
+release=5
+
+source="https://files.pythonhosted.org/packages/source/j/jinja2-time/jinja2-time-0.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

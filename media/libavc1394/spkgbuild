@@ -1,0 +1,17 @@
+# description : library to control A/V devices using 1394ta AV/C commands
+# depends : libraw1394
+
+name=libavc1394
+version=0.5.4
+release=4
+
+source="https://downloads.sourceforge.net/sourceforge/libavc1394/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --mandir=/usr/share/man --disable-static
+	make
+	make DESTDIR=$PKG install
+}
+

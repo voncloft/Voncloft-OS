@@ -1,0 +1,56 @@
+# description : Core components for the kde desktop installs all plasma programs
+# depends : kdecoration libkscreen libksysguard breeze breeze-gtk kscreenlocker oxygen kinfocenter ksysguard kwayland-server kwin kactivities-stats
+# depends : plasma-workspace plasma-disks bluedevil kde-gtk-config khotkeys kmenuedit kscreen kwallet-pam kwayland-integration kwrited milou
+# depends : plasma-nm plasma-pa plasma-workspace-wallpapers polkit-kde-agent-1 powerdevil plasma-desktop kdeplasma-addons kgamma5 ksshaskpass
+# depends : sddm-kcm discover kactivitymanagerd plasma-integration plasma-tests xdg-desktop-portal-kde drkonqi plasma-vault 
+# depends : plasma-browser-integration kde-cli-tools systemsettings plasma-thunderbolt linux-pam
+
+name=plasma-programs
+version=5.22.5
+release=1
+
+build() {
+
+	mkdir -pv $PKG/etc/pam.d
+        cat <<-EOF > $PKG/etc/pam.d/kde
+        # Begin /etc/pam.d/kde
+
+        auth     requisite      pam_nologin.so
+        auth     required       pam_env.so
+
+        auth     required       pam_succeed_if.so uid >= 1000 quiet
+        auth     include        system-auth
+
+        account  include        system-account
+        password include        system-password
+        session  include        system-session
+
+        # End /etc/pam.d/kde
+	EOF
+
+        cat <<-EOF > $PKG/etc/pam.d/kde-np
+        # Begin /etc/pam.d/kde-np
+
+        auth     requisite      pam_nologin.so
+        auth     required       pam_env.so
+
+        auth     required       pam_succeed_if.so uid >= 1000 quiet
+        auth     required       pam_permit.so
+
+        account  include        system-account
+        password include        system-password
+        session  include        system-session
+
+        # End /etc/pam.d/kde-np
+	EOF
+
+        cat <<-EOF > $PKG/etc/pam.d/kscreensaver
+        # Begin /etc/pam.d/kscreensaver
+
+        auth    include system-auth
+        account include system-account
+
+        # End /etc/pam.d/kscreensaver
+	EOF
+
+}

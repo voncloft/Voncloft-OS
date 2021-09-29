@@ -1,0 +1,15 @@
+# description : Plugin for accessing test session metadata
+# depends : python-pytest
+
+name=python-pytest-metadata
+version=1.11.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-metadata/pytest-metadata-1.11.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

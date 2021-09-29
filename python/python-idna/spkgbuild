@@ -1,0 +1,15 @@
+# description : Internationalized Domain Names in Applications IDNA
+   # depends : python
+
+name=python-idna
+version=3.2
+release=3
+
+source="https://pypi.io/packages/source/i/idna/idna-3.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Base class SAX Drivers and Filters
+# depends : perl
+
+name=perl-xml-sax-base
+version=1.09
+release=4
+
+source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-Base-1.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

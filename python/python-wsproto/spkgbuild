@@ -1,0 +1,15 @@
+# description : WebSockets state-machine based protocol implementation
+# depends : python-h11
+
+name=python-wsproto
+version=1.0.0
+release=1
+
+source="https://pypi.io/packages/source/w/wsproto/wsproto-1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

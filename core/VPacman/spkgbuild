@@ -1,0 +1,14 @@
+# description : a gui for scratch
+# depends : qt5
+
+name=VPacman
+version=4.3
+release=1
+
+source="VPacman"
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install -D -m755 $SRC/VPacman $PKG/usr/bin/	
+}

@@ -1,0 +1,15 @@
+# description : Extends nose.plugins.cover to add Cobertura-style XML reports
+# depends : python-nose python-coverage
+
+name=python-nosexcover
+version=1.0.11
+release=6
+
+source="python-nosexcover-1.0.11.tar.gz::https://github.com/cmheisel/nose-xcover/archive/v1.0.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

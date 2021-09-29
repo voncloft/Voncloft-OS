@@ -1,0 +1,16 @@
+# description : Perl symbol table access and dumping
+# depends : perl
+
+name=perl-devel-symdump
+version=2.18
+release=4
+
+source="https://www.cpan.org/authors/id/A/AN/ANDK/Devel-Symdump-2.18.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Net::IPv4Addr
+# depends : perl
+
+name=perl-net-ipv4addr
+version=0.10
+release=12
+
+source="https://www.cpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-0.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,22 @@
+# description : Modern library for one-way hashing of passwords
+# depends : glibc
+
+name=libxcrypt
+version=4.4.18
+release=1
+
+source="https://github.com/besser82/$name/archive/refs/tags/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	autoreconf -ifv
+	./configure \
+    --prefix=/usr \
+    --disable-static \
+    --enable-hashes=strong,glibc \
+    --enable-obsolete-api=no \
+    --disable-failure-tokens
+  make
+  make DESTDIR=$PKG install
+}

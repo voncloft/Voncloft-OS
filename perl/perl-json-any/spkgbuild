@@ -1,0 +1,16 @@
+# description : DEPRECATED Wrapper Class for the various JSON classes
+# depends : perl-json perl-json-xs perl-yaml-syck perl-namespace-clean
+
+name=perl-json-any
+version=1.39
+release=5
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/JSON-Any-1.39.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

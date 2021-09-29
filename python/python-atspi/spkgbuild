@@ -1,0 +1,19 @@
+# description	: python bindings for the core components of the GNOME Accessibility
+# depends	: at-spi2-core python-gobject3
+
+name=python-atspi
+version=2.38.1
+release=1
+_pverz=2_38_1
+source="https://gitlab.gnome.org/GNOME/pyatspi2/-/archive/PYATSPI_$_pverz/pyatspi2-PYATSPI_$_pverz.tar.gz"
+options="!checksum"
+
+build() {
+   cd pyatspi2-PYATSPI_2_38_1
+   #python setup.py build
+   #python setup.py install --optimize=1 --root=$PKG
+	NOCONFIGURE=1 ./autogen.sh
+	./configure --prefix=/usr --with-python=/usr/bin/python
+	make
+	make DESTDIR=$PKG install
+ }

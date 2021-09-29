@@ -1,0 +1,15 @@
+# description : All-in-one infinity value for Python. Can be compared to any object.
+# depends : python
+
+name=python-infinity
+version=1.5
+release=3
+
+source="https://pypi.python.org/packages/source/i/infinity/infinity-1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

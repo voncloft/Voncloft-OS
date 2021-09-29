@@ -1,0 +1,16 @@
+# description : Line wrapping module with support for multibyte, fullwidth, and combining characters and languages without whitespaces between words
+# depends : perl-text-charwidth
+
+name=perl-text-wrapi18n
+version=0.06
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/K/KU/KUBOTA/Text-WrapI18N-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

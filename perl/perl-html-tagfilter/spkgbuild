@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module HTML::TagFilter
+# depends : perl-uri perl-html-parser
+
+name=perl-html-tagfilter
+version=1.03
+release=12
+
+source="https://www.cpan.org/authors/id/W/WR/WROSS/HTML-TagFilter-1.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

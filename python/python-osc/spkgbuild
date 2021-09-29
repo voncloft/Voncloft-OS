@@ -1,0 +1,15 @@
+# description : Open Sound Control server and client implementations in pure Python
+# depends : python
+
+name=python-osc
+version=1.7.7
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/python-osc/python-osc-1.7.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

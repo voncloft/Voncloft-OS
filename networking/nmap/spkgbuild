@@ -1,0 +1,16 @@
+# description : port scan your network
+# depends : libpcap lua pcre liblinear
+
+name=nmap
+version=7.92
+release=1
+
+source="https://nmap.org/dist/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

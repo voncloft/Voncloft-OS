@@ -1,0 +1,20 @@
+source="https://www.rust-lang.org/"
+
+get_generic(){
+	uversion=$(grep -i "href" index.html \
+	| grep html \
+	| grep -Po "(?<=>)[^<>]*(?=<)" \
+	| sed "s/Version //g")
+	new_file=/Voncloft-OS/$(echo $ppath | sed "s/override/spkgbuild/g")
+	#echo $new_file
+	sed -i -e "s/_rust=$_rust/_rust=$uversion/g" $new_file
+        sed -i -e "s/_cargo=$_cargo/_cargo=$uversion/g" $new_file
+	year=$(grep -i "href" index.html         | grep html | grep '<a href=".*">' | cut -d / -f4 | head -n1)
+	month=$(grep -i "href" index.html         | grep html | grep '<a href=".*">' | cut -d / -f5)
+	day=$(grep -i "href" index.html         | grep html | grep '<a href=".*">' | cut -d / -f6)
+	#echo $month-$day-$year
+	sed -i -e "s/_date=$_date/_date=$year-$month-$day/g" $new_file
+	spkg=$(echo $new_file | sed "s/\/Voncloft-OS\///g")
+	echo -e "${CYAN}Notice:    Upgraded cargo, rust, and date flags for $spkg${NC}"
+
+}

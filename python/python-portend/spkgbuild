@@ -1,0 +1,15 @@
+# description : Use portend to monitor TCP ports for bound or unbound states.
+# depends : python python-tempora
+
+name=python-portend
+version=2.7.1
+release=2
+
+source="https://files.pythonhosted.org/packages/source/p/pook/pook-2.7.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

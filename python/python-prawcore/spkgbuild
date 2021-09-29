@@ -1,0 +1,15 @@
+# description : Low-level communication layer for PRAW 4+.
+# depends : python-requests
+
+name=python-prawcore
+version=2.3.0
+release=3
+
+source="python-prawcore-2.3.0.tar.gz::https://github.com/praw-dev/prawcore/archive/v2.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

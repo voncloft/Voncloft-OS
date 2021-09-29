@@ -1,0 +1,16 @@
+# description : lets you ask the user for a password without echoing
+# depends : perl
+
+name=perl-term-read-password
+version=0.11
+release=10
+
+source="https://cpan.org/modules/by-module/Term/Term-ReadPassword-0.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

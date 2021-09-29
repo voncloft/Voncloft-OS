@@ -1,0 +1,16 @@
+# description : Information about the currently running perl
+# depends : perl
+
+name=perl-probe-perl
+version=0.03
+release=3
+
+source="https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/Probe-Perl-0.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

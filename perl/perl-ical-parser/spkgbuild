@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module iCal::Parser : Parse iCalendar files into a data structure
+# depends : perl-freezethaw perl-io-string perl-datetime-format-ical perl-text-vfile-asdata
+
+name=perl-ical-parser
+version=1.21
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RI/RIXED/iCal-Parser-1.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

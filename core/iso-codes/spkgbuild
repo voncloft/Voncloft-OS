@@ -1,0 +1,15 @@
+# description	: List of country, language and currency names
+# depends	: python
+
+name=iso-codes
+version=4.7.0
+release=1
+source="git+https://salsa.debian.org/iso-codes-team/iso-codes/#commit=2379c6981fe257f779b214c0c54bf11fde2d75e8"
+
+build() {
+	cd $name-$name-$version
+
+	./configure --prefix=/usr
+	make
+	make pkgconfigdir=/usr/lib/pkgconfig DESTDIR=$PKG install
+}

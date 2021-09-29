@@ -1,0 +1,15 @@
+# description : N-D labeled arrays and datasets in Python
+# depends : python-numpy python-pandas
+
+name=python-xarray
+version=0.19.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source///-0.17.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

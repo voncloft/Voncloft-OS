@@ -1,0 +1,16 @@
+# description : RFC 2822 Address Parsing and Creation 
+# depends : perl
+
+name=perl-email-address
+version=1.912
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-Address-1.912.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Extremely flexible deep comparison 
+# depends : perl-test-nowarnings perl-test-simple
+
+name=perl-test-deep
+version=1.130
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Test-Deep-1.130.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

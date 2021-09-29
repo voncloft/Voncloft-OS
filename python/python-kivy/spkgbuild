@@ -1,0 +1,15 @@
+# description : A software library for rapid development of hardware-accelerated multitouch applications.
+# depends : python-docutils gstreamer sdl2_ttf sdl2_mixer sdl2_image
+
+name=python-kivy
+version=2.0.0
+release=1
+
+source="https://pypi.io/packages/source/K/Kivy/Kivy-2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Fast, simple object-to-object and broadcast signaling
+# depends : python
+
+name=python-blinker
+version=1.4
+release=9
+
+source="https://files.pythonhosted.org/packages/source/b/blinker/blinker-1.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

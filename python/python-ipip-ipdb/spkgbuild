@@ -1,0 +1,15 @@
+# description : IPIP.net officially supported IP database ipdb format parsing library
+# depends : python
+
+name=python-ipip-ipdb
+version=1.6.0
+release=1
+
+source="https://pypi.io/packages/source/i/ipip-ipdb/ipip-ipdb-1.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

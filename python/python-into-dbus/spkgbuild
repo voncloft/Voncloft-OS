@@ -1,0 +1,15 @@
+# description : Facilities for converting an object that inhabits core Python types, e.g., lists, ints, dicts, to an object that inhabits dbus-python types, e.g., dbus.Array, dbus.UInt32, dbus.Dictionary based on a specified dbus signature.
+# depends : python-dbus python-dbus-signature-pyparsing
+
+name=python-into-dbus
+version=0.06
+release=8
+
+source=""
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

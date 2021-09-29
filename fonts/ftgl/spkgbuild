@@ -1,0 +1,19 @@
+# description : OpenGL library to use fonts
+# depends : freetype2 glu
+
+name=ftgl
+version=2.4.0
+release=2
+_pkgver=2.1.3-rc5
+
+source="https://github.com/frankheckenbach/$name/archive/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./autogen.sh
+	./configure --prefix=/usr --with-pic --disable-static
+	make
+	make DESTDIR=$PKG install
+	install -Dt "$PKG/usr/include/FTGL" -m644 src/FT{Face,Size}.h
+}

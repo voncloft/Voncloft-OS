@@ -1,0 +1,15 @@
+# description : Backport of Python 3 csv module.
+# depends : python
+
+name=python-backports.csv
+version=1.0.7
+release=4
+
+source="python--1.0.7.zip::https://github.com/ryanhiebert/backports.csv/archive/1.0.7.zip"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

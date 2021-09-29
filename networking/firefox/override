@@ -1,0 +1,10 @@
+source="https://archive.mozilla.org/pub/firefox/releases/"
+
+get_generic()
+{
+	uversion=$(grep -i "href" index.html \
+	| cut -d / -f 5 \
+	| sort -V -r \
+	| grep -i "^[1-9]" \
+	| head -n1)
+}

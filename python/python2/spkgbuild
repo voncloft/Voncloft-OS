@@ -1,0 +1,27 @@
+# description : old python
+# depends : 
+
+name=python2
+version=2.7.18
+release=1
+
+source="https://www.python.org/ftp/python/$version/Python-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/blfs/svn/Python-$version-security_fixes-1.patch"
+options="!checksum"
+
+build() {
+	cd Python-$version
+	sed -i '/2to3/d' ./setup.py
+	patch -Np1 -i $SRC/Python-2.7.18-security_fixes-1.patch &&
+./configure --prefix=/usr                              \
+            --enable-shared                            \
+            --with-system-expat                        \
+            --with-system-ffi                          \
+            --enable-unicode=ucs4
+
+            make
+            make DESTDIR=$PKG altinstall
+            ln -s python2.7        $PKG/usr/bin/python2
+	ln -s python2.7-config $PKG/usr/bin/python2-config
+	chmod -v 755 $PKG/usr/lib/libpython2.7.so.1.0
+}

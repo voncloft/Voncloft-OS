@@ -1,0 +1,16 @@
+  # description : Python SQL toolkit and Object Relational Mapper
+  # description : Python 2 SQL toolkit and Object Relational Mapper
+  # depends : python
+
+name=python-sqlalchemy
+version=1.4.23
+release=1
+
+source="https://files.pythonhosted.org/packages/ad/c7/61ff52be84f5ac86c72672ceac941981f1685b4ef90391d405a1f89677d0/SQLAlchemy-1.4.23.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

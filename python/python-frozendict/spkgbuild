@@ -1,0 +1,15 @@
+# description : An immutable dictionary
+# depends : python python-setuptools
+
+name=python-frozendict
+version=2.0.6
+release=8
+
+source="https://pypi.org/packages/source/f/frozendict/frozendict-2.0.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

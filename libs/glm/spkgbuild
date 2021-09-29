@@ -1,0 +1,32 @@
+# description : a c mathematics library for 3D software based on opengl
+# depends :
+
+name=glm
+version=0.9.9.8
+release=1
+
+source="https://github.com/g-truc/$name/releases/download/${version}/glm-${version}.zip
+        glm.pc.in
+        glmConfigVersion.cmake.in
+        glmConfig.cmake.in
+        glmTargets.cmake"
+	
+options="!checksum"
+
+build() {
+	cd $name
+	mkdir -pv $PKG/usr/include
+	cp -rv glm $PKG/usr/include
+
+	mkdir -pv $PKG/usr/share/doc
+	cp -rv doc $PKG/usr/share/doc
+
+	mkdir -pv $PKG/usr/lib/pkgconfig/
+	sed "s/@VERSION@/$pkgver/" "$SRC"/glm.pc.in > "$PKG"/usr/lib/pkgconfig/glm.pc
+
+	mkdir -pv $PKG/usr/lib/cmake/glm
+	sed "s/@VERSION@/$pkgver/" "$SRC"/glmConfigVersion.cmake.in > "$PKG"/usr/lib/cmake/glm/glmConfigVersion.cmake
+        sed "s/@VERSION@/$pkgver/" "$SRC"/glmConfig.cmake.in > "$PKG"/usr/lib/cmake/glm/glmConfig.cmake
+
+        install -Dm644 "$SRC"/glmTargets.cmake "$PKG"/usr/lib/cmake/glm/glmTargets.cmake
+}

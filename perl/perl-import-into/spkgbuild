@@ -1,0 +1,16 @@
+# description : Import packages into other packages
+# depends : perl-module-runtime perl
+
+name=perl-import-into
+version=1.002005
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Import-Into-1.002004.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Python tools for handling intervals ranges of comparable objects.
+# depends : python python-infinity
+
+name=python-intervals
+version=0.9.2
+release=5
+
+source="https://files.pythonhosted.org/packages/source/i/intervals/intervals-0.9.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A colored formatter for the python logging module
+# depends : python
+
+name=python-colorlog
+version=6.4.1
+release=1
+
+source="python-colorlog-6.4.1.tar.gz::https://github.com/borntyping/python-colorlog/archive/v6.4.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

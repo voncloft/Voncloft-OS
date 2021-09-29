@@ -1,0 +1,16 @@
+# description : A gaggle of idiosyncratic and questionable wrappers for the stdlib.
+# depends : python-six python-pytz python-more-itertools
+# And now cherrypy depends on this too :-
+
+name=python-jaraco
+version=2021.03.28
+release=1
+
+source="/j/jaraco.text/jaraco.text-.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

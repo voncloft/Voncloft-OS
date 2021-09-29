@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module XML::Stream : Module for handling XML Streams
+# depends : perl-authen-sasl
+
+name=perl-xml-stream
+version=1.24
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DA/DAPATRICK/XML-Stream-1.24.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

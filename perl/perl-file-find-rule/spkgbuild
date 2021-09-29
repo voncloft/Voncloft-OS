@@ -1,0 +1,16 @@
+# description : Alternative interface to File::Find
+# depends : perl-number-compare perl-text-glob
+
+name=perl-file-find-rule
+version=0.34
+release=7
+
+source="https://search.mcpan.org/CPAN/authors/id/R/RC/RCLAMP/-0.34.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

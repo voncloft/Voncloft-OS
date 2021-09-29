@@ -1,0 +1,16 @@
+# description : read a file backwards by lines
+# depends : perl
+
+name=perl-file-readbackwards
+version=1.06
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id//File-ReadBackwards-1.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

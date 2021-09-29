@@ -1,0 +1,15 @@
+# description : A fancy and practical functional tools
+# depends : python-persistent python-zope-interface
+
+name=python-btrees
+version=4.9.2
+release=3
+
+source="python-btrees-4.9.2.tar.gz::https://github.com/zopefoundation/btrees/archive/4.9.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

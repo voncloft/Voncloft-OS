@@ -1,0 +1,15 @@
+# description : Matrix Client-Server SDK for Python
+# depends : python-requests
+
+name=python-matrix_client
+version=0.3.2
+release=3
+
+source="https://files.pythonhosted.org/packages/93/9a/23c4894da5aeb316903677c71014575c486616026b85e2d0b408f84d8540/matrix_client-0.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

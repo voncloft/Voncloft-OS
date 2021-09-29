@@ -1,0 +1,25 @@
+# get file names from /Voncloft-OS/beta/files_for_kde
+# create automatic script like you did for python and perl
+
+for f in /Voncloft-OS/beta/files_for_kde/apps/*; do
+	files=${f%%.*}
+	filename=${files##*/}
+	echo $filename
+	mkdir -pv /Voncloft-OS/beta/app-script/${filename%???}
+
+	echo -e "# description :" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "# depends : kde-deps\n" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "name=${filename%???}" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "version=20.12.2" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "release=1\n" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+
+	echo -e "source=\"https://download.kde.org/stable/release-service/\$version/src/\$name-\$version.tar.xz"\" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "options=\"!checksum\"\n" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+
+	echo -e "build() {" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "   cd \$name-\$version" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "   plasma-package-installer" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "   make DESTDIR=\$PKG install" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	echo -e "}" >> /Voncloft-OS/beta/app-script/${filename%???}/spkgbuild
+	
+done

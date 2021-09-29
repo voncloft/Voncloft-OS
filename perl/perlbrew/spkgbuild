@@ -1,0 +1,16 @@
+# description : Manage perl installations in your $HOME
+# depends : perl perl-capture-tiny perl-cpan-perl-releases perl-devel-patchperl
+
+name=perlbrew
+version=0.89
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/G/GU/GUGOD/App-perlbrew-0.89.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

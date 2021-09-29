@@ -1,0 +1,15 @@
+# description : Python Solr client
+# depends : python-requests
+
+name=python-pysolr
+version=3.9.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/pysolr/pysolr-3.9.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Framework for perl-gtk2 development
+# depends : gtk2-perl perl
+
+name=perl-gtk2-ex-formfactory
+version=0.67
+release=5
+
+source="https://www.exit1.org/packages/Gtk2-Ex-FormFactory/dist/Gtk2-Ex-FormFactory-0.67.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

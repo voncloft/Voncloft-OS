@@ -1,0 +1,16 @@
+# description : Patches text with given patch
+# depends : perl
+
+name=perl-text-patch
+version=1.8
+release=8
+
+source="https://search.cpan.org/CPAN/authors/id/C/CA/CADE/Text-Patch-1.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

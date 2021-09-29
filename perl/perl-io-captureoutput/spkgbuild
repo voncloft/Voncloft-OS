@@ -1,0 +1,16 @@
+# description : capture STDOUT and STDERR from Perl code, subprocesses or XS
+# depends : perl
+
+name=perl-io-captureoutput
+version=1.1105
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/IO-CaptureOutput-1.1105.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

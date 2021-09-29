@@ -1,0 +1,15 @@
+# description : SQLAlchemy integration with marshmallow
+# depends : 
+
+name=python-marshmallow-sqlalchemy
+version=0.26.1
+release=1
+
+source="git+https://github.com/marshmallow-code/marshmallow-sqlalchemy.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

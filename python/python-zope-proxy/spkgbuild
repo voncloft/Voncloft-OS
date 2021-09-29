@@ -1,0 +1,15 @@
+# description : Generic Transparent Proxies
+# depends : python-setuptools python-zope-interface
+
+name=python-zope-proxy
+version=4.4.0
+release=3
+
+source="python-zope-proxy-4.4.0.tar.gz::https://github.com/zopefoundation/zope.proxy/archive/4.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

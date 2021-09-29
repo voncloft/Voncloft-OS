@@ -1,0 +1,16 @@
+# description : Convert arbitrary objects to/from strings
+# depends : perl
+
+name=perl-freezethaw
+version=0.5001
+release=7
+
+source="https://www.cpan.org/authors/id/I/IL/ILYAZ/modules/FreezeThaw-0.5001.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

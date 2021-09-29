@@ -1,0 +1,16 @@
+# description : Take options from files
+# depends : perl
+
+name=perl-getopt-argvfile
+version=1.11
+release=10
+
+source="https://www.cpan.org/authors/id/J/JS/JSTENZEL/Getopt-ArgvFile-1.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

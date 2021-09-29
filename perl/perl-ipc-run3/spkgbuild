@@ -1,0 +1,16 @@
+# description : run a subprocess with input/ouput redirection
+# depends : perl
+
+name=perl-ipc-run3
+version=0.048
+release=8
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/-0.048.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

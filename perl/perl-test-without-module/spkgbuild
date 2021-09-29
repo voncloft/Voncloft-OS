@@ -1,0 +1,16 @@
+# description : Test::Without::Module - Test fallback behaviour in absence of modules
+# depends : perl
+
+name=perl-test-without-module
+version=0.20
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/C/CO/CORION/Test-Without-Module-0.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Pytest plugin to manage external processes across test runs.
+# depends : python-psutil python-pytest python-setuptools
+
+name=python-pytest-xprocess
+version=0.18.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-xprocess/pytest-xprocess-0.18.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

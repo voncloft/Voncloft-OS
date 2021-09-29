@@ -1,0 +1,15 @@
+# description : mythtv boot script
+# depends :
+
+name=mythbackend-boot
+version=20210314
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-mythbackend-boot
+
+}

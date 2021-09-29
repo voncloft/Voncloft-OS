@@ -1,0 +1,15 @@
+# description : A py.test fixture for httpbining code
+# depends : python-pytest python-six httpbin
+
+name=python-pytest-httpbin
+version=1.0.0
+release=6
+
+source="python-pytest-httpbin-1.0.0.tar.gz::https://github.com/kevin1024/pytest-httpbin/archive/v1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A library with a fast, convenient interface to Mercurial. It uses Mercurials command server for communication with hg.
+# depends : python mercurial
+
+name=python-hglib
+version=2.6.2
+release=3
+
+source="https://files.pythonhosted.org/packages/fb/11/1cfa47d5e2aa45f6a803fcdf4484f8255383221ccb2f521d9010afca0d8d/python-hglib-2.6.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,25 @@
+# description : object oriented gles abstraction utility layer
+# depends : gdk-pixbuf libdrm libxcomposite libxdamage libxext libxrandr mesa pango git gobject-introspection
+
+name=cogl
+version=1.22.8
+release=1
+
+source="git+https://gitlab.gnome.org/GNOME/cogl.git#commit="
+options="!checksum"
+
+build() {
+	cd $name-$version
+	NOCONFIGURE=1 ./autogen.sh
+
+	./configure --prefix=/usr \
+    	--enable-gles2 \
+    	--enable-{kms,wayland}-egl-platform \
+  	--enable-wayland-egl-server
+
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+  make
+
+  make DESTDIR=$PKG install
+}

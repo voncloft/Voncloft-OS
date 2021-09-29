@@ -1,0 +1,15 @@
+# description : Dark style sheet for QtWidgets application
+# depends : python-helpdev python-qtpy
+
+name=python-qdarkstyle
+version=3.0.2
+release=3
+
+source="https://github.com/ColinDuquesnoy/QDarkStyleSheet/archive/v3.0.2/python--3.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

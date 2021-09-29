@@ -1,0 +1,15 @@
+# description : A python library adding a json log formatter
+# depends : python-setuptools
+
+name=python-json-logger
+version=2.0.2
+release=5
+
+source="https://github.com/madzak/python-json-logger/archive/v2.0.2/python-json-logger-2.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

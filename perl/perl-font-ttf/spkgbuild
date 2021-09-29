@@ -1,0 +1,16 @@
+# description : Perl module for TrueType font hacking
+# depends : perl-io-string
+
+name=perl-font-ttf
+version=1.06
+release=4
+
+source="-1.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

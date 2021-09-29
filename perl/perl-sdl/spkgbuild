@@ -1,0 +1,16 @@
+# description : Simple DirectMedia Layer for Perl
+# depends : perl-alien-sdl perl-tie-simple
+
+name=perl-sdl
+version=2.548
+release=5
+
+source="https://cpan.metacpan.org/authors/id////SDL-2.548.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

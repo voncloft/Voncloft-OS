@@ -1,0 +1,15 @@
+# description : Python ctype-based wrapper around libusb1
+# depends : python libusb
+
+name=python-libusb1
+version=1.9.3
+release=1
+
+source="python-libusb1-1.9.3.tar.gz::https://github.com/vpelletier/python-libusb1/archive/1.9.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

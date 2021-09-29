@@ -1,0 +1,16 @@
+# description : Perl extension for scrubbing/sanitizing html
+# depends : perl perl-html-parser
+
+name=perl-html-scrubber
+version=0.19
+release=3
+
+source="https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-0.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

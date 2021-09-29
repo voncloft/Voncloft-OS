@@ -1,0 +1,15 @@
+# description : A fast and simple micro-framework for small web-applications
+# depends : python
+
+name=python-bottle
+version=0.12.19
+release=2
+
+source="python-bottle-0.12.19.tar.gz::https://github.com/defnull/bottle/archive/0.12.19.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

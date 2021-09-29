@@ -1,0 +1,15 @@
+# description : Command Line Interface Formulation Framework
+# depends : python-six python-pbr python-cmd2 python-prettytable python-pyparsing
+
+name=python-cliff
+version=3.9.0
+release=1
+
+source="python-cliff-3.8.0.tar.gz::https://github.com/openstack/cliff/archive/3.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

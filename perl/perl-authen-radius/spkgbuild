@@ -1,0 +1,16 @@
+# description : perl radius client
+# depends : perl-data-hexdump
+
+name=perl-authen-radius
+version=0.32
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/P/PO/PORTAONE/Authen-Radius-0.27.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

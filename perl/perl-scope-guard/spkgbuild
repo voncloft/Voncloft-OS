@@ -1,0 +1,16 @@
+# description : Lexically-scoped resource management
+# depends : perl
+
+name=perl-scope-guard
+version=0.21
+release=3
+
+source="https://cpan.metacpan.org/authors/id/C/CH/CHOCOLATE/Scope-Guard-0.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Setuptools revision control system plugin for Git
+# depends : python-setuptools git
+
+name=python-setuptools-git
+version=1.2
+release=6
+
+source="python-setuptools-git-1.2.tar.gz::https://github.com/msabramo/setuptools-git/archive/1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

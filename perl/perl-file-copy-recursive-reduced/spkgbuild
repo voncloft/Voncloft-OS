@@ -1,0 +1,16 @@
+# description : Recursive copying of files and directories within Perl 5 toolchain
+# depends : perl
+
+name=perl-file-copy-recursive-reduced
+version=0.006
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/J/JK/JKEENAN/File-Copy-Recursive-Reduced-0.006.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

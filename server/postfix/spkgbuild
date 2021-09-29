@@ -1,0 +1,25 @@
+# description : mail transport agent
+# depends : berkeley-db cyrus-sasl libnsl postfix-boot
+
+name=postfix
+version=3.6.2
+release=1
+
+backup="etc/postfix/main.cf
+	etc/postfix/saslpasswd
+	etc/postfix/master.cf"
+
+source="ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i 's/.\x08//g' README_FILES/*
+	make CCARGS="-DUSE_TLS -I/usr/include/openssl/                     \
+                -DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
+		AUXLIBS="-lssl -lcrypto -lsasl2"                              \
+     makefiles
+     make
+     sh postfix-install -non-interactive install_root="${PKG}"\
+     daemon_directory=/usr/lib/postfix
+}

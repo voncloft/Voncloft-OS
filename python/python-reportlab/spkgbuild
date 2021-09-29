@@ -1,0 +1,16 @@
+# description : A proven industry-strength PDF generating solution
+# depends : freetype2
+# depends : python python-pip python-pillow
+
+name=python-reportlab
+version=3.6.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-3.6.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

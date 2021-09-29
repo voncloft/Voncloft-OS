@@ -1,0 +1,16 @@
+# description : Ease testing test modules built with Test::Builder
+# depends : perl
+
+name=perl-test-tester
+version=0.109
+release=3
+
+source="https://www.cpan.org/authors/id/F/FD/FDALY/Test-Tester-0.109.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

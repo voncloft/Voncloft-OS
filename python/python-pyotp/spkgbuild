@@ -1,0 +1,15 @@
+# description : Python library for generating and verifying one-time passwords
+# depends : python
+
+name=python-pyotp
+version=2.6.0
+release=1
+
+source="git+https://github.com/pyotp/pyotp#commit=?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

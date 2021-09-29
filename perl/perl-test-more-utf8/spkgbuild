@@ -1,0 +1,16 @@
+# description : Enhancing Test::More for UTF8-based projects
+# depends : perl
+
+name=perl-test-more-utf8
+version=0.05
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MO/MONS/Test-More-UTF8-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

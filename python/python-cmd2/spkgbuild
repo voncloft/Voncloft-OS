@@ -1,0 +1,15 @@
+# description : A tool for build()ing interactive command line apps
+# depends : python-attrs python-colorama python-pyperclip python-wcwidth
+
+name=python-cmd2
+version=2.2.0
+release=1
+
+source="https://pypi.io/packages/source/c/cmd2/cmd2-2.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Perl interface to the EggTrayIcon library
+# depends : gtk2-perl
+
+name=perl-gtk2-trayicon
+version=0.07
+release=20
+
+source="https://downloads.sourceforge.net/sourceforge/gtk2-perl/Gtk2-TrayIcon-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

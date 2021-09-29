@@ -1,0 +1,15 @@
+# description : OpenStack Image API Client Library
+# depends : python-six python-pbr python-babel python-prettytable python-keystoneauth1
+
+name=python-glanceclient
+version=3.5.0
+release=3
+
+source="https://github.com/openstack/python-glanceclient/archive/3.5.0/python-glanceclient-3.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

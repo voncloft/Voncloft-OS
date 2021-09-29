@@ -1,0 +1,15 @@
+# description : Curses-based user interface library
+# depends : python glibc
+
+name=python-urwid
+version=2.1.2
+release=3
+
+source="https://pypi.org/packages/source/u/urwid/urwid-2.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

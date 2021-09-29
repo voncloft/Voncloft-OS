@@ -1,0 +1,15 @@
+# description : Virtual Python Environment build()er
+  # depends : python-appdirs python-distlib python-filelock python-six
+
+name=python-virtualenv
+version=20.8.1
+release=1
+
+source="https://github.com/pypa/virtualenv/archive/20.8.0/python-virtualenv-20.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

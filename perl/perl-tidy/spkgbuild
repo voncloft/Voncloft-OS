@@ -1,0 +1,16 @@
+# description : Parses and beautifies perl source
+# depends : perl
+
+name=perl-tidy
+version=20210402
+release=1
+
+source=https://www.cpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-20210402.tar.gz
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

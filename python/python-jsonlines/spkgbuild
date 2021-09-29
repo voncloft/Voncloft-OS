@@ -1,0 +1,15 @@
+# description : Library with helpers for the jsonlines file format
+# depends : python-six
+
+name=python-jsonlines
+version=2.0.0
+release=7
+
+source="https://github.com/wbolster/jsonlines/archive/2.0.0/python-jsonlines-2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

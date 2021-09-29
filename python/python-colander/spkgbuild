@@ -1,0 +1,15 @@
+# description : A simple schema-based serialization and deserialization library
+# depends : python-iso8601 python-setuptools python-translationstring
+
+name=python-colander
+version=1.8.3
+release=1
+
+source="python-colander-1.8.3.tar.gz::https://github.com/Pylons/colander/archive/1.8.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

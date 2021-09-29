@@ -1,0 +1,16 @@
+# description : Interface to LDAP Protocol RFC1777
+# depends : perl-convert-asn1 perl-xml-sax-writer perl-text-soundex
+
+name=perl-ldap
+version=0.68
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MARSCHAP/perl-ldap-0.68.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

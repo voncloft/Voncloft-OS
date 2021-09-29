@@ -1,0 +1,16 @@
+# description : Cipherblock chaining for Crypt::DES/IDEA
+# depends : perl
+
+name=perl-crypt-cbc
+version=3.04
+release=4
+
+source="https://www.cpan.org/authors/id/L/LD/LDS/Crypt-CBC-3.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

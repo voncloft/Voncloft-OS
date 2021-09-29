@@ -1,0 +1,15 @@
+# description : Colour representations manipulation library RGB, HSL, web, ...
+# depends : python python-d2to1
+
+name=python-colour
+version=0.1.5
+release=8
+
+source="https://files.pythonhosted.org/packages/source/c/colour/colour-0.1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

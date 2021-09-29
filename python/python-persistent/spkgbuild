@@ -1,0 +1,15 @@
+# description : Translucent persistent objects
+# depends : python-zope-interface
+
+name=python-persistent
+version=4.7.0
+release=3
+
+source="https://github.com/zopefoundation/persistent/archive/4.7.0/python-persistent-4.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

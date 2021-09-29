@@ -1,0 +1,15 @@
+# description : Python implementation of Extended Window Manager Hints, based on Xlib
+# depends : python-xlib
+
+name=python-ewmh
+version=0.1.6
+release=3
+
+source="python-ewmh-0.1.6.tar.gz::https://github.com/parkouss/pyewmh/archive/v0.1.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Threat9 Test Bed
+# depends : python python-setuptools python-click python-faker python-flask
+
+name=python-threat9-test-bed
+version=0.6.0+2+g1ed61b3
+release=4
+
+source="python-threat9-test-bed::git+https://github.com/threat9/threat9-test-bed#commit="
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Use the fastest JSON functions available at import time
+# depends : python
+
+name=python-mujson
+version=1.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source/m/mujson/mujson-1.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

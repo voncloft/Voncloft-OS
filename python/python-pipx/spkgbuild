@@ -1,0 +1,15 @@
+# description : Install and Run Python Applications in Isolated Environments
+# depends : python python-userpath python-argcomplete
+
+name=python-pipx
+version=0.16.4
+release=1
+
+source="python-pipx-0.16.4.tar.gz::https://github.com/pipxproject/pipx/archive/0.16.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

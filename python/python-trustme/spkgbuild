@@ -1,0 +1,15 @@
+# description : Library for fake certificate authority CA to generate fake TLS certs
+# depends : python python-cryptography
+
+name=python-trustme
+version=0.9.0
+release=3
+
+source="https://github.com/python-trio/trustme/archive/v0.9.0/python-trustme-0.9.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

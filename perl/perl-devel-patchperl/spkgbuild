@@ -1,0 +1,16 @@
+# description : Patch perl source a la Devel::PPPorts buildperl.pl
+# depends : perl perl-file-pushd perl-module-pluggable
+
+name=perl-devel-patchperl
+version=2.08
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Devel-PatchPerl-1.64.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

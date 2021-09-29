@@ -1,0 +1,15 @@
+# description : Python-Markdown extension for easy video embedding
+# depends : python
+
+name=python-mdx-video
+version=0.1.8
+release=6
+
+source="https://pypi.python.org/packages/source/m/mdx_video/mdx_video-0.1.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

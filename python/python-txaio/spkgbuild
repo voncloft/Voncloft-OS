@@ -1,0 +1,15 @@
+# description : Compatibility API between asyncio/Twisted/Trollius
+# depends : python-six
+
+name=python-txaio
+version=21.2.1
+release=1
+
+source="https://pypi.io/packages/source/t/txaio/txaio-21.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

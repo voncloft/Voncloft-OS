@@ -1,0 +1,15 @@
+# description : Faker generates fake data for you.
+# depends : python-setuptools python-dateutil python-text-unidecode
+
+name=python-faker
+version=8.13.2
+release=1
+
+source="python-faker-8.13.2.tar.gz::https://github.com/joke2k/faker/archive/v8.13.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Promises, promises, promises
+# depends : python-case
+
+name=python-vine
+version=5.0.0
+release=3
+
+source="python-vine-5.0.0.tar.gz::https://github.com/celery/vine/archive/v5.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Jupyter protocol implementation and client libraries
+# depends : python-ipykernel python-traitlets python-pyzmq
+
+name=python-jupyter_client
+version=6.1.12
+release=3
+
+source="https://files.pythonhosted.org/packages/source/j/jupyter_client/jupyter_client-6.1.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Octavia client for OpenStack Load Balancing
+# depends : python-cliff python-keystoneauth1 python-neutronclient python-openstackclient
+
+name=python-octaviaclient
+version=2.4.0
+release=2
+
+source="https://github.com/openstack/python-octaviaclient/archive/2.4.0/python-octaviaclient-2.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

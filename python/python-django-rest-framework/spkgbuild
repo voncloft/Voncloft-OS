@@ -1,0 +1,16 @@
+# description : A powerful and flexible toolkit for build()ing Web APIs.
+# depends : python-django
+# bootstrap without python-django-filter, as it has a checkdepends on
+
+name=python-django-rest-framework
+version=3.12.4
+release=3
+
+source="python-django-rest-framework-3.12.4.tar.gz::https://github.com/encode/django-rest-framework/archive/3.12.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

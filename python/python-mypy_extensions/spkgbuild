@@ -1,0 +1,15 @@
+# description : Experimental type system extensions for programs checked with the mypy typechecker
+# depends : python
+
+name=python-mypy_extensions
+version=0.4.3
+release=3
+
+source="python-mypy_extensions-0.4.3.tar.gz::https://pypi.org/packages/source/m/mypy_extensions/mypy_extensions-0.4.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

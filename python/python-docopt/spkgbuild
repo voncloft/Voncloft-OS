@@ -1,0 +1,15 @@
+# description : Pythonic argument parser, that will make you smile
+# depends : python
+
+name=python-docopt
+version=0.6.2
+release=9
+
+source="https://pypi.python.org/packages/source/d/docopt/docopt-0.6.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

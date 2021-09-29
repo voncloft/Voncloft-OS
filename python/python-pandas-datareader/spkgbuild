@@ -1,0 +1,15 @@
+# description : Data readers extracted from the pandas codebase
+# depends : python-pandas python-lxml python-requests
+
+name=python-pandas-datareader
+version=0.10.0
+release=2
+
+source="python-pandas-datareader-0.10.0.tar.gz::https://github.com/pydata/pandas-datareader/archive/v0.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

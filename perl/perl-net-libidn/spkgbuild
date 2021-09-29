@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Net::LibIDN
+# depends : perl libidn
+
+name=perl-net-libidn
+version=0.12
+release=18
+
+source="https://search.cpan.org/CPAN/authors/id/T/TH/THOR/Net-LibIDN-0.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Distribution with a rich set of tools built upon the Test2 framework.
+# depends : perl-module-pluggable perl-importer perl-scope-guard perl-sub-info
+
+name=perl-test2-suite
+version=0.000141
+release=1
+
+source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test2-Suite-0.000141.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

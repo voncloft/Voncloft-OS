@@ -1,0 +1,15 @@
+# description : Prometheus instrumentation library for Python applications
+# depends : python
+
+name=python-prometheus_client
+version=0.11.0
+release=1
+
+source="client_python-0.11.0.tar.gz::https://github.com/prometheus/client_python/archive/v0.11.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

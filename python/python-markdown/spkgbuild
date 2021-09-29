@@ -1,0 +1,15 @@
+# description : Python implementation of John Grubers Markdown.
+# depends : python
+
+name=python-markdown
+version=3.3.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source/M/Markdown/Markdown-3.3.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

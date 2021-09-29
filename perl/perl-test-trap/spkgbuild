@@ -1,0 +1,16 @@
+# description : Trap exit codes, exceptions, output, etc.
+# depends : perl perl-data-dump
+
+name=perl-test-trap
+version=v0.3.4
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

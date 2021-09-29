@@ -1,0 +1,63 @@
+# description : turn your wificard into a hotspot
+# depends : hostapd-boot glibc libnl openssl sqlite
+
+name=hostapd
+version=2.9
+release=4
+
+source="https://w1.fi/releases/$name-$version.tar.gz"
+options="!checksum"
+build()
+{
+	cd $name-$version/hostapd
+	cat <<- EOF > .config
+	CONFIG_DEBUG_FILE=y
+	CONFIG_DRIVER_HOSTAP=y
+	CONFIG_DRIVER_NL80211=y
+	CONFIG_DRIVER_RADIUS_ACL=y
+	CONFIG_EAP=y
+	CONFIG_EAP_AKA=y
+	CONFIG_EAP_AKA_PRIME=y
+	CONFIG_EAP_EKE=y
+	CONFIG_EAP_FAST=y
+	CONFIG_EAP_GPSK=y
+	CONFIG_EAP_GPSK_SHA256=y
+	CONFIG_EAP_GTC=y
+	CONFIG_EAP_IKEV2=y
+	CONFIG_EAP_MD5=y
+	CONFIG_EAP_MSCHAPV2=y
+	CONFIG_EAP_PAX=y
+	CONFIG_EAP_PEAP=y
+	CONFIG_EAP_PSK=y
+	CONFIG_EAP_PWD=y
+	CONFIG_EAP_SAKE=y
+	CONFIG_EAP_SIM=y
+	CONFIG_EAP_TLS=y
+	CONFIG_EAP_TNC=y
+	CONFIG_EAP_TTLS=y
+	CONFIG_FULL_DYNAMIC_VLAN=y
+	CONFIG_IAPP=y
+	CONFIG_IEEE80211AC=y
+	CONFIG_IEEE80211N=y
+	CONFIG_PEERKEY=y
+	CONFIG_PKCS12=y
+	CONFIG_RSN_PREAUTH=y
+	CONFIG_SQLITE=y
+	CONFIG_TLS=openssl
+	CONFIG_VLAN_NETLINK=y
+	CONFIG_WNM=y
+	CONFIG_WPS2=y
+	CONFIG_WPS=y
+	CONFIG_WPS_NFC=y
+	CONFIG_WPS_UPNP=y
+	CONFIG_LIBNL32=y
+	CFLAGS += -I/usr/include/libnl3
+	LIBS += -lnl-genl-3 -lnl-3
+	EOF
+	make
+	cp -v hostapd $PKG/usr/bin/
+	cp -v hostapd_cli $/pkg/usr/bin/
+	
+	#make -C $name install DESTDIR=$PKG BINDIR=/usr/bin
+	install $SRC/hostapd.conf $PKG/etc/
+}

@@ -1,0 +1,15 @@
+# description : Python bindings to the Zstandard zstd compression library
+# depends : python
+
+name=python-zstandard
+version=0.15.2
+release=1
+
+source="python-zstandard-0.15.2.tar.gz::https://github.com/indygreg/python-zstandard/archive/0.15.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

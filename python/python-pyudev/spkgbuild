@@ -1,0 +1,15 @@
+# description : Python bindings to libudev
+# depends : python-six systemd
+
+name=python-pyudev
+version=0.22.0
+release=5
+
+source="pyudev-0.22.tar.gz::https://github.com/pyudev/pyudev/archive/v0.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

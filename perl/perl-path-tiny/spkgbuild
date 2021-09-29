@@ -1,0 +1,16 @@
+# description : File path utility
+# depends : perl
+
+name=perl-path-tiny
+version=0.118
+release=1
+
+source="https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.118.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

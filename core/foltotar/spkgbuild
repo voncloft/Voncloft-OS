@@ -1,0 +1,14 @@
+# description : a simple program to tarball a folder
+# depends : 
+
+name=foltotar
+version=1
+release=1
+
+source="foltotar"
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install -m755 $SRC/foltotar $PKG/usr/bin
+}

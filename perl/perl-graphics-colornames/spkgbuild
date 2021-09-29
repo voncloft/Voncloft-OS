@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Graphics::ColorNames : provides RGB values for standard color names
+# depends : perl
+
+name=perl-graphics-colornames
+version=v3.5.0
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/R/RR/RRWO/Graphics-ColorNames-2.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

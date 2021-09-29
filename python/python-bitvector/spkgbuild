@@ -1,0 +1,15 @@
+# description : A memory-efficient packed representation for bit arrays in pure Python
+# depends : python
+
+name=python-bitvector
+version=3.5.0
+release=4
+
+source="https://engineering.purdue.edu/kak/dist/BitVector-3.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

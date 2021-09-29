@@ -1,0 +1,15 @@
+# description : Qt-based console for Jupyter with support for rich media output
+# depends : python-ipykernel python-jupyter_core python-jupyter_client
+
+name=python-qtconsole
+version=5.1.1
+release=2
+
+source="python-qtconsole-5.1.1.tgz::https://github.com/jupyter/qtconsole/archive/5.1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

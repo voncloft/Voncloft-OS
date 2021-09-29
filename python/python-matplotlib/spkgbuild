@@ -1,0 +1,15 @@
+# description : A python plotting library, making publication quality plots
+# depends : freetype2 python-cycler python-dateutil python-kiwisolver python-numpy python-pillow python-pyparsing qhull
+
+name=python-matplotlib
+version=3.5.0
+release=1
+
+source="git+https://github.com/matplotlib/matplotlib.git#tag=?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

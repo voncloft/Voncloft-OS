@@ -1,0 +1,19 @@
+# description : wayland c++ bindings
+# depends : pugixml wayland
+
+name=waylandpp
+version=0.2.8
+release=1
+
+source="https://github.com/NilsBrause/waylandpp/archive/$version.zip"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	[[ -d build ]] && rm -rf build
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX="/usr" -DCMAKE_INSTALL_LIBDIR="lib" .. 
+	make
+	make DESTDIR=$PKG install
+}

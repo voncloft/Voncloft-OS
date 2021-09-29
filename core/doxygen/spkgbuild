@@ -1,0 +1,23 @@
+# description :  documentation system for C++, C, Java, Objective-C, Corba IDL and to some extent PHP, C# and D
+# depends : cmake git 
+
+name=doxygen
+version=1.9.2
+release=1
+
+source="http://doxygen.nl/files/$name-$version.src.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir -v build &&
+	cd       build &&
+
+	cmake -G "Unix Makefiles"         \
+      		-DCMAKE_BUILD_TYPE=Release  \
+      		-DCMAKE_INSTALL_PREFIX=/usr \
+      		-Wno-dev ..
+
+	make
+	make DESTDIR=$PKG install
+}

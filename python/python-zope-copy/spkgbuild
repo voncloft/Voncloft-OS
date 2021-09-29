@@ -1,0 +1,15 @@
+# description : Pluggable object copying mechanism
+# depends : python-setuptools python-zope-interface
+
+name=python-zope-copy
+version=4.2
+release=5
+
+source="python-zope-copy-4.2.tar.gz::https://github.com/zopefoundation/zope.copy/archive/4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

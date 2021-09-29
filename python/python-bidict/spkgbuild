@@ -1,0 +1,15 @@
+# description : Bidirectional mapping library for Python
+# depends : python
+
+name=python-bidict
+version=0.21.3
+release=2
+
+source="https://files.pythonhosted.org/packages/source/b/bidict/bidict-0.21.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

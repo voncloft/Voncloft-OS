@@ -1,0 +1,15 @@
+# description : A multiprocessing distributed task queue for Django
+# depends : 
+
+name=python-django-q
+version=1.3.9
+release=3
+
+source="git+https://github.com/Koed00/django-q.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

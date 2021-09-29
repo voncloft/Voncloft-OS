@@ -1,0 +1,15 @@
+# description : Extract meta information from setup.py
+# depends : python-setuptools
+
+name=python-dephell-setuptools
+version=0.2.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_setuptools/dephell_setuptools-0.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : OpenStack library for all concurrency-related code
+# depends : python-six python-pbr python-oslo-config python-oslo-i18n python-oslo-utils
+
+name=python-oslo-concurrency
+version=4.4.1
+release=1
+
+source="https://github.com/openstack/oslo.concurrency/archive/4.4.1/python-oslo-concurrency-4.4.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

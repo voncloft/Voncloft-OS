@@ -1,0 +1,22 @@
+# description : api to express expected outcomes
+# depends : ruby-diff-lcs ruby-rspec-support
+
+_gemname=rspec-expectations
+name=ruby-rspec-expectations
+version=3.10.1
+release=4
+
+source="https://rubygems.org/downloads/${_gemname}-${version}.gem"
+options="!checksum"
+
+build() {
+	_gemdir="$(gem env gemdir)"
+
+	gem install \
+		--ignore-dependencies \
+		--no-user-install \
+		--no-document \
+		-i "$PKG/$_gemdir" \
+		-n "$PKG"/usr/bin \
+		$_gemname-$version.gem
+}

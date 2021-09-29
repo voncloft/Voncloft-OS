@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Danga::Socket
+# depends : perl-sys-syscall
+
+name=perl-danga-socket
+version=1.62
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/B/BR/BRADFITZ/Danga-Socket-1.61.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

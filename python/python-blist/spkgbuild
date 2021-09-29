@@ -1,0 +1,15 @@
+# description : List-like type with better asymptotic performance
+# depends : python
+
+name=python-blist
+version=1.3.6
+release=9
+
+source="python-blist-1.3.6.tar.gz::https://github.com/DanielStutzbach/blist/archive/v1.3.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

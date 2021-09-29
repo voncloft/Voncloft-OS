@@ -1,0 +1,15 @@
+# description : AWS Serverless Application Model AWS SAM prescribes rules for expressing Serverless applications on AWS
+# depends : python python-boto3 python-jsonschema python-six
+
+name=python-aws-sam-translator
+version=1.38.0
+release=1
+
+source="https://github.com/aws/serverless-application-model/archive/v1.38.0/python-aws-sam-translator-1.38.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python bindings for Gammu library
+# depends : python gammu
+
+name=python-gammu
+version=3.2.3
+release=2
+
+source="python-gammu-3.2.3.tar.gz::https://github.com/gammu/python-gammu/archive/refs/tags/3.2.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

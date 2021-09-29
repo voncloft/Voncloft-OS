@@ -1,0 +1,15 @@
+# description : SAT solver for use in Enstaller, based on the MiniSat implementation
+# depends : python python-attrs python-okonomiyaki python-six
+
+name=python-simplesat
+version=0.8.2
+release=3
+
+source="git+https://github.com/enthought/sat-solver.git#tag=v0.8.2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

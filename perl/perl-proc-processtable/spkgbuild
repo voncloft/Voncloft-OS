@@ -1,0 +1,16 @@
+# description : Provides a consistent interface to process table information.
+# depends : perl
+
+name=perl-proc-processtable
+version=0.612
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/J/JW/JWB/Proc-ProcessTable-0.60.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

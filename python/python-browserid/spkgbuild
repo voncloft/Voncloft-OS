@@ -1,0 +1,15 @@
+# description : Python client library for the BrowserID protocol
+# depends : python-requests
+
+name=python-browserid
+version=1.4
+release=7
+
+source="https://github.com/mozilla/PyBrowserID/archive/0.14.0/python-browserid-0.14.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

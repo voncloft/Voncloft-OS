@@ -1,0 +1,15 @@
+# description : Plugin for generating HTML reports for pytest results
+# depends : python-pytest python-pytest-metadata
+
+name=python-pytest-html
+version=3.1.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-html/pytest-html-3.1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

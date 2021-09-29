@@ -1,0 +1,15 @@
+# description : Logging integration for Click
+# depends : python-click
+
+name=python-click-log
+version=0.3.2
+release=7
+
+source="https://files.pythonhosted.org/packages/source/c/click-log/click-log-0.3.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

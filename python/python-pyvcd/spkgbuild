@@ -1,0 +1,14 @@
+# description : Python package for writing Value Change Dump VCD files
+
+name=python-pyvcd
+version=0.2.4
+release=1
+
+source="python-pyvcd-0.2.4.tar.gz::https://github.com/SanDisk-Open-Source/pyvcd/archive/0.2.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

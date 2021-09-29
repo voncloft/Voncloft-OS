@@ -1,0 +1,15 @@
+# description : Time-handling functionality from python-netcdf4
+# depends : python-numpy
+
+name=python-cftime
+version=1.5.0
+release=1
+
+source="https://github.com/Unidata/cftime/archive/v1.5.0rel/python--1.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

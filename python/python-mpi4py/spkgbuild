@@ -1,0 +1,15 @@
+# description : Python bindings for the Message Passing Interface MPI standard
+# depends : python openmpi
+
+name=python-mpi4py
+version=3.1.1
+release=3
+
+source="https://github.com/mpi4py/mpi4py/releases/download/3.1.1/mpi4py-3.1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

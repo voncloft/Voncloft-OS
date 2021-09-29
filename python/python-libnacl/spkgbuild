@@ -1,0 +1,15 @@
+# description : A simple ctypes based python binding to libsodium
+# depends : python libsodium
+
+name=python-libnacl
+version=1.8.0
+release=3
+
+source="https://pypi.io/packages/source/l/libnacl/libnacl-1.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,12 @@
+set autoindent
+set constantshow
+set fill 72
+set historylog
+set multibuffer
+set nohelp
+set positionlog
+set quickblank 
+set regexp
+set suspend
+include /usr/share/nano/*.nanorc
+

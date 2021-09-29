@@ -1,0 +1,15 @@
+# description : LHA archive support for Python
+# depends : python
+
+name=python-lhafile
+version=0.3.0
+release=5
+
+source="https://github.com/FrodeSolheim/python-lhafile/archive/v0.3.0/python-lhafile-0.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

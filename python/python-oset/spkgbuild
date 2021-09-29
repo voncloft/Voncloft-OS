@@ -1,0 +1,14 @@
+# description : Ordered sets for Python
+
+name=python-oset
+version=0.1.3
+release=7
+
+source="https://pypi.io/packages/source/o/oset/oset-0.1.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

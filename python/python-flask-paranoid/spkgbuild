@@ -1,0 +1,15 @@
+# description : Simple user session protection for Flask applications
+# depends : python python-flask
+
+name=python-flask-paranoid
+version=0.2.0
+release=6
+
+source="python-flask-paranoid-0.2.tar.gz::https://github.com/miguelgrinberg/flask-paranoid/archive/v0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

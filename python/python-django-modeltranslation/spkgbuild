@@ -1,0 +1,15 @@
+# description : Translates Django models using a registration approach
+# depends : python-django
+
+name=python-django-modeltranslation
+version=0.17.3
+release=1
+
+source="https://github.com/deschler/django-modeltranslation/archive/0.17.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

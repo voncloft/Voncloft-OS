@@ -1,0 +1,15 @@
+# description : Opinionated Batteries-Included Python 3 CLI Framework.
+# depends : python-appdirs python-argcomplete python-colorama
+
+name=python-milc
+version=1.6.3
+release=1
+
+source="python-milc-1.4.2.tar.gz::https://github.com/clueboard/milc/archive/1.4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

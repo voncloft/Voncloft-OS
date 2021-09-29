@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module App::CLI
+# depends : perl
+
+name=perl-app-cli
+version=0.52
+release=3
+
+source="https://cpan.metacpan.org/authors/id/P/PT/PTC/App-CLI-0.52.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

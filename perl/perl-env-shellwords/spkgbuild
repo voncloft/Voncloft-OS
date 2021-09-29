@@ -1,0 +1,16 @@
+# description : Environment variables for arguments as array
+# depends : perl
+
+name=perl-env-shellwords
+version=0.02
+release=3
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Env-ShellWords-0.02.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

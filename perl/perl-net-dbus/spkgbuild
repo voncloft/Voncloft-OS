@@ -1,0 +1,16 @@
+# description : Binding for DBus messaging protocol
+# depends : dbus perl-xml-twig
+
+name=perl-net-dbus
+version=1.2.0
+release=2
+
+source="https://www.cpan.org/authors/id/D/DA/DANBERR/Net-DBus-1.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

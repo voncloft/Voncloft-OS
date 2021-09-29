@@ -1,0 +1,15 @@
+# description : ASN.1 library for Python 3
+# depends : python
+
+name=python-pyasn1
+version=0.4.8
+release=4
+
+source="https://pypi.io/packages/source/p/pyasn1/pyasn1-0.4.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

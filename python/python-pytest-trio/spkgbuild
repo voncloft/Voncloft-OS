@@ -1,0 +1,15 @@
+# description : Pytest plugin for Trio
+# depends : 
+
+name=python-pytest-trio
+version=0.7.0
+release=3
+
+source="git+https://github.com/python-trio/pytest-trio.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

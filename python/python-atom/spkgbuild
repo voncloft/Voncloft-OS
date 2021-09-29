@@ -1,0 +1,15 @@
+# description : Memory efficient Python objects
+# depends : python python-setuptools
+
+name=python-atom
+version=0.6.0
+release=3
+
+source="python-atom-0.6.0.tar.gz::https://github.com/nucleic/atom/archive/0.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,28 @@
+Date: Tue 23 Mar 2021 05:42:37 AM EDT
+
+name=vsftpd
+version=3.0.3
+release=1
+
+Synopsis:
+Initial creation of package in repo
+
+----------------------------------------------------------------
+
+Date: Tue 23 Mar 2021 11:54:34 AM EDT
+
+version=3.0.3
+release=1
+
+Synopsis:
+added a clause for depends and pam file to allow only users in /etc/ftpusers
+
+----------------------------------------------------------------
+
+Date: Sun Aug  8 15:15:43 EDT 2021
+
+version=3.0.5
+release=1
+
+Synopsis:
+Upgraded from version 3.0.4 to version 3.0.5

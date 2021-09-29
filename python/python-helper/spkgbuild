@@ -1,0 +1,15 @@
+# description : Development library for quickly writing configurable applications and daemons
+# depends : python-yaml
+
+name=python-helper
+version=2.5.0
+release=1
+
+source="python-helper-2.5.0.tar.gz::https://github.com/gmr/helper/archive/2.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

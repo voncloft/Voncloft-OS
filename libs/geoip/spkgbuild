@@ -1,0 +1,22 @@
+# description : Non-DNS IP-to-country resolver in C library
+# depends : geoip-database zlib
+
+name=geoip
+version=1.6.12
+release=1
+
+source="https://github.com/maxmind/${name}-api-c/archive/v${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd geoip-api-c-$version
+	autoreconf -ifv
+	autoconf
+	
+	./configure --prefix=/usr \
+	--mandir=/usr/share/man \
+	--sysconfdir=/etc/geoip
+
+	make
+	make DESTDIR=$PKG install
+}

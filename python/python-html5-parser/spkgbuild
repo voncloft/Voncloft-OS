@@ -1,0 +1,15 @@
+# description : Fast C based HTML 5 parsing for python
+# depends : python-chardet python-lxml
+
+name=python-html5-parser
+version=0.4.9
+release=5
+
+source="https://pypi.python.org/packages/source/m/html5-parser/html5-parser-0.4.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : computing with and displaying bytes
+# depends : python python-justbases
+
+name=python-justbytes
+version=0.15
+release=3
+
+source="python-justbytes-0.15.tar.gz::https://github.com/mulkieran/justbytes/archive/v0.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

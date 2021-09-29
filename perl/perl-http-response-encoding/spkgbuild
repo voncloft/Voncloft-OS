@@ -1,0 +1,16 @@
+# description : Adds encoding to HTTP::Response
+# depends : perl-libwww
+
+name=perl-http-response-encoding
+version=0.06
+release=6
+
+source="https://www.cpan.org/authors/id/D/DA/DANKOGAI/HTTP-Response-Encoding-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

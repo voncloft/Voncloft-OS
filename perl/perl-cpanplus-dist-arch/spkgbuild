@@ -1,0 +1,16 @@
+# description : CPANPLUS backend for building ArchLinux pacman packages
+# depends : perl perl-cpanplus perl-pod-parser
+
+name=perl-cpanplus-dist-arch
+version=1.32
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/J/JN/JNBEK/CPANPLUS-Dist-Arch-1.32.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

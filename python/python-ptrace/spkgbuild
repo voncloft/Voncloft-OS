@@ -1,0 +1,15 @@
+# description : Python binding of ptrace library to trace processes and syscalls
+# depends : python python-six
+
+name=python-ptrace
+version=1.0.1
+release=3
+
+source="https://github.com/haypo/python-ptrace/archive/0.9.8/python-ptrace-0.9.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

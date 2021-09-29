@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module PerlIO::via::symlink
+
+name=perlio-via-symlink
+version=0.05
+release=9
+
+source="https://www.cpan.org/authors/id/C/CL/CLKAO/PerlIO-via-symlink-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

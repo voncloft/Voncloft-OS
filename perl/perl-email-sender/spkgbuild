@@ -1,0 +1,16 @@
+# description : a library for sending email
+# depends : perl-capture-tiny perl-email-abstract.006 perl-email-address
+
+name=perl-email-sender
+version=2.500
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-Sender-2.500.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

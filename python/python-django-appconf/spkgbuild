@@ -1,0 +1,15 @@
+# description : An app to handle configuration defaults of packaged Django apps gracefully
+# depends : python-django python-six
+
+name=python-django-appconf
+version=1.0.5
+release=4
+
+source="https://files.pythonhosted.org/packages/source/d/django-appconf/django-appconf-1.0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

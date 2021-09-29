@@ -1,0 +1,15 @@
+# description : A simple implementation of contracts for Python
+# depends : python
+
+name=python-dpcontracts
+version=0.6.0
+release=7
+
+source="https://pypi.io/packages/source/d/dpcontracts/dpcontracts-0.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

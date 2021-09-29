@@ -1,0 +1,16 @@
+# description : Loads one of several alternate underlying implementations for a module
+# depends : perl-module-runtime2 perl-try-tiny
+
+name=perl-module-implementation
+version=0.09
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Module-Implementation-0.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

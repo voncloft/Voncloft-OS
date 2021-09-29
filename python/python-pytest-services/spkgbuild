@@ -1,0 +1,15 @@
+# description : Services plugin for pytest testing framework
+# depends : python-setuptools python-pytest python-requests python-psutil
+
+name=python-pytest-services
+version=2.2.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-services/pytest-services-2.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

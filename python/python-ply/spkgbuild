@@ -1,0 +1,15 @@
+# description : Implementation of lex and yacc parsing tools
+  # depends : python
+
+name=python-ply
+version=3.11
+release=7
+
+source="https://pypi.io/packages/source/p/ply/ply-3.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

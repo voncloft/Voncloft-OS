@@ -1,0 +1,15 @@
+# description : Collection of persistent disk-based queues.
+# depends : python
+
+name=python-queuelib
+version=1.6.2
+release=7
+
+source="python-queuelib-1.6.2.tar.gz::https://github.com/scrapy/queuelib/archive/v1.6.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

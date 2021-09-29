@@ -1,0 +1,15 @@
+# description : A platform independent file lock
+# depends : python
+
+name=python-filelock
+version=3.0.12
+release=5
+
+source="python-filelock-3.0.12.tar.gz::https://github.com/benediktschmitt/py-filelock/archive/v3.0.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

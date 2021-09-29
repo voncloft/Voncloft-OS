@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module HTML::Highlight
+
+name=perl-html-highlight
+version=0.20
+release=11
+
+source="https://www.cpan.org/authors/id/T/TR/TRIPIE/HTML-Highlight-0.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

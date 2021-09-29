@@ -1,0 +1,16 @@
+# description : Keep imports and functions out of your namespace
+# depends : perl perl-b-hooks-endofscope perl-package-stash
+
+name=perl-namespace-clean
+version=0.27
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RI/RIBASUSHI/namespace-clean-0.27.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

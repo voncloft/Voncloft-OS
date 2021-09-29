@@ -1,0 +1,16 @@
+# description : Fast CGI
+# depends : perl
+
+name=perl-fcgi
+version=0.82
+release=3
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/FCGI-0.82.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

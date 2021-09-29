@@ -1,0 +1,15 @@
+# description	: Self-contained ISO 3166-1 country definitions
+# depends	: python
+
+name=python-iso3166
+version=2.0.1
+release=1
+
+source="https://files.pythonhosted.org/packages/59/d7/1f875a69b9b2ba2158a860f674725df7a2917c112a47223da92b756c3214/iso3166-2.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

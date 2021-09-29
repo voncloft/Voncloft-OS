@@ -1,0 +1,15 @@
+# description : Python toolkit for stream-based generation of output for the web.
+# depends : python
+
+name=python-genshi
+version=0.7.5
+release=2
+
+source="python-genshi-0.7.5.tar.gz::https://github.com/edgewall/genshi/archive/0.7.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

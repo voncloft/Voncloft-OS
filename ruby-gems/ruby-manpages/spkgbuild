@@ -1,0 +1,22 @@
+# description : manages terminal colors and effects in ruby
+# depends : ruby ruby-rainbow ruby-rspec ruby-term-ansicolor ruby-rake
+
+_gemname=manpages
+name=ruby-manpages
+version=0.6.1
+release=1
+
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
+options="!checksum"
+
+build() {
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem	
+}

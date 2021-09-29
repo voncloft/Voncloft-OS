@@ -1,0 +1,16 @@
+# description : OpenSSLs multiprecision integer arithmetic
+# depends : perl openssl
+
+name=perl-crypt-openssl-bignum
+version=0.09
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/K/KM/KMX/Crypt-OpenSSL-Bignum-0.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

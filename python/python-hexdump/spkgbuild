@@ -1,0 +1,15 @@
+# description : Library and tool to work with hex and binary data
+# depends : python
+
+name=python-hexdump
+version=3.3
+release=5
+
+source="https://files.pythonhosted.org/packages/source/h/hexdump/hexdump-3.3.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

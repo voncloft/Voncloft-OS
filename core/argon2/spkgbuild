@@ -1,0 +1,14 @@
+# description : A password-hashing function
+# depends : glibc
+
+name=argon2
+version=20190702
+release-3
+
+source="https://github.com/P-H-C/phc-winner-argon2/archive/${version}/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd phc-winner-$name-$version
+	make OPTTARGET='none' LIBRARY_REL='lib' DESTDIR=$PKG install
+}

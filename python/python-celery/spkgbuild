@@ -1,0 +1,15 @@
+# description : Distributed Asynchronous Task Queue
+# depends : python-billiard python-click-didyoumean python-click-repl python-kombu
+
+name=python-celery
+version=5.2.0
+release=1
+
+source="https://pypi.io/packages/source/c/celery/celery-5.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

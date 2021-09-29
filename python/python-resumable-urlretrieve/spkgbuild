@@ -1,0 +1,15 @@
+# description : Small library to fetch files over HTTP and resuming their download
+# depends : python python-requests
+
+name=python-resumable-urlretrieve
+version=0.1.6
+release=4
+
+source="python-resumable-urlretrieve-0.1.6.tar.gz::https://github.com/berdario/resumable-urlretrieve/archive/0.1.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

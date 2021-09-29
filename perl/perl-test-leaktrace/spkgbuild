@@ -1,0 +1,16 @@
+# description : Traces memory leaks
+# depends : perl
+
+name=perl-test-leaktrace
+version=0.17
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEEJO/Test-LeakTrace-0.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

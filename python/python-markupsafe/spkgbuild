@@ -1,0 +1,15 @@
+# description : Implements a XML/HTML/XHTML Markup safe string for Python
+  # depends : python
+
+name=python-markupsafe
+version=2.0.1
+release=6
+
+source="python-markupsafe-2.0.1.tar.gz::https://github.com/pallets/markupsafe/archive/2.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd MarkupSafe-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

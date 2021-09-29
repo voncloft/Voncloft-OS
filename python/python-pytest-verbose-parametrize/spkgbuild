@@ -1,0 +1,15 @@
+# description : Pytest parametrize hook to generate ids for parametrized tests
+# depends : python-pytest python-six
+
+name=python-pytest-verbose-parametrize
+version=1.7.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-verbose-parametrize/pytest-verbose-parametrize-1.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Parse strings using a specification based on the Python format syntax.
+# depends : python
+
+name=python-parse
+version=1.19.0
+release=1
+
+source="https://pypi.org/packages/source/p/parse/parse-1.19.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

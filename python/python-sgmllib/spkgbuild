@@ -1,0 +1,16 @@
+# description : Parse RSS and Atom feeds in python
+# depends : python
+
+name=python-sgmllib
+version=5.2.1
+_pythonverzion=3.8
+release=9
+
+source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

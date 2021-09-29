@@ -1,0 +1,15 @@
+# description : Implementation of itertools, builtins, and more for AsyncIO and mixed-type iterables
+# depends : python python-typing_extensions
+
+name=python-aioitertools
+version=0.8.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/a/aioitertools/aioitertools-0.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

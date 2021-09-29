@@ -1,0 +1,16 @@
+# description : Hexadecial Dumper
+# depends : perl
+
+name=perl-data-hexdump
+version=0.04
+release=7
+
+source="https://www.cpan.org/authors/id/F/FT/FTASSIN/Data-HexDump-0.02.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

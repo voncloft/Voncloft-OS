@@ -1,0 +1,16 @@
+# description : launch and control background processes
+# depends : perl
+
+name=perl-proc-simple
+version=1.32
+release=6
+
+source="https://search.mcpan.org/CPAN/authors/id/M/MS/MSCHILLI/Proc-Simple-1.32.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Caching and sessions WSGI middleware for use with web applications and stand-alone Python scripts and applications
+# depends : python
+
+name=python-beaker
+version=1.11.0
+release=6
+pyn=python-Beaker
+
+source="python-beaker-1.11.0.tar.gz::https://github.com/bbangert/beaker/archive/1.11.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${pyn#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

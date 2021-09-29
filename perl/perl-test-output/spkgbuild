@@ -1,0 +1,16 @@
+# description : Utilities to test STDOUT and STDERR messages
+# depends : perl-sub-exporter
+
+name=perl-test-output
+version=1.033
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/Test-Output-1.033.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

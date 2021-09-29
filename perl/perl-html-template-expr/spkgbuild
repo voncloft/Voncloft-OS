@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module HTML::Template::Expr
+# depends : perl-html-template perl-parse-recdescent
+
+name=perl-html-template-expr
+version=0.07
+release=11
+
+source="https://www.cpan.org/authors/id/S/SA/SAMTREGAR/HTML-Template-Expr-0.07.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

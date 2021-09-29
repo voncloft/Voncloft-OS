@@ -1,0 +1,15 @@
+# description : Simple module to parse ISO 8601 dates
+# depends : python
+
+name=python-iso8601
+version=1.0.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/i/iso8601/iso8601-0.1.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

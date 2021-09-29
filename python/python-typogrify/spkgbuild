@@ -1,0 +1,15 @@
+# description : filters to make caring about typography on the web a bit easier
+# depends : python python-smartypants
+
+name=python-typogrify
+version=2.0.7
+release=10
+
+source="https://pypi.python.org/packages/source/t/typogrify/typogrify-2.0.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

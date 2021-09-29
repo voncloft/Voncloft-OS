@@ -1,0 +1,15 @@
+# description : Simplified packaging of Python modules
+# depends : python python-flit-core python-requests python-docutils python-pytoml
+
+name=python-flit
+version=3.3.0
+release=3
+
+source="python-flatdict-3.2.0.tar.gz::https://github.com/takluyver/flit/archive/3.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : make chained accessors
+# depends : perl perl-class-accessor
+
+name=perl-class-accessor-chained
+version=0.01
+release=9
+
+source="https://www.cpan.org/authors/id/R/RC/RCLAMP/Class-Accessor-Chained-0.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

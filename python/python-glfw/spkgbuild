@@ -1,0 +1,15 @@
+# description : Module for OpenGL, OpenGL ES, Vulkan, window and input support
+# depends : glfw python
+
+name=python-glfw
+version=2.2.0
+release=2
+
+source="git+https://github.com/FlorianRhiem/pyGLFW#commit=0555e765cd31902899afae3479e31269fdf0cf9a"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

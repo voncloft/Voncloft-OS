@@ -1,0 +1,21 @@
+# description : fast messaging system built on sockets
+# depends : gcc libsodium util-linux
+
+name=zeromq
+version=4.3.4
+release=1
+
+source="https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	#sed -i 's/libzmq_werror="yes"/libzmq_werror="no"/' configure
+
+  	#sed -i 's/openpgm-5.1/openpgm-5.3/' configure configure.ac
+  	#sed -i 's/CXXFLAGS="-Wno-long-long/CXXFLAGS="-Wno-unused-function -Wno-long-long/' configure
+
+	./configure prefix=/usr --with-libsodium --enable-static
+	make
+	make DESTDIR=$PKG install
+}

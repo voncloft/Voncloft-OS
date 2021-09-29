@@ -1,0 +1,23 @@
+00
+sed -i -e 's/2.3.2/2.3.3/g' /Voncloft-OS/*/icewm/spkgbuild
+Packages upgraded: 1
+
+04
+sed -i -e 's/3.3.0/attica/g' /Voncloft-OS/*/fcron/spkgbuild
+Packages upgraded: 1
+
+08
+Packages upgraded: 0
+
+12
+sed -i -e 's/75.0.3969.218/76.0.4017.94/g' /Voncloft-OS/*/opera/spkgbuild
+Packages upgraded: 1
+
+16
+sed -i -e 's/581/581.2/g' /Voncloft-OS/*/less/spkgbuild
+Packages upgraded: 1
+
+20
+Packages upgraded: 0
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

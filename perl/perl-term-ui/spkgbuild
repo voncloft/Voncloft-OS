@@ -1,0 +1,16 @@
+# description : User interfaces via Term::ReadLine made easy
+# depends : perl-log-message perl-log-message-simple
+
+name=perl-term-ui
+version=0.50
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Term-UI-0.50.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

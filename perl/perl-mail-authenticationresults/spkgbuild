@@ -1,0 +1,16 @@
+# description : Object Oriented Authentication-Results Headers
+# depends : perl perl-json
+
+name=perl-mail-authenticationresults
+version=2.20210915
+release=1
+
+source="https://cpan.metacpan.org/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-2.20210112.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

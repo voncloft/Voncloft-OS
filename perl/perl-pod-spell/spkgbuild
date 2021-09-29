@@ -1,0 +1,16 @@
+# description : A formatter for spellchecking Pod
+# depends : perl-class-tiny perl-file-sharedir perl-lingua-en-inflect perl-path-tiny
+
+name=perl-pod-spell
+version=1.20
+release=3
+
+source="https://cpan.metacpan.org/authors/id/D/DO/DOLMEN/Pod-Spell-1.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

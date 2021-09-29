@@ -1,0 +1,28 @@
+# description : json parser for c++
+# depends : cmake 
+
+name=rapidjson
+version=1.1.0
+release=5
+
+source="https://github.com/miloyip/$name/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	find -name CMakeLists.txt | xargs sed -e 's|-Werror||' -i # Don't use -Werror
+	mkdir -p build
+ 	cd build
+
+  cmake .. \
+      -DCMAKE_BUILD_TYPE=None \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DRAPIDJSON_HAS_STDSTRING=ON \
+      -DRAPIDJSON_BUILD_CXX11=ON \
+      -DRAPIDJSON_ENABLE_INSTRUMENTATION_OPT=OFF \
+      -DDOC_INSTALL_DIR=/usr/share/doc/${pkgname}
+
+	make
+	make DESTDIR=$PKG install
+	
+}

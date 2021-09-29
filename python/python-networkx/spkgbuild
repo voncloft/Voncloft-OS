@@ -1,0 +1,15 @@
+# description : Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+# depends : python-decorator
+
+name=python-networkx
+version=2.6.3
+release=3
+
+source="https://github.com/networkx/networkx/archive/networkx-2.6.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

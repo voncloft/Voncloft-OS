@@ -1,0 +1,15 @@
+# description : Flask + marshmallow for beautiful APIs
+# depends : 
+
+name=python-flask-marshmallow
+version=0.14.0
+release=2
+
+source="git+https://github.com/marshmallow-code/flask-marshmallow.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python package for 3D CAD/BIM/PLM/CAM
+# depends : python opencascade libxmu libxi
+
+name=python-occ-core
+version=7.4.1.r16.gfcf4e6ec
+release=2
+
+source="git+https://github.com/tpaviot/pythonocc-core#commit=b3e935355afcfb5240bac5a99707ffecc35772a2"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

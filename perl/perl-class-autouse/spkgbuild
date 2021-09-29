@@ -1,0 +1,16 @@
+# description : Run-time load a class the first time you call a method in it. 
+# depends : perl
+
+name=perl-class-autouse
+version=2.01
+release=5
+
+source="https://www.cpan.org/authors/id/A/AD/ADAMK/Class-Autouse-2.01.tar.gz"
+options="!checksum" 
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

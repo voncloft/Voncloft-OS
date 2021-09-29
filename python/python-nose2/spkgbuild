@@ -1,0 +1,15 @@
+# description : The next generation of nicer testing for python
+# depends : python-coverage python-six
+
+name=python-nose2
+version=0.10.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/n/nose2/nose2-0.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

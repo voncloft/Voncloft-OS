@@ -1,0 +1,15 @@
+# description : File system based database that uses python pickles
+# depends : python
+
+name=python-pickleshare
+version=0.7.5
+release=5
+
+source="https://files.pythonhosted.org/packages/source/p/pickleshare/pickleshare-0.7.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

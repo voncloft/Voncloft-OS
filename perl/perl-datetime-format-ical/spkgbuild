@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module DateTime::Format::ICal
+# depends : perl-datetime-timezone perl-datetime-event-ical perl-datetime perl-params-validate perl-datetime-set
+
+name=perl-datetime-format-ical
+version=0.09
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-ICal-0.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

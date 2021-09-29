@@ -1,0 +1,15 @@
+# description : Pure-Python implementation of the Git file formats and protocols
+# depends : python-certifi python-setuptools python-urllib3
+
+name=python-dulwich
+version=0.20.25
+release=1
+
+source="https://files.pythonhosted.org/packages/source/d/dulwich/dulwich-0.20.25.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

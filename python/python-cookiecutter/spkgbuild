@@ -1,0 +1,15 @@
+# description : A command-line utility that creates projects from project templates
+# depends : python-binaryornot python-click python-future python-jinja
+
+name=python-cookiecutter
+version=1.7.3
+release=3
+
+source="https://files.pythonhosted.org/packages/source/c/cookiecutter/cookiecutter-1.7.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

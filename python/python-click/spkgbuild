@@ -1,0 +1,15 @@
+# description : A simple wrapper around optparse for powerful command line utilities
+# depends : python
+
+name=python-click
+version=8.0.1
+release=3
+
+source="https://github.com/pallets/click/archive/8.0.1/python-click-8.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

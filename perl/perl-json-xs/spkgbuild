@@ -1,0 +1,16 @@
+# description : JSON::XS - JSON serialising/deserialising, done correctly and fast
+# depends : perl perl-common-sense perl-types-serialiser
+
+name=perl-json-xs
+version=4.03
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/JSON-XS-4.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

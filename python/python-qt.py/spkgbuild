@@ -1,0 +1,15 @@
+# description : Python compatibility wrapper around all Qt bindings
+# depends : python qt5-python-bindings
+
+name=python-qt.py
+version=1.3.6
+release=5
+
+source="python-qt.py-1.2.5.tar.gz::https://github.com/mottosso/Qt.py/archive/1.2.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

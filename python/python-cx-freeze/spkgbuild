@@ -1,0 +1,15 @@
+# description : Create standalone executables from Python scripts
+# depends : python-importlib-metadata
+
+name=python-cx-freeze
+version=6.8
+release=1
+
+source="https://github.com/marcelotduarte/cx_Freeze/archive/6.7/python-cx-freeze-6.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

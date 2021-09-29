@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Mail::Sendmail : Simple platform independent mailer
+
+name=perl-mail-sendmail
+version=0.80
+release=11
+
+source="https://www.cpan.org/authors/id/M/MI/MIVKOVIC/Mail-Sendmail-0.79.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

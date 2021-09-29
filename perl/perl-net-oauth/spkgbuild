@@ -1,0 +1,16 @@
+# description : An implementation of the OAuth protocol
+# depends : perl-class-accessor perl-class-data-inheritable perl-digest-hmac perl-digest-sha1 perl-uri perl-libwww perl-file-slurp-tiny
+
+name=perl-net-oauth
+version=0.28
+release=10
+
+source="https://search.cpan.org/CPAN/authors/id/K/KG/KGRENNAN/Net-OAuth-0.28.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

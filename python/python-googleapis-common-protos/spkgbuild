@@ -1,0 +1,15 @@
+# description : Python classes generated from the common protos in the googleapis repository
+# depends : python-protobuf
+
+name=python-googleapis-common-protos
+version=1.53.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/g/googleapis-common-protos/googleapis-common-protos-1.53.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

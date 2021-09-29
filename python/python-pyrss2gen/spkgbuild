@@ -1,0 +1,15 @@
+# description : Generate RSS2 using a Python data structure
+# depends : python
+
+name=python-pyrss2gen
+version=1.1
+release=12
+
+source="http://www.dalkescientific.com/Python/PyRSS2Gen-1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

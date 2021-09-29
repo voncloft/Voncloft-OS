@@ -1,0 +1,15 @@
+# description : A simple library for managing DNS zones
+# depends : python-dnspython
+
+name=python-localzone
+version=0.9.8
+release=1
+
+source="https://pypi.io/packages/source/l/localzone/localzone-0.9.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

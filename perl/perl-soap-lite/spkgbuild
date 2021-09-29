@@ -1,0 +1,16 @@
+# description : Client and server side SOAP implementation
+# depends : perl perl-crypt-ssleay perl-mime-lite perl-libwww perl-uri \
+
+name=perl-soap-lite
+version=1.27
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/P/PH/PHRED/SOAP-Lite-1.27.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

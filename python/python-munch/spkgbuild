@@ -1,0 +1,15 @@
+# description : A dot-accessible dictionary a la JavaScript objects
+# depends : python-six
+
+name=python-munch
+version=2.5.1
+release=4
+
+source="https://pypi.io/packages/source/m/munch/munch-2.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python client for MeiliSearch API
+# depends : python
+
+name=python-meilisearch
+version=0.16.1
+release=1
+
+source="python-meilisearch-0.16.0.tar.gz::https://github.com/meilisearch/meilisearch-python/archive/v0.16.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Snowball stemming library collection for Python
+# depends : python
+
+name=python-snowballstemmer
+version=2.1.0
+release=1
+
+source="https://pypi.python.org/packages/source/s/snowballstemmer/snowballstemmer-2.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

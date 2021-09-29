@@ -1,0 +1,15 @@
+# description : This package provides cross-platform cross-python shutil.which functionality
+# depends : python
+
+name=python-whichcraft
+version=0.6.1
+release=4
+
+source="https://files.pythonhosted.org/packages/source/w/whichcraft/whichcraft-0.6.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

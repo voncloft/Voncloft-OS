@@ -1,0 +1,15 @@
+# description : Chinese Words Segementation Utilities
+# depends : python
+
+name=python-jieba
+version=0.42.1
+release=2
+
+source="python-jieba-0.42.1.tar.gz::https://github.com/fxsjy/jieba/archive/v0.42.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

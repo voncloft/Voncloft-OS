@@ -1,0 +1,16 @@
+# description : Perl interface to read and parse BibTeX files
+# depends : perl
+
+name=perl-text-bibtex
+version=0.88
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/A/AM/AMBS/-0.85.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

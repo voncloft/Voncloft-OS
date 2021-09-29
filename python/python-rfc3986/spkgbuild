@@ -1,0 +1,15 @@
+# description : Validating URI References per RFC 3986
+# depends : python
+
+name=python-rfc3986
+version=1.5.0
+release=3
+
+source="https://pypi.io/packages/source/r/rfc3986/rfc3986-1.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

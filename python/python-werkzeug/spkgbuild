@@ -1,0 +1,15 @@
+# description : Swiss Army knife of Python web development
+# depends : python
+
+name=python-werkzeug
+version=2.0.1
+release=4
+
+source="python-werkzeug-2.0.1.tar.gz::https://github.com/pallets/werkzeug/archive/2.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

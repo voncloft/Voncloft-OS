@@ -1,0 +1,15 @@
+# description : A collection of utilities for working with PIL the Python Imaging Library
+# depends : python
+
+name=python-pilkit
+version=2.0
+release=7
+
+source="https://files.pythonhosted.org/packages/source/p/pilkit/pilkit-2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

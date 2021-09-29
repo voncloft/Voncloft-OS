@@ -1,0 +1,15 @@
+# description : Pythonic task execution
+# depends : python
+
+name=python-invoke
+version=1.6.0
+release=1
+
+source="https://pypi.io/packages/source/i/invoke/invoke-1.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

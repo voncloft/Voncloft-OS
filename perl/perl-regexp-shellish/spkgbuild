@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Regexp::Shellish : Shelllike regular expressions
+
+name=perl-regexp-shellish
+version=0.93
+release=11
+
+source="https://www.cpan.org/authors/id/R/RB/RBS/Regexp-Shellish-0.93.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Hack around people calling UNIVERSAL::can as a function
+# depends : perl
+
+name=perl-universal-can
+version=1.20140328
+release=4
+
+source="https://www.cpan.org/authors/id/C/CH/CHROMATIC/UNIVERSAL-can-1.20140328.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

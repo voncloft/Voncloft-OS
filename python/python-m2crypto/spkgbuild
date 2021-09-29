@@ -1,0 +1,15 @@
+# description : A crypto and SSL toolkit for Python
+  # depends : python openssl
+
+name=python-m2crypto
+version=0.38.0
+release=1
+
+source="python-m2crypto-0.38.0.tar.gz::https://gitlab.com/m2crypto/m2crypto/-/archive/0.38.0/m2crypto-0.38.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

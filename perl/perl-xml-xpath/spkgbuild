@@ -1,0 +1,16 @@
+# description : A set of modules for parsing and evaluating XPath statements
+# depends : perl perl-xml-parser
+
+name=perl-xml-xpath
+version=1.44
+release=3
+
+source="https://cpan.metacpan.org/authors/id/M/MA/MANWAR/XML-XPath-1.44.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

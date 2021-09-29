@@ -1,0 +1,15 @@
+# description : FastAPI framework, high performance, easy to learn, fast to code, ready for production
+# depends : python-starlette python-pydantic
+
+name=python-fastapi
+version=0.68.1
+release=1
+
+source="python-fastapi-0.68.1.tar.gz::https://github.com/tiangolo/fastapi/archive/0.68.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

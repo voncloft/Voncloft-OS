@@ -1,0 +1,15 @@
+# description : Extensions to Ian Bickings virtualenv tool
+# depends : python-virtualenv python-virtualenv-clone python-stevedore
+
+name=python-virtualenvwrapper
+version=4.8.4
+release=5
+
+source="https://pypi.org/packages/source/v/virtualenvwrapper/virtualenvwrapper-4.8.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

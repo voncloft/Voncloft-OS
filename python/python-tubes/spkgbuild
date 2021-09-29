@@ -1,0 +1,15 @@
+# description : A data-processing and flow-control engine for event-driven programs
+# depends : python python-characteristic python-six python-twisted
+
+name=python-tubes
+version=0.2.0
+release=5
+
+source="https://github.com/twisted/tubes/archive/v0.2.0/tubes-v0.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

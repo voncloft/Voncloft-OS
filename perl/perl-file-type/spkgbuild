@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module File::Type
+
+name=perl-file-type
+version=0.22
+release=11
+
+source="https://www.cpan.org/authors/id/P/PM/PMISON/File-Type-0.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

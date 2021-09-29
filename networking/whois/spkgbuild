@@ -1,0 +1,17 @@
+# description : looks up IP addresses
+# depends :
+
+name=whois
+version=5.5.10
+release=1
+
+source="https://github.com/rfc1036/$name/archive/v$version.tar.gz"
+options="!checksum"
+
+build()
+{
+	cd $name-$version
+	make
+	mkdir -pv $PKG/usr
+	make prefix=$PKG/usr install-whois
+}

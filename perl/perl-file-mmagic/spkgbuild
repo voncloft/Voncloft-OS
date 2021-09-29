@@ -1,0 +1,16 @@
+# description : Guess file type
+# depends : perl
+
+name=perl-file-mmagic
+version=1.30
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

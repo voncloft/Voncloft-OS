@@ -1,0 +1,15 @@
+# description : asynchronous networking framework in Python
+# depends : python
+
+name=python-twisted
+version=21.7.0
+release=1
+
+source="https://github.com/twisted/twisted/archive/twisted-21.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

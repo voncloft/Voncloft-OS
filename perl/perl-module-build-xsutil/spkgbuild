@@ -1,0 +1,16 @@
+# description : A Module::Build class for building XS modules
+# depends : perl-devel-checkcompiler perl
+
+name=perl-module-build-xsutil
+version=0.19
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/H/HI/HIDEAKIO/Module-Build-XSUtil-0.19.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

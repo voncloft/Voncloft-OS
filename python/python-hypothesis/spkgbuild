@@ -1,0 +1,15 @@
+# description : Advanced Quickcheck style testing library for Python
+# depends : python-attrs python-sortedcontainers
+
+name=python-hypothesis
+version=6.21.3
+release=1
+
+source="python-hypothesis-6.17.0.tar.gz::https://github.com/HypothesisWorks/hypothesis/archive/hypothesis-python-6.17.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

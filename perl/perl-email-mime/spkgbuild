@@ -1,0 +1,16 @@
+# description : Easy MIME message parsing
+# depends : perl-email-mime-encodings perl-mime-types
+
+name=perl-email-mime
+version=1.949
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Email-MIME-1.949.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

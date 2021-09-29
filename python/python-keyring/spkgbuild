@@ -1,0 +1,15 @@
+# description : Store and access your passwords safely
+# depends : python-entrypoints python-secretstorage
+
+name=python-keyring
+version=23.2.1
+release=1
+
+source="git+https://github.com/jaraco/keyring#tag=v23.0.1"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

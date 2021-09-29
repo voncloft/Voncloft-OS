@@ -1,0 +1,16 @@
+# description : Author test that validates a package MANIFEST
+# depends : perl perl-module-manifest
+
+name=perl-test-distmanifest
+version=1.014
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-DistManifest-1.014.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

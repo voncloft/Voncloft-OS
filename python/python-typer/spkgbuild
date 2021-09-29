@@ -1,0 +1,15 @@
+# description : Build great CLIs. Easy to code. Based on Python type hints
+# depends : python-click
+
+name=python-typer
+version=0.4.0
+release=2
+
+source="python-typer-0.4.0.tar.gz::https://github.com/tiangolo/typer/archive/0.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

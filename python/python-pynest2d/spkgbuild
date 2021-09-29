@@ -1,0 +1,15 @@
+# description : Python bindings for libnest2d
+# depends : python polyclipping nlopt
+
+name=python-pynest2d
+version=4.10.0
+release=4
+
+source="https://files.pythonhosted.org/packages/source/p/pynest2d/pynest2d-4.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Declare version conflicts for your dist
+# depends : perl-list-moreutils perl-exporter
+
+name=perl-dist-checkconflicts
+version=0.11
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DO/DOY/Dist-CheckConflicts-0.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

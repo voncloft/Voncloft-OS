@@ -1,0 +1,15 @@
+# description : Work with version specifiers
+# depends : python-packaging
+
+name=python-dephell-specifier
+version=0.2.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_specifier/dephell_specifier-0.2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

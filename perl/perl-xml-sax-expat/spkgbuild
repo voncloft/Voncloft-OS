@@ -1,0 +1,17 @@
+# description : SAX2 Driver for Expat XML::Parser 
+# depends : perl-xml-namespacesupport perl-xml-parser perl-xml-sax
+
+name=perl-xml-sax-expat
+version=0.51
+release=7
+
+source="https://www.cpan.org/authors/id/B/BJ/BJOERN/XML-SAX-Expat-0.51.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   make
+   make DESTDIR=$PKG install
+
+
+}

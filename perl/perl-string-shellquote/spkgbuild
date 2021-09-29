@@ -1,0 +1,16 @@
+# description : Quote strings for passing through the shell
+# depends : perl
+
+name=perl-string-shellquote
+version=1.04
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

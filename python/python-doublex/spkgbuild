@@ -1,0 +1,15 @@
+# description : Powerful test doubles framework for Python
+# depends : python-pyhamcrest
+
+name=python-doublex
+version=1.9.3
+release=1
+
+source="python-doublex-1.9.3.tar.bz2::https://bitbucket.org/DavidVilla/python-doublex/get/b3e935355afcfb5240bac5a99707ffecc35772a2.tar.bz2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

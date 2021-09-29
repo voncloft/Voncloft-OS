@@ -1,0 +1,16 @@
+# description : Perl DES encryption module
+# depends : glibc
+
+name=perl-crypt-des
+version=2.07
+release=11
+
+source="https://www.cpan.org/authors/id/D/DP/DPARIS/Crypt-DES-2.07.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

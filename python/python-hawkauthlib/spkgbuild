@@ -1,0 +1,15 @@
+# description : Low-level library for implementing MAC Access Authentication
+# depends : python-requests python-webob
+
+name=python-hawkauthlib
+version=2.0.0
+release=7
+
+source="https://github.com/mozilla-services/hawkauthlib/archive/v2.0.0/python-hawkauthlib-2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

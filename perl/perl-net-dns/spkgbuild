@@ -1,0 +1,16 @@
+# description : Perl Module: Interface to the DNS resolver
+# depends : perl-digest-hmac perl-net-ip
+
+name=perl-net-dns
+version=1.32
+release=1
+
+source="https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.32.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

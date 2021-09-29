@@ -1,0 +1,16 @@
+# description : Check that a library is available for FFI
+# depends : perl
+
+name=perl-ffi-checklib
+version=0.28
+release=2
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/FFI-CheckLib-0.28.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

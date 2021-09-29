@@ -1,0 +1,16 @@
+# description : Perl interface to the MediaWiki API
+# depends : perl-json-xs perl-json perl-libwww
+
+name=perl-mediawiki-api
+version=0.52
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/E/EX/EXOBUZZ/MediaWiki-API-0.52.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

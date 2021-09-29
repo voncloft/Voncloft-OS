@@ -1,0 +1,16 @@
+# description : a more sensible way to change directories 
+# depends : perl
+
+name=perl-file-chdir
+version=0.1011
+release=4
+
+source="https://www.cpan.org/authors/id/D/DA/DAGOLDEN/File-chdir-0.1011.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

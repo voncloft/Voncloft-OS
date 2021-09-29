@@ -1,0 +1,16 @@
+# description : Execute code after a scope finished compilation
+# depends : perl-module-implementation perl-module-runtime perl-sub-exporterperl-sub-exporter-progressiveperl-try-tinyperl-variable-magic perl
+
+name=perl-b-hooks-endofscope
+version=0.24
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/B-Hooks-EndOfScope-0.24.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

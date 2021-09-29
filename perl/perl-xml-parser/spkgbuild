@@ -1,0 +1,16 @@
+# description : Expat-based XML parser module for perl
+# depends : perl-libwww expat
+
+name=perl-xml-parser
+version=2.46
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-2.46.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

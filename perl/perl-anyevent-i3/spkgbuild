@@ -1,0 +1,16 @@
+# description : Communicate with the i3 window manager
+# depends : perl perl-anyevent perl-json-xs
+
+name=perl-anyevent-i3
+version=0.17
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/M/MS/MSTPLBG/AnyEvent-I3-0.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

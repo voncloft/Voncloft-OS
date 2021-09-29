@@ -1,0 +1,15 @@
+# description : Represents the core of the Zope Component Architecture
+# depends : python-setuptools python-zope-deferredimport python-zope-deprecation
+
+name=python-zope-component
+version=5.0.1
+release=3
+
+source="python-zope-component-5.0.1.tar.gz::https://github.com/zopefoundation/zope.component/archive/5.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Skip tests when modules not available
+# depends : perl
+
+name=perl-test-needs
+version=0.002009
+release=3
+
+source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002009.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

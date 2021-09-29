@@ -1,0 +1,27 @@
+#/bin/bash
+
+# $1=name-of-package
+# $2=description
+
+for dir in /Voncloft-OS/*/$1/; do
+        if [[ -d $dir ]];
+        then
+                file=$dir"spkgbuild"
+                name=$(grep name= $file)
+                version=$(grep version= $file)
+                release=$(grep release= $file)
+		changelog=$dir"CHANGELOG"
+                if [ -f $changelog ];
+                then
+      			echo -e "\n----------------------------------------------------------------" >> $changelog
+			echo -e "\nDate: $(date)\n\n$version\n$release\n\nSynopsis:\n$2" >> $changelog
+
+                else
+                        echo -e "Date: $(date)\n\n$name\n$version\n$release\n\nSynopsis:\nAdded Changelog to package\n$2" >> $changelog
+                fi
+        echo "Added Changelog successfully"
+	break
+        else
+                echo "Package does not exist"
+        fi
+done

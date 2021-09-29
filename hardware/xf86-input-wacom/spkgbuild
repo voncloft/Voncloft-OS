@@ -1,0 +1,18 @@
+# description : x11 driver for tablets
+# depends : xorg-server
+
+name=xf86-input-wacom
+version=0.40.0
+release=1
+
+source="https://github.com/linuxwacom/$name/releases/download/$name-$version/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --sysconfdir=/etc \
+    		--localstatedir=/var --disable-static --with-systemd-unit-dir=no \
+            --with-udev-rules-dir=/lib/udev/rules.d
+        make
+        make DESTDIR=$PKG install
+}

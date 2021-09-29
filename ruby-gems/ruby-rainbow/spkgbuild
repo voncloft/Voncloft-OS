@@ -1,0 +1,22 @@
+# description : string class for ansi coloring in terminal
+# depends : ruby
+
+name=ruby-rainbow
+version=3.0.0
+release=6
+_gemname=rainbow
+
+source="https://rubygems.org/downloads/$_gemname-$version.gem"
+options="!checksum"
+
+build() {
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
+}

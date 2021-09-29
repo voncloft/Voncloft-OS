@@ -1,0 +1,16 @@
+# description : Perl package to work with International Standard Serial Numbers
+# depends : perl
+
+name=perl-business-issn
+version=1.004
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/-1.003.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

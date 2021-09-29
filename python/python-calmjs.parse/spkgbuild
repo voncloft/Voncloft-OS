@@ -1,0 +1,15 @@
+# description : Various parsers for ECMA standards
+# depends : python-ply
+
+name=python-calmjs.parse
+version=1.2.5
+release=5
+
+source="https://files.pythonhosted.org/packages/source/c/calmjs.parse/calmjs.parse-1.2.5.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

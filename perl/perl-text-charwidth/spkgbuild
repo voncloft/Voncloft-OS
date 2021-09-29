@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Text::CharWidth
+
+name=perl-text-charwidth
+version=0.04
+release=19
+
+source="https://www.cpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

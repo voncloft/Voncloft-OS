@@ -1,0 +1,10 @@
+#/bin/sh
+
+for d in /var/lib/scratchpkg/index/*
+do
+	#echo $d;
+	version=$(grep version $d/.pkginfo | sed 's/version = //g')
+	#echo "$d $version"
+	echo "$version 1" > /Voncloft-OS/scripts/db/${d##*/}
+	cat /var/lib/scratchpkg/index/${d##*/}/.files >> /Voncloft-OS/scripts/db/${d##*/}
+done

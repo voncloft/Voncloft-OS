@@ -1,0 +1,15 @@
+# description : A Python extension module that allows you to manipulate the extended attributes.
+# depends : python
+
+name=python-pyxattr
+version=0.7.2
+release=1
+
+source="https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

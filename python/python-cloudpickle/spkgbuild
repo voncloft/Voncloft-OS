@@ -1,0 +1,15 @@
+# description : Extended pickling support for Python objects
+# depends : python-setuptools
+
+name=python-cloudpickle
+version=2.0.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source///-1.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

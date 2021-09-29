@@ -1,0 +1,15 @@
+# description : Play and Record Sound with Python
+# depends : portaudio python-cffi
+
+name=python-sounddevice
+version=0.4.2
+release=2
+
+source="https://files.pythonhosted.org/packages/source/s/sounddevice/sounddevice-0.4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

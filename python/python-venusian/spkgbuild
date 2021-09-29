@@ -1,0 +1,15 @@
+# description : A library for deferring decorator actions
+# depends : python
+
+name=python-venusian
+version=3.0.0
+release=2
+
+source="python-venusian-3.0.0.tar.gz::https://github.com/Pylons/venusian/archive/3.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python Imaging Library PIL fork.
+# depends : python lcms2 libtiff openjpeg2 libimagequant libxcb
+
+name=python-pillow
+version=8.3.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/P/Pillow/Pillow-8.3.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd Pillow-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

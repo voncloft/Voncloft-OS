@@ -1,0 +1,15 @@
+# description : Per object permissions for Django
+# depends : python-django python-django-environ
+
+name=python-django-guardian
+version=2.4.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source/d/django-guardian/django-guardian-2.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

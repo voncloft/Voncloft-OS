@@ -1,0 +1,15 @@
+# description : Convenience, extension and workaround code for Python and some Python modules
+# depends : polkit python-dbus python-decorator python-gobject
+
+name=python-slip
+version=0.6.5
+release=6
+
+source="https://github.com/nphilipp/python-slip/releases/download/python-slip-0.6.5/python-slip-0.6.5.tar.bz2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

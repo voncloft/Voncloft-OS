@@ -1,0 +1,16 @@
+# description : A simple, sane and efficient module to slurp a file
+# depends : perl
+
+name=perl-file-slurper
+version=0.012
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/-0.012.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

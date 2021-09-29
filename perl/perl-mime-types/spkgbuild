@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module MIME::Types : Information and processing MIME types
+# depends : perl
+
+name=perl-mime-types
+version=2.21
+release=1
+
+source="https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

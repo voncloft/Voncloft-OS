@@ -1,0 +1,15 @@
+# description : pytest plugin for working with MPI
+# depends : python-pytest
+
+name=python-pytest-mpi
+version=0.5
+release=3
+
+source="https://files.pythonhosted.org/packages/source///-0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,20 @@
+# description	: Library for writing single instance applications
+# depends	: gtk2 gobject-introspection gtk-doc
+
+name=libunique
+version=1.1.6
+release=1
+source="https://ftp.gnome.org/pub/gnome/sources/libunique/${version%.*}/$name-$version.tar.bz2
+	http://www.linuxfromscratch.org/patches/blfs/svn/libunique-1.1.6-upstream_fixes-1.patch"
+options="!checksum"
+build() {
+	cd $name-$version
+	patch -Np1 -i ../libunique-1.1.6-upstream_fixes-1.patch
+	autoreconf -fi
+	
+	./configure --prefix=/usr  \
+	            --disable-dbus \
+	            --disable-static
+	make
+	make DESTDIR=$PKG install
+}

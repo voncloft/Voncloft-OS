@@ -1,0 +1,15 @@
+# description	: python bindings for PyGObject3
+# depends	: python-cairo gobject-introspection
+
+name=python-gobject3
+version=3.38.0
+release=1
+
+source="https://download.gnome.org/sources/pygobject/3.38/pygobject-$version.tar.xz"
+options="!checksum"
+
+build() {
+   cd pygobject-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

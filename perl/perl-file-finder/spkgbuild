@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module File::Finder
+# depends : perl
+
+name=perl-file-finder
+version=0.53
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/M/ME/MERLYN/File-Finder-0.53.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : An implementation of the JSON Patch format
+# depends : python-jsonpointer
+
+name=python-jsonpatch
+version=1.32
+release=1
+
+source="python-jsonpatch-1.32.tar.gz::https://github.com/stefankoegl/python-json-patch/archive/v1.32.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

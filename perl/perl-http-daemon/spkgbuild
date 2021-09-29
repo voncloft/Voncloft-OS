@@ -1,0 +1,16 @@
+# description : Simple http server class
+# depends : perl perl-http-date perl-http-message perl-lwp-mediatypes
+
+name=perl-http-daemon
+version=6.12
+release=2
+
+source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-6.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

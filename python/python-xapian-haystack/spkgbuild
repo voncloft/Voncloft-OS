@@ -1,0 +1,16 @@
+# description : Xapian backend for Django-Haystack
+# depends : python-django python-django-haystack python-six python-xapian
+
+name=python-xapian-haystack
+version=2.1.1
+_haystackverzion=2.8.1.r109.g7773b7f9
+release=2
+
+source="xapian-haystack-2.1.0.r7.g2247b23::git+https://github.com/notanumber/xapian-haystack#commit=2247b23"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

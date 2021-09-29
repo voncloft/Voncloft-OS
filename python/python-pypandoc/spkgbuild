@@ -1,0 +1,15 @@
+# description : Thin wrapper for pandoc
+# depends : python-setuptools pandoc
+
+name=python-pypandoc
+version=1.6.4
+release=4
+
+source="https://github.com/bebraw/pypandoc/archive/v1.6.4/python-pypandoc-1.6.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

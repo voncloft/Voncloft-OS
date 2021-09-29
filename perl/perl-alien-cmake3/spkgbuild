@@ -1,0 +1,16 @@
+# description : Find or download or build cmake 3 or better
+# depends : cmake perl-alien-build
+
+name=perl-alien-cmake3
+version=0.08
+release=3
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-0.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

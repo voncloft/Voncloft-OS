@@ -1,0 +1,15 @@
+# description : Super-fast and clean conversions to numbers
+# depends : python
+
+name=python-fastnumbers
+version=3.1.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source/f/fastnumbers/fastnumbers-3.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

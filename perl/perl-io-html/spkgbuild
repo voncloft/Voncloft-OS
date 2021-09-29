@@ -1,0 +1,16 @@
+# description : Open an HTML file with automatic charset detection
+# depends : perl
+
+name=perl-io-html
+version=1.004
+release=1
+
+source="https://search.cpan.org/CPAN/authors/id/C/CJ/CJM/IO-HTML-1.004.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Highly-optimized, pure-python HTTP server
+# depends : python-six python-jaraco
+
+name=python-cheroot
+version=8.5.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/c/cheroot/cheroot-8.5.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

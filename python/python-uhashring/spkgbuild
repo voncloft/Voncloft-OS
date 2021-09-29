@@ -1,0 +1,15 @@
+# description : Full featured consistent hashing python library compatible with ketama
+# depends : python
+
+name=python-uhashring
+version=2.1
+release=3
+
+source="python-tox-1.2.tar.gz::https://github.com/ultrabug/uhashring/archive/1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

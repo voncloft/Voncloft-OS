@@ -1,0 +1,15 @@
+# description : An asyncio based SMTP server
+# depends : python-atpublic
+
+name=python-aiosmtpd
+version=1.4.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/a/aiosmtpd/aiosmtpd-1.4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

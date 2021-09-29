@@ -1,0 +1,15 @@
+# description : A complete, object-oriented language binding of OpenCL to Python
+# depends : opencl-icd-loader opencl-headers mesa boost-libs
+
+name=python-pyopencl
+version=2021.2.6
+release=2
+
+source="git+https://github.com/inducer/pyopencl.git?signed#tag=v2021.1.4"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

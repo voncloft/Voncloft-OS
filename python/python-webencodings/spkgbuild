@@ -1,0 +1,16 @@
+# description : This is a Python implementation of the WHATWG Encoding standard.
+# description : This is a Python implementation of the WHATWG Encoding standard.
+# depends : python
+
+name=python-webencodings
+version=0.5.1
+release=6
+
+source="https://github.com/gsnedders/python-webencodings/archive/v0.5.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

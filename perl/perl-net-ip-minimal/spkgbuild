@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Net::IP::Minimal
+# depends : perl
+
+name=perl-net-ip-minimal
+version=0.06
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Net-IP-Minimal-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

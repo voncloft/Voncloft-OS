@@ -1,0 +1,16 @@
+# description : A simple HTML templating system
+# depends : perl
+
+name=perl-html-template
+version=2.97
+release=6
+
+source="https://www.cpan.org/authors/id/S/SA/SAMTREGAR/HTML-Template-2.97.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

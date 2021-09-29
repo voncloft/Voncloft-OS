@@ -1,0 +1,15 @@
+# description : Generate simple tables in terminals from a nested list of strings
+# depends : python
+
+name=python-terminaltables
+version=3.1.0
+release=8
+
+source="terminaltables-3.1.0.tar.gz::https://github.com/Robpol86/terminaltables/archive/v3.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

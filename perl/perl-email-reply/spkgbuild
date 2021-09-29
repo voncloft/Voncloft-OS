@@ -1,0 +1,16 @@
+# description : Reply to a Message 
+# depends : perl-email-address0 perl-email-mime-creator perl-email-mime2 perl-email-abstract perl-email-mime-modifier
+
+name=perl-email-reply
+version=1.204
+release=4
+
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Reply-1.204.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

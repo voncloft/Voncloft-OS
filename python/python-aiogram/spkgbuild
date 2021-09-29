@@ -1,0 +1,15 @@
+# description : A pretty simple and fully asynchronous library for Telegram Bot API written with asyncio and aiohttp
+# depends : python-aiohttp python-babel
+
+name=python-aiogram
+version=3.0.0
+release=3
+
+source="https://github.com/aiogram/aiogram/archive/v2.15/python-aiogram-2.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

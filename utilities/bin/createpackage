@@ -1,0 +1,109 @@
+#!/bin/bash
+
+echo "Name of package you would like to create"
+read name
+
+
+for dir in /Voncloft-OS/*/$name/; do
+        if [[ -d $dir ]];
+	then
+		echo "Package Exists already"
+	else
+		echo "What is the repo name?"
+		read location
+		dirs=/Voncloft-OS/$location/
+		if [[ -d $dirs ]];
+		then
+			echo "Description of package"
+			read description
+			echo "Dependencies of package"
+			read depends
+			echo "Version of package"
+			read version
+			echo "Release of package"
+			read release
+			echo "Source location <! to escape>"
+			read source
+			finalsource=$source
+		
+                        while [ $source != "!" ]
+                        do
+                                echo "Enter source <! to escape>"
+                                read source
+                                if [[ $source != "!" ]];then
+                                finalsource="$finalsource\n\t$source"
+				fi
+                        done
+			
+
+
+
+
+			#echo $dirs$name"/spkgbuild"
+			mkdir -pv $dirs$name
+
+			echo -e "# description : $description" >> $dirs$name/spkgbuild
+			echo -e "# depends : $depends" >> $dirs$name/spkgbuild
+			echo -e "" >> $dirs$name/spkgbuild
+			echo -e "name=$name" >> $dirs$name/spkgbuild
+			echo -e "version=$version" >> $dirs$name/spkgbuild
+			echo -e "release=$release" >> $dirs$name/spkgbuild
+			echo -e "" >> $dirs$name/spkgbuild
+			echo -e 'source="'$finalsource'"' >> $dirs$name/spkgbuild
+			echo -e 'options="!checksum"' >> $dirs$name/spkgbuild
+			echo -e "" >> $dirs$name/spkgbuild
+			echo -e "build() {" >> $dirs$name/spkgbuild
+			echo -e "\n}" >> $dirs$name/spkgbuild
+			echo "Package Created"
+			changelog "$name" "Initial creation of package in repo"
+			echo "Changelog Created"
+
+			nano $dirs$name/spkgbuild
+
+
+			####add option to ask for configuration files####
+			
+                        echo "Do you need any configuration files? <Y/N>"
+                        read configs
+
+                        while [[ $configs != ["Nn"] ]]
+                        do
+				echo "Enter filename: "
+				read conf
+				touch $dirs$name/$conf
+				nano $dirs$name/$conf
+				echo "Do you have another config file needed? <Y/N>"
+				read configs
+                        done
+			echo $name >> /etc/checkrepo.conf
+                        echo "Do you need any pre-install scripts? <Y/N>"
+                        read pre_install
+                        if [[ $pre_install == ["Yy"] ]];
+                        then
+                                echo -e "#!/bin/sh\n" >> $dirs$name/pre-install.sh
+                                nano $dirs$name/pre-install.sh
+                        fi
+
+			echo "Do you need any post-install scripts? <Y/N>"
+                        read post_install
+                        if [[ $post_install == ["Yy"] ]];
+                        then
+                        	echo -e "#!/bin/sh\n" >> $dirs$name/post-install.sh
+				nano $dirs$name/post-install.sh
+                        fi
+                        echo "Do you need any post-install scripts? <Y/N>"
+                        read post_upgrade
+
+                        if [[ $post_upgrade == ["Yy"] ]];
+                        then
+                                echo -e "#!/bin/sh\n" >> $dirs$name/post-upgrade.sh
+                                nano $dirs$name/post-upgrade.sh
+                        fi
+
+			#nano $dirs$name/spkgbuild
+			####open configuration files after editing spkgbuild#####
+		else
+			echo "Repo does not exist"
+		fi
+	fi
+done

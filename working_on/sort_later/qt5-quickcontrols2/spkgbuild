@@ -1,0 +1,20 @@
+# description : reusable qt quick based ui controls to create classic desktop style user interfaces
+# depends : qt5-declarative
+
+name=qt5-quickcontrols2
+version=5.15.2
+release=1
+
+source="https://download.qt.io/official_releases/qt/5.12/$version/submodules/qtquickcontrols2-everywhere-src-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd qtquickcontrols2-everywhere-src-$version
+	mkdir build
+	cd build
+	qmake ../
+	make
+	make INSTALL_ROOT=$PKG install
+	find "$PKG/usr/lib" -type f -name '*.prl' \
+    		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}

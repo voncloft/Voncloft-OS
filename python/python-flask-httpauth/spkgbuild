@@ -1,0 +1,15 @@
+# description : Basic, Digest and Token HTTP authentication for Flask routes
+# depends : python python-flask
+
+name=python-flask-httpauth
+version=4.4.0
+release=1
+
+source="https://github.com/miguelgrinberg/Flask-HTTPAuth/archive/v4.4.0/python-flask-httpauth-4.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

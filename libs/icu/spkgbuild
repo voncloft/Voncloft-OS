@@ -1,0 +1,20 @@
+# description	: International Components for Unicode library
+
+name=icu
+version=69.1
+verzion=$(echo $version | tr '.' '-')
+_verzion=$(echo $version | tr '.' '_')
+release=1
+source="https://github.com/unicode-org/icu/releases/download/release-$verzion/icu4c-$_verzion-src.tgz"
+
+build() {
+	cd icu/source
+
+	# icu tries to use clang by default
+	#[ "$CC" ] || export CC=gcc
+	#[ "$CXX" ] || export CXX=g++
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

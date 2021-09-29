@@ -1,0 +1,15 @@
+# description : Non-blocking redis client for python
+# depends : python
+
+name=python-hiredis
+version=2.0.0
+release=3
+
+source="https://pypi.org/packages/source/h/hiredis/hiredis-2.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

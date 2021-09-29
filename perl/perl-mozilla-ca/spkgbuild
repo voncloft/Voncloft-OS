@@ -1,0 +1,16 @@
+# description : Mozillas CA cert bundle in PEM format
+# depends : perl
+
+name=perl-mozilla-ca
+version=20200520
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/A/AB/ABH/Mozilla-CA-20200520.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

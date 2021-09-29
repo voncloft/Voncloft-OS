@@ -1,0 +1,24 @@
+# description	: Next generation of the python high-level scripting language
+# depends	: libffi sqlite
+
+name=python
+version=3.9.7
+release=1
+source="https://www.python.org/ftp/python/$version/Python-$version.tar.xz
+	pyconfig.h"
+
+options="!checksum"
+
+build() {
+	cd Python-$version
+
+  	CXX="/usr/bin/g++"              \
+	./configure --prefix=/usr       \
+	            --enable-shared     \
+	            --with-system-expat \
+	            --with-system-ffi   \
+	            --with-ensurepip=yes
+	make
+	make DESTDIR=$PKG install
+
+}

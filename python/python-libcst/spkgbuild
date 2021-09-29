@@ -1,0 +1,15 @@
+# description : A concrete syntax tree parser and serializer library for Python that preserves many aspects of Pythons abstract syntax tree
+# depends : python-typing_extensions python-typing_inspect python-yaml
+
+name=python-libcst
+version=0.3.20
+release=1
+
+source="python-libcst-0.3.20.tar.gz::https://github.com/Instagram/LibCST/archive/v0.3.20.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

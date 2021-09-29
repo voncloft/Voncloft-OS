@@ -1,0 +1,15 @@
+# description : Python simple and lightweight SOAP Library
+# depends : python
+
+name=python-pysimplesoap
+version=1.16.2
+release=5
+
+source="python-pysimplesoap-b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz::https://github.com/pysimplesoap/pysimplesoap/archive/b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

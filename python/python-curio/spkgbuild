@@ -1,0 +1,15 @@
+# description : Concurrent I/O
+# depends : python
+
+name=python-curio
+version=1.5
+release=3
+
+source="git+https://github.com/dabeaz/curio.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

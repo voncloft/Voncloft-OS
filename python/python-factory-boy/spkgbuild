@@ -1,0 +1,15 @@
+# description : A versatile test fixtures replacement based on thoughtbots factory_bot for Ruby
+# depends : python-faker
+
+name=python-factory-boy
+version=3.2.0
+release=1
+
+source="python-factory-boy-3.2.0.tar.gz::https://github.com/FactoryBoy/factory_boy/archive/3.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

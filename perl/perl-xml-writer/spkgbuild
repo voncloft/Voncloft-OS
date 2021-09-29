@@ -1,0 +1,16 @@
+# description : Module for writing XML documents
+# depends : perl
+
+name=perl-xml-writer
+version=0.900
+release=6
+
+source="https://www.cpan.org/authors/id/J/JO/JOSEPHW/XML-Writer-0.625.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

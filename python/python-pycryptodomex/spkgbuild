@@ -1,0 +1,15 @@
+# description : A self-contained Python package of low-level cryptographic primitives
+	# depends : python
+
+name=python-pycryptodomex
+version=3.10.1
+release=1
+
+source="https://pypi.org/packages/source/p/pycryptodomex/pycryptodomex-3.10.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

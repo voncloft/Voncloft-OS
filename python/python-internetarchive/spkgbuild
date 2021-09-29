@@ -1,0 +1,15 @@
+# description : Wrapper for the various Internet Archive APIs IA-S3, Metadata API, etc
+# depends : python
+
+name=python-internetarchive
+version=2.1.0
+release=1
+
+source="python-internetarchive-2.1.0.tar.gz::https://github.com/jjjake/internetarchive/archive/v2.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

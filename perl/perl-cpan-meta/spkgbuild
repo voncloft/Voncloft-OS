@@ -1,0 +1,16 @@
+# description : the distribution metadata for a CPAN dist
+# depends : perl perl-cpan-meta-requirements
+
+name=perl-cpan-meta
+version=2.150010
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.150010.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

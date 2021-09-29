@@ -1,0 +1,23 @@
+# description : GeoIP legacy country database
+# depends : 
+
+name=geoip-database
+version=20210126
+release=1
+
+_source_base=https://sources.archlinux.org/other/packages/$name/$version
+
+source="$_source_base/GeoIP.dat.gz
+	$_source_base/GeoIPv6.dat.gz
+	$_source_base/GeoIPCity.dat.gz
+	$_source_base/GeoIPASNum.dat.gz
+	$_source_base/GeoIPCityv6.dat.gz
+	$_source_base/GeoIPASNumv6.dat.gz"
+
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/usr/share/GeoIP
+	install -m644 -t "$PKG/usr/share/GeoIP" $SRC/GeoIP{,v6}.dat.gz
+	install -m644 -t "$PKG/usr/share/GeoIP" $SRC/GeoIPCity{,v6}.dat.gz GeoIPASNum{,v6}.dat.gz
+}

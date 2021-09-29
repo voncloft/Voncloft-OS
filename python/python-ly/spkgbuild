@@ -1,0 +1,15 @@
+# description : Parse, manipulate or create documents in LilyPond format
+# depends : python
+
+name=python-ly
+version=1.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/python-ly/python-ly-0.9.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

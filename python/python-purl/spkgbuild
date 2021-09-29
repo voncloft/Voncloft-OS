@@ -1,0 +1,15 @@
+# description : An immutable URL class for easy URL-build()ing and manipulation
+# depends : python-six
+
+name=python-purl
+version=1.6
+release=6
+
+source="https://github.com/codeinthehole/purl/archive/1.6/python-purl-1.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

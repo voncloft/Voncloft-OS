@@ -1,0 +1,15 @@
+# description : File identification library for Python
+# depends : python
+
+name=python-identify
+version=2.2.15
+release=1
+
+source="identify-2.2.15.tar.gz::https://github.com/chriskuehl/identify/archive/v2.2.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

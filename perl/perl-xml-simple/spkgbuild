@@ -1,0 +1,16 @@
+# description : Simple XML parser for perl
+# depends : perl-xml-sax-expat
+
+name=perl-xml-simple
+version=2.25
+release=5
+
+source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-Simple-2.25.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

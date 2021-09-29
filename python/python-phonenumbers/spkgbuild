@@ -1,0 +1,15 @@
+# description : Python version of Googles common library for parsing, formatting, storing and validating international phone numbers
+# depends : python
+
+name=python-phonenumbers
+version=8.12.33
+release=1
+
+source="https://github.com/daviddrysdale/python-phonenumbers/archive/v8.12.33/python-phonenumbers-8.12.33.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

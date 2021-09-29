@@ -1,0 +1,16 @@
+# description : Basic cross-platform tests for scripts
+# depends : perl-capture-tiny perl-probe-perl perl-test2-suite
+
+name=perl-test-script
+version=1.29
+release=2
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Test-Script-1.29.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

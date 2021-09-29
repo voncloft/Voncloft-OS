@@ -1,0 +1,15 @@
+# description : Collection of core plugins for markdown-it-py
+# depends : python-markdown-it-py
+
+name=python-mdit_py_plugins
+version=0.2.8
+release=1
+
+source="python-mdit_py_plugins-0.2.8.tar.gz::https://github.com/executablebooks/mdit-py-plugins/archive/v0.2.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

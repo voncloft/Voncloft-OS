@@ -1,0 +1,16 @@
+# description : Verify requirements in a CPAN::Meta object
+# depends : perl
+
+name=perl-cpan-meta-check
+version=0.014
+release=6
+
+source="https://cpan.metacpan.org/authors/id/L/LE/LEONT/CPAN-Meta-Check-0.014.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : AST that abstracts the underlying Python version
+# depends : python
+
+name=python-gast03
+version=0.3.3
+release=1
+
+source="https://pypi.io/packages/source/g/gast/gast-0.3.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A lightweight unicode templating language
+# depends : python
+
+name=python-tempita
+version=0.5.3
+release=3
+
+source="https://pypi.python.org/packages/source/T/Tempita/Tempita-0.5.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

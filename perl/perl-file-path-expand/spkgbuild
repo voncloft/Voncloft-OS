@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module File::Path::Expand
+
+name=perl-file-path-expand
+version=1.02
+release=13
+
+source="https://www.cpan.org/authors/id/R/RC/RCLAMP/File-Path-Expand-1.02.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

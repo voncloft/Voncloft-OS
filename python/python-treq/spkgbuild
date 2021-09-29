@@ -1,0 +1,15 @@
+# description : A requests-like API built on top of twisted.webs Agent
+# depends : python-incremental python-requests python-pyopenssl python-service-identity
+
+name=python-treq
+version=21.5.0
+release=1
+
+source="https://github.com/twisted/treq/archive/release-21.5.0/python-treq-21.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Parsel is a library to extract data from HTML and XML using XPath and CSS selectors
+# depends : python-cssselect python-lxml python-six python-w3lib
+
+name=python-parsel
+version=1.6.0
+release=3
+
+source="python-parsel-1.6.0.tar.gz::https://github.com/scrapy/parsel/archive/v1.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

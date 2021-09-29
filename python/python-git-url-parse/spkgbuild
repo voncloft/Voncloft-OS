@@ -1,0 +1,15 @@
+# description : A simple GIT URL parser
+# depends : python-pbr
+
+name=python-git-url-parse
+version=1.2.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source/g/git-url-parse/git-url-parse-1.2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

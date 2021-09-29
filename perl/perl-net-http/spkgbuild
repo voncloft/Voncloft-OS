@@ -1,0 +1,16 @@
+# description : Low-level HTTP connection client
+# depends : perl
+
+name=perl-net-http
+version=6.21
+release=1
+
+source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : A new approach to API documentation in Sphinx.
+# depends : python-astroid python-jinja python-sphinx python-unidecode
+
+name=python-sphinx-autoapi
+version=1.8.4
+release=1
+
+source="https://files.pythonhosted.org/packages/source/s/sphinx-autoapi/sphinx-autoapi-1.8.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : setconf a utility to change settings in config files
+# depends : python
+
+name=setconf
+version=0.7.7
+release=2
+options="!checksum"
+source="https://setconf.roboticoverlords.org/$name-$version.tar.xz"
+build()
+{
+	cd $name-$version
+	install -Dm755 "$name.py" "$PKG/usr/bin/$name"
+        install -Dm644 "$name.1.gz" "$PKG/usr/share/man/man1/$name.1.gz"
+	#run commands except make install that is replaced by below
+
+}

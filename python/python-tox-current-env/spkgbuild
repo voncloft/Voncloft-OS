@@ -1,0 +1,15 @@
+# description : tox plugin to run tests in current Python environment
+# depends : python python-tox
+
+name=python-tox-current-env
+version=0.0.6
+release=1
+
+source="python-tox-current-env-0.0.6.tar.gz::https://github.com/fedora-python/tox-current-env/archive/v0.0.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

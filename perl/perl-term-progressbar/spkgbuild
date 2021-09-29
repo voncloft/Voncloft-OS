@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Term::ProgressBar : Progress bar in just ASCII  using Term
+# depends : perl-class-methodmaker perl-term-readkey
+
+name=perl-term-progressbar
+version=2.22
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MANWAR/Term-ProgressBar-2.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

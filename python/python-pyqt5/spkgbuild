@@ -1,0 +1,15 @@
+# description	: A set of Python 3.x bindings for the Qt5 toolkit
+# depends	: python-sip qtwebengine qt5-webkit python-dbus 
+
+name=python-pyqt5
+version=5.15.4
+release=1
+
+source="https://files.pythonhosted.org/packages/8e/a4/d5e4bf99dd50134c88b95e926d7b81aad2473b47fde5e3e4eac2c69a8942/PyQt5-5.15.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

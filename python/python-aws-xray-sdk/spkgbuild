@@ -1,0 +1,15 @@
+# description : AWS X-Ray SDK for Python
+# depends : python python-botocore python-future python-jsonpickle python-wrapt
+
+name=python-aws-xray-sdk
+version=2.8.0
+release=3
+
+source="https://github.com/aws/aws-xray-sdk-python/archive/2.8.0/python-aws-xray-sdk-2.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

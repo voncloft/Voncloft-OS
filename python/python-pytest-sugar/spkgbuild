@@ -1,0 +1,15 @@
+# description : A plugin for py.test that changes the default look and feel of py.test
+# depends : python-pytest python-termcolor
+
+name=python-pytest-sugar
+version=0.9.4
+release=3
+
+source="https://github.com/Frozenball/pytest-sugar/archive/b3e935355afcfb5240bac5a99707ffecc35772a2/python-pytest-sugar-b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

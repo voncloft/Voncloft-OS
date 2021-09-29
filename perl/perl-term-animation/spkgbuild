@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Term::Animation
+# depends : perl-curses
+
+name=perl-term-animation
+version=2.6
+release=7
+
+source="https://www.cpan.org/authors/id/K/KB/KBAUCOM/Term-Animation-2.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

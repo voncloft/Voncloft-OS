@@ -1,0 +1,16 @@
+# description : Manages sets of integers, newsrc style
+# depends : perl
+
+name=perl-set-intspan
+version=1.19
+release=8
+
+source="https://www.cpan.org/modules/by-module//--1.19.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

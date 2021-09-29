@@ -1,0 +1,15 @@
+# description : Open source and free implementation of v1/v2c/v3 SNMP engine
+# depends : python python-pysmi python-pyasn1
+
+name=python-pysnmp
+version=4.4.12
+release=3
+
+source="https://github.com/etingof/pysnmp/archive/v4.4.12/pysnmp-v4.4.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

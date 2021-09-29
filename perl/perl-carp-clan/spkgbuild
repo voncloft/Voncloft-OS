@@ -1,0 +1,16 @@
+# description : Report errors from perspective of caller of a clan of modules
+# depends : perl
+
+name=perl-carp-clan
+version=6.08
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Carp-Clan-6.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

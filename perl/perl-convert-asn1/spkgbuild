@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Convert::ASN1 : Standard endecode of ASN1 structures
+
+name=perl-convert-asn1
+version=0.31
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

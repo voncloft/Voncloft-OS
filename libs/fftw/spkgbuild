@@ -1,0 +1,43 @@
+# description	: A library for computing the discrete Fourier transform (DFT)
+# depends	: bash
+
+name=fftw
+version=3.3.9
+release=1
+source="http://www.fftw.org/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr    \
+            --enable-shared  \
+            --disable-static \
+            --enable-threads \
+            --enable-sse2    \
+            --enable-avx
+	make
+	make DESTDIR=$PKG install
+
+	make clean
+	./configure --prefix=/usr    \
+            --enable-shared  \
+            --disable-static \
+            --enable-threads \
+            --enable-sse2    \
+            --enable-avx     \
+            --enable-float
+	make
+	make DESTDIR=$PKG install
+
+	make clean
+	./configure --prefix=/usr    \
+            --enable-shared  \
+            --disable-static \
+            --enable-threads \
+            --enable-long-double
+       make 
+       make DESTDIR=$PKG install
+
+
+}

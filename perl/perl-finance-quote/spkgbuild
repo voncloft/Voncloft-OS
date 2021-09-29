@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Finance::Quote : Fetch stock prices over the Internet
+# depends : perl-html-tree perl-html-tableextract perl-crypt-ssleay
+
+name=perl-finance-quote
+version=1.51
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/E/EC/ECOCODE/Finance-Quote-1.49.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : sort lexically, but sort numeral parts numerically
+# depends : perl
+
+name=perl-sort-naturally
+version=1.03
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Sort-Naturally-1.03.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

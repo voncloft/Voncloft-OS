@@ -1,0 +1,15 @@
+# description : Extends Hypothesis to add fully automatic testing of type annotated functions
+# depends : python-pydantic python-hypothesis
+
+name=python-hypothesis-auto
+version=1.1.4
+release=3
+
+source="https://github.com/timothycrosley/hypothesis-auto/archive/b3e935355afcfb5240bac5a99707ffecc35772a2/python-hypothesis-auto-b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

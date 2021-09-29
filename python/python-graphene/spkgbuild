@@ -1,0 +1,15 @@
+# description : GraphQL framework for Python
+# depends : 
+
+name=python-graphene
+version=3.0.0b7
+release=1
+
+source="git+https://github.com/graphql-python/graphene.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

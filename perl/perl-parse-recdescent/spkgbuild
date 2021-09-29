@@ -1,0 +1,16 @@
+# description : Recursive descent parser generator
+# depends : perl
+
+name=perl-parse-recdescent
+version=1.967015
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/J/JT/JTBRAUN/Parse-RecDescent-1.967015.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

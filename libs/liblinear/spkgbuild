@@ -1,0 +1,19 @@
+# description : library for learning linear classifiers for large scale applications
+# depends : 
+
+name=liblinear
+version=243
+release=1
+
+source="https://github.com/cjlin1/liblinear/archive/v$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	make lib
+	mkdir -pv $PKG/usr/include
+	mkdir -pv $PKG/usr/lib
+	install -vm644 linear.h $PKG/usr/include 
+	install -vm755 liblinear.so.4 $PKG/usr/lib 
+	ln -sfv liblinear.so.4 $PKG/usr/lib/liblinear.so
+}

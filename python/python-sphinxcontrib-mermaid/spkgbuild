@@ -1,0 +1,15 @@
+# description : Mermaid diagrams in yours sphinx powered docs
+# depends : python-sphinx
+
+name=python-sphinxcontrib-mermaid
+version=0.7.1
+release=1
+
+source="sphinx-sphinxcontrib-mermaid-0.3.1.tar.gz::https://github.com/mgaitan/sphinxcontrib-mermaid/archive/0.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

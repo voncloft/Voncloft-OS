@@ -1,0 +1,16 @@
+# description : Interface to syslog functions in a C-library
+# depends : perl
+
+name=perl-unix-syslog
+version=1.1
+release=14
+
+source="https://search.cpan.org/CPAN/authors/id/M/MH/MHARNISCH/Unix-Syslog-1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

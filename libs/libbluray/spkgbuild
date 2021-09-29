@@ -1,0 +1,18 @@
+# description : lib bluray playback
+# depends : fontconfig freetype2 libxml2 libudfread
+
+name=libbluray
+version=1.2.1
+release=1
+
+source="https://code.videolan.org/videolan/libbluray/-/archive/master/libbluray-master.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-master
+	autoreconf -ifv
+	autoconf
+	./configure --prefix=/usr --disable-bdjava-jar
+	make
+	make DESTDIR=$PKG install
+}

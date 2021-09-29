@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module HTML::TableExtract : Flexible HTML table extraction
+# depends : perl-html-parser perl-html-element-extended
+
+name=perl-html-tableextract
+version=2.15
+release=4
+
+source="https://www.cpan.org/authors/id/M/MS/MSISK/HTML-TableExtract-2.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

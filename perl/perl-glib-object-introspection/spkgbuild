@@ -1,0 +1,16 @@
+# description : Dynamically create Perl language bindings
+# depends : glib-perl gobject-introspection-runtime
+
+name=perl-glib-object-introspection
+version=0.049
+release=5
+
+source="https://cpan.metacpan.org/authors/id/X/XA/XAOC/--0.047.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

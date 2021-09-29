@@ -1,0 +1,15 @@
+# description : A collection of tools for Python
+# depends : python-six python-decorator python-appdirs python-numpy
+
+name=python-pytools
+version=2021.2.8
+release=1
+
+source="https://pypi.io/packages/source/p/pytools/pytools-2021.2.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

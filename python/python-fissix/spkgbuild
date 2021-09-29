@@ -1,0 +1,15 @@
+# description : Fork of lib2to3 with patch for Python issue33983 support
+# depends : python
+
+name=python-fissix
+version=21.6.6
+release=5
+
+source="fissix-19.2b1.tar.gz::https://github.com/jreese/fissix/archive/v19.2b1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

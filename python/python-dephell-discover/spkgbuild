@@ -1,0 +1,15 @@
+# description : Find project modules and data files packages and package_data for setup.py
+# depends : python-attrs
+
+name=python-dephell-discover
+version=0.2.10
+release=4
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_discover/dephell_discover-0.2.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

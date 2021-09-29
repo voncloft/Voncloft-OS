@@ -1,0 +1,16 @@
+# description : Framework for perl-events
+# depends : perl-anyevent perl-libintl-perl perl
+
+name=perl-event-execflow
+version=0.64
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/J/JR/JRED/Event-ExecFlow-0.64.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

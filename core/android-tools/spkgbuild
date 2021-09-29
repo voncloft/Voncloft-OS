@@ -1,0 +1,22 @@
+# description : android platform tools
+# depends : android-udev brotli libusb protobuf zstd
+
+name=android-tools
+version=31.0.2
+release=1
+
+source="https://github.com/nmeum/android-tools/releases/download/$version/android-tools-$version.tar.xz"
+options="!checksum"
+
+build() {
+  cd android-tools-$_tag
+
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
+    -DCMAKE_C_FLAGS="$CFLAGS" \
+    -G Ninja -S . -B build
+
+    DESTDIR="${PKG}" ninja -C build install
+}

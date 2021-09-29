@@ -1,0 +1,15 @@
+# description : PKCS#11/Cryptoki support for Python
+# depends : python python-asn1crypto python-cached-property
+
+name=python-python-pkcs11
+version=0.7.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/python-pkcs11/python-pkcs11-0.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Asynchronous encrypted transaction based protocol using Ioflo
+# depends : python-libnacl python-ioflo python-six
+
+name=python-raet
+version=0.6.8
+release=6
+
+source="https://pypi.io/packages/source/r/raet/raet-0.6.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

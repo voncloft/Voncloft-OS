@@ -1,0 +1,42 @@
+Wrote 2/13/2021 at 10PM
+
+kde/kde5 - full meta of kde desktop
+kde/kdedeps - meta of all dependencies for kde5 to event continue references kf5 and plasma depends
+kf5/kf5-depends - meta of all kf5 depends
+plasma/plasma-depends - meta of all plasma depends
+kf5/kf5-programs - all kf5 programs in the kde desktop making sure depends are satisfied first in kde5
+plasma/plasma-programs - all plasma programs in the kde desktop making sure depends are satisfied first in kde5
+
+kde/kde-deps-installer - a quick and easy hack to install programs for kde
+
+each program in plasma and kf5 will need kde-deps for a dependency 
+
+Basically I want to blanket kf5 dependencies first and all plasma programs second before moving onto individual packages so 
+if I want to install kate....on a brand new system it would need to do the following:
+
+Find kate's dependencies
+
+it should come back and say kde-deps
+
+kde-deps would say it needs kde-deps-installer which would install the programs to compile both kf5 and plasma packages
+then it would need kf5-depends and plasma-deps which would go thru them in that particular order to grab a bunch of crap creating a "blank
+slate" for other programs to be installed 
+
+then the base of kde would be completed and should be okay to install kate 
+
+When all is done: delete KDE from maing branch
+
+make the following
+kf5 - keep kf5 spkgbuild's here 
+plasma - keep all plasma spkgbuild's here
+kde - shouldn't have much its just the gateway for kf5 and plasma should only have the 'primer' to start a full blown installation and the 
+toolkit for the packages
+
+Version sheming:
+kde/kde5/spkgbuild - only the version will drop the decimal for example kf5 and plasma5 ...its gonna be version 5
+kf5/kf5*/spkgbuild - version will include decimal
+plasma/plasma*/spkgbuild - will include decimal 
+
+
+use plasmapackageinstaller for plasma and apps
+kf5 for kf5 frameworks

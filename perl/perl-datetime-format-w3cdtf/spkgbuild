@@ -1,0 +1,16 @@
+# description : Parse and format W3CDTF datetime strings
+# depends : perl perl-datetime
+
+name=perl-datetime-format-w3cdtf
+version=0.08
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/G/GW/GWILLIAMS/DateTime-Format-W3CDTF-0.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

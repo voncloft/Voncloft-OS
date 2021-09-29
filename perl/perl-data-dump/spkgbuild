@@ -1,0 +1,16 @@
+# description : Pretty printing of data structures
+# depends : perl
+
+name=perl-data-dump
+version=1.25
+release=6
+
+source="https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Dump-1.25.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

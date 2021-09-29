@@ -1,0 +1,15 @@
+# description : A PEG-based parser interpreter with memoization
+# depends : python python-six
+
+name=python-speg
+version=0.3
+release=7
+
+source="https://pypi.io/packages/source/s/speg/speg-0.3.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

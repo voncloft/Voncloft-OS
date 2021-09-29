@@ -1,0 +1,16 @@
+# description : Associate user-defined magic to variables from Perl.
+# depends : perl
+
+name=perl-variable-magic
+version=0.62
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/V/VP/VPIT/Variable-Magic-0.62.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

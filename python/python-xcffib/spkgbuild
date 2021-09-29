@@ -1,0 +1,15 @@
+# description : Python3 drop in replacement for xpyb, an XCB python binding
+# depends : python-six python-cffi libxcb
+
+name=python-xcffib
+version=0.11.1
+release=1
+
+source="https://github.com/tych0/xcffib/archive/v0.11.1/python-xcffib-0.11.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

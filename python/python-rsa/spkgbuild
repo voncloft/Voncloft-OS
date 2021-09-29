@@ -1,0 +1,15 @@
+# description : Pure-Python RSA implementation
+# depends : python-pyasn1
+
+name=python-rsa
+version=4.7.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/r/rsa/rsa-4.7.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,24 @@
+# description : library with common api for various cinnamon modules
+# depends : accountsservice gtk3 libxkbfile libpulse
+# depends : meson ninja gobject-introspection intltool
+
+name=cinnamon-desktop
+version=5.0.0
+release=1
+
+source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz
+        config.patch"
+options="!checksum"
+
+build() {
+    cd ${name}-${version}
+    # Adjust configuration
+    patch -Np1 -i ../config.patch
+
+    mkdir -p ${name}-${version}/build
+    cd ${name}-${version}/build
+
+    meson --prefix=/usr --buildtype=plain ..
+    ninja
+    DESTDIR="${PKG}" ninja install
+}

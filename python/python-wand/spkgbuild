@@ -1,0 +1,15 @@
+# description : Ctypes-based simple MagickWand API binding for Python
+# depends : imagemagick libxml2 python
+
+name=python-wand
+version=0.6.7
+release=1
+
+source="python-wand-0.6.7.tar.gz::https://github.com/emcconville/wand/archive/0.6.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Sort::Key - the fastest way to sort anything in Perl
+# depends : perl
+
+name=perl-sort-key
+version=1.33
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id//-1.33.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,10 @@
+# description : these are all the dependencies needed for kde
+# depends : kde-deps-installer kf5-depends plasma-depends
+
+name=kde-deps
+version=5
+release=1
+
+build() {
+	mkdir -p $PKG/opt
+}

@@ -1,0 +1,15 @@
+# description : Python interface to Graphvizs Dot
+# depends : python-pyparsing graphviz
+
+name=python-pydot
+version=1.4.2
+release=5
+
+source="python-pydot-1.4.2.tar.gz::https://github.com/erocarrera/pydot/archive/v1.4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

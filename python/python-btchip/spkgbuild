@@ -1,0 +1,15 @@
+# description : Python library to communicate with BTChip dongle
+# depends : python-hidapi
+
+name=python-btchip
+version=0.1.32
+release=2
+
+source="python-btchip-0.1.32.tar.gz::https://github.com/LedgerHQ/btchip-python/archive/0.1.32.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

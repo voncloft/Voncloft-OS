@@ -1,0 +1,15 @@
+# description : Python interface for the Linux scheduler functions etc.
+# depends : python
+
+name=python-schedutils
+version=0.6
+release=9
+
+source="https://git.kernel.org/pub/scm/libs/python/python-schedutils/python-schedutils.git/snapshot/python-schedutils-0.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

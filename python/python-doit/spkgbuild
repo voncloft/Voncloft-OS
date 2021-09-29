@@ -1,0 +1,15 @@
+# description : A task management and automation tool
+# depends : python-cloudpickle python-pyinotify python-setuptools
+
+name=python-doit
+version=0.33.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/d/doit/doit-0.33.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

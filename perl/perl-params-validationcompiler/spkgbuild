@@ -1,0 +1,16 @@
+# description : Build an optimized subroutine parameter validator once, use it forever
+# depends : perl-role-tiny perl-eval-closure perl-exception-class
+
+name=perl-params-validationcompiler
+version=0.30
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

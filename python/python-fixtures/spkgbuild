@@ -1,0 +1,15 @@
+# description : Fixtures, reusable state for writing clean tests and more
+# depends : python-pbr python-six python-testtools
+
+name=python-fixtures
+version=3.0.0
+release=10
+
+source="https://pypi.io/packages/source/f/fixtures/fixtures-3.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

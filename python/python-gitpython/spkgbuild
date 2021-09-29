@@ -1,0 +1,15 @@
+# description : A python library used to interact with Git repositories
+# depends : git python-gitdb
+
+name=python-gitpython
+version=3.1.24
+release=1
+
+source="git+https://github.com/gitpython-developers/gitpython.git#tag=3.1.24?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

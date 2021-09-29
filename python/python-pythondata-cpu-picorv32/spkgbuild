@@ -1,0 +1,15 @@
+# description : Python module containing verilog files for picorv32 cpu for use with LiteX
+# depends : python
+
+name=python-pythondata-cpu-picorv32
+version=2020.08
+release=1
+
+source="python-pythondata-cpu-picorv32-2020.08.tar.gz::https://github.com/litex-hub/pythondata-cpu-picorv32/archive/2020.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

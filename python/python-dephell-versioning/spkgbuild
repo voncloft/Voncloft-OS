@@ -1,0 +1,15 @@
+# description : Bump project version like a pro
+# depends : python-packaging
+
+name=python-dephell-versioning
+version=0.1.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_versioning/dephell_versioning-0.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

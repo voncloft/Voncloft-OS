@@ -1,0 +1,15 @@
+# description : A Python dict with a merge method
+# depends : python
+
+name=python-mergedict
+version=1.0.0
+release=4
+
+source="https://files.pythonhosted.org/packages/source/m/mergedict/mergedict-1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

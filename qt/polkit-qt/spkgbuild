@@ -1,0 +1,21 @@
+# description : Polkit-Qt
+# depends : cmake polkit qt5
+
+name=polkit-qt
+version=0.113.0
+release=1
+
+source="https://download.kde.org/stable/polkit-qt-1/polkit-qt-1-$version.tar.xz"
+options="!checksum"
+build()
+{
+	cd polkit-qt-1-$version
+	mkdir build &&
+	cd    build &&
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	      -DCMAKE_BUILD_TYPE=Release  \
+	            -Wno-dev .. &&
+	            make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Plugin and hook calling mechanisms for python
+  # depends : python-importlib-metadata
+
+name=python-pluggy
+version=1.0.0
+release=4
+
+source="python-pluggy-0.13.1.tar.gz::https://github.com/pytest-dev/pluggy/archive/0.13.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

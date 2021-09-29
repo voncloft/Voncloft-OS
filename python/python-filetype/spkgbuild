@@ -1,0 +1,15 @@
+# description : Infer file type and MIME type of any file/buffer
+# depends : python
+
+name=python-filetype
+version=1.0.8
+release=3
+
+source="https://github.com/h2non/filetype.py/archive/v1.0.8/python-filetype-1.0.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

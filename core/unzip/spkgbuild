@@ -1,0 +1,16 @@
+# description	: ZIP extraction utilities
+
+name=unzip
+version=6.0
+verzion=$(echo $version | sed 's/\.//')
+release=1
+source="https://downloads.sourceforge.net/infozip/${name}${verzion}.tar.gz"
+
+build() {
+	cd ${name}${verzion}
+
+  	make -f unix/Makefile generic
+	make prefix=$PKG/usr MANDIR=$PKG/usr/share/man/man1 \
+	 -f unix/Makefile install
+}
+

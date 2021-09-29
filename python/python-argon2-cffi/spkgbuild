@@ -1,0 +1,15 @@
+# description : CFFI-based Argon2 Bindings for Python
+# depends : argon2 python-cffi python-six
+
+name=python-argon2-cffi
+version=21.1.0
+release=3
+
+source="https://files.pythonhosted.org/packages/7b/39/a26aaef5c3f0c6cfd67c80599b5b40a794fdab46f4ee3be925d71e2f9596/argon2-cffi-21.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

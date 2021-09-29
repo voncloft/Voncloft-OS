@@ -1,0 +1,15 @@
+# description : Manipulate jagged, chunky, and/or bitmasked arrays as easily as Numpy
+# depends : python-numpy
+
+name=python-awkward
+version=1.5.0
+release=1
+
+source="python-awkward::https://github.com/scikit-hep/awkward-0.x/archive/0.15.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

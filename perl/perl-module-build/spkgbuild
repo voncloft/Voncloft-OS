@@ -1,0 +1,16 @@
+# description : Build, test, and install Perl modules
+# depends : perl perl-cpan-meta perl-inc-latest
+
+name=perl-module-build
+version=0.4231
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

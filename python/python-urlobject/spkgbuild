@@ -1,0 +1,15 @@
+# description : A utility class for manipulating URLs
+# depends : python
+
+name=python-urlobject
+version=2.4.3
+release=5
+
+source="python-urlobject-2.4.3.tar.gz::https://github.com/zacharyvoase/urlobject/archive/v2.4.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Write tests in a declarative specification style
+# depends : perl-package-stash perl-test-deep perl-test-trap
+
+name=perl-test-spec
+version=0.54
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/A/AK/AKZHAN/Test-Spec-0.54.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

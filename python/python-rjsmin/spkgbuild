@@ -1,0 +1,15 @@
+# description : Fast javascript minifier for Python
+# depends : python
+
+name=python-rjsmin
+version=1.1.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/r/rjsmin/rjsmin-1.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

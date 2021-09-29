@@ -1,0 +1,15 @@
+# description : Generic exceptions and implementations for Zope
+  # depends : python-setuptools python-zope-interface
+
+name=python-zope-exceptions
+version=4.4
+release=3
+
+source="python-zope-exceptions-4.4.tar.gz::https://github.com/zopefoundation/zope.exceptions/archive/4.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

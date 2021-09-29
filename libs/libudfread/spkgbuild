@@ -1,0 +1,23 @@
+# description : libbluray component
+# depends : glibc
+
+name=libudfread
+version=1.0.0.32.g09059bb
+release=1
+
+source="https://code.videolan.org/videolan/libudfread/-/archive/master/$name-master.tar.gz"
+options="!checksum"
+
+build() {
+	cd libudfread-master
+	mkdir -pv build
+	./bootstrap
+	cd build
+		../configure \
+    		--prefix=/usr \
+    		--disable-static
+
+  make
+
+  make DESTDIR=$PKG install
+}

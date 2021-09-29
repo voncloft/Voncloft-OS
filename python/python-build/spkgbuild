@@ -1,0 +1,15 @@
+# description : A simple, correct PEP517 package builder
+# depends : python-toml python-pep517 python-packaging
+
+name=python-build
+version=0.7.0
+release=1
+
+source="git+https://github.com/pypa/build#tag=0.7.0?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

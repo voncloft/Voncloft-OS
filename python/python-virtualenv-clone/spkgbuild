@@ -1,0 +1,15 @@
+# description : A script for cloning a non-relocatable virtualenv.
+# depends : python
+
+name=python-virtualenv-clone
+version=0.5.7
+release=4
+
+source="https://files.pythonhosted.org/packages/source/v/virtualenv-clone/virtualenv-clone-0.5.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,14 @@
+# description : A module which implements a high-level interface to SOAP functions
+
+name=python-soappy
+version=0.12.22
+release=3
+
+source="https://pypi.python.org/packages/source/S/SOAPpy/SOAPpy-0.12.22.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

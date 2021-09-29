@@ -1,0 +1,16 @@
+# description : Generic namespace helpers ported from SAX2
+# depends : perl
+
+name=perl-xml-namespacesupport
+version=1.12
+release=4
+
+source="https://www.cpan.org/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-1.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Module for parsing and generating vCard and vCalendar files
+# depends : python-dateutil python-setuptools
+
+name=python-vobject
+version=0.9.6.1
+release=6
+
+source="https://files.pythonhosted.org/packages/source/v/vobject/vobject-0.9.6.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A pythonic interface to Amazons DynamoDB
+# depends : python-botocore
+
+name=python-pynamodb
+version=5.1.0
+release=1
+
+source="https://github.com/pynamodb/PynamoDB/archive/5.1.0/PynamoDB-5.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

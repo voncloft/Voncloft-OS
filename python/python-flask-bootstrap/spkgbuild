@@ -1,0 +1,15 @@
+# description : Ready-to-use Twitter-bootstrap for use in Flask
+# depends : python-flask python-dominate python-visitor
+
+name=python-flask-bootstrap
+version=3.3.7.1
+release=3
+
+source="python-flask-bootstrap-3.3.7.1.tar.gz::https://github.com/mbr/flask-bootstrap/archive/3.3.7.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

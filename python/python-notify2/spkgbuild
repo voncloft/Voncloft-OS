@@ -1,0 +1,15 @@
+# description : Python interface to DBus notifications
+# depends : python-dbus
+
+name=python-notify2
+version=0.3.1
+release=5
+
+source="https://files.pythonhosted.org/packages/source/n/notify2/notify2-0.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

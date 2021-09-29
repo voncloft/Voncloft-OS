@@ -1,0 +1,15 @@
+# description : Simple powerful testing with Python
+# depends : python-attrs python-iniconfig python-more-itertools python-packaging python-pluggy
+
+name=python-pytest
+version=6.2.5
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pytest/pytest-6.2.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

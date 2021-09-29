@@ -1,0 +1,15 @@
+# description : Python bindings for the Apache Thrift RPC system
+# depends : python
+
+name=python-thrift
+version=0.14.1
+release=4
+
+source="thrift-0.14.1.zip::https://github.com/apache/thrift/archive/0.14.1.zip"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

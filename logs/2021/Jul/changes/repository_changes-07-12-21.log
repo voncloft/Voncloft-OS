@@ -1,0 +1,115 @@
+00
+sed -i -e 's/6.14.1/6.14.2/g' /Voncloft-OS/*/python-hypothesis/spkgbuild
+Packages upgraded: 1
+
+04
+Packages upgraded: 0
+
+08
+sed -i -e 's/3.67/3.68/g' /Voncloft-OS/*/nss/spkgbuild
+sed -i -e 's/89.0.2/90.0/g' /Voncloft-OS/*/firefox/spkgbuild
+sed -i -e 's/8.0.0/8.0.1/g' /Voncloft-OS/*/python-tenacity/spkgbuild
+Packages upgraded: 3
+
+10
+sed -i -e 's/2.23/2.26/g' /Voncloft-OS/*/perl-config-tiny/spkgbuild
+sed -i -e 's/1.16/1.18/g' /Voncloft-OS/*/perl-dbd-sybase/spkgbuild
+sed -i -e 's/0.40/2.10/g' /Voncloft-OS/*/perl-io-pager/spkgbuild
+sed -i -e 's/0.18.4/0.22.1/g' /Voncloft-OS/*/python-aiorpcx/spkgbuild
+sed -i -e 's/1.10.1/1.10.2/g' /Voncloft-OS/*/python-arpeggio/spkgbuild
+sed -i -e 's/0.15.3/1.0.0/g' /Voncloft-OS/*/python-authlib/spkgbuild
+sed -i -e 's/2.9.0/2.9.1/g' /Voncloft-OS/*/python-babel/spkgbuild
+sed -i -e 's/3.4.9/3.5.0/g' /Voncloft-OS/*/python-bitvector/spkgbuild
+sed -i -e 's/4.7.2/4.9.2/g' /Voncloft-OS/*/python-btrees/spkgbuild
+sed -i -e 's/2.5.1/2.5.2/g' /Voncloft-OS/*/python-cairosvg/spkgbuild
+sed -i -e 's/1.3.2/1.3.4/g' /Voncloft-OS/*/python-cerberus/spkgbuild
+sed -i -e 's/3.8.1/3.9.1/g' /Voncloft-OS/*/python-chameleon/spkgbuild
+sed -i -e 's/18.6.0/18.6.1/g' /Voncloft-OS/*/python-cherrypy/spkgbuild
+sed -i -e 's/1.2.3/1.5.1/g' /Voncloft-OS/*/python-configargparse/spkgbuild
+sed -i -e 's/6.5.3/6.7/g' /Voncloft-OS/*/python-cx-freeze/spkgbuild
+sed -i -e 's/1.2.11/1.2.12/g' /Voncloft-OS/*/python-deprecated/spkgbuild
+sed -i -e 's/3.1.7/3.2.5/g' /Voncloft-OS/*/python-django/spkgbuild
+sed -i -e 's/0.31.0/0.31.1/g' /Voncloft-OS/*/python-eventlet/spkgbuild
+sed -i -e 's/6.0.0/8.10.0/g' /Voncloft-OS/*/python-faker/spkgbuild
+sed -i -e 's/1.1.2/2.0.1/g' /Voncloft-OS/*/python-flask/spkgbuild
+sed -i -e 's/1.9.0/1.10.1/g' /Voncloft-OS/*/python-flask-caching/spkgbuild
+sed -i -e 's/1.8.0/1.10.1/g' /Voncloft-OS/*/python-flask-compress/spkgbuild
+sed -i -e 's/3.2.0/5.0.0/g' /Voncloft-OS/*/python-flask-dance/spkgbuild
+sed -i -e 's/2.0.2/2.1.0/g' /Voncloft-OS/*/python-flask-htmlmin/spkgbuild
+sed -i -e 's/4.2.0/4.4.0/g' /Voncloft-OS/*/python-flask-httpauth/spkgbuild
+sed -i -e 's/2.5.3/3.0.1/g' /Voncloft-OS/*/python-flask-migrate/spkgbuild
+sed -i -e 's/0.2/0.2.0/g' /Voncloft-OS/*/python-flask-paranoid/spkgbuild
+sed -i -e 's/0.3.8/0.3.9/g' /Voncloft-OS/*/python-flask-restful/spkgbuild
+sed -i -e 's/3.3.3/4.0.1/g' /Voncloft-OS/*/python-flask-security-too/spkgbuild
+sed -i -e 's/5.0.1/5.1.0/g' /Voncloft-OS/*/python-flask-socketio/spkgbuild
+sed -i -e 's/2.4.4/2.5.1/g' /Voncloft-OS/*/python-flask-sqlalchemy/spkgbuild
+sed -i -e 's/0.14.3/0.15.1/g' /Voncloft-OS/*/python-flask-wtf/spkgbuild
+sed -i -e 's/0.7.4/0.7.5/g' /Voncloft-OS/*/python-genshi/spkgbuild
+sed -i -e 's/3.1.14/3.1.18/g' /Voncloft-OS/*/python-gitpython/spkgbuild
+sed -i -e 's/2020.9.25/2021.4.18/g' /Voncloft-OS/*/python-imdbpy/spkgbuild
+sed -i -e 's/0.70/0.71/g' /Voncloft-OS/*/python-js2py/spkgbuild
+sed -i -e 's/0.37.1/0.38.0/g' /Voncloft-OS/*/python-m2crypto/spkgbuild
+sed -i -e 's/3.3.3/3.3.4/g' /Voncloft-OS/*/python-markdown/spkgbuild
+sed -i -e 's/3.0.0/3.1.1/g' /Voncloft-OS/*/python-markups/spkgbuild
+sed -i -e 's/1.1.1/2.0.1/g' /Voncloft-OS/*/python-markupsafe/spkgbuild
+sed -i -e 's/0.5.3/0.5.4/g' /Voncloft-OS/*/python-micawber/spkgbuild
+sed -i -e 's/1.5.5.1/1.5.7/g' /Voncloft-OS/*/python-netcdf4/spkgbuild
+sed -i -e 's/0.22.0/0.24.1/g' /Voncloft-OS/*/python-owslib/spkgbuild
+sed -i -e 's/1.2.2/2.0.1/g' /Voncloft-OS/*/python-pallets-sphinx-themes/spkgbuild
+sed -i -e 's/8.1.0/8.3.1/g' /Voncloft-OS/*/python-pillow/spkgbuild
+sed -i -e 's/0.16.1/0.17/g' /Voncloft-OS/*/python-pint/spkgbuild
+sed -i -e 's/0.22/0.23/g' /Voncloft-OS/*/python-pybluez/spkgbuild
+sed -i -e 's/1.54.1/1.55/g' /Voncloft-OS/*/python-pygithub/spkgbuild
+sed -i -e 's/2.7.4/2.9.0/g' /Voncloft-OS/*/python-pygments/spkgbuild
+sed -i -e 's/1.9.0/2.0.2/g' /Voncloft-OS/*/python-pyhamcrest/spkgbuild
+sed -i -e 's/2.6/2.7.4/g' /Voncloft-OS/*/python-pyicu/spkgbuild
+sed -i -e 's/1.7.1/2.1.0/g' /Voncloft-OS/*/python-pyjwt/spkgbuild
+sed -i -e 's/5.13.1/5.15.4/g' /Voncloft-OS/*/python-pyqt5/spkgbuild
+sed -i -e 's/12.8.1/12.9.0/g' /Voncloft-OS/*/python-pyqt5-sip/spkgbuild
+sed -i -e 's/13.0.0/13.1.0/g' /Voncloft-OS/*/python-pyqt6-sip/spkgbuild
+sed -i -e 's/5.13.1/5.15.4/g' /Voncloft-OS/*/python-pyqtwebengine/spkgbuild
+sed -i -e 's/2.0/2.2/g' /Voncloft-OS/*/python-pyvirtualdisplay/spkgbuild
+sed -i -e 's/1.6.1/1.7.0/g' /Voncloft-OS/*/python-pyxdameraulevenshtein/spkgbuild
+sed -i -e 's/2.8.1/3.0.2/g' /Voncloft-OS/*/python-qdarkstyle/spkgbuild
+sed -i -e 's/0.6.0/1.0.3/g' /Voncloft-OS/*/python-qtawesome/spkgbuild
+sed -i -e 's/1.2.5/1.3.4/g' /Voncloft-OS/*/python-qt.py/spkgbuild
+sed -i -e 's/0.14.1/0.15.1/g' /Voncloft-OS/*/python-quart/spkgbuild
+sed -i -e 's/0.3.0/0.5.0/g' /Voncloft-OS/*/python-quart-cors/spkgbuild
+sed -i -e 's/3.1.1/3.2.0/g' /Voncloft-OS/*/python-rx/spkgbuild
+sed -i -e 's/3.3.0/3.3.1/g' /Voncloft-OS/*/python-secretstorage/spkgbuild
+sed -i -e 's/1.5.0/1.7.1/g' /Voncloft-OS/*/python-send2trash/spkgbuild
+sed -i -e 's/1.7.1/1.8/g' /Voncloft-OS/*/python-shapely/spkgbuild
+sed -i -e 's/5.9.2/5.9.6/g' /Voncloft-OS/*/python-softlayer/spkgbuild
+sed -i -e 's/3.4.3/4.1.0/g' /Voncloft-OS/*/python-sphinx/spkgbuild
+sed -i -e 's/1.3.23/1.4.20/g' /Voncloft-OS/*/python-sqlalchemy/spkgbuild
+sed -i -e 's/1.3.9/1.3.11/g' /Voncloft-OS/*/python-sqlalchemy-continuum/spkgbuild
+sed -i -e 's/1.0.3/1.1.0/g' /Voncloft-OS/*/python-sqlalchemy-i18n/spkgbuild
+sed -i -e 's/0.36.8/0.37.8/g' /Voncloft-OS/*/python-sqlalchemy-utils/spkgbuild
+sed -i -e 's/3.9.0/3.9.1/g' /Voncloft-OS/*/python-sqlobject/spkgbuild
+sed -i -e 's/0.5.2/0.5.3/g' /Voncloft-OS/*/python-tempita/spkgbuild
+sed -i -e 's/20.3.0/21.7.0/g' /Voncloft-OS/*/python-twisted/spkgbuild
+sed -i -e 's/1.1.2/1.2.0/g' /Voncloft-OS/*/python-unidecode/spkgbuild
+sed -i -e 's/0.6.5/0.6.6/g' /Voncloft-OS/*/python-wand/spkgbuild
+sed -i -e 's/1.8.6/1.8.7/g' /Voncloft-OS/*/python-webob/spkgbuild
+sed -i -e 's/1.0.1/2.0.1/g' /Voncloft-OS/*/python-werkzeug/spkgbuild
+sed -i -e 's/2.2.1/3.0.0/g' /Voncloft-OS/*/python-wtforms/spkgbuild
+sed -i -e 's/4.0.7.2/4.1.1/g' /Voncloft-OS/*/python-wxpython/spkgbuild
+sed -i -e 's/1.3.7/1.4.4/g' /Voncloft-OS/*/python-xlsxwriter/spkgbuild
+sed -i -e 's/3.5.0/3.6.0/g' /Voncloft-OS/*/python-zconfig/spkgbuild
+Packages upgraded: 84
+
+12
+sed -i -e 's/8.10.0/8.10.1/g' /Voncloft-OS/*/python-faker/spkgbuild
+Packages upgraded: 1
+
+16
+sed -i -e 's/1.17.109/1.17.110/g' /Voncloft-OS/*/python-boto3/spkgbuild
+sed -i -e 's/1.20.109/1.20.110/g' /Voncloft-OS/*/python-botocore/spkgbuild
+sed -i -e 's/10.5.0/10.6.0/g' /Voncloft-OS/*/python-rich/spkgbuild
+Packages upgraded: 3
+
+20
+sed -i -e 's/4.6.0/4.7.0/g' /Voncloft-OS/*/python-pwntools/spkgbuild
+Packages upgraded: 1
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

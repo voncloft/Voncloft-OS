@@ -1,0 +1,15 @@
+# description : HTTP request/response parser for Python
+# depends : python
+
+name=python-http-parser
+version=0.9.0
+release=4
+
+source="https://github.com/benoitc/http-parser/archive/0.9.0/python-http-parser-0.9.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

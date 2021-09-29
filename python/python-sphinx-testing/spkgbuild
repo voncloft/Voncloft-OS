@@ -1,0 +1,15 @@
+# description : Testing utility classes and functions for Sphinx extensions
+# depends : python-six python-sphinx
+
+name=python-sphinx-testing
+version=1.0.1
+release=4
+
+source="https://pypi.io/packages/source/s/sphinx-testing/sphinx-testing-1.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

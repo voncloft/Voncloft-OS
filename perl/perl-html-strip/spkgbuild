@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module HTML::Strip
+# depends : perl
+
+name=perl-html-strip
+version=2.10
+release=8
+
+source="https://www.cpan.org/authors/id/K/KI/KILINRAX/HTML-Strip-2.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

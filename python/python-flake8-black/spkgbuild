@@ -1,0 +1,15 @@
+# description : Flake8 plugin to call black as a code style validator
+# depends : flake8 python-black python-setuptools
+
+name=python-flake8-black
+version=0.2.3
+release=4
+
+source="https://github.com/peterjc/flake8-black/archive/v0.2.2/flake8-black-0.2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : A low memory library for creating large XML files.
+# depends : python-lxml
+
+name=python-et-xmlfile
+version=1.1.0
+release=9
+
+source="https://foss.heptapod.net/openpyxl/et_xmlfile/-/archive/1.1/et_xmlfile-1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

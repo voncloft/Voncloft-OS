@@ -1,0 +1,15 @@
+# description : Reactive Extensions for Python
+# depends : python
+
+name=python-rx
+version=3.2.0
+release=3
+
+source="git+https://github.com/ReactiveX/RxPY.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : pytest support for PyQt and PySide applications
+# depends : python-pytest
+
+name=python-pytest-qt
+version=4.0.2
+release=4
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-qt/pytest-qt-4.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

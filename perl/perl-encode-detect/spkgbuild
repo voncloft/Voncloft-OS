@@ -1,0 +1,16 @@
+# description : An Encode subclass that detects encoding of data
+# depends : perl
+
+name=perl-encode-detect
+version=1.01
+release=7
+
+source="https://www.cpan.org/authors/id/J/JG/JGMYERS/Encode-Detect-1.01.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

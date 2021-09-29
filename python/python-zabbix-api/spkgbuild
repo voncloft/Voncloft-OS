@@ -1,0 +1,15 @@
+# description : Python Zabbix API
+# depends : python
+
+name=python-zabbix-api
+version=0.5.4
+release=2
+
+source="https://files.pythonhosted.org/packages/source/z/zabbix-api/zabbix-api-0.5.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

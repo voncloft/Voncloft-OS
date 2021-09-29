@@ -1,0 +1,15 @@
+# description : Commandline flags module for Python
+# depends : python
+
+name=python-gflags
+version=3.1.2
+release=6
+
+source="python-gflags-3.1.2.tar.gz::https://github.com/google/python-gflags/archive/3.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Permits access from Perl to the gettext family of functions
+# depends : gettext perl
+
+name=perl-locale-gettext
+version=1.07
+release=10
+
+source="https://search.cpan.org/CPAN/authors/id/P/PV/PVANDRY/Locale-gettext-1.07.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

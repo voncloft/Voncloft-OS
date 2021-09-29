@@ -1,0 +1,15 @@
+# description : High-level interface to Kerberos
+# depends : python krb5
+
+name=python-pykerberos
+version=1.2.3
+release=7
+
+source="python-pykerberos-1.2.1.tar.gz::https://github.com/02strich/pykerberos/archive/v1.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

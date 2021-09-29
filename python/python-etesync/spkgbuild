@@ -1,0 +1,15 @@
+# description : Python API to interact with an EteSync server
+# depends : python-appdirs python-asn1crypto python-cffi
+
+name=python-etesync
+version=0.12.1
+release=2
+
+source="https://files.pythonhosted.org/packages/source/e/etesync/etesync-0.12.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

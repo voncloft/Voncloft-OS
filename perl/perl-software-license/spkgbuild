@@ -1,0 +1,15 @@
+# depends : perl perl-data-section perl-text-template
+
+name=perl-software-license
+version=0.104001
+release=3
+
+source="https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Software-License-0.104001.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

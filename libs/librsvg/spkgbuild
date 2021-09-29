@@ -1,0 +1,18 @@
+# description	: Library and tools used to manipulate, convert and view Scalable Vector Graphic (SVG) images
+# depends	: gdk-pixbuf cairo pango rust
+
+name=librsvg
+version=2.50.4
+release=1
+source="https://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz"
+options="!checksum"
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr    \
+	            --enable-vala    \
+	            --disable-static \
+			--docdir=/usr/share/doc/librsvg-$version
+	make
+	make DESTDIR=$PKG install
+}

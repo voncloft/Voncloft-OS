@@ -1,0 +1,15 @@
+# description : A tool for converting between pip-style and pipfile requirements
+# depends : python-appdirs python-attrs python-cached-property python-distlib
+
+name=python-requirementslib
+version=1.5.16
+release=1
+
+source="python-requirementslib-1.5.16.tar.gz::https://github.com/sarugaku/requirementslib/archive/1.5.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

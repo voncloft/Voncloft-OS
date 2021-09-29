@@ -1,0 +1,15 @@
+# description : Standalone version of django.utils.feedgenerator python3.
+# depends : python python-pytz python-six
+
+name=python-feedgenerator
+version=1.9.2
+release=3
+
+source="https://pypi.python.org/packages/source/f/feedgenerator/feedgenerator-1.9.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

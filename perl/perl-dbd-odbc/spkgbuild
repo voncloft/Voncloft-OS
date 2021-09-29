@@ -1,0 +1,16 @@
+# description : ODBC Driver for DBI
+# depends : perl-dbi perl unixodbc
+
+name=perl-dbd-odbc
+version=1.61
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MJ/MJEVANS/DBD-ODBC-1.61.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

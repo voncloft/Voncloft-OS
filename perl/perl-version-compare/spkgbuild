@@ -1,0 +1,16 @@
+# description : Compare version strings
+# depends : perl
+
+name=perl-version-compare
+version=0.14
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/T/TE/TEX/Version-Compare-0.14.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

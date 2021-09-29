@@ -1,0 +1,16 @@
+# description : Net::IMAP::Simple - a simple IMAP access library
+# depends : perl
+
+name=perl-net-imap-simple
+version=1.2212
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/J/JE/JETTERO/Net-IMAP-Simple-1.2207.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

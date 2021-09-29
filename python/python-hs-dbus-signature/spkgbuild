@@ -1,0 +1,15 @@
+# description : dbus signature hypothesis strategy generator
+# depends : python-hypothesis 
+
+name=python-hs-dbus-signature
+version=0.7
+release=1
+
+source="https://github.com/stratis-storage/hs-dbus-signature/archive/v0.07.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

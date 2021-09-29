@@ -1,0 +1,15 @@
+# description : Python wrapper around Lua and LuaJIT
+# depends : lua53 python
+
+name=python-lupa
+version=1.10
+release=4
+
+source="https://files.pythonhosted.org/packages/source/l/lupa/lupa-1.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

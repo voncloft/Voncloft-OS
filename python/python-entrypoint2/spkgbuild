@@ -1,0 +1,15 @@
+# description : Easy to use command-line interface for python modules
+# depends : python-argparse python-decorator
+
+name=python-entrypoint2
+version=0.2.4
+release=3
+
+source="https://files.pythonhosted.org/packages/source///-0.2.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Base types for calmjs framework
+# depends : python
+
+name=python-calmjs.types
+version=1.0.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/c/calmjs.types/calmjs.types-1.0.1.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

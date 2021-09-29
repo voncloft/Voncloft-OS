@@ -1,0 +1,14 @@
+# description : Sphinx extension which outputs serialized HTML files json and pickle
+
+name=python-sphinxcontrib-serializinghtml
+version=1.1.5
+release=3
+
+source="https://files.pythonhosted.org/packages/source/s/sphinxcontrib-serializinghtml/sphinxcontrib-serializinghtml-1.1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

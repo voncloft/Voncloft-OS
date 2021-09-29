@@ -1,0 +1,16 @@
+# description : Play with other peoples lexical variables
+# depends : perl
+
+name=perl-padwalker
+version=2.5
+release=1
+
+source="https://cpan.metacpan.org/authors/id/R/RO/ROBIN/-2.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

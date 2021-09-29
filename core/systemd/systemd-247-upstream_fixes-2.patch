@@ -1,0 +1,225 @@
+Submitted By:            Douglas R. Reno <renodr at linuxfromscratch dot org>
+Date:                    2020-12-02
+Updated Date:            2021-03-04
+Initial Package Version: 247
+Origin:                  Upstream + PR #17809
+Origin (Updated):        https://github.com/systemd/systemd/commit/e133c454b1beda0d80020a35f9f92226e8167bc1
+Upstream Status:         Applied (and undergoing review)
+Upstream Status (Updated): Applied
+Description:             Fixes a few regressions discovered in systemd-247.
+                         The first regression causes segmentation faults when
+                         shutting down or rebooting. This appears to crash
+                         PID1, which will result in a kernel panic.
+                         The next regression causes systems on networks that
+                         have an IPv4 prefix length of 32 or higher to not be
+                         able to get a route assigned when working over DHCP.
+                         Note: This primarily impacts users of Comcast as an ISP.
+                         UPDATED: Applies a patch to fix a problem when running
+                         under Linux-5.11. This only affects systems with 5.11
+                         headers installed, but will prevent systemd-rfkill
+                         from starting because the size of the data structure
+                         rfkill_event has changed.
+
+diff -Naurp systemd-247.orig/src/core/scope.c systemd-247/src/core/scope.c
+--- systemd-247.orig/src/core/scope.c	2020-11-26 12:00:50.000000000 -0600
++++ systemd-247/src/core/scope.c	2021-03-04 11:32:20.759425419 -0600
+@@ -377,10 +377,6 @@ static int scope_start(Unit *u) {
+                 return r;
+         }
+ 
+-        /* Now u->pids have been moved into the scope cgroup, it's not needed
+-         * anymore. */
+-        u->pids = set_free(u->pids);
+-
+         s->result = SCOPE_SUCCESS;
+ 
+         scope_set_state(s, SCOPE_RUNNING);
+@@ -388,7 +384,13 @@ static int scope_start(Unit *u) {
+         /* Set the maximum runtime timeout. */
+         scope_arm_timer(s, usec_add(UNIT(s)->active_enter_timestamp.monotonic, s->runtime_max_usec));
+ 
+-        /* Start watching the PIDs currently in the scope */
++        /* On unified we use proper notifications, hence we can unwatch the PIDs
++         * we just attached to the scope. This can also be done on legacy as
++         * we're going to update the list of the processes we watch with the
++         * PIDs currently in the scope anyway. */
++        unit_unwatch_all_pids(u);
++
++        /* Start watching the PIDs currently in the scope (legacy hierarchy only) */
+         (void) unit_enqueue_rewatch_pids(u);
+         return 1;
+ }
+diff -Naurp systemd-247.orig/src/libsystemd/sd-event/sd-event.c systemd-247/src/libsystemd/sd-event/sd-event.c
+--- systemd-247.orig/src/libsystemd/sd-event/sd-event.c	2020-11-26 12:00:50.000000000 -0600
++++ systemd-247/src/libsystemd/sd-event/sd-event.c	2021-03-04 11:32:20.759425419 -0600
+@@ -3725,7 +3725,7 @@ _public_ int sd_event_run(sd_event *e, u
+                 this_run = now(CLOCK_MONOTONIC);
+ 
+                 l = u64log2(this_run - e->last_run);
+-                assert(l < sizeof(e->delays));
++                assert(l < ELEMENTSOF(e->delays));
+                 e->delays[l]++;
+ 
+                 if (this_run - e->last_log >= 5*USEC_PER_SEC) {
+diff -Naurp systemd-247.orig/src/network/networkd-address.c systemd-247/src/network/networkd-address.c
+--- systemd-247.orig/src/network/networkd-address.c	2020-11-26 12:00:50.000000000 -0600
++++ systemd-247/src/network/networkd-address.c	2021-03-04 11:32:20.760425409 -0600
+@@ -1863,10 +1863,12 @@ static int address_section_verify(Addres
+                                          address->section->filename, address->section->line);
+         }
+ 
+-        if (address->family == AF_INET && in_addr_is_null(address->family, &address->in_addr_peer) &&
+-            address->broadcast.s_addr == 0 && address->prefixlen <= 30)
+-                address->broadcast.s_addr = address->in_addr.in.s_addr | htobe32(0xfffffffflu >> address->prefixlen);
+-        else if (address->broadcast.s_addr != 0) {
++        if (address->family == AF_INET &&
++              in_addr_is_null(address->family, &address->in_addr_peer) &&
++              address->prefixlen <= 30) {
++           if (address->broadcast.s_addr == 0)
++              address->broadcast.s_addr = address->in_addr.in.s_addr | htobe32(0xfffffffflu >> address->prefixlen);
++        } else if (address->broadcast.s_addr != 0) {
+                 log_warning("%s: broadcast address is set for IPv6 address or IPv4 address with prefixlength larger than 30. "
+                             "Ignoring Broadcast= setting in the [Address] section from line %u.",
+                             address->section->filename, address->section->line);
+diff -Naurp systemd-247.orig/src/network/networkd-dhcp4.c systemd-247/src/network/networkd-dhcp4.c
+--- systemd-247.orig/src/network/networkd-dhcp4.c	2020-11-26 12:00:50.000000000 -0600
++++ systemd-247/src/network/networkd-dhcp4.c	2021-03-04 11:32:20.760425409 -0600
+@@ -861,7 +861,8 @@ static int dhcp4_update_address(Link *li
+         addr->cinfo.ifa_prefered = lifetime;
+         addr->cinfo.ifa_valid = lifetime;
+         addr->prefixlen = prefixlen;
+-        addr->broadcast.s_addr = address.s_addr | ~netmask.s_addr;
++        if (prefixlen <= 30)
++           addr->broadcast.s_addr = address.s_addr | ~netmask.s_addr;
+         SET_FLAG(addr->flags, IFA_F_NOPREFIXROUTE, !link_prefixroute(link));
+ 
+         /* allow reusing an existing address and simply update its lifetime
+diff -Naurp systemd-247.orig/src/network/test-networkd-conf.c systemd-247/src/network/test-networkd-conf.c
+--- systemd-247.orig/src/network/test-networkd-conf.c	2020-11-26 12:00:50.000000000 -0600
++++ systemd-247/src/network/test-networkd-conf.c	2021-03-04 11:32:20.760425409 -0600
+@@ -224,7 +224,7 @@ static void test_config_parse_match_ifna
+         assert_se(config_parse_match_ifnames("network", "filename", 1, "section", 1, "Name", 0, "!baz", &names, NULL) == 0);
+         assert_se(config_parse_match_ifnames("network", "filename", 1, "section", 1, "Name", 0, "aaa bbb ccc", &names, NULL) == 0);
+ 
+-        strv_equal(names, STRV_MAKE("!hoge", "!hogehoge", "!foo", "!baz", "aaa", "bbb", "ccc"));
++        assert_se(strv_equal(names, STRV_MAKE("!hoge", "!hogehoge", "!foo", "!baz", "aaa", "bbb", "ccc")));
+ }
+ 
+ static void test_config_parse_match_strv(void) {
+diff -Naurp systemd-247.orig/src/rfkill/rfkill.c systemd-247/src/rfkill/rfkill.c
+--- systemd-247.orig/src/rfkill/rfkill.c	2020-11-26 12:00:50.000000000 -0600
++++ systemd-247/src/rfkill/rfkill.c	2021-03-04 11:42:27.638910709 -0600
+@@ -135,8 +135,6 @@ static int determine_state_file(
+ 
+ static int load_state(Context *c, const struct rfkill_event *event) {
+         _cleanup_free_ char *state_file = NULL, *value = NULL;
+-        struct rfkill_event we;
+-        ssize_t l;
+         int b, r;
+ 
+         assert(c);
+@@ -168,18 +166,23 @@ static int load_state(Context *c, const
+         if (b < 0)
+                 return log_error_errno(b, "Failed to parse state file %s: %m", state_file);
+ 
+-        we = (struct rfkill_event) {
+-                .op = RFKILL_OP_CHANGE,
++        struct rfkill_event we = {
+                 .idx = event->idx,
++                .op = RFKILL_OP_CHANGE,
+                 .soft = b,
+         };
+ 
+-        l = write(c->rfkill_fd, &we, sizeof(we));
++        assert_cc(offsetof(struct rfkill_event, op) < RFKILL_EVENT_SIZE_V1);
++        assert_cc(offsetof(struct rfkill_event, soft) < RFKILL_EVENT_SIZE_V1);
++
++        ssize_t l = write(c->rfkill_fd, &we, sizeof(we));
+         if (l < 0)
+                 return log_error_errno(errno, "Failed to restore rfkill state for %i: %m", event->idx);
+-        if (l != sizeof(we))
++        if (l < RFKILL_EVENT_SIZE_V1)
+                 return log_error_errno(SYNTHETIC_ERRNO(EIO),
+-                                       "Couldn't write rfkill event structure, too short.");
++                                       "Couldn't write rfkill event structure, too short (wrote %zd of %zu bytes).",
++                                       l, sizeof we);
++        log_debug("Writing struct rfkill_event successful (%zd of %zu bytes).", l, sizeof we);
+ 
+         log_debug("Loaded state '%s' from %s.", one_zero(b), state_file);
+         return 0;
+@@ -305,44 +308,45 @@ static int run(int argc, char *argv[]) {
+         }
+ 
+         for (;;) {
+-                struct rfkill_event event;
+-                const char *type;
+-                ssize_t l;
++                struct rfkill_event event = {};
+ 
+-                l = read(c.rfkill_fd, &event, sizeof(event));
++                ssize_t l = read(c.rfkill_fd, &event, sizeof event);
+                 if (l < 0) {
+-                        if (errno == EAGAIN) {
++                        if (errno != EAGAIN)
++                           return log_error_errno(errno, "Failed to read from /dev/rfkill: %m");
+ 
+-                                if (!ready) {
+-                                        /* Notify manager that we are
+-                                         * now finished with
+-                                         * processing whatever was
+-                                         * queued */
+-                                        (void) sd_notify(false, "READY=1");
+-                                        ready = true;
+-                                }
+-
+-                                /* Hang around for a bit, maybe there's more coming */
+-
+-                                r = fd_wait_for_event(c.rfkill_fd, POLLIN, EXIT_USEC);
+-                                if (r == -EINTR)
+-                                        continue;
+-                                if (r < 0)
+-                                        return log_error_errno(r, "Failed to poll() on device: %m");
+-                                if (r > 0)
+-                                        continue;
+-
+-                                log_debug("All events read and idle, exiting.");
+-                                break;
++                        if (!ready) {
++                           /* Notify manager that we are now finished with processing whatever was
++                            * queued.*/
++                           (void) sd_notify(false, "READY=1");
++                           ready = true;
+                         }
+ 
+-                        log_error_errno(errno, "Failed to read from /dev/rfkill: %m");
++                        /* hang around for a bit, maybe there is more coming. */
++
++                        r = fd_wait_for_event(c.rfkill_fd, POLLIN, EXIT_USEC);
++                        if (r == -EINTR)
++                           continue;
++                        if (r < 0)
++                           return log_error_errno(r, "Failed to poll() on device: %m");
++                        if (r > 0)
++                           continue;
++
++                        log_debug("All events read and idle, exiting.");
++                        break;
+                 }
+ 
+-                if (l != RFKILL_EVENT_SIZE_V1)
+-                        return log_error_errno(SYNTHETIC_ERRNO(EIO), "Read event structure of invalid size.");
++                if (l < RFKILL_EVENT_SIZE_V1)
++                        return log_error_errno(SYNTHETIC_ERRNO(EIO), "Short read of struct rfkill_event: (%zd < %d)",
++                                               l, RFKILL_EVENT_SIZE_V1);
++                log_debug("Reading struct rfkill_event: got %zd bytes.", l);
++
++                /* The event structure has more fields. We only care about the first few, so it's OK if we
++                 * don't read the full structure. */
++                assert_cc(offsetof(struct rfkill_event, op) < RFKILL_EVENT_SIZE_V1);
++                assert_cc(offsetof(struct rfkill_event, type) < RFKILL_EVENT_SIZE_V1);
+ 
+-                type = rfkill_type_to_string(event.type);
++                const char *type = rfkill_type_to_string(event.type);
+                 if (!type) {
+                         log_debug("An rfkill device of unknown type %i discovered, ignoring.", event.type);
+                         continue;

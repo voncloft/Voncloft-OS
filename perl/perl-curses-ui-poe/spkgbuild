@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Curses::UI::POE : A subclass that forces CursesUI to use POE
+# depends : perl-curses-ui perl-poe
+
+name=perl-curses-ui-poe
+version=0.04
+release=5
+
+source="https://www.cpan.org/authors/id/T/TA/TAG/Curses-UI-POE-0.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

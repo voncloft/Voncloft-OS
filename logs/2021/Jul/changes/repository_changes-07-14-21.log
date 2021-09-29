@@ -1,0 +1,25 @@
+00
+sed -i -e 's/0.030/0.031/g' /Voncloft-OS/*/perl-test-warnings/spkgbuild
+sed -i -e 's/6.1.1/6.2.0/g' /Voncloft-OS/*/python-diff-cover/spkgbuild
+Packages upgraded: 2
+
+04
+sed -i -e 's/0.16/0.17/g' /Voncloft-OS/*/python-graphviz/spkgbuild
+Packages upgraded: 1
+
+07
+Packages upgraded: 0
+
+15
+sed -i -e 's/5.0.4/5.0.5/g' /Voncloft-OS/*/cinnamon/spkgbuild
+sed -i -e 's/77.0.4054.203/77.0.4054.254/g' /Voncloft-OS/*/opera/spkgbuild
+sed -i -e 's/11.13.2/11.13.3/g' /Voncloft-OS/*/python-dropbox/spkgbuild
+sed -i -e 's/1.6.6/1.6.7/g' /Voncloft-OS/*/python-gdspy/spkgbuild
+sed -i -e 's/0.18.3/0.18.4/g' /Voncloft-OS/*/python-matrix-nio/spkgbuild
+sed -i -e 's/3.9.2/3.10.0/g' /Voncloft-OS/*/python-openmdao/spkgbuild
+sed -i -e 's/4.1.0/4.1.1/g' /Voncloft-OS/*/python-sphinx/spkgbuild
+sed -i -e 's/2.4.0/2.5.0/g' /Voncloft-OS/*/python-testtools/spkgbuild
+sed -i -e 's/20.5.0/20.6.0/g' /Voncloft-OS/*/python-virtualenv/spkgbuild
+Packages upgraded: 9
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

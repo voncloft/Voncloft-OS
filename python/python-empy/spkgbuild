@@ -1,0 +1,15 @@
+# description : Powerful and robust templating system for Python
+# depends : python
+
+name=python-empy
+version=3.3.4
+release=5
+
+source="http://www.alcyone.com/software/empy/empy-3.3.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Validate configuration and produce human readable error messages
+# depends : python
+
+name=python-cfgv
+version=3.3.1
+release=3
+
+source="cfgv-3.3.1.tar.gz::https://github.com/asottile/cfgv/archive/v3.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

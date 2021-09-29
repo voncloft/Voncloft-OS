@@ -1,0 +1,15 @@
+# description : Helpers for better testing
+# depends : python-mock
+
+name=python-exam
+version=0.10.6
+release=8
+
+source="git+https://github.com/Fluxx/exam.git#tag=0.10.6"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Utilize 12factor inspired environment variables to configure your Django application
+# depends : python
+
+name=python-django-environ
+version=0.7.0
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/django-environ/django-environ-0.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

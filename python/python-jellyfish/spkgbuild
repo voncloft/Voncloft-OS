@@ -1,0 +1,15 @@
+# description : A python library for doing approximate and phonetic matching of strings
+# depends : python
+
+name=python-jellyfish
+version=0.8.8
+release=3
+
+source=""
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

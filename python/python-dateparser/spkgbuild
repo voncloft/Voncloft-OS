@@ -1,0 +1,15 @@
+# description : Python parser for human readable dates
+# depends : python
+
+name=python-dateparser
+version=1.0.0
+release=2
+
+source="git+https://github.com/scrapinghub/dateparser.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

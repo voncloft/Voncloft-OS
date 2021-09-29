@@ -1,0 +1,15 @@
+# description : A faster implementation of PBKDF2
+# depends : python-cffi python-six
+
+name=python-fastpbkdf2
+version=0.2
+release=6
+
+source="git+https://github.com/Ayrx/python-fastpbkdf2.git#tag=v0.2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

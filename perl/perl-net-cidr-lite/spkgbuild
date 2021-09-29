@@ -1,0 +1,16 @@
+# description : Perl extension for merging IPv4 or IPv6 CIDR addresses
+# depends : perl
+
+name=perl-net-cidr-lite
+version=0.22
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/S/ST/STIGTSP/Net-CIDR-Lite-0.22.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

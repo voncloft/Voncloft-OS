@@ -1,0 +1,15 @@
+# description : Geocoding library for Python
+# depends : python-geographiclib
+
+name=python-geopy
+version=2.2.0
+release=1
+
+source="https://github.com/geopy/geopy/archive/2.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

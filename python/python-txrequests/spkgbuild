@@ -1,0 +1,15 @@
+# description : Asynchronous Python HTTP Requests for Humans using twisted
+# depends : python-requests python-twisted
+
+name=python-txrequests
+version=0.9.6
+release=6
+
+source="https://files.pythonhosted.org/packages/source/t/txrequests/txrequests-0.9.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,17 @@
+# description : API for OFX banking standard
+# depends : curl libxml opensp
+
+name=libofx
+version=0.9.15
+release=1
+
+source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+   	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+   	make CXXFLAGS+=-std=c++11
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Resolve abstract dependencies into concrete ones
+  # depends : python
+
+name=python-resolvelib
+version=0.7.1
+release=1
+
+source="python-resolvelib-0.5.5.tar.gz::https://github.com/sarugaku/resolvelib/archive/0.5.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

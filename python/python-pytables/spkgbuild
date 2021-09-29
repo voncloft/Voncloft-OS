@@ -1,0 +1,15 @@
+# description : A package for managing hierarchical datasets and designed to efficiently and easily cope with extremely large amounts of data
+# depends : blosc lzo hdf5 python-numexpr
+
+name=python-pytables
+version=3.6.1
+release=7
+
+source="https://github.com/PyTables/PyTables/archive/v3.6.1/python-pytables-3.6.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

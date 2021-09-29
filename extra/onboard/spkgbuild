@@ -1,0 +1,15 @@
+# description : Virtual Keyboard
+# depends : gtk3 hunspell iso-codes libcanberra libxkbfile python-cairo python-dbus python-gobject3 python-distutils-extra
+
+name=onboard
+version=1.4.1
+release=6
+
+source="https://launchpad.net/$name/${version%.*}/$version/+download/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	python3 setup.py build
+	python3 setup.py install --root=$PKG --optimize=1
+}

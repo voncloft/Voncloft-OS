@@ -1,0 +1,16 @@
+# description : module for manipulations of cpio archives
+# depends : perl
+
+name=perl-archive-cpio
+version=0.10
+release=5
+
+source="perl-archive-cpio-0.10.tar.gz::https://cpan.metacpan.org/authors/id/P/PI/PIXEL/Archive-Cpio-0.10.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

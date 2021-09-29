@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module Mail::Transport::Dbx : Parse Outlook Express mailboxes
+
+name=perl-mail-transport-dbx
+version=0.07
+release=19
+
+source="https://www.cpan.org/authors/id/V/VP/VPARSEVAL/Mail-Transport-Dbx-0.07.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

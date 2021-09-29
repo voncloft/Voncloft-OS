@@ -1,0 +1,15 @@
+# description : A lint-like tool for Python to identify common errors quickly without executing code
+  # depends : python-setuptools
+
+name=python-pyflakes
+version=2.3.1
+release=3
+
+source="https://pypi.io/packages/source/p/pyflakes/pyflakes-2.3.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

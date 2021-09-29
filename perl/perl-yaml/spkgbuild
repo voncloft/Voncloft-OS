@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module YAML : YAML Aint Markup Language
+# depends : perl
+
+name=perl-yaml
+version=1.30
+release=2
+
+source="https://www.cpan.org/authors/id/T/TI/TINITA/YAML-1.30.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

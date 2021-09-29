@@ -1,0 +1,15 @@
+# description : A library to help construct a graphql-py server supporting react-relay
+# depends : 
+
+name=python-graphql-relay
+version=3.1.0
+release=3
+
+source="git+https://github.com/graphql-python/graphql-relay-py.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

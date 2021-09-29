@@ -1,0 +1,25 @@
+# description : D-Bus interface for user account query and manipulation
+# depends : glib libxcrypt polkit shadow git gobject-introspection meson systemd
+
+name=accountsservice
+version=0.6.55
+release=3
+
+source="git+https://gitlab.freedesktop.org/accountsservice/accountsservice.git#commit="
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i '/dbus_conf_dir/s/sysconfdir/datadir/g' meson.build
+	mkdir build
+	cd build
+	meson .. \
+		-D admin_group=wheel \
+		-D systemd=false \
+		-D docbook=false \
+		-D gtk_dock=false \
+		-D user_heuristics=false\
+		-D systemd=false
+	ninja
+        DESTDIR=$PKG ninja install
+}

@@ -1,0 +1,16 @@
+# description : Provides simple control over terminal driver modes
+# depends : perl glibc
+
+name=perl-term-readkey
+version=2.38
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

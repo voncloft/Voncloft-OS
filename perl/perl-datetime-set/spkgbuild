@@ -1,0 +1,16 @@
+# description : Datetime sets and set math
+# depends : perl perl-set-infinite perl-datetime
+
+name=perl-datetime-set
+version=0.3900
+release=4
+
+source="https://www.cpan.org/authors/id/F/FG/FGLOCK/DateTime-Set-0.3900.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

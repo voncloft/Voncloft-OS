@@ -1,0 +1,15 @@
+# description : A test runner runner similar to testrepository
+# depends : python-future python-cliff python-pbr python-subunit python-fixtures
+
+name=python-stestr
+version=3.2.1
+release=1
+
+source="https://pypi.io/packages/source/s/stestr/stestr-3.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

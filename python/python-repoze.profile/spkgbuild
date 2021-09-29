@@ -1,0 +1,15 @@
+# description : Aggregate profiling for WSGI requests
+# depends : python
+
+name=python-repoze.profile
+version=2.3
+release=4
+
+source="https://pypi.io/packages/source/r/repoze.profile/repoze.profile-2.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

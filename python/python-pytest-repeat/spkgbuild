@@ -1,0 +1,15 @@
+# description : pytest plugin for repeating test execution
+# depends : python-pytest
+
+name=python-pytest-repeat
+version=0.9.1
+release=3
+
+source="python-pytest-repeat-0.9.1.tar.gz::https://github.com/pytest-dev/pytest-repeat/archive/v0.9.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

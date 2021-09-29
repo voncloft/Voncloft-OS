@@ -1,0 +1,15 @@
+# description : Language detection library ported from Googles language-detection
+# depends : python-six
+
+name=python-langdetect
+version=1.0.9
+release=3
+
+source="https://files.pythonhosted.org/packages/source/l/langdetect/langdetect-1.0.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

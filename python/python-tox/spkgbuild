@@ -1,0 +1,15 @@
+# description : Python virtualenv management and testing tool
+  # depends : python-py python-virtualenv python-packaging python-pluggy python-toml
+
+name=python-tox
+version=4.0.0
+release=1
+
+source="https://pypi.io/packages/source/t/tox/tox-3.24.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

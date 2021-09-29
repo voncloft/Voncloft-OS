@@ -1,0 +1,16 @@
+# description : Perl Archive Toolkit
+# depends : perl-archive-zip perl-par-dist
+
+name=perl-par
+version=1.017
+release=1
+
+source="https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/PAR-1.017.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

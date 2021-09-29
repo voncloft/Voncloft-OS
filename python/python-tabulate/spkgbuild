@@ -1,0 +1,15 @@
+# description : Pretty-print tabular data in Python, a library and a command-line utility.
+# depends : python-setuptools
+
+name=python-tabulate
+version=0.8.9
+release=3
+
+source="https://files.pythonhosted.org/packages/source/t/tabulate/tabulate-0.8.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

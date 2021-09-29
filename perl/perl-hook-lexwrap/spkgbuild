@@ -1,0 +1,16 @@
+# description : Lexically-scoped resource management
+# depends : perl
+
+name=perl-hook-lexwrap
+version=0.26
+release=3
+
+source="https://cpan.metacpan.org/authors/id/E/ET/ETHER/Hook-LexWrap-0.26.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

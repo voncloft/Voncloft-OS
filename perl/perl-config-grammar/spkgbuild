@@ -1,0 +1,16 @@
+# description : A grammar-based, user-friendly config parser
+# depends : perl
+
+name=perl-config-grammar
+version=1.13
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DS/DSCHWEI/Config-Grammar-1.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

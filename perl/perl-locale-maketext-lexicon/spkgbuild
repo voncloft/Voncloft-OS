@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Locale::Maketext::Lexicon : Use other catalog formats in Maketext
+# depends : perl
+
+name=perl-locale-maketext-lexicon
+version=1.00
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DRTECH/Locale-Maketext-Lexicon-1.00.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Does your code require newer perl than you think?
+# depends : perl-file-find-rule perl-file-find-rule-perl perl-perl-minimumversion
+
+name=perl-test-minimumversion
+version=0.101082
+release=3
+
+source="https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-MinimumVersion-0.101082.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

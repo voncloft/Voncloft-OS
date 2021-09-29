@@ -1,0 +1,15 @@
+# description : A py.test plugin providing fixtures and markers to simplify testing of asynchronous tornado applications.
+# depends : python-pytest python-tornado
+
+name=python-pytest-tornado
+version=0.8.1
+release=2
+
+source="https://github.com/eugeniy/pytest-tornado/archive/v0.8.1/python-pytest-tornado-0.8.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

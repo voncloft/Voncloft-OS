@@ -1,0 +1,15 @@
+# description : PRECIS framework RFC 8264, RFC 8265, RFC 8266
+# depends : python
+
+name=python-precis_i18n
+version=1.0.3
+release=3
+
+source="https://github.com/byllyfish/precis_i18n/archive/v1.0.3/python-precis_i18n-1.0.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

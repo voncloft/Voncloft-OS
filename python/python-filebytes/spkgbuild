@@ -1,0 +1,15 @@
+# description : Library to read and edit executable binary files
+# depends : python
+
+name=python-filebytes
+version=0.10.2
+release=3
+
+source="https://github.com/sashs/filebytes/archive/v0.10.2/python-filebytes-0.10.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

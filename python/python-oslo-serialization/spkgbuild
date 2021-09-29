@@ -1,0 +1,15 @@
+# description : Oslo Serialization library
+# depends : python-six python-pbr python-babel python-msgpack python-oslo-utils
+
+name=python-oslo-serialization
+version=4.2.0
+release=3
+
+source="https://github.com/openstack/oslo.serialization/archive/4.2.0/python-oslo-serialization-4.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

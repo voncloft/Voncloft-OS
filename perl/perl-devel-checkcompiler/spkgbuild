@@ -1,0 +1,16 @@
+# description : Check the compilers availability
+# depends : perl
+
+name=perl-devel-checkcompiler
+version=0.07
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/S/SY/SYOHEX/Devel-CheckCompiler-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

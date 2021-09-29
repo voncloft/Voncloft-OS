@@ -1,0 +1,22 @@
+# description : rainbow text
+# depends : ruby ruby-optimist ruby-paint ruby-manpages
+
+_gemname=lolcat
+name=ruby-lolcat
+version=100.0.1
+release=3
+
+source="https://rubygems.org/downloads/lolcat-$version.gem"
+options="!checksum"
+
+build() {
+        _gemdir="$(gem env gemdir)"
+
+        gem install \
+                --ignore-dependencies \
+                --no-user-install \
+                --no-document \
+                -i "$PKG/$_gemdir" \
+                -n "$PKG"/usr/bin \
+                $_gemname-$version.gem
+}

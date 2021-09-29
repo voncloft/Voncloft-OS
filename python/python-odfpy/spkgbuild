@@ -1,0 +1,15 @@
+# description : Python API and tools to manipulate OpenDocument files
+# depends : python-defusedxml
+
+name=python-odfpy
+version=1.4.1
+release=3
+
+source="https://github.com/eea/odfpy/archive/release-1.4.1/python-odfpy-1.4.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

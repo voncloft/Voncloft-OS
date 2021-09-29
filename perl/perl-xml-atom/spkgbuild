@@ -1,0 +1,16 @@
+# description : Atom feed and API implementation 
+# depends : perl-class-data-inheritable perl-uri perl-xml-libxml
+
+name=perl-xml-atom
+version=0.43
+release=2
+
+source="https://www.cpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.43.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

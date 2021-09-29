@@ -1,0 +1,15 @@
+# description : PyTest Helpers Namespace
+# depends : python-pytest
+
+name=python-pytest-helpers-namespace
+version=2021.4.29
+release=3
+
+source="git+https://github.com/saltstack/pytest-helpers-namespace#tag=v2021.4.29?signed"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

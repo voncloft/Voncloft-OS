@@ -1,0 +1,16 @@
+# description : Manual text wrapping and reformatting 
+# depends : perl
+
+name=perl-text-reform
+version=1.20
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/C/CH/CHORNY/Text-Reform-1.20.tar.gz"
+options="!checksum" 
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

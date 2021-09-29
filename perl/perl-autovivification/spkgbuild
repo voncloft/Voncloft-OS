@@ -1,0 +1,16 @@
+# description : Lexically disable autovivification.
+# depends : perl
+
+name=perl-autovivification
+version=0.18
+release=6
+
+source="https://www.cpan.org/authors/id/V/VP/VPIT/autovivification-0.18.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Retrieve names of code references
+# depends : perl
+
+name=perl-sub-identify
+version=0.14
+release=8
+
+source="https://search.mcpan.org/CPAN/authors/id/R/RG/RGARCIA/Sub-Identify-0.14.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

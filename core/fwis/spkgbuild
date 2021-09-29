@@ -1,0 +1,14 @@
+# description : a simple program to find out which files have a missing word.
+# depends : 
+
+name=fwis
+version=1
+release=1
+
+source="fwis"
+options="!checksum"
+
+build() {
+	mkdir -pv $PKG/usr/bin/
+	install -D -m755 $SRC/fwis $PKG/usr/bin/
+}

@@ -1,0 +1,15 @@
+# description : Applications module of the Keras deep learning library
+# depends : python python-numpy
+
+name=python-keras-applications
+version=1.0.8
+release=6
+
+source="https://files.pythonhosted.org/packages/source/K/Keras_Applications/Keras_Applications-1.0.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

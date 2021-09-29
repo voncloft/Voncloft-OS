@@ -1,0 +1,15 @@
+# description : Nose plugin to facilitate randomized unit testing
+# depends : python-nose
+
+name=python-nose-random
+version=1.0.0
+release=7
+
+source="https://github.com/xlwings/nose-random/archive/1.0.0/python-nose-random-1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

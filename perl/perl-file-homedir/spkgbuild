@@ -1,0 +1,16 @@
+# description : Find your home and other directories on any platform
+# depends : perl-file-which
+
+name=perl-file-homedir
+version=1.006
+release=1
+
+source="https://cpan.metacpan.org/authors/id/R/RE/REHSACK/File-HomeDir-1.006.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Minimalistic evaluator of python expression using ast module
+# depends : python
+
+name=python-asteval
+version=0.9.25
+release=1
+
+source="https://github.com/newville/asteval/archive/0.9.25/python-asteval-0.9.25.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

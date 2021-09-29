@@ -1,0 +1,16 @@
+# description : Perl extension for the SANE Scanner Access Now Easy Project
+# depends : perl sane perl-extutils-depends perl-extutils-pkgconfig perl-readonly perl-test-requires perl-exception-class perl-try-tiny
+
+name=perl-image-sane
+version=5
+release=2
+
+source="https://www.cpan.org/modules/by-module//--5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

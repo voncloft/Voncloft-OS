@@ -1,0 +1,19 @@
+# description : panel for gnome flashback
+# depends : evolution-data-server gnome-desktop gnome-menus gdbm libwnck3 nautilus polkit alacarte gnome-applets autoconf-archive git intltool itstool python yelp-tools
+
+name=gnome-panel
+version=3.40.0
+release=1
+
+source="https://download.gnome.org/sources/gnome-panel/3.40/gnome-panel-3.40.0.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	NOCONFIGURE=1 ./autogen.sh
+	  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --libexecdir=/usr/lib/$name \
+              --disable-schemas-compile --enable-compile-warnings=minimum --enable-gtk-doc
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+}

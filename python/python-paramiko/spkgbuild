@@ -1,0 +1,15 @@
+# description : Python module that implements the SSH2 protocol
+# depends : python-bcrypt python-cryptography python-pynacl
+
+name=python-paramiko
+version=2.7.2
+release=3
+
+source="https://github.com/paramiko/paramiko/archive/2.7.2/python-paramiko-2.7.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

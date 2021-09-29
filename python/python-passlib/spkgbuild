@@ -1,0 +1,15 @@
+# description : A password hashing library for Python
+# depends : python
+
+name=python-passlib
+version=1.7.4
+release=3
+
+source="https://pypi.io/packages/source/p/passlib/passlib-1.7.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

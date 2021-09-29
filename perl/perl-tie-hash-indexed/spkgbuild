@@ -1,0 +1,16 @@
+# description : Ordered hashes for Perl
+# depends : perl
+
+name=perl-tie-hash-indexed
+version=0.08
+release=19
+
+source="https://www.cpan.org/authors/id/M/MH/MHX/Tie-Hash-Indexed-0.05.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

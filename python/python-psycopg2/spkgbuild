@@ -1,0 +1,15 @@
+# description : A PostgreSQL database adapter for the Python programming language.
+  # depends : python postgresql-libs
+
+name=python-psycopg2
+version=2.9.1
+release=3
+
+source="https://files.pythonhosted.org/packages/aa/8a/7c80e7e44fb1b4277e89bd9ca509aefdd4dd1b2c547c6f293afe9f7ffd04/psycopg2-2.9.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

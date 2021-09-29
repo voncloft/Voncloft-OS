@@ -1,0 +1,15 @@
+# description : Namecheap API client in Python
+# depends : python-requests
+
+name=python-pynamecheap
+version=0.0.3
+release=6
+
+source="python-pynamecheap-0.0.3.tar.gz::https://github.com/Bemmu/PyNamecheap/archive/v0.0.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

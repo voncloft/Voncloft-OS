@@ -1,0 +1,15 @@
+# description : A python module that will check for package updates
+# depends : python-requests
+
+name=python-update-checker
+version=0.18.0
+release=3
+
+source="https://pypi.io/packages/source/u/update_checker/update_checker-0.18.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : An AST unparser for Python
+# depends : python python-six
+
+name=python-astunparse
+version=1.6.3
+release=3
+
+source="python-astunparse-1.6.3.tar.gz::https://github.com/simonpercivall/astunparse/archive/v1.6.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

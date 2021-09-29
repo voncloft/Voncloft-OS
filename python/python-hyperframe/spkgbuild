@@ -1,0 +1,15 @@
+# description : HTTP/2 framing layer for Python
+# depends : python
+
+name=python-hyperframe
+version=6.0.1
+release=1
+
+source="python-hyperframe-6.0.1.tar.gz::https://github.com/python-hyper/hyperframe/archive/v6.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

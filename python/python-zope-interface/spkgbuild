@@ -1,0 +1,16 @@
+  # description : Zope Interfaces for Python 3.x
+  # description : Zope Interfaces for Python 2.x
+  # depends : python
+
+name=python-zope-interface
+version=5.4.0
+release=3
+
+source="https://pypi.io/packages/source/z/zope.interface/zope.interface-5.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

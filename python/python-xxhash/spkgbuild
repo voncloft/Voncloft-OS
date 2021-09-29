@@ -1,0 +1,15 @@
+# description : Python binding for xxHash
+# depends : python xxhash
+
+name=python-xxhash
+version=2.0.2
+release=3
+
+source="python-xxhash-2.0.2.tar.gz::https://github.com/ifduyue/python-xxhash/archive/v2.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

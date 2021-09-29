@@ -1,0 +1,17 @@
+# description : library commmunication with usb and bluetooth hid devices
+# depends : 
+
+name=hidapi
+version=0.10.1
+release=1
+
+source="https://github.com/libusb/${name}/archive/${name}-${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$name-$version
+	./bootstrap
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

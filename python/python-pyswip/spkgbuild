@@ -1,0 +1,15 @@
+# description : Python wrapper for SWI-Prolog
+# depends : python swi-prolog
+
+name=python-pyswip
+version=0.2.10
+release=1
+
+source="git+https://github.com/yuce/pyswip#commit=9e9ca3e0059d156397fb020c2bdaef70f59529a6"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

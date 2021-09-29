@@ -1,0 +1,22 @@
+# description : common code needed for other rspec gems
+# depends : ruby
+
+_gemname=rspec-support
+name=ruby-rspec-support
+version=3.10.2
+release=4
+
+source="https://rubygems.org/downloads/${_gemname}-${version}.gem"
+options="!checksum"
+
+build() {
+	_gemdir="$(gem env gemdir)"
+
+	gem install \
+		--ignore-dependencies \
+		--no-user-install \
+		--no-document \
+		-i "$PKG/$_gemdir" \
+		-n "$PKG"/usr/bin \
+		$_gemname-$version.gem
+}

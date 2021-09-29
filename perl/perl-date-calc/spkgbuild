@@ -1,0 +1,16 @@
+# description : Perl module for Gregorian calendar date calculations
+# depends : perl-bit-vector perl
+
+name=perl-date-calc
+version=6.4
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/S/ST/STBEY/Date-Calc-6.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

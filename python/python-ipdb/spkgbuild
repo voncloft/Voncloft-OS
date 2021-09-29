@@ -1,0 +1,15 @@
+# description : IPython-enabled pdb
+# depends : ipython
+
+name=python-ipdb
+version=0.13.9
+release=2
+
+source="python-ipdb-0.13.9.tar.gz::https://github.com/gotcha/ipdb/archive/0.13.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

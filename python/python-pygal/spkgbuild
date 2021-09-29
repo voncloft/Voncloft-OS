@@ -1,0 +1,15 @@
+# description : A Python SVG graph plotting library
+# depends : python-setuptools
+
+name=python-pygal
+version=3.0.0
+release=8
+
+source="python-pygal-2.4.0.tar.gz::https://github.com/Kozea/pygal/archive/2.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

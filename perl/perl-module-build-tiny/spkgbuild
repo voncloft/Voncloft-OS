@@ -1,0 +1,16 @@
+# description : A tiny replacement for Module::Build
+# depends : perl perl-extutils-config perl-extutils-helpers perl-extutils-installpaths
+
+name=perl-module-build-tiny
+version=0.039
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/Module-Build-Tiny-0.039.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

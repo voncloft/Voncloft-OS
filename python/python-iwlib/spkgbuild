@@ -1,0 +1,15 @@
+# description : Python module to interface with iwlib
+# depends : python-cffi wireless_tools
+
+name=python-iwlib
+version=1.7.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/i/iwlib/iwlib-1.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

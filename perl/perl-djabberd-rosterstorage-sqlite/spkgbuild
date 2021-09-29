@@ -1,0 +1,16 @@
+# description : DJabberd sqlite roster storage module
+# depends : perl-djabberd perl-dbd-sqlite
+
+name=perl-djabberd-rosterstorage-sqlite
+version=1.00
+release=9
+
+source="https://search.cpan.org/CPAN/authors/id/B/BR/BRADFITZ/DJabberd-RosterStorage-SQLite-1.00.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

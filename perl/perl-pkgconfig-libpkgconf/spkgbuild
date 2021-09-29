@@ -1,0 +1,16 @@
+# description : Perl bindings for libpkgconf
+# depends : perl pkgconf
+
+name=perl-pkgconfig-libpkgconf
+version=0.11
+release=2
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/PkgConfig-LibPkgConf-0.11.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

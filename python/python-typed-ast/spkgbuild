@@ -1,0 +1,15 @@
+# description : a fork of Python 2 and 3 ast modules with type comment support
+# depends : python
+
+name=python-typed-ast
+version=1.4.3
+release=1
+
+source="python-typed-ast-1.4.3.tar.gz::https://github.com/python/typed_ast/archive/1.4.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

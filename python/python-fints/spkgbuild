@@ -1,0 +1,15 @@
+# description : Minimal pure-python FinTS formerly known as HBCI implementation
+# depends : python python-mt-940 python-bleach python-sepaxml python-requests
+
+name=python-fints
+version=3.0.1
+release=1
+
+source="python-fints-3.0.1.tar.gz::https://github.com/raphaelm/python-fints/archive/v3.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Template system for Python which is compatible with Handlebars.js
+# depends : python python-pymeta3
+
+name=python-pybars3
+version=0.9.7
+release=5
+
+source="python-pybars3-0.9.7.tar.gz::https://github.com/wbond/pybars3/archive/0.9.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

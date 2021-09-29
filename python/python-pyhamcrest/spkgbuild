@@ -1,0 +1,15 @@
+# description : Hamcrest framework for matcher objects
+  # depends : python-six
+
+name=python-pyhamcrest
+version=2.0.2
+release=7
+
+source="https://github.com/hamcrest/PyHamcrest/archive/V1.10.1/python-pyhamcrest-1.10.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

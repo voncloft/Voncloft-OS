@@ -1,0 +1,16 @@
+# description : Distribution of modules to handle locale codes
+# depends : perl
+
+name=perl-locale-codes
+version=3.68
+release=2
+
+source="http://search.cpan.org/CPAN/authors/id/SBECK/-3.62.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

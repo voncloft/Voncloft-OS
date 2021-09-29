@@ -1,0 +1,15 @@
+# description :  Pure Python interface to the Pluggable Authentication Modules system on Linux
+# depends : pam python
+
+name=python-pam
+version=1.8.4
+release=5
+
+source="https://files.pythonhosted.org/packages/source/p/python-pam/python-pam-1.8.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

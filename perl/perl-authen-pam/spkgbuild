@@ -1,0 +1,16 @@
+# description : Perl interface to PAM library
+# depends : perl
+
+name=perl-authen-pam
+version=0.16
+release=8
+
+source="https://www.cpan.org/authors/id/N/NI/NIKIP/Authen-PAM-0.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

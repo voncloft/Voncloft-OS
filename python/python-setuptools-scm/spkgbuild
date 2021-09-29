@@ -1,0 +1,15 @@
+# description : Handles managing your python package versions in scm metadata.
+  # depends : python-setuptools
+
+name=python-setuptools-scm
+version=6.3.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-6.3.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : String processing utilities
+# depends : perl-number-misc
+
+name=perl-string-util
+version=1.32
+release=2
+
+source="https://cpan.metacpan.org/authors/id/M/MI/MIKO/String-Util-1.26.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

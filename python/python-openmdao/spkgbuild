@@ -1,0 +1,15 @@
+# description : An open-source high-performance computing platform
+# depends : python-six python-numpydoc python-scipy python-sqlitedict python-pycodestyle
+
+name=python-openmdao
+version=3.12.0
+release=1
+
+source="https://github.com/OpenMDAO/OpenMDAO/archive/3.12.0/python-openmdao-3.12.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

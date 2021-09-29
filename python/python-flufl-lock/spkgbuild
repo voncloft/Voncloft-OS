@@ -1,0 +1,15 @@
+# description : NFS-safe file locking with timeouts for POSIX systems for Python
+# depends : python-atpublic python-psutil
+
+name=python-flufl-lock
+version=6.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/f/flufl.lock/flufl.lock-6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

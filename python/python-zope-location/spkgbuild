@@ -1,0 +1,15 @@
+# description : Special objects that have a structural location
+# depends : python-setuptools python-zope-interface python-zope-schema python-zope-proxy
+
+name=python-zope-location
+version=4.2
+release=6
+
+source="python-zope-location-4.2.tar.gz::https://github.com/zopefoundation/zope.location/archive/4.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

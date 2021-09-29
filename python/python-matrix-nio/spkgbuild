@@ -1,0 +1,15 @@
+# description : Python Matrix client library, designed according to sans I/O principles
+# depends : python python-aiofiles python-aiohttp python-atomicwrites python-cachetools
+
+name=python-matrix-nio
+version=0.18.7
+release=1
+
+source="git+https://github.com/poljar/matrix-nio.git?signed#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

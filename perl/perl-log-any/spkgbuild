@@ -1,0 +1,16 @@
+# description : Bringing loggers and listeners together
+# depends : perl
+
+name=perl-log-any
+version=1.710
+release=2
+
+source="https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.710.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

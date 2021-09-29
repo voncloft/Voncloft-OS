@@ -1,0 +1,17 @@
+  # description : JavaScript unobfuscator and beautifier
+  # description : CSS unobfuscator and beautifier
+# depends : python-editorconfig python-six
+  depends+=python-jsbeautifier
+
+name=python-jsbeautifier
+version=1.14.0
+release=1
+
+source="https://github.com/beautify-web/js-beautify/archive/v1.14.0/js-beautify-v1.14.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

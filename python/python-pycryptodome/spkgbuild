@@ -1,0 +1,16 @@
+  # description : Collection of cryptographic algorithms and protocols, implemented for use from Python 3.
+  # description : Collection of cryptographic algorithms and protocols, implemented for use from Python 2.
+  # depends : python gmp
+
+name=python-pycryptodome
+version=3.10.4
+release=3
+
+source="pycryptodome-3.10.4.tar.gz::https://github.com/Legrandin/pycryptodome/archive/v3.10.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

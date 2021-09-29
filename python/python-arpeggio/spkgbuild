@@ -1,0 +1,15 @@
+# description : Packrat parser interpreter
+# depends : python
+
+name=python-arpeggio
+version=1.10.2
+release=3
+
+source="https://github.com/textX/Arpeggio/archive/1.10.2/python-arpeggio-1.10.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

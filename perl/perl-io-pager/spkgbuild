@@ -1,0 +1,15 @@
+# description : Perl/CPAN Module IO::Pager
+
+name=perl-io-pager
+version=2.10
+release=3
+
+source="https://cpan.metacpan.org/authors/id/J/JP/JPIERCE/IO-Pager-0.40.tgz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

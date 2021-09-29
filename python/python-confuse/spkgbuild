@@ -1,0 +1,15 @@
+# description : Painless YAML config files for Python
+# depends : python-yaml
+
+name=python-confuse
+version=1.5.0
+release=1
+
+source="git+https://github.com/beetbox/confuse.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

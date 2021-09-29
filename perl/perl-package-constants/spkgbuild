@@ -1,0 +1,16 @@
+# description : List all constants declared in a package
+# depends : perl
+
+name=perl-package-constants
+version=0.06
+release=6
+
+source="https://search.mcpan.org/CPAN/authors/id/B/BI/BINGOS/Package-Constants-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

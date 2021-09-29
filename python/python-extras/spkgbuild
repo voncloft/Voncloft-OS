@@ -1,0 +1,15 @@
+# description : Useful extra bits for Python - things that should be in the standard library
+# depends : python
+
+name=python-extras
+version=1.0.0
+release=8
+
+source="https://github.com/testing-cabal/extras/archive/1.0.0/python-extras-1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

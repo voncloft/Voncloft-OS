@@ -1,0 +1,15 @@
+# description : Sphinx extension for linking to your projects issue tracker
+# depends : python python-sphinx
+
+name=python-sphinx-issues
+version=1.2.0
+release=5
+
+source="https://github.com/sloria/sphinx-issues/archive/1.2.0/sphinx-issues-1.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python module containing data files for compiler_rt software for use with LiteX
+# depends : python
+
+name=python-pythondata-software-compiler_rt
+version=2020.08
+release=1
+
+source="python-pythondata-software-compiler_rt-2020.08.tar.gz::https://github.com/litex-hub/pythondata-software-compiler_rt/archive/2020.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

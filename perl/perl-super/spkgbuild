@@ -1,0 +1,16 @@
+# description : Control superclass method dispatch
+# depends : perl-sub-identify
+
+name=perl-super
+version=1.20190531
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/C/CH/CHROMATIC/SUPER-1.20190531.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

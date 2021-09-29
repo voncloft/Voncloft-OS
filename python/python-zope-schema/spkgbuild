@@ -1,0 +1,15 @@
+# description : zope.interface extension for defining data schemas
+# depends : python-setuptools python-zope-interface python-zope-event
+
+name=python-zope-schema
+version=6.1.0
+release=1
+
+source="python-zope-schema-6.1.0.tar.gz::https://github.com/zopefoundation/zope.schema/archive/6.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

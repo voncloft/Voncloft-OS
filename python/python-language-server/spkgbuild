@@ -1,0 +1,15 @@
+# description : An implementation of the Language Server Protocol for Python
+# depends : python python-setuptools python-jsonrpc-server python-future python-jedi python-pluggy python-ujson
+
+name=python-language-server
+version=0.36.2
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/python-language-server/python-language-server-0.36.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

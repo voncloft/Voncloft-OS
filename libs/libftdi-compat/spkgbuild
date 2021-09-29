@@ -1,0 +1,16 @@
+# description : library to talk to ftdi chips
+# depends : gcc libusb-compat
+
+name=libftdi-compat
+version=0.20
+release=8
+
+source="https://www.intra2net.com/en/developer/libftdi/download/libftdi-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd libftdi-$version
+	./configure --prefix=/usr --without-examples
+    make
+    make DESTDIR=$PKG install
+}

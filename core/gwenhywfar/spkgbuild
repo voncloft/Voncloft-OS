@@ -1,0 +1,17 @@
+# description : OS abstraction functions
+# depends : gnutls libgcrypt openssl qt5
+
+name=gwenhywfar
+version=5.6.0
+release=1
+
+source="https://www.aquamaniac.de/rdm/attachments/download/364/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --sysconfdir=/etc --enable-system-certs --with-guis="gtk3 qt5"
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+}

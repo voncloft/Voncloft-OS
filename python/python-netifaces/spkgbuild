@@ -1,0 +1,15 @@
+# description : Portable module to access network interface information in Python
+# depends : python
+
+name=python-netifaces
+version=0.11.0
+release=6
+
+source="https://pypi.io/packages/source/n/netifaces/netifaces-0.11.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

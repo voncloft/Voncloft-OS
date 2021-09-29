@@ -1,0 +1,16 @@
+# description : A module that allows you to declare real exception classes in Perl
+# depends : perl perl-class-data-inheritable perl-devel-stacktrace
+
+name=perl-exception-class
+version=1.45
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Exception-Class-1.45.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

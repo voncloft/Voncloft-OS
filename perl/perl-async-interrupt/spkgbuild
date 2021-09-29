@@ -1,0 +1,16 @@
+# description : allow C/XS libraries to interrupt perl asynchronously
+# depends : perl-canary-stability perl-common-sense
+
+name=perl-async-interrupt
+version=1.26
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/Async-Interrupt-1.26.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

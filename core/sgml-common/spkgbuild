@@ -1,0 +1,18 @@
+# description	: Creating and maintaining centralized SGML catalogs
+
+name=sgml-common
+version=0.6.3
+release=2
+source="https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/sgml-common-$version.tgz
+	http://www.linuxfromscratch.org/patches/blfs/svn/sgml-common-$version-manpage-1.patch"
+options="!checksum"
+build() {
+	cd $name-$version
+
+	patch -Np1 -i $SRC/sgml-common-0.6.3-manpage-1.patch
+	autoreconf -f -i
+
+	./configure --prefix=/usr --sysconfdir=/etc
+	make
+	make docdir=/usr/share/doc DESTDIR=$PKG install
+}

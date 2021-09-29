@@ -1,0 +1,16 @@
+# description : Allows conversion between Roman and Arabic algarisms
+# depends : perl
+
+name=perl-text-roman
+version=3.5
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/S/SY/SYP/-3.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

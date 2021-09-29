@@ -1,0 +1,15 @@
+# description : OpenStack DNS-as-a-Service - Client
+# depends : python-cliff python-jsonschema python-osc-lib python-oslo-serialization
+
+name=python-designateclient
+version=4.3.0
+release=1
+
+source="https://github.com/openstack/python-designateclient/archive/4.3.0/python-designateclient-4.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

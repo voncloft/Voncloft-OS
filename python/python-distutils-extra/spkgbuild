@@ -1,0 +1,15 @@
+# description	: Enhancements to the Python build system
+# depends	: intltool python python-setuptools
+
+name=python-distutils-extra
+version=2.39
+release=1
+
+source="https://launchpad.net/$name/trunk/$version/+download/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

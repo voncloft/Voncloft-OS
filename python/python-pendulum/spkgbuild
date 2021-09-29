@@ -1,0 +1,15 @@
+# description : Python datetimes made easy
+# depends : python python-dateutil python-pytzdata
+
+name=python-pendulum
+version=2.1.2
+release=3
+
+source="python-pendulum-2.1.2.tar.gz::https://github.com/sdispater/pendulum/archive/2.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Highly concurrent networking library
+# depends : python python-greenlet python-monotonic python-dnspython
+
+name=python-eventlet
+version=0.32.0
+release=1
+
+source="https://github.com/eventlet/eventlet/archive/v0.32.0/eventlet-0.32.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

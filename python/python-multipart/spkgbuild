@@ -1,0 +1,15 @@
+# description : Parser for multipart/form-data
+# depends : python
+
+name=python-multipart
+version=0.2.4
+release=1
+
+source="python-multipart-0.2.4.tar.gz::https://github.com/defnull/multipart/archive/v0.2.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

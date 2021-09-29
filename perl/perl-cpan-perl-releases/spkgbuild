@@ -1,0 +1,16 @@
+# description : Mapping Perl releases on CPAN to the location of the tarballs
+# depends : perl
+
+name=perl-cpan-perl-releases
+version=5.20210821
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-5.20191220.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

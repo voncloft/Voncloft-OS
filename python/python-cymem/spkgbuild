@@ -1,0 +1,15 @@
+# description : Cython memory pool for RAII-style memory management
+# depends : cython3 python
+
+name=python-cymem
+version=2.0.5
+release=1
+
+source="https://github.com/explosion/cymem/archive/v2.0.5/python-cymem-2.0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

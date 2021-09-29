@@ -1,0 +1,16 @@
+# description : Perl/CPAN DBD::mysql module for interacting with MySQL via DBD
+# depends : perl-devel-checklib mariadb perl-dbi
+
+name=perl-dbd-mysql
+version=4.050
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

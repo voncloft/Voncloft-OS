@@ -1,0 +1,16 @@
+# description : read multiple hunks of data out of your DATA section
+# depends : perl-mro-compat perl-sub-exporter
+
+name=perl-data-section
+version=0.200007
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Data-Section-0.200007.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

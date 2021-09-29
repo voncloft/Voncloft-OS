@@ -1,0 +1,15 @@
+# description : Fast numerical array expression evaluator for Python, NumPy, PyTables, pandas
+# depends : python-numpy
+
+name=python-numexpr
+version=2.7.3
+release=1
+
+source="python-numexpr-2.7.3.tar.gz::https://github.com/pydata/numexpr/archive/v2.7.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

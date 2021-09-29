@@ -1,0 +1,15 @@
+# description : A flake8 extension that checks for blind except: statements
+# depends : python-setuptools
+
+name=python-flake8-blind-except
+version=0.2.0
+release=4
+
+source="https://github.com/elijahandrews/flake8-blind-except/archive/v0.2.0/python-flake8-blind-except-0.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

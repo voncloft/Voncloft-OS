@@ -1,0 +1,15 @@
+# description : Python Memory Usage Analyzer
+  # depends : python
+
+name=python-meliae
+version=0.5.1
+release=3
+
+source="https://github.com/isaacl/meliae/archive/meliae-0.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

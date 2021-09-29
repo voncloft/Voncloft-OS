@@ -1,0 +1,15 @@
+# description : Diff JSON and JSON-like structures in Python
+# depends : python
+
+name=python-jsondiff
+version=1.3.0
+release=6
+
+source="https://github.com/xlwings/jsondiff/archive/1.3.0/jsondiff-1.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

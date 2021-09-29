@@ -1,0 +1,15 @@
+# description : A small library for extracting rich content from urls.
+# depends : python
+
+name=python-micawber
+version=0.5.4
+release=1
+
+source="https://files.pythonhosted.org/packages/source/m/micawber/micawber-0.5.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,17 @@
+# description	: Utility library registering global X keyboard shortcuts
+# depends	: gtk2
+
+name=keybinder2
+version=0.3.2
+release=1
+source="https://github.com/kupferlauncher/keybinder/releases/download/v$version/keybinder-$version.tar.gz"
+
+options="!checksums"
+build() {
+	cd keybinder-$version
+
+	./configure --prefix=/usr --disable-lua --disable-python
+	make
+	make DESTDIR=$PKG install
+}
+

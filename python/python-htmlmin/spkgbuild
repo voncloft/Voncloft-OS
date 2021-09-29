@@ -1,0 +1,16 @@
+# description : Configurable HTML Minifier with safety features
+# depends : python python-setuptools python-htmlmin
+# depends : python
+
+name=python-htmlmin
+version=0.1.12
+release=6
+
+source="python-htmlmin-0.1.12.tar.gz::https://github.com/mankyd/htmlmin/archive/.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

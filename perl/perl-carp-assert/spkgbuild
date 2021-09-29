@@ -1,0 +1,16 @@
+# description : executable comments
+# depends : perl
+
+name=perl-carp-assert
+version=0.21
+release=3
+
+source="https://cpan.metacpan.org/authors/id/N/NE/NEILB/Carp-Assert-0.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

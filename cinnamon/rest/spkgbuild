@@ -1,0 +1,18 @@
+# description : helper library for restful services
+# depends : glib libsoup libxml2 gobject-introspection
+
+name=rest
+version=0.8.1
+release=1
+
+source="git+https://gitlab.gnome.org/GNOME/librest.git#commit="
+options="!checksum"
+
+build() {
+	cd librest-$version
+	NOCONFIGURE=1 ./autogen.sh
+	./configure --prefix=/usr --sysconfdir=/etc --enable-gtk-doc
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
+	make DESTDIR=$PKG install
+}

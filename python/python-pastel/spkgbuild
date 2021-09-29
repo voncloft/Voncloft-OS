@@ -1,0 +1,15 @@
+# description : Bring colors to your terminal
+# depends : python
+
+name=python-pastel
+version=0.2.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/pastel/pastel-0.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

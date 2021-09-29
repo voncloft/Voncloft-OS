@@ -1,0 +1,16 @@
+# description : Create bubble-babble fingerprints
+# depends : perl
+
+name=perl-digest-bubblebabble
+version=0.02
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BT/BTROTT/Digest-BubbleBabble-0.02.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

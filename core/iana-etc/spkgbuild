@@ -1,0 +1,12 @@
+# description	: Provides data for network services and protocols
+
+name=iana-etc
+version=20210903
+release=1
+source="https://sources.archlinux.org/other/packages/iana-etc/.xml"
+
+build() {
+	install -d -m 755 $PKG/etc
+	install -m 644 services $PKG/etc
+	install -m 644 protocols $PKG/etc
+}

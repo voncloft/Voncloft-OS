@@ -1,0 +1,33 @@
+sed -i -e 's/4.29/4.30/g' /Voncloft-OS/*/nspr/spkgbuild
+Packages upgraded: 1
+sed -i -e 's/3.63/3.64/g' /Voncloft-OS/*/nss/spkgbuild
+Packages upgraded: 1
+sed -i -e 's/1.9.2/1.9.6p1/g' /Voncloft-OS/*/sudo/spkgbuild
+Packages upgraded: 1
+Packages upgraded: 0
+Packages upgraded: 0
+sed -i -e 's/6.1.18/6.1.20/g' /Voncloft-OS/*/virtualbox/spkgbuild
+Packages upgraded: 1
+
+
+sed -i -e 's/2.3.0/2.3.1/g' /Voncloft-OS/*/gnupg/spkgbuild
+
+
+Packages upgraded: 1
+
+
+Packages upgraded: 0
+
+sed -i -e 's/1.39/1.42/g' /Voncloft-OS/*/libgpg-error/spkgbuild
+Packages upgraded: 1
+
+Packages upgraded: 0
+
+sed -i -e 's/1.8.6/1.9.3/g' /Voncloft-OS/*/libgcrypt/spkgbuild
+Packages upgraded: 1
+
+Packages upgraded: 0
+
+Packages upgraded: 0
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

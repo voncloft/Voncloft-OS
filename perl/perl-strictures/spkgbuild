@@ -1,0 +1,16 @@
+# description : Turn on strict and make most warnings fatal
+# depends : perl
+
+name=perl-strictures
+version=2.000006
+release=3
+
+source="https://cpan.metacpan.org/authors/id/H/HA/HAARG/-2.000006.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Draws Python object reference graphs with graphviz
+  # depends : python
+
+name=python-objgraph
+version=3.5.0
+release=3
+
+source="python-nose-3.5.0.tar.gz::https://github.com/mgedmin/objgraph/archive/3.5.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

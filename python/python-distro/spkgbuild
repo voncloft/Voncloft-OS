@@ -1,0 +1,15 @@
+# description : detect distro of OS via python 
+# depends : python python-sphinx
+
+name=python-distro
+version=1.6.0
+release=1
+
+source="https://github.com/python-distro/distro/archive/v1.6.0/python-distro-1.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

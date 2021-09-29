@@ -1,0 +1,15 @@
+# description : Intercept socket connection to wsgi applications for testing.
+# depends : python-six
+
+name=python-wsgi-intercept
+version=1.9.2
+release=2
+
+source="https://files.pythonhosted.org/packages/source/w/wsgi_intercept/wsgi_intercept-1.9.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

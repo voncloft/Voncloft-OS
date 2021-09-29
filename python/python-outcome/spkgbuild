@@ -1,0 +1,15 @@
+# description : Capture the outcome of Python function calls
+# depends : 
+
+name=python-outcome
+version=1.1.0
+release=1
+
+source="git+https://github.com/python-trio/outcome.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

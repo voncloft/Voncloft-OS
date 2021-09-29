@@ -1,0 +1,16 @@
+# description : Perl YAML Serialization using XS and libyaml
+# depends : perl
+
+name=perl-yaml-libyaml
+version=0.83
+release=5
+
+source="https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-0.83.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

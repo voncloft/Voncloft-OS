@@ -1,0 +1,16 @@
+# description : Sybase Driver for DBI
+# depends : perl-dbi perl freetds
+
+name=perl-dbd-sybase
+version=1.18
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/M/ME/MEWP/DBD-Sybase-1.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

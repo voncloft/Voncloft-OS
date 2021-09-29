@@ -1,0 +1,16 @@
+# description : Extract meta information from image files
+# depends : perl
+
+name=perl-image-info
+version=1.42
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Perl module that provides SPF support
+# depends : perl-error perl-netaddr-ip perl-uri perl-net-dns perl
+
+name=perl-mail-spf
+version=v2.9.0
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/J/JM/JMEHNLE/mail-spf/Mail-SPF-v2.9.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

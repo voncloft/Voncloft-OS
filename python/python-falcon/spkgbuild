@@ -1,0 +1,15 @@
+# description : Web API framework for build()ing fast and reliable microservices, proxies, and app backends in Python
+# depends : python
+
+name=python-falcon
+version=3.0.1
+release=6
+
+source="https://files.pythonhosted.org/packages/source/f/falcon/falcon-3.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

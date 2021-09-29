@@ -1,0 +1,16 @@
+# description : a visualization for VLC and other media players
+# depends : ftgl glew glm libglvnd pulseaudio sdl2 qt5
+
+pkgbase=projectm
+name=projectm
+version=3.1.12
+release=1
+
+source="https://github.com/projectM-visualizer/$pkgbase/releases/download/v$version/projectM-$version.tar.gz"
+build() {
+	cd projectM-$version
+	./configure --prefix=/usr --enable-gles --enable-sdl --enable-threading --enable-qt
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool 
+	make
+	make DESTDIR=$PKG install
+}

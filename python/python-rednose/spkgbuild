@@ -1,0 +1,15 @@
+# description : Coloured output for nosetests
+# depends : python-setuptools python-termstyle python-colorama python-nose
+
+name=python-rednose
+version=1.3.0
+release=7
+
+source="python-rednose-1.3.0.tar.gz::https://github.com/JBKahn/rednose/archive/1.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

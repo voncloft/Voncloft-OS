@@ -1,0 +1,16 @@
+# description : Manage deprecation warnings for your distribution
+# depends : perl-params-util perl-sub-install perl-sub-name perl-package-stash
+
+name=perl-package-deprecationmanager
+version=0.17
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Package-DeprecationManager-0.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

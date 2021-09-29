@@ -1,0 +1,17 @@
+# description : extra fonts for ghostscript
+# depends : ghostscript
+
+name=ghostscript-fonts
+version=8.11
+release=1
+
+source="https://downloads.sourceforge.net/gs-fonts/$name-std-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd fonts
+	install -d $PKG/usr/share/ghostscript/fonts
+	install -m644 *.afm $PKG/usr/share/ghostscript/fonts
+	install -m644 *.pfb $PKG/usr/share/ghostscript/fonts	
+	fc-cache -v $PKG/usr/share/ghostscript/fonts/
+}

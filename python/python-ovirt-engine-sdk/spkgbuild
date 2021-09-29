@@ -1,0 +1,15 @@
+# description : Python access to the oVirt Engine API
+# depends : python-pycurl python-six libxml2
+
+name=python-ovirt-engine-sdk
+version=4.4.14
+release=1
+
+source="https://resources.ovirt.org/pub/ovirt-4.4/src/python-ovirt-engine-sdk4/ovirt-engine-sdk-python-4.4.14.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

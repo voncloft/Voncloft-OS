@@ -1,0 +1,15 @@
+# description : A semi hard Cornish cheese, also queries PyPI PyPI client
+# depends : python-requests
+
+name=python-yarg
+version=0.1.9
+release=6
+
+source="python-yarg-0.1.9.tar.gz::https://github.com/kura/yarg/archive/0.1.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

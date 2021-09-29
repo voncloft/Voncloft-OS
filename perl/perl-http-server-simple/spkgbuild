@@ -1,0 +1,16 @@
+# description : Lightweight HTTP server
+# depends : perl-uri perl-cgi
+
+name=perl-http-server-simple
+version=0.52
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/B/BP/BPS/HTTP-Server-Simple-0.52.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

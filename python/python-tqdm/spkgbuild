@@ -1,0 +1,15 @@
+# description : Fast, Extensible Progress Meter
+# depends : python
+
+name=python-tqdm
+version=4.62.3
+release=1
+
+source="python-tqdm-4.62.3.tar.gz::https://github.com/tqdm/tqdm/archive/v4.62.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

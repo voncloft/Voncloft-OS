@@ -1,0 +1,15 @@
+# description : Python module for using MongoDB
+# depends : python
+
+name=python-pymongo
+version=3.12.0
+release=1
+
+source="https://pypi.io/packages/source/p/pymongo/pymongo-3.12.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

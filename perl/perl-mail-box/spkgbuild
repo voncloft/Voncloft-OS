@@ -1,0 +1,16 @@
+# description : Mail folder manager and MUA backend
+# depends : perl-timedate perl-digest-hmac perl-file-remove.20
+
+name=perl-mail-box
+version=3.009
+release=2
+
+source="https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-3.005.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

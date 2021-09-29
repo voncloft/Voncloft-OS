@@ -1,0 +1,14 @@
+# depends : python-defusedxml
+
+name=python-openid
+version=3.2.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/p/python3-openid/python3-openid-3.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

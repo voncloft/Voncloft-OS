@@ -1,0 +1,15 @@
+# description : Python wrapper for the liblo OSC library
+# depends : python liblo
+
+name=python-pyliblo
+version=0.10.0
+release=7
+
+source="pyliblo-0.10.0.tar.gz::https://github.com/dsacre/pyliblo/archive/refs/tags/0.10.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

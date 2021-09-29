@@ -1,0 +1,15 @@
+# description : Python lib/cli for JSON/YAML schema validation
+# depends : python-dateutil python-docopt python-ruamel-yaml python-setuptools
+
+name=python-pykwalify
+version=1.8.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pykwalify/pykwalify-1.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Globally/Universally Unique Identifiers GUIDs/UUIDs
+# depends : perl
+
+name=perl-data-uuid
+version=1.226
+release=8
+
+source="https://www.cpan.org/modules/by-module//--1.226.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : A pure-Python robots.txt parser with support for modern conventions
+# depends : python-six
+
+name=python-protego
+version=0.1.16
+release=3
+
+source="python-protego-0.1.16.tar.gz::https://github.com/scrapy/protego/archive/0.1.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

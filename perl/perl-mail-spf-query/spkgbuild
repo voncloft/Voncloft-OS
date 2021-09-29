@@ -1,0 +1,16 @@
+# description : Perl module that provides SPF support
+# depends : perl-net-cidr-lite5 perl-net-dns.46 perl-sys-hostname-long perl-uri perl
+
+name=perl-mail-spf-query
+version=1.999.1
+release=11
+
+source="https://search.cpan.org/CPAN/authors/id/J/JM/JMEHNLE/mail-spf-query/Mail-SPF-Query-1.999.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

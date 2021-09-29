@@ -1,0 +1,15 @@
+# description : Client Library for OpenStack Identity
+# depends : python-six python-pbr python-iso8601 python-prettytable python-debtcollector
+
+name=python-keystoneclient
+version=4.3.0
+release=1
+
+source="python-keystoneclient-4.3.0.tar.gz::https://github.com/openstack/python-keystoneclient/archive/4.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

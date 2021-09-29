@@ -1,0 +1,16 @@
+# description : Polymorphic Return Values 
+# depends : perl
+
+name=perl-return-value
+version=1.666005
+release=4
+
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Return-Value-1.666005.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

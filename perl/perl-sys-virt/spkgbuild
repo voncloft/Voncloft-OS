@@ -1,0 +1,16 @@
+# description : Represent and manage a libvirt hypervisor connection
+# depends : libvirt perl
+
+name=perl-sys-virt
+version=v7.7.0
+release=1
+
+source="https://cpan.metacpan.org/authors/id/D/DA/DANBERR/Sys-Virt-v7.7.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

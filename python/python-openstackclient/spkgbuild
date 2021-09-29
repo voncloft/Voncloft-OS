@@ -1,0 +1,15 @@
+# description : OpenStack Command-line Client
+# depends : python-six python-pbr python-babel python-cliff python-keystoneclient
+
+name=python-openstackclient
+version=5.6.0
+release=3
+
+source="https://github.com/openstack/python-openstackclient/archive/5.6.0/python-openstackclient-5.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

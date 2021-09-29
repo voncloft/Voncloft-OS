@@ -1,0 +1,15 @@
+# description : Helpful mixins for unittest classes
+# depends : python-six
+
+name=python-unittest-mixins
+version=1.6
+release=6
+
+source="python-unittest-mixins-1.6.tar.gz::https://github.com/nedbat/unittest-mixins/archive/v1.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

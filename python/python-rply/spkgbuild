@@ -1,0 +1,15 @@
+# description : A pure Python Lex/Yacc that works with RPython
+  # depends : python-appdirs
+
+name=python-rply
+version=0.7.8
+release=1
+
+source="python-rfc6555-0.7.8.tar.gz::https://github.com/alex/rply/archive/v0.7.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

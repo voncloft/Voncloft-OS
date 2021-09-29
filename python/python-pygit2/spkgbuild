@@ -1,0 +1,15 @@
+# description : Python bindings for libgit2
+# depends : libgit2>=1:0.27.0 python-cffi python-six python-cached-property
+
+name=python-pygit2
+version=1.6.1
+release=1
+
+source="python-pygit2-1.6.1.tar.gz::https://github.com/libgit2/pygit2/archive/v1.6.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

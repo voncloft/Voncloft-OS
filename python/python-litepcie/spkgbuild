@@ -1,0 +1,15 @@
+# description : Small footprint and configurable PCIe core
+# depends : python-migen python-litex python-yaml
+
+name=python-litepcie
+version=2020.12
+release=1
+
+source="python-litepcie-2020.12.tar.gz::https://github.com/enjoy-digital/litepcie/archive/2020.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Python interfaces for ADI hardware with IIO drivers
+# depends : libiio python-numpy
+
+name=python-pyadi-iio
+version=0.0.8
+release=2
+
+source="python-pyadi-iio-0.0.8.tar.gz::https://github.com/analogdevicesinc/pyadi-iio/archive/v0.0.8.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

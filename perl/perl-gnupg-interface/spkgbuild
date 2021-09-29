@@ -1,0 +1,16 @@
+# description : Object-oriented methods for interacting with GnuPG
+# depends : gnupg perl-math-bigint perl-moo perl-moox-handlesvia perl-moox-late
+
+name=perl-gnupg-interface
+version=1.02
+release=1
+
+source="https://cpan.metacpan.org/authors/id/B/BP/BPS/-1.02.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Remove files and directories
+# depends : perl
+
+name=perl-file-remove
+version=1.60
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/File-Remove-1.60.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

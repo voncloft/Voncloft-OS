@@ -1,0 +1,15 @@
+# description : Iconic fonts in PyQt and PySide applications
+# depends : python-six python-qtpy
+
+name=python-qtawesome
+version=1.0.3
+release=5
+
+source="https://github.com/spyder-ide/qtawesome//archive/v1.0.2/python--1.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

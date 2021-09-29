@@ -1,0 +1,15 @@
+# description : A lightweight library for converting complex datatypes to and from native Python datatypes
+# depends : python
+
+name=python-marshmallow
+version=3.13.0
+release=1
+
+source="https://pypi.io/packages/source/m/marshmallow/marshmallow-3.13.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

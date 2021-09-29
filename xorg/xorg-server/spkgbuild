@@ -1,0 +1,26 @@
+# description	: The core of the X Window system
+# depends	: nettle libxext libx11 libglvnd pixman libxfont2 libxau libxshmfence libxdmcp wayland libdrm libepoxy mesa dbus eudev libpciaccess libxkbfile xkeyboard-config
+
+name=xorg-server
+version=21.0.99.1
+release=1
+source="http://ftp.x.org/pub/individual/xserver/$name-$version.tar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+
+	./configure \
+	    --prefix=/usr \
+	    --sysconfdir=/etc \
+	    --localstatedir=/var \
+	    --libexecdir=/usr/lib/$name \
+	    --disable-static \
+	    --enable-glamor \
+	    --enable-suid-wrapper \
+	    --with-xkb-output=/var/lib/xkb
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -pv $PKG/etc/X11/xorg.conf.d
+}

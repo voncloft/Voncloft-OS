@@ -1,0 +1,15 @@
+# description : Useful snippets of python code
+# depends : python
+
+name=python-kitchen
+version=1.2.6
+release=5
+
+source="https://files.pythonhosted.org/packages/d9/ca/3365cb1160533be8c8b57dbfd6502f367d35e30935ee89a003c664740714/kitchen-1.2.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

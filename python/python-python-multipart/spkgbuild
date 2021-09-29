@@ -1,0 +1,15 @@
+# description : streaming multipart parser for Python
+# depends : python python-six
+
+name=python-python-multipart
+version=0.0.5
+release=3
+
+source="python-python-multipart-0.0.5.tar.gz::https://github.com/andrew-d/python-multipart/archive/0.0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Automated testing for the examples in your documentation.
+# depends : python
+
+name=python-sybil
+version=2.0.1
+release=1
+
+source="python-sybil-2.0.1.tar.gz::https://github.com/cjw296/sybil/archive/2.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Poetry PEP 517 Build Backend & Core Utilities
+# depends : ${_deps[@]/#/python-}
+
+name=python-poetry-core
+version=1.1.0
+release=2
+
+source="poetry-core-1.0.3.tar.gz::https://github.com/python-poetry/poetry-core/archive/1.0.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

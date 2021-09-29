@@ -1,0 +1,16 @@
+# description : Perl module for Dates in the Julian calendar
+# depends : perl-datetime
+
+name=perl-datetime-calendar-julian
+version=0.105
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/P/PI/PIJLL/-0.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

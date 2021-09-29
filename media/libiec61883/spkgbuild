@@ -1,0 +1,16 @@
+# description : Higher level API for streaming codecs
+# depends : libraw
+
+name=libiec61883
+version=1.2.0
+release=6
+
+source="https://www.kernel.org/pub/linux/libs/ieee1394/${name}-${version}.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make 
+	make DESTDIR=$PKG install
+}

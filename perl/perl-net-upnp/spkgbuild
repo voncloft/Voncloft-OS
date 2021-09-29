@@ -1,0 +1,16 @@
+# description : perl module for upnp
+# depends : perl
+
+name=perl-net-upnp
+version=1.4.6
+release=1
+
+source="https://www.cpan.org/authors/id/S/SK/SKONNO/Net-UPnP-1.4.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

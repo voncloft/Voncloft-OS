@@ -1,0 +1,15 @@
+# description : Zope testing frameworks
+  # depends : python
+
+name=python-zc.lockfile
+version=2.0
+release=5
+
+source="python-zc.lockfile-2.0.tar.gz::https://github.com/zopefoundation/zc.lockfile/archive/2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

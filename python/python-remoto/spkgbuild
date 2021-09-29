@@ -1,0 +1,15 @@
+# description : A very simplistic remote-command-executor using connections to hosts
+# depends : python python-execnet
+
+name=python-remoto
+version=1.2.1
+release=2
+
+source="https://files.pythonhosted.org/packages/source/r/regex/regex-1.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

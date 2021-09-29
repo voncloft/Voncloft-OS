@@ -1,0 +1,19 @@
+# description : chess game
+# depends : tk zlib
+
+name=scid_vs_pc
+version=4.21
+release=1
+
+url="https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=scid_vs_pc"
+
+source="https://downloads.sourceforge.net/project/scidvspc/source/scid_vs_pc-4.21.tgz"
+options="!checksum"
+
+build() {
+cd $name-$version
+sed -i 's/8.5/8.6/g' ./configure
+    ./configure BINDIR=/usr/bin/ SHAREDIR=/usr/share/scid/ TCL_VERSION="8.6" OPTIMIZE="-O2 -funroll-loops"
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : library for accessing a MySQL database from the asyncio
+# depends : python python-pymysql
+
+name=python-aiomysql
+version=0.0.21
+release=2
+
+source="python-aiomysql-0.0.21.tar.gz::https://github.com/aio-libs/aiomysql/archive/v0.0.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

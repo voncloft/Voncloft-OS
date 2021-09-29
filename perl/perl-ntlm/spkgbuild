@@ -1,0 +1,16 @@
+# description : Perl/CPAN module NTLM
+# depends : perl
+
+name=perl-ntlm
+version=1.09
+release=5
+
+source="https://cpan.metacpan.org/authors/id/N/NB/NBEBOUT/NTLM-1.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

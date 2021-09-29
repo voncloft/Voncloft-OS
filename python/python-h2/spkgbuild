@@ -1,0 +1,15 @@
+# description : HTTP/2 State-Machine based protocol implementation
+# depends : python-hpack python-hyperframe
+
+name=python-h2
+version=4.0.0
+release=1
+
+source="https://github.com/python-hyper/h2/archive/v4.0.0/python-h2-4.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

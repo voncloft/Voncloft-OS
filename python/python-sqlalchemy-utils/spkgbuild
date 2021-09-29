@@ -1,0 +1,15 @@
+# description : Various utility functions, new data types and helpers for SQLAlchemy
+# depends : python python-sqlalchemy python-anyjson python-babel
+
+name=python-sqlalchemy-utils
+version=0.37.8
+release=3
+
+source="https://github.com/kvesteri/sqlalchemy-utils/archive/0.37.1/python-sqlalchemy-utils-0.37.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

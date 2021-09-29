@@ -1,0 +1,16 @@
+# description : Install the C libxml2 library on your system
+# depends : libxml2 perl-alien-build
+
+name=perl-alien-libxml2
+version=0.17
+release=1
+
+source="https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Libxml2-0.17.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

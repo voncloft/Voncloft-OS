@@ -1,0 +1,15 @@
+# description : Simple Python interface for Graphviz
+# depends : graphviz python
+
+name=python-graphviz
+version=0.17
+release=1
+
+source="https://files.pythonhosted.org/packages/source/g/graphviz/graphviz-0.16.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

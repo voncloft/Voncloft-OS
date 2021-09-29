@@ -1,0 +1,15 @@
+# description : Provides powerful extensions to the standard datetime module
+# depends : python-six
+
+name=python-dateutil
+version=2.8.2
+release=5
+
+source="git+https://github.com/dateutil/dateutil.git#commit=6b035517571e63b6a63a493740c5506ec1e5da44?signed"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

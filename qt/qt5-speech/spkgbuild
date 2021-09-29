@@ -1,0 +1,20 @@
+# description : speech for qt
+# depends : qt5-multimedia
+
+name=qt5-speech
+_qtverz=5.15.2
+version=${_qtverz/-/}
+release=1
+
+_pkgfqn="${name/5-/}-everywhere-src-${_qtverz}"
+source="https://download.qt.io/official_releases/qt/${version%.*}/${_qtverz}/submodules/${_pkgfqn}.tar.xz"
+options="!checksum"
+
+build() {
+	mkdir build
+	cd build
+	qmake ../${_pkgfqn}
+	make
+	make INSTALL_ROOT=$PKG install
+	
+}

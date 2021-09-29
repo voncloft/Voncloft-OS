@@ -1,0 +1,15 @@
+# description : Configuration manager in your pocket
+# depends : python-yaml
+
+name=python-kaptan
+version=0.5.12
+release=5
+
+source="https://files.pythonhosted.org/packages/source/k/kaptan/kaptan-0.5.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

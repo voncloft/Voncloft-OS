@@ -1,0 +1,15 @@
+# description : First-class OAuth library support for Requests
+# depends : python-requests python-oauthlib
+
+name=python-requests-oauthlib
+version=1.3.0
+release=4
+
+source="python-requests-oauthlib-1.3.0.tar.gz::https://github.com/requests/requests-oauthlib/archive/v1.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

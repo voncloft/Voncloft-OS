@@ -1,0 +1,15 @@
+# description : pyfakefs implements a fake file system that mocks the Python file system modules
+# depends : python-pytest
+
+name=python-pyfakefs
+version=4.5.1
+release=1
+
+source="git+https://github.com/jmcgeheeiv/pyfakefs.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

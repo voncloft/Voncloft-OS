@@ -1,0 +1,15 @@
+# description : A refreshed Python toolbox for build()ing complex digital hardware
+# depends : python
+
+name=python-nmigen
+version=0.2
+release=3
+
+source="python-nmigen-0.2.tar.gz::https://github.com/nmigen/nmigen/archive/v0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

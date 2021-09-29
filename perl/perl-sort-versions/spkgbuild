@@ -1,0 +1,16 @@
+# description : Sort::Versions - a perl 5 module for sorting of revision-like numbers
+# depends : perl
+
+name=perl-sort-versions
+version=1.62
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id//-1.62.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

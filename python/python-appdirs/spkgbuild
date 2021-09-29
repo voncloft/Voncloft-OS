@@ -1,0 +1,15 @@
+# description	: A small Python module for determining appropriate platform-specific dirs, e.g. a user data dir
+# depends	: python
+
+name=python-appdirs
+version=1.4.4
+release=1
+
+source="https://pypi.io/packages/source/a/appdirs/appdirs-1.4.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

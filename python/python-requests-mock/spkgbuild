@@ -1,0 +1,15 @@
+# description : A mock of useful classes and functions to be used with python-requests.
+# depends : python-requests python-six
+
+name=python-requests-mock
+version=1.9.3
+release=3
+
+source="python-requests-mock-1.9.3.tar.gz::https://github.com/jamielennox/requests-mock/archive/1.9.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

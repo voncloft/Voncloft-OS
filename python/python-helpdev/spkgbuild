@@ -1,0 +1,15 @@
+# description : Helping users and developers to get information about the environment to report bugs
+# depends : python-importlib-metadata python-psutil
+
+name=python-helpdev
+version=0.7.1
+release=3
+
+source="https://gitlab.com/dpizetta/helpdev/-/archive/v0.7.1/-v0.7.1.tar.bz2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

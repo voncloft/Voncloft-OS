@@ -1,0 +1,15 @@
+  # description : Backported, durable, and portable selectors.
+  # description : Backported, durable, and portable selectors.
+
+name=python-selectors2
+version=2.0.2
+release=1
+
+source="python-selectors2-2.0.2.tar.gz::https://github.com/SethMichaelLarson/selectors2/archive/2.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

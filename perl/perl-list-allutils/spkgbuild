@@ -1,0 +1,16 @@
+# description : Perl package that combines List::Util and List::MoreUtils in one bite-sized package
+# depends : perl perl-list-moreutils.28 perl-scalar-list-utils.45
+
+name=perl-list-allutils
+version=0.19
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/List-AllUtils-0.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

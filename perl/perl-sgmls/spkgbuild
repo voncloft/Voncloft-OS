@@ -1,0 +1,16 @@
+# description : A Post-Processor for SGMLS and NSGMLS
+# depends : perl
+
+name=perl-sgmls
+version=1.1
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/R/RA/RAAB/SGMLSpm-1.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

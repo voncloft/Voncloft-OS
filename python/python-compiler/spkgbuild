@@ -1,0 +1,15 @@
+# description : The compiler package from Python 2, ported to Python 3
+# depends : python
+
+name=python-compiler
+version=1.1
+release=2
+
+source="git+https://github.com/facebookincubator/python-compiler#commit=5a9a30b3d5fae5337ff449030873a58b35e875a4"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

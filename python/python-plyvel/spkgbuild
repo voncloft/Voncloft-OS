@@ -1,0 +1,15 @@
+# description : A fast and feature-rich Python interface to LevelDB
+# depends : leveldb python
+
+name=python-plyvel
+version=1.3.0
+release=3
+
+source="https://pypi.io/packages/source/p/plyvel/plyvel-1.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

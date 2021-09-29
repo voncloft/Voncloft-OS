@@ -1,0 +1,13 @@
+# description	: Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible
+# depends	: python ninja python-setuptools
+
+name=meson
+version=0.59.2
+release=1
+source="https://github.com/mesonbuild/meson/releases/download/$version/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+	python setup.py build
+	python setup.py install --root=$PKG
+}

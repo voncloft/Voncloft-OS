@@ -1,0 +1,15 @@
+# description : EditorConfig File Locator and Interpreter for Python
+# depends : python
+
+name=python-editorconfig
+version=0.12.3
+release=1
+
+source="https://pypi.io/packages/source/E/EditorConfig/EditorConfig-0.12.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

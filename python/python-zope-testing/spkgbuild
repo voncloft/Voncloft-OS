@@ -1,0 +1,15 @@
+# description : Zope testing helpers
+  # depends : python-setuptools python-zope-interface python-zope-exceptions
+
+name=python-zope-testing
+version=4.9
+release=1
+
+source="python-zope-testing-4.9.tar.gz::https://github.com/zopefoundation/zope.testing/archive/4.9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

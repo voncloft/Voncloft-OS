@@ -1,0 +1,15 @@
+# description : Reference ASGI adapters and channel layers
+# depends : python
+
+name=python-asgiref
+version=3.4.1
+release=1
+
+source="https://pypi.io/packages/source/a/asgiref/asgiref-3.4.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

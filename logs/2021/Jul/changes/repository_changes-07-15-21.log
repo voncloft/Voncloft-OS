@@ -1,0 +1,15 @@
+15
+sed -i -e 's/3.20.5/3.21.0/g' /Voncloft-OS/*/cmake/spkgbuild
+sed -i -e 's/3.4.6/3.4.7/g' /Voncloft-OS/*/wireshark/spkgbuild
+sed -i -e 's/3.3.0/3.3.1/g' /Voncloft-OS/*/python-bleach/spkgbuild
+sed -i -e 's/1.17.111/1.17.112/g' /Voncloft-OS/*/python-boto3/spkgbuild
+sed -i -e 's/1.20.111/1.20.112/g' /Voncloft-OS/*/python-botocore/spkgbuild
+sed -i -e 's/6.0.1/6.0.2/g' /Voncloft-OS/*/python-ipykernel/spkgbuild
+sed -i -e 's/0.2.0/0.3.0/g' /Voncloft-OS/*/python-itemadapter/spkgbuild
+sed -i -e 's/0.4.2/0.5.0/g' /Voncloft-OS/*/python-s3transfer/spkgbuild
+sed -i -e 's/57.1.0/57.2.0/g' /Voncloft-OS/*/python-setuptools/spkgbuild
+sed -i -e 's/1.4.20/1.4.21/g' /Voncloft-OS/*/python-sqlalchemy/spkgbuild
+sed -i -e 's/6.17.1/6.18.0/g' /Voncloft-OS/*/python-testfixtures/spkgbuild
+Packages upgraded: 11
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

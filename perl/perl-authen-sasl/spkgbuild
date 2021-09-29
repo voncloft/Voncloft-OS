@@ -1,0 +1,16 @@
+# description : Perl/CPAN Module Authen::SASL : SASL authentication framework
+# depends : python perl-inc-latest perl-module-install
+
+name=perl-authen-sasl
+version=2.16
+release=8
+
+source="https://www.cpan.org/authors/id/G/GB/GBARR/Authen-SASL-2.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Oslo Logging Library
+# depends : python-six python-pbr python-oslo-config python-oslo-context python-oslo-i18n
+
+name=python-oslo-log
+version=4.6.0
+release=3
+
+source="https://github.com/openstack/oslo.log/archive/4.6.0/python-oslo-log-4.6.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

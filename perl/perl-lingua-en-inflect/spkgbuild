@@ -1,0 +1,16 @@
+# description : Convert singular to plural. Select a or an
+# depends : perl
+
+name=perl-lingua-en-inflect
+version=1.905
+release=1
+
+source="https://cpan.metacpan.org/authors/id/D/DC/DCONWAY/Lingua-EN-Inflect-1.905.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

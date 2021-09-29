@@ -1,0 +1,16 @@
+# description : CPAN Test::PerlTidy module
+# depends : perl perl-text-diff perl-file-slurp perl-tidy perl-file-finder
+
+name=perl-test-perltidy
+version=20210709
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/L/LA/LARRYL/Test-PerlTidy-20130104.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Various objects to denote special meanings in python
+# depends : python
+
+name=python-sentinels
+version=1.0.0
+release=6
+
+source="python-selectors2-1.0.0.tar.gz::https://github.com/vmalloc/sentinels/archive/1.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

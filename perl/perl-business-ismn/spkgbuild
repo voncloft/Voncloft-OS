@@ -1,0 +1,16 @@
+# description : Perl package to work with International Standard Music Numbers
+# depends : perl perl-tie-cycle
+
+name=perl-business-ismn
+version=1.202
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/B/BD/BDFOY/-1.201.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

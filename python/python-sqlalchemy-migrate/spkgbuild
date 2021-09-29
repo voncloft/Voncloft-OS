@@ -1,0 +1,15 @@
+# description : Database schema migration for SQLAlchemy
+# depends : python-six python-pbr python-sqlalchemy python-decorator python-sqlparse
+
+name=python-sqlalchemy-migrate
+version=0.13.0
+release=6
+
+source="python-sqlalchemy-migrate-0.13.0.tar.gz::https://opendev.org/x/sqlalchemy-migrate/archive/0.13.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

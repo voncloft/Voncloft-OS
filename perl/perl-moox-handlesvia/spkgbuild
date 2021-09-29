@@ -1,0 +1,16 @@
+# description : NativeTrait-like behavior for Moo
+# depends : perl-class-method-modifiers perl-data-perl perl-module-runtime perl-moo perl-role-tiny
+
+name=perl-moox-handlesvia
+version=0.001009
+release=1
+
+source="https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/-0.001009.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Python bindings for systemd
+  # depends : python3 libsystemd
+
+name=python-systemd
+version=234
+release=7
+
+source="python-systemd::git+https://github.com/systemd/python-systemd#commit=b3e935355afcfb5240bac5a99707ffecc35772a2"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

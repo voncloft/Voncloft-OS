@@ -1,0 +1,15 @@
+# description : Symbolic constants in Python
+# depends : python
+
+name=python-constantly
+version=15.1.0
+release=8
+
+source="https://github.com/twisted/constantly/archive/15.1.0/python-constantly-15.1.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

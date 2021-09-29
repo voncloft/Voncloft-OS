@@ -1,0 +1,16 @@
+# description : Warns and dies noisily with stack backtraces
+# depends : perl
+
+name=perl-carp-always
+version=0.16
+release=1
+
+source="https://www.cpan.org/modules/by-module//--0.16.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

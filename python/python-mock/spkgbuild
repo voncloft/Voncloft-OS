@@ -1,0 +1,15 @@
+# description : Mocking and Patching Library for Testing
+# depends : python python-six python-pbr
+
+name=python-mock
+version=4.0.3
+release=5
+
+source="mock-3.0.5.tar.gz::https://github.com/testing-cabal/mock/archive/3.0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Create and use a local lib/ for perl modules with PERL5LIB
+# depends : perl
+
+name=perl-local-lib
+version=2.000024
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/local-lib-2.000024.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

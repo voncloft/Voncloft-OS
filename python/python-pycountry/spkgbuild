@@ -1,0 +1,15 @@
+# description : ISO country, subdivision, language, currency and script definitions and their translations
+# depends : python python-lxml
+
+name=python-pycountry
+version=20.7.3
+release=3
+
+source="https://pypi.io/packages/source/p/pycountry/pycountry-20.7.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

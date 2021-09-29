@@ -1,0 +1,15 @@
+# description : Pure Python library for PNG image encoding/decoding
+# depends : python
+
+name=python-pypng
+version=0.0.21
+release=3
+
+source="https://github.com/drj11/pypng/archive/pypng-0.0.21.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

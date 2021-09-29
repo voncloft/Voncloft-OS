@@ -1,0 +1,15 @@
+# description : Library to enforce positional or key-word arguments
+# depends : python-pbr python-wrapt
+
+name=python-positional
+version=1.2.1
+release=5
+
+source="python-positional-1.2.1.tar.gz::https://github.com/morganfainberg/positional/archive/1.2.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

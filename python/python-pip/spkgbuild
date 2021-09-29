@@ -1,0 +1,15 @@
+# description : The PyPA recommended tool for installing Python packages
+  # depends : ${_deps[@]/#/python-}
+
+name=python-pip
+version=21.2.4
+release=1
+
+source="pip-20.3.4.tar.gz::https://github.com/pypa/pip/archive/20.3.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

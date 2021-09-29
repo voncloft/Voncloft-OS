@@ -1,0 +1,15 @@
+# description : Pathlib for archives
+# depends : python-attrs
+
+name=python-dephell-archive
+version=0.1.7
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/dephell-archive/dephell-archive-0.1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

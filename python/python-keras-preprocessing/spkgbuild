@@ -1,0 +1,15 @@
+# description : Preprocessing module of the Keras deep learning library
+# depends : python python-numpy
+
+name=python-keras-preprocessing
+version=1.1.2
+release=4
+
+source="https://files.pythonhosted.org/packages/source/K/Keras_Preprocessing/Keras_Preprocessing-1.1.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

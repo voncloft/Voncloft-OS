@@ -1,0 +1,16 @@
+# description : Basic utilities for writing tests
+# depends : perl
+
+name=perl-test-simple
+version=1.302187
+release=1
+
+source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302187.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,21 @@
+# description : media center
+# depends : kde5 bluez curl lcms2 libass libcdio libnfs pulseaudio libva libvdpau libxrandr libxslt lirc mariadb python samba taglib tinyxml bluez cmake curl dav1d doxygen ghostscript giflib git glew gperf graphviz gtest hicolor-icon-theme libaacs libass libbluray libcdio libcec libglvnd libinput libmicrohttpd libmodplug libmpeg2 libnfs libva libvdpau libxkbcommon libxrandr libxslt lirc lzo  mesa meson nasm python-pillow python-pybluez python-pycryptodomex  python-simplejson rapidjson swig taglib upower wayland-protocols waylandpp libbluray libcec libmicrohttpd fmt spdlog
+
+name=kodi
+version=19.1
+release=Matrix
+source="https://github.com/xbmc/xbmc/archive/refs/tags/v$version.tar.gz"
+options="!checksum"
+
+build()
+{
+
+	#run commands except make install that is replaced by below
+	cd xbmc-$version
+	mkdir build
+	cd build
+	#cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCORE_PLATFORM_NAME=x11 -DAPP_RENDER_SYSTEM=gl
+	cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DENABLE_INTERNAL_FMT=ON -DENABLE_INTERNAL_SPDLOG=ON -DCORE_PLATFORM_NAME=x11 -DAPP_RENDER_SYSTEM=gl
+	make 
+	make DESTDIR=$PKG install
+}

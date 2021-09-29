@@ -1,0 +1,16 @@
+# description : Various utility functions
+# depends : perl
+
+name=perl-data-munge
+version=0.097
+release=3
+
+source="https://cpan.metacpan.org/authors/id/M/MA/MAUKE/Data-Munge-0.097.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

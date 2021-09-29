@@ -1,0 +1,15 @@
+# description : A Pythonic wrapper for the Wikipedia API
+# depends : 
+
+name=python-wikipedia
+version=1.4.0
+release=8
+
+source="https://pypi.python.org/packages/source/w/wikipedia/wikipedia-1.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files
+# depends : python
+
+name=python-xlwt
+version=1.3.0
+release=5
+
+source="https://github.com/python-excel/xlwt/archive/1.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

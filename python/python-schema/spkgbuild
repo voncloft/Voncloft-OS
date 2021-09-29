@@ -1,0 +1,15 @@
+# description : Python module to validate and convert data structures.
+# depends : python python-contextlib2
+
+name=python-schema
+version=0.7.4
+release=1
+
+source="https://files.pythonhosted.org/packages/source/s/schema/schema-0.7.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

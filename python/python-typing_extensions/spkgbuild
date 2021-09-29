@@ -1,0 +1,15 @@
+# description : Backported and Experimental Type Hints for Python 3.5+
+# depends : python
+
+name=python-typing_extensions
+version=3.10.0.2
+release=3
+
+source="git+https://github.com/python/typing.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : HTTP client/server for asyncio
+# depends : python python-chardet python-multidict python-async-timeout python-yarl python-attrs
+
+name=python-aiohttp
+version=4.0.0
+release=1
+
+source="python-aiohttp::git+https://github.com/aio-libs/aiohttp#commit="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

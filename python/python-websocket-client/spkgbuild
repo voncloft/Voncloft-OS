@@ -1,0 +1,15 @@
+# description : WebSocket client library for Python
+# depends : python-six
+
+name=python-websocket-client
+version=1.2.1
+release=3
+
+source="https://pypi.io/packages/source/w/websocket-client/websocket-client-0.59.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

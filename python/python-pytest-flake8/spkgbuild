@@ -1,0 +1,15 @@
+# description : pytest plugin to check FLAKE8 requirements
+# depends : python-pytest flake8
+
+name=python-pytest-flake8
+version=1.0.7
+release=1
+
+source="python-pytest-flake8-1.0.7.tar.gz::https://github.com/tholo/pytest-flake8/archive/1.0.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

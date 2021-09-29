@@ -1,0 +1,16 @@
+# description : Powerful and flexible message logging mechanism
+# depends : perl
+
+name=perl-log-message
+version=0.08
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/Log-Message-0.08.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

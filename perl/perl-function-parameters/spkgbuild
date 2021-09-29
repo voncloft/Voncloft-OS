@@ -1,0 +1,16 @@
+# description : define functions and methods with parameter lists subroutine signatures
+# depends : perl
+
+name=perl-function-parameters
+version=2.001003
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/M/MA/MAUKE/Function-Parameters-2.001003.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

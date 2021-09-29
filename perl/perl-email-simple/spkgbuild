@@ -1,0 +1,16 @@
+# description : simple parsing of RFC2822 message format and headers 
+# depends : perl perl-email-date-format
+
+name=perl-email-simple
+version=2.216
+release=2
+
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-Simple-2.216.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

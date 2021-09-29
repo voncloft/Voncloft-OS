@@ -1,0 +1,15 @@
+# description : framework for building toolchains and utilities for working with the JavaScript/Node.js ecosystem
+# depends : python-calmjs.parse python-calmjs.types python-setuptools
+
+name=python-calmjs
+version=3.4.1
+release=3
+
+source="https://files.pythonhosted.org/packages/source/c/calmjs/calmjs-3.4.1.zip"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

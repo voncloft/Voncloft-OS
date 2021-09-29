@@ -1,0 +1,14 @@
+# description : Sphinx extension which outputs Apple help books
+
+name=python-sphinxcontrib-applehelp
+version=1.0.2
+release=3
+
+source="https://files.pythonhosted.org/packages/source/s/sphinxcontrib-applehelp/sphinxcontrib-applehelp-1.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

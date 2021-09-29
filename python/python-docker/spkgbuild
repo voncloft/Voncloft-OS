@@ -1,0 +1,15 @@
+# description : A Python library for the Docker Engine API
+# depends : python-requests python-six python-websocket-client python-docker-pycreds python-paramiko
+
+name=python-docker
+version=5.0.2
+release=1
+
+source="python-docker-5.0.2.tar.gz::https://github.com/docker/docker-py/archive/5.0.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

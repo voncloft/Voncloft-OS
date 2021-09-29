@@ -1,0 +1,16 @@
+# description : A complete, easy to use date and time object
+# depends : perl-datetime-timezone perl-datetime-locale
+
+name=perl-datetime
+version=1.54
+release=1
+
+source="https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-1.54.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,19 @@
+# description : gnome applets
+# depends : gconf gnome-icon-theme gnome-panel libgnomekbd libgtop libnotify rarian nm-connection-editor
+
+name=gnome-applets
+version=3.4.1
+release=1
+
+source="http://ftp.gnome.org/pub/gnome/sources/$name/3.4/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --libexecdir=/usr/lib/gnome-applets
+        make
+        make DESTDIR=$PKG install
+	
+}

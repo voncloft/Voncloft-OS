@@ -1,0 +1,16 @@
+# description : A graphical user interface toolkit for Perl
+# depends : libpng libjpeg tk perl
+
+name=perl-tk
+version=804.036
+release=2
+
+source="https://www.cpan.org/authors/id/S/SR/SREZIC/Tk-804.036.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

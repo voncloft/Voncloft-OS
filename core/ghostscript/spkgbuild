@@ -1,0 +1,26 @@
+# description : a versatile processor for PostScript data with the ability to render PostScript to different targets
+# depends : cups fontconfig freetype2 libjpeg-turbo libpng libtiff openjpeg
+
+name=ghostscript
+version=9.55
+release=1
+
+source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/$name-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-freetype_fix-1.patch"
+
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i $SRC/ghostscript-9.54.0-freetype_fix-1.patch
+
+	rm -rf zlib &&
+
+	./configure --prefix=/usr           \
+            --disable-compile-inits \
+            --enable-dynamic        \
+            #--with-system-libtiff 
+	make
+	make DESTDIR=$PKG install
+
+}

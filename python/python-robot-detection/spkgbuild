@@ -1,0 +1,15 @@
+# description : Detect web crawlers using HTTP User Agent
+# depends : python-six
+
+name=python-robot-detection
+version=0.4.0
+release=4
+
+source="python-robot-detection-0.4.0.tar.gz::https://github.com/rory/robot-detection/archive/v0.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

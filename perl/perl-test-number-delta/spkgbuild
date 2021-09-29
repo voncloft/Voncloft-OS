@@ -1,0 +1,16 @@
+# description : Compare the difference between numbers against a given tolerance
+# depends : perl
+
+name=perl-test-number-delta
+version=1.06
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Test-Number-Delta-1.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

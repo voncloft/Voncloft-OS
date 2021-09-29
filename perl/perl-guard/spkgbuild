@@ -1,0 +1,15 @@
+# description : safe cleanup blocks
+
+name=perl-guard
+version=1.023
+release=11
+
+source="https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/Guard-1.023.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

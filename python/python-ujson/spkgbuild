@@ -1,0 +1,15 @@
+# description : Ultra fast JSON encoder and decoder for Python
+# depends : python
+
+name=python-ujson
+version=4.2.0
+release=1
+
+source=https://github.com/ultrajson/ultrajson/archive/4.2.0/python-ujson-4.2.0.tar.gz
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

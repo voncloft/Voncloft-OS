@@ -1,0 +1,15 @@
+# description : Fast, pure-Python full text indexing, search, and spell checking library
+# depends : python
+
+name=python-whoosh
+version=2.7.4
+release=7
+
+source="git+https://github.com/mchaput/whoosh#tag=v2.7.4"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

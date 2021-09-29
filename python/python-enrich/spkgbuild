@@ -1,0 +1,15 @@
+# description : Extends rich library functionality with a set of changes that were not accepted
+# depends : python-rich
+
+name=python-enrich
+version=1.2.6
+release=1
+
+source="https://files.pythonhosted.org/packages/source/e/enrich/enrich-1.2.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

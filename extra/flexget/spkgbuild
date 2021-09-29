@@ -1,0 +1,18 @@
+# description : downloads torrents 
+# depends : flexget-daemon python python-feedparser python-sqlalchemy python-yaml python-beautifulsoup4 python-html5lib python-pyrss2gen python-pynzb python-rpyc python-jinja python-requests python-dateutil python-jsonschema python-guessit python-rebulk python-apscheduler python-terminaltables python-colorclass python-cherrypy python-flask python-flask-restful python-flask-restplus python-flask-compress python-flask-login python-flask-cors python-pyparsing python-zxcvbn python-progressbar python-loguru python-guppy python-transmissionrpc python-rarfile python-boto3 python-paver python-setuptools
+
+
+
+name=flexget
+version=3.1.137
+release=1
+
+source="https://github.com/Flexget/Flexget/archive/v${version}.tar.gz"
+options="!checksum"
+
+build()
+{
+	python setup.py build
+	python setup.py install --root=$PKG --prefix=/usr --optimize=1 
+}
+

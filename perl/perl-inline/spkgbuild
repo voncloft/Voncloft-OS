@@ -1,0 +1,16 @@
+# description : Write Perl subroutines in other languages
+# depends : perl perl-parse-recdescent
+
+name=perl-inline
+version=0.86
+release=2
+
+source="https://cpan.metacpan.org/authors/id/T/TI/TINITA/Inline-0.83.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

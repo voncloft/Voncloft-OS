@@ -1,0 +1,16 @@
+# description : an exporter with the features of Sub::Exporter but only core dependencies
+# depends : perl
+
+name=perl-exporter-tiny
+version=1.002002
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.002002.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

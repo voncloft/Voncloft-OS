@@ -1,0 +1,29 @@
+# description : tinyxml a simple small xml parser
+# depends : setconf
+
+name=tinyxml
+version=2.6.2
+release=7
+options="!checksum"
+source="https://downloads.sourceforge.net/tinyxml/tinyxml_2_6_2.tar.gz"
+build()
+{
+	cd $name-$version
+
+	patch -p0 -i "$SRC/entity.patch"
+	patch -p1 -i "$SRC/$name-2.5.3-st1.patch"
+
+	setconf Makefile TINYXML_USE_STL YES
+  	setconf Makefile RELEASE_CFLAGS "$CXXFLAGS -fPIC"
+	make
+
+	g++ -fPIC "$CXXFLAGS" -shared -o "lib${name}.so.0.$version" \
+      	-Wl,-soname,"lib${name}.so.0" $(ls *.o | grep -v xmltest)	
+
+	install -m 0755 "lib${name}.so.0.$pkgver" $PKG/usr/lib/
+  	install -m 0644 "$name.h" tinystr.h $PKG/usr/include
+        install -Dm644 "$SRC/$name.pc" "$PKG/usr/lib/pkgconfig/$name.pc"
+
+        ln -s "/usr/lib/lib${name}.so.0.$version" "$PKG/usr/lib/lib${name}.so.0"
+        ln -s "/usr/lib/lib${name}.so.0.$version" "$PKG/usr/lib/lib${name}.so"
+}

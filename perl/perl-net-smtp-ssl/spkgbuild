@@ -1,0 +1,16 @@
+# description : SSL support for Net::SMTP
+# depends : perl-io-socket-ssl
+
+name=perl-net-smtp-ssl
+version=1.04
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Net-SMTP-SSL-1.04.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

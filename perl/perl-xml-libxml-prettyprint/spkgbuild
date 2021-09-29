@@ -1,0 +1,16 @@
+# description : Add pleasant whitespace to a DOM tree
+# depends : perl perl-exporter-tiny perl-xml-libxml
+
+name=perl-xml-libxml-prettyprint
+version=0.006
+release=5
+
+source="https://search.cpan.org/CPAN/authors/id/T/TO/TOBYINK/XML-LibXML-PrettyPrint-0.006.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

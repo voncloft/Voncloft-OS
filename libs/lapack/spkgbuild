@@ -1,0 +1,30 @@
+# description : C interface to BLAS
+# depends : cmake blas
+
+name=lapack
+version=3.9.0
+release=3
+
+source="https://github.com/Reference-LAPACK/lapack/archive/v$version.tar.gz
+	https://github.com/Reference-LAPACK/lapack/commit/87536aa3.patch"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	patch -p1 -i ../lapacke-missing-symbols.patch
+	mkdir build
+	cd build
+	cmake .. \
+		-DCMAKE_SKIP_RPATH=ON \
+    		-DBUILD_SHARED_LIBS=ON \
+    		-DBUILD_TESTING=OFF \
+    		-DCMAKE_INSTALL_PREFIX=/usr \
+    		-DCMAKE_Fortran_COMPILER=gfortran \
+    		-DLAPACKE_WITH_TMG=ON \
+    		-DCBLAS=ON \
+    		-DBUILD_DEPRECATED=ON
+    	make
+
+	# lapack
+	make DESTDIR=$PKG install
+}

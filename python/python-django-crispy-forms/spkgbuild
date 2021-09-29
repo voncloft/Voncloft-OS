@@ -1,0 +1,15 @@
+# description : The best way to have DRY Django forms
+# depends : python-django
+
+name=python-django-crispy-forms
+version=1.13.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/d/django-crispy-forms/django-crispy-forms-1.13.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,15 @@
+# description : Easy way to make anonymous functions by partial application of operators
+# depends : python
+
+name=python-whatever
+version=0.6
+release=3
+
+source="python-whatever-0.6.tar.gz::https://github.com/Suor/whatever/archive/0.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

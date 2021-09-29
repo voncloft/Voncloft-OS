@@ -1,0 +1,15 @@
+# description : Micro subset of unicode data files for linkify-it-py projects
+# depends : python
+
+name=python-uc-micro-py
+version=1.0.1
+release=1
+
+source="python-uc-micro-py-1.0.1.tar.gz::https://github.com/tsutsu3/uc.micro-py/archive/v1.0.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

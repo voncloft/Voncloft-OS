@@ -1,0 +1,15 @@
+# description : Tensors and Dynamic neural networks in Python with strong GPU acceleration
+# depends : google-glog gflags opencv openmp nccl pybind11 python python-yaml libuv
+
+name=python-pytorch
+version=1.9.0
+release=4
+
+source="pytorch-1.9.0::git+https://github.com/pytorch/pytorch.git#tag=v1.9.0"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

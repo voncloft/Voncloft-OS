@@ -1,0 +1,16 @@
+# description : Simple set-and-forget using of a /share directory in your projects root
+# depends : perl-file-sharedir perl-path-finddev perl-path-isdev perl-path-tiny
+
+name=perl-file-sharedir-projectdistdir
+version=1.000009
+release=3
+
+source="https://cpan.metacpan.org/authors/id/K/KE/KENTNL/File-ShareDir-ProjectDistDir-1.000009.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

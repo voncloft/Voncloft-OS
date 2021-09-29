@@ -1,0 +1,21 @@
+# description : input method user interface and devel platform
+# depends : gtk2 libtool gtk3 intltool
+
+name=scim
+version=1.4.18
+release=3
+
+source="https://github.com/scim-im/$name/archive/$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./bootstrap
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--with-gtk-version=2 # no gtk3 support in scim-anthy
+
+	make
+	make DESTDIR=$PKG install
+}

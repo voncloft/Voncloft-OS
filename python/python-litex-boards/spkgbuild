@@ -1,0 +1,15 @@
+# description : Small footprint and configurable Ethernet core
+# depends : python-migen python-litex python-litedram python-liteeth python-liteiclink python-litejesd204b
+
+name=python-litex-boards
+version=2020.12
+release=1
+
+source="python-litex-boards-2020.12.tar.gz::https://github.com/litex-hub/litex-boards/archive/2020.12.tar.gz"
+options="!checksum"
+
+build() {
+   cd ${name#python-}-$version
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

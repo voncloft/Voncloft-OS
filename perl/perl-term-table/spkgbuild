@@ -1,0 +1,16 @@
+# description : Format a header and rows into a table
+# depends : perl-importer
+
+name=perl-term-table
+version=0.015
+release=2
+
+source="https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.015.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

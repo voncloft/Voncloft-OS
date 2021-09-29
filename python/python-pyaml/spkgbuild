@@ -1,0 +1,15 @@
+# description : PyYAML-based module to produce pretty and readable YAML-serialized data
+# depends : python-yaml
+
+name=python-pyaml
+version=21.8.3
+release=4
+
+source="https://pypi.io/packages/source/p/pyaml/pyaml-21.8.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

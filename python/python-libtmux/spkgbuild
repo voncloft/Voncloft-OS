@@ -1,0 +1,15 @@
+# description : Python api for tmux
+# depends : python tmux
+
+name=python-libtmux
+version=0.10.1
+release=3
+
+source="python-libtmux-0.10.1.tar.gz::https://github.com/tmux-python/libtmux/archive/v0.10.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

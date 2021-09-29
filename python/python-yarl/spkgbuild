@@ -1,0 +1,15 @@
+# description : Yet another URL library
+# depends : glibc python python-multidict python-idna python-typing_extensions
+
+name=python-yarl
+version=1.6.3
+release=1
+
+source="https://github.com/aio-libs/yarl/archive/v1.6.3/python-yarl-1.6.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

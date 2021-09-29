@@ -1,0 +1,15 @@
+# description : Colorization of help messages in Click
+# depends : python-click
+
+name=python-click-help-colors
+version=0.9.1
+release=1
+
+source="https://files.pythonhosted.org/packages/source/c/click-help-colors/click-help-colors-0.9.1.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : A Data Driven Testing Framework
+# depends : perl-spiffy
+
+name=perl-test-base
+version=0.89
+release=2
+
+source="https://www.cpan.org/authors/id/I/IN/INGY/Test-Base-0.89.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

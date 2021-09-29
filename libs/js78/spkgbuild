@@ -1,0 +1,26 @@
+# description : javascript interpreter and libraries version 78
+# depends : autoconf icu rustc which gcc
+
+name=js78
+version=78.9.0
+release=1
+
+source="https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz"
+options="!checksum"
+
+build() {
+	cd js-$version
+	mkdir obj
+	cd obj
+	CC=gcc CXX=g++ \
+	../js/src/configure --prefix=/usr            \
+                    --with-intl-api          \
+                    --with-system-zlib       \
+                    --with-system-icu        \
+                    --disable-jemalloc       \
+                    --disable-debug-symbols  \
+                    --enable-readline
+
+	make
+	make DESTDIR=$PKG install
+}

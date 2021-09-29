@@ -1,0 +1,16 @@
+# description : Perl extension to test methods for warnings 
+# depends : perl-tree-dag-node perl-sub-uplevel perl
+
+name=perl-test-warn
+version=0.36
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,28 @@
+#!/bin/sh
+########################################################################
+# Begin xdm
+#
+# Description : Start a Display Manager
+#
+# Author      : Pierre Labastie - pierre.labastie@neuf.fr
+#
+# Version     : BLFS 10.0
+#
+########################################################################
+
+# This script is not a bootscript with information on
+# dependencies, etc. It is supposed to be run directly from
+# inittab, with:
+# dm:5:respawn:/etc/rc.d/init.d/xdm
+
+source /etc/sysconfig/xdm
+
+if [ -z "${DISPLAY_MANAGER}" ]; then
+    echo Please set DISPLAY_MANAGER in /etc/sysconfig/xdm \
+before running /etc/rc.d/init.d/xdm
+    exit 1
+fi
+
+exec ${DISPLAY_MANAGER} ${DM_OPTIONS}
+
+# End xdm

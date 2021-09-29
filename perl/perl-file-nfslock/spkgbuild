@@ -1,0 +1,16 @@
+# description : NFS compatible safe locking utility
+# depends : perl
+
+name=perl-file-nfslock
+version=1.29
+release=2
+
+source="https://www.cpan.org/authors/id/B/BB/BBB/File-NFSLock-1.29.tar.gz"
+options="!checksum" 
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

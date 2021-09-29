@@ -1,0 +1,15 @@
+# description : A Python interface to Last.fm and Libre.fm
+# depends : python-six
+
+name=python-pylast
+version=4.2.1
+release=1
+
+source="git+https://github.com/pylast/pylast.git#tag="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

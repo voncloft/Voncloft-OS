@@ -1,0 +1,15 @@
+# description : Activate virtual environment for current shell
+# depends : python-attrs python-pexpect python-shellingham
+
+name=python-dephell-shells
+version=0.1.5
+release=5
+
+source="https://files.pythonhosted.org/packages/source/d/dephell_shells/dephell_shells-0.1.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Perl module getting a full hostname
+# depends : perl
+
+name=perl-sys-hostname-long
+version=1.5
+release=7
+
+source="https://search.cpan.org/CPAN/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

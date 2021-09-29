@@ -1,0 +1,15 @@
+# description : A Python data validation library
+# depends : python
+
+name=python-voluptuous
+version=0.12.2
+release=1
+
+source="https://pypi.io/packages/source/v/voluptuous/voluptuous-0.12.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

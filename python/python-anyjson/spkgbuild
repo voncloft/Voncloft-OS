@@ -1,0 +1,15 @@
+# description : Wraps the best available JSON implementation available in a common interface
+# depends : python
+
+name=python-anyjson
+version=0.3.3
+release=14
+
+source="https://files.pythonhosted.org/packages/source/a/anyjson/anyjson-0.3.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

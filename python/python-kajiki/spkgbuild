@@ -1,0 +1,15 @@
+# description : Python XML-based template engine with Genshi-like syntax and Jinja-style blocks
+# depends : python
+
+name=python-kajiki
+version=0.8.3
+release=4
+
+source="kajiki-0.8.3.tar.gz::https://github.com/nandoflorestan/kajiki/archive/v0.8.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

@@ -1,0 +1,16 @@
+# description : Testinfra test your infrastructures
+# depends : python-pytest
+# TODO: add salt to optdepends, after it has been ported to python3
+
+name=python-pytest-testinfra
+version=6.4.0
+release=1
+
+source="https://files.pythonhosted.org/packages/source/p/pytest-testinfra/pytest-testinfra-6.4.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

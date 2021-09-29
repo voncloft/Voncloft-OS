@@ -1,0 +1,15 @@
+# description : Simple SQLite3 store for Python objects
+# depends : python
+
+name=python-minidb
+version=2.0.5
+release=3
+
+source="http://thp.io/2010/minidb/minidb-2.0.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

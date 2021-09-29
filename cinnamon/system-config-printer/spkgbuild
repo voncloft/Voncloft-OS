@@ -1,0 +1,21 @@
+# description : cups printer configuration tool
+# depends : gtk3 libnotify python-cairo python-dbus python-gobject3 python-pycups python-pycurl python-requests libsecret python-pysmbc desktop-file-utils docbook-xsl intltool xmlto
+
+name=system-config-printer
+version=1.5.15
+release=1
+
+source="https://github.com/OpenPrinting/$name/archive/refs/tags/v$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+    	--sbindir=/usr/bin \
+    	--sysconfdir=/etc \
+    	--with-systemdsystemunitdir=/usr/lib/systemd/system \
+    	--with-udevdir=/usr/lib/udev \
+    	--with-udev-rules
+  	make
+	make DESTDIR=$PKG install
+}

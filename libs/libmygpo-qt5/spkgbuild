@@ -1,0 +1,21 @@
+# description : A C++/Qt client library for gpodder.net
+# depends : qt5
+
+name=libmygpo-qt5
+version=1.1.0
+release=3
+
+source="http://stefan.derkits.at/files/libmygpo-qt/libmygpo-qt.${version}.tar.gz"
+options="!checksum"
+
+build() {
+	cd libmygpo-qt.$version
+	mkdir build
+	cd build
+	cmake ..  \
+    	-DCMAKE_BUILD_TYPE='Release' \
+    	-DCMAKE_INSTALL_PREFIX='/usr' \
+    	-DMYGPO_BUILD_TESTS=OFF
+	make
+	make DESTDIR=$PKG install
+}

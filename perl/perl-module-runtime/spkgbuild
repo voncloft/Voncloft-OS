@@ -1,0 +1,16 @@
+# description : runtime module handling
+# depends : perl perl-module-build
+
+name=perl-module-runtime
+version=0.016
+release=2
+
+source="https://search.cpan.org/CPAN/authors/id/Z/ZE/ZEFRAM/Module-Runtime-0.016.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,20 @@
+# description : library for banking
+# depends : python cmake
+
+name=ktoblzcheck
+version=1.52
+release=3
+
+source="https://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake .. \
+	-DCMAKE_BUILD_TYPE=Release \
+    	-DCMAKE_INSTALL_PREFIX=/usr
+	make
+	make DESTDIR=$PKG install
+}

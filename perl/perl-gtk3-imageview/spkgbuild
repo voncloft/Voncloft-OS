@@ -1,0 +1,16 @@
+# description : Image viewer widget for Gtk3
+# depends : perl-gtk3 imagemagick
+
+name=perl-gtk3-imageview
+version=9
+release=1
+
+source="https://cpan.metacpan.org/authors/id/A/AS/ASOKOLOV/--9.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Port of node.jss EventEmitter to python
+# depends : python-trio python-twisted
+
+name=python-pyee
+version=8.2.2
+release=2
+
+source="https://files.pythonhosted.org/packages/source/p/pyee/pyee-8.2.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

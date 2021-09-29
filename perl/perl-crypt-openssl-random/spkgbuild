@@ -1,0 +1,16 @@
+# description : Routines for accessing the OpenSSL pseudo-random number generator
+# depends : perl openssl 
+
+name=perl-crypt-openssl-random
+version=0.15
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/R/RU/RURBAN/Crypt-OpenSSL-Random-0.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

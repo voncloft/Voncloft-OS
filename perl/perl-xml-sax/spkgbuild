@@ -1,0 +1,16 @@
+# description : Simple API for XML
+# depends : perl perl-xml-sax-base perl-xml-namespacesupport
+
+name=perl-xml-sax
+version=1.02
+release=1
+
+source="https://www.cpan.org/authors/id/G/GR/GRANTM/XML-SAX-1.02.tar.gz"
+options="!checksum" 
+
+build() {
+   cd *
+   make
+   PERLLIB=blib/lib make install DESTDIR=$PKG
+
+}

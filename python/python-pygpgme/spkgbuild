@@ -1,0 +1,15 @@
+# description : A Python interface to the gpgme GnuPG library
+# depends : python gpgme
+
+name=python-pygpgme
+version=0.3
+release=9
+
+source="https://launchpad.net/pygpgme/trunk/0.3/+download/pygpgme-0.3.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

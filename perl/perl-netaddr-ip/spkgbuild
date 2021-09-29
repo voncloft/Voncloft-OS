@@ -1,0 +1,16 @@
+# description : Perl module to manage IP addresses and subnets
+# depends : perl
+
+name=perl-netaddr-ip
+version=4.079
+release=10
+
+source="https://search.cpan.org/CPAN/authors/id/M/MI/MIKER/NetAddr-IP-4.079.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

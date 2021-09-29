@@ -1,0 +1,15 @@
+# description : Recursive descent parsing library based on functional combinators
+# depends : python
+
+name=python-funcparserlib
+version=1.0.0
+release=5
+
+source="python-funcparserlib-0.3.6.tar.gz::https://github.com/vlasovskikh/funcparserlib/archive/0.3.6.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

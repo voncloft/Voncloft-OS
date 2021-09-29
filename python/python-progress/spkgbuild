@@ -1,0 +1,15 @@
+# description : Easy to use progress bars for Python
+    # depends : python
+
+name=python-progress
+version=1.6
+release=5
+
+source="python-progress-1.5.tar.gz::https://github.com/verigak/progress/archive/1.5.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

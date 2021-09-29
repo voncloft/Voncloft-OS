@@ -1,0 +1,16 @@
+# description : GD plugins for the Template Toolkit
+# depends : perl-template-toolkit perl-gd
+
+name=perl-template-gd
+version=2.66
+release=7
+
+source="https://www.cpan.org/authors/id/A/AB/ABW/Template-GD-2.66.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

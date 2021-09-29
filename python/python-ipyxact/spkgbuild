@@ -1,0 +1,15 @@
+# description : Python-based IP-XACT parser
+# depends : python python-yaml
+
+name=python-ipyxact
+version=0.2.4
+release=3
+
+source="python-ipyxact-0.2.4.tar.gz::https://github.com/olofk/ipyxact/archive/v0.2.4.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

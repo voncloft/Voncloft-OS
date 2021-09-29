@@ -1,0 +1,167 @@
+#!/bin/sh
+vercomp() {
+        if [ "$1" = "$2" ]; then
+                return 0 # same version
+        #elif [ "$1" = "$(echo "$1\n$2" | sort -V | head -n1)" ]; then
+        elif [ "$(printf '%s\n' "$1" "$2" | sort -V | head -n1)" = "$1" ]; then
+                return 1 # $1 lower than $2
+                #echo "1"
+        else
+                return 2 # $1 higher than $2
+                #echo "2"
+        fi
+}
+cd /var/log/old
+logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
+mkdir -pv $logpath/changes
+mkdir -pv $logpath/reports
+mkdir -pv $logpath/over_updated
+mkdir -pv $logpath/missing
+rm -v index.html
+rm -v index.html.*
+shopt -s nocaseglob
+#foltotar repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+rm testing.txt
+wget http://distrowatch.org/packages.php
+
+#remove packages that you want out of the loop
+#sed -i -e '/vlc/d' packages.php
+#sed -i -e '/llvm/d' packages.php #not yet supported
+sed -i -e '/mesa/d' packages.php
+sed -i -e '/qt/d' packages.php
+sed -i -e '/wine/d' packages.php
+
+rm -rf stripped_info.txt
+grep -A 1 "<th><a name=" packages.php >> modified.php
+
+#fix a few packages
+#sed -i -e 's/qt/qt5/g' modified.php
+
+grep -Po "(?<=>)[^<>]*(?=<)" modified.php | grep -v : | tr '[:upper:]' '[:lower:]'>> stripped_info.txt
+
+##get some additional packages##
+for f in /Voncloft-OS/utilities/custom_progs/*
+do
+	filenames=${f##*/}
+	
+	#sh $filenames
+	#if [ "$filenames" != "python-upgrade.sh" ] && [ "$filenames" != "perl-upgrade.sh" ];
+	#if [ "$filenames" == "python-upgrade.sh" ];
+	#then
+        	echo $filenames
+		sh $f
+	#fi
+	#echo ${f##*/}
+done
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+input=stripped_info.txt
+myarr=()
+list=$(cat </etc/checkrepo.conf)
+while IFS= read  -r line; do
+   myarr+=("$line")
+done < "$input"
+count=0
+#final="$(date +%H)<br>\n"
+
+echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> echo -e "$(date +%H)" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >>  echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> missing.txt
+
+
+
+echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+echo -e "$(date +%H)" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+while IFS=$'\n' read -ra items; do
+		for item in "${items[@]}"; do
+			for ((index=0; index <= ${#myarr[@]}; index++)); do
+			#echo "${myarr[index]}"
+  			if [ "${myarr[index]}" == "$item" ]; 
+  			then
+    				uversion=${myarr[index+1]}
+				cversion=$(grep "version=" /Voncloft-OS/*/$item/spkgbuild | sed 's/version=//g' | grep -v version | grep -v { )
+				if [ "$uversion" != "$cversion" ];
+				then
+				vercomp $uversion $cversion
+					if [ $? = 2 ]; then #if I have a more current up to date package on my repo then leave it out of the report
+						((count=count+1))
+						final="<b><u>${myarr[index]}</u></b>\n"
+						final+="<br>installed version in repo: $cversion\n"
+						final+="<br>upgraded to version: $uversion\n"
+						final+="<br><br>\n\n"
+						echo -e $final >> testing.txt
+						echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+						echo -e "sed -i -e 's/$cversion/$uversion/g' /Voncloft-OS/*/$item/spkgbuild" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+						sed -i -e "s/$cversion/$uversion/g" /Voncloft-OS/*/$item/spkgbuild
+						changelog "$item" "Upgraded from version $cversion to version $uversion"
+					else
+						echo "$item is: $cversion in my repository - internet says should be $uversion"
+						echo -e "$item is: $cversion in my repository - internet says should be $uversion<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+					fi
+				fi
+  			fi
+                        done
+                        #echo $final
+		done
+		#echo $final
+done <<< "$list"
+#echo $PWD
+echo -e "Packages upgraded: $count\n" >> $PWD/testing.txt
+echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+words=$(cat $PWD/testing.txt)
+cat $PWD/testing.txt
+title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
+echo $title
+#log_html_path="http://voncloft.dnsfor.me/updated/"$(date +"%Y")"/"$(date +"%b")"/reports/"repository_upgrade_report-$(date +"%m-%d-%y").html
+
+
+
+###get missing package info not in the loop
+grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
+
+if [ $count -gt 0 ];
+then
+	###if I have outdated packages let me know
+	#mail me the packages updated in repo automatically
+	mailme voncloft@gmail.com "$words" "$title"
+	mailme phonenumber@vtext.com "Updated packages: $count" "Upgrade Report"
+	#mailme phonenumber@vtext.com "$log_html_path" "Upgrade Report"
+	#message me outdated packages not in the loop
+	mailme phonenumber@vtext.com "Total Missing: $(cat missing.txt | wc -l)" "Total Outdated Packages"
+	echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
+	missing=$(cat missing.txt)
+	mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
+
+fi
+###OLD
+
+##MISSING PACKES KEPT OUT OF LOOP
+#grep -vxf stripped_info.txt /etc/checkrepo.conf | sort -V | sed 's/.*/&<br>/g' > missing.txt
+#echo "<br><br>Total Missing: $(cat missing.txt | wc -l)" >> missing.txt
+#missing=$(cat missing.txt)
+#mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked"
+
+rm -rfv *.php
+rm -rfv *.php.*
+#rm -rfv stripped_info.txt
+
+####what is missing for update checks
+#grep -vxf stripped_info.txt checkrepo.conf | sort -V
+
+
+#mv -v testing.txt repository_upgrade_report.log
+rm -v testing.txt
+rm -v test.txt
+cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
+cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").log /var/log/old/repository_changes-$(date +"%m-%d-%y").html
+echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
+cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
+cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
+#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
+find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;

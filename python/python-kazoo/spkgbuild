@@ -1,0 +1,15 @@
+# description : A high-level Python library that makes it easier to use Apache Zookeeper
+# depends : python-six
+
+name=python-kazoo
+version=2.8.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source/k/kazoo/kazoo-2.8.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

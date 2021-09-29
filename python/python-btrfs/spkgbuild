@@ -1,0 +1,15 @@
+# description : Python Btrfs module, with useful scripts to inspect btrfs internals
+# depends : python
+
+name=python-btrfs
+version=13
+release=2
+
+source="python-btrfs::git://github.com/knorrie/python-btrfs.git#tag=v13"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

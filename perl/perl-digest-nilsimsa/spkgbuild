@@ -1,0 +1,16 @@
+# description : Perl version of Nilsimsa code
+# depends : perl
+
+name=perl-digest-nilsimsa
+version=0.06
+release=20
+
+source="https://www.cpan.org/authors/id/V/VI/VIPUL/Digest-Nilsimsa-0.06.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

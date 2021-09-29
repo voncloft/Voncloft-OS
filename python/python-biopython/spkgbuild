@@ -1,0 +1,15 @@
+# description : Freely available Python tools for computational molecular biology
+# depends : python-numpy
+
+name=python-biopython
+version=1.79
+release=2
+
+source="http://www.biopython.org/DIST/biopython-1.79.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

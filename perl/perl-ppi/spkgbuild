@@ -1,0 +1,16 @@
+# description : Parse, Analyze and Manipulate Perl without perl
+# depends : perl-clone perl-io-string perl-list-moreutils perl-params-util perl-task-weaken
+
+name=perl-ppi
+version=1.270
+release=2
+
+source="https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/PPI-1.270.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

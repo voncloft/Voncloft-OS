@@ -1,0 +1,16 @@
+# description : database independant abstraction layer for C
+# depends : glibc
+
+name=libdbi
+version=0.9.0
+release=5
+
+source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : conversion of ints and rationals to any base
+# depends : python
+
+name=python-justbases
+version=0.15
+release=3
+
+source="python-justbases-0.15.tar.gz::https://github.com/mulkieran/justbases/archive/v0.15.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

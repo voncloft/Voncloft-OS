@@ -1,0 +1,16 @@
+# description : Uniform Resource Identifiers absolute and relative
+# depends : perl
+
+name=perl-uri
+version=5.09
+release=1
+
+source="https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,16 @@
+# description : Expose the flag which marks global
+# depends : perl perl-sub-exporter perl-sub-exporter-progressive
+
+name=perl-devel-globaldestruction
+version=0.14
+release=6
+
+source="https://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Devel-GlobalDestruction-0.14.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

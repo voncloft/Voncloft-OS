@@ -1,0 +1,15 @@
+# description : A featureful, correct URL for Python
+# depends : python-idna
+
+name=python-hyperlink
+version=21.0.0
+release=1
+
+source="https://github.com/python-hyper/hyperlink/archive/v21.0.0/python-hyperlink-21.0.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

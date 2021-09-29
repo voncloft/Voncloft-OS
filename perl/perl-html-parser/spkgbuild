@@ -1,0 +1,16 @@
+# description : Perl HTML parser class
+# depends : perl-html-tagset perl-http-message perl-uri
+
+name=perl-html-parser
+version=3.76
+release=1
+
+source="https://www.cpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.76.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

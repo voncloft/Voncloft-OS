@@ -1,0 +1,16 @@
+# description : Pure python SSH tunnels
+  # depends : python python-sshtunnel python-setuptools
+  # depends : python python-paramiko
+
+name=python-sshtunnel
+version=0.4.0
+release=5
+
+source="python-sshtunnel::git+https://github.com/pahaz/sshtunnel#commit="
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

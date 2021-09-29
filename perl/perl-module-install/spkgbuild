@@ -1,0 +1,16 @@
+# description : Module::Install - Standalone, extensible Perl module installer
+# depends : perl-file-remove perl-json perl-module-build perl-module-scandeps perl-par-dist perl-yaml-tiny
+
+name=perl-module-install
+version=1.19
+release=4
+
+source="https://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

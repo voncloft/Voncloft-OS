@@ -1,0 +1,22 @@
+00
+Packages upgraded: 0
+
+04
+Packages upgraded: 0
+
+08
+Packages upgraded: 0
+
+12
+sed -i -e 's/3.0.1/3.0.2/g' /Voncloft-OS/*/ruby/spkgbuild
+sed -i -e 's/77.0.4054.172/77.0.4054.203/g' /Voncloft-OS/*/opera/spkgbuild
+Packages upgraded: 2
+
+16
+Packages upgraded: 0
+
+20
+sed -i -e 's/248.3/249/g' /Voncloft-OS/*/systemd/spkgbuild
+Packages upgraded: 1
+
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css"></head>

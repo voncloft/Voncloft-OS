@@ -1,0 +1,15 @@
+# description : Subprocess interface that allows you to call any program as if it were a function
+# depends : python
+
+name=python-sh
+version=1.14.2
+release=3
+
+source="https://pypi.io/packages/source/s/sh/sh-1.14.2.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

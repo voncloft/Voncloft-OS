@@ -1,0 +1,16 @@
+# description : Perl module that provides lightweight MIME generator
+# depends : perl-email-date-format perl-mailtools perl-mime-types perl
+
+name=perl-mime-lite
+version=3.033
+release=3
+
+source="https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/MIME-Lite-3.033.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

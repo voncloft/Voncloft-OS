@@ -1,0 +1,16 @@
+# description : strip the attachments from an email 
+# depends : perl-email-mime-modifier perl-email-mime-contenttype perl-email-mime61
+
+name=perl-email-mime-attachment-stripper
+version=1.317
+release=4
+
+source="https://www.cpan.org/authors/id/R/RJ/RJBS/Email-MIME-Attachment-Stripper-1.317.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   perl Makefile.PL
+   make
+   make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# description : Correctly generate plurals, singular nouns, ordinals, indefinite articles
+# depends : python
+
+name=python-inflect
+version=5.3.0
+release=2
+
+source="https://files.pythonhosted.org/packages/source/i/inflect/inflect-5.3.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

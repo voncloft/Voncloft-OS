@@ -1,0 +1,15 @@
+# description : SQLAlchemy support for IBM Data Servers
+# depends : python-sqlalchemy
+
+name=python-ibm-db-sa
+version=0.3.7
+release=4
+
+source="https://pypi.io/packages/source/i/ibm_db_sa/ibm_db_sa-0.3.7.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }

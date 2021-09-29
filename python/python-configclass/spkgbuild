@@ -1,0 +1,15 @@
+# description : A Python class to hold configuration values
+# depends : python-mergedict
+
+name=python-configclass
+version=0.2.0
+release=3
+
+source="https://files.pythonhosted.org/packages/source/c/configclass/configclass-0.2.0.tar.gz"
+options="!checksum"
+
+build() {
+   cd *
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
+ }
