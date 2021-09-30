@@ -2,7 +2,7 @@
 # depends	: bash nano screenfetch cowsay lolcat fortune-mod monitor_process
 
 name=bash-completion
-version=2.11
+version=2.11.0
 release=1
 
 source="https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz

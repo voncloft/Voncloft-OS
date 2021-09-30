@@ -348,9 +348,9 @@ upgrade_process()
 	if [ -f index.html ];then
         	rm index.html
 	fi
-	#if [ -f test.txt ];then
-	#	rm test.txt
-	#fi
+	if [ -f test.txt ];then
+		rm test.txt
+	fi
 }
 alerts_and_logs()
 {
@@ -407,7 +407,7 @@ alerts_and_logs()
 }
 prepare_backup_and_logs()
 {
-	#foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
 		mkdir -pv $logpath/changes

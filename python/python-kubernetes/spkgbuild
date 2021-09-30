@@ -2,7 +2,7 @@
 # depends : python python-certifi python-six python-dateutil
 
 name=python-kubernetes
-version=18.20.0
+version=19.15.0
 release=2
 
 source="kombu-18.20.0.tar.gz::https://github.com/kubernetes-client/python/archive/v18.20.0.tar.gz"

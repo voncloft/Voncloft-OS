@@ -2,7 +2,7 @@
 # depends : python-migen python-pyserial python-requests python-pythondata-software-compiler_rt
 
 name=python-litex
-version=2020.12
+version=2021.08
 release=1
 
 source="python-litex-2020.12.tar.gz::https://github.com/enjoy-digital/litex/archive/2020.12.tar.gz"

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-rapidjson
-version=1.3
+version=1.4
 release=1
 
-source="https://pypi.io/packages/source/p/python-rapidjson/python-rapidjson-1.3.tar.gz"
+source="https://pypi.io/packages/source/p/python-rapidjson/python-rapidjson-1.4.tar.gz"
 options="!checksum"
 
 build() {
