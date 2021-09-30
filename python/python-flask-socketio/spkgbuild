@@ -5,7 +5,7 @@ name=python-flask-socketio
 version=5.1.1
 release=1
 
-source="https://github.com/miguelgrinberg/Flask-SocketIO/archive/v5.1.0/python-flask-socketio-5.1.0.tar.gz"
+source="https://github.com/miguelgrinberg/Flask-SocketIO/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

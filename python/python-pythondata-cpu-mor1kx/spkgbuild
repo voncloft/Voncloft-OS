@@ -5,7 +5,7 @@ name=python-pythondata-cpu-mor1kx
 version=2020.08
 release=1
 
-source="python-pythondata-cpu-mor1kx-2020.08.tar.gz::https://github.com/litex-hub/pythondata-cpu-mor1kx/archive/2020.08.tar.gz"
+source="https://github.com/litex-hub/pythondata-cpu-mor1kx/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-uhashring
 version=2.1
 release=3
 
-source="python-tox-1.2.tar.gz::https://github.com/ultrabug/uhashring/archive/1.2.tar.gz"
+source="https://github.com/ultrabug/uhashring/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

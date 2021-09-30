@@ -5,7 +5,7 @@ name=python-flasgger
 version=0.9.5
 release=3
 
-source="python-flasgger-0.9.5.tar.gz::https://github.com/flasgger/flasgger/archive/0.9.5.tar.gz"
+source="https://github.com/flasgger/flasgger/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

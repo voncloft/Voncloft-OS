@@ -5,7 +5,7 @@ name=python-mt-940
 version=4.23.0
 release=4
 
-source="https://github.com/WoLpH/mt940/archive/v4.23.0/python-mt-940-4.23.0.tar.gz"
+source="https://github.com/WoLpH/mt940/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-potr
 version=1.0.2
 release=3
 
-source="python-potr-1.0.2.tar.gz::https://github.com/afflux/pure-python-otr/archive/1.0.2.tar.gz"
+source="https://github.com/afflux/pure-python-otr/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

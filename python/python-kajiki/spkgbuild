@@ -5,7 +5,7 @@ name=python-kajiki
 version=0.8.3
 release=4
 
-source="kajiki-0.8.3.tar.gz::https://github.com/nandoflorestan/kajiki/archive/v0.8.3.tar.gz"
+source="https://github.com/nandoflorestan/kajiki/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

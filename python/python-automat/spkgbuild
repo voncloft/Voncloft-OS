@@ -5,7 +5,7 @@ name=python-automat
 version=20.2.0
 release=5
 
-source="https://github.com/glyph/automat/archive/v20.2.0/python-automat-20.2.0.tar.gz"
+source="https://github.com/glyph/automat/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

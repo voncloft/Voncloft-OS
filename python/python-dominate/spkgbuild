@@ -5,7 +5,7 @@ name=python-dominate
 version=2.6.0
 release=3
 
-source="python-dominate-2.6.0.tar.gz::https://github.com/Knio/dominate/archive/2.6.0.tar.gz"
+source="https://github.com/Knio/dominate/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

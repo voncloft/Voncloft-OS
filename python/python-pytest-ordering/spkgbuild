@@ -5,7 +5,7 @@ name=python-pytest-ordering
 version=0.6
 release=3
 
-source="https://github.com/ftobia/pytest-ordering/archive/0.6/python--0.6.tar.gz"
+source="https://github.com/ftobia/pytest-ordering/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

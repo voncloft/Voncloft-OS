@@ -5,7 +5,7 @@ name=python-cairosvg
 version=2.5.2
 release=1
 
-source="python-cairosvg-2.5.2.tar.gz::https://github.com/Kozea/CairoSVG/archive/2.5.2.tar.gz"
+source="https://github.com/Kozea/CairoSVG/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

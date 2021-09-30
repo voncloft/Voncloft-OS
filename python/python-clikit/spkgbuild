@@ -5,7 +5,7 @@ name=python-clikit
 version=0.6.2
 release=1
 
-source="clikit-0.6.2.tar.gz::https://github.com/sdispater/clikit/archive/0.6.2.tar.gz"
+source="https://github.com/sdispater/clikit/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

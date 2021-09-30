@@ -5,7 +5,7 @@ name=python-keyrings-alt
 version=4.1.0
 release=1
 
-source="python-keyrings-alt-4.0.2.tar.gz::https://github.com/jaraco/keyrings.alt/archive/v4.0.2.tar.gz"
+source="https://github.com/jaraco/keyrings.alt/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

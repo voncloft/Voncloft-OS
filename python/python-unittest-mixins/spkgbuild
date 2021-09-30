@@ -5,7 +5,7 @@ name=python-unittest-mixins
 version=1.6
 release=6
 
-source="python-unittest-mixins-1.6.tar.gz::https://github.com/nedbat/unittest-mixins/archive/v1.6.tar.gz"
+source="https://github.com/nedbat/unittest-mixins/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

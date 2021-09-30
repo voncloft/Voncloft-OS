@@ -5,7 +5,7 @@ name=python-seaborn
 version=0.11.2
 release=3
 
-source="python-seaborn-0.11.2.tar.gz::https://github.com/mwaskom/seaborn/archive/v0.11.2.tar.gz"
+source="https://github.com/mwaskom/seaborn/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-janus
 version=0.6.1
 release=3
 
-source="https://github.com/aio-libs/janus/archive/v0.6.1/python-janus-0.6.1.tar.gz"
+source="https://github.com/aio-libs/janus/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-xpybutil
 version=0.0.6
 release=3
 
-source="python-xpybutil-0.0.6.tar.gz::https://github.com/BurntSushi/xpybutil/archive/0.0.6.tar.gz"
+source="https://github.com/BurntSushi/xpybutil/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

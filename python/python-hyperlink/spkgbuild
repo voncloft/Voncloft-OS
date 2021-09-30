@@ -5,7 +5,7 @@ name=python-hyperlink
 version=21.0.0
 release=1
 
-source="https://github.com/python-hyper/hyperlink/archive/v21.0.0/python-hyperlink-21.0.0.tar.gz"
+source="https://github.com/python-hyper/hyperlink/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

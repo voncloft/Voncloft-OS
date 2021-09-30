@@ -5,7 +5,7 @@ name=python-typed-ast
 version=1.4.3
 release=1
 
-source="python-typed-ast-1.4.3.tar.gz::https://github.com/python/typed_ast/archive/1.4.3.tar.gz"
+source="https://github.com/python/typed_ast/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

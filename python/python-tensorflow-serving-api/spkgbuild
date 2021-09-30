@@ -5,7 +5,7 @@ name=python-tensorflow-serving-api
 version=2.6.0
 release=2
 
-source="python-tensorflow-serving-api-2.3.0.tar.gz::https://github.com/tensorflow/serving/archive/2.3.0.tar.gz"
+source="https://github.com/tensorflow/serving/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

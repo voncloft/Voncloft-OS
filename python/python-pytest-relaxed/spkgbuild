@@ -5,7 +5,7 @@ name=python-pytest-relaxed
 version=1.1.5
 release=5
 
-source="https://github.com/bitprophet/pytest-relaxed/archive/1.1.5/python-pytest-plugins-1.1.5.tar.gz"
+source="https://github.com/bitprophet/pytest-relaxed/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

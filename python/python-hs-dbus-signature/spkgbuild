@@ -5,7 +5,7 @@ name=python-hs-dbus-signature
 version=0.7
 release=1
 
-source="https://github.com/stratis-storage/hs-dbus-signature/archive/v0.07.tar.gz"
+source="https://github.com/stratis-storage/hs-dbus-signature/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

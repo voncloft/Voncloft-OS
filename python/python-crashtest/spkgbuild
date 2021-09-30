@@ -5,7 +5,7 @@ name=python-crashtest
 version=0.3.1
 release=3
 
-source="crashtest-0.3.1.tar.gz::https://github.com/sdispater/crashtest/archive/0.3.1.tar.gz"
+source="https://github.com/sdispater/crashtest/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

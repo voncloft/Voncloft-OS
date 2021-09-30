@@ -5,7 +5,7 @@ name=python-aiofiles
 version=0.7.0
 release=3
 
-source="git+https://github.com/Tinche/aiofiles.git#tag="
+source="https://github.com/Tinche/aiofiles.git#tag=/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pyinotify
 version=0.9.6
 release=9
 
-source="https://github.com/seb-m/pyinotify/archive/0.9.6.tar.gz"
+source="https://github.com/seb-m/pyinotify/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-mock
 version=4.0.3
 release=5
 
-source="mock-3.0.5.tar.gz::https://github.com/testing-cabal/mock/archive/3.0.5.tar.gz"
+source="https://github.com/testing-cabal/mock/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-cvxopt
 version=1.2.7
 release=3
 
-source="https://github.com/cvxopt/cvxopt/archive/1.2.7/python-cvxopt-1.2.7.tar.gz"
+source="https://github.com/cvxopt/cvxopt/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

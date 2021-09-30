@@ -5,7 +5,7 @@ name=python-filelock
 version=3.0.12
 release=5
 
-source="python-filelock-3.0.12.tar.gz::https://github.com/benediktschmitt/py-filelock/archive/v3.0.12.tar.gz"
+source="https://github.com/benediktschmitt/py-filelock/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-zipp
 version=3.6.0
 release=3
 
-source="python-zipp-3.5.0.tar.gz::https://github.com/jaraco/zipp/archive/v3.5.0.tar.gz"
+source="https://github.com/jaraco/zipp/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

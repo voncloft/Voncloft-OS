@@ -5,7 +5,7 @@ name=python-anyio
 version=3.3.2
 release=4
 
-source="https://github.com/agronholm/anyio/archive/3.3.1/anyio-3.3.1.tar.gz"
+source="https://github.com/agronholm/anyio/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

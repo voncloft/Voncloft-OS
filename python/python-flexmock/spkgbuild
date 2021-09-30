@@ -5,7 +5,7 @@ name=python-flexmock
 version=0.10.10
 release=6
 
-source="python-flaky-0.10.10.tar.gz::https://github.com/bkabrda/flexmock/archive/0.10.10.tar.gz"
+source="https://github.com/bkabrda/flexmock/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

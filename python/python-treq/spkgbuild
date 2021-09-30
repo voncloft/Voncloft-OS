@@ -5,7 +5,7 @@ name=python-treq
 version=21.5.0
 release=1
 
-source="https://github.com/twisted/treq/archive/release-21.5.0/python-treq-21.5.0.tar.gz"
+source="https://github.com/twisted/treq/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

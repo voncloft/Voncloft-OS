@@ -5,7 +5,7 @@ name=python-pythondata-cpu-lm32
 version=2020.08
 release=1
 
-source="python-pythondata-cpu-lm32-2020.08.tar.gz::https://github.com/litex-hub/pythondata-cpu-lm32/archive/2020.08.tar.gz"
+source="https://github.com/litex-hub/pythondata-cpu-lm32/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

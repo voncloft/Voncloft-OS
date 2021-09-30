@@ -5,7 +5,7 @@ name=python-scrypt
 version=0.8.18
 release=3
 
-source="https://github.com/holgern/py-scrypt/archive/v0.8.18/python-scrypt-0.8.18.tar.gz"
+source="https://github.com/holgern/py-scrypt/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

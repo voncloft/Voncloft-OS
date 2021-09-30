@@ -5,7 +5,7 @@ name=python-opentracing
 version=2.4.0
 release=1
 
-source="https://github.com/opentracing/opentracing-python/archive/2.4.0/python-opentracing-2.4.0.tar.gz"
+source="https://github.com/opentracing/opentracing-python/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

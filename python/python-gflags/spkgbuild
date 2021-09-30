@@ -5,7 +5,7 @@ name=python-gflags
 version=3.1.2
 release=6
 
-source="python-gflags-3.1.2.tar.gz::https://github.com/google/python-gflags/archive/3.1.2.tar.gz"
+source="https://github.com/google/python-gflags/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-blist
 version=1.3.6
 release=9
 
-source="python-blist-1.3.6.tar.gz::https://github.com/DanielStutzbach/blist/archive/v1.3.6.tar.gz"
+source="https://github.com/DanielStutzbach/blist/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

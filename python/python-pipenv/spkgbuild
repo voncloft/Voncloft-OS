@@ -5,7 +5,7 @@ name=python-pipenv
 version=2021.5.29
 release=1
 
-source="python-pipenv-2021.5.29.tar.gz::https://github.com/pypa/pipenv/archive/v2021.5.29.tar.gz"
+source="https://github.com/pypa/pipenv/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-visitor
 version=0.1.3
 release=5
 
-source="python-visitor-0.1.3.tar.gz::https://github.com/mbr/visitor/archive/0.1.3.tar.gz"
+source="https://github.com/mbr/visitor/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

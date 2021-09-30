@@ -5,7 +5,7 @@ name=python-poetry
 version=1.2.0
 release=1
 
-source="poetry-1.1.10.tar.gz::https://github.com/sdispater/poetry/archive/1.1.10.tar.gz"
+source="https://github.com/sdispater/poetry/archive/refs/tags/a$version.tar.gz"
 options="!checksum"
 
 build() {

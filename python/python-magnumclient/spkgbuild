@@ -5,7 +5,7 @@ name=python-magnumclient
 version=3.5.0
 release=1
 
-source="https://github.com/openstack/python-magnumclient/archive/3.5.0/python-magnumclient-3.5.0.tar.gz"
+source="https://github.com/openstack/python-magnumclient/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

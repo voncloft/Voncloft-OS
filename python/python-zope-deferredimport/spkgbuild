@@ -5,7 +5,7 @@ name=python-zope-deferredimport
 version=4.3.1
 release=6
 
-source="python-zope-deferredimport-4.3.1.tar.gz::https://github.com/zopefoundation/zope.deferredimport/archive/4.3.1.tar.gz"
+source="https://github.com/zopefoundation/zope.deferredimport/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

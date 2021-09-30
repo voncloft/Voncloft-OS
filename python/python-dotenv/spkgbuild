@@ -5,7 +5,7 @@ name=python-dotenv
 version=0.19.0
 release=3
 
-source="python-dotenv-0.19.0.tar.gz::https://github.com/theskumar/python-dotenv/archive/v0.19.0.tar.gz"
+source="https://github.com/theskumar/python-dotenv/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

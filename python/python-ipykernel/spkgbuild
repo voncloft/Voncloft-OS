@@ -5,7 +5,7 @@ name=python-ipykernel
 version=6.4.1
 release=1
 
-source="ipykernel-6.0.3.tgz::https://github.com/ipython/ipykernel/archive/6.0.3.tar.gz"
+source="https://github.com/ipython/ipykernel/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

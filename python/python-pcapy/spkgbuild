@@ -5,7 +5,7 @@ name=python-pcapy
 version=0.11.5
 release=4
 
-source="https://github.com/CoreSecurity/pcapy/archive/0.11.5/python-pbr-0.11.5.tar.gz"
+source="https://github.com/CoreSecurity/pcapy/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

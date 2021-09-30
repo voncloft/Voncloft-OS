@@ -4,7 +4,7 @@ name=python-sphinx-typlog-theme
 version=0.8.0
 release=3
 
-source="python-sphinx-typlog-theme-0.8.0.tar.gz::https://github.com/typlog/sphinx-typlog-theme/archive/b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+source="https://github.com/typlog/sphinx-typlog-theme/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

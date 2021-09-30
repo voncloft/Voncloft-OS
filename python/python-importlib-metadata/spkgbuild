@@ -5,7 +5,7 @@ name=python-importlib-metadata
 version=4.8.1
 release=1
 
-source="https://github.com/python/importlib_metadata/archive/v4.8.1/python-importlib-metadata-4.8.1.tar.gz"
+source="https://github.com/python/importlib_metadata/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

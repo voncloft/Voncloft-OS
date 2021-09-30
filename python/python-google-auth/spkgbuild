@@ -5,7 +5,7 @@ name=python-google-auth
 version=2.1.0
 release=1
 
-source="https://github.com/GoogleCloudPlatform/google-auth-library-python/archive/v1.33.1/python-google-auth-1.33.1.tar.gz"
+source="https://github.com/GoogleCloudPlatform/google-auth-library-python/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-ewmh
 version=0.1.6
 release=3
 
-source="python-ewmh-0.1.6.tar.gz::https://github.com/parkouss/pyewmh/archive/v0.1.6.tar.gz"
+source="https://github.com/parkouss/pyewmh/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

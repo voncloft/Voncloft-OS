@@ -5,7 +5,7 @@ name=python-os-service-types
 version=1.7.0
 release=7
 
-source="python-os-service-types-1.7.0.tar.gz::https://github.com/openstack/os-service-types/archive/1.7.0.tar.gz"
+source="https://github.com/openstack/os-service-types/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

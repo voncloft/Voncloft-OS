@@ -5,7 +5,7 @@ name=python-aiohttp-socks
 version=0.6.0
 release=3
 
-source="git+https://github.com/romis2012/aiohttp-socks?signed#tag=v0.4.2"
+source="https://github.com/romis2012/aiohttp-socks?signed#tag=v0.4.2/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

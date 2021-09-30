@@ -5,7 +5,7 @@ name=python-aiohttp
 version=4.0.0
 release=1
 
-source="python-aiohttp::git+https://github.com/aio-libs/aiohttp#commit="
+source="https://github.com/aio-libs/aiohttp#commit=/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-paho-mqtt
 version=1.5.1
 release=2
 
-source="python-paho-mqtt-1.5.1.tar.gz::https://github.com/eclipse/paho.mqtt.python/archive/v1.5.1.tar.gz"
+source="https://github.com/eclipse/paho.mqtt.python/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

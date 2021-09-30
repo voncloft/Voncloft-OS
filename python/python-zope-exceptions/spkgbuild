@@ -5,7 +5,7 @@ name=python-zope-exceptions
 version=4.4
 release=3
 
-source="python-zope-exceptions-4.4.tar.gz::https://github.com/zopefoundation/zope.exceptions/archive/4.4.tar.gz"
+source="https://github.com/zopefoundation/zope.exceptions/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

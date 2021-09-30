@@ -5,7 +5,7 @@ name=python-hacking
 version=4.1.0
 release=1
 
-source="python-hacking-4.1.0.tar.gz::https://github.com/openstack/hacking/archive/4.1.0.tar.gz"
+source="https://github.com/openstack/hacking/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

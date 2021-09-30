@@ -5,7 +5,7 @@ name=python-plette
 version=0.2.3
 release=5
 
-source="python-plette-0.2.3.tar.gz::https://github.com/sarugaku/plette/archive/0.2.3.tar.gz"
+source="https://github.com/sarugaku/plette/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-cmarkgfm
 version=0.6.0
 release=1
 
-source="https://github.com/theacodes/cmarkgfm/archive/0.6.0/python-cmarkgfm-0.6.0.tar.gz"
+source="https://github.com/theacodes/cmarkgfm/archive/refs/tags/a$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-rich
 version=10.11.0
 release=1
 
-source="https://github.com/willmcgugan/rich/archive/v10.11.0/rich-10.11.0.tar.gz"
+source="https://github.com/willmcgugan/rich/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

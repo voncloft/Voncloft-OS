@@ -5,7 +5,7 @@ name=python-sphinxcontrib-bibtex
 version=2.4.1
 release=1
 
-source="python-sphinxcontrib-bibtex-2.4.1.tar.gz::https://github.com/mcmtroffaes/sphinxcontrib-bibtex/archive/2.4.1.tar.gz"
+source="https://github.com/mcmtroffaes/sphinxcontrib-bibtex/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-scikit-learn
 version=1.0
 release=1
 
-source="scikit-learn-1.0.tar.gz::https://github.com/scikit-learn/scikit-learn/archive/1.0.tar.gz"
+source="https://github.com/scikit-learn/scikit-learn/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-threadloop
 version=1.0.2
 release=4
 
-source="https://github.com/unhashable/threadloop/archive/1.0.2/python-threadloop-1.0.2.tar.gz"
+source="https://github.com/unhashable/threadloop/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

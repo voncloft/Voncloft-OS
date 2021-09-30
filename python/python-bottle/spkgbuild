@@ -5,7 +5,7 @@ name=python-bottle
 version=0.12.19
 release=2
 
-source="python-bottle-0.12.19.tar.gz::https://github.com/defnull/bottle/archive/0.12.19.tar.gz"
+source="https://github.com/defnull/bottle/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

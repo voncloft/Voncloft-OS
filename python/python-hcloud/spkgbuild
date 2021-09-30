@@ -5,7 +5,7 @@ name=python-hcloud
 version=1.16.0
 release=2
 
-source="python-hcloud-1.16.0.tar.gz::https://github.com/hetznercloud/hcloud-python/archive/v1.16.0.tar.gz"
+source="https://github.com/hetznercloud/hcloud-python/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

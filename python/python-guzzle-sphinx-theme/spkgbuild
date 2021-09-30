@@ -5,7 +5,7 @@ name=python-guzzle-sphinx-theme
 version=0.7.11
 release=8
 
-source="guzzle_sphinx_theme-0.7.11.tar.gz::https://github.com/guzzle/guzzle_sphinx_theme/archive/0.7.11.tar.gz"
+source="https://github.com/guzzle/guzzle_sphinx_theme/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

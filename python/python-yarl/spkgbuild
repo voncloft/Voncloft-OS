@@ -5,7 +5,7 @@ name=python-yarl
 version=1.6.3
 release=1
 
-source="https://github.com/aio-libs/yarl/archive/v1.6.3/python-yarl-1.6.3.tar.gz"
+source="https://github.com/aio-libs/yarl/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-first
 version=2.0.2
 release=4
 
-source="python-first-2.0.2.tar.gz::https://github.com/hynek/first/archive/2.0.2.tar.gz"
+source="https://github.com/hynek/first/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

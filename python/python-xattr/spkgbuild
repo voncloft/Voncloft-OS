@@ -5,7 +5,7 @@ name=python-xattr
 version=0.9.7
 release=5
 
-source="https://github.com/xattr/xattr/archive/v0.9.7/python-xattr-0.9.7.tar.gz"
+source="https://github.com/xattr/xattr/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

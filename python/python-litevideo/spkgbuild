@@ -5,7 +5,7 @@ name=python-litevideo
 version=2021.08
 release=1
 
-source="python-litevideo-2020.12.tar.gz::https://github.com/enjoy-digital/litevideo/archive/2020.12.tar.gz"
+source="https://github.com/enjoy-digital/litevideo/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

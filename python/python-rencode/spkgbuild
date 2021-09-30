@@ -5,7 +5,7 @@ name=python-rencode
 version=1.0.6
 release=5
 
-source="python-pytorch-1.0.6.tar.gz::https://github.com/aresch/rencode/archive/v1.0.6.tar.gz"
+source="https://github.com/aresch/rencode/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

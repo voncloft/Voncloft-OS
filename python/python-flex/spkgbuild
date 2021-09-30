@@ -5,7 +5,7 @@ name=python-flex
 version=6.14.1
 release=5
 
-source="python-flex-6.14.1.tar.gz::https://github.com/pipermerriam/flex/archive/v6.14.1.tar.gz"
+source="https://github.com/pipermerriam/flex/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

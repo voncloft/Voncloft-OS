@@ -5,7 +5,7 @@ name=python-gwebsockets
 version=0.7
 release=3
 
-source="python-gwebsockets-0.7.tar.gz::https://github.com/sugarlabs/gwebsockets/archive/v0.7.tar.gz"
+source="https://github.com/sugarlabs/gwebsockets/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

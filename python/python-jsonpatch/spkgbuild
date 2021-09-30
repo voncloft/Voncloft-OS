@@ -5,7 +5,7 @@ name=python-jsonpatch
 version=1.32
 release=1
 
-source="python-jsonpatch-1.32.tar.gz::https://github.com/stefankoegl/python-json-patch/archive/v1.32.tar.gz"
+source="https://github.com/stefankoegl/python-json-patch/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

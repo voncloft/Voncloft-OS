@@ -5,7 +5,7 @@ name=python-arpeggio
 version=1.10.2
 release=3
 
-source="https://github.com/textX/Arpeggio/archive/1.10.2/python-arpeggio-1.10.2.tar.gz"
+source="https://github.com/textX/Arpeggio/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

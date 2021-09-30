@@ -5,7 +5,7 @@ name=python-transaction
 version=3.0.1
 release=1
 
-source="https://github.com/zopefoundation/transaction/archive/3.0.1/python-transaction-3.0.1.tar.gz"
+source="https://github.com/zopefoundation/transaction/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-wheel
 version=0.37.0
 release=1
 
-source="python-wheel-0.37.0.tar.gz::https://github.com/pypa/wheel/archive/0.37.0.tar.gz"
+source="https://github.com/pypa/wheel/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

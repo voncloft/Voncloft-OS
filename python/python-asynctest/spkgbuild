@@ -5,7 +5,7 @@ name=python-asynctest
 version=0.13.0
 release=4
 
-source="python-asynctest-0.13.0.tar.gz::https://github.com/Martiusweb/asynctest/archive/v0.13.0.tar.gz"
+source="https://github.com/Martiusweb/asynctest/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

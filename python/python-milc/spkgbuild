@@ -5,7 +5,7 @@ name=python-milc
 version=1.6.5
 release=1
 
-source="python-milc-1.4.2.tar.gz::https://github.com/clueboard/milc/archive/1.4.2.tar.gz"
+source="https://github.com/clueboard/milc/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

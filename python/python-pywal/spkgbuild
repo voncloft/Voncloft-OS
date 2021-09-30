@@ -5,7 +5,7 @@ name=python-pywal
 version=3.3.0
 release=3
 
-source="https://github.com/dylanaraps/pywal/archive/3.3.0.tar.gz"
+source="https://github.com/dylanaraps/pywal/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

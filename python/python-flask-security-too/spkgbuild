@@ -5,7 +5,7 @@ name=python-flask-security-too
 version=4.1.1
 release=3
 
-source="https://github.com/jwag956/flask-security/archive/4.0.1/python-flask-security-too-4.0.1.tar.gz"
+source="https://github.com/jwag956/flask-security/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

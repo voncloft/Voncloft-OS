@@ -6,7 +6,7 @@ name=python-feedparser
 version=6.0.8
 release=9
 
-source="feedparser-5.2.1.tar.gz::https://github.com/kurtmckee/feedparser/archive/5.2.1.tar.gz"
+source="https://github.com/kurtmckee/feedparser/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

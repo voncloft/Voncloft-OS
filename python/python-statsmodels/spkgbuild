@@ -5,7 +5,7 @@ name=python-statsmodels
 version=0.13.0
 release=2
 
-source="python-statsmodels-0.12.2.tar.gz::https://github.com/statsmodels/statsmodels/archive/v0.12.2.tar.gz"
+source="https://github.com/statsmodels/statsmodels/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

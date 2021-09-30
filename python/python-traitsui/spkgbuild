@@ -5,7 +5,7 @@ name=python-traitsui
 version=7.2.1
 release=3
 
-source="traitsui-7.2.1.tar.gz::https://github.com/enthought/traitsui/archive/7.2.1.tar.gz"
+source="https://github.com/enthought/traitsui/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

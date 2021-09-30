@@ -5,7 +5,7 @@ name=python-path
 version=16.2.0
 release=1
 
-source="https://github.com/jaraco/path/archive/v16.2.0/python-path-16.2.0.tar.gz"
+source="https://github.com/jaraco/path/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

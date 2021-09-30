@@ -5,7 +5,7 @@ name=python-django-fake-model
 version=0.1.4
 release=3
 
-source="https://github.com/erm0l0v/django-fake-model/archive/0.1.4/python-django-fake-model-0.1.4.tar.gz"
+source="https://github.com/erm0l0v/django-fake-model/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-bitstring
 version=3.1.9
 release=3
 
-source="https://github.com/scott-griffiths/bitstring/archive/bitstring-3.1.9.tar.gz"
+source="https://github.com/scott-griffiths/bitstring/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

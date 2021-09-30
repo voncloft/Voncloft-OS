@@ -5,7 +5,7 @@ name=python-asn1crypto
 version=1.4.0
 release=3
 
-source="python-asn1crypto-1.4.0.tar.gz::https://github.com/wbond/asn1crypto/archive/1.4.0.tar.gz"
+source="https://github.com/wbond/asn1crypto/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

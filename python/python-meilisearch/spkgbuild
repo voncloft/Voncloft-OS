@@ -5,7 +5,7 @@ name=python-meilisearch
 version=0.16.1
 release=1
 
-source="python-meilisearch-0.16.0.tar.gz::https://github.com/meilisearch/meilisearch-python/archive/v0.16.0.tar.gz"
+source="https://github.com/meilisearch/meilisearch-python/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

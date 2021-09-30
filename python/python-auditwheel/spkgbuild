@@ -5,7 +5,7 @@ name=python-auditwheel
 version=5.0.0
 release=1
 
-source="python-auditwheel-3.3.1.tar.gz::https://github.com/pypa/auditwheel/archive/3.3.1.tar.gz"
+source="https://github.com/pypa/auditwheel/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pip
 version=21.2.4
 release=1
 
-source="pip-20.3.4.tar.gz::https://github.com/pypa/pip/archive/20.3.4.tar.gz"
+source="https://github.com/pypa/pip/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

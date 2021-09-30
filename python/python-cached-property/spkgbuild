@@ -5,7 +5,7 @@ name=python-cached-property
 version=1.5.2
 release=3
 
-source="python-cached-property-1.5.2.tar.gz::https://github.com/pydanny/cached-property/archive/1.5.2.tar.gz"
+source="https://github.com/pydanny/cached-property/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

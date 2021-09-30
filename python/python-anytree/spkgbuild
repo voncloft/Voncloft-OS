@@ -5,7 +5,7 @@ name=python-anytree
 version=2.8.0
 release=3
 
-source="python-anytree::git+https://github.com/c0fec0de/anytree#commit=b3e935355afcfb5240bac5a99707ffecc35772a2"
+source="https://github.com/c0fec0de/anytree#commit=b3e935355afcfb5240bac5a99707ffecc35772a2/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-ptrace
 version=1.0.1
 release=3
 
-source="https://github.com/haypo/python-ptrace/archive/0.9.8/python-ptrace-0.9.8.tar.gz"
+source="https://github.com/haypo/python-ptrace/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

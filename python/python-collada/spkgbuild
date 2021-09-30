@@ -5,7 +5,7 @@ name=python-collada
 version=0.7.1
 release=1
 
-source="python-collada-0.7.1.tar.gz::https://github.com/pycollada/pycollada/archive/v0.7.1.tar.gz"
+source="https://github.com/pycollada/pycollada/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

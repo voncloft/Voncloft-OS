@@ -5,7 +5,7 @@ name=python-pwntools
 version=4.7.0
 release=3
 
-source="https://github.com/Gallopsled/pwntools/archive/4.6.0/python-pwntools-4.6.0.tar.gz"
+source="https://github.com/Gallopsled/pwntools/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pycparser
 version=2.20
 release=3
 
-source="python-pycparser-2.20.tar.gz::https://github.com/eliben/pycparser/archive/release_v2.20.tar.gz"
+source="https://github.com/eliben/pycparser/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

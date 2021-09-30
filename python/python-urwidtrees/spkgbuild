@@ -5,7 +5,7 @@ name=python-urwidtrees
 version=1.0.3
 release=5
 
-source="urwidtrees-1.0.3.tar.gz::https://github.com/pazz/urwidtrees/archive/1.0.3.tar.gz"
+source="https://github.com/pazz/urwidtrees/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-func-timeout
 version=4.3.5
 release=3
 
-source="python-func-timeout-4.3.5.tar.gz::https://github.com/kata198/func_timeout/archive/4.3.5.tar.gz"
+source="https://github.com/kata198/func_timeout/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

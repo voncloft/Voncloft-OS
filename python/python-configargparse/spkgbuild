@@ -5,7 +5,7 @@ name=python-configargparse
 version=1.5.2
 release=3
 
-source="https://github.com/bw2/ConfigArgParse/archive/v1.5/python-configargparse-1.5.tar.gz"
+source="https://github.com/bw2/ConfigArgParse/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

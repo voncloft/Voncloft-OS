@@ -4,7 +4,7 @@ name=python-unicodecsv
 version=0.14.1
 release=4
 
-source="python-unicodecsv-0.14.1.tar.gz::https://github.com/jdunck/python-unicodecsv/archive/0.14.1.tar.gz"
+source="https://github.com/jdunck/python-unicodecsv/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pyhamcrest
 version=2.0.2
 release=7
 
-source="https://github.com/hamcrest/PyHamcrest/archive/V1.10.1/python-pyhamcrest-1.10.1.tar.gz"
+source="https://github.com/hamcrest/PyHamcrest/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

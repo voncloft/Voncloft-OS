@@ -9,7 +9,7 @@ name=python-pytest-plugins
 version=1.7.0
 release=6
 
-source="python-pytest-plugins-1.7.0.tar.gz::https://github.com/manahl/pytest-plugins/archive/v1.7.0.tar.gz"
+source="https://github.com/manahl/pytest-plugins/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

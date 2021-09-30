@@ -5,7 +5,7 @@ name=python-translationstring
 version=1.4
 release=3
 
-source="https://github.com/Pylons/translationstring/archive/1.4/python-translationstring-1.4.tar.gz"
+source="https://github.com/Pylons/translationstring/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

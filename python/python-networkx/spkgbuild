@@ -5,7 +5,7 @@ name=python-networkx
 version=2.6.3
 release=3
 
-source="https://github.com/networkx/networkx/archive/networkx-2.6.3.tar.gz"
+source="https://github.com/networkx/networkx/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

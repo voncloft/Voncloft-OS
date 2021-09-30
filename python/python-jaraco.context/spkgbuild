@@ -5,7 +5,7 @@ name=python-jaraco.context
 version=4.0.0
 release=1
 
-source="https://github.com/jaraco/jaraco.context/archive/v4.0.0/python-jaraco.context-4.0.0.tar.gz"
+source="https://github.com/jaraco/jaraco.context/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

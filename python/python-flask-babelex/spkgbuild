@@ -5,7 +5,7 @@ name=python-flask-babelex
 version=0.9.4
 release=3
 
-source="python-flask-babelex-0.9.4.tar.gz::https://github.com/mrjoes/flask-babelex/archive/0.9.4.tar.gz"
+source="https://github.com/mrjoes/flask-babelex/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

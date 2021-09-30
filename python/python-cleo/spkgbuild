@@ -5,7 +5,7 @@ name=python-cleo
 version=1.0.0
 release=4
 
-source="cleo-0.7.6.tar.gz::https://github.com/sdispater/cleo/archive/0.7.6.tar.gz"
+source="https://github.com/sdispater/cleo/archive/refs/tags/a$version.tar.gz"
 options="!checksum"
 
 build() {

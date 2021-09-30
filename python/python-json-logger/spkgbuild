@@ -5,7 +5,7 @@ name=python-json-logger
 version=2.0.2
 release=5
 
-source="https://github.com/madzak/python-json-logger/archive/v2.0.2/python-json-logger-2.0.2.tar.gz"
+source="https://github.com/madzak/python-json-logger/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

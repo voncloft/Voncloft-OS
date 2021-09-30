@@ -5,7 +5,7 @@ name=python-hpack
 version=4.0.0
 release=1
 
-source="https://github.com/python-hyper/hpack/archive/v4.0.0/python-hpack-4.0.0.tar.gz"
+source="https://github.com/python-hyper/hpack/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

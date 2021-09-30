@@ -5,7 +5,7 @@ name=python-xlsxwriter
 version=3.0.1
 release=1
 
-source="python-xlsxwriter-3.0.1.tar.gz::https://github.com/jmcnamara/XlsxWriter/archive/RELEASE_3.0.1.tar.gz"
+source="https://github.com/jmcnamara/XlsxWriter/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

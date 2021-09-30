@@ -5,7 +5,7 @@ name=python-pytzdata
 version=2020.1
 release=3
 
-source="python-pytzdata-2020.1.tar.gz::https://github.com/sdispater/pytzdata/archive/2020.1.tar.gz"
+source="https://github.com/sdispater/pytzdata/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pytest-socket
 version=0.4.1
 release=2
 
-source="https://github.com/miketheman/pytest-socket/archive/0.4.1/python-pytest-socket-0.4.1.tar.gz"
+source="https://github.com/miketheman/pytest-socket/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

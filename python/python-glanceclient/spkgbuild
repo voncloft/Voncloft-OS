@@ -5,7 +5,7 @@ name=python-glanceclient
 version=3.5.0
 release=3
 
-source="https://github.com/openstack/python-glanceclient/archive/3.5.0/python-glanceclient-3.5.0.tar.gz"
+source="https://github.com/openstack/python-glanceclient/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

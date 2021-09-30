@@ -5,7 +5,7 @@ name=python-latexcodec
 version=2.0.1
 release=3
 
-source="python-latexcodec-2.0.1.tar.gz::https://github.com/mcmtroffaes/latexcodec/archive/2.0.1.tar.gz"
+source="https://github.com/mcmtroffaes/latexcodec/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

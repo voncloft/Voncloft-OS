@@ -5,7 +5,7 @@ name=python-sqlobject
 version=3.9.1
 release=1
 
-source="python-sqlobject-3.9.1.tar.gz::https://github.com/sqlobject/sqlobject/archive/3.9.1.tar.gz"
+source="https://github.com/sqlobject/sqlobject/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

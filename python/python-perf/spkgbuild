@@ -5,7 +5,7 @@ name=python-perf
 version=1.6.0
 release=5
 
-source="python-perf-1.6.0.tar.gz::https://github.com/vstinner/perf/archive/1.6.0.tar.gz"
+source="https://github.com/vstinner/perf/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

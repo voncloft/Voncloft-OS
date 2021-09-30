@@ -5,7 +5,7 @@ name=python-chameleon
 version=3.9.1
 release=2
 
-source="https://github.com/malthe/chameleon/archive/3.9.1/python-chameleon-3.9.1.tar.gz"
+source="https://github.com/malthe/chameleon/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-sphinxcontrib-trio
 version=1.1.2
 release=1
 
-source="https://github.com/python-trio/sphinxcontrib-trio/archive/v1.1.2/sphinxcontrib-trio-1.1.2.tar.gz"
+source="https://github.com/python-trio/sphinxcontrib-trio/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

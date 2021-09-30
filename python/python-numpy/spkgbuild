@@ -5,7 +5,7 @@ name=python-numpy
 version=1.22.0
 release=1
 
-source="python-numpy-1.21.2.tar.gz::https://github.com/numpy/numpy/archive/v1.21.2.tar.gz"
+source="https://github.com/numpy/numpy/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

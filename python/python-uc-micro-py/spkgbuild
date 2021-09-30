@@ -5,7 +5,7 @@ name=python-uc-micro-py
 version=1.0.1
 release=1
 
-source="python-uc-micro-py-1.0.1.tar.gz::https://github.com/tsutsu3/uc.micro-py/archive/v1.0.1.tar.gz"
+source="https://github.com/tsutsu3/uc.micro-py/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

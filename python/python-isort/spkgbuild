@@ -5,7 +5,7 @@ name=python-isort
 version=5.9.3
 release=1
 
-source="https://github.com/PyCQA/isort/archive/5.9.3/.tar.gz"
+source="https://github.com/PyCQA/isort/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

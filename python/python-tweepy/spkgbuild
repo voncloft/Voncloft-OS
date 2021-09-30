@@ -5,7 +5,7 @@ name=python-tweepy
 version=4.0.0
 release=1
 
-source="https://github.com/tweepy/tweepy/archive/v3.10.0/tweepy-3.10.0.tar.gz"
+source="https://github.com/tweepy/tweepy/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

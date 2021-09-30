@@ -5,7 +5,7 @@ name=python-parse-type
 version=0.5.6
 release=1
 
-source="https://github.com/jenisys/parse_type/archive/v0.5.6/python-parse-type-0.5.6.tar.gz"
+source="https://github.com/jenisys/parse_type/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-django-sekizai
 version=2.0.0
 release=5
 
-source="python-django-sekizai-2.0.0.tar.gz::https://github.com/divio/django-sekizai/archive/2.0.0.tar.gz"
+source="https://github.com/divio/django-sekizai/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

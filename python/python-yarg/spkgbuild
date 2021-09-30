@@ -5,7 +5,7 @@ name=python-yarg
 version=0.1.9
 release=6
 
-source="python-yarg-0.1.9.tar.gz::https://github.com/kura/yarg/archive/0.1.9.tar.gz"
+source="https://github.com/kura/yarg/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-sphinxcontrib-seqdiag
 version=2.0.0
 release=3
 
-source="python-sphinxcontrib-seqdiag-2.0.0.tar.gz::https://github.com/blockdiag/sphinxcontrib-seqdiag/archive/2.0.0.tar.gz"
+source="https://github.com/blockdiag/sphinxcontrib-seqdiag/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

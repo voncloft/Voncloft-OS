@@ -5,7 +5,7 @@ name=python-textdistance
 version=4.2.1
 release=1
 
-source="https://github.com/life4/textdistance/archive/v.4.2.1/-4.2.1.tar.gz"
+source="https://github.com/life4/textdistance/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-liteeth
 version=2021.08
 release=1
 
-source="python-liteeth-2020.12.tar.gz::https://github.com/enjoy-digital/liteeth/archive/2020.12.tar.gz"
+source="https://github.com/enjoy-digital/liteeth/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

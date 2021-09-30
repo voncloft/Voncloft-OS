@@ -5,7 +5,7 @@ name=python-nose-random
 version=1.0.0
 release=7
 
-source="https://github.com/xlwings/nose-random/archive/1.0.0/python-nose-random-1.0.0.tar.gz"
+source="https://github.com/xlwings/nose-random/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

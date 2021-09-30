@@ -5,7 +5,7 @@ name=python-osprofiler
 version=3.4.2
 release=3
 
-source="https://github.com/openstack/osprofiler/archive/3.4.2/python-osprofiler-3.4.2.tar.gz"
+source="https://github.com/openstack/osprofiler/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

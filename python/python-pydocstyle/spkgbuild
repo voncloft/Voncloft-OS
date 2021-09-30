@@ -5,7 +5,7 @@ name=python-pydocstyle
 version=6.1.1
 release=3
 
-source="python-pydocstyle-6.1.1.tar.gz::https://github.com/PyCQA/pydocstyle/archive/6.1.1.tar.gz"
+source="https://github.com/PyCQA/pydocstyle/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

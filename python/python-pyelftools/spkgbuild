@@ -5,7 +5,7 @@ name=python-pyelftools
 version=0.27
 release=1
 
-source="https://github.com/eliben/pyelftools/archive/v0.27/pyelftools-0.27.tar.gz"
+source="https://github.com/eliben/pyelftools/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

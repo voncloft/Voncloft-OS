@@ -5,7 +5,7 @@ name=python-parsedatetime
 version=2.6
 release=3
 
-source="python-parsedatetime-2.6.tar.gz::https://github.com/bear/parsedatetime/archive/v2.6.tar.gz"
+source="https://github.com/bear/parsedatetime/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

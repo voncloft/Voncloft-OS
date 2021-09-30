@@ -5,7 +5,7 @@ name=python-apscheduler
 version=3.7.0
 release=1
 
-source="https://github.com/agronholm/apscheduler/archive/v3.7.0/python-apscheduler-3.7.0.tar.gz"
+source="https://github.com/agronholm/apscheduler/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

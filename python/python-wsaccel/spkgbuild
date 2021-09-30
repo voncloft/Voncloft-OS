@@ -5,7 +5,7 @@ name=python-wsaccel
 version=0.6.3
 release=2
 
-source="https://github.com/methane/wsaccel/archive/v0.6.3/python-wsaccel-0.6.3.tar.gz"
+source="https://github.com/methane/wsaccel/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

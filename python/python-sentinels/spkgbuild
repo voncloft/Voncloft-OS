@@ -5,7 +5,7 @@ name=python-sentinels
 version=1.0.0
 release=6
 
-source="python-selectors2-1.0.0.tar.gz::https://github.com/vmalloc/sentinels/archive/1.0.0.tar.gz"
+source="https://github.com/vmalloc/sentinels/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-parameterized
 version=0.8.1
 release=1
 
-source="https://github.com/wolever/parameterized/archive/v0.8.1/python-parameterized-0.8.1.tar.gz"
+source="https://github.com/wolever/parameterized/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

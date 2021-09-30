@@ -5,7 +5,7 @@ name=python-flask-jwt
 version=0.3.2
 release=7
 
-source="python-flask-jwt-0.3.2.tar.gz::https://github.com/mattupstate/flask-jwt/archive/0.3.2.tar.gz"
+source="https://github.com/mattupstate/flask-jwt/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

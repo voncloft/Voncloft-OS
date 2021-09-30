@@ -5,7 +5,7 @@ name=python-gssapi
 version=1.7.0
 release=2
 
-source="https://github.com/pythongssapi/python-gssapi/archive/v1.6.14/python-gssapi-1.6.14.tar.gz"
+source="https://github.com/pythongssapi/python-gssapi/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

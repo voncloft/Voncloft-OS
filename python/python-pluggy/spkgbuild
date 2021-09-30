@@ -5,7 +5,7 @@ name=python-pluggy
 version=1.0.0
 release=4
 
-source="python-pluggy-0.13.1.tar.gz::https://github.com/pytest-dev/pluggy/archive/0.13.1.tar.gz"
+source="https://github.com/pytest-dev/pluggy/archive/refs/tags/d$version.tar.gz"
 options="!checksum"
 
 build() {

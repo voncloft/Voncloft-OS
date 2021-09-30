@@ -5,7 +5,7 @@ name=python-jsonschema
 version=4.0.0
 release=4
 
-source="python-jsonschema-3.2.0.tar.bz2::https://github.com/Julian/jsonschema/archive/v3.2.0.tar.gz"
+source="https://github.com/Julian/jsonschema/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

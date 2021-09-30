@@ -5,7 +5,7 @@ name=python-colorcet
 version=2.0.6
 release=1
 
-source="https://github.com/holoviz/colorcet/archive/v2.0.5/python--2.0.5.tar.gz"
+source="https://github.com/holoviz/colorcet/archive/refs/tags/w$version.tar.gz"
 options="!checksum"
 
 build() {

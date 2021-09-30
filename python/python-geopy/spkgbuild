@@ -5,7 +5,7 @@ name=python-geopy
 version=2.2.0
 release=1
 
-source="https://github.com/geopy/geopy/archive/2.2.0.tar.gz"
+source="https://github.com/geopy/geopy/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

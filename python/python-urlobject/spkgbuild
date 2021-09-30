@@ -5,7 +5,7 @@ name=python-urlobject
 version=2.4.3
 release=5
 
-source="python-urlobject-2.4.3.tar.gz::https://github.com/zacharyvoase/urlobject/archive/v2.4.3.tar.gz"
+source="https://github.com/zacharyvoase/urlobject/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

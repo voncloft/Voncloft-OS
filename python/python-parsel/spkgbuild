@@ -5,7 +5,7 @@ name=python-parsel
 version=1.6.0
 release=3
 
-source="python-parsel-1.6.0.tar.gz::https://github.com/scrapy/parsel/archive/v1.6.0.tar.gz"
+source="https://github.com/scrapy/parsel/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pdoc
 version=8.0.0
 release=7
 
-source="https://github.com/mitmproxy/pdoc/archive/v7.4.0/python-pdoc-7.4.0.tar.gz"
+source="https://github.com/mitmproxy/pdoc/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

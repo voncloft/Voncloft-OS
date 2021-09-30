@@ -5,7 +5,7 @@ name=python-filetype
 version=1.0.8
 release=3
 
-source="https://github.com/h2non/filetype.py/archive/v1.0.8/python-filetype-1.0.8.tar.gz"
+source="https://github.com/h2non/filetype.py/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

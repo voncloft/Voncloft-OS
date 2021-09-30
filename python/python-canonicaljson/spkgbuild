@@ -5,7 +5,7 @@ name=python-canonicaljson
 version=1.4.0
 release=3
 
-source="python-canonicaljson-1.4.0.tar.gz::https://github.com/matrix-org/python-canonicaljson/archive/v1.4.0.tar.gz"
+source="https://github.com/matrix-org/python-canonicaljson/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-lazy-object-proxy
 version=1.6.0
 release=2
 
-source="python-lazy-object-proxy-1.6.0.tar.gz::https://github.com/ionelmc/python-lazy-object-proxy/archive/v1.6.0.tar.gz"
+source="https://github.com/ionelmc/python-lazy-object-proxy/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pure-sasl
 version=0.6.2
 release=2
 
-source="https://github.com/thobbs/pure-sasl/archive/0.6.2/python-pure-sasl-0.6.2.tar.gz"
+source="https://github.com/thobbs/pure-sasl/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

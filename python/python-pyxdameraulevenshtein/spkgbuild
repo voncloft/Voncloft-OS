@@ -5,7 +5,7 @@ name=python-pyxdameraulevenshtein
 version=1.7.0
 release=1
 
-source="https://github.com/gfairchild/pyxDamerauLevenshtein/archive/v1.7.0/-1.7.0.tar.gz"
+source="https://github.com/gfairchild/pyxDamerauLevenshtein/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

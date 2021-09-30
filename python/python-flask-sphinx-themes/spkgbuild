@@ -5,7 +5,7 @@ name=python-flask-sphinx-themes
 version=1.0.2
 release=4
 
-source="python-flask-sphinx-themes-1.0.2.tar.gz::https://github.com/pallets/flask-sphinx-themes/archive/1.0.2.tar.gz"
+source="https://github.com/pallets/flask-sphinx-themes/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

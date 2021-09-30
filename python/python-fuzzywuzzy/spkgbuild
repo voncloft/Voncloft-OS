@@ -5,7 +5,7 @@ name=python-fuzzywuzzy
 version=0.18.0
 release=3
 
-source="https://github.com/seatgeek/fuzzywuzzy/archive/0.18.0/python-fuzzywuzzy-0.18.0.tar.gz"
+source="https://github.com/seatgeek/fuzzywuzzy/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

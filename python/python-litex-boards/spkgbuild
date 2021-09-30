@@ -5,7 +5,7 @@ name=python-litex-boards
 version=2021.08
 release=1
 
-source="python-litex-boards-2020.12.tar.gz::https://github.com/litex-hub/litex-boards/archive/2020.12.tar.gz"
+source="https://github.com/litex-hub/litex-boards/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

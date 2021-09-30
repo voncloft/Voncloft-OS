@@ -5,7 +5,7 @@ name=python-braintree
 version=4.12.0
 release=1
 
-source="python-braintree-4.12.0.tar.gz::https://github.com/braintree/braintree_python/archive/4.12.0.tar.gz"
+source="https://github.com/braintree/braintree_python/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

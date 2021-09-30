@@ -5,7 +5,7 @@ name=python-pymeta3
 version=0.5.1
 release=3
 
-source="python-pymeta3-0.5.1.tar.gz::https://github.com/wbond/pymeta3/archive/0.5.1.tar.gz"
+source="https://github.com/wbond/pymeta3/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-fuse
 version=1.0.4
 release=3
 
-source="python-fuse-1.0.4.tar.gz::https://github.com/libfuse/python-fuse/archive/v1.0.4.tar.gz"
+source="https://github.com/libfuse/python-fuse/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

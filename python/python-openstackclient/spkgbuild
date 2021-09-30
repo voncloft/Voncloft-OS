@@ -5,7 +5,7 @@ name=python-openstackclient
 version=5.6.0
 release=3
 
-source="https://github.com/openstack/python-openstackclient/archive/5.6.0/python-openstackclient-5.6.0.tar.gz"
+source="https://github.com/openstack/python-openstackclient/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

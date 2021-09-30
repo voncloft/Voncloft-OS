@@ -5,7 +5,7 @@ name=python-shellingham
 version=1.4.0
 release=1
 
-source="shellingham-1.4.0.tar.gz::https://github.com/sarugaku/shellingham/archive/1.4.0.tar.gz"
+source="https://github.com/sarugaku/shellingham/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

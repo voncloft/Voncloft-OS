@@ -5,7 +5,7 @@ name=python-podcastparser
 version=0.6.8
 release=1
 
-source="https://github.com/gpodder/podcastparser/archive/0.6.7/python-podcastparser-0.6.7.tar.gz"
+source="https://github.com/gpodder/podcastparser/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

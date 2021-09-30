@@ -5,7 +5,7 @@ name=python-nose-exclude
 version=0.5.0
 release=6
 
-source="python-nose-exclude-0.5.0.tar.gz::https://github.com/kgrandis/nose-exclude/archive/0.5.0.tar.gz"
+source="https://github.com/kgrandis/nose-exclude/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

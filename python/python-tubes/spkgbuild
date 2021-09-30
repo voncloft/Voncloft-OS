@@ -5,7 +5,7 @@ name=python-tubes
 version=0.2.0
 release=5
 
-source="https://github.com/twisted/tubes/archive/v0.2.0/tubes-v0.2.0.tar.gz"
+source="https://github.com/twisted/tubes/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

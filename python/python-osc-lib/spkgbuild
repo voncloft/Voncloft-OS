@@ -5,7 +5,7 @@ name=python-osc-lib
 version=2.4.2
 release=3
 
-source="https://github.com/openstack/osc-lib/archive/2.4.2/python-osc-lib-2.4.2.tar.gz"
+source="https://github.com/openstack/osc-lib/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

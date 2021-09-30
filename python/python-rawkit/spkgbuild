@@ -5,7 +5,7 @@ name=python-rawkit
 version=0.6.0
 release=9
 
-source="rawkit-0.6.0.tar.gz::https://github.com/photoshell/rawkit/archive/v0.6.0.tar.gz"
+source="https://github.com/photoshell/rawkit/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

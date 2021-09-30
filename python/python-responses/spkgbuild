@@ -5,7 +5,7 @@ name=python-responses
 version=0.14.0
 release=1
 
-source="https://github.com/getsentry/responses/archive/0.14.0/python-responses-0.14.0.tar.gz"
+source="https://github.com/getsentry/responses/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

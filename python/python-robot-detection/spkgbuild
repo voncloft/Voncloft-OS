@@ -5,7 +5,7 @@ name=python-robot-detection
 version=0.4.0
 release=4
 
-source="python-robot-detection-0.4.0.tar.gz::https://github.com/rory/robot-detection/archive/v0.4.0.tar.gz"
+source="https://github.com/rory/robot-detection/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

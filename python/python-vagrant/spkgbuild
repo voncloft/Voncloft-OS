@@ -5,7 +5,7 @@ name=python-vagrant
 version=0.5.15
 release=5
 
-source="python-vagrant-0.5.15.tar.gz::https://github.com/todddeluca/python-vagrant/archive/0.5.15.tar.gz"
+source="https://github.com/todddeluca/python-vagrant/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

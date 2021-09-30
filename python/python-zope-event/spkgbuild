@@ -5,7 +5,7 @@ name=python-zope-event
 version=4.5.0
 release=3
 
-source="https://github.com/zopefoundation/zope.event/archive/4.5.0.tar.gz"
+source="https://github.com/zopefoundation/zope.event/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

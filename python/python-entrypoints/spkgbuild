@@ -5,7 +5,7 @@ name=python-entrypoints
 version=0.3
 release=6
 
-source="python-entrypoints-0.3.tgz::https://github.com/takluyver/entrypoints/archive/0.3.tar.gz"
+source="https://github.com/takluyver/entrypoints/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

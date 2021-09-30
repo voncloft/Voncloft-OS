@@ -5,7 +5,7 @@ name=python-sphinx-issues
 version=1.2.0
 release=5
 
-source="https://github.com/sloria/sphinx-issues/archive/1.2.0/sphinx-issues-1.2.0.tar.gz"
+source="https://github.com/sloria/sphinx-issues/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

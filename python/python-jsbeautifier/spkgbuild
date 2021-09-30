@@ -7,7 +7,7 @@ name=python-jsbeautifier
 version=1.14.0
 release=1
 
-source="https://github.com/beautify-web/js-beautify/archive/v1.14.0/js-beautify-v1.14.0.tar.gz"
+source="https://github.com/beautify-web/js-beautify/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

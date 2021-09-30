@@ -5,7 +5,7 @@ name=python-editor
 version=1.2.1
 release=6
 
-source="python-ecdsa-1.0.4.tar.gz::https://github.com/fmoo/python-editor/archive/1.0.4.tar.gz"
+source="https://github.com/fmoo/python-editor/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

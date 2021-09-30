@@ -5,7 +5,7 @@ name=python-argh
 version=0.26.2
 release=8
 
-source="https://github.com/neithere/argh/archive/v0.26.2/python-argh-0.26.2.tar.gz"
+source="https://github.com/neithere/argh/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

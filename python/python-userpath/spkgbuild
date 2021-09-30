@@ -5,7 +5,7 @@ name=python-userpath
 version=1.7.0
 release=3
 
-source="python-userpath-1.7.0.tar.gz::https://github.com/ofek/userpath/archive/1.7.0.tar.gz"
+source="https://github.com/ofek/userpath/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

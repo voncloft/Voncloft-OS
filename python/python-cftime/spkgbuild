@@ -5,7 +5,7 @@ name=python-cftime
 version=1.5.1
 release=1
 
-source="https://github.com/Unidata/cftime/archive/v1.5.0rel/python--1.5.0.tar.gz"
+source="https://github.com/Unidata/cftime/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

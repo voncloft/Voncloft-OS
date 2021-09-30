@@ -5,7 +5,7 @@ name=python-xxhash
 version=2.0.2
 release=3
 
-source="python-xxhash-2.0.2.tar.gz::https://github.com/ifduyue/python-xxhash/archive/v2.0.2.tar.gz"
+source="https://github.com/ifduyue/python-xxhash/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

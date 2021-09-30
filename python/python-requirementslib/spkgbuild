@@ -5,7 +5,7 @@ name=python-requirementslib
 version=1.5.16
 release=1
 
-source="python-requirementslib-1.5.16.tar.gz::https://github.com/sarugaku/requirementslib/archive/1.5.16.tar.gz"
+source="https://github.com/sarugaku/requirementslib/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

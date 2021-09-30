@@ -5,7 +5,7 @@ name=python-geoip2
 version=4.4.0
 release=3
 
-source="https://github.com/maxmind/GeoIP2-python/archive/v4.2.0/python-geoip2-4.2.0.tar.gz"
+source="https://github.com/maxmind/GeoIP2-python/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

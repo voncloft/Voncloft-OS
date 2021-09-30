@@ -5,7 +5,7 @@ name=python-pytest-enabler
 version=1.2.0
 release=1
 
-source="https://github.com/jaraco/pytest-enabler/archive/v1.2.0/python-pytest-enabler-1.2.0.tar.gz"
+source="https://github.com/jaraco/pytest-enabler/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

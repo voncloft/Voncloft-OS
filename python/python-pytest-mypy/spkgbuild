@@ -5,7 +5,7 @@ name=python-pytest-mypy
 version=0.8.1
 release=1
 
-source="python-pytest-mypy-0.8.1.tar.gz::https://github.com/dbader/pytest-mypy/archive/v0.8.1.tar.gz"
+source="https://github.com/dbader/pytest-mypy/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

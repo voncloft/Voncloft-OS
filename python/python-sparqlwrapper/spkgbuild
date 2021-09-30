@@ -5,7 +5,7 @@ name=python-sparqlwrapper
 version=1.8.5
 release=2
 
-source="python-sparqlwrapper-1.8.5.tar.gz::https://github.com/RDFLib/sparqlwrapper/archive/1.8.5.tar.gz"
+source="https://github.com/RDFLib/sparqlwrapper/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

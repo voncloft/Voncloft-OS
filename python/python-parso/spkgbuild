@@ -5,7 +5,7 @@ name=python-parso
 version=0.8.2
 release=3
 
-source="https://github.com/davidhalter/parso/archive/v0.8.2/parso-0.8.2.tar.gz"
+source="https://github.com/davidhalter/parso/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

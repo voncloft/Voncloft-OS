@@ -5,7 +5,7 @@ name=python-pyperclip
 version=1.8.2
 release=3
 
-source="python-pyopencl-b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz::https://github.com/asweigart/pyperclip/archive/b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+source="https://github.com/asweigart/pyperclip/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

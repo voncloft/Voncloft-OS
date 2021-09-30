@@ -5,7 +5,7 @@ name=python-pytest-benchmark
 version=3.4.1
 release=4
 
-source="python-pytest-benchmark-3.4.1.tar.gz::https://github.com/ionelmc/pytest-benchmark/archive/v3.4.1.tar.gz"
+source="https://github.com/ionelmc/pytest-benchmark/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

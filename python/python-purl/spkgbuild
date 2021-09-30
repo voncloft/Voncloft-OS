@@ -5,7 +5,7 @@ name=python-purl
 version=1.6
 release=6
 
-source="https://github.com/codeinthehole/purl/archive/1.6/python-purl-1.6.tar.gz"
+source="https://github.com/codeinthehole/purl/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

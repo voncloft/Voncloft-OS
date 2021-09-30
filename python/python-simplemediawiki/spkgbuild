@@ -5,7 +5,7 @@ name=python-simplemediawiki
 version=1.2.0_b2
 release=7
 
-source="python-simplemediawiki-1.2.0_b2.tar.gz::https://github.com/ianweller/python-simplemediawiki/archive/1.2.0b2.tar.gz"
+source="https://github.com/ianweller/python-simplemediawiki/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

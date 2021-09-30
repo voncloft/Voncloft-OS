@@ -5,7 +5,7 @@ name=python-mypy-protobuf
 version=2.10
 release=3
 
-source="https://github.com/dropbox/mypy-protobuf/archive/v2.9.tar.gz"
+source="https://github.com/dropbox/mypy-protobuf/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

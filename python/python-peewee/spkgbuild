@@ -5,7 +5,7 @@ name=python-peewee
 version=3.14.4
 release=3
 
-source="python-peewee-3.14.4.tar.gz::https://github.com/coleifer/peewee/archive/3.14.4.tar.gz"
+source="https://github.com/coleifer/peewee/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

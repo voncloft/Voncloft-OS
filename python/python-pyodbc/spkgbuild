@@ -5,7 +5,7 @@ name=python-pyodbc
 version=4.0.32
 release=3
 
-source="https://github.com/mkleehammer/pyodbc/archive/4.0.32/python-pyodbc-4.0.32.tar.gz"
+source="https://github.com/mkleehammer/pyodbc/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

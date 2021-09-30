@@ -5,7 +5,7 @@ name=python-antlr4
 version=4.9.2
 release=1
 
-source="python-antlr4-4.9.2.tar.gz::https://github.com/antlr/antlr4/archive/4.9.2.tar.gz"
+source="https://github.com/antlr/antlr4/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

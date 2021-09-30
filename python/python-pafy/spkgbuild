@@ -5,7 +5,7 @@ name=python-pafy
 version=0.5.5
 release=3
 
-source="python-pafy-0.5.5.tar.gz::https://github.com/mps-youtube/pafy/archive/v0.5.5.tar.gz"
+source="https://github.com/mps-youtube/pafy/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

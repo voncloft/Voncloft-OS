@@ -5,7 +5,7 @@ name=python-gammu
 version=3.2.3
 release=2
 
-source="python-gammu-3.2.3.tar.gz::https://github.com/gammu/python-gammu/archive/refs/tags/3.2.3.tar.gz"
+source="https://github.com/gammu/python-gammu/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

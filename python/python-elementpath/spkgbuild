@@ -5,7 +5,7 @@ name=python-elementpath
 version=2.3.2
 release=1
 
-source="python-elementpath-2.3.1.tar.gz::https://github.com/sissaschool/elementpath/archive/v2.3.1.tar.gz"
+source="https://github.com/sissaschool/elementpath/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

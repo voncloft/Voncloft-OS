@@ -5,7 +5,7 @@ name=python-awkward
 version=1.5.0
 release=1
 
-source="python-awkward::https://github.com/scikit-hep/awkward-0.x/archive/0.15.5.tar.gz"
+source="https://github.com/scikit-hep/awkward-0.x/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-unicodedata2
 version=13.0.0.post2
 release=2
 
-source="python-unicodedata2-13.0.0.post2.tar.gz::https://github.com/mikekap/unicodedata2/archive/13.0.0-2.tar.gz"
+source="https://github.com/mikekap/unicodedata2/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

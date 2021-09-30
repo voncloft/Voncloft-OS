@@ -5,7 +5,7 @@ name=python-json5
 version=0.9.6
 release=3
 
-source="https://github.com/dpranke/pyjson5/archive/v0.9.6/python-json5-0.9.6.tar.gz"
+source="https://github.com/dpranke/pyjson5/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-doublex-expects
 version=0.7.1
 release=5
 
-source="python-doublex-expects-0.7.1.tar.gz::https://github.com/jaimegildesagredo/doublex-expects/archive/v0.7.1.tar.gz"
+source="https://github.com/jaimegildesagredo/doublex-expects/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

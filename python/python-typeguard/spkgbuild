@@ -5,7 +5,7 @@ name=python-typeguard
 version=2.12.1
 release=3
 
-source="https://github.com/agronholm/typeguard/archive/2.12.1/python-typeguard-2.12.1.tar.gz"
+source="https://github.com/agronholm/typeguard/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

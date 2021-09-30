@@ -5,7 +5,7 @@ name=python-markdown2
 version=2.4.1
 release=1
 
-source="python-markdown2-2.4.1.tar.gz::https://github.com/trentm/python-markdown2/archive/2.4.1.tar.gz"
+source="https://github.com/trentm/python-markdown2/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

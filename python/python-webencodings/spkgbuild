@@ -6,7 +6,7 @@ name=python-webencodings
 version=0.5.1
 release=6
 
-source="https://github.com/gsnedders/python-webencodings/archive/v0.5.1.tar.gz"
+source="https://github.com/gsnedders/python-webencodings/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

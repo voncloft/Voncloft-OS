@@ -5,7 +5,7 @@ name=python-paramiko
 version=2.7.2
 release=3
 
-source="https://github.com/paramiko/paramiko/archive/2.7.2/python-paramiko-2.7.2.tar.gz"
+source="https://github.com/paramiko/paramiko/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

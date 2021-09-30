@@ -5,7 +5,7 @@ name=python-jsonlines
 version=2.0.0
 release=7
 
-source="https://github.com/wbolster/jsonlines/archive/2.0.0/python-jsonlines-2.0.0.tar.gz"
+source="https://github.com/wbolster/jsonlines/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

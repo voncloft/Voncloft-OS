@@ -5,7 +5,7 @@ name=python-intervaltree
 version=3.1.0
 release=3
 
-source="python-intervaltree-3.1.0.tar.gz::https://github.com/chaimleib/intervaltree/archive/3.1.0.tar.gz"
+source="https://github.com/chaimleib/intervaltree/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

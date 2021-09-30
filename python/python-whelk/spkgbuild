@@ -5,7 +5,7 @@ name=python-whelk
 version=3.0
 release=2
 
-source="python-whelk-3.0.tar.gz::https://github.com/seveas/whelk/archive/3.0.tar.gz"
+source="https://github.com/seveas/whelk/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

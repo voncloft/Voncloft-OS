@@ -5,7 +5,7 @@ name=python-pecan
 version=1.4.0
 release=3
 
-source="python-pecan-1.4.0.tar.gz::https://github.com/pecan/pecan/archive/1.4.0.tar.gz"
+source="https://github.com/pecan/pecan/archive/refs/tags/d$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-netaddr
 version=0.8.0
 release=3
 
-source="https://github.com/drkjam/netaddr/archive/0.8.0/python-netaddr-0.8.0.tar.gz"
+source="https://github.com/drkjam/netaddr/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

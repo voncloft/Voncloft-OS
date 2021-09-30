@@ -5,7 +5,7 @@ name=python-pook
 version=1.0.2
 release=4
 
-source="https://github.com/h2non/pook/archive/v1.0.2/python-pook-1.0.2.tar.gz"
+source="https://github.com/h2non/pook/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

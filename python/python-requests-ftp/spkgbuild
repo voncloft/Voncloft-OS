@@ -5,7 +5,7 @@ name=python-requests-ftp
 version=0.3.1
 release=5
 
-source="https://github.com/Lukasa/requests-ftp/archive/v0.3.1.tar.gz"
+source="https://github.com/Lukasa/requests-ftp/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

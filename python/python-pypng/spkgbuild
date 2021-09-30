@@ -5,7 +5,7 @@ name=python-pypng
 version=0.0.21
 release=3
 
-source="https://github.com/drj11/pypng/archive/pypng-0.0.21.tar.gz"
+source="https://github.com/drj11/pypng/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

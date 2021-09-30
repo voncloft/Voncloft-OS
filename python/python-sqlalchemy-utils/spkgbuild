@@ -5,7 +5,7 @@ name=python-sqlalchemy-utils
 version=0.37.8
 release=3
 
-source="https://github.com/kvesteri/sqlalchemy-utils/archive/0.37.1/python-sqlalchemy-utils-0.37.1.tar.gz"
+source="https://github.com/kvesteri/sqlalchemy-utils/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

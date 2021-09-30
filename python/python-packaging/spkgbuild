@@ -5,7 +5,7 @@ name=python-packaging
 version=21.0
 release=1
 
-source="https://github.com/pypa/packaging/archive/20.9/python-packaging-20.9.tar.gz"
+source="https://github.com/pypa/packaging/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -6,7 +6,7 @@ name=python-keyutils
 version=0.6
 release=6
 
-source="python-keyutils-0.6.tar.gz::https://github.com/sassoftware/python-keyutils/archive/0.6.tar.gz"
+source="https://github.com/sassoftware/python-keyutils/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

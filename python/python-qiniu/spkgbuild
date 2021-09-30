@@ -5,7 +5,7 @@ name=python-qiniu
 version=7.5.0
 release=1
 
-source="python-qiniu-7.5.0.tar.gz::https://github.com/qiniu/python-sdk/archive/v7.5.0.tar.gz"
+source="https://github.com/qiniu/python-sdk/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

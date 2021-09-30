@@ -5,7 +5,7 @@ name=python-pasta
 version=0.2.0
 release=3
 
-source="python-pasta-0.2.0.tar.gz::https://github.com/google/pasta/archive/v0.2.0.tar.gz"
+source="https://github.com/google/pasta/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

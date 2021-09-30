@@ -5,7 +5,7 @@ name=python-argcomplete
 version=1.12.3
 release=1
 
-source="argcomplete::git+https://github.com/kislyuk/argcomplete#commit=?signed"
+source="https://github.com/kislyuk/argcomplete#commit=?signed/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

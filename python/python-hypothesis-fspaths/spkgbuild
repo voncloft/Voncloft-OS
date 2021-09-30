@@ -5,7 +5,7 @@ name=python-hypothesis-fspaths
 version=0.1.0
 release=6
 
-source="python-hypothesis-fspaths-0.1.0.tar.gz::https://github.com/lazka/hypothesis-fspaths/archive/v0.1.0.tar.gz"
+source="https://github.com/lazka/hypothesis-fspaths/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

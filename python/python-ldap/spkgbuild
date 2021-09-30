@@ -5,7 +5,7 @@ name=python-ldap
 version=3.3.1
 release=3
 
-source="python-ldap-3.3.1.tar.gz::https://github.com/python-ldap/python-ldap/archive/python-ldap-3.3.1.tar.gz"
+source="https://github.com/python-ldap/python-ldap/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

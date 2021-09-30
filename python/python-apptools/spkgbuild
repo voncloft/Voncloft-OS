@@ -5,7 +5,7 @@ name=python-apptools
 version=5.1.0
 release=3
 
-source="apptools-5.1.0.tar.gz::https://github.com/enthought/apptools/archive/5.1.0.tar.gz"
+source="https://github.com/enthought/apptools/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-sphinx-furo
 version=2021.09.22
 release=3
 
-source="python-sphinx-furo-2020.11.10.beta15.tar.gz::https://github.com/pradyunsg/furo/archive/2020.11.10.beta15.tar.gz"
+source="https://github.com/pradyunsg/furo/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

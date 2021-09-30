@@ -5,7 +5,7 @@ name=python-jieba
 version=0.42.1
 release=2
 
-source="python-jieba-0.42.1.tar.gz::https://github.com/fxsjy/jieba/archive/v0.42.1.tar.gz"
+source="https://github.com/fxsjy/jieba/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

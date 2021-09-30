@@ -5,7 +5,7 @@ name=python-testfixtures
 version=6.18.3
 release=1
 
-source="python-testfixtures-6.18.2.tar.gz::https://github.com/Simplistix/testfixtures/archive/6.18.2.tar.gz"
+source="https://github.com/Simplistix/testfixtures/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

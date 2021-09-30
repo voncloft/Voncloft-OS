@@ -5,7 +5,7 @@ name=python-aiobotocore
 version=1.4.1
 release=1
 
-source="https://github.com/aio-libs/aiobotocore/archive/1.4.1/python-aiobotocore-1.4.1.tar.gz"
+source="https://github.com/aio-libs/aiobotocore/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

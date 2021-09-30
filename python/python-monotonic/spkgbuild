@@ -5,7 +5,7 @@ name=python-monotonic
 version=1.6
 release=6
 
-source="monotonic-1.6.tar.gz::https://github.com/atdt/monotonic/archive/1.6.tar.gz"
+source="https://github.com/atdt/monotonic/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-jsonmerge
 version=1.8.0
 release=3
 
-source="python-jsonmerge-1.8.0.tar.gz::https://github.com/avian2/jsonmerge/archive/jsonmerge-1.8.0.tar.gz"
+source="https://github.com/avian2/jsonmerge/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

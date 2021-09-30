@@ -5,7 +5,7 @@ name=python-blosc
 version=1.10.4
 release=1
 
-source="python-blosc-1.10.4.tar.gz::https://github.com/Blosc/python-blosc/archive/v1.10.4.tar.gz"
+source="https://github.com/Blosc/python-blosc/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

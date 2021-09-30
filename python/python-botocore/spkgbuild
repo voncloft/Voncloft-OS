@@ -5,7 +5,7 @@ name=python-botocore
 version=1.21.51
 release=1
 
-source="python-botocore-1.21.49.tar.gz::https://github.com/boto/botocore/archive/1.21.49.tar.gz"
+source="https://github.com/boto/botocore/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

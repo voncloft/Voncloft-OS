@@ -5,7 +5,7 @@ name=python-doctest-ignore-unicode
 version=0.1.2
 release=3
 
-source="https://github.com/gnublade/doctest-ignore-unicode/archive/b3e935355afcfb5240bac5a99707ffecc35772a2/python-doctest-ignore-unicode-b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+source="https://github.com/gnublade/doctest-ignore-unicode/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

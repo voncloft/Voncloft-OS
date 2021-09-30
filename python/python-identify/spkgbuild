@@ -5,7 +5,7 @@ name=python-identify
 version=2.2.15
 release=1
 
-source="identify-2.2.15.tar.gz::https://github.com/chriskuehl/identify/archive/v2.2.15.tar.gz"
+source="https://github.com/chriskuehl/identify/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

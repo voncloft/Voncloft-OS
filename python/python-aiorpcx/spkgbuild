@@ -5,7 +5,7 @@ name=python-aiorpcx
 version=0.22.1
 release=3
 
-source="https://github.com/kyuupichan/aiorpcX/archive/0.22.1.tar.gz"
+source="https://github.com/kyuupichan/aiorpcX/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

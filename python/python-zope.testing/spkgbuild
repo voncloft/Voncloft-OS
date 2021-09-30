@@ -5,7 +5,7 @@ name=python-zope.testing
 version=4.9
 release=1
 
-source="python-zope.testing-4.7.tar.gz::https://github.com/zopefoundation/zope.testing/archive/4.7.tar.gz"
+source="https://github.com/zopefoundation/zope.testing/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

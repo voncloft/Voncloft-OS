@@ -5,7 +5,7 @@ name=python-sphobjinv
 version=2.1
 release=2
 
-source="https://github.com/bskinn/sphobjinv/archive/v2.1/sphobjinv-2.1.tar.gz"
+source="https://github.com/bskinn/sphobjinv/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

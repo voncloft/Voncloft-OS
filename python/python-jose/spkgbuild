@@ -5,7 +5,7 @@ name=python-jose
 version=3.3.0
 release=4
 
-source="https://github.com/mpdavis/python-jose/archive/3.3.0/python-jose-3.3.0.tar.gz"
+source="https://github.com/mpdavis/python-jose/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

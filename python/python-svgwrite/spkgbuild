@@ -5,7 +5,7 @@ name=python-svgwrite
 version=1.4.1
 release=3
 
-source="python-svgwrite-1.4.1.tar.gz::https://github.com/mozman/svgwrite/archive/v1.4.1.tar.gz"
+source="https://github.com/mozman/svgwrite/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-fxa
 version=0.7.7
 release=2
 
-source="https://github.com/mozilla/PyFxA/archive/v0.7.7/python-fxa-0.7.7.tar.gz"
+source="https://github.com/mozilla/PyFxA/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-debtcollector
 version=2.3.0
 release=3
 
-source="python-debtcollector-2.3.0.tar.gz::https://github.com/openstack/debtcollector/archive/2.3.0.tar.gz"
+source="https://github.com/openstack/debtcollector/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-bottleneck
 version=1.3.2
 release=3
 
-source="python-bottleneck-1.3.2.tar.gz::https://github.com/kwgoodman/bottleneck/archive/v1.3.2.tar.gz"
+source="https://github.com/kwgoodman/bottleneck/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

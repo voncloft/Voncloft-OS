@@ -5,7 +5,7 @@ name=python-btchip
 version=0.1.32
 release=2
 
-source="python-btchip-0.1.32.tar.gz::https://github.com/LedgerHQ/btchip-python/archive/0.1.32.tar.gz"
+source="https://github.com/LedgerHQ/btchip-python/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

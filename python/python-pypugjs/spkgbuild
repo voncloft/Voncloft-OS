@@ -5,7 +5,7 @@ name=python-pypugjs
 version=5.9.9
 release=1
 
-source="https://github.com/kakulukia/pypugjs/archive/v5.9.9/pypugjs-5.9.9.tar.gz"
+source="https://github.com/kakulukia/pypugjs/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

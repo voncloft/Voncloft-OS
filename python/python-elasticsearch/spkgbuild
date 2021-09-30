@@ -5,7 +5,7 @@ name=python-elasticsearch
 version=7.15.0
 release=3
 
-source="python-elasticsearch-7.8.1.tar.gz::https://github.com/elastic/elasticsearch-py/archive/7.8.1.tar.gz"
+source="https://github.com/elastic/elasticsearch-py/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

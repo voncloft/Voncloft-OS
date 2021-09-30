@@ -5,7 +5,7 @@ name=python-unittest-xml-reporting
 version=3.0.4
 release=2
 
-source="python-unittest-xml-reporting-3.0.4.tar.gz::https://github.com/xmlrunner/unittest-xml-reporting/archive/3.0.4.tar.gz"
+source="https://github.com/xmlrunner/unittest-xml-reporting/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-neutronclient
 version=7.6.0
 release=1
 
-source="https://github.com/openstack/python-neutronclient/archive/7.6.0/python-neutronclient-7.6.0.tar.gz"
+source="https://github.com/openstack/python-neutronclient/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

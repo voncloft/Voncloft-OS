@@ -5,7 +5,7 @@ name=python-covdefaults
 version=1.2.0
 release=2
 
-source="python-covdefaults-1.2.0.tar.gz::https://github.com/asottile/covdefaults/archive/v1.2.0.tar.gz"
+source="https://github.com/asottile/covdefaults/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

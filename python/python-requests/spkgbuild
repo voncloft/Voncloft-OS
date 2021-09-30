@@ -5,7 +5,7 @@ name=python-requests
 version=2.26.0
 release=1
 
-source="python-requests-2.26.0.tar.gz::https://github.com/psf/requests/archive/v2.26.0.tar.gz"
+source="https://github.com/psf/requests/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pipenv-to-requirements
 version=0.9.0
 release=3
 
-source="python-pipenv-to-requirements-0.9.0.tar.gz::https://github.com/gsemet/pipenv-to-requirements/archive/0.9.0.tar.gz"
+source="https://github.com/gsemet/pipenv-to-requirements/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

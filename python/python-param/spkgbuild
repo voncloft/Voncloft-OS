@@ -4,7 +4,7 @@ name=python-param
 version=1.11.2
 release=1
 
-source="https://github.com/holoviz/param/archive/v1.11.1/-1.11.1.tar.gz"
+source="https://github.com/holoviz/param/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

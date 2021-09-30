@@ -5,7 +5,7 @@ name=python-octaviaclient
 version=2.4.0
 release=2
 
-source="https://github.com/openstack/python-octaviaclient/archive/2.4.0/python-octaviaclient-2.4.0.tar.gz"
+source="https://github.com/openstack/python-octaviaclient/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

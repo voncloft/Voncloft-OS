@@ -5,7 +5,7 @@ name=python-aspectlib
 version=1.5.2
 release=1
 
-source="python-aspectlib-1.5.2.tar.gz::https://github.com/ionelmc/python-aspectlib/archive/v1.5.2.tar.gz"
+source="https://github.com/ionelmc/python-aspectlib/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

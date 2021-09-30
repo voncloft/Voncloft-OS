@@ -5,7 +5,7 @@ name=python-coverage
 version=6.0
 release=1
 
-source="python-coverage-5.5.tar.gz::https://github.com/nedbat/coveragepy/archive/coverage-5.5.tar.gz"
+source="https://github.com/nedbat/coveragepy/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

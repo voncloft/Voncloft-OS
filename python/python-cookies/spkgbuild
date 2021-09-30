@@ -5,7 +5,7 @@ name=python-cookies
 version=2.2.1
 release=5
 
-source="python-cookies-b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz::https://github.com/sashahart/cookies/archive/b3e935355afcfb5240bac5a99707ffecc35772a2.tar.gz"
+source="https://github.com/sashahart/cookies/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

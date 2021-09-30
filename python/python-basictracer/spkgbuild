@@ -5,7 +5,7 @@ name=python-basictracer
 version=3.2.0
 release=2
 
-source="https://github.com/opentracing/basictracer-python/archive/3.2.0/python-basictracer-3.2.0.tar.gz"
+source="https://github.com/opentracing/basictracer-python/archive/refs/tags/r$version.tar.gz"
 options="!checksum"
 
 build() {

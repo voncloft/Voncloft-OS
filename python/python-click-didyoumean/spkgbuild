@@ -5,7 +5,7 @@ name=python-click-didyoumean
 version=0.3.0
 release=3
 
-source="https://github.com/click-contrib/click-didyoumean/archive/v0.0.3/python-click-didyoumean-0.0.3.tar.gz"
+source="https://github.com/click-contrib/click-didyoumean/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

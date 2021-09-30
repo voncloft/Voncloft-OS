@@ -5,7 +5,7 @@ name=python-pipreqs
 version=0.4.10
 release=3
 
-source="python-pipreqs-0.4.10.tar.gz::https://github.com/bndr/pipreqs/archive/v0.4.10.tar.gz"
+source="https://github.com/bndr/pipreqs/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

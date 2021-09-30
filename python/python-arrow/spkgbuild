@@ -5,7 +5,7 @@ name=python-arrow
 version=1.1.1
 release=3
 
-source="git+https://github.com/crsmithdev/arrow.git#tag="
+source="https://github.com/crsmithdev/arrow.git#tag=/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

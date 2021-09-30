@@ -5,7 +5,7 @@ name=python-odfpy
 version=1.4.2
 release=3
 
-source="https://github.com/eea/odfpy/archive/release-1.4.1/python-odfpy-1.4.1.tar.gz"
+source="https://github.com/eea/odfpy/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

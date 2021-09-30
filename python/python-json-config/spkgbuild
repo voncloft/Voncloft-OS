@@ -5,7 +5,7 @@ name=python-json-config
 version=2.0.1
 release=3
 
-source="python-json-config-2.0.1.tar.gz::https://github.com/bionikspoon/json_config/archive/2.0.1.tar.gz"
+source="https://github.com/bionikspoon/json_config/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

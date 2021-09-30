@@ -5,7 +5,7 @@ name=python-lmdb
 version=1.2.1
 release=3
 
-source="https://github.com/jnwatson/py-lmdb//archive/_1.2.1.tar.gz"
+source="https://github.com/jnwatson/py-lmdb/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-keystoneauth1
 version=4.4.0
 release=1
 
-source="python-keystoneauth1-4.4.0.tar.gz::https://github.com/openstack/keystoneauth/archive/4.4.0.tar.gz"
+source="https://github.com/openstack/keystoneauth/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

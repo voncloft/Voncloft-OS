@@ -5,7 +5,7 @@ name=python-vine
 version=5.0.0
 release=3
 
-source="python-vine-5.0.0.tar.gz::https://github.com/celery/vine/archive/v5.0.0.tar.gz"
+source="https://github.com/celery/vine/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

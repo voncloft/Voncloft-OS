@@ -6,7 +6,7 @@ name=python-htmlmin
 version=0.1.12
 release=6
 
-source="python-htmlmin-0.1.12.tar.gz::https://github.com/mankyd/htmlmin/archive/.tar.gz"
+source="https://github.com/mankyd/htmlmin/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

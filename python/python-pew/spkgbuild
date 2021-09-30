@@ -5,7 +5,7 @@ name=python-pew
 version=1.2.0
 release=5
 
-source="python-pew-1.2.0.tar.gz::https://github.com/berdario/pew/archive/1.2.0.zip"
+source="https://github.com/berdario/pew/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

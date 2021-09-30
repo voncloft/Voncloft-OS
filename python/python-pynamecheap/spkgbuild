@@ -5,7 +5,7 @@ name=python-pynamecheap
 version=0.0.3
 release=6
 
-source="python-pynamecheap-0.0.3.tar.gz::https://github.com/Bemmu/PyNamecheap/archive/v0.0.3.tar.gz"
+source="https://github.com/Bemmu/PyNamecheap/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

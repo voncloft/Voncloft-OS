@@ -5,7 +5,7 @@ name=python-qrcode
 version=7.3
 release=6
 
-source="https://github.com/lincolnloop/python-qrcode/archive/v7.3/python-qrcode-v7.3.tar.gz"
+source="https://github.com/lincolnloop/python-qrcode/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

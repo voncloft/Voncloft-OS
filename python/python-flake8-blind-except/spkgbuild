@@ -5,7 +5,7 @@ name=python-flake8-blind-except
 version=0.2.0
 release=4
 
-source="https://github.com/elijahandrews/flake8-blind-except/archive/v0.2.0/python-flake8-blind-except-0.2.0.tar.gz"
+source="https://github.com/elijahandrews/flake8-blind-except/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

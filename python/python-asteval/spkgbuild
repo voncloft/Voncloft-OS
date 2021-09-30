@@ -5,7 +5,7 @@ name=python-asteval
 version=0.9.25
 release=1
 
-source="https://github.com/newville/asteval/archive/0.9.25/python-asteval-0.9.25.tar.gz"
+source="https://github.com/newville/asteval/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

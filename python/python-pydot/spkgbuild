@@ -5,7 +5,7 @@ name=python-pydot
 version=1.4.2
 release=5
 
-source="python-pydot-1.4.2.tar.gz::https://github.com/erocarrera/pydot/archive/v1.4.2.tar.gz"
+source="https://github.com/erocarrera/pydot/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

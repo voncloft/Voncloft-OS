@@ -5,7 +5,7 @@ name=python-oauth2client
 version=4.1.3
 release=6
 
-source="https://github.com/google/oauth2client/archive/v4.1.3.tar.gz"
+source="https://github.com/google/oauth2client/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-funcy
 version=1.16
 release=2
 
-source="python-funcy-1.16.tar.gz::https://github.com/Suor/funcy/archive/1.16.tar.gz"
+source="https://github.com/Suor/funcy/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

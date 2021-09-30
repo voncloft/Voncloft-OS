@@ -5,7 +5,7 @@ name=python-sepaxml
 version=2.4.1
 release=4
 
-source="python-sepaxml-2.4.1.tar.gz::https://github.com/raphaelm/python-sepaxml/archive/2.4.1.tar.gz"
+source="https://github.com/raphaelm/python-sepaxml/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

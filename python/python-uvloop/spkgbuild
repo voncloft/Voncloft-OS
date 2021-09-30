@@ -5,7 +5,7 @@ name=python-uvloop
 version=0.16.0
 release=3
 
-source="python-uvloop-0.16.0.tar.gz::https://github.com/MagicStack/uvloop/archive/v0.16.0.tar.gz"
+source="https://github.com/MagicStack/uvloop/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

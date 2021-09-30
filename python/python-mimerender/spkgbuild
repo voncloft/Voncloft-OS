@@ -5,7 +5,7 @@ name=python-mimerender
 version=0.6.0
 release=6
 
-source="python-mimerender-0.6.0.tar.gz::https://github.com/martinblech/mimerender/archive/v0.6.0.tar.gz"
+source="https://github.com/martinblech/mimerender/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

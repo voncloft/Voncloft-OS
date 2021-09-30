@@ -5,7 +5,7 @@ name=python-testing.common.database
 version=2.0.3
 release=5
 
-source="python-testing.common.database-2.0.3.tar.gz::https://github.com/tk0miya/testing.common.database/archive/2.0.3.tar.gz"
+source="https://github.com/tk0miya/testing.common.database/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

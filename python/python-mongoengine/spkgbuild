@@ -5,7 +5,7 @@ name=python-mongoengine
 version=0.23.1
 release=1
 
-source="python-mongoengine-0.23.1.tar.gz::https://github.com/MongoEngine/mongoengine/archive/v0.23.1.tar.gz"
+source="https://github.com/MongoEngine/mongoengine/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

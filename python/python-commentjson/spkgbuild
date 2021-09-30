@@ -5,7 +5,7 @@ name=python-commentjson
 version=0.9.0
 release=3
 
-source="python-commentjson-0.9.0.tar.gz::https://github.com/vaidik/commentjson/archive/v0.9.0.tar.gz"
+source="https://github.com/vaidik/commentjson/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

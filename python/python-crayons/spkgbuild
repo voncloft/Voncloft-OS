@@ -5,7 +5,7 @@ name=python-crayons
 version=0.4.0
 release=2
 
-source="python-crayons-0.4.0.tar.gz::https://github.com/kennethreitz/crayons/archive/v0.4.0.tar.gz"
+source="https://github.com/kennethreitz/crayons/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

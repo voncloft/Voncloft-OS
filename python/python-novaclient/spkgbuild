@@ -5,7 +5,7 @@ name=python-novaclient
 version=17.6.0
 release=1
 
-source="python-novaclient-17.6.0.tar.gz::https://github.com/openstack/python-novaclient/archive/17.6.0.tar.gz"
+source="https://github.com/openstack/python-novaclient/archive/refs/tags/e$version.tar.gz"
 options="!checksum"
 
 build() {

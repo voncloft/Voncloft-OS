@@ -4,7 +4,7 @@ name=python-pyvcd
 version=0.2.4
 release=1
 
-source="python-pyvcd-0.2.4.tar.gz::https://github.com/SanDisk-Open-Source/pyvcd/archive/0.2.4.tar.gz"
+source="https://github.com/SanDisk-Open-Source/pyvcd/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

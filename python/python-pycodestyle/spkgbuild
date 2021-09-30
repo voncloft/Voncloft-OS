@@ -5,7 +5,7 @@ name=python-pycodestyle
 version=2.7.0
 release=3
 
-source="https://github.com/PyCQA/pycodestyle/archive/2.7.0/python-pycodestyle-2.7.0.tar.gz"
+source="https://github.com/PyCQA/pycodestyle/archive/refs/tags/a$version.tar.gz"
 options="!checksum"
 
 build() {

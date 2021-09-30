@@ -6,7 +6,7 @@ name=python-urllib3
 version=1.26.7
 release=1
 
-source="https://github.com/urllib3/urllib3/archive/1.26.7/python-urllib3-1.26.7.tar.gz"
+source="https://github.com/urllib3/urllib3/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-sphinxcontrib-blockdiag
 version=2.0.0
 release=3
 
-source="https://github.com/blockdiag/sphinxcontrib-blockdiag/archive/2.0.0/python-sphinxcontrib-blockdiag-2.0.0.tar.gz"
+source="https://github.com/blockdiag/sphinxcontrib-blockdiag/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

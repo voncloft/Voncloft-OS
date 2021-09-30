@@ -5,7 +5,7 @@ name=python-cpplint
 version=1.5.5
 release=1
 
-source="python-cpplint-1.5.5.tar.gz::https://github.com/cpplint/cpplint/archive/1.5.5.tar.gz"
+source="https://github.com/cpplint/cpplint/archive/refs/tags/f$version.tar.gz"
 options="!checksum"
 
 build() {

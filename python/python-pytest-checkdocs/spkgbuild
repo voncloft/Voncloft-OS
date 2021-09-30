@@ -4,7 +4,7 @@ name=python-pytest-checkdocs
 version=2.7.1
 release=1
 
-source="https://github.com/jaraco/pytest-checkdocs/archive/v2.7.1/python-pytest-checkdocs-2.7.1.tar.gz"
+source="https://github.com/jaraco/pytest-checkdocs/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {

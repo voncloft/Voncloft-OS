@@ -5,7 +5,7 @@ name=python-requests-hawk
 version=1.1.1
 release=2
 
-source="https://github.com/mozilla-services/requests-hawk/archive/1.1.1/python-requests-hawk-1.1.1.tar.gz"
+source="https://github.com/mozilla-services/requests-hawk/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {

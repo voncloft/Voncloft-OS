@@ -5,7 +5,7 @@ name=python-testpath
 version=0.5.0
 release=3
 
-source="python-testpath-0.4.4.tgz::https://github.com/jupyter/testpath/archive/0.4.4.tar.gz"
+source="https://github.com/jupyter/testpath/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {
