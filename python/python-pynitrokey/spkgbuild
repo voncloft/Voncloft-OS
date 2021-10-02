@@ -2,10 +2,10 @@
 # depends : python-cbor python-cffi python-click python-cryptography
 
 name=python-pynitrokey
-version=0.4.4
+version=0.4.5
 release=3
 
-source="https://files.pythonhosted.org/packages/source/p/pynitrokey/pynitrokey-0.4.4.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pynitrokey/pynitrokey-0.4.5.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-numpy python-cftime python-mpi4py netcdf-${_mpi}
 
 name=python-netcdf4-openmpi
-version=1.5.6
+version=1.5.7
 release=1
 
-source="https://files.pythonhosted.org/packages/source///-1.5.6.tar.gz"
+source="https://files.pythonhosted.org/packages/source///-1.5.7.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-distlib
-version=0.3.2
+version=0.3.3
 release=2
 
-source="https://files.pythonhosted.org/packages/source/d/distlib/distlib-0.3.2.zip"
+source="https://files.pythonhosted.org/packages/source/d/distlib/distlib-0.3.3.zip"
 options="!checksum"
 
 build() {

@@ -4,7 +4,7 @@
 name=swig
 version=4.0.2
 release=1
-source="https://downloads.sourceforge.net/swig/$name-$version.tar.gz"
+source="https://downloads.sourceforge.net/swig/swig-4.0.2.tar.gz"
 
 build() {
 	cd $name-$version
