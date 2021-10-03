@@ -9,7 +9,7 @@ backup="etc/vsftpd.conf
         etc/pam.d/vsftpd
         etc/ftpusers"
 
-source="https://security.appspot.com/downloads/$name-$version.tar.gz
+source="https://security.appspot.com/downloads/vsftpd-3.0.3.tar.gz
 	vsftpd.conf
 	vsftpd
 	ftpusers"

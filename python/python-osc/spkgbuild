@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-osc
-version=1.7.7
+version=1.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/p/python-osc/python-osc-1.7.7.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/python-osc/python-osc-1.8.0.tar.gz"
 options="!checksum"
 
 build() {

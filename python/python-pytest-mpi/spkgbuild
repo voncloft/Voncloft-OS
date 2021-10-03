@@ -5,7 +5,7 @@ name=python-pytest-mpi
 version=0.5
 release=3
 
-source="https://files.pythonhosted.org/packages/source///-0.5.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pytest-mpi/pytest-mpi-0.5.tar.gz"
 options="!checksum"
 
 build() {

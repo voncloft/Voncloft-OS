@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-sqlalchemy
-version=1.4.23
+version=1.4.25
 release=1
 
-source="https://files.pythonhosted.org/packages/ad/c7/61ff52be84f5ac86c72672ceac941981f1685b4ef90391d405a1f89677d0/SQLAlchemy-1.4.23.tar.gz"
+source="https://pypi.io/packages/source/S/SQLAlchemy/SQLAlchemy-1.4.25.tar.gz"
 options="!checksum"
 
 build() {

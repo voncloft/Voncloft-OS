@@ -5,7 +5,7 @@ name=python-stem
 version=1.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/71/bd/ab05ffcbfe74dca704e860312e00c53ef690b1ddcb23be7a4d9ea4f40260/stem-1.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/s/stem/stem-1.8.0.tar.gz"
 options="!checksum"
 
 build() {

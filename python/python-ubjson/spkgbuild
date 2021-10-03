@@ -5,7 +5,7 @@ name=python-ubjson
 version=0.16.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/${name:7:1}/${name#python-}/${name#python-}-${version}.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/py-ubjson/py-ubjson-0.16.1.tar.gz"
 options="!checksum"
 
 build() {

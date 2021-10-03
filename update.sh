@@ -520,7 +520,7 @@ main $@
 end_time="$(date -u +%s)"
 elapsed="$(($end_time-$start_time))"
 if [ $elapsed -gt 60 ];then
-	minutes_passed=$elapsed/60
+	minutes_passed=$((elapsed/60))
 	echo "Total of $minutes_passed minutes elapsed for process"
 else
 	minutes_passed=$elapsed

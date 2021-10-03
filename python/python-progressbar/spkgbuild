@@ -5,7 +5,7 @@ name=python-progressbar
 version=3.53.3
 release=5
 
-source="https://files.pythonhosted.org/packages/a3/a6/b8e451f6cff1c99b4747a2f7235aa904d2d49e8e1464e0b798272aa84358/progressbar-2.5.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/progressbar2/progressbar2-3.53.3.tar.gz"
 options="!checksum"
 
 build() {

@@ -5,7 +5,7 @@ name=python-pytest-lazy-fixture
 version=0.6.3
 release=3
 
-source="https://files.pythonhosted.org/packages/source///-0.6.3.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pytest-lazy-fixture/pytest-lazy-fixture-0.6.3.tar.gz"
 options="!checksum"
 
 build() {

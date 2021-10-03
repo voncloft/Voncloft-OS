@@ -4,7 +4,7 @@
 name=openbox
 version=3.6.1
 release=2
-source="http://openbox.org/dist/$name/$name-$version.tar.gz"
+source="http://openbox.org/dist/openbox/openbox-3.6.1.tar.gz"
 
 build() {
 	cd $name-$version

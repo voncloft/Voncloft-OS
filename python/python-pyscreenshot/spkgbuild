@@ -5,7 +5,7 @@ name=python-pyscreenshot
 version=3.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source///-3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pyscreenshot/pyscreenshot-3.0.tar.gz"
 options="!checksum"
 
 build() {

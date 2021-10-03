@@ -5,7 +5,7 @@ name=python-distributed
 version=2021.9.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source///-2021.3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/d/distributed/distributed-2021.3.0.tar.gz"
 options="!checksum"
 
 build() {

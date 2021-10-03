@@ -5,7 +5,7 @@ name=python-flufl.testing
 version=0.8
 release=3
 
-source="https://files.pythonhosted.org/packages/0d/e1/030cb22f7ad6ec12056de1daf4f537fbbeb8e92ed8be0cb73480dad2e61e/flufl.testing-0.8.tar.gz"
+source="https://files.pythonhosted.org/packages/source/f/flufl.testing/flufl.testing-0.8.tar.gz"
 options="!checksum"
 
 build() {

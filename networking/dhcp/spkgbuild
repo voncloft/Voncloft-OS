@@ -5,7 +5,7 @@ name=dhcp
 version=4.4.2-p1
 release=1
 
-source="ftp://ftp.isc.org/isc/dhcp/4.4.2-p1/dhcp-4.4.2-p1.tar.gz
+source="https://downloads.isc.org/isc/dhcp//dhcp-.tar.gz
 	dhclient.conf
 	ifconfig.eth0"
 options="!checksum"

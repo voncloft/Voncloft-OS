@@ -5,7 +5,7 @@ name=python-scramp
 version=1.4.1
 release=1
 
-source="https://files.pythonhosted.org/packages/56/26/7cb510bc22da4e6234e9b90586c43eb4fbece4004b35d5a00987808185f5/scramp-1.4.1.tar.gz"
+source="https://files.pythonhosted.org/packages/source/s/scramp/scramp-1.4.1.tar.gz"
 options="!checksum"
 
 build() {

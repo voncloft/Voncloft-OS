@@ -5,7 +5,7 @@ name=python-pythondialog
 version=3.5.2
 release=2
 
-source="https://files.pythonhosted.org/packages/78/00/1556fa223ceb177d0ae92579812e195be5598ca3abe60f89c63ac23c472b/pythondialog-3.5.2.tar.gz"
+source="https://downloads.sourceforge.net/project/pythondialog/pythondialog/3.5.2/python3-pythondialog-3.5.2.tar.bz2"
 options="!checksum"
 
 build() {

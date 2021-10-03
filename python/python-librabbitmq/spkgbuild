@@ -5,7 +5,7 @@ name=python-librabbitmq
 version=2.0.0
 release=5
 
-source="https://files.pythonhosted.org/packages/f4/4e/8f8bf33d44f3441d6f6c29b299cc847570b2c864bd8d2f9871aa6c03b73e/librabbitmq-2.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/l/librabbitmq/librabbitmq-2.0.0.tar.gz"
 options="!checksum"
 
 build() {

@@ -4,7 +4,7 @@
 name=weechat
 version=3.3
 release=1
-source="https://weechat.org/files/src/weechat-$version.tar.xz"
+source="https://www.weechat.org/files/src/weechat-3.3.tar.xz"
 
 build() {
 	cd $name-$version
