@@ -34,6 +34,7 @@ _As of 09-16-2021_
 
 **Workon next:**
 - PHP: needs to not overwrite httpd existing config files upon upgrading
+- Hollywood: dependencies and install script
 
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
