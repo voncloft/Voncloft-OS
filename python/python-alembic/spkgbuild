@@ -5,7 +5,7 @@ name=python-alembic
 version=1.7.3
 release=3
 
-source="https://files.pythonhosted.org/packages/e9/5d/edeaf9dd2c3addabb170cd721580b691c8488b0553a18b9f799605fd0841/alembic-1.7.1.tar.gz"
+source="https://pypi.org/packages/source/a/alembic/alembic-1.7.3.tar.gz"
 options="!checksum"
 
 build() {

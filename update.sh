@@ -260,23 +260,25 @@ grep_retry()
                                 	rm test.txt
 				fi
 				if [ -f /Voncloft-OS/index.html ];then
-					grep "pkgbase=" index.html > /Voncloft-OS/test.txt
+					grep "pkg=" index.html > /Voncloft-OS/test.txt
+					grep "_pkg=" index.html >> /Voncloft-OS/test.txt
+					grep "pkgbase=" index.html >> /Voncloft-OS/test.txt
                                         grep "pkgver=" index.html >> /Voncloft-OS/test.txt
                                         grep "name=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
                                         grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
                                         grep "url=" index.html >> /Voncloft-OS/test.txt
                                         grep "source=" index.html >> /Voncloft-OS/test.txt
-					
+					sed -i -e "s/\'//g" /Voncloft-OS/test.txt
                                         sed -i -e "s/(//g" /Voncloft-OS/test.txt
                                         sed -i -e "s/)//g" /Voncloft-OS/test.txt
-
+					sed -i -e "s/{,.asc}//g" /Voncloft-OS/test.txt
                                         new_url=$spkg_url
                                         source /Voncloft-OS/test.txt
 					spkg_src=$(echo $spkg_src | sed "s/\"//g")
 					#echo $spkg_src
                                         uversion="$pkgver"
                                         #echo "new url $source"
-					#echo "sed -i -e 's,$spkg_src,$source,g" $ppath"
+					#echo "sed -i -e 's,$spkg_src,$source,g" $ppath
 					sed -i -e "s,$spkg_src,$source,g" $ppath
                                         #echo "NEW VERSION $uversion"
                                         #echo "New URL2 $new_url"
@@ -511,20 +513,16 @@ repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
-#repos="networking/openssh"
-#repos="python/python-xapp python/python-wheezy-template python/python-ujson"
-#repos="perl/* python/*"
-#repos="python/python-decorator python/python-defusedxml python/python-dephell python/python-genty"
-#repos="core/wget core/iasl python/python-aiopg perl/perl-a*"
-#repos="$bare_essentials"
-#echo "Ignoring: $ignoring"
-#repos="networking/openssh"
-#repos="python/python-virtualenv"
-#repos="cinnamon/* compilers/* displaym/* extra/* firewall/* fonts/* gnome/* hardware/* kde/* kde-apps/* kf5/* libs/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/* core/*"
-#repos="extra/chessx"
+#repos="compilers/*"
 start_time="$(date -u +%s)"
 ###Start Checking###
 main $@
 end_time="$(date -u +%s)"
 elapsed="$(($end_time-$start_time))"
-echo "Total of $elapsed seconds elapsed for process"
+if [ $elapsed -gt 60 ];then
+	minutes_passed=$elapsed/60
+	echo "Total of $minutes_passed minutes elapsed for process"
+else
+	minutes_passed=$elapsed
+	echo "Total of $minutes_passed seconds elapsed for process"
+fi
