@@ -59,6 +59,13 @@ alter_per_url() {
 		*..subsonic.*)
 			url="http://www.subsonic.org/pages/download.jsp"
 			;;
+		*x.org*|*xcb.freedesktop.org*|*xorg.freedesktop.org*)
+			url=$(echo $url | sed "s/pub/archive/g" | sed "s/ftp/www/g")
+			if [[ "$url" == *"http://"* ]]; then
+				url=$(echo $url | sed "s/http/https/g")
+			fi
+			;;
+
                 *)
         esac
 }
@@ -209,6 +216,23 @@ cmd_torun()
                 	if [ $? = 1 ];then
                 		url="http://www.subsonic.org/pages/download.jsp"
                 		run_manual_upd
+                	fi
+                	;;
+                *x.org*|*xcb.freedesktop.org*|*xorg.freedesktop.org*)
+                	cmd="xorg"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+			else
+                                fetch
+				uversion=$(grep $name index.html \
+				| grep -i "href" \
+				| grep -Po '(?<=href=")[^"]*' \
+				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+				| sort -V -r \
+				| uniq \
+				| head -n1)
+
                 	fi
                 	;;
                 *)
@@ -509,11 +533,11 @@ cd /Voncloft-OS
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 #bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
-repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/*"
+#repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/*"
 
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
-#repos="compilers/*"
+repos="xorg/xcb-util"
 start_time="$(date -u +%s)"
 ###Start Checking###
 main $@
