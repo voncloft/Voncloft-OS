@@ -353,10 +353,13 @@ upgrade_process()
                                 echo "NEW"
                                 ((count=count+1))
                                 if [ -z $test_upgrade ];then
-					create_table $ppath $version $uversion
+                                	title="Updates for: "
                                 	sed -i -e "s/version=$version/version=$uversion/g" $ppath
                                 	changelog "$ppath" "Upgraded from version $version to version $uversion"
+				else
+					title="Test updates for: "
 				fi
+				create_table $ppath $version $uversion
                         elif [ $? = 1 ];then
                                 echo "OLD"
                         fi
@@ -482,7 +485,7 @@ create_table()
 	
 	if [ $count = 1 ];then
 	        echo "<CENTER>" >> $table_log
-		echo -e '<table border = "2" width="600px"><caption>Updates for' $(date +"%m-%d-%y") $(date "+%H")'</caption>' >> $table_log
+		echo -e '<table border = "2" width="600px"><caption>'$title $(date +"%m-%d-%y") $(date "+%H")'</caption>' >> $table_log
 		echo '<tr><td align=center>Package Path</td><td align=center>Old Version</td><td align=center>New Version</td><td align=center>Changelog</td><td align=center>spkgbuild</td></tr>' >> $table_log
 	fi
 	spkg_dir=$(echo $1 | sed "s/\/spkgbuild//g")
