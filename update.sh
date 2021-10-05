@@ -512,7 +512,7 @@ check_handles()
 }
 repos()
 {
-	echo "What repos do you want to run"
+	echo "What packages do you want to check?"
 	read repos
 }
 help()
@@ -572,9 +572,7 @@ logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 #bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
 #echo "Repos to test $repos_to_test"
-if [ -z $repos_to_test ];then
-	repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/*"
-fi
+repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/*"
 ###TESTING###
 #ignoring="kf5 plasma kde-apps python perl"
 #repos="xorg/xcb-util"
