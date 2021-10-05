@@ -303,9 +303,9 @@ grep_retry()
                                         uversion="$pkgver"
                                         #echo "new url $source"
 					#echo "sed -i -e 's,$spkg_src,$source,g" $ppath
-					sed -i -e "s,$spkg_src,$source,g" $ppath
-                                        #echo "NEW VERSION $uversion"
-                                        #echo "New URL2 $new_url"
+					if [ -z $test_upgrade ];then
+						sed -i -e "s,$spkg_src,$source,g" $ppath
+					fi
                                         if [ ! -f /Voncloft-OS/index.html ];then
                                                 echo "NO PACKAGE FOUND AT ARCH"
                                                 #put sed command here
@@ -352,17 +352,11 @@ upgrade_process()
                         if [ $? = 2 ]; then
                                 echo "NEW"
                                 ((count=count+1))
-				#timestamp_log
-                                #final="<b><u>$ppath</u></b>\n"
-                                #final+="<br>installed version in repo: $version\n"
-                                #final+="<br>upgraded to version: $uversion\n"
-                                #final+="<br><br>\n\n"
-                                #echo -e $final >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-				create_table $ppath $version $uversion
-                                #echo -e "sed -i -e s/version=$version/version=$uversion/g $ppath<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html   
-                                sed -i -e "s/version=$version/version=$uversion/g" $ppath
-                                changelog "$ppath" "Upgraded from version $version to version $uversion"
-                                #cp index.html $name-index.html
+                                if [ -z $test_upgrade ];then
+					create_table $ppath $version $uversion
+                                	sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                	changelog "$ppath" "Upgraded from version $version to version $uversion"
+				fi
                         elif [ $? = 1 ];then
                                 echo "OLD"
                         fi
@@ -433,7 +427,9 @@ alerts_and_logs()
 }
 prepare_backup_and_logs()
 {
-	foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	if [ -z $skip_tar ];then
+		foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	fi
 	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
 		mkdir -pv $logpath/changes
@@ -494,8 +490,44 @@ create_table()
         echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td align=center><a href=http://voncloft.dnsfor.me/repository/'$1'>spkgbuild</a></td></tr>' >> $table_log	
 
 }
+check_handles()
+{
+        while [ $1 ]; do
+                case $1 in
+                        -r) while [ $2 ]; do
+                                        case $2 in
+                                                -*) break;;
+                                                *) REPO+=($2)
+                                        esac
+                                        shift
+                                done;;
+                        -st) skip_tar=1;;
+                        -t) test_upgrade=1;;
+			-h)  help
+         		exit;;
+                esac
+                shift
+        done
+}
+help()
+{
+	echo "-st skip tarballing"
+	echo "-t test upgrades do not apply them"
+	echo "-h help"
+}
 main()
 {
+	check_handles $@
+	if [ -z $skip_tar ];then
+		echo "Backing up repo"
+	else
+		echo "Skipping backup of repo"
+	fi
+	if [ -z $test_upgrade ];then
+		echo "Applying updates to repo"
+	else
+		echo "Checking for updates - not applying any, test run"
+	fi
 	prepare_backup_and_logs
 	for f in $repos;
 	do
@@ -527,7 +559,6 @@ DBLUE='\e[1;34;40m'
 CYAN='\e[0;36;40m'
 FRED='\e[5;31;40m'
 NC='\033[0m'
-
 cd /Voncloft-OS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
@@ -541,6 +572,7 @@ repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome
 start_time="$(date -u +%s)"
 ###Start Checking###
 main $@
+check_handles
 end_time="$(date -u +%s)"
 elapsed="$(($end_time-$start_time))"
 if [ $elapsed -gt 60 ];then
