@@ -63,7 +63,6 @@ alter_per_url() {
 				url=$(echo $url | sed "s/http/https/g")
 			fi
 			;;
-
                 *)
         esac
 }
