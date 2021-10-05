@@ -22,7 +22,6 @@ get_url()
 }
 fetch() {
 	curl -f "$url" -o index.html -s
-	#wget -O index.html $url -q
 }
 alter_per_url() {
         case $url in
@@ -35,7 +34,6 @@ alter_per_url() {
                 *gitlab.com*)
                         url=$(echo $url | cut -d/ -f1-5)/tags;;
                 *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
-                        #url=https://pypi.org/simple/${name#python-};;
 			url=https://pypi.org;;
 		*cpan.*)
 			url=https://cpan.org;;
@@ -122,7 +120,6 @@ cmd_torun()
                         if [ $? = 1 ];then
                                 run_manual_upd
                         else
-                        	#spkg_url=$source
 				retry_index
 				grep_retry
                         fi
@@ -166,7 +163,6 @@ cmd_torun()
                 		| sort -V -r \
                         	| head -n1)
                         	url=$url$uversion/
-                        	#echo $url
                         	rm index.html
                         	fetch
                         	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
@@ -262,10 +258,8 @@ cmd_torun()
 }
 retry_index()
 {
-#echo "PPath $ppath"
 spkg_src=$(grep "source=" $ppath | sed "s/source=//g")
 
-#echo "spkgbuild $spkg_src"
 url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
 fetch
 if [ ! -f /Voncloft-OS/index.html ];then
@@ -299,18 +293,13 @@ grep_retry()
                                         new_url=$spkg_url
                                         source /Voncloft-OS/test.txt
 					spkg_src=$(echo $spkg_src | sed "s/\"//g")
-					#echo $spkg_src
                                         uversion="$pkgver"
-                                        #echo "new url $source"
-					#echo "sed -i -e 's,$spkg_src,$source,g" $ppath
 					if [ -z $test_upgrade ];then
 						sed -i -e "s,$spkg_src,$source,g" $ppath
 					fi
                                         if [ ! -f /Voncloft-OS/index.html ];then
                                                 echo "NO PACKAGE FOUND AT ARCH"
-                                                #put sed command here
                                         fi
-                                        #echo $new_url
                                 fi
 }
 perform_override()
@@ -394,14 +383,10 @@ alerts_and_logs()
         	#missing=$(cat missing.txt)
         	#mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
 	fi
-	#rm -v /var/log/old/testing.txt
-	#rm -v test.txt
 	cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
 	cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").html /var/log/old/repository_changes-$(date +"%m-%d-%y").html
 	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
 	cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
-	#cp missing.txt $logpath/missing/missing-$(date +"%m-%d-%y").html
-	#find /Voncloft-OS/logs -maxdepth 100 -exec cp /Voncloft-OS/utilities/files/secondary.php {} \;
 	find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
 	if [ $count = 1 ];
 	then
@@ -433,7 +418,6 @@ prepare_backup_and_logs()
 	if [ -z $skip_tar ];then
 		foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
 	fi
-	#mv repo-$(date +"%m-%d-%y").tar.gz /var/log/old
 	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
 		mkdir -pv $logpath/changes
 		mkdir -pv $logpath/reports
@@ -443,10 +427,6 @@ prepare_backup_and_logs()
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/missing/missing-$(date +"%m-%d-%y").html
-
-		#echo -e "$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-		#echo -e "$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
-		#echo -e "$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
 	fi
 }
 timestamp_log()
@@ -573,12 +553,8 @@ cd /Voncloft-OS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-#bare_essentials="networking/firefox networking/thunderbird core/nss extra/nspr"
-#echo "Repos to test $repos_to_test"
 repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* networking/* nonfree/* perl/* plasma/* python/* qt/* ruby-gems/* server/* xfce/* xorg/*"
-###TESTING###
-#ignoring="kf5 plasma kde-apps python perl"
-#repos="xorg/xcb-util"
+
 start_time="$(date -u +%s)"
 ###Start Checking###
 main $@
