@@ -1,0 +1,18 @@
+source="http://xcb.freedesktop.org/dist/"
+
+get_generic()
+{
+	uversion=$(grep -i "href" index.html \
+		| grep .tar.gz | grep -Po '(?<=href=")[^"]*' \
+		| grep -w "xcb-util" | grep -v cursor \
+		| grep -v errors \
+		| grep -v image \
+		|  grep -v keysyms \
+		| grep -v renderutil \
+		| grep -v wm \
+		| uniq \
+		| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+		| sort -V -r \
+		| head -n1)
+
+}
