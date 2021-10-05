@@ -2,10 +2,10 @@
 # depends : python-marshmallow python-requests python-requests-toolbelt python-six python-munch
 
 name=python-copr
-version=1.112
+version=1.113
 release=1
 
-source="https://pagure.io/copr/copr/archive/python-copr-1.112-1/copr-python-copr-1.112-1.tar.gz"
+source="https://pagure.io/copr/copr/archive/python-copr-1.113-1/copr-python-copr-1.113-1.tar.gz"
 options="!checksum"
 
 build() {

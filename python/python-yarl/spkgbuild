@@ -2,7 +2,7 @@
 # depends : glibc python python-multidict python-idna python-typing_extensions
 
 name=python-yarl
-version=1.6.3
+version=1.7.0
 release=1
 
 source="https://github.com/aio-libs/yarl/archive/refs/tags/v$version.tar.gz"

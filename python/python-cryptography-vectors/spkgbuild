@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-cryptography-vectors
-version=3.4.8
+version=35.0.0
 release=1
 
-source="https://pypi.io/packages/source/c/cryptography-vectors/cryptography_vectors-3.4.8.tar.gz"
+source="https://pypi.io/packages/source/c/cryptography-vectors/cryptography_vectors-35.0.0.tar.gz"
 options="!checksum"
 
 build() {

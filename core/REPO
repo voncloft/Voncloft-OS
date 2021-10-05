@@ -491,6 +491,7 @@ f:a1ec4bfb2ae5116db789397aa796683a:grub/detect-venom-fallback-initrd.patch
 f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:325c8173b81f3e6cfb8e636e14d74766:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
+f:46401b446edbddffb997aed693f54325:xpr/CHANGELOG
 f:0b6d8c405a6a59dcc9055fbeb9ce3706:xpr/spkgbuild
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
 f:74689ecc47f2929bb0f8a97764943744:systemd/CHANGELOG
@@ -551,7 +552,8 @@ f:bc29a2346378d104a7ba28ce90146000:deadbeef/CHANGELOG
 f:2366c180a5bb93f048a99ac97c10515c:deadbeef/spkgbuild
 f:9fe05dd573d7d17891fa4e4353cc8d5c:smtube/CHANGELOG
 f:376d2eb1c9b74a81daffb91a35793586:smtube/spkgbuild
-f:e29d41f44d87ca1a25ec8827bdaf23f7:xprop/spkgbuild
+f:1eb6abe461c518d980f8a24a326e068d:xprop/CHANGELOG
+f:4a4d2bb1f3a57a7e581819a9d29a17a6:xprop/spkgbuild
 f:b3eea11581d1e7439c0d39f98b63ec3b:poppler-glib/spkgbuild
 f:c9e1abb8d76f66d2c4c6ed4bb5e9e1fa:reiserfsprogs/reiserfsprogs-3.6.27-loff_t.patch
 f:f77b24a2e077b4943fe815ba50313073:reiserfsprogs/spkgbuild
@@ -933,7 +935,8 @@ f:b97670b39428ec48d53dfe6fcfb10f79:elfutils/spkgbuild
 f:24f46f5938b1fdc87ef9ac463eba20b3:bleachbit/CHANGELOG
 f:2222033d67a4a44da586e932d835fb9b:bleachbit/spkgbuild
 f:31947433f140176deec3d77be55e5b44:papirus-icon-theme-dark/spkgbuild
-f:e0f6ada7b7deff9692c0a0146df3182c:xrdb/spkgbuild
+f:241572aa6054d8ed8ea44f2bd5311923:xrdb/CHANGELOG
+f:3d91d491d4737157519d0469d375490c:xrdb/spkgbuild
 f:fe20d9ea9979c9daf7689c79a4d09a55:tree/spkgbuild
 f:c54e6b38de9c1a3fca98c6e145bd545c:inetutils/CHANGELOG
 f:22f773a8f4cda58de5ea2381873bb3d5:inetutils/spkgbuild
@@ -1070,8 +1073,8 @@ f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
 f:75d1d9f07fb31d2ed311dcca080b367c:yelp-xsl/spkgbuild
 f:6c0b6e2ed6913ab31f2b133520dd6199:yaml-cpp/CHANGELOG
 f:a8e5c3af35b596acaf3b77bc7546fa88:yaml-cpp/spkgbuild
-f:d54fb8b6344ff8504a2621febc3cf650:links/CHANGELOG
-f:1915510cf642cbea97e7afd62184074e:links/spkgbuild
+f:a72414aa52a90ffa44ecac0886efcc8b:links/CHANGELOG
+f:b290459347d4519bbdd6de93fc704e73:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
 f:a2119b483444f02d9f0f56fda3ff2521:qalculate/CHANGELOG
 f:89c3a45bd3c1efd08bee2320ff9f5b98:qalculate/spkgbuild
@@ -1111,7 +1114,8 @@ f:6921f9d8aabb53f22adcbf5630dff6b8:dmenu/break-fix.diff
 f:8541735789d9810d7020fdba62b72296:dmenu/dmenu-4.5-history-fixed.diff
 f:53b286e8bd76d9225f365673fafd6083:dmenu/dmenu-4.5-height-fixed.diff
 f:441f2649ddb5d561d2d47bcdc8b9f60d:dmenu/spkgbuild
-f:3019c11b0b18604b43642c554be48e93:xwd/spkgbuild
+f:cc0201a5d69b0722532d44c09e705f4b:xwd/CHANGELOG
+f:048079cdbce1a25bbb1461fe3c4a5d05:xwd/spkgbuild
 f:2385e0ec7652d6932b39ad28a4f884fa:dosfstools/readme
 f:445dce537f2c98b17f721798fba57745:dosfstools/CHANGELOG
 f:d6ac7ee7bccbb86ca32e3f5ce16d632f:dosfstools/spkgbuild
@@ -1147,10 +1151,10 @@ f:c396b6c9edd25706cd46d7c3492ebed2:i3/spkgbuild
 f:ab58673eaee46e7d05b92900adee4a91:aircrack-ng/spkgbuild
 f:382580d8b3f6c7c721598719539b31fb:pv/spkgbuild
 f:09250983c3b0241612eca678faa4b063:uget/spkgbuild
-f:3ed0adcdf4370b8018c062652e631946:polkit/CHANGELOG
+f:eed7939f349834415b43aa5d5017e6aa:polkit/CHANGELOG
 f:f4d1b90979fa1c3b424798949a5fdb6f:polkit/pre-install.sh
 f:8c8b6d8f3bb968eebb26befb04b7c0c7:polkit/mkdirs
-f:f189f4bea50e547b7df6b5a8985b3446:polkit/spkgbuild
+f:98aecdade0120d98f25d6d59cb0800ee:polkit/spkgbuild
 f:97e4cb9f74e6d526143f3632a817b41b:fuse2/readme
 f:ffa2c12aa370545ba6dfdb0c58fc5c54:fuse2/CHANGELOG
 f:c9457cf5b2196da67d5ac816d1c86a4f:fuse2/fuse.conf
@@ -1171,8 +1175,8 @@ f:be504191612e31c58eaaea584e2e7508:lmdb/spkgbuild
 f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:dd42055dfe13090ae201d49ea641149a:zsh/spkgbuild
 f:40d41c5cf0069e5bc74c74571c0a96ed:luit/spkgbuild
-f:ee87589cfc4ca5ff6af89d8e9f1309ee:redis/CHANGELOG
-f:804f37b1a25de458e7a058236d787368:redis/spkgbuild
+f:4c173599dd5f182aa42567a1efecdd5f:redis/CHANGELOG
+f:5e4569d353ffdd21b9c7e7ab38f74e12:redis/spkgbuild
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh
 f:00ba78f5c9cd97e34f3e223fe482d078:ntp/mkdirs
 f:0b371501d534ace7dab3bf6256cd8217:ntp/rc.ntpd
@@ -1203,8 +1207,8 @@ f:f0246b0d49f131aa97fedd27415f69f2:zstd/spkgbuild
 f:943b589e71d65c5d815c43b99ffb89c9:grep/CHANGELOG
 f:4da1ca0f003ee4743d49e7234fed3090:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
-f:d7fb3614ac5bf5cc47bef189a3656c1a:icewm/CHANGELOG
-f:008426d1c17a7ab810f90b196fb7a5bd:icewm/spkgbuild
+f:5bc2a469edbe950d2ce2eac4c31eeac2:icewm/CHANGELOG
+f:befb5dbac3c843e78fb9ce6d8be614ba:icewm/spkgbuild
 f:381637cf43f244bd8fd0bf48cd436530:ibus/CHANGELOG
 f:cc777d640e3598e91573d240611af1f9:ibus/spkgbuild
 f:ff63cefdccc761edd6ee5ff997c05eab:smplayer-themes/CHANGELOG
@@ -1349,7 +1353,8 @@ f:59c3734515e5e6ccb0ea274802671e16:jack/99-audio.conf
 f:05da56e571d1558e82d9b3c8f41b9609:jack/spkgbuild
 f:c277ed6cb5224aaa4da2db89d58d8b8a:diffutils/CHANGELOG
 f:d6ff86c36b27f25b9371b07a1d73ec96:diffutils/spkgbuild
-f:ea2bff3c1a194ba6d0aee5d3c4ede59c:util-macros/spkgbuild
+f:17ff3af1bdeefa6baad582a45de6a89f:util-macros/CHANGELOG
+f:40fa0fea485fe5711d76b52b5516d6e0:util-macros/spkgbuild
 f:efc714d9cb4e91d152c663c574a6903f:unrar/CHANGELOG
 f:7d5f313a54bac6354a84015b2ee7f63c:unrar/spkgbuild
 f:868548231e6537fa8ceb683468c679f3:frei0r-plugins/spkgbuild
