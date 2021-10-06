@@ -227,7 +227,6 @@ cmd_torun()
 				| sort -V -r \
 				| uniq \
 				| head -n1)
-
                 	fi
                 	;;
                 *)
