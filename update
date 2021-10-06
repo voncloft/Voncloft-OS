@@ -293,6 +293,8 @@ grep_retry()
                                         uversion="$pkgver"
 					if [ -z $test_upgrade ];then
 						sed -i -e "s,$spkg_src,$source,g" $ppath
+					else
+						echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath >> test_updates.sh
 					fi
                                         if [ ! -f /Voncloft-OS/index.html ];then
                                                 echo "NO PACKAGE FOUND AT ARCH"
