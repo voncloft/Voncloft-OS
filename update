@@ -291,13 +291,19 @@ grep_retry()
                                         source /Voncloft-OS/test.txt
 					spkg_src=$(echo $spkg_src | sed "s/\"//g")
                                         uversion="$pkgver"
-					if [ -z $test_upgrade ];then
-						sed -i -e "s,$spkg_src,$source,g" $ppath
-					else
-						echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath >> test_updates.sh
-					fi
-                                        if [ ! -f /Voncloft-OS/index.html ];then
-                                                echo "NO PACKAGE FOUND AT ARCH"
+                			if [ "$uversion" != "$version" ];
+                			then
+                			vercomp $uversion $version
+                        			if [ $? = 2 ]; then
+							if [ -z $test_upgrade ];then
+								sed -i -e "s,$spkg_src,$source,g" $ppath
+							else
+								echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath >> test_updates.sh
+							fi
+                                        		if [ ! -f /Voncloft-OS/index.html ];then
+                                                		echo "NO PACKAGE FOUND AT ARCH"
+                                        		fi
+                                        	fi
                                         fi
                                 fi
 }
