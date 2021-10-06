@@ -487,9 +487,13 @@ check_handles()
 }
 apply_test_updates()
 {
-	sh test_updates.sh
-	rm test_updates.sh
-	echo "Test updates applied"
+	if [ -f test_updates.sh ];then
+		sh test_updates.sh
+		rm test_updates.sh
+		echo "Test updates applied"
+	else
+		echo "No test updates available"
+	fi
 }
 repos()
 {
