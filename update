@@ -258,7 +258,6 @@ cmd_torun()
 retry_index()
 {
 spkg_src=$(grep "source=" $ppath | sed "s/source=//g")
-
 url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
 fetch
 if [ ! -f /Voncloft-OS/index.html ];then
