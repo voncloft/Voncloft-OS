@@ -461,7 +461,6 @@ finish_logs()
 }
 create_table()
 {
-	
 	if [ $count = 1 ];then
 	        echo "<CENTER>" >> $table_log
 		echo -e '<table border = "2" width="600px"><caption>'$title $(date +"%m-%d-%y") $(date "+%H")'</caption>' >> $table_log
@@ -470,19 +469,11 @@ create_table()
 	spkg_dir=$(echo $1 | sed "s/\/spkgbuild//g")
 	changelog="http://voncloft.dnsfor.me/repository/$spkg_dir/CHANGELOG"
         echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td align=center><a href=http://voncloft.dnsfor.me/repository/'$1'>spkgbuild</a></td></tr>' >> $table_log	
-
 }
 check_handles()
 {
         while [ $1 ]; do
                 case $1 in
-                        -r) while [ $2 ]; do
-                                        case $2 in
-                                                -*) break;;
-                                                *) REPO+=($2)
-                                        esac
-                                        shift
-                                done;;
                         -st) skip_tar=1;;
                         -t) test_upgrade=1;;
                         -s) repos ;;
