@@ -344,6 +344,7 @@ upgrade_process()
                                 	changelog "$ppath" "Upgraded from version $version to version $uversion"
 				else
 					title="Test updates for: "
+					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath >> test_updates.sh
 				fi
 				create_table $ppath $version $uversion
                         elif [ $? = 1 ];then
@@ -471,14 +472,22 @@ check_handles()
 {
         while [ $1 ]; do
                 case $1 in
+                	-a) apply_test_updates
+                	exit;;
                         -st) skip_tar=1;;
                         -t) test_upgrade=1;;
-                        -s) repos ;;
+                        -s) repos;;
 			-h) help
          		exit;;
                 esac
                 shift
         done
+}
+apply_test_updates()
+{
+	sh test_updates.sh
+	rm test_updates.sh
+	echo "Test updates applied"
 }
 repos()
 {
@@ -487,9 +496,10 @@ repos()
 }
 help()
 {
+	echo "-a apply test updates"
+	echo "-s check for specific package updates (format category/package_name)"
 	echo "-st skip tarballing"
 	echo "-t test upgrades do not apply them"
-	echo "-s check for specific package updates (format category/package_name)"
 	echo "-h help"
 }
 main()
