@@ -363,9 +363,9 @@ upgrade_process()
                 ((missing=missing+1))
                 log_missing
         fi
-	#if [ -f index.html ];then
-        #	rm index.html
-	#fi
+	if [ -f index.html ];then
+        	rm index.html
+	fi
 	if [ -f test.txt ];then
 		rm test.txt
 	fi
