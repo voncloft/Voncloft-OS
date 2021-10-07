@@ -2,7 +2,7 @@
 # depends : python make-ca
 
 name=python-httplib2
-version=0.20.0
+version=0.20.1
 release=4
 
 source="https://github.com/httplib2/httplib2/archive/refs/tags/v$version.tar.gz"

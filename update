@@ -44,7 +44,8 @@ alter_per_url() {
                 *ftp.gnome.org*)
                         url=https://ftp.gnome.org/pub/gnome/sources/$filename/cache.json;;
                 *archive.xfce.org*)
-                        url=http://archive.xfce.org/src/$(echo $url | cut -d / -f5)/$name/;;
+                        url=http://archive.xfce.org/src/$(echo $url | cut -d / -f5)/$name/
+                        url=$(echo $url | sed "s/http/https/g");;
 		*/plasma/*)
 			url="$(echo $url | cut -d / -f1-5)/"
 			;;
@@ -362,9 +363,9 @@ upgrade_process()
                 ((missing=missing+1))
                 log_missing
         fi
-	if [ -f index.html ];then
-        	rm index.html
-	fi
+	#if [ -f index.html ];then
+        #	rm index.html
+	#fi
 	if [ -f test.txt ];then
 		rm test.txt
 	fi
