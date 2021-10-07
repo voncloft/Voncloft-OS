@@ -141,7 +141,7 @@ cmd_torun()
                 		run_manual_upd
                 	else
 	                	fetch
-				uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | head -n1)
+				uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
 			fi
 			;;
                 #*launchpad.net*)
@@ -363,8 +363,10 @@ upgrade_process()
                 ((missing=missing+1))
                 log_missing
         fi
-	if [ -f index.html ];then
-        	rm index.html
+        if [ -z $keep_index ];then
+		if [ -f index.html ];then
+        		rm index.html
+		fi
 	fi
 	if [ -f test.txt ];then
 		rm test.txt
@@ -485,6 +487,7 @@ check_handles()
                         -st) skip_tar=1;;
                         -t) test_upgrade=1;;
                         -s) repos;;
+                        -k) keep_index=1;;
 			-h) help
          		exit;;
                 esac
@@ -509,6 +512,7 @@ repos()
 help()
 {
 	echo "-a apply test updates"
+	echo "-k keep index.html file for debugging"
 	echo "-s check for specific package updates (format category/package_name)"
 	echo "-st skip tarballing"
 	echo "-t test upgrades do not apply them"
@@ -526,6 +530,11 @@ main()
 		echo "Applying updates to repo"
 	else
 		echo "Checking for updates - not applying any, test run"
+	fi
+	if [ -z $keep_index ];then
+		echo "Not keeping index.html"
+	else
+		echo "Keeping index.html for debugging"
 	fi
 	prepare_backup_and_logs
 	for f in $repos;
