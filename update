@@ -504,6 +504,9 @@ apply_test_updates()
 		sh test_updates.sh
 		rm test_updates.sh
 		echo "Test updates applied"
+		if [ -f index.html ];then
+			rm index.html
+		fi
 	else
 		echo "No test updates available"
 	fi
