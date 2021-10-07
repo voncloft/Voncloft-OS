@@ -1,0 +1,14 @@
+source="https://archive.mozilla.org/pub/security/nss/releases/"
+
+get_generic()
+{
+	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+		| grep -v : \
+		| grep NSS \
+		| sed "s/_/./g" \
+		| sed "s/.RTM\///g" \
+		| sed "s/NSS.//g" \
+		| sort -V -r \
+		| uniq \
+		| head -n1)
+}
