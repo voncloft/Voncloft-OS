@@ -1,0 +1,11 @@
+source="https://archive.mozilla.org/pub/nspr/releases/"
+
+get_generic()
+{
+	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+		| sort -V -r \
+		| uniq \
+		| sed "s/v//g" \
+		| sed "s/\///g" \
+		| head -n1)
+}
