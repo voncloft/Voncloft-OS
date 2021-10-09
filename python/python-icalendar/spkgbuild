@@ -2,10 +2,10 @@
 # depends : python-dateutil python-pytz python-setuptools
 
 name=python-icalendar
-version=4.0.7
+version=4.0.8
 release=3
 
-source="https://files.pythonhosted.org/packages/source/i/icalendar/icalendar-4.0.7.tar.gz"
+source="https://files.pythonhosted.org/packages/source/i/icalendar/icalendar-4.0.8.tar.gz"
 options="!checksum"
 
 build() {

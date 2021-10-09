@@ -2,10 +2,10 @@
 # depends : python-ply
 
 name=python-calmjs.parse
-version=1.2.5
+version=1.3.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/c/calmjs.parse/calmjs.parse-1.2.5.zip"
+source="https://files.pythonhosted.org/packages/source/c/calmjs.parse/calmjs.parse-1.3.0.zip"
 options="!checksum"
 
 build() {
