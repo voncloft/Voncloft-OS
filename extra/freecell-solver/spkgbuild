@@ -2,10 +2,10 @@
 # depends : perl-moo
 
 name=freecell-solver
-version=6.4.0
+version=6.6.0
 release=1
 
-source="https://fc-solve.shlomifish.org/downloads/fc-solve/freecell-solver-6.4.0.tar.xz"
+source="https://fc-solve.shlomifish.org/downloads/fc-solve/freecell-solver-6.6.0.tar.xz"
 options="!checksum"
 
 build() {
