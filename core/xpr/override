@@ -1,0 +1,11 @@
+source="http://ftp.x.org/pub/individual/app/"
+
+get_generic()
+{
+	uversion=$(grep -i "href" index.html \
+		| grep -w $name \
+		| grep -Po '(?<=href=")[^"]*' \
+                | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                | sort -V -r \
+                | head -n1)
+}
