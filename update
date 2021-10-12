@@ -382,7 +382,7 @@ alerts_and_logs()
 	echo "-----------------------------------------------------------------------------------"
 	if [ ! -z $count ];
 	then
-	echo -e "Packages upgraded: $count<br><br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+	echo -e "Packages upgraded: $count<br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
 	echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 	words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
 	title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
@@ -585,10 +585,19 @@ start_time="$(date -u +%s)"
 main $@
 end_time="$(date -u +%s)"
 elapsed="$(($end_time-$start_time))"
+
 if [ $elapsed -gt 60 ];then
 	minutes_passed=$((elapsed/60))
-	echo "Total of $minutes_passed minutes elapsed for process"
+	minutes_quote="Total of $minutes_passed minutes elapsed for process"
+	#echo $minutes_quote
 else
 	minutes_passed=$elapsed
-	echo "Total of $minutes_passed seconds elapsed for process"
+	minutes_quote="Total of $minutes_passed seconds elapsed for process"
+	#echo $minutes_quote
+fi
+echo $minutes_quote
+
+echo "Count: " $count
+if [[ $count -gt 0 ]];then
+	echo $minutes_quote"<br>" >> $table_log
 fi
