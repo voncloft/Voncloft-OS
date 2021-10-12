@@ -2,10 +2,10 @@
 # depends : python python-tempora
 
 name=python-portend
-version=2.7.1
+version=3.0.0
 release=2
 
-source="https://files.pythonhosted.org/packages/source/p/plyvel/plyvel-2.7.1.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/plyvel/plyvel-3.0.0.tar.gz"
 options="!checksum"
 
 build() {

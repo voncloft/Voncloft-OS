@@ -2,7 +2,7 @@
 # depends : python-bcrypt python-cryptography python-pynacl
 
 name=python-paramiko
-version=2.7.2
+version=2.8.0
 release=3
 
 source="https://github.com/paramiko/paramiko/archive/refs/tags/$version.tar.gz"

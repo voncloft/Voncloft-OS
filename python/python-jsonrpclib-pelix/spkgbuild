@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-jsonrpclib-pelix
-version=0.4.3
+version=0.4.3.1
 release=1
 
-source="https://pypi.io/packages/source/j/jsonrpclib-pelix/jsonrpclib-pelix-0.4.3.tar.gz"
+source="https://pypi.io/packages/source/j/jsonrpclib-pelix/jsonrpclib-pelix-0.4.3.1.tar.gz"
 options="!checksum"
 
 build() {
