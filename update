@@ -357,6 +357,7 @@ upgrade_process()
 				else
 					title="Test updates for: "
 					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath >> test_updates.sh
+					echo -e 'changelog "'$ppath'" "Upgraded from version '$version' to version '$uversion'"' >> test_updates.sh
 				fi
 				create_table $ppath $version $uversion
                         elif [ $? = 1 ];then
