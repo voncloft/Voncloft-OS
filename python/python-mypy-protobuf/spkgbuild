@@ -2,7 +2,7 @@
 # depends : mypy protobuf python python-protobuf
 
 name=python-mypy-protobuf
-version=2.10
+version=3.0.0
 release=3
 
 source="https://github.com/dropbox/mypy-protobuf/archive/refs/tags/v$version.tar.gz"

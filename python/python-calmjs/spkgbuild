@@ -2,10 +2,10 @@
 # depends : python-calmjs.parse python-calmjs.types python-setuptools
 
 name=python-calmjs
-version=3.4.1
+version=3.4.2
 release=3
 
-source="https://files.pythonhosted.org/packages/source/c/calmjs/calmjs-3.4.1.zip"
+source="https://files.pythonhosted.org/packages/source/c/calmjs/calmjs-3.4.2.zip"
 options="!checksum"
 
 build() {
