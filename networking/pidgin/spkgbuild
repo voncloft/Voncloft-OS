@@ -2,7 +2,7 @@
 # depends : gtk2 libgcrypt gstreamer gnutls nss
 
 name=pidgin
-version=2.14.7
+version=2.14.8
 release=1
 
 source="https://downloads.sourceforge.net/$name/$name-$version.tar.bz2"

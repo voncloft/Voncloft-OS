@@ -2,10 +2,10 @@
 # depends : flake8 python-isort python-setuptools python-testfixtures
 
 name=python-flake8-isort
-version=4.0.0
+version=4.1.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/f/flake8-isort/flake8-isort-4.0.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/f/flake8-isort/flake8-isort-4.1.1.tar.gz"
 options="!checksum"
 
 build() {

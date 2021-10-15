@@ -3,10 +3,10 @@
 # depends : python python-pip python-pillow
 
 name=python-reportlab
-version=3.6.1
+version=3.6.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-3.6.1.tar.gz"
+source="https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-3.6.2.tar.gz"
 options="!checksum"
 
 build() {
