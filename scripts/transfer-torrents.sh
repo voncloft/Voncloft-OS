@@ -15,6 +15,8 @@ sheldon="5"
 archer="11"
 
 shows="Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer"
+
+if [[ $1 = "x" ]];then
 echo "Checking for correct folders"
 
 for x in $shows;
@@ -29,7 +31,7 @@ do
 		mkdir -pv "$ppath"
 	fi
 done
-
+fi
 move_files()
 {
 # Drive Variable (in case of new hard drive - sitcoms/cartoons/ permanent location resides here)
@@ -69,5 +71,6 @@ cp ../secondary.php .
 #str="Done Transfering Files.\n"
 #echo | sed "i$str" >> /var/log/my_scripts/shows_watched.log
 }
-
-move_files
+if [[ $1 = "x" ]];then
+	move_files
+fi

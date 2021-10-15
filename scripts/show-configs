@@ -1,0 +1,31 @@
+#!/bin/sh
+source /media/Scripts/transfer.sh
+TV='\e[6;31;40m'
+SN='\e[6;34;40m'
+NC='\033[0m'
+echo "Transfer Configuration"
+stripped=$(echo -e $shows | sed "s/ /\n/g" | cut -d / -f 2)
+for x in $stripped;
+do
+	show=$(echo $x | cut -d - -f1)
+	season=$(echo $x | cut -d - -f2)
+	echo -e ${TV}$show${NC}: ${SN}$season${NC} | sed "s/\./ /g"
+done
+echo -e "\nCurrent Shows downloaded"
+for d in /temp/Stripped\ Files/*;
+do
+	no_files=$(ls "$d" | wc -l)
+	FOLDER="$d"
+	if [ $no_files -ge 3 ];
+	then
+		echo ""
+		echo "$d"
+		for f in "$FOLDER/"*;
+		do
+			if [[ ${f##*/} != "index.php" ]] &&  [[ ${f##*/} != "secondary.php" ]];
+			then
+				echo ${f##*/}
+			fi
+		done
+	fi
+done
