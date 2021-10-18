@@ -32,4 +32,13 @@ build(){
 
         # End Qt5 changes for KF5
 	EOF
+	mkdir $PKG/etc/sudoers.d
+	cat <<- EOF > $PKG/etc/sudoers.d/qt
+	Defaults env_keep += QT_PLUGIN_PATH
+	Defaults env_keep += QML2_IMPORT_PATH
+	EOF
+
+	cat <<- EOF > $PKG/etc/sudoers.d/kde
+	Defaults env_keep += KF5_PREFIX
+	EOF 
 }
