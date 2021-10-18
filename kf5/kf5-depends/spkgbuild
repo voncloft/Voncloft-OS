@@ -40,5 +40,5 @@ build(){
 
 	cat <<- EOF > $PKG/etc/sudoers.d/kde
 	Defaults env_keep += KF5_PREFIX
-	EOF 
+	EOF
 }
