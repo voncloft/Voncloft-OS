@@ -2,10 +2,10 @@
 # depends : perl-crypt-openssl-bignum perl-crypt-openssl-dsa perl-crypt-openssl-rsa perl-digest-bubblebabble perl-mime-base32 perl-net-dns perl
 
 name=perl-net-dns-sec
-version=1.18
+version=1.19
 release=1
 
-source="https://search.mcpan.org/CPAN/authors/id/N/NL/NLNETLABS/Net-DNS-SEC-1.18.tar.gz"
+source="https://search.mcpan.org/CPAN/authors/id/N/NL/NLNETLABS/Net-DNS-SEC-1.19.tar.gz"
 options="!checksum"
 
 build() {

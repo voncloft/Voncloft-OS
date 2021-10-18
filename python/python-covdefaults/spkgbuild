@@ -2,7 +2,7 @@
 # depends : python-coverage
 
 name=python-covdefaults
-version=1.2.0
+version=2.0.0
 release=2
 
 source="https://github.com/asottile/covdefaults/archive/refs/tags/v$version.tar.gz"
