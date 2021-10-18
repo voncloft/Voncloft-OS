@@ -1,7 +1,7 @@
 #!/bin/sh
 source /media/Scripts/transfer.sh
-TV='\e[6;31;40m'
-SN='\e[6;34;40m'
+TV='\e[0;31;40m'
+SN='\e[0;37;40m'
 NC='\033[0m'
 echo "Transfer Configuration"
 stripped=$(echo -e $shows | sed "s/ /\n/g" | cut -d / -f 2)

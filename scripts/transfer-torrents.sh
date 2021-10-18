@@ -13,8 +13,9 @@ South_Park="23"
 Rick="5"
 sheldon="5"
 archer="11"
-
-shows="Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer"
+ghosts="1"
+family_guy="20"
+shows="Cartoons/Family.Guy-Season.$family_guy Sitcoms/Ghosts-Season.$ghosts Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer"
 
 if [[ $1 = "x" ]];then
 echo "Checking for correct folders"
@@ -48,6 +49,8 @@ rm -rf */*Sample* --verbose
 #Ignore case if it has the base word do move commands listed below
 
 #Scan thru the directories and put it into the library
+mv */*family* "$Drive/Storage/Videos/Cartoons/Family Guy/Season $family_guy" --verbose
+mv */*ghosts* "$Drive/Storage/Videos/Sitcoms/Ghosts/Season $ghosts" --verbose
 mv */*Park* "$Drive/Storage/Videos/Cartoons/South Park/Season $South_Park" --verbose
 mv */*Saul* "$Drive/Storage/Videos/Sitcoms/Better Call Saul/Season $Saul" --verbose
 mv */*Sunny* "$Drive/Storage/Videos/Sitcoms/Sunny/Season $Sunny" --verbose
