@@ -2,7 +2,7 @@
 # depends : libarchive gtk3 vala
 
 name=gnome-autoar
-version=0.3.3
+version=0.4.0
 release=1
 
 source="https://download.gnome.org/sources/$name/0.3/$name-$version.tar.xz"

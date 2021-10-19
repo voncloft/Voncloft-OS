@@ -3,7 +3,7 @@
 # optdepends	: vala valgrind gtk-doc itstool fop glade
 
 name=gtksourceview3
-version=3.24.11
+version=3.24.11+28+g73e57b57
 release=1
 source="https://ftp.gnome.org/pub/gnome/sources/gtksourceview/${version%.*}/gtksourceview-$version.tar.xz"
 

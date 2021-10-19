@@ -4,7 +4,7 @@
 # depends : ibus xf86-input-synaptics scim socat
 
 name=plasma-depends
-version=5.23.0
+version=5.23.1
 release=1
 build(){
 	mkdir -pv $PKG/usr

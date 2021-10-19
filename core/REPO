@@ -726,8 +726,8 @@ f:53ed46b4a964f2f74b60e1f43e395491:tcl/spkgbuild
 f:cd2960982d644f21e38201e2509a3112:vimix-icon-theme/spkgbuild
 f:b2d1b91627297c15765d25edde2882d6:imagemagick7/spkgbuild
 f:00ef7169f53f09fe4a0366b0b84aeeb3:speex/spkgbuild
-f:fc40983f5d5c1c7be8c220bedb34258e:i3-gaps/CHANGELOG
-f:726ee4a9cf1b6acdab2fc068fa1efcf7:i3-gaps/spkgbuild
+f:2571b993a7233dd2622e78a0c6c7c459:i3-gaps/CHANGELOG
+f:ea5ca048354978c9375a08ffd859d2e4:i3-gaps/spkgbuild
 f:7f7d72b794c44c60afc122aca70838e0:gpm/gpm-1.20.7-consolidated-1.patch
 f:4c2c53bedd7415f946c9e6c918cfd591:gpm/readme
 f:f42f4473171200c4f036876e43023936:gpm/CHANGELOG
@@ -818,8 +818,8 @@ f:eb2a5a71bf61ea7554f33409ec8d98d6:ntfs-3g/CHANGELOG
 f:36d82aeb003144c79a0bdbb5c30513fa:ntfs-3g/spkgbuild
 f:a967ac7858bdcb1ddf6dfa05410a19b5:gwenhywfar/spkgbuild
 f:f1a24cdd0b11bc01cc510600a167f701:faad2/spkgbuild
-f:aab8db8d99f8b5d78f7339eeefd58558:wpebackend-fdo/CHANGELOG
-f:7f8887a63033e6ec1c6c93f9ab36d720:wpebackend-fdo/spkgbuild
+f:0ef4b23e9a2dc604a6a9ab7d49e1090b:wpebackend-fdo/CHANGELOG
+f:08a96172b6077ba1222e68593b9fa42f:wpebackend-fdo/spkgbuild
 f:ef7d72eabb12b9576367390f3989248d:bamf/CHANGELOG
 f:c0368b9281097e3c922b044a59980320:bamf/spkgbuild
 f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild
@@ -908,7 +908,8 @@ f:6c6272fa5bbb151aea3d51249942edb1:x11perf/spkgbuild
 f:5ef4fb404339b31dbc0877d1b3518df8:poppler-data/CHANGELOG
 f:b2631a99e66a1a0c401eda560fc2c61c:poppler-data/spkgbuild
 f:7ac01c464a20b819f83658dc47184430:vte3/fix-W_EXITCODE.patch
-f:7c9ae84292dc44b3606fc7dd8d21c7f5:vte3/spkgbuild
+f:ed811ba16d645d1469b742deae0b0435:vte3/CHANGELOG
+f:11f42f8cee68b044d920e084d6be7f7d:vte3/spkgbuild
 f:cf3c5f80ee381fc649927541eb7eb3c1:jemalloc/CHANGELOG
 f:e30ee3c1af1a3cc72a973defacb7dd02:jemalloc/spkgbuild
 f:4bb9583b43d631eff15803ba2e08e47d:iso-codes/CHANGELOG
@@ -931,7 +932,8 @@ f:8a4f36f00251349b11930d02186308c6:cdrtools/spkgbuild
 f:bd7b2a66ef36495a9a01a98415cd1b70:bubblewrap/CHANGELOG
 f:f0db142abbe0c24a6db56bd40f6537c4:bubblewrap/spkgbuild
 f:089969a0565fed51c48af9a0a70d89d2:xbacklight/spkgbuild
-f:4bc6009aac7206be273b68805acb2f7f:zenity/spkgbuild
+f:1f580d2d1f2383a4919053a472ec1f22:zenity/CHANGELOG
+f:a5e7e65ebfc709dc049b2a1989a81416:zenity/spkgbuild
 f:969a61c5436fd96104c8bb6505d83315:yetris/spkgbuild
 f:e036b6f9f6e73a23260da9ecd0c7cf3f:gzip/CHANGELOG
 f:11e1f478416541894c1b40e127fe8df6:gzip/spkgbuild
@@ -972,8 +974,8 @@ f:2e68d4ce70eef7e0349c55c7e0f1feed:refind/spkgbuild
 f:8dc13dff65ffa7e3897f6ab11509c886:lftp/spkgbuild
 f:df619745d2218be43e8c1ac29166c4f6:viewnior/spkgbuild
 f:30baeaaa0c6a6e6be8cf56a875726619:gdbm/fix-build-with-gcc10.patch
-f:4e6c22c9324a94edbe072e23ec49fef0:gdbm/CHANGELOG
-f:114fea8f4979262e3fe5176e51daabf3:gdbm/spkgbuild
+f:ca4e4b7cb58f8cb2fc03b8b7a3708562:gdbm/CHANGELOG
+f:cf38233a4aa3ed10df8b3c3bbe896921:gdbm/spkgbuild
 f:e15dfa0fd6b2bc0288001f6ae0b750ff:cairomm/CHANGELOG
 f:7bee08e83a510e88ca7a29e7247098fa:cairomm/spkgbuild
 f:1d0f36824ce10676d7f70cae2d8f3bdd:gdl/spkgbuild
@@ -1074,7 +1076,8 @@ f:d75ed3438dab01552304c06fd9a967b1:consolekit2/pam-foreground-compat.ck
 f:593266f7a2b014dbb3c7ba8d5877d80f:consolekit2/spkgbuild
 f:4632595e76250da3b971089a34a6fc1c:audacious-plugins/spkgbuild
 f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
-f:75d1d9f07fb31d2ed311dcca080b367c:yelp-xsl/spkgbuild
+f:41cdc97cea4655d466f4f52722ffc5e1:yelp-xsl/CHANGELOG
+f:c596979032ce1ffad64856d7fb1c94df:yelp-xsl/spkgbuild
 f:6c0b6e2ed6913ab31f2b133520dd6199:yaml-cpp/CHANGELOG
 f:a8e5c3af35b596acaf3b77bc7546fa88:yaml-cpp/spkgbuild
 f:a72414aa52a90ffa44ecac0886efcc8b:links/CHANGELOG
@@ -1293,8 +1296,8 @@ f:946d742b6966c9fd833e07769da75516:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
 f:285372a9ff8b41dab46fbc06e52708bc:man-pages/CHANGELOG
 f:95cba14761e68f547edd98d1d11d2379:man-pages/spkgbuild
-f:840d6242e8d8a0c139831739cb473758:dunst/CHANGELOG
-f:bf3ae44a7fd67de29ae02b73bc6001d6:dunst/spkgbuild
+f:e4058fa73b653cbbaf86dcb5f1d9cde8:dunst/CHANGELOG
+f:08f216f144f49ee25abaaceb459362a3:dunst/spkgbuild
 f:9df08e3e734ecda4d0881b9dfa1dea73:xdpyinfo/spkgbuild
 f:b5b635722048512f64f54a3cdc112639:lua/spkgbuild
 f:deee148134a3fede4595152e34d8cdc7:lua/lua.pc

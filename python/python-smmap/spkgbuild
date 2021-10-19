@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-smmap
-version=4.0.0
+version=5.0.0
 release=1
 
-source="https://pypi.org/packages/source/s/smmap/smmap-4.0.0.tar.gz"
+source="https://pypi.org/packages/source/s/smmap/smmap-5.0.0.tar.gz"
 options="!checksum"
 
 build() {

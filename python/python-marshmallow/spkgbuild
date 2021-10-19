@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-marshmallow
-version=3.13.0
+version=3.14.0
 release=1
 
-source="https://pypi.io/packages/source/m/marshmallow/marshmallow-3.13.0.tar.gz"
+source="https://pypi.io/packages/source/m/marshmallow/marshmallow-3.14.0.tar.gz"
 options="!checksum"
 
 build() {

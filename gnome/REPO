@@ -12,11 +12,11 @@ d:gnome-keyring
 d:gnome-bluetooth
 d:gnome-backgrounds
 f:4546d01d664f8e98732000ce50f2e9b4:gnome-themes-extra/spkgbuild
-f:0fae54c10722fe407b5c6892425ed800:gnome-online-accounts/CHANGELOG
-f:0506c576f021b7ac671e5c3574d3eb32:gnome-online-accounts/spkgbuild
+f:bbc1953955aa3132b2a40384ce5ff6b8:gnome-online-accounts/CHANGELOG
+f:a1baa40a731a89e5599107923de3aa1b:gnome-online-accounts/spkgbuild
 f:83babd51fb84299511e0622cff00742b:gnome-common/spkgbuild
-f:ca88e7153d94c94636c750aaa7bdf17e:gnome-autoar/CHANGELOG
-f:440a48da11863cb1d2050ebae6c57ed2:gnome-autoar/spkgbuild
+f:3ed93337541d6de9b38c1dc50b1d1fc6:gnome-autoar/CHANGELOG
+f:dceaf2bed7308db803752f9177d2a51b:gnome-autoar/spkgbuild
 f:22d9be642c3fb60a1c386a9d80dbe971:gnome-applets/spkgbuild
 f:0ca52048d53ccdbaa7e31cb2984d6b53:gnome-icon-theme/spkgbuild
 f:ef17fa48025df182da9363352ad93eb4:gnome-panel/spkgbuild
@@ -24,7 +24,8 @@ f:8a3a36778609d0cbb05b3cc115985856:gnome-desktop/CHANGELOG
 f:7d117a846b07d00e4d43e3770eff11ce:gnome-desktop/spkgbuild
 f:903056f75ff24b82de69d7d84f52a6e3:gnome-color-manager/spkgbuild
 f:90d4bd271c5e7f83805e30894b368051:gnome-menus/spkgbuild
-f:8f6c655786d6cf6b85bd34d3dd27a3c9:gnome-keyring/spkgbuild
+f:4f2485780da7c81b848ac3ce91188979:gnome-keyring/CHANGELOG
+f:64f7b742cb6da18be6236866df0ad483:gnome-keyring/spkgbuild
 f:8942113c45372d5b30bdabb2ac759233:gnome-bluetooth/spkgbuild
 f:74f2bf001492236bb9346845781ea2b6:gnome-backgrounds/CHANGELOG
 f:d7c0b0bb1a30ceabdb47da38baf19484:gnome-backgrounds/spkgbuild
