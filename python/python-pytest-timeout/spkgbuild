@@ -2,7 +2,7 @@
   # depends : python-pytest
 
 name=python-pytest-timeout
-version=1.4.2
+version=2.0.1
 release=3
 
 source="https://github.com/pytest-dev/pytest-timeout/archive/refs/tags/$version.tar.gz"
