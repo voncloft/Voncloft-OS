@@ -2,10 +2,10 @@
 # depends : python-six python-utils
 
 name=python-progressbar
-version=3.53.3
+version=3.55.0
 release=5
 
-source="https://files.pythonhosted.org/packages/source/p/progressbar2/progressbar2-3.53.3.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/progressbar2/progressbar2-3.55.0.tar.gz"
 options="!checksum"
 
 build() {

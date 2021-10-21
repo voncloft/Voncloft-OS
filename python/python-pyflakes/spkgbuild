@@ -2,10 +2,10 @@
   # depends : python-setuptools
 
 name=python-pyflakes
-version=2.3.1
+version=2.4.0
 release=3
 
-source="https://pypi.io/packages/source/p/pyflakes/pyflakes-2.3.1.tar.gz"
+source="https://pypi.io/packages/source/p/pyflakes/pyflakes-2.4.0.tar.gz"
 options="!checksum"
 
 build() {

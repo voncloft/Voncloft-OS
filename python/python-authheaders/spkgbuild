@@ -2,10 +2,10 @@
 # depends : publicsuffix-list python-authres python-dkim python-dnspython
 
 name=python-authheaders
-version=0.13.0
+version=0.14.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/a/authheaders/authheaders-0.13.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/a/authheaders/authheaders-0.14.1.tar.gz"
 options="!checksum"
 
 build() {
