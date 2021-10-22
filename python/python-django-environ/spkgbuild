@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-django-environ
-version=0.8.0
+version=0.8.1
 release=5
 
-source="https://files.pythonhosted.org/packages/source/d/django-environ/django-environ-0.8.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/d/django-environ/django-environ-0.8.1.tar.gz"
 options="!checksum"
 
 build() {

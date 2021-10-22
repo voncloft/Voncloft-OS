@@ -2,7 +2,7 @@
   # depends : ${_deps[@]/#/python-}
 
 name=python-pip
-version=21.3
+version=21.3.1
 release=1
 
 source="https://github.com/pypa/pip/archive/refs/tags/$version.tar.gz"

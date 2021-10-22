@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-pytz
-version=2021.1
+version=2021.3
 release=1
 
-source="https://pypi.io/packages/source/p/pytz/pytz-2021.1.tar.gz"
+source="https://pypi.io/packages/source/p/pytz/pytz-2021.3.tar.gz"
 options="!checksum"
 
 build() {
