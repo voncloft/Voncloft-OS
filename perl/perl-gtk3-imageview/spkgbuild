@@ -2,10 +2,10 @@
 # depends : perl-gtk3 imagemagick
 
 name=perl-gtk3-imageview
-version=9
+version=10
 release=1
 
-source="https://cpan.metacpan.org/authors/id/A/AS/ASOKOLOV/--9.tar.gz"
+source="https://cpan.metacpan.org/authors/id/A/AS/ASOKOLOV/--10.tar.gz"
 options="!checksum"
 
 build() {
