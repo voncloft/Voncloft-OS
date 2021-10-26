@@ -2,7 +2,7 @@
 # depends : python-faker
 
 name=python-factory-boy
-version=3.2.0
+version=3.2.1
 release=1
 
 source="https://github.com/FactoryBoy/factory_boy/archive/refs/tags/$version.tar.gz"
