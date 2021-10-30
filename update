@@ -529,6 +529,7 @@ help()
 main()
 {
 	check_handles $@
+	rm test_updates.sh
 	if [ -z $skip_tar ];then
 		echo "Backing up repo"
 	else
