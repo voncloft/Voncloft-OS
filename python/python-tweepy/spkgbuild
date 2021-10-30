@@ -2,7 +2,7 @@
 # depends : python python-requests python-requests-oauthlib python-six python-pysocks
 
 name=python-tweepy
-version=4.1.0
+version=4.2.0
 release=1
 
 source="https://github.com/tweepy/tweepy/archive/refs/tags/v$version.tar.gz"

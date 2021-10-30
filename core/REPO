@@ -649,7 +649,8 @@ f:9df734d8a4772a6c6354ab4374af4a49:gnustep-make/CHANGELOG
 f:df99024f919d4cf0e5e7a9b2b0840509:gnustep-make/spkgbuild
 f:9347bd50fd10e00ca0d122d35a95fdee:spectrwm/baraction.sh
 f:dcf82d1b1d7b8afef542220702bd3e47:spectrwm/spkgbuild
-f:c80e8acc8617bfd326b53cb60a600c0c:gawk/spkgbuild
+f:420bf399b301d3065fe18c8aeda85dd8:gawk/CHANGELOG
+f:3cfa6349846771438724dd3cc87d5f37:gawk/spkgbuild
 f:476e61784a7e7ccf9c23544fb5e30749:gcr/spkgbuild
 f:45325df757e3016b2d609774dbc2d0dc:mps-youtube/spkgbuild
 f:c0a4d43c0d27c1a1cf7e9217544478cd:runit-rc/spkgbuild
@@ -669,10 +670,10 @@ f:8e0c7a0c5d800682044530913ab651e0:lz4/CHANGELOG
 f:bf4966e57ab076679483da59bebaa795:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:6c3e8b496961f6c4dbec8d347e03b58d:nss/CHANGELOG
+f:602a8028adfe9ee7fac494b35d1ef19d:nss/CHANGELOG
 f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:11437e19633a5ee6756999bd6ed440ce:nss/spkgbuild
+f:d6ee62681e3ac5ca21ec59b4074230ce:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
 f:aab15903c835642081bbaf4c9aeec8a7:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
@@ -843,8 +844,8 @@ f:a6612378ea202490e077350b046130fe:conky/CHANGELOG
 f:ff2d5b496af6c5548a4eeaa80051fa56:conky/spkgbuild
 f:39099c98ec5fea676a000610a8789173:flex/spkgbuild
 f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
-f:6e6cd5d3c5d282190298a64825016268:blueman/CHANGELOG
-f:409173402808bfef23acaab8993698b8:blueman/spkgbuild
+f:0b200b5b185cfa936fc3e1d69efad566:blueman/CHANGELOG
+f:99c3a38f4d70453ee3da8d43ffd624ed:blueman/spkgbuild
 f:f9adb31b0ddce53fff522d2d8888d7ab:vimix-gtk-themes/spkgbuild
 f:01054dca3ebb4806b1782a3f469a7138:vimix-gtk-themes/Install.patch
 f:41731562065a553a023e0b0608b74dc2:surf/spkgbuild
@@ -985,8 +986,8 @@ f:d6b011b611df75cfa3b42b933250c1a8:iana-etc/update.sh
 f:c57eedd93bafdd546b0eb8d33ed4348c:iana-etc/spkgbuild
 f:85bd5b886c1f93353f3a885fa05bbdc3:iana-etc/services
 f:8219ee56c634626b5bdc68e1a7ddb9aa:pcmanfm/spkgbuild
-f:cf15284ddd2f3c2b2523fce3b49ba50e:smplayer/CHANGELOG
-f:ed9cdbe788ec8e9305d7b005fe9402bb:smplayer/spkgbuild
+f:a72cc1b4fd2e69ca164e905d9b73f2db:smplayer/CHANGELOG
+f:506e0893d3d345379365785cc820fade:smplayer/spkgbuild
 f:f68691ada1f18ad778e58aefc192f404:gnu-netcat/spkgbuild
 f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:e70460ff08dc354b256f521b8f304d21:iw/spkgbuild
@@ -1244,8 +1245,8 @@ f:0775823d8fe2187d756917576e08a71b:arc-gtk-theme/spkgbuild
 f:d9968d39b792248b176fd0642e6ead3b:cabextract/spkgbuild
 f:acec581cc2cea1a22a96ce28cfe9bbbe:flac/spkgbuild
 f:a91f088bed8d38c7267a1430b093ecca:xvinfo/spkgbuild
-f:54ea585e2ca9d44760345bb1d36f6859:dkms/CHANGELOG
-f:63b487a498683e7f832d400a5ae0a882:dkms/spkgbuild
+f:3ea704ff729f6252ec8a4d1c315054bf:dkms/CHANGELOG
+f:882fd0675518146b59bbf4237e1f3f32:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
 f:8e8a437236bdeebcbcfb3f631d095501:gsettings-desktop-schemas/spkgbuild
 f:7220efb449a3e7bf49d90048bab15a29:ethtool/spkgbuild
