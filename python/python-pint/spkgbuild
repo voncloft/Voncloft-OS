@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-pint
-version=0.17
+version=0.18
 release=3
 
-source="https://pypi.io/packages/source/P/Pint/Pint-0.17.tar.gz"
+source="https://pypi.io/packages/source/P/Pint/Pint-0.18.tar.gz"
 options="!checksum"
 
 build() {

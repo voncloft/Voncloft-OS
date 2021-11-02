@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-hstspreload
-version=2021.9.1
+version=2021.11.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/h/hstspreload/hstspreload-2020.12.22.tar.gz"
+source="https://files.pythonhosted.org/packages/source/h/hstspreload/hstspreload-2021.11.1.tar.gz"
 options="!checksum"
 
 build() {

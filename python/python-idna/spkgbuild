@@ -2,10 +2,10 @@
    # depends : python
 
 name=python-idna
-version=3.2
+version=3.3
 release=3
 
-source="https://pypi.io/packages/source/i/idna/idna-3.2.tar.gz"
+source="https://pypi.io/packages/source/i/idna/idna-3.3.tar.gz"
 options="!checksum"
 
 build() {
