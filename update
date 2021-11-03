@@ -493,6 +493,8 @@ check_handles()
                         -t) test_upgrade=1;;
                         -s) repos;;
                         -k) keep_index=1;;
+                        -stu) show_test_updates
+                        exit;;
 			-h) help
          		exit;;
                 esac
@@ -524,7 +526,12 @@ help()
 	echo "-s check for specific package updates (format category/package_name)"
 	echo "-st skip tarballing"
 	echo "-t test upgrades do not apply them"
+	echo "-stu show test updates"
 	echo "-h help"
+}
+show_test_updates()
+{
+	nano test_updates.sh
 }
 main()
 {

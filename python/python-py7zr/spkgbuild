@@ -2,10 +2,10 @@
 # depends : python-pycryptodome python-texttable
 
 name=python-py7zr
-version=0.16.1
+version=0.16.2
 release=1
 
-source="https://files.pythonhosted.org/packages/source/p/py7zr/py7zr-0.11.3.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/py7zr/py7zr-0.16.2.tar.gz"
 options="!checksum"
 
 build() {

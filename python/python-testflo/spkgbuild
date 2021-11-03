@@ -2,10 +2,10 @@
 # depends : python-coverage
 
 name=python-testflo
-version=1.4.5.1
+version=1.4.6
 release=4
 
-source="https://pypi.io/packages/source/t/testflo/testflo-1.4.5.1.tar.gz"
+source="https://pypi.io/packages/source/t/testflo/testflo-1.4.6.tar.gz"
 options="!checksum"
 
 build() {

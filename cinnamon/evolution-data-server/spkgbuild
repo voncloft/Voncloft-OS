@@ -2,7 +2,7 @@
 # depends : db gnome-online-accounts krb5 libgdata libgweather libical libphonenumber nss boost cmake git gobject-introspection gperf gtk-doc intltool ninja vala
 
 name=evolution-data-server
-version=3.40.4
+version=3.42.1
 release=1
 
 source="git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#commit="
