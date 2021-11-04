@@ -2,10 +2,10 @@
 # depends : python-setuptools python-pyopenssl python-pyrfc3339 python-pytz python-requests python-six python-josepy python-requests-toolbelt
 
 name=python-acme
-version=1.19.0
+version=1.20.0
 release=1
 
-source="https://pypi.io/packages/source/a/acme/acme-1.19.0.tar.gz"
+source="https://pypi.io/packages/source/a/acme/acme-1.20.0.tar.gz"
 options="!checksum"
 
 build() {

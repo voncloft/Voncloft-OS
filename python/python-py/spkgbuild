@@ -2,7 +2,7 @@
   # depends : python-iniconfig python-apipkg
 
 name=python-py
-version=1.10.0
+version=1.11.0
 release=1
 
 source="https://github.com/pytest-dev/py/archive/refs/tags/$version.tar.gz"

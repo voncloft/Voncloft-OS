@@ -2,7 +2,7 @@
 # depends : python openmpi
 
 name=python-mpi4py
-version=3.1.1
+version=3.1.2
 release=3
 
 source="https://github.com/mpi4py/mpi4py/archive/refs/tags/$version.tar.gz"

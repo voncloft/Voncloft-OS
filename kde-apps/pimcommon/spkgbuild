@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=pimcommon
-version=21.08.2
+version=21.08.3
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"

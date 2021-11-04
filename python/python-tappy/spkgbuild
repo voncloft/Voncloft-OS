@@ -2,10 +2,10 @@
 # depends : python python-babel python-pyaml python-more-itertools
 
 name=python-tappy
-version=2.5
+version=3.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/t/tap.py/tap.py-2.5.tar.gz"
+source="https://files.pythonhosted.org/packages/source/t/tap.py/tap.py-3.0.tar.gz"
 options="!checksum"
 
 build() {

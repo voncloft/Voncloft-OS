@@ -2,10 +2,10 @@
 # depends : python-setuptools
 
 name=python-natsort
-version=7.1.1
+version=8.0.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/n/natsort/natsort-7.1.1.tar.gz"
+source="https://files.pythonhosted.org/packages/source/n/natsort/natsort-8.0.0.tar.gz"
 options="!checksum"
 
 build() {
