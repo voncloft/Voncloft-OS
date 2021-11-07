@@ -2,10 +2,10 @@
 # depends : python hidapi
 
 name=python-hidapi
-version=0.10.1
+version=0.11.0.2
 release=1
 
-source="https://pypi.org/packages/source/h/hidapi/hidapi-0.10.1.tar.gz"
+source="https://pypi.org/packages/source/h/hidapi/hidapi-0.11.0.post2.tar.gz"
 options="!checksum"
 
 build() {

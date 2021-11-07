@@ -2,9 +2,9 @@
 # depends	: python
 
 name=iso-codes
-version=4.7.0
+version=4.8.0
 release=1
-source="git+https://salsa.debian.org/iso-codes-team/iso-codes/#commit=2379c6981fe257f779b214c0c54bf11fde2d75e8"
+source="https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v4.8.0/iso-codes-v4.8.0.tar.gz"
 
 build() {
 	cd $name-$name-$version

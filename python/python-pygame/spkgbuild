@@ -2,10 +2,10 @@
 # depends : python sdl2_mixer sdl2_ttf sdl2_image portmidi
 
 name=python-pygame
-version=2.0.2
+version=2.0.3
 release=1
 
-source="https://pypi.io/packages/source/p/pygame/pygame-2.0.1.tar.gz"
+source="https://pypi.io/packages/source/p/pygame/pygame-2.0.3.tar.gz"
 options="!checksum"
 
 build() {

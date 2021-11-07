@@ -2,10 +2,10 @@
 # depends : python-numpy python-pandas
 
 name=python-xarray
-version=0.20.0
+version=0.20.1
 release=1
 
-source="https://files.pythonhosted.org/packages/source/x/xarray/xarray-0.20.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/x/xarray/xarray-0.20.1.tar.gz"
 options="!checksum"
 
 build() {

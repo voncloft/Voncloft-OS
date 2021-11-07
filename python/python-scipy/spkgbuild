@@ -2,10 +2,10 @@
 # depends : python-numpy
 
 name=python-scipy
-version=1.7.1
+version=1.7.2
 release=1
 
-source="https://pypi.python.org/packages/source/s/scipy/scipy-1.7.1.tar.gz"
+source="https://pypi.python.org/packages/source/s/scipy/scipy-1.7.2.tar.gz"
 options="!checksum"
 
 build() {

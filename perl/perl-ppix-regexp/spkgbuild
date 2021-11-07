@@ -2,10 +2,10 @@
 # depends : perl-list-moreutils perl-ppi perl-task-weaken
 
 name=perl-ppix-regexp
-version=0.080
+version=0.081
 release=1
 
-source="https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-Regexp-0.080.tar.gz"
+source="https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-Regexp-0.081.tar.gz"
 options="!checksum"
 
 build() {

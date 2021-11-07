@@ -2,7 +2,7 @@
 # depends : python python-grpcio python-tensorflow python-protobuf
 
 name=python-tensorflow-serving-api
-version=2.6.0
+version=2.7.0
 release=2
 
 source="https://github.com/tensorflow/serving/archive/refs/tags/r$version.tar.gz"

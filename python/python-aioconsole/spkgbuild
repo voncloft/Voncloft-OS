@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-aioconsole
-version=0.3.2
+version=0.3.3
 release=2
 
 source="https://github.com/vxgmichel/aioconsole/archive/refs/tags/v$version.tar.gz"
