@@ -64,7 +64,11 @@ alter_per_url() {
 				url=$(echo $url | sed "s/http/https/g")
 			fi
 			;;
+               *qt.io*)
+               		url="$(echo $url | cut -d / -f1-6)/"
+               		;;
                 *)
+               
         esac
 }
 check_manual_upd()
@@ -148,6 +152,20 @@ cmd_torun()
 					| head -n1)
 			fi
 			;;
+		*qt.io*)
+			cmd="Qt"
+			check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
+                                fetch
+                                uversion=$(grep -i "href" index.html \
+                                        | grep -Po '(?<=href=")[^"]*' \
+                                        | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                                        | sort -V -r \
+                                        | head -n1)
+                        fi
+                        ;;
                 #*launchpad.net*)
                 #	cmd="launchpad"
 		#	fetch
