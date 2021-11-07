@@ -1,0 +1,19 @@
+url="https://download.qt.io/archive/qt/"
+get_generic()
+{
+	fetch
+        uversion=$(grep -i "href" index.html \
+        | grep -Po '(?<=href=")[^"]*' \
+        | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        | sort -V -r \
+        | head -n1)
+
+	url=$(echo $url$uversion/)
+	fetch
+	uversion=$(grep -i "href" index.html \
+        | grep -Po '(?<=href=")[^"]*' \
+        | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        | sort -V -r \
+        | head -n1)
+
+}
