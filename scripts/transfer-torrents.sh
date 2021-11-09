@@ -5,19 +5,22 @@
 #season variables of Tv Shows
 
 #format of folder naming scheme: Name.of.show-Season.$showvariable
-
+animaniacs="2"
+archer="12"
+big_mouth="5"
+family_guy="20"
+ghosts="1"
+inside_job="1"
+Rick="5"
+Saul="5"
+sheldon="5"
+South_Park="23"
 Sunny="14"
 tank="13"
-Saul="5"
-South_Park="23"
-Rick="5"
-sheldon="5"
-archer="11"
-ghosts="1"
-family_guy="20"
-shows="Cartoons/Family.Guy-Season.$family_guy Sitcoms/Ghosts-Season.$ghosts Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer"
 
-if [[ $1 = "x" ]];then
+shows="Cartoons/Family.Guy-Season.$family_guy Sitcoms/Ghosts-Season.$ghosts Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer Cartoons/Big.Mouth-Season.$big_mouth Cartoons/Inside.Job-Season.$inside_job Cartoons/Animaniacs.2020-Season.$animaniacs"
+
+if [[ $1 = "-c" ]];then
 echo "Checking for correct folders"
 
 for x in $shows;
@@ -58,7 +61,9 @@ mv */*tank* "$Drive/Storage/Videos/Sitcoms/Shark Tank/Season $tank" --verbose
 mv */Rick* "$Drive/Storage/Videos/Cartoons/Rick and Morty/Season $Rick" --verbose
 mv */*sheldon* "$Drive/Storage/Videos/Sitcoms/Young Sheldon/Season $sheldon" --verbose
 mv */archer* "$Drive/Storage/Videos/Cartoons/Archer/Season $archer" --verbose
-
+mv */*job* "$Drive/Storage/Videos/Cartoons/Inside Job/Season $inside_job" --verbose
+mv */*mouth* "$Drive/Storage/Videos/Cartoons/Big Mouth/Season $big_mouth" --verbose
+mv */*maniac* "$Drive/Storage/Videos/Cartoons/Animaniacs 2020/Season $animaniacs" --verbose
 #move all missed files to the misc folder
 mv */*.mkv $Drive/Storage/Videos/Misc --verbose
 mv */*.avi $Drive/Storage/Videos/Misc --verbose
@@ -74,6 +79,11 @@ cp ../secondary.php .
 #str="Done Transfering Files.\n"
 #echo | sed "i$str" >> /var/log/my_scripts/shows_watched.log
 }
-if [[ $1 = "x" ]];then
+if [[ $1 = "-x" ]];then
 	move_files
+fi
+if [[ $1 = "-h" ]];then
+	echo "-c check for folders"
+	echo "-x execute move"
+	echo "-h help"
 fi
