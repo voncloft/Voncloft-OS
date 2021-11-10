@@ -41,6 +41,7 @@ cat <<- EOF > .mozconfig
 	ac_add_options --disable-updater
 	ac_add_options --disable-crashreporter
 	ac_add_options --disable-necko-wifi
+	ac_add_options --without-wasm-sandboxed-libraries
 EOF
 
 	export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
