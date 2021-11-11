@@ -5,7 +5,7 @@ name=python-psutil
 version=5.8.0
 release=1
 
-source="https://github.com/giampaolo/psutil/archive/refs/tags/$version.tar.gz"
+source="https://github.com/giampaolo/psutil/archive/refs/tags/release-$version.tar.gz"
 options="!checksum"
 
 build() {
