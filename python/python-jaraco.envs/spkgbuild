@@ -2,7 +2,7 @@
 # depends : python-jaraco python-path python-virtualenv python-tox
 
 name=python-jaraco.envs
-version=2.1.1
+version=2.2.0
 release=1
 
 source="https://github.com/jaraco/jaraco.envs/archive/refs/tags/v$version.tar.gz"
