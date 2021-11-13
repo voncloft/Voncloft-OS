@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=krunner
-version=5.87.0
+version=5.88.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
