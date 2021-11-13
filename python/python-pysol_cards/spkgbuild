@@ -2,10 +2,10 @@
 # depends : python-pbr
 
 name=python-pysol_cards
-version=0.12.0
+version=0.14.2
 release=3
 
-source="https://pypi.io/packages/source/p/pysol_cards/pysol_cards-0.12.0.tar.gz"
+source="https://pypi.io/packages/source/p/pysol_cards/pysol_cards-0.14.2.tar.gz"
 options="!checksum"
 
 build() {
