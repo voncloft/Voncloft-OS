@@ -5,8 +5,9 @@ name=kalendar
 version=0.2.0
 release=1
 
+source="https://invent.kde.org/pim/kalendar/-/archive/v0.2.0/kalendar-v$version.tar.gz"
 build(){
-   cd $name-$version
+   cd $name-v$version
    kf5-package-installer
    cd build
    make DESTDIR=$PKG install	
