@@ -12,7 +12,8 @@ build()
 	cd qtkeychain-$version
 	mkdir -pv build
 	cd build
-	qmake ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	.. 
 	make
-	make INSTALL_ROOT="$PKG" install
+	make DESTDIR=$PKG install
 }
