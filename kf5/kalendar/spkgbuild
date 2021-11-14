@@ -1,0 +1,13 @@
+# description : calendar application using akonadi
+# depends :
+
+name=kalendar
+version=0.2.0
+release=1
+
+build(){
+   cd $name-$version
+   kf5-package-installer
+   cd build
+   make DESTDIR=$PKG install	
+}
