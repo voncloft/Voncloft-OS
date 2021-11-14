@@ -1,5 +1,5 @@
 # description : calendar application using akonadi
-# depends :
+# depends : akonadi akonadi-contacts calendarsupport akonadi-calendar
 
 name=kalendar
 version=0.2.0

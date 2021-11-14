@@ -1,0 +1,18 @@
+#description: provides support for secure credentials storage
+#depends: libsecret
+
+name=qt5-keychain
+version=0.13.0
+release=1
+
+source="https://github.com/frankosterfeld/qtkeychain/archive/v$version/$name-$version.tar.gz"
+
+build()
+{
+	cd qtkeychain-$version
+	mkdir -pv build
+	cd build
+	qmake ..
+	make
+	make INSTALL_ROOT="$PKG" install
+}
