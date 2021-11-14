@@ -1,0 +1,7 @@
+for d in /usr/Voncloft-OS/kde-apps/* /usr/Voncloft-OS/plasma/* /usr/Voncloft-OS/kf5/*;
+do
+	if [[ ! ${d##*/} == "ksysguard" ]];then
+	        packages=$packages" "${d##*/}
+	fi
+done
+sudo scratch upgrade -c $packages
