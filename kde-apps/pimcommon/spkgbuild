@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kimap kldap libkdepim akonadi-search
 
 name=pimcommon
 version=21.08.3

@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps ksmtp libkgapi qt5keychain
+# depends : kde-deps ksmtp libkgapi qt5-keychain
 
 name=kmailtransport
 version=21.08.3
