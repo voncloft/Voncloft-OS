@@ -2,10 +2,10 @@
 # depends : python-numpy python-matplotlib
 
 name=python-schemdraw
-version=0.11
+version=0.12
 release=2
 
-source="python-schemdraw-0.11.tar.bz2::https://bitbucket.org/cdelker/schemdraw/get/0.11.tar.bz2"
+source="python-schemdraw-0.12.tar.bz2::https://bitbucket.org/cdelker/schemdraw/get/0.12.tar.bz2"
 options="!checksum"
 
 build() {

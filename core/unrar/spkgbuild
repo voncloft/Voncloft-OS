@@ -1,9 +1,9 @@
 # description	: Extraction utility used for extracting files from RAR archives
 
 name=unrar
-version=6.0.7
+version=6.1.2
 release=1
-source="https://www.rarlab.com/rar/unrarsrc-6.0.7.tar.gz"
+source="https://www.rarlab.com/rar/unrarsrc-6.1.2.tar.gz"
 
 build() {
 	cp -a unrar libunrar

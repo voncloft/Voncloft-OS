@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-lark-parser
-version=0.12.0
+version=1.0.0
 release=1
 
 source="https://github.com/lark-parser/lark/archive/refs/tags/$version.tar.gz"
