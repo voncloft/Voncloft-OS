@@ -2,7 +2,7 @@
 # depends : python-appdirs python-pytz python-setuptools python-six
 
 name=python-fs
-version=2.4.13
+version=2.4.14
 release=2
 
 source="https://github.com/PyFilesystem/pyfilesystem2/archive/refs/tags/v$version.tar.gz"
