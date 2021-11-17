@@ -321,6 +321,7 @@ grep_retry()
 					sed -i -e "s,$spkg_src,$source,g" $ppath
 				else
 					echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath >> test_updates.sh
+					echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 				fi
                                 if [ ! -f /Voncloft-OS/index.html ];then
                                         echo "NO PACKAGE FOUND AT ARCH"
@@ -372,14 +373,18 @@ upgrade_process()
                                 	title="Updates for: "
                                 	sed -i -e "s/version=$version/version=$uversion/g" $ppath
                                 	changelog "$ppath" "Upgraded from version $version to version $uversion"
+					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath "<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 				else
 					title="Test updates for: "
 					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath >> test_updates.sh
 					echo -e 'changelog "'$ppath'" "Upgraded from version '$version' to version '$uversion'"' >> test_updates.sh
+					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath "<br>"  >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 				fi
 				create_table $ppath $version $uversion
                         elif [ $? = 1 ];then
-                                echo "OLD"
+                                echo "Overupdated"
+					echo $ppath "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+
                         fi
                 fi
 	else
@@ -401,7 +406,7 @@ alerts_and_logs()
 	if [ ! -z $count ];
 	then
 	echo -e "Packages upgraded: $count<br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-	echo -e "Packages upgraded: $count\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+	echo -e "Packages upgraded: $count<br>\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
 	words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
 	title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 	if [ ! -z $count ];
@@ -462,11 +467,11 @@ prepare_backup_and_logs()
 }
 timestamp_log()
 {
-	if [ ! -z $count ] && [ $count -eq 1 ];then
-                        echo -e "\n$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+	#if [ ! -z $count ] && [ $count -eq 1 ];then
+                        #echo -e "\n$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
                         echo -e "\n$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
                         echo -e "\n$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
-	fi
+	#fi
 }
 log_missing()
 {
@@ -570,6 +575,7 @@ main()
 	else
 		echo "Keeping index.html for debugging"
 	fi
+	timestamp_log
 	prepare_backup_and_logs
 	for f in $repos;
 	do
