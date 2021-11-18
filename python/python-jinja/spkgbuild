@@ -2,10 +2,10 @@
   # depends : python-setuptools python-markupsafe
 
 name=python-jinja
-version=3.0.0
+version=3.0.3
 release=1
 
-source="http://dev.pocoo.org/hg/jinja-main/archive/tip.tar.gz#egg=Jinja-dev"
+source="https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-$version.tar.gz"
 options="!checksum"
 
 build() {
