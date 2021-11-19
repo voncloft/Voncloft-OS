@@ -2,10 +2,10 @@
 # depends : python python-appdirs python-click python-mypy_extensions
 
 name=python-black
-version=21.11b0
+version=21.11b1
 release=5
 
-source="https://files.pythonhosted.org/packages/source/b/black/black-21.11b0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/b/black/black-21.11b1.tar.gz"
 options="!checksum"
 
 build() {

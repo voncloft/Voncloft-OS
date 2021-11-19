@@ -2,7 +2,7 @@
 # depends : python python-dbus
 
 name=python-libcharon
-version=4.12.0
+version=4.12.1
 release=1
 
 source="https://github.com/Ultimaker/libCharon/archive/refs/tags/d$version.tar.gz"

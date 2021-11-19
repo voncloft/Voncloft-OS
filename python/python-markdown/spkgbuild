@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-markdown
-version=3.3.5
+version=3.3.6
 release=3
 
-source="https://files.pythonhosted.org/packages/source/M/Markdown/Markdown-3.3.5.tar.gz"
+source="https://files.pythonhosted.org/packages/source/M/Markdown/Markdown-3.3.6.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,7 +2,7 @@
 # depends : python-six python-numpydoc python-scipy python-sqlitedict python-pycodestyle
 
 name=python-openmdao
-version=3.13.1
+version=3.14.0
 release=1
 
 source="https://github.com/OpenMDAO/OpenMDAO/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
   # depends : python-setuptools python-zope-interface python-zope-exceptions python-six
 
 name=python-zope-testrunner
-version=5.3.0
+version=5.4.0
 release=3
 
 source="https://github.com/zopefoundation/zope.testrunner/archive/refs/tags/l$version.tar.gz"
