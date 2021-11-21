@@ -10,7 +10,7 @@ backup="etc/scratchpkg.conf
 	etc/scratchpkg.mask
 	etc/revdep.conf"
 scratchpkg_url=https://github.com/voncloft/scratchpkg
-source="https://github.com/voncloft/scratchpkg/tags/$version.tar.gz
+source="$scratchpkg_url/archive/refs/tags/$version.tar.gz
 	$name.repo
 	$name.conf
 	$name.alias
