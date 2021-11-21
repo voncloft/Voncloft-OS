@@ -1,0 +1,9 @@
+source="https://github.com/voncloft/scratchpkg/tags"
+
+get_generic()
+{
+	uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
+	| sed "s/.tar.gz//g" \
+	| sort -V -r \
+	| head -n1)
+}

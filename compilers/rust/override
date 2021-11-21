@@ -1,4 +1,4 @@
-source="https://www.rust-lang.org/"
+source="https://github.com/voncloft/scratchpkg/archive/refs/tags/"
 
 get_generic(){
 	uversion=$(grep -i "href" index.html \
