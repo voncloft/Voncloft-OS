@@ -2,10 +2,10 @@
 # depends : python-pytest python-werkzeug
 
 name=python-pytest-localserver
-version=0.5.0
+version=0.5.1
 release=6
 
-source="https://files.pythonhosted.org/packages/source/p/pytest-localserver/pytest-localserver-0.5.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pytest-localserver/pytest-localserver-0.5.1.tar.gz"
 options="!checksum"
 
 build() {
