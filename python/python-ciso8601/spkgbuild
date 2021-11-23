@@ -5,7 +5,7 @@ name=python-ciso8601
 version=2.2.0
 release=3
 
-source="git+https://github.com/closeio/ciso8601.git#tag="
+source="https://github.com/closeio/ciso8601/archive/refs/tags/v$version.tar.gz"
 options="!checksum"
 
 build() {
