@@ -2,10 +2,10 @@
 # depends	: webkitgtk libnotify itstool gnome-common yelp-tools
 
 name=zenity
-version=3.32.0+55+gd7bedff
+version=3.32.0
 release=1
-source="https://ftp.gnome.org/pub/gnome/sources/zenity/${version%.*}/zenity-$version.tar.xz"
 
+source="source="https://ftp.gnome.org/pub/gnome/sources/zenity/${version%.*}/zenity-$version.tar.xz""
 build() {
 	cd $name-$version
 	NOCONFIGURE=1 ./autogen.sh

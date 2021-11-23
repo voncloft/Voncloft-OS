@@ -2,10 +2,10 @@
 # depends	: glib-networking libxml2 sqlite gobject-introspection vala meson libpsl
 
 name=libsoup
-version=2.72.0
+version=2.99.9
 release=1
-source="https://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz"
 
+source="https://download-fallback.gnome.org/sources/libsoup/2.99/libsoup-$version.tar.xz"
 build() {
 	cd $name-$version
 
