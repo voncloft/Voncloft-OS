@@ -4,7 +4,7 @@
 name=graphviz
 version=2.44.1
 release=1
-source="https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.0.tar.gz"
+source="https://www2.graphviz.org/Packages/stable/portable_source/graphviz-$version.tar.gz"
 
 build() {
 	cd $name-$version

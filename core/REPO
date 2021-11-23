@@ -626,10 +626,11 @@ f:324848d098be356a18083b0a02c3c842:cups/rc.cupsd
 f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
 f:7977cc81f2869ac5f28c93c4ffc83348:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
-f:373bab266478101ca81a651ee2a47dae:dbus/post-install.sh
+f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
 f:215fbe384ed68bb8868d6008dbf103bd:dbus/CHANGELOG
 f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
-f:cf8c8ef7e62332c087bf24b49925ef1f:dbus/spkgbuild
+f:6f6124cd2b2f26c2c328b0d3324469ed:dbus/.checksums
+f:d174def107bf2b3256200abed72fd569:dbus/spkgbuild
 f:b550c6ee4e08df2a6442b033af6f1b35:readline/CHANGELOG
 f:3b28d35755182c05d2ed861bdee7d956:readline/spkgbuild
 f:8e60e9dec182e6fb2bb05c42c42a5afd:xmodmap/spkgbuild
@@ -1038,7 +1039,7 @@ f:cbf6a5420ae3ad95fad609a613c5630d:shellcheck-static/spkgbuild
 f:455f02af5db3f20d6cf40136eb8e799b:socat/CHANGELOG
 f:bf9340a6e582ee878ad011a9ab00ddd6:socat/spkgbuild
 f:f6fe6886d34e97c23d8308bb7d21dbbb:graphviz/CHANGELOG
-f:32311caa0070e80b44e01c7f9edf213e:graphviz/spkgbuild
+f:5ac0ca02f44146925625a7fca9122d4d:graphviz/spkgbuild
 f:0e9eec6f93402366a99023874b77ef1f:uthash/CHANGELOG
 f:aa606493e8c0487273df31f0e39d8c61:uthash/spkgbuild
 f:e1e86b8aa37ef9b40ce0968d79fd5efd:notification-daemon/spkgbuild
@@ -1129,8 +1130,8 @@ f:cc0201a5d69b0722532d44c09e705f4b:xwd/CHANGELOG
 f:048079cdbce1a25bbb1461fe3c4a5d05:xwd/spkgbuild
 f:2385e0ec7652d6932b39ad28a4f884fa:dosfstools/readme
 f:445dce537f2c98b17f721798fba57745:dosfstools/CHANGELOG
-f:d6ac7ee7bccbb86ca32e3f5ce16d632f:dosfstools/spkgbuild
-f:4e1aa93eb6ce93f28d3ce4d24844a7fd:gobject-introspection/spkgbuild
+f:c5cca9015c9380411697e6d5f0c66425:dosfstools/spkgbuild
+f:3f9b3377f08982aee0110e07eac264ad:gobject-introspection/spkgbuild
 f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
 f:b888477e29219f1b8ce40184edcd1bd6:parcellite/spkgbuild
 f:0ffae7bed396419428b15e8adb9b952d:mpfr/spkgbuild

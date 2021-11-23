@@ -4,9 +4,7 @@
 name=dbus
 version=1.13.18
 release=1
-source="https://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz
-	rc.$name
-	run"
+source="https://dbus.freedesktop.org/releases/$name/$name-$version.tar.xz"
 
 build() {
 	cd $name-$version
@@ -27,7 +25,5 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-	chown -v root:messagebus $PKG/usr/lib/$name/dbus-daemon-launch-helper
-	chmod -v      4750       $PKG/usr/lib/$name/dbus-daemon-launch-helper
 
 }
