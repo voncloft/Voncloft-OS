@@ -5,7 +5,7 @@ name=python-lxml
 version=4.6.4
 release=1
 
-source="https://github.com/lxml/lxml/archive/refs/tags/$version.tar.gz"
+source="https://github.com/lxml/lxml/releases/download/lxml-4.6.4-5/lxml-$version.tar.gz"
 options="!checksum"
 
 build() {

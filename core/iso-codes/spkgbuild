@@ -7,7 +7,7 @@ release=1
 source="https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v4.8.0/iso-codes-v4.8.0.tar.gz"
 
 build() {
-	cd $name-$name-$version
+	cd *
 
 	./configure --prefix=/usr
 	make
