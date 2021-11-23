@@ -1,11 +1,11 @@
-# description : Concurrent I/O
+https://github.com/dabeaz/# description : Concurrent I/O
 # depends : python
 
 name=python-curio
 version=1.5
 release=3
 
-source="git+https://github.com/dabeaz/curio.git#tag="
+source="https://github.com/dabeaz/curio/archive/refs/tags/$version.tar.gz"
 options="!checksum"
 
 build() {
