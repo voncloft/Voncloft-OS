@@ -9,8 +9,12 @@ source="https://downloads.sourceforge.net/openjpeg.mirror/$name-$version.tar.gz"
 build() {
 	cd $name-$version
 
-  	autoreconf -f -i
-	./configure --prefix=/usr --disable-static
+	mkdir -v build 
+	cd       build 
+
+	cmake -DCMAKE_BUILD_TYPE=Release \
+     	-DCMAKE_INSTALL_PREFIX=/usr \
+      	-DBUILD_STATIC_LIBS=OFF ..
 	make
 	make DESTDIR=$PKG install
 }

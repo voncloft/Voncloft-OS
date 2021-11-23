@@ -9,7 +9,7 @@ source="https://netfilter.org/projects/nftables/files/nftables-0.9.6.tar.bz2"
 
 build()
 {
-	cd $name-$version
+	cd *
 	autoreconf -ifv
 	autoconf
 
