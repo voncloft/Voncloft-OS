@@ -8,16 +8,16 @@ source="https://www.freedesktop.org/software/pulseaudio/releases/$name-$version.
 options="!checksum"
 build() {
 	cd $name-$version
+	mkdir build &&
+	cd    build &&
 
-	./configure --prefix=/usr \
-                    --sysconfdir=/etc \
-		    --libexecdir=/usr/lib \
-                    --localstatedir=/var \
-                    --disable-bluez4 \
-                    --disable-bluez5 \
-                    --disable-rpath
-	make
-	make DESTDIR=$PKG install
+	meson --prefix=/usr       \
+      	--buildtype=release \
+      	-Ddatabase=gdbm     \
+      	-Ddoxygen=false     \
+      	-Dbluez5=disabled
+	ninja
+	DESTDIR=$PKG ninja install
 
         # remove the D-Bus configuration file for the system wide daemon to avoid creating unnecessary system users and groups
 	rm -fv $PKG/etc/dbus-1/system.d/pulseaudio-system.conf
