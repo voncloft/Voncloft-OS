@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-ujson
-version=4.2.0
+version=4.3.0
 release=1
 
 source=https://github.com/ultrajson/ultrajson/archive/refs/tags/$version.tar.gz
