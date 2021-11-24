@@ -2,10 +2,10 @@
 # depends : poppler python
 
 name=python-pdftotext
-version=2.2.0
+version=2.2.2
 release=2
 
-source="https://files.pythonhosted.org/packages/source/p/pdftotext/pdftotext-2.2.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pdftotext/pdftotext-2.2.2.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python-ipykernel python-traitlets python-pyzmq
 
 name=python-jupyter_client
-version=7.0.6
+version=7.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/j/jupyter_client/jupyter_client-7.0.6.tar.gz"
+source="https://files.pythonhosted.org/packages/source/j/jupyter_client/jupyter_client-7.1.0.tar.gz"
 options="!checksum"
 
 build() {

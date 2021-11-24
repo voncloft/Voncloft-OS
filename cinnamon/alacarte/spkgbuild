@@ -2,7 +2,7 @@
 # depends : gnome-menus gtk3 python-gobject3
 
 name=alacarte
-version=3.36.0+2+gae6b92d
+version=3.42.0
 release=1
 
 source="git+https://gitlab.gnome.org/GNOME/alacarte.git#commit="
