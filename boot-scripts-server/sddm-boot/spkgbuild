@@ -1,0 +1,15 @@
+# description : boot sddm on start
+# depends : sddm
+
+name=sddm-boot
+version=20170731
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-sddm
+
+}

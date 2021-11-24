@@ -12,10 +12,9 @@ f:af6bd6cd7a179fd7116f81c6ca1ba038:lightdm/lightdm-autologin.pam
 f:2a7326f4de1d949b8c96749b62cc5021:lightdm/lightdm.rules
 f:47b4d1f66f157435dc506335dc91dd83:lightdm/spkgbuild
 f:c6e5b3e8b439f5c5b44f61f71b038142:lightdm/run
-f:fa4a39188ff891688ebe642c3d7998fb:sddm/rc.sddm
+f:0f63a7231b52b707fed16519e6056c81:sddm/post-install.sh
 f:433e480930b3e4c55c3f6901a5ab831a:sddm/CHANGELOG
+f:d49712e16dc0def1dcd673a64f58fef5:sddm/post-upgrade.sh
 f:f8c2f76698f0ca436c7dfe078bca195f:sddm/pre-install.sh
-f:d0a40ec5b6e1e18d26911e2e0df16701:sddm/mkdirs
-f:1d66d964ed7833951bbcdc03cbc3963c:sddm/spkgbuild
-f:5385a3b055dcca1277b0164a46ad6e24:sddm/run
+f:71630c040eb8c236e1cbe0a5677631ca:sddm/spkgbuild
 f:c5e2ebed7622b8b5ab59dc2482ef4440:lightdm-gtk-greeter-settings/spkgbuild

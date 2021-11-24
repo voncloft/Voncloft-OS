@@ -887,13 +887,10 @@ f:96a10b95b0e3a40d7edcac4a7b9fdd14:xpaint/CHANGELOG
 f:231a0447ef1e8e9923b6230470c6a715:xpaint/spkgbuild
 f:74419a59dacc41aec1752624273b5731:doxygen/CHANGELOG
 f:2baf2c82ac57f855de3e2191fe39e10f:doxygen/spkgbuild
+f:11de935fc9c5327e5f8ef2d0893c54f0:linux-pam/post-install.sh
 f:e29ee0123928179f2e09530b7f5c60bb:linux-pam/CHANGELOG
-f:8a82e837907ae2cd3334800823fc2382:linux-pam/system-password
-f:6be86e52bfbaf5f80ec7c9fc23f55bc0:linux-pam/system-session
-f:8c37ec4dba9c45b3540f990a6c1922c1:linux-pam/other
-f:a627ab415e96e7b14d8f171811064e14:linux-pam/spkgbuild
-f:bc55c6d8d9cf1d31e6c39047eafde517:linux-pam/system-account
-f:b1198d9ae416bd204e53a7aeb5a7842a:linux-pam/system-auth
+f:c95d4c6445922d0d687bb6ee44075e8f:linux-pam/post-upgrade.sh
+f:e159aa01e399f9788f73d79df584b3d9:linux-pam/spkgbuild
 f:aac6b80a6e8f22d21658faafacfc421f:vsv/spkgbuild
 f:371b04400afc06bc4df62338bf55a897:rapidjson/spkgbuild
 f:4a01446e007b8fcc1f4076195bb6ab34:openjpeg2/spkgbuild
