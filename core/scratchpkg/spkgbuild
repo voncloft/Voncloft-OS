@@ -2,7 +2,7 @@
 # depends	: coreutils httpup libarchive
 
 name=scratchpkg
-version=20211124
+version=20211124b
 release=6
 backup="etc/scratchpkg.conf
 	etc/scratchpkg.alias

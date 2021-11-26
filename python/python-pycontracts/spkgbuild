@@ -2,7 +2,7 @@
 # depends : python-pyparsing python-decorator python-six python-future
 
 name=python-pycontracts
-version=7.3.2111211800
+version=7.3.2111251730
 release=4
 
 source="https://github.com/AndreaCensi/contracts/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-cmd2 python-prettytable python-pyparsing
 
 name=python-cliff
-version=3.9.0
+version=3.10.0
 release=1
 
 source="https://github.com/openstack/cliff/archive/refs/tags/e$version.tar.gz"
