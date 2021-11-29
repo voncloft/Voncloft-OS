@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-toposort
-version=1.6
+version=1.7
 release=1
 
-source="https://pypi.io/packages/source/t/toposort/toposort-1.6.tar.gz"
+source="https://pypi.io/packages/source/t/toposort/toposort-1.7.tar.gz"
 options="!checksum"
 
 build() {
