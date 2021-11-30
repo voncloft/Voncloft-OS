@@ -2,10 +2,10 @@
 # depends : python-pycparser
 
 name=python-cffi
-version=1.14.6
+version=1.15.0
 release=1
 
-source="https://foss.heptapod.net/pypy/cffi/-/archive/v1.14.6/cffi-v1.14.6.tar.bz2"
+source="https://foss.heptapod.net/pypy/cffi/-/archive/v1.15.0/cffi-v1.15.0.tar.bz2"
 options="!checksum"
 
 build() {

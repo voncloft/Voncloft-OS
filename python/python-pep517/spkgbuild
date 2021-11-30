@@ -2,10 +2,10 @@
   # depends : python-toml
 
 name=python-pep517
-version=0.11.0
+version=0.12.0
 release=3
 
-source="https://pypi.io/packages/source/p/pep517/pep517-0.11.0.tar.gz"
+source="https://pypi.io/packages/source/p/pep517/pep517-0.12.0.tar.gz"
 options="!checksum"
 
 build() {
