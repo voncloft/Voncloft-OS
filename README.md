@@ -41,3 +41,11 @@ _As of 12-01-2021_
 
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
+
+**SPECIAL FOLDERS:**
+- beta: stuff I'm working on 
+- old: not sure I want to delete
+- scripts: scripts I use and keep here for safe keeping
+- utilities: tools I used on this repo in the past dont want to throw away just yet
+- working_on: get to it eventually, not as important as beta
+- the rest should be self explanitory
