@@ -2,8 +2,8 @@
 
 A Linux From Scratch Repository that I self maintain.
 
-_As of 09-16-2021_
-
+_As of 12-01-2021_
+##(You are on your own if you choose to use my repository)
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
 - work on all universal user passes on vpn
