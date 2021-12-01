@@ -10,14 +10,14 @@ _As of 12-01-2021_
 **Update:**
 - Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
 - work on all universal user passes on vpn
-- need to fix lsdm pamd.d file
+- need to fix lxdm pamd.d file
 
 **Needs Testing:**
 - qtcreator
 - postfix
 - mythtv
-- python - might have errors will fix as a need be basis
-- perl - might have errors will fix as a need be basis
+- python - might have errors will fix as a need be basis (again your own risk - I can be lazy)
+- perl - might have errors will fix as a need be basis (again your own risk - I can be lazy)
 - chessx - needs testing and its dependencies
 - scid_vs_pc - needs testing
 
@@ -32,7 +32,7 @@ _As of 12-01-2021_
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
-- Packages are checked via the "updates.sh" in /Voncloft-OS (Always a work in progress)
+- Packages are checked via the "updates.sh" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
 - Updates can be viewed here: http://voncloft.dnsfor.me/updated
 
 **Workon next:**
