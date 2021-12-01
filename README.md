@@ -29,7 +29,7 @@ _As of 09-16-2021_
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
-- Packages are checked via the "updates.sh" in /Voncloft-OS (WORK IN PROGRESS not ready for production)
+- Packages are checked via the "updates.sh" in /Voncloft-OS (Always a work in progress)
 - Updates can be viewed here: http://voncloft.dnsfor.me/updated
 
 **Workon next:**
