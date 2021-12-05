@@ -2,10 +2,10 @@
 # depends : akonadi akonadi-contacts calendarsupport akonadi-calendar eventviews kdepim-addons kdepim-runtime kpeople akonadi-calendar-core akonadi-import-wizard
 
 name=kalendar
-version=0.2.0
+version=0.3.1
 release=1
 
-source="https://invent.kde.org/pim/kalendar/-/archive/v0.2.0/kalendar-v$version.tar.gz"
+source="https://github.com/KDE/kalendar/archive/refs/tags/v$versiontar.gz"
 build(){
    cd $name-v$version
    kf5-package-installer
