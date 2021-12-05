@@ -1,0 +1,41 @@
+
+15<br>
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>
+sed -i -e "s/version=5.2.1/version=5.2.2/g" cinnamon/cinnamon/spkgbuild <br>
+sed -i -e "s,git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#commit=,git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#commit=,g" cinnamon/evolution-data-server/spkgbuild <br>
+sed -i -e "s/version=3.42.1/version=3.42.2/g" cinnamon/evolution-data-server/spkgbuild <br>
+sed -i -e "s/version=3.1.5/version=3.1.6/g" core/double-conversion/spkgbuild <br>
+sed -i -e "s/version=2.3.1/version=2.3.2/g" core/enchant/spkgbuild <br>
+sed -i -e "s,passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue,passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue,g" core/filesystem/spkgbuild <br>
+sed -i -e "s/version=2021.11.11/version=2021.12.04/g" core/filesystem/spkgbuild <br>
+sed -i -e "s/version=3.2.2/version=3.2.3/g" extra/flexget/spkgbuild <br>
+sed -i -e "s/version=6.22/version=6.23/g" multilib/wine/spkgbuild <br>
+sed -i -e "s/version=1.24/version=1.25.4/g" nonfree/veracrypt/spkgbuild <br>
+sed -i -e "s,https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/CPANPLUS-0.9912.tar.gz,https://search.cpan.org/CPAN/authors/id/B/BI/BINGOS/CPANPLUS-0.9914.tar.gz,g" perl/perl-cpanplus/spkgbuild <br>
+sed -i -e "s/version=0.9912/version=0.9914/g" perl/perl-cpanplus/spkgbuild <br>
+sed -i -e "s,https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test2-Suite-0.000142.tar.gz,https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test2-Suite-0.000143.tar.gz,g" perl/perl-test2-suite/spkgbuild <br>
+sed -i -e "s/version=0.000142/version=0.000143/g" perl/perl-test2-suite/spkgbuild <br>
+sed -i -e "s/version=0.5.0/version=0.5.1/g" python/python-adblock/spkgbuild <br>
+sed -i -e "s/version=1.20.19/version=1.20.20/g" python/python-boto3/spkgbuild <br>
+sed -i -e "s/version=1.23.19/version=1.23.20/g" python/python-botocore/spkgbuild <br>
+sed -i -e "s/version=0.56.2/version=0.56.3/g" python/python-cfn-lint/spkgbuild <br>
+sed -i -e "s,https://files.pythonhosted.org/packages/source/d/diff_cover/diff_cover-6.4.2.tar.gz,https://files.pythonhosted.org/packages/source/d/diff_cover/diff_cover-6.4.3.tar.gz,g" python/python-diff-cover/spkgbuild <br>
+sed -i -e "s/version=6.4.2/version=6.4.3/g" python/python-diff-cover/spkgbuild <br>
+sed -i -e "s/version=4.28.2/version=4.28.3/g" python/python-fonttools/spkgbuild <br>
+sed -i -e "s/version=6.29.3/version=6.30.0/g" python/python-hypothesis/spkgbuild <br>
+sed -i -e "s/version=2.0.0/version=3.0.0/g" python/python-jsonlines/spkgbuild <br>
+sed -i -e "s/version=1.1.0/version=2.0.0/g" python/python-markdown-it-py/spkgbuild <br>
+sed -i -e "s/version=0.2.8/version=0.3.0/g" python/python-mdit_py_plugins/spkgbuild <br>
+sed -i -e "s/version=1.2.2/version=1.3.0/g" python/python-mockito/spkgbuild <br>
+sed -i -e "s/version=0.60.0/version=0.61.0/g" python/python-openstacksdk/spkgbuild <br>
+sed -i -e "s/version=3.11.0/version=3.12.0/g" python/python-pycryptodome/spkgbuild <br>
+sed -i -e "s,https://files.pythonhosted.org/packages/source/p/pynitrokey/pynitrokey-0.4.5.tar.gz,git+https://github.com/nitrokey/pynitrokey#tag=v0.4.6.nitrokey?signed,g" python/python-pynitrokey/spkgbuild <br>
+sed -i -e "s/version=0.4.5/version=0.4.6/g" python/python-pynitrokey/spkgbuild <br>
+sed -i -e "s/version=1.11.2/version=1.11.3/g" python/python-qtpy/spkgbuild <br>
+sed -i -e "s,https://files.pythonhosted.org/packages/58/a8/1dfba2db1f744657065562386069e547eefea9432d3f520d4af5b5fabd28/rfc6555-0.0.0.tar.gz,https://pypi.io/packages/source/r/rfc6555/rfc6555-0.1.0.tar.gz,g" python/python-rfc6555/spkgbuild <br>
+sed -i -e "s/version=0.0.0/version=0.1.0/g" python/python-rfc6555/spkgbuild <br>
+sed -i -e "s/version=0.8.18/version=0.8.19/g" python/python-scrypt/spkgbuild <br>
+sed -i -e "s/version=1.5.0/version=1.5.1/g" python/python-typed-ast/spkgbuild <br>
+<br>
+Packages upgraded: 28<br>
+

@@ -827,8 +827,8 @@ f:08a96172b6077ba1222e68593b9fa42f:wpebackend-fdo/spkgbuild
 f:ef7d72eabb12b9576367390f3989248d:bamf/CHANGELOG
 f:c0368b9281097e3c922b044a59980320:bamf/spkgbuild
 f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild
-f:11f45ecda6f3b883ee8e73555e6675ad:enchant/CHANGELOG
-f:29715eb0e8167e7b5517f453d175c782:enchant/spkgbuild
+f:eb2bb35bac9e909e7f1efefff946ba26:enchant/CHANGELOG
+f:cc57eb41b0b65da323258b8497c93e03:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:eda0545af6a628507e33990495ec6e60:aspell/spkgbuild
@@ -863,7 +863,7 @@ f:5cbb5efc6adba814bafb91e534b09836:filesystem/locale.conf
 f:42f4400ed2314bd7519c020d0187edc5:filesystem/bash_logout.skel
 f:aa116741c76ab220567c0771d2c7d718:filesystem/passwd
 f:1f4aee8f427f734e314a472ebc88f414:filesystem/lsb-release
-f:2e569656c0089289c167700996d1d1a6:filesystem/CHANGELOG
+f:16f208e969ab956564d54300619bd793:filesystem/CHANGELOG
 f:6336f6a759a3cff8a5f02daabf3c9be3:filesystem/locale.sh
 f:2a381ac307b3f8f8223707946ff1a23a:filesystem/fstab
 f:5515689cb0b00a1f8474908e32bc309f:filesystem/issue
@@ -876,7 +876,7 @@ f:8dae1a1bd7394619836eed4edb32706a:filesystem/group
 f:b8419160170a41ae01abab13a3b887df:filesystem/hostname
 f:73b50995f63c6d88f5137db0759d6e92:filesystem/hosts
 f:2902e0fee7a9168f3a4fd2ccd60ff047:filesystem/bash_profile.skel
-f:2a4c32bd383f8b9f7fa57b76cf8ff1fb:filesystem/spkgbuild
+f:4c530509a0e58ba05b100a7f72f1f677:filesystem/spkgbuild
 f:3e47d3ddb26a72616c5889a4f266cadf:filesystem/resolv.conf
 f:37c1f2bc904ef01f13a8ed4d3e846f98:filesystem/shells
 f:be3d4507d6fcd289c28dc4e3c90ab907:filesystem/inputrc
@@ -1031,7 +1031,8 @@ f:195211db8f74de47473f906d0e6a6a22:fluxbox/spkgbuild
 f:d4b1ff77ab64e6ab30c26f9337e479ae:potrace/spkgbuild
 f:8794464f4b7561518fbfa97448f9c0f4:osx-arc-theme/spkgbuild
 f:c7bdc82817b9e49ad5964380e0aa8576:swig/spkgbuild
-f:1aa05ea22487407bdaa7341be994e88d:double-conversion/spkgbuild
+f:3b8d1fabf4bf84ff6386d0118ef65414:double-conversion/CHANGELOG
+f:012060c5bd267270ce3327a21b130dad:double-conversion/spkgbuild
 f:cbf6a5420ae3ad95fad609a613c5630d:shellcheck-static/spkgbuild
 f:455f02af5db3f20d6cf40136eb8e799b:socat/CHANGELOG
 f:bf9340a6e582ee878ad011a9ab00ddd6:socat/spkgbuild

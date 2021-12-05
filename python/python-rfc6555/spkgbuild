@@ -3,10 +3,10 @@
   # depends : python python-selectors2
 
 name=python-rfc6555
-version=0.0.0
+version=0.1.0
 release=3
 
-source="https://files.pythonhosted.org/packages/58/a8/1dfba2db1f744657065562386069e547eefea9432d3f520d4af5b5fabd28/rfc6555-0.0.0.tar.gz"
+source="https://pypi.io/packages/source/r/rfc6555/rfc6555-0.1.0.tar.gz"
 options="!checksum"
 
 build() {
