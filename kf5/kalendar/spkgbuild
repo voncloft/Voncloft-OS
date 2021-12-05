@@ -5,9 +5,9 @@ name=kalendar
 version=0.3.1
 release=1
 
-source="https://github.com/KDE/kalendar/archive/refs/tags/v$versiontar.gz"
+source="https://github.com/KDE/kalendar/archive/refs/tags/v$version.tar.gz"
 build(){
-   cd $name-v$version
+   cd *
    kf5-package-installer
    cd build
    make DESTDIR=$PKG install	
