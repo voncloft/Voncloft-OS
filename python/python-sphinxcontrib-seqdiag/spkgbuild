@@ -2,7 +2,7 @@
 # depends : blockdiag seqdiag python-sphinx
 
 name=python-sphinxcontrib-seqdiag
-version=2.0.0
+version=3.0.0
 release=3
 
 source="https://github.com/blockdiag/sphinxcontrib-seqdiag/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python python-lxml python-text-unidecode python-xmlschema
 
 name=python-sepaxml
-version=2.4.1
+version=2.5.0
 release=4
 
 source="https://github.com/raphaelm/python-sepaxml/archive/refs/tags/$version.tar.gz"
