@@ -10,7 +10,7 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	make pypi-files
+	#make pypi-files - pauses for some reason
 	python setup.py build
 	python setup.py install --root="$PKG" --skip-build --optimize=1
 }

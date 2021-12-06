@@ -12,7 +12,4 @@ build() {
 	mkdir -p $PKG/usr/share/pandoc
 	cp -R bin share $PKG/usr
 
-	rm $PKG/usr/bin/pandoc-citeproc $PKG/usr/share/man/man1/pandoc-citeproc.1.gz
-	cp -R data $PKG/usr/share/pandoc
-	find $PKG -iname '*README*' -delete
 }
