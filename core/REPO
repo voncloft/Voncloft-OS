@@ -411,6 +411,7 @@ d:nbwmon
 d:java-headless
 d:p11-kit
 d:rfkill
+d:atomicparsley
 d:dash
 d:xhost
 d:irssi
@@ -1258,6 +1259,8 @@ f:1155045c45cadc916219485d2c5669a7:java-headless/spkgbuild
 f:a80188643d7e4a7a66a94cf9297c7b16:p11-kit/CHANGELOG
 f:764c77156d906b5230a134682c430163:p11-kit/spkgbuild
 f:1a3bde6f8e32e7c78cd9673c4422bae4:rfkill/spkgbuild
+f:f09991e368c50b5c71124e46bdfbaa04:atomicparsley/CHANGELOG
+f:4a2bae892d17c629e9dae20c540d356a:atomicparsley/spkgbuild
 f:31f63820e56357cd9fd659e617c04f21:dash/post-install.sh
 f:b3111a487383f7f4c5d44ecc5ac3bb54:dash/CHANGELOG
 f:b0500069bd49968261064ea0a7ca80d2:dash/spkgbuild

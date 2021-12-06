@@ -1,5 +1,5 @@
 # description : download youtube
-# depends : python-mutagen python-pycryptodomex python-websockets python-setuptools pandoc ffmpeg rtmdump atomicparsley aria2
+# depends : python-mutagen python-pycryptodomex python-websockets python-setuptools pandoc-bin ffmpeg atomicparsley
 
 name=yt-dlp
 version=2021.12.01

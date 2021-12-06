@@ -1,0 +1,18 @@
+# description : get metadata for mpeg4 files
+# depends : gcc zlib cmake
+
+name=atomicparsley
+version=20210715.151551.e7ad03a
+release=1
+
+source="https://github.com/wez/atomicparsley/archive/$version/$name-$version.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None ..
+	make
+	install -D AtomicParsley "$PKG"/usr/bin/atomicparsley
+}
