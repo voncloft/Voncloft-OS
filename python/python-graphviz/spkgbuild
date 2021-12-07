@@ -2,10 +2,10 @@
 # depends : graphviz python
 
 name=python-graphviz
-version=0.17
+version=0.19
 release=1
 
-source="https://files.pythonhosted.org/packages/source/g/graphviz/graphviz-0.17.zip"
+source="https://github.com/xflr6/graphviz/archive/0.19/graphviz-0.19.tar.gz"
 options="!checksum"
 
 build() {
