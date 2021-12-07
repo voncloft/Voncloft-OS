@@ -4,4 +4,4 @@ do
 	        packages=$packages" "${d##*/}
 	fi
 done
-sudo scratch intsall -rc $packages
+sudo scratch install -rc $packages
