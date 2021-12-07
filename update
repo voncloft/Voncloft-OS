@@ -617,6 +617,10 @@ repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome
 
 start_time="$(date -u +%s)"
 ###Start Checking###
+if [ -f test_updates.sh ];then
+        mv test_updates.sh test_updates-$(date +"%m-%d-%y").sh
+fi
+
 main $@
 end_time="$(date -u +%s)"
 elapsed="$(($end_time-$start_time))"
