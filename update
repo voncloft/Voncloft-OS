@@ -518,6 +518,8 @@ check_handles()
                         -k) keep_index=1;;
                         -stu) show_test_updates
                         exit;;
+                        -utg) update-rep
+                        exit;;
 			-h) help
          		exit;;
                 esac
@@ -550,6 +552,7 @@ help()
 	echo "-st skip tarballing"
 	echo "-t test upgrades do not apply them"
 	echo "-stu show test updates"
+	echo "-utg upload changes to github"
 	echo "-h help"
 }
 show_test_updates()
