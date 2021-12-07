@@ -511,6 +511,7 @@ check_handles()
         while [ $1 ]; do
                 case $1 in
                 	-a) apply_test_updates
+                	apply=1
                 	exit;;
                         -st) skip_tar=1;;
                         -t) test_upgrade=1;;
@@ -562,7 +563,12 @@ show_test_updates()
 main()
 {
 	check_handles $@
-	rm test_updates.sh
+	if [ -z $apply ];then
+		echo "Backup up test upgrade script"
+		backup_test
+	else
+		echo "Not backing up scripts"
+	fi
 	if [ -z $skip_tar ];then
 		echo "Backing up repo"
 	else
@@ -597,6 +603,12 @@ main()
 	finish_logs	
 	alerts_and_logs
 }
+backup_test()
+{
+        if [ -f test_updates.sh ];then
+                mv test_updates.sh test_updates-$(date +"%m-%d-%y").sh
+        fi
+}
 ####GLOBAL VARIABLES##############
 ###COLORS###
 RED='\e[0;31;40m'
@@ -617,10 +629,6 @@ repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome
 
 start_time="$(date -u +%s)"
 ###Start Checking###
-if [ -f test_updates.sh ];then
-        mv test_updates.sh test_updates-$(date +"%m-%d-%y").sh
-fi
-
 main $@
 end_time="$(date -u +%s)"
 elapsed="$(($end_time-$start_time))"
