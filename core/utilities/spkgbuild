@@ -1,0 +1,18 @@
+# description : base utilities for system
+# depends : 
+
+name=utilities
+version=1
+release=1
+
+source="upgrade-python-packages
+	upgrade-perl-packages
+	update-kde"
+options="!checksum"
+
+build() {
+	mkdir $PKG/usr/bin
+	install -Dm755 $SRC/upgrade-python-packages $PKG/usr/bin/upgrade-python-packages
+	install -Dm755 $SRC/upgrade-perl-packages $PKG/usr/bin/upgrade-perl-packages
+	install -Dm755 $SRC/update-kde $PKG/usr/bin/upgrade-kde
+}

@@ -1,0 +1,7 @@
+for d in /usr/Voncloft-OS/python/*
+do
+	if [[ ! ${d##*/} == "python" ]];then
+	        packages=$packages" "${d##*/}
+	fi
+done
+sudo scratch insall -rc $packages
