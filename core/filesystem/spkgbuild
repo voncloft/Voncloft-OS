@@ -2,9 +2,9 @@
 # depends	: iana-etc
 
 name=filesystem
-version=2021.12.04
+version=2021.12.07
 release=7
-backup="etc/passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue
+backup="etc/passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue
 	etc/locale.conf
 	etc/resolv.conf
 	etc/hostname
@@ -12,7 +12,7 @@ backup="etc/passwd group resolv.conf locale.conf hosts hostname inputrc shells f
 	etc/fstab
 	etc/hosts
 	etc/shells"
-source="passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue
+source="passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue
 	group
 	resolv.conf
 	locale.conf
@@ -76,7 +76,7 @@ build() {
 	#mknod -m 600 $PKG/dev/console c 5 1
 	#mknod -m 666 $PKG/dev/null c 1 3
 		
-	install -m644 passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue $PKG/etc
+	install -m644 passwd group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue group resolv.conf locale.conf hosts hostname inputrc shells fstab lsb-release bashrc profile dircolors.sh readline.sh locale.sh bash_profile.skel bashrc.skel bash_logout.skel issue $PKG/etc
 	install -m644 group $PKG/etc
 	install -m644 resolv.conf $PKG/etc
 	install -m644 locale.conf $PKG/etc

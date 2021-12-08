@@ -518,6 +518,7 @@ check_handles()
                         -s) repos;;
                         -k) keep_index=1;;
                         -stu) show_test_updates
+                        apply=1
                         exit;;
                         -utg) update-rep
                         exit;;

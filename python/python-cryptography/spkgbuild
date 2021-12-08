@@ -2,10 +2,10 @@
   # depends : python-six python-cffi python-idna python-setuptools python-asn1crypto
 
 name=python-cryptography
-version=35.0.0
+version=36.0.0
 release=1
 
-source="https://pypi.io/packages/source/c/cryptography/cryptography-35.0.0.tar.gz"
+source="https://pypi.io/packages/source/c/cryptography/cryptography-36.0.0.tar.gz"
 options="!checksum"
 
 build() {
