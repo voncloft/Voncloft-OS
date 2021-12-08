@@ -2,7 +2,7 @@
 # depends : snappy zstd
 
 name=blosc
-version=1.21.0
+version=1.21.1
 release=1
 
 source="https://github.com/Blosc/c-blosc/archive/v${version}.tar.gz"

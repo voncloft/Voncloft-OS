@@ -2,7 +2,7 @@
 # depends : 
 
 name=hidapi
-version=0.10.1
+version=0.11.0
 release=1
 
 source="https://github.com/libusb/${name}/archive/${name}-${version}.tar.gz"

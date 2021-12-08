@@ -1,7 +1,7 @@
 # description	: An implementation of the XDG Base Directory specifications
 
 name=libxdg-basedir
-version=1.2.0
+version=1.2.3
 release=1
 source="https://github.com/devnev/$name/archive/$name-$version.tar.gz
         xdgGetRelativeHome-overflow.patch"

@@ -2,7 +2,7 @@
 # depends : curl libxml opensp
 
 name=libofx
-version=0.9.15
+version=0.10.3
 release=1
 
 source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"

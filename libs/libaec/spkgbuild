@@ -2,7 +2,7 @@
 # depends : glibc 
 
 name=libaec
-version=1.0.4
+version=1.0.6
 release=1
 
 source="https://gitlab.dkrz.de/k202009/libaec/-/archive/v$version/libaec-v$version.tar.gz"
