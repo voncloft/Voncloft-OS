@@ -2,7 +2,7 @@
 # depends : python python-webob python-mako python-webtest python-six
 
 name=python-pecan
-version=1.4.0
+version=1.4.1
 release=3
 
 source="https://github.com/pecan/pecan/archive/refs/tags/d$version.tar.gz"
