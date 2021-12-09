@@ -133,7 +133,6 @@ d:imagemagick7
 d:speex
 d:i3-gaps
 d:gpm
-d:fop
 d:light
 d:attr
 d:smartmontools
@@ -742,9 +741,6 @@ f:6e49c378ce5d1ee27cacbd833b646061:gpm/rc.gpm
 f:e8b5cfabaa7b87c6dd5f1f74b8e38e70:gpm/conf
 f:e24ffb0572d13298396df49ba1c30b81:gpm/spkgbuild
 f:e67409039df6e8e093e7967321bbc595:gpm/run
-f:78d0d3913b5b31b729974b98df82374e:fop/CHANGELOG
-f:3dc3325bf77afc787024f33e7d6ab99e:fop/fop.conf
-f:1c424542386d37126b1c7e937d7e20ce:fop/spkgbuild
 f:1cc4984ee64448ca7f55c37f28b83019:light/finish
 f:d443423606ba6fb12ae58215c606afc9:light/rc.light
 f:0a05a9a982a2f696d01f9ec9ed8a52db:light/spkgbuild
