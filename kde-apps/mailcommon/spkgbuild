@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps mailimporter
+# depends : kde-deps mailimporter messagelib
 
 name=mailcommon
 version=21.12.0
