@@ -11,16 +11,14 @@ build() {
 
 	find -type f -name "*.pr[io]" |
 	  xargs sed -i -e 's|INCLUDEPATH += |&$$QTWEBENGINE_ROOT/include |'
+	sed -e '/link_pulseaudio/s/false/true/' \
+    		-i src/3rdparty/chromium/media/media_options.gni
+	sed -i 's/NINJAJOBS/NINJA_JOBS/' src/core/gn_run.pro
+	mkdir build &&
+	cd    build &&
 
-	mkdir build
-	cd    build
-
-	test -n $MAKEFLAGS && export NINJAFLAGS="$NINJAFLAGS $MAKEFLAGS"
-	
-	qmake .. -- -proprietary-codecs -system-ffmpeg -webengine-icu
-	make
-	make INSTALL_ROOT=$PKG install
-
-	find $PKG/usr/ -name \*.prl \
-	   -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+	qmake .. -- -system-ffmpeg -webengine-icu
+	make DESTDIR=$PKG install
+		
 }
+
