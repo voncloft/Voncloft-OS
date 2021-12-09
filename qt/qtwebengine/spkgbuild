@@ -4,13 +4,18 @@
 name=qtwebengine
 version=5.15.2
 release=1
-source="https://download.qt.io/archive/qt/${version%.*}/$version/submodules/$name-everywhere-src-$version.tar.xz"
+source="https://download.qt.io/archive/qt/${version%.*}/$version/submodules/$name-everywhere-src-$version.tar.xz
+	http://www.linuxfromscratch.org/patches/blfs/10.1/qtwebengine-everywhere-src-5.15.2-ICU68-2.patch
+	http://www.linuxfromscratch.org/patches/blfs/10.1/qtwebengine-everywhere-src-5.15.2-glibc233-1.patch"
 
 build() {
 	cd $name-everywhere-src-$version
 
 	find -type f -name "*.pr[io]" |
 	  xargs sed -i -e 's|INCLUDEPATH += |&$$QTWEBENGINE_ROOT/include |'
+	patch -Np1 -i $SRC/qtwebengine-everywhere-src-5.15.2-ICU68-2.patch
+	patch -Np1 -i ../qtwebengine-everywhere-src-5.15.2-glibc233-1.patch
+	
 	sed -e '/link_pulseaudio/s/false/true/' \
     		-i src/3rdparty/chromium/media/media_options.gni
 	sed -i 's/NINJAJOBS/NINJA_JOBS/' src/core/gn_run.pro
