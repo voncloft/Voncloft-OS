@@ -133,6 +133,7 @@ d:imagemagick7
 d:speex
 d:i3-gaps
 d:gpm
+d:fop
 d:light
 d:attr
 d:smartmontools
@@ -558,7 +559,7 @@ f:4b2303c74c8f10f50e120ddfcc77c652:smtube/CHANGELOG
 f:eeb849a25f2561324f05674abea503bf:smtube/spkgbuild
 f:1eb6abe461c518d980f8a24a326e068d:xprop/CHANGELOG
 f:4a4d2bb1f3a57a7e581819a9d29a17a6:xprop/spkgbuild
-f:b3eea11581d1e7439c0d39f98b63ec3b:poppler-glib/spkgbuild
+f:eca603e369627968fe9bc2635df535d2:poppler-glib/spkgbuild
 f:c9e1abb8d76f66d2c4c6ed4bb5e9e1fa:reiserfsprogs/reiserfsprogs-3.6.27-loff_t.patch
 f:f77b24a2e077b4943fe815ba50313073:reiserfsprogs/spkgbuild
 f:b54622ee3a56686569fb8ee146fc0995:yasm/spkgbuild
@@ -741,6 +742,9 @@ f:6e49c378ce5d1ee27cacbd833b646061:gpm/rc.gpm
 f:e8b5cfabaa7b87c6dd5f1f74b8e38e70:gpm/conf
 f:e24ffb0572d13298396df49ba1c30b81:gpm/spkgbuild
 f:e67409039df6e8e093e7967321bbc595:gpm/run
+f:78d0d3913b5b31b729974b98df82374e:fop/CHANGELOG
+f:3dc3325bf77afc787024f33e7d6ab99e:fop/fop.conf
+f:1c424542386d37126b1c7e937d7e20ce:fop/spkgbuild
 f:1cc4984ee64448ca7f55c37f28b83019:light/finish
 f:d443423606ba6fb12ae58215c606afc9:light/rc.light
 f:0a05a9a982a2f696d01f9ec9ed8a52db:light/spkgbuild

@@ -1,0 +1,19 @@
+# description : XSL Formatting
+# depends : apache-ant
+
+name=fop
+version=2.6
+release=1
+
+source="https://ftp-stud.hs-esslingen.de/pub/Mirrors/ftp.apache.org/dist/xmlgraphics/$name/source/$name-$version-src.tar.gz"
+options="!checksum"
+
+
+build() {
+	cd $name-$version
+	ant -f "$name"/build.xml package
+  	install -Dm0644 "$name/build/fop.jar" "$PKG/usr/share/java/fop/fop.jar"
+  	install -Dm0644 "../fop.conf" "$PKG/etc/fop.conf"
+  	install -Dm0755 "$name/$name" "$PKG/usr/bin/$name"
+	
+}
