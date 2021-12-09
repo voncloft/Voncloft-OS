@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps mailcommon
 
 name=akonadi-import-wizard
 version=21.12.0
