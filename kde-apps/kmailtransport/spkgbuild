@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps ksmtp libkgapi qt5-keychain
+# depends : kde-deps ksmtp libkgapi qt5-keychain kmime akonadi-mime
 
 name=kmailtransport
 version=21.12.0

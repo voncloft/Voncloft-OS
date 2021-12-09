@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kcalendarsupport
 
 name=akonadi-calendar-tools
 version=21.12.0
