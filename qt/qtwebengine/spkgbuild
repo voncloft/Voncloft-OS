@@ -18,6 +18,7 @@ build() {
 	cd    build &&
 
 	qmake .. -- -system-ffmpeg -webengine-icu
+	make
 	make DESTDIR=$PKG install
 		
 }
