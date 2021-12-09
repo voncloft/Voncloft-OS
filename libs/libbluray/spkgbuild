@@ -9,7 +9,7 @@ source="https://code.videolan.org/videolan/libbluray/-/archive/$version/$name-$v
 options="!checksum"
 
 build() {
-	cd $name-master
+	cd $name-$version
 	autoreconf -ifv
 	autoconf
 	./configure --prefix=/usr --disable-bdjava-jar
