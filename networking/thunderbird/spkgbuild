@@ -48,10 +48,10 @@ EOF
 
 	export CC=gcc CXX=g++ 
 	export MACH_USE_SYSTEM_PYTHON=1
-        SHELL=/bin/sh ./mach create-mach-environment
-        SHELL=/bin/sh ./mach configure
+        #SHELL=/bin/sh ./mach create-mach-environment
+        #SHELL=/bin/sh ./mach configure
         SHELL=/bin/sh ./mach build
-        SHELL=/bin/sh DESTDIR=$PKG MACH_USE_SYSTEM_PYTHON=1 ./mach install
+        SHELL=/bin/sh DESTDIR=$PKG ./mach install
 	unset CC CXX MACH_USE_SYSTEM_PYTHON
 	mkdir -pv $PKG/usr/share/applications  $PKG/usr/share/pixmaps
 
