@@ -1,0 +1,17 @@
+# description : binary java vm
+# depends : alsa-lib cups giflib xorg
+
+name=openjdk
+version=16.0.2
+release=1
+
+source="https://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-$version/$name-$version_linux-x64_bin.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	install -vdm755 $PKG/opt/OpenJDK-$version-bin
+	mv -v * $PKG/opt/OpenJDK-$version-bin         
+	chown -R root:root $PKG/opt/OpenJDK-$version-bin
+	ln -sfn OpenJDK-$version-bin $PKG/opt/jdk
+}

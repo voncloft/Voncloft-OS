@@ -5,19 +5,15 @@ name=fop
 version=2.6
 release=1
 
-source="https://archive.apache.org/dist/xmlgraphics/fop/source/fop-2.6-src.tar.gz
+source="https://archive.apache.org/dist/xmlgraphics/fop/source/$name-$version-src.tar.gz
 	http://archive.apache.org/dist/pdfbox/2.0.24/pdfbox-2.0.24.jar
 	http://archive.apache.org/dist/pdfbox/2.0.24/fontbox-2.0.24.jar
 	http://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 	https://downloads.sourceforge.net/offo/2.2/offo-hyphenation.zip"
 
-noextract="offo-hyphenation.zip"
-
 build() {
 	cd $name-$version
-	unzip ../off-hyphentation.zip
-	cp offo-hyphenation/hyph/* fop/hyph
-	rm -rf offo-hyphenation
+	cp $SRC/offo-hyphenation/hyph/* fop/hyph
 
 
 	sed -i '\@</javad@i\
@@ -28,19 +24,19 @@ build() {
 
 	sed -i 's/<war.plugin.version>2.2/<war.plugin.version>3.3.1/' pom.xml
 
-	cp ../{pdf,font}box-2.0.24.jar fop/lib
+	cp $SRC/{pdf,font}box-2.0.24.jar fop/lib
 
-	cd fop &&
+	cd fop 
 
 	LC_ALL=en_US.UTF-8                     \
 	PATH=$PATH:/tmp/apache-maven-3.6.3/bin \
-	ant all javadocs &&
+	ant all javadocs
 
 	mv build/javadocs .
 
-	install -v -d -m755 -o root -g root          $PKG/opt/fop-2.6
-	cp -vR build conf examples fop* javadocs lib $PKG/opt/fop-2.6
-	chmod a+x $PKG/opt/fop-2.6/fop
-	ln -v -sfn fop-2.6 $PKG/opt/fop
+	install -v -d -m755 -o root -g root          $PKG/opt/$name-$version
+	cp -vR build conf examples fop* javadocs lib $PKG/opt/$name-$version
+	chmod a+x $PKG/opt/$name-$version/$name
+	ln -v -sfn $name-$version $PKG/opt/$name
 	
 }

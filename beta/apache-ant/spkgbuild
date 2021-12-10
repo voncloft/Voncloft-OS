@@ -1,0 +1,19 @@
+# description : java based build tool
+# depends : openjdk glib
+
+name=apache-ant
+version=1.10.12
+release=1
+
+source="https://archive.apache.org/dist/ant/source/$name-$version-src.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	./bootstrap.sh
+	bootstrap/bin/ant -f fetch.xml -Ddest=optional
+	./build.sh -Ddist.dir=$PWD/ant-$version dist
+	cp -rv ant-$version $PKG/opt/            
+	chown -R root:root $PKG/opt/ant-$version
+	ln -sfv ant-$version $PKG/opt/ant
+}
