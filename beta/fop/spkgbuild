@@ -38,9 +38,9 @@ build() {
 
 	mv build/javadocs .
 
-	install -v -d -m755 -o root -g root          /opt/fop-2.6
-	cp -vR build conf examples fop* javadocs lib /opt/fop-2.6
-	chmod a+x /opt/fop-2.6/fop
-	ln -v -sfn fop-2.6 /opt/fop
+	install -v -d -m755 -o root -g root          $PKG/opt/fop-2.6
+	cp -vR build conf examples fop* javadocs lib $PKG/opt/fop-2.6
+	chmod a+x $PKG/opt/fop-2.6/fop
+	ln -v -sfn fop-2.6 $PKG/opt/fop
 	
 }
