@@ -1,8 +1,9 @@
 d:fop
 d:qt6
+f:c83f9253913da953b328f219a5ffde98:fop/post-install.sh
 f:78d0d3913b5b31b729974b98df82374e:fop/CHANGELOG
-f:3dc3325bf77afc787024f33e7d6ab99e:fop/fop.conf
-f:65a16a3cca203e06677dcb8c253842f0:fop/spkgbuild
+f:60061558183308983e1dc47a32830598:fop/pre-install.sh
+f:f18009c2dce4c43a744c2a60616f8980:fop/spkgbuild
 f:aadd40347642d4a60f78270664b2d369:qt6/main.patch
 f:87719b71fc17dccb96f069d0322122ef:qt6/spkgbuild-backup
 f:5422c3342c7975a39eb5f684388152cf:qt6/CHANGELOG

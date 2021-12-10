@@ -19,5 +19,28 @@ build() {
 	cp offo-hyphenation/hyph/* fop/hyph
 	rm -rf offo-hyphenation
 
-	tar -xf 
+
+	sed -i '\@</javad@i\
+	<arg value="-Xdoclint:none"/>\
+	<arg value="--allow-script-in-comments"/>\
+	<arg value="--ignore-source-errors"/>' \
+    	fop/build.xml
+
+	sed -i 's/<war.plugin.version>2.2/<war.plugin.version>3.3.1/' pom.xml
+
+	cp ../{pdf,font}box-2.0.24.jar fop/lib
+
+	cd fop &&
+
+	LC_ALL=en_US.UTF-8                     \
+	PATH=$PATH:/tmp/apache-maven-3.6.3/bin \
+	ant all javadocs &&
+
+	mv build/javadocs .
+
+	install -v -d -m755 -o root -g root          /opt/fop-2.6
+	cp -vR build conf examples fop* javadocs lib /opt/fop-2.6
+	chmod a+x /opt/fop-2.6/fop
+	ln -v -sfn fop-2.6 /opt/fop
+	
 }
