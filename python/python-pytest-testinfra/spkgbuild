@@ -3,10 +3,10 @@
 # TODO: add salt to optdepends, after it has been ported to python3
 
 name=python-pytest-testinfra
-version=6.4.0
+version=6.5.0
 release=1
 
-source="https://files.pythonhosted.org/packages/source/p/pytest-testinfra/pytest-testinfra-6.4.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/p/pytest-testinfra/pytest-testinfra-6.5.0.tar.gz"
 options="!checksum"
 
 build() {
