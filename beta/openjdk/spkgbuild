@@ -5,11 +5,11 @@ name=openjdk
 version=16.0.2
 release=1
 
-source="https://github.com/openjdk/jdk16u/archive/jdk-$version-ga.tar.gz"
+source="https://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-$version/OpenJDK-${version}+7-i686-bin.tar.xz"
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd *
 	install -vdm755 $PKG/opt/OpenJDK-$version-bin
 	mv -v * $PKG/opt/OpenJDK-$version-bin         
 	chown -R root:root $PKG/opt/OpenJDK-$version-bin
