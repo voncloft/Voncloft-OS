@@ -1,4 +1,4 @@
-url="https://www.rust-lang.org/"
+source="https://www.rust-lang.org/"
 get_generic(){
 	uversion=$(grep -i "href" index.html \
 	| grep html \
