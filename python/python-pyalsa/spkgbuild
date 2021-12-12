@@ -2,10 +2,10 @@
 # depends : alsa-lib python
 
 name=python-pyalsa
-version=1.1.6
+version=1.2.6
 release=6
 
-source="http://bigasterisk.com/post/pyalsa-1.1.tar.gz"
+source=""
 options="!checksum"
 
 build() {

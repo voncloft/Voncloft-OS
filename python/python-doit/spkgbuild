@@ -2,10 +2,10 @@
 # depends : python-cloudpickle python-pyinotify python-setuptools
 
 name=python-doit
-version=0.33.1
+version=0.34.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/d/doit/doit-0.33.1.tar.gz"
+source="https://files.pythonhosted.org/packages/source/d/doit/doit-0.34.0.tar.gz"
 options="!checksum"
 
 build() {
