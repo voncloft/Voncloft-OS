@@ -2,10 +2,10 @@
 # depends : python dialog
 
 name=python-pythondialog
-version=3.5.2
+version=3.5.3
 release=2
 
-source="https://downloads.sourceforge.net/project/pythondialog/pythondialog/3.5.2/python3-pythondialog-3.5.2.tar.bz2"
+source="https://downloads.sourceforge.net/project/pythondialog/pythondialog/3.5.3/python3-pythondialog-3.5.3.tar.bz2"
 options="!checksum"
 
 build() {
