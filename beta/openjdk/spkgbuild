@@ -5,7 +5,7 @@ name=openjdk
 version=16.0.2
 release=1
 
-source="https://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-$version/$name-$version_linux-x64_bin.tar.gz"
+source="https://github.com/openjdk/jdk16u/archive/jdk-$version-ga.tar.gz"
 options="!checksum"
 
 build() {
