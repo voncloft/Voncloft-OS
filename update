@@ -87,6 +87,7 @@ run_manual_upd()
 	source $update_script
 	fetch
 	get_generic
+	cmd="override"
 }
 cmd_torun()
 {
@@ -265,13 +266,22 @@ cmd_torun()
 					retry_index
 					grep_retry
 				else
-				uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
-        				| sed "s/$name[-_]//;s/\.tar.*//" \
-        				| grep -Evi '(alpha|beta|rc|pre|latest)' \
-        				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-        				| sort -V -r \
-        				| uniq \
-        				| head -n1)
+				#uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
+        			#	| sed "s/$name[-_]//;s/\.tar.*//" \
+        			#	| grep -Evi '(alpha|beta|rc|pre|latest)' \
+        			#	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        			#	| sort -V -r \
+        			#	| uniq \
+        			#	| head -n1)
+				#####more robust maybe idk
+				uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+				| grep -v : \
+				| tr '[:upper:]' '[:lower:]' \
+				| grep $name \
+				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+				| uniq \
+				| sort -V -r \
+				| head -n1)
         			fi
 			fi
                 	;;
