@@ -1,0 +1,11 @@
+
+get_generic()
+{
+	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| grep -v : \
+	| tr '[:upper:]' '[:lower:]' \
+	| grep $name \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	| sort -V -r \
+	| head -n1)
+}
