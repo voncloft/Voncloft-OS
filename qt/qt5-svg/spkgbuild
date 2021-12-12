@@ -2,7 +2,7 @@
 # depends : qt5
 
 name=qt5-svg
-version=6.2.2
+version=5.12.12
 release=1
 
 source="https://invent.kde.org/qt/qt/qtsvg/-/archive/v$version/qtsvg-v$version.tar.gz"
