@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kbookmarks kded kjobwidgets ktextwidgets kwallet libxslt solid kdoctools kio-extras
 
 name=kio
 version=5.89.0
