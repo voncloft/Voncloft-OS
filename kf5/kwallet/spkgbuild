@@ -1,8 +1,8 @@
 # description : Core components for the kde desktop
-# depends : kde-deps gpgme kiconthemes knotifications kservice
+# depends : kde-deps
 
 name=kwallet
-version=5.89.0
+version=5.88.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
