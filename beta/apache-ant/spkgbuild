@@ -13,6 +13,7 @@ build() {
 	./bootstrap.sh
 	bootstrap/bin/ant -f fetch.xml -Ddest=optional
 	./build.sh -Ddist.dir=$PWD/ant-$version dist
+	mkdir -pv $PKG/opt
 	cp -rv ant-$version $PKG/opt/            
 	chown -R root:root $PKG/opt/ant-$version
 	ln -sfv ant-$version $PKG/opt/ant
