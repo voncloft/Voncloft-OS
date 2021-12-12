@@ -1,17 +1,4 @@
-d:apache-ant
-d:openjdk
-d:fop
 d:qt6
-f:d12fcf021316bb31fc95e469d0423c97:apache-ant/post-install.sh
-f:a4090c83af4f3d027e27eb3902ad5d09:apache-ant/CHANGELOG
-f:882d7df39d6852c14e1c16b2783f3ad6:apache-ant/spkgbuild
-f:ec42fae2cd9c4afedeab617315cd4f55:openjdk/post-install.sh
-f:c0dd249c01ef3729e2317bd5244c2b9b:openjdk/CHANGELOG
-f:de32018d272061c22978d2fb388caa3d:openjdk/spkgbuild
-f:c83f9253913da953b328f219a5ffde98:fop/post-install.sh
-f:78d0d3913b5b31b729974b98df82374e:fop/CHANGELOG
-f:60061558183308983e1dc47a32830598:fop/pre-install.sh
-f:cc31438a6815afcba065a8e1a7fa73cc:fop/spkgbuild
 f:aadd40347642d4a60f78270664b2d369:qt6/main.patch
 f:87719b71fc17dccb96f069d0322122ef:qt6/spkgbuild-backup
 f:5422c3342c7975a39eb5f684388152cf:qt6/CHANGELOG

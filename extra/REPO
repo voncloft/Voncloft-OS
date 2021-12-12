@@ -6,6 +6,7 @@ d:flexget
 d:woff2
 d:flashplugin
 d:onboard
+d:openjdk
 d:protobuf
 d:waterfox
 d:firefox-esr
@@ -58,6 +59,9 @@ f:c000b5faf4c8278507d27622d1f263d1:flashplugin/CHANGELOG
 f:66c331be421c449c521adcbb688bb862:flashplugin/spkgbuild
 f:1622181a205950786bc4c695003feff9:onboard/CHANGELOG
 f:ebbf021261f2671e307e6e82741dd747:onboard/spkgbuild
+f:ec42fae2cd9c4afedeab617315cd4f55:openjdk/post-install.sh
+f:c0dd249c01ef3729e2317bd5244c2b9b:openjdk/CHANGELOG
+f:de32018d272061c22978d2fb388caa3d:openjdk/spkgbuild
 f:13d79fc8ec604f634f6233ab128a0165:protobuf/CHANGELOG
 f:c784a22f2332bfe1e94f57f0d62f2f6b:protobuf/spkgbuild
 f:a893e6a506d6cbb2685182b298fe7964:waterfox/mozconfig
@@ -99,7 +103,7 @@ f:3a32fa3f3723cf42f581b1a6519eddbe:gtk3/CHANGELOG
 f:66e18cd2ba8da8204a2bac949fa2d540:gtk3/spkgbuild
 f:aa845bc32a094cdfc06427d7bbaf18eb:gnucash/CHANGELOG
 f:91acd2757b7fb26c54f5e7e5e7517b86:gnucash/spkgbuild
-f:b806a392dc9030ef3ac16a105910359a:gtk-doc/spkgbuild
+f:19d9c3487a0698f309bf21eefa9527ea:gtk-doc/spkgbuild
 f:2c860b068423cd217b71b2262f90bd57:gimp/CHANGELOG
 f:6f7dd8eb83144379e905c259963a532c:gimp/spkgbuild
 f:059af5f2140bdf9a41b275a9325dd149:mozjs/spkgbuild
