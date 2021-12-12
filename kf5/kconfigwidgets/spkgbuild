@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kauth kcodecs kconfig kguiaddons ki18n kwidgetsaddons perl
 
 name=kconfigwidgets
 version=5.89.0
