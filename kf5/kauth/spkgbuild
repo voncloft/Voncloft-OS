@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kcoreaddons polkit-qt
 
 name=kauth
 version=5.89.0

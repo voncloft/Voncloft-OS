@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps karchive kcoreaddons ki18n
 
 name=kpackage
 version=5.89.0

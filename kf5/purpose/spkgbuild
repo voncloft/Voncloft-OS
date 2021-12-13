@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kaccounts-integration kirigami2 bluedevil kdeconnect-kde prison
 
 name=purpose
 version=5.89.0

@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kiconthemes knotifications kservice kwalletmanager
 
 name=kwallet
 version=5.89.0

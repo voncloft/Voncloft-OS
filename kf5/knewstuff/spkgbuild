@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps attica kio kpackage syndication kirigami2
 
 name=knewstuff
 version=5.89.0

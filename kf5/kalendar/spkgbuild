@@ -1,5 +1,5 @@
 # description : calendar application using akonadi
-# depends : akonadi akonadi-contacts calendarsupport akonadi-calendar eventviews kdepim-addons kdepim-runtime kpeople akonadi-calendar-core akonadi-import-wizard
+# depends: eventviews kdepim-runtime
 
 name=kalendar
 version=0.3.1
