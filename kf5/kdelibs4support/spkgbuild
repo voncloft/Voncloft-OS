@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps kemoticons kitemmodels kparts kunitversion perl kdoctools kdesignerplugin networkmanager
+# depends : kde-deps kemoticons kitemmodels kparts kunitconversion perl kdoctools kdesignerplugin networkmanager
 
 name=kdelibs4support
 version=5.89.0
