@@ -1,5 +1,5 @@
 # description : API for OFX banking standard
-# depends : curl libxml opensp
+# depends : curl libxml2 opensp
 
 name=libofx
 version=0.10.3
