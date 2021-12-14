@@ -16,6 +16,7 @@ d:iasl
 d:nasm
 d:autoconf
 d:autoconf2.13
+d:gdb
 d:cmake
 f:60f4a4af4e22674dc13b2d29eb8dfd51:ruby/CHANGELOG
 f:83931cc28ee68fd8197b8e1e69c0b0ff:ruby/spkgbuild
@@ -54,6 +55,8 @@ f:0d8e67141b01c9e575176f89f60f19ee:nasm/spkgbuild
 f:5d958c9ea1ac631ac9402f77ff7fa5a6:autoconf/spkgbuild
 f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes-1.patch
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
+f:487906f94837c99fc04450835a4cec35:gdb/CHANGELOG
+f:23b963a9bcf459d593a06525a627944a:gdb/spkgbuild
 f:c65fb9985be350466d3e03b17d506994:cmake/CHANGELOG
 f:a766a60ff8766e22289e7bfd2debae44:cmake/override
 f:580a1e3f6f36db91e3bc690e7caea400:cmake/spkgbuild

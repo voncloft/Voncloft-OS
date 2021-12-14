@@ -1,0 +1,22 @@
+# description : debugger for linux
+# depends : python-six gcc guile valgrind
+
+name=gdb
+version=11.1
+release=4
+
+source="https://ftp.gnu.org/gnu/gdb/${name}-${version}.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	mkdir build &&
+	cd    build &&
+
+	../configure --prefix=/usr          \
+             --with-system-readline \
+             --with-python=/usr/bin/python3
+
+	make
+	make DESTDIR=$PKG -C gdb install
+}

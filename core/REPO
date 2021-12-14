@@ -64,6 +64,7 @@ d:brotli
 d:startup-notification
 d:i3blocks
 d:udisks2
+d:valgrind
 d:gptfdisk
 d:runit
 d:cups
@@ -623,6 +624,8 @@ f:c9695ad50deb49c92aa332e830ccb83f:startup-notification/spkgbuild
 f:45cd179621565f30da2b491786255862:i3blocks/spkgbuild
 f:8a256dd5a22c116165fa1921a07c0d1b:udisks2/CHANGELOG
 f:9060319ac02f5c33510fb6f7a057be71:udisks2/spkgbuild
+f:cf804e74d09e447d7626a3657f28904a:valgrind/CHANGELOG
+f:add56fb481550cc1afb0627336e08a66:valgrind/spkgbuild
 f:f2c9bd3eb0644cfdeda5180ee112e5b3:gptfdisk/CHANGELOG
 f:b461c175493b2419c27a4136648e49aa:gptfdisk/spkgbuild
 f:18d7ddd71d3e0c3ddb5c50668f6466f1:runit/spkgbuild

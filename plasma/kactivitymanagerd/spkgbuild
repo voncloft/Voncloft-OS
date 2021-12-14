@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kio
 
 name=kactivitymanagerd
 version=5.23.4

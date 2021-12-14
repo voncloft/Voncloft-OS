@@ -1,0 +1,20 @@
+# description : instrumentation framework for building dynamic analysis tools
+# depends : gdb llvm
+
+name=valgrind
+version=3.18
+release=1
+
+source="https://sourceware.org/pub/$name/$name-$versiontar.bz2"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	sed -i 's|/doc/valgrind||' docs/Makefile.in
+
+	./configure --prefix=/usr \
+            --datadir=/usr/share/doc/valgrind-3.18.1
+
+        make
+        make DESTDIR=$PKG install
+}
