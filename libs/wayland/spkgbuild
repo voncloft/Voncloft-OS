@@ -10,11 +10,13 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	./configure --prefix=/usr    \
-            --disable-static \
-            --disable-documentation
+	mkdir build 
+	cd    build 
 
-            make
-            make DESTDIR=$PKG install
+	meson --prefix=/usr       \
+      	--buildtype=release \
+      	-Ddocumentation=false 
+	ninja
+	DESTDIR=$PKG ninja install
 }
 
