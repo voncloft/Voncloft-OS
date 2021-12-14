@@ -10,6 +10,11 @@ options="!checksum"
 
 build() {
    cd *
-   python setup.py build
-   python setup.py install --optimize=1 --root=$PKG
- }
+	sip-build \
+    	--confirm-license \
+    	--no-make \
+    	--api-dir /usr/share/qt/qsci/api/python
+  	cd build
+  	make
+	make INSTALL_ROOT="$PKG" install -j1
+}
