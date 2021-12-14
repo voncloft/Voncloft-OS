@@ -2,7 +2,7 @@
 # depends : cantarell-fonts gtk2 gtk3 intltool git
 
 name=gnome-themes-extra
-version=3.28
+version=3.28+r6+g45b1d457
 release=1
 
 source="git+https://gitlab.gnome.org/GNOME/gnome-themes-extra.git#commit=b3e935355afcfb5240bac5a99707ffecc35772a2"

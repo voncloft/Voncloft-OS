@@ -482,13 +482,13 @@ d:hugo
 f:64229d073ebfaaea96ed72b4d19ac1b1:itstool/CHANGELOG
 f:952361b55f22d58bb773e2c71fe88830:itstool/spkgbuild
 f:0ec9dbd79fddd179145ce7c740cab9cf:scratchpkg/scratchpkg.alias
-f:6ad6d72c65e711ff6510fb37ce8fd707:scratchpkg/CHANGELOG
+f:7ce6f1e79fb1ea9df8d4f0e7b7753534:scratchpkg/CHANGELOG
 f:b57ccd5e99f47eb21a48183c3df0665a:scratchpkg/scratchpkg.conf
 f:ee57c17c776153be26674dafd42cb983:scratchpkg/scratchpkg.mask
 f:34e87674c72e6c2c77bbf451b8c3bf09:scratchpkg/scratchpkg.repo
 f:15eb9305cc2ee7364767b029ca946006:scratchpkg/override
 f:ceb2592d66eac6e0162cd80ebe504c02:scratchpkg/revdep
-f:19cd858b9ce66e4b20e1aff0c12ebcfc:scratchpkg/spkgbuild
+f:6a35e6f8d9f79953b565d9939dcf86ab:scratchpkg/spkgbuild
 f:f1af3882fd1419a066448c8c160a293b:pangomm/spkgbuild
 f:8d9d1ed2f3f1bedc7c36410442f2eefa:grub/CHANGELOG
 f:a1ec4bfb2ae5116db789397aa796683a:grub/detect-venom-fallback-initrd.patch
@@ -514,8 +514,8 @@ f:caa54c2e8199d943be170a294f901e32:mksh/spkgbuild
 f:67dcff5032325ef42ada02801c816d41:binutils/CHANGELOG
 f:5b26054b6368097b27e73e5dabe71d56:binutils/spkgbuild
 f:1c3c5b6ba36a9bd98eb820d9a0725eb0:make/spkgbuild
-f:289d4eddf4b0e621d65a8a974b552125:sysvinit/CHANGELOG
-f:0cb715dd6f23b050916e72b3b01c0b3f:sysvinit/spkgbuild
+f:15fab942796ea4bd2b5a137df693ab25:sysvinit/CHANGELOG
+f:e10ee50113d9fbf566e10d2d33bf2389:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:f9d3ca5f0c1ea16ea8f068d0fef6a6fa:shadow/CHANGELOG
 f:627c2917ac3828c3ed168d3b7e67dbe5:shadow/post-upgrade.sh
@@ -715,8 +715,8 @@ f:87757894337d0b8428d282d1fb359c16:nnn/spkgbuild
 f:66b537f2a21a9cfeb43122bec0f699b8:gnupg/CHANGELOG
 f:5081d01f155e5518c61f03e1c5b31bcb:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:feeaabfa91f340129d894259885da076:pipewire/CHANGELOG
-f:343352249e6ba711061e78776d38b41b:pipewire/spkgbuild
+f:10dddb5af99e5a406095ade16310253a:pipewire/CHANGELOG
+f:d79f1f15c1ce20269be9f7faca7e8a01:pipewire/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
 f:966019be9bdb1097a5095eb9ae1d6c39:foltotar/spkgbuild
 f:d1079a56828cc16c17afc129665bc01b:pciutils/readme

@@ -542,7 +542,7 @@ apply_test_updates()
 {
 	if [ -f test_updates.sh ];then
 		sh test_updates.sh
-		rm test_updates.sh
+		mv test_updates.sh old-test-updates/test_updates-$(date +"%m-%d-%y").sh
 		echo "Test updates applied"
 		if [ -f index.html ];then
 			rm index.html
