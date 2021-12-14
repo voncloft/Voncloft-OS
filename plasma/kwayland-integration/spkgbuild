@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kguiaddons kidletime kwayland kwindowsystem
 
 name=kwayland-integration
 version=5.23.4

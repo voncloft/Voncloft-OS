@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kwayland plasma-wayland-protocols
 
 name=libkscreen
 version=5.23.4

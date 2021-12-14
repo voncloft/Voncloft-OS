@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps libkscreen
+# depends : kde-deps libkscreen plasma-framework kcmutils
 
 name=kscreen
 version=5.23.4

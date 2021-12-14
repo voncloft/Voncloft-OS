@@ -2,6 +2,7 @@
 # depends : gconf gtk3 gtk2 libpwquality libxkbcommon mesa networkmanager pipewire pulseaudio qca sassc taglib xcb-util-cursor 
 # depends : fftw gsettings-desktop-schemas libdbusmenu-qt libcanberra libinput linux-pam lm_sensors pciutils smartmontools glu
 # depends : ibus xf86-input-synaptics scim socat bluez-qt extra-cmake-modules hicolor-icon-theme python-cairo gdb boost qtwebengine
+# depends : perl libxcursor wayland-protocols doxygen lcms2 libxrandr libxres
 
 name=plasma-depends
 version=5.23.4
