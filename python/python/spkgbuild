@@ -2,10 +2,9 @@
 # depends	: libffi sqlite
 
 name=python
-version=3.11.0
+version=3.10.0
 release=1
-source="https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tar.xz
-	pyconfig.h"
+source="https://www.python.org/ftp/python/$version/Python-$version.tar.xz"
 
 options="!checksum"
 
@@ -13,11 +12,12 @@ build() {
 	cd Python-$version
 
   	CXX="/usr/bin/g++"              \
-	./configure --prefix=/usr       \
-	            --enable-shared     \
-	            --with-system-expat \
-	            --with-system-ffi   \
-	            --with-ensurepip=yes
+	./configure --prefix=/usr        \
+            --enable-shared      \
+            --with-system-expat  \
+            --with-system-ffi    \
+            --with-ensurepip=yes \
+            --enable-optimizations
 	make
 	make DESTDIR=$PKG install
 
