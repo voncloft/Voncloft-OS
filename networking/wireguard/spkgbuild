@@ -1,0 +1,25 @@
+# description : vpn into home network
+# depends : bash
+
+name=wireguard
+version=1.0.20210914
+release=1
+
+source="https://git.zx2c4.com/${pkgname}/snapshot/${name}-${version}.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	find contrib/ -name '.gitignore' -delete
+	make -C src/
+
+	make -C src/ \
+		DESTDIR="${pkgdir}/" \
+		WITH_BASHCOMPLETION=yes \
+                WITH_WGQUICK=yes \
+                WITH_SYSTEMDUNITS=yes \
+                install
+
+	install -d -m0755 "${PKG}"/usr/share/${name}/
+	cp -r contrib/ $PKG/usr/share/$name/examples/
+}
