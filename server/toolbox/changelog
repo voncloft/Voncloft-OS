@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# $1=name-of-package
+# $2=description
+
+location=$1
+final_location=$(echo $location | sed "s/\/spkgbuild//g")
+#echo $final_location
+source /Voncloft-OS/$1
+changelog=/Voncloft-OS/$final_location/CHANGELOG
+if [ -f $changelog ];
+then
+      	echo -e "\n----------------------------------------------------------------" >> $changelog
+	echo -e "\nDate: $(date)\n\nVersion=$version\nRelease=$release\n\nSynopsis:\n$2" >> $changelog
+	echo "Updated Changelog for $1"
+else
+      echo -e "Date: $(date)\n\n$name\nVersion=$version\nRelease=$release\n\nSynopsis:\nAdded Changelog to package\n$2" >> $changelog
+	echo "Updated Changelog for $1"
+fi

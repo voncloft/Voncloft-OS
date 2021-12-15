@@ -1,0 +1,18 @@
+# description : Commonly used tools to maintain repo
+# depends : 
+
+name=toolbox
+version=1
+release=1
+
+source="createpackage
+	changelog
+	foltotar"
+options="!checksum"
+
+build() {
+	mkdir $PKG/usr/bin
+	install -Dm755 $SRC/createpackage $PKG/usr/bin/createpackage
+	install -Dm755 $SRC/changelog	$PKG/usr/bin/changelog
+	install -Dm755 $SRC/foltotar	$PKG/usr/bin/foltotar
+}
