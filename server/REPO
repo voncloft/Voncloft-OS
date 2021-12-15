@@ -6,6 +6,7 @@ d:iptables
 d:postfix
 d:mariadb
 d:monitor_process
+d:httpup
 d:dhcpcd
 d:deluge
 d:subsonic
@@ -40,6 +41,10 @@ f:3d298f870fe5ae041512e8914cb8a6ce:mariadb/spkgbuild
 f:de7ddea34fb734b8e82acb25e56bf00a:monitor_process/CHANGELOG
 f:fd239cd91a93f260739ffb195a6746ed:monitor_process/process_monitor.sh
 f:52092704f4f4d20f1f38fe0c455e60b8:monitor_process/spkgbuild
+f:9a31d3a0302b3ab314c056c5e4b91e7a:httpup/update-rep
+f:87ed823a0a883eeb491aad8e40f13af2:httpup/update-scratchpkg
+f:6f7c997ae9625b18aa45e6d0f046159b:httpup/spkgbuild
+f:a93c79689c830747b1a04aeeceaf10f8:httpup/update-lfs-build
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf

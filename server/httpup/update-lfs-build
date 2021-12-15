@@ -1,0 +1,10 @@
+cd /lfs-scripts
+git init
+git add .
+if [ -z "$1" ];then
+	git commit -m "Minor Updates"
+else
+	git commit -m "$1"
+fi
+git remote set-url origin git@github.com:voncloft/lfs-scripts.git
+git push -u origin master

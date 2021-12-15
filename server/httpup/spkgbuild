@@ -1,0 +1,20 @@
+# description	: One way sync over http
+# depends	: curl
+
+name=httpup
+version=0.5.0
+release=1
+source="https://crux.nu/files/$name-$version.tar.xz
+	update-lfs-build
+	update-rep
+	update-scratchpkg"
+
+build() {
+	cd $name-$version
+	sed -i 's/Updating collection/Updating repository/' httpup.cpp
+	make
+	make DESTDIR=$PKG prefix=/usr mandir=/usr/share/man install
+	install -Dm755 $SRC/update-lfs-build $PKG/usr/bin/update-lfs-build
+	install -Dm755 $SRC/update-rep $PKG/usr/bin/update-rep
+	install -Dm755 $SRC/update-scratchpkg $PKG/usr/bin/update-scratchpkg 
+}

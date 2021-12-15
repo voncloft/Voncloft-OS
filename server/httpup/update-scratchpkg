@@ -1,0 +1,17 @@
+#httpup-repgen /Voncloft-OS/working_on/extra
+
+
+
+cd /scratchpkg
+git init
+git add .
+if [ -z "$1" ];then
+	git commit -m "Minor Updates"
+else
+	git commit -m "$1"
+fi
+git remote set-url origin git@github.com:voncloft/scratchpkg.git
+git push -u -f origin master
+
+####git remote add origin https://github.com/voncloft/scratch-build.git
+

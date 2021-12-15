@@ -1,0 +1,56 @@
+httpup-repgen /Voncloft-OS/core
+httpup-repgen /Voncloft-OS/multilib
+httpup-repgen /Voncloft-OS/nonfree
+httpup-repgen /Voncloft-OS/qt
+httpup-repgen /Voncloft-OS/lxde
+httpup-repgen /Voncloft-OS/compilers
+httpup-repgen /Voncloft-OS/extra
+httpup-repgen /Voncloft-OS/xorg
+httpup-repgen /Voncloft-OS/networking
+httpup-repgen /Voncloft-OS/firewall
+httpup-repgen /Voncloft-OS/boot-scripts-server
+httpup-repgen /Voncloft-OS/xfce
+httpup-repgen /Voncloft-OS/media
+httpup-repgen /Voncloft-OS/lxqt
+httpup-repgen /Voncloft-OS/libs
+httpup-repgen /Voncloft-OS/hardware
+httpup-repgen /Voncloft-OS/fonts
+httpup-repgen /Voncloft-OS/displaym
+httpup-repgen /Voncloft-OS/server
+httpup-repgen /Voncloft-OS/python
+httpup-repgen /Voncloft-OS/perl
+httpup-repgen /Voncloft-OS/beta
+httpup-repgen /Voncloft-OS/kf5
+httpup-repgen /Voncloft-OS/plasma
+httpup-repgen /Voncloft-OS/kde-apps
+httpup-repgen /Voncloft-OS/kde
+httpup-repgen /Voncloft-OS/working_on/sort_later
+httpup-repgen /Voncloft-OS/cinnamon
+httpup-repgen /Voncloft-OS/mate
+httpup-repgen /Voncloft-OS/ruby-gems
+httpup-repgen /Voncloft-OS/gnome
+httpup-repgen /media/Storage/Software/Voncloft-OS/programs
+
+sed -i -e '/index.php/d' /media/Storage/Software/Voncloft-OS/programs/REPO
+sed -i -e '/secondary.php/d' /media/Storage/Software/Voncloft-OS/programs/REPO
+
+cd /Voncloft-OS
+git init
+git add .
+if [ -z "$1" ];then
+	git commit -m "Minor Updates"
+else
+	git commit -m "$1"
+fi
+git remote set-url origin git@github.com:voncloft/Voncloft-OS.git
+git push -u origin master --force
+
+#cd /scratch-build
+#git init
+#git add .
+#git commit -m 'update'
+
+####git remote add origin https://github.com/voncloft/scratch-build.git
+
+#git remote set-url origin git@github.com:voncloft/scratch-build.git
+#git push -u origin master
