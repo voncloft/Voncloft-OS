@@ -2,7 +2,7 @@
 # depends : cmark-gfm python-cffi
 
 name=python-cmarkgfm
-version=0.6.0
+version=0.7.0
 release=1
 
 source="https://github.com/theacodes/cmarkgfm/archive/refs/tags/a$version.tar.gz"
