@@ -4,12 +4,13 @@
 name=wireguard
 version=1.0.20210914
 release=1
+_name=wireguard-tools
 
-source="https://git.zx2c4.com/${pkgname}/snapshot/${name}-${version}.tar.xz"
+source="https://git.zx2c4.com/${_name}/snapshot/${_name}-${version}.tar.xz"
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd $_name-$version
 	find contrib/ -name '.gitignore' -delete
 	make -C src/
 
