@@ -13,6 +13,7 @@ d:mythbackend-boot
 d:vsftpd-boot
 d:openvpn-daemon
 d:dnsmasq-boot
+d:wireguard-boot
 d:mariadb-boot
 d:fcron-boot
 d:iptables-boot
@@ -39,6 +40,8 @@ f:49cbdfcb3bffaaaab672af8a625ad999:vsftpd-boot/spkgbuild
 f:4227795b60e84046b8270970b78483c3:openvpn-daemon/spkgbuild
 f:9c970cf44a19802602172babeaf0f012:dnsmasq-boot/CHANGELOG
 f:9f47f7d02ac3f08b064e29b200664d42:dnsmasq-boot/spkgbuild
+f:16165f16ab9f9436511f0c911330cec9:wireguard-boot/CHANGELOG
+f:54609e7e543763add17070fb60a4997b:wireguard-boot/spkgbuild
 f:a2ea82d689859fe3b0e8e9502a975847:mariadb-boot/spkgbuild.save
 f:6bf0b890e5b02710f64f9e02d64b66c4:mariadb-boot/spkgbuild
 f:8faa8127e9680fd207bac42615322d52:fcron-boot/spkgbuild.save

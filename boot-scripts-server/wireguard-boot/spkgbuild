@@ -1,0 +1,15 @@
+# description : boot script for noip
+# depends :
+
+name=wireguard-boot
+version=2.1.9
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-wireguard-boot
+
+}
