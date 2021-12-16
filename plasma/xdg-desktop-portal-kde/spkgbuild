@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kirigami2 plasma-framework plasma-wayland-protocols
 
 name=xdg-desktop-portal-kde
 version=5.23.4

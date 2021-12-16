@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kactivities kactivities-stats kcmutils kdeclarative kdeconnect-kde ki18n kirigami2 kwayland plasma-framework plasma-wayland-session plasma-workspace 
 
 name=plasma-nano
 version=5.23.4

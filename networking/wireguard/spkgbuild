@@ -15,7 +15,7 @@ build() {
 	make -C src/
 
 	make -C src/ \
-		DESTDIR="${pkgdir}/" \
+		DESTDIR="${PKG}/" \
 		WITH_BASHCOMPLETION=yes \
                 WITH_WGQUICK=yes \
                 WITH_SYSTEMDUNITS=yes \

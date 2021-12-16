@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps knewstuff systemsettings kdoctools
 
 name=sddm-kcm
 version=5.23.4
