@@ -6,7 +6,10 @@ version=1.0.20210914
 release=1
 _name=wireguard-tools
 
-source="https://git.zx2c4.com/${_name}/snapshot/${_name}-${version}.tar.xz"
+source="https://git.zx2c4.com/${_name}/snapshot/${_name}-${version}.tar.xz
+	wg0.conf"
+backup="etc/wireguard/wg0.conf"
+
 options="!checksum"
 
 build() {
@@ -23,4 +26,6 @@ build() {
 
 	install -d -m0755 "${PKG}"/usr/share/${name}/
 	cp -r contrib/ $PKG/usr/share/$name/examples/
+	mkdir -pv $PKG/etc/wireguard
+	install -Dm644 $SRC/wg0.conf $PKG/etc/wireguard/wg0.conf
 }
