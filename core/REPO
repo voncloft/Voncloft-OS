@@ -634,9 +634,9 @@ f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
 f:7977cc81f2869ac5f28c93c4ffc83348:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
-f:215fbe384ed68bb8868d6008dbf103bd:dbus/CHANGELOG
+f:1e0c89eb29dca69de5759ba8687706ed:dbus/CHANGELOG
 f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
-f:d174def107bf2b3256200abed72fd569:dbus/spkgbuild
+f:758719d32914845bfc9b73e14df0053f:dbus/spkgbuild
 f:b550c6ee4e08df2a6442b033af6f1b35:readline/CHANGELOG
 f:3b28d35755182c05d2ed861bdee7d956:readline/spkgbuild
 f:8e60e9dec182e6fb2bb05c42c42a5afd:xmodmap/spkgbuild
@@ -679,10 +679,10 @@ f:8e0c7a0c5d800682044530913ab651e0:lz4/CHANGELOG
 f:bf4966e57ab076679483da59bebaa795:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:59937092d0ccd19d1109530b11b9ae80:nss/CHANGELOG
+f:689706531676b338643e39292a9c9496:nss/CHANGELOG
 f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:5f6e09e137db3369be81358f689ac8ac:nss/spkgbuild
+f:3357a8ff9df8e5f70ed4f4785976a36c:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
 f:aab15903c835642081bbaf4c9aeec8a7:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
@@ -719,8 +719,8 @@ f:87757894337d0b8428d282d1fb359c16:nnn/spkgbuild
 f:66b537f2a21a9cfeb43122bec0f699b8:gnupg/CHANGELOG
 f:5081d01f155e5518c61f03e1c5b31bcb:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:10dddb5af99e5a406095ade16310253a:pipewire/CHANGELOG
-f:d79f1f15c1ce20269be9f7faca7e8a01:pipewire/spkgbuild
+f:565533277ac9e37073ebc3233ae9b642:pipewire/CHANGELOG
+f:2d1c9149d6c51050cbeea0f76bf4dbbc:pipewire/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
 f:966019be9bdb1097a5095eb9ae1d6c39:foltotar/spkgbuild
 f:d1079a56828cc16c17afc129665bc01b:pciutils/readme
@@ -1265,8 +1265,8 @@ f:0775823d8fe2187d756917576e08a71b:arc-gtk-theme/spkgbuild
 f:d9968d39b792248b176fd0642e6ead3b:cabextract/spkgbuild
 f:acec581cc2cea1a22a96ce28cfe9bbbe:flac/spkgbuild
 f:a91f088bed8d38c7267a1430b093ecca:xvinfo/spkgbuild
-f:4206c9599df4039fee60b453d8066a15:dkms/CHANGELOG
-f:c736f75ceca3bbc1a24023a118044923:dkms/spkgbuild
+f:27709c76f222a5172b37c3d0c2746b63:dkms/CHANGELOG
+f:53dcbc3ed98fce2628f4bc9a74e19769:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
 f:8e8a437236bdeebcbcfb3f631d095501:gsettings-desktop-schemas/spkgbuild
 f:7220efb449a3e7bf49d90048bab15a29:ethtool/spkgbuild
@@ -1394,5 +1394,5 @@ f:6d0e2ee67d073419576701c5e2f535b0:unrar/spkgbuild
 f:868548231e6537fa8ceb683468c679f3:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:05302a2404668af4cb0a89b5aa80fd5b:hugo/CHANGELOG
-f:0fef35c76ffb528a079b0e2cf3995faa:hugo/spkgbuild
+f:e77a051c08d1d710ad1a99bb64287168:hugo/CHANGELOG
+f:8c4aae82ca351e001cc7ddd406a2867b:hugo/spkgbuild

@@ -2,10 +2,10 @@
 # depends : python-six
 
 name=python-utils
-version=2.5.6
+version=2.6.0
 release=1
 
-source="https://pypi.org/packages/source/p/python-utils/python-utils-2.5.6.tar.gz"
+source="https://pypi.org/packages/source/p/python-utils/python-utils-2.6.0.tar.gz"
 options="!checksum"
 
 build() {
