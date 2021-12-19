@@ -7,12 +7,13 @@ options="!checksum"
 
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
+	https://raw.githubusercontent.com/archlinux/svntogit-community/packages/firefox-developer-edition/trunk/add-missing-stub-for-wl_proxy_marshal_flags.patch
 	$name.desktop"
 
 build() {
 	INITDIR=$PWD
-
 	cd $name-${version:0:4}
+	patch -Np1 -i $SRC/add-missing-stub-for-wl_proxy_marshal_flags.patch
 
 cat <<- EOF > .mozconfig
 	mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-shared
@@ -44,13 +45,23 @@ cat <<- EOF > .mozconfig
 	ac_add_options --without-wasm-sandboxed-libraries
 EOF
 
-	export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
-	export MACH_USE_SYSTEM_PYTHON=1
-	export MOZBUILD_STATE_PATH=${PWD}/mozbuild
-	export CARGO_HOME=$INITDIR
+	export MOZ_NOSPAM=1
+  	export MOZBUILD_STATE_PATH="$SRC/mozbuild"
+  	#export MOZ_ENABLE_FULL_SYMBOLS=1
+  	export MACH_USE_SYSTEM_PYTHON=1
 
-	SHELL=/bin/sh ./mach build
-	SHELL=/bin/sh DESTDIR=$PKG ./mach install
+	./mach build
+	DESTDIR="$PKG" ./mach install
+	
+
+
+	#export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
+	#export MACH_USE_SYSTEM_PYTHON=1
+	#export MOZBUILD_STATE_PATH=${PWD}/mozbuild
+	#export CARGO_HOME=$INITDIR
+
+	#SHELL=/bin/sh ./mach build
+	#SHELL=/bin/sh DESTDIR=$PKG ./mach install
 
 	mkdir -pv    $PKG/usr/lib/mozilla/plugins
 	ln    -sfv   ../../mozilla/plugins $PKG/usr/lib/$name/browser
