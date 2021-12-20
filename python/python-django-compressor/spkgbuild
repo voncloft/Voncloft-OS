@@ -2,10 +2,10 @@
 # depends : python-django-appconf python-rcssmin python-rjsmin
 
 name=python-django-compressor
-version=3.0
+version=3.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/d/django_compressor/django_compressor-3.0.tar.gz"
+source="https://files.pythonhosted.org/packages/source/d/django_compressor/django_compressor-3.1.tar.gz"
 options="!checksum"
 
 build() {
