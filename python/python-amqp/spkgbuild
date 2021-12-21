@@ -2,7 +2,7 @@
 # depends : python-vine
 
 name=python-amqp
-version=5.0.8
+version=5.0.9
 release=1
 
 source="https://github.com/celery/py-amqp/archive/refs/tags/v$version.tar.gz"

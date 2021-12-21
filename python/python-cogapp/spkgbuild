@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-cogapp
-version=3.2.0
+version=3.3.0
 release=5
 
-source="https://pypi.io/packages/source/c/cogapp/cogapp-3.2.0.tar.gz"
+source="https://pypi.io/packages/source/c/cogapp/cogapp-3.3.0.tar.gz"
 options="!checksum"
 
 build() {

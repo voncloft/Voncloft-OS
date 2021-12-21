@@ -2,10 +2,10 @@
 # depends : python-cryptography python-pyopenssl python-setuptools
 
 name=python-josepy
-version=1.10.0
+version=1.11.0
 release=1
 
-source="https://pypi.io/packages/source/j/josepy/josepy-1.10.0.tar.gz"
+source="https://pypi.io/packages/source/j/josepy/josepy-1.11.0.tar.gz"
 options="!checksum"
 
 build() {
