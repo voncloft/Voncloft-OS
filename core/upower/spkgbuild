@@ -4,7 +4,8 @@
 name=upower
 version=0.99.13
 release=1
-source="git+https://gitlab.freedesktop.org/upower/upower.git#commit=0787787f863fe34531ee2670a9277e2b327a3b42"
+
+source="https://gitlab.freedesktop.org/upower/upower/uploads/177df5b9f9b76f25a2ad9da41aa0c1fa/$name-$version.tar.xz"
 
 build() {
 	cd $name-$version
