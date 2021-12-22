@@ -56,3 +56,44 @@ sed -i -e "s/version=5.0.0/version=5.1.0/g" python/python-ujson/spkgbuild
 changelog "python/python-ujson/spkgbuild" "Upgraded from version 5.0.0 to version 5.1.0"
 sed -i -e "s/version=2.4.51/version=2.4.52/g" server/httpd/spkgbuild
 changelog "server/httpd/spkgbuild" "Upgraded from version 2.4.51 to version 2.4.52"
+sed -i -e "s/version=2.3.3/version=2.3.4/g" core/gnupg/spkgbuild
+changelog "core/gnupg/spkgbuild" "Upgraded from version 2.3.3 to version 2.3.4"
+sed -i -e "s/version=2.9.2/version=2.9.3/g" core/icewm/spkgbuild
+changelog "core/icewm/spkgbuild" "Upgraded from version 2.9.2 to version 2.9.3"
+sed -i -e "s/version=1.5.0/version=1.5.1/g" core/zstd/spkgbuild
+changelog "core/zstd/spkgbuild" "Upgraded from version 1.5.0 to version 1.5.1"
+sed -i -e "s/version=1.1.1rc1/version=1.1.1rc2/g" extra/solaar/spkgbuild
+changelog "extra/solaar/spkgbuild" "Upgraded from version 1.1.1rc1 to version 1.1.1rc2"
+sed -i -e "s/version=96.0b2/version=96.0b3/g" networking/thunderbird/spkgbuild
+changelog "networking/thunderbird/spkgbuild" "Upgraded from version 96.0b2 to version 96.0b3"
+sed -i -e "s,https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-2.44.tar.gz,https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-2.45.tar.gz,g" perl/perl-alien-build/spkgbuild
+sed -i -e "s/version=2.44/version=2.45/g" perl/perl-alien-build/spkgbuild
+changelog "perl/perl-alien-build/spkgbuild" "Upgraded from version 2.44 to version 2.45"
+sed -i -e "s,https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.21.tar.gz,https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.22.tar.gz,g" perl/perl-mime-types/spkgbuild
+sed -i -e "s/version=2.21/version=2.22/g" perl/perl-mime-types/spkgbuild
+changelog "perl/perl-mime-types/spkgbuild" "Upgraded from version 2.21 to version 2.22"
+sed -i -e "s,https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.32.tar.gz,https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.33.tar.gz,g" perl/perl-net-dns/spkgbuild
+sed -i -e "s/version=1.32/version=1.33/g" perl/perl-net-dns/spkgbuild
+changelog "perl/perl-net-dns/spkgbuild" "Upgraded from version 1.32 to version 1.33"
+sed -i -e "s,https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/-0.007.tar.gz,https://search.cpan.org/CPAN/authors/id/L/LE/LEONT/-0.008.tar.gz,g" perl/perl-perlio-utf8-strict/spkgbuild
+sed -i -e "s/version=0.007/version=0.008/g" perl/perl-perlio-utf8-strict/spkgbuild
+changelog "perl/perl-perlio-utf8-strict/spkgbuild" "Upgraded from version 0.007 to version 0.008"
+sed -i -e "s/version=2.0.0/version=2.0.1/g" python/python-aioredis/spkgbuild
+changelog "python/python-aioredis/spkgbuild" "Upgraded from version 2.0.0 to version 2.0.1"
+sed -i -e "s/version=1.20.25/version=1.20.26/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.20.25 to version 1.20.26"
+sed -i -e "s/version=1.23.25/version=1.23.26/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.23.25 to version 1.23.26"
+sed -i -e "s/version=4.2.4/version=5.0.0/g" python/python-cachetools/spkgbuild
+changelog "python/python-cachetools/spkgbuild" "Upgraded from version 4.2.4 to version 5.0.0"
+sed -i -e "s,https://pypi.org/packages/source/f/frozendict/frozendict-2.1.1.tar.gz,https://pypi.org/packages/source/f/frozendict/frozendict-2.1.2.tar.gz,g" python/python-frozendict/spkgbuild
+sed -i -e "s/version=2.1.1/version=2.1.2/g" python/python-frozendict/spkgbuild
+changelog "python/python-frozendict/spkgbuild" "Upgraded from version 2.1.1 to version 2.1.2"
+sed -i -e "s/version=3.6.5/version=3.6.6/g" python/python-nltk/spkgbuild
+changelog "python/python-nltk/spkgbuild" "Upgraded from version 3.6.5 to version 3.6.6"
+sed -i -e "s/version=60.0.1/version=60.0.3/g" python/python-setuptools/spkgbuild
+changelog "python/python-setuptools/spkgbuild" "Upgraded from version 60.0.1 to version 60.0.3"
+sed -i -e "s/version=0.37.10/version=0.38.1/g" python/python-sqlalchemy-utils/spkgbuild
+changelog "python/python-sqlalchemy-utils/spkgbuild" "Upgraded from version 0.37.10 to version 0.38.1"
+sed -i -e "s/version=2.2.33/version=2.3.0/g" ruby-gems/ruby-bundler/spkgbuild
+changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.2.33 to version 2.3.0"
