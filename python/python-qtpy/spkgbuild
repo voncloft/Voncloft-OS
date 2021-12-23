@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-qtpy
-version=1.11.3
+version=2.0.0
 release=5
 
 source="https://github.com/spyder-ide/qtpy/archive/refs/tags/v$version.tar.gz"

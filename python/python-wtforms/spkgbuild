@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-wtforms
-version=3.0.0
+version=3.0.1
 release=10
 
 source="https://github.com/wtforms/wtforms/archive/refs/tags/a$version.tar.gz"

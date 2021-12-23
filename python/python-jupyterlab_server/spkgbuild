@@ -2,10 +2,10 @@
 # depends : jupyter-server python-requests python-json5 python-babel
 
 name=python-jupyterlab_server
-version=2.9.0
+version=2.10.1
 release=1
 
-source="https://pypi.io/packages/source/j/jupyterlab_server/jupyterlab_server-2.9.0.tar.gz"
+source="https://pypi.io/packages/source/j/jupyterlab_server/jupyterlab_server-2.10.1.tar.gz"
 options="!checksum"
 
 build() {

@@ -2,10 +2,10 @@
 # depends : python python-docutils python-jinja python-sphinx
 
 name=python-sphinx-jinja
-version=1.1.1
+version=1.2.1
 release=3
 
-source="https://files.pythonhosted.org/packages/source/s/sphinx-jinja/sphinx-jinja-1.1.1.tar.gz"
+source="git+https://github.com/tardyp/sphinx-jinja.git?signed#tag="
 options="!checksum"
 
 build() {
