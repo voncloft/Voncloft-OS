@@ -2,10 +2,10 @@
 # depends : python
 
 name=python-tomlkit
-version=0.7.2
+version=0.8.0
 release=3
 
-source="https://files.pythonhosted.org/packages/source/t/tomlkit/tomlkit-0.7.2.tar.gz"
+source="https://files.pythonhosted.org/packages/source/t/tomlkit/tomlkit-0.8.0.tar.gz"
 options="!checksum"
 
 build() {

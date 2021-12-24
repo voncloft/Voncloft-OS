@@ -1,10 +1,10 @@
 # depends : perl-socket6
 
 name=perl-io-socket-inet6
-version=2.72
+version=2.73
 release=7
 
-source="https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/IO-Socket-INET6-2.72.tar.gz"
+source="https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/IO-Socket-INET6-2.73.tar.gz"
 options="!checksum"
 
 build() {
