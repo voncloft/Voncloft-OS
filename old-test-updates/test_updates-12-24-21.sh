@@ -21,3 +21,5 @@ sed -i -e "s/version=0.37.0/version=0.38.1/g" python/python-zeroconf/spkgbuild
 changelog "python/python-zeroconf/spkgbuild" "Upgraded from version 0.37.0 to version 0.38.1"
 sed -i -e "s/version=2.3.1/version=2.3.3/g" ruby-gems/ruby-bundler/spkgbuild
 changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.3.1 to version 2.3.3"
+sed -i -e "s/version=96.0b1/version=96.0b9/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 96.0b1 to version 96.0b9"

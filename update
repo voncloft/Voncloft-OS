@@ -421,8 +421,12 @@ alerts_and_logs()
 	title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
 	if [ ! -z $count ];
 	then
-        	mailme voncloft@gmail.com "$words" "$title"
-        	mailme phone@vtext.com "Updated packages: $count" "Upgrade Report"
+		recipients=$(cat < /etc/scratchpkg.email)
+		format_date=$(date +"%Y")/$(date +"%b")
+		email_link="http://voncloft.dnsfor.me/updated/"$format_date"/reports/repository_upgrade_report-"$(date +"%m-%d-%y").html
+	 	mailme voncloft@gmail.com "$words" "$title"
+        	mailme $recipients "Updated packages: $count <br> $email_link" "Upgrade Report"
+		#mailme $recipients" "$email_link" "$title"
         	#missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
         	#mailme 2606159678@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
         	#echo "<br><br>Total Missing: $missing_packages" >> missing.txt
@@ -544,7 +548,9 @@ check_handles()
 }
 test_prog()
 {
-	echo "1 is " $1
+	#recipients=$(cat < /etc/scratchpkg.email)
+	#mailme $recipients "test" "test2"
+	echo $(date +"%Y")/$(date +"%b")
 }
 edit_program()
 {
