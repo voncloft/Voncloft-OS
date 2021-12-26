@@ -2,10 +2,10 @@
 # depends : python-attrs python-colorama python-pyperclip python-wcwidth
 
 name=python-cmd2
-version=2.2.0
+version=2.3.3
 release=1
 
-source="https://pypi.io/packages/source/c/cmd2/cmd2-2.1.2.tar.gz"
+source="https://pypi.io/packages/source/c/cmd2/cmd2-2.3.3.tar.gz"
 options="!checksum"
 
 build() {

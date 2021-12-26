@@ -2,10 +2,10 @@
 # depends : python-billiard python-click-didyoumean python-click-repl python-kombu
 
 name=python-celery
-version=5.2.0
+version=5.2.1
 release=1
 
-source="https://pypi.io/packages/source/c/celery/celery-5.1.2.tar.gz"
+source="https://pypi.io/packages/source/c/celery/celery-5.2.1.tar.gz"
 options="!checksum"
 
 build() {
