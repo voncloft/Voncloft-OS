@@ -16,3 +16,11 @@ sed -i -e "s/version=2021.03.28/version=2021.12.20/g" python/python-jaraco/spkgb
 changelog "python/python-jaraco/spkgbuild" "Upgraded from version 2021.03.28 to version 2021.12.20"
 sed -i -e "s/version=1.29.1/version=1.30.0/g" ruby-gems/ruby-tins/spkgbuild
 changelog "ruby-gems/ruby-tins/spkgbuild" "Upgraded from version 1.29.1 to version 1.30.0"
+sed -i -e "s/version=0.3.1/version=0.4.0/g" kf5/kalendar/spkgbuild
+changelog "kf5/kalendar/spkgbuild" "Upgraded from version 0.3.1 to version 0.4.0"
+sed -i -e "s/version=2.2.6/version=2.2.7/g" libs/xapp/spkgbuild
+changelog "libs/xapp/spkgbuild" "Upgraded from version 2.2.6 to version 2.2.7"
+sed -i -e "s/version=10.0.0/version=11.0.0/g" python/python-faker/spkgbuild
+changelog "python/python-faker/spkgbuild" "Upgraded from version 10.0.0 to version 11.0.0"
+sed -i -e "s/version=0.7/version=1.0.0/g" python/python-kikit/spkgbuild
+changelog "python/python-kikit/spkgbuild" "Upgraded from version 0.7 to version 1.0.0"
