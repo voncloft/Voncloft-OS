@@ -2,7 +2,7 @@
 # depends	: gc openssl ncurses imlib2
 
 name=w3m
-version=0.5.3
+version=0.5.3.git20210102_6
 release=3
 source="https://downloads.sourceforge.net/w3m/$name-$version.tar.gz
 	fix-compile.patch"

@@ -1193,8 +1193,8 @@ f:a9c5426cedad28b06c9b1002fcc35bc4:m4/CHANGELOG
 f:ed0d9386fc726acbf3706c5e86a5d28c:m4/spkgbuild
 f:35878c643cf80467d52bdaa655de2429:tmux/CHANGELOG
 f:8be4972dbadc2b622271035369986f74:tmux/spkgbuild
-f:b626c8249fcfea792b4bd1b331a7e564:busybox/CHANGELOG
-f:78f846e9ffb601e0e8e57f7d28b74356:busybox/spkgbuild
+f:5662abcf4941bf6ca25c4bed7d04d31c:busybox/CHANGELOG
+f:25aaa77aa96f179146b5966b43d2a863:busybox/spkgbuild
 f:45de326e439ed1393f20b9cd5c55fa22:busybox/config
 f:1fc4241c3ad27cffdc9a26a571744ed8:tzdata/spkgbuild
 f:83c2b00728b23c48a939c762fb0c6c3d:time/spkgbuild
@@ -1214,8 +1214,9 @@ f:710ac7970f5b4c963f70c15a86cb3b3d:transmission-cli/pre-install.sh
 f:aa6a059e3d70db2211067900501a7619:transmission-cli/mkdirs
 f:a61224330b7dd82e6f2b8e1bc7ad3630:transmission-cli/spkgbuild
 f:b4ae39ab442b1a522f20c67efb2ccf9f:elinks/spkgbuild
+f:109a7491ac9154e024670350d312141f:w3m/CHANGELOG
 f:1a2eedaba387dee4f6db5048015777dc:w3m/fix-compile.patch
-f:3477c451be3304116ecd71ce41f7cff9:w3m/spkgbuild
+f:4aaf9f9419759769e61930a718fd616e:w3m/spkgbuild
 f:58039773ca1c07a326b84b3694112903:logrotate/CHANGELOG
 f:94dae4d3eded2fab9ae879533d3680db:logrotate/logrotate.conf
 f:70edb55e673773ddb6695ad9dde4f74e:logrotate/spkgbuild

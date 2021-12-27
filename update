@@ -21,7 +21,7 @@ get_url()
 	url=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
 }
 fetch() {
-	curl -f "$url" -o index.html -s
+	curl -f "$url" -o index.html -s --max-time 5
 }
 alter_per_url() {
         case $url in

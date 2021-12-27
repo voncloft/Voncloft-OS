@@ -1,0 +1,36 @@
+
+05<br>
+<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>
+
+05<br>
+
+05<br>
+
+05<br>
+
+05<br>
+
+05<br>
+
+06<br>
+
+06<br>
+
+06<br>
+
+06<br>
+
+06<br>
+sed -i -e "s/version=1.34.1/version=1.35.0/g" core/busybox/spkgbuild <br>
+sed -i -e "s,https://downloads.sourceforge.net/w3m/$name-$version.tar.gz,git+https://salsa.debian.org/debian/w3m.git#commit=,g" core/w3m/spkgbuild <br>
+sed -i -e "s/version=0.5.3/version=0.5.3.git20210102_6/g" core/w3m/spkgbuild <br>
+sed -i -e "s/version=0.9.74/version=0.9.75/g" libs/libmicrohttpd/spkgbuild <br>
+sed -i -e "s/version=4.17.2/version=4.17.3/g" libs/libxfce4ui/spkgbuild <br>
+sed -i -e "s/version=2021.12.25/version=2021.12.27/g" networking/yt-dlp/spkgbuild <br>
+sed -i -e "s/version=2.1.0rc1/version=2.1.1/g" python/python-gmpy2/spkgbuild <br>
+sed -i -e "s,/j/jaraco.text/jaraco.text-.tar.gz,/j/jaraco.text/jaraco.text-.tar.gz,g" python/python-jaraco/spkgbuild <br>
+sed -i -e "s/version=2021.03.28/version=2021.12.20/g" python/python-jaraco/spkgbuild <br>
+sed -i -e "s/version=1.29.1/version=1.30.0/g" ruby-gems/ruby-tins/spkgbuild <br>
+<br>
+Packages upgraded: 8<br>
+
