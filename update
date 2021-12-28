@@ -566,8 +566,8 @@ apply_test_updates()
 {
 	if [ -f test_updates.sh ];then
 		sh test_updates.sh
-		mkdir -pv old-test-updates/$(date +"%Y")/$(date +"%b")
-		cat test_updates.sh >> old-test-updates/$(date +"%Y")/$(date +"%b")/test_updates-$(date +"%m-%d-%y").sh
+		mkdir -pv logs/old-test-updates/$(date +"%Y")/$(date +"%b")
+		cat test_updates.sh >> logs/old-test-updates/$(date +"%Y")/$(date +"%b")/applied_updates-$(date +"%m-%d-%y").sh
 		rm test_updates.sh
 		echo "Test updates applied"
 		if [ -f index.html ];then
