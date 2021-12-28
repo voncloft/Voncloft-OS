@@ -550,7 +550,7 @@ test_prog()
 {
 	#recipients=$(cat < /etc/scratchpkg.email)
 	#mailme $recipients "test" "test2"
-	echo $(date +"%Y")/$(date +"%b")
+	mkdir -pv $(date +"%Y")/$(date +"%b")
 }
 edit_program()
 {
@@ -566,7 +566,8 @@ apply_test_updates()
 {
 	if [ -f test_updates.sh ];then
 		sh test_updates.sh
-		cat test_updates.sh >> old-test-updates/test_updates-$(date +"%m-%d-%y").sh
+		mkdir -pv old-test-updates/$(date +"%Y")/$(date +"%b")
+		cat test_updates.sh >> old-test-updates/$(date +"%Y")/$(date +"%b")/test_updates-$(date +"%m-%d-%y").sh
 		rm test_updates.sh
 		echo "Test updates applied"
 		if [ -f index.html ];then
