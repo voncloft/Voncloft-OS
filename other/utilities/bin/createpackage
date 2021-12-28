@@ -4,14 +4,16 @@ echo "Name of package you would like to create"
 read name
 
 
-for dir in /Voncloft-OS/*/$name/; do
+for dir in /Voncloft-OS/REPOS/*/$name/; do
         if [[ -d $dir ]];
 	then
 		echo "Package Exists already"
 	else
 		echo "What is the repo name?"
 		read location
-		dirs=/Voncloft-OS/$location/
+		dirs=/Voncloft-OS/REPOS/$location/
+		changelog_path=$(echo $dirs | sed "s/\/Voncloft-OS\/REPOS\///g")$name/spkgbuild
+		echo $changelog_path
 		if [[ -d $dirs ]];
 		then
 			echo "Description of package"
@@ -55,11 +57,11 @@ for dir in /Voncloft-OS/*/$name/; do
 			echo -e "build() {" >> $dirs$name/spkgbuild
 			echo -e "\n}" >> $dirs$name/spkgbuild
 			echo "Package Created"
-			changelog "$name" "Initial creation of package in repo"
-			echo "Changelog Created"
-
 			nano $dirs$name/spkgbuild
 
+                        echo $changelog_path
+                        changelog "$changelog_path" "Initial creation of package in repo"
+                        echo "Changelog Created"
 
 			####add option to ask for configuration files####
 			
@@ -75,7 +77,7 @@ for dir in /Voncloft-OS/*/$name/; do
 				echo "Do you have another config file needed? <Y/N>"
 				read configs
                         done
-			echo $name >> /etc/checkrepo.conf
+			#echo $name >> /etc/checkrepo.conf
                         echo "Do you need any pre-install scripts? <Y/N>"
                         read pre_install
                         if [[ $pre_install == ["Yy"] ]];
@@ -91,7 +93,7 @@ for dir in /Voncloft-OS/*/$name/; do
                         	echo -e "#!/bin/sh\n" >> $dirs$name/post-install.sh
 				nano $dirs$name/post-install.sh
                         fi
-                        echo "Do you need any post-install scripts? <Y/N>"
+                        echo "Do you need any post-upgrade scripts? <Y/N>"
                         read post_upgrade
 
                         if [[ $post_upgrade == ["Yy"] ]];

@@ -44,7 +44,9 @@ _As of 12-01-2021_
 
 **SPECIAL FOLDERS:**
 - logs: whats been done to repo
-- OTHER: Misc junk
+- logs/YEAR: html layout of updates
+- logs/old-test-updates: applied updates after script has been ran
+- other: Misc junk
 - scripts: scripts I use and keep here for safe keeping
 - workbench: projects I untar and tar due to changes
 - working_on: get to it eventually, not as important as beta

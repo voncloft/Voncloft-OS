@@ -566,8 +566,8 @@ apply_test_updates()
 {
 	if [ -f test_updates.sh ];then
 		sh test_updates.sh
-		mkdir -pv logs/old-test-updates/$(date +"%Y")/$(date +"%b")
-		cat test_updates.sh >> logs/old-test-updates/$(date +"%Y")/$(date +"%b")/applied_updates-$(date +"%m-%d-%y").sh
+		mkdir -pv /Voncloft-OS/logs/old-test-updates/$(date +"%Y")/$(date +"%b")
+		cat test_updates.sh >> /Voncloft-OS/logs/old-test-updates/$(date +"%Y")/$(date +"%b")/applied_updates-$(date +"%m-%d-%y").sh
 		rm test_updates.sh
 		echo "Test updates applied"
 		if [ -f index.html ];then
@@ -659,7 +659,7 @@ DBLUE='\e[1;34;40m'
 CYAN='\e[0;36;40m'
 FRED='\e[5;31;40m'
 NC='\033[0m'
-cd /Voncloft-OS
+cd /Voncloft-OS/REPOS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
