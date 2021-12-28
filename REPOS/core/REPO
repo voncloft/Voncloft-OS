@@ -595,7 +595,6 @@ f:2d9a8748399fceb1175163578732cc85:fcron/post-install.sh
 f:6553bde2a4d3b29eeba69ecb5d7bceff:fcron/CHANGELOG
 f:2e4c0c1b4452c86be9d475471ac84a8c:fcron/post-upgrade.sh
 f:c74208c9099b486638c16cf4ccaf29a7:fcron/pre-install.sh
-f:af70865c0a0d3fcc377012155cc46cca:fcron/spkgbuild.save
 f:79908f33790e696da307ee4e52210a6e:fcron/run-parts
 f:a6d95e0dbc740bc7a4fc8fc600f27f3e:fcron/spkgbuild
 f:1f75f7a13435adab64ca48b6e8e84870:fcron/systab.orig
@@ -1014,7 +1013,6 @@ f:0991a6df360fea31353c4a8c1c8aac41:linux-router/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
 f:c98fc77ee026973b0e00a384253f3936:linux-router/spkgbuild
 f:99c17170a669e0c5d831170b8ca86586:linux-router/.config
-f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh.save
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
 f:ad497aff9b0466ede33894410c8f66db:acl/spkgbuild
@@ -1109,7 +1107,6 @@ f:8165593d775800d307fdaaefe7860445:xrefresh/spkgbuild
 f:286a34fae690eb366507213a5152aa79:gc/CHANGELOG
 f:ecd159406cdd8f3c4297b12030de4702:gc/spkgbuild
 f:f9ab58296386e235320bc1370ec230be:pango/spkgbuild
-f:3e6f4013fee1ca470b2d7d90bd3a9811:bash-completion/bashrc.save
 f:45f13b305d240b2a298e9d1a4353049e:bash-completion/CHANGELOG
 f:f1dd87922e8fddfe73ef20ae76c2f777:bash-completion/umask.sh
 f:fa6ce99e0329c7854e0a83d022da6fe3:bash-completion/readline.sh
@@ -1145,7 +1142,6 @@ f:cc0201a5d69b0722532d44c09e705f4b:xwd/CHANGELOG
 f:048079cdbce1a25bbb1461fe3c4a5d05:xwd/spkgbuild
 f:2385e0ec7652d6932b39ad28a4f884fa:dosfstools/readme
 f:445dce537f2c98b17f721798fba57745:dosfstools/CHANGELOG
-f:c5cca9015c9380411697e6d5f0c66425:dosfstools/spkgbuild.save
 f:c5cca9015c9380411697e6d5f0c66425:dosfstools/spkgbuild
 f:3f9b3377f08982aee0110e07eac264ad:gobject-introspection/spkgbuild
 f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
