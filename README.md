@@ -31,7 +31,7 @@ _As of 12-01-2021_
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
-- Packages are checked via the "updates.sh" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
+- Packages are checked via the "updates" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
 - Updates can be viewed here: http://voncloft.dnsfor.me/updated
 
 **Workon next:**
