@@ -13,7 +13,7 @@ for dir in /Voncloft-OS/REPOS/*/$name/; do
 		read location
 		dirs=/Voncloft-OS/REPOS/$location/
 		changelog_path=$(echo $dirs | sed "s/\/Voncloft-OS\/REPOS\///g")$name/spkgbuild
-		echo $changelog_path
+		#echo $changelog_path
 		if [[ -d $dirs ]];
 		then
 			echo "Description of package"
