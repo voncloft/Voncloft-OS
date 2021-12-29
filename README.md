@@ -31,6 +31,7 @@ _As of 12-01-2021_
 - perl - might have errors will fix as a need be basis (again your own risk - I can be lazy)
 - chessx - needs testing and its dependencies
 - scid_vs_pc - needs testing
+
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
 
