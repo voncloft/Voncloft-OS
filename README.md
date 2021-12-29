@@ -21,7 +21,7 @@ _As of 12-01-2021_
 - work on all universal user passes on vpn
 - need to fix lxdm pamd.d file
 - Work on **Needs Testing**
-- Work o n **bugs**
+- Work on **bugs**
 - Work on **Programs to be added in the future**
 
 **Needs Testing:**
