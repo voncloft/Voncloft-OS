@@ -4,13 +4,10 @@ A Linux From Scratch Repository that I self maintain.
 
 ## (You are on your own if you choose to use my repository)
 
-
 _As of 12-01-2021_
 
 **Update:**
-- Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
-- work on all universal user passes on vpn
-- need to fix lxdm pamd.d file
+- None
 
 **Needs Testing:**
 - qtcreator
@@ -37,6 +34,11 @@ _As of 12-01-2021_
 **Workon next:**
 - PHP: needs to not overwrite httpd existing config files upon upgrading
 - Hollywood: dependencies and install script
+- Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
+- work on all universal user passes on vpn
+- need to fix lxdm pamd.d file
+- KDEVELOP
+- Work on **Needs Testing**
 
 **bugs:**
 - mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
