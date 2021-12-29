@@ -10,7 +10,7 @@ source="https://www.lua.org/ftp/lua-$version.tar.gz
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd lua-$version
 	cat <<-EOF > lua.pc
 	V=5.2
 	R=$version
