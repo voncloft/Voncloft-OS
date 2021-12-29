@@ -52,7 +52,7 @@ for dir in /Voncloft-OS/REPOS/*/$name/; do
 			echo -e "release=$release" >> $dirs$name/spkgbuild
 			echo -e "" >> $dirs$name/spkgbuild
 			echo -e 'source="'$finalsource'"' >> $dirs$name/spkgbuild
-			echo -e 'options="!checksum"' >> $dirs$name/spkgbuild
+			#echo -e 'options="!checksum"' >> $dirs$name/spkgbuild
 			echo -e "" >> $dirs$name/spkgbuild
 			echo -e "build() {" >> $dirs$name/spkgbuild
 			echo -e "\n}" >> $dirs$name/spkgbuild
