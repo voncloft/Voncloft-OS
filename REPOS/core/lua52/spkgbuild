@@ -1,0 +1,58 @@
+# description : remote addon for vlc
+# depends : 
+
+name=lua52
+version=5.2.4
+release=1
+
+source="https://www.lua.org/ftp/lua-$version.tar.gz
+	https://www.linuxfromscratch.org/patches/blfs/svn/lua-$version-shared_library-1.patch"
+options="!checksum"
+
+build() {
+	cd $name-$version
+	cat <<-EOF > lua.pc
+	V=5.2
+	R=$version
+
+	prefix=/usr
+	INSTALL_BIN=${prefix}/bin
+	INSTALL_INC=${prefix}/include/lua5.2
+	INSTALL_LIB=${prefix}/lib
+	INSTALL_MAN=${prefix}/share/man/man1
+	INSTALL_LMOD=${prefix}/share/lua/${V}
+	INSTALL_CMOD=${prefix}/lib/lua/${V}
+	exec_prefix=${prefix}
+	libdir=${exec_prefix}/lib
+	includedir=${prefix}/include/lua5.2
+
+	Name: Lua
+	Description: An Extensible Extension Language
+	Version: ${R}
+	Requires:
+	Libs: -L${libdir} -llua5.2 -lm -ldl
+	Cflags: -I${includedir}
+	EOF
+
+	patch -Np1 -i $SRC/lua-$version-shared_library-1.patch
+	sed -i '/#define LUA_ROOT/s:/usr/local/:/usr/:' src/luaconf.h
+
+	sed -r -e '/^LUA_(SO|A|T)=/ s/lua/lua5.2/' \
+       		-e '/^LUAC_T=/ s/luac/luac5.2/'     \
+       		-i src/Makefile
+
+	make MYCFLAGS="-fPIC" linux
+
+	make TO_BIN='lua5.2 luac5.2'                     \
+     	TO_LIB="liblua5.2.so liblua5.2.so.5.2 liblua5.2.so.$version" \
+     	INSTALL_DATA="cp -d"                        \
+     	INSTALL_TOP=$PKG/install/usr                \
+     	INSTALL_INC=$PKG/install/usr/include/lua5.2 \
+     	INSTALL_MAN=$PKG/install/usr/share/man/man1
+	install
+
+	install -Dm644 lua.pc $PKG/usr/lib/pkgconfig/lua52.pc
+
+	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.5.2
+	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.$version
+}
