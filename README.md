@@ -9,6 +9,20 @@ _As of 12-01-2021_
 **Update:**
 - None
 
+**Updates:**
+- Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
+- Packages are checked via the "updates" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
+- Updates can be viewed here: http://voncloft.dnsfor.me/updated
+
+**Work on next:**
+- PHP: needs to not overwrite httpd existing config files upon upgrading
+- Hollywood: dependencies and install script
+- Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
+- work on all universal user passes on vpn
+- need to fix lxdm pamd.d file
+- Work on **Needs Testing**
+- Work on **Programs to be added in the future**
+
 **Needs Testing:**
 - qtcreator
 - postfix
@@ -17,33 +31,14 @@ _As of 12-01-2021_
 - perl - might have errors will fix as a need be basis (again your own risk - I can be lazy)
 - chessx - needs testing and its dependencies
 - scid_vs_pc - needs testing
+**bugs:**
+- mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
 
 **Programs to be added in the future:**
 - KDEVELOP
 
-**Other:**
-- Everything in workbench is files that continuously get changed and tarballed for later
-- Everything in working_on/sort_later needs to be tested.
-- Will use a spare PC to test everything on or a virtual box
-
-**Updates:**
-- Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
-- Packages are checked via the "updates" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
-- Updates can be viewed here: http://voncloft.dnsfor.me/updated
-
-**Workon next:**
-- PHP: needs to not overwrite httpd existing config files upon upgrading
-- Hollywood: dependencies and install script
-- Cinnamon has been put on hold as of 4/5 - due to systemd dependencies, which I am doubting whether or not to use
-- work on all universal user passes on vpn
-- need to fix lxdm pamd.d file
-- KDEVELOP
-- Work on **Needs Testing**
-
-**bugs:**
-- mesa fails to build opengl drivers for virtualbox, building by hand....does don't know why
-
 **SPECIAL FOLDERS:**
+- REPOS: all packages categorized for my OS
 - logs: whats been done to repo
 - logs/YEAR: html layout of updates
 - logs/old-test-updates: applied updates after script has been ran
@@ -51,3 +46,8 @@ _As of 12-01-2021_
 - scripts: scripts I use and keep here for safe keeping
 - workbench: projects I untar and tar due to changes
 - working_on: get to it eventually, not as important as beta
+
+**Other:**
+- Everything in workbench is files that continuously get changed and tarballed for later
+- Everything in working_on/sort_later needs to be tested.
+- Will use a spare PC to test everything on or a virtual box
