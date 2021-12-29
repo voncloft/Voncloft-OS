@@ -28,7 +28,6 @@ _As of 12-01-2021_
 - Everything in workbench is files that continuously get changed and tarballed for later
 - Everything in working_on/sort_later needs to be tested.
 - Will use a spare PC to test everything on or a virtual box
-- Template folder is a base for all packages as of 3/16/21
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
