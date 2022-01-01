@@ -36,3 +36,27 @@ sed -i -e "s/version=20.10.0/version=20.11.2/g" python/python-virtualenv/spkgbui
 changelog "python/python-virtualenv/spkgbuild" "Upgraded from version 20.10.0 to version 20.11.2"
 sed -i -e "s/version=2.3.3/version=2.3.4/g" ruby-gems/ruby-bundler/spkgbuild
 changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.3.3 to version 2.3.4"
+sed -i -e "s/version=1.4.6/version=1.4.7/g" cinnamon/blueberry/spkgbuild
+changelog "cinnamon/blueberry/spkgbuild" "Upgraded from version 1.4.6 to version 1.4.7"
+sed -i -e "s/version=5.2.6/version=5.2.7/g" cinnamon/cinnamon/spkgbuild
+changelog "cinnamon/cinnamon/spkgbuild" "Upgraded from version 5.2.6 to version 5.2.7"
+sed -i -e "s/version=5.2.1/version=5.2.2/g" cinnamon/cinnamon-translations/spkgbuild
+changelog "cinnamon/cinnamon-translations/spkgbuild" "Upgraded from version 5.2.1 to version 5.2.2"
+sed -i -e "s/version=5.2.2/version=5.2.3/g" cinnamon/nemo/spkgbuild
+changelog "cinnamon/nemo/spkgbuild" "Upgraded from version 5.2.2 to version 5.2.3"
+sed -i -e "s/version=2.9.3/version=2.9.4/g" core/icewm/spkgbuild
+changelog "core/icewm/spkgbuild" "Upgraded from version 2.9.3 to version 2.9.4"
+sed -i -e "s/version=1.27/version=1.28/g" libs/pkcs11-helper/spkgbuild
+changelog "libs/pkcs11-helper/spkgbuild" "Upgraded from version 1.27 to version 1.28"
+sed -i -e "s/version=2.2.7/version=2.2.8/g" libs/xapp/spkgbuild
+changelog "libs/xapp/spkgbuild" "Upgraded from version 2.2.7 to version 2.2.8"
+sed -i -e "s/version=2.9.0/version=2.9.1/g" python/python-astroid/spkgbuild
+changelog "python/python-astroid/spkgbuild" "Upgraded from version 2.9.0 to version 2.9.1"
+sed -i -e "s/version=6.33.0/version=6.34.1/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.33.0 to version 6.34.1"
+sed -i -e "s/version=0.3.23/version=0.4.0/g" python/python-libcst/spkgbuild
+changelog "python/python-libcst/spkgbuild" "Upgraded from version 0.3.23 to version 0.4.0"
+sed -i -e "s/version=20.11.2/version=20.12.0/g" python/python-virtualenv/spkgbuild
+changelog "python/python-virtualenv/spkgbuild" "Upgraded from version 20.11.2 to version 20.12.0"
+sed -i -e "s/version=3.6.0/version=3.7.0/g" python/python-zipp/spkgbuild
+changelog "python/python-zipp/spkgbuild" "Upgraded from version 3.6.0 to version 3.7.0"

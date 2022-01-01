@@ -2,7 +2,7 @@
 # depends : bluez gnome-bluetooth python-dbus python-gobject3 python-setproctitle rfkill xapp
 
 name=blueberry
-version=1.4.6
+version=1.4.7
 release=1
 
 source="https://github.com/linuxmint/$name/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-typing_extensions python-typing_inspect python-yaml
 
 name=python-libcst
-version=0.3.23
+version=0.4.0
 release=1
 
 source="https://github.com/Instagram/LibCST/archive/refs/tags/v$version.tar.gz"
