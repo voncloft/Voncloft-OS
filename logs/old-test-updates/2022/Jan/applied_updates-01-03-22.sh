@@ -8,3 +8,5 @@ sed -i -e "s/version=2021.8.17/version=2022.01.02/g" python/python-sphinx-inline
 changelog "python/python-sphinx-inline-tabs/spkgbuild" "Upgraded from version 2021.8.17 to version 2022.01.02"
 sed -i -e "s/version=20.12.1/version=20.13.0/g" python/python-virtualenv/spkgbuild
 changelog "python/python-virtualenv/spkgbuild" "Upgraded from version 20.12.1 to version 20.13.0"
+sed -i -e "s/version=21.1.2/version=21.1.3/g" xorg/xorg-server/spkgbuild
+changelog "xorg/xorg-server/spkgbuild" "Upgraded from version 21.1.2 to version 21.1.3"
