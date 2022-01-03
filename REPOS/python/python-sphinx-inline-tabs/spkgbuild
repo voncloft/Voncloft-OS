@@ -2,7 +2,7 @@
 # depends : python-sphinx
 
 name=python-sphinx-inline-tabs
-version=2021.8.17
+version=2022.01.02
 release=3
 
 source="https://github.com/pradyunsg/sphinx-inline-tabs/archive/refs/tags/$version.tar.gz"
