@@ -15,6 +15,7 @@ d:qbittorrent
 d:qt5
 d:qbittorrent-nox
 d:pavucontrol-qt
+d:signonqt5
 d:qtwebengine
 d:qt5-webkit
 d:appstream-qt
@@ -22,6 +23,7 @@ d:bluez-qt
 d:pcmanfm-qt
 d:qca
 d:qt5-webengine-widevine
+d:libaccounts-qt
 d:qtermwidget
 d:qt5-multimedia
 f:ee736b2805e6272b5aeee414dfa98a08:qt5-x11extras/CHANGELOG
@@ -54,6 +56,8 @@ f:b7c3ebd80624338b36f79875efb63ef1:qt5/spkgbuild
 f:1194a995c0966c0bf9beff2d21f82036:qbittorrent-nox/spkgbuild
 f:0349fa21fe504e33a2a9d3f6b2a4373e:pavucontrol-qt/CHANGELOG
 f:adee95f079d4dc5149b1272f8e888325:pavucontrol-qt/spkgbuild
+f:be98687918220f1d7fe4e56a339dd987:signonqt5/CHANGELOG
+f:0e18c371da2c746f7bcef0b4be4785cc:signonqt5/spkgbuild
 f:d8e3650dd0fca51128187d8bd8504786:qtwebengine/post-install.sh
 f:2eea2b35e5baeeeec473464cd46ee096:qtwebengine/CHANGELOG
 f:d8e3650dd0fca51128187d8bd8504786:qtwebengine/post-upgrade.sh
@@ -61,7 +65,7 @@ f:9aea1b15a7061ca7fc504dec279b3f62:qtwebengine/pre-install.sh
 f:b66dcfce3f9db5f02dfe358f96be091a:qtwebengine/spkgbuild
 f:9aea1b15a7061ca7fc504dec279b3f62:qtwebengine/pre-upgrade.sh
 f:293f9c2c0d7274e5c19775bc6f523aaa:qt5-webkit/spkgbuild
-f:d7284b387fc721b629ca03d33f06f695:appstream-qt/spkgbuild
+f:998623a3c1a69916606ac30e4a9fc499:appstream-qt/spkgbuild
 f:890d7803d8ddca53045a7794fa6f1293:bluez-qt/CHANGELOG
 f:915e0787301e21faa74850ef96f4dd08:bluez-qt/spkgbuild
 f:14eec06d8632fd3c2203d663d31565da:pcmanfm-qt/CHANGELOG
@@ -69,6 +73,8 @@ f:a7d57e74de59d9ddc4a52043a377d0aa:pcmanfm-qt/spkgbuild
 f:59bf65f2b85f9ace7766c095a1bb653b:qca/qca-2.1.3-openssl-1.patch
 f:2ade06ac0f38a3ff50aac0744a6daa15:qca/spkgbuild
 f:ab645dc1cf30ed038c50579c62f61dd2:qt5-webengine-widevine/spkgbuild
+f:29f94b685d201d02e69201808260dab0:libaccounts-qt/CHANGELOG
+f:4aff605f3d9a115197d8210520dd1a8f:libaccounts-qt/spkgbuild
 f:1faf5c72c4df53c155c5f09419de9e66:qtermwidget/CHANGELOG
 f:6eef675c16fa807711c92bdf9478a29d:qtermwidget/spkgbuild
 f:afecb8dc83f0b407dd0b6886d16c1dec:qt5-multimedia/CHANGELOG

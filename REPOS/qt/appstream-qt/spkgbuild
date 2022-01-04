@@ -10,11 +10,17 @@ options="!checksum"
 
 build() {
 	cd AppStream-$version
+	mkdir build
+	cd build
 	meson .. --prefix=/usr \
 	-Dqt=true \
     	-Dvapi=true \
+    	-Ddocs=false \
+    	-Dinstall-docs=false\
+    	-Dapidocs=false\
     	-Dcompose=true
 
-	ninja
-	DESTDIR=$PKG ninja install
+	#ninja
+	#DESTDIR=$PKG ninja install
+	meson install --destdir "$PKG" -C .
 }

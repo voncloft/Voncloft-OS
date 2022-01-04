@@ -1,0 +1,17 @@
+# description : glib based library for accessing online accounts database
+# depends : dbus-glib libxml2 sqlite gobject-introspection
+
+name=libaccounts-glib
+version=1.25
+release=6
+
+source="https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/VERSION_$version/libaccounts-glib-VERSION_$version.tar.gz"
+
+build() {
+	cd $name-VERSION_$version
+	mkdir build
+	cd build
+	meson .. \
+	-Dprefix=/usr
+	meson install . --destdir $PKG"
+}

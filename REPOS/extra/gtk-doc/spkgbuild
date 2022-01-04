@@ -10,8 +10,12 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	autoreconf -fiv   
-	./configure --prefix=/usr
-	make
-	make DESTDIR=$PKG install
+	#autoreconf -fiv   
+	#./configure --prefix=/usr
+	mkdir build
+	cd build
+	meson .. \
+	--libdir=/usr/lib \
+	--prefix=/usr
+	DESTDIR=$PKG meson install -C .
 }	

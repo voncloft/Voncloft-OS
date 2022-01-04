@@ -4,17 +4,17 @@ name=stemmer
 version=2.2.0
 release=1
 source="$name-$version.tar.gz::https://github.com/snowballstem/snowball/archive/v$version.tar.gz
-	dynamiclib.patch"
+	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/snowball/trunk/dynamiclib.patch"
 
 build() {
 	cd snowball-$version
-
-	patch -Np1 -i ../dynamiclib.patch
-
+	#git describe --tags | sed 's/^v//;s/-/+/g'
+	patch -Np1 -i $SRC/dynamiclib.patch
+	#git apply -3 ../dynamiclib.patch
 	make
+	install -Dt "$PKG/usr/lib" libstemmer.so.0.0.0
+  	ln -s libstemmer.so.0.0.0 "$PKG/usr/lib/libstemmer.so.0"
+ 	ln -s libstemmer.so.0 "$PKG/usr/lib/libstemmer.so"
 
-	install -Dm644 ./include/libstemmer.h $PKG/usr/include/libstemmer.h
-	install -D ./libstemmer.so.0.0.0 $PKG/usr/lib/libstemmer.so.0.0.0
-	ln -s libstemmer.so.0.0.0 $PKG/usr/lib/libstemmer.so.0
-	ln -s libstemmer.so.0 $PKG/usr/lib/libstemmer.so
+  	install -Dt "$PKG/usr/include" -m644 include/libstemmer.h
 }

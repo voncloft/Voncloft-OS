@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps libaccounts-qt5 signonqt5
 
 name=kaccounts-integration
 version=21.12.0

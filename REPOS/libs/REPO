@@ -139,6 +139,7 @@ d:libreplaygain
 d:libfm
 d:libbluray
 d:sdl
+d:libaccounts-glib
 d:libfs
 d:libxfce4util
 d:libmng
@@ -270,8 +271,7 @@ d:libspiro
 d:blas
 f:1418a41e50acfa647dc6091337c51a89:libcanberra/spkgbuild
 f:6b68c751d18088c5ccc9c43e388a2363:stemmer/CHANGELOG
-f:70e9965a8c2b415d5de3593d0728e517:stemmer/dynamiclib.patch
-f:6a00227d7351536960f2acb7446ede60:stemmer/spkgbuild
+f:fecaa1fbbf2eb46c7d97a63085b1ce05:stemmer/spkgbuild
 f:182aa85fa281794108bd6e013ac554dc:libxrender/spkgbuild
 f:66e9544fe68abcb398ab60087620a3ea:libblack-hole-solver/CHANGELOG
 f:287668ad0d1dbb4bdcd9413c041025a2:libblack-hole-solver/spkgbuild
@@ -481,6 +481,8 @@ f:9a9a911da9452b3a98c1c9d43be2ad6c:libfm/spkgbuild
 f:92358df6b16ab6c75e2a6bb6d71e5595:libbluray/CHANGELOG
 f:44731ff6e9acdff5575ba810474cbc99:libbluray/spkgbuild
 f:9652206f589e2e8ad5a3095af54bc5c9:sdl/spkgbuild
+f:8716fd56ae8d595293c55ad0b31d9bc9:libaccounts-glib/CHANGELOG
+f:92321314756a09f8fe1f889c3f381714:libaccounts-glib/spkgbuild
 f:2f2b56de7290d4010c40cf53b428ff5b:libfs/spkgbuild
 f:5208d4a8ea6a39275f9bec310cbe42dd:libxfce4util/CHANGELOG
 f:633c39593aa7ebcd6770bb540767ecb6:libxfce4util/spkgbuild
@@ -493,7 +495,7 @@ f:772a4b7611de6572930cc2ed0e432d78:libmpc/spkgbuild
 f:079f9c832f587f45f9504e4d3c41a4d3:libftdi/spkgbuild
 f:1d8e2c99a6ea47dbca2c62def38e43ad:libfontenc/spkgbuild
 f:e10aa5eba25f1129fd0e3f2413451441:libpng/spkgbuild
-f:15c387d1c7ff00f7023f8fadbde614e0:libxml2/spkgbuild
+f:555618a093b2a65c51ec12eac36bc68f:libxml2/spkgbuild
 f:f4f20cadbfde63b8615b51fec99e2c40:newt/spkgbuild
 f:c547002fccf87aaa93a1f9cd6e1946e4:liberation-fonts/30-0-liberation-mono.conf
 f:69d9fc1593bb9344f0bc9b2cb0aa93ab:liberation-fonts/30-0-liberation-sans.conf

@@ -1,0 +1,15 @@
+# description : A D-Bus service which performs user authentication on behalf of its clients
+# depends : libproxy qt5
+
+name=signonqt5
+version=8.60
+release=3
+
+source="https://gitlab.com/accounts-sso/signond/-/archive/VERSION_$version/signond-VERSION_$version.tar.bz2"
+
+build() {
+	cd signond-VERSION_$version
+	qmake PREFIX=/usr LIBDIR=/usr/lib CONFIG+=rtii
+	make
+	make INSTALL_ROOT=$PKG install
+}
