@@ -519,11 +519,11 @@ f:1c3c5b6ba36a9bd98eb820d9a0725eb0:make/spkgbuild
 f:15fab942796ea4bd2b5a137df693ab25:sysvinit/CHANGELOG
 f:e10ee50113d9fbf566e10d2d33bf2389:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
-f:463e9156e383707ede69d2ed528605bf:shadow/CHANGELOG
+f:190319edcc97c99d46ea374c9e62de63:shadow/CHANGELOG
 f:627c2917ac3828c3ed168d3b7e67dbe5:shadow/post-upgrade.sh
 f:11f5b3140ca4cef4dee8034091af88cc:shadow/pwck
 f:e2ecbd6743ab9d7faf5f436e9edd6265:shadow/su
-f:2609fb85a8f000b579854309cf4e2eb0:shadow/spkgbuild
+f:487814d5784336179f5a9a5d3f5cf933:shadow/spkgbuild
 f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
 f:2728914f5b2c37fc421d046ce5e5b464:shadow/chage
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
@@ -587,8 +587,8 @@ f:1542762d296136a96edf725493706224:bluez/spkgbuild
 f:f715f0b49a44a5764e9379ab3c99d9b1:bluez/run
 f:b38bf3d662c95083fff31bd73a07a5f3:recode/CHANGELOG
 f:69e8beb4b81b62e7f7aaf98460a09bdb:recode/spkgbuild
-f:d400991b281294b8466056484780b4e1:mpv/CHANGELOG
-f:a9422dcf27f27c7f13954aa03d421055:mpv/spkgbuild
+f:de15f5e69bf3fe9219a4c0b4a4878e63:mpv/CHANGELOG
+f:19876613b168813ace392531a25a5a60:mpv/spkgbuild
 f:591c31c34f7f94d73573ce993d81a510:numix-icon-theme/spkgbuild
 f:92725c3566888e3c6eb4df87503f2929:freeglut/spkgbuild
 f:70b22b107370852af463b83756935eb4:fcron/fcron
@@ -774,8 +774,8 @@ f:22f6cbb3fbdda3fd72c185a5f2610ecc:audiofile/007-CVE-2017-6830-CVE-2017-6834-CVE
 f:58289e3cb839111f43e9853e219b65dd:numix-icon-theme-circle/spkgbuild
 f:4daf5d27981cd63ad075146c88a39533:gperf/spkgbuild
 f:badae5b89a5d9d6b5741be60a6d2eb6d:leafpad/spkgbuild
-f:b2312f96a900e50434722180ff09a2c3:bash/CHANGELOG
-f:80991f3715eaabf222899d73f51bbcc2:bash/spkgbuild
+f:fedb661eeefaa7d2f0f5ec113fb503e8:bash/CHANGELOG
+f:30d7332c6e92e864c44f3455a9f1584e:bash/spkgbuild
 f:40f5213a8d76656844ce0c8028a60629:xbps/spkgbuild
 f:8ae16df601b481a578a74a481ba000c0:nano/CHANGELOG
 f:3d9df7122b55e553c145bb78bb58bf93:nano/spkgbuild
