@@ -7,7 +7,8 @@ release=1
 
 source="upgrade-python-packages
 	upgrade-perl-packages
-	update-kde"
+	update-kde
+	watchallports"
 options="!checksum"
 
 build() {
@@ -15,4 +16,5 @@ build() {
 	install -Dm755 $SRC/upgrade-python-packages $PKG/usr/bin/upgrade-python-packages
 	install -Dm755 $SRC/upgrade-perl-packages $PKG/usr/bin/upgrade-perl-packages
 	install -Dm755 $SRC/update-kde $PKG/usr/bin/upgrade-kde
+	install -Dm755 $SRC/update-kde $PKG/usr/bin/watchallports
 }

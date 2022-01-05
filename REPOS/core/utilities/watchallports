@@ -1,0 +1,1 @@
+watch -n 0.5 "sudo netstat -tanp | grep -v unix | grep -v 127.0.0.1 |  grep ESTABLISHED "
