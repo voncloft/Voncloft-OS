@@ -1,0 +1,14 @@
+# description : helper application and mime type association for the types
+# depends : git python
+
+name=mailcap
+version=2.1.53
+release=1
+
+source="https://pagure.io/mailcap/archive/r${version}/mailcap-r${version}.tar.gz"
+
+build() {
+	cd mailcap
+	make
+	make DESTDIR=$PKG install
+}
