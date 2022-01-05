@@ -517,8 +517,8 @@ create_table()
 		echo '<tr><td align=center>Package Path</td><td align=center>Old Version</td><td align=center>New Version</td><td align=center>Changelog</td><td align=center>spkgbuild</td></tr>' >> $table_log
 	fi
 	spkg_dir=$(echo $1 | sed "s/\/spkgbuild//g")
-	changelog="http://voncloft.dnsfor.me/repository/$spkg_dir/CHANGELOG"
-        echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td align=center><a href=http://voncloft.dnsfor.me/repository/'$1'>spkgbuild</a></td></tr>' >> $table_log	
+	changelog="http://voncloft.dnsfor.me/repository/REPOS/$spkg_dir/CHANGELOG"
+        echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td align=center><a href=http://voncloft.dnsfor.me/repository/REPOS/'$1'>spkgbuild</a></td></tr>' >> $table_log	
 }
 check_handles()
 {
