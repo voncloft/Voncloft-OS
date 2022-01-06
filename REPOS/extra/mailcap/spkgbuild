@@ -9,7 +9,6 @@ _version=$(echo $version | sed "s/\./-/g" )
 source="https://pagure.io/mailcap/archive/r$_version/mailcap-r$_version.tar.gz"
 
 build() {
-	dir *
 	cd mailcap-r$_version
 	make
 	make DESTDIR=$PKG install
