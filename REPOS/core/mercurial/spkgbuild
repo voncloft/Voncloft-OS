@@ -2,7 +2,7 @@
 # depends : python make-ca
 
 name=mercurial
-version=6.0
+version=6.0.1
 release=1
 
 source="https://www.mercurial-scm.org/release/${name}-${version}.tar.gz"

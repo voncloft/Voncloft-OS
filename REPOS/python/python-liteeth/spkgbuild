@@ -2,7 +2,7 @@
 # depends : python-migen python-litex
 
 name=python-liteeth
-version=2021.08
+version=2021.12
 release=1
 
 source="https://github.com/enjoy-digital/liteeth/archive/refs/tags/$version.tar.gz"

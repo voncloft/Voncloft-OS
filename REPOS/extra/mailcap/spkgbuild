@@ -4,11 +4,13 @@
 name=mailcap
 version=2.1.53
 release=1
+_version=$(echo $version | sed "s/\./-/g" )
 
-source="https://pagure.io/mailcap/archive/r${version}/mailcap-r${version}.tar.gz"
+source="https://pagure.io/mailcap/archive/r$_version/mailcap-r$_version.tar.gz"
 
 build() {
-	cd mailcap
+	dir *
+	cd mailcap-$_version
 	make
 	make DESTDIR=$PKG install
 }
