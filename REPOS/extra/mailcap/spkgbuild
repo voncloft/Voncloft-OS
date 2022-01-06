@@ -10,7 +10,7 @@ source="https://pagure.io/mailcap/archive/r$_version/mailcap-r$_version.tar.gz"
 
 build() {
 	dir *
-	cd mailcap-$_version
+	cd mailcap-r$_version
 	make
 	make DESTDIR=$PKG install
 }
