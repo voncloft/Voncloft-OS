@@ -62,3 +62,9 @@ sed -i -e "s/version=3.9.39/version=3.9.40/g" python/python-trimesh/spkgbuild
 changelog "python/python-trimesh/spkgbuild" "Upgraded from version 3.9.39 to version 3.9.40"
 sed -i -e "s/version=1.20.2/version=1.21.5/g" server/nginx/spkgbuild
 changelog "server/nginx/spkgbuild" "Upgraded from version 1.20.2 to version 1.21.5"
+sed -i -e "s/version=5.14.4/version=5.15.13/g" core/linux-desktop/spkgbuild
+changelog "core/linux-desktop/spkgbuild" "Upgraded from version 5.14.4 to version 5.15.13"
+sed -i -e "s/version=5.14.4/version=5.15.13/g" core/linux-router/spkgbuild
+changelog "core/linux-router/spkgbuild" "Upgraded from version 5.14.4 to version 5.15.13"
+sed -i -e "s/version=7.2.4/version=7.2.5/g" nonfree/libreoffice/spkgbuild
+changelog "nonfree/libreoffice/spkgbuild" "Upgraded from version 7.2.4 to version 7.2.5"
