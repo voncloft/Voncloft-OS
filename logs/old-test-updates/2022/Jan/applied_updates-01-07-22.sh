@@ -1,0 +1,32 @@
+sed -i -e "s/version=3.18.1/version=3.19.0/g" core/logrotate/spkgbuild
+changelog "core/logrotate/spkgbuild" "Upgraded from version 3.18.1 to version 3.19.0"
+sed -i -e "s/version=1.4.2/version=1.4.3/g" core/rpcsvc-proto/spkgbuild
+changelog "core/rpcsvc-proto/spkgbuild" "Upgraded from version 1.4.2 to version 1.4.3"
+sed -i -e "s/version=3.2.7/version=3.2.8/g" extra/flexget/spkgbuild
+changelog "extra/flexget/spkgbuild" "Upgraded from version 3.2.7 to version 3.2.8"
+sed -i -e "s/version=1.0.0/version=1.0.1/g" lxqt/lxqt-globalkeys/spkgbuild
+changelog "lxqt/lxqt-globalkeys/spkgbuild" "Upgraded from version 1.0.0 to version 1.0.1"
+sed -i -e "s/version=8.1.0/version=8.1.1/g" libs/fmt/spkgbuild
+changelog "libs/fmt/spkgbuild" "Upgraded from version 8.1.0 to version 8.1.1"
+sed -i -e "s/version=1.20.30/version=1.20.31/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.20.30 to version 1.20.31"
+sed -i -e "s/version=1.23.30/version=1.23.31/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.23.30 to version 1.23.31"
+sed -i -e "s/version=0.2.5/version=0.3.0/g" python/python-edalize/spkgbuild
+changelog "python/python-edalize/spkgbuild" "Upgraded from version 0.2.5 to version 0.3.0"
+sed -i -e "s/version=0.70.1/version=0.71.0/g" python/python-fastapi/spkgbuild
+changelog "python/python-fastapi/spkgbuild" "Upgraded from version 0.70.1 to version 0.71.0"
+sed -i -e "s/version=2.4.0/version=2.5.0/g" python/python-heatclient/spkgbuild
+changelog "python/python-heatclient/spkgbuild" "Upgraded from version 2.4.0 to version 2.5.0"
+sed -i -e "s/version=4.3.0/version=4.4.0/g" python/python-keystoneclient/spkgbuild
+changelog "python/python-keystoneclient/spkgbuild" "Upgraded from version 4.3.0 to version 4.4.0"
+sed -i -e "s/version=3.15.0/version=3.16.0/g" python/python-openmdao/spkgbuild
+changelog "python/python-openmdao/spkgbuild" "Upgraded from version 3.15.0 to version 3.16.0"
+sed -i -e "s/version=16.2.0/version=16.3.0/g" python/python-path/spkgbuild
+changelog "python/python-path/spkgbuild" "Upgraded from version 16.2.0 to version 16.3.0"
+sed -i -e "s/version=7.3.2201042251/version=7.3.2201062214/g" python/python-pycontracts/spkgbuild
+changelog "python/python-pycontracts/spkgbuild" "Upgraded from version 7.3.2201042251 to version 7.3.2201062214"
+sed -i -e "s/version=1.26.7/version=1.26.8/g" python/python-urllib3/spkgbuild
+changelog "python/python-urllib3/spkgbuild" "Upgraded from version 1.26.7 to version 1.26.8"
+sed -i -e "s/version=4.3.9/version=4.4.0/g" qt/qbittorrent/spkgbuild
+changelog "qt/qbittorrent/spkgbuild" "Upgraded from version 4.3.9 to version 4.4.0"
