@@ -2,7 +2,7 @@
 # depends : python python-wheel python-pyelftools unzip patchelf
 
 name=python-auditwheel
-version=5.1.1
+version=5.1.2
 release=1
 
 source="https://github.com/pypa/auditwheel/archive/refs/tags/$version.tar.gz"

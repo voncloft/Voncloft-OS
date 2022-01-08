@@ -2,7 +2,7 @@
 # depends : ruby
 _name=tins
 name=ruby-tins
-version=1.30.0
+version=1.31.0
 release=2
 
 source="https://rubygems.org/downloads/tins-${version}.gem"

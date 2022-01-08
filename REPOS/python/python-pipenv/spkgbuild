@@ -2,7 +2,7 @@
 # depends : python python-pip python-certifi
 
 name=python-pipenv
-version=2021.11.23
+version=2022.1.8
 release=1
 
 source="https://github.com/pypa/pipenv/archive/refs/tags/v$version.tar.gz"
