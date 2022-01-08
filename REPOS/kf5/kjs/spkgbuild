@@ -9,7 +9,7 @@ source="https://download.kde.org/stable/frameworks/${version%.*}/portingAids/$na
 options="!checksum"
 
 build() {
-   cd $name-v$version
+   cd *
    kf5-package-installer
    cd build
    make DESTDIR=$PKG install
