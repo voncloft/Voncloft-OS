@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-pony
-version=0.7.14
+version=0.7.15
 release=2
 
 source="https://github.com/ponyorm/pony/archive/refs/tags/v$version.tar.gz"
