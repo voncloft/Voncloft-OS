@@ -2,7 +2,7 @@
 # depends : python-decorator python-http-parser python-magic python-urllib3
 
 name=python-mocket
-version=3.10.3
+version=3.10.4
 release=1
 
 source="https://github.com/mindflayer/python-mocket/archive/refs/tags/$version.tar.gz"
