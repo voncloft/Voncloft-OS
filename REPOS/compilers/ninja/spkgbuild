@@ -1,5 +1,5 @@
 # description	: Small build system with a focus on speed
-# depends	: python
+# depends	: python bash-completion
 
 name=ninja
 version=1.10.2
