@@ -20,4 +20,5 @@ build() {
 
 	python ./configure.py --bootstrap
 	install -Dm755 ninja $PKG/usr/bin/ninja
+	install -vDm644 misc/bash-completion $PKG/usr/share/bash-completion/completions/ninja
 }
