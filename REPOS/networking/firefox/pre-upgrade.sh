@@ -1,2 +1,2 @@
 #!/bin/sh
-scratch upgrade -y nss nspr
+scratch upgrade -y nss nspr rust
