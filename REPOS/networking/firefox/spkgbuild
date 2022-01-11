@@ -7,7 +7,6 @@ options="!checksum"
 
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
-	https://raw.githubusercontent.com/archlinux/svntogit-community/packages/firefox-developer-edition/trunk/add-missing-stub-for-wl_proxy_marshal_flags.patch
 	https://www.linuxfromscratch.org/patches/blfs/svn/firefox-91.4.0esr-disable_rust_test-1.patch
 	$name.desktop"
 
