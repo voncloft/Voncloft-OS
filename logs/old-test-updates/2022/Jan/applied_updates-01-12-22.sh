@@ -32,3 +32,5 @@ sed -i -e "s/version=2.0.0/version=3.0.1/g" python/python-sphinx-issues/spkgbuil
 changelog "python/python-sphinx-issues/spkgbuild" "Upgraded from version 2.0.0 to version 3.0.1"
 sed -i -e "s/version=3.0.0/version=3.1.1/g" ruby-gems/ruby-rainbow/spkgbuild
 changelog "ruby-gems/ruby-rainbow/spkgbuild" "Upgraded from version 3.0.0 to version 3.1.1"
+sed -i -e "s/version=97.0b1/version=97.0b2/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 97.0b1 to version 97.0b2"
