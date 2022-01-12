@@ -2,7 +2,7 @@
 # depends : python-appdirs python-pyee python-tqdm python-urllib3
 
 name=python-pyppeteer
-version=1.0.0
+version=1.0.2
 release=1
 
 source="https://github.com/pyppeteer/pyppeteer/archive/refs/tags/$version.tar.gz"
