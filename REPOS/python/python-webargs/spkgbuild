@@ -2,7 +2,7 @@
 # depends : python-marshmallow
 
 name=python-webargs
-version=8.0.1
+version=8.1.0
 release=3
 
 source="https://github.com/marshmallow-code/webargs/archive/refs/tags/d$version.tar.gz"
