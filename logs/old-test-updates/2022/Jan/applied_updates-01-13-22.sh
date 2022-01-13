@@ -20,3 +20,23 @@ sed -i -e "s/version=60.5.1/version=60.5.2/g" python/python-setuptools/spkgbuild
 changelog "python/python-setuptools/spkgbuild" "Upgraded from version 60.5.1 to version 60.5.2"
 sed -i -e "s/version=8.0.1/version=8.1.0/g" python/python-webargs/spkgbuild
 changelog "python/python-webargs/spkgbuild" "Upgraded from version 8.0.1 to version 8.1.0"
+sed -i -e "s/version=1.57.0/version=1.58.0/g" compilers/rust/spkgbuild
+changelog "compilers/rust/spkgbuild" "Upgraded from version 1.57.0 to version 1.58.0"
+sed -i -e "s/version=0.32.1/version=0.32.2/g" libs/neon/spkgbuild
+changelog "libs/neon/spkgbuild" "Upgraded from version 0.32.1 to version 0.32.2"
+sed -i -e "s/version=2.16.2/version=2.17/g" nonfree/pandoc-bin/spkgbuild
+changelog "nonfree/pandoc-bin/spkgbuild" "Upgraded from version 2.16.2 to version 2.17"
+sed -i -e "s/version=1.5.0/version=1.6.0/g" plasma/plasma-wayland-protocols/spkgbuild
+changelog "plasma/plasma-wayland-protocols/spkgbuild" "Upgraded from version 1.5.0 to version 1.6.0"
+sed -i -e "s/version=1.20.34/version=1.20.35/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.20.34 to version 1.20.35"
+sed -i -e "s/version=1.23.34/version=1.23.35/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.23.34 to version 1.23.35"
+sed -i -e "s/version=6.6.1/version=6.7.0/g" python/python-ipykernel/spkgbuild
+changelog "python/python-ipykernel/spkgbuild" "Upgraded from version 6.6.1 to version 6.7.0"
+sed -i -e "s/version=0.16.0/version=0.17.0/g" python/python-pytest-asyncio/spkgbuild
+changelog "python/python-pytest-asyncio/spkgbuild" "Upgraded from version 0.16.0 to version 0.17.0"
+sed -i -e "s/version=2.2.0/version=2.2.1/g" python/python-spyder-kernels/spkgbuild
+changelog "python/python-spyder-kernels/spkgbuild" "Upgraded from version 2.2.0 to version 2.2.1"
+sed -i -e "s/version=2.3.4/version=2.3.5/g" ruby-gems/ruby-bundler/spkgbuild
+changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.3.4 to version 2.3.5"
