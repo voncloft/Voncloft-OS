@@ -2,7 +2,7 @@
 # depends : python-mako python-markdown
 
 name=python-pdoc
-version=8.2.0
+version=8.3.0
 release=7
 
 source="https://github.com/mitmproxy/pdoc/archive/refs/tags/v$version.tar.gz"
