@@ -1,5 +1,5 @@
 # description : keeps running tab of running processes on server
-# depends : wireguard utilities
+# depends : wireguard
 
 name=monitor_process
 version=1
