@@ -1,14 +1,16 @@
 # description : keeps running tab of running processes on server
-# depends : 
+# depends : wireguard
 
 name=monitor_process
 version=1
 release=1
 
-source="process_monitor.sh"
+source="process_monitor.sh
+	wireguard-check.sh"
 options="!checksum"
 
 build() {
 	mkdir -pv $PKG/usr/bin
 	install -Dm755 $SRC/process_monitor.sh $PKG/usr/bin
+	install -Dm755 $SRC/wireguard-check.sh $PKG/usr/bin
 }
