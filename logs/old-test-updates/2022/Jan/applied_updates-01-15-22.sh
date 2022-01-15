@@ -18,3 +18,15 @@ sed -i -e "s/version=3.10.1/version=3.10.2/g" ruby-gems/ruby-rspec-expectations/
 changelog "ruby-gems/ruby-rspec-expectations/spkgbuild" "Upgraded from version 3.10.1 to version 3.10.2"
 sed -i -e "s/version=0.12.1/version=0.12.2/g" xfce/ristretto/spkgbuild
 changelog "xfce/ristretto/spkgbuild" "Upgraded from version 0.12.1 to version 0.12.2"
+sed -i -e "s/version=1.9.19/version=1.9.20/g" core/jack/spkgbuild
+changelog "core/jack/spkgbuild" "Upgraded from version 1.9.19 to version 1.9.20"
+sed -i -e "s/version=1.20.35/version=1.20.37/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.20.35 to version 1.20.37"
+sed -i -e "s/version=1.23.35/version=1.23.37/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.23.35 to version 1.23.37"
+sed -i -e "s/version=2021.12.0/version=2022.01.0/g" python/python-distributed/spkgbuild
+changelog "python/python-distributed/spkgbuild" "Upgraded from version 2021.12.0 to version 2022.01.0"
+sed -i -e "s/version=0.5.0/version=0.6.0/g" python/python-pytest-subtests/spkgbuild
+changelog "python/python-pytest-subtests/spkgbuild" "Upgraded from version 0.5.0 to version 0.6.0"
+sed -i -e "s/version=3.6.3/version=3.6.4/g" server/postfix/spkgbuild
+changelog "server/postfix/spkgbuild" "Upgraded from version 3.6.3 to version 3.6.4"
