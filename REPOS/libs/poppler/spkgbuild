@@ -1,5 +1,5 @@
 # description	: PDF rendering library and command line tools used to manipulate PDF files
-# depends	: cmake fontconfig cairo libjpeg-turbo libpng nss openjpeg2 poppler-data
+# depends	: cmake fontconfig cairo libjpeg-turbo libpng nss openjpeg2 poppler-data qt5
 
 name=poppler
 version=22.01.0
@@ -17,7 +17,7 @@ build() {
 	       -DTESTDATADIR=$PWD/testfiles \
 	       -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
 	       -DENABLE_GLIB=OFF \
-	       -DENABLE_QT5=OFF \
+	       -DENABLE_QT5=ON \
 	       .. 
 	make
 	make DESTDIR=$PKG install
