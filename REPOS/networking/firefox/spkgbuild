@@ -7,7 +7,7 @@ options="!checksum"
 
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
-	https://www.linuxfromscratch.org/patches/blfs/svn/firefox-91.4.0esr-disable_rust_test-1.patch
+	https://www.linuxfromscratch.org/patches/blfs/svn/firefox-91.5.0esr-disable_rust_test-1.patch
 	$name.desktop"
 
 build() {
