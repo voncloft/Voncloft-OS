@@ -1,0 +1,60 @@
+#!/bin/sh
+########################################################################
+# Begin svn
+#
+# Description : Start Subversion server
+#
+# Author      : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            svn
+# Required-Start:      $network
+# Should-Start:        krb5 openldap networkmanager samba saslauthd wicd
+# Required-Stop:       $network
+# Should-Stop:         krb5 openldap networkmanager samba saslauthd wicd
+# Default-Start:       3 4 5
+# Default-Stop:        0 1 2 6
+# Short-Description:   Starts subersion server.
+# Description:         Starts subversion version control system server daemon.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+case "$1" in
+        start)
+                log_info_msg "Starting Subversion..."
+                start_daemon /usr/bin/svnserve -d -r /srv/svn/repositories
+                evaluate_retval
+                ;;
+
+        stop)
+                log_info_msg "Stopping Subversion..."
+                killproc /usr/bin/svnserve.orig
+                evaluate_retval
+                ;;
+
+        restart)
+                $0 stop
+                sleep 1
+                $0 start
+                ;;
+
+        status)
+                statusproc /usr/bin/svnserve.orig
+                ;;
+
+        *)
+                echo "Usage: $0 {start|stop|restart|status}"
+                exit 1
+                ;;
+esac
+
+# End /etc/init.d/svn

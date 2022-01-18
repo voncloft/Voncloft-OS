@@ -638,38 +638,28 @@ install-noip-boot: create-dirs
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc5.d/S82noip2
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc6.d/S82noip2
 
-install-wireguard-boot: create-dirs
-	install -m ${MODE} blfs/init.d/wireguard     ${EXTDIR}/rc.d/init.d/
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc0.d/K99wireguard
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc1.d/K99wireguard
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc2.d/K99wireguard
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc3.d/S99wireguard
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc4.d/S99wireguard
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc5.d/S99wireguard
-	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc6.d/S99wireguard
-
 install-openvpn-torrent: create-dirs
 	install -m ${MODE} blfs/init.d/openvpn-torrent     ${EXTDIR}/rc.d/init.d/
 	
 install-psad-boot: create-dirs	
 	install -m ${MODE} blfs/init.d/psad     ${EXTDIR}/rc.d/init.d/
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc0.d/K83psad
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc1.d/K83psad
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc2.d/K83psad
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc3.d/S83psad
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc4.d/S83psad
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc5.d/S83psad
-	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc6.d/S83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc0.d/K83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc1.d/K83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc2.d/K83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc3.d/S83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc4.d/S83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc5.d/S83psad
+	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc6.d/S83psad
 	
 install-sshguard-boot: create-dirs
 	install -m ${MODE} blfs/init.d/sshguard     ${EXTDIR}/rc.d/init.d/
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc0.d/K83sshguard
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc1.d/K83sshguard
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc2.d/K83sshguard
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc3.d/S83sshguard
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc4.d/S83sshguard
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc5.d/S83sshguard
-	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc6.d/S83sshguard
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc0.d/K83psad
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc1.d/K83psad
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc2.d/K83psad
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc3.d/S83psad
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc4.d/S83psad
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc5.d/S83psad
+	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc6.d/S83psad
 
 install-subsonic-boot: create-dirs
 	install -m ${MODE} blfs/init.d/subsonic     ${EXTDIR}/rc.d/init.d/
@@ -1291,7 +1281,6 @@ uninstall-xinetd:
 	install-webmin-boot \
 	install-logrotate-boot
 	install-mythbackend-boot \
-	install-wireguard-boot \
 	uninstall-atd \
 	uninstall-accounts-daemon \
 	uninstall-acpid \

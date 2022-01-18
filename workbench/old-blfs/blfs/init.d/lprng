@@ -1,0 +1,67 @@
+#!/bin/sh
+########################################################################
+# Begin lprng
+#
+# Description : Start lpd daemon
+#
+# Author      : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            lprng
+# Required-Start:      udev
+# Should-Start:        $syslog
+# Required-Stop:
+# Should-Stop:         $syslog
+# Default-Start:       2 3 4 5
+# Default-Stop:        0 1 6
+# Short-Description:   Starts lpd daemon.
+# Description:         Starts an implementation of the Berkeley LPR print
+#                      spooler functionality.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2019-10-30 22:22:33 -0500 (Wed, 30 Oct 2019) $
+
+case "$1" in
+   start)
+      log_info_msg "Starting lpd..."
+      start_daemon /usr/sbin/lpd
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping lpd..."
+      killproc /usr/sbin/lpd
+      evaluate_retval
+      ;;
+
+   reload)
+      boot_mesg "Reloading lpd..."
+      killproc /usr/sbin/lpd -HUP
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc /usr/sbin/lpd
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|reload|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/lprng

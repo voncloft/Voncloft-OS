@@ -1,0 +1,59 @@
+#!/bin/sh
+########################################################################
+# Begin fcron
+#
+# Description : deluge-daemon
+#
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            deluged
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+BIN_FILE="/usr/bin/deluged"
+
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+case "$1" in
+   start)
+      log_info_msg "Starting deluged..."
+      #start_daemon ${BIN_FILE} --pidfile /run/deluged.pid -L info -l /var/log/deluged.log --user=deluge
+      start_daemon ${BIN_FILE} --pidfile /home/deluge/deluged.pid -L info -l /home/deluge/deluged.log --user deluge --group deluge --config /home/deluge/.config/deluge
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping deluged..."
+      PID_FILE=$(cat /home/deluge/deluged.pid)
+      kill -9 $PID_FILE
+      #killproc /usr/bin/deluged
+      rm -rf /home/deluge/deluged.pid
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      if [ -f /home/deluge/deluged.pid ]; then
+          PID_FILE=$(cat /home/deluge/deluged.pid)
+          echo "Deluged is running on process:" $PID_FILE
+      else
+          echo "Deluged is not running."
+      fi
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/fcron

@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# Startup script for psad
+#
+# chkconfig: 345 99 05
+# description: The Port Scan Attack Detector (psad)
+# processname: psad
+# pidfile: /var/run/psad.pid
+# config: /etc/psad/psad.conf
+#
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+. /lib/lsb/init-functions
+
+# See how we were called.
+case "$1" in
+start)
+    echo -n "Starting psad: "
+    ### psad enables signature matching and auto
+    ### danger level assignment by default, so
+    ### command line args are not necessary here.
+    /usr/sbin/psad
+	sh /media/Scripts/mail_me.sh "PSAD is up"
+    evaluate_retval
+    ;;
+stop)
+    /usr/sbin/psad --Kill
+    sh /media/Scripts/mail_me.sh "PSAD is down"
+	evaluate_retval
+    ;;
+status)
+	 if [ -f /run/psad.pid ]; then
+          PID_FILE=$(cat /run/psad.pid)
+          echo -e "${GREEN}PSAD is running on process:" $PID_FILE${NC}
+      else
+          echo -e "${RED}PSAD is not running."${NC}
+      fi
+    ;;
+restart)
+	$0 stop
+	sleep 1
+	$0 start
+    ;;
+*)
+    echo "Usage: psad {start|stop|status|restart}"
+    exit 1
+esac
