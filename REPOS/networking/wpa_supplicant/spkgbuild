@@ -2,7 +2,7 @@
 # depends	: libnl openssl dbus dhcpcd
 
 name=wpa_supplicant
-version=2.9
+version=2.10
 release=3
 backup="etc/wpa_supplicant.conf"
 source="https://w1.fi/releases/$name-$version.tar.gz
