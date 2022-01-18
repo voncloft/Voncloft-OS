@@ -1,0 +1,55 @@
+httpup-repgen /Voncloft-OS/REPOS/core
+httpup-repgen /Voncloft-OS/REPOS/multilib
+httpup-repgen /Voncloft-OS/REPOS/nonfree
+httpup-repgen /Voncloft-OS/REPOS/qt
+httpup-repgen /Voncloft-OS/REPOS/lxde
+httpup-repgen /Voncloft-OS/REPOS/compilers
+httpup-repgen /Voncloft-OS/REPOS/extra
+httpup-repgen /Voncloft-OS/REPOS/xorg
+httpup-repgen /Voncloft-OS/REPOS/networking
+httpup-repgen /Voncloft-OS/REPOS/firewall
+httpup-repgen /Voncloft-OS/REPOS/boot-scripts-server
+httpup-repgen /Voncloft-OS/REPOS/xfce
+httpup-repgen /Voncloft-OS/REPOS/media
+httpup-repgen /Voncloft-OS/REPOS/lxqt
+httpup-repgen /Voncloft-OS/REPOS/libs
+httpup-repgen /Voncloft-OS/REPOS/hardware
+httpup-repgen /Voncloft-OS/REPOS/fonts
+httpup-repgen /Voncloft-OS/REPOS/displaym
+httpup-repgen /Voncloft-OS/REPOS/server
+httpup-repgen /Voncloft-OS/REPOS/python
+httpup-repgen /Voncloft-OS/REPOS/perl
+httpup-repgen /Voncloft-OS/REPOS/beta
+httpup-repgen /Voncloft-OS/REPOS/kf5
+httpup-repgen /Voncloft-OS/REPOS/plasma
+httpup-repgen /Voncloft-OS/REPOS/kde-apps
+httpup-repgen /Voncloft-OS/REPOS/kde
+httpup-repgen /Voncloft-OS/REPOS/cinnamon
+httpup-repgen /Voncloft-OS/REPOS/mate
+httpup-repgen /Voncloft-OS/REPOS/ruby-gems
+httpup-repgen /Voncloft-OS/REPOS/gnome
+httpup-repgen /media/Storage/Software/Voncloft-OS/programs
+
+sed -i -e '/index.php/d' /media/Storage/Software/Voncloft-OS/programs/REPO
+sed -i -e '/secondary.php/d' /media/Storage/Software/Voncloft-OS/programs/REPO
+
+cd /Voncloft-OS
+git init
+git add .
+if [ -z "$1" ];then
+	git commit -m "Minor Updates"
+else
+	git commit -m "$1"
+fi
+git remote set-url origin git@github.com:voncloft/Voncloft-OS.git
+git push -u origin master --force
+
+#cd /scratch-build
+#git init
+#git add .
+#git commit -m 'update'
+
+####git remote add origin https://github.com/voncloft/scratch-build.git
+
+#git remote set-url origin git@github.com:voncloft/scratch-build.git
+#git push -u origin master
