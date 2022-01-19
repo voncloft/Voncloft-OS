@@ -10,7 +10,7 @@ build() {
 	cd $name-$version
 
 	./configure --prefix=/usr \
-            --docdir=/usr/share/doc/gnutls-3.7.2 \
+            --docdir=/usr/share/doc/gnutls-$version \
             --disable-guile \
             --disable-rpath \
             --with-default-trust-store-pkcs11="pkcs11:"
