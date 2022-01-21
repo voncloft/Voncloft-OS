@@ -2,7 +2,7 @@
 # depends : python-numpy
 
 name=python-cftime
-version=1.5.1
+version=1.5.1.1
 release=1
 
 source="https://github.com/Unidata/cftime/archive/refs/tags/v$version.tar.gz"
