@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-mccabe
-version=0.6.1
+version=0.7.0
 release=8
 
 source="https://github.com/PyCQA/mccabe/archive/refs/tags/$version.tar.gz"

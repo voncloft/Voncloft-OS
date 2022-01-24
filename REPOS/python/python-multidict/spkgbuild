@@ -2,7 +2,7 @@
 # depends : python glibc
 
 name=python-multidict
-version=6.0.1
+version=6.0.2
 release=1
 
 source="https://github.com/aio-libs/multidict/archive/refs/tags/v$version.tar.gz"
