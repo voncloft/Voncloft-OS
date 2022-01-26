@@ -2,7 +2,7 @@
 # depends : python-six python-monotonic
 
 name=python-fasteners
-version=0.17.2
+version=0.17.3
 release=5
 
 source="https://github.com/harlowja/fasteners/archive/refs/tags/$version.tar.gz"
