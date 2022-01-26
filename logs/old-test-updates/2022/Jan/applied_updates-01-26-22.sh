@@ -22,3 +22,23 @@ sed -i -e "s/version=4.4.0/version=4.5.0/g" python/python-tweepy/spkgbuild
 changelog "python/python-tweepy/spkgbuild" "Upgraded from version 4.4.0 to version 4.5.0"
 sed -i -e "s/version=1.21.5/version=1.21.6/g" server/nginx/spkgbuild
 changelog "server/nginx/spkgbuild" "Upgraded from version 1.21.5 to version 1.21.6"
+sed -i -e "s/version=5.4.3/version=5.4.4/g" core/lua/spkgbuild
+changelog "core/lua/spkgbuild" "Upgraded from version 5.4.3 to version 5.4.4"
+sed -i -e "s/version=97.0b7/version=97.0b8/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 97.0b7 to version 97.0b8"
+sed -i -e "s/version=2.2.2/version=3.0.0/g" python/python-aiohttp-apispec/spkgbuild
+changelog "python/python-aiohttp-apispec/spkgbuild" "Upgraded from version 2.2.2 to version 3.0.0"
+sed -i -e "s/version=1.20.43/version=1.20.44/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.20.43 to version 1.20.44"
+sed -i -e "s/version=1.23.43/version=1.23.44/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.23.43 to version 1.23.44"
+sed -i -e "s/version=11.25.0/version=11.26.0/g" python/python-dropbox/spkgbuild
+changelog "python/python-dropbox/spkgbuild" "Upgraded from version 11.25.0 to version 11.26.0"
+sed -i -e "s/version=9.0.0/version=9.0.1/g" python/python-pdoc/spkgbuild
+changelog "python/python-pdoc/spkgbuild" "Upgraded from version 9.0.0 to version 9.0.1"
+sed -i -e "s/version=0.18.0/version=0.19.0/g" python/python-pytest-httpx/spkgbuild
+changelog "python/python-pytest-httpx/spkgbuild" "Upgraded from version 0.18.0 to version 0.19.0"
+sed -i -e "s/version=3.9.42/version=3.9.43/g" python/python-trimesh/spkgbuild
+changelog "python/python-trimesh/spkgbuild" "Upgraded from version 3.9.42 to version 3.9.43"
+sed -i -e "s/version=2.3.5/version=2.3.6/g" ruby-gems/ruby-bundler/spkgbuild
+changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.3.5 to version 2.3.6"

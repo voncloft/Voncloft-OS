@@ -2,7 +2,7 @@
 # depends : python-aiohttp python-apispec python-webargs python-jinja
 
 name=python-aiohttp-apispec
-version=2.2.2
+version=3.0.0
 release=2
 
 source="https://github.com/maximdanilchenko/aiohttp-apispec/archive/refs/tags/v$version.tar.gz"
