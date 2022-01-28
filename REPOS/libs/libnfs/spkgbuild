@@ -2,7 +2,7 @@
 # depends : glibc
 
 name=libnfs
-version=4.0.0
+version=5.0.0
 release=4
 
 source="https://github.com/sahlberg/$name/archive/$name-$version.tar.gz"
