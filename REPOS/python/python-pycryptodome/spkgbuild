@@ -3,7 +3,7 @@
   # depends : python gmp
 
 name=python-pycryptodome
-version=3.13.0
+version=3.14.0
 release=3
 
 source="https://github.com/Legrandin/pycryptodome/archive/refs/tags/w$version.tar.gz"

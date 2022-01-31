@@ -2,7 +2,7 @@
 # depends : mypy python-filelock python-pytest
 
 name=python-pytest-mypy
-version=0.8.1
+version=0.9.0
 release=1
 
 source="https://github.com/dbader/pytest-mypy/archive/refs/tags/v$version.tar.gz"
