@@ -1,0 +1,22 @@
+# description : look for changes to filesystem
+# depends : bash gcc git
+
+name=incrontab
+version=0.5.12
+release=4
+
+source="https://github.com/ar-/incron/archive/refs/tags/0.$version.tar.gz"
+
+build() {
+	cd *
+	sed -i 's|$(DESTDIR)$(PREFIX)/sbin/|$(DESTDIR)$(PREFIX)/bin/|g' Makefile
+	make
+
+	make PREFIX=$PKG/usr \
+	USERDATADIR=$PKG/var/spool/incron \
+	INITDIR=$PKG/etc \
+	CFGDIR=$PKG/etc \
+	SYSDATADIR=$PKG/etc/incron.d install
+
+	rm -r $PKG/{usr/sbin,var}
+}
