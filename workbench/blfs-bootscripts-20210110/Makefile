@@ -637,7 +637,15 @@ install-noip-boot: create-dirs
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc4.d/S82noip2
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc5.d/S82noip2
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc6.d/S82noip2
-
+install-incrontab-boot: create-dirs
+        install -m ${MODE} blfs/init.d/incrontab     ${EXTDIR}/rc.d/init.d/
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc0.d/K99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc1.d/K99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc2.d/K99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc3.d/S99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc4.d/S99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc5.d/S99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc6.d/S99incrontab
 install-wireguard-boot: create-dirs
 	install -m ${MODE} blfs/init.d/wireguard     ${EXTDIR}/rc.d/init.d/
 	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc0.d/K99wireguard
@@ -1246,6 +1254,7 @@ uninstall-xinetd:
 	install-dovecot \
 	install-exim \
 	install-fcron \
+	install-incrontab-boot \
 	install-firewalld \
 	install-gdm \
 	install-gpm \
@@ -1308,6 +1317,7 @@ uninstall-xinetd:
 	uninstall-dovecot \
 	uninstall-exim \
 	uninstall-fcron \
+	uninstall-incrontab-boot \
 	uninstall-firewalld \
 	uninstall-gdm \
 	uninstall-gpm \

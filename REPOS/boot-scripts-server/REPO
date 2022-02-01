@@ -18,6 +18,7 @@ d:mariadb-boot
 d:fcron-boot
 d:iptables-boot
 d:openssh-boot
+d:incrontab-boot
 d:hostapd-boot
 d:httpd-boot
 d:samba-boot
@@ -45,6 +46,7 @@ f:6bf0b890e5b02710f64f9e02d64b66c4:mariadb-boot/spkgbuild
 f:9b62ce13c05fb026975ef5eae2f1fc56:fcron-boot/spkgbuild
 f:f49bb9e94ff22f5048834123dfd0268c:iptables-boot/spkgbuild
 f:193d367f5ebfefec85fe0c8de2e27bb4:openssh-boot/spkgbuild
+f:e231166f814b5577e8ea5c949a1af712:incrontab-boot/spkgbuild
 f:40dfe3673a6edd75826ed00b65326cad:hostapd-boot/spkgbuild
 f:91326c18a723a50f1247b335bd82646b:httpd-boot/spkgbuild
 f:b95abe7b7a4765cafdead476f56aebd5:samba-boot/spkgbuild

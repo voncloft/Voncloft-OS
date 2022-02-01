@@ -5,7 +5,7 @@ name=incrontab
 version=0.5.12
 release=4
 
-source="https://github.com/ar-/incron/archive/refs/tags/0.$version.tar.gz"
+source="https://github.com/ar-/incron/archive/refs/tags/$version.tar.gz"
 
 build() {
 	cd *
@@ -18,5 +18,4 @@ build() {
 	CFGDIR=$PKG/etc \
 	SYSDATADIR=$PKG/etc/incron.d install
 
-	rm -r $PKG/{usr/sbin,var}
 }
