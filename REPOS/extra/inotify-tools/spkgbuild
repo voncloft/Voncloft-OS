@@ -1,0 +1,17 @@
+# description : watch io events in realtime and execute script
+# depends : 
+
+name=inotify-tools
+version=3.22.1.0
+release=1
+
+source="https://github.com/inotify-tools/inotify-tools/archive/refs/tags/$version.tar.gz"
+
+build() {
+	cd $name-$version
+	sed -i 's|-Werror||g' src/Makefile.*
+	./autogen.sh
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

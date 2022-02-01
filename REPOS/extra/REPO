@@ -24,6 +24,7 @@ d:setconf
 d:nspr
 d:chessx
 d:vidtomp3
+d:inotify-tools
 d:nodejs
 d:dbi-drivers
 d:bluefish
@@ -101,6 +102,8 @@ f:668adb700ec0292770dea8f95161e67f:chessx/CHANGELOG
 f:751d2935949c4f5ff4cf08e2717bea9e:chessx/spkgbuild
 f:3086f608854ed2150fbae7ef450cfcea:vidtomp3/vidtomp3
 f:0b26455ad8ff239d782f0a565bf5275b:vidtomp3/spkgbuild
+f:efc342757e484391daef51ce7f8aeb4d:inotify-tools/CHANGELOG
+f:9cf0b6401f099eec16e4e96c5ddc4559:inotify-tools/spkgbuild
 f:62cbf7d9432d07a7cf186d7d5f9f57b9:nodejs/spkgbuild
 f:855a926513e4239c61a09466de81de36:dbi-drivers/spkgbuild
 f:e68b811ec7656ab0ede0546616751951:bluefish/spkgbuild
