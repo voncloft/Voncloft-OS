@@ -2,7 +2,7 @@
 # depends : glibc
 
 name=libxcrypt
-version=4.4.27
+version=4.4.28
 release=1
 
 source="https://github.com/besser82/$name/archive/refs/tags/v$version.tar.gz"

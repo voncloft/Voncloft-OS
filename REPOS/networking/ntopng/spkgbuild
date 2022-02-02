@@ -2,7 +2,7 @@
 # depends : redis mariadb libpcap sqlite libmaxminddb libpcap redis rrdtool git zeromq automake curl glib libtool libxml2 wget json-c
 
 name=ntopng
-version=5.0
+version=5.2
 release=1
 _ndpiver=3.4
 
