@@ -25,12 +25,12 @@ build() {
     	fop/build.xml
 
 
-	cp $SRC/{pdf,font}box-$fop.jar fop/lib
+	cp $SRC/{pdf,font}box-$pdf.jar fop/lib
 
 	cd fop 
 
 	LC_ALL=en_US.UTF-8                     \
-	PATH=$PATH:$SRC/apache-maven-$maven/bin \
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/opt/ant/bin:/usr/lib64/pkgconfig:/opt/fop:/opt/jdk/bin:/bin:$SRC/apache-maven-3.8.4/bin \
 	ant all javadocs
 
 	mv build/javadocs .
