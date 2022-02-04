@@ -2,7 +2,7 @@
 # depends	: bash
 
 name=gdbm
-version=1.22
+version=1.23
 release=1
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz
 	fix-build-with-gcc10.patch"
