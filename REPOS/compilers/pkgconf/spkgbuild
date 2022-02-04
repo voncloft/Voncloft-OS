@@ -12,8 +12,8 @@ build() {
 	./configure \
 		--prefix=/usr \
 		--sysconfdir=/etc \
-		--with-pkg-config-dir="/usr/lib/pkgconfig:/usr/share/pkgconfig" \
-		--with-system-libdir="/lib:/usr/lib" \
+		--with-pkg-config-dir="/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib64/pkgconfig:/usr/lib32/pkgconfig" \
+		--with-system-libdir="/lib:/usr/lib:/usr/lib32:/usr/lib64" \
 		--with-system-includedir="/usr/include"
 	make
 	make DESTDIR=$PKG install
