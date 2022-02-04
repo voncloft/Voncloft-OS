@@ -486,3 +486,5 @@ sed -i -e "s/version=0.27/version=0.28/g" python/python-pyelftools/spkgbuild
 changelog "python/python-pyelftools/spkgbuild" "Upgraded from version 0.27 to version 0.28"
 sed -i -e "s/version=60.7.0/version=60.7.1/g" python/python-setuptools/spkgbuild
 changelog "python/python-setuptools/spkgbuild" "Upgraded from version 60.7.0 to version 60.7.1"
+sed -i -e "s/version=5.89.0/version=5.90.0/g" kf5/kidletime/spkgbuild
+changelog "kf5/kidletime/spkgbuild" "Upgraded from version 5.89.0 to version 5.90.0"
