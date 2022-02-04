@@ -4,12 +4,14 @@
 name=fop
 version=2.7
 release=1
-
+pdf=2.0.25
+maven=3.8.4
+offo=2.2
 source="https://archive.apache.org/dist/xmlgraphics/fop/source/$name-$version-src.tar.gz
-	http://archive.apache.org/dist/pdfbox/2.0.24/pdfbox-2.0.24.jar
-	http://archive.apache.org/dist/pdfbox/2.0.24/fontbox-2.0.24.jar
-	http://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-	https://downloads.sourceforge.net/offo/2.2/offo-hyphenation.zip"
+	http://archive.apache.org/dist/pdfbox/$pdf/pdfbox-$pdf.jar
+	http://archive.apache.org/dist/pdfbox/$pdf/fontbox-$pdf.jar
+	http://archive.apache.org/dist/maven/maven-3/$maven/binaries/apache-maven-$maven-bin.tar.gz
+	https://downloads.sourceforge.net/offo/$offo/offo-hyphenation.zip"
 
 build() {
 	cd $name-$version
@@ -22,14 +24,13 @@ build() {
 	<arg value="--ignore-source-errors"/>' \
     	fop/build.xml
 
-	sed -i 's/<war.plugin.version>2.2/<war.plugin.version>3.3.1/' pom.xml
 
-	cp $SRC/{pdf,font}box-2.0.24.jar fop/lib
+	cp $SRC/{pdf,font}box-$fop.jar fop/lib
 
 	cd fop 
 
 	LC_ALL=en_US.UTF-8                     \
-	PATH=$PATH:$SRC/apache-maven-3.6.3/bin \
+	PATH=$PATH:$SRC/apache-maven-$maven/bin \
 	ant all javadocs
 
 	mv build/javadocs .
