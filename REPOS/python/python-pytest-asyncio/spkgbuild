@@ -2,7 +2,7 @@
 # depends : python-pytest
 
 name=python-pytest-asyncio
-version=0.17.2
+version=0.18.0
 release=3
 
 source="https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v$version.tar.gz"
