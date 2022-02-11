@@ -2,7 +2,7 @@
 # depends : cython3 python-matplotlib geos shapelib python-numpy python-pyproj
 
 name=python-basemap
-version=1.3.1
+version=1.3.2
 release=2
 
 source="https://github.com/matplotlib/basemap/archive/refs/tags/v$version.tar.gz"
