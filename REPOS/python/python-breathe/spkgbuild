@@ -2,7 +2,7 @@
 # depends : python python-sphinx python-docutils python-six
 
 name=python-breathe
-version=4.32.0
+version=4.33.1
 release=2
 
 source="https://github.com/michaeljones/breathe/archive/refs/tags/v$version.tar.gz"
