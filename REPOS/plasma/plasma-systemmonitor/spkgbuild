@@ -2,7 +2,7 @@
 # depends : kde-deps kitemmodels kquickcharts ksystemstats qqc2-desktop-style
 
 name=plasma-systemmonitor
-version=5.24.0
+version=5.24.1
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
