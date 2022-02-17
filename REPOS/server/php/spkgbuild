@@ -2,7 +2,7 @@
 # depends: httpd libxml2 
 
 name=php
-version=8.0.10
+version=8.1.3
 release=1
 
 source="http://www.php.net/distributions/$name-$version.tar.xz"
@@ -31,17 +31,18 @@ build()
             --with-gettext               \
             --enable-mbstring            \
             --disable-mbregex            \
-            --with-readline              &&
+            --with-mysqli=shared	\
+            --with-readline              
 make
 make DESTDIR=$PKG install
-install -v -Dm644 $SRC/php.ini-production $PKG/etc/php.ini
-if [ -f /etc/php-fpm.conf.default ]; then
-  mv -v /etc/php-fpm.conf{.default,} &&
-  mv -v /etc/php-fpm.d/www.conf{.default,}
-fi
+#install -v -Dm644 $SRC/php.ini-production $PKG/etc/php.ini
+#if [ -f /etc/php-fpm.conf.default ]; then
+#  mv -v /etc/php-fpm.conf{.default,} &&
+#  mv -v /etc/php-fpm.d/www.conf{.default,}
+#fi
 
-sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
-    $PKG/etc/php.ini
+#sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
+#    $PKG/etc/php.ini
 ###needed for httpd - figure out how to not overwrite existing configs
 #sed -i -e '/proxy_module/s/^#//'      \
 #       -e '/proxy_fcgi_module/s/^#//' \

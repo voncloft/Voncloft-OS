@@ -11,7 +11,7 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 session_start();
-include_once 'dbconnect.php';
+include_once '/media/Websites/voncloft.dnsfor.me/include/dbconnect.php';
 
 if(!isset($_SESSION['user']))
 {
