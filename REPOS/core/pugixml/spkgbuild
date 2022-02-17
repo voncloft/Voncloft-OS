@@ -9,7 +9,7 @@ source="https://github.com/zeux/pugixml/releases/download/v${version}/${name}-${
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd *
 	mkdir build
 	cd build
 	cmake .. \

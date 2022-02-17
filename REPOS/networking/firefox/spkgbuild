@@ -4,7 +4,7 @@
 name=firefox
 version=98.0b5
 options="!checksum"
-rust_version=91.5.0
+rust_version=91.6.0
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
 	https://www.linuxfromscratch.org/patches/blfs/svn/firefox-${rust_version}esr-disable_rust_test-1.patch
