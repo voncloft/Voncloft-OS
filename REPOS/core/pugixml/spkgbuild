@@ -2,7 +2,7 @@
 # depends : gcc
 
 name=pugixml
-version=1.12
+version=1.12.1
 release=1
 
 source="https://github.com/zeux/pugixml/releases/download/v${version}/${name}-${version}.tar.gz"
