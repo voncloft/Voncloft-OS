@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-click
-version=8.0.3
+version=8.0.4
 release=3
 
 source="https://github.com/pallets/click/archive/refs/tags/r$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-protego
-version=0.2.0
+version=0.2.1
 release=3
 
 source="https://github.com/scrapy/protego/archive/refs/tags/$version.tar.gz"

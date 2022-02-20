@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-cpplint
-version=1.5.5
+version=1.6.0
 release=1
 
 source="https://github.com/cpplint/cpplint/archive/refs/tags/f$version.tar.gz"
