@@ -2,7 +2,7 @@
 # depends : lvm2 fuse2 fuse3 libsm wxgtk3 sudo yasm
 
 name=veracrypt
-version=1.25.7
+version=1.25.9
 release=1
 
 source="https://launchpad.net/$name/trunk/$version-update7/+download/VeraCrypt_$version-Update7_Source.tar.bz2
