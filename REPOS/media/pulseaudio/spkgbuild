@@ -12,6 +12,7 @@ build() {
 	cd    build &&
 
 	meson --prefix=/usr       \
+	--libdir=/usr/lib \
       	--buildtype=release \
       	-Ddatabase=gdbm     \
       	-Ddoxygen=false     \
