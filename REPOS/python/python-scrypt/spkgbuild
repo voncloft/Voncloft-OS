@@ -2,7 +2,7 @@
 # depends : python glibc openssl
 
 name=python-scrypt
-version=0.8.19
+version=0.8.20
 release=3
 
 source="https://github.com/holgern/py-scrypt/archive/refs/tags/v$version.tar.gz"
