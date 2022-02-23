@@ -2,7 +2,7 @@
 # depends : berkeley-db
 
 name=cyrus-sasl
-version=2.1.27
+version=2.1.28
 release=1
 
 source="https://github.com/cyrusimap/cyrus-sasl/releases/download/$name-$version/$name-$version.tar.gz

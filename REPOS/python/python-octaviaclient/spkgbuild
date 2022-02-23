@@ -2,7 +2,7 @@
 # depends : python-cliff python-keystoneauth1 python-neutronclient python-openstackclient
 
 name=python-octaviaclient
-version=2.4.0
+version=2.5.0
 release=2
 
 source="https://github.com/openstack/python-octaviaclient/archive/refs/tags/e$version.tar.gz"
