@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-testpath
-version=0.5.0
+version=0.6.0
 release=3
 
 source="https://github.com/jupyter/testpath/archive/refs/tags/$version.tar.gz"

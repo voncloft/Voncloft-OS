@@ -2,7 +2,7 @@
 # depends : python-setuptools python-six python-pytz python-tzlocal
 
 name=python-apscheduler
-version=3.8.1
+version=3.9.0
 release=1
 
 source="https://github.com/agronholm/apscheduler/archive/refs/tags/v$version.tar.gz"
