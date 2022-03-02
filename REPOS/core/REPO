@@ -634,9 +634,9 @@ f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
 f:7977cc81f2869ac5f28c93c4ffc83348:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
-f:e71b74b9d0a5a49e7a660028f6ba6c79:dbus/CHANGELOG
+f:e465d20656d90035580b9213c68e0180:dbus/CHANGELOG
 f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
-f:f6ebbcbd2a4efa07e6e429dd0c535139:dbus/spkgbuild
+f:cf962addfa46102e6e357384af141e18:dbus/spkgbuild
 f:0c4425f1486ab49284b40b113677c715:readline/CHANGELOG
 f:d2197bed7f41b0b65a38eb1d2b4c59c4:readline/spkgbuild
 f:8e60e9dec182e6fb2bb05c42c42a5afd:xmodmap/spkgbuild
@@ -758,9 +758,9 @@ f:0a05a9a982a2f696d01f9ec9ed8a52db:light/spkgbuild
 f:b4b85009911ad5c0f383d59f1a62de20:light/run
 f:820aea386b0b51a32782487c41da8fc2:attr/CHANGELOG
 f:f969b442b7c6ef628e8a77981cc41a41:attr/spkgbuild
-f:2877bba2bfdb73745efd7f6fdd3f15d1:smartmontools/CHANGELOG
+f:c935d4847782e14ed34a834c06e2ac42:smartmontools/CHANGELOG
 f:7d14428e62f1a3c871fd93da52b31bfc:smartmontools/rc.smartd
-f:d6da2e0d890c98586780ed1f69a220c9:smartmontools/spkgbuild
+f:c378d81cbf203d4d9ee473a837d6199b:smartmontools/spkgbuild
 f:6f65c48412a1c30895aee51e1a7e9528:smartmontools/run
 f:73c9384775b5781e57e5f5ef16b5a03f:less/CHANGELOG
 f:db53cb4dc9a8ac1e96c92bdca82adb2a:less/spkgbuild
@@ -940,8 +940,8 @@ f:cf3c5f80ee381fc649927541eb7eb3c1:jemalloc/CHANGELOG
 f:e30ee3c1af1a3cc72a973defacb7dd02:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:ce97ede1717a1fa0e006456c27fb1d9d:mercurial/CHANGELOG
-f:0da6182241697e91c618a366abe8bafb:mercurial/spkgbuild
+f:9a0394e6c6dd67b29d70fa9888cbf44c:mercurial/CHANGELOG
+f:60489c8301bfa0433ac8943b5d6fdbd4:mercurial/spkgbuild
 f:52224673969ada7b392db76b52910714:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:6e0a494e314b843637087ae80bf923d5:rxvt-unicode/spkgbuild
@@ -1012,8 +1012,8 @@ f:d6b011b611df75cfa3b42b933250c1a8:iana-etc/update.sh
 f:c57eedd93bafdd546b0eb8d33ed4348c:iana-etc/spkgbuild
 f:85bd5b886c1f93353f3a885fa05bbdc3:iana-etc/services
 f:8219ee56c634626b5bdc68e1a7ddb9aa:pcmanfm/spkgbuild
-f:a72cc1b4fd2e69ca164e905d9b73f2db:smplayer/CHANGELOG
-f:506e0893d3d345379365785cc820fade:smplayer/spkgbuild
+f:5dc495309f408897990e6903888ff230:smplayer/CHANGELOG
+f:6d95c297ce74ab37d0efb8232fca440d:smplayer/spkgbuild
 f:f68691ada1f18ad778e58aefc192f404:gnu-netcat/spkgbuild
 f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:e70460ff08dc354b256f521b8f304d21:iw/spkgbuild
@@ -1405,5 +1405,5 @@ f:6d0e2ee67d073419576701c5e2f535b0:unrar/spkgbuild
 f:868548231e6537fa8ceb683468c679f3:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:646f0c6cf4ea530639b7e0fe3f6b7d22:hugo/CHANGELOG
-f:a0f04a8af2ea9b5fc8a7462a02b02a28:hugo/spkgbuild
+f:0f5414e90850b04e10e93d259fc45c04:hugo/CHANGELOG
+f:f7451f50aa152728b9dfccfa6d59dc7d:hugo/spkgbuild
