@@ -26,14 +26,15 @@ d:qt5-webengine-widevine
 d:libaccounts-qt
 d:qtermwidget
 d:qt5-multimedia
-f:ee736b2805e6272b5aeee414dfa98a08:qt5-x11extras/CHANGELOG
-f:a82d2c7c38ca985da68adde4f779e88e:qt5-x11extras/spkgbuild
-f:393f041b76423e53cdf16ea4271cac8e:qt5-speech/CHANGELOG
+f:092d893581d252c10c034ece9a252474:qt5-x11extras/CHANGELOG
+f:5e81c6cb54a99b0f2e6c623e6af7852e:qt5-x11extras/spkgbuild
+f:c945be1e29232778d273d13b5e2c5d94:qt5-speech/CHANGELOG
 f:9c20716589252bcd2b9a39933867d596:qt5-speech/spkgbuild
 f:9cd1da7fc53dbf25d4749280fe10aae2:polkit-qt/spkgbuild
 f:8b847a7fd41ee640895470ab4e583a00:qt5-svg/CHANGELOG
 f:4ad51caa004a23520d1cf337a71d7b80:qt5-svg/spkgbuild
-f:a83cb4989be211ecc753363f5fb7868e:qtsql/spkgbuild
+f:5fec8348b9cad78479734f30e25bee93:qtsql/CHANGELOG
+f:a81ca7886779986fd099aa8eb047c55b:qtsql/spkgbuild
 f:5e49e41f5fd3637b7be56d12d5d82390:networkmanager-qt/CHANGELOG
 f:b14cd3fcb61223ee6651b7f6f6b1bb6f:networkmanager-qt/spkgbuild
 f:04dc8db42e87aafcc6885c1349c7527e:layer-shell-qt/CHANGELOG
@@ -51,8 +52,9 @@ f:6ebe07313cb23568b9c6c14edd0a2d22:qbittorrent/CHANGELOG
 f:a7b6dbc9d83f33669904201a1d343b42:qbittorrent/spkgbuild
 f:aadd40347642d4a60f78270664b2d369:qt5/main.patch
 f:87719b71fc17dccb96f069d0322122ef:qt5/spkgbuild-backup
+f:6bce4aca76bc2fd422244387e15ffeef:qt5/CHANGELOG
 f:af3a7093ca9f5f3ee85f45ce85615569:qt5/webengine.patch
-f:b7c3ebd80624338b36f79875efb63ef1:qt5/spkgbuild
+f:e0452cd8691d1fa4637a998a436a355a:qt5/spkgbuild
 f:1194a995c0966c0bf9beff2d21f82036:qbittorrent-nox/spkgbuild
 f:0349fa21fe504e33a2a9d3f6b2a4373e:pavucontrol-qt/CHANGELOG
 f:adee95f079d4dc5149b1272f8e888325:pavucontrol-qt/spkgbuild
@@ -77,5 +79,5 @@ f:29f94b685d201d02e69201808260dab0:libaccounts-qt/CHANGELOG
 f:374da282bf4e2e86bb96a85929d619d7:libaccounts-qt/spkgbuild
 f:1faf5c72c4df53c155c5f09419de9e66:qtermwidget/CHANGELOG
 f:6eef675c16fa807711c92bdf9478a29d:qtermwidget/spkgbuild
-f:afecb8dc83f0b407dd0b6886d16c1dec:qt5-multimedia/CHANGELOG
+f:2e1dd505986e9c68fb356f02daa90181:qt5-multimedia/CHANGELOG
 f:bf4012d04df2b88ddca52bcefca7a8b4:qt5-multimedia/spkgbuild
