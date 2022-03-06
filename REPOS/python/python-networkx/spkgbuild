@@ -2,7 +2,7 @@
 # depends : python-decorator
 
 name=python-networkx
-version=2.7
+version=2.7.1
 release=3
 
 source="https://github.com/networkx/networkx/archive/refs/tags/r$version.tar.gz"
