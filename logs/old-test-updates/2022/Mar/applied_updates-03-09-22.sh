@@ -30,3 +30,5 @@ sed -i -e "s/version=5.15.2/version=5.15.3/g" qt/qt5-speech/spkgbuild
 changelog "qt/qt5-speech/spkgbuild" "Upgraded from version 5.15.2 to version 5.15.3"
 sed -i -e "s/version=1.9.9/version=1.9.10/g" xfce/xfce4-screenshooter/spkgbuild
 changelog "xfce/xfce4-screenshooter/spkgbuild" "Upgraded from version 1.9.9 to version 1.9.10"
+sed -i -e "s/version=3.0.16/version=3.0.17/g" media/vlc/spkgbuild
+changelog "media/vlc/spkgbuild" "Upgraded from version 3.0.16 to version 3.0.17"
