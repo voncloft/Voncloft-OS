@@ -2,7 +2,7 @@
 # depends : python-requests python-biscuits python-six
 
 name=python-responses
-version=0.18.0
+version=0.19.0
 release=1
 
 source="https://github.com/getsentry/responses/archive/refs/tags/$version.tar.gz"
