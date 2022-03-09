@@ -11,11 +11,11 @@ options="!checksum"
 
 build() {
 	cd lua-$version
+	export prefix=/usr
 	cat <<-EOF > lua.pc
 	V=5.2
 	R=$version
 
-	prefix=/usr
 	INSTALL_BIN=${prefix}/bin
 	INSTALL_INC=${prefix}/include/lua5.2
 	INSTALL_LIB=${prefix}/lib
@@ -46,9 +46,9 @@ build() {
 	make TO_BIN='lua5.2 luac5.2'                     \
      	TO_LIB="liblua5.2.so liblua5.2.so.5.2 liblua5.2.so.$version" \
      	INSTALL_DATA="cp -d"                        \
-     	INSTALL_TOP=$PKG/install/usr                \
-     	INSTALL_INC=$PKG/install/usr/include/lua5.2 \
-     	INSTALL_MAN=$PKG/install/usr/share/man/man1 \
+     	INSTALL_TOP=$PKG/usr                \
+     	INSTALL_INC=$PKG/usr/include/lua5.2 \
+     	INSTALL_MAN=$PKG/usr/share/man/man1 \
 	install
 
 	install -Dm644 lua.pc $PKG/usr/lib/pkgconfig/lua52.pc
