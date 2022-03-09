@@ -48,7 +48,7 @@ build() {
      	INSTALL_DATA="cp -d"                        \
      	INSTALL_TOP=$PKG/install/usr                \
      	INSTALL_INC=$PKG/install/usr/include/lua5.2 \
-     	INSTALL_MAN=$PKG/install/usr/share/man/man1
+     	INSTALL_MAN=$PKG/install/usr/share/man/man1 \
 	install
 
 	install -Dm644 lua.pc $PKG/usr/lib/pkgconfig/lua52.pc
