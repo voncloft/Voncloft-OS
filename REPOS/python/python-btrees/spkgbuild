@@ -2,7 +2,7 @@
 # depends : python-persistent python-zope-interface
 
 name=python-btrees
-version=4.9.2
+version=4.10.0
 release=3
 
 source="https://github.com/zopefoundation/btrees/archive/refs/tags/$version.tar.gz"
