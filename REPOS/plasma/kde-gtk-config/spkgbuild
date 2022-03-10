@@ -10,7 +10,10 @@ options="!checksum"
 
 build() {
    cd $name-$version
-   plasma-package-installer
+   mkdir build
    cd build
+   cmake .. -DCMAKE_INSTALL_LIBEXECDIR=lib \
+   -DBUILD_TESTING=OFF
+   make
    make DESTDIR=$PKG install
 }
