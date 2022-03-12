@@ -2,7 +2,7 @@
 # depends : python-urwid python-pygments
 
 name=python-pudb
-version=2022.1
+version=2022.1.1
 release=1
 
 source="https://github.com/inducer/pudb/archive/refs/tags/v$version.tar.gz"
