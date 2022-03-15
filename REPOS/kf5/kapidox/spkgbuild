@@ -10,7 +10,6 @@ options="!checksum"
 
 build() {
    cd $name-$version
-   kf5-package-installer
-   cd build
-   make DESTDIR=$PKG install
+   python setup.py build
+   python setup.py install --optimize=1 --root=$PKG
 }
