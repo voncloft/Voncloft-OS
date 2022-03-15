@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-sparqlwrapper
-version=1.8.5
+version=2.0.0
 release=2
 
 source="https://github.com/RDFLib/sparqlwrapper/archive/refs/tags/$version.tar.gz"

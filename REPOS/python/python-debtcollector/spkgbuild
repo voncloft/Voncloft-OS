@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-babel python-wrapt
 
 name=python-debtcollector
-version=2.4.0
+version=2.5.0
 release=3
 
 source="https://github.com/openstack/debtcollector/archive/refs/tags/e$version.tar.gz"
