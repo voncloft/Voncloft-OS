@@ -2,15 +2,13 @@
 # depends : gst-plugins-base pulseaudio openal qt5
 
 name=qt5-multimedia
-_qtver=5.15.2
-version=${_qtver/-/}
+version=5.15.3
 release=1
-_pkgfqn="${name/5-/}-everywhere-src-${_qtver}"
-source="https://download.qt.io/official_releases/qt/${version%.*}/${_qtver}/submodules/${_pkgfqn}.tar.xz"
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/qtmultimedia-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd *
 	mkdir -pv build
 	cd build
 	qmake ../${_pkgfqn}

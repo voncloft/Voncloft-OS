@@ -2,15 +2,13 @@
 # depends : qt5-multimedia
 
 name=qt5-speech
-_qtverz=5.15.2
-version=${_qtverz/-/}
-release=1
+version=5.15.2
 
-_pkgfqn="${name/5-/}-everywhere-src-${_qtverz}"
-source="https://download.qt.io/official_releases/qt/${version%.*}/${_qtverz}/submodules/${_pkgfqn}.tar.xz"
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/qtspeech-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"
 
 build() {
+	cd *
 	mkdir build
 	cd build
 	qmake ../${_pkgfqn}

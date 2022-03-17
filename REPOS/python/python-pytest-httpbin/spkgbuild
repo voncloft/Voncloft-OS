@@ -2,7 +2,7 @@
 # depends : python-pytest python-six httpbin
 
 name=python-pytest-httpbin
-version=1.0.2
+version=2.0.0
 release=6
 
 source="https://github.com/kevin1024/pytest-httpbin/archive/refs/tags/v$version.tar.gz"
