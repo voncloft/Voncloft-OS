@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-flake8-blind-except
-version=0.2.0
+version=0.2.1
 release=4
 
 source="https://github.com/elijahandrews/flake8-blind-except/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-mpmath
 
 name=python-sympy
-version=1.10
+version=1.10.1
 release=2
 
 source="https://github.com/sympy/sympy/archive/refs/tags/r$version.tar.gz"
