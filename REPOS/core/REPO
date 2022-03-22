@@ -684,10 +684,10 @@ f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:6d9ed73b67801b187325c702a9b3d2e4:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
-f:062c31642e0fb1479f901dee6114463d:linux-desktop/CHANGELOG
+f:368dc272b66625a5e16576cb6a1155dc:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-desktop/override
-f:1030a1f06feed00df7fb01a361d97c24:linux-desktop/spkgbuild
+f:32aadb2cfcbe2627e2ae671ed19deaa0:linux-desktop/spkgbuild
 f:cd5390e5b0e7cbe86cb692fa06666762:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -916,8 +916,8 @@ f:e159aa01e399f9788f73d79df584b3d9:linux-pam/spkgbuild
 f:aac6b80a6e8f22d21658faafacfc421f:vsv/spkgbuild
 f:371b04400afc06bc4df62338bf55a897:rapidjson/spkgbuild
 f:4a01446e007b8fcc1f4076195bb6ab34:openjpeg2/spkgbuild
-f:6e1d7047eb946ff24977a65941fdb123:webkitgtk/CHANGELOG
-f:cbd849a9aa1ccfd91cd7d3e82fe02707:webkitgtk/spkgbuild
+f:a2b789ae20deee6deb4a3d742b2cae9b:webkitgtk/CHANGELOG
+f:4574f415427532760afd90f349b1183e:webkitgtk/spkgbuild
 f:9b2b1b68e1751587a3a8ac81cf70a11f:openjpeg/CHANGELOG
 f:a08812e0681a7af09a1cc2119dcf58a8:openjpeg/spkgbuild
 f:548ae33bd944ed02279f054c3d566884:pugixml/CHANGELOG
@@ -1019,10 +1019,10 @@ f:f68691ada1f18ad778e58aefc192f404:gnu-netcat/spkgbuild
 f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:e70460ff08dc354b256f521b8f304d21:iw/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh
-f:7e8f76a29481bf2cdc5bd572540ac360:linux-router/CHANGELOG
+f:93e28ac2f179b0b527fa3559e36476c2:linux-router/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-router/override
-f:74c0f60bdde9b59660c000f35c25911b:linux-router/spkgbuild
+f:73af427f6e179c3e61a234656f2bee9d:linux-router/spkgbuild
 f:2306924a6b4b136029e5e95be3af9d11:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
