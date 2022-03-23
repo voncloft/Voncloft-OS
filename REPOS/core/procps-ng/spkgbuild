@@ -8,7 +8,7 @@ source="https://sourceforge.net/projects/procps-ng/files/Production/$name-$versi
 
 build() {
 	cd *
-
+	sed 's:<ncursesw/:<:g' -i watch.c
 	./configure \
     	--prefix=/usr \
     	--exec-prefix=/ \
@@ -17,7 +17,6 @@ build() {
     	--bindir=/usr/bin \
     	--sbindir=/usr/bin \
     	--enable-watch8bit \
-	--disable-modern-top \
     	--disable-kill
 	make
 	make DESTDIR=$PKG install
