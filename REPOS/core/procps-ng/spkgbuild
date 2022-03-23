@@ -9,18 +9,17 @@ source="https://sourceforge.net/projects/procps-ng/files/Production/$name-$versi
 build() {
 	cd *
 
-	./configure --prefix=/usr \
-	            --exec-prefix= \
-	            --libdir=/usr/lib \
-	            --disable-static \
-	            --disable-kill \
-		    --disable-nls
+	./configure \
+    	--prefix=/usr \
+    	--exec-prefix=/ \
+    	--sysconfdir=/etc \
+    	--libdir=/usr/lib \
+    	--bindir=/usr/bin \
+    	--sbindir=/usr/bin \
+    	--enable-watch8bit \
+	--disable-modern-top \
+    	--disable-kill
 	make
 	make DESTDIR=$PKG install
 
-	rm -r $PKG/usr/share/doc
-
-	mkdir -pv $PKG/lib
-	mv -v $PKG/usr/lib/libprocps.so.* $PKG/lib
-	ln -sfv ../../lib/$(readlink $PKG/usr/lib/libprocps.so) $PKG/usr/lib/libprocps.so
 }
