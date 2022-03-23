@@ -7,7 +7,7 @@ release=1
 source="https://sourceforge.net/projects/procps-ng/files/Production/$name-$version.tar.xz"
 
 build() {
-	cd $name-$version
+	cd procps-$version
 	sed 's:<ncursesw/:<:g' -i watch.c
 	./configure \
     	--prefix=/usr \
