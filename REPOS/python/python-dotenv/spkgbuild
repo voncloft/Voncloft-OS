@@ -2,7 +2,7 @@
 # depends : python-click
 
 name=python-dotenv
-version=0.19.2
+version=0.20.0
 release=3
 
 source="https://github.com/theskumar/python-dotenv/archive/refs/tags/v$version.tar.gz"
