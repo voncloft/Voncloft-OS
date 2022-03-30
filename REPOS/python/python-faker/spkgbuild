@@ -2,7 +2,7 @@
 # depends : python-setuptools python-dateutil python-text-unidecode
 
 name=python-faker
-version=13.3.3
+version=13.3.4
 release=1
 
 source="https://github.com/joke2k/faker/archive/refs/tags/v$version.tar.gz"
