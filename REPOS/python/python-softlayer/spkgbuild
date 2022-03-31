@@ -2,7 +2,7 @@
 # depends : python-six python-ptable python-click python-requests python-prompt_toolkit
 
 name=python-softlayer
-version=6.0.1
+version=6.0.2
 release=2
 
 source="https://github.com/softlayer/softlayer-python/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python python-six python-chardet
 
 name=python-pypugjs
-version=5.9.10
+version=5.9.11
 release=1
 
 source="https://github.com/kakulukia/pypugjs/archive/refs/tags/v$version.tar.gz"
