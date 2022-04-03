@@ -4,7 +4,7 @@
 name=squashfs-tools
 version=4.5.1
 release=2
-source="https://downloads.sourceforge.net/squashfs/squashfs$version.tar.gz
+source="https://downloads.sourceforge.net/squashfs/squashfs-$version.tar.gz
 	fix-glibc-2.28.patch"
 
 build() {
