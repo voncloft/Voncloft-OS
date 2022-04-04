@@ -26,17 +26,31 @@ RED='\033[1;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 . /lib/lsb/init-functions
-
+. /etc/default/subsonic
 BIN_FILE="/var/subsonic/subsonic.sh"
-
+PIDFILE="/run/subsonic.pid"
+DAEMON="/var/subsonic/subsonic.sh"
+DAEMON_ARGS="--pidfile=$PIDFILE $SUBSONIC_ARGS"
 #$LastChangedBy: dj $
 #$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
 
 case "$1" in
    start)
       log_info_msg "Starting subsonic..."
-      start_daemon ${BIN_FILE} --pidfile=/run/subsonic.pid
-      evaluate_retval
+      #if [ -e $PIDFILE ]
+    #then
+     #   ps -p $(cat $PIDFILE) > /dev/null
+      #  [ "$?" = 0 ] && return 1
+    #fi
+
+    touch $PIDFILE
+    chown $SUBSONIC_USER $PIDFILE
+    [ -e /var/subsonic ] && chown -R $SUBSONIC_USER /var/subsonic
+    [ -e /tmp/subsonic ] && chown -R $SUBSONIC_USER /tmp/subsonic
+	echo $PIDFILE
+     start_daemon ${DAEMON} ${DAEMON_ARGS} --pidfile=${PIDFILE} 
+     #start_daemon ${DAEMON} --pidfile=$PIDFILE
+      #evaluate_retval
       ;;
 
    stop)

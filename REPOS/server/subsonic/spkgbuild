@@ -6,7 +6,8 @@ version=6.1.6
 release=1
 options="!checksum"
 
-source="https://sourceforge.net/projects/subsonic/files/${name}/${version}/${name}-${version}-standalone.tar.gz"
+source="https://sourceforge.net/projects/subsonic/files/${name}/${version}/${name}-${version}-standalone.tar.gz
+	subsonic"
 
 build()
 {
@@ -18,4 +19,6 @@ build()
     	cp  * $PKG/var/lib/subsonic
     	ln -fs /var/lib/subsonic/subsonic.sh $PKG/etc/subsonic.conf
     	chmod +x $PKG/var/lib/subsonic/subsonic.sh
+	mkdir -pv $PKG/etc/default
+	install -Dm644 $SRC/subsonic $PKG/etc/default/subsonic
 }
