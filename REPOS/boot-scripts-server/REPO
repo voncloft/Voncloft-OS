@@ -1,4 +1,5 @@
 d:subsonic-boot
+d:voogle-boot
 d:lxdm-boot
 d:postfix-boot
 d:psad-boot
@@ -23,6 +24,8 @@ d:hostapd-boot
 d:httpd-boot
 d:samba-boot
 f:82c5a7b04b78a35143852ba1ba3fbc43:subsonic-boot/spkgbuild
+f:16165f16ab9f9436511f0c911330cec9:voogle-boot/CHANGELOG
+f:9b703697431e3fe1c59edfbe1bbb085e:voogle-boot/spkgbuild
 f:c0146462581a3a20617550101c8547aa:lxdm-boot/spkgbuild
 f:d21ec10e9452f978c8e1c5afbb8d4fa2:postfix-boot/spkgbuild
 f:c1dd87eabe9a4d7d9896ba5c65796b16:psad-boot/spkgbuild

@@ -1,0 +1,15 @@
+# description : boot script for voogle search engine
+# depends :
+
+name=wireguard-boot
+version=1.0.20210914
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+options="!checksum"
+
+build() {
+        cd blfs-bootscripts-20210110
+        make DESTDIR=$PKG install-voogle-boot
+
+}

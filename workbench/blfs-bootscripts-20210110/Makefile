@@ -718,7 +718,15 @@ install-logrotate-boot: create-dirs
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc4.d/S11logrotate
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc5.d/S11logrotate
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc6.d/S11logrotate
-
+install-voogle-boot: create-dirs
+	install -m ${MODE} blfs/init.d/voogle     ${EXTDIR}/rc.d/init.d/
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc0.d/K99voogle
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc1.d/K99voogle
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc2.d/K99voogle
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc3.d/S99voogle
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc4.d/S99voogle
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc5.d/S99voogle
+	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc6.d/S99voogle
 uninstall-atd:
 	rm -f ${EXTDIR}/rc.d/init.d/atd
 	rm -f ${EXTDIR}/rc.d/rc0.d/K29atd
@@ -1301,6 +1309,7 @@ uninstall-xinetd:
 	install-logrotate-boot
 	install-mythbackend-boot \
 	install-wireguard-boot \
+	install-voogle-boot \
 	uninstall-atd \
 	uninstall-accounts-daemon \
 	uninstall-acpid \
