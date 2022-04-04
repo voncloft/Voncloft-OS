@@ -9,7 +9,7 @@ CONFMODE=644
 
 all:
 	@grep "^install" Makefile | cut -d ":" -f 1
-	@echo "Select an appropriate install target from the above list"
+	@echo "Select an appropriate install target from the above list" 
 
 create-dirs:
 	install -d -m ${DIRMODE} ${EXTDIR}/rc.d/rc{0,1,2,3,4,5,6,S}.d
@@ -232,7 +232,7 @@ install-firewalld: create-dirs
 	ln -sf  ../init.d/firewalld ${EXTDIR}/rc.d/rc6.d/K81firewalld
 
 install-gdm: create-dirs
-	install -m ${MODE} blfs/init.d/xdm	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/xdm        ${EXTDIR}/rc.d/init.d/
 	install -m ${CONFMODE} blfs/sysconfig/xdm ${EXTDIR}/sysconfig/xdm
 	sed -i '/gdm/s/^#//' ${EXTDIR}/sysconfig/xdm
 	if ! grep -q '^dm:5' ${ETCDIR}/inittab; then \
@@ -240,7 +240,7 @@ install-gdm: create-dirs
 	fi
 
 install-gpm: create-dirs
-	install -m ${MODE} blfs/init.d/gpm	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/gpm        ${EXTDIR}/rc.d/init.d/
 	ln -sf  ../init.d/gpm ${EXTDIR}/rc.d/rc0.d/K10gpm
 	ln -sf  ../init.d/gpm ${EXTDIR}/rc.d/rc1.d/K10gpm
 	ln -sf  ../init.d/gpm ${EXTDIR}/rc.d/rc2.d/S70gpm
@@ -250,7 +250,7 @@ install-gpm: create-dirs
 	ln -sf  ../init.d/gpm ${EXTDIR}/rc.d/rc6.d/K10gpm
 
 install-haveged: create-dirs
-	install -m ${MODE} blfs/init.d/haveged	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/haveged        ${EXTDIR}/rc.d/init.d/
 	ln -sf  ../init.d/haveged ${EXTDIR}/rc.d/rc0.d/K90haveged
 	ln -sf  ../init.d/haveged ${EXTDIR}/rc.d/rc1.d/K90haveged
 	ln -sf  ../init.d/haveged ${EXTDIR}/rc.d/rc2.d/K90haveged
@@ -260,7 +260,7 @@ install-haveged: create-dirs
 	ln -sf  ../init.d/haveged ${EXTDIR}/rc.d/rc6.d/K90haveged
 
 install-heimdal: create-dirs
-	install -m ${MODE} blfs/init.d/heimdal	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/heimdal        ${EXTDIR}/rc.d/init.d/
 	ln -sf  ../init.d/heimdal ${EXTDIR}/rc.d/rc0.d/K42heimdal
 	ln -sf  ../init.d/heimdal ${EXTDIR}/rc.d/rc1.d/K42heimdal
 	ln -sf  ../init.d/heimdal ${EXTDIR}/rc.d/rc2.d/K42heimdal
@@ -270,7 +270,7 @@ install-heimdal: create-dirs
 	ln -sf  ../init.d/heimdal ${EXTDIR}/rc.d/rc6.d/K42heimdal
 
 install-iptables: create-dirs
-	install -m ${MODE} blfs/init.d/iptables	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/iptables        ${EXTDIR}/rc.d/init.d/
 	ln -sf  ../init.d/iptables ${EXTDIR}/rc.d/rc3.d/S19iptables
 	ln -sf  ../init.d/iptables ${EXTDIR}/rc.d/rc4.d/S19iptables
 	ln -sf  ../init.d/iptables ${EXTDIR}/rc.d/rc5.d/S19iptables
@@ -296,7 +296,7 @@ install-lprng: create-dirs
 	ln -sf  ../init.d/lprng ${EXTDIR}/rc.d/rc6.d/K00lprng
 
 install-lxdm: create-dirs
-	install -m ${MODE} blfs/init.d/xdm	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/xdm        ${EXTDIR}/rc.d/init.d/
 	install -m ${CONFMODE} blfs/sysconfig/xdm ${EXTDIR}/sysconfig/xdm
 	sed -i '/lxdm/s/^#//' ${EXTDIR}/sysconfig/xdm
 	if ! grep -q '^dm:5' ${ETCDIR}/inittab; then \
@@ -445,7 +445,7 @@ install-samba: create-dirs
 	ln -sf  ../init.d/samba ${EXTDIR}/rc.d/rc6.d/K48samba
 
 install-lightdm: create-dirs
-	install -m ${MODE} blfs/init.d/xdm	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/xdm        ${EXTDIR}/rc.d/init.d/
 	install -m ${CONFMODE} blfs/sysconfig/xdm ${EXTDIR}/sysconfig/xdm
 	sed -i '/lightdm/s/^#//' ${EXTDIR}/sysconfig/xdm
 	if ! grep -q '^dm:5' ${ETCDIR}/inittab; then \
@@ -513,7 +513,7 @@ install-stunnel: create-dirs
 	ln -sf  ../init.d/stunnel ${EXTDIR}/rc.d/rc6.d/K47stunnel
 
 install-svn: create-dirs
-	install -m ${MODE} blfs/init.d/svn	${EXTDIR}/rc.d/init.d/
+	install -m ${MODE} blfs/init.d/svn        ${EXTDIR}/rc.d/init.d/
 	ln -sf ../init.d/svn ${EXTDIR}/rc.d/rc0.d/K27svn
 	ln -sf ../init.d/svn ${EXTDIR}/rc.d/rc1.d/K27svn
 	ln -sf ../init.d/svn ${EXTDIR}/rc.d/rc2.d/K27svn
@@ -637,17 +637,15 @@ install-noip-boot: create-dirs
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc4.d/S82noip2
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc5.d/S82noip2
 	ln -sf ../init.d/noip2 ${EXTDIR}/rc.d/rc6.d/S82noip2
-
 install-incrontab-boot: create-dirs
-	install -m ${MODE} blfs/init.d/incrontab     ${EXTDIR}/rc.d/init.d/
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc0.d/K99incrontab
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc1.d/K99incrontab
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc2.d/K99incrontab
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc3.d/S99incrontab
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc4.d/S99incrontab
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc5.d/S99incrontab
-	ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc6.d/S99incrontab
-
+        install -m ${MODE} blfs/init.d/incrontab     ${EXTDIR}/rc.d/init.d/
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc0.d/K99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc1.d/K99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc2.d/K99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc3.d/S99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc4.d/S99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc5.d/S99incrontab
+        ln -sf ../init.d/incrontab ${EXTDIR}/rc.d/rc6.d/S99incrontab
 install-wireguard-boot: create-dirs
 	install -m ${MODE} blfs/init.d/wireguard     ${EXTDIR}/rc.d/init.d/
 	ln -sf ../init.d/wireguard ${EXTDIR}/rc.d/rc0.d/K99wireguard
@@ -660,8 +658,8 @@ install-wireguard-boot: create-dirs
 
 install-openvpn-torrent: create-dirs
 	install -m ${MODE} blfs/init.d/openvpn-torrent     ${EXTDIR}/rc.d/init.d/
-
-install-psad-boot: create-dirs
+	
+install-psad-boot: create-dirs	
 	install -m ${MODE} blfs/init.d/psad     ${EXTDIR}/rc.d/init.d/
 	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc0.d/K83psad
 	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc1.d/K83psad
@@ -670,7 +668,7 @@ install-psad-boot: create-dirs
 	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc4.d/S83psad
 	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc5.d/S83psad
 	ln -sf ../init.d/psad ${EXTDIR}/rc.d/rc6.d/S83psad
-
+	
 install-sshguard-boot: create-dirs
 	install -m ${MODE} blfs/init.d/sshguard     ${EXTDIR}/rc.d/init.d/
 	ln -sf ../init.d/sshguard ${EXTDIR}/rc.d/rc0.d/K83sshguard
@@ -690,7 +688,7 @@ install-subsonic-boot: create-dirs
 	ln -sf ../init.d/subsonic ${EXTDIR}/rc.d/rc4.d/S95subsonic
 	ln -sf ../init.d/subsonic ${EXTDIR}/rc.d/rc5.d/S95subsonic
 	ln -sf ../init.d/subsonic ${EXTDIR}/rc.d/rc6.d/S95subsonic
-
+	
 install-webmin-boot: create-dirs
 	install -m ${MODE} blfs/init.d/webmin     ${EXTDIR}/rc.d/init.d/
 	ln -sf ../init.d/webmin ${EXTDIR}/rc.d/rc0.d/K96webmin
@@ -720,17 +718,15 @@ install-logrotate-boot: create-dirs
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc4.d/S11logrotate
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc5.d/S11logrotate
 	ln -sf ../init.d/mythbackend ${EXTDIR}/rc.d/rc6.d/S11logrotate
-
 install-voogle-boot: create-dirs
-	install -m ${MODE} blfs/init.d/voogle     ${EXTDIR}/rc.d/init.d/
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc0.d/K99voogle
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc1.d/K99voogle
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc2.d/K99voogle
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc3.d/S99voogle
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc4.d/S99voogle
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc5.d/S99voogle
-	ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc6.d/S99voogle
-
+        install -m ${MODE} blfs/init.d/voogle     ${EXTDIR}/rc.d/init.d/
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc0.d/K99voogle
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc1.d/K99voogle
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc2.d/K99voogle
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc3.d/S99voogle
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc4.d/S99voogle
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc5.d/S99voogle
+        ln -sf ../init.d/voogle ${EXTDIR}/rc.d/rc6.d/S99voogle
 uninstall-atd:
 	rm -f ${EXTDIR}/rc.d/init.d/atd
 	rm -f ${EXTDIR}/rc.d/rc0.d/K29atd

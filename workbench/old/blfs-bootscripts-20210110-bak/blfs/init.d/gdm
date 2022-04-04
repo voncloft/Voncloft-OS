@@ -1,0 +1,62 @@
+#!/bin/sh
+########################################################################
+# Begin gdm
+#
+# Description : Start Gnome Display Manager
+#
+# Authors     : Armin K. - krejzi@email.com
+#               DJ Lucas - dj@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            gdm
+# Required-Start:      $local_fs $last
+# Should-Start:
+# Required-Stop:       $local_fs $first
+# Should-Stop:
+# Default-Start:       5
+# Default-Stop:        0 1 2 3 4 6
+# Short-Description:   Gnome Display Manager
+# Description:         Starts the Gnome Display Manger
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+GDM_BINARY=/usr/sbin/gdm
+
+case "${1}" in
+   start)
+      log_info_msg "Starting GNOME Display Manager GDM"
+      start_daemon ${GDM_BINARY}
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping GNOME Display Manager GDM"
+      killproc ${GDM_BINARY}
+      evaluate_retval
+      ;;
+
+   restart)
+      ${0} stop
+      sleep 1
+      ${0} start
+      ;;
+
+   status)
+      statusproc ${GDM_BINARY}
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+exit 0
+
+# End gdm

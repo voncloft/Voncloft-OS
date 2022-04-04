@@ -1,0 +1,62 @@
+#!/bin/sh
+########################################################################
+# Begin lxdm
+#
+# Description : LXDM Boot Script
+#
+# Authors     : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            lxdm
+# Required-Start:      $local_fs
+# Should-Start:        $remote_fs $last
+# Required-Stop:       $local_fs $first
+# Should-Stop:         $remote_fs
+# Default-Start:       5
+# Default-Stop:        0 1 2 3 4 6
+# Short-Description:   Starts lxdm.
+# Description:         Starts lxdm daemon.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+BIN_FILE="/usr/sbin/lxdm"
+
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+case $1 in
+   start)
+	log_info_msg "Starting LXDM..."
+	start_daemon $BIN_FILE -d
+	evaluate_retval
+	;;
+
+   stop)
+	log_info_msg "Stopping LXDM..."
+ 	killproc $BIN_FILE
+	evaluate_retval
+	;;
+
+   restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+
+   status)
+        statusproc ${BIN_FILE}
+        ;;
+
+   *)
+	echo "usage: $0 [start|stop|restart|status]"
+        exit 1
+	;;
+esac
+
+# End /etc/rc.d/init.d/lxdm

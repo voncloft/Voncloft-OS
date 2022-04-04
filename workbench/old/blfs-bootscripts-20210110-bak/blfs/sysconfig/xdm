@@ -1,0 +1,7 @@
+# Which display manager to use (full path):
+# DISPLAY_MANAGER=/usr/sbin/gdm
+# DISPLAY_MANAGER=/usr/sbin/lxdm
+# DISPLAY_MANAGER=/usr/bin/lightdm
+
+# Options to pass to the display manager:
+DM_OPTIONS=""

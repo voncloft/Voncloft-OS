@@ -1,0 +1,67 @@
+#!/bin/sh
+########################################################################
+# Begin dovecot
+#
+# Description : Dovecot server init script
+#
+# Author      : Igor Živković <contact@igor-zivkovic.from.hr>
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+
+### BEGIN INIT INFO
+# Provides:          dovecot
+# Required-Start:    $network
+# Should-Start:      mysql openldap networkmanager postgresql samba saslauthd wicd
+# Required-Stop:     $network
+# Should-Stop:       mysql openldap networkmanager postgresql samba saslauthd wicd
+# Default-Start:     3 4 5
+# Default-Stop:      0 1 2 6
+# Short-Description: Starts the Dovecot POP3/IMAP service
+# Description:       Starts the Dovecot POP3/IMAP service
+# X-LFS-Provided-By: BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy$
+#$Date$
+
+case "$1" in
+   start)
+      log_info_msg "Starting Dovecot server..."
+      start_daemon /usr/sbin/dovecot
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping Dovecot server..."
+      killproc -p "/run/dovecot/master.pid" /usr/sbin/dovecot
+      evaluate_retval
+      ;;
+
+   reload)
+      log_info_msg "Reloading Dovecot server..."
+      killproc -p "/run/dovecot/master.pid" /usr/sbin/dovecot -HUP
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc /usr/sbin/dovecot
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|reload|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End dovecot
