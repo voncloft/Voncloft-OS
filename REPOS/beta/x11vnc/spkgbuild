@@ -1,0 +1,16 @@
+# description : remotely view desktop of pc
+# depends : avahi libvncserver libx11 libxcomposite libxcrypt libxdamage libxext libxfixes libxi libxinerama libxrandr libxtst openssl xorg-xdpyinfo tk
+
+name=x11vnc
+version=0.9.16
+release=5
+
+source="https://github.com/LibVNC/x11vnc/archive/refs/tags/$version.tar.gz"
+
+build() {
+	cd $name
+	./configure --prefix='/usr' --mandir='/usr/share/man'
+	make
+	make -C x11vnc DESTDIR="$PKG" install
+	install x11vnc/misc/{rx11vnc,Xdummy} -t "$PKG/usr/bin"
+}

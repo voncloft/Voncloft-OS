@@ -1,4 +1,10 @@
+d:x11vnc
+d:libvncserver
 d:qt6
+f:8776c73b89f6eebf324cabffacd6b8f4:x11vnc/CHANGELOG
+f:d6a5dc34fec5e8bc739e325f9d6a3d79:x11vnc/spkgbuild
+f:203eeaf6d72517ca59bd6f661a594e42:libvncserver/CHANGELOG
+f:6ddf5f7a3cf3bf27d6ec27b958b6f430:libvncserver/spkgbuild
 f:aadd40347642d4a60f78270664b2d369:qt6/main.patch
 f:87719b71fc17dccb96f069d0322122ef:qt6/spkgbuild-backup
 f:5422c3342c7975a39eb5f684388152cf:qt6/CHANGELOG
