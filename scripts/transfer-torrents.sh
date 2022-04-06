@@ -34,6 +34,10 @@ do
 	else
 		echo "$ppath does not exist creating folder now"
 		mkdir -pv "$ppath"
+		cp /media/Storage/Videos/Sitcoms/secondary.php /media/Storage/Videos/$show
+		cp /media/Storage/Videos/Sitcoms/index.php /media/Storage/Videos/$show
+		cp /media/Storage/Videos/Sitcoms/secondary.php $ppath
+		cp /media/Storage/Videos/Sitcoms/index.php $ppath
 	fi
 done
 fi
