@@ -2,7 +2,7 @@
 # depends : python-appdirs python-packaging python-ordered-set
 
 name=python-setuptools
-version=61.3.1
+version=62.0.0
 release=1
 
 source="https://github.com/pypa/setuptools/archive/refs/tags/v$version.tar.gz"

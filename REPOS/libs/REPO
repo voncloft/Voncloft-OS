@@ -306,8 +306,8 @@ f:d2ffdfbdef07651a2a9b39d0288f0bfe:libaec/CHANGELOG
 f:8d62a37b64966f401abfce68102da4c7:libaec/spkgbuild
 f:376807bbc96d25302f36e90893d27f61:js78/spkgbuild
 f:2b735e0b63377f2b155bfbb2093060e3:libvdpau-va-gl/spkgbuild
-f:dcabfaf8771ee596dbd573d9a04321ac:spdlog/CHANGELOG
-f:c0ca930a4f0a50053ec93b9fa81fb036:spdlog/spkgbuild
+f:168bcc55c37bb79871aba0fc6578ae93:spdlog/CHANGELOG
+f:cbecc230beee6eb90ee2137eacdbf245:spdlog/spkgbuild
 f:c9167fc50b6822f374bf67d1ee0de403:yaml/spkgbuild
 f:9d51da1147956aa1180a531d532015f0:giblib/spkgbuild
 f:7cbceb6db5573c20790bd6c3e640e9de:libgee/spkgbuild
@@ -342,7 +342,8 @@ f:57118b6fe02ee9007330fa4417df96dc:libseccomp/CHANGELOG
 f:f93feef74db6331d604be0bcb80b8c74:libseccomp/spkgbuild
 f:88ad2fdaa92cce2717a8dab81f38500b:liba52/spkgbuild
 f:04499d4efa25108c18604ff3e19efca2:libidl2/spkgbuild
-f:3180c2101da3b4ffd18552474fb5e6f3:libmnl/spkgbuild
+f:b0ab235df86a56c10e7c700faf092467:libmnl/CHANGELOG
+f:dd7788795837d5357b40e240113e5eb4:libmnl/spkgbuild
 f:6a576b3cee52d18f1930e8b094d99813:libdaemon/spkgbuild
 f:6b3a9a19dc330ffa545803aac7934f51:libxcrypt/CHANGELOG
 f:7e5468464e03618c9e4feefc05495e29:libxcrypt/spkgbuild
@@ -443,8 +444,8 @@ f:09117913847f1a2744363b3851468dda:libmpd/0003-fix-comparison.patch
 f:a4c9c84441bdb99433e20fa34dc80cda:libmpd/spkgbuild
 f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
-f:b5a85387c651664c38b8a45eefef48c6:libqalculate/CHANGELOG
-f:765e621a07803da391aff5ee2356ddea:libqalculate/spkgbuild
+f:9e00fef95f79476be3d245990d573ca8:libqalculate/CHANGELOG
+f:c15fcf3a9e4739049ab3513c3fd0e937:libqalculate/spkgbuild
 f:e08821b28a0a85aaaa6fff03fa9fc1b3:libtorrent-rasterbar/CHANGELOG
 f:fcde2dfd18fb5aafe1d0b4144b5afdbd:libtorrent-rasterbar/spkgbuild
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild

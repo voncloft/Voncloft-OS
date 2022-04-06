@@ -2,7 +2,7 @@
 # depends : python spatialindex
 
 name=python-rtree
-version=0.9.7
+version=1.0.0
 release=2
 
 source="https://github.com/Toblerity/rtree/archive/refs/tags/$version.tar.gz"
