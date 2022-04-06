@@ -14,11 +14,12 @@ inside_job="1"
 Rick="5"
 Saul="5"
 sheldon="5"
-South_Park="23"
-Sunny="14"
+South_Park="25"
+Sunny="15"
 tank="13"
-
-shows="Cartoons/Family.Guy-Season.$family_guy Sitcoms/Ghosts-Season.$ghosts Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer Cartoons/Big.Mouth-Season.$big_mouth Cartoons/Inside.Job-Season.$inside_job Cartoons/Animaniacs.2020-Season.$animaniacs"
+billions="6"
+states="2"
+shows="Cartoons/Family.Guy-Season.$family_guy Sitcoms/Ghosts-Season.$ghosts Sitcoms/Shark.Tank-Season.$tank Sitcoms/Sunny-Season.$Sunny Sitcoms/Better.Call.Saul-Season.$Saul Cartoons/South.Park-Season.$South_Park Cartoons/Rick.and.Morty-Season.$Rick Sitcoms/Young.Sheldon-Season.$sheldon Cartoons/Archer-Season.$archer Cartoons/Big.Mouth-Season.$big_mouth Cartoons/Inside.Job-Season.$inside_job Cartoons/Animaniacs.2020-Season.$animaniacs Sitcoms/Billions-Season.$billions Sitcoms/United.States.Of.Al-Season.$states"
 
 if [[ $1 = "-c" ]];then
 echo "Checking for correct folders"
@@ -64,6 +65,8 @@ mv */archer* "$Drive/Storage/Videos/Cartoons/Archer/Season $archer" --verbose
 mv */*job* "$Drive/Storage/Videos/Cartoons/Inside Job/Season $inside_job" --verbose
 mv */*mouth* "$Drive/Storage/Videos/Cartoons/Big Mouth/Season $big_mouth" --verbose
 mv */*maniac* "$Drive/Storage/Videos/Cartoons/Animaniacs 2020/Season $animaniacs" --verbose
+mv */*billion* "$Drive/Storage/Videos/Sitcoms/Billions/Season $billions" --verbose
+mv */*states* "$Drive/Storage/Videos/Sitcoms/United States Of Al/Season $states" --verbose
 #move all missed files to the misc folder
 mv */*.mkv $Drive/Storage/Videos/Misc --verbose
 mv */*.avi $Drive/Storage/Videos/Misc --verbose
@@ -71,8 +74,8 @@ mv */*.mp4 $Drive/Storage/Videos/Misc --verbose
 
 #delete empty folders
 rm -rf /temp/Stripped\ Files/* --verbose
-cp ../index.php .
-cp ../secondary.php .
+cp /media/Storage/Videos/Sitcoms/index.php .
+cp /media/Storage/Videos/Sitcoms/secondary.php .
 
 #generate the php files for the display pages on the webserver
 #cd $Drive/Storage/Videos && find . -type d -exec cp secondary.php {} \; && cd /temp && find . -type d -exec cp secondary.php {} \; && cd /temp/Downloading && cp secon*.backup secondary.php --verbose
