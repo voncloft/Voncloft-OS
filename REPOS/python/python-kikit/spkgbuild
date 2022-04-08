@@ -2,7 +2,7 @@
 # depends : python kicad python-numpy python-shapely python-click python-markdown2
 
 name=python-kikit
-version=1.0.4
+version=1.0.5
 release=1
 
 source="https://github.com/yaqwsx/KiKit/archive/refs/tags/v$version.tar.gz"
