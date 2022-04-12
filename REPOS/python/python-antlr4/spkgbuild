@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-antlr4
-version=4.9.3
+version=4.10.0
 release=1
 
 source="https://github.com/antlr/antlr4/archive/refs/tags/v$version.tar.gz"
