@@ -1,5 +1,5 @@
 # description : library with common api for various cinnamon modules
-# depends : accountsservice gtk3 libxkbfile libpulse
+# depends : accountsservice gtk3 libxkbfile pulseaudio
 # depends : meson ninja gobject-introspection intltool
 
 name=cinnamon-desktop
