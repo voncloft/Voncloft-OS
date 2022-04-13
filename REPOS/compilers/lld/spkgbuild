@@ -1,0 +1,28 @@
+# description : linker from llvm project
+# depends : llvm cmake ninja python-sphinx
+
+name=lld
+version=13.0.1
+release=1
+
+source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version.tar.xz"
+
+build() {
+	cd $name-$version.src
+	mkdir build
+	cmake .. -G Ninja \
+	    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_SKIP_RPATH=ON \
+    -DLLVM_LINK_LLVM_DYLIB=ON \
+    -DLLVM_INCLUDE_TESTS=ON \
+    -DLLVM_BUILD_TESTS=ON \
+    -DLLVM_BUILD_DOCS=ON \
+    -DLLVM_ENABLE_SPHINX=ON \
+    -DSPHINX_WARNINGS_AS_ERRORS=OFF \
+    -DLLVM_EXTERNAL_LIT=/usr/bin/lit \
+    -DLLVM_MAIN_SRC_DIR="$srcdir/llvm-$pkgver.src"
+  ninja
+
+  DESTDIR=$PKG ninja install
+}
