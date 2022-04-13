@@ -10,7 +10,7 @@ options="!checksum"
 build() {
 	INITDIR=$PWD
 
-	cd $name-${version:0:4}
+	cd $name-${version:0:5}
 	
 	cat > mozconfig << "EOF"
 #ac_add_options --disable-dbus

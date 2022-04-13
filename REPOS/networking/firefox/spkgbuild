@@ -7,12 +7,11 @@ options="!checksum"
 rust_version=91.6.0
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
-	https://www.linuxfromscratch.org/patches/blfs/svn/firefox-${rust_version}esr-disable_rust_test-1.patch
 	$name.desktop"
 
 build() {
 	INITDIR=$PWD
-	cd $name-${version:0:4}
+	cd $name-${version:0:5}
 	#patch -Np1 -i $SRC/add-missing-stub-for-wl_proxy_marshal_flags.patch
 
 cat <<- EOF > .mozconfig
@@ -44,7 +43,7 @@ cat <<- EOF > .mozconfig
 	ac_add_options --disable-necko-wifi
 	ac_add_options --without-wasm-sandboxed-libraries
 EOF
-	patch -Np1 -i $SRC/firefox-${rust_version}esr-disable_rust_test-1.patch
+	#patch -Np1 -i $SRC/firefox-${rust_version}esr-disable_rust_test-1.patch
 	export MOZ_NOSPAM=1
   	export MOZBUILD_STATE_PATH="$SRC/mozbuild"
   	#export MOZ_ENABLE_FULL_SYMBOLS=1
