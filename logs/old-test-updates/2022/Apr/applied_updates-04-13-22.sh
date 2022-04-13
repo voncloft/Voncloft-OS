@@ -8,3 +8,5 @@ sed -i -e "s/version=0.58.4/version=0.59.0/g" python/python-cfn-lint/spkgbuild
 changelog "python/python-cfn-lint/spkgbuild" "Upgraded from version 0.58.4 to version 0.59.0"
 sed -i -e "s/version=6.42.3/version=6.43.0/g" python/python-hypothesis/spkgbuild
 changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.42.3 to version 6.43.0"
+sed -i -e "s/version=2.33.0/version=2.35.2/g" networking/git/spkgbuild
+changelog "networking/git/spkgbuild" "Upgraded from version 2.33.0 to version 2.35.2"

@@ -2,9 +2,9 @@
 # depends	: perl curl openssl python
 
 name=git
-version=2.33.0
+version=2.35.2
 release=1
-source="https://www.kernel.org/pub/software/scm/$name/$name-$version.tar.xz"
+source="https://github.com/git/git/archive/v${version}.tar.gz"
 options="!checksum"
 build() {
 	cd $name-$version
