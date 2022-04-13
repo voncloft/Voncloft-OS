@@ -4,7 +4,7 @@ get_generic(){
 	| grep html \
 	| grep -Po "(?<=>)[^<>]*(?=<)" \
 	| sed "s/Version //g")
-	new_file=/Voncloft-OS/$(echo $ppath | sed "s/override/spkgbuild/g")
+	new_file=/Voncloft-OS/REPOS/$(echo $ppath | sed "s/override/spkgbuild/g")
 	#echo $new_file
 	sed -i -e "s/_rust=$_rust/_rust=$uversion/g" $new_file
         sed -i -e "s/_cargo=$_cargo/_cargo=$uversion/g" $new_file
