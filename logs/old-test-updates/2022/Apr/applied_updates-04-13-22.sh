@@ -14,3 +14,5 @@ sed -i -e "s/version=3.0.4/version=3.1.2/g" compilers/ruby/spkgbuild
 changelog "compilers/ruby/spkgbuild" "Upgraded from version 3.0.4 to version 3.1.2"
 sed -i -e "s/version=8.1.3/version=8.1.4/g" server/php/spkgbuild
 changelog "server/php/spkgbuild" "Upgraded from version 8.1.3 to version 8.1.4"
+sed -i -e "s/version=100.0b4/version=100.0b5/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 100.0b4 to version 100.0b5"
