@@ -10,3 +10,7 @@ sed -i -e "s/version=6.42.3/version=6.43.0/g" python/python-hypothesis/spkgbuild
 changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.42.3 to version 6.43.0"
 sed -i -e "s/version=2.33.0/version=2.35.2/g" networking/git/spkgbuild
 changelog "networking/git/spkgbuild" "Upgraded from version 2.33.0 to version 2.35.2"
+sed -i -e "s/version=3.0.4/version=3.1.2/g" compilers/ruby/spkgbuild
+changelog "compilers/ruby/spkgbuild" "Upgraded from version 3.0.4 to version 3.1.2"
+sed -i -e "s/version=8.1.3/version=8.1.4/g" server/php/spkgbuild
+changelog "server/php/spkgbuild" "Upgraded from version 8.1.3 to version 8.1.4"

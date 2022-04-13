@@ -1,0 +1,20 @@
+source="https://github.com/ruby/ruby/archive/refs/tags/"
+get_generic()
+{
+        #uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html)
+                #| sort -V -r \
+                #| uniq \
+                #| sed "s/v//g" \
+                #| sed "s/\///g" \
+                #| head -n1)
+	uversion=$(grep "tar.gz" index.html \
+		| grep -i "href" $file | grep .tar.gz | grep -Po '(?<=href=")[^"]*' \
+		| sed "s/\/ruby\/ruby\/archive\/refs\/tags\/v//g" \
+		| sed "s/\.tar.gz//g" \
+		| sed "s/\_/\./g" \
+		| grep -v preview \
+		| sort -V -r \
+		| uniq \
+		| head -n1
+	)
+}
