@@ -1,0 +1,22 @@
+# description : general purpose programming language and toolchain
+# depends : clang llvm lld cmake
+
+name=zig
+version=0.9.1
+release=1
+
+source="https://ziglang.org/download/$pkgver/zig-$version.tar.xz
+	resolve_DNS.patch"
+
+build() {
+	cd $name-$version
+	patch -p1 < $SRC/resolve_DNS.patch
+	mkdir build
+	cd build
+	cmake .. \
+		-DCMAKE_BUILD_TYPE=none \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DZIG_PREFER_CLANG_CPP_DYLIB=ON
+
+	make DESTDIR=$PKG install
+}

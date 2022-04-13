@@ -1,5 +1,6 @@
 d:ruby
 d:meson
+d:zig
 d:clang
 d:apache-ant
 d:ninja
@@ -23,6 +24,9 @@ f:18f97db36b6ad7d4948bb8eb81a1fa58:ruby/override
 f:d800ff3b7931c677af87a05e7c6321cb:ruby/spkgbuild
 f:5410d805cafe0d698ea46f3c4e1627f5:meson/CHANGELOG
 f:46a476d7550ef1189411c798f59e1c1d:meson/spkgbuild
+f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
+f:1317e5013b5f92ca83fe2aa41ae5a45f:zig/spkgbuild
+f:6be2a5e3cd924b417e134fccf6449d41:zig/resolve_DNS.patch
 f:e33c790e0542ed33d8deade0060d7383:clang/CHANGELOG
 f:6b7f049d9937136811d3eb93401ee722:clang/spkgbuild
 f:d12fcf021316bb31fc95e469d0423c97:apache-ant/post-install.sh
