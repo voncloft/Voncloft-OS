@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-flexmock
-version=0.10.10
+version=0.11.3
 release=6
 
 source="https://github.com/bkabrda/flexmock/archive/refs/tags/$version.tar.gz"

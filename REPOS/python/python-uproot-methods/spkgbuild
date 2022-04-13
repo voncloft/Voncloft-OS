@@ -2,7 +2,7 @@
 # depends : python-awkward python-numpy
 
 name=python-uproot-methods
-version=0.10.0
+version=0.10.1
 release=3
 
 source="python-uproot-methods::https://github.com/scikit-hep/uproot-methods/archive/0.10.0.zip"

@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-vagrant
-version=0.5.15
+version=1.0.0
 release=5
 
 source="https://github.com/todddeluca/python-vagrant/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
   # depends : python
 
 name=python-uritemplate
-version=3.0.1
+version=4.1.1
 release=3
 
 source="https://github.com/sigmavirus24/uritemplate/archive/refs/tags/$version.tar.gz"

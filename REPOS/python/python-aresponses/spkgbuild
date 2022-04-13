@@ -2,7 +2,7 @@
 # depends : python-aiohttp python-pytest-asyncio
 
 name=python-aresponses
-version=2.1.4
+version=2.1.5
 release=1
 
 source="https://github.com/circleup/aresponses/archive/refs/tags/r$version.tar.gz"

@@ -29,8 +29,8 @@ d:kodi
 d:pulseaudio-alsa
 d:clementine
 d:libavc1394
-f:113da8dd7277e2de8a739317b173ffa3:gstreamer/CHANGELOG
-f:c3dabed3aaa820611c89e81e02227077:gstreamer/spkgbuild
+f:ca839d7f592979cb6dc0a50f2bf71340:gstreamer/CHANGELOG
+f:cbc37cf38cb95e391c26857b90789f92:gstreamer/spkgbuild
 f:44e6512aba4f0151568c437e4ae9051a:phonon/spkgbuild
 f:9abbecb92c8009ff089f88fa7a5e656b:dav1d/spkgbuild
 f:42124838af6c2472d515fa6ced16bd0f:mpg123/CHANGELOG
@@ -62,7 +62,8 @@ f:e1d3380c177b8a70d60edc64ea9863a6:ffmpeg/CHANGELOG
 f:457c0ce4103027073902726ee4fd75e2:ffmpeg/spkgbuild
 f:0ae49382e40d584f67b4f47d284f132c:x264/spkgbuild
 f:edca612f717af4ca96d86dc0c968b218:mesa-demos/spkgbuild
-f:4f24ff87ddee2d86c63c197f395232ff:gst-plugins-base/spkgbuild
+f:78c70ffb5894d74bc28abc1b602e3834:gst-plugins-base/CHANGELOG
+f:465eb0b353d5eb7033259f2c2f9f4257:gst-plugins-base/spkgbuild
 f:57930f1931e244bdc5426094ee1b08f9:gst-libav/CHANGELOG
 f:399d4e1556dc4ddcb7e87df30bc3b409:gst-libav/spkgbuild
 f:459417aced874ef71fad77f9a0538182:chromaprint/CHANGELOG

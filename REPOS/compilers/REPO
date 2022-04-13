@@ -23,8 +23,8 @@ f:18f97db36b6ad7d4948bb8eb81a1fa58:ruby/override
 f:d800ff3b7931c677af87a05e7c6321cb:ruby/spkgbuild
 f:5410d805cafe0d698ea46f3c4e1627f5:meson/CHANGELOG
 f:46a476d7550ef1189411c798f59e1c1d:meson/spkgbuild
-f:55da57ddc7ea9613ef1343872589245c:clang/CHANGELOG
-f:0f87b8bd35cda2eddca18fd210d18f78:clang/spkgbuild
+f:e33c790e0542ed33d8deade0060d7383:clang/CHANGELOG
+f:6b7f049d9937136811d3eb93401ee722:clang/spkgbuild
 f:d12fcf021316bb31fc95e469d0423c97:apache-ant/post-install.sh
 f:a4090c83af4f3d027e27eb3902ad5d09:apache-ant/CHANGELOG
 f:43ad58e10cd9197d555ca44341091298:apache-ant/override
@@ -33,9 +33,9 @@ f:541f8775d9c325cb0ac970896bf6f4db:ninja/spkgbuild
 f:3974f8f7a47a02daff9c222aeff3e1b6:automake/CHANGELOG
 f:bb267fddaaa154f28badbace1efb73b4:automake/spkgbuild
 f:efbc369782cf6837d3430e16ec1fafa5:luajit/spkgbuild
-f:e88779d0042781dc35d19bfd19fef4ba:llvm/CHANGELOG
+f:984e6f5298c21ad4646e3dc6b677dd70:llvm/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
-f:bdfbf0a036173139a7e90fa6048ef7a1:llvm/spkgbuild
+f:e575d6b2bb8834bb03c389539b4074ef:llvm/spkgbuild
 f:9220b9bfb3f0083845c0a8fcfc977169:xkbcomp/CHANGELOG
 f:4972d5153f34dd4a886fb8521f5dbf79:xkbcomp/spkgbuild
 f:288e5ab4d2b14539aae36f0bd07e7b9c:pkgconf/CHANGELOG
@@ -47,7 +47,8 @@ f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
 f:3a1292193e3657288db8896780f365a3:gcc/CHANGELOG
 f:fe77818dc29927160088bce58cb07ac1:gcc/spkgbuild
-f:96b1ce20c411ef2663fe9382eef9ae84:autoconf-archive/spkgbuild
+f:423d067708b3e8e9493c1ff3d13fe218:autoconf-archive/CHANGELOG
+f:3dd027f8302c545deb99d1056e668ef4:autoconf-archive/spkgbuild
 f:7d6740ee5358d7181c6f49a4141cacf4:ccache/readme
 f:c4450dfc1f430ddd73f92888872b189e:ccache/CHANGELOG
 f:b58c3074638e6914a15778f75b75cae5:ccache/spkgbuild

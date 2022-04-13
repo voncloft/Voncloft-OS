@@ -2,7 +2,7 @@
 # depends : python enchant
 
 name=python-pyenchant
-version=3.2.1
+version=3.2.2
 release=1
 
 source="https://github.com/rfk/pyenchant/archive/refs/tags/v$version.tar.gz"

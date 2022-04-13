@@ -2,7 +2,7 @@
 # depends : python-django python-six
 
 name=python-django-classy-tags
-version=2.0.0
+version=3.0.1
 release=4
 
 source="https://github.com/divio/django-classy-tags/archive/refs/tags/$version.tar.gz"
