@@ -857,8 +857,8 @@ f:4a756bf3bce5beac9af146d6fe324953:utilities/upgrade-python-packages
 f:ea5b4a275145bc05db4a2f18fb1cf468:utilities/upgrade-perl-packages
 f:33f0fd6d8e33753d2e744a8bffe37ddb:utilities/spkgbuild
 f:0d29f39429ce00a91dda37e4fa3a00c8:utilities/update-kde
-f:eb2bb35bac9e909e7f1efefff946ba26:enchant/CHANGELOG
-f:cc57eb41b0b65da323258b8497c93e03:enchant/spkgbuild
+f:849c7bcf2230601746966e8988a78a62:enchant/CHANGELOG
+f:c4e633645d21d8d02f4e315a3924ad26:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:eda0545af6a628507e33990495ec6e60:aspell/spkgbuild
@@ -1174,9 +1174,9 @@ f:3f9b3377f08982aee0110e07eac264ad:gobject-introspection/spkgbuild
 f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
 f:b888477e29219f1b8ce40184edcd1bd6:parcellite/spkgbuild
 f:0ffae7bed396419428b15e8adb9b952d:mpfr/spkgbuild
-f:db85efc08aa81e297a5a5629a8b92ece:coreutils/CHANGELOG
+f:9fe50cfe8b3cc280f0a226470ac197a7:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
-f:c02fcd23f7d0863a20a28f9547e9be7b:coreutils/spkgbuild
+f:977a5923e6effab2faf0f641fbd10bc4:coreutils/spkgbuild
 f:d0eb587443bd689fd0babf4282fd30fb:alsa-plugins/CHANGELOG
 f:c04619afcdcbe8740ee9acc50abc4f65:alsa-plugins/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
@@ -1342,9 +1342,10 @@ f:3b3e8e9784b944bd6aa5700c313b3509:lhasa/CHANGELOG
 f:580998485d792458124e4877b0a07912:lhasa/spkgbuild
 f:725771744a443ff83a57d21d24277e68:streamlink/CHANGELOG
 f:a50c3296ba47fa0fb60e0ba935ba2ccb:streamlink/spkgbuild
+f:c241c6d4421dc857170d5b27e1d0cdcb:rsync/CHANGELOG
 f:af8998ac5e7145370a800a69aa1c774e:rsync/pre-install.sh
 f:8596e2539b37dd638a10418ba7168b57:rsync/rc.rsyncd
-f:cf05db3be4409aea065a281207696224:rsync/spkgbuild
+f:bcdc5fb5b66955eea17f16f5f4ce274f:rsync/spkgbuild
 f:19f06afc0a351605c10242252ad7ab9e:rsync/run
 f:1857a6efd7793e8c176a2827f037941b:grantlee/spkgbuild
 f:dd9ac2c531f2ab9ceffff1deda89c70c:grantlee/3a5fc7662da3261be6496611900c095844e56ab1.patch
@@ -1419,10 +1420,10 @@ f:55aa8668de12fd083824ae3f4a126592:smproxy/spkgbuild
 f:28e94c7051ac45def96a6f80ea2b8cba:scrot/CHANGELOG
 f:0dfa7b3a2ae3ba749c4294619db743df:scrot/spkgbuild
 f:091fae075c53f8e79bd5585230939a9b:jack/40-hpet-permissions.rules
-f:58bf9630300f4fb8260b664d966676fd:jack/CHANGELOG
+f:90ea0684010380b7e72115244114147d:jack/CHANGELOG
 f:73060059c06ed7739211b8f47e55b70c:jack/post-upgrade.sh
 f:59c3734515e5e6ccb0ea274802671e16:jack/99-audio.conf
-f:20a72dd3bd3bb4ab48ef99d33eff9a0a:jack/spkgbuild
+f:79c31192cc8e369159e3cd67cbfb979d:jack/spkgbuild
 f:c277ed6cb5224aaa4da2db89d58d8b8a:diffutils/CHANGELOG
 f:d6ff86c36b27f25b9371b07a1d73ec96:diffutils/spkgbuild
 f:17ff3af1bdeefa6baad582a45de6a89f:util-macros/CHANGELOG
@@ -1433,5 +1434,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:064976b0c17e02240ab0add0c43c7762:hugo/CHANGELOG
-f:3891f363779d5b853f96149fa399355c:hugo/spkgbuild
+f:ddb3d01989071781ba704c61526cebe4:hugo/CHANGELOG
+f:cbfebf7a613607097fde4cf65a2c9000:hugo/spkgbuild
