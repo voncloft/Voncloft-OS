@@ -7,7 +7,7 @@ release=2
 source="http://http.debian.net/debian/pool/main/o/$name/${name}_${version}.tar.xz"
 
 build() {
-	cd $name-$version
+	cd $name*
 
 	make
 	install -Dm755 linux-boot-prober $PKG/usr/bin/linux-boot-prober
