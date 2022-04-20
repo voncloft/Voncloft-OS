@@ -12,3 +12,5 @@ sed -i -e "s/version=6.1.32/version=6.1.34/g" nonfree/virtualbox-guest-modules/s
 changelog "nonfree/virtualbox-guest-modules/spkgbuild" "Upgraded from version 6.1.32 to version 6.1.34"
 sed -i -e "s/version=6.2.0/version=7.0.0/g" extra/qemu/spkgbuild
 changelog "extra/qemu/spkgbuild" "Upgraded from version 6.2.0 to version 7.0.0"
+sed -i -e "s/version=9.18.1/version=9.19.0/g" networking/bind/spkgbuild
+changelog "networking/bind/spkgbuild" "Upgraded from version 9.18.1 to version 9.19.0"

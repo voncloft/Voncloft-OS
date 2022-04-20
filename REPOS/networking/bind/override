@@ -1,0 +1,10 @@
+source=https://ftp.isc.org/isc/bind9/
+
+get_generic()
+{
+	uversion=$( grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| grep -E -o '\<[0-9]{1,2}\.[0-9]{1,4}\.[0-9]{1,2}\>' \
+	| sort -V -r \
+	| head -n1)
+	
+}
