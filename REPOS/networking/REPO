@@ -11,6 +11,7 @@ d:tcpdump
 d:libssh2
 d:vsftpd
 d:you-get
+d:bind
 d:iptables-client
 d:cyrus-sasl
 d:subversion
@@ -77,6 +78,12 @@ f:d8e8fca2dc0f896fd7cb4cb0031ba249:vsftpd/ftpusers
 f:2368e923af5c7fefc7d5fb34264a9891:vsftpd/spkgbuild
 f:1afee49a2d13d1d63c5b538adca2781e:you-get/CHANGELOG
 f:479d7e1afd3a63169a6180a3b50cdead:you-get/spkgbuild
+f:cd9b62908a6be2bd13619dcda7edcdd4:bind/named.conf
+f:78eda3f14608136647796bfb82dd7402:bind/post-install.sh
+f:a5d5888b85c770a6859671c1af732e36:bind/CHANGELOG
+f:e868838f27ab81c82dcb63b06155bbb1:bind/127.0.0
+f:2ce485d8d6e944c2c273708d489ed7d1:bind/spkgbuild
+f:3a7bdc9221be6f91b1b96ba0fe382667:bind/root.hints
 f:9da2194edd2f85c0b83b0c3f4427e89b:iptables-client/rc.iptables
 f:e73bda3719b3e01b05b87431b4f1117f:iptables-client/spkgbuild
 f:23eeea1fe489904bcf9437f3fcf87f2f:cyrus-sasl/CHANGELOG
