@@ -19,11 +19,9 @@ build() {
             --disable-static
         make
         mkdir -pv $PKG/srv/named
-	mkdir -p dev $PKG/etc/named/{slave,pz} $PKG/usr/lib/engines $PKG/var/run/named
+	mkdir -pv $PKG/dev $PKG/etc/named/{slave,pz} $PKG/usr/lib/engines $PKG/var/run/named
         install -Dm644 $SRC/named.conf $PKG/srv/named/etc/named.conf
         install -Dm644 $SRC/127.0.0 $PKG/srv/named/etc/named/pz/127.0.0
         install -Dm644 $SRC/root.hints $PKG/srv/named/etc/named/roots.hints
         make DESTDIR=$PKG install
-
-
 }
