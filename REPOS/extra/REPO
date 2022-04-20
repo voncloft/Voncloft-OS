@@ -36,6 +36,7 @@ d:gimp
 d:mozjs
 d:freecell-solver
 d:gtksourceview3
+d:qemu
 d:gtk2
 d:gtkmm3
 d:clazy
@@ -123,6 +124,10 @@ f:704e81edacc682b976932ef9c53f18b4:freecell-solver/CHANGELOG
 f:2ae13a2c3de5dbc6c5de56d89e871b1e:freecell-solver/spkgbuild
 f:10a18e9386007c8f0aa6198184a47105:gtksourceview3/CHANGELOG
 f:fd5f1f36af0f93fd8081f2af783f78da:gtksourceview3/spkgbuild
+f:6f9043fefe246942a88b37808f8c0a63:qemu/CHANGELOG
+f:47e04c4dbd133ff51aa7547ce8e9e56b:qemu/pre-install.sh
+f:ae7caa19c3db453b132c2d4bf7c0aa12:qemu/mkdirs
+f:269c1ab67f813bf709e53da9ca659152:qemu/spkgbuild
 f:bb0ad7d077d5a01e5aa061e1662d37fa:gtk2/post-install.sh
 f:13f2c9445f7358f37ebde4fd22c3a024:gtk2/spkgbuild
 f:bf89bb98ad0d06cef7a9bebda179720f:gtkmm3/spkgbuild

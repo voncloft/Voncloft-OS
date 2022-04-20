@@ -445,7 +445,6 @@ d:jwm
 d:patch
 d:gconf
 d:at-spi2-atk
-d:qemu
 d:weechat
 d:geos
 d:xauth
@@ -1369,10 +1368,6 @@ f:1c9ab70a85685bc65f25dc08d84bd845:jwm/spkgbuild
 f:86a520326cc265843cccc42e557d869c:patch/spkgbuild
 f:f6e621be6c7e9228e4daf40520901483:gconf/spkgbuild
 f:da3acd3a32c6f5ce2a4333dbf3a6a2b5:at-spi2-atk/spkgbuild
-f:33ee3de2fadfa6882369505019438dba:qemu/CHANGELOG
-f:47e04c4dbd133ff51aa7547ce8e9e56b:qemu/pre-install.sh
-f:ae7caa19c3db453b132c2d4bf7c0aa12:qemu/mkdirs
-f:8661606b311ec87d4ae7cad38871cbff:qemu/spkgbuild
 f:b1d296f99301992df6810644bbdf049c:weechat/CHANGELOG
 f:52380f553066cb8ea693fd0aa193c6b7:weechat/spkgbuild
 f:d98871a32555122d51728844d1dbc0f1:geos/CHANGELOG

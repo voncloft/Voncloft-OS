@@ -10,3 +10,5 @@ sed -i -e "s/version=6.1.32/version=6.1.34/g" nonfree/virtualbox-guest-utils/spk
 changelog "nonfree/virtualbox-guest-utils/spkgbuild" "Upgraded from version 6.1.32 to version 6.1.34"
 sed -i -e "s/version=6.1.32/version=6.1.34/g" nonfree/virtualbox-guest-modules/spkgbuild
 changelog "nonfree/virtualbox-guest-modules/spkgbuild" "Upgraded from version 6.1.32 to version 6.1.34"
+sed -i -e "s/version=6.2.0/version=7.0.0/g" extra/qemu/spkgbuild
+changelog "extra/qemu/spkgbuild" "Upgraded from version 6.2.0 to version 7.0.0"
