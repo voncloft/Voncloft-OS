@@ -535,8 +535,8 @@ f:41bcbee48a9731e140f89d7673bf5f45:newsboat/newsboat.1.gz
 f:8355dc7165cbdf83517a19588de9f1d8:newsboat/CHANGELOG
 f:edb7d33365d3db7d0a4f3c98a8e6dc85:newsboat/spkgbuild
 f:43b602a9011a48837005f82972e0beca:newsboat/podboat.1.gz
-f:c989cc4b170d1a26b4d3315b7f5795f6:cbindgen/CHANGELOG
-f:5b96cd1df00ef9a4a0c497c3392df277:cbindgen/spkgbuild
+f:d7bdf2163087f36d81ebe6c74ea36587:cbindgen/CHANGELOG
+f:db60e7559f67c357f6e8f6c9d98960a6:cbindgen/spkgbuild
 f:2bf40a877eedd001abcae0c495ae97ed:mkinitramfs/install
 f:ef609f40abcd6437acc84d6f7f3e1242:mkinitramfs/mkinitramfs.conf
 f:d300a6d09dadfc279b69aec15b1e1ee7:mkinitramfs/spkgbuild
@@ -814,8 +814,8 @@ f:76ed237c811ad99b3667a46ec70346ea:slim/slim.pam
 f:0ce875df8b9aac62589ce1897514eaf9:slim/spkgbuild
 f:5c5e03f31a2ce06f7d431fbfa17ea316:slim/run
 f:e56d82fe7c147b7c0216355ae9c83545:lame/spkgbuild
-f:39d241e22f9f8a524bf388e221e84e51:fribidi/CHANGELOG
-f:192cceb838f2e6f5f7e104dedcf4cc61:fribidi/spkgbuild
+f:9af0e58377cc20e76f4a9cf68a17c259:fribidi/CHANGELOG
+f:8a08762832134a52ac75e84ef4fd24f0:fribidi/spkgbuild
 f:976e25fefcb47ade4da57d2cd6c8e1c2:acpi/spkgbuild
 f:a27ca6e25b9a0ec7078d5017a60779a6:lcms2/CHANGELOG
 f:b9740930146c725f80ae7361f4a6d02d:lcms2/spkgbuild
@@ -911,7 +911,8 @@ f:744e7fb62a645fd0515f0a55c4441657:filesystem/spkgbuild
 f:3e47d3ddb26a72616c5889a4f266cadf:filesystem/resolv.conf
 f:37c1f2bc904ef01f13a8ed4d3e846f98:filesystem/shells
 f:be3d4507d6fcd289c28dc4e3c90ab907:filesystem/inputrc
-f:b5286b041c0836d842e3f4528f7943f0:parted/spkgbuild
+f:275f6112966968f0c61e824e2e247313:parted/CHANGELOG
+f:bffd723f87a7ca7504e7b45f9d9171b4:parted/spkgbuild
 f:1b412280d6e15338ef18b7e163242f4f:xset/spkgbuild
 f:390dcf908a947ff00a01d0d137d4c870:xpaint/xpaint.desktop
 f:96a10b95b0e3a40d7edcac4a7b9fdd14:xpaint/CHANGELOG
@@ -1372,8 +1373,8 @@ f:b1d296f99301992df6810644bbdf049c:weechat/CHANGELOG
 f:52380f553066cb8ea693fd0aa193c6b7:weechat/spkgbuild
 f:d98871a32555122d51728844d1dbc0f1:geos/CHANGELOG
 f:5417452a26bb480268618b80a62c67a4:geos/spkgbuild
-f:d2ba28c57d6301cadbe08cdc1f161daa:xauth/CHANGELOG
-f:f043d14ec1a34f705fde1690a1b2c0c0:xauth/spkgbuild
+f:c72243c736596bff87d749bdc93bdc19:xauth/CHANGELOG
+f:ffa31379cc1d8e71054f1fa709c219b8:xauth/spkgbuild
 f:f2d5afae36f9821bbe4a3e82207ffb61:speedtest-cli/CHANGELOG
 f:44c3d1a96a1e6bfe7de503534f464e01:speedtest-cli/spkgbuild
 f:2508877d5ed2964be1d54a33e53dd913:argon2/spkgbuild

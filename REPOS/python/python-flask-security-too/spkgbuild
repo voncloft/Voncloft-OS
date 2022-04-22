@@ -2,7 +2,7 @@
 # depends : python python-flask python-flask-login python-flask-mail python-flask-principal
 
 name=python-flask-security-too
-version=4.1.3
+version=4.1.4
 release=3
 
 source="https://github.com/jwag956/flask-security/archive/refs/tags/r$version.tar.gz"
