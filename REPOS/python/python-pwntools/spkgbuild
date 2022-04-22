@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-pwntools
-version=4.8.0
+version=4.9.0
 release=3
 
 source="https://github.com/Gallopsled/pwntools/archive/refs/tags/$version.tar.gz"
