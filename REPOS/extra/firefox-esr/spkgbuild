@@ -24,7 +24,7 @@ cat <<- EOF > .mozconfig
 	ac_add_options --enable-system-sqlite
 	ac_add_options --enable-alsa
 	ac_add_options --enable-official-branding
-	ac_add_options --with-distribution-id=venomlinux
+	ac_add_options --with-distribution-id=voncloftlinux
 	ac_add_options --enable-extensions=default,-gnomevfs
 	ac_add_options --disable-tests
 	ac_add_options --disable-debug
