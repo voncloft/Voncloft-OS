@@ -1,5 +1,5 @@
 # description : transfer files to server outside of network
-# depends : libnsl linux-pam vsftpd-boot
+# depends : libnsl linux-pam
 
 name=vsftpd
 version=3.0.5
@@ -9,7 +9,7 @@ backup="etc/vsftpd.conf
         etc/pam.d/vsftpd
         etc/ftpusers"
 
-source="https://security.appspot.com/downloads/vsftpd-3.0.3.tar.gz
+source="https://security.appspot.com/downloads/$name-$version.tar.gz
 	vsftpd.conf
 	vsftpd
 	ftpusers"
