@@ -2,7 +2,7 @@
 # depends : llvm cmake ninja
 
 name=lld
-version=14.0.1
+version=14.0.2
 release=1
 _source_base=https://github.com/llvm/llvm-project/releases/download/llvmorg-$version
 
