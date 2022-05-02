@@ -1,0 +1,33 @@
+# description : rdp sofrtware for linux
+# depends : tigervnc libxrandr fuse libfdk-aac ffmpeg imlib2
+
+name=xrdp
+version=0.9.19
+release=2
+
+source="https://github.com/neutrinolabs/$name/releases/download/v${version}/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+	./bootstrap
+	  ./configure --prefix=/usr \
+              --sysconfdir=/etc \
+              --localstatedir=/var \
+              --sbindir=/usr/bin \
+              --with-systemdsystemunitdir=/usr/lib/systemd/system \
+              --enable-jpeg \
+              --enable-tjpeg \
+              --enable-fuse \
+	      --enable-fdkaac \
+	      --enable-opus \
+	      --enable-rfxcodec \
+	      --enable-mp3lame \
+	      --enable-pixman \
+	      --enable-painter \
+	      --enable-vsock \
+	      --enable-ipv6 \
+	      --enable-pam-config=arch \
+	      --enable-rdpsndaudin \
+	      --with-imlib2
+	  make DESTDIR=$PKG install
+}
