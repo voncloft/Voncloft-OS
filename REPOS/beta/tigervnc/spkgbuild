@@ -5,15 +5,20 @@ name=tigervnc
 version=1.12.0
 release=3
 
+_xorgver=1.20.9
 source="https://github.com/TigerVNC/tigervnc/archive/v${version}.tar.gz
 	Xsession
 	more-xsessions.patch
-	remove-selinux.patch"
+	remove-selinux.patch
+	https://xorg.freedesktop.org/releases/individual/xserver/xorg-server-${_xorgver}.tar.bz2
+	https://github.com/TigerVNC/tigervnc/commit/2daf4126882f82b6e392dfbae87205dbdc559c3d.patch"
 
 build() {
-	cd $name-$versioin
+	cd $name-$version
 	patch -p1 -i $SRC/more-xsessions.patch
 	patch -p1 -i $SRC/remove-selinux.patch
+	patch -p1 -i "$SRC"/2daf4126882f82b6e392dfbae87205dbdc559c3d.patch
+
 	cmake -G "Unix Makefiles" \
 	-DCMAKE_INSTALL_PREFIX=/usr \
     	-DCMAKE_INSTALL_SBINDIR=/usr/bin \
@@ -23,6 +28,7 @@ build() {
   make DESTDIR=$PKG install
   install -Dm0644 java/VncViewer.jar "${PKG}"/usr/share/vnc/classes/VncViewer.jar
   cd unix/xserver
+  cp -r "$SRC"/xorg-server-${_xorgver}/* .
   patch -Np1 -i ../xserver120.patch
   autoreconf -fiv
   CFLAGS="$CFLAGS -I/usr/include/libdrm" ./configure --prefix=/usr \
