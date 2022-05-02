@@ -1,5 +1,5 @@
 # description : rdp sofrtware for linux
-# depends : tigervnc libxrandr fuse libfdk-aac ffmpeg imlib2
+# depends : tigervnc libxrandr fuse2 fuse3 fdk-aac ffmpeg imlib2
 
 name=xrdp
 version=0.9.19
