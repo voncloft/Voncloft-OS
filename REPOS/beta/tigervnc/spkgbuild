@@ -6,10 +6,14 @@ version=1.12.0
 release=3
 
 source="https://github.com/TigerVNC/tigervnc/archive/v${version}.tar.gz
-	Xsession"
+	Xsession
+	more-xsessions.patch
+	remove-selinux.patch"
 
 build() {
 	cd $name-$versioin
+	patch -p1 -i $SRC/more-xsessions.patch
+	patch -p1 -i $SRC/remove-selinux.patch
 	cmake -G "Unix Makefiles" \
 	-DCMAKE_INSTALL_PREFIX=/usr \
     	-DCMAKE_INSTALL_SBINDIR=/usr/bin \
@@ -19,6 +23,7 @@ build() {
   make DESTDIR=$PKG install
   install -Dm0644 java/VncViewer.jar "${PKG}"/usr/share/vnc/classes/VncViewer.jar
   cd unix/xserver
+  patch -Np1 -i ../xserver120.patch
   autoreconf -fiv
   CFLAGS="$CFLAGS -I/usr/include/libdrm" ./configure --prefix=/usr \
 	--disable-static --without-dtrace \
