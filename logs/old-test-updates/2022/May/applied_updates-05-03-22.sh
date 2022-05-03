@@ -32,3 +32,5 @@ sed -i -e "s/version=1.14.0/version=1.14.1/g" python/python-wrapt/spkgbuild
 changelog "python/python-wrapt/spkgbuild" "Upgraded from version 1.14.0 to version 1.14.1"
 sed -i -e "s/version=4.16.0/version=4.16.1/g" server/samba/spkgbuild
 changelog "server/samba/spkgbuild" "Upgraded from version 4.16.0 to version 4.16.1"
+sed -i -e "s/version=100.0b9/version=101.0b1/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 100.0b9 to version 101.0b1"
