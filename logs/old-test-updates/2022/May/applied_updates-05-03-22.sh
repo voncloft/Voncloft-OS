@@ -34,3 +34,5 @@ sed -i -e "s/version=4.16.0/version=4.16.1/g" server/samba/spkgbuild
 changelog "server/samba/spkgbuild" "Upgraded from version 4.16.0 to version 4.16.1"
 sed -i -e "s/version=100.0b9/version=101.0b1/g" networking/firefox/spkgbuild
 changelog "networking/firefox/spkgbuild" "Upgraded from version 100.0b9 to version 101.0b1"
+sed -i -e "s/version=1.20.1/version=1.20.2/g" media/gstreamer/spkgbuild
+changelog "media/gstreamer/spkgbuild" "Upgraded from version 1.20.1 to version 1.20.2"
