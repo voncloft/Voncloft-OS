@@ -32,6 +32,7 @@ d:noip
 d:wpa_supplicant
 d:nmap
 d:wireshark
+d:tigervnc
 d:libnftnl
 d:wireless_tools
 d:libnfnetlink
@@ -138,6 +139,11 @@ f:638bc3e2a84ef18cb9c547b7bdda50e0:nmap/CHANGELOG
 f:6309f6c5e09f3cfdd2819f1e77c38c54:nmap/spkgbuild
 f:00f67292d012c312b64c6d09e6c6d475:wireshark/CHANGELOG
 f:6f7888928488b0aeda76d2c3db697fa0:wireshark/spkgbuild
+f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
+f:1823a10d4401fba66e43f2dd9afc4487:tigervnc/CHANGELOG
+f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
+f:01cb746432115354d4b5e1fda5bddcc4:tigervnc/more-xsessions.patch
+f:16d81720f1cb2942c1ac35fdcf26c31b:tigervnc/spkgbuild
 f:2696e2f23026f172adad90f47c8391a3:libnftnl/CHANGELOG
 f:70b21c73f9a2d4c4641b544847531306:libnftnl/spkgbuild
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
