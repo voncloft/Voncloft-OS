@@ -152,3 +152,5 @@ sed -i -e "s/version=0.19.1/version=0.20.0/g" python/python-starlette/spkgbuild
 changelog "python/python-starlette/spkgbuild" "Upgraded from version 0.19.1 to version 0.20.0"
 sed -i -e "s/version=5.24.4/version=5.24.5/g" qt/layer-shell-qt/spkgbuild
 changelog "qt/layer-shell-qt/spkgbuild" "Upgraded from version 5.24.4 to version 5.24.5"
+sed -i -e "s/version=100.0b4/version=101.0b1/g" networking/thunderbird/spkgbuild
+changelog "networking/thunderbird/spkgbuild" "Upgraded from version 100.0b4 to version 101.0b1"
