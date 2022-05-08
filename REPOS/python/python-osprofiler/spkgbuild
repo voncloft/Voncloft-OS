@@ -2,7 +2,7 @@
 # depends : python-netaddr python-oslo-concurrency python-oslo-serialization python-oslo-utils
 
 name=python-osprofiler
-version=3.4.2
+version=3.4.3
 release=3
 
 source="https://github.com/openstack/osprofiler/archive/refs/tags/e$version.tar.gz"
