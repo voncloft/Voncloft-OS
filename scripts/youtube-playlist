@@ -1,0 +1,2 @@
+#!/bin/sh
+yt-dlp --ignore-errors --yes-playlist $1
