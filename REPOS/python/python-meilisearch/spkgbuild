@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-meilisearch
-version=0.18.2
+version=0.18.3
 release=1
 
 source="https://github.com/meilisearch/meilisearch-python/archive/refs/tags/v$version.tar.gz"
