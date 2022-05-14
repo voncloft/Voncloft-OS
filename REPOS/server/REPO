@@ -19,8 +19,8 @@ f:97a8f2ba3046b0d2aefb32264d5f85ba:httpd/CHANGELOG
 f:2a424710304fdd98868c6511c4814d41:httpd/pre-install.sh
 f:745bf759b14df1fbf8a601e2c0e7fd79:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
-f:2f459cf0024870a2a35eb7120037f347:php/CHANGELOG
-f:3a3b23f1dc1158352c764edb6e202704:php/spkgbuild
+f:6f02850e1a9b55a8c9d197adc2e8943b:php/CHANGELOG
+f:b709fd1c5d76807dc4374693e471dab5:php/spkgbuild
 f:cf9b5340b220350df739de0c21edf471:dnsmasq/post-install.sh
 f:28272840d321a80d0f68b8a04fe77e15:dnsmasq/CHANGELOG
 f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
@@ -31,8 +31,8 @@ f:0eaf67b03b78d47286fd3a93982a67a7:wireguard/CHANGELOG
 f:8314903de87feb7abad1661ef60734da:wireguard/spkgbuild
 f:f8538d73b8a7eec3ed9e7b077366d5de:wireguard/wg0.conf
 f:2f647df400ed113a0f4ee42108ef346a:iptables/rc.iptables
-f:5675bd2e1ab041aefa57b7a5c0d45429:iptables/CHANGELOG
-f:b3d5c10cf49931da57a8d327023ada41:iptables/spkgbuild
+f:a03f3047a45f5c41ec5d9482d551d932:iptables/CHANGELOG
+f:629e312aacb5e583be26a8a252fae36f:iptables/spkgbuild
 f:d7ecf376ff1dbee70335d1c57b565e38:postfix/post-install.sh
 f:cedcfba2360a80918b063bfe8124bdc4:postfix/CHANGELOG
 f:fcc3e56a9dd90b4b33ed3adb5b2d4e3c:postfix/post-upgrade.sh

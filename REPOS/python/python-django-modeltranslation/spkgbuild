@@ -2,7 +2,7 @@
 # depends : python-django
 
 name=python-django-modeltranslation
-version=0.17.7
+version=0.18.0
 release=1
 
 source="https://github.com/deschler/django-modeltranslation/archive/refs/tags/v$version.tar.gz"
