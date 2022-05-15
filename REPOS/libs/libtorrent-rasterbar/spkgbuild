@@ -10,7 +10,7 @@ options="!checksum"
 
 build()
 {
-	cd $name-version
+	cd $name*
 	mkdir build
 	cd build
   cmake -DCMAKE_BUILD_TYPE=Release \
