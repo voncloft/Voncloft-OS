@@ -11,16 +11,16 @@ options="!checksum"
 build()
 {
 	cd $name-version
-	autoconf -ifv
-	
-	./configure \
-    	--prefix=/usr \
-    	--enable-python-binding \
-    	--enable-examples \
-    	--disable-static \
-    	--with-libiconv \
-    	--with-boost-python=boost_python
+	mkdir build
+	cd build
+  cmake -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DCMAKE_INSTALL_LIBDIR="lib" \
+    -Dpython-bindings=ON \
+    -Dboost-python-module-name="python" \
+    -Dpython-egg-info=ON \
+    -GNinja ..
 
-	make
-	make DESTDIR=$PKG install
+    ninja
+    DESTDIR=$PKG ninja install
 }
