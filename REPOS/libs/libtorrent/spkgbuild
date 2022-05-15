@@ -3,9 +3,8 @@
 
 name=libtorrent
 version=2.0.6
-verzion=$(echo $version | tr '.' '_')
 release=1
-source="https://github.com/arvidn/libtorrent/archive/libtorrent-${verzion}.tar.gz"
+source="https://github.com/arvidn/libtorrent/archive/refs/tags/v$version.tar.gz"
 
 build() {
 	cd libtorrent-libtorrent-${verzion}
