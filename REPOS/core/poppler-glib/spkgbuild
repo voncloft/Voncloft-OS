@@ -20,8 +20,8 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-	rm $PKG/usr/lib/libpoppler.so*
-	rm $PKG/usr/lib/pkgconfig/poppler.pc
-	rm $PKG/usr/lib/pkgconfig/poppler-splash.pc
-	rm $PKG/usr/lib/pkgconfig/poppler-cairo.pc
+	#rm $PKG/usr/lib/libpoppler.so*
+	#rm $PKG/usr/lib/pkgconfig/poppler.pc
+	#rm $PKG/usr/lib/pkgconfig/poppler-splash.pc
+	#rm $PKG/usr/lib/pkgconfig/poppler-cairo.pc
 }
