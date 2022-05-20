@@ -1,6 +1,7 @@
 d:httpd
 d:berkeley-db
 d:php
+d:plex-media-server
 d:dnsmasq
 d:wireguard
 d:iptables
@@ -21,6 +22,8 @@ f:745bf759b14df1fbf8a601e2c0e7fd79:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:6f02850e1a9b55a8c9d197adc2e8943b:php/CHANGELOG
 f:b709fd1c5d76807dc4374693e471dab5:php/spkgbuild
+f:6111f450a2237d4bfd3f0080d2920b57:plex-media-server/CHANGELOG
+f:7893da87552ac73902f5d32305823ba6:plex-media-server/spkgbuild
 f:cf9b5340b220350df739de0c21edf471:dnsmasq/post-install.sh
 f:28272840d321a80d0f68b8a04fe77e15:dnsmasq/CHANGELOG
 f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
