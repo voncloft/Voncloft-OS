@@ -10,6 +10,7 @@ d:mariadb
 d:monitor_process
 d:httpup
 d:nginx
+d:homeassistant
 d:dhcpcd
 d:deluge
 d:subsonic
@@ -23,7 +24,8 @@ f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:6f02850e1a9b55a8c9d197adc2e8943b:php/CHANGELOG
 f:b709fd1c5d76807dc4374693e471dab5:php/spkgbuild
 f:6111f450a2237d4bfd3f0080d2920b57:plex-media-server/CHANGELOG
-f:7893da87552ac73902f5d32305823ba6:plex-media-server/spkgbuild
+f:9322a10019c0226e3f9b8d1e0a3c22f3:plex-media-server/plexmediaserver.conf.d
+f:5e07b558ec9d46404ab5bbeeb06c2c93:plex-media-server/spkgbuild
 f:cf9b5340b220350df739de0c21edf471:dnsmasq/post-install.sh
 f:28272840d321a80d0f68b8a04fe77e15:dnsmasq/CHANGELOG
 f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
@@ -54,6 +56,8 @@ f:14817664930759de0ad6b401935ed927:monitor_process/spkgbuild
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
 f:2cecf55519fc9d613aae8ce350495796:nginx/CHANGELOG
 f:ba9ff34d70b807af8f94f7a4e0f57b89:nginx/spkgbuild
+f:161d2061235efb97e97abe410d595e0a:homeassistant/CHANGELOG
+f:4a1e194858624d32dda7d0c3c3e40eaa:homeassistant/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
