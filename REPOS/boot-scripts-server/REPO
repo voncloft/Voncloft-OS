@@ -18,6 +18,7 @@ d:dnsmasq-boot
 d:wireguard-boot
 d:mariadb-boot
 d:fcron-boot
+d:avahi-boot
 d:iptables-boot
 d:openssh-boot
 d:incrontab-boot
@@ -49,6 +50,8 @@ f:16165f16ab9f9436511f0c911330cec9:wireguard-boot/CHANGELOG
 f:ff4537129b9e262068d93ef6d0d8ead8:wireguard-boot/spkgbuild
 f:6bf0b890e5b02710f64f9e02d64b66c4:mariadb-boot/spkgbuild
 f:9b62ce13c05fb026975ef5eae2f1fc56:fcron-boot/spkgbuild
+f:50d485e161d4c307641f73a17664c4bb:avahi-boot/CHANGELOG
+f:2c4712a3f28e26d2fbce6d8b2513d866:avahi-boot/spkgbuild
 f:f49bb9e94ff22f5048834123dfd0268c:iptables-boot/spkgbuild
 f:193d367f5ebfefec85fe0c8de2e27bb4:openssh-boot/spkgbuild
 f:e231166f814b5577e8ea5c949a1af712:incrontab-boot/spkgbuild

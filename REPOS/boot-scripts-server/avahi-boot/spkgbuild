@@ -1,0 +1,13 @@
+# description : bootscript for avahi
+# depends : avahi
+
+name=avahi-boot
+version=0.8
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+
+build() {
+	cd blfs-bootscripts-20210110
+	make DESTDIR=$PKG install-avahi
+}
