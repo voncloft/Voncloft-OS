@@ -24,6 +24,7 @@ d:openssh-boot
 d:incrontab-boot
 d:hostapd-boot
 d:httpd-boot
+d:plex-boot
 d:samba-boot
 f:82c5a7b04b78a35143852ba1ba3fbc43:subsonic-boot/spkgbuild
 f:16165f16ab9f9436511f0c911330cec9:voogle-boot/CHANGELOG
@@ -57,4 +58,6 @@ f:193d367f5ebfefec85fe0c8de2e27bb4:openssh-boot/spkgbuild
 f:e231166f814b5577e8ea5c949a1af712:incrontab-boot/spkgbuild
 f:40dfe3673a6edd75826ed00b65326cad:hostapd-boot/spkgbuild
 f:91326c18a723a50f1247b335bd82646b:httpd-boot/spkgbuild
+f:e3d472c84d095a62c9dff8fb22096040:plex-boot/CHANGELOG
+f:22f13d4292e3e34be7c955c1caa49b73:plex-boot/spkgbuild
 f:b95abe7b7a4765cafdead476f56aebd5:samba-boot/spkgbuild

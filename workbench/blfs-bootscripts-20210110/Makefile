@@ -111,6 +111,16 @@ install-avahi: create-dirs
 	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc5.d/S34avahi
 	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc6.d/K28avahi
 
+install-plex: create-dirs
+	install -m ${MODE} blfs/init.d/plex     ${EXTDIR}/rc.d/init.d/
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc0.d/K28plex
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc1.d/K28plex
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc2.d/S34plex
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc3.d/S34plex
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc4.d/S34plex
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc5.d/S34plex
+	ln -sf  ../init.d/avahi ${EXTDIR}/rc.d/rc6.d/K28plex
+
 install-bind: create-dirs
 	install -m ${MODE} blfs/init.d/bind       ${EXTDIR}/rc.d/init.d/
 	ln -sf  ../init.d/bind ${EXTDIR}/rc.d/rc0.d/K49bind
@@ -1255,6 +1265,7 @@ uninstall-xinetd:
 	install-acpid \
 	install-alsa \
 	install-avahi \
+	install-plex \
 	install-httpd \
 	install-php \
 	install-bind \

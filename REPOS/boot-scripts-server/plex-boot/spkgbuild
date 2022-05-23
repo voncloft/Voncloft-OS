@@ -1,0 +1,13 @@
+# description : 1
+# depends : 1
+
+name=plex-boot
+version=1
+release=1
+
+source="http://voncloft.dnsfor.me/software/Voncloft-OS/tarballs/bootscripts.tar.gz"
+
+build() {
+        cd blfs-bootscripts-20210110
+	make DESTIR=$PKG install-plex
+}
