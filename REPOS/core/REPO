@@ -551,8 +551,8 @@ f:4cdd92a83f6a6de721eda77d4e32d179:gegl/CHANGELOG
 f:a5a54d8690d877e1f31c83eb25853260:gegl/spkgbuild
 f:6468459ac1d210de4c9dfff9b269656f:gmp/CHANGELOG
 f:13ebf2abd57789a72f154a5954c5812a:gmp/spkgbuild
-f:e41609a8eed63d1c768f5886de2ca876:os-prober/CHANGELOG
-f:eb33fb7761a3f0bafd68fb7f5808e94e:os-prober/spkgbuild
+f:f231c7bc0462a537e50880ad1b43294b:os-prober/CHANGELOG
+f:5d541e4083fa1ccc6f18e1bd17fca361:os-prober/spkgbuild
 f:71fef9dff54db6a32dbd52a24f77d448:yelp-tools/spkgbuild
 f:0a8aa193f1bc709a137f5d03fed78ec3:deadbeef/CHANGELOG
 f:fb85fe43a81e98c72927e81bdc5b1870:deadbeef/spkgbuild
@@ -632,8 +632,9 @@ f:b2ad46d9f0a6592924fa075b21cd958f:gptfdisk/CHANGELOG
 f:f35ffa11a0417d2a5b0fa7f4c148c00b:gptfdisk/spkgbuild
 f:18d7ddd71d3e0c3ddb5c50668f6466f1:runit/spkgbuild
 f:324848d098be356a18083b0a02c3c842:cups/rc.cupsd
+f:cca78009a14af6a4bd9e834095169d90:cups/CHANGELOG
 f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
-f:7977cc81f2869ac5f28c93c4ffc83348:cups/spkgbuild
+f:cf95c775f42eeb5a5e81907bda8e9ed1:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
 f:e465d20656d90035580b9213c68e0180:dbus/CHANGELOG
@@ -1009,8 +1010,8 @@ f:9a62d63a2d2fa271f5f8cf5a3652b1e7:alsa-utils/spkgbuild
 f:3f0e774624f500b08f206305503c240e:alsa-utils/run
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
 f:26773e36153d3057fe9b1926fbe4bacd:cracklib/spkgbuild
-f:3ab8adfaf042ca82828d56edc2a92714:gnutls/CHANGELOG
-f:6bf9d85fe36176a6c0b0ceda2b731e42:gnutls/spkgbuild
+f:54ff2a34c89f2c7aeee73f9127608aba:gnutls/CHANGELOG
+f:4d375cef2ee416dd257137bc464ba183:gnutls/spkgbuild
 f:2e68d4ce70eef7e0349c55c7e0f1feed:refind/spkgbuild
 f:8dc13dff65ffa7e3897f6ab11509c886:lftp/spkgbuild
 f:6b9fec89392cad502d89f69f3d87147a:viewnior/CHANGELOG
@@ -1031,8 +1032,8 @@ f:5dc495309f408897990e6903888ff230:smplayer/CHANGELOG
 f:6d95c297ce74ab37d0efb8232fca440d:smplayer/spkgbuild
 f:f68691ada1f18ad778e58aefc192f404:gnu-netcat/spkgbuild
 f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
-f:2af02f8298baadb4e0e78fb5ce0d8f09:iw/CHANGELOG
-f:ee44ec6fe39c4fd327d561eab4ad0a00:iw/spkgbuild
+f:dde2b1dcd664417006b5c48e006f4d20:iw/CHANGELOG
+f:0c2c826b9063fc3a7799afa8b4c6002a:iw/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh
 f:eb9d950cc1c10e2522576d4c60de6c99:linux-router/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
@@ -1106,8 +1107,8 @@ f:4c5418dd35999b59a2341b0533baccd2:timeshift/CHANGELOG
 f:47bd4bec043150eebc5dace79989b84c:timeshift/spkgbuild
 f:84164d8ff50bd28cc8d534272d363ef4:timeshift/pr476.patch
 f:7bfc910bdba61120769029c980726780:neomutt/spkgbuild
-f:1d83afcd734056ced916b2cd1a3fe1a8:qutebrowser/CHANGELOG
-f:825395f7c65d20ed73a494f30a2ff992:qutebrowser/spkgbuild
+f:cb8e81de8060d22752156cdbfe818c7d:qutebrowser/CHANGELOG
+f:c8d95cf2be7ed3af57443cfdd610a47a:qutebrowser/spkgbuild
 f:b6387d21884a6fbe9d3fcf7969a2fa78:alacritty/CHANGELOG
 f:f3ba9db7d0a12c698fbf45a1f52906c8:alacritty/spkgbuild
 f:f1b7c1e596c8bdd60dec43ecf38ca212:epdfview/epdfview-fixes-2.patch
@@ -1195,8 +1196,8 @@ f:91fcf57823cf5dd1b626efbe3aab4a0b:pavucontrol/CHANGELOG
 f:de7f10bd580af1c176732b2048c1577c:pavucontrol/spkgbuild
 f:63156f47268cf2ea1bd7b2ba3ab9d38f:hyphen/spkgbuild
 f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
-f:2d00f00d6a56d8a1a0e485fa54a1b3ae:iproute2/CHANGELOG
-f:7808977edef59717c3d8a655d00418b7:iproute2/spkgbuild
+f:d8a7ab4d1bffdc033b8e5a02d40d93a6:iproute2/CHANGELOG
+f:996fcb552f203e1344a096925743ce7c:iproute2/spkgbuild
 f:531b28edaeed08b279cb06bdc9de6285:xlsclients/spkgbuild
 f:842ebb033fb8ea3cd349c963c54edec1:psmisc/CHANGELOG
 f:ca05668ec4f547631549c2fd3f11c1ae:psmisc/spkgbuild

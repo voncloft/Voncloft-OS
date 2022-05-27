@@ -2,7 +2,7 @@
 # depends : fuse2 fuse3 glib openssh
 
 name=sshfs
-version=3.7.2
+version=3.7.3
 release=2
 
 source="https://github.com/libfuse/sshfs/releases/download/$name-$version/$name-$version.tar.xz"

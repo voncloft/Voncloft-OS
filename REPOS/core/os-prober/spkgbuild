@@ -2,7 +2,7 @@
 # depends	: bash
 
 name=os-prober
-version=1.79
+version=1.80
 release=2
 source="http://http.debian.net/debian/pool/main/o/$name/${name}_${version}.tar.xz"
 
