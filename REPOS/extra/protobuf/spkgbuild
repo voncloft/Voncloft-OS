@@ -9,7 +9,7 @@ source="https://github.com/protocolbuffers/$name/releases/download/v$version/$na
 options="!checksum"
 
 build() {
-	cd $name-$version
+	cd $name-3.${version}
 	autoreconf -ifv
 	./configure --prefix=/usr
 	make
