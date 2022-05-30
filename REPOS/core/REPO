@@ -616,8 +616,8 @@ f:b9fa8f284483480675d29d19e704f62c:kernel-prereq/dvb-fe-tda10048-1.0.fw
 f:766e8169b048498f690be18569bc18a4:kernel-prereq/spkgbuild
 f:e6006fd3e9a47b6c94194d488f729527:usbutils/spkgbuild
 f:5f17f5f991b28b73de1050edcc6410c6:papirus-icon-theme/spkgbuild
-f:45ddaa93d5d17f88d96907b03f381565:i3lock/CHANGELOG
-f:9dfb571a12c11b17723e5e7dcd341a9e:i3lock/spkgbuild
+f:b1ca9c161db3ad5e7bbaf6dd89916e17:i3lock/CHANGELOG
+f:48c2ac6549559d87819afd22c35564dd:i3lock/spkgbuild
 f:6ee130265ad6e97992195cecca1cc46b:giflib/spkgbuild
 f:677d4471c793b7a46eb9bffac6c38257:log-folders/CHANGELOG
 f:7a8c246814ce676ef8640096fab05e89:log-folders/spkgbuild
@@ -928,8 +928,8 @@ f:e159aa01e399f9788f73d79df584b3d9:linux-pam/spkgbuild
 f:aac6b80a6e8f22d21658faafacfc421f:vsv/spkgbuild
 f:371b04400afc06bc4df62338bf55a897:rapidjson/spkgbuild
 f:4a01446e007b8fcc1f4076195bb6ab34:openjpeg2/spkgbuild
-f:6fc6c67119b3dfb0e6e21144e2637edb:webkitgtk/CHANGELOG
-f:c720d8becc6b12c90188ee8d92482da6:webkitgtk/spkgbuild
+f:1c912fd47f35f0dab1e5352f734b9954:webkitgtk/CHANGELOG
+f:42b8a59d124337858561030e512fe778:webkitgtk/spkgbuild
 f:9b2b1b68e1751587a3a8ac81cf70a11f:openjpeg/CHANGELOG
 f:a08812e0681a7af09a1cc2119dcf58a8:openjpeg/spkgbuild
 f:548ae33bd944ed02279f054c3d566884:pugixml/CHANGELOG
@@ -1103,8 +1103,8 @@ f:c1cd655442965ff2f5923512c5e1e40d:js52/spkgbuild
 f:98f848e53eeb353b94ed9815778a4d03:smplayer-skins/CHANGELOG
 f:b36b6b659b9fc4b052d686a3b5a1b546:smplayer-skins/spkgbuild
 f:c279146b3142e0bc837b2f0f08ae76bb:pkg-config/spkgbuild
-f:4c5418dd35999b59a2341b0533baccd2:timeshift/CHANGELOG
-f:47bd4bec043150eebc5dace79989b84c:timeshift/spkgbuild
+f:9c51ee2b6b5ba6274ffde49da460edb2:timeshift/CHANGELOG
+f:3788d7b8834d8d86f569fa2eb8c6dab2:timeshift/spkgbuild
 f:84164d8ff50bd28cc8d534272d363ef4:timeshift/pr476.patch
 f:7bfc910bdba61120769029c980726780:neomutt/spkgbuild
 f:cb8e81de8060d22752156cdbfe818c7d:qutebrowser/CHANGELOG
@@ -1128,8 +1128,8 @@ f:41cdc97cea4655d466f4f52722ffc5e1:yelp-xsl/CHANGELOG
 f:c596979032ce1ffad64856d7fb1c94df:yelp-xsl/spkgbuild
 f:6c0b6e2ed6913ab31f2b133520dd6199:yaml-cpp/CHANGELOG
 f:a8e5c3af35b596acaf3b77bc7546fa88:yaml-cpp/spkgbuild
-f:7918d18b374e2038686c0d87f1803a48:links/CHANGELOG
-f:fb25aecdb3d2cd5ddeee360e613bbe39:links/spkgbuild
+f:e1aadf4dda84d58913f96786ffb4664c:links/CHANGELOG
+f:e8a8418f4eadfdee36c67eee791aece8:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
 f:647d8b514326af3bf8aa8af42dbb67e8:qalculate/CHANGELOG
 f:d5307c84b496317e892eba280b06cd0d:qalculate/spkgbuild
@@ -1336,9 +1336,9 @@ f:191efde7bf69182c552c55c44c602711:midori/spkgbuild
 f:e4c3daae9a282d30706d01ba26f12077:paper-icon-theme/spkgbuild
 f:2cdfa50915d97bee204ea5e4536101b9:jasper/spkgbuild
 f:2053ec02a4cc5bf021bf183fc4a3827d:sysklogd/post-install.sh
-f:36888263c1874f82fd7d5b5e4cf29d08:sysklogd/CHANGELOG
+f:b787cae7ddf6e610aa52675c007f08da:sysklogd/CHANGELOG
 f:6b5bf4e2fae36cc8131f09cb2bf06d86:sysklogd/rc.sysklogd
-f:b3a5e4e9f3e42ca435f9c32ef704f647:sysklogd/spkgbuild
+f:90a41b51f42dd4ba8510feec2f28501d:sysklogd/spkgbuild
 f:03220afc11e3a579794205f7da930137:sysklogd/run
 f:d5ffd5e615144bff7cc8074fb2adc844:wmderland/spkgbuild
 f:3b3e8e9784b944bd6aa5700c313b3509:lhasa/CHANGELOG
