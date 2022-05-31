@@ -39,6 +39,7 @@ d:python-rply
 d:python-litedram
 d:python-tabulate
 d:python-ghp-import
+d:python-lru-dict
 d:python-frozendict
 d:python-watchgod
 d:python-pydocstyle
@@ -1258,6 +1259,7 @@ d:python-seaborn
 d:python-munkres
 d:python-flickrapi
 d:python-sphinxcontrib-devhelp
+d:python-awesomeversion
 d:python-editorconfig
 d:python-yarl
 d:python-jsonrpclib-pelix
@@ -1498,6 +1500,7 @@ d:python-pytest-expect
 d:python-redbaron
 d:python-matplotlib
 d:python-k5test
+d:python-aiodiscover
 d:python-betamax-serializers
 d:python-gnupg
 d:python-urllib3
@@ -1596,6 +1599,8 @@ f:676b644e8a8b954ca40366e584ded4ae:python-tabulate/CHANGELOG
 f:2d2f8156ef79cdc68ca06ee6244fdd5b:python-tabulate/spkgbuild
 f:e50b592cc08f6f61fad082544621892b:python-ghp-import/CHANGELOG
 f:ceb831b7a042f2e07b5bf442f02859bc:python-ghp-import/spkgbuild
+f:e36ac29fdc5c0f3d38ebf27e301b33ae:python-lru-dict/CHANGELOG
+f:c7caee5359f2f483108b5d1aa9c0169f:python-lru-dict/spkgbuild
 f:03137e9026471692d4cc45bb838542c2:python-frozendict/CHANGELOG
 f:ba84718ffe7fe18c04298e6d978f3050:python-frozendict/spkgbuild
 f:0af6b07eeb488958d1f5654646d08b7f:python-watchgod/CHANGELOG
@@ -3992,6 +3997,8 @@ f:9326cbd9a2156878f47277dee5fd4f4b:python-flickrapi/CHANGELOG
 f:8b4d5eae0b518b1811750687fcb9ff00:python-flickrapi/spkgbuild
 f:bedcebef9860e4c08c03aa48e38e4032:python-sphinxcontrib-devhelp/CHANGELOG
 f:fff2c0c32b003ada0c6d3ddc18fbec4b:python-sphinxcontrib-devhelp/spkgbuild
+f:c292e6bbce1aacbe6bcfdf2a7cb74a34:python-awesomeversion/CHANGELOG
+f:03cf2180d9a0a6032e45b87765f16a25:python-awesomeversion/spkgbuild
 f:47a2acbce8f3f1648a8f06d40e5970ba:python-editorconfig/CHANGELOG
 f:7eb5ee6cd4200d0d9e6e7d325ec5aee2:python-editorconfig/spkgbuild
 f:669f059e192ee281cfc06731d906c911:python-yarl/CHANGELOG
@@ -4463,6 +4470,8 @@ f:27acffe7db776d3437ea84d921db089c:python-matplotlib/CHANGELOG
 f:acacfa77539a334410763bcd9fb17f3a:python-matplotlib/spkgbuild
 f:3eda32aaf669e5addbdb136c2fc2f17a:python-k5test/CHANGELOG
 f:bf7b9681bce11f27c13d3d1d5b00d3b8:python-k5test/spkgbuild
+f:45d989482531d29f3f38ce3815c6930e:python-aiodiscover/CHANGELOG
+f:38d9fa292dda99491ea8475ad8aa0a83:python-aiodiscover/spkgbuild
 f:951064c7ed7d8ad1e5e03b39abaa9463:python-betamax-serializers/CHANGELOG
 f:183033b7b3625c643c8cddeb9cedd999:python-betamax-serializers/spkgbuild
 f:ccad24565222a2b499febbd253452a7b:python-gnupg/CHANGELOG

@@ -1,0 +1,14 @@
+# description : discover hosts via arp
+# depends : python python-dnspython python-ifaddr python-netifaces python-pyroute2
+
+name=python-aiodiscover
+version=1.4.11
+release=1
+
+source="https://github.com/bdraco/aiodiscover/archive/refs/tags/v${version}.tar.gz"
+
+build() {
+	cd aiodiscover
+	python setup.py build
+	python setup.py install --root="${PKG}" --optimize=1
+}
