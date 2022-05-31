@@ -688,10 +688,10 @@ f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:297c59fbf8da2b7aa10f321bf045a216:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
-f:9fcdee1197e5e965226647d83720fc20:linux-desktop/CHANGELOG
+f:24da0ca8e3ec1d68932ad2fa34260dc5:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-desktop/override
-f:8f26a56fe7c4df85edd32dc5794f259b:linux-desktop/spkgbuild
+f:0879ed33f2dcb75dd85e126f553f7de7:linux-desktop/spkgbuild
 f:cd5390e5b0e7cbe86cb692fa06666762:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -1035,10 +1035,10 @@ f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:dde2b1dcd664417006b5c48e006f4d20:iw/CHANGELOG
 f:0c2c826b9063fc3a7799afa8b4c6002a:iw/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh
-f:eb9d950cc1c10e2522576d4c60de6c99:linux-router/CHANGELOG
+f:3a8ab541acde198c0e0d8ead6066b9fe:linux-router/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-router/override
-f:561c526d77d63fdf4416adfe79eaa0f8:linux-router/spkgbuild
+f:da8749825cf2bafdea6addcf946a9067:linux-router/spkgbuild
 f:9a66451909861d207ef7b152e0bff6b0:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
@@ -1343,8 +1343,8 @@ f:03220afc11e3a579794205f7da930137:sysklogd/run
 f:d5ffd5e615144bff7cc8074fb2adc844:wmderland/spkgbuild
 f:3b3e8e9784b944bd6aa5700c313b3509:lhasa/CHANGELOG
 f:580998485d792458124e4877b0a07912:lhasa/spkgbuild
-f:ad51b059fa9d6601d0e200daeedcbbaf:streamlink/CHANGELOG
-f:77224a9a58e9c4b73eef981cd514897b:streamlink/spkgbuild
+f:9bb9f868da8e4d8bb6a456ebafb61fc5:streamlink/CHANGELOG
+f:61de516172db11c7a29673306eb8d617:streamlink/spkgbuild
 f:c241c6d4421dc857170d5b27e1d0cdcb:rsync/CHANGELOG
 f:af8998ac5e7145370a800a69aa1c774e:rsync/pre-install.sh
 f:8596e2539b37dd638a10418ba7168b57:rsync/rc.rsyncd
