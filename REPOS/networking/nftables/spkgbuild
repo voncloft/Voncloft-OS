@@ -5,11 +5,12 @@ name=nftables
 version=1.0.3
 release=1
 
-source="https://netfilter.org/projects/nftables/files/nftables-0.9.6.tar.bz2"
+source="https://netfilter.org/projects/nftables/files/nftables-$version.tar.bz2
+	nftables.conf"
 
 build()
 {
-	cd *
+	cd $name-$version
 	autoreconf -ifv
 	autoconf
 
@@ -24,4 +25,5 @@ build()
 	make
 
 	make DESTDIR=$PKG install
+	install -Dm644 $SRC/nftables.conf $PKG/etc/nftables.conf
 }
