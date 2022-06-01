@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-awesomeversion
-version=22.5.1
+version=22.5.2
 release=1
 
 source="https://github.com/ludeeus/awesomeversion/archive/refs/tags/$version.tar.gz"
@@ -10,5 +10,5 @@ source="https://github.com/ludeeus/awesomeversion/archive/refs/tags/$version.tar
 build() {
 	cd awesomeversion-$version
 	python -m build --wheel --no-isolation
-	python -m installer --destdir=$PKG" dist/*.whl
+	python -m installer --destdir="$PKG" dist/*.whl
 }

@@ -2,7 +2,7 @@
 # depends : python-dateutil python-jmespath python-docutils python-urllib3
 
 name=python-botocore
-version=1.26.10
+version=1.27.1
 release=1
 
 source="https://github.com/boto/botocore/archive/refs/tags/$version.tar.gz"
