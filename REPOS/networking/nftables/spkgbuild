@@ -1,5 +1,5 @@
 # description : nftables
-# depends : libnftnl 
+# depends : libnftnl readline libmnl gmp ncurses jansson
 
 name=nftables
 version=1.0.3
@@ -13,7 +13,13 @@ build()
 	autoreconf -ifv
 	autoconf
 
-	./configure --prefix=/usr
+	./configure --prefix=/usr \
+	--sbindir=/usr/bin \
+	--sysconfdir=/usr/share \
+	--with-json \
+	--with-cli=readline \
+	--disable-debug
+	
 
 	make
 
