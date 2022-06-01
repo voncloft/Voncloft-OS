@@ -683,10 +683,10 @@ f:8e0c7a0c5d800682044530913ab651e0:lz4/CHANGELOG
 f:bf4966e57ab076679483da59bebaa795:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:0916eba294b9b3347d902f4c20d81526:nss/CHANGELOG
+f:30bd7ed546124b9ad4a40405fded1626:nss/CHANGELOG
 f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:297c59fbf8da2b7aa10f321bf045a216:nss/spkgbuild
+f:86908a02cddfb0341a65dff080fb93a5:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
 f:24da0ca8e3ec1d68932ad2fa34260dc5:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
@@ -1004,9 +1004,9 @@ f:ab7252f8ed151e1a00263ef363bcce08:cryptsetup/CHANGELOG
 f:5ccc2d224d4b04cf5c84bead00a43714:cryptsetup/spkgbuild
 f:1b09f5e6174f72ab04eb3eba98ca660a:xev/spkgbuild
 f:43186d2b4108b9c0455753af8b7fad17:alsa-utils/finish
-f:df0cc6fed5e09c947062fe8e2e7f3bc9:alsa-utils/CHANGELOG
+f:95b1cf7d86e69a159d0f64e9a2ec855a:alsa-utils/CHANGELOG
 f:911d2befcbb52fdd62e79c954c9a537c:alsa-utils/rc.alsa
-f:9a62d63a2d2fa271f5f8cf5a3652b1e7:alsa-utils/spkgbuild
+f:cec56a8733bb8985cd3bae6477d5a3db:alsa-utils/spkgbuild
 f:3f0e774624f500b08f206305503c240e:alsa-utils/run
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
 f:26773e36153d3057fe9b1926fbe4bacd:cracklib/spkgbuild
@@ -1433,5 +1433,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:8039a818280d339fc0818e53fa6c95af:hugo/CHANGELOG
-f:629b0dba23d08f9ffe1382fc62641dc4:hugo/spkgbuild
+f:2ac17d39ee83d913713e1eaf7046c132:hugo/CHANGELOG
+f:f6de5fd384cecd596f756bd88cf5074a:hugo/spkgbuild
