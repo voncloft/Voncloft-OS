@@ -2,7 +2,7 @@
 # depends : python python-characteristic python-six python-twisted
 
 name=python-tubes
-version=0.2.0
+version=0.2.1
 release=5
 
 source="https://github.com/twisted/tubes/archive/refs/tags/v$version.tar.gz"
