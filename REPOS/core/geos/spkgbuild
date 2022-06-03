@@ -12,5 +12,5 @@ build() {
 	cd $name-$version
 	./configure --prefix=/usr
 	make
-	makde DESTDIR=$PKG install
+	make DESTDIR=$PKG install
 }
