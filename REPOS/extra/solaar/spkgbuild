@@ -1,5 +1,5 @@
 # description : Check battery level of logitech devices
-# depends : gtk3 libnotify python-dbus python-gobject2 python-gobject3 python-psutil python-pyudev python-xlib python-yaml git
+# depends : gtk3 libnotify python-dbus python-gobject2 python-gobject3 python-psutil python-pyudev python-xlib python-yaml git python-evdev
 
 name=solaar
 version=1.1.3rc3
@@ -10,6 +10,7 @@ options="!checksum"
 
 build() {
 	cd *
+	tools/po-compile.sh
 	python setup.py build
 	python setup.py install --skip-build \
                           --optimize=1 \
