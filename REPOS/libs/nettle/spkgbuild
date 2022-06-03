@@ -14,5 +14,5 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-	chmod 755 $PKG/usr/lib/libhogweed.so $PKG/usr/lib/libnettle.so
+	chmod 755 $PKG/usr/lib64/libhogweed.so $PKG/usr/lib64/libnettle.so
 }
