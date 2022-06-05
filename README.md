@@ -7,7 +7,7 @@ A Linux From Scratch Repository that I self maintain.
 _As of 05-04-2022_
 
 **Update:**
-- None
+- fixed update utility
 
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
