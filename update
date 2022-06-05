@@ -542,8 +542,7 @@ check_handles()
                         exit;;
 			-h) help
          		exit;;
-         		-l) 
-         		apply_test_updates
+         		-l) apply_test_updates
          		apply=1
          		update_to_github
          		exit;;
