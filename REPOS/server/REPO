@@ -17,9 +17,9 @@ d:subsonic
 d:samba
 d:toolbox
 f:57d715e1f1daf558e527c846df116ffc:httpd/post-install.sh
-f:97a8f2ba3046b0d2aefb32264d5f85ba:httpd/CHANGELOG
+f:18c2ef97704fb61e61d9858defd093e1:httpd/CHANGELOG
 f:2a424710304fdd98868c6511c4814d41:httpd/pre-install.sh
-f:745bf759b14df1fbf8a601e2c0e7fd79:httpd/spkgbuild
+f:ed4019b5776c0fab8ba484357c8c9fe4:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:6f02850e1a9b55a8c9d197adc2e8943b:php/CHANGELOG
 f:b709fd1c5d76807dc4374693e471dab5:php/spkgbuild
@@ -58,8 +58,8 @@ f:14817664930759de0ad6b401935ed927:monitor_process/spkgbuild
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
 f:190ec42db2b52c793aeadf31501274dc:nginx/CHANGELOG
 f:8af830c425e550f6fd92fd593a08be33:nginx/spkgbuild
-f:baf3c05ad15f88526cb5e7e371ba5925:homeassistant/CHANGELOG
-f:38712d14c0b0cf1cf91d82af46226e3f:homeassistant/spkgbuild
+f:47ca8c690567a81506f5d677620c8e1a:homeassistant/CHANGELOG
+f:13dbf890e84322fe0e681372f599e51f:homeassistant/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
