@@ -30,3 +30,17 @@ sed -i -e "s/version=2.2.9/version=2.2.10/g" libs/xapp/spkgbuild
 changelog "libs/xapp/spkgbuild" "Upgraded from version 2.2.9 to version 2.2.10"
 sed -i -e "s/version=102.0b5/version=102.0b6/g" networking/firefox/spkgbuild
 changelog "networking/firefox/spkgbuild" "Upgraded from version 102.0b5 to version 102.0b6"
+sed -i -e "s/version=2.13.1/version=2.14.0/g" python/python-connexion/spkgbuild
+changelog "python/python-connexion/spkgbuild" "Upgraded from version 2.13.1 to version 2.14.0"
+sed -i -e "s/version=13.12.1/version=13.13.0/g" python/python-faker/spkgbuild
+changelog "python/python-faker/spkgbuild" "Upgraded from version 13.12.1 to version 13.13.0"
+sed -i -e "s/version=6.47.0/version=6.47.1/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.47.0 to version 6.47.1"
+sed -i -e "s/version=0.20.2/version=0.20.3/g" python/python-starlette/spkgbuild
+changelog "python/python-starlette/spkgbuild" "Upgraded from version 0.20.2 to version 0.20.3"
+sed -i -e "s/version=6.1.0/version=6.2.0/g" python/python-tornado/spkgbuild
+changelog "python/python-tornado/spkgbuild" "Upgraded from version 6.1.0 to version 6.2.0"
+sed -i -e "s/version=20.14.1/version=20.14.2/g" python/python-virtualenv/spkgbuild
+changelog "python/python-virtualenv/spkgbuild" "Upgraded from version 20.14.1 to version 20.14.2"
+sed -i -e "s/version=2.1.8/version=2.1.9/g" python/python-watchdog/spkgbuild
+changelog "python/python-watchdog/spkgbuild" "Upgraded from version 2.1.8 to version 2.1.9"
