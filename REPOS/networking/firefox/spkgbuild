@@ -7,13 +7,14 @@ options="!checksum"
 rust_version=91.6.0
 release=1
 source="https://archive.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
+	fix-ftbfs-newer-cbindgen.patch
 	$name.desktop"
 
 build() {
 	INITDIR=$PWD
 	cd $name-${version:0:5}
 	#patch -Np1 -i $SRC/add-missing-stub-for-wl_proxy_marshal_flags.patch
-
+	patch -Np1 -i $SRC/fix-ftbfs-newer-cbindgen.patch
 cat <<- EOF > .mozconfig
 	mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-shared
 	unset MOZ_TELEMETRY_REPORTING

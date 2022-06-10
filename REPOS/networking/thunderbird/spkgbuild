@@ -4,14 +4,15 @@
 name=thunderbird
 version=102.0b4
 release=1
-source="https://archive.mozilla.org/pub/thunderbird/releases/$version/source/thunderbird-$version.source.tar.xz"
+source="https://archive.mozilla.org/pub/thunderbird/releases/$version/source/thunderbird-$version.source.tar.xz
+	cbindgen-0.24.patch"
 options="!checksum"
 
 build() {
 	INITDIR=$PWD
 
 	cd $name-${version:0:5}
-	
+	patch -Np1 -i $SRC/cbindgen-0.24.patch
 	cat > mozconfig << "EOF"
 #ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi
