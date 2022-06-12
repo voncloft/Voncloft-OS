@@ -202,3 +202,5 @@ sed -i -e "s/version=4.17.1/version=4.17.2/g" xfce/exo/spkgbuild
 changelog "xfce/exo/spkgbuild" "Upgraded from version 4.17.1 to version 4.17.2"
 sed -i -e "s/version=4.17.0/version=4.17.1/g" xfce/tumbler/spkgbuild
 changelog "xfce/tumbler/spkgbuild" "Upgraded from version 4.17.0 to version 4.17.1"
+sed -i -e "s/version=5.94.0/version=5.95.0/g" extra/extra-cmake-modules/spkgbuild
+changelog "extra/extra-cmake-modules/spkgbuild" "Upgraded from version 5.94.0 to version 5.95.0"
