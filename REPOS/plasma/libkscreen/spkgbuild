@@ -2,7 +2,7 @@
 # depends : kde-deps kwayland plasma-wayland-protocols
 
 name=libkscreen
-version=5.24.5
+version=5.25.0
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
