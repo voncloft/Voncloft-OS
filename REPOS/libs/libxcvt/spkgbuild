@@ -1,0 +1,19 @@
+# description : stand alone x server
+# depends : meson glibc
+
+name=libxcvt
+version=0.1.1
+release=1
+
+source="https://xorg.freedesktop.org/releases/individual/lib/${name}-${version}.tar.xz"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	meson .. \
+	--prefix=/usr
+
+	ninja
+        DESTDIR=$PKG ninja install
+}

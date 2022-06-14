@@ -202,6 +202,7 @@ d:libksba
 d:libx11
 d:libmicrohttpd
 d:libisofs
+d:libxcvt
 d:neon
 d:libcdio-paranoia
 d:apr
@@ -583,6 +584,8 @@ f:874e72cef632f5ad6f27ca1eb1465937:libmicrohttpd/CHANGELOG
 f:f5f47c58bde193a48474b1827e39fc5d:libmicrohttpd/spkgbuild
 f:fd766d9974f1211975998de9de8123ac:libisofs/CHANGELOG
 f:b1e06725bb4f5184b36efdde3fe174df:libisofs/spkgbuild
+f:7adb0a6adb1204ed340ccaf0e590145f:libxcvt/CHANGELOG
+f:a4f0c3ba1fccfd785dc1e4a640849943:libxcvt/spkgbuild
 f:adf1a143cb75a298116fbfac8a5069af:neon/CHANGELOG
 f:5080a18ef0614cc56c3db47c8ca95394:neon/spkgbuild
 f:d472f4e112b787b34503fb20103eb231:libcdio-paranoia/spkgbuild

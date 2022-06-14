@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps breeze kcmutils kscreenlocker kwayland-server plasma-framework kdoctools krunner
+# depends : kde-deps breeze kcmutils kscreenlocker kwayland-server plasma-framework kdoctools krunner libxcvt
 
 name=kwin
 version=5.25.0
