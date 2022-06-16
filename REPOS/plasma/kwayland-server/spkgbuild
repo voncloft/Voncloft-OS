@@ -2,7 +2,7 @@
 # depends : kde-deps kwayland plasma-wayland-protocols
 
 name=kwayland-server
-version=5.24.0
+version=5.25.0
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"

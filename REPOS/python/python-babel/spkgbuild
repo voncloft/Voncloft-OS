@@ -2,7 +2,7 @@
 # depends : python python-pytz
 
 name=python-babel
-version=2.10.2
+version=2.10.3
 release=1
 
 source="https://github.com/python-babel/babel/archive/refs/tags/v$version.tar.gz"

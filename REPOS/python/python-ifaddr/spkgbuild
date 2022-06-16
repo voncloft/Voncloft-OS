@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-ifaddr
-version=0.1.7
+version=0.2.0
 release=3
 
 source="https://github.com/pydron/ifaddr/archive/refs/tags/$version.tar.gz"
