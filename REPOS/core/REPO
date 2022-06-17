@@ -256,7 +256,6 @@ d:monit
 d:rc
 d:cryptsetup
 d:xev
-d:alsa-utils
 d:vimb
 d:cracklib
 d:gnutls
@@ -342,7 +341,6 @@ d:appstream-glib
 d:parcellite
 d:mpfr
 d:coreutils
-d:alsa-plugins
 d:btrfs-progs
 d:vala
 d:xkbevd
@@ -1004,11 +1002,6 @@ f:5bc8a15b1f11f4e1b59f73e9c3120d67:cryptsetup/readme
 f:ab7252f8ed151e1a00263ef363bcce08:cryptsetup/CHANGELOG
 f:5ccc2d224d4b04cf5c84bead00a43714:cryptsetup/spkgbuild
 f:1b09f5e6174f72ab04eb3eba98ca660a:xev/spkgbuild
-f:43186d2b4108b9c0455753af8b7fad17:alsa-utils/finish
-f:b2fc97a4c370713bffa117ce44df99c5:alsa-utils/CHANGELOG
-f:911d2befcbb52fdd62e79c954c9a537c:alsa-utils/rc.alsa
-f:cec56a8733bb8985cd3bae6477d5a3db:alsa-utils/spkgbuild
-f:3f0e774624f500b08f206305503c240e:alsa-utils/run
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
 f:26773e36153d3057fe9b1926fbe4bacd:cracklib/spkgbuild
 f:54ff2a34c89f2c7aeee73f9127608aba:gnutls/CHANGELOG
@@ -1181,8 +1174,6 @@ f:0ffae7bed396419428b15e8adb9b952d:mpfr/spkgbuild
 f:9fe50cfe8b3cc280f0a226470ac197a7:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:977a5923e6effab2faf0f641fbd10bc4:coreutils/spkgbuild
-f:f40b3cb56ec3566f3fd5875155c280d5:alsa-plugins/CHANGELOG
-f:11ab8742f04a233c749cc00ca0210273:alsa-plugins/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
 f:10b021351c93196f70d0c65962521155:btrfs-progs/CHANGELOG
 f:ebecddc78e4d71c4dcc9e431e2eb9828:btrfs-progs/spkgbuild
