@@ -6,3 +6,5 @@ sed -i -e "s/version=1.27.11/version=1.27.12/g" python/python-botocore/spkgbuild
 changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.27.11 to version 1.27.12"
 sed -i -e "s/version=62.4.0/version=62.5.0/g" python/python-setuptools/spkgbuild
 changelog "python/python-setuptools/spkgbuild" "Upgraded from version 62.4.0 to version 62.5.0"
+sed -i -e "s/version=3.0.3/version=3.0.4/g" core/dkms/spkgbuild
+changelog "core/dkms/spkgbuild" "Upgraded from version 3.0.3 to version 3.0.4"
