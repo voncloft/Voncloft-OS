@@ -1,0 +1,6 @@
+get_generic()
+{
+        wget -q "https://raw.githubusercontent.com/archlinux/svntogit-community/packages/discord/trunk/PKGBUILD"
+	uversion=$(grep pkgver= PKGBUILD | sed "s/pkgver=//g")
+	rm PKGBUILD
+}
