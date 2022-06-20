@@ -4,19 +4,17 @@
 name=discordchatexporter
 version=2.34.1
 release=1
-
+noextract="DiscordChatExporter.CLI.zip"
 source="https://github.com/Tyrrrz/DiscordChatExporter/releases/download/$version/DiscordChatExporter.CLI.zip
 	discord-chat-exporter-cli"
-noextract="DiscordChatExporter.CLI.zip"
 build() {
-	cd $SRC
+	ls -la
 	mkdir $SRC/unzip
 	cd $SRC/unzip
-	unzip $SRC/discord-chat-exporter-cli-$version.zip
-	rm $SRC/discord-chat-exporter-cli
-	mkdir -p $PKG/opt/
-	mv $SRC/unzip $PKG/opt/discord-chat-explorer-cli
-	install -m755 discord-chat-explorer-cli "$PKG/opt/discord-chat-exporter-cli/"
+	bsdtar -xvf $SRC/DiscordChatExporter.CLI.zip
+	mkdir -pv $PKG/opt/
+	mv $SRC/unzip $PKG/opt/discord-chat-exporter-cli
+	install -m755 $SRC/discord-chat-exporter-cli "$PKG/opt/discord-chat-exporter-cli/"
 	mkdir -p "$PKG/usr/bin"
 	ln -s "/opt/discord-chat-exporter-cli/discord-chat-exporter-cli" "$PKG/usr/bin/discord-exporter-cli"
 	
