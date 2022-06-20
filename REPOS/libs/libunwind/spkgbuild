@@ -1,0 +1,16 @@
+# description : c porgramming api to determine the call chain of a program
+# depends : xz zlib
+
+name=libunwind
+version=1.6.2
+release=1
+
+source="https://download.savannah.gnu.org/releases/$pkgname/$pkgname-$pkgver.tar.gz"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+  	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  	make
+	make DESTDIR=$PKG install
+}

@@ -98,6 +98,7 @@ d:libogg
 d:libmaxminddb
 d:cmark
 d:shapelib
+d:libunwind
 d:speexdsp
 d:libqtxdg
 d:libxdmcp
@@ -428,6 +429,8 @@ f:4e28953c35add33ca1bcd236a7201b84:libmaxminddb/spkgbuild
 f:f7e93bd60cfba3126e36c04a874016a8:cmark/CHANGELOG
 f:2127fb63e998e89c616e24191666d2f0:cmark/spkgbuild
 f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
+f:3bf9a43ee00af17dca6f7185a8fb3c18:libunwind/CHANGELOG
+f:868696a20c1a50e8888d469680519af7:libunwind/spkgbuild
 f:da0f3c80bf85e97ad614647642facabe:speexdsp/spkgbuild
 f:fefda0e680957ebc61bd6960afdc4943:libqtxdg/CHANGELOG
 f:7e017e31568c5e63d015708daac08676:libqtxdg/spkgbuild

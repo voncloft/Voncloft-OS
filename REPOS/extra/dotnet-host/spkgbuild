@@ -1,0 +1,61 @@
+# description : generic driver for .net core command line interface
+# depends : gcc glibc
+_bootstrapver=0.1.0-6.0.100-bootstrap.29
+name=dotnet-host
+version=6.0.301
+release=1
+noextract="Private.SourceBuilt.Artifacts.${_bootstrapver}.tar.gz"
+source="https://github.com/dotnet/installer/archive/refs/tags/v${version}.tar.gz
+	https://dotnetcli.azureedge.net/source-built-artifacts/assets/Private.SourceBuilt.Artifacts.${_bootstrapver}.tar.gz
+	dotnet.sh
+	dotnet-core-sdk-telemetry-optout.patch"
+
+build() {
+  export COMPlus_LTTng=0
+  export VERBOSE=1
+
+  CFLAGS=$(echo $CFLAGS  | sed -e 's/-fstack-clash-protection//' )
+  CXXFLAGS=$(echo $CXXFLAGS  | sed -e 's/-fstack-clash-protection//' )
+  export EXTRA_CFLAGS="$CFLAGS"
+  export EXTRA_CXXFLAGS="$CXXFLAGS"
+  export EXTRA_LDFLAGS="$LDFLAGS"
+  unset CFLAGS
+  unset CXXFLAGS
+  unset LDFLAGS
+
+  cd dotnet-installer
+
+  ./build.sh \
+    /p:ArcadeBuildTarball=true \
+    /p:TarballDir="${SRC}"/sources
+
+  cd ../sources
+
+  sed -i -E 's|( /p:BuildDebPackage=false)|\1 /p:EnablePackageValidation=false|' src/runtime.*/eng/SourceBuild.props
+  sed -i -E 's|( /p:BuildDebPackage=false)|\1 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=TRUE|' src/runtime.*/eng/SourceBuild.props
+
+  pushd src/sdk.*
+  patch -Np1 -i ../../../dotnet-core-sdk-telemetry-optout.patch
+  popd
+
+  ln -sf "${SRC}"/Private.SourceBuilt.Artifacts.${_bootstrapver}.tar.gz packages/archive/
+
+  ./prep.sh
+  ./build.sh \
+    --with-sdk "${SRC}"/dotnet \
+    -- \
+    /v:n \
+    /p:ContinueOnPrebuiltBaselineError=true \
+    /p:LogVerbosity=n \
+    /p:MinimalConsoleLogOutput=false \
+    /p:PrebuiltPackagesPath="${srcdir}"/sources/packages \
+    /p:SkipPortableRuntimeBuild=true
+
+  install -dm 755 "${PKG}"/{etc/profile.d,usr/{bin,lib,share/{dotnet,licenses/dotnet-host}}}
+  bsdtar -xf dotnet-sdk-${version%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner dotnet host
+  bsdtar -xf dotnet-sdk-${version%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/licenses/dotnet-host/ --no-same-owner LICENSE.txt ThirdPartyNotices.txt
+  ln -s /usr/share/dotnet/dotnet "${PKG}"/usr/bin/dotnet
+  ln -s /usr/share/dotnet/host/fxr/${version%.sdk*}/libhostfxr.so "${pkgdir}"/usr/lib/libhostfxr.so
+  install -Dm 644 ../../../src/sdk.*/scripts/register-completions.bash "${PKG}"/usr/share/bash-completion/completions/dotnet
+  install -Dm 644 ../../../../dotnet.sh -t "${PKG}"/etc/profile.d/
+}
