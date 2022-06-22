@@ -686,10 +686,10 @@ f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:86908a02cddfb0341a65dff080fb93a5:nss/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
-f:6b59be871c0be50ec07b4f0a19f53fd2:linux-desktop/CHANGELOG
+f:d2ac33aab2372e11b9e8ebee1da17389:linux-desktop/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-desktop/override
-f:8540987147661caa9eea70a920a5aa15:linux-desktop/spkgbuild
+f:2682a810fac025e5f07581deab9574ca:linux-desktop/spkgbuild
 f:cd5390e5b0e7cbe86cb692fa06666762:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -1029,10 +1029,10 @@ f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:dde2b1dcd664417006b5c48e006f4d20:iw/CHANGELOG
 f:0c2c826b9063fc3a7799afa8b4c6002a:iw/spkgbuild
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh
-f:8a9de8308aab667e2b3979390f2648a2:linux-router/CHANGELOG
+f:498eec193526ff6213949ab14b15a80f:linux-router/CHANGELOG
 f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-router/override
-f:05575cf67ef98e49d63b182d490c2a07:linux-router/spkgbuild
+f:6c5b7bf918b84e04f56b0a2e7511a14b:linux-router/spkgbuild
 f:9a66451909861d207ef7b152e0bff6b0:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
@@ -1080,8 +1080,8 @@ f:0e9eec6f93402366a99023874b77ef1f:uthash/CHANGELOG
 f:aa606493e8c0487273df31f0e39d8c61:uthash/spkgbuild
 f:e1e86b8aa37ef9b40ce0968d79fd5efd:notification-daemon/spkgbuild
 f:1c0c2cf65a1d95e9cb61c428891d7e77:chntpw/spkgbuild
-f:e90a7f8953fcd464d89c6dde8568ec7b:mlt/CHANGELOG
-f:d80467c61420b4985f0943a97be842a4:mlt/spkgbuild
+f:f5d24ac571e51f3df89e89e550a251dc:mlt/CHANGELOG
+f:8ae98bcd38e58c0730c46f5f5d36758a:mlt/spkgbuild
 f:9afb4d6be4545c15210f05302f24b8b4:docbook2x/spkgbuild
 f:826fae88a435d9278c4f9614991d55a1:docbook2x/docbook2x.datadir.patch
 f:39d7b749276659b8c7d22d66ae83184a:sassc/CHANGELOG
@@ -1101,8 +1101,8 @@ f:9c51ee2b6b5ba6274ffde49da460edb2:timeshift/CHANGELOG
 f:3788d7b8834d8d86f569fa2eb8c6dab2:timeshift/spkgbuild
 f:84164d8ff50bd28cc8d534272d363ef4:timeshift/pr476.patch
 f:7bfc910bdba61120769029c980726780:neomutt/spkgbuild
-f:cb8e81de8060d22752156cdbfe818c7d:qutebrowser/CHANGELOG
-f:c8d95cf2be7ed3af57443cfdd610a47a:qutebrowser/spkgbuild
+f:606e7787dfb54bee4cc2ea78d43339aa:qutebrowser/CHANGELOG
+f:b4ab7c7366ac6e33d10ce0f634547c65:qutebrowser/spkgbuild
 f:b6387d21884a6fbe9d3fcf7969a2fa78:alacritty/CHANGELOG
 f:f3ba9db7d0a12c698fbf45a1f52906c8:alacritty/spkgbuild
 f:f1b7c1e596c8bdd60dec43ecf38ca212:epdfview/epdfview-fixes-2.patch
