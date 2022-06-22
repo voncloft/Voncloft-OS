@@ -2,7 +2,7 @@
 # depends : python-argon2_cffi python-construct python-dateutil python-future python-lxml python-pycryptodomex
 
 name=python-pykeepass
-version=4.0.2
+version=4.0.3
 release=4
 
 source="https://github.com/libkeepass/pykeepass/archive/refs/tags/l$version.tar.gz"
