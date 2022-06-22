@@ -4,7 +4,6 @@ d:plasma-nm
 d:plasma-workspace
 d:breeze-grub
 d:polkit-kde-agent-1
-d:kwayland-server
 d:ksshaskpass
 d:plasma-sdk
 d:plasma-programs
@@ -66,8 +65,6 @@ f:545e79b80a9b15e3c9c27c31c0f4ba73:breeze-grub/CHANGELOG
 f:2b3b2251971a209f014e73eec9a149e3:breeze-grub/spkgbuild
 f:c3357abcbc60b1d68d099e0d763b8782:polkit-kde-agent-1/CHANGELOG
 f:704a71f99def8d1a73a5145dd7ffc10a:polkit-kde-agent-1/spkgbuild
-f:a0214e6057239bcbe0ab8c9103280f8e:kwayland-server/CHANGELOG
-f:526ba59a5d4629dad715ff64ad0e4ac2:kwayland-server/spkgbuild
 f:f443d62fe048eb3efa015be1903b4bf4:ksshaskpass/CHANGELOG
 f:8bfc6a136634ae5b3d322d7dc68ad539:ksshaskpass/spkgbuild
 f:608c498b35f674e633a5f6cb987ef1b9:plasma-sdk/CHANGELOG
