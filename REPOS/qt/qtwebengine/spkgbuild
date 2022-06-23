@@ -2,7 +2,7 @@
 # depends	: qt5 nss python libwebp libxslt opus ninja ffmpeg alsa-lib libxcomposite libxtst
 
 name=qtwebengine
-version=5.15.9
+version=5.15.10
 release=1
 
 source="https://anduin.linuxfromscratch.org/BLFS/$name/$name-$version.tar.xz

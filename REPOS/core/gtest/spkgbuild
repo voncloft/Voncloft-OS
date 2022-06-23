@@ -2,7 +2,7 @@
 # depends : gcc 
 
 name=gtest
-version=1.10.0
+version=1.12.0
 release=3
 
 source="https://github.com/google/googletest/archive/release-${version}.tar.gz"
