@@ -5,7 +5,7 @@ name=protobuf
 version=21.2
 release=3
 
-source="https://github.com/protocolbuffers/$name/releases/download/v$version/$name-all-$version.tar.gz"
+source="https://github.com/protocolbuffers/$name/archive/refs/tags/v${version}.tar.gz"
 options="!checksum"
 
 build() {
