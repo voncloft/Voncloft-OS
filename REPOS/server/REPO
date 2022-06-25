@@ -23,11 +23,14 @@ f:ed4019b5776c0fab8ba484357c8c9fe4:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:ab4f513531f1001177c5bd8badb6d85c:php/CHANGELOG
 f:9b71e7fc8fab24592f4939a1c6ba5df6:php/spkgbuild
-f:6111f450a2237d4bfd3f0080d2920b57:plex-media-server/CHANGELOG
+f:560dc57ca4c1d4b566453ca8926a4f49:plex-media-server/CHANGELOG
 f:9322a10019c0226e3f9b8d1e0a3c22f3:plex-media-server/plexmediaserver.conf.d
 f:561722f0631737ca172ce54ab9413bb3:plex-media-server/plex.tmpfiles
+f:b812d65762e7375c60c4e85f8c8c0a93:plex-media-server/override
+f:abdf60c386e1a46b2a83276381d94a1e:plex-media-server/old-versions.1
 f:d9f76e547b6c31912efa19463af0f3c6:plex-media-server/plex.sysusers
-f:4240cac55075c93ecaa879e9110dc0f3:plex-media-server/spkgbuild
+f:67174bc5502662e08e737832ed723754:plex-media-server/spkgbuild
+f:9e90f0f1669ef6799db797c7f417ef2b:plex-media-server/old-versions
 f:cf9b5340b220350df739de0c21edf471:dnsmasq/post-install.sh
 f:28272840d321a80d0f68b8a04fe77e15:dnsmasq/CHANGELOG
 f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
