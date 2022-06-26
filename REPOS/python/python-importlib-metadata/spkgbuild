@@ -2,7 +2,7 @@
 # depends : python-zipp
 
 name=python-importlib-metadata
-version=4.11.4
+version=4.12.0
 release=1
 
 source="https://github.com/python/importlib_metadata/archive/refs/tags/v$version.tar.gz"
