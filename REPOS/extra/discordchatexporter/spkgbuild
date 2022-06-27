@@ -1,5 +1,5 @@
 # description : export logs from discord
-# depends : dotnet-runtime unzip
+# depends : dotnet-host
 
 name=discordchatexporter
 version=2.34.1
