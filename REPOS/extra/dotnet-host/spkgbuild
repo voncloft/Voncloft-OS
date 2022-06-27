@@ -14,4 +14,37 @@ build() {
   	ln -sf /usr/share/dotnet/dotnet "${PKG}"/usr/bin/dotnet
   	ln -sf /usr/share/dotnet/host/fxr/"${_runtimever}"/libhostfxr.so "${PKG}"/usr/lib/libhostfxr.so
   	install -Dm 644 "${SRC}"/dotnet.sh -t "${PKG}"/etc/profile.d/
+
+
+  install -dm 755 "${PKG}"/usr/share/{dotnet/shared,licenses}
+  cp -dr --no-preserve='ownership' shared/Microsoft.NETCore.App "${PKG}"/usr/share/dotnet/shared/
+  ln -s dotnet-host-bin "${PKG}"/usr/share/licenses/dotnet-runtime-bin
+
+    #install -dm 755 "${PKG}"/usr/share/{dotnet/shared,licenses}
+  #cp -dr --no-preserve='ownership' shared/Microsoft.AspNetCore.App "${PKG}"/usr/share/dotnet/shared/
+  #ln -s dotnet-host-bin "${PKG}"/usr/share/licenses/aspnet-runtime-bin
+
+   # install -dm 755 "${PKG}"/usr/share/{dotnet,licenses}
+  #cp -dr --no-preserve='ownership' sdk sdk-manifests templates "${PKG}"/usr/share/dotnet/
+  #ln -s dotnet-host-bin "${PKG}"/usr/share/licenses/dotnet-sdk-bin
+
+  
+  #install -dm 755 "${PKG}"/usr/share/{dotnet,dotnet/packs,licenses}
+  #cp -dr --no-preserve='ownership' packs/NETStandard.Library.Ref "${PKG}"/usr/share/dotnet/packs/
+  #ln -s dotnet-host-bin "${PKG}"/usr/share/licenses/netstandard-targeting-pack
+
+
+  #if [ $CARCH = 'x86_64' ]; then msarch=x64;
+  #elif [ $CARCH = 'armv7h' ]; then msarch=arm;
+  #elif [ $CARCH = 'aarch64' ]; then msarch=arm64; fi
+
+  #install -dm 755 "${PKG}"/usr/share/{dotnet,dotnet/packs,licenses}
+  #cp -dr --no-preserve='ownership' packs/Microsoft.NETCore.App.{Host.linux-${msarch},Ref} "${PKG}"/usr/share/dotnet/packs/
+  #ln -s dotnet-host-bin "${PKG}"/usr/share/licenses/dotnet-targeting-pack-bin
+
+
+
+  #install -dm 755 "${PKG}"/usr/share/{dotnet,dotnet/packs,licenses}
+  #cp -dr --no-preserve='ownership' packs/Microsoft.AspNetCore.App.Ref "${PKG}"/usr/share/dotnet/packs/
+  #ln -s dotnet-host-bin "${PKG}"/usr/share/licenses/aspnet-targeting-pack-bin
 }
