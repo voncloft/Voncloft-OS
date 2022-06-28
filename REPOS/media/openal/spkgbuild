@@ -2,7 +2,7 @@
 # depends : gcc
 
 name=openal
-version=1.22.1
+version=1.22.2
 release=1
 
 source="https://github.com/kcat/openal-soft/archive/refs/tags/$version.tar.gz"
