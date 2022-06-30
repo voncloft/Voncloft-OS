@@ -130,3 +130,47 @@ sed -i -e "s/version=0.20.3/version=0.20.4/g" python/python-starlette/spkgbuild
 changelog "python/python-starlette/spkgbuild" "Upgraded from version 0.20.3 to version 0.20.4"
 sed -i -e "s/version=5.25.1/version=5.25.2/g" qt/layer-shell-qt/spkgbuild
 changelog "qt/layer-shell-qt/spkgbuild" "Upgraded from version 5.25.1 to version 5.25.2"
+sed -i -e "s/version=3.0.4/version=3.0.5/g" core/dkms/spkgbuild
+changelog "core/dkms/spkgbuild" "Upgraded from version 3.0.4 to version 3.0.5"
+sed -i -e "s/version=5.18.7/version=5.18.8/g" core/linux-desktop/spkgbuild
+changelog "core/linux-desktop/spkgbuild" "Upgraded from version 5.18.7 to version 5.18.8"
+sed -i -e "s/version=5.18.7/version=5.18.8/g" core/linux-router/spkgbuild
+changelog "core/linux-router/spkgbuild" "Upgraded from version 5.18.7 to version 5.18.8"
+sed -i -e "s/version=1.1.4rc1/version=1.1.4rc2/g" extra/solaar/spkgbuild
+changelog "extra/solaar/spkgbuild" "Upgraded from version 1.1.4rc1 to version 1.1.4rc2"
+sed -i -e "s/version=1.11.0/version=1.12.0/g" libs/libvpx/spkgbuild
+changelog "libs/libvpx/spkgbuild" "Upgraded from version 1.11.0 to version 1.12.0"
+sed -i -e "s/version=103.0b1/version=103.0b2/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 103.0b1 to version 103.0b2"
+sed -i -e "s/version=2022.06.22.1/version=2022.06.29/g" networking/yt-dlp/spkgbuild
+changelog "networking/yt-dlp/spkgbuild" "Upgraded from version 2022.06.22.1 to version 2022.06.29"
+sed -i -e "s/version=1.3.3/version=1.3.4/g" python/python-aiopg/spkgbuild
+changelog "python/python-aiopg/spkgbuild" "Upgraded from version 1.3.3 to version 1.3.4"
+sed -i -e "s/version=1.24.19/version=1.24.20/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.24.19 to version 1.24.20"
+sed -i -e "s/version=1.27.19/version=1.27.20/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.27.19 to version 1.27.20"
+sed -i -e "s/version=2.8.0/version=2.9.0/g" python/python-google-auth/spkgbuild
+changelog "python/python-google-auth/spkgbuild" "Upgraded from version 2.8.0 to version 2.9.0"
+sed -i -e "s/version=1.16.0/version=1.17.0/g" python/python-hcloud/spkgbuild
+changelog "python/python-hcloud/spkgbuild" "Upgraded from version 1.16.0 to version 1.17.0"
+sed -i -e "s/version=5.2.4/version=5.3.0/g" python/python-kombu/spkgbuild
+changelog "python/python-kombu/spkgbuild" "Upgraded from version 5.2.4 to version 5.3.0"
+sed -i -e "s/version=3.18.0/version=3.19.0/g" python/python-openmdao/spkgbuild
+changelog "python/python-openmdao/spkgbuild" "Upgraded from version 3.18.0 to version 3.19.0"
+sed -i -e "s/version=0.7.0/version=0.7.1/g" python/python-pip-shims/spkgbuild
+changelog "python/python-pip-shims/spkgbuild" "Upgraded from version 0.7.0 to version 0.7.1"
+sed -i -e "s/version=2.28.0/version=2.28.1/g" python/python-requests/spkgbuild
+changelog "python/python-requests/spkgbuild" "Upgraded from version 2.28.0 to version 2.28.1"
+sed -i -e "s/version=62.6.0/version=63.0.0/g" python/python-setuptools/spkgbuild
+changelog "python/python-setuptools/spkgbuild" "Upgraded from version 62.6.0 to version 63.0.0"
+sed -i -e "s/version=7.3.1/version=7.4.0/g" python/python-traitsui/spkgbuild
+changelog "python/python-traitsui/spkgbuild" "Upgraded from version 7.3.1 to version 7.4.0"
+sed -i -e "s/version=20.15.0/version=20.15.1/g" python/python-virtualenv/spkgbuild
+changelog "python/python-virtualenv/spkgbuild" "Upgraded from version 20.15.0 to version 20.15.1"
+sed -i -e "s/version=2.3.16/version=2.3.17/g" ruby-gems/ruby-bundler/spkgbuild
+changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.3.16 to version 2.3.17"
+sed -i -e "s/version=2.1.0/version=2.1.1/g" server/deluge/spkgbuild
+changelog "server/deluge/spkgbuild" "Upgraded from version 2.1.0 to version 2.1.1"
+sed -i -e "s/version=2022.6.7/version=2022.7.0/g" server/homeassistant/spkgbuild
+changelog "server/homeassistant/spkgbuild" "Upgraded from version 2022.6.7 to version 2022.7.0"

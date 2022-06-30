@@ -2,7 +2,7 @@
 # depends : elfutils linux-firmware
 
 name=linux-router
-version=5.18.7
+version=5.18.8
 release=1
 
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz"
