@@ -8,10 +8,13 @@ if [[ ! $NEW_IP == $OLD_IP ]]; then
 	echo "IP CHANGED"
         ip rule flush table deluge
         ip rule add from all fwmark 0x1 lookup deluge
-        ip route add default via $ip_of_tun table deluge
-        sed -i -e "s/$OLD_IP/$NEW_IP/g" /home/deluge/.config/deluge/core.conf
-        chown deluge:deluge /home/deluge/.config/deluge/core.conf
-        /etc/init.d/deluged restart
+        ip route add default via $NEW_IP table deluge
+        #sed -i -e "s/$OLD_IP/$NEW_IP/g" /home/deluge/.config/deluge/core.conf
+        #chown deluge:deluge /home/deluge/.config/deluge/core.conf
+        #/etc/init.d/deluged restart
+	killall deluged
+	/usr/bin/deluged --pidfile /home/deluge/deluged.pid -L debug -l /home/deluge/deluged.log --user deluge --group deluge --config /home/deluge/.config/deluge -i $NEW_IP
+
 else
 	echo "NO CHANGE YOU ARE PROTECTED"
 fi
