@@ -12,7 +12,7 @@ build() {
 	INITDIR=$PWD
 
 	cd $name-${version:0:5}
-	patch -Np1 -i $SRC/cbindgen-0.24.patch
+	#patch -Np1 -i $SRC/cbindgen-0.24.patch
 	cat > mozconfig << "EOF"
 #ac_add_options --disable-dbus
 ac_add_options --disable-necko-wifi

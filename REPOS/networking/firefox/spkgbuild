@@ -14,7 +14,7 @@ build() {
 	INITDIR=$PWD
 	cd $name-${version:0:5}
 	#patch -Np1 -i $SRC/add-missing-stub-for-wl_proxy_marshal_flags.patch
-	patch -Np1 -i $SRC/fix-ftbfs-newer-cbindgen.patch
+	#patch -Np1 -i $SRC/fix-ftbfs-newer-cbindgen.patch
 cat <<- EOF > .mozconfig
 	mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-shared
 	unset MOZ_TELEMETRY_REPORTING
