@@ -2,7 +2,7 @@
 # depends : python-traitlets
 
 name=python-jupyter_core
-version=4.10.0
+version=4.11.0
 release=4
 
 source="https://github.com/jupyter/jupyter_core/archive/refs/tags/r$version.tar.gz"

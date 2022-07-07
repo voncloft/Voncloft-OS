@@ -2,7 +2,7 @@
 # depends : python-pip python-wheel python-setuptools
 
 name=python-pip-shims
-version=0.7.2
+version=0.7.3
 release=3
 
 source="https://github.com/sarugaku/pip-shims/archive/refs/tags/$version.tar.gz"
