@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-kaitaistruct
-version=0.9
+version=0.10
 release=3
 
 source="https://github.com/kaitai-io/kaitai_struct_python_runtime/archive/refs/tags/$version.tar.gz"
