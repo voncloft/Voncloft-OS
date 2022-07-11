@@ -493,9 +493,9 @@ f:a1ec4bfb2ae5116db789397aa796683a:grub/detect-venom-fallback-initrd.patch
 f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:325c8173b81f3e6cfb8e636e14d74766:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
-f:ce10d9e882c6dcb07c9d243d0e6a17e4:xpr/CHANGELOG
+f:e29c2b2a17d0bbf27394e3416212aa5d:xpr/CHANGELOG
 f:835e7b01a3181cf0efc82b826c2d3e87:xpr/override
-f:0b6d8c405a6a59dcc9055fbeb9ce3706:xpr/spkgbuild
+f:144bcc999904384ecdeba799da52eadf:xpr/spkgbuild
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
 f:2e67dccb4c2270345c0e71262ff8ac9b:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
@@ -641,7 +641,8 @@ f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
 f:cf962addfa46102e6e357384af141e18:dbus/spkgbuild
 f:0c4425f1486ab49284b40b113677c715:readline/CHANGELOG
 f:d2197bed7f41b0b65a38eb1d2b4c59c4:readline/spkgbuild
-f:8e60e9dec182e6fb2bb05c42c42a5afd:xmodmap/spkgbuild
+f:905bd6e44d2d6c71773918c0071fa61c:xmodmap/CHANGELOG
+f:708b3a1432d3d7f9fb451403ea4312a4:xmodmap/spkgbuild
 f:18e3d5669d4376a79598badfc3f5a782:cpio/spkgbuild
 f:fe269c0d67598bcfc16ad936c9f1e981:terminator/spkgbuild
 f:9152af24dad0cfee15da3094da963614:cowsay/CHANGELOG
@@ -803,8 +804,8 @@ f:8d75b04742611560b66735b60e4abbea:twm/CHANGELOG
 f:a78845425f9f2a30d4dec2f1738a8a1a:twm/spkgbuild
 f:cb39462d84f62b2194834538eec298f0:docbook-xml/post-install.sh
 f:90f59decf5050a8cdaa1b4d6f48fc270:docbook-xml/spkgbuild
-f:4f9fa55ad4df9060824e1d04a66cd0de:audacious/CHANGELOG
-f:93f0dda2688a2c422635c65ae8a6cbf4:audacious/spkgbuild
+f:8279eca18c4f3372e866e26ab8224ae5:audacious/CHANGELOG
+f:abb93651e43c5e2d07307ea156aaa075:audacious/spkgbuild
 f:3be4cac952eb28068866325cd416ad96:opencl-headers/spkgbuild
 f:8ea88517950af029dd5f56c64e5c1c61:yad/CHANGELOG
 f:a1e1378ec6d03ac6e511a51837f8b0b8:yad/spkgbuild
@@ -871,7 +872,8 @@ f:1e8408c28502f17e4f6e7816f9d4600c:linux-firmware/CHANGELOG
 f:59acf9b514ce1c02438ed45e68d7aaa5:linux-firmware/spkgbuild
 f:d9b396a7d485f5e0c68e6d038def2146:gnustep-base/CHANGELOG
 f:edda81a7dcd469799fb6885305fff6a5:gnustep-base/spkgbuild
-f:a4ac09bb8f4e39eb690761670f1d90cc:xcmsdb/spkgbuild
+f:de00ad9a9a9e867c9a58d2b8a83407d6:xcmsdb/CHANGELOG
+f:e94d5f40c19e1592925f6e570ec74358:xcmsdb/spkgbuild
 f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
@@ -937,7 +939,8 @@ f:548ae33bd944ed02279f054c3d566884:pugixml/CHANGELOG
 f:d92690d855b4802c5ffae2f9c31a1fd4:pugixml/spkgbuild
 f:5d80105ec67b564136a34f8f93f52575:hdparm/CHANGELOG
 f:2331b389dc497d8050ced93827298281:hdparm/spkgbuild
-f:a9e3b7b873ada9c9106f83dee4922c57:xwud/spkgbuild
+f:5868781959d010369d55a67c45c8bb8c:xwud/CHANGELOG
+f:6aad53244d99ab9454a6671d959eb103:xwud/spkgbuild
 f:be4242cd7e09a51387e4cb7a1cc9d1cd:volumeicon/spkgbuild
 f:2b8ca3e5cefb9fe5521ea293ad003deb:makeself/CHANGELOG
 f:a2b908ac2ab8dae54ec1cd689ef97d07:makeself/spkgbuild
@@ -953,8 +956,8 @@ f:9dbbb05c50025586c9cce35468dde9c7:jemalloc/CHANGELOG
 f:f1ca8a404836fcc0a43cec5a0acd65a6:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:4df329f4e91cb6ced5fde19b8bf746b8:mercurial/CHANGELOG
-f:d61b454f5a093b57ae18a308851ceeb8:mercurial/spkgbuild
+f:1ad7b16b02e8db9ee6bece2f9d68c610:mercurial/CHANGELOG
+f:d22b25bbbb40d85d975e65c4e08ccefa:mercurial/spkgbuild
 f:52224673969ada7b392db76b52910714:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:6e0a494e314b843637087ae80bf923d5:rxvt-unicode/spkgbuild
@@ -1117,8 +1120,8 @@ f:eb7a8a86792273889c58c6bc9ea6011f:consolekit2/consolekit2.install.bak
 f:e184366eba89b39268dbb42359f86bfc:consolekit2/CHANGELOG
 f:d75ed3438dab01552304c06fd9a967b1:consolekit2/pam-foreground-compat.ck
 f:593266f7a2b014dbb3c7ba8d5877d80f:consolekit2/spkgbuild
-f:1e03821e04e009b86c3332b8437adeb3:audacious-plugins/CHANGELOG
-f:9894f5073961d9697180cb6edd7fd7f1:audacious-plugins/spkgbuild
+f:664694c82eb1fb32eb4cfd935c3c9e8c:audacious-plugins/CHANGELOG
+f:6b4af8f8e07e989c9743f7f0456f8425:audacious-plugins/spkgbuild
 f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
 f:41cdc97cea4655d466f4f52722ffc5e1:yelp-xsl/CHANGELOG
 f:c596979032ce1ffad64856d7fb1c94df:yelp-xsl/spkgbuild
@@ -1365,8 +1368,8 @@ f:1c9ab70a85685bc65f25dc08d84bd845:jwm/spkgbuild
 f:86a520326cc265843cccc42e557d869c:patch/spkgbuild
 f:f6e621be6c7e9228e4daf40520901483:gconf/spkgbuild
 f:da3acd3a32c6f5ce2a4333dbf3a6a2b5:at-spi2-atk/spkgbuild
-f:b1d296f99301992df6810644bbdf049c:weechat/CHANGELOG
-f:52380f553066cb8ea693fd0aa193c6b7:weechat/spkgbuild
+f:7a9ce056d9722d43268ae3f375ee44a0:weechat/CHANGELOG
+f:4c7e4fe4e14b482b04f7928e4a6e38c7:weechat/spkgbuild
 f:4d5a371732a0d19323f09c0075a97961:geos/CHANGELOG
 f:1bab01d12036a4107d27ca778133b5a0:geos/spkgbuild
 f:c72243c736596bff87d749bdc93bdc19:xauth/CHANGELOG
