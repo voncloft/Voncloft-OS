@@ -2,13 +2,11 @@ d:itstool
 d:scratchpkg
 d:pangomm
 d:grub
-d:xpr
 d:bspwm
 d:systemd
 d:sxhkd
 d:lm_sensors
 d:intltool
-d:xsetroot
 d:clipit
 d:mksh
 d:binutils
@@ -32,7 +30,6 @@ d:os-prober
 d:yelp-tools
 d:deadbeef
 d:smtube
-d:xprop
 d:poppler-glib
 d:reiserfsprogs
 d:yasm
@@ -70,11 +67,9 @@ d:runit
 d:cups
 d:dbus
 d:readline
-d:xmodmap
 d:cpio
 d:terminator
 d:cowsay
-d:xmessage
 d:go
 d:linux-api-headers
 d:ncmpcpp
@@ -110,12 +105,10 @@ d:obconf
 d:fakeroot
 d:file
 d:parallel
-d:xkill
 d:upower
 d:mtools
 d:unzip
 d:stfl
-d:xlsatoms
 d:nnn
 d:gnupg
 d:inxi
@@ -123,7 +116,6 @@ d:pipewire
 d:foltotar
 d:pciutils
 d:glew
-d:xgamma
 d:desktop-file-utils
 d:man-db
 d:wifite
@@ -165,7 +157,6 @@ d:fribidi
 d:acpi
 d:lcms2
 d:scons
-d:xdriinfo
 d:help2man
 d:numactl
 d:recordmydesktop
@@ -179,16 +170,12 @@ d:gwenhywfar
 d:faad2
 d:wpebackend-fdo
 d:bamf
-d:xbitmaps
 d:utilities
 d:enchant
 d:db
 d:aspell
-d:iceauth
-d:encodings
 d:linux-firmware
 d:gnustep-base
-d:xcmsdb
 d:pnmixer
 d:zip
 d:efibootmgr
@@ -200,11 +187,9 @@ d:vimix-gtk-themes
 d:surf
 d:dzen2
 d:colord
-d:xwininfo
 d:cdw
 d:filesystem
 d:parted
-d:xset
 d:xpaint
 d:doxygen
 d:linux-pam
@@ -215,10 +200,8 @@ d:webkitgtk
 d:openjpeg
 d:pugixml
 d:hdparm
-d:xwud
 d:volumeicon
 d:makeself
-d:x11perf
 d:poppler-data
 d:vte3
 d:lua52
@@ -227,7 +210,6 @@ d:iso-codes
 d:mercurial
 d:rxvt-unicode
 d:papirus-icon-theme-light
-d:setxkbmap
 d:pixman
 d:mc
 d:fdupes
@@ -235,14 +217,12 @@ d:squashfs-tools
 d:adapta-gtk-theme
 d:cdrtools
 d:bubblewrap
-d:xbacklight
 d:zenity
 d:yetris
 d:gzip
 d:elfutils
 d:bleachbit
 d:papirus-icon-theme-dark
-d:xrdb
 d:tree
 d:inetutils
 d:hicolor-icon-theme
@@ -255,7 +235,6 @@ d:faenza-icon-theme
 d:monit
 d:rc
 d:cryptsetup
-d:xev
 d:vimb
 d:cracklib
 d:gnutls
@@ -316,7 +295,6 @@ d:qutebrowser
 d:alacritty
 d:epdfview
 d:fakescratch
-d:xkbutils
 d:consolekit2
 d:audacious-plugins
 d:arc-icon-theme
@@ -325,7 +303,6 @@ d:yaml-cpp
 d:links
 d:galculator
 d:qalculate
-d:xrefresh
 d:gc
 d:bash-completion
 d:which
@@ -334,7 +311,6 @@ d:pm-utils
 d:gparted
 d:bzip2
 d:dmenu
-d:xwd
 d:dosfstools
 d:gobject-introspection
 d:appstream-glib
@@ -343,7 +319,6 @@ d:mpfr
 d:coreutils
 d:btrfs-progs
 d:vala
-d:xkbevd
 d:sed
 d:boost
 d:cmus
@@ -352,7 +327,6 @@ d:pavucontrol
 d:hyphen
 d:pypanel
 d:iproute2
-d:xlsclients
 d:psmisc
 d:wgetpaste
 d:i3
@@ -370,7 +344,6 @@ d:tzdata
 d:time
 d:lmdb
 d:zsh
-d:luit
 d:redis
 d:ntp
 d:transmission-cli
@@ -403,7 +376,6 @@ d:p7zip
 d:arc-gtk-theme
 d:cabextract
 d:flac
-d:xvinfo
 d:dkms
 d:st
 d:gsettings-desktop-schemas
@@ -414,7 +386,6 @@ d:p11-kit
 d:rfkill
 d:atomicparsley
 d:dash
-d:xhost
 d:irssi
 d:reaver
 d:ghostscript
@@ -437,7 +408,6 @@ d:zeromq
 d:asciidoc
 d:man-pages
 d:dunst
-d:xdpyinfo
 d:lua
 d:jwm
 d:patch
@@ -445,7 +415,6 @@ d:gconf
 d:at-spi2-atk
 d:weechat
 d:geos
-d:xauth
 d:speedtest-cli
 d:argon2
 d:android-udev
@@ -467,11 +436,9 @@ d:neofetch
 d:ranger
 d:htop
 d:openbox
-d:smproxy
 d:scrot
 d:jack
 d:diffutils
-d:util-macros
 d:unrar
 d:frei0r-plugins
 d:xbindkeys
@@ -493,9 +460,6 @@ f:a1ec4bfb2ae5116db789397aa796683a:grub/detect-venom-fallback-initrd.patch
 f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:325c8173b81f3e6cfb8e636e14d74766:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
-f:e29c2b2a17d0bbf27394e3416212aa5d:xpr/CHANGELOG
-f:835e7b01a3181cf0efc82b826c2d3e87:xpr/override
-f:144bcc999904384ecdeba799da52eadf:xpr/spkgbuild
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
 f:2e67dccb4c2270345c0e71262ff8ac9b:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
@@ -505,7 +469,6 @@ f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
 f:c8999a29e48618d654c559af11ecff81:lm_sensors/spkgbuild
 f:37ac3fc4141f0d12a5da70a668f3b462:lm_sensors/run
 f:fa96f6abf49b9378bf6f7c48979379d0:intltool/spkgbuild
-f:05dd28ad6ee5e5d081965462e21d2605:xsetroot/spkgbuild
 f:5d4e8f73a7420ba6997eb32b940d97f7:clipit/spkgbuild
 f:ad398cc11133888ff3936caeae51037c:mksh/post-install.sh
 f:caa54c2e8199d943be170a294f901e32:mksh/spkgbuild
@@ -556,8 +519,6 @@ f:0a8aa193f1bc709a137f5d03fed78ec3:deadbeef/CHANGELOG
 f:fb85fe43a81e98c72927e81bdc5b1870:deadbeef/spkgbuild
 f:4b2303c74c8f10f50e120ddfcc77c652:smtube/CHANGELOG
 f:eeb849a25f2561324f05674abea503bf:smtube/spkgbuild
-f:1eb6abe461c518d980f8a24a326e068d:xprop/CHANGELOG
-f:4a4d2bb1f3a57a7e581819a9d29a17a6:xprop/spkgbuild
 f:123c1d768f2d2961493a42de665b1534:poppler-glib/spkgbuild
 f:c9e1abb8d76f66d2c4c6ed4bb5e9e1fa:reiserfsprogs/reiserfsprogs-3.6.27-loff_t.patch
 f:f77b24a2e077b4943fe815ba50313073:reiserfsprogs/spkgbuild
@@ -641,14 +602,11 @@ f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
 f:cf962addfa46102e6e357384af141e18:dbus/spkgbuild
 f:0c4425f1486ab49284b40b113677c715:readline/CHANGELOG
 f:d2197bed7f41b0b65a38eb1d2b4c59c4:readline/spkgbuild
-f:905bd6e44d2d6c71773918c0071fa61c:xmodmap/CHANGELOG
-f:9e776d08af61f3b78d99e87eca843f92:xmodmap/spkgbuild
 f:18e3d5669d4376a79598badfc3f5a782:cpio/spkgbuild
 f:fe269c0d67598bcfc16ad936c9f1e981:terminator/spkgbuild
 f:9152af24dad0cfee15da3094da963614:cowsay/CHANGELOG
 f:7091f9a6d97006299a1f27a665b638b6:cowsay/cowsay.patch
 f:2754d951cff391b6efb8f02374c5f4f1:cowsay/spkgbuild
-f:66158d98ba1688edba9621669ccfbe33:xmessage/spkgbuild
 f:47c2d99b1e13cd5f97e53c8b8773e92f:go/spkgbuild
 f:82d603a21323ebe767132d69e020f38c:linux-api-headers/spkgbuild
 f:181974f7a7196a64f7e502ddb3dc17f5:ncmpcpp/CHANGELOG
@@ -713,14 +671,12 @@ f:20b9d53845d6f0a60d7015712ea2d2a0:fakeroot/spkgbuild
 f:da600038ab73e1d093e1bb7f9e103df2:file/CHANGELOG
 f:1ffd1c1dae3106f673494bb12f18fa1d:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
-f:d0e92d4345323ffd69e9346f64dbce9a:xkill/spkgbuild
 f:81ce46ac08d7ab4f3a6629a155162716:upower/CHANGELOG
 f:9b22367f91bcff2f545ae267628adffb:upower/spkgbuild
 f:4a11c1d7bd6b2f1d5e6671092da86464:mtools/CHANGELOG
 f:5ca9ccd0b7a8d4c9ab70b1a216b2ebee:mtools/spkgbuild
 f:d594f98bfc59eb0d416042712acdc2fb:unzip/spkgbuild
 f:59583b7acb6b7c62c73c6410d29b30ad:stfl/spkgbuild
-f:85f4df280a4dedfe41e62d0635df02ab:xlsatoms/spkgbuild
 f:dc487f83fedce479ae77d71413fc8f75:nnn/CHANGELOG
 f:55d8477a528956190db31e0af1de5be0:nnn/spkgbuild
 f:2673a353fe6da6092841b2b4b97dd74a:gnupg/CHANGELOG
@@ -734,7 +690,6 @@ f:d1079a56828cc16c17afc129665bc01b:pciutils/readme
 f:9961c609cc865a9cfd099c34eeb58535:pciutils/CHANGELOG
 f:42c85d27b9d33280f2f1f7847438418c:pciutils/spkgbuild
 f:26bdee005991162166a6f930f4e1d70d:glew/spkgbuild
-f:55a021566192d0545ecfd2a8d9f74a05:xgamma/spkgbuild
 f:2b23300f3e388995a86d89970ec0114a:desktop-file-utils/post-install.sh
 f:d184f51eadd79efd912e528af3ad6291:desktop-file-utils/spkgbuild
 f:e5d1ab52ba3ec8ca39b0a706304f6425:man-db/CHANGELOG
@@ -824,7 +779,6 @@ f:a27ca6e25b9a0ec7078d5017a60779a6:lcms2/CHANGELOG
 f:b9740930146c725f80ae7361f4a6d02d:lcms2/spkgbuild
 f:37271408961aa6f3adedbc00d816d9b7:scons/CHANGELOG
 f:ed7497b92ba0e26920fe807dcffe5ef0:scons/spkgbuild
-f:41470aaf59ec0e3e04eb33b3318b7a28:xdriinfo/spkgbuild
 f:4260f27b95233cc4fcb3d3cc396ea215:help2man/CHANGELOG
 f:62990f75e2199280170a4639bb7803ba:help2man/spkgbuild
 f:5a4c1948e07ecd3f99b7cf3dfd314a09:numactl/spkgbuild
@@ -853,7 +807,6 @@ f:0ef4b23e9a2dc604a6a9ab7d49e1090b:wpebackend-fdo/CHANGELOG
 f:08a96172b6077ba1222e68593b9fa42f:wpebackend-fdo/spkgbuild
 f:9a0031cab0e772ca6e487d161667241e:bamf/CHANGELOG
 f:95c6fd0c56ec5a60673cc030f885d51b:bamf/spkgbuild
-f:e6a5fbe8edef6b6543de762ff2487473:xbitmaps/spkgbuild
 f:7d1d64e365680113d57a17b6cbb5eca6:utilities/CHANGELOG
 f:e08ec7ad27a2a36d764e8c87f4e6ea45:utilities/watchallports
 f:4a756bf3bce5beac9af146d6fe324953:utilities/upgrade-python-packages
@@ -865,15 +818,10 @@ f:c4e633645d21d8d02f4e315a3924ad26:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:eda0545af6a628507e33990495ec6e60:aspell/spkgbuild
-f:5895a9602ac523f51c4b7b6e15fcc44e:iceauth/CHANGELOG
-f:04bdbfb007268710b2eedc537cb1d4ae:iceauth/spkgbuild
-f:efbccf84e899047f325e0b93e2b05f92:encodings/spkgbuild
 f:1e8408c28502f17e4f6e7816f9d4600c:linux-firmware/CHANGELOG
 f:59acf9b514ce1c02438ed45e68d7aaa5:linux-firmware/spkgbuild
 f:d9b396a7d485f5e0c68e6d038def2146:gnustep-base/CHANGELOG
 f:edda81a7dcd469799fb6885305fff6a5:gnustep-base/spkgbuild
-f:de00ad9a9a9e867c9a58d2b8a83407d6:xcmsdb/CHANGELOG
-f:752cd94ded64dbef27a5bae4a01c5124:xcmsdb/spkgbuild
 f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
@@ -892,7 +840,6 @@ f:1f5fda6fab1b1c45a82861cac35154cb:colord/CHANGELOG
 f:561181f4c3e83bb6affa8fad85d0981c:colord/pre-install.sh
 f:371a660dae1b590d86edc86de1565e11:colord/mkdirs
 f:8a8a0f6d03fa6fe380fb71945b26411f:colord/spkgbuild
-f:09a4f9f5e7fa9539f56b70a0d208385f:xwininfo/spkgbuild
 f:9ed07e6225e626478096997d020d0ca2:cdw/spkgbuild
 f:5cbb5efc6adba814bafb91e534b09836:filesystem/locale.conf
 f:42f4400ed2314bd7519c020d0187edc5:filesystem/bash_logout.skel
@@ -917,7 +864,6 @@ f:37c1f2bc904ef01f13a8ed4d3e846f98:filesystem/shells
 f:be3d4507d6fcd289c28dc4e3c90ab907:filesystem/inputrc
 f:275f6112966968f0c61e824e2e247313:parted/CHANGELOG
 f:bffd723f87a7ca7504e7b45f9d9171b4:parted/spkgbuild
-f:1b412280d6e15338ef18b7e163242f4f:xset/spkgbuild
 f:390dcf908a947ff00a01d0d137d4c870:xpaint/xpaint.desktop
 f:96a10b95b0e3a40d7edcac4a7b9fdd14:xpaint/CHANGELOG
 f:231a0447ef1e8e9923b6230470c6a715:xpaint/spkgbuild
@@ -939,12 +885,9 @@ f:548ae33bd944ed02279f054c3d566884:pugixml/CHANGELOG
 f:d92690d855b4802c5ffae2f9c31a1fd4:pugixml/spkgbuild
 f:5d80105ec67b564136a34f8f93f52575:hdparm/CHANGELOG
 f:2331b389dc497d8050ced93827298281:hdparm/spkgbuild
-f:5868781959d010369d55a67c45c8bb8c:xwud/CHANGELOG
-f:ddf15348cfdc0d6edd86fa1fb99edc2d:xwud/spkgbuild
 f:be4242cd7e09a51387e4cb7a1cc9d1cd:volumeicon/spkgbuild
 f:2b8ca3e5cefb9fe5521ea293ad003deb:makeself/CHANGELOG
 f:a2b908ac2ab8dae54ec1cd689ef97d07:makeself/spkgbuild
-f:6c6272fa5bbb151aea3d51249942edb1:x11perf/spkgbuild
 f:5ef4fb404339b31dbc0877d1b3518df8:poppler-data/CHANGELOG
 f:b2631a99e66a1a0c401eda560fc2c61c:poppler-data/spkgbuild
 f:7ac01c464a20b819f83658dc47184430:vte3/fix-W_EXITCODE.patch
@@ -962,8 +905,6 @@ f:52224673969ada7b392db76b52910714:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:6e0a494e314b843637087ae80bf923d5:rxvt-unicode/spkgbuild
 f:71bbcc9ba1218a8413e0430b851b33c2:papirus-icon-theme-light/spkgbuild
-f:68ff367b66065be7e2b5298ed2550135:setxkbmap/CHANGELOG
-f:2d443804d11b2969f1b1bd15a19b958a:setxkbmap/spkgbuild
 f:28639b517fa9d01f3ca91eb4a99b5b5a:pixman/spkgbuild
 f:e2cedce9560b62149ad586c9a3820d6f:mc/CHANGELOG
 f:addc1415999499d2c2a4dc39fb7e2a23:mc/spkgbuild
@@ -975,7 +916,6 @@ f:48410b426fb6143ceda93fcf055f7a06:adapta-gtk-theme/spkgbuild
 f:8a4f36f00251349b11930d02186308c6:cdrtools/spkgbuild
 f:fab51646a23e78ad4161366bcfebaf8f:bubblewrap/CHANGELOG
 f:aa53c7168389057176d5c2633a388e18:bubblewrap/spkgbuild
-f:089969a0565fed51c48af9a0a70d89d2:xbacklight/spkgbuild
 f:1f580d2d1f2383a4919053a472ec1f22:zenity/CHANGELOG
 f:ad5b6834a519a41b44c22cad84853657:zenity/spkgbuild
 f:969a61c5436fd96104c8bb6505d83315:yetris/spkgbuild
@@ -985,8 +925,6 @@ f:b97670b39428ec48d53dfe6fcfb10f79:elfutils/spkgbuild
 f:24f46f5938b1fdc87ef9ac463eba20b3:bleachbit/CHANGELOG
 f:2222033d67a4a44da586e932d835fb9b:bleachbit/spkgbuild
 f:31947433f140176deec3d77be55e5b44:papirus-icon-theme-dark/spkgbuild
-f:241572aa6054d8ed8ea44f2bd5311923:xrdb/CHANGELOG
-f:3d91d491d4737157519d0469d375490c:xrdb/spkgbuild
 f:fe20d9ea9979c9daf7689c79a4d09a55:tree/spkgbuild
 f:5f54da129b99a33829b14d2f19cfa0f6:inetutils/CHANGELOG
 f:3fa0eefdf1ee2eb81ea22c09b3d459ca:inetutils/spkgbuild
@@ -1006,7 +944,6 @@ f:7bada37b1a5148e985b74dff03c26ff6:rc/spkgbuild
 f:5bc8a15b1f11f4e1b59f73e9c3120d67:cryptsetup/readme
 f:ab7252f8ed151e1a00263ef363bcce08:cryptsetup/CHANGELOG
 f:5ccc2d224d4b04cf5c84bead00a43714:cryptsetup/spkgbuild
-f:1b09f5e6174f72ab04eb3eba98ca660a:xev/spkgbuild
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
 f:26773e36153d3057fe9b1926fbe4bacd:cracklib/spkgbuild
 f:54ff2a34c89f2c7aeee73f9127608aba:gnutls/CHANGELOG
@@ -1115,7 +1052,6 @@ f:8c1895f1d0c1ce554e4aa5c39ae87c66:epdfview/spkgbuild
 f:8675ce8c2c219f5031a09af1e961e050:fakescratch/CHANGELOG
 f:3d2e3f2cfe26282b6053c712fba0dd25:fakescratch/fakescratch
 f:bde6290ea341b4c95b3d48c14cc6d656:fakescratch/spkgbuild
-f:f339b945f8bb4b40ca3726fa1c0d516d:xkbutils/spkgbuild
 f:eb7a8a86792273889c58c6bc9ea6011f:consolekit2/consolekit2.install.bak
 f:e184366eba89b39268dbb42359f86bfc:consolekit2/CHANGELOG
 f:d75ed3438dab01552304c06fd9a967b1:consolekit2/pam-foreground-compat.ck
@@ -1132,7 +1068,6 @@ f:e8a8418f4eadfdee36c67eee791aece8:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
 f:647d8b514326af3bf8aa8af42dbb67e8:qalculate/CHANGELOG
 f:d5307c84b496317e892eba280b06cd0d:qalculate/spkgbuild
-f:8165593d775800d307fdaaefe7860445:xrefresh/spkgbuild
 f:286a34fae690eb366507213a5152aa79:gc/CHANGELOG
 f:ecd159406cdd8f3c4297b12030de4702:gc/spkgbuild
 f:45f13b305d240b2a298e9d1a4353049e:bash-completion/CHANGELOG
@@ -1167,8 +1102,6 @@ f:6921f9d8aabb53f22adcbf5630dff6b8:dmenu/break-fix.diff
 f:8541735789d9810d7020fdba62b72296:dmenu/dmenu-4.5-history-fixed.diff
 f:53b286e8bd76d9225f365673fafd6083:dmenu/dmenu-4.5-height-fixed.diff
 f:ddc6cb46e3a11575cc17da8802772f6f:dmenu/spkgbuild
-f:cc0201a5d69b0722532d44c09e705f4b:xwd/CHANGELOG
-f:048079cdbce1a25bbb1461fe3c4a5d05:xwd/spkgbuild
 f:2385e0ec7652d6932b39ad28a4f884fa:dosfstools/readme
 f:445dce537f2c98b17f721798fba57745:dosfstools/CHANGELOG
 f:c5cca9015c9380411697e6d5f0c66425:dosfstools/spkgbuild
@@ -1183,7 +1116,6 @@ f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
 f:10b021351c93196f70d0c65962521155:btrfs-progs/CHANGELOG
 f:ebecddc78e4d71c4dcc9e431e2eb9828:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
-f:d3369df0fb3ccec9c1a2f547421ba315:xkbevd/spkgbuild
 f:09d44f84218e47a5f9bca17229401cdf:sed/spkgbuild
 f:0b422cf5bfbb7ee0679d18bc33fc6a92:boost/spkgbuild
 f:5a376ea65e3fda11e09622d6795f7162:cmus/CHANGELOG
@@ -1195,7 +1127,6 @@ f:63156f47268cf2ea1bd7b2ba3ab9d38f:hyphen/spkgbuild
 f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
 f:d8a7ab4d1bffdc033b8e5a02d40d93a6:iproute2/CHANGELOG
 f:996fcb552f203e1344a096925743ce7c:iproute2/spkgbuild
-f:531b28edaeed08b279cb06bdc9de6285:xlsclients/spkgbuild
 f:842ebb033fb8ea3cd349c963c54edec1:psmisc/CHANGELOG
 f:ca05668ec4f547631549c2fd3f11c1ae:psmisc/spkgbuild
 f:31043aeb69dc0973664cf6d197bf27cc:wgetpaste/spkgbuild
@@ -1229,7 +1160,6 @@ f:be504191612e31c58eaaea584e2e7508:lmdb/spkgbuild
 f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:e485d74f524820e693f8a53c0cbcdc02:zsh/CHANGELOG
 f:23fdfe608891c3828582a7ec3f79023f:zsh/spkgbuild
-f:40d41c5cf0069e5bc74c74571c0a96ed:luit/spkgbuild
 f:ce4b6db687d784136f1a87e36940c3cb:redis/CHANGELOG
 f:d3793dc74255aec51e34f399cc6414de:redis/spkgbuild
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh
@@ -1296,7 +1226,6 @@ f:0775823d8fe2187d756917576e08a71b:arc-gtk-theme/spkgbuild
 f:d9968d39b792248b176fd0642e6ead3b:cabextract/spkgbuild
 f:918eaebcdde8270e44228ad6bf5a03df:flac/CHANGELOG
 f:3e37b53c599167a829b67805ffe82b9e:flac/spkgbuild
-f:a91f088bed8d38c7267a1430b093ecca:xvinfo/spkgbuild
 f:8ecf19b3d68902eef1abedadf9e57896:dkms/CHANGELOG
 f:f491daefdaefaf0eff06c64c43385fd3:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
@@ -1314,7 +1243,6 @@ f:4a2bae892d17c629e9dae20c540d356a:atomicparsley/spkgbuild
 f:31f63820e56357cd9fd659e617c04f21:dash/post-install.sh
 f:b3111a487383f7f4c5d44ecc5ac3bb54:dash/CHANGELOG
 f:b0500069bd49968261064ea0a7ca80d2:dash/spkgbuild
-f:84b987a011d914f30f8f271e7571ac2e:xhost/spkgbuild
 f:55d4bff819055eb43f20cf7725ec8e90:irssi/CHANGELOG
 f:3b90e8e6d51050dab0ee2bbeb14ca674:irssi/spkgbuild
 f:5839075cae19030b5de27c8b23f6249b:reaver/spkgbuild
@@ -1357,8 +1285,6 @@ f:285372a9ff8b41dab46fbc06e52708bc:man-pages/CHANGELOG
 f:95cba14761e68f547edd98d1d11d2379:man-pages/spkgbuild
 f:ef264cc5ef4b83a72888befb054daf4d:dunst/CHANGELOG
 f:f18e5dd99f346d21a9f5d35cabf4b9c1:dunst/spkgbuild
-f:86bd5082699dd77a14685be05e45bbeb:xdpyinfo/CHANGELOG
-f:1fb8e98ccff5950267545d338d320733:xdpyinfo/spkgbuild
 f:750ebc91710c4eb2d3ccf1725d5e05bb:lua/CHANGELOG
 f:6e62d03bc0c35f612f60204746132bc1:lua/spkgbuild
 f:deee148134a3fede4595152e34d8cdc7:lua/lua.pc
@@ -1372,8 +1298,6 @@ f:7a9ce056d9722d43268ae3f375ee44a0:weechat/CHANGELOG
 f:4c7e4fe4e14b482b04f7928e4a6e38c7:weechat/spkgbuild
 f:4d5a371732a0d19323f09c0075a97961:geos/CHANGELOG
 f:1bab01d12036a4107d27ca778133b5a0:geos/spkgbuild
-f:c72243c736596bff87d749bdc93bdc19:xauth/CHANGELOG
-f:ffa31379cc1d8e71054f1fa709c219b8:xauth/spkgbuild
 f:f2d5afae36f9821bbe4a3e82207ffb61:speedtest-cli/CHANGELOG
 f:44c3d1a96a1e6bfe7de503534f464e01:speedtest-cli/spkgbuild
 f:2508877d5ed2964be1d54a33e53dd913:argon2/spkgbuild
@@ -1412,7 +1336,6 @@ f:8b57514d74c978ec5e2a936ed6cad181:neofetch/spkgbuild
 f:823ba7b9ec03509c8674b6b5d43d2739:ranger/spkgbuild
 f:180b5f13c562bce7fb9c805ac6115b0c:htop/spkgbuild
 f:4bccd3de2177c4f9626a25984557b5ec:openbox/spkgbuild
-f:55aa8668de12fd083824ae3f4a126592:smproxy/spkgbuild
 f:28e94c7051ac45def96a6f80ea2b8cba:scrot/CHANGELOG
 f:0dfa7b3a2ae3ba749c4294619db743df:scrot/spkgbuild
 f:091fae075c53f8e79bd5585230939a9b:jack/40-hpet-permissions.rules
@@ -1422,8 +1345,6 @@ f:59c3734515e5e6ccb0ea274802671e16:jack/99-audio.conf
 f:79c31192cc8e369159e3cd67cbfb979d:jack/spkgbuild
 f:c277ed6cb5224aaa4da2db89d58d8b8a:diffutils/CHANGELOG
 f:d6ff86c36b27f25b9371b07a1d73ec96:diffutils/spkgbuild
-f:17ff3af1bdeefa6baad582a45de6a89f:util-macros/CHANGELOG
-f:4d3f63a02c55e9d824a7663b53ded68b:util-macros/spkgbuild
 f:869ff831f2b73baea69fe6be2f08afab:unrar/CHANGELOG
 f:6d0e2ee67d073419576701c5e2f535b0:unrar/spkgbuild
 f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
