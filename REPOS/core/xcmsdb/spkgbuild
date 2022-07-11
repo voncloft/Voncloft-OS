@@ -4,7 +4,7 @@
 name=xcmsdb
 version=1.0.6
 release=1
-source="http://ftp.x.org/pub/individual/app/xcmsdb-$version.tar.bz2"
+source="http://ftp.x.org/pub/individual/app/xcmsdb-$version.tar.gz"
 
 build() {
 	cd $name-$version
