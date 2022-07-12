@@ -4,7 +4,7 @@
 name=xev
 version=1.2.5
 release=1
-source="http://ftp.x.org/pub/individual/app/xev-$version.tar.bz2"
+source="http://ftp.x.org/pub/individual/app/xev-$version.tar.gz"
 
 build() {
 	cd $name-$version
