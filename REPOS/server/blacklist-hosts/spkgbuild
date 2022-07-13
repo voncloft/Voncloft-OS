@@ -1,0 +1,16 @@
+# description : hosts files that block urls for the lan
+# depends : dnsmasq
+
+name=blacklist-hosts
+version=3.10.15
+release=1
+
+source="https://github.com/StevenBlack/hosts/archive/refs/tags/$version.tar.gz"
+
+build() {
+	mkdir -pv $PKG/etc/blacklist-hosts
+	cd hosts-$version
+	cp -rv alternates $PKG/etc/blacklist-hosts
+	cp -rv data $PKG/etc/blacklist-hosts
+	
+}

@@ -11,6 +11,7 @@ d:monitor_process
 d:httpup
 d:nginx
 d:homeassistant
+d:blacklist-hosts
 d:dhcpcd
 d:deluge
 d:subsonic
@@ -63,6 +64,8 @@ f:10477a6aa826f2b0c9db455a9c951a9f:nginx/CHANGELOG
 f:781ca218de27ddd38cf5a2519a7a2584:nginx/spkgbuild
 f:cad9a54b61e90c8c585b3d072c841c21:homeassistant/CHANGELOG
 f:8d28cef5d1a8569afb4558c4e8e61ee8:homeassistant/spkgbuild
+f:05915c863d0bb5fabdd9d8c1a46d8c26:blacklist-hosts/CHANGELOG
+f:96199d56f380b499761943093df36a46:blacklist-hosts/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
