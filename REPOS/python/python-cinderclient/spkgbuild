@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-babel python-prettytable python-keystoneclient
 
 name=python-cinderclient
-version=8.3.0
+version=9.0.0
 release=1
 
 source="https://github.com/openstack/python-cinderclient/archive/refs/tags/e$version.tar.gz"

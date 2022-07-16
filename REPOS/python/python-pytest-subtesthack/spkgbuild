@@ -2,7 +2,7 @@
 # depends : python-pytest python-setuptools
 
 name=python-pytest-subtesthack
-version=0.1.2
+version=0.2.0
 release=9
 
 source="https://github.com/untitaker/pytest-subtesthack/archive/refs/tags/$version.tar.gz"
