@@ -9,7 +9,14 @@ source="https://github.com/ccache/ccache/releases/download/v$version/$name-$vers
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr --sysconfdir=/etc
+	mkdir build
+	cd build
+
+	cmake \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DREDIS_STORAGE_BACKEND=OFF \
+		..
 	make
 	make DESTDIR=$PKG install
 
