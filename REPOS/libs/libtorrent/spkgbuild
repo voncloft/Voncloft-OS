@@ -2,7 +2,7 @@
 # depends	: boost python python
 
 name=libtorrent
-version=2.0.6
+version=2.0.7
 release=1
 source="https://github.com/arvidn/libtorrent/archive/refs/tags/v$version.tar.gz"
 
