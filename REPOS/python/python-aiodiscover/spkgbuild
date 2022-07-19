@@ -8,7 +8,7 @@ release=1
 source="https://github.com/bdraco/aiodiscover/archive/refs/tags/v${version}.tar.gz"
 
 build() {
-	cd aiodiscover
+	cd *
 	python setup.py build
 	python setup.py install --root="${PKG}" --optimize=1
 }
