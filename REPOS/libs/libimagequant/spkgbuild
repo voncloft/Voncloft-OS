@@ -10,7 +10,9 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	./configure --prefix=/usr --with-openmp
-	make shared imagequant.pc
-	make DESTDIR=$PKG PREFIX=/usr install
+	#./configure --prefix=/usr --with-openmp
+	#make shared imagequant.pc
+	#make DESTDIR=$PKG PREFIX=/usr install
+	cargo cbuild --release --prefix=/usr
+	cargo cinstall --destdir=$PKG ==prefix=/usr --release
 }
