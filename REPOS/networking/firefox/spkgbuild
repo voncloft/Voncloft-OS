@@ -1,5 +1,5 @@
 # description	: Stand-alone browser based on the Mozilla codebase
-# depends	: alsa-lib pulseaudio pulseaudio-alsa  gtk2 gtk3 nss nspr icu libevent dbus-glib unzip zip autoconf2.13 yasm rust cbindgen nodejs clang nasm geos
+# depends	: alsa-lib pulseaudio pulseaudio-alsa  gtk2 gtk3 nss nspr icu libevent dbus-glib unzip zip autoconf2.13 yasm rust cbindgen nodejs clang nasm geos ccache
 
 name=firefox
 version=103.0b9
@@ -46,6 +46,7 @@ cat <<- EOF > .mozconfig
 EOF
 	#patch -Np1 -i $SRC/firefox-${rust_version}esr-disable_rust_test-1.patch
 	export MOZ_NOSPAM=1
+	export CC="ccache gcc" CXX="ccache g++"
   	export MOZBUILD_STATE_PATH="$SRC/mozbuild"
   	#export MOZ_ENABLE_FULL_SYMBOLS=1
   	export MACH_USE_SYSTEM_PYTHON=1

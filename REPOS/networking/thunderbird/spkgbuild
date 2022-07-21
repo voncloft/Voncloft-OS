@@ -1,5 +1,5 @@
 # description	: Stand-alone mail/news client based on the Mozilla codebase
-# depends	: pulseaudio autoconf2.13 gtk3 gtk2 rust yasm icu libevent nspr sqlite dbus-glib gconf clang startup-notification cbindgen nodejs nasm unzip zip nss
+# depends	: pulseaudio autoconf2.13 gtk3 gtk2 rust yasm icu libevent nspr sqlite dbus-glib gconf clang startup-notification cbindgen nodejs nasm unzip zip nss ccache
 
 name=thunderbird
 version=103.0b6
@@ -47,7 +47,9 @@ ac_add_options --with-system-zlib
 ac_add_options --without-wasm-sandboxed-libraries
 EOF
 
-	export CC=gcc CXX=g++ 
+	#export CC=gcc CXX=g++ 
+	export CC="ccache gcc" CXX="ccache g++"
+
 	export MACH_USE_SYSTEM_PYTHON=1
         #SHELL=/bin/sh ./mach create-mach-environment
         #SHELL=/bin/sh ./mach configure
