@@ -2,10 +2,9 @@
 # depends	: cmake
 
 name=json-c
-version=0.15
+version=0.16
 release=1
-source="git+https://github.com/json-c/json-c#commit=2379c6981fe257f779b214c0c54bf11fde2d75e8"
-
+source="https://s3.amazonaws.com/json-c_releases/releases/json-c-$version.tar.gz"
 build() {
 	cd $name-$version
 		
