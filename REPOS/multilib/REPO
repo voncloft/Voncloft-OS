@@ -81,6 +81,7 @@ d:libdmx-32
 d:lm_sensors-32
 d:libx11-32
 d:libsm-32
+d:json-c-32
 d:winetricks
 d:sdl-32
 d:ncurses-32
@@ -100,7 +101,7 @@ f:9d50b8009f43173571e25ca1edf0bbe6:glib-32/multilib.patch
 f:ef9c5adb8ebd0e6f6b2d8c679a0a5e51:glib-32/spkgbuild
 f:5a2ea7039b9c582bbd4ae17c3e4c033c:libxft-32/spkgbuild
 f:258ca6f658cc5f2a02031f2ea9696209:libxtst-32/spkgbuild
-f:1a0292eaf493acea6fc74cf7008a093c:fontconfig-32/spkgbuild
+f:56692f8d3af93dc54174d22db2ba46ce:fontconfig-32/spkgbuild
 f:f133c5af2d9f764b56f13712f84a0f80:libxfixes-32/spkgbuild
 f:133ea2c0e5ad2f0fb0c37773e448d48d:xz-32/spkgbuild
 f:ca5ebada52211c8bb6dfc02aefcc37dc:libxshmfence-32/spkgbuild
@@ -118,7 +119,7 @@ f:d20d7254187c952c61a3ad60a2710771:steam/spkgbuild
 f:e16bb9a631731d8ea23d5f5f4ae65666:libxi-32/spkgbuild
 f:ac137c81792d8c431fec1a6e4825f3d1:expat-32/spkgbuild
 f:8cb6d23dde3b905c9ad3203631dda7ce:gmp-32/spkgbuild
-f:539f8775209602608930554133083da4:brotli-32/spkgbuild
+f:61331027eb487c3d07bd5b436f237f83:brotli-32/spkgbuild
 f:d3f57fdc39e2786ef0962568bc6db835:zlib-32/spkgbuild
 f:f7b60f5e63dfe9e5327befe299c4193e:libxdmcp-32/spkgbuild
 f:4684a46d2cea252f10eeca38d8fe5c4f:libpciaccess-32/spkgbuild
@@ -197,6 +198,7 @@ f:6042a85476e29eda44ba86b351a6f3a9:libdmx-32/spkgbuild
 f:224694f96c42ffd65d8fed1fd684841e:lm_sensors-32/spkgbuild
 f:ceea8860a700a6a0d269c23e69fcdb86:libx11-32/spkgbuild
 f:a4b529bd93ddc7099bd2680229e3cb73:libsm-32/spkgbuild
+f:bcb8b765a356d85217c3bf354cf8bb99:json-c-32/spkgbuild
 f:3783d7849f575282cffda3828b2c8399:winetricks/spkgbuild
 f:1bc076c23d4b39f2a04a608b0dac9a50:sdl-32/spkgbuild
 f:0b1f04c23d0114254ba46970e8bab7fa:ncurses-32/spkgbuild
