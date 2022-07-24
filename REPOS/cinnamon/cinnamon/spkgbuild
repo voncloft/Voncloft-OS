@@ -8,7 +8,7 @@
 # depends : meson ninja gobject-introspection intltool
 
 name=cinnamon
-version=5.4.5
+version=5.4.6
 release=1
 
 source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz
