@@ -1,5 +1,5 @@
 # description	: A library and support programs used for configuring and customizing font access (32bit)
-# depends	: fontconfig expat-32 freetype2-32 util-linux-32
+# depends	: fontconfig brotli-32 expat-32 freetype2-32 util-linux-32 
 
 name=fontconfig-32
 version=2.14.0
