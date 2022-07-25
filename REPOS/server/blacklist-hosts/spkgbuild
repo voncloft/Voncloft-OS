@@ -12,6 +12,6 @@ build() {
 	cd hosts-$version
 	cp -rv alternates $PKG/etc/blacklist-hosts
 	cp -rv data $PKG/etc/blacklist-hosts
-	mkdir -pv $PKG/etc/default
+	mkdir -pv $PKG/etc/blacklist-hosts/default
 	cp hosts $PKG/etc/blacklist-hosts/default/hosts
 }
