@@ -10,5 +10,5 @@ source="https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master
 build() {
 	mkdir -pv $PKG/etc/blacklist-hosts/youtube
 	cp $SRC/youtubelist.txt $PKG/etc/blacklist-hosts/youtube/youtubeadlist
-	sed -i -e 's/^/127.0.0.1/g' $PKG/etc/blacklist-hosts/youtube/youtubeadlist
+	sed -i -e 's/^/0.0.0.0 /g' $PKG/etc/blacklist-hosts/youtube/youtubeadlist
 }
