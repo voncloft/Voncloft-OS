@@ -13,5 +13,5 @@ build() {
 	cp -rv alternates $PKG/etc/blacklist-hosts
 	cp -rv data $PKG/etc/blacklist-hosts
 	mkdir -pv $PKG/etc/default
-	cp hosts $PKG/etc/default/hosts
+	cp hosts $PKG/etc/blacklist-hosts/default/hosts
 }
