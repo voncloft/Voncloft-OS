@@ -15,6 +15,6 @@ build()
 	make mrproper
 	cp $SRC/.config $PKG/linux-$version
 	make -j9
-	make DESTDIR=$PKG modules_install
-	make DESTDIR=$PKG install
+	make INSTALL_MOD_PATH=$PKG modules_install
+	make INSTALL_MOD_PATH=$PKG install
 }
