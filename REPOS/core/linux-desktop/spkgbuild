@@ -13,7 +13,7 @@ build()
 {
 	cd linux-$version
 	make mrproper
-	cp $SRC/.config $PKG/linux-$version
+	cp $SRC/.config .
 	make menuconfig
 	make -j9
 	make INSTALL_MOD_PATH=$PKG modules_install
