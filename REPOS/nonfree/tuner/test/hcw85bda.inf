@@ -1,0 +1,2458 @@
+;------------------------------------------------------------------------
+;
+;   Copyright and Disclaimer:
+;
+;       ---------------------------------------------------------------
+;       This software is provided "as is" without warranty of any kind,
+;       either expressed or implied, including but not limited to the
+;       implied warranties of merchantability and/or fitness for a
+;       particular purpose.
+;
+;       Copyright (c) 2006-2007 Hauppauge Computer Works, Inc.
+;       All Rights Reserved.
+;       ---------------------------------------------------------------
+;
+;   Abstract:
+;
+;       This is the CX23885 AVStream video/audio capture driver inf file
+;      
+;       PCI Express x1 Adapter
+;
+;------------------------------------------------------------------------
+
+[Version]
+signature="$CHICAGO$"
+Class=Media
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider="Hauppauge"
+DriverVer=09/28/2007,1.25.25271
+CatalogFile.ntx86=hcw85bda.cat
+DriverPackageType=PlugAndPlay
+DriverPackageDisplayName="WinTV (885)"
+
+[Manufacturer]
+"Hauppauge"=Hauppauge
+
+[SourceDisksNames]
+1=%p2.InstallDisk%,,,Driver85				;32/64bit machine, Non-Bit-Specific Components
+2=%p2.InstallDisk64%,,,"Driver85\64bit"		;64bit machine, 64bit components
+3=%p2.InstallDiskWOW%,,,"Driver85\WOW64"	;64bit machine, 32bit components (WOW64)
+
+[SourceDisksFiles]
+hcw85enc.rom=1
+hcw85mlC.rom=1
+hcw85bda.sys=1
+hcw85enc.ax=1
+hcw85prop.ax=1
+;;hcwCoIns hcw85CoInstaller.dll=1
+hcwcp.ax=1
+hcwecppp.ax=1
+hcwxds.dll=1
+
+[Hauppauge]
+; Kingston - Zarlink353, Xc3028, 417 MPEG2 Encoder
+%CX885.M7100%=CX885.M7100,PCI\VEN_14F1&DEV_8852&SUBSYS_71000070
+; Kingston - Zarlink353, Xc3028, 417 MPEG2 Encoder, No FM
+%CX885.M7101%=CX885.M7101,PCI\VEN_14F1&DEV_8852&SUBSYS_71010070
+; Kingston Lite - Zarlink353, Xc3028 (SW Encode)
+%CX885.M7110%=CX885.M7110,PCI\VEN_14F1&DEV_8852&SUBSYS_71100070
+; Kingston PVR - Xc3028, 417 MPEG2 Encoder
+%CX885.M7120%=CX885.M7120,PCI\VEN_14F1&DEV_8852&SUBSYS_71200070
+; Kingston GO - Xc3028 (SW Encode)
+%CX885.M7130%=CX885.M7130,PCI\VEN_14F1&DEV_8852&SUBSYS_71300070
+
+; Kingston (aka Dover-e) - NXP8275A/8290 DVB Hybrid tuner, 417 MPEG2 Encoder
+%CX885.M7108%=CX885.M7108,PCI\VEN_14F1&DEV_8852&SUBSYS_71080070
+; Kingston Lite (aka Oxford-e) - NXP8275A/8290 DVB Hybrid tuner (SW Encode)
+%CX885.M7118%=CX885.M7118,PCI\VEN_14F1&DEV_8852&SUBSYS_71180070
+; Kingston PVR (aka Roslyn-e) - NXP8275A/8290 tuner (HW Encode, Analog only)
+%CX885.M7128%=CX885.M7128,PCI\VEN_14F1&DEV_8852&SUBSYS_71280070
+; Kingston GO (aka Pluto-e) - NXP8275A/8290 tuner (SW Encode, Analog only)
+%CX885.M7138%=CX885.M7138,PCI\VEN_14F1&DEV_8852&SUBSYS_71380070
+
+; Kingston (aka Dover-e) - NXP8275A/8295 DVB Hybrid tuner, 417 MPEG2 Encoder
+%CX885.M7148%=CX885.M7148,PCI\VEN_14F1&DEV_8852&SUBSYS_71480070
+; Kingston Lite (aka Oxford-e) - NXP8275A/8295 DVB Hybrid tuner (SW Encode)
+%CX885.M7158%=CX885.M7158,PCI\VEN_14F1&DEV_8852&SUBSYS_71580070
+; Kingston PVR (aka Roslyn-e) - NXP8275A/8295 tuner (HW Encode, Analog only)
+%CX885.M7168%=CX885.M7168,PCI\VEN_14F1&DEV_8852&SUBSYS_71680070
+; Kingston GO (aka Pluto-e) - NXP8275A/8290 tuner (SW Encode, Analog only)
+%CX885.M7178%=CX885.M7178,PCI\VEN_14F1&DEV_8852&SUBSYS_71780070
+
+; Kingston (aka Dover-e) - NXP18271/8295/10046 DVB Hybrid tuner, 417 MPEG2 Encoder
+%CX885.M7141%=CX885.M7141,PCI\VEN_14F1&DEV_8852&SUBSYS_71410070
+; Kingston Lite (aka Oxford-e) - NXP18271/8295/10046 DVB Hybrid tuner (SW Encode)
+%CX885.M7151%=CX885.M7151,PCI\VEN_14F1&DEV_8852&SUBSYS_71510070
+; Kingston-05 Lite (aka Oxford-e) - NXP18271/8295 tuner (SW Encode)
+%CX885.M7173%=CX885.M7173,PCI\VEN_14F1&DEV_8852&SUBSYS_71730070
+; Kingston-05 Lite (aka Oxford-e) - NXP18271/8295/10048 DVB Hybrid tuner (SW Encode)
+%CX885.M71D1%=CX885.M71D1,PCI\VEN_14F1&DEV_8852&SUBSYS_71D10070
+; Kingston-05 Lite 887 (aka Oxford-e) - NXP18271/8295/10048 DVB Hybrid tuner (SW Encode)
+%CX885.M71D1%=CX885.M71D1_25,PCI\VEN_14F1&DEV_8880&SUBSYS_71D10070
+; Kingston-05 Lite (aka Oxford-e) - NXP18271/8295/10048 DVB Hybrid tuner (SW Encode, No FP header)
+%CX885.M71D3%=CX885.M71D3,PCI\VEN_14F1&DEV_8852&SUBSYS_71D30070
+; Kingston-05 Lite 887 (aka Oxford-e) - NXP18271/8295/10048 DVB Hybrid tuner (SW Encode, No FP header)
+%CX885.M71D3%=CX885.M71D3_25,PCI\VEN_14F1&DEV_8880&SUBSYS_71D30070
+
+
+; Brentwood - 8275A+8295+417 MPEG2 Encoder, + MT2161/CX23277  ATSC Combo
+%CX885.M7600%=CX885.M7600,PCI\VEN_14F1&DEV_8852&SUBSYS_76000070
+; Brentwood Lite - 8275A+8295+(SW encode), + MT2161/CX23277  ATSC Combo
+%CX885.M7610%=CX885.M7610,PCI\VEN_14F1&DEV_8852&SUBSYS_76100070
+
+
+; Melville - CX24277, Xc3028 (ATSC/NTSC Hybrid, SW Encode)
+%CX885.M7710%=CX885.M771x,PCI\VEN_14F1&DEV_8852&SUBSYS_77100070
+%CX885.M7717%=CX885.M771x,PCI\VEN_14F1&DEV_8852&SUBSYS_77170070
+; Melville-Q - CX24277, Xc5000 (ATSC/QAM/NTSC Hybrid, SW Encode)
+%CX885.M7790%=CX885.M779x,PCI\VEN_14F1&DEV_8852&SUBSYS_77900070
+%CX885.M7797%=CX885.M779x,PCI\VEN_14F1&DEV_8852&SUBSYS_77970070
+
+
+; Medford - 18271/8295/417 MPEG2 Encoder, MT2131/CX23277  NTSC/ATSC/QAM Combo
+%CX885.M7800%=CX885.M7800,PCI\VEN_14F1&DEV_8880&SUBSYS_78000070
+; Medford - 18271/8295/417 MPEG2 Encoder, MT2131/CX23277  NTSC/ATSC/QAM Combo
+%CX885.M7801%=CX885.M7801,PCI\VEN_14F1&DEV_8880&SUBSYS_78010070
+; Medford - 18271/8295/417 MPEG2 Encoder, MT2131/CX23277  NTSC/ATSC/QAM Combo/No FM
+%CX885.M7809%=CX885.M7809,PCI\VEN_14F1&DEV_8880&SUBSYS_78090070
+; Medford Lite - 18271/8295 \, MT2131/CX23277  NTSC/ATSC/QAM Combo (SW Encode)
+%CX885.M7810%=CX885.M771x,PCI\VEN_14F1&DEV_8880&SUBSYS_78100070
+; Medford Lite - 18271/8295 \, MT2131/CX23277  NTSC/ATSC/QAM Combo (SW Encode)
+%CX885.M7811%=CX885.M7811,PCI\VEN_14F1&DEV_8880&SUBSYS_78110070
+
+
+; Coram - 887, MT2131/TDA9885/CX24227 NTSC/ATSC/QAM Hybrid tuner (SW Encode)
+%CX885.M7911%=CX885.M7911_25,PCI\VEN_14F1&DEV_8880&SUBSYS_79110070
+; Coram - 885, MT2131/TDA9885/CX24227 NTSC/ATSC/QAM Hybrid tuner (SW Encode)
+%CX885.M7911%=CX885.M7911,PCI\VEN_14F1&DEV_8852&SUBSYS_79110070
+
+
+; Whitman - Dib7000pc, Xc3028L (DVBT/PAL Hybrid, SW Encode)
+%CX885.M8010%=CX885.M801x,PCI\VEN_14F1&DEV_8852&SUBSYS_80100070
+%CX885.M8017%=CX885.M801x,PCI\VEN_14F1&DEV_8852&SUBSYS_80170070
+
+%CX885.M8050%=CX885.M805x,PCI\VEN_14F1&DEV_8852&SUBSYS_80500070
+%CX885.M8056%=CX885.M805x,PCI\VEN_14F1&DEV_8852&SUBSYS_80560070
+%CX885.M8057%=CX885.M805x,PCI\VEN_14F1&DEV_8852&SUBSYS_80570070
+
+
+; Whitney - 885, NXP18271/8295/10048 DVB Hybrid tuner, 417 MPEG2 Encoder
+%CX885.M8101%=CX885.M8101,PCI\VEN_14F1&DEV_8852&SUBSYS_81010070
+; Whitney - 887, NXP18271/8295/10048 DVB Hybrid tuner, 417 MPEG2 Encoder
+%CX885.M8101%=CX885.M8101_25,PCI\VEN_14F1&DEV_8880&SUBSYS_81010070
+
+
+
+;Production test - EEprom programming only
+;%CX23885.Blank%=CX885.M7138,PCI\VEN_14F1&DEV_8852
+;%CX23887.Blank%=CX885.M7158,PCI\VEN_14F1&DEV_8880&REV_02
+;%CX23887.Blank%=CX885.M7158,PCI\VEN_14F1&DEV_8880&REV_0F
+
+; Sonora Ref board - Zarlink353, Xc3028 EVK/417 MPEG2 Encoder
+;%CX23885.Sonora%=CX885.M7100,PCI\VEN_14F1&DEV_8852&SUBSYS_003714F1
+
+
+
+[CX885.M7100]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7100.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7100.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7100.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7101]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7101.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7101.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7101.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7110]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7110.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7110.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7110.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7120]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7120.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7120.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7120.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7130]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7130.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7130.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M7130.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7108]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290DVB.AddReg,CXTS.AddReg,M7108.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7108.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290DVB.AddReg,CXTS.AddReg,M7108.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7118]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290DVB.AddReg,CXTS.AddReg,M7118.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7118.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290DVB.AddReg,CXTS.AddReg,M7118.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7128]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290DVB.AddReg,M7128.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7128.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290DVB.AddReg,M7128.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7138]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290.AddReg,M7138.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7138.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8290.AddReg,M7138.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7141]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M7141.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7141.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M7141.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7148]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295DVB.AddReg,CXTS.AddReg,M7148.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7148.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295DVB.AddReg,CXTS.AddReg,M7148.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7151]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M7151.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7151.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M7151.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7158]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295DVB.AddReg,CXTS.AddReg,M7158.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7158.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295DVB.AddReg,CXTS.AddReg,M7158.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7168]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295.AddReg,M7168.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7168.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295.AddReg,M7168.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7173]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M7173.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7173.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M7173.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7178]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295.AddReg,M7178.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7178.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil8295.AddReg,M7178.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M71D1]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D1.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M71D1.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D1.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M71D1_25]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D1.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M71D1_25.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D1.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M71D3]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoFP_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D3.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M71D3.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoFP_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D3.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M71D3_25]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoFP_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D3.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M71D3_25.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoFP_NoYPrPb.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M71D3.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7600]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtNTSC.AddReg,Phil8295.AddReg,CXTS.AddReg,M7600.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7600.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtNTSC.AddReg,Phil8295.AddReg,CXTS.AddReg,M7600.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7610]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtNTSC.AddReg,Phil8295.AddReg,CXTS.AddReg,M7610.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7610.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtNTSC.AddReg,Phil8295.AddReg,CXTS.AddReg,M7610.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M771x]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtNTSC.AddReg,Xceive.AddReg,CXTS.AddReg,M7717.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+;;hcwCoIns [CX885.M771x.CoInstallers] 
+;;hcwCoIns AddReg=hcwCoInstallers.AddReg
+;;hcwCoIns CopyFiles=hcwCoInstallers.CopyFiles
+
+[CX885.M771x.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtNTSC.AddReg,Xceive.AddReg,CXTS.AddReg,M7717.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+;;hcwCoIns [CX885.M771x.NT.CoInstallers] 
+;;hcwCoIns AddReg=hcwCoInstallers.AddReg
+;;hcwCoIns CopyFiles=hcwCoInstallers.CopyFiles
+
+[CX885.M779x]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtNTSC.AddReg,Xceive.AddReg,CXTS.AddReg,M7797.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M779x.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtNTSC.AddReg,Xceive.AddReg,CXTS.AddReg,M7797.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7800]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7800.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7800.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7800.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7801]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7801.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7801.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7801.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7809]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7809.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7809.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7809.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7811]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7811.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7811.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,Phil18271.AddReg,CXTS.AddReg,M7811.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M7911]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,MT2131.AddReg,CXTS.AddReg,M7911.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7911.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,MT2131.AddReg,CXTS.AddReg,M7911.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7911_25]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,MT2131.AddReg,CXTS.AddReg,M7911.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M7911_25.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoYPrPb.AddReg,CX885.FmtNTSC.AddReg,MT2131.AddReg,CXTS.AddReg,M7911.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M801x]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M801x.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M801x.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M801x.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M805x.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M805x.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M805x]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR_NoFP.AddReg,CX885.FmtPAL.AddReg,Xceive.AddReg,CXTS.AddReg,M805x.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M8101]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M8101.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M8101.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M8101.AddReg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+[CX885.M8101_25]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration, WDMAUDIO.Registration, BDA.Registration,bda.Installation
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M8101.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+[CX885.M8101_25.NT]
+Include=    ks.inf, kscaptur.inf, wdmaudio.inf, bda.inf
+Needs=      KS.Registration,KSCAPTUR.Registration.NT, WDMAUDIO.Registration, BDA.Registration,bda.Installation.NT
+AddReg=     CX885.AddReg,CX885XBAR.AddReg,CX885.FmtPAL.AddReg,Phil18271DVB.AddReg,CXTS.AddReg,M8101.AddReg,Xtal25.Addreg
+CopyFiles=  CX885.CopyDrivers,DSFilters.CopyFiles
+RegisterDlls=DSFilters.RegDLL
+
+
+
+[DestinationDirs]
+CX885.CopyDrivers=10,system32\drivers
+DSFilters.CopyFiles=11
+;;hcwCoIns hcwCoInstallers.CopyFiles=11
+
+[CX885.CopyDrivers]
+HCW85BDA.sys
+hcw85enc.rom
+; Merlin Rev. C audio firmware
+hcw85mlC.rom
+
+[DSFilters.CopyFiles]
+hcw85enc.ax
+hcw85prop.ax
+hcwcp.ax
+hcwecppp.ax
+hcwxds.dll
+
+[DSFilters.RegDLL]
+11,,hcw85enc.ax,1
+11,,hcw85prop.ax,1
+11,,hcwcp.ax,1
+11,,hcwecppp.ax,1
+11,,hcwxds.dll,1
+
+;;hcwCoIns [hcwCoInstallers.CopyFiles]
+;;hcwCoIns hcw85CoInstaller.dll
+
+;;hcwCoIns [hcwCoInstallers.AddReg]
+;;hcwCoIns HKR,,CoInstallers32,0x00010000,"hcw85CoInstaller,CoInstallerEntry"
+
+[CX885.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,HCW85BDA.sys
+HKR,,OkToHibernate,3,01
+; Disable driver page out
+HKR,,PageOutWhenUnopened,3,0
+;HKR,,PageOutWhenUnopened,3,01
+HKR,,DontSuspendIfStreamsAreRunning,3,01
+HKLM,%MediaCategories%\%GUID.PINNAME_ANALOG_AUDIO_IN%,Name,,%Pin.p2AnalogAudioIn%
+HKLM,%MediaCategories%\%GUID.PINNAME_AUDIO_OUT%,Name,,%PinName.AnalogAudioOut%
+; Can do this here or in the driver; useful for ExpressCard devices
+;HKR,,SurpriseRemovalOK,0x00010001,1
+
+;Copy protection method enforced by driver
+HKR,"DriverData","CpMethod",0x00010001, 0xFE, 0x00, 0x00, 0x00
+
+;
+;Register the name of the 656 and MPEG pins
+;
+HKLM,%MediaCategories%\%GUID.PINNAME_656_OUT%,Name,,%PinName.656_OUT%
+HKLM,%MediaCategories%\%GUID.PINNAME_656_IN%,Name,,%PinName.656_IN%
+HKLM,%MediaCategories%\%GUID.PINNAME_MPEG_OUT%,Name,,%PinName.MpegOut%
+
+;
+;Add the property pages
+;
+HKCR,CLSID\%GUID.GenEnc_Properties%\InprocServer32,,,hcw85enc.ax
+HKCR,CLSID\%GUID.GenEnc_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.IVAC_PROPERTIES%\PropertyPages\%GUID.GenEnc_Properties%,,,
+
+HKCR,CLSID\%GUID.Video_Properties%\InprocServer32,,,hcw85enc.ax
+HKCR,CLSID\%GUID.Video_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.IVAC_PROPERTIES%\PropertyPages\%GUID.Video_Properties%,,,
+
+HKCR,CLSID\%GUID.Audio_Properties%\InprocServer32,,,hcw85enc.ax
+HKCR,CLSID\%GUID.Audio_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.IVAC_PROPERTIES%\PropertyPages\%GUID.Audio_Properties%,,,
+
+HKCR,CLSID\%GUID.MPEG_Properties%\InprocServer32,,,hcw85enc.ax
+HKCR,CLSID\%GUID.MPEG_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.IVAC_PROPERTIES%\PropertyPages\%GUID.MPEG_Properties%,,,
+
+HKCR,CLSID\%GUID.Diagnostic_Properties%\InprocServer32,,,hcw85enc.ax
+HKCR,CLSID\%GUID.Diagnostic_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.IVAC_PROPERTIES%\PropertyPages\%GUID.Diagnostic_Properties%,,,
+
+HKCR,CLSID\%GUID.Noise_Properties%\InprocServer32,,,hcw85enc.ax
+HKCR,CLSID\%GUID.Noise_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.IVAC_PROPERTIES%\PropertyPages\%GUID.Noise_Properties%,,,
+
+;Register the encoder and multiplexer classes with Direct X
+HKCR,%ActiveMovieCategories%\%GUID.Encoder%,CLSID,,%GUID.Encoder%
+HKCR,%ActiveMovieCategories%\%GUID.Encoder%,FriendlyName,,%Category_Encoders%
+HKCR,%ActiveMovieCategories%\%GUID.Multiplexer%,CLSID,,%GUID.Multiplexer%
+HKCR,%ActiveMovieCategories%\%GUID.Multiplexer%,FriendlyName,,%Category_Multiplexers%
+
+;Register the names of the encoder and multiplexer nodes
+HKLM,%MediaCategories%\%GUID.Encoder%,Name,,%Node.Encoder%
+HKLM,%MediaCategories%\%GUID.Encoder%,Display,1,00,00,00,00
+HKLM,%MediaCategories%\%GUID.Multiplexer%,Name,,%Node.Multiplexer%
+HKLM,%MediaCategories%\%GUID.Multiplexer%,Display,1,00,00,00,00
+
+;Wave in audio device registration
+;HKR,Drivers,SubClasses,,"wave"
+;HKR,Drivers\wave\wdmaud.drv, Driver,,wdmaud.drv
+;HKR,Drivers\wave\wdmaud.drv,Description,,%AudioFriendlyName%
+
+; these registry keys for 3D comb filter enable
+; use3DComb entry allows the use of the 3D Comb feature, currently connected to the color enable
+; property of the capture filter
+HKR,"DriverData","Use3DComb",0x00010001, 0x01,0x00,0x00,0x00
+
+; this entry sets the initial state of the 3D comb enable when use3DComb is specified
+HKR,"DriverData","Enable3DComb",0x00010001, 0x01,0x00,0x00,0x00
+
+;Enable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x01, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x1E, 0x00, 0x00, 0x00
+
+; these registry keys for TS filter
+; DebugTS entry forces creation of TS capture filter without a demod
+;HKR,"DriverData","DebugTS",0x00010001, 0x01,0x00,0x00,0x00
+; Next line enables the software TS packetizer
+;HKR,"DriverData","dwIsTSStream",0x00010001,0x01,0x00,0x00,0x00
+
+; this registry keys for the FixNMI option which takes care of the BSODs in the 
+; ICH6/7 chipsets
+HKR,"DriverData","FixNMIBit",0x00010001, 0x00,0x00,0x00,0x00
+
+;IR Support (default to EEprom based)
+;;;HKR,"DriverData","EnableIR",0x00010001, 0x01, 0x00, 0x00, 0x00
+;NEC standard (not used by driver)
+;;HKR,"DriverData","IRStandard",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+;Add the property pages
+HKCR,CLSID\%GUID.Corona_Properties%\InprocServer32,,,hcw85prop.ax
+HKCR,CLSID\%GUID.Corona_Properties%\InprocServer32,ThreadingModel,,Both
+HKLM,%MediaSets%\%GUID.CORONA_VERSION_PROPERTIES%\PropertyPages\%GUID.Corona_Properties%,,,
+
+; GPIO Pin values
+;;HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+;;HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+;Demod Comm mode : 0x00 = Serial, 0x01 = Parallel
+HKR,"DriverData","DemodTransferMode",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+
+;HKR,"DriverData","IsMCE",0x00010001, 0x00,0x00,0x00,0x00
+
+; Static Temporal filter, level=4
+HKR,"DriverData","StaticTemporalLevel",0x00010001, 0x04, 0x00, 0x00, 0x00
+HKR,"DriverData","IsStaticTemporal",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+; Back Panel = 0x00, Front Panel = 0x01
+HKR,"DriverData","comp_select_panel", 0x00010001, 0x00, 0x00, 0x00, 0x00
+
+; Use PLL tuning strategy by default
+HKR,"DriverData","TunerUsePllTuningStrategy", 0x00010001, 0x01, 0x00, 0x00, 0x00
+
+
+; save our driver version for reference
+HKLM,Software\Hauppauge\WDM\Version,,0x4000,"1.25.25271"
+
+HKLM,Software\Hauppauge\hcwTVWnd,"VCapFilter",0x4000,"%VIDFriendlyName%"
+
+
+
+;
+; Driver Configuration Registry Entries
+;
+
+[CX885.FmtPAL.AddReg]
+HKR,"DriverData","VideoStandard",0x00010001, 0x10,0x00,0x00,0x00
+
+[CX885.FmtNTSC.AddReg]
+HKR,"DriverData","VideoStandard",0x00010001, 0x01,0x00,0x00,0x00
+
+
+;-------------------------------------------------------------------
+; Crossbar AddReg sections
+;
+;---Crossbar registry values---
+;
+; Note: For each pin on the crossbar, specify the following:
+; (1) Pin type 
+;     0 - TunerIn
+;     1 - Composite 1
+;     2 - SVideo 1
+;     3 - Component
+;     4 - Composite 2
+;     5 - SVideo 2
+;     6 - Audio from Tuner
+;     7 - Audio from Line In
+;     8 - Audio from Line In 2
+; (2) InputMux (optional) - input mux to use for the selected pin
+;     in 0xAA, 0xBB, 0xCC, 0x00 format
+;     where AA is the input mux for Composite/S-Video Luma/Component Luma
+;           BB is the input mux for Tuner Audio/S-Video Chroma/Component YPr
+;           CC is the input mux for Component YPb
+; (3) InputChannel (optional, but required if InputMux present) - Input channel 
+;     to use for mux in 0xAA, 0xBB, 0xCC, 0xDD format
+;     where AA is the input channel for Composite/S-Video Luma/Component Luma
+;           BB is the input channel for Tuner Audio/S-Video Chroma/Component YPr
+;           CC is the input channel for Component YPb 
+;           DD = 1 if dual ADC2 mode required, zero if single mode
+; (4) RelatedPinIndex 
+
+;-------------------------------------------------------------------
+
+
+[CX885XBAR.AddReg]
+;Pin 0 - Tuner In
+; Input MUX       : VIN2 for video, VIN5 for audio
+; Input Channel   : Ch1 for video,  Ch2  for audio
+; Related PinIndex: Tuner Audio - Pin6 
+HKR,"DriverData\XBarPin0","PinType",0x00010001, 0x00,0x00,0x00,0x00
+HKR,"DriverData\XBarPin0","InputMux",0x00010001, 0x02,0x05,0x00,0x00
+HKR,"DriverData\XBarPin0","InputChannel",0x00010001, 0x01,0x02,0x00,0x00
+HKR,"DriverData\XBarPin0","RelatedPinIndex",0x00010001, 0x06,0x00,0x00,0x00
+
+;Pin 1 - Composite 1 (Rear)
+; Input Mux       : VIN6 for Composite
+; Input Channel   : Ch1 for Composite
+; Related PinIndex: Audio Line In 1 - Pin7
+HKR,"DriverData\XBarPin1","PinType",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputMux",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputChannel",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","RelatedPinIndex",0x00010001, 0x07,0x00,0x00,0x00
+
+;Pin 2 - S-Video 1 (Rear)
+; Input Mux       : VIN8 for Luma, VIN7 for Chroma
+; Input Channel   : Ch1 for  Luma, Ch3  for Chroma
+; Related PinIndex: Audio Line In 1 - Pin7
+HKR,"DriverData\XBarPin2","PinType",0x00010001, 0x02,0x00,0x00,0x00
+HKR,"DriverData\XBarPin2","InputMux",0x00010001, 0x08,0x07,0x00,0x00
+HKR,"DriverData\XBarPin2","InputChannel",0x00010001, 0x01,0x03,0x00,0x00
+HKR,"DriverData\XBarPin2","RelatedPinIndex",0x00010001, 0x07,0x00,0x00,0x00
+
+;Pin 3 - Component 1 (Rear)
+; Input Mux       : VIN8 for Luma, VIN6 for YPb, VIN7 for YPr
+; Input Channel   : Ch1 for  Lume, Ch2  for YPb, Ch3  for YPr, Dual ADC
+; Related PinIndex: Audio Line In 1 - Pin7
+HKR,"DriverData\XBarPin3","PinType",0x00010001, 0x03,0x00,0x00,0x00
+HKR,"DriverData\XBarPin3","InputMux",0x00010001, 0x08,0x06,0x07,0x00
+HKR,"DriverData\XBarPin3","InputChannel",0x00010001, 0x01,0x02,0x03,0x01
+HKR,"DriverData\XBarPin3","RelatedPinIndex",0x00010001, 0x07,0x00,0x00,0x00
+
+;Pin 4 - Composite 2 (Front) 
+; Input Mux       : VIN1 for Composite 
+; Input Channel   : Ch1 for Composite
+; Related PinIndex: Audio Line In 2 - Pin8
+HKR,"DriverData\XBarPin4","PinType",0x00010001, 0x04,0x00,0x00,0x00
+HKR,"DriverData\XBarPin4","InputMux",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin4","InputChannel",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin4","RelatedPinIndex",0x00010001, 0x08,0x00,0x00,0x00
+
+;Pin 5 - S-Video 2 (Front)
+; Input Mux       : VIN3 for Luma, VIN4 for Chroma
+; Input Channel   : Ch1 for  Luma, Ch2  for Chroma
+; Related PinIndex: Audio Line In 2 - Pin8
+HKR,"DriverData\XBarPin5","PinType",0x00010001, 0x05,0x00,0x00,0x00
+HKR,"DriverData\XBarPin5","InputMux",0x00010001, 0x03,0x04,0x00,0x00
+HKR,"DriverData\XBarPin5","InputChannel",0x00010001, 0x01,0x02,0x00,0x00
+HKR,"DriverData\XBarPin5","RelatedPinIndex",0x00010001, 0x08,0x00,0x00,0x00
+
+;Pin 6 - Tuner Audio
+; Related PinIndex: Tuner In - Pin0
+HKR,"DriverData\XBarPin6","PinType",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin6","RelatedPinIndex",0x00010001, 0x00,0x00,0x00,0x00
+
+;Pin 7 - Audio Line In 1 (Rear)
+; Related PinIndex: Composite 1 - Pin1
+HKR,"DriverData\XBarPin7","PinType",0x00010001, 0x07,0x00,0x00,0x00
+HKR,"DriverData\XBarPin7","RelatedPinIndex",0x00010001, 0x01,0x00,0x00,0x00
+
+;Pin 8 - Audio Line In 2 (Front)
+; Related PinIndex: Composite 2 - Pin4
+HKR,"DriverData\XBarPin8","PinType",0x00010001, 0x08,0x00,0x00,0x00
+HKR,"DriverData\XBarPin8","RelatedPinIndex",0x00010001, 0x04,0x00,0x00,0x00
+
+;Pin 9 - Audio SPDIF in 
+;;HKR,"DriverData\XBarPin9","PinType",0x00010001, 0x09,0x00,0x00,0x00
+;;HKR,"DriverData\XBarPin9","RelatedPinIndex",0x00010001, 0x02,0x00,0x00,0x00
+
+;Composite input is the default
+HKR,"DriverData","VideoInputPin",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","ForceAudioWithVideoPin",0x00010001, 0x01,0x00,0x00,0x00
+
+
+[CX885XBAR_NoYPrPb.AddReg]
+;Pin 0 - Tuner In
+; Input MUX       : VIN2 for video, VIN5 for audio
+; Input Channel   : Ch1 for video,  Ch2  for audio
+; Related PinIndex: Tuner Audio - Pin5 
+HKR,"DriverData\XBarPin0","PinType",0x00010001, 0x00,0x00,0x00,0x00
+HKR,"DriverData\XBarPin0","InputMux",0x00010001, 0x02,0x05,0x00,0x00
+HKR,"DriverData\XBarPin0","InputChannel",0x00010001, 0x01,0x02,0x00,0x00
+HKR,"DriverData\XBarPin0","RelatedPinIndex",0x00010001, 0x05,0x00,0x00,0x00
+
+;Pin 1 - Composite 1 (Rear)
+; Input Mux       : VIN6 for Composite
+; Input Channel   : Ch1 for Composite
+; Related PinIndex: Audio Line In 1 - Pin6
+HKR,"DriverData\XBarPin1","PinType",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputMux",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputChannel",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","RelatedPinIndex",0x00010001, 0x06,0x00,0x00,0x00
+
+;Pin 2 - S-Video 1 (Rear)
+; Input Mux       : VIN8 for Luma, VIN7 for Chroma
+; Input Channel   : Ch1 for  Luma, Ch3  for Chroma
+; Related PinIndex: Audio Line In 1 - Pin6
+HKR,"DriverData\XBarPin2","PinType",0x00010001, 0x02,0x00,0x00,0x00
+HKR,"DriverData\XBarPin2","InputMux",0x00010001, 0x08,0x07,0x00,0x00
+HKR,"DriverData\XBarPin2","InputChannel",0x00010001, 0x01,0x03,0x00,0x00
+HKR,"DriverData\XBarPin2","RelatedPinIndex",0x00010001, 0x06,0x00,0x00,0x00
+
+;Pin 3 - Composite 2 (Front) 
+; Input Mux       : VIN1 for Composite 
+; Input Channel   : Ch1 for Composite
+; Related PinIndex: Audio Line In 2 - Pin7
+HKR,"DriverData\XBarPin3","PinType",0x00010001, 0x04,0x00,0x00,0x00
+HKR,"DriverData\XBarPin3","InputMux",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin3","InputChannel",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin3","RelatedPinIndex",0x00010001, 0x07,0x00,0x00,0x00
+
+;Pin 4 - S-Video 2 (Front)
+; Input Mux       : VIN3 for Luma, VIN4 for Chroma
+; Input Channel   : Ch1 for  Luma, Ch2  for Chroma
+; Related PinIndex: Audio Line In 2 - Pin7
+HKR,"DriverData\XBarPin4","PinType",0x00010001, 0x05,0x00,0x00,0x00
+HKR,"DriverData\XBarPin4","InputMux",0x00010001, 0x03,0x04,0x00,0x00
+HKR,"DriverData\XBarPin4","InputChannel",0x00010001, 0x01,0x02,0x00,0x00
+HKR,"DriverData\XBarPin4","RelatedPinIndex",0x00010001, 0x07,0x00,0x00,0x00
+
+;Pin 5 - Tuner Audio
+; Related PinIndex: Tuner In - Pin0
+HKR,"DriverData\XBarPin5","PinType",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin5","RelatedPinIndex",0x00010001, 0x00,0x00,0x00,0x00
+
+;Pin 6 - Audio Line In 1 (Rear)
+; Related PinIndex: Composite 1 - Pin1
+HKR,"DriverData\XBarPin6","PinType",0x00010001, 0x07,0x00,0x00,0x00
+HKR,"DriverData\XBarPin6","RelatedPinIndex",0x00010001, 0x01,0x00,0x00,0x00
+
+;Pin 7 - Audio Line In 2 (Front)
+; Related PinIndex: Composite 2 - Pin3
+HKR,"DriverData\XBarPin7","PinType",0x00010001, 0x08,0x00,0x00,0x00
+HKR,"DriverData\XBarPin7","RelatedPinIndex",0x00010001, 0x03,0x00,0x00,0x00
+
+;Composite input is the default
+HKR,"DriverData","VideoInputPin",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","ForceAudioWithVideoPin",0x00010001, 0x01,0x00,0x00,0x00
+
+
+
+[CX885XBAR_NoFP.AddReg]
+;Pin 0 - Tuner In
+; Input MUX       : VIN2 for video, VIN5 for audio
+; Input Channel   : Ch1 for video,  Ch2  for audio
+; Related PinIndex: Tuner Audio - Pin4 
+HKR,"DriverData\XBarPin0","PinType",0x00010001, 0x00,0x00,0x00,0x00
+HKR,"DriverData\XBarPin0","InputMux",0x00010001, 0x02,0x05,0x00,0x00
+HKR,"DriverData\XBarPin0","InputChannel",0x00010001, 0x01,0x02,0x00,0x00
+HKR,"DriverData\XBarPin0","RelatedPinIndex",0x00010001, 0x04,0x00,0x00,0x00
+
+;Pin 1 - Composite 1 (Rear)
+; Input Mux       : VIN6 for Composite
+; Input Channel   : Ch1 for Composite
+; Related PinIndex: Audio Line In 1 - Pin5
+HKR,"DriverData\XBarPin1","PinType",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputMux",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputChannel",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","RelatedPinIndex",0x00010001, 0x05,0x00,0x00,0x00
+
+;Pin 2 - S-Video 1 (Rear)
+; Input Mux       : VIN8 for Luma, VIN7 for Chroma
+; Input Channel   : Ch1 for  Luma, Ch3  for Chroma
+; Related PinIndex: Audio Line In 1 - Pin5
+HKR,"DriverData\XBarPin2","PinType",0x00010001, 0x02,0x00,0x00,0x00
+HKR,"DriverData\XBarPin2","InputMux",0x00010001, 0x08,0x07,0x00,0x00
+HKR,"DriverData\XBarPin2","InputChannel",0x00010001, 0x01,0x03,0x00,0x00
+HKR,"DriverData\XBarPin2","RelatedPinIndex",0x00010001, 0x05,0x00,0x00,0x00
+
+;Pin 3 - Component 1 (Rear)
+; Input Mux       : VIN8 for Luma, VIN6 for YPb, VIN7 for YPr
+; Input Channel   : Ch1 for  Lume, Ch2  for YPb, Ch3  for YPr, Dual ADC
+; Related PinIndex: Audio Line In 1 - Pin5
+HKR,"DriverData\XBarPin3","PinType",0x00010001, 0x03,0x00,0x00,0x00
+HKR,"DriverData\XBarPin3","InputMux",0x00010001, 0x08,0x06,0x07,0x00
+HKR,"DriverData\XBarPin3","InputChannel",0x00010001, 0x01,0x02,0x03,0x01
+HKR,"DriverData\XBarPin3","RelatedPinIndex",0x00010001, 0x05,0x00,0x00,0x00
+
+;Pin 4 - Tuner Audio
+; Related PinIndex: Tuner In - Pin0
+HKR,"DriverData\XBarPin4","PinType",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin4","RelatedPinIndex",0x00010001, 0x00,0x00,0x00,0x00
+
+;Pin 5 - Audio Line In 1 (Rear)
+; Related PinIndex: Composite 1 - Pin1
+HKR,"DriverData\XBarPin5","PinType",0x00010001, 0x07,0x00,0x00,0x00
+HKR,"DriverData\XBarPin5","RelatedPinIndex",0x00010001, 0x01,0x00,0x00,0x00
+
+;Composite input is the default
+HKR,"DriverData","VideoInputPin",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","ForceAudioWithVideoPin",0x00010001, 0x01,0x00,0x00,0x00
+
+
+[CX885XBAR_NoFP_NoYPrPb.AddReg]
+;Pin 0 - Tuner In
+; Input MUX       : VIN2 for video, VIN5 for audio
+; Input Channel   : Ch1 for video,  Ch2  for audio
+; Related PinIndex: Tuner Audio - Pin3 
+HKR,"DriverData\XBarPin0","PinType",0x00010001, 0x00,0x00,0x00,0x00
+HKR,"DriverData\XBarPin0","InputMux",0x00010001, 0x02,0x05,0x00,0x00
+HKR,"DriverData\XBarPin0","InputChannel",0x00010001, 0x01,0x02,0x00,0x00
+HKR,"DriverData\XBarPin0","RelatedPinIndex",0x00010001, 0x03,0x00,0x00,0x00
+
+;Pin 1 - Composite 1 (Rear)
+; Input Mux       : VIN6 for Composite
+; Input Channel   : Ch1 for Composite
+; Related PinIndex: Audio Line In 1 - Pin4
+HKR,"DriverData\XBarPin1","PinType",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputMux",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","InputChannel",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData\XBarPin1","RelatedPinIndex",0x00010001, 0x04,0x00,0x00,0x00
+
+;Pin 2 - S-Video 1 (Rear)
+; Input Mux       : VIN8 for Luma, VIN7 for Chroma
+; Input Channel   : Ch1 for  Luma, Ch3  for Chroma
+; Related PinIndex: Audio Line In 1 - Pin4
+HKR,"DriverData\XBarPin2","PinType",0x00010001, 0x02,0x00,0x00,0x00
+HKR,"DriverData\XBarPin2","InputMux",0x00010001, 0x08,0x07,0x00,0x00
+HKR,"DriverData\XBarPin2","InputChannel",0x00010001, 0x01,0x03,0x00,0x00
+HKR,"DriverData\XBarPin2","RelatedPinIndex",0x00010001, 0x04,0x00,0x00,0x00
+
+;Pin 3 - Tuner Audio
+; Related PinIndex: Tuner In - Pin0
+HKR,"DriverData\XBarPin3","PinType",0x00010001, 0x06,0x00,0x00,0x00
+HKR,"DriverData\XBarPin3","RelatedPinIndex",0x00010001, 0x00,0x00,0x00,0x00
+
+;Pin 4 - Audio Line In 1 (Rear)
+; Related PinIndex: Composite 1 - Pin1
+HKR,"DriverData\XBarPin4","PinType",0x00010001, 0x07,0x00,0x00,0x00
+HKR,"DriverData\XBarPin4","RelatedPinIndex",0x00010001, 0x01,0x00,0x00,0x00
+
+;Composite input is the default
+HKR,"DriverData","VideoInputPin",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","ForceAudioWithVideoPin",0x00010001, 0x01,0x00,0x00,0x00
+
+
+
+
+;-------------------------------------------------------------------
+; Tuner AddReg sections
+;-------------------------------------------------------------------
+
+[Xceive.AddReg]
+
+
+[Phil8290.AddReg]
+
+
+[Phil8290DVB.AddReg]
+
+
+[Phil8295.AddReg]
+
+
+[Phil8295DVB.AddReg]
+
+
+[Phil18271.AddReg]
+
+
+[Phil18271DVB.AddReg]
+
+
+[MT2131.AddReg]
+
+
+
+;-------------------------------------------------------------------
+; AddReg sections for TS filter
+;-------------------------------------------------------------------
+
+[CXTS.AddReg]
+HKLM,%MediaCategories%\%TSPinID%,Display,1, 00,00,00,00
+HKLM,%MediaCategories%\%TSPinID%,Name,,%TSPinName%
+
+;
+; Interfaces installation
+;
+
+;
+; Video
+;
+[CX885.M7100.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7100.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7101.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7101.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7110.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7110.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7120.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7120.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7130.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7130.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7108.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7108.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7118.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7118.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7128.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7128.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7138.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7138.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7141.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7141.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7148.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7148.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7151.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7151.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7158.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7158.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7168.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7168.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7173.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7173.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7178.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7178.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D1.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D1.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D1_25.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D1_25.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D3.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D3.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D3_25.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M71D3_25.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7600.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7600.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7610.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7610.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M771x.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M771x.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M779x.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M779x.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7800.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7800.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7801.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7801.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7809.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7809.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7811.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7811.NT.Interfaces]
+Needs=VIDCombo.Interfaces
+
+[CX885.M7911.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7911.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7911_25.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M7911_25.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M801x.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M801x.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M805x.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M805x.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M8101.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M8101.NT.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M8101_25.Interfaces]
+Needs=VID.Interfaces
+
+[CX885.M8101_25.NT.Interfaces]
+Needs=VID.Interfaces
+
+
+
+[VID.Interfaces]
+AddInterface={65e8773d-8f56-11d0-a3b9-00a0c9223196},%VcapReferenceGUID%,VID_Interface,
+AddInterface={a799a802-a46d-11d0-a18c-00a02401dcd4},%TVAudioReferenceGuid%,TvAudio_Interface,
+AddInterface={a799a801-a46d-11d0-a18c-00a02401dcd4},%XBARReferenceGUID%,CX88XBAR_Interface,
+AddInterface={a799a800-a46d-11d0-a18c-00a02401dcd4},%TunerReferenceGuid%,CX88TUNE_Interface,
+AddInterface={6994AD04-93EF-11D0-A3CC-00A0C9223196},%AudioReferenceGuid%,AUD_Interface,
+AddInterface={71985F48-1CA1-11d3-9CC8-00C04F7971E0},%BDATuneReferenceGuid%,BDATUNE_Interface,
+; Debug interface for TS testing
+AddInterface={FD0A5AF4-B41D-11d2-9C95-00C04F7971E0},%TSReferenceGuid%,TS_Interface,
+; Encoder interface
+AddInterface=%GUID.Encoder%,%EncoderReferenceGuid%,ENCODER_Interface,
+AddInterface=%GUID.Multiplexer%,%EncoderReferenceGuid%,ENCODER_Interface
+
+[VIDCombo.Interfaces]
+AddInterface={65e8773d-8f56-11d0-a3b9-00a0c9223196},%VcapReferenceGUID%,VID_Interface,
+AddInterface={a799a802-a46d-11d0-a18c-00a02401dcd4},%TVAudioReferenceGuid%,TvAudio_Interface,
+AddInterface={a799a801-a46d-11d0-a18c-00a02401dcd4},%XBARReferenceGUID%,CX88XBAR_Interface,
+AddInterface={a799a800-a46d-11d0-a18c-00a02401dcd4},%TunerReferenceGuid%,CX88TUNE_Interface,
+AddInterface={6994AD04-93EF-11D0-A3CC-00A0C9223196},%AudioReferenceGuid%,AUD_Interface,
+AddInterface={71985F48-1CA1-11d3-9CC8-00C04F7971E0},%BDATuneReferenceGuid%,BDACombo_Interface,
+; Debug interface for TS testing
+AddInterface={FD0A5AF4-B41D-11d2-9C95-00C04F7971E0},%TSReferenceGuid%,TS_Interface,
+; Encoder interface
+AddInterface=%GUID.Encoder%,%EncoderReferenceGuid%,ENCODER_Interface,
+AddInterface=%GUID.Multiplexer%,%EncoderReferenceGuid%,ENCODER_Interface
+
+
+[VID_Interface]
+AddReg=VID_Interface.AddReg
+
+[VID_Interface.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%       ; {17CCA71B-ECD7-11D0-B908-00A0C9223196}
+HKR,,FriendlyName,,%VIDFriendlyName%
+
+[TvAudio_Interface]
+AddReg=TvAudio_Interface.AddReg
+
+[TvAudio_Interface.AddReg]
+HKR,,CLSID,,{71F96462-78F3-11d0-A18C-00A0C9118956}
+HKR,,FriendlyName,,%TVAudioFriendlyName%
+
+[CX88XBAR_Interface]
+AddReg=CX88XBAR_Interface.AddReg
+
+[CX88XBAR_Interface.AddReg]
+HKR,,CLSID,,{71F96460-78F3-11d0-A18C-00A0C9118956}
+HKR,,FriendlyName,,%XBARFriendlyName%
+
+[CX88TUNE_Interface]
+AddReg=CX88TUNE_Interface.AddReg
+
+[CX88TUNE_Interface.AddReg]
+HKR,,CLSID,,{266EEE40-6C63-11cf-8A03-00AA006ECB65}
+HKR,,FriendlyName,,%TunerFriendlyName%
+;Vista tunerInstanceID entry, see CXTUNE_Interface.AddReg
+HKR,,TunerInstanceID,0x00010001,10
+
+[AUD_Interface]
+AddReg=AUD_Interface.AddReg
+
+[AUD_Interface.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%       ; {17CCA71B-ECD7-11D0-B908-00A0C9223196}
+HKR,,FriendlyName,,%AudioFriendlyName%
+
+[BDATUNE_Interface]
+AddReg=BDATUNE_Interface.AddReg
+
+[BDATUNE_Interface.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%       ; {17CCA71B-ECD7-11D0-B908-00A0C9223196}
+HKR,,FriendlyName,,%BDATuneFriendlyName%
+;Vista tunerInstanceID entry, see CXTUNE_Interface.AddReg
+;Use this to indicate a Hybrid Card
+HKR,,TunerInstanceID,0x00010001,10
+
+[BDACombo_Interface]
+AddReg=BDACombo_Interface.AddReg
+
+[BDACombo_Interface.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%       ; {17CCA71B-ECD7-11D0-B908-00A0C9223196}
+HKR,,FriendlyName,,%BDATuneFriendlyName%
+;Vista tunerInstanceID entry, see CXTUNE_Interface.AddReg
+;Use this to indicate a Combo(Dual tuner) Card
+HKR,,TunerInstanceID,0x00010001,11
+
+[TS_Interface]
+AddReg=TS_Interface.AddReg
+
+[TS_Interface.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%       ; {17CCA71B-ECD7-11D0-B908-00A0C9223196}
+HKR,,FriendlyName,,%TSFriendlyName%
+
+[ENCODER_Interface]
+AddReg=ENCODER_Interface.AddReg
+
+[ENCODER_Interface.AddReg]
+HKR,,CLSID,,{17CCA71B-ECD7-11D0-B908-00A0C9223196}
+HKR,,FriendlyName,,%EncoderFriendlyName%
+;Add an interface for Microsoft's video bit rate property set
+HKR,Interfaces\{B43C4EEC-8C32-4791-9102-508ADA5EE8E7},,,
+
+
+
+;
+; Services installation
+;
+[CX885.M7100.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7100.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7101.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7101.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7110.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7110.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7120.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7120.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7130.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7130.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7108.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7108.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7118.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7118.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7128.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7128.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7138.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7138.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7141.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7141.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7148.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7148.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7151.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7151.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7158.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7158.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7168.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7168.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7173.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7173.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7178.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7178.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D1.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D1.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D1_25.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D1_25.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D3.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D3.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D3_25.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M71D3_25.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7600.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7600.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7610.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7610.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M771x.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M771x.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M779x.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M779x.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7800.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7800.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7801.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7801.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7809.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7809.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7811.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7811.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7911.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7911.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7911_25.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M7911_25.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M801x.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M801x.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M805x.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M805x.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M8101.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M8101.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M8101_25.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+[CX885.M8101_25.NT.Services]
+AddService = HCW85BDA,2,VID.ServiceInstall
+
+
+
+
+[VID.ServiceInstall]
+DisplayName   = %CX23885.DeviceDesc%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %10%\system32\drivers\HCW85BDA.sys
+
+;;;;;;;;;;;;;;;;;;;;;
+;
+[Xtal25.Addreg]
+HKR,"DriverData","XtalFreq",0x00010001, 0x19,0x00,0x00,0x00
+
+
+[M7100.AddReg]
+;;;Kingston
+HKR,"DriverData","BoardType",0x00010001, 0x10,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x1C, 0x00, 0x00, 0x00
+
+
+[M7101.AddReg]
+;;;Kingston, No FM
+HKR,"DriverData","BoardType",0x00010001, 0x10,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x1C, 0x00, 0x00, 0x00
+
+
+[M7110.AddReg]
+;;;Kingston	Lite
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston_lite",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x1C, 0x00, 0x00, 0x00
+
+
+[M7120.AddReg]
+;;;Kingston	PVR
+HKR,"DriverData","BoardType",0x00010001, 0x12,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston_PVR",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+
+[M7130.AddReg]
+;;;Kingston	GO
+HKR,"DriverData","BoardType",0x00010001, 0x15,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston_GO",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0x01, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+
+[M7108.AddReg]
+;;;Kingston (aka Dover-e)
+HKR,"DriverData","BoardType",0x00010001, 0x10,0x00,0x00,0x00
+HKR,"DriverData","Is_Dover-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+
+[M7118.AddReg]
+;;;Kingston Lite (aka Oxford-e)
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Oxford-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+
+[M7128.AddReg]
+;;;Kingston PVR (aka Roslyn-e)
+HKR,"DriverData","BoardType",0x00010001, 0x12,0x00,0x00,0x00
+HKR,"DriverData","Is_Roslyn-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+
+[M7138.AddReg]
+;;;Kingston Go (aka Pluto-e)
+HKR,"DriverData","BoardType",0x00010001, 0x15,0x00,0x00,0x00
+HKR,"DriverData","Is_Pluto-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+
+
+[M7141.AddReg]
+;;;Kingston (aka Dover-e)
+HKR,"DriverData","BoardType",0x00010001, 0x10,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston04",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295+10046(204)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xcc, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x72, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x32, 0x00, 0x00, 0x00
+
+
+[M7148.AddReg]
+;;;Kingston (aka Dover-e)
+HKR,"DriverData","BoardType",0x00010001, 0x10,0x00,0x00,0x00
+HKR,"DriverData","Is_Dover-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA8275A+TDA8295+10046(200)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xc8, 0x00, 0x00, 0x00
+;;invert TV/FM selection logic
+HKR,"I2C Devices","Device 0, Data7",0x00010001, 0xa0, 0x00, 0x00, 0x00
+
+
+[M7151.AddReg]
+;;;Kingston Lite (aka Oxford-e)
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston04_Lite",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295+10046(204)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xcc, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x72, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x32, 0x00, 0x00, 0x00
+
+
+[M7158.AddReg]
+;;;Kingston Lite (aka Oxford-e)
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Oxford-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;set tuner type to TDA8275A+TDA8295+10046(200)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xc8, 0x00, 0x00, 0x00
+;;invert TV/FM selection logic
+HKR,"I2C Devices","Device 0, Data7",0x00010001, 0xa0, 0x00, 0x00, 0x00
+
+
+[M7168.AddReg]
+;;;Kingston PVR (aka Roslyn-e)
+HKR,"DriverData","BoardType",0x00010001, 0x12,0x00,0x00,0x00
+HKR,"DriverData","Is_Roslyn-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+;;set tuner type to TDA8275A+TDA8295(201)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xc9, 0x00, 0x00, 0x00
+
+
+[M7173.AddReg]
+;;;Kingston Lite (aka Oxford-e)
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston05_Lite",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_PRESENT",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_FLASH_EEPROM",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_AUTOUPDATE",0x00010001, 0x0, 0x00, 0x00, 0x00
+; Allow FM via TV RF input
+;HKR,"Parameters","TDA18271_UseFMInput",0x00010001, 0x02, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xca, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x60, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x32, 0x00, 0x00, 0x00
+;Change default AGC timing to 31.25KHz
+HKR,"Parameters","TDA18271_EXTENDED_BYTE_12",0x00010001, 0x03, 0x00, 0x00, 0x00
+;BUGBUG 990ms is TOO LONG; fix this
+HKR,"Parameters","TDA18271_StaticAGCDelay",0x00010001, 0xDE, 0x03, 0x00, 0x00
+
+
+[M7178.AddReg]
+;;;Kingston Go (aka Pluto-e)
+HKR,"DriverData","BoardType",0x00010001, 0x15,0x00,0x00,0x00
+HKR,"DriverData","Is_Pluto-e",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;Disable TS capture and BDA filter registration
+HKR,"DriverData","Enable_BDA",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+;;set tuner type to TDA8275A+TDA8295(201)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xc9, 0x00, 0x00, 0x00
+
+
+[M71D1.AddReg]
+;;;Kingston Lite (aka Oxford-e)
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston05_Lite",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_PRESENT",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_FLASH_EEPROM",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_AUTOUPDATE",0x00010001, 0x0, 0x00, 0x00, 0x00
+; Allow FM via TV RF input
+HKR,"Parameters","TDA18271_UseFMInput",0x00010001, 0x02, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295+10048(203)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xcb, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x72, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x32, 0x00, 0x00, 0x00
+;Change default AGC timing to 31.25KHz
+HKR,"Parameters","TDA18271_EXTENDED_BYTE_12",0x00010001, 0x03, 0x00, 0x00, 0x00
+;BUGBUG 990ms is TOO LONG; fix this
+HKR,"Parameters","TDA18271_StaticAGCDelay",0x00010001, 0xDE, 0x03, 0x00, 0x00
+
+
+[M71D3.AddReg]
+;;;Kingston Lite (aka Oxford-e)
+HKR,"DriverData","BoardType",0x00010001, 0x11,0x00,0x00,0x00
+HKR,"DriverData","Is_Kingston05_LiteNoFP",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_PRESENT",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_FLASH_EEPROM",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_AUTOUPDATE",0x00010001, 0x0, 0x00, 0x00, 0x00
+; Allow FM via TV RF input
+;HKR,"Parameters","TDA18271_UseFMInput",0x00010001, 0x02, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295+10048(203)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xcb, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x62, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x32, 0x00, 0x00, 0x00
+;Change default AGC timing to 31.25KHz
+HKR,"Parameters","TDA18271_EXTENDED_BYTE_12",0x00010001, 0x03, 0x00, 0x00, 0x00
+;BUGBUG 990ms is TOO LONG; fix this
+HKR,"Parameters","TDA18271_StaticAGCDelay",0x00010001, 0xDE, 0x03, 0x00, 0x00
+
+
+[M7600.AddReg]
+;;;Brentwood
+HKR,"DriverData","BoardType",0x00010001, 0x13,0x00,0x00,0x00
+HKR,"DriverData","Is_Brentwood",0x00010001, 0x01,0x00,0x00,0x00
+;Orig boards had tuner at addr C0, new ones at C2
+;HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking, for testing
+HKR,"Parameters","TDA8275A_Blanking",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA8275A+TDA8295(201)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xc9, 0x00, 0x00, 0x00
+;; Prototype -01 boards used address C2
+;;HKR,"I2C Devices","Device 0, Data2",0x00010001, 0xc2, 0x00, 0x00, 0x00
+
+
+[M7610.AddReg]
+;;;Brentwood Lite
+HKR,"DriverData","BoardType",0x00010001, 0x14,0x00,0x00,0x00
+HKR,"DriverData","Is_Brentwood_lite",0x00010001, 0x01,0x00,0x00,0x00
+;Orig boards had tuner at addr C0, new ones at C2
+;HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking, for testing
+HKR,"Parameters","TDA8275A_Blanking",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA8275A+TDA8295(201)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xc9, 0x00, 0x00, 0x00
+
+
+[M7717.AddReg]
+;;;Melville (XC3028 tuner)
+HKR,"DriverData","BoardType",0x00010001, 0x16,0x00,0x00,0x00
+HKR,"DriverData","Is_Melville",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x32, 0x00, 0x00, 0x00
+
+HKR,"DriverData","EnableIR",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+[M7797.AddReg]
+;;;Melville (XC5000 tuner)
+HKR,"DriverData","BoardType",0x00010001, 0x16,0x00,0x00,0x00
+HKR,"DriverData","Is_Melville-Q",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x11, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x40, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC2, 0x00, 0x00, 0x00
+HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x32, 0x00, 0x00, 0x00
+
+HKR,"DriverData","EnableIR",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+
+[M7800.AddReg]
+;;;Medford
+HKR,"DriverData","BoardType",0x00010001, 0x18,0x00,0x00,0x00
+HKR,"DriverData","Is_Medford",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x2E, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295(202)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xca, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_DIG_IF_Level",0x00010001, 0x3, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_XTALOut_Mode",0x00010001, 0x1, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x31, 0x00, 0x00, 0x00
+
+
+[M7801.AddReg]
+;;;Medford
+HKR,"DriverData","BoardType",0x00010001, 0x18,0x00,0x00,0x00
+HKR,"DriverData","Is_Medford_25M",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x2E, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","XtalFreq",0x00010001, 0x19,0x00,0x00,0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295(202)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xca, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_DIG_IF_Level",0x00010001, 0x3, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_XTALOut_Mode",0x00010001, 0x1, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x31, 0x00, 0x00, 0x00
+
+
+[M7809.AddReg]
+;;;Medford, No FM
+HKR,"DriverData","BoardType",0x00010001, 0x18,0x00,0x00,0x00
+HKR,"DriverData","Is_Medford_25M_NoFM",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x2E, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","XtalFreq",0x00010001, 0x19,0x00,0x00,0x00
+HKR,"DriverData","blaster_reset_gpio_bit", 0x00010001, 0x2f, 0x00, 0x00, 0x00
+HKR,"DriverData","blaster_data_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295(202)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xca, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0xA1, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_DIG_IF_Level",0x00010001, 0x3, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_XTALOut_Mode",0x00010001, 0x1, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x21, 0x00, 0x00, 0x00
+
+
+[M7811.AddReg]
+;;;Medford Lite
+HKR,"DriverData","BoardType",0x00010001, 0x19,0x00,0x00,0x00
+HKR,"DriverData","Is_Medford_lite",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x0E, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","XtalFreq",0x00010001, 0x19,0x00,0x00,0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295(202)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xca, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_DIG_IF_Level",0x00010001, 0x3, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA18271_XTALOut_Mode",0x00010001, 0x1, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x31, 0x00, 0x00, 0x00
+
+
+[M7911.AddReg]
+;;;Coram
+HKR,"DriverData","BoardType",0x00010001, 0x17,0x00,0x00,0x00
+HKR,"DriverData","Is_Coram",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x02, 0x10, 0x00, 0x10
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x02, 0x00, 0x00, 0x10
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_demod_reset_gpio_bit",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"DriverData","MT2131_227_tuner_reset_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+
+[M801x.AddReg]
+;;;Whitman
+HKR,"DriverData","BoardType",0x00010001, 0x1a,0x00,0x00,0x00
+HKR,"DriverData","Is_Whitman",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x10, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x1A, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC8, 0x00, 0x00, 0x00
+;HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x12, 0x00, 0x00, 0x00
+
+HKR,"DriverData","EnableIR",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+;Mask NTSC_M, NTSC_M_J, PAL_M, PAL_N and PAL_N_COMBO standards
+HKR,"DriverData","TunerStandardsMask",0x00010001, 0xfc, 0xf9, 0xef, 0xff
+
+
+[M805x.AddReg]
+;;;Whitman-D
+HKR,"DriverData","BoardType",0x00010001, 0x1a,0x00,0x00,0x00
+HKR,"DriverData","Is_Whitman-D",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x12, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+HKR,"DriverData","TunerType",0x00010001, 0x41, 0x00, 0x00, 0x00
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","TunerI2CAddress",0x00010001, 0xC8, 0x00, 0x00, 0x00
+;HKR,"DriverData","Tuner2IFAddress",0x00010001, 0x86, 0x00, 0x00, 0x00
+HKR,"DriverData","DemodI2CAddress",0x00010001, 0x12, 0x00, 0x00, 0x00
+
+HKR,"DriverData","EnableIR",0x00010001, 0x00, 0x00, 0x00, 0x00
+
+;Mask NTSC_M, NTSC_M_J, PAL_M, PAL_N and PAL_N_COMBO standards
+;;HKR,"DriverData","TunerStandardsMask",0x00010001, 0xfc, 0xf9, 0xef, 0xff
+;Debug, allow all standards
+HKR,"DriverData","TunerStandardsMask",0x00010001, 0xff, 0xff, 0xff, 0xff
+
+
+
+[M8101.AddReg]
+;;;Whitney (aka Dover-e)
+HKR,"DriverData","BoardType",0x00010001, 0x10,0x00,0x00,0x00
+HKR,"DriverData","Is_Whitney",0x00010001, 0x01,0x00,0x00,0x00
+HKR,"DriverData","TunerType",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","TunerCountryCode",0x00010001, 0x31,0x00,0x00,0x00
+HKR,"DriverData","BDA_Demod_Tuner_type",0x00010001, 0x01, 0x00, 0x00, 0x80
+HKR,"DriverData","demod_sleep_gpio_bit", 0x00010001, 0xff, 0x00, 0x00, 0x00
+HKR,"DriverData","demod_reset_gpio_bit", 0x00010001, 0x00, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_reset_gpio_bit", 0x00010001, 0x02, 0x00, 0x00, 0x00
+HKR,"DriverData","tuner_sif_fm_gpio_bit",0x00010001, 0xff, 0x00, 0x00, 0x00
+
+;;disable any blanking
+HKR,"Parameters","TDA18271_BlankVideo",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA8295_AUTOMUTE_VIDEO",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_PRESENT",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_FLASH_EEPROM",0x00010001, 0x0, 0x00, 0x00, 0x00
+HKR,"Parameters","TDA10048_EEPROM_AUTOUPDATE",0x00010001, 0x0, 0x00, 0x00, 0x00
+; Allow FM via TV RF input
+;HKR,"Parameters","TDA18271_UseFMInput",0x00010001, 0x02, 0x00, 0x00, 0x00
+;;set tuner type to TDA18271+TDA8295+10048(203)
+HKR,"I2C Devices","Device 0, Data1",0x00010001, 0xcb, 0x00, 0x00, 0x00
+HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x62, 0x00, 0x00, 0x00
+; Enable all formats (testing only); may break MCE scanning
+;HKR,"I2C Devices","Device 0, Data6",0x00010001, 0x32, 0x00, 0x00, 0x00
+;Change default AGC timing to 31.25KHz
+HKR,"Parameters","TDA18271_EXTENDED_BYTE_12",0x00010001, 0x03, 0x00, 0x00, 0x00
+;BUGBUG 990ms is TOO LONG; fix this
+;HKR,"Parameters","TDA18271_StaticAGCDelay",0x00010001, 0xDE, 0x03, 0x00, 0x00
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+
+;---------------------------------------------------------------
+;                S t r i n g s
+;---------------------------------------------------------------
+
+
+[Strings]
+CX885.M7100                  = "Hauppauge WinTV 885 (Model 71xxx PVR/DVB-T Hybrid, Xc3028)"
+CX885.M7101                  = "Hauppauge WinTV 885 (Model 71xxx PVR/DVB-T Hybrid, Xc3028, No FM)"
+CX885.M7110                  = "Hauppauge WinTV 885 (Model 71xxx Analog/DVB-T Hybrid, Xc3028)"
+CX885.M7120                  = "Hauppauge WinTV 885 (Model 71xxx PVR, Xc3028)"
+CX885.M7130                  = "Hauppauge WinTV 885 (Model 71xxx Analog, Xc3028)"
+CX885.M7108                  = "Hauppauge WinTV 885 (Model 71xxx PVR/DVB-T Hybrid, 8275a/8290)"
+CX885.M7118                  = "Hauppauge WinTV 885 (Model 71xxx Analog/DVB-T Hybrid, 8275a/8290)"
+CX885.M7128                  = "Hauppauge WinTV 885 (Model 71xxx PVR, 8275a/8290)"
+CX885.M7138                  = "Hauppauge WinTV 885 (Model 71xxx Analog, 8275a/8290)"
+CX885.M7141                  = "Hauppauge WinTV HVR-1700 Engr Sample (OBSOLETE)"
+CX885.M7148                  = "Hauppauge WinTV 885 (Model 71xxx PVR/DVB-T Hybrid, 8275a/8295)"
+CX885.M7151                  = "Hauppauge WinTV HVR-1200 (Model 71xxx, Hybrid DVB-T)"
+CX885.M7158                  = "Hauppauge WinTV 885 (Model 71xxx Analog/DVB-T Hybrid, 8275a/8295)"
+CX885.M7168                  = "Hauppauge WinTV 885 (Model 71xxx PVR, 8275a/8295)"
+CX885.M7173                  = "Hauppauge WinTV HVR-1200 (Model 71xxx, Multi-PAL)"
+CX885.M7178                  = "Hauppauge WinTV 885 (Model 71xxx Analog, 8275a/8295)"
+CX885.M71D1                  = "Hauppauge WinTV HVR-1200 (Model 71xxx, Hybrid DVB-T)"
+CX885.M71D3                  = "Hauppauge WinTV HVR-1200 (Model 71xxx, Hybrid DVB-T, No FP)"
+CX885.M7600                  = "Hauppauge WinTV HVR-1800lp (Model 76xxx, Combo)"
+CX885.M7610                  = "Hauppauge WinTV 885 (Model 76xxx Analog/ATSC Combo, 8275a/8295)"
+CX885.M7710                  = "Hauppauge WinTV HVR-1500 (Model 77xxx, Hybrid ATSC)"
+CX885.M7717                  = "HP Digital/Analog TV Tuner"
+CX885.M7790                  = "Hauppauge WinTV HVR-1500 (Model 77xxx, Hybrid ATSC/QAM)"
+CX885.M7797                  = "HP Digital/Analog TV Tuner"
+CX885.M7800                  = "Hauppauge WinTV HVR-1800 Engr Sample (OBSOLETE)"
+CX885.M7801                  = "Hauppauge WinTV HVR-1800 (Model 78xxx, Combo ATSC/QAM)"
+CX885.M7809                  = "Hauppauge WinTV HVR-1800 (Model 78xxx, Combo ATSC/QAM, No FM)"
+CX885.M7810                  = "Hauppauge WinTV HVR-1800sw Engr Sample (OBSOLETE)"
+CX885.M7811                  = "Hauppauge WinTV HVR-1800sw (Model 78xxx, Combo ATSC/QAM)"
+CX885.M7911                  = "Hauppauge WinTV HVR-1250 (Model 79xxx, Hybrid ATSC/QAM)"
+CX885.M8010                  = "Hauppauge WinTV HVR-1400 (Model 80xxx, Hybrid DVB-T)"
+CX885.M8017                  = "HVR-1400 OEM Digital/Analog TV Tuner"
+CX885.M8050                  = "Hauppauge WinTV HVR-1400 (Model 80xxx, Hybrid DVB-T)"
+CX885.M8056                  = "Hauppauge WinTV HVR-1400 (Model 80xxx, Hybrid DVB-T, OEM)"
+CX885.M8057                  = "HVR-1400 OEM2 Digital/Analog TV Tuner"
+CX885.M8101                  = "Hauppauge WinTV HVR-1700 (Model 81xxx, Hybrid DVB-T)"
+CX23885.DeviceDesc           = "Hauppauge WinTV 885 Video Capture"
+CX23885.Sonora               = "Hauppauge WinTV 885 Video Capture (proto)"
+CX23885.Blank                = "Hauppauge WinTV 885 (CX23885 Blank EEprom)"
+CX23887.Blank                = "Hauppauge WinTV 885 (CX23887 Blank EEprom)"
+VIDFriendlyName              = "Hauppauge WinTV 885 Video Capture"
+TVAudioFriendlyName          = "Hauppauge WinTV 885 TvAudio"
+XBARFriendlyName             = "Hauppauge WinTV 885 Crossbar"
+TunerFriendlyName            = "Hauppauge WinTV 885 Tuner"
+AudioFriendlyName            = "Hauppauge WinTV 885 Audio Capture"
+BDATuneFriendlyName          = "Hauppauge WinTV 885 BDA Tuner/Demod"
+EncoderFriendlyName          = "Hauppauge WinTV 885 MPEG Encoder"
+TSFriendlyName               = "Hauppauge WinTV 885 TS Capture"
+
+p2.InstallDisk               = "Hauppauge CX23885 Drivers Install Disk"
+p2.InstallDisk64             = "Hauppauge CX23885 Drivers Install Disk (64Bit Components)"
+p2.InstallDiskWOW            = "Hauppauge CX23885 Drivers Install Disk (WOW64 Components)"
+
+VcapReferenceGUID            = "{9F0E8B75-C677-11db-BEB4-00A0C9F21FC7}"
+Proxy.CLSID                  = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+MediaCategories              = "SYSTEM\CurrentControlSet\Control\MediaCategories"
+GUID.PINNAME_ANALOG_AUDIO_IN = "{04394D28-52A7-4c46-AED0-65D62CC64DA6}"
+Pin.p2AnalogAudioIn          = "Analog Audio In"
+GUID.PINNAME_AUDIO_OUT       = "{9DA02733-7910-40f2-95DD-0441676C9A9B}"
+PinName.AnalogAudioOut       = "Audio Out"
+TVAudioReferenceGuid         = "{9F0E8B76-C677-11db-BEB4-00A0C9F21FC7}"
+XBARReferenceGUID            = "{9F0E8B71-C677-11db-BEB4-00A0C9F21FC7}"
+TunerReferenceGuid           = "{9F0E8B77-C677-11db-BEB4-00A0C9F21FC7}"
+TSPinID                      = "{5237C937-0A21-4f7e-B338-DE0D0793D03F}"
+TSPinName                    = "TS Out"
+BDATuneReferenceGuid         = "{9F0E8B70-C677-11db-BEB4-00A0C9F21FC7}"
+TSReferenceGuid              = "{9F0E8B73-C677-11db-BEB4-00A0C9F21FC7}"
+AudioReferenceGuid           = "{9F0E8B74-C677-11db-BEB4-00A0C9F21FC7}"
+
+EncoderReferenceGuid         = "{9F0E8B72-C677-11db-BEB4-00A0C9F21FC7}"
+GUID.Encoder                 = "{19689BF6-C384-48fd-AD51-90E58C79F70B}"
+GUID.Multiplexer             = "{7A5DE1D3-01A1-452c-B481-4FA2B96271E8}"
+Category_Encoders            = "WDM Streaming Encoder Devices"
+Category_Multiplexers        = "WDM Streaming Multiplexer Devices"
+Node.Encoder                 = "Encoder"
+Node.Multiplexer             = "Multiplexer"
+GUID.PINNAME_656_IN          = "{DFD530C7-36D9-47ff-B838-9A11D215B140}"
+PinName.656_IN               = "656"
+GUID.PINNAME_656_OUT         = "{E2EEB283-EB84-4910-BABE-037FFBB03249}"
+PinName.656_OUT              = "656"
+GUID.PINNAME_MPEG_OUT        = "{1649D2C1-435E-11d3-A94B-00A0C9D8B34E}"
+PinName.MpegOut              = "MPEG"
+
+;GUID.IVAC_PROPERTIES         = "{87489F71-B890-4ba2-A88B-03E0B1A4EC1D}"
+; we implement the true legacy version of the IVAC API
+GUID.IVAC_PROPERTIES          = "{d2185a40-0398-11d3-a53e-00a0c9ef506a}"
+
+GUID.GenEnc_Properties       = "{F6E6FBD9-FE5D-419d-B994-57FB20AAED1D}"
+GUID.Video_Properties        = "{5D64F5ED-1526-46f5-B510-AA93437FFA6E}"
+GUID.Audio_Properties        = "{9D52CFF7-0DB7-4300-B936-844105E64E9E}"
+GUID.MPEG_Properties         = "{A6ABB595-D3B7-4fdf-A418-F2C79E6E1C14}"
+GUID.Diagnostic_Properties   = "{18759BBE-6A06-4118-9A57-E833AD670B81}"
+GUID.Noise_Properties        = "{10E2DF32-3EC5-4551-BAE6-6D8F6B6C853A}"
+
+GUID.Corona_Properties       = "{063108C1-C019-4d4a-8145-7C7A8AA1E700}"
+GUID.CORONA_VERSION_PROPERTIES  = "{461C2E4C-FC98-44c4-A735-21A9FA837A02}"
+
+MediaSets                    = "System\CurrentControlSet\Control\MediaSets"
+ActiveMovieCategories        = "CLSID\{da4e3da0-d07d-11d0-bd50-00a0c911ce86}\Instance"
+
+MediaInterfaces              = "System\CurrentControlSet\Control\MediaInterfaces"
+

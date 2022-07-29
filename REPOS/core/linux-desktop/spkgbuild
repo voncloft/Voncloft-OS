@@ -5,7 +5,8 @@ name=linux-desktop
 version=5.18.14
 release=1
 
-source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz"
+source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
+	.config"
 options="!checksum"
 
 build()

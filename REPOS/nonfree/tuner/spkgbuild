@@ -1,0 +1,14 @@
+# description : add tuner firmware to host os
+# depends : 
+
+name=tuner
+version=1.0.3
+release=3
+
+source="http://www.steventoth.net/linux/hvr22xx/22xxdrv_27086.zip
+	http://www.steventoth.net/linux/hvr22xx/HVR-12x0-14x0-17x0_1_25_25271_WHQL.zip"
+	
+build() {
+	mkdir -pv $PKG/lib/firmware
+	
+}
