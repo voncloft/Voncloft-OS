@@ -13,7 +13,7 @@ build()
 {
 	cd linux-$version
 	make mrproper
-	cp $SRC/.config $PKG/$name-version
+	cp $SRC/.config $PKG/linux-$version
 	make -j9
 	make DESTDIR=$PKG modules_install
 	make DESTDIR=$PKG install
