@@ -1,5 +1,5 @@
 # description : linux kernel for desktop
-# depends : kernel-prereq linux-firmware
+# depends : linux-firmware
 
 name=linux-desktop
 version=5.18.15
