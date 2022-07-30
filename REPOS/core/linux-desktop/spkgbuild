@@ -17,5 +17,10 @@ build()
 	make menuconfig
 	make -j9
 	make INSTALL_MOD_PATH=$PKG modules_install
-	make INSTALL_MOD_PATH=$PKG install
+	mkdir $PKG/boot
+	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-$version
+	mv $SRC/linux-$version $PKG/lib/modules/$kernver/build
+	ln -sv build $PKG/lib/modules/$kernver/source
+	find -L $PKG/lib/modules/$kernver/build -type l -exec rm -f "{}" \;
+}
 }
