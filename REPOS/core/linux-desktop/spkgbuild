@@ -22,7 +22,7 @@ build()
 	#mv $SRC/linux-$version $PKG/lib/modules/$kernver/build
 	#ln -sv build $PKG/lib/modules/$kernver/source
 	#find -L $PKG/lib/modules/$kernver/build -type l -exec rm -f "{}" \;
-  	local builddir="$PKG/usr/lib/modules/$(<version)/build"
+  	local builddir="$PKG/usr/lib/modules/${version}/build"
 
   	echo "Installing build files..."
   	install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
@@ -89,7 +89,7 @@ build()
       	application/x-pie-executable\;*) # Relocatable binaries
         strip -v $STRIP_SHARED "$file" ;;
     esac
-  	done < <(find "$builddir" -type f -perm -u+x ! -name vmlinux -print0)
+  	done <<(find "$builddir" -type f -perm -u+x ! -name vmlinux -print0)
 
   	echo "Stripping vmlinux..."
   	strip -v $STRIP_STATIC "$builddir/vmlinux"
