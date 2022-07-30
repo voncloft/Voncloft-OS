@@ -109,9 +109,9 @@ f:7ae6482b6d39206fc663b13574cae25a:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:1f84270f22e23e67d168400c862c2ae0:thunderbird/CHANGELOG
+f:b5bec4476a0620dfe0f66a462c208af1:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:5584b524aa189a295cc61e18474c0f5e:thunderbird/spkgbuild
+f:90404f5b00864197b13ef080509d6e28:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:4f7a53dd5f1e8f7e21043697d218fc73:openvpn/CHANGELOG
@@ -139,8 +139,8 @@ f:b57af65b0209972792ef2e021035979e:wpa_supplicant/spkgbuild
 f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:638bc3e2a84ef18cb9c547b7bdda50e0:nmap/CHANGELOG
 f:6309f6c5e09f3cfdd2819f1e77c38c54:nmap/spkgbuild
-f:97402af12b08513d19c7895639a9ca5d:wireshark/CHANGELOG
-f:6377cc52852b328131cf81f9392f35f5:wireshark/spkgbuild
+f:d8d325dcdb050e59ff4e9ce87b70ecff:wireshark/CHANGELOG
+f:182d9de1baf887c82f518180dedcabaa:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
 f:1823a10d4401fba66e43f2dd9afc4487:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
@@ -155,11 +155,11 @@ f:0e8c42daae6cab0096d8b65a2dcb2c3b:avahi/pre-install.sh
 f:104a643de888cb977c33b53c8211fd6a:avahi/spkgbuild
 f:497d4af7bf83dbe15393a04847f79571:youtube-dl/CHANGELOG
 f:c71c1cf8de6e2bb5ded1dbb19ec3edf6:youtube-dl/spkgbuild
-f:c99c3e12a8075d13f76048e299c4c5e9:firefox/CHANGELOG
+f:c17e16f5106d792a3456e23d664ef29d:firefox/CHANGELOG
 f:37db9ec3cc336d3a09ede8becec2ad69:firefox/fix-ftbfs-newer-cbindgen.patch
 f:a4a0f7c9c1e3424463670d031976aa67:firefox/override
 f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
-f:95cad593314d32d288b8979103287aa0:firefox/spkgbuild
+f:d394cbffdc12fedc35be56a11f1d8b01:firefox/spkgbuild
 f:89fb28a484e7f5126839e83f10de377a:firefox/pre-upgrade.sh
 f:2e964b5170bf49059c359e1225ac1ed3:git/CHANGELOG
 f:4cb5254029b6f87d968122a781c61061:git/spkgbuild
