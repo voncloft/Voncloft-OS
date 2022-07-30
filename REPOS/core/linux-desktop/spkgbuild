@@ -96,5 +96,5 @@ build()
 
   	echo "Adding symlink..."
   	mkdir -p "$PKG/usr/src"
-  	ln -sr "$builddir" "$PKG/usr/src/linux"
+  	ln -sr "$builddir" "$PKG/usr/src/linux-$version"
 }
