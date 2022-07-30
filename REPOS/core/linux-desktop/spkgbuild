@@ -26,7 +26,7 @@ build()
 
   	echo "Installing build files..."
   	install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
-    		localversion.* version vmlinux
+    		vmlinux
   	install -Dt "$builddir/kernel" -m644 kernel/Makefile
   	install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   	cp -t "$builddir" -a scripts
@@ -35,7 +35,7 @@ build()
   	install -Dt "$builddir/tools/objtool" tools/objtool/objtool
 
   	# required when DEBUG_INFO_BTF_MODULES is enabled
-  	install -Dt "$builddir/tools/bpf/resolve_btfids" tools/bpf/resolve_btfids/resolve_btfids
+  	#install -Dt "$builddir/tools/bpf/resolve_btfids" tools/bpf/resolve_btfids/resolve_btfids
 
   	echo "Installing headers..."
   	cp -t "$builddir" -a include
