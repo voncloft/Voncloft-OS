@@ -1,11 +1,22 @@
-source="https://cmake.org/files/"
+source=https://cmake.org/download/
 
 get_generic()
 {
-	uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
-	source=$(echo $source""v$uversion/)
-	rm index.html
-	url=$source
-	fetch
-	uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | grep tar.gz | cut -d - -f2 | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
+	#uversion=$(grep -i "href" index.html \
+	#| grep -Po '(?<=href=")[^"]*' \
+	#| grep tar.gz \
+	#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	#| sort -V -r \
+	#| head -n1)
+	uversion=$(grep -i "href" index.html \
+	| grep -Po '(?<=href=")[^"]*' \
+	| grep .tar.gz \
+	| cut -d / -f9 \
+	| sed "s/cmake-//g" \
+	| sed "s/.tar.gz//g" \
+	| sort -V -r \
+	| grep -v macos \
+	| grep -v linux \
+	| sort -V -r \
+	| head -n1)
 }

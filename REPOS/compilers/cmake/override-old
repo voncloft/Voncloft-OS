@@ -1,0 +1,14 @@
+source="https://cmake.org/files/"
+
+get_generic()
+{
+	#uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
+	#wget https://cmake.org/files/
+	curl -L -f https://cmake.org/files/ -o index.html -s --max-time 5
+	uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | sort -V -r | head -n1)
+	source=$(echo $source""v$uversion/)
+	rm index.html
+	url=$source
+	fetch
+	uversion=$(grep -i "href" index.html | grep -Po '(?<=href=")[^"]*' | grep tar.gz | cut -d - -f2 | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" | sort -V -r | head -n1)
+}
