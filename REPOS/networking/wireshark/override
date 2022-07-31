@@ -1,0 +1,21 @@
+source=https://www.wireshark.org/#download/
+
+get_generic()
+{
+	uversion=$(grep -i "href" index.html \
+	| grep -Po '(?<=href=")[^"]*' \
+	| grep .tar.xz \
+	| cut -d / -f5 \
+	| sed "s/wireshark-//g" \
+	| sed "s/.tar.xz//g" \
+	| sort -V -r \
+	| head -n1)
+
+	#| grep wget \
+	#| grep -v latest \
+	#| grep -v wget2 \
+	#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	#| sort -V -r \
+	#| head -n1)
+	#cat index.html
+}
