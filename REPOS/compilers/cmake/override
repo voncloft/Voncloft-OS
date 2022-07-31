@@ -2,12 +2,6 @@ source=https://cmake.org/download/
 
 get_generic()
 {
-	#uversion=$(grep -i "href" index.html \
-	#| grep -Po '(?<=href=")[^"]*' \
-	#| grep tar.gz \
-	#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-	#| sort -V -r \
-	#| head -n1)
 	uversion=$(grep -i "href" index.html \
 	| grep -Po '(?<=href=")[^"]*' \
 	| grep .tar.gz \
