@@ -61,6 +61,6 @@ build() {
 	# encoding/decoding libraries
 	install -m 0755 libnvcuvid.so.$version $PKG/usr/lib32/
 	install -m 0755 libnvidia-encode.so.$version $PKG/usr/lib32/
-	install -m 0755 libnvidia-ifr.so.$version $PKG/usr/lib32/
+	#install -m 0755 libnvidia-ifr.so.$version $PKG/usr/lib32/
 	install -m 0755 libnvidia-fbc.so.$version $PKG/usr/lib32/
 }
