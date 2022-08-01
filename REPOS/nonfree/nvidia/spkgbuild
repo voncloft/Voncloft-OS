@@ -53,7 +53,7 @@ build() {
 	install -m 0755 libnvidia-glsi.so.$version $PKG/usr/lib/
 	install -m 0755 libnvidia-glvkspirv.so.$version $PKG/usr/lib/
 	install -m 0755 libnvidia-rtcore.so.$version $PKG/usr/lib/
-	install -m 0755 libnvidia-cbl.so.$version $PKG/usr/lib/
+	#install -m 0755 libnvidia-cbl.so.$version $PKG/usr/lib/
 
 	# vendor VDPAU library
 	install -D -m 0755 libvdpau_nvidia.so.$version $PKG/usr/lib/vdpau/libvdpau_nvidia.so.$version
