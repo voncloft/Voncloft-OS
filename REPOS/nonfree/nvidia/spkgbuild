@@ -30,9 +30,9 @@ build() {
 	install -D -m 0644 10_nvidia.json $PKG/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 
 	# wayland EGL library and config
-	install -d $PKG/usr/share/egl/egl_external_platform.d
-	install -m 0755 libnvidia-egl-wayland.so.1.0.2 $PKG/usr/lib/
-	install -m 0644 10_nvidia_wayland.json $PKG/usr/share/egl/egl_external_platform.d/
+	#install -d $PKG/usr/share/egl/egl_external_platform.d
+	#install -m 0755 libnvidia-egl-wayland.so.1.0.2 $PKG/usr/lib/
+	#install -m 0644 10_nvidia_wayland.json $PKG/usr/share/egl/egl_external_platform.d/
 
 	# GLVND vendor implementation libraries
 	install -m 0755 libGLX_nvidia.so.$version $PKG/usr/lib/
@@ -103,7 +103,7 @@ build() {
 	# encoding/decoding libraries
 	install -m 0755 libnvcuvid.so.$version $PKG/usr/lib/
 	install -m 0755 libnvidia-encode.so.$version $PKG/usr/lib/
-	install -m 0755 libnvidia-ifr.so.$version $PKG/usr/lib/
+	#install -m 0755 libnvidia-ifr.so.$version $PKG/usr/lib/
 	install -m 0755 libnvidia-fbc.so.$version $PKG/usr/lib/
 
 	# OptiX ray tracing engine
@@ -112,7 +112,7 @@ build() {
 	ln -s libnvoptix.so.$version $PKG/usr/lib/libnvoptix.so
 
 	# X driver config
-	install -D -m 0644 $SRC/nvidia-drm-outputclass.conf \
+	install -D -m 0644 $SRC/10-nvidia-drm-outputclass.conf \
 		$PKG/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 
 	# application profile keys and documentation
