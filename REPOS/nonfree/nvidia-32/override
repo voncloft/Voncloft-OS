@@ -1,0 +1,10 @@
+source=https://www.nvidia.com/en-us/drivers/unix/
+
+get_generic()
+{
+	uversion=$(grep Latest index.html \
+		| grep x86_64 \
+		|  egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+		| sort -V -r \
+		| head -n1)
+}

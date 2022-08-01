@@ -1,2 +1,2 @@
-sed -i -e "s/version=104.0b3/version=104.0b4/g" networking/firefox/spkgbuild
-changelog "networking/firefox/spkgbuild" "Upgraded from version 104.0b3 to version 104.0b4"
+sed -i -e "s/version=495.46/version=515.57 495.46 515.43.04 470.129.06 390.151 340.108 304.137 71.86 71.86.15 71.86.15 96.43 96.43.23 96.43.23 173.14 173.14.39/g" nonfree/nvidia/spkgbuild
+changelog "nonfree/nvidia/spkgbuild" "Upgraded from version 495.46 to version 515.57 495.46 515.43.04 470.129.06 390.151 340.108 304.137 71.86 71.86.15 71.86.15 96.43 96.43.23 96.43.23 173.14 173.14.39"

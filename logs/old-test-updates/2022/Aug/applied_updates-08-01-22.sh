@@ -20,3 +20,7 @@ sed -i -e "s/version=5.18.15/version=5.19/g" core/linux-desktop/spkgbuild
 changelog "core/linux-desktop/spkgbuild" "Upgraded from version 5.18.15 to version 5.19"
 sed -i -e "s/version=5.18.15/version=5.19/g" core/linux-router/spkgbuild
 changelog "core/linux-router/spkgbuild" "Upgraded from version 5.18.15 to version 5.19"
+sed -i -e "s/version=495.46/version=515.57/g" nonfree/nvidia/spkgbuild
+changelog "nonfree/nvidia/spkgbuild" "Upgraded from version 495.46 to version 515.57"
+sed -i -e "s/version=450.66/version=515.57/g" nonfree/nvidia-32/spkgbuild
+changelog "nonfree/nvidia-32/spkgbuild" "Upgraded from version 450.66 to version 515.57"
