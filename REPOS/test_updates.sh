@@ -20,3 +20,7 @@ sed -i -e "s/version=1.12.0/version=1.13.0/g" python/python-flake8-typing-import
 changelog "python/python-flake8-typing-imports/spkgbuild" "Upgraded from version 1.12.0 to version 1.13.0"
 sed -i -e "s/version=7.3.2207311741/version=7.3.2208011911/g" python/python-pycontracts/spkgbuild
 changelog "python/python-pycontracts/spkgbuild" "Upgraded from version 7.3.2207311741 to version 7.3.2208011911"
+sed -i -e "s/version=1.27.2.5929/version=1.28.0.5999/g" server/plex-media-server/spkgbuild
+changelog "server/plex-media-server/spkgbuild" "Upgraded from version 1.27.2.5929 to version 1.28.0.5999"
+sed -i -e "s/version=0.17/version=0.18/g" xorg/xdg-user-dirs/spkgbuild
+changelog "xorg/xdg-user-dirs/spkgbuild" "Upgraded from version 0.17 to version 0.18"
