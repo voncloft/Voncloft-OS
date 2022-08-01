@@ -16,3 +16,7 @@ sed -i -e "s/version=2.8.0/version=2.9.0/g" python/python-pycodestyle/spkgbuild
 changelog "python/python-pycodestyle/spkgbuild" "Upgraded from version 2.8.0 to version 2.9.0"
 sed -i -e "s/version=7.3.2207231127/version=7.3.2207311741/g" python/python-pycontracts/spkgbuild
 changelog "python/python-pycontracts/spkgbuild" "Upgraded from version 7.3.2207231127 to version 7.3.2207311741"
+sed -i -e "s/version=5.18.15/version=5.19/g" core/linux-desktop/spkgbuild
+changelog "core/linux-desktop/spkgbuild" "Upgraded from version 5.18.15 to version 5.19"
+sed -i -e "s/version=5.18.15/version=5.19/g" core/linux-router/spkgbuild
+changelog "core/linux-router/spkgbuild" "Upgraded from version 5.18.15 to version 5.19"
