@@ -4,7 +4,7 @@ name=virtualbox-modules
 version=6.1.36
 release=1
 _name=Oracle_VM_VirtualBox_Extension_Pack
-_release=136177
+_release=152435
 
 source="http://download.virtualbox.org/virtualbox/$version/VirtualBox-${version}-${_release}-Linux_amd64.run"
 
@@ -19,7 +19,7 @@ build() {
 	fi
 
 	cd src/vboxhost/
-	KERN_VER=$kernver make
+	KERN_VER=$kernver KERN_DIR=/usr/lib/$kernver/modules/build make
 
 	for i in *.ko; do
 	    install -Dm0644 $i $PKG/lib/modules/$kernver/misc/$i
