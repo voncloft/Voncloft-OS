@@ -25,13 +25,13 @@ build() {
 	KERN_VER=$kernver KERN_DIR=/usr/lib/modules/$kernver/build make
 
 	for i in *.ko; do
-	    install -Dm0644 $i $PKG/lib/modules/$kernver/misc/$i
+	    install -Dm0644 $i $PKG/lib/modules/$kernver/kernel/misc/$i
 	done
 
 
 # dkms
 	install -d $PKG/usr/src/
-	#mv $PKG/opt/VirtualBox/src/vboxhost $PKG/usr/src/vboxhost-$_version
+	mkdir $PKG/usr/src/vboxhost-$_version
 	sed "s,@VERSION@,$_version," $SRC/dkms.conf > $PKG/usr/src/vboxhost-$_version/dkms.conf
 	#rm -fr $PKG/opt/VirtualBox/src/
 
@@ -49,5 +49,5 @@ build() {
 	echo "vboxpci" >> $PKG/etc/modules-load.d/virtualbox.conf
 
 	# compress modules
-	#find $PKG -name '*.ko' -exec xz -T1 {} +
+	find $PKG -name '*.ko' -exec xz -T1 {} +
 }
