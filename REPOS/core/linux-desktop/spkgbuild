@@ -19,6 +19,14 @@ build()
 	make INSTALL_MOD_PATH=$PKG modules_install
 	mkdir $PKG/boot
 	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-$version
+
+	periods="${version//[^.]}"
+
+	if [[ "${#periods}" -eq 1 ]];then
+		version=$version.0
+	else
+		version=$version
+	fi
 	#mv $SRC/linux-$version $PKG/lib/modules/$kernver/build
 	#ln -sv build $PKG/lib/modules/$kernver/source
 	#find -L $PKG/lib/modules/$kernver/build -type l -exec rm -f "{}" \;
