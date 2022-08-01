@@ -3,10 +3,13 @@
 name=virtualbox-modules
 version=6.1.36
 release=1
+_version=${version%.*}
 _name=Oracle_VM_VirtualBox_Extension_Pack
 _release=152435
 
-source="http://download.virtualbox.org/virtualbox/$version/VirtualBox-${version}-${_release}-Linux_amd64.run"
+source="http://download.virtualbox.org/virtualbox/$version/VirtualBox-${version}-${_release}-Linux_amd64.run
+	buildmodules-vboxhost.sh
+	dkms.conf"
 
 build() {
 	sh VirtualBox-${version}-${_release}-Linux_amd64.run --keep --noexec --target $PWD
@@ -19,7 +22,7 @@ build() {
 	fi
 
 	cd src/vboxhost/
-	KERN_VER=$kernver KERN_DIR=/usr/lib/$kernver/modules/build make
+	KERN_VER=$kernver KERN_DIR=/usr/lib/modules/$kernver/build make
 
 	for i in *.ko; do
 	    install -Dm0644 $i $PKG/lib/modules/$kernver/misc/$i
@@ -28,9 +31,9 @@ build() {
 
 # dkms
 	install -d $PKG/usr/src/
-	mv $PKG/opt/VirtualBox/src/vboxhost $PKG/usr/src/vboxhost-$_version
+	#mv $PKG/opt/VirtualBox/src/vboxhost $PKG/usr/src/vboxhost-$_version
 	sed "s,@VERSION@,$_version," $SRC/dkms.conf > $PKG/usr/src/vboxhost-$_version/dkms.conf
-	rm -fr $PKG/opt/VirtualBox/src/
+	#rm -fr $PKG/opt/VirtualBox/src/
 
 	# dkms build modules script
 	mkdir -p $PKG/var/lib/dkms
@@ -43,8 +46,8 @@ build() {
 	echo "vboxdrv" >> $PKG/etc/modules-load.d/virtualbox.conf
 	echo "vboxnetadp" >> $PKG/etc/modules-load.d/virtualbox.conf
 	echo "vboxnetflt" >> $PKG/etc/modules-load.d/virtualbox.conf
-	#echo "vboxpci" >> $PKG/etc/modules-load.d/virtualbox.conf
+	echo "vboxpci" >> $PKG/etc/modules-load.d/virtualbox.conf
 
 	# compress modules
-	find $PKG -name '*.ko' -exec xz -T1 {} +
+	#find $PKG -name '*.ko' -exec xz -T1 {} +
 }
