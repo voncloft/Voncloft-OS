@@ -646,9 +646,9 @@ f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:b8aa212e4144d045e193088a386fd776:nss/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:linux-desktop/extract.sh
-f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-install.sh
+f:a26e961caf20e56421fa060fee6dd0f6:linux-desktop/post-install.sh
 f:8f3915b4469c3ad2d303edf1604ef70c:linux-desktop/CHANGELOG
-f:9363ccaa6f7cd907e48b76d5acb24319:linux-desktop/post-upgrade.sh
+f:a26e961caf20e56421fa060fee6dd0f6:linux-desktop/post-upgrade.sh
 f:511d2d2f2ca57c4a5938f0bedb1ff0de:linux-desktop/.old-config
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-desktop/override
 f:673ff45e84aa7cbe82beaddf4694b3cb:linux-desktop/spkgbuild
@@ -972,9 +972,9 @@ f:f68691ada1f18ad778e58aefc192f404:gnu-netcat/spkgbuild
 f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:dde2b1dcd664417006b5c48e006f4d20:iw/CHANGELOG
 f:0c2c826b9063fc3a7799afa8b4c6002a:iw/spkgbuild
-f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-install.sh
+f:e762fccfee971f972096f130162c2edb:linux-router/post-install.sh
 f:9ca8b40b3ec6d870d24c15a2a217ec64:linux-router/CHANGELOG
-f:9363ccaa6f7cd907e48b76d5acb24319:linux-router/post-upgrade.sh
+f:e762fccfee971f972096f130162c2edb:linux-router/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-router/override
 f:bd87d5b423935a923d43436694817877:linux-router/spkgbuild
 f:9a66451909861d207ef7b152e0bff6b0:linux-router/.config
