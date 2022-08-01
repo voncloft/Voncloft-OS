@@ -1,5 +1,5 @@
 # description	: Virtualbox host kernel modules
-
+# depends	: dkms
 name=virtualbox-modules
 version=6.1.36
 release=1
@@ -24,6 +24,19 @@ build() {
 	for i in *.ko; do
 	    install -Dm0644 $i $PKG/lib/modules/$kernver/misc/$i
 	done
+
+
+# dkms
+	install -d $PKG/usr/src/
+	mv $PKG/opt/VirtualBox/src/vboxhost $PKG/usr/src/vboxhost-$_version
+	sed "s,@VERSION@,$_version," $SRC/dkms.conf > $PKG/usr/src/vboxhost-$_version/dkms.conf
+	rm -fr $PKG/opt/VirtualBox/src/
+
+	# dkms build modules script
+	mkdir -p $PKG/var/lib/dkms
+	sed -e "s/@name@/vboxhost/g" \
+	    -e "s/@version@/$_version/g" \
+	$SRC/buildmodules-vboxhost.sh > $PKG/var/lib/dkms/buildmodules-vboxhost.sh
 
 	install -d $PKG/etc/modules-load.d/
 	echo "# Load virtualbox modules at startup" > $PKG/etc/modules-load.d/virtualbox.conf

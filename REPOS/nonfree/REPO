@@ -40,7 +40,7 @@ f:7009445fbeb0ae5e513063b58660421f:nvidia/index.html
 f:404f52aa84a2f37b2427da95ca6eb681:nvidia/buildmodules-nvidia.sh
 f:cfcb2fdfc65066f4197f1d593883c205:nvidia/override
 f:768a64259f7e8d8a46a13b876d6c443c:nvidia/10-nvidia-drm-outputclass.conf
-f:a6a38d8b072020f883baa392e21a068a:nvidia/spkgbuild
+f:d9eee6aa8729150189d24b7aff865348:nvidia/spkgbuild
 f:768a64259f7e8d8a46a13b876d6c443c:nvidia/nvidia-drm-outputclass.conf
 f:0b422c5c30518efbb70a5082bc4fd24b:wps-office/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:tuner/extract.sh
@@ -112,4 +112,4 @@ f:aa2c3d8e1e9eb2cef7d76a1b96d8aab1:google-chrome/spkgbuild
 f:6f75c7a8dcbbce7b0dab4ad40f04fed0:virtualbox-modules/post-install.sh
 f:40e65e26cd1b0e62f084d9112ee1be76:virtualbox-modules/CHANGELOG
 f:22ddedc71b0342aca887499b5789c416:virtualbox-modules/override
-f:fab5334c102a289dacf6b9cc86b55712:virtualbox-modules/spkgbuild
+f:73c563666eb65347b44c6490650b35dc:virtualbox-modules/spkgbuild
