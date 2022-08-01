@@ -30,9 +30,9 @@ build() {
 	install -D -m 0644 10_nvidia.json $PKG/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 
 	# wayland EGL library and config
-	#install -d $PKG/usr/share/egl/egl_external_platform.d
-	#install -m 0755 libnvidia-egl-wayland.so.1.0.2 $PKG/usr/lib/
-	#install -m 0644 10_nvidia_wayland.json $PKG/usr/share/egl/egl_external_platform.d/
+	install -d $PKG/usr/share/egl/egl_external_platform.d
+	install -m 0755 libnvidia-egl-wayland.so.1.0.2 $PKG/usr/lib/
+	install -m 0644 10_nvidia_wayland.json $PKG/usr/share/egl/egl_external_platform.d/
 
 	# GLVND vendor implementation libraries
 	install -m 0755 libGLX_nvidia.so.$version $PKG/usr/lib/
