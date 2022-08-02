@@ -101,11 +101,15 @@ f:22ddedc71b0342aca887499b5789c416:virtualbox-guest-modules/override
 f:501ab7b371ea0ac9bbebc886be9f3027:virtualbox-guest-modules/vboxvideo-upstream.conf
 f:5c770c6394691dfa7e5e35c52bf3aa5b:virtualbox-guest-modules/spkgbuild
 f:e04163ce7c7c186c87c80cf5da9d6736:virtualbox-guest-modules/vboxguest.hook
+f:876ddcf0df27567604a25c18ce6c16f0:virtualbox/post-install.sh
 f:c31e16f66a29fdfed2ed114b29acf517:virtualbox/CHANGELOG
 f:4ea4d95b17dceb9dec7b5645405627a3:virtualbox/pre-install.sh
+f:b62c9723f5cb45cf8122265026b97af9:virtualbox/dkms.conf
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules
+f:404f52aa84a2f37b2427da95ca6eb681:virtualbox/buildmodules-vboxhost.sh
 f:22ddedc71b0342aca887499b5789c416:virtualbox/override
-f:ae47b47bc1e82fe3cfb20ca7f4ae7c25:virtualbox/spkgbuild
+f:72ae3277e7df0f69209af005e8bb7730:virtualbox/spkgbuild
+f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules.1
 f:99fa93d5e7fb5d622cef0f9621f3ffa3:google-chrome/google-chrome-stable.sh
 f:aa2c3d8e1e9eb2cef7d76a1b96d8aab1:google-chrome/spkgbuild
 f:181c0f90eb98ab33abcc3a3494df3e79:virtualbox-modules/post-install.sh

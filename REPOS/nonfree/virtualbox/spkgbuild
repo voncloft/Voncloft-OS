@@ -1,31 +1,31 @@
 # description	: Powerful x86 virtualization for enterprise as well as home use
-# depends	: sdl qt5 virtualbox-modules
+# depends	: sdl qt5
 
-name=virtualbox
-version=6.1.36
+name=virtualbox-bin
+_name=${name%-*}
+version=6.1.22.144080
+_version=${version%.*}
+_build=${version##*.}
 release=1
-_name=Oracle_VM_VirtualBox_Extension_Pack
-_release=135662
-
-source="http://download.virtualbox.org/virtualbox/$version/VirtualBox-${version}-${_release}-Linux_amd64.run
-	virtualbox.60-vboxdrv.rules"
-
-options="!checksum"
+source="http://download.virtualbox.org/virtualbox/$_version/VirtualBox-${_version}-${_build}-Linux_amd64.run
+	virtualbox.60-vboxdrv.rules
+	dkms.conf
+	buildmodules-vboxhost.sh"
 
 build() {
 	_installdir=/opt/VirtualBox
 
 	# extract source file
-	sh VirtualBox-${version}-${_release}-Linux_amd64.run --keep --noexec --target $SRC/
-	
+	sh VirtualBox-${_version}-${_build}-Linux_amd64.run --keep --noexec --target $SRC/
+
 	# creating directories
 	mkdir -p $PKG/opt/VirtualBox $PKG/etc/vbox $PKG/usr/bin $PKG/lib/udev/rules.d/ \
 	    $PKG/usr/share/applications/ $PKG/usr/share/pixmaps/ $PKG/usr/share/mime/packages/ \
 	    $PKG/etc/ld.so.conf.d
-	
+
 	cd $PKG/opt/VirtualBox
 	tar xfj $SRC/VirtualBox.tar.bz2
-	rm -Rf $PKG/opt/VirtualBox/sdk  $PKG/opt/VirtualBox/src
+	rm -Rf $PKG/opt/VirtualBox/sdk
 	for i in VirtualBox VBoxManage VBoxSDl VBoxHeadless; do
 	    ln -s /opt/VirtualBox/VBox.sh $PKG/usr/bin/$i
 	done
@@ -46,10 +46,10 @@ build() {
 
 	echo "# VirtualBox installation directory" > $PKG/etc/vbox/vbox.cfg
 	echo "INSTALL_DIR="\"/opt/VirtualBox\" >> $PKG/etc/vbox/vbox.cfg
-	
+
 	echo /opt/VirtualBox > $PKG/etc/ld.so.conf.d/virtualbox.conf
 
-	mv $name.xml $PKG/usr/share/mime/packages/
+	mv $_name.xml $PKG/usr/share/mime/packages/
 
 	# Icon
 	mv $PKG/opt/VirtualBox/VBox.png $PKG/usr/share/pixmaps/VBox.png
@@ -77,6 +77,25 @@ build() {
 
 	# exclude library for revdep
 	mkdir -p $PKG/etc/revdep.d/
-	echo VBoxRT.so > $PKG/etc/revdep.d/$name.conf
-	# echo libpython2.6.so.1.0 >> $PKG/etc/revdep.d/$name.conf
+	echo VBoxRT.so > $PKG/etc/revdep.d/$_name.conf
+	echo libpython2.6.so.1.0 >> $PKG/etc/revdep.d/$_name.conf
+
+	# dkms
+	install -d $PKG/usr/src/
+	mv $PKG/opt/VirtualBox/src/vboxhost $PKG/usr/src/vboxhost-$_version
+	sed "s,@VERSION@,$_version," $SRC/dkms.conf > $PKG/usr/src/vboxhost-$_version/dkms.conf
+	rm -fr $PKG/opt/VirtualBox/src/
+
+	# dkms build modules script
+	mkdir -p $PKG/var/lib/dkms
+	sed -e "s/@name@/vboxhost/g" \
+	    -e "s/@version@/$_version/g" \
+	$SRC/buildmodules-vboxhost.sh > $PKG/var/lib/dkms/buildmodules-vboxhost.sh
+
+	# load modules on boot
+	install -d $PKG/etc/modules-load.d/
+	echo "# Load virtualbox modules at startup" > $PKG/etc/modules-load.d/virtualbox.conf
+	echo "vboxdrv" >> $PKG/etc/modules-load.d/virtualbox.conf
+	echo "vboxnetadp" >> $PKG/etc/modules-load.d/virtualbox.conf
+	echo "vboxnetflt" >> $PKG/etc/modules-load.d/virtualbox.conf
 }
