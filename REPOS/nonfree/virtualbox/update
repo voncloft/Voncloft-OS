@@ -1,8 +1,0 @@
-source=http://download.virtualbox.org/virtualbox/
-
-get_version()
-{
-	uversion=$(grep -Eo href=\"[0-9a-z.]+ index.html \
-	| sed 's/href=\"//' \
-	| grep ^[[:digit:]])
-}
