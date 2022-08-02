@@ -2,9 +2,25 @@ source="http://download.virtualbox.org/virtualbox/"
 
 get_generic()
 {
-	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
-	| sort -V -r \
-	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
-	| head -n1)
+	#uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	#| sort -V -r \
+	#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	#| head -n1)
+
+	url=$(grep -Eo href=\"[0-9a-z.]+ index.html \
+		| sed 's/href=\"//' \
+		| grep ^[[:digit:]] \
+		| sort -V -r \
+		| head -n1)
+	rm index.html
+	wget $source$url -o index.html
+	sed -i -e "s/-/./g" $url
+        uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" $url \
+        | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        	| grep $url \
+                | sort -V -r \
+                | head -n1)
+	rm $url
+	#echo $source$url
 
 }
