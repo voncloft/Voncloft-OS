@@ -1,0 +1,21 @@
+source=https://www.nano-editor.org/dist/
+
+get_generic()
+{
+	url=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| grep v \
+	| sort -V -r \
+	| head -n1)
+	echo $url
+	rm index.html
+	echo $source$url
+	wget $source$url
+        uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+        | grep tar.gz \
+        | sed "s/.tar.gz//g" \
+        | sed "s/nano-//g" \
+        | grep -v asc \
+        | sort -V -r \
+        | head -n1)
+
+}
