@@ -21,7 +21,6 @@ d:icecat-bin
 d:virtualbox-guest-modules
 d:virtualbox
 d:google-chrome
-d:virtualbox-modules
 f:cdb6856a5f5f7634714d7a6b3c63cf26:discord/CHANGELOG
 f:32c2bdaf6c6b65df67ef08a2e2645dc5:discord/override
 f:365d7b8c6f720270506a9d70e57ee190:discord/spkgbuild
@@ -108,14 +107,7 @@ f:b62c9723f5cb45cf8122265026b97af9:virtualbox/dkms.conf
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules
 f:404f52aa84a2f37b2427da95ca6eb681:virtualbox/buildmodules-vboxhost.sh
 f:22ddedc71b0342aca887499b5789c416:virtualbox/override
-f:72ae3277e7df0f69209af005e8bb7730:virtualbox/spkgbuild
+f:dff3ff123d2e66b078693f290d001ff6:virtualbox/spkgbuild
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules.1
 f:99fa93d5e7fb5d622cef0f9621f3ffa3:google-chrome/google-chrome-stable.sh
 f:aa2c3d8e1e9eb2cef7d76a1b96d8aab1:google-chrome/spkgbuild
-f:181c0f90eb98ab33abcc3a3494df3e79:virtualbox-modules/post-install.sh
-f:40e65e26cd1b0e62f084d9112ee1be76:virtualbox-modules/CHANGELOG
-f:181c0f90eb98ab33abcc3a3494df3e79:virtualbox-modules/post-upgrade.sh
-f:b62c9723f5cb45cf8122265026b97af9:virtualbox-modules/dkms.conf
-f:404f52aa84a2f37b2427da95ca6eb681:virtualbox-modules/buildmodules-vboxhost.sh
-f:22ddedc71b0342aca887499b5789c416:virtualbox-modules/override
-f:f83f721c144c9df5f23b2a3edae4f384:virtualbox-modules/spkgbuild

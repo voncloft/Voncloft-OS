@@ -1,7 +1,7 @@
 # description	: Powerful x86 virtualization for enterprise as well as home use
 # depends	: sdl qt5
 
-name=virtualbox-bin
+name=virtualbox
 _name=${name%-*}
 version=6.1.22.144080
 _version=${version%.*}
