@@ -34,6 +34,7 @@ f:6a88c6894d8e09120ef1d48004c3c550:veracrypt/no-makeself.patch
 f:f3350cc0fb7b5f4fb6f2c0adda7e1260:dropbox/dropbox.desktop
 f:5485cda5d86e02748a09e4ab02b39b09:dropbox/spkgbuild
 f:2be5a57e477adf82a7d9b7fe77f22086:dropbox/dropbox.png
+f:99e39838a69cbdcbb246b3cd755286ab:nvidia/post-install.sh
 f:d32752a838a572d4556c6d36ea66f5b0:nvidia/CHANGELOG
 f:404f52aa84a2f37b2427da95ca6eb681:nvidia/buildmodules-nvidia.sh
 f:cfcb2fdfc65066f4197f1d593883c205:nvidia/override
@@ -108,6 +109,7 @@ f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules
 f:404f52aa84a2f37b2427da95ca6eb681:virtualbox/buildmodules-vboxhost.sh
 f:22ddedc71b0342aca887499b5789c416:virtualbox/override
 f:dff3ff123d2e66b078693f290d001ff6:virtualbox/spkgbuild
+f:7b19087d227bf4db00daa7e40230e071:virtualbox/update
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules.1
 f:99fa93d5e7fb5d622cef0f9621f3ffa3:google-chrome/google-chrome-stable.sh
 f:aa2c3d8e1e9eb2cef7d76a1b96d8aab1:google-chrome/spkgbuild
