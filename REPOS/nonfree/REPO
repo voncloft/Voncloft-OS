@@ -36,6 +36,7 @@ f:5485cda5d86e02748a09e4ab02b39b09:dropbox/spkgbuild
 f:2be5a57e477adf82a7d9b7fe77f22086:dropbox/dropbox.png
 f:99e39838a69cbdcbb246b3cd755286ab:nvidia/post-install.sh
 f:d32752a838a572d4556c6d36ea66f5b0:nvidia/CHANGELOG
+f:99e39838a69cbdcbb246b3cd755286ab:nvidia/post-upgrade.sh
 f:404f52aa84a2f37b2427da95ca6eb681:nvidia/buildmodules-nvidia.sh
 f:cfcb2fdfc65066f4197f1d593883c205:nvidia/override
 f:768a64259f7e8d8a46a13b876d6c443c:nvidia/10-nvidia-drm-outputclass.conf
@@ -103,6 +104,7 @@ f:5c770c6394691dfa7e5e35c52bf3aa5b:virtualbox-guest-modules/spkgbuild
 f:e04163ce7c7c186c87c80cf5da9d6736:virtualbox-guest-modules/vboxguest.hook
 f:876ddcf0df27567604a25c18ce6c16f0:virtualbox/post-install.sh
 f:a8443d6220a3d178a1100059838fd2c5:virtualbox/CHANGELOG
+f:cac40cf5d6255f90cd49bf3bd13492fb:virtualbox/post-upgrade.sh
 f:b62c9723f5cb45cf8122265026b97af9:virtualbox/dkms.conf
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules
 f:404f52aa84a2f37b2427da95ca6eb681:virtualbox/buildmodules-vboxhost.sh
