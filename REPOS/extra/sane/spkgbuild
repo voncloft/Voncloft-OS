@@ -1,0 +1,26 @@
+# description : Scanner Access Now Easy
+# depends : avahi cups libjpeg-turbo libtiff libusb v4l-utils net-snmp liblee1284 libgphoto2 texlive
+
+name=sane
+version=1.0.32
+release=1
+
+source="https://anduin.linuxfromscratch.org/BLFS/sane/sane-backends-1.0.32.tar.gz
+	net.conf"
+
+build() {
+	cd $name-$version
+	sg scanner -c "                  \
+	./configure --prefix=/usr        \
+            --sysconfdir=/etc    \
+            --localstatedir=/var \
+            --with-group=scanner \
+            --with-lockdir=/run/lock \
+            --docdir=/usr/share/doc/sane-backends-1.0.32"
+	make
+	make DESTDIR=$PKG install
+
+	make install
+	mkdir -pv $PKG/etc/sane.d
+	install -Dm644 $SRC/net.conf $PKG/etc/sane.d/net.conf                                         
+}
