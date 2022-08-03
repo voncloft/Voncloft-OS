@@ -1,5 +1,5 @@
 # description : Scanner Access Now Easy
-# depends : avahi cups libjpeg-turbo libtiff libusb v4l-utils net-snmp liblee1284 libgphoto2 texlive
+# depends : avahi cups libjpeg-turbo libtiff libusb v4l-utils 
 
 name=sane
 version=1.0.32
@@ -9,7 +9,7 @@ source="https://anduin.linuxfromscratch.org/BLFS/sane/sane-backends-1.0.32.tar.g
 	net.conf"
 
 build() {
-	cd $name-$version
+	cd $name-backends-$version
 	sg scanner -c "                  \
 	./configure --prefix=/usr        \
             --sysconfdir=/etc    \
