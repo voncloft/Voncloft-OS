@@ -5,6 +5,7 @@ d:postfix-boot
 d:psad-boot
 d:logrotate-boot
 d:sshguard-boot
+d:cups-boot
 d:dbus-boot
 d:flexget-daemon
 d:noip-boot
@@ -35,6 +36,7 @@ f:c1dd87eabe9a4d7d9896ba5c65796b16:psad-boot/spkgbuild
 f:e98d2be4e1bfee88e7c3541911beb3e5:logrotate-boot/CHANGELOG
 f:9bd087b597b4a9c43464b593a477877a:logrotate-boot/spkgbuild
 f:25ebab034c9ece2ed1f064635f0649d7:sshguard-boot/spkgbuild
+f:8806cc8327f8d79330f0cc3cd53bb8ac:cups-boot/spkgbuild
 f:6c60fdfba73af162c7cebcfc1429a997:dbus-boot/spkgbuild
 f:a74956b572361f15811b73004f7d4a6f:flexget-daemon/spkgbuild
 f:a84f159fea806a96e98df5540132a445:noip-boot/spkgbuild

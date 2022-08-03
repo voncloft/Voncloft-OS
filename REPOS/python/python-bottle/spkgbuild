@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-bottle
-version=0.12.21
+version=0.12.23
 release=2
 
 source="https://github.com/defnull/bottle/archive/refs/tags/$version.tar.gz"

@@ -1,0 +1,20 @@
+sed -i -e "s/version=104.0b4/version=104.0b5/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 104.0b4 to version 104.0b5"
+sed -i -e "s/version=1.24.44/version=1.24.45/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.24.44 to version 1.24.45"
+sed -i -e "s/version=1.27.44/version=1.27.45/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.27.44 to version 1.27.45"
+sed -i -e "s/version=0.12.21/version=0.12.23/g" python/python-bottle/spkgbuild
+changelog "python/python-bottle/spkgbuild" "Upgraded from version 0.12.21 to version 0.12.23"
+sed -i -e "s/version=0.3.1/version=0.4.0/g" python/python-crashtest/spkgbuild
+changelog "python/python-crashtest/spkgbuild" "Upgraded from version 0.3.1 to version 0.4.0"
+sed -i -e "s/version=4.3.3/version=4.3.4/g" python/python-engineio/spkgbuild
+changelog "python/python-engineio/spkgbuild" "Upgraded from version 4.3.3 to version 4.3.4"
+sed -i -e "s/version=4.9.0/version=4.9.1/g" python/python-jsonschema/spkgbuild
+changelog "python/python-jsonschema/spkgbuild" "Upgraded from version 4.9.0 to version 4.9.1"
+sed -i -e "s/version=22.2.1/version=22.2.2/g" python/python-pip/spkgbuild
+changelog "python/python-pip/spkgbuild" "Upgraded from version 22.2.1 to version 22.2.2"
+sed -i -e "s/version=7.3.2208021230/version=7.3.2208031847/g" python/python-pycontracts/spkgbuild
+changelog "python/python-pycontracts/spkgbuild" "Upgraded from version 7.3.2208021230 to version 7.3.2208031847"
+sed -i -e "s/version=3.11.3/version=3.11.4/g" server/blacklist-hosts/spkgbuild
+changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.11.3 to version 3.11.4"
