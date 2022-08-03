@@ -34,8 +34,8 @@ build() {
 	mkdir -p $PKG/etc/pam.d
 	cat > $PKG/etc/pam.d/cups << "EOF"
 auth    include system-auth
-account include system-auth
-session include system-auth
+account include system-account
+session include system-session
 EOF
 
 	rm -fr $PKG/var/run
