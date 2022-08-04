@@ -14,4 +14,5 @@ get_generic()
         | sort -V -r \
         | head -n1)
 	rm v$url
+	
 }
