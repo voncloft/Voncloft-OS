@@ -2,7 +2,7 @@
 # depends: httpd libxml2 
 
 name=php
-version=8.1.8
+version=8.1.9
 release=1
 
 source="https://www.php.net/distributions/php-$version.tar.gz"
