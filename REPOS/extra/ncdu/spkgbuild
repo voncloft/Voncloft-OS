@@ -1,26 +1,15 @@
 # description	: Disk usage analyzer with an ncurses interface
-# depends	: ncurses zig
+# depends	: ncurses
 
 name=ncdu
 version=2.1.2
 release=1
-source="http://dev.yorhel.nl/download/$name-$version.tar.gz"
+source="http://dev.yorhel.nl/download/$name-$version-linux-x86_64.tar.gz"
 
 build() {
-	cd $name-$version
-	zig build-exe \
-        -target x86_64-linux.5.10-gnu.2.34 -mcpu baseline \
-        -L /usr/local/lib -L /usr/lib \
-        -isystem /usr/local/include -isystem /usr/include \
-        ./src/main.zig ./src/ncurses_refs.c \
-        -lc -lncursesw \
-        -OReleaseSafe \
-        --name ncdu \
-        -D _DEFAULT_SOURCE -D _XOPEN_SOURCE=600 \
-        -fPIE \
-        -z relro -z now \
-        -fno-each-lib-rpath
 
-        install --verbose -D --mode=755 "./$name" "$PKG/usr/bin/$name"
+	mkdir -p $PKG/usr/bin
+
+	install -m 0755 ncdu $PKG/usr/bin
         
 }
