@@ -38,6 +38,8 @@ build() {
 	mv -v $PKG/usr/lib/libnss_winbind.so*   $PKG/lib
 	ln -v -sf ../../lib/libnss_winbind.so.2 $PKG/usr/lib/libnss_winbind.so
 	ln -v -sf ../../lib/libnss_wins.so.2    $PKG/usr/lib/libnss_wins.so
-
+	
 	install -v -m644 examples/smb.conf.default $PKG/etc/samba
+	install -dvm 755 $PKG/usr/lib/cups/backend
+	ln -v -sf /usr/bin/smbool $PKG/usr/lib/cups/backend/samba
 }
