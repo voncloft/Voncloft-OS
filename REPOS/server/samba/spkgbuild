@@ -1,5 +1,5 @@
 # description	: File and print services to SMB/CIFS clients and Windows networking to Linux clients
-# depends	: fuse3 gpgme python jansson libtirpc rpcsvc-proto perl-parse-yapp gnutls linux-pam python-iso8601 cups
+# depends	: fuse3 gpgme python jansson libtirpc rpcsvc-proto perl-parse-yapp gnutls linux-pam python-iso8601 cups perl-json
 
 name=samba
 version=4.16.4
