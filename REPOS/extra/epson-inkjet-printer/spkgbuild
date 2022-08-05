@@ -1,0 +1,20 @@
+# description : epson printer driver
+# depends : cups ghostscript
+
+name=epson-inkjet-printer
+version=1.7.19
+release=1
+
+source="https://download3.ebz.epson.net/dsc/f/03/00/13/71/14/0eb0d3f849bc3048d0d327020f32e4538d59eedc/epson-inkjet-printer-escpr-$version-1lsb3.2.tar.gz
+	bug_x86_64.patch"
+
+build() {
+	cd epson-inkjet-printer-escpr-$version
+	patch -p1 < $SRC/bug_x86_64.patch
+	autoreconf -ifv
+	  ./configure \
+  	--prefix=/usr \
+  	--with-cupsfilterdir=/usr/lib/cups/filter \
+  	--with-cupsppddir=/usr/share/ppd
+	make DESTDIR=$PKG install
+}
