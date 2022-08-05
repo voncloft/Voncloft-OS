@@ -41,5 +41,5 @@ build() {
 	
 	install -v -m644 examples/smb.conf.default $PKG/etc/samba
 	install -dvm 755 $PKG/usr/lib/cups/backend
-	ln -v -sf /usr/bin/smbool $PKG/usr/lib/cups/backend/samba
+	ln -v -sf /usr/bin/smbspool $PKG/usr/lib/cups/backend/samba
 }
