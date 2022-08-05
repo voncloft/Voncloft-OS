@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-oslo-config python-oslo-i18n python-oslo-utils
 
 name=python-oslo-concurrency
-version=4.5.1
+version=5.0.0
 release=1
 
 source="https://github.com/openstack/oslo.concurrency/archive/refs/tags/e$version.tar.gz"

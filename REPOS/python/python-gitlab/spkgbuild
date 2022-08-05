@@ -2,7 +2,7 @@
 # depends : python python-requests python-six python-requests-toolbelt
 
 name=python-gitlab
-version=3.7.0
+version=3.8.0
 release=2
 
 source="https://github.com/python-gitlab/python-gitlab/archive/refs/tags/v$version.tar.gz"

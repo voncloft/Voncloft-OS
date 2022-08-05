@@ -2,7 +2,7 @@
 # depends : python-werkzeug python-jinja python-itsdangerous python-click
 
 name=python-flask
-version=2.2.0
+version=2.2.1
 release=4
 
 source="https://github.com/pallets/flask/archive/refs/tags/r$version.tar.gz"
