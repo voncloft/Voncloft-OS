@@ -5,12 +5,10 @@ name=texlive
 version=20220321
 release=1
 
-source="https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/texlive-$version-source.tar.xz
-	https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/texlive-$version-texmf.tar.xz
-	https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-$version-tlpdb-full.tar.gz"
+source="https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/texlive-$version-source.tar.xz"
 
 build() {
-	cd $name-$version
+	cd $name-$version-source
 	export TEXARCH=$(uname -m | sed -e 's/i.86/i386/' -e 's/$/-linux/') &&
 
 mkdir texlive-build &&

@@ -1,0 +1,13 @@
+# description : binaries of texlive
+# depends : gnupg ghostscript xorg libxcb epdfview freeglut python
+
+name=tl-unx
+version=20220806
+release=1
+
+source="https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
+
+build() {
+	cd install-tl-$version
+	TEXLIVE_INSTALL_PREFIX=$PKG/opt/texlive ./install-tl
+}
