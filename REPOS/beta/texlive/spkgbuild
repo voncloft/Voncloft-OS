@@ -1,0 +1,47 @@
+# description : latex file manipulator
+# depends : ghostscript cairo fontconfig freetype gc graphite harfbuzz icu libpaper libpng python2
+
+name=texlive
+version=20220321
+release=1
+
+source="https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/texlive-$version-source.tar.xz
+	https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/texlive-$version-texmf.tar.xz
+	https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2022/texlive-$version-tlpdb-full.tar.gz"
+
+build() {
+	cd $name-$version
+	export TEXARCH=$(uname -m | sed -e 's/i.86/i386/' -e 's/$/-linux/') &&
+
+mkdir texlive-build &&
+cd    texlive-build &&
+
+../configure                                      \
+    --prefix=$TEXLIVE_PREFIX                      \
+    --bindir=$TEXLIVE_PREFIX/bin/$TEXARCH         \
+    --datarootdir=$TEXLIVE_PREFIX                 \
+    --includedir=$TEXLIVE_PREFIX/include          \
+    --infodir=$TEXLIVE_PREFIX/texmf-dist/doc/info \
+    --libdir=$TEXLIVE_PREFIX/lib                  \
+    --mandir=$TEXLIVE_PREFIX/texmf-dist/doc/man   \
+    --disable-native-texlive-build                \
+    --disable-static --enable-shared              \
+    --disable-dvisvgm                             \
+    --with-system-cairo                           \
+    --with-system-fontconfig                      \
+    --with-system-freetype2                       \
+    --with-system-gmp                             \
+    --with-system-graphite2                       \
+    --with-system-harfbuzz                        \
+    --with-system-icu                             \
+    --with-system-libgs                           \
+    --with-system-libpaper                        \
+    --with-system-libpng                          \
+    --with-system-mpfr                            \
+    --with-system-pixman                          \
+    --with-system-zlib                            \
+    --with-banner-add=" - Voncloft-OS"
+    make
+    make DESTDIR=$PKG install
+    
+}

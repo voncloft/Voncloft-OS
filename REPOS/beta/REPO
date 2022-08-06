@@ -1,6 +1,10 @@
+d:texlive
 d:x11vnc
 d:libvncserver
 d:qt6
+f:34bc7061caed40ec6b7f30aac0c6ac10:texlive/CHANGELOG
+f:5bc744664d4adeb6b0b2ccd413ee1041:texlive/pre-install.sh
+f:feeb2e4829fa7343df71b3e286265a52:texlive/spkgbuild
 f:8776c73b89f6eebf324cabffacd6b8f4:x11vnc/CHANGELOG
 f:d6a5dc34fec5e8bc739e325f9d6a3d79:x11vnc/spkgbuild
 f:203eeaf6d72517ca59bd6f661a594e42:libvncserver/CHANGELOG
