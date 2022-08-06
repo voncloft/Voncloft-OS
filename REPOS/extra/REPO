@@ -11,10 +11,10 @@ d:onboard
 d:openjdk
 d:protobuf
 d:waterfox
+d:epson-inkjet-printer-escpr2
 d:firefox-esr
 d:mcomix
 d:extra-cmake-modules
-d:epson-inkjet-printer
 d:gtk-engine-murrine
 d:gtkmm2
 d:ncdu
@@ -22,6 +22,7 @@ d:mailcap
 d:iotop
 d:geoip-database
 d:solaar
+d:epson-inkjet-printer-escpr
 d:setconf
 d:nspr
 d:chessx
@@ -83,6 +84,9 @@ f:4c3961432c233b9b2f9fabbbf602b3a5:protobuf/spkgbuild
 f:a893e6a506d6cbb2685182b298fe7964:waterfox/mozconfig
 f:ae7a2882092719b68e78ca8a0c4290e5:waterfox/spkgbuild
 f:cd463125b53a1a25c1b559721934aa90:waterfox/waterfox.desktop
+f:f884fbf6726f9ab103e2d832d8ad27fe:epson-inkjet-printer-escpr2/bug_x86_64.patch
+f:cc1347064094c2cf55f9bb202c6e83da:epson-inkjet-printer-escpr2/CHANGELOG
+f:f6212909cf472f8500548d010ace2efd:epson-inkjet-printer-escpr2/spkgbuild
 f:ede5c134e43e03df52398c41110d6b94:firefox-esr/CHANGELOG
 f:cf6971669f70b440cb6ff8df8b2722ae:firefox-esr/firefox.desktop
 f:afe61c7760e835bd12d5dfd40af4ec84:firefox-esr/firefox-install-dir.patch
@@ -91,9 +95,6 @@ f:06761fbf361c7a3305bf38f633aa89c9:mcomix/CHANGELOG
 f:3d7248195242a2aba64cc45e3f4942d3:mcomix/spkgbuild
 f:659e30428cf75dfdbf742ac35f58e78e:extra-cmake-modules/CHANGELOG
 f:1dc1337a338922b7b6be743d43082145:extra-cmake-modules/spkgbuild
-f:f884fbf6726f9ab103e2d832d8ad27fe:epson-inkjet-printer/bug_x86_64.patch
-f:cc1347064094c2cf55f9bb202c6e83da:epson-inkjet-printer/CHANGELOG
-f:cc8db22ad54afe70e9397b4f6c90ad66:epson-inkjet-printer/spkgbuild
 f:5b67a82e4956df3ef8e2a07ff1974f35:gtk-engine-murrine/spkgbuild
 f:5a3c86e8ed520b973293ab599a3df213:gtkmm2/spkgbuild
 f:97cd2e1c55919be22fec29220e008900:ncdu/CHANGELOG
@@ -106,6 +107,9 @@ f:80a0050adc4e383a71fca11c158c09a8:geoip-database/spkgbuild
 f:e48c7db4368f821797e6672c30fedea7:solaar/CHANGELOG
 f:ed11e8350d03fe315fa742824d6f95aa:solaar/override
 f:0730f9803b3bd1f27234a2b4bc3fb866:solaar/spkgbuild
+f:f884fbf6726f9ab103e2d832d8ad27fe:epson-inkjet-printer-escpr/bug_x86_64.patch
+f:cc1347064094c2cf55f9bb202c6e83da:epson-inkjet-printer-escpr/CHANGELOG
+f:584ceb39b197685f7215ee0a4fa2e5bb:epson-inkjet-printer-escpr/spkgbuild
 f:a0785bf69ab10afbeb832551ac12d132:setconf/spkgbuild
 f:edcda070a27003271126aaaba902f669:nspr/CHANGELOG
 f:b67368e78838b26c4777723bab45cc3b:nspr/override
