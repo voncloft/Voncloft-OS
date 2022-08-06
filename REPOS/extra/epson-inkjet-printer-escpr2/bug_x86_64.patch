@@ -1,16 +1,29 @@
-diff -Naur epson-inkjet-printer-escpr-1.6.9/src/filter.c epson-inkjet-printer-escpr-1.6.9-fixed/src/filter.c
---- epson-inkjet-printer-escpr-1.6.9/src/filter.c	2016-09-21 03:55:30.000000000 +0200
-+++ epson-inkjet-printer-escpr-1.6.9-fixed/src/filter.c	2016-10-07 22:07:23.965463021 +0200
-@@ -34,6 +34,8 @@
- #include "epson-protocol.h"
+From 2eaf51858354107641a97bfd0fb5539a5889e925 Mon Sep 17 00:00:00 2001
+Message-Id: <2eaf51858354107641a97bfd0fb5539a5889e925.1595700971.git.maciek.borzecki@gmail.com>
+From: Maciek Borzecki <maciek.borzecki@gmail.com>
+Date: Sat, 25 Jul 2020 20:15:18 +0200
+Subject: [PATCH] update x86-64 patch
+
+Signed-off-by: Maciek Borzecki <maciek.borzecki@gmail.com>
+---
+ src/filter.c | 13 ++++++++++---
+ src/mem.c    |  1 +
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/src/filter.c b/src/filter.c
+index 6d4ce86e4993b58f25b569cf014c9237f0726785..bc64487787464803839aa883e3020b6d40f052fb 100644
+--- a/src/filter.c
++++ b/src/filter.c
+@@ -39,6 +39,8 @@
  #include "epson-escpr-api.h"
+ #include "epson-escpr-services.h"
  #include "epson-escpr-mem.h"
 +#include "epson-escpr-services.h"
-+#include "epson-escpage.h"
++//#include "epson-escpage.h"
  
  #include "err.h"
  #include "mem.h"
-@@ -42,6 +44,11 @@
+@@ -47,6 +49,11 @@
  #include "libprtX.h"
  #include "optBase.h"
  #include "linux_cmn.h"
@@ -22,21 +35,16 @@ diff -Naur epson-inkjet-printer-escpr-1.6.9/src/filter.c epson-inkjet-printer-es
  
  #define WIDTH_BYTES(bits) (((bits) + 31) / 32 * 4)
  
-@@ -380,10 +387,10 @@
- 	}else{
- 		debug_msg("pageStartJob() success");
+@@ -430,7 +437,7 @@ main (int argc, char *argv[])
  	}
--	
-+
+ 	
  	printJob.jobStatus = EPS_STATUS_ESTABLISHED;
 -	int printHeight = 0;
--///////////////////////////////////////////////////////////////////////////////////////////////////////////	
 +	EPS_UINT32 printHeight = 0;
-+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////	
  
  	print_area_x = printJob.printableAreaWidth;
- 	print_area_y = printJob.printableAreaHeight;
-@@ -535,7 +542,7 @@
+@@ -604,7 +611,7 @@ main (int argc, char *argv[])
  						memcpy(rever_buf + k*3, startpage + pos + (bandBmp.widthBytes - 6) - k*3, 3);
  					}
  				}
@@ -45,41 +53,20 @@ diff -Naur epson-inkjet-printer-escpr-1.6.9/src/filter.c epson-inkjet-printer-es
  				pos -= bandBmp.widthBytes;
  			}
  
-@@ -642,17 +649,17 @@
- 						}
- 					}
- 				}
--				
-+
- 				band_line_count ++;
--				
-+
- 				if (band_line_count >= band_line)
- 				{
- 					printHeight = band_line_count;
- 					PrintBand (bandBmp.bits, bandBmp.widthBytes, &printHeight);
- #if (HAVE_PPM)
- 					fp = fopen(ppmfilename, "a+");
--					int i=0;	
--					for(i=0; i<bytes_per_line/byte_par_pixel*3; i++){		
-+					int i=0;
-+					for(i=0; i<bytes_per_line/byte_par_pixel*3; i++){
- 						fprintf(fp, "%u ", (unsigned char)bandBmp.Bits[i]);
- 					}
- 					fprintf(fp, "\n");
-@@ -831,7 +838,7 @@
+@@ -897,7 +904,7 @@ set_pips_parameter (filter_option_t *filter_opt_p, EPS_OPT *printOpt)
  
  	/* Get number of pages */
  	char page_num;
 -	read (STDIN_FILENO, &page_num, 1);
 +	(void)read (STDIN_FILENO, &page_num, 1);
+ 	debug_msg("total pages = %d\n", page_num);
  
  	/* Others */
- 	jobAttr.apfAutoCorrect = EPS_APF_ACT_STANDARD;
-diff -Naur epson-inkjet-printer-escpr-1.6.9/src/mem.c epson-inkjet-printer-escpr-1.6.9-fixed/src/mem.c
---- epson-inkjet-printer-escpr-1.6.9/src/mem.c	2016-09-21 03:55:30.000000000 +0200
-+++ epson-inkjet-printer-escpr-1.6.9-fixed/src/mem.c	2016-10-07 22:07:59.519366574 +0200
-@@ -24,6 +24,7 @@
+diff --git a/src/mem.c b/src/mem.c
+index f53f2bc144c3dd5b4a6b9ed0c8bdf9fec963ef79..d6c945acbf6a493de0b921f11d700cabeb6d3ff4 100644
+--- a/src/mem.c
++++ b/src/mem.c
+@@ -23,6 +23,7 @@
  
  #include <stdlib.h>
  #include "mem.h"
@@ -87,3 +74,7 @@ diff -Naur epson-inkjet-printer-escpr-1.6.9/src/mem.c epson-inkjet-printer-escpr
  
  void *
  mem_malloc (unsigned int size, bool_t crit)
+-- 
+2.27.0
+
+
