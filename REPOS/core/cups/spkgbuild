@@ -23,7 +23,10 @@ sed -e "s/format-truncation//" \
             --with-docdir=/usr/share/cups/doc-$version
             make
             make DESTDIR=$PKG install 
-            ln -svnf ../cups/doc-2.4.2 $PKG/usr/share/doc/cups-$version
+            #ls $PKG/usr/share/*
+	    ls $PKG/usr/share/*
+	    mkdir $PKG/usr/share/doc/
+            ln -sf ../cups/doc-$version $PKG/usr/share/doc/cups-$version
             rm -rf $PKG/tmp/cupsinit
 	echo "voncloft /run/cups/cups.sock" > $PKG/etc/cups/client.conf
 	# Linux PAM Configuration
