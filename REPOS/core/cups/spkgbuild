@@ -4,7 +4,7 @@
 name=cups
 version=2.4.2
 release=1
-source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz"
+source="https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz
 	cupsd.conf"
 
 build() {
@@ -23,7 +23,7 @@ sed -e "s/format-truncation//" \
             --with-docdir=/usr/share/cups/doc-$version
             make
             make DESTDIR=$PKG install 
-            ln -svnf ../cups/doc-2.4.2 $PKG/usr/share/doc/cups-2.4.2
+            ln -svnf ../cups/doc-2.4.2 $PKG/usr/share/doc/cups-$version
             rm -rf $PKG/tmp/cupsinit
 	echo "voncloft /run/cups/cups.sock" > $PKG/etc/cups/client.conf
 	# Linux PAM Configuration
