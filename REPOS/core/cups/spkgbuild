@@ -37,6 +37,6 @@ account include system-account
 session include system-session
 EOF
 
-#	mkdir -pv $PKG/etc/cups
-#	install -Dm644 $SRC/cupsd.conf $PKG/etc/cups/cupsd.conf
+	mkdir -pv $PKG/etc/cups
+	install -Dm644 $SRC/cupsd.conf $PKG/etc/cups/cupsd.conf
 }
