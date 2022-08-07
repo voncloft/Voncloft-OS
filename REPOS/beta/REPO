@@ -3,6 +3,7 @@ d:x11vnc
 d:tl-unx
 d:libvncserver
 d:qt6
+d:cups-old
 f:34bc7061caed40ec6b7f30aac0c6ac10:texlive/CHANGELOG
 f:a94094d5197fccb109c9697d7c1ebae5:texlive/pre-install.sh
 f:ac4de8c7e2860f5d4d0c3f5a9c6c16ec:texlive/spkgbuild
@@ -20,3 +21,9 @@ f:5422c3342c7975a39eb5f684388152cf:qt6/CHANGELOG
 f:af3a7093ca9f5f3ee85f45ce85615569:qt6/webengine.patch
 f:39a4717a7d5cc1751c3f98d07b3291e4:qt6/override
 f:641dcfb3af2962c792ed89e48b72bf75:qt6/spkgbuild
+f:324848d098be356a18083b0a02c3c842:cups-old/rc.cupsd
+f:cca78009a14af6a4bd9e834095169d90:cups-old/CHANGELOG
+f:485892b0c31bacd1d8f96e8d2d470a86:cups-old/pre-install.sh
+f:036553576036ed2b58c8df09d4d88c50:cups-old/cupsd.conf
+f:f53fc94e3c8219ad67bee113d250687e:cups-old/spkgbuild
+f:7ff084677614b02915fa8e05e8817cfe:cups-old/run
