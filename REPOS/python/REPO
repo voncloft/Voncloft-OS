@@ -1581,8 +1581,8 @@ f:3affcb72d1b54ba0bf9b66fdcea66dbb:python-docopt/CHANGELOG
 f:be761a2e1c8887a83eb693a18a66b055:python-docopt/spkgbuild
 f:94113e035e192296fc4f5a41dad70e00:python-pysolr/CHANGELOG
 f:dffdad245658410fa6d4c14a160d0c1b:python-pysolr/spkgbuild
-f:4537e32adb9b7f00bc1cb1d68f805859:python-flask/CHANGELOG
-f:9053137b113fd3cb6482bb5fad5f934f:python-flask/spkgbuild
+f:bf8ebdeb6330fd3140a904f33fe229d3:python-flask/CHANGELOG
+f:800bd4fdd8e1c89a5a9d485e873933aa:python-flask/spkgbuild
 f:5b79cb0df71d696f69aa43aa838b0182:python-pytest-enabler/CHANGELOG
 f:12910e36bc1f096e12ad129cd7a297c7:python-pytest-enabler/spkgbuild
 f:713f4eaa51e20516c4412956d84b3dae:python-partd/CHANGELOG
@@ -1751,8 +1751,8 @@ f:dd5d3e7d48fca5bfc65dc737880ba6d9:python-pyaudio/CHANGELOG
 f:3ee237fba28d5d4dd3c8c8f9a070b352:python-pyaudio/spkgbuild
 f:3b868d624b42e9658a28a2a1ce06a9d8:python-param/CHANGELOG
 f:bda044ff5408e78ce2dd9702900afcd6:python-param/spkgbuild
-f:4bea92e26553be0665d30069215a0acb:python-google-api-python-client/CHANGELOG
-f:89eaa884b2aab0fbbc10bb8fa0ad4866:python-google-api-python-client/spkgbuild
+f:1c4b0746f3dd6023008086950acc3e7f:python-google-api-python-client/CHANGELOG
+f:fd57c0abd6e5af39184252385b3aa5ea:python-google-api-python-client/spkgbuild
 f:e66d37d8bf3d8e116f0b98ba496a7f45:python-connexion/CHANGELOG
 f:163cee8819515ecc2708f7f100c73071:python-connexion/spkgbuild
 f:3e8669c5e013556911856e75f863eaf9:python-setuptools-git/CHANGELOG
@@ -2619,8 +2619,8 @@ f:a3f7994038ef24bebe7ad98acc82126a:python-zeroconf/CHANGELOG
 f:18d2f7eff39c9830dc3bafda1fe9afc9:python-zeroconf/spkgbuild
 f:7e5f220c4b69441c4ec95981901e55d5:python-auditwheel/CHANGELOG
 f:ed3c18606b6181eff843c16bd221412b:python-auditwheel/spkgbuild
-f:1caf183cfe6bb25f4f424d9ed39da43f:python-databases/CHANGELOG
-f:571c00af6c8adebb51dde9dfbc6527b3:python-databases/spkgbuild
+f:ebad06b2d417ffcea964e7b80f872497:python-databases/CHANGELOG
+f:d37b620930c2240dcbdcb4bf2084455f:python-databases/spkgbuild
 f:bb496b989262557500c18def59645f93:python-pyannotate/CHANGELOG
 f:e7ec9eecf79a4b5fcb7f634230e9af6f:python-pyannotate/spkgbuild
 f:b3adf7864037fb515c5a6ea2b518dacf:python-migen/CHANGELOG
@@ -3409,8 +3409,8 @@ f:b2c10054fc7bd580dc24a32657cdf239:python-sphinxcontrib-newsfeed/CHANGELOG
 f:92a5750a55a600b32ef39d986999d979:python-sphinxcontrib-newsfeed/spkgbuild
 f:e904c1b1709590611e2c986af4cc6ea4:python-sane/CHANGELOG
 f:19c5023aa5fc414196d648aac62ab54e:python-sane/spkgbuild
-f:719e91f8617120cd397e3520c7b3d2e5:python-boto3/CHANGELOG
-f:0e1cc462b3c2c5307a9a59fbeb187e87:python-boto3/spkgbuild
+f:debfb50f6dd8be094913937ef0f7f7d4:python-boto3/CHANGELOG
+f:32d4092b203600bb63ff5770fe3e940f:python-boto3/spkgbuild
 f:cc22b5acf1a529bc792d26021da9beda:python-inflection/CHANGELOG
 f:e0f853d4f99fea30dc9a174b6da9478c:python-inflection/spkgbuild
 f:62b2806ab60feadbeaf4cd66eba1c411:python-nosexcover/CHANGELOG
@@ -4029,8 +4029,8 @@ f:c725c1a4ea568ca6e82f93ced52ccde8:python-pysmi/CHANGELOG
 f:fa8155af58c67bbb63042d7598772201:python-pysmi/spkgbuild
 f:a50c844987badb80e8c4cbb5e7e8e9b2:python-importlib-metadata/CHANGELOG
 f:7354af3fde363ac6208db683e0db88a2:python-importlib-metadata/spkgbuild
-f:f39b88a8d30fecfe063836abee6c927d:python-botocore/CHANGELOG
-f:a86fe8842c20e16673258f1eb2c223e9:python-botocore/spkgbuild
+f:440c2d00f7f26146f6af01156eb5299c:python-botocore/CHANGELOG
+f:6522fe249465042ec4584f5f28a2ef3b:python-botocore/spkgbuild
 f:8645b2ea011e166c8d838975a0b64de1:python-pwntools/CHANGELOG
 f:a83b2ae631b4da108bc3b81212a45001:python-pwntools/spkgbuild
 f:96b5d8eca463262ad65beb2988180325:python-distro/CHANGELOG
@@ -4399,8 +4399,8 @@ f:89dc778a05cef75c34c9d38ef7a09ce3:python-click-completion/CHANGELOG
 f:16ed46f5603c7e65bf36e4f45587fcd0:python-click-completion/spkgbuild
 f:706ab0564221e1f8f9e62dfb1edb93bc:python-zope-hookable/CHANGELOG
 f:e0bf0daa915c412172ab3662f6a995e7:python-zope-hookable/spkgbuild
-f:e33702f71be62b65768f2e466811f0a5:python-werkzeug/CHANGELOG
-f:7b77bea93b79763c1c0692fe55432433:python-werkzeug/spkgbuild
+f:7ba45a2ed8d95dd29b7c24a7f23cbe79:python-werkzeug/CHANGELOG
+f:e872921aafb90accf30de647279d2622:python-werkzeug/spkgbuild
 f:0e0fbd0577a99daab02c78cf195c3c98:python-rencode/CHANGELOG
 f:26233107b91ccc9592792f9078fa2972:python-rencode/spkgbuild
 f:1c92bdf28f62ed247aec2c8049607d07:python-hpack/CHANGELOG
