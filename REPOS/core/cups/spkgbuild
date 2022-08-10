@@ -11,7 +11,7 @@ build() {
 	cd $name-$version
 
 
-sed -i 's#@CUPS_HTMLVIEW@#firefox#' desktop/cups.desktop.in
+#sed -i 's#@CUPS_HTMLVIEW@#firefox#' desktop/cups.desktop.in
 sed -e "s/format-truncation//" \
     -i configure \
        config-scripts/cups-compiler.m4
@@ -23,8 +23,6 @@ sed -e "s/format-truncation//" \
             --with-docdir=/usr/share/cups/doc-$version
             make
             make DESTDIR=$PKG install 
-            #ls $PKG/usr/share/*
-	    ls $PKG/usr/share/*
 	    mkdir $PKG/usr/share/doc/
             ln -sf ../cups/doc-$version $PKG/usr/share/doc/cups-$version
             rm -rf $PKG/tmp/cupsinit
