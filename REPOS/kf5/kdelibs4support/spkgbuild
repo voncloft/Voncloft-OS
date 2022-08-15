@@ -2,7 +2,7 @@
 # depends : kde-deps kemoticons kitemmodels kparts kunitconversion perl kdoctools kdesignerplugin networkmanager
 
 name=kdelibs4support
-version=5.96.0
+version=5.97.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/portingAids/$name-$version.tar.xz"

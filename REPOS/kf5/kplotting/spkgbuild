@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=kplotting
-version=5.96.0
+version=5.97.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
