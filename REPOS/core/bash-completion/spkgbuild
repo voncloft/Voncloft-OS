@@ -16,7 +16,8 @@ source="profile
 	.bash_profile
 	.profile
 	.bashrc
-	.bash_logout"
+	.bash_logout
+	.nanorc"
 
 build()
 {
@@ -38,7 +39,7 @@ build()
 	install -Dm644 $SRC/.profile $PKG/etc/skel/.profile
 	install -Dm644 $SRC/.bashrc $PKG/etc/skel/.bashrc
 	install -Dm644 $SRC/.bash_logout $PKG/etc/skel/.bash_logout
-
+	install -Dm644 $SRC/.nanorc $PKG/etc/skell/.nanorc
 	dircolors -p > $PKG/etc/dircolors
 	
 }
