@@ -37,7 +37,7 @@ build()
 	install -Dm644 $SRC/.bash_profile $PKG/etc/skel/.bash_profile
 	install -Dm644 $SRC/.profile $PKG/etc/skel/.profile
 	install -Dm644 $SRC/.bashrc $PKG/etc/skel/.bash_profile
-	install -Dm644 $S$C/.bash_logout $PKG/etc/skel/.bash_logout
+	install -Dm644 $SRC/.bash_logout $PKG/etc/skel/.bash_logout
 
 	dircolors -p > $PKG/etc/dircolors
 	
