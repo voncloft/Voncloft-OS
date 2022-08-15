@@ -1,11 +1,11 @@
-# description	: Programmable completion for the bash shell
-# depends	: bash nano screenfetch cowsay lolcat fortune-mod monitor_process
+# description   : Programmable completion for the bash shell
+# depends       : bash nano screenfetch cowsay lolcat fortune-mod monitor_process
 
 name=bash-completion
 version=2.11.0
 release=1
 
-source="https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz
+source="profile
 	bash_completion.sh
 	dircolors.sh
 	extrapaths.sh
@@ -13,33 +13,32 @@ source="https://github.com/scop/bash-completion/releases/download/2.11/bash-comp
 	umask.sh
 	i18n.sh
 	bashrc
-	.bash_https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz
-	.https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz
+	.bash_profile
+	.profile
 	.bashrc
-	.bash_logout
-	.nanorc"
-	
-options="!checksum"
+	.bash_logout"
 
-build() {
+build()
+{
 	mkdir $PKG/etc
-	install -m644 $SRC/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz $PKG/etc
-	install --directory --mode=0755 --owner=root --group=root $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
-	install -m644 $SRC/bash_completion.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install --directory --mode=0755 --owner=root --group=root $PKG/etc/profile.d
+	install -Dm644 $SRC/profile $PKG/etc/profile
 	install --directory --mode=0755 --owner=root --group=root $PKG/etc/bash_completion.d
-	install -m644 $SRC/dircolors.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
-	install -m644 $SRC/extrapaths.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
-	install -m644 $SRC/readline.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
-	install -m644 $SRC/umask.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
-	install -m644 $SRC/i18n.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	mkdir -pv $PKG/etc/profile.d/
+	install -Dm644 $SRC/bash_completion.sh $PKG/etc/profile.d/bash_completion.sh
+	install -Dm644 $SRC/dircolors.sh $PKG/etc/profile.d/dircolors.sh
+	install -Dm644 $SRC/extrapaths.sh $PKG/etc/profile.d/extrapaths.sh
+	install -Dm644 $SRC/readline.sh $PKG/etc/profile.d/readline.sh
+	install -Dm644 $SRC/umask.sh $PKG/etc/profile.d/umask.sh
+	install -Dm644 $SRC/i18n.sh $PKG/etc/profile.d/i18n.sh
+	install -Dm644 $SRC/bashrc $PKG/etc/bashrc
 
-	install -m644 $SRC/bashrc $PKG/etc
-	
 	mkdir -pv $PKG/etc/skel
-	install -m644 $SRC/.bash_https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz $PKG/etc/skel
-	install -m644 $SRC/.https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz $PKG/etc/skel
-	install -m644 $SRC/.bashrc $PKG/etc/skel
-	install -m644 $SRC/.bash_logout $PKG/etc/skel
-	install -m644 $SRC/.nanorc $PKG/etc/skel
-	dircolors -p > $PKG/etc/dircolors 
+	install -Dm644 $SRC/.bash_profile $PKG/etc/skel/.bash_profile
+	install -Dm644 $SRC/.profile $PKG/etc/skel/.profile
+	install -Dm644 $SRC/.bashrc $PKG/etc/skel/.bash_profile
+	install -Dm644 $S$C/.bash_logout $PKG/etc/skel/.bash_logout
+
+	dircolors -p > $PKG/etc/dircolors
+	
 }

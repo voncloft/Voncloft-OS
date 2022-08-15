@@ -1,0 +1,45 @@
+# description	: Programmable completion for the bash shell
+# depends	: bash nano screenfetch cowsay lolcat fortune-mod monitor_process
+
+name=bash-completion
+version=2.11.0
+release=1
+
+source="https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz
+	bash_completion.sh
+	dircolors.sh
+	extrapaths.sh
+	readline.sh
+	umask.sh
+	i18n.sh
+	bashrc
+	.bash_https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz
+	.https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz
+	.bashrc
+	.bash_logout
+	.nanorc"
+	
+options="!checksum"
+
+build() {
+	mkdir $PKG/etc
+	install -m644 $SRC/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz $PKG/etc
+	install --directory --mode=0755 --owner=root --group=root $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install -m644 $SRC/bash_completion.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install --directory --mode=0755 --owner=root --group=root $PKG/etc/bash_completion.d
+	install -m644 $SRC/dircolors.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install -m644 $SRC/extrapaths.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install -m644 $SRC/readline.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install -m644 $SRC/umask.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+	install -m644 $SRC/i18n.sh $PKG/etc/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz.d
+
+	install -m644 $SRC/bashrc $PKG/etc
+	
+	mkdir -pv $PKG/etc/skel
+	install -m644 $SRC/.bash_https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz $PKG/etc/skel
+	install -m644 $SRC/.https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz $PKG/etc/skel
+	install -m644 $SRC/.bashrc $PKG/etc/skel
+	install -m644 $SRC/.bash_logout $PKG/etc/skel
+	install -m644 $SRC/.nanorc $PKG/etc/skel
+	dircolors -p > $PKG/etc/dircolors 
+}
