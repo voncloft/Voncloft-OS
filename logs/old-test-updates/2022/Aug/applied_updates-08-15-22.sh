@@ -176,3 +176,19 @@ sed -i -e "s/version=5.96.0/version=5.97.0/g" qt/modemmanager-qt/spkgbuild
 changelog "qt/modemmanager-qt/spkgbuild" "Upgraded from version 5.96.0 to version 5.97.0"
 sed -i -e "s/version=5.96.0/version=5.97.0/g" qt/networkmanager-qt/spkgbuild
 changelog "qt/networkmanager-qt/spkgbuild" "Upgraded from version 5.96.0 to version 5.97.0"
+sed -i -e "s/version=4.2.0/version=4.3.0/g" core/streamlink/spkgbuild
+changelog "core/streamlink/spkgbuild" "Upgraded from version 4.2.0 to version 4.3.0"
+sed -i -e "s/version=2022.08.08/version=2022.08.14/g" networking/yt-dlp/spkgbuild
+changelog "networking/yt-dlp/spkgbuild" "Upgraded from version 2022.08.08 to version 2022.08.14"
+sed -i -e "s/version=1.24.51/version=1.24.52/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.24.51 to version 1.24.52"
+sed -i -e "s/version=1.27.51/version=1.27.52/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.27.51 to version 1.27.52"
+sed -i -e "s/version=6.0.1/version=6.1.0/g" python/python-envisage/spkgbuild
+changelog "python/python-envisage/spkgbuild" "Upgraded from version 6.0.1 to version 6.1.0"
+sed -i -e "s/version=4.34.4/version=4.35.0/g" python/python-fonttools/spkgbuild
+changelog "python/python-fonttools/spkgbuild" "Upgraded from version 4.34.4 to version 4.35.0"
+sed -i -e "s/version=2022.8.14/version=2022.8.15/g" python/python-pipenv/spkgbuild
+changelog "python/python-pipenv/spkgbuild" "Upgraded from version 2022.8.14 to version 2022.8.15"
+sed -i -e "s/version=0.6.9/version=0.6.10/g" python/python-wand/spkgbuild
+changelog "python/python-wand/spkgbuild" "Upgraded from version 0.6.9 to version 0.6.10"
