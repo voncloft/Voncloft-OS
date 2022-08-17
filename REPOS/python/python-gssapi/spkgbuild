@@ -2,7 +2,7 @@
 # depends : python python-decorator krb5
 
 name=python-gssapi
-version=1.8.0
+version=1.8.1
 release=2
 
 source="https://github.com/pythongssapi/python-gssapi/archive/refs/tags/v$version.tar.gz"
