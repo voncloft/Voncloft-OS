@@ -187,6 +187,7 @@ d:vimix-gtk-themes
 d:surf
 d:dzen2
 d:colord
+d:lsof
 d:cdw
 d:filesystem
 d:parted
@@ -845,6 +846,8 @@ f:1f5fda6fab1b1c45a82861cac35154cb:colord/CHANGELOG
 f:561181f4c3e83bb6affa8fad85d0981c:colord/pre-install.sh
 f:371a660dae1b590d86edc86de1565e11:colord/mkdirs
 f:8a8a0f6d03fa6fe380fb71945b26411f:colord/spkgbuild
+f:d829ef73cfd1960d0d48f9cb32804d16:lsof/CHANGELOG
+f:13c33cff8472431bc67c4326b4fd7206:lsof/spkgbuild
 f:9ed07e6225e626478096997d020d0ca2:cdw/spkgbuild
 f:5cbb5efc6adba814bafb91e534b09836:filesystem/locale.conf
 f:42f4400ed2314bd7519c020d0187edc5:filesystem/bash_logout.skel
