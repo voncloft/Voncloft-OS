@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps sane
+# depends : kde-deps sane ksanecore
 
 name=libksane
 version=22.08.0

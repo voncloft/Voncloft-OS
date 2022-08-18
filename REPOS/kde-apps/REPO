@@ -106,6 +106,7 @@ d:akonadi
 d:ktouch
 d:ktp-accounts-kcm
 d:kreversi
+d:ksanecore
 d:libkcompactdisc
 d:keditbookmarks
 d:kontrast
@@ -440,6 +441,8 @@ f:16c5bd4d4c09dbbb260862fb27d004eb:ktp-accounts-kcm/CHANGELOG
 f:d82c1477b3f4b2ee065870ab35887e8a:ktp-accounts-kcm/spkgbuild
 f:7d1ca18a6962c70d9a7384795b6b7699:kreversi/CHANGELOG
 f:6c9b5da8222b5bcf2bf94b797c09ccd2:kreversi/spkgbuild
+f:558d3c14505a6061b92e374d4bcd4e89:ksanecore/CHANGELOG
+f:2422cd72532450ed896dc27d26e77ba5:ksanecore/spkgbuild
 f:e9713314d606e47b138e6e97eb1db9dc:libkcompactdisc/CHANGELOG
 f:59c3457a7925161d0dffd68249cb14ba:libkcompactdisc/spkgbuild
 f:d5d29aefbda5f39ef8735d213d0b551d:keditbookmarks/CHANGELOG
@@ -611,7 +614,7 @@ f:81b63b8a62a8deb939ffeea12e837111:ktp-call-ui/spkgbuild
 f:0729894ec26c08c90003fedb7be19ff0:kmailtransport/CHANGELOG
 f:3087858dcdf88a0f48b05b80a4201e0f:kmailtransport/spkgbuild
 f:190ce56f89fcd39847c995869c22fd6a:libksane/CHANGELOG
-f:cb782d2370d9d62ee3e8b94346b2b507:libksane/spkgbuild
+f:9aaa3327e5d2f222065637b7edd30092:libksane/spkgbuild
 f:290b38f60872750465c2292a0c43ccbb:kosmindoormap/CHANGELOG
 f:23146d2db63edb297f743eb1551403a8:kosmindoormap/spkgbuild
 f:655d91aadfddabd13e75b45a9055d0d6:kleopatra/CHANGELOG
