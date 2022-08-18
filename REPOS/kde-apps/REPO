@@ -154,6 +154,7 @@ d:konquest
 d:lskat
 d:dragon
 d:cervisia
+d:kdesdk-kio
 d:akonadi-notes
 d:kcachegrind
 d:kamoso
@@ -215,7 +216,6 @@ d:ktp-approver
 d:zeroconf-ioslave
 d:kfourinline
 d:umbrello
-d:kdesdk-kioslaves
 d:kmplot
 d:libkexiv2
 d:minuet
@@ -536,6 +536,8 @@ f:b27ff162562341eb747af007f5d2f409:dragon/CHANGELOG
 f:db4f34d8314b30d518dc624705a712fe:dragon/spkgbuild
 f:be9f220c5008d4fa70a1faf6d2278b2e:cervisia/CHANGELOG
 f:d5df1a118fe4077d787714ca24892fdc:cervisia/spkgbuild
+f:b026f811cd4be1765a853c29fb829f20:kdesdk-kio/CHANGELOG
+f:022fa6916839b574c18c57d5abf7829f:kdesdk-kio/spkgbuild
 f:c5d7dab23c94f42af13427b4a31763e4:akonadi-notes/CHANGELOG
 f:101a12c6f22d680057b6cb9af24b2b85:akonadi-notes/spkgbuild
 f:644f9621ae37dff18aab0d625662f5dd:kcachegrind/CHANGELOG
@@ -658,8 +660,6 @@ f:b1c30a8adfe3afa0060ce5f75a9b3b88:kfourinline/CHANGELOG
 f:0dab48c13010b5700a7a70148a30ee19:kfourinline/spkgbuild
 f:6720e4f3d4ebaa67c15f060720f7e4b7:umbrello/CHANGELOG
 f:466df8098fd4d4004e3826ed868e93f0:umbrello/spkgbuild
-f:b026f811cd4be1765a853c29fb829f20:kdesdk-kioslaves/CHANGELOG
-f:99e917694a6af2e1ba7b9a98fba0af83:kdesdk-kioslaves/spkgbuild
 f:0fdca6c6002565cee5703c3e70502153:kmplot/CHANGELOG
 f:7a2d92e05951ffcde9cf17886176a19f:kmplot/spkgbuild
 f:6beb4818822dcc0b7dc13ac759a2955b:libkexiv2/CHANGELOG
