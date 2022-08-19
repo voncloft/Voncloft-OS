@@ -6,7 +6,7 @@ version=2.2.7.b
 _ver=2.2.7b
 release=1
 
-source="https://github.com/Orc/discount/archive/$_ver/$name-$version.tar.gz"
+source="http://www.pell.portland.or.us/~orc/Code/discount/$name-$_ver.tar.bz2"
 
 build() {
 	cd $name-$_ver
