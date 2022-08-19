@@ -1,0 +1,21 @@
+# description : markdown implementation written in C
+# depends : glibc
+
+name=discount
+version=2.2.7.b
+_ver=2.2.7b
+release=1
+
+source="https://github.com/Orc/discount/archive/$_ver/$name-$version.tar.gz"
+
+build() {
+	cd $name-$_ver
+	  ./configure.sh \
+    	--prefix=/usr \
+    	--enable-all-features \
+    	--with-fenced-code \
+    	--github-checkbox \
+    	--shared
+  	make
+	make DESTDIR=$PKG install
+}

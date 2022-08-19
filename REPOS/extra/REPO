@@ -16,6 +16,7 @@ d:firefox-esr
 d:mcomix
 d:extra-cmake-modules
 d:gtk-engine-murrine
+d:discount
 d:gtkmm2
 d:ncdu
 d:mailcap
@@ -97,6 +98,8 @@ f:3d7248195242a2aba64cc45e3f4942d3:mcomix/spkgbuild
 f:89c2671e2b17cb7bec9336c5262a2dcf:extra-cmake-modules/CHANGELOG
 f:a57e393452ccc6a719fdf2354a0bbf7b:extra-cmake-modules/spkgbuild
 f:5b67a82e4956df3ef8e2a07ff1974f35:gtk-engine-murrine/spkgbuild
+f:90709b1cbe1169018537b288b630195a:discount/CHANGELOG
+f:2c0f2a3de44de4b3d89a8d4f3aac8a11:discount/spkgbuild
 f:5a3c86e8ed520b973293ab599a3df213:gtkmm2/spkgbuild
 f:97cd2e1c55919be22fec29220e008900:ncdu/CHANGELOG
 f:1345710051e0cce2e3e03834186128db:ncdu/spkgbuild
