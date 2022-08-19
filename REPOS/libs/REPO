@@ -92,6 +92,7 @@ d:libstatgrab
 d:libxrandr
 d:ktoblzcheck
 d:lapack
+d:libtommath
 d:glibc
 d:libcroco
 d:libogg
@@ -168,7 +169,6 @@ d:libqmi
 d:libmodplug
 d:libwacom
 d:libftdi-compat
-d:libtomath
 d:libexif
 d:libxpm
 d:libevent
@@ -421,6 +421,8 @@ f:98738e2009c8973bf6300a21bca8b740:libxrandr/spkgbuild
 f:52d3e85f6ea7d824e4f05272c9909584:ktoblzcheck/spkgbuild
 f:05a9afb34a40e17f43c6fc211fa52f8c:lapack/CHANGELOG
 f:13daa9ed1650bcb1f24938ee6c11771a:lapack/spkgbuild
+f:e460d085db880412220f9bf025bfed4a:libtommath/CHANGELOG
+f:60c77b3ef14d1561bed271ed04015f36:libtommath/spkgbuild
 f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
 f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
 f:1e6e79c96b713a04cbd385c110674a6b:glibc/CHANGELOG
@@ -461,7 +463,7 @@ f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
 f:e4e4faf915c83b9831a644bab836f6d9:libqalculate/CHANGELOG
 f:f3d5fb940dd002aee74976ff32d66a43:libqalculate/spkgbuild
 f:4166f4254387829a5fd6602a0b720e1a:libzip/CHANGELOG
-f:8764a710b22935429359cf2d0b1fe70c:libzip/spkgbuild
+f:f2875cc54b52b716b648291af4843e15:libzip/spkgbuild
 f:1e03ff36fa8f546193e8fa7924eaf1a3:libtorrent-rasterbar/CHANGELOG
 f:099fcaa791ecd75588b0dc9d176a6d04:libtorrent-rasterbar/spkgbuild
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild
@@ -539,8 +541,6 @@ f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
 f:2aa0658d1c3baea80e0597eb8f725f70:libwacom/CHANGELOG
 f:a34c24a4751396acd7cc9273cadabc8c:libwacom/spkgbuild
 f:ae13bc7326af8d543d55bc1c8b130ebe:libftdi-compat/spkgbuild
-f:e460d085db880412220f9bf025bfed4a:libtomath/CHANGELOG
-f:23f37bd6f94117bc84ec17590a594b86:libtomath/spkgbuild
 f:303816b3ff77e02723a38d101867e7ba:libexif/spkgbuild
 f:53e64757fb50427f24303690a0aa2d65:libxpm/spkgbuild
 f:0bd386b2ad7c92582d2f38f66387cda0:libevent/spkgbuild
