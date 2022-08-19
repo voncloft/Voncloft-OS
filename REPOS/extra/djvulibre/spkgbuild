@@ -5,7 +5,7 @@ name=djvulibre
 version=3.5.28
 release=3
 
-source="https://downloads.sourceforge.net/project/djvu/DjVuLibre/$pkgver/djvulibre-$pkgver.tar.gz"
+source="https://downloads.sourceforge.net/project/djvu/DjVuLibre/$version/djvulibre-$version.tar.gz"
 
 build() {
 	cd $name-$version
