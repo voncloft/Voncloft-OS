@@ -40,6 +40,7 @@ d:gnucash
 d:gtk-doc
 d:gimp
 d:mozjs
+d:djvulibre
 d:freecell-solver
 d:gtksourceview3
 d:qemu
@@ -147,6 +148,8 @@ f:f730a66fdf4e72064a1d690f176d3be7:gtk-doc/spkgbuild
 f:495bb0837e035f8d82ff0ae62d4d0313:gimp/CHANGELOG
 f:8741e5039cdd88f2497f71b566046188:gimp/spkgbuild
 f:059af5f2140bdf9a41b275a9325dd149:mozjs/spkgbuild
+f:f6e45406ddf40ea37185fa47512a71e4:djvulibre/CHANGELOG
+f:8aed71ac4f57c327c93d99003484c414:djvulibre/spkgbuild
 f:704e81edacc682b976932ef9c53f18b4:freecell-solver/CHANGELOG
 f:2ae13a2c3de5dbc6c5de56d89e871b1e:freecell-solver/spkgbuild
 f:10a18e9386007c8f0aa6198184a47105:gtksourceview3/CHANGELOG

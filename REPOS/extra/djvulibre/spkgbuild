@@ -1,0 +1,18 @@
+# description : suite to create manipulate and view DjVu documents
+# depends : hicolor-icon-theme libtiff
+
+name=djvulibre
+version=3.5.28
+release=3
+
+source="https://downloads.sourceforge.net/project/djvu/DjVuLibre/$pkgver/djvulibre-$pkgver.tar.gz"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --disable-desktopfiles
+	make
+	make DESTDIR=$PKG install
+	for sz in 22 32 48 64; do
+		install -Dm644 desktopfiles/prebuilt-hi${sz}-djvu.png "${PKG}/usr/share/icons/hicolor/${sz}x${sz}/mimetypes/image-vnd.djvu.mime.png"
+	done
+}

@@ -3,6 +3,7 @@
 # depends : phonon plasma-wayland-protocols shared-mime-info perl-uri wget aspell avahi libdbusmenu-qt networkmanager polkit-qt bluez
 # depends : noto-fonts doxygen python-jinja yaml jasper openexr upower gpgme hunspell sudo exiv2 ffmpeg poppler-qt5 taglib libxss
 # depends : libutempter libdmtx telegram-desktop-bin udisks2 aspell hunspell
+# depends : discount
 name=kf5-depends
 version=5.97.0
 release=1
