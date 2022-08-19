@@ -1,0 +1,17 @@
+# description : extracter for lit ebooks
+# depends : libtomath
+
+name=convertlit
+version=1.8
+release=10
+
+source="http://www.convertlit.com/clit18src.zip"
+
+build() {
+	sed -i 's|../libtommath-0.30/libtommath.a|/usr/lib/libtommath.so ${LDFLAGS}|' clit18/Makefile
+	cd lib
+	make
+	cd ../clit18
+	make
+	install -Dm755 clit "$PKG/usr/bin/clit"
+}

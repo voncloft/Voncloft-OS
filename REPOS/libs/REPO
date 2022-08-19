@@ -114,6 +114,7 @@ d:libuv
 d:libmpd
 d:libxcursor
 d:libqalculate
+d:libzip
 d:libtorrent-rasterbar
 d:libglade
 d:geoip
@@ -167,6 +168,7 @@ d:libqmi
 d:libmodplug
 d:libwacom
 d:libftdi-compat
+d:libtomath
 d:libexif
 d:libxpm
 d:libevent
@@ -195,6 +197,7 @@ d:fmt
 d:glib
 d:libgudev
 d:libuninameslist
+d:chmlib
 d:pango
 d:libdmtx
 d:libaio
@@ -457,6 +460,8 @@ f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
 f:e4e4faf915c83b9831a644bab836f6d9:libqalculate/CHANGELOG
 f:f3d5fb940dd002aee74976ff32d66a43:libqalculate/spkgbuild
+f:4166f4254387829a5fd6602a0b720e1a:libzip/CHANGELOG
+f:8764a710b22935429359cf2d0b1fe70c:libzip/spkgbuild
 f:1e03ff36fa8f546193e8fa7924eaf1a3:libtorrent-rasterbar/CHANGELOG
 f:099fcaa791ecd75588b0dc9d176a6d04:libtorrent-rasterbar/spkgbuild
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild
@@ -534,6 +539,8 @@ f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
 f:2aa0658d1c3baea80e0597eb8f725f70:libwacom/CHANGELOG
 f:a34c24a4751396acd7cc9273cadabc8c:libwacom/spkgbuild
 f:ae13bc7326af8d543d55bc1c8b130ebe:libftdi-compat/spkgbuild
+f:e460d085db880412220f9bf025bfed4a:libtomath/CHANGELOG
+f:23f37bd6f94117bc84ec17590a594b86:libtomath/spkgbuild
 f:303816b3ff77e02723a38d101867e7ba:libexif/spkgbuild
 f:53e64757fb50427f24303690a0aa2d65:libxpm/spkgbuild
 f:0bd386b2ad7c92582d2f38f66387cda0:libevent/spkgbuild
@@ -577,6 +584,8 @@ f:fd1deb7d62706b0f6b423e0d3ac2c7d4:glib/spkgbuild
 f:6340260c83dd10a4992c9bd3b81fcb98:libgudev/CHANGELOG
 f:73000df7fcc5b0e10a07572b8ab287d7:libgudev/spkgbuild
 f:cd446c27d4f708ac701bbc8dda63f92a:libuninameslist/spkgbuild
+f:b3848dac1f8e8e0a8619834e2aea92f5:chmlib/CHANGELOG
+f:377b9cecabf4a3380b378e99bc61286d:chmlib/spkgbuild
 f:f9ab58296386e235320bc1370ec230be:pango/spkgbuild
 f:ebdd87d1be841e07a03144aea7b109c6:libdmtx/CHANGELOG
 f:46faf9f90929ac63368a6c7a21ede821:libdmtx/spkgbuild

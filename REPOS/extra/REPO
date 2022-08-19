@@ -26,6 +26,7 @@ d:solaar
 d:epson-inkjet-printer-escpr
 d:setconf
 d:nspr
+d:ebook-tools
 d:chessx
 d:vidtomp3
 d:inotify-tools
@@ -42,6 +43,7 @@ d:gimp
 d:mozjs
 d:djvulibre
 d:freecell-solver
+d:convertlit
 d:gtksourceview3
 d:qemu
 d:gtk2
@@ -119,6 +121,9 @@ f:a0785bf69ab10afbeb832551ac12d132:setconf/spkgbuild
 f:edcda070a27003271126aaaba902f669:nspr/CHANGELOG
 f:b67368e78838b26c4777723bab45cc3b:nspr/override
 f:1bb9af258f78e01e0dec803498be3da1:nspr/spkgbuild
+f:845f07ffb5611c20822ae29ae1742a55:ebook-tools/crash-fix.patch
+f:4b8798bee1339effc3924a8cbff88177:ebook-tools/CHANGELOG
+f:fb88c6791ab60fc530b329f9c34f316d:ebook-tools/spkgbuild
 f:668adb700ec0292770dea8f95161e67f:chessx/CHANGELOG
 f:751d2935949c4f5ff4cf08e2717bea9e:chessx/spkgbuild
 f:21926b318d7ecd15a531ffae0cd7146e:vidtomp3/CHANGELOG
@@ -152,6 +157,8 @@ f:f6e45406ddf40ea37185fa47512a71e4:djvulibre/CHANGELOG
 f:3bcde8d6d13a3d3e0f33f4dcbd7207eb:djvulibre/spkgbuild
 f:704e81edacc682b976932ef9c53f18b4:freecell-solver/CHANGELOG
 f:2ae13a2c3de5dbc6c5de56d89e871b1e:freecell-solver/spkgbuild
+f:da86052816c68ee971245289d6a5cda8:convertlit/CHANGELOG
+f:9adc918a541f4d2a3a9a88ea0e839920:convertlit/spkgbuild
 f:10a18e9386007c8f0aa6198184a47105:gtksourceview3/CHANGELOG
 f:fd5f1f36af0f93fd8081f2af783f78da:gtksourceview3/spkgbuild
 f:6f9043fefe246942a88b37808f8c0a63:qemu/CHANGELOG

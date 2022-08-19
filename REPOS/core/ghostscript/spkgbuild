@@ -2,25 +2,26 @@
 # depends : cups fontconfig freetype2 libjpeg-turbo libpng libtiff openjpeg
 
 name=ghostscript
-version=9.55
+version=9.56.1
 release=1
-
-source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/$name-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-freetype_fix-1.patch"
-
+$_ver=9561
+source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$_ver/$name-$version.tar.xz
+	https://downloads.sourceforge.net/gs-fonts/ghostscript-fonts-std-8.11.tar.gz
+	https://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz"
+	
 options="!checksum"
 
 build() {
 	cd $name-$version
-	patch -Np1 -i $SRC/ghostscript-9.54.0-freetype_fix-1.patch
-
-	rm -rf zlib &&
-
+	rm -rf freetype lcms2mt jpeg libpng openjpeg
 	./configure --prefix=/usr           \
             --disable-compile-inits \
             --enable-dynamic        \
-            #--with-system-libtiff 
-	make
-	make DESTDIR=$PKG install
-
+            --with-system-libtiff 
+        make
+        make so
+        make DESTDIR=$PKG install soinstall
+	mkdir -pv $PKG/usr/include/ghostscript
+	install -v -m644 base/*.h $PKG/usr/include/ghostscript
+	ln -sfvn ghostscript /$PKG/usr/ps
 }

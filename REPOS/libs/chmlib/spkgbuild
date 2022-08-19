@@ -1,0 +1,16 @@
+# description : Library for dealing with Microsoft ITSS/CHM format files
+# depends : glibc
+
+name=chmlib
+version=0.40
+release=6
+
+source="http://www.jedrea.com/$name/$name-$version.tar.bz2"
+
+build() {
+	cd $name-$version
+	  ./configure --prefix=/usr \
+              --enable-examples=yes
+  	make
+	make DESTDIR=$PKG install
+}

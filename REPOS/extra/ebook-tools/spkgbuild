@@ -1,0 +1,21 @@
+# description : tools for converting ebook file formats
+# depends : convertlit libxml2 libzip cmake
+
+name=ebook-tools
+version=0.2.2
+release=7
+
+source="https://downloads.sourceforge.net/${name}/${name}-${version}.tar.gz
+	crash-fix.patch"
+
+build() {
+	cd $name-$version
+	mkdir -pv build
+	patch -p2 -i $SRC/crash-fix.patch
+	cd build
+	cmake \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		..
+	make
+	make DESTDIR=$PKG install
+}

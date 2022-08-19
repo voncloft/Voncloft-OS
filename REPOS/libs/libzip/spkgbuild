@@ -1,0 +1,19 @@
+# description : c library for reading creating and modifying zip archives
+# depends : bzip2 gnutls openssl zlib zstd cmake
+
+name=libzip
+version=1.9.2
+release=1
+
+source="https://libzip.org/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_INSTALL_LIBDIR=lib \
+	..
+	make
+	make DESTDIR=$PKG install
+}
