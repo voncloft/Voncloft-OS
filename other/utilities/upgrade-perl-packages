@@ -1,0 +1,8 @@
+for d in /usr/Voncloft-OS/perl/*
+do
+	if [[ ! ${d##*/} == "perl" ]];then
+	        packages=$packages" "${d##*/}
+	fi
+done
+sudo scratch install -rc $packages
+#echo $packages

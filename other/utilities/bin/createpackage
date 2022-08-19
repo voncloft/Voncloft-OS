@@ -62,7 +62,8 @@ for dir in /Voncloft-OS/REPOS/*/$name/; do
                         echo $changelog_path
                         changelog "$changelog_path" "Initial creation of package in repo"
                         echo "Changelog Created"
-
+			sed -i -e "s/pkgname/name/g" $dirs$name/spkgbuild
+			sed -i -e "s/pkgver/version/g" $dirs$name/spkgbuild
 			####add option to ask for configuration files####
 			
                         echo "Do you need any configuration files? <Y/N>"
