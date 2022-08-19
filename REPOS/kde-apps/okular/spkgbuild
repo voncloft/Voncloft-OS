@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps kactivities kjs kparts kpty
 
 name=okular
 version=22.08.0

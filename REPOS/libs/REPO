@@ -208,6 +208,7 @@ d:neon
 d:libcdio-paranoia
 d:apr
 d:libdbi
+d:libspectre
 d:lzo
 d:libgusb
 d:libva-intel
@@ -596,6 +597,8 @@ f:5080a18ef0614cc56c3db47c8ca95394:neon/spkgbuild
 f:d472f4e112b787b34503fb20103eb231:libcdio-paranoia/spkgbuild
 f:4992f2d0e7affb83d96e045241a21c6a:apr/spkgbuild
 f:15625a5c7b2874ac21b4276b7dee75bc:libdbi/spkgbuild
+f:d5e66af48ff259a99001c91fb71d53ff:libspectre/CHANGELOG
+f:b35312cbee5eca68c9fadfac1099f00c:libspectre/spkgbuild
 f:d12025f243e321bdc550582589d37d21:lzo/spkgbuild
 f:a73249ccf3dae19a0ad7549a8d2e2439:libgusb/CHANGELOG
 f:9a9793111efe23d1e26e3064f26320d8:libgusb/spkgbuild
