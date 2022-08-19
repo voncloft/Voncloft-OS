@@ -1,0 +1,13 @@
+# description : will add page numbers to pdf documents
+# depends : tl-unx
+
+name=convertpdf
+version=1
+release=1
+
+source="convertpdf"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/convertpdf $PKG/usr/bin/convertpdf
+}

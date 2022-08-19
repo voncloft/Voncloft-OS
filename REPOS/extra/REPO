@@ -34,6 +34,7 @@ d:discordchatexporter
 d:nodejs
 d:dbi-drivers
 d:bluefish
+d:convertpdf
 d:screenfetch
 d:sane
 d:gtk3
@@ -137,6 +138,9 @@ f:8569a98c5a3f646ad61db9a1890f9eae:discordchatexporter/discord-chat-exporter-cli
 f:62cbf7d9432d07a7cf186d7d5f9f57b9:nodejs/spkgbuild
 f:855a926513e4239c61a09466de81de36:dbi-drivers/spkgbuild
 f:e68b811ec7656ab0ede0546616751951:bluefish/spkgbuild
+f:332ae8d62f376752915a9efaae4e7923:convertpdf/CHANGELOG
+f:913069c0036f1e139915ea7f44a7afe6:convertpdf/convertpdf
+f:e0b2482b2da2e0b1939a0464ca601e52:convertpdf/spkgbuild
 f:4f4a324a8ddaea736240853fecfc314d:screenfetch/CHANGELOG
 f:a666051d1c798d6ca8afa17d162bf95f:screenfetch/spkgbuild
 f:38282db290c44e941952d303c02b9ced:sane/post-install.sh

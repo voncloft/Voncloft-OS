@@ -1,0 +1,13 @@
+#!/bin/sh
+for dir in */;
+do
+(
+cd "$dir"
+name=$(ls *.*)
+echo $name
+mv $name convert.pdf
+pdflatex /home/von/texlive/Numbered.tex
+mv Numbered.pdf $name --verbose
+rm Numbered.aux  Numbered.log convert.pdf
+)
+done
