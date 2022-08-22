@@ -2,7 +2,7 @@
 # depends : cinnamon-desktop gobject-introspection libcanberra libinput libsm libxkbcommon startup-notification zenity
 
 name=muffin
-version=5.4.5
+version=5.4.6
 release=1
 
 source="https://github.com/linuxmint/muffin/archive/refs/tags/$version.tar.gz"
