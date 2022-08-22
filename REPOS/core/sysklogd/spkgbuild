@@ -1,11 +1,9 @@
 # description	: Logging system messages, such as those given by the kernel
 
 name=sysklogd
-version=2.4.4
+version=1.5.1
 release=1
-source="https://github.com/troglobit/sysklogd/releases/download/v$version/sysklogd-$version.tar.gz
-	rc.$name
-	run"
+source="https://www.infodrom.org/projects/$name/download/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
