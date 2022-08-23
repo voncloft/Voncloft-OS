@@ -750,7 +750,8 @@ f:40f5213a8d76656844ce0c8028a60629:xbps/spkgbuild
 f:a49965cd2d65ef9676eec0cd903167d7:nano/CHANGELOG
 f:a4ce7ce5111e38ef571c619a75047f2b:nano/override
 f:cc41f97f905500ed9fb7618d985c7d0e:nano/spkgbuild
-f:36c65d9e9a9b5e6f9476f8bba81994e2:hunspell/spkgbuild
+f:2f849e06a0e69307ef24b9f232e1068b:hunspell/CHANGELOG
+f:4f296a022ba9b0015f56ceb3d780b0c3:hunspell/spkgbuild
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-install.sh
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-upgrade.sh
 f:cff3571dcd31294f38def129c5ded3b4:shared-mime-info/spkgbuild
@@ -916,7 +917,8 @@ f:71bbcc9ba1218a8413e0430b851b33c2:papirus-icon-theme-light/spkgbuild
 f:28639b517fa9d01f3ca91eb4a99b5b5a:pixman/spkgbuild
 f:e2cedce9560b62149ad586c9a3820d6f:mc/CHANGELOG
 f:addc1415999499d2c2a4dc39fb7e2a23:mc/spkgbuild
-f:55f6697a506fc85073ef5cd484227991:fdupes/spkgbuild
+f:bbdc56c4cdcc1ee8473f636c16c20e2c:fdupes/CHANGELOG
+f:19ca9db89cc8ad9aa461ef630695f5d8:fdupes/spkgbuild
 f:a39a3ceb97a26ca0cd031d17eb8ef7d4:squashfs-tools/CHANGELOG
 f:466f4b9e8f81f446f0218cebde4206a5:squashfs-tools/fix-glibc-2.28.patch
 f:adb6de3719240b52d399a76ef32fe9c3:squashfs-tools/spkgbuild
@@ -1075,8 +1077,8 @@ f:a8e5c3af35b596acaf3b77bc7546fa88:yaml-cpp/spkgbuild
 f:e1aadf4dda84d58913f96786ffb4664c:links/CHANGELOG
 f:e8a8418f4eadfdee36c67eee791aece8:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
-f:647d8b514326af3bf8aa8af42dbb67e8:qalculate/CHANGELOG
-f:d5307c84b496317e892eba280b06cd0d:qalculate/spkgbuild
+f:c22b29c8d72a9a87aa3fbc6aa140ece2:qalculate/CHANGELOG
+f:77c7a604b70572a51dcb5b342b6304f8:qalculate/spkgbuild
 f:286a34fae690eb366507213a5152aa79:gc/CHANGELOG
 f:ecd159406cdd8f3c4297b12030de4702:gc/spkgbuild
 f:45f13b305d240b2a298e9d1a4353049e:bash-completion/CHANGELOG
@@ -1208,8 +1210,8 @@ f:4da1ca0f003ee4743d49e7234fed3090:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
 f:6cc4a11902be42e5339b747d8305c519:icewm/CHANGELOG
 f:401f547483ef2fc1e74b43c4ec1c840f:icewm/spkgbuild
-f:0cf687ad539013e24a0561ee6718a75f:ibus/CHANGELOG
-f:d1df3ee14d158dc913100ae0828fe4ef:ibus/spkgbuild
+f:a8937fa54498cc6152abb95c40ff9274:ibus/CHANGELOG
+f:a762127bcdbb10b2b78b6a7085361ed7:ibus/spkgbuild
 f:ff63cefdccc761edd6ee5ff997c05eab:smplayer-themes/CHANGELOG
 f:232228ddc8227ccdf79f76b049322099:smplayer-themes/spkgbuild
 f:481b89ead6b42b6067b6a0ea21efddd5:opera/CHANGELOG
@@ -1241,8 +1243,8 @@ f:501ebf202c7db0e51a686dafec652c40:dkms/CHANGELOG
 f:b07cac848da923e7dcd85fa4076a7c95:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
 f:8e8a437236bdeebcbcfb3f631d095501:gsettings-desktop-schemas/spkgbuild
-f:dd4da624f7bdd64e08adc2a9c2ddd584:ethtool/CHANGELOG
-f:df7a064eccd03bbd5ca4603b45fff07b:ethtool/spkgbuild
+f:6a6c09deb7542c19de5c16bff35ce950:ethtool/CHANGELOG
+f:aee7f72ea9735f03531659e2f4c95b2b:ethtool/spkgbuild
 f:a3b27534933eeeabeaf7ddcab763c725:nbwmon/spkgbuild
 f:1155045c45cadc916219485d2c5669a7:java-headless/spkgbuild
 f:e16922d18f1e753172264c45174efccc:p11-kit/CHANGELOG

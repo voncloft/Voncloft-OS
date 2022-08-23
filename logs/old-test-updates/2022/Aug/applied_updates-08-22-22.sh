@@ -36,3 +36,41 @@ sed -i -e "s/version=4.17.2/version=4.17.3/g" xfce/xfce4-panel/spkgbuild
 changelog "xfce/xfce4-panel/spkgbuild" "Upgraded from version 4.17.2 to version 4.17.3"
 sed -i -e "s/version=4.16.0/version=4.17.0/g" xfce/xfdesktop/spkgbuild
 changelog "xfce/xfdesktop/spkgbuild" "Upgraded from version 4.16.0 to version 4.17.0"
+sed -i -e "s/version=5.18/version=5.19/g" core/ethtool/spkgbuild
+changelog "core/ethtool/spkgbuild" "Upgraded from version 5.18 to version 5.19"
+sed -i -e "s/version=2.1.2/version=2.2.0/g" core/fdupes/spkgbuild
+changelog "core/fdupes/spkgbuild" "Upgraded from version 2.1.2 to version 2.2.0"
+sed -i -e "s/version=1.7.0/version=1.7.1/g" core/hunspell/spkgbuild
+changelog "core/hunspell/spkgbuild" "Upgraded from version 1.7.0 to version 1.7.1"
+sed -i -e "s/version=1.5.26/version=1.5.27/g" core/ibus/spkgbuild
+changelog "core/ibus/spkgbuild" "Upgraded from version 1.5.26 to version 1.5.27"
+sed -i -e "s/version=4.2.0/version=4.3.0/g" core/qalculate/spkgbuild
+changelog "core/qalculate/spkgbuild" "Upgraded from version 4.2.0 to version 4.3.0"
+sed -i -e "s/version=1.4.0/version=1.5.0/g" multilib/libglvnd-32/spkgbuild
+changelog "multilib/libglvnd-32/spkgbuild" "Upgraded from version 1.4.0 to version 1.5.0"
+sed -i -e "s/version=1.4.0/version=1.5.0/g" libs/libglvnd/spkgbuild
+changelog "libs/libglvnd/spkgbuild" "Upgraded from version 1.4.0 to version 1.5.0"
+sed -i -e "s/version=4.0.1/version=4.0.2/g" libs/libimagequant/spkgbuild
+changelog "libs/libimagequant/spkgbuild" "Upgraded from version 4.0.1 to version 4.0.2"
+sed -i -e "s/version=4.2.0/version=4.3.0/g" libs/libqalculate/spkgbuild
+changelog "libs/libqalculate/spkgbuild" "Upgraded from version 4.2.0 to version 4.3.0"
+sed -i -e "s/version=2.19.1/version=2.19.2/g" nonfree/pandoc-bin/spkgbuild
+changelog "nonfree/pandoc-bin/spkgbuild" "Upgraded from version 2.19.1 to version 2.19.2"
+sed -i -e "s/version=1.24.56/version=1.24.57/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.24.56 to version 1.24.57"
+sed -i -e "s/version=1.27.56/version=1.27.57/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.27.56 to version 1.27.57"
+sed -i -e "s/version=6.1.0/version=6.1.1/g" python/python-flask-dance/spkgbuild
+changelog "python/python-flask-dance/spkgbuild" "Upgraded from version 6.1.0 to version 6.1.1"
+sed -i -e "s/version=2.8.5/version=2.8.6/g" python/python-networkx/spkgbuild
+changelog "python/python-networkx/spkgbuild" "Upgraded from version 2.8.5 to version 2.8.6"
+sed -i -e "s/version=1.9.2/version=1.10/g" python/python-pydantic/spkgbuild
+changelog "python/python-pydantic/spkgbuild" "Upgraded from version 1.9.2 to version 1.10"
+sed -i -e "s/version=36.0/version=37.0/g" python/python-readme-renderer/spkgbuild
+changelog "python/python-readme-renderer/spkgbuild" "Upgraded from version 36.0 to version 37.0"
+sed -i -e "s/version=65.1.1/version=65.2.0/g" python/python-setuptools/spkgbuild
+changelog "python/python-setuptools/spkgbuild" "Upgraded from version 65.1.1 to version 65.2.0"
+sed -i -e "s/version=2.4.2/version=2.5.0/g" python/python-sphinxcontrib-bibtex/spkgbuild
+changelog "python/python-sphinxcontrib-bibtex/spkgbuild" "Upgraded from version 2.4.2 to version 2.5.0"
+sed -i -e "s/version=1.26.11/version=1.26.12/g" python/python-urllib3/spkgbuild
+changelog "python/python-urllib3/spkgbuild" "Upgraded from version 1.26.11 to version 1.26.12"

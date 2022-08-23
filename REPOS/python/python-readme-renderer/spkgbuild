@@ -1,7 +1,7 @@
 # depends : python-bleach python-docutils python-pygments python-six
 
 name=python-readme-renderer
-version=36.0
+version=37.0
 release=3
 
 source="https://github.com/pypa/readme_renderer/archive/refs/tags/$version.tar.gz"
