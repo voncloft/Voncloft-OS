@@ -2,7 +2,7 @@
 # depends : python-numpy python-dateutil python-pytz python-setuptools
 
 name=python-pandas
-version=1.5.0
+version=1.6.0
 release=1
 
 source="https://github.com/pandas-dev/pandas/archive/refs/tags/v$version.tar.gz"

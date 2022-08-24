@@ -2,7 +2,7 @@
 # depends : python-google-auth-httplib2 python-uritemplate python-google-api-core
 
 name=python-google-api-python-client
-version=2.57.0
+version=2.58.0
 release=1
 
 source="https://github.com/google/google-api-python-client/archive/refs/tags/v$version.tar.gz"
