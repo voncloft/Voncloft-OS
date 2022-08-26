@@ -12,8 +12,6 @@ options="!checksum"
 build()
 {
 	cd linux-$version
-	mkdir -pv $PKG/etc
-	echo $version > $PKG/etc/LINUX_VERSION
 	make mrproper
 	cp $SRC/.config .
 	make menuconfig
@@ -22,16 +20,16 @@ build()
 	mkdir $PKG/boot
 	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-$version
 
-	periods="${version//[^.]}"
+	#periods="${version//[^.]}"
 
-	if [[ "${#periods}" -eq 1 ]];then
-		version=$version.0
-	else
-		version=$version
-	fi
-
-
-
+	#if [[ "${#periods}" -eq 1 ]];then
+	#	version=$version.0
+	#else
+	#	version=$version
+	#fi
+	#kernver=${version}$(grep CONFIG_LOCALVERSION= .config | cut -d '"' -f2)
+	#echo $kernver > $PKG/lib/modules/KERNELVERSION
+	echo $version > $PKG/lib/modules/KERNELVERSION
 	#rm -rf $PKG/lib/firmware
 
 	#for file in $(ls arch); do

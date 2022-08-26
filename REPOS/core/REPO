@@ -654,7 +654,7 @@ f:652f847ebe7df98a7ffe7607b3c3cd9c:linux-desktop/CHANGELOG
 f:ed95c05aeb478387b4bf9e1cdeedf18e:linux-desktop/post-upgrade.sh
 f:511d2d2f2ca57c4a5938f0bedb1ff0de:linux-desktop/.old-config
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-desktop/override
-f:ac67379fa27e21c5cc41375edd9c2486:linux-desktop/spkgbuild
+f:c9fd555641f595cdcce2a353d47db2a2:linux-desktop/spkgbuild
 f:d536957a77dc208ece67a289ca972c85:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -984,7 +984,7 @@ f:e762fccfee971f972096f130162c2edb:linux-router/post-install.sh
 f:86ef1019818b97d42c827441923f9f4a:linux-router/CHANGELOG
 f:793969456faf973b96e1aba7f8a4651e:linux-router/post-upgrade.sh
 f:5bda23c7f6afd31aa74f4d4602024e19:linux-router/override
-f:f0928abf337afab529c92a9ba3c71ec2:linux-router/spkgbuild
+f:c9fd555641f595cdcce2a353d47db2a2:linux-router/spkgbuild
 f:9a66451909861d207ef7b152e0bff6b0:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
@@ -1239,8 +1239,9 @@ f:0775823d8fe2187d756917576e08a71b:arc-gtk-theme/spkgbuild
 f:d9968d39b792248b176fd0642e6ead3b:cabextract/spkgbuild
 f:918eaebcdde8270e44228ad6bf5a03df:flac/CHANGELOG
 f:3e37b53c599167a829b67805ffe82b9e:flac/spkgbuild
+f:1fdd2d6a322cac28a0f634ccd7a61d49:dkms/buildmodules-template.sh
 f:501ebf202c7db0e51a686dafec652c40:dkms/CHANGELOG
-f:b07cac848da923e7dcd85fa4076a7c95:dkms/spkgbuild
+f:c0407b25a4f8c4f434faf13881c20aa9:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
 f:8e8a437236bdeebcbcfb3f631d095501:gsettings-desktop-schemas/spkgbuild
 f:6a6c09deb7542c19de5c16bff35ce950:ethtool/CHANGELOG
