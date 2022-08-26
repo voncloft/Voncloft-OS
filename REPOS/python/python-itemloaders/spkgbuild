@@ -2,7 +2,7 @@
 # depends : python-w3lib python-parsel python-jmespath python-itemadapter
 
 name=python-itemloaders
-version=1.0.4
+version=1.0.5
 release=1
 
 source="https://github.com/scrapy/itemloaders/archive/refs/tags/v$version.tar.gz"
