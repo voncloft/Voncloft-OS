@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-fsspec
-version=2022.7.1
+version=2022.8.0
 release=1
 
 source="https://github.com/intake/filesystem_spec/archive/refs/tags/$version.tar.gz"

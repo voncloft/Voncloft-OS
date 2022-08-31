@@ -2,7 +2,7 @@
 # depends : python-colorama python-requests python-six
 
 name=python-vistir
-version=0.5.6
+version=0.6.1
 release=3
 
 source="https://github.com/sarugaku/vistir/archive/refs/tags/$version.tar.gz"
