@@ -43,8 +43,8 @@ d:git
 d:openssl1.0
 d:dhcp
 d:libnetfilter_conntrack
-f:4fabbec4cd97107c6fc1f6462d768673:yt-dlp/CHANGELOG
-f:3707e584d2015631c3ccd7344a287647:yt-dlp/spkgbuild
+f:5bc841a9a579c28c5d289aa52174e3f3:yt-dlp/CHANGELOG
+f:c489625d0dc2dcc84ce0f56f4ebde54e:yt-dlp/spkgbuild
 f:d3ac1f5a3d8570c04462dc3ce4aa1c18:openssh/post-install.sh
 f:3571cfd0e200309d5f7eaac8dbda524b:openssh/CHANGELOG
 f:375bc8bcfb157208c9c5d9700c7c6b69:openssh/pre-install.sh
@@ -109,9 +109,9 @@ f:586f645cc60e2fdda0dbca9622241772:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:d7198e4aa6e47a01b44545d7126270f2:thunderbird/CHANGELOG
+f:6c49d42e895b79a18fd14cb0a48841be:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:a728c354154001565bb51437538f2157:thunderbird/spkgbuild
+f:24f7200647550f12ba6d33bfee92fad4:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:4f7a53dd5f1e8f7e21043697d218fc73:openvpn/CHANGELOG
