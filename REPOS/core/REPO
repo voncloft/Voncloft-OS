@@ -480,12 +480,12 @@ f:6a59157409abe87cb4338c9f330e843c:sysvinit/CHANGELOG
 f:e5504d827b9507c8a330b2999d0f12c2:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:190319edcc97c99d46ea374c9e62de63:shadow/CHANGELOG
-f:627c2917ac3828c3ed168d3b7e67dbe5:shadow/post-upgrade.sh
-f:11f5b3140ca4cef4dee8034091af88cc:shadow/pwck
-f:e2ecbd6743ab9d7faf5f436e9edd6265:shadow/su
-f:487814d5784336179f5a9a5d3f5cf933:shadow/spkgbuild
+f:04e83abaeffce07c5e6155d0b467d9d9:shadow/post-upgrade.sh
+f:67bfdee60d1f31efc42ea724c5da9cad:shadow/su
+f:a647a87ebd460912bf80a62a8c66d2ac:shadow/chpasswd
+f:e0f33a1ed10c9260c38e592e677ae855:shadow/spkgbuild
 f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
-f:2728914f5b2c37fc421d046ce5e5b464:shadow/chage
+f:651dd39e74b086fa23e8c8cf915224a6:shadow/chage
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
 f:b198c0e0ced4d2ec028ab49f887bf430:acpid/CHANGELOG
 f:d22a8b6910dcf4f4d08fb658fa78e999:acpid/rc.acpid
@@ -956,6 +956,7 @@ f:ab7252f8ed151e1a00263ef363bcce08:cryptsetup/CHANGELOG
 f:5ccc2d224d4b04cf5c84bead00a43714:cryptsetup/spkgbuild
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
 f:d5f05860f0dfcbadf7692ec94bc01860:cracklib/CHANGELOG
+f:3dd3aebdb7f724cbabf55c78c1d8dc84:cracklib/post-upgrade.sh
 f:5891159d26622e15246cbc3df30d88fd:cracklib/spkgbuild
 f:9241b580cb60b03ae158f84c09d9be38:gnutls/CHANGELOG
 f:db440138555897cc49f4a1b12e670ea0:gnutls/spkgbuild

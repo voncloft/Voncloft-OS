@@ -8,33 +8,30 @@ source="https://github.com/shadow-maint/shadow/releases/download/v$version/shado
 	login
 	passwd
 	su
+	chpasswd
 	chage"
 options="!checksum"
 
 build() {
 	cd $name-$version
-	if [ -f /var/lib/scratchpkg/db/linux-pam ];
-	then
-		sed -i 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' etc/login.defs
-	fi
+	sed -i 's/groups$(EXEEXT) //' src/Makefile.in          &&
 
-	sed -i 's/groups$(EXEEXT) //' src/Makefile.in 
-	find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \; 
-	find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \; 
-	find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;
+	find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \; &&
+	find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \; &&
+	find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \; &&
 
-        sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
-        -e 's@/var/spool/mail@/var/mail@'                 \
-        -i etc/login.defs
+	sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' \
+    	-e 's@/var/spool/mail@/var/mail@'                 \
+    	-e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                \
+    	-i etc/login.defs                                 &&
 
-    	sed -i 's/1000/999/' etc/useradd
-
-    	./configure --sysconfdir=/etc --with-group-name-max-length=32
-    	make
-    	make DESTDIR=$PKG install
-	
-	
-	install -v -m644 $PKG/etc/login.defs $PKG/etc/login.defs.orig
+	./configure --sysconfdir=/etc               \
+            --disable-static                \
+            --with-group-name-max-length=32 &&
+	make
+	make DESTDIR=$PKG install
+	mkdir $PKG/etc
+	install -v -m644 $PKG/etc/login.defs $PKG/etc/login.defs.orig &&
 	for FUNCTION in FAIL_DELAY               \
                 FAILLOG_ENAB             \
                 LASTLOG_ENAB             \
@@ -54,25 +51,10 @@ build() {
 	do
     		sed -i "s/^${FUNCTION}/# &/" $PKG/etc/login.defs
 	done
+	install -Dm644 $SRC/login $PKG/etc/pam.d/login
+	install -Dm644 $SRC/passwd $PKG/etc/pam.d/passwd
+	install -Dm644 $SRC/su $PKG/etc/pam.d/su
+	install -Dm644 $SRC/chpasswd $PKG/etc/pam.d/chpasswd
+	install -Dm644 $SRC/chage $PKG/etc/pam.d/chage
 	
-	mkdir -pv $PKG/etc/pam.d
-	install -m644 $SRC/login $PKG/etc/pam.d/login
-	install -m644 $SRC/passwd $PKG/etc/pam.d/passwd	
-	install -m644 $SRC/su $PKG/etc/pam.d/su
-	install -m644 $SRC/chage $PKG/etc/pam.d/chage
-	
-	for PROGRAM in chfn chgpasswd chpasswd chsh groupadd groupdel \
-            groupmems groupmod newusers useradd userdel usermod
-	do
-    		install -v -m644 $PKG/etc/pam.d/chage $PKG/etc/pam.d/${PROGRAM}
-    		sed -i "s/chage/$PROGRAM/" $PKG/etc/pam.d/${PROGRAM}
-	done
-	if [ -f /etc/login.access ];
-	then
-	     mv -v /etc/login.access{,.NOUSE}
-	fi
-	if [ -f /etc/limits ]; 
-	then
-		mv -v /etc/limits{,.NOUSE}
-	fi
 }
