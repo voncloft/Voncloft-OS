@@ -137,8 +137,8 @@ f:463f717515ab0f27e22f9a6166063f1e:wpa_supplicant/rc.wpa
 f:64d22c68fd52aaea378dde9d844872a2:wpa_supplicant/conf
 f:b57af65b0209972792ef2e021035979e:wpa_supplicant/spkgbuild
 f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
-f:638bc3e2a84ef18cb9c547b7bdda50e0:nmap/CHANGELOG
-f:6309f6c5e09f3cfdd2819f1e77c38c54:nmap/spkgbuild
+f:ac40b26161a2e3ca1c5f8d55b4b6dc8c:nmap/CHANGELOG
+f:5c1192dc6121f2fcc64df6743a3c1a8f:nmap/spkgbuild
 f:4a00b62892a0893980a55abf7372102f:wireshark/CHANGELOG
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
 f:b5b83a9210ca737f0c3fa89e295b3dd6:wireshark/spkgbuild
@@ -156,11 +156,11 @@ f:0e8c42daae6cab0096d8b65a2dcb2c3b:avahi/pre-install.sh
 f:104a643de888cb977c33b53c8211fd6a:avahi/spkgbuild
 f:497d4af7bf83dbe15393a04847f79571:youtube-dl/CHANGELOG
 f:c71c1cf8de6e2bb5ded1dbb19ec3edf6:youtube-dl/spkgbuild
-f:69ddb05dde243b0c69e12fc09b5e410d:firefox/CHANGELOG
+f:5d9825820643834595d06eef3b38a97d:firefox/CHANGELOG
 f:37db9ec3cc336d3a09ede8becec2ad69:firefox/fix-ftbfs-newer-cbindgen.patch
 f:a4a0f7c9c1e3424463670d031976aa67:firefox/override
 f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
-f:2ab7814af6c3d0da56bcf88e9cc1b6c1:firefox/spkgbuild
+f:d693780098e6acfbb829ea555f033c2f:firefox/spkgbuild
 f:89fb28a484e7f5126839e83f10de377a:firefox/pre-upgrade.sh
 f:a5988e80717ec0a01bcc8f73faf5a1f6:git/CHANGELOG
 f:99a579c06d51b944ea836c292cc663c4:git/spkgbuild
