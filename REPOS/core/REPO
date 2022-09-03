@@ -479,8 +479,9 @@ f:1c3c5b6ba36a9bd98eb820d9a0725eb0:make/spkgbuild
 f:6a59157409abe87cb4338c9f330e843c:sysvinit/CHANGELOG
 f:e5504d827b9507c8a330b2999d0f12c2:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
+f:d65f80e3f592084b62d205b075f08a9c:shadow/post-install.sh
 f:190319edcc97c99d46ea374c9e62de63:shadow/CHANGELOG
-f:04e83abaeffce07c5e6155d0b467d9d9:shadow/post-upgrade.sh
+f:d65f80e3f592084b62d205b075f08a9c:shadow/post-upgrade.sh
 f:67bfdee60d1f31efc42ea724c5da9cad:shadow/su
 f:a647a87ebd460912bf80a62a8c66d2ac:shadow/chpasswd
 f:e0f33a1ed10c9260c38e592e677ae855:shadow/spkgbuild
