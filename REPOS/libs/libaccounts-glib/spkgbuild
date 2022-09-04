@@ -2,7 +2,7 @@
 # depends : dbus-glib libxml2 sqlite gobject-introspection
 
 name=libaccounts-glib
-version=1.25
+version=1.26
 release=6
 
 source="https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/VERSION_$version/libaccounts-glib-VERSION_$version.tar.gz"
