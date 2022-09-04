@@ -14,5 +14,5 @@ build() {
 	meson .. \
 	-Dprefix=/usr \
 	-Dlibdir=/usr/lib
-	meson install . --destdir $PKG
+	meson install --destdir $PKG
 }
