@@ -5,9 +5,10 @@ name=flac
 version=1.4.0
 release=1
 source="https://downloads.xiph.org/releases/$name/$name-$version.tar.xz"
-
+noextract="$name-$version.tar.xz"
 build() {
-	cd $name-$version
+	tar xvf $SRC/$name-$version.tar.xz
+	cd $SRC/$name-$version
 
 	./configure --prefix=/usr \
 	            --disable-thorough-tests
