@@ -2,7 +2,7 @@
 # depends : python-colorama python-cymem python-manhole
 
 name=python-hunter
-version=3.4.3
+version=3.5.0
 release=2
 
 source="https://github.com/ionelmc/python-hunter/archive/refs/tags/v$version.tar.gz"
