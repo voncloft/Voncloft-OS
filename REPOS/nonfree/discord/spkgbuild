@@ -6,15 +6,22 @@ release=1
 source="https://dl.discordapp.net/apps/linux/$version/discord-$version.tar.gz"
 
 build() {
-	install -d $PKG/usr/share/$name
-	cp -a Discord/* $PKG/usr/share/$name
-	chmod 755 $PKG/usr/share/$name/Discord
-	rm $PKG/usr/share/$name/postinst.sh
+	cd Discord
+	sed -i "s|Exec=.*|Exec=/usr/bin/$name|" $name.desktop
+  	echo 'Path=/usr/bin' >> $name.desktop
 
-	install -d $PKG/usr/bin
-	ln -s /usr/share/$name/Discord $PKG/usr/bin/$name
+	install -d "$PKG"/opt/$name
+	cp -a Discord/. "$PKG"/opt/$name
 
-	install -d $PKG/usr/share/pixmaps $PKG/usr/share/applications
-	ln -s /usr/share/$name/$name.png $PKG/usr/share/pixmaps/$name.png
-	ln -s /usr/share/$name/$name.desktop $PKG/usr/share/applications/$name.desktop	
+	chmod 755 "$PKG"/opt/$name/Discord
+
+	rm "$PKG"/opt/$name/postinst.sh
+
+  	install -d "$PKG"/usr/{bin,share/{pixmaps,applications}}
+  	ln -s /opt/$name/Discord "$PKG"/usr/bin/$name
+  	ln -s /opt/$name/discord.png "$PKG"/usr/share/pixmaps/$name.png
+  	ln -s /opt/$name/$pkgname.desktop "$PKG"/usr/share/applications/$name.desktop
+
+  # setuid on chrome-sandbox
+ 	 chmod u+s "$PKG"/opt/$name/chrome-sandbox
 }
