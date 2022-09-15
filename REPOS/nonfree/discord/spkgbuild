@@ -9,7 +9,7 @@ build() {
 	cd Discord
 	sed -i "s|Exec=.*|Exec=/usr/bin/$name|" $name.desktop
   	echo 'Path=/usr/bin' >> $name.desktop
-
+	cd ..
 	install -d "$PKG"/opt/$name
 	cp -a Discord/. "$PKG"/opt/$name
 
