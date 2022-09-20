@@ -30,6 +30,7 @@ d:ebook-tools
 d:chessx
 d:vidtomp3
 d:inotify-tools
+d:minecraft-launcher
 d:discordchatexporter
 d:nodejs
 d:dbi-drivers
@@ -132,6 +133,9 @@ f:f1739fcafcb78fde77578cc276f1ff06:vidtomp3/vidtomp3
 f:182d294f6367ebed6cc4e144c9695dcb:vidtomp3/spkgbuild
 f:c935c3fec78d41f3babd07f20ed8eca1:inotify-tools/CHANGELOG
 f:1ec689d517c6c188c1d1f5b4a5e9fef6:inotify-tools/spkgbuild
+f:b78826ef54e0cab77d9ea4c4b7c50174:minecraft-launcher/CHANGELOG
+f:61a694a2574ed840f1509039d18e8b1e:minecraft-launcher/minecraft-launcher.desktop
+f:1515ff64ea19d1ed58dc22537a30e81b:minecraft-launcher/spkgbuild
 f:898fb5910f49afc8d2e27229df420c42:discordchatexporter/CHANGELOG
 f:9ee727fd981d5bd71261825dcc68c6f0:discordchatexporter/spkgbuild
 f:8569a98c5a3f646ad61db9a1890f9eae:discordchatexporter/discord-chat-exporter-cli

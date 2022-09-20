@@ -1,0 +1,16 @@
+# description : Minecraft Server
+# depends : java
+
+name=minecraft-server
+version=1.19.2
+release=1
+
+source="https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
+	minecraft.sh"
+
+build() {
+	mkdir -pv $PKG/minecraft
+	install -Dm644 $SRC/server.jar $PKG/minecraft/minecraft_server.$version
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/minecraft.sh $PKG/usr/bin/minecraft.sh
+}
