@@ -1,5 +1,7 @@
 # description : launches minecraft
-# depends : alsa ati-spi2-atk at-spi2-core atk dbus expat gcc gdk-pixbuf2 glib2 glibc gtk3 libcups libdrm libx11 libxcb libxcomposite libxdamage libext libxfixes libxrandr mesa nspr nss pango util-linux zlib java xorg-xrandr
+# depends : alsa-lib at-spi2-atk at-spi2-core atk dbus expat gcc gdk-pixbuf glib glibc gtk3 cups libdrm libx11 
+# depends : libxcb libxcomposite libxdamage libxext libxfixes libxrandr mesa nspr nss pango util-linux zlib java-headless 
+# depends : xrandr
 
 name=minecraft-launcher
 version=1.0.1221
