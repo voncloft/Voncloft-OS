@@ -1,7 +1,7 @@
 # description	: Portable foreign function interface library
 
 name=libffi
-version=3.3
+version=3.4.3
 release=1
 source="ftp://sourceware.org/pub/$name/$name-$version.tar.gz"
 
