@@ -2,16 +2,14 @@
 # depends : 
 
 name=java-headless
-version=18.0.2
-release=1
+version=8
+release=u341
 
-#source="https://github.com/frekele/oracle-java/releases/download/$version$release-b10/jre-$version$release-linux-x64.tar.gz"
-source="https://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-$version/OpenJDK-$version+8-x86_64-bin.tar.xz"
+source="https://github.com/frekele/oracle-java/releases/download/$version$release-b10/jre-$version$release-linux-x64.tar.gz"
 options="!checksum"
 
 build() {
-	cd *
-	install -vdm755 $PKG/OpenJDK-$version-bin
-	mv -v * $PKG/opt/OpenJDK-$version-bin
-	ln -sfn OpenJDK-$version-bin $PKG/opt/jdk	
+	mkdir -pv $PKG/opt/java
+	cd jre1.8.0_212
+	mv * $PKG/opt/java
 }
