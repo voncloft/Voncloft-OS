@@ -5,12 +5,12 @@ name=minecraft-server
 version=1.19.2
 release=1
 
-source="https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
+source="https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
 	minecraft.sh"
 
 build() {
 	mkdir -pv $PKG/minecraft
-	install -Dm644 $SRC/server.jar $PKG/minecraft/minecraft_server.$version
+	install -Dm644 $SRC/server.jar $PKG/minecraft/minecraft_server.$version.jar
 	mkdir -pv $PKG/usr/bin
-	install -Dm755 $SRC/minecraft.sh $PKG/usr/bin/minecraft.sh
+	install -Dm755 $SRC/minecraft.sh $PKG/usr/bin/minecraft-server
 }
