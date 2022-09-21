@@ -9,7 +9,6 @@ d:tuner/test
 d:tuner/test/Driver85
 d:tuner/test/Driver85/64bit
 d:spotify
-d:nvidia-modules
 d:webtorrent-desktop-bin
 d:nvidia-32
 d:pandoc-bin
@@ -68,11 +67,6 @@ f:397d905eb8b3a459e98383213422af79:tuner/test/hcwclear.exe
 f:c5895279c4c7e796eb1416ce0642c755:tuner/spkgbuild
 f:75aae82b7b33d79bcec25c8783f3ed5c:spotify/spotify
 f:9fc66cc2eb0d4ef8ff58c4bab85b6a79:spotify/spkgbuild
-f:181c0f90eb98ab33abcc3a3494df3e79:nvidia-modules/post-install.sh
-f:5c6f9065691721769e62744d475dcb2f:nvidia-modules/CHANGELOG
-f:5330340c849687dc9ae19357cbc2e3a7:nvidia-modules/post-upgrade.sh
-f:cfcb2fdfc65066f4197f1d593883c205:nvidia-modules/override
-f:352609fb03e119e5770b3a63dee7d881:nvidia-modules/spkgbuild
 f:aa18de49bc5722d70ff79518c951d1ca:webtorrent-desktop-bin/webtorrent-desktop.desktop
 f:8299bf3caf764381e0688bcb0586de28:webtorrent-desktop-bin/CHANGELOG
 f:22a3925173a3f0f7cc69b343e9323def:webtorrent-desktop-bin/spkgbuild

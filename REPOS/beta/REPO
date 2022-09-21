@@ -1,5 +1,6 @@
 d:texlive
 d:x11vnc
+d:nvidia-modules
 d:tl-unx
 d:libvncserver
 d:qt6
@@ -9,6 +10,11 @@ f:a94094d5197fccb109c9697d7c1ebae5:texlive/pre-install.sh
 f:ac4de8c7e2860f5d4d0c3f5a9c6c16ec:texlive/spkgbuild
 f:8776c73b89f6eebf324cabffacd6b8f4:x11vnc/CHANGELOG
 f:d6a5dc34fec5e8bc739e325f9d6a3d79:x11vnc/spkgbuild
+f:181c0f90eb98ab33abcc3a3494df3e79:nvidia-modules/post-install.sh
+f:5c6f9065691721769e62744d475dcb2f:nvidia-modules/CHANGELOG
+f:5330340c849687dc9ae19357cbc2e3a7:nvidia-modules/post-upgrade.sh
+f:cfcb2fdfc65066f4197f1d593883c205:nvidia-modules/override
+f:352609fb03e119e5770b3a63dee7d881:nvidia-modules/spkgbuild
 f:9d5d7cfcae9a0502d6fcabb70d077dd2:tl-unx/post-install.sh
 f:6d17cd30cb42843ad66569d4be775937:tl-unx/CHANGELOG
 f:a94094d5197fccb109c9697d7c1ebae5:tl-unx/pre-install.sh
