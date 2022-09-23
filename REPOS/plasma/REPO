@@ -26,6 +26,7 @@ d:xdg-desktop-portal-kde
 d:kwin
 d:kactivitymanagerd
 d:qqc2-breeze-style
+d:ksystemstats
 d:systemsettings
 d:plasma-systemmonitor
 d:plasma-desktop
@@ -109,6 +110,8 @@ f:272f62fb5957855373c5b7a7729571b4:kactivitymanagerd/CHANGELOG
 f:61322d73be216115b680671b6c3a2ac9:kactivitymanagerd/spkgbuild
 f:9be91154d878eebb7c190c30e5b63005:qqc2-breeze-style/CHANGELOG
 f:5840838d3d105516eb1954230450cb02:qqc2-breeze-style/spkgbuild
+f:f254e3f6d92a6d46985cef561235ddc4:ksystemstats/CHANGELOG
+f:2511bf787d34c4b37610fee67f8c9d5c:ksystemstats/spkgbuild
 f:1ec65b3c1ed04ff91cfa8ec73c74a66a:systemsettings/CHANGELOG
 f:63fb52bf055618efa18511980ca61fd0:systemsettings/spkgbuild
 f:d50549324e552eb4692f484cc5d9c141:plasma-systemmonitor/CHANGELOG
