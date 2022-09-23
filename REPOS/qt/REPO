@@ -23,6 +23,7 @@ d:bluez-qt
 d:pcmanfm-qt
 d:qca
 d:qt5-webengine-widevine
+d:qt5-quickcontrols2
 d:libaccounts-qt
 d:qtermwidget
 d:qt5-multimedia
@@ -75,6 +76,8 @@ f:6b652200704501aefdbd9c835bbcc7f3:pcmanfm-qt/spkgbuild
 f:59bf65f2b85f9ace7766c095a1bb653b:qca/qca-2.1.3-openssl-1.patch
 f:2ade06ac0f38a3ff50aac0744a6daa15:qca/spkgbuild
 f:ab645dc1cf30ed038c50579c62f61dd2:qt5-webengine-widevine/spkgbuild
+f:25e2f151db92a17544356d9e355148c1:qt5-quickcontrols2/CHANGELOG
+f:fcd2a70358e1755a7afab83690a48323:qt5-quickcontrols2/spkgbuild
 f:29f94b685d201d02e69201808260dab0:libaccounts-qt/CHANGELOG
 f:374da282bf4e2e86bb96a85929d619d7:libaccounts-qt/spkgbuild
 f:81974f761857a5e2fb9038e9547a157d:qtermwidget/CHANGELOG

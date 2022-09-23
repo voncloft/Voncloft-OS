@@ -1,0 +1,19 @@
+# description : interface controls for qt
+# depends : qt5
+
+name=qt5-quickcontrols2
+version=5.15.6
+release=1
+
+source="https://invent.kde.org/qt/qt/qtquickcontrols2/-/archive/v$version-lts-lgpl/qtquickcontrols2-v$version-lts-lgpl.tar.gz"
+
+build() {
+	cd $
+	mkdir -p build
+	cd build
+	qmake ../
+	make
+	make INSTALL_ROOT=$PKG install
+	  find "$PKG/usr/lib" -type f -name '*.prl' \
+    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}

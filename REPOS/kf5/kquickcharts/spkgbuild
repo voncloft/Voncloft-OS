@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps
+# depends : kde-deps qt5-quickcontrols2
 
 name=kquickcharts
 version=5.98.0
