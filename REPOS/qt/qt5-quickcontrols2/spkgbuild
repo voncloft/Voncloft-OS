@@ -1,5 +1,5 @@
 # description : interface controls for qt
-# depends : qt5
+# depends : qt5 qt5-declarative
 
 name=qt5-quickcontrols2
 version=5.15.6
@@ -8,7 +8,7 @@ release=1
 source="https://invent.kde.org/qt/qt/qtquickcontrols2/-/archive/v$version-lts-lgpl/qtquickcontrols2-v$version-lts-lgpl.tar.gz"
 
 build() {
-	cd $
+	cd *
 	mkdir -p build
 	cd build
 	qmake ../
