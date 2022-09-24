@@ -38,3 +38,15 @@ sed -i -e "s/version=0.11.1/version=0.12.0/g" python/python-xcffib/spkgbuild
 changelog "python/python-xcffib/spkgbuild" "Upgraded from version 0.11.1 to version 0.12.0"
 sed -i -e "s/version=3.11.17/version=3.11.18/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.11.17 to version 3.11.18"
+sed -i -e "s/version=2.36/version=2.36.1/g" extra/discordchatexporter/spkgbuild
+changelog "extra/discordchatexporter/spkgbuild" "Upgraded from version 2.36 to version 2.36.1"
+sed -i -e "s/version=0.15.4/version=0.15.7/g" python/python-libtmux/spkgbuild
+changelog "python/python-libtmux/spkgbuild" "Upgraded from version 0.15.4 to version 0.15.7"
+sed -i -e "s/version=8.12.55/version=8.12.56/g" python/python-phonenumbers/spkgbuild
+changelog "python/python-phonenumbers/spkgbuild" "Upgraded from version 8.12.55 to version 8.12.56"
+sed -i -e "s/version=37.1/version=37.2/g" python/python-readme-renderer/spkgbuild
+changelog "python/python-readme-renderer/spkgbuild" "Upgraded from version 37.1 to version 37.2"
+sed -i -e "s/version=2.0.2/version=2.0.3/g" python/python-requirementslib/spkgbuild
+changelog "python/python-requirementslib/spkgbuild" "Upgraded from version 2.0.2 to version 2.0.3"
+sed -i -e "s/version=65.3.0/version=65.4.0/g" python/python-setuptools/spkgbuild
+changelog "python/python-setuptools/spkgbuild" "Upgraded from version 65.3.0 to version 65.4.0"
