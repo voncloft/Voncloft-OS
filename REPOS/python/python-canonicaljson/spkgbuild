@@ -2,7 +2,7 @@
 # depends : python python-simplejson python-frozendict
 
 name=python-canonicaljson
-version=1.6.2
+version=1.6.3
 release=3
 
 source="https://github.com/matrix-org/python-canonicaljson/archive/refs/tags/v$version.tar.gz"
