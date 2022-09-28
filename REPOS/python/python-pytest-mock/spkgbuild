@@ -2,7 +2,7 @@
 # depends : python-pytest
 
 name=python-pytest-mock
-version=3.8.2
+version=3.9.0
 release=1
 
 source="https://github.com/pytest-dev/pytest-mock/archive/refs/tags/v$version.tar.gz"
