@@ -2,7 +2,7 @@
 # depends : python-param python-pyct
 
 name=python-colorcet
-version=3.0.0
+version=3.0.1
 release=1
 
 source="https://github.com/holoviz/colorcet/archive/refs/tags/w$version.tar.gz"
