@@ -15,7 +15,7 @@ build() {
 	fi
 
 	# kernel modules
-	IGNORE_CC_MISMATCH=1 SYSSRC=/usr/lib/modules/$kernver/build make -C NVIDIA-Linux-x86_64-$version/kernel module
+	IGNORE_CC_MISMATCH=1 SYSSRC=/lib/modules/$kernver/build make -C NVIDIA-Linux-x86_64-$version/kernel module
 	install -d $PKG/lib/modules/$kernver/kernel/misc/
 	install -m 0644 NVIDIA-Linux-x86_64-$version/kernel/*.ko $PKG/lib/modules/$kernver/kernel/misc/
 
