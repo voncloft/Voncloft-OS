@@ -7,12 +7,12 @@ majver=${version%%.*}
 basever=${version%.*}
 patchver=${version##*.}
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$basever.tar.gz"
+source="https://ftp.gnu.org/gnu/bash/bash-$version.tar.gz"
 #https://ftp.gnu.org/gnu/bash/bash-$basever-patches/bash${majver}0-$patchver"
 options="!checksum"
 
 build() {
-	cd $name-$basever
+	cd $name-$version
 
 	./configure --prefix=/usr \
 	            --without-bash-malloc \

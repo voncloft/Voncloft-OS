@@ -5,32 +5,16 @@ name=grub
 version=2.06
 release=2
 backup="etc/default/grub"
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
-	grub.default
-	detect-venom-fallback-initrd.patch
-	0006-BootHole.patch"
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
 
 build() {
 	cd $name-$version
-
-	patch -Np1 -i $SRC/detect-venom-fallback-initrd.patch
-	patch -Np1 -i $SRC/0006-BootHole.patch
-
-	# fix os name
-	sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
-
 	./configure --prefix=/usr \
-	            --sbindir=/sbin \
-	            --sysconfdir=/etc \
-	            --disable-efiemu \
-	            --disable-werror \
-		    --enable-grub-mount \
-		    --disable-nls
+	--sysconfdir=/etc \
+	--disable-efimu \
+	--disable-werror
 	make
 	make DESTDIR=$PKG install
-
-	rm -r $PKG/usr/share/info
-
-	# borrow from Arch
-	install -D -m0644 $SRC/grub.default $PKG/etc/default/grub
+	mkdir -pv $PKG/usr/share/bash-completion
+	mv -v $PKG/etc/bash_completion.d/grub $PKG/usr/share/bash-completion/completions
 }
