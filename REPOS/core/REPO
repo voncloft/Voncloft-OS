@@ -600,9 +600,9 @@ f:20dd912fbad050c8908f296e525f9ac6:cups/cupsd.conf
 f:5fb2e11611bd00a2d8344bf7c669ab69:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
-f:00003e7040a08bfda72af0de2a1a209d:dbus/CHANGELOG
+f:214a5540c51f617c0af71831225fcc35:dbus/CHANGELOG
 f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
-f:09549b7408731f8463063beedf90ac5e:dbus/spkgbuild
+f:2f9c1adb1e08107716cb8f720cf9f46c:dbus/spkgbuild
 f:abba39f9c73fa5f3861ff6b64d843e58:readline/CHANGELOG
 f:b1f6e7bfb58371645779a2965faecb42:readline/spkgbuild
 f:18e3d5669d4376a79598badfc3f5a782:cpio/spkgbuild
@@ -789,8 +789,8 @@ f:4e914f1b1f6b890d0b67195fb018cac8:scons/CHANGELOG
 f:0306d6ac6409301c981903c972eeae43:scons/spkgbuild
 f:4260f27b95233cc4fcb3d3cc396ea215:help2man/CHANGELOG
 f:62990f75e2199280170a4639bb7803ba:help2man/spkgbuild
-f:07c15e1c04eacb37689f2e3743aa5b0a:numactl/CHANGELOG
-f:63dbf41ce92f5aaaf0ca3e05db2e7b9b:numactl/spkgbuild
+f:103f5c1155a621109ceef0a5ab5329a2:numactl/CHANGELOG
+f:c84dcb9673f38be4048e1a6fb0a7223a:numactl/spkgbuild
 f:b0794a769efd287e9e8c5fb8c3299b35:recordmydesktop/recordmydesktop-bitrate.patch
 f:211a1773f223b3f281520aa1056395e6:recordmydesktop/shmstr-to-shmproto.patch
 f:27a8ebb6201396e29ff9fa078c00f8c6:recordmydesktop/spkgbuild
@@ -910,8 +910,8 @@ f:9dbbb05c50025586c9cce35468dde9c7:jemalloc/CHANGELOG
 f:f1ca8a404836fcc0a43cec5a0acd65a6:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:d0ef8a86ca5f1073f62117091d0d71ba:mercurial/CHANGELOG
-f:a1dfb85f3c60a67da8c7050a02b57ce7:mercurial/spkgbuild
+f:b290b340f0f8653804ad710f878030be:mercurial/CHANGELOG
+f:4c46fc1d8e7e586b670c8425e1ddcc3d:mercurial/spkgbuild
 f:52224673969ada7b392db76b52910714:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:6e0a494e314b843637087ae80bf923d5:rxvt-unicode/spkgbuild
@@ -1112,12 +1112,12 @@ f:126eed21b5b206128ed195f50636fe55:gparted/spkgbuild
 f:5de358b52fc36d7c86a9511928e079e7:bzip2/spkgbuild
 f:71fc82b76c45499fcd46b3754407f59d:dmenu/dmenu-4.5-fuzzy-fixed.diff
 f:0c73d595eb78f159bea83f33bba15e80:dmenu/dmenu-4.5-xft.diff
-f:97afdef2128800cbe63b373b4b62f1c2:dmenu/CHANGELOG
+f:c53b2b4b027cafead0690b3dae5b12e2:dmenu/CHANGELOG
 f:eeec3e11ff68f27ebbc3133ad6549f56:dmenu/dmenu-4.5-mouse-support.diff
 f:6921f9d8aabb53f22adcbf5630dff6b8:dmenu/break-fix.diff
 f:8541735789d9810d7020fdba62b72296:dmenu/dmenu-4.5-history-fixed.diff
 f:53b286e8bd76d9225f365673fafd6083:dmenu/dmenu-4.5-height-fixed.diff
-f:ddc6cb46e3a11575cc17da8802772f6f:dmenu/spkgbuild
+f:002b4c3d245f58dbef3f3250fefbd47f:dmenu/spkgbuild
 f:2385e0ec7652d6932b39ad28a4f884fa:dosfstools/readme
 f:445dce537f2c98b17f721798fba57745:dosfstools/CHANGELOG
 f:c5cca9015c9380411697e6d5f0c66425:dosfstools/spkgbuild
@@ -1141,8 +1141,8 @@ f:91fcf57823cf5dd1b626efbe3aab4a0b:pavucontrol/CHANGELOG
 f:de7f10bd580af1c176732b2048c1577c:pavucontrol/spkgbuild
 f:63156f47268cf2ea1bd7b2ba3ab9d38f:hyphen/spkgbuild
 f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
-f:03cfb6341f5ccc75039855e421f3833b:iproute2/CHANGELOG
-f:4e1f710652bb71df44d8494e7814e8ac:iproute2/spkgbuild
+f:97f7f94aad58a621271d5509a7706966:iproute2/CHANGELOG
+f:7cfe456d0553ea10edf0a17a5162bbd8:iproute2/spkgbuild
 f:842ebb033fb8ea3cd349c963c54edec1:psmisc/CHANGELOG
 f:ca05668ec4f547631549c2fd3f11c1ae:psmisc/spkgbuild
 f:31043aeb69dc0973664cf6d197bf27cc:wgetpaste/spkgbuild
@@ -1369,5 +1369,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:c3ea9d2465d204d98904d8202187f376:hugo/CHANGELOG
-f:a14329166402ab2f36ca906677d9406b:hugo/spkgbuild
+f:8b09caae796ce6b89ace1ca775740d9c:hugo/CHANGELOG
+f:8ba7eb01bb9861eb13c1a962d232926c:hugo/spkgbuild
