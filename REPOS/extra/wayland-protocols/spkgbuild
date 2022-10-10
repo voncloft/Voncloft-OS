@@ -5,7 +5,7 @@ name=wayland-protocols
 version=1.27
 release=1
 
-source="https://wayland.freedesktop.org/releases/wayland-protocols-$version.tar.xz"
+source="https://gitlab.freedesktop.org/wayland/$name/-/releases/$version/downloads/$name-$version.tar.xz"
 options="!checksum"
 
 build() {
