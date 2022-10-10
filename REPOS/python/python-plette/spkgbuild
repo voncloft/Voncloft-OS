@@ -2,7 +2,7 @@
 # depends : python-six python-tomlkit
 
 name=python-plette
-version=0.4.0
+version=0.4.1
 release=5
 
 source="https://github.com/sarugaku/plette/archive/refs/tags/$version.tar.gz"
