@@ -1,0 +1,15 @@
+# description : Core components for the kde desktop
+# depends : kde-deps
+name=kuserfeedback
+version=1.2.0
+release=1
+
+source="https://download.kde.org/stable/$name/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   kf5-package-installer
+   cd build
+   make DESTDIR=$PKG install
+}
