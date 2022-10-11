@@ -2,7 +2,7 @@
 # depends : python python-boto3 python-jsonschema python-six
 
 name=python-aws-sam-translator
-version=1.52.0
+version=1.53.0
 release=1
 
 source="https://github.com/aws/serverless-application-model/archive/refs/tags/v$version.tar.gz"
