@@ -2,7 +2,7 @@
 # depends : python-flask python-sqlalchemy
 
 name=python-flask-sqlalchemy
-version=3.0.1
+version=3.0.2
 release=3
 
 source="https://github.com/mitsuhiko/flask-sqlalchemy/archive/refs/tags/$version.tar.gz"

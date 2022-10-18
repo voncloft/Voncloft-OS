@@ -2,7 +2,7 @@
 # depends : python python-certifi python-six python-dateutil
 
 name=python-kubernetes
-version=24.2.0
+version=25.2.0
 release=2
 
 source="https://github.com/kubernetes-client/python/archive/refs/tags/v$version.tar.gz"

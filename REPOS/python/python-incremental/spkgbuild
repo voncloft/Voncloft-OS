@@ -2,7 +2,7 @@
   # depends : python-click python-twisted
 
 name=python-incremental
-version=21.3.0
+version=22.10.0
 release=6
 
 source="https://github.com/hawkowl/incremental/archive/refs/tags/$version.tar.gz"
