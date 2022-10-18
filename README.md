@@ -9,9 +9,10 @@ _As of 10-18-2022_
 **Update:**
 - fixed update utility
 
-**Next Project**
+**Next Project:**
 - KRDC KRFB
 - involves libssh (not 2), libvnc, xrdp - fix deps
+
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
 - Packages are checked via the "updates" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
