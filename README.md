@@ -4,11 +4,14 @@ A Linux From Scratch Repository that I self maintain.
 
 ## (You are on your own if you choose to use my repository)
 
-_As of 05-04-2022_
+_As of 10-18-2022_
 
 **Update:**
 - fixed update utility
 
+**Next Project**
+- KRDC KRFB
+- involves libssh (not 2), libvnc, xrdp - fix deps
 **Updates:**
 - Not EVERYTHING will be updated, at best it is at my leisure on packages I view worth my while.
 - Packages are checked via the "updates" in /Voncloft-OS (Always a work in progress) - I will review the updates before pushing them to github
