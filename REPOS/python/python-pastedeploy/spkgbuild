@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-pastedeploy
-version=3.0
+version=3.0.1
 release=3
 
 source="https://github.com/Pylons/pastedeploy/archive/refs/tags/$version.tar.gz"
