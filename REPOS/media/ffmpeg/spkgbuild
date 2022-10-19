@@ -4,11 +4,13 @@
 name=ffmpeg
 version=5.1.2
 release=1
-source="https://ffmpeg.org/releases/$name-$version.tar.xz"
+source="https://ffmpeg.org/releases/$name-$version.tar.xz
+	https://www.linuxfromscratch.org/patches/blfs/svn/ffmpeg-5.1.2-chromium_method-1.patch"
 options="!checksum"
 build() {
 	cd $name-$version
-
+	#patch it for lfs
+	patch -Np1 -i $SRC/ffmpeg-5.1.2-chromium_method-1.patch
 	# adds the ALSA library to the Flite LDFLAGS variable and
 	# enables the discovery of Flite
 	sed -i 's/-lflite"/-lflite -lasound"/' configure
