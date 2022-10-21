@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-oslo-config python-oslo-context python-oslo-i18n
 
 name=python-oslo-log
-version=5.0.0
+version=5.0.1
 release=3
 
 source="https://github.com/openstack/oslo.log/archive/refs/tags/e$version.tar.gz"
