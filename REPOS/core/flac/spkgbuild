@@ -2,7 +2,7 @@
 # depends	: libogg
 
 name=flac
-version=1.4.1
+version=1.4.2
 release=1
 source="https://downloads.xiph.org/releases/$name/$name-$version.tar.xz"
 noextract="$name-$version.tar.xz"
