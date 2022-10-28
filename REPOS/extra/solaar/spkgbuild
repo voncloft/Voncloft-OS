@@ -2,7 +2,7 @@
 # depends : gtk3 libnotify python-dbus python-gobject2 python-gobject3 python-psutil python-pyudev python-xlib python-yaml git python-evdev
 
 name=solaar
-version=1.1.6rc4
+version=1.1.7rc1
 release=2
 
 source="https://github.com/pwr-Solaar/Solaar/archive/refs/tags/$version.tar.gz"

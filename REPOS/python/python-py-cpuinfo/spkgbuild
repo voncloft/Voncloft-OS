@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-py-cpuinfo
-version=8.0.0
+version=9.0.0
 release=3
 
 source="https://github.com/workhorsy/py-cpuinfo/archive/refs/tags/v$version.tar.gz"

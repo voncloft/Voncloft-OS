@@ -2,7 +2,7 @@
 # depends : python-requests
 
 name=python-requests-toolbelt
-version=0.10.0
+version=0.10.1
 release=5
 
 source="https://github.com/requests/toolbelt/archive/refs/tags/$version.tar.gz"

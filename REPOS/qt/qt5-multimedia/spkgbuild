@@ -2,7 +2,7 @@
 # depends : gst-plugins-base pulseaudio openal qt5
 
 name=qt5-multimedia
-version=5.15.6
+version=5.15.7
 release=1
 source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/qtmultimedia-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"

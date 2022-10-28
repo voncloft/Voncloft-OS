@@ -2,7 +2,7 @@
 # depends : python python-flask python-htmlmin
 
 name=python-flask-htmlmin
-version=2.2.0
+version=2.2.1
 release=1
 
 source="https://github.com/hamidfzm/Flask-HTMLmin/archive/refs/tags/v$version.tar.gz"
