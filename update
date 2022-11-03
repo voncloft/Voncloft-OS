@@ -574,6 +574,7 @@ apply_test_updates()
 		mkdir -pv /Voncloft-OS/logs/old-test-updates/$(date +"%Y")/$(date +"%b")
 		cat test_updates.sh >> /Voncloft-OS/logs/old-test-updates/$(date +"%Y")/$(date +"%b")/applied_updates-$(date +"%m-%d-%y").sh
 		rm test_updates.sh
+		rm *.sh
 		echo "Test updates applied"
 		if [ -f index.html ];then
 			rm index.html
