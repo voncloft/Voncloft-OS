@@ -109,9 +109,9 @@ f:586f645cc60e2fdda0dbca9622241772:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:7265c023f0e2f15888d6e879046172f8:thunderbird/CHANGELOG
+f:d1bf40bc06d1b9b0fcfee9d791ab5bc8:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:53c88cc68be59e98747b23a07f2fe0b4:thunderbird/spkgbuild
+f:4b8c49c89369d5102b75d5371518a606:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:ea8524344c10921986555ae1efd9d75b:openvpn/CHANGELOG
@@ -123,8 +123,8 @@ f:7953c16487ef67fb52768e5da565a05e:xrdp/CHANGELOG
 f:a91baa1bc475126ac140aa8da77f2238:xrdp/spkgbuild
 f:18b22520bc5ef6f1a399a31976594022:ntopng/CHANGELOG
 f:0bd36a7e4355792b3e0f47742ac4cd05:ntopng/spkgbuild
-f:410513388a1a497822beb7a269eee969:openssl/CHANGELOG
-f:59417b9b945c1d7d3e1b4d5ac203504b:openssl/spkgbuild
+f:b233d972e4dcdb1d9b12a594d7915ba3:openssl/CHANGELOG
+f:b673686d9b9aabd9a57d643729092fdf:openssl/spkgbuild
 f:9369d051cf1668afed1aec4fc2baf3e1:nethogs/CHANGELOG
 f:ef484709e5592ecb2ffd3ea6cc265b81:nethogs/spkgbuild
 f:f8d8dbe71c2931ac3b2182e612903eae:pidgin/CHANGELOG
@@ -157,11 +157,11 @@ f:0e8c42daae6cab0096d8b65a2dcb2c3b:avahi/pre-install.sh
 f:104a643de888cb977c33b53c8211fd6a:avahi/spkgbuild
 f:497d4af7bf83dbe15393a04847f79571:youtube-dl/CHANGELOG
 f:c71c1cf8de6e2bb5ded1dbb19ec3edf6:youtube-dl/spkgbuild
-f:3d4c3416c132dd8b9a601d8da36acb46:firefox/CHANGELOG
+f:503abf73466b7c508982c771f39eb845:firefox/CHANGELOG
 f:37db9ec3cc336d3a09ede8becec2ad69:firefox/fix-ftbfs-newer-cbindgen.patch
 f:a4a0f7c9c1e3424463670d031976aa67:firefox/override
 f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
-f:505a2615e067cceb5a9e9db97ef24c0d:firefox/spkgbuild
+f:73c92d097d4f56fa173b9ef08664c460:firefox/spkgbuild
 f:89fb28a484e7f5126839e83f10de377a:firefox/pre-upgrade.sh
 f:8df32062cf46142d5c934522398ca2fc:git/CHANGELOG
 f:024f2a35d83c4ee296443a13d061bd91:git/spkgbuild
