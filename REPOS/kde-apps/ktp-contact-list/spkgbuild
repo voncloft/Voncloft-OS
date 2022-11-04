@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=ktp-contact-list
-version=22.08.2
+version=22.08.3
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
