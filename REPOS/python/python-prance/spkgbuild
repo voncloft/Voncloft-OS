@@ -2,7 +2,7 @@
 # depends : python-chardet python-yaml python-flex python-click python-requests
 
 name=python-prance
-version=0.21.8.0
+version=0.22.11.04.0
 release=1
 
 source="https://github.com/jfinkhaeuser/prance/archive/refs/tags/v$version.tar.gz"

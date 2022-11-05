@@ -2,7 +2,7 @@
 # depends : python-sphinx
 
 name=python-sphinx_rtd_theme
-version=1.1.0
+version=1.1.1
 release=2
 
 source="https://github.com/readthedocs/sphinx_rtd_theme/archive/refs/tags/r$version.tar.gz"
