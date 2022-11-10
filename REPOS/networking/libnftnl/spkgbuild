@@ -2,7 +2,7 @@
 # depends : 
 
 name=libnftnl
-version=1.2.3
+version=1.2.4
 release=1
 
 source="https://www.netfilter.org/pub/$name/$name-$version.tar.bz2"

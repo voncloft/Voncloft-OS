@@ -96,12 +96,12 @@ f:73094aefef5d679c106af69f745c7a2b:subversion/spkgbuild
 f:66119448ecd40461df344fc2a804071a:make-ca/CHANGELOG
 f:78153899fd744640486a4e7855849fd5:make-ca/update-pki.sh
 f:981d570c47f6374b8487a0a722e578a0:make-ca/spkgbuild
-f:4bb7db7d5395a2bf536d6be69a9fa1c2:tor/CHANGELOG
+f:9aaf93ec5de14c622da836a13d9cd03b:tor/CHANGELOG
 f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
 f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
 f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
 f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
-f:303c1030d37aa3005b5c59715cd9dee4:tor/spkgbuild
+f:4406792b8533c495a73b5351bcf64fa7:tor/spkgbuild
 f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
 f:3451d6c13db8d89d88558f48e9c7e961:nftables/CHANGELOG
@@ -109,9 +109,9 @@ f:586f645cc60e2fdda0dbca9622241772:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:d1bf40bc06d1b9b0fcfee9d791ab5bc8:thunderbird/CHANGELOG
+f:d619d39ea22b789bcc76ec11201c1421:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:4b8c49c89369d5102b75d5371518a606:thunderbird/spkgbuild
+f:e67147e724eb32e1c3429bcb4cfe8a4d:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:ea8524344c10921986555ae1efd9d75b:openvpn/CHANGELOG
@@ -148,8 +148,8 @@ f:1823a10d4401fba66e43f2dd9afc4487:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
 f:01cb746432115354d4b5e1fda5bddcc4:tigervnc/more-xsessions.patch
 f:16d81720f1cb2942c1ac35fdcf26c31b:tigervnc/spkgbuild
-f:9dac64ad0876a4fd03f9c47ae4f5cd79:libnftnl/CHANGELOG
-f:fbd8940fd45d58df7aebfc0cdd8ce3f8:libnftnl/spkgbuild
+f:27a3b07dd384b7079820acc1497e2539:libnftnl/CHANGELOG
+f:2792209166ff62340a978fb038ec1821:libnftnl/spkgbuild
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
 f:468585cd270ce78fecc48eef558eae0c:libnfnetlink/CHANGELOG
 f:81ebc7ac14b43b40df9e05c8cc88eb7b:libnfnetlink/spkgbuild

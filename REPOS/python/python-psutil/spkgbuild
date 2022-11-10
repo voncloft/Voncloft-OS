@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-psutil
-version=5.9.3
+version=5.9.4
 release=1
 
 source="https://github.com/giampaolo/psutil/archive/refs/tags/release-$version.tar.gz"
