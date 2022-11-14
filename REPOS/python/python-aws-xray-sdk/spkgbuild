@@ -2,7 +2,7 @@
 # depends : python python-botocore python-future python-jsonpickle python-wrapt
 
 name=python-aws-xray-sdk
-version=2.10.0
+version=2.11.0
 release=3
 
 source="https://github.com/aws/aws-xray-sdk-python/archive/refs/tags/$version.tar.gz"

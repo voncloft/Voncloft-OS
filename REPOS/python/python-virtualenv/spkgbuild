@@ -2,7 +2,7 @@
   # depends : python-appdirs python-distlib python-filelock python-six
 
 name=python-virtualenv
-version=20.16.6
+version=20.16.7
 release=1
 
 source="https://github.com/pypa/virtualenv/archive/refs/tags/$version.tar.gz"
