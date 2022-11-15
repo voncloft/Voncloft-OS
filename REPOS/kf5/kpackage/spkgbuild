@@ -2,7 +2,7 @@
 # depends : kde-deps karchive kcoreaddons ki18n
 
 name=kpackage
-version=5.99.0
+version=5.100.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
