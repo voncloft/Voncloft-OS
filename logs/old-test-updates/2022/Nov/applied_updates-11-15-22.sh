@@ -200,3 +200,37 @@ sed -i -e "s/version=3.11.29/version=3.11.30/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.11.29 to version 3.11.30"
 sed -i -e "s/version=5.19.0/version=6.0.0/g" xfce/xfsprogs/spkgbuild
 changelog "xfce/xfsprogs/spkgbuild" "Upgraded from version 5.19.0 to version 6.0.0"
+sed -i -e "s/version=5.4.0/version=5.6.0/g" cinnamon/cinnamon-menus/spkgbuild
+changelog "cinnamon/cinnamon-menus/spkgbuild" "Upgraded from version 5.4.0 to version 5.6.0"
+sed -i -e "s/version=2.11.0/version=2.11.1/g" core/man-db/spkgbuild
+changelog "core/man-db/spkgbuild" "Upgraded from version 2.11.0 to version 2.11.1"
+sed -i -e "s/version=6.4/version=7.0/g" core/nano/spkgbuild
+changelog "core/nano/spkgbuild" "Upgraded from version 6.4 to version 7.0"
+sed -i -e "s/version=6.2.0/version=6.2.1/g" fonts/awesome-font/spkgbuild
+changelog "fonts/awesome-font/spkgbuild" "Upgraded from version 6.2.0 to version 6.2.1"
+sed -i -e "s/version=2.3.2/version=2.3.4/g" libs/muparser/spkgbuild
+changelog "libs/muparser/spkgbuild" "Upgraded from version 2.3.2 to version 2.3.4"
+sed -i -e "s/version=2.2.15/version=2.4.0/g" libs/xapp/spkgbuild
+changelog "libs/xapp/spkgbuild" "Upgraded from version 2.2.15 to version 2.4.0"
+sed -i -e "s/version=107.0b9/version=108.0b1/g" networking/firefox/spkgbuild
+changelog "networking/firefox/spkgbuild" "Upgraded from version 107.0b9 to version 108.0b1"
+sed -i -e "s/version=1.26.9/version=1.26.10/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.26.9 to version 1.26.10"
+sed -i -e "s/version=1.29.9/version=1.29.10/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.29.9 to version 1.29.10"
+sed -i -e "s/version=2022.10.2/version=2022.11.0/g" python/python-distributed/spkgbuild
+changelog "python/python-distributed/spkgbuild" "Upgraded from version 2022.10.2 to version 2022.11.0"
+sed -i -e "s/version=8.5.0/version=8.5.1/g" python/python-elasticsearch/spkgbuild
+changelog "python/python-elasticsearch/spkgbuild" "Upgraded from version 8.5.0 to version 8.5.1"
+sed -i -e "s/version=0.60/version=0.61/g" python/python-memory-profiler/spkgbuild
+changelog "python/python-memory-profiler/spkgbuild" "Upgraded from version 0.60 to version 0.61"
+sed -i -e "s/version=12.2.2/version=12.3.0/g" python/python-pdoc/spkgbuild
+changelog "python/python-pdoc/spkgbuild" "Upgraded from version 12.2.2 to version 12.3.0"
+sed -i -e "s/version=3.17.6/version=3.18.0/g" python/python-simplejson/spkgbuild
+changelog "python/python-simplejson/spkgbuild" "Upgraded from version 3.17.6 to version 3.18.0"
+sed -i -e "s/version=1.26.12/version=2.0.0/g" python/python-urllib3/spkgbuild
+changelog "python/python-urllib3/spkgbuild" "Upgraded from version 1.26.12 to version 2.0.0"
+sed -i -e "s/version=2.2.2/version=2.4.0/g" python/python-xapp/spkgbuild
+changelog "python/python-xapp/spkgbuild" "Upgraded from version 2.2.2 to version 2.4.0"
+sed -i -e "s/version=4.17.2/version=4.17.3/g" server/samba/spkgbuild
+changelog "server/samba/spkgbuild" "Upgraded from version 4.17.2 to version 4.17.3"

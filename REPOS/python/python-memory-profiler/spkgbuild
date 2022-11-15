@@ -2,7 +2,7 @@
 # depends : python-psutil
 
 name=python-memory-profiler
-version=0.60
+version=0.61
 release=1
 
 source="https://github.com/pythonprofilers/memory_profiler/archive/refs/tags/v$version.tar.gz"
