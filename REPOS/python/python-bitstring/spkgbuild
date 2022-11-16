@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-bitstring
-version=3.1.9
+version=4.0.1
 release=3
 
 source="https://github.com/scott-griffiths/bitstring/archive/refs/tags/$version.tar.gz"

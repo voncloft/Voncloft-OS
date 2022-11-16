@@ -2,7 +2,7 @@
 # depends : python-zope-interface
 
 name=python-persistent
-version=4.9.2
+version=4.9.3
 release=3
 
 source="https://github.com/zopefoundation/persistent/archive/refs/tags/$version.tar.gz"
