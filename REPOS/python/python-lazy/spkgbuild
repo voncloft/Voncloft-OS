@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-lazy
-version=1.5
+version=1.5.1
 release=5
 
 source="https://github.com/stefanholek/lazy/archive/refs/tags/$version.tar.gz"

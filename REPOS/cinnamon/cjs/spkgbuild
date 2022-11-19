@@ -2,7 +2,7 @@
 # depends : gobject-introspection gtk3 js78 meson
 
 name=cjs
-version=5.4.1
+version=5.6.0
 release=1
 
 source="https://github.com/linuxmint/$name/archive/refs/tags/$version.tar.gz"

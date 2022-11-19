@@ -2,7 +2,7 @@
 # depends	: cracklib linux-pam python
 
 name=libpwquality
-version=1.4.4
+version=1.4.5
 release=1
 source="https://github.com/libpwquality/libpwquality/releases/download/$name-$version/$name-$version.tar.bz2
 	system-password"
