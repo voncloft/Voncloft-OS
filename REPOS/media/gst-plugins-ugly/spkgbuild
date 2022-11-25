@@ -14,11 +14,9 @@ build() {
 
         meson \
 		--prefix=/usr \
-		--libexecdir=lib \
-		-Dgst_debug=false \
-		-Dgtk_doc=disabled \
-		-Dnls=disabled \
-		-Dpackage-name="GStreamer Ugly Plugins $version (Venom Linux)"
+		--buildtype=release \
+		-Dgpl=enabled\
+		-Dpackage-name="GStreamer Ugly Plugins $version (Voncloft Linux)"
 	ninja
 	DESTDIR=$PKG ninja install
 }

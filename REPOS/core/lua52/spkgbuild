@@ -52,6 +52,8 @@ build() {
 	install
 
 	install -Dm644 lua.pc $PKG/usr/lib/pkgconfig/lua52.pc
+  	ln -sf lua52.pc "$PKG"/usr/lib/pkgconfig/lua5.2.pc
+  	ln -sf lua52.pc "$PKG"/usr/lib/pkgconfig/lua-5.2.pc
 
 	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.5.2
 	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.$version

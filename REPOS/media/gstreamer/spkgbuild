@@ -14,9 +14,8 @@ build() {
 
         meson \
 		--prefix=/usr \
-		--libexecdir=lib \
+		--buildtype=release \
 		-Dgst_debug=false \
-		-Dnls=disabled \
 		-Dpackage-name="GStreamer $version (Voncloft Linux)"
 	ninja
 	DESTDIR=$PKG ninja install
