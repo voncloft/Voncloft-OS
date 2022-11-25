@@ -14,7 +14,7 @@ build() {
 
 	BUILDCC=gcc ./configure --prefix=/usr    \
                         --disable-opencv \
-                        --disable-libav \
+                        --disable-libva \
                         --disable-vpx	\
                         --enable-chromecast \
                         --enable-sout
