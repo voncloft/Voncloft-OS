@@ -20,7 +20,7 @@ build() {
   	install -d "$PKG"/usr/{bin,share/{pixmaps,applications}}
   	ln -s /opt/$name/Discord "$PKG"/usr/bin/$name
   	ln -s /opt/$name/discord.png "$PKG"/usr/share/pixmaps/$name.png
-  	ln -s /opt/$name/$pkgname.desktop "$PKG"/usr/share/applications/$name.desktop
+  	ln -s /opt/$name/$name.desktop "$PKG"/usr/share/applications/$name.desktop
 
   # setuid on chrome-sandbox
  	 chmod u+s "$PKG"/opt/$name/chrome-sandbox

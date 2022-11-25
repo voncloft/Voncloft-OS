@@ -2,7 +2,7 @@
 # depends : python python-dateutil python-pytzdata
 
 name=python-pendulum
-version=2.1.2
+version=3.0.0
 release=3
 
 source="https://github.com/sdispater/pendulum/archive/refs/tags/$version.tar.gz"
