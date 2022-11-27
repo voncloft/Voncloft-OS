@@ -24,3 +24,5 @@ sed -i -e "s/version=6.0.1/version=6.0.10/g" core/linux-desktop/spkgbuild
 changelog "core/linux-desktop/spkgbuild" "Upgraded from version 6.0.1 to version 6.0.10"
 sed -i -e "s/version=5.19.17/version=6.0.10/g" core/linux-router/spkgbuild
 changelog "core/linux-router/spkgbuild" "Upgraded from version 5.19.17 to version 6.0.10"
+sed -i -e "s/version=5.4.53/version=6.0.10/g" core/linux-api-headers/spkgbuild
+changelog "core/linux-api-headers/spkgbuild" "Upgraded from version 5.4.53 to version 6.0.10"
