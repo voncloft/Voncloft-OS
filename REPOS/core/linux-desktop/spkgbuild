@@ -2,10 +2,10 @@
 # depends : kernel-prereq linux-firmware
 
 name=linux-desktop
-version=5.19.17
+version=6.0.10
 release=1
 
-source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
+source="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-$version.tar.xz
 	.config"
 options="!checksum"
 

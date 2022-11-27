@@ -20,3 +20,7 @@ sed -i -e "s/version=3.10.0/version=3.11.0/g" python/python-zipp/spkgbuild
 changelog "python/python-zipp/spkgbuild" "Upgraded from version 3.10.0 to version 3.11.0"
 sed -i -e "s/version=3.11.32/version=3.11.33/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.11.32 to version 3.11.33"
+sed -i -e "s/version=6.0.1/version=6.0.10/g" core/linux-desktop/spkgbuild
+changelog "core/linux-desktop/spkgbuild" "Upgraded from version 6.0.1 to version 6.0.10"
+sed -i -e "s/version=5.19.17/version=6.0.10/g" core/linux-router/spkgbuild
+changelog "core/linux-router/spkgbuild" "Upgraded from version 5.19.17 to version 6.0.10"
