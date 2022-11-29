@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-w3lib
-version=2.0.1
+version=2.1.0
 release=3
 
 source="https://github.com/scrapy/w3lib/archive/refs/tags/v$version.tar.gz"
