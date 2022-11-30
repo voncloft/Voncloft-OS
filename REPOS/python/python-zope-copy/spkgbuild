@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-interface
 
 name=python-zope-copy
-version=4.2
+version=4.3
 release=5
 
 source="https://github.com/zopefoundation/zope.copy/archive/refs/tags/$version.tar.gz"
