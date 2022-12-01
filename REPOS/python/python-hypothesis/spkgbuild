@@ -2,7 +2,7 @@
 # depends : python-attrs python-sortedcontainers
 
 name=python-hypothesis
-version=6.58.1
+version=6.58.2
 release=1
 
 source="https://github.com/HypothesisWorks/hypothesis/archive/refs/tags/$version.tar.gz"
