@@ -3,7 +3,7 @@
 # depends : cinnamon-translations gobject-introspection meson ninja
 
 name=cinnamon-screensaver
-version=5.6.1
+version=5.6.2
 release=1
 
 source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
