@@ -2,7 +2,7 @@
 # depends : python-cffi
 
 name=python-xattr
-version=0.10.0
+version=0.10.1
 release=5
 
 source="https://github.com/xattr/xattr/archive/refs/tags/v$version.tar.gz"
