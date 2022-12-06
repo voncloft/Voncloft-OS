@@ -1,6 +1,7 @@
 d:kuserfeedback
 d:texlive
 d:x11vnc
+d:kwin-effects-cube
 d:tl-unx
 d:libvncserver
 d:qt6
@@ -12,6 +13,8 @@ f:a94094d5197fccb109c9697d7c1ebae5:texlive/pre-install.sh
 f:ac4de8c7e2860f5d4d0c3f5a9c6c16ec:texlive/spkgbuild
 f:8776c73b89f6eebf324cabffacd6b8f4:x11vnc/CHANGELOG
 f:d6a5dc34fec5e8bc739e325f9d6a3d79:x11vnc/spkgbuild
+f:0686a981c8d8ea1ddfd9173f0bd29ee0:kwin-effects-cube/CHANGELOG
+f:01203b4e4e57965237a45cc17bd01963:kwin-effects-cube/spkgbuild
 f:9d5d7cfcae9a0502d6fcabb70d077dd2:tl-unx/post-install.sh
 f:6d17cd30cb42843ad66569d4be775937:tl-unx/CHANGELOG
 f:a94094d5197fccb109c9697d7c1ebae5:tl-unx/pre-install.sh

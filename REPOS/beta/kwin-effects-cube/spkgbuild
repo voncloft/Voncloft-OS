@@ -1,0 +1,15 @@
+# description : desktop cube for plasma 5
+# depends : kde-deps
+
+name=kwin-effects-cube
+version=1.0.0
+release=1
+
+source="https://github.com/zzag/kwin-effects-cube/archive/refs/tags/$version.tar.gz"
+
+build() {
+	cd kwin-effects-cube
+	plasma-package-installer
+	cd build
+	make DESTDIR=$PKG install
+}
