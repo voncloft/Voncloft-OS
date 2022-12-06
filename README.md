@@ -29,6 +29,7 @@ _As of 10-18-2022_
 - Work on **Programs to be added in the future**
 
 **Needs Testing:**
+- lua52 needs to be tested can only install manually currently, attempted to fix on Dec 6 2022
 - x11vnc (currently in beta)
 - qtcreator
 - postfix

@@ -6,33 +6,12 @@ version=5.2.4
 release=1
 
 source="https://www.lua.org/ftp/lua-$version.tar.gz
-	https://www.linuxfromscratch.org/patches/blfs/svn/lua-$version-shared_library-1.patch"
+	https://www.linuxfromscratch.org/patches/blfs/svn/lua-$version-shared_library-1.patch
+	lua52.pc"
 options="!checksum"
 
 build() {
 	cd lua-$version
-	export prefix=/usr
-	cat <<-EOF > lua.pc
-	V=5.2
-	R=$version
-
-	INSTALL_BIN=${prefix}/bin
-	INSTALL_INC=${prefix}/include/lua5.2
-	INSTALL_LIB=${prefix}/lib
-	INSTALL_MAN=${prefix}/share/man/man1
-	INSTALL_LMOD=${prefix}/share/lua/${V}
-	INSTALL_CMOD=${prefix}/lib/lua/${V}
-	exec_prefix=${prefix}
-	libdir=${exec_prefix}/lib
-	includedir=${prefix}/include/lua5.2
-
-	Name: Lua
-	Description: An Extensible Extension Language
-	Version: ${R}
-	Requires:
-	Libs: -L${libdir} -llua5.2 -lm -ldl
-	Cflags: -I${includedir}
-	EOF
 
 	patch -Np1 -i $SRC/lua-$version-shared_library-1.patch
 	sed -i '/#define LUA_ROOT/s:/usr/local/:/usr/:' src/luaconf.h
@@ -51,10 +30,11 @@ build() {
      	INSTALL_MAN=$PKG/usr/share/man/man1 \
 	install
 
-	install -Dm644 lua.pc $PKG/usr/lib/pkgconfig/lua52.pc
-  	ln -sf lua52.pc "$PKG"/usr/lib/pkgconfig/lua5.2.pc
-  	ln -sf lua52.pc "$PKG"/usr/lib/pkgconfig/lua-5.2.pc
+	install -Dm644 $SRC/lua52.pc $PKG/usr/lib/pkgconfig/lua52.pc
+  	#ln -sf lua52.pc "$PKG"/usr/lib/pkgconfig/lua5.2.pc
+  	#ln -sf lua52.pc "$PKG"/usr/lib/pkgconfig/lua-5.2.pc
 
 	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.5.2
 	ln -s liblua5.2.so $PKG/usr/lib/liblua.so.$version
+
 }
