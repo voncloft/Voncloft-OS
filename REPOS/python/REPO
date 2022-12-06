@@ -2171,8 +2171,8 @@ f:dc200676242e41c5b590d41243982a17:python-django-picklefield/CHANGELOG
 f:a965483917e44a816ed9491ce52fde6f:python-django-picklefield/spkgbuild
 f:00631e751ccc3f157cc6559495c3fa0e:python-gevent/CHANGELOG
 f:856e08fddc4d6e888bee3094fe7b2a5d:python-gevent/spkgbuild
-f:45c240beb3446c50643c4902c82b2b5f:python-virtualenv/CHANGELOG
-f:1ec873afbf36bae56fb0e8da2fc4a5bf:python-virtualenv/spkgbuild
+f:bec436bcebecfdc3bdf4a07306ab219d:python-virtualenv/CHANGELOG
+f:76bcc5f07f4a486d9d3670579de55033:python-virtualenv/spkgbuild
 f:492bc627d408f29185b1e71b79bf545f:python-ptyprocess/CHANGELOG
 f:3b569c5e31f535713ae9ff6a70d5004e:python-ptyprocess/spkgbuild
 f:e3edc8f5174f5c77ed1b0c8b7cbc89ec:python-google-auth-httplib2/CHANGELOG
@@ -2443,8 +2443,8 @@ f:6ba678f9744d4d79c7c5708dcd1948ac:python-milc/CHANGELOG
 f:91ee9998486910436c8efdd002bfe77d:python-milc/spkgbuild
 f:37ecae836cb21ff48221d6c6755f2ca4:python-pydle/CHANGELOG
 f:fa70354fa5f6bf040b84fa0989c54b75:python-pydle/spkgbuild
-f:c0cbedc0a2baec6c8d0c2645803bc6de:python-starlette/CHANGELOG
-f:0133e399c03a6a1470d33bcfb599adb5:python-starlette/spkgbuild
+f:b13d23313b88904c61acc62539798338:python-starlette/CHANGELOG
+f:ed7619474a693e7ffdda10cf4e50a2e6:python-starlette/spkgbuild
 f:be931bd61db20e590334d1a3853ef8f2:python-pytest-html/CHANGELOG
 f:b73a7b620bc7613190c7f29eef68fab9:python-pytest-html/spkgbuild
 f:6dda4a5986272cff94f7850063fb9d1f:python-pytest-plugins/spkgbuild
@@ -3263,8 +3263,8 @@ f:11953c0062d1bdffa8818996eeaf8d0a:python-hstspreload/CHANGELOG
 f:67a8070e02b51be9a5c3900b8f1553ae:python-hstspreload/spkgbuild
 f:ccc5689a167c6f4b0f7ffc2b078bf3a5:python-queuelib/CHANGELOG
 f:b4ba1b6b98937ebd6fbe948d36b4bcd9:python-queuelib/spkgbuild
-f:a8d7489f8a2297f8b5f7c6c534c41665:python-mdit_py_plugins/CHANGELOG
-f:6bac13834902be0a7556cadc84e54130:python-mdit_py_plugins/spkgbuild
+f:2e12c8a823ecf1fa6852c438873ef4c7:python-mdit_py_plugins/CHANGELOG
+f:c92fe67b1dea0aeffba85fc7fbdf033b:python-mdit_py_plugins/spkgbuild
 f:849b053bdaf2ad407f49c22fa0e143bf:python-constantly/CHANGELOG
 f:ad8208dc8f5d4c5a8cc747a919a2c24b:python-constantly/spkgbuild
 f:8c8e20f7b482aed0eed3a95479764bcd:python-trio-asyncio/CHANGELOG
@@ -3416,8 +3416,8 @@ f:cc22b5acf1a529bc792d26021da9beda:python-inflection/CHANGELOG
 f:e0f853d4f99fea30dc9a174b6da9478c:python-inflection/spkgbuild
 f:62b2806ab60feadbeaf4cd66eba1c411:python-nosexcover/CHANGELOG
 f:ed6e10f909c93c3deb2b859008ea96e8:python-nosexcover/spkgbuild
-f:555197cc6b5554d1769b43155c67c82f:python-testfixtures/CHANGELOG
-f:d8df5a71371175cabcff57cec21ddcaf:python-testfixtures/spkgbuild
+f:4a6e4539f1fe827c9a11540d072a39e2:python-testfixtures/CHANGELOG
+f:80b6256d63d35f7cbeb8ee258bab1344:python-testfixtures/spkgbuild
 f:d3a81c148c32173ae32fe18089dd237f:python-mtrpacket/CHANGELOG
 f:1e946fa3216de9ae1632df337b80d53e:python-mtrpacket/spkgbuild
 f:cba8a29d5fd9643f3631ef29dd775b5f:python-sphinx-autorun/CHANGELOG
@@ -4150,8 +4150,8 @@ f:ef5006284977086a7c2c98b6bdf07048:python-colander/CHANGELOG
 f:05a6fc628ca4e451a1bc73c931fdb2f2:python-colander/spkgbuild
 f:b7068c5b790a28503a846b793583c436:python-zipp/CHANGELOG
 f:326e59ca573e24f40f8ff6eb3b724699:python-zipp/spkgbuild
-f:ed499dc6cb9033c72e81066cf98fe8b6:python-filelock/CHANGELOG
-f:0fc89406cf6b489ae88f5f8e46d51bd6:python-filelock/spkgbuild
+f:6ab6d0bdb6918dcd264e71ec824e8635:python-filelock/CHANGELOG
+f:fbed2470b6a6ab3337af6cc7ade8c2c3:python-filelock/spkgbuild
 f:96d75f6fada79e33a0f54aba07ca1883:python-configclass/CHANGELOG
 f:729bbe394ef083c0c00ae67f8056a6c0:python-configclass/spkgbuild
 f:bde6e84684f9e5c965c3240e59ed41ed:python-oslo-config/CHANGELOG
@@ -4320,8 +4320,8 @@ f:06d5392b568ad0ea3e134144d95a2b37:python-flask-security-too/CHANGELOG
 f:9842ac6e0b25c21d9002d668e7490b0c:python-flask-security-too/spkgbuild
 f:808c085b5743342244856fe65734fe29:python-flask-htmlmin/CHANGELOG
 f:d336476e726b5772651953357b66a9ef:python-flask-htmlmin/spkgbuild
-f:faa554d6c411dbdbbab5e73a5cf0c473:python-watchdog/CHANGELOG
-f:4ce2fda8d39771af624df6e64c674217:python-watchdog/spkgbuild
+f:63f52b41ff434f9663d4bf9c31d56351:python-watchdog/CHANGELOG
+f:05c82f37aa7648b6b40824db456a7073:python-watchdog/spkgbuild
 f:f505d39a8f8e572aeb71de368c379f82:python-perf/CHANGELOG
 f:42ea88327c004634403174ff8a0581d3:python-perf/spkgbuild
 f:1f0b75f7e60511575ad4a26a41941089:python-hidapi/CHANGELOG

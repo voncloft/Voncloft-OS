@@ -2,7 +2,7 @@
 # depends	: alsa-lib gstreamer libtheora libvorbis libogg gobject-introspection iso-codes meson
 
 name=gst-plugins-base
-version=1.21.2
+version=1.21.3
 release=1
 source="http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz"
 
