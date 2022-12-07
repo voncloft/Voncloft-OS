@@ -96,12 +96,12 @@ f:73094aefef5d679c106af69f745c7a2b:subversion/spkgbuild
 f:66119448ecd40461df344fc2a804071a:make-ca/CHANGELOG
 f:78153899fd744640486a4e7855849fd5:make-ca/update-pki.sh
 f:981d570c47f6374b8487a0a722e578a0:make-ca/spkgbuild
-f:9aaf93ec5de14c622da836a13d9cd03b:tor/CHANGELOG
+f:71a62fe74935a23fff7e09caf852aac2:tor/CHANGELOG
 f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
 f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
 f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
 f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
-f:4406792b8533c495a73b5351bcf64fa7:tor/spkgbuild
+f:b739e56cad477661be3731b547a806f3:tor/spkgbuild
 f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
 f:3451d6c13db8d89d88558f48e9c7e961:nftables/CHANGELOG
@@ -109,9 +109,9 @@ f:586f645cc60e2fdda0dbca9622241772:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:fa8846fc9ce97da28ca11c04bb6562ec:thunderbird/CHANGELOG
+f:2eac27619c4f9cfc45305b225df52b09:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:e8404618685b07ca7e8cbc5ce166e9f6:thunderbird/spkgbuild
+f:b8063bdb2bdac168c42c2531458111e8:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:ea8524344c10921986555ae1efd9d75b:openvpn/CHANGELOG
