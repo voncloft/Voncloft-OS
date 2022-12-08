@@ -2,7 +2,7 @@
 # depends : python jupyter-widgetsnbextension
 
 name=python-ipywidgets
-version=8.0.3
+version=8.0.4
 release=1
 
 source="https://github.com/ipython/ipywidgets/archive/refs/tags/a$version.tar.gz"
