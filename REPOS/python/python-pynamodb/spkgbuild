@@ -2,7 +2,7 @@
 # depends : python-botocore
 
 name=python-pynamodb
-version=5.3.3
+version=5.3.4
 release=1
 
 source="https://github.com/pynamodb/PynamoDB/archive/refs/tags/$version.tar.gz"
