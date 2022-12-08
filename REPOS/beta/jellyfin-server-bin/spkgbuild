@@ -4,19 +4,20 @@
 name=jellyfin-server-bin
 version=10.8.8
 release=1
-_version=${version}=1"
+_pkgver="${version}-1"
 
-source="https://repo.jellyfin.org/releases/server/debian/versions/stable/server/${version}/jellyfin-server_${_version}_amd64.deb")
+source="https://repo.jellyfin.org/releases/server/debian/versions/stable/server/${version}/jellyfin-server_${_pkgver}_amd64.deb
 	jellyfin.sysusers
 	jellyfin.tmpfiles
 	jellyfin.conf
 	jellyfin.service"
+
 noextract="jellyfin-server_${_pkgver}_amd64.deb"
 
 build() {
 	mkdir -pv "jellyfin-server"
-	bsdtar -xf "jellyfin-server_${_pkgver}_amd64.ded" -C "jellyfin-server"
-	tar -xf "jellyfin-server/data.tar.xz" -C "jellyfin-server"
+	bsdtar -xf "jellyfin-server_${_pkgver}_amd64.deb" -C "jellyfin-server"
+	tar -xvf "jellyfin-server/data.tar.xz" -C "jellyfin-server"
 	cp -r "$SRC/jellyfin-server/usr" "$PKG/usr"
 	rm -r "$PKG/usr/share"
 	install -Dm 644 "jellyfin.sysusers" "$PKG/usr/lib/sysusers.d/jellyfin.conf"
