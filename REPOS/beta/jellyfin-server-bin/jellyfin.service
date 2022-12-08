@@ -12,8 +12,10 @@
 ### END INIT INFO
 
 . /lib/lsb/init-functions
-
-BIN_FILE="/usr/lib/jellyfinmediaserver/Jellyfin Media Server"
+if test -f /etc/default/jellyfin; then
+    . /etc/default/jellyfin
+    fi
+BIN_FILE="/usr/lib/jellyfin/bin/jellyfin"
 #$LastChangedBy: dj $
 #$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
 

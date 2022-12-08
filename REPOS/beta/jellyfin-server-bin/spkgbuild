@@ -21,6 +21,6 @@ build() {
 	rm -r "$PKG/usr/share"
 	install -Dm 644 "jellyfin.sysusers" "$PKG/usr/lib/sysusers.d/jellyfin.conf"
 	install -Dm 644 "jellyfin.tmpfiles" "$PKG/usr/lib/tmpfiles.d/jellyfin.conf"
-	install -Dm 644 "jellyfin.conf" "$PKG/etc/conf.d/jellyfin"
+	install -Dm 644 "jellyfin.conf" "$PKG/etc/default/jellyfin"
 	install -Dm 644 "jellyfin.service" "$PKG/etc/init.d/jellyfin"
 }

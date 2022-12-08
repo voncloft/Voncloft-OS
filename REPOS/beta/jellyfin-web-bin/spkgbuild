@@ -6,10 +6,10 @@ version=10.8.8
 release=1
 _pkgver=$"{version}-1"
 source="https://repo.jellyfin.org/releases/server/debian/versions/stable/web/${version}/jellyfin-web_${_pkgver}_all.deb"
-noextract="jellyfin-web-${pkgver}.deb"
+noextract="jellyfin-web_${_pkgver}_all.deb"
 build() {
 	mkdir -pv "jellyfin-web"
-	bsdtar -xf "jellyfin-web-$version.deb" -C "jellyfin-web"
+	bsdtar -xf "jellyfin-web_${_pkgver}_all.deb" -C "jellyfin-web"
 	tar -xf "jellyfin-web/data.tar.xz" -C "jellyfin-web"
 	cp -r $SRC/jellyfin-web/usr" "$PKG/"
 }
