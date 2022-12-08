@@ -9,7 +9,8 @@ release=1
 source="https://repo.jellyfin.org/releases/server/debian/versions/stable/server/${version}/jellyfin-server_${_version}_amd64.deb")
 	jellyfin.sysusers
 	jellyfin.tmpfiles
-	jellyfin.conf"
+	jellyfin.conf
+	jellyfin.service"
 noextract="jellyfin-web-$version.deb"
 
 build() {
@@ -21,4 +22,5 @@ build() {
 	install -Dm 644 "jellyfin.sysusers" "$PKG/usr/lib/sysusers.d/jellyfin.conf"
 	install -Dm 644 "jellyfin.tmpfiles" "$PKG/usr/lib/tmpfiles.d/jellyfin.conf"
 	install -Dm 644 "jellyfin.conf" "$PKG/etc/conf.d/jellyfin"
+	install -Dm 644 "jellyfin.service" "$PKG/etc/init.d/jellyfin"
 }
