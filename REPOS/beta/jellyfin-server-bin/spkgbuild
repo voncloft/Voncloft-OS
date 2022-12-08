@@ -1,0 +1,24 @@
+# description : Jellyfin server component
+# depends : ffmpeg
+
+name=jellyfin-server-bin
+version=10.8.8
+_version=${version}=1"
+release=1
+
+source="https://repo.jellyfin.org/releases/server/debian/versions/stable/server/${version}/jellyfin-server_${_version}_amd64.deb")
+	jellyfin.sysusers
+	jellyfin.tmpfiles
+	jellyfin.conf"
+noextract="jellyfin-web-$version.deb"
+
+build() {
+	mkdir -pv "jellyfin-server"
+	bsdtar -xf "jellyfin-${version}.deb" -C "jellyfin-server"
+	tar -xf "jellyfin-server/data.tar.xz" -C "jellyfin-server"
+	cp -r "$SRC/jellyfin-server/usr" "$PKG/usr"
+	rm -r "$PKG/usr/share"
+	install -Dm 644 "jellyfin.sysusers" "$PKG/usr/lib/sysusers.d/jellyfin.conf"
+	install -Dm 644 "jellyfin.tmpfiles" "$PKG/usr/lib/tmpfiles.d/jellyfin.conf"
+	install -Dm 644 "jellyfin.conf" "$PKG/etc/conf.d/jellyfin"
+}

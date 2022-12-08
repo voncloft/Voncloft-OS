@@ -1,0 +1,10 @@
+# description : Free software media system
+# depends : jellyfin-server-bin jellyfin-web-bin
+
+name=jellyfin-bin
+version=10.8.8
+release=1
+
+build() {
+	mkdir -pv $PKG/usr
+}
