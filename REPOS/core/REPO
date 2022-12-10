@@ -648,10 +648,10 @@ f:37ed666b243f05311f800a6639649a8d:lz4/CHANGELOG
 f:db13b1ad2b0be92315ef6e7f00554d37:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:eef374150954a6186542c3ab3edd2775:nss/CHANGELOG
+f:37fc227df7428503f4f5fc2d8b3a370a:nss/CHANGELOG
 f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:f4bb7267a57eef6a2ebe5a9b7de03d78:nss/spkgbuild
+f:c8d15c473b1fb80fbab8ee46c00be557:nss/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:linux-desktop/extract.sh
 f:6f0f530adbe1f4d982c017270087eaf2:linux-desktop/post-install.sh
 f:be5ee45140b0b5a67f1eec7d41c08fec:linux-desktop/CHANGELOG
@@ -691,8 +691,8 @@ f:a5ac7449e99296bd91c0bdf8b6b43e9d:nnn/spkgbuild
 f:a854dfeb23e5c87b29f20210d8e1804a:gnupg/CHANGELOG
 f:1777046c3c0ed1e0747a05b2dfdb52be:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:0efe63c05bc9e07dd97dfa43d4b56f48:pipewire/CHANGELOG
-f:55a0e437ec31f89dd1a932308501f358:pipewire/spkgbuild
+f:fc7bb81ba8cdb81328730cd781152673:pipewire/CHANGELOG
+f:acb900c6d8beb2eb4e68ec14fd87bf49:pipewire/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
 f:966019be9bdb1097a5095eb9ae1d6c39:foltotar/spkgbuild
 f:d1079a56828cc16c17afc129665bc01b:pciutils/readme
@@ -747,7 +747,8 @@ f:84d8a99671239b0c1c3c48166fd5edfa:audiofile/spkgbuild
 f:22f6cbb3fbdda3fd72c185a5f2610ecc:audiofile/007-CVE-2017-6830-CVE-2017-6834-CVE-2017-6836-CVE-2017-6838.patch
 f:58289e3cb839111f43e9853e219b65dd:numix-icon-theme-circle/spkgbuild
 f:4daf5d27981cd63ad075146c88a39533:gperf/spkgbuild
-f:badae5b89a5d9d6b5741be60a6d2eb6d:leafpad/spkgbuild
+f:652191ef522559c1d0f7b2317dd744da:leafpad/CHANGELOG
+f:cd34dec63d0d6ec4f10eb4a682ec1547:leafpad/spkgbuild
 f:475b6cfe3052ca4d2679918dbe5aa497:bash/CHANGELOG
 f:eded9feb881d99f3e507f74fa2860b95:bash/spkgbuild
 f:40f5213a8d76656844ce0c8028a60629:xbps/spkgbuild
