@@ -2,7 +2,7 @@
 # depends : python-yaml
 
 name=python-nltk
-version=3.7
+version=3.8
 release=3
 
 source="https://github.com/nltk/nltk/archive/refs/tags/$version.tar.gz"
