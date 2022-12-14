@@ -2,7 +2,7 @@
 # depends : ipython
 
 name=python-ipdb
-version=0.13.9
+version=0.13.11
 release=2
 
 source="https://github.com/gotcha/ipdb/archive/refs/tags/$version.tar.gz"

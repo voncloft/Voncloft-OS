@@ -2,7 +2,7 @@
 # depends : acl gzip popt log-folders logrotate-boot
 
 name=logrotate
-version=3.20.1
+version=3.21.0
 release=1
 
 source="https://github.com/logrotate/logrotate/releases/download/$version/${name}-${version}.tar.xz

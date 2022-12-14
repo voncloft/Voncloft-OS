@@ -2,7 +2,7 @@
 # depends : flake8 python-black python-setuptools
 
 name=python-flake8-black
-version=0.3.5
+version=0.3.6
 release=4
 
 source="https://github.com/peterjc/flake8-black/archive/refs/tags/v$version.tar.gz"
