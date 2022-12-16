@@ -109,9 +109,9 @@ f:586f645cc60e2fdda0dbca9622241772:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:2eac27619c4f9cfc45305b225df52b09:thunderbird/CHANGELOG
+f:c8894df9de48f69cdf75d388f47e4d59:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:cac50999caf3679fefc62a418deab3cb:thunderbird/spkgbuild
+f:c1ad05d24531d384be3dc07573051f4d:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:ea8524344c10921986555ae1efd9d75b:openvpn/CHANGELOG
@@ -144,10 +144,10 @@ f:ad805264c43f6fdc84d9d9395c887515:wireshark/CHANGELOG
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
 f:afa3824d6d02655003d74f30a94fe44b:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
-f:1823a10d4401fba66e43f2dd9afc4487:tigervnc/CHANGELOG
+f:fe5eae050b958582aa4d59e5951de16f:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
 f:01cb746432115354d4b5e1fda5bddcc4:tigervnc/more-xsessions.patch
-f:16d81720f1cb2942c1ac35fdcf26c31b:tigervnc/spkgbuild
+f:81f189bb9c11bc87a6f23ec0260d8ba0:tigervnc/spkgbuild
 f:27a3b07dd384b7079820acc1497e2539:libnftnl/CHANGELOG
 f:2792209166ff62340a978fb038ec1821:libnftnl/spkgbuild
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
