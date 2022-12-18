@@ -4,7 +4,7 @@ A Linux From Scratch Repository that I self maintain.
 
 ## (You are on your own if you choose to use my repository)
 
-_As of 10-18-2022_
+_As of 12-18-2022_
 
 **Update:**
 - fixed update utility
