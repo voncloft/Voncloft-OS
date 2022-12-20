@@ -2,7 +2,7 @@
 # depends : python-typing_extensions python-pydantic
 
 name=python-aiosqlite
-version=0.17.0
+version=0.18.0
 release=3
 
 source="https://github.com/omnilib/aiosqlite/archive/refs/tags/v$version.tar.gz"
