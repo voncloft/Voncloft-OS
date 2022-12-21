@@ -2,7 +2,7 @@
 # depends	: libxcb 
 
 name=xcb-util
-version=0.4.0
+version=0.4.1
 release=1
 source="http://xcb.freedesktop.org/dist/xcb-util-$version.tar.bz2"
 
