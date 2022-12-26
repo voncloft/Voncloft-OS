@@ -2,7 +2,7 @@
 # depends : blosc lzo hdf5 python-numexpr
 
 name=python-pytables
-version=3.7.0
+version=3.8.0
 release=7
 
 source="https://github.com/PyTables/PyTables/archive/refs/tags/v$version.tar.gz"

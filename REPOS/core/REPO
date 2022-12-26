@@ -839,8 +839,8 @@ f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
 f:9e7254403ce579eb0f93988680a84b99:efibootmgr/spkgbuild
-f:c53df8e104b35994e23e903a6249d18a:conky/CHANGELOG
-f:079da888a9635ee59c2027fe84541c3f:conky/spkgbuild
+f:04ad21df28f66885204e216f6042f64b:conky/CHANGELOG
+f:d514e4485b00c1fd657859561c9ea244:conky/spkgbuild
 f:39099c98ec5fea676a000610a8789173:flex/spkgbuild
 f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
 f:35c0bc218ac475f090f213223b034046:blueman/CHANGELOG
@@ -1136,8 +1136,8 @@ f:9fe50cfe8b3cc280f0a226470ac197a7:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:977a5923e6effab2faf0f641fbd10bc4:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
-f:618fd05ac3f04a37a763b4d6f5a70914:btrfs-progs/CHANGELOG
-f:27c4dad288184273aebb3ccec6284882:btrfs-progs/spkgbuild
+f:174ebbbdb39b1e2c1be700e21fc6eaf7:btrfs-progs/CHANGELOG
+f:07cb793ccd5f3b1ade254a68b0fd9be7:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
 f:b44a2b0bff7d9c7c1d14640d0a8c7c9c:sed/CHANGELOG
 f:eb13e7233eba3eae549fe4afd76b2b5a:sed/spkgbuild
@@ -1209,10 +1209,10 @@ f:57a4ed378b72d98e3d78446d30945315:waylandpp/spkgbuild
 f:3591cbf3f462a5910f32399b45681051:android-tools/CHANGELOG
 f:3b072ba47896e8aafab62016c703d047:android-tools/spkgbuild
 f:d85332a55cf2795efc89dbf30af9a3d8:tcsh/post-install.sh
-f:fd0b5e4b0e35e4f1ad6367a0dc4958d0:tcsh/CHANGELOG
+f:8299acb649efaf3a212e2a11978d2c99:tcsh/CHANGELOG
 f:7ca0fe6d1a1b9a0093f632499d4fb112:tcsh/csh.cshrc
 f:4869b9da87c79854e2cc97241f125853:tcsh/csh.login
-f:5ab1b51a96a4c85014efcbd2c902ce43:tcsh/spkgbuild
+f:174e71efbbe2f0d7f3ddcdd7b399b442:tcsh/spkgbuild
 f:eca42e3356b6dd0c13ceaf010b4664c9:cdparanoia/spkgbuild
 f:08b0d328e8381b632afcc36d634f0d15:polkit-gnome/spkgbuild
 f:137d8a2043f7a6be87b7f37fde4307ae:zstd/CHANGELOG
@@ -1308,8 +1308,8 @@ f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
 f:1faa0c30d77048812b9f76b696899eb0:zeromq/CHANGELOG
 f:946d742b6966c9fd833e07769da75516:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
-f:db6d59464e75a9db97ee92134de3a442:man-pages/CHANGELOG
-f:729603a4d24dfd5409a37d0b4cbe92ad:man-pages/spkgbuild
+f:a8f9ab5d7279e78ef180e08cd6700615:man-pages/CHANGELOG
+f:9b1cccd0fbb26743e4636520c53471b2:man-pages/spkgbuild
 f:ef264cc5ef4b83a72888befb054daf4d:dunst/CHANGELOG
 f:f18e5dd99f346d21a9f5d35cabf4b9c1:dunst/spkgbuild
 f:750ebc91710c4eb2d3ccf1725d5e05bb:lua/CHANGELOG
@@ -1378,5 +1378,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:e7c57ef766fdb3e804c88c3203c9698a:hugo/CHANGELOG
-f:02c222dfbc4b2fd438158b02724bebe4:hugo/spkgbuild
+f:d8a18e6dffe78f2ea5efa8ba95d4f5c1:hugo/CHANGELOG
+f:02c046c6ef30c32780db1b7c9c73087b:hugo/spkgbuild
