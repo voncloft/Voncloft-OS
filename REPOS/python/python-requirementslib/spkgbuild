@@ -2,7 +2,7 @@
 # depends : python-appdirs python-attrs python-cached-property python-distlib
 
 name=python-requirementslib
-version=2.2.2
+version=2.2.3
 release=1
 
 source="https://github.com/sarugaku/requirementslib/archive/refs/tags/$version.tar.gz"
