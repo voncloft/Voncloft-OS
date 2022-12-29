@@ -2,7 +2,7 @@
 # depends : python xxhash
 
 name=python-xxhash
-version=3.1.0
+version=3.2.0
 release=3
 
 source="https://github.com/ifduyue/python-xxhash/archive/refs/tags/v$version.tar.gz"
