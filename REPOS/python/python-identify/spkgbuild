@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-identify
-version=2.5.11
+version=2.5.12
 release=1
 
 source="https://github.com/chriskuehl/identify/archive/refs/tags/v$version.tar.gz"
