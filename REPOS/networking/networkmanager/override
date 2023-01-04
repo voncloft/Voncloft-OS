@@ -1,1 +1,19 @@
-#work on later
+source=https://download.gnome.org/sources/NetworkManager/
+
+get_generic()
+{
+	url=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| grep \/ \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	| sort -V -r \
+	| head -n1)
+	echo $source$url
+	rm index.html
+	wget -O index.html $source$url/
+	
+	uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| grep tar.xz \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+	| sort -V -r \
+	| head -n1)
+}
