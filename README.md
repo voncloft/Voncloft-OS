@@ -53,6 +53,7 @@ _As of 12-18-2022_
 - logs/YEAR: html layout of updates
 - logs/old-test-updates: applied updates after script has been ran
 - other: Misc junk
+  retired: In the process of verifying its safe to get rid of
 - scripts: scripts I use and keep here for safe keeping
 - workbench: projects I untar and tar due to changes
 - working_on: get to it eventually, not as important as beta

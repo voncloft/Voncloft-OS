@@ -21,18 +21,22 @@ BIN_FILE="/usr/bin/deluged"
 case "$1" in
    start)
       log_info_msg "Starting deluged..."
-      #start_daemon ${BIN_FILE} --pidfile /run/deluged.pid -L info -l /var/log/deluged.log --user=deluge
-      start_daemon ${BIN_FILE} --pidfile /home/deluge/deluged.pid -L info -l /home/deluge/deluged.log --user deluge --group deluge --config /home/deluge/.config/deluge
+      IP_ADDRESS=$(cat < /etc/VPN_TO_CHECK.txt)
+      start_daemon ${BIN_FILE} --pidfile /home/deluge/deluged.pid -L info -l /home/deluge/deluged.log --user deluge --group deluge --config /home/deluge/.config/deluge -i $IP_ADDRESS
       evaluate_retval
       ;;
 
    stop)
-      log_info_msg "Stopping deluged..."
-      PID_FILE=$(cat /home/deluge/deluged.pid)
-      kill -9 $PID_FILE
-      #killproc /usr/bin/deluged
-      rm -rf /home/deluge/deluged.pid
-      evaluate_retval
+      	log_info_msg "Stopping deluged..."
+
+	if [ -f /home/deluge/deluged.pid ]; then
+          PID_FILE=$(cat /home/deluge/deluged.pid)
+          kill -9 $PID_FILE
+      	else
+          echo "Deluged is not running."
+      	fi
+	#rm -rf /home/deluge/deluged.pid
+      	evaluate_retval
       ;;
 
    restart)

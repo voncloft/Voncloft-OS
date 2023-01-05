@@ -10,7 +10,6 @@ d:dbus-boot
 d:flexget-daemon
 d:noip-boot
 d:sddm-boot
-d:deluge-boot
 d:bind-boot
 d:mythbackend-boot
 d:vsftpd-boot
@@ -42,7 +41,6 @@ f:a74956b572361f15811b73004f7d4a6f:flexget-daemon/spkgbuild
 f:a84f159fea806a96e98df5540132a445:noip-boot/spkgbuild
 f:4a1f73e5c1c83ae476fc3281098a8b2e:sddm-boot/CHANGELOG
 f:eed1d0f353d7f56fc3c317be72b66ab5:sddm-boot/spkgbuild
-f:7a202abad44b7774555509a1b1da4b31:deluge-boot/spkgbuild
 f:56e18a971b4f7c8de3de67e630951fea:bind-boot/spkgbuild
 f:ceffcc44ce19e5e290660f853847592c:mythbackend-boot/spkgbuild
 f:49cbdfcb3bffaaaab672af8a625ad999:vsftpd-boot/spkgbuild
