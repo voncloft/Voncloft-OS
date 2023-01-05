@@ -10,6 +10,7 @@ _As of 12-18-2022_
 - fixed update utility
 
 **Next Project:**
+- Work on integrating bookscripts into packages mentioned in PACKAGE_PROJECT
 - KRDC KRFB
 - involves libssh (not 2), libvnc, xrdp - fix deps
 

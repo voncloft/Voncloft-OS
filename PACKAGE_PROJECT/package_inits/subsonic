@@ -1,0 +1,86 @@
+#!/bin/sh
+########################################################################
+# Begin fcron
+#
+# Description : Fcron cron init script
+#
+# Author      : Name - name@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            fcron
+# Required-Start:      $local_fs $network $syslog
+# Should-Start:        networkmanager wicd
+# Required-Stop:       $local_fs $network $syslog
+# Should-Stop:         networkmanager wicd
+# Default-Start:       3 4 5
+# Default-Stop:        0 1 2 6
+# Short-Description:   Starts fcron.
+# Description:         Starts fcron daemon.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+. /lib/lsb/init-functions
+. /etc/default/subsonic
+BIN_FILE="/var/subsonic/subsonic.sh"
+PIDFILE="/run/subsonic.pid"
+DAEMON="/var/subsonic/subsonic.sh"
+DAEMON_ARGS="--pidfile=$PIDFILE $SUBSONIC_ARGS"
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+case "$1" in
+   start)
+      log_info_msg "Starting subsonic..."
+      if [ -e $PIDFILE ]
+      then
+      	ps -p $(cat $PIDFILE) > /dev/null
+      [ "$?" = 0 ] && return 1
+    fi
+    touch $PIDFILE
+    chown $SUBSONIC_USER $PIDFILE
+    [ -e /var/subsonic ] && chown -R $SUBSONIC_USER /var/subsonic
+    [ -e /tmp/subsonic ] && chown -R $SUBSONIC_USER /tmp/subsonic
+	echo $PIDFILE
+     start_daemon ${DAEMON} ${DAEMON_ARGS}
+     #start_daemon ${DAEMON} --pidfile=$PIDFILE
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping subsonic..."
+      PID_FILE=$(cat /run/subsonic.pid)
+      kill -9 $PID_FILE
+      rm -rf /run/subsonic.pid
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      #statusproc ${BIN_FILE}
+      #statusproc /run/subsonic.pid
+      if [ -f /run/subsonic.pid ]; then
+          PID_FILE=$(cat /run/subsonic.pid)
+          echo -e "${GREEN}Subsonic is running on process:" $PID_FILE${NC}
+      else
+          echo -e "${RED}Subsonic is not running.${NC}"
+      fi
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/fcron
