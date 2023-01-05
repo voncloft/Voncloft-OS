@@ -2,7 +2,7 @@
 # depends : qt5-multimedia
 
 name=qt5-speech
-version=5.15.7
+version=5.15.8
 
 source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/qtspeech-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"

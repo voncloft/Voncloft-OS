@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-lazy-object-proxy
-version=1.8.0
+version=1.9.0
 release=2
 
 source="https://github.com/ionelmc/python-lazy-object-proxy/archive/refs/tags/v$version.tar.gz"
