@@ -2,7 +2,7 @@
 # depends : imagemagick libxml2 python
 
 name=python-wand
-version=0.6.10
+version=0.6.11
 release=1
 
 source="https://github.com/emcconville/wand/archive/refs/tags/$version.tar.gz"
