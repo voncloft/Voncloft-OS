@@ -1,12 +1,12 @@
-# description	: Visual Studio Code, editor for building and debugging modern web and cloud applications (official binary version)
-# depends	: libxkbfile gnupg gtk3 libsecret nss libnotify
+# description : Visual Studio Code, editor for building and debugging modern web and cloud applications (official binary version)
+# depends : libxkbfile gnupg gtk3 libsecret nss libnotify
 
 name=vscode-bin
 _name=visual-studio-code
-version=1.43.2
+version=1.71.0
 release=1
-options="!checksum"
-source="$name-$version.tar.gz::https://vscode-update.azurewebsites.net/$version/linux-x64/stable
+
+source="$name-$version.tar.gz::https://update.code.visualstudio.com/${version}/linux-x64/stable
 	$_name.desktop
 	$_name-url-handler.desktop"
 
