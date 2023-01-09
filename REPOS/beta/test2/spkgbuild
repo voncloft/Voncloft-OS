@@ -1,0 +1,11 @@
+# description : test package
+# depends : 
+
+name=test2
+version=1
+release=1
+
+
+build() {
+	create_startup_directories $PKG
+}
