@@ -21,8 +21,8 @@ build() {
    install -d -m 755 $PKG/etc/init.d
    install -m 754 $SRC/deluged $PKG/etc/rc.d/init.d/
    install -m 754 $SRC/deluge-web $PKG/etc/rc.d/init.d/
-   ln -sfv $PKG/etc/rc.d/init.d/deluged $PKG/etc/init.d/deluge
-   ln -sfv $PKG/etc/rc.d/init.d/deluge-web $PKG/etc/init.d/deluge-web
+   ln -sfv "$PKG/etc/rc.d/init.d/deluged $PKG/etc/init.d/deluged"
+   ln -sfv "$PKG/etc/rc.d/init.d/deluge-web $PKG/etc/init.d/deluge-web"
    ln -sfv ../init.d/deluged $PKG/etc/rc.d/rc3.d/S99deluged
    ln -sfv ../init.d/deluge-web $PKG/etc/rc.d/rc3.d/S99delugeweb
    ln -sfv ../init.d/deluged $PKG/etc/rc.d/rc5.d/S99deluged
