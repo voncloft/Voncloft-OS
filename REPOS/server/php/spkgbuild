@@ -5,7 +5,8 @@ name=php
 version=8.2.1
 release=1
 
-source="https://www.php.net/distributions/php-$version.tar.gz"
+source="https://www.php.net/distributions/php-$version.tar.gz
+	php"
 options="!checksum"
 build()
 {
@@ -35,6 +36,7 @@ build()
             --with-readline              
 make
 make DESTDIR=$PKG install
+create_boot_directories php K28php-fpm S28php-fpm $SRC $PKG
 #install -v -Dm644 $SRC/php.ini-production $PKG/etc/php.ini
 #if [ -f /etc/php-fpm.conf.default ]; then
 #  mv -v /etc/php-fpm.conf{.default,} &&

@@ -5,7 +5,8 @@ name=noip
 version=2.1.9
 release=1
 
-source="http://www.no-ip.com/client/linux/$name-duc-linux.tar.gz"
+source="http://www.no-ip.com/client/linux/$name-duc-linux.tar.gz
+	noip2"
 options="!checksum"
 
 build()
@@ -18,5 +19,5 @@ build()
 
 	cc -Wall $CLFAGS $LDFLAGS -g -Dlinux -DPREFIX=/usr noip2.c -o noip2 -Wno-unused-but-set-variable
 	install -Dm755 noip2 "$PKG/usr/bin/noip2"
-	
+	create_boot_directories noip2 K99noip2 S99noip2 $SRC $PKG
 }

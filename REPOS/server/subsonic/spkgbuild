@@ -7,7 +7,8 @@ release=1
 options="!checksum"
 
 source="https://sourceforge.net/projects/subsonic/files/${name}/${version}/${name}-${version}-standalone.tar.gz
-	subsonic"
+	subsonic
+	subsonic_boot"
 
 build()
 {
@@ -21,4 +22,5 @@ build()
     	chmod +x $PKG/var/lib/subsonic/subsonic.sh
 	mkdir -pv $PKG/etc/default
 	install -Dm644 $SRC/subsonic $PKG/etc/default/subsonic
+	create_boot_directories subsonic_boot K40subsonic S40subsonic $SRC $PKG
 }

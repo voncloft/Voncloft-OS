@@ -1,0 +1,78 @@
+#!/bin/sh
+########################################################################
+# Begin dhcpd
+#
+# Description : ISC DHCP Server Boot Script.
+#
+# Author      : 
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            dhcpd
+# Required-Start:      $network
+# Should-Start:        networkmanager wicd
+# Required-Stop:       $network
+# Should-Stop:         networkmanager wicd
+# Default-Start:       3 4 5
+# Default-Stop:        0 1 2 6
+# Short-Description:   Starts the ISC DHCP Server
+# Description:         Starts the ISC DHCP Server
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+INTERFACES=""
+OPTIONS=""
+
+if [ -f "/etc/sysconfig/dhcpd" ]; then
+   . /etc/sysconfig/dhcpd
+fi
+
+case "$1" in
+   start)
+
+      if [ -z "$INTERFACES" ]; then
+         MSG="You need to configure dhcp server in"
+         log_warning_msg "$MSG /etc/sysconfig/dhcpd"
+         exit 0
+      fi
+
+      log_info_msg "Starting dnsmasq"
+      #echo /var/log/my_scripts/$(date +%m-%d-%Y)/$(date +%H)/dnsmasq.log
+      start_daemon /usr/sbin/dnsmasq --log-facility=/var/log/dnsmasq.log
+      evaluate_retval
+
+      ;;
+
+   stop)
+
+      log_info_msg "Stopping dnsmasq"
+      killproc /usr/sbin/dnsmasq
+      evaluate_retval
+
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc /usr/sbin/dnsmasq
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/dhcpd

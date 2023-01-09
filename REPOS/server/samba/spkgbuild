@@ -4,7 +4,8 @@
 name=samba
 version=4.17.4
 release=1
-source="https://www.samba.org/ftp/samba/stable/$name-$version.tar.gz"
+source="https://www.samba.org/ftp/samba/stable/$name-$version.tar.gz
+	samba"
 
 
 build() {

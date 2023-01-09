@@ -6,7 +6,8 @@ version=2.88
 release=1
 
 source="http://www.thekelleys.org.uk/dnsmasq/$name-$version.tar.xz
-	dnsmasq.conf"
+	dnsmasq.conf
+	dnsmasq"
 
 build()
 {
@@ -18,6 +19,6 @@ build()
 	make DESTDIR=$PKG install
 
 	install -Dm644 $SRC/dnsmasq.conf $PKG/etc/dnsmasq.conf
-	
+	create_startup_directories dnsmasq K30dnsmasq S30dnsmasq $SRC $PKG
 
 }

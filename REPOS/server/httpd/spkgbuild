@@ -7,7 +7,8 @@ release=1
 
 backup="etc/httpd/httpd.conf"
 source="https://archive.apache.org/dist/httpd/$name-$version.tar.bz2
-	https://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.48-blfs_layout-1.patch"
+	https://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.48-blfs_layout-1.patch
+	httpd"
 
 build() {
 	cd $name-$version
@@ -34,4 +35,5 @@ build() {
 	            --with-suexec-userdir=public_html
 	make
 	make DESTDIR=$PKG install
+	create_boot_directories httpd K28httpd S28httpd $SRC $PKG
 }
