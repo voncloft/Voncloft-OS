@@ -16,17 +16,6 @@ build() {
    python setup.py build
    python setup.py install --root=$PKG --optimize=1
    ###INSTALL BOOT SCRIPTS###
-   install -d -m 755 $PKG/etc/rc.d/rc{0,1,2,3,4,5,6,S}.d
-   install -d -m 755 $PKG/etc/rc.d/init.d
-   install -d -m 755 $PKG/etc/init.d
-   install -m 754 $SRC/deluged $PKG/etc/rc.d/init.d/
-   install -m 754 $SRC/deluge-web $PKG/etc/rc.d/init.d/
-   ln -sfv "$PKG/etc/rc.d/init.d/deluged $PKG/etc/init.d/deluged"
-   ln -sfv "$PKG/etc/rc.d/init.d/deluge-web $PKG/etc/init.d/deluge-web"
-   ln -sfv ../init.d/deluged $PKG/etc/rc.d/rc3.d/S99deluged
-   ln -sfv ../init.d/deluge-web $PKG/etc/rc.d/rc3.d/S99delugeweb
-   ln -sfv ../init.d/deluged $PKG/etc/rc.d/rc5.d/S99deluged
-   ln -sfv ../init.d/deluge-web $PKG/etc/rc.d/rc5.d/S99delugeweb
-   #create_startup_directories deluged K99deluged S99deluged $SRC $PKG
-   #create_startup_directories deluge-web K99deluge-web S99deluge-web $SRC $PKG
+   create_startup_directories deluged K99deluged S99deluged $SRC $PKG
+   create_startup_directories deluge-web K99deluge-web S99deluge-web $SRC $PKG
 }
