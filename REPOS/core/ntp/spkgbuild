@@ -6,7 +6,8 @@ version=4.2.8p15
 release=1
 source="https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-${version%.*}/$name-$version.tar.gz
 	rc.ntpd
-	run"
+	run
+	ntpd"
 
 build() {
 	cd $name-$version
@@ -61,4 +62,5 @@ EOF
 	# runit service
         install -Dm755 $SRC/run $PKG/etc/sv/ntpd/run
         ln -s /run/runit/supervise.ntpd $PKG/etc/sv/ntpd/supervise
+	create_boot_directories ntpd K46ntpd S46ntpd $SRC $PKG
 }

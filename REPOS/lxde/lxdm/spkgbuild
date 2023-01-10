@@ -1,5 +1,5 @@
 # description	: Lightweight Display Manager for the LXDE desktop
-# depends	: gtk2 iso-codes consolekit2 linux-pam xorg-server librsvg lxdm-boot
+# depends	: gtk2 iso-codes consolekit2 linux-pam xorg-server librsvg
 
 name=lxdm
 version=0.5.3

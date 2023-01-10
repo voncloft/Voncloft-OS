@@ -11,3 +11,4 @@ sed -e 's/\"none\"/\"on\"/' \
 
 cp -v /etc/inittab{,-orig}
 sed -i '/initdefault/ s/3/5/' /etc/inittab
+/etc/init.d/sddm start

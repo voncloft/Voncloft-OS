@@ -1,0 +1,44 @@
+#!/bin/sh
+########################################################################
+# Begin sysstat
+#
+# Description : Clear kernel counters for sysstat
+#
+# Author      : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            sysstat
+# Required-Start:      $local_fs
+# Should-Start:        sysctl console
+# Required-Stop:
+# Should-Stop:
+# Default-Start:       S
+# Default-Stop:
+# Short-Description:   Reset system activity data collector file
+# Description:         Reset system activity data collector file
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2019-09-08 13:50:13 -0500 (Sun, 08 Sep 2019) $
+
+case "$1" in
+   start)
+      log_info_msg "Calling the system activity data collector (sadc)..."
+      /usr/lib/sa/sadc -F -L -
+      evaluate_retval
+      ;;
+
+   *)
+      echo "Usage: $0 start"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/sysstat

@@ -1,5 +1,5 @@
 # description	: Free version of the SSH connectivity tools
-# depends	: linux-pam xorg-server openssh-boot 
+# depends	: linux-pam xorg-server
 
 name=openssh
 version=9.1

@@ -12,3 +12,4 @@ scratch install -y fcron-boot
 fcrontab -z -u systab
 rm /var/spool/fcron/systab.orig.spkgnew
 
+/etc/init.d/fcron start

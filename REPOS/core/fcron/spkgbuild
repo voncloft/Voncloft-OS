@@ -1,5 +1,5 @@
 # description : scheduling program
-# depends : nano linux-pam fcron-boot
+# depends : nano linux-pam
 
 name=fcron
 version=3.3.0

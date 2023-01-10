@@ -6,3 +6,4 @@ chgrp apache           /usr/lib/httpd/suexec
 chmod 4754             /usr/lib/httpd/suexec
 chown -v -R apache:apache /srv/www
 
+/etc/init.d/httpd restart

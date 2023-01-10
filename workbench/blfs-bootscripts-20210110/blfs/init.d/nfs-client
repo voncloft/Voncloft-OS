@@ -1,0 +1,62 @@
+#!/bin/sh
+########################################################################
+# Begin nfs-client
+#
+# Description : Start statd
+#
+# Authors     : Ken Moffat - ken@linuxfromscratch.org
+#               Bruce Dubbs - bdubbs@linuxfromscratch.org
+#               Douglas R. Reno - renodr@linuxfromscratch.org
+#
+# Version     : BLFS 7.0
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            nfs-client
+# Required-Start:      $network $portmap
+# Should-Start:        networkmanager wicd
+# Required-Stop:       $network $portmap
+# Should-Stop:         networkmanager wicd
+# Default-Start:       3 4 5
+# Default-Stop:        0 1 2 6
+# Short-Description:   Starts statd
+# Description:         rpc.statd provides file locking on nfs.
+# X-LFS-Provided-By:   BLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+#$LastChangedBy: dj $
+#$Date: 2020-08-17 01:20:21 -0500 (Mon, 17 Aug 2020) $
+
+case "$1" in
+   start)
+      log_info_msg "Starting NFS statd..."
+      start_daemon /sbin/rpc.statd --no-notify
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping NFS statd..."
+      killproc /sbin/rpc.statd
+      evaluate_retval
+      ;;
+
+   restart)
+      $0 stop
+      sleep 1
+      $0 start
+      ;;
+
+   status)
+      statusproc /sbin/rpc.statd
+      ;;
+
+   *)
+      echo "Usage: $0 {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/nfs-client

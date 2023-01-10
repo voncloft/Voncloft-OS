@@ -11,4 +11,4 @@ mysqladmin -p shutdown
 
 rm /etc/mysql/my.cnf.spkgnew
 
-scratch install -y mariadb-boot
+/etc/init.d/mysql start

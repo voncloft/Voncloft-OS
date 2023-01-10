@@ -1,1 +1,1 @@
-scratch install -y wireguard-boot
+/etc/init.d/wireguard start

@@ -1,0 +1,120 @@
+#!/bin/sh
+
+########################################################################
+
+# Begin hostapd
+
+#
+
+# Description : Start hostap daemon
+
+#
+
+# Author      : Bruce Dubbs - bdubbs at linuxfromscratch.org
+
+#
+
+# Version     : LFS 7.0
+
+#
+
+########################################################################
+
+
+
+### BEGIN INIT INFO
+
+# Provides:            hostap
+
+# Required-Start:      $network
+
+# Should-Start:        $remote_fs haldaemon
+
+# Required-Stop:       $network
+
+# Should-Stop:         haldaemon $remote_fs
+
+# Default-Start:       3 4 5
+
+# Default-Stop:        0 1 2 6
+
+# Short-Description:   Starts hostap daemon.
+
+# Description:         Starts hostap daemon.
+
+# X-LFS-Provided-By:   BLFS / LFS 7.0
+
+### END INIT INFO
+
+
+
+. /lib/lsb/init-functions
+
+
+
+#$LastChangedBy: dj $
+
+#$Date: 2011-12-05 07:38:40 +0000 (Mon, 05 Dec 2011) $
+
+
+
+case $1 in
+
+   start)
+
+      log_info_msg "Starting sshguard daemon..."
+
+      /usr/bin/sshguard -a 4 -b 5:/var/lib/sshguard/enemies -w /var/lib/sshguard/whitelist -i /var/run/sshguard.pid -l /var/log/auth.log &
+
+      #evaluate_retval
+
+      ;;
+
+
+
+   stop)
+
+      log_info_msg "Stopping sshguard daemon..."
+
+      killproc /usr/bin/sshguard
+
+      #evaluate_retval
+
+      ;;
+
+
+
+   restart)
+
+      $0 stop
+
+      sleep 1
+
+      $0 start
+
+      ;;
+
+
+
+   status)
+
+      statusproc /usr/bin/sshguard
+
+      ;;
+
+
+
+   *)
+
+      echo "Usage: $0 {start|stop|restart|status}"
+
+      exit 1
+
+      ;;
+
+esac
+
+
+
+# End /etc/init.d/hostapd
+
