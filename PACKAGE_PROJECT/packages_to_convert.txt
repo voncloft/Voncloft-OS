@@ -1,5 +1,7 @@
 ####THESE NEED TESTING####
 ####AS OF 1/9/2023####
+
+####NEED TO REMOVE boot-$name from spkgbuilds####
 Include the init.d file to the package itself
 have it do the rc.d "crap" for boot stuff
 post upgrade and post install start process
