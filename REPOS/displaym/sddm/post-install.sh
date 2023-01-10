@@ -7,7 +7,7 @@ sed -e 's/-nolisten tcp//'\
 sed -e 's/\"none\"/\"on\"/' \
     -i /etc/sddm.conf
 
-scratch install -y -c sddm-boot
+#scratch install -y -c sddm-boot
 
 cp -v /etc/inittab{,-orig}
 sed -i '/initdefault/ s/3/5/' /etc/inittab
