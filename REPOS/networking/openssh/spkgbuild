@@ -6,7 +6,8 @@ version=9.1
 release=1
 
 backup="etc/ssh/sshd_config"
-source="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz"
+source="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz
+	sshd"
 options="!checksum"
 
 build() {
@@ -23,5 +24,5 @@ build() {
       make DESTDIR=$PKG install
       mkdir $PKG/usr/bin
       install -v -m755    contrib/ssh-copy-id $PKG/usr/bin
-      
+      create_boot_directories sshd K30sshd S30sshd $SRC $PKG
 }

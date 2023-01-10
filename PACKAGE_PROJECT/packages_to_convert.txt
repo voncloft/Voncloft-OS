@@ -1,3 +1,5 @@
+####THESE NEED TESTING####
+####AS OF 1/9/2023####
 Include the init.d file to the package itself
 have it do the rc.d "crap" for boot stuff
 post upgrade and post install start process
@@ -11,40 +13,41 @@ cups
 dbus
 #deluged
 #deluge-web
-dhcpd
-fcron
+#dhcpd
+#fcron
 flexget
 fuse
 halt
-hostapd
-httpd
+#hostapd
+#httpd
 incron
-iptables
+#iptables
 jellyfin
 localnet
-lxdm
+#lxdm
 modules
 mountfs
 mountvirtfs
-mysql
+#mysql
 network
-noip2
+#noip2
 ntpd
 openvpn-personal
-openvpn-torrent
-php-fpm
-plex
+#openvpn-torrent
+#php-fpm
+#plex
 postfix
 psad
 rc
 reboot
-samba
+#samba
 saslauthd
+#sddm
 sendsignals
 setclock
-sshd
+#sshd
 sshguard
-subsonic
+#subsonic
 swap
 sysctl
 sysklogd
@@ -54,4 +57,4 @@ udev_retry
 voogle
 vsftpd
 webmin
-wireguard
+#wireguard

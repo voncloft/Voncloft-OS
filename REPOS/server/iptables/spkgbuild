@@ -6,7 +6,8 @@ version=1.8.8
 release=1
 
 source="http://www.netfilter.org/projects/iptables/files/iptables-$version.tar.bz2
-	rc.iptables"
+	rc.iptables
+	iptables"
 options="!checksum"
 
 build()
@@ -31,5 +32,5 @@ done
 #install -D $PKG/etc/rc.d/
 mkdir -pv $PKG/etc/rc.d
 install -m644 $SRC/rc.iptables $PKG/etc/rc.d/
-
+create_boot_directories iptables K19iptables S19iptables $SRC $PKG
 }

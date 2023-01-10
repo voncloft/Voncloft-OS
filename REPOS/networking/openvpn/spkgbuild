@@ -4,7 +4,8 @@
 name=openvpn
 version=2.5.8
 release=1
-source="https://github.com/OpenVPN/openvpn/archive/$version/$name-$version.tar.gz"
+source="https://github.com/OpenVPN/openvpn/archive/$version/$name-$version.tar.gz
+	openvpn-torrent"
 
 build() {
 	cd $name-$version
@@ -29,4 +30,5 @@ build() {
 
 	grep -i -e 's/auth-users-pass/auth-users-pass \/etc\/pia\/secrets\nlog-append \/var\/log\/openvpn.log/g' us_denver.ovpn
 	#echo "log-append /var/log/openvpn.log" >> us_denver.ovpn
+	create_boot_directories openvpn-torrent $K99openvpn S99openvpn $SRC $PKG
 }
