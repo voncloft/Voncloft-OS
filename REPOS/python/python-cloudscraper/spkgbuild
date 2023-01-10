@@ -2,7 +2,7 @@
 # depends : python-pyparsing python-requests python-requests-toolbelt
 
 name=python-cloudscraper
-version=1.2.67
+version=1.2.68
 release=1
 
 source="https://github.com/VeNoMouS/cloudscraper/archive/refs/tags/$version.tar.gz"

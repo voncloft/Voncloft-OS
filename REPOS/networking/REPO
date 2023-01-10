@@ -45,8 +45,9 @@ d:dhcp
 d:libnetfilter_conntrack
 f:873d1983c6de6659396ed0b849142e4b:yt-dlp/CHANGELOG
 f:e4b299a58f1fc0b98ebf9b5e6c4de0d5:yt-dlp/spkgbuild
-f:d3ac1f5a3d8570c04462dc3ce4aa1c18:openssh/post-install.sh
+f:29547b2cd5195a0b93a28e2ffaaae3f3:openssh/post-install.sh
 f:4bd2e2f26c75b76c14eb91cbc5d284a6:openssh/CHANGELOG
+f:6323af6f0662d0fb596d663f2e04c733:openssh/post-upgrade.sh
 f:375bc8bcfb157208c9c5d9700c7c6b69:openssh/pre-install.sh
 f:7fe73bf8ea8559f4d74a0848c244db1a:openssh/mkdirs
 f:ac6f86776efc565c3e62564e3c8afc18:openssh/spkgbuild
@@ -71,8 +72,6 @@ f:d7b09dd0c095f65256dbf44af7e68169:hostapd/hostapd.conf
 f:156218aae34657522234e203bd681d64:hostapd/spkgbuild
 f:4c7ed06a29acb5bd1037c73f64ee30e6:krb5/CHANGELOG
 f:cf2d8da681f22dc3c171575db48ddeb3:krb5/spkgbuild
-f:8383cbdcf73230481714890d09c8a1ad:post-install.sh
-f:6323af6f0662d0fb596d663f2e04c733:post-upgrade.sh
 f:ac6d6bd899563b2d6df2275a420881b5:tcpdump/CHANGELOG
 f:cb8b94e067ba78d2b06b1cffb4266203:tcpdump/spkgbuild
 f:9754e864728bf164b84d29126eec1677:libssh2/CHANGELOG
@@ -116,9 +115,9 @@ f:22c773627e449c3631e0540aa86d4003:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:864c99d23161060e53f210501c749cf9:thunderbird/CHANGELOG
+f:13969935255e40975607361385fb024d:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:41d5f034d43fec37eab45cbf6d983b8a:thunderbird/spkgbuild
+f:012f5022ad5fa2d38ce4e96f842f010d:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:d18dce76462cdf0fb6d05986ec9a9985:openvpn/post-install.sh

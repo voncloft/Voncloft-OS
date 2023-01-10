@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-orjson
-version=3.8.4
+version=3.8.5
 release=1
 
 source="https://github.com/ijl/orjson/archive/refs/tags/$version.tar.gz"

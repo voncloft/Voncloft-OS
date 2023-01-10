@@ -2,7 +2,7 @@
 # depends : python python-six python-pbr
 
 name=python-mock
-version=5.0.0
+version=5.0.1
 release=5
 
 source="https://github.com/testing-cabal/mock/archive/refs/tags/$version.tar.gz"
