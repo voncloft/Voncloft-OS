@@ -8,7 +8,8 @@ release=1
 backup="var/spool/fcron/systab.orig"
 source="http://fcron.free.fr/archives/$name-$version.src.tar.gz\
 	systab.orig
-	run-parts"
+	run-parts
+	fcron_tab"
 options="!checksum"
 
 build() {
@@ -26,4 +27,5 @@ build() {
 	install -Dm644 $SRC/run-parts $PKG/usr/bin/run-parts
 	mkdir -pv $PKG/var/spool/fcron
 	install -Dm644 $SRC/systab.orig $PKG/var/spool/fcron/systab.orig	
+	create_boot_directories fcron_start K08fcron S08fcron $SRC $PKG
 }

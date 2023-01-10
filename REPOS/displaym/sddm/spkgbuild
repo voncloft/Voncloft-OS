@@ -5,7 +5,8 @@ name=sddm
 version=0.19.0
 release=6
 backup="usr/share/sddm/scripts/Xsetup
-	etc/sddm.conf"
+	etc/sddm.conf
+	sddm"
 source="https://github.com/sddm/sddm/releases/download/v$version/sddm-$version.tar.xz"
 
 build() {
@@ -69,4 +70,5 @@ password required       pam_deny.so
 session  required       pam_unix.so
 -session optional       pam_systemd.so
 EOF
+create_boot_directory sddm K95sddm S95sddm $SRC $PKG
 }

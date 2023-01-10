@@ -7,7 +7,8 @@ release=2
 backup="etc/lxdm/lxdm.conf"
 source="https://downloads.sourceforge.net/$name/$name-$version.tar.xz
 	rc.$name
-	run"
+	run
+	lxdm"
 
 build() {
 	cd $name-$version
@@ -44,9 +45,10 @@ sed -e 's/^bg/#&/'        \
 	make DESTDIR=$PKG install
 
 	# rc service
-	install -Dm755 $SRC/rc.$name $PKG/etc/rc.d/$name
+	#install -Dm755 $SRC/rc.$name $PKG/etc/rc.d/$name
 
 	# runit service
-        install -Dm755 $SRC/run $PKG/etc/sv/$name/run
-        ln -s /run/runit/supervise.$name $PKG/etc/sv/$name/supervise
+        #install -Dm755 $SRC/run $PKG/etc/sv/$name/run
+        #ln -s /run/runit/supervise.$name $PKG/etc/sv/$name/supervise
+	create_boot_directories lxdm K05lxdm K05lxdm $SRC $PKG
 }
