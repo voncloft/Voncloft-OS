@@ -16,7 +16,6 @@ while IFS=, read -ra items; do
 				echo -e ${GREEN}"$item is running normally."${NC} 
 			fi
           	else
-			#mailme 2606159678@vtext.com "$item is not running"
 			if [ $item == "dnsmasq" ];
 			then
 				mailme $email "$item is not running"

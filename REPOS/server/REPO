@@ -10,6 +10,7 @@ d:minecraft-server
 d:postfix
 d:mariadb
 d:monitor_process
+d:mailme
 d:httpup
 d:nginx
 d:homeassistant
@@ -81,8 +82,11 @@ f:443c9f78e00a86ce5aa52d0252f129d3:mariadb/override
 f:ada6d570599036764cfc7209e8b987a6:mariadb/spkgbuild
 f:f7a752db3eea2bb6921d7882dd152455:monitor_process/wireguard-check.sh
 f:4f0b34cfb59da0da1ddc3bf351d61fa0:monitor_process/CHANGELOG
-f:cdf938a72b43098140b7740e80359675:monitor_process/process_monitor.sh
+f:2c03c0565ef7fac1861fbeca31883d5a:monitor_process/process_monitor.sh
 f:14817664930759de0ad6b401935ed927:monitor_process/spkgbuild
+f:617164cf45b902acf196d7915141392b:mailme/CHANGELOG
+f:ce8929f4b3ca74bc516371e755afd154:mailme/mailme
+f:a3f59370b5ae6790f4c25e54397408c5:mailme/spkgbuild
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
 f:137b1497c17f5bd8df3631074f3ec67d:nginx/CHANGELOG
 f:089a04a51466d2800ef5f0e447f32f53:nginx/spkgbuild

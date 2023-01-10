@@ -33,9 +33,8 @@ case "$1" in
       log_info_msg "Starting OPENVPN Torrent..."
         modprobe tun
 	/usr/sbin/openvpn --config /etc/pia/US\ Denver.ovpn --writepid /run/openvpn-torrent.pid --daemon
-	#/usr/sbin/openvpn --config /etc/pia-try/openvpn.conf --writepid /run/openvpn-torrent.pid --daemon
-	#sh /media/Scripts/mail_me.sh "OPENVPN Torrent is up"
-	mailme 2606159678@vtext.com "OPENVPN Torrent is up" "ALERT!"
+	recipients=$(cat < /etc/scratchpkg.email)
+	mailme $recipients "OPENVPN Torrent is up" "ALERT!"
       evaluate_retval
       ;;
 
@@ -45,7 +44,8 @@ case "$1" in
       kill -9 $PID_FILE
       rm -rf /run/openvpn-torrent.pid
       #sh /media/Scripts/mail_me.sh "OPENVPN Torrent is down" "Alert"
-	mailme 2606159678@vtext.com "OPENVPN Torrent is down" "ALERT!"
+	recipients=$(cat < /etc/scratchpkg.email)
+	mailme $recipients "OPENVPN Torrent is down" "ALERT!"
       evaluate_retval
       ;;
 

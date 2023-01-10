@@ -1,0 +1,13 @@
+# description : an email program designed to be user friendly because I am too lazy to remember the commands
+# depends : 
+
+name=mailme
+version=1
+release=1
+
+source="mailme"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install $SRC/mailme $PKG/usr/bin/mailme
+}
