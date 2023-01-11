@@ -61,5 +61,5 @@ build()
 	
 	#make -C $name install DESTDIR=$PKG BINDIR=/usr/bin
 	install $SRC/hostapd.conf $PKG/etc/
-	create_boot_directories hostapd K28hostapd S28hostapd $SRC $PKG
+	create_startup_directories hostapd K28hostapd S28hostapd $SRC $PKG
 }

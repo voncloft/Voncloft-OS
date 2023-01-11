@@ -22,5 +22,5 @@ build()
     	chmod +x $PKG/var/lib/subsonic/subsonic.sh
 	mkdir -pv $PKG/etc/default
 	install -Dm644 $SRC/subsonic $PKG/etc/default/subsonic
-	create_boot_directories subsonic_boot K40subsonic S40subsonic $SRC $PKG
+	create_startup_directories subsonic_boot K40subsonic S40subsonic $SRC $PKG
 }

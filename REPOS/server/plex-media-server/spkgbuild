@@ -17,5 +17,5 @@ build() {
 	install -D -m 644 "${SRC}/plexmediaserver.conf.d" "${PKG}/etc/conf.d/plexmediaserver"
   	install -D -m 644 "${SRC}/plex.sysusers" "${PKG}/usr/lib/sysusers.d/plex.conf"
   	install -D -m 644 "${SRC}/plex.tmpfiles" "${PKG}/usr/lib/tmpfiles.d/plex.conf"
-	create_boot_directories plex K40plex S40plex $SRC $PKG
+	create_startup_directories plex K40plex S40plex $SRC $PKG
 }

@@ -36,7 +36,7 @@ build()
             --with-readline              
 make
 make DESTDIR=$PKG install
-create_boot_directories php K28php-fpm S28php-fpm $SRC $PKG
+create_startup_directories php K28php-fpm S28php-fpm $SRC $PKG
 #install -v -Dm644 $SRC/php.ini-production $PKG/etc/php.ini
 #if [ -f /etc/php-fpm.conf.default ]; then
 #  mv -v /etc/php-fpm.conf{.default,} &&

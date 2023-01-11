@@ -32,5 +32,5 @@ done
 #install -D $PKG/etc/rc.d/
 mkdir -pv $PKG/etc/rc.d
 install -m644 $SRC/rc.iptables $PKG/etc/rc.d/
-create_boot_directories iptables K19iptables S19iptables $SRC $PKG
+create_startup_directories iptables K19iptables S19iptables $SRC $PKG
 }

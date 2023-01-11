@@ -563,7 +563,7 @@ f:6553bde2a4d3b29eeba69ecb5d7bceff:fcron/CHANGELOG
 f:2059f650359630f85ea7b37f79ab8c41:fcron/post-upgrade.sh
 f:c74208c9099b486638c16cf4ccaf29a7:fcron/pre-install.sh
 f:79908f33790e696da307ee4e52210a6e:fcron/run-parts
-f:5d672589e5b5e96141f73da5e26fa6d3:fcron/spkgbuild
+f:0fe3fffbaffdd23e04502bbd6b9775e2:fcron/spkgbuild
 f:1f75f7a13435adab64ca48b6e8e84870:fcron/systab.orig
 f:a4e6f75e5a8efe668a97abae653cf69e:fcron/fcrontab
 f:f1986aae4d403896de3a920c79d0dbb5:rrdtool/CHANGELOG
@@ -1193,7 +1193,7 @@ f:bc12af08e46ffd1d1dabc90858ccf935:ntp/post-upgrade.sh
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh
 f:00ba78f5c9cd97e34f3e223fe482d078:ntp/mkdirs
 f:0b371501d534ace7dab3bf6256cd8217:ntp/rc.ntpd
-f:cb9f7dae439710075199a9bdb06e5a34:ntp/spkgbuild
+f:5ad21e52680fb6588b5cf9126778a9b2:ntp/spkgbuild
 f:8b1df2998c118b4d47d6d797240a5d9e:ntp/ntpd
 f:4c1718bc27f66742ada77cfd3cdc94d1:ntp/run
 f:710ac7970f5b4c963f70c15a86cb3b3d:transmission-cli/pre-install.sh

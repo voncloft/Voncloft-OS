@@ -50,5 +50,5 @@ sed -e 's/^bg/#&/'        \
 	# runit service
         #install -Dm755 $SRC/run $PKG/etc/sv/$name/run
         #ln -s /run/runit/supervise.$name $PKG/etc/sv/$name/supervise
-	create_boot_directories lxdm K05lxdm K05lxdm $SRC $PKG
+	create_startup_directories lxdm K05lxdm K05lxdm $SRC $PKG
 }

@@ -19,5 +19,5 @@ build()
 
 	cc -Wall $CLFAGS $LDFLAGS -g -Dlinux -DPREFIX=/usr noip2.c -o noip2 -Wno-unused-but-set-variable
 	install -Dm755 noip2 "$PKG/usr/bin/noip2"
-	create_boot_directories noip2 K99noip2 S99noip2 $SRC $PKG
+	create_startup_directories noip2 K99noip2 S99noip2 $SRC $PKG
 }

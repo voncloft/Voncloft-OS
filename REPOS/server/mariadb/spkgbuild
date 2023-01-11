@@ -43,5 +43,5 @@ build()
       	make DESTDIR=$PKG install
 	mkdir -pv $PKG/etc/mysql
 	install -Dm644 $SRC/my.cnf $PKG/etc/mysql/my.cnf
-	create_boot_directories mysql K28mysql S28mysql $SRC $PKG 
+	create_startup_directories mysql K28mysql S28mysql $SRC $PKG 
 }

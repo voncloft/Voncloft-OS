@@ -35,5 +35,5 @@ build() {
 	            --with-suexec-userdir=public_html
 	make
 	make DESTDIR=$PKG install
-	create_boot_directories httpd K28httpd S28httpd $SRC $PKG
+	create_startup_directories httpd K28httpd S28httpd $SRC $PKG
 }

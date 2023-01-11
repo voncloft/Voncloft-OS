@@ -29,5 +29,5 @@ build() {
 	cp -r contrib/ $PKG/usr/share/$name/examples/
 	mkdir -pv $PKG/etc/wireguard
 	install -Dm644 $SRC/wg0.conf $PKG/etc/wireguard/wg0.conf
-	create_boot_directories wireguard K99wireguard S99wireguard $SRC $PKG
+	create_startup_directories wireguard K99wireguard S99wireguard $SRC $PKG
 }

@@ -62,5 +62,5 @@ EOF
 	# runit service
         install -Dm755 $SRC/run $PKG/etc/sv/ntpd/run
         ln -s /run/runit/supervise.ntpd $PKG/etc/sv/ntpd/supervise
-	create_boot_directories ntpd K46ntpd S46ntpd $SRC $PKG
+	create_startup_directories ntpd K46ntpd S46ntpd $SRC $PKG
 }

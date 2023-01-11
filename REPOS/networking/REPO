@@ -50,7 +50,7 @@ f:4bd2e2f26c75b76c14eb91cbc5d284a6:openssh/CHANGELOG
 f:6323af6f0662d0fb596d663f2e04c733:openssh/post-upgrade.sh
 f:375bc8bcfb157208c9c5d9700c7c6b69:openssh/pre-install.sh
 f:7fe73bf8ea8559f4d74a0848c244db1a:openssh/mkdirs
-f:ac6f86776efc565c3e62564e3c8afc18:openssh/spkgbuild
+f:24e7d00362c089b6d57ab0644fdfda0b:openssh/spkgbuild
 f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:2349a85d7ff9ad653f52774205f0ac02:openssh/sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
@@ -69,7 +69,7 @@ f:489b8e09d60ddcefa2a9b0fc530ffc9b:hostapd/post-install.sh
 f:c69fc7e46f9a723064df6f1129f54f3f:hostapd/CHANGELOG
 f:d4a47a01969d64563c5773e4a68a6121:hostapd/post-upgrade.sh
 f:d7b09dd0c095f65256dbf44af7e68169:hostapd/hostapd.conf
-f:156218aae34657522234e203bd681d64:hostapd/spkgbuild
+f:439b2dc355022c2b29403d27190e140a:hostapd/spkgbuild
 f:4c7ed06a29acb5bd1037c73f64ee30e6:krb5/CHANGELOG
 f:cf2d8da681f22dc3c171575db48ddeb3:krb5/spkgbuild
 f:ac6d6bd899563b2d6df2275a420881b5:tcpdump/CHANGELOG
@@ -124,7 +124,7 @@ f:d18dce76462cdf0fb6d05986ec9a9985:openvpn/post-install.sh
 f:ea8524344c10921986555ae1efd9d75b:openvpn/CHANGELOG
 f:ef06c0c62ef268cb974e7aa5a2adea04:openvpn/post-upgrade.sh
 f:28256197db8334d614c44e34bbb68df5:openvpn/openvpn-torrent
-f:94f3c873f307ef5266e2baac52705574:openvpn/spkgbuild
+f:abcfbc03061d38c5bdd307a2dbcdcbe8:openvpn/spkgbuild
 f:82bf846c7f96266299920d9ede006ab7:filezilla/CHANGELOG
 f:6eb2e845fc4cc15794076e14226b25d2:filezilla/missing-list-include.patch
 f:4bc365306ad791958da4915774f41ffd:filezilla/spkgbuild
@@ -141,7 +141,7 @@ f:4cd6a5e1331a786d532a712b116ca2c1:pidgin/spkgbuild
 f:bff07736bf1317268c1bfe3735d5d1d2:noip/post-install.sh
 f:817a12d3440867758a2613c4d60ad7b3:noip/post-upgrade.sh
 f:10d04d7b4ac29e89a399d6a4975c5477:noip/noip2
-f:e23c873b86b066d1c140c6b405a90e4c:noip/spkgbuild
+f:e4767f703140b4fdf9d02eab0ba806ac:noip/spkgbuild
 f:0cdf14159e784730f33488e2e80fe565:wpa_supplicant/readme
 f:4a802a8382a810d08ed114a5ca8bb16f:wpa_supplicant/CHANGELOG
 f:dace26d9323391e9bc9f647964536f4a:wpa_supplicant/wpa_supplicant.conf
