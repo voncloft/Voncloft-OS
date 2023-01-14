@@ -2,7 +2,7 @@
 # depends : kde-deps 
 
 name=kquickcharts
-version=5.101.0
+version=5.102.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
