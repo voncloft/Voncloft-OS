@@ -28,8 +28,8 @@ f:66a142cfc96b0c7a2d698267c380cda1:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
 f:d659b78f7071326fd1be1afde98d2b3a:zig/spkgbuild
 f:6be2a5e3cd924b417e134fccf6449d41:zig/resolve_DNS.patch
-f:54729ae7064095c7c845e67fbcf50219:clang/CHANGELOG
-f:a90661b84782d2f8f5304201f0f8e78c:clang/spkgbuild
+f:ab3d1def23927bc567d7915f507e552e:clang/CHANGELOG
+f:4549e6c10f4ae648f3cd57601b1d3133:clang/spkgbuild
 f:d12fcf021316bb31fc95e469d0423c97:apache-ant/post-install.sh
 f:c671094144a0664febc44678eafc2c4d:apache-ant/CHANGELOG
 f:43ad58e10cd9197d555ca44341091298:apache-ant/override
@@ -38,12 +38,12 @@ f:0bcd6bcee2d0f054461a695e457ff379:ninja/CHANGELOG
 f:c2b224de8e9830096347b39451045236:ninja/spkgbuild
 f:3974f8f7a47a02daff9c222aeff3e1b6:automake/CHANGELOG
 f:bb267fddaaa154f28badbace1efb73b4:automake/spkgbuild
-f:4a0c7f7324b734f300649620e53b7c3d:lld/CHANGELOG
-f:fd98303b09b9e649d60b4a9d722831e3:lld/spkgbuild
+f:725d3061a6d2a0d5b29c0c4c801d1a3d:lld/CHANGELOG
+f:a52f267e6b20a2c7257b747ad4ed7a35:lld/spkgbuild
 f:efbc369782cf6837d3430e16ec1fafa5:luajit/spkgbuild
-f:39a4fb398d9dbce77ea998cc7f0e61a1:llvm/CHANGELOG
+f:4a927d554b3cbe5fdb8576f6e740426d:llvm/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
-f:9157c1402cdadee6fe12006a1301f53f:llvm/spkgbuild
+f:6b17022edd36d3f193451f404d144cb2:llvm/spkgbuild
 f:c756eaae15dd3e429e3fefa53e1c57ce:xkbcomp/CHANGELOG
 f:ae82392524ab8e2e8a8fb091639717cb:xkbcomp/spkgbuild
 f:6bb6d765309946a9a61208dff2323ed2:pkgconf/CHANGELOG

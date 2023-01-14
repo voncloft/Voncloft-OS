@@ -6,7 +6,7 @@ version=9.1
 release=1
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
 	$name-i18n-1.patch
-	https://github.com/jarun/advcpmv/blob/master/advcpmv-0.{$version:0:1}-${version}.patch"
+	https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.${version:0:1}-${version}.patch"
 
 build() {
 	cd $name-$version
@@ -14,7 +14,7 @@ build() {
 	# fixes POSIX requires that programs from Coreutils recognize
 	# character boundaries correctly even in multibyte locales
 	#patch -Np1 -i ../$name-i18n-1.patch
-	patch -p1 -i advcpmv-0.{$version:0:1}.patch
+	patch -p1 -i ../advcpmv-0.${version:0:1}-${version}.patch
 	sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk
 
 	autoreconf -fiv
