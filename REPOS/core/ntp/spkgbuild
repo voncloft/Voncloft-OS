@@ -45,7 +45,7 @@ server 2.south-america.pool.ntp.org
 
 driftfile /var/lib/ntp/ntp.drift
 pidfile   /var/run/ntpd.pid
-
+logfile /var/log/ntpd.log
 leapfile  /etc/ntp.leapseconds
 
 # Security session
