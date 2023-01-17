@@ -2,7 +2,7 @@
 # depends : python-snowballstemmer
 
 name=python-pydocstyle
-version=6.2.3
+version=6.3.0
 release=3
 
 source="https://github.com/PyCQA/pydocstyle/archive/refs/tags/$version.tar.gz"

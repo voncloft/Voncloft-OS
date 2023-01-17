@@ -3,7 +3,7 @@
 
 name=virtualbox
 _name=${name%-*}
-version=7.0.7.0.4
+version=7.0.7.0.6
 _version=${version%.*}
 _build=${version##*.}
 release=1
