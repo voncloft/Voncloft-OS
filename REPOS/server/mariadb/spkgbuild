@@ -2,12 +2,12 @@
 # depends : cmake libevent
 
 name=mariadb
-version=10.6.4
+version=10.6.9
 release=1
 
 backup="etc/mysql/my.cnf"
 
-source="https://downloads.mariadb.org/interstitial/$mn-$version/source/$name-$version.tar.gz
+source="https://downloads.mariadb.org/interstitial/$mariadb-$version/source/$name-$version.tar.gz
 	my.cnf
 	mysql"
 options="!checksum"
