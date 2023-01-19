@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-component python-zope-i18nmessageid
 
 name=python-zope-security
-version=6.0
+version=6.1
 release=3
 
 source="https://github.com/zopefoundation/zope.security/archive/refs/tags/$version.tar.gz"
