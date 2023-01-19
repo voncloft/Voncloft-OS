@@ -12,6 +12,7 @@ options="!checksum"
 
 build()
 {
+	cd *
 	python setup.py build
 	python setup.py install --root=$PKG --prefix=/usr --optimize=1 
 }
