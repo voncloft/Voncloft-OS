@@ -56,7 +56,7 @@ for dir in /Voncloft-OS/REPOS/*/$name/; do
 			#echo -e 'options="!checksum"' >> $dirs$name/spkgbuild
 			echo -e "" >> $dirs$name/spkgbuild
 			echo -e "build() {\n" >> $dirs$name/spkgbuild
-			if [[ $boot_up_script == ["Y/y"] ]];
+			if [[ $boot_up_script == ["Yy"] ]];
 			then
 				echo -e "create_startup_directories name_of_init.d rc_0-2_name rc_3-5_name \$SRC \$PKG" >> $dirs$name/spkgbuild
 			fi
