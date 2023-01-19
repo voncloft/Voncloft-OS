@@ -37,7 +37,8 @@ for dir in /Voncloft-OS/REPOS/*/$name/; do
 				fi
                         done
 			
-
+			echo "Does this need a startup script"
+			read boot_up_script
 
 
 
@@ -54,8 +55,12 @@ for dir in /Voncloft-OS/REPOS/*/$name/; do
 			echo -e 'source="'$finalsource'"' >> $dirs$name/spkgbuild
 			#echo -e 'options="!checksum"' >> $dirs$name/spkgbuild
 			echo -e "" >> $dirs$name/spkgbuild
-			echo -e "build() {" >> $dirs$name/spkgbuild
-			echo -e "\n}" >> $dirs$name/spkgbuild
+			echo -e "build() {\n" >> $dirs$name/spkgbuild
+			if [[ $boot_up_script == ["Y/y"] ]];
+			then
+				echo -e "create_startup_directories name_of_init.d rc_0-2_name rc_3-5_name \$SRC \$PKG" >> $dirs$name/spkgbuild
+			fi
+			echo -e "}" >> $dirs$name/spkgbuild
 			echo "Package Created"
 			nano $dirs$name/spkgbuild
 

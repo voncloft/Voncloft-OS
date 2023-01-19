@@ -4,7 +4,6 @@ d:texlive
 d:x11vnc
 d:kwin-effects-cube
 d:tl-unx
-d:test2
 d:jellyfin-web-bin
 d:libvncserver
 d:qt6
@@ -25,8 +24,6 @@ f:9d5d7cfcae9a0502d6fcabb70d077dd2:tl-unx/post-install.sh
 f:6d17cd30cb42843ad66569d4be775937:tl-unx/CHANGELOG
 f:a94094d5197fccb109c9697d7c1ebae5:tl-unx/pre-install.sh
 f:2701d1e88d96aed3587128a591a11c8e:tl-unx/spkgbuild
-f:672abf38e7ba762491de8eb36c767296:test2/CHANGELOG
-f:aedfa14be38d5b72e9f9d63ac862c8da:test2/spkgbuild
 f:91835579b6573b9b5fb8dc3b68ef7999:jellyfin-web-bin/CHANGELOG
 f:cc1a6cbc8c582eda6caf1d3b066e0541:jellyfin-web-bin/spkgbuild
 f:203eeaf6d72517ca59bd6f661a594e42:libvncserver/CHANGELOG
