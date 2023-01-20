@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-alembic python-debtcollector python-oslo-i18n
 
 name=python-oslo-db
-version=12.3.0
+version=12.3.1
 release=1
 
 source="https://github.com/openstack/oslo.db/archive/refs/tags/e$version.tar.gz"

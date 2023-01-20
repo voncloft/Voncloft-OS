@@ -2,7 +2,7 @@
 # depends : python python-six python-pytz python-jaraco
 
 name=python-tempora
-version=5.2.0
+version=5.2.1
 release=3
 
 source="https://github.com/jaraco/tempora/archive/refs/tags/v$version.tar.gz"
