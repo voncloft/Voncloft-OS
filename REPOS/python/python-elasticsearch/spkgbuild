@@ -2,7 +2,7 @@
 # depends : python-urllib3
 
 name=python-elasticsearch
-version=8.6.0
+version=8.6.1
 release=3
 
 source="https://github.com/elastic/elasticsearch-py/archive/refs/tags/v$version.tar.gz"
