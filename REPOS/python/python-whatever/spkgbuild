@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-whatever
-version=0.6
+version=0.7
 release=3
 
 source="https://github.com/Suor/whatever/archive/refs/tags/$version.tar.gz"
