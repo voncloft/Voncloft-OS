@@ -10,7 +10,7 @@ get_generic()
 	| sed "s/-x86_64//g" \
 	| sort -V -r \
 	| head -n1)
-	checksum_web=${version#*-}
+	checksum_web=$(echo $version | cut -f2 -d"-" )
 	uversion=$(echo $version | cut -f1 -d"-" )
 	new_file=/Voncloft-OS/REPOS/$(echo $ppath | sed "s/override/spkgbuild/g")
 	echo $new_file

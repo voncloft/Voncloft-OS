@@ -34,3 +34,5 @@ sed -i -e "s/version=2.4.5/version=2.4.6/g" ruby-gems/ruby-bundler/spkgbuild
 changelog "ruby-gems/ruby-bundler/spkgbuild" "Upgraded from version 2.4.5 to version 2.4.6"
 sed -i -e "s/version=3.12.1/version=3.12.2/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.12.1 to version 3.12.2"
+sed -i -e "s/version=/version=1.30.2.6563/g" server/plex-media-server/spkgbuild
+changelog "server/plex-media-server/spkgbuild" "Upgraded from version  to version 1.30.2.6563"
