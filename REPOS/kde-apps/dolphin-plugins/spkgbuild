@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=dolphin-plugins
-version=22.12.1
+version=22.12.2
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
