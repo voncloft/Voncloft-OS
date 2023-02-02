@@ -2,7 +2,7 @@
 # depends	: openssl apr
 
 name=apr-util
-version=1.6.2
+version=1.6.3
 release=2
 source="https://archive.apache.org/dist/apr/$name-$version.tar.bz2"
 
