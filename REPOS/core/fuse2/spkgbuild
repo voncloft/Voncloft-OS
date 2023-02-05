@@ -1,7 +1,7 @@
 # description	: Simple interface for userspace programs to export a virtual filesystem to the Linux kernel
 
 name=fuse2
-version=3.13.0
+version=3.13.1
 release=1
 source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz
 	fuse.conf"
