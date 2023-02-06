@@ -46,11 +46,11 @@ f:b8bbdb316c5b2d6871488e94c9854925:plex-media-server/override
 f:d9f76e547b6c31912efa19463af0f3c6:plex-media-server/plex.sysusers
 f:816e99cd166cd97ae6eb80db2fb020b9:plex-media-server/spkgbuild
 f:cf9b5340b220350df739de0c21edf471:dnsmasq/post-install.sh
-f:4b8b727b93cff3f70baea9c5464573d2:dnsmasq/CHANGELOG
+f:998b25dadef0f1c560a87e86e1f8ed20:dnsmasq/CHANGELOG
 f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
 f:06dad71dd4b9b47d8190f31cf9a22e07:dnsmasq/dnsmasq
 f:5de538543759ea3c2cd6c9fd11af4b88:dnsmasq/dnsmasq.conf
-f:8bd44934b6896f78e9b749e094c89ab7:dnsmasq/spkgbuild
+f:047fb594f0ef088bdb4aed115266509a:dnsmasq/spkgbuild
 f:b204b29eec3167f28f674dd5fe264d32:wireguard/post-install.sh
 f:0eaf67b03b78d47286fd3a93982a67a7:wireguard/CHANGELOG
 f:287e73aeb231b0e7803402de6367cebc:wireguard/post-upgrade.sh
@@ -91,8 +91,8 @@ f:1c642e246a03125cbf5f85e59988aa85:mailme/spkgbuild
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
 f:137b1497c17f5bd8df3631074f3ec67d:nginx/CHANGELOG
 f:089a04a51466d2800ef5f0e447f32f53:nginx/spkgbuild
-f:2bcfda59d777f43752c20ae55ad02eec:homeassistant/CHANGELOG
-f:c69c6637a7b1145a4128aaa745e03c53:homeassistant/spkgbuild
+f:6c5acc02cb7a149076a5d2e6a5e7144d:homeassistant/CHANGELOG
+f:7feb19ecfb1971b1a0d1004c968fd026:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
 f:a5b2f2856a5d9a47080227e8f05c6ab4:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh

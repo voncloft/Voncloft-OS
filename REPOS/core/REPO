@@ -890,8 +890,8 @@ f:11de935fc9c5327e5f8ef2d0893c54f0:linux-pam/post-install.sh
 f:e29ee0123928179f2e09530b7f5c60bb:linux-pam/CHANGELOG
 f:c95d4c6445922d0d687bb6ee44075e8f:linux-pam/post-upgrade.sh
 f:e159aa01e399f9788f73d79df584b3d9:linux-pam/spkgbuild
-f:c6b782b0607dba0f6f85e2ea2b230d45:vsv/CHANGELOG
-f:7798fc0863519c8f5b2a45dcaefdef5d:vsv/spkgbuild
+f:7ed91862a84ca4db4b6356692ec643f6:vsv/CHANGELOG
+f:c4da2ec1e80552fdf9232a21f0878e44:vsv/spkgbuild
 f:371b04400afc06bc4df62338bf55a897:rapidjson/spkgbuild
 f:4a01446e007b8fcc1f4076195bb6ab34:openjpeg2/spkgbuild
 f:b19cc970e6150266c3210af399d7eb44:webkitgtk/CHANGELOG
@@ -1254,7 +1254,8 @@ f:774b8c2383c3097a85369441a4af0b75:jfsutils/sysmacros.patch
 f:de730c4268c141534b2050c942ea1177:jfsutils/spkgbuild
 f:f0c815149648468c1d51aa6b538c7e52:p7zip/spkgbuild
 f:0775823d8fe2187d756917576e08a71b:arc-gtk-theme/spkgbuild
-f:d9968d39b792248b176fd0642e6ead3b:cabextract/spkgbuild
+f:b7539616cd741d4997324bd016749581:cabextract/CHANGELOG
+f:da16518e52ec12e70e88130dff2571b6:cabextract/spkgbuild
 f:debcda1edff2746f5299ad66ab5714fb:flac/CHANGELOG
 f:329b864f88790c217ece3e98151e118f:flac/spkgbuild
 f:1fdd2d6a322cac28a0f634ccd7a61d49:dkms/buildmodules-template.sh
