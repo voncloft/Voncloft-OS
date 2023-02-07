@@ -2,7 +2,7 @@
 # depends : python-pillow python-six python-setuptools
 
 name=python-qrcode
-version=7.4.1
+version=7.4.2
 release=6
 
 source="https://github.com/lincolnloop/python-qrcode/archive/refs/tags/v$version.tar.gz"
