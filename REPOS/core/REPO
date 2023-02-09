@@ -602,9 +602,9 @@ f:20dd912fbad050c8908f296e525f9ac6:cups/cupsd.conf
 f:5fb2e11611bd00a2d8344bf7c669ab69:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
-f:214a5540c51f617c0af71831225fcc35:dbus/CHANGELOG
+f:2d1ade8ab8e53dea6788d912ee4178d9:dbus/CHANGELOG
 f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
-f:2f9c1adb1e08107716cb8f720cf9f46c:dbus/spkgbuild
+f:29fa772bfaf73ed75c7837e44e38f672:dbus/spkgbuild
 f:abba39f9c73fa5f3861ff6b64d843e58:readline/CHANGELOG
 f:b1f6e7bfb58371645779a2965faecb42:readline/spkgbuild
 f:18e3d5669d4376a79598badfc3f5a782:cpio/spkgbuild
@@ -677,8 +677,8 @@ f:1f0ab4b9116a4a3dcfb34e87ef784ebb:cronie/run
 f:2962d9812fbbbdee1bd7f1c1ccb5e372:cronie/cronie.deny
 f:1fd106caba5c68c76f01b83f89396ba5:obconf/spkgbuild
 f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
-f:344fc9f2251c5ffccc5d30ec446228e3:fakeroot/CHANGELOG
-f:ff69a000b3b11f067d8d6c503a574ecd:fakeroot/spkgbuild
+f:0650c06ddaefd3ab45d752965c3c8126:fakeroot/CHANGELOG
+f:6a3e7fffc6f584aa57dbed83bf31bf21:fakeroot/spkgbuild
 f:03553e078e541d92a7d5cc76d955a641:file/CHANGELOG
 f:2b274d80c8157b6dab9145e6b72766a8:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
