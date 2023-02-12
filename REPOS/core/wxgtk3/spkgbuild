@@ -2,7 +2,7 @@
 # depends	: gst-plugins-base gtk3 libnotify libsm libxxf86vm glu
 
 name=wxgtk3
-version=3.2.1
+version=3.2.2
 release=1
 #source="https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2
 source="https://github.com/wxWidgets/wxWidgets/archive/refs/tags/v$version.tar.gz
