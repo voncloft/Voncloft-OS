@@ -2,7 +2,7 @@
 # depends : kde-deps kparts qt5-webkit
 
 name=kdewebkit
-version=5.102.0
+version=5.103.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
