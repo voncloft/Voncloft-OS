@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-json-logger
-version=2.0.5
+version=2.0.6
 release=5
 
 source="https://github.com/madzak/python-json-logger/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-thrift
-version=0.17.0
+version=0.18.0
 release=4
 
 source="thrift-0.14.1.zip::https://github.com/apache/thrift/archive/0.14.1.zip"
