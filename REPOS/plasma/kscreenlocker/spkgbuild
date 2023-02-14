@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps kdeclarative kidletime kwayland layer-shell-qt kcmutils kdoctools
+# depends : kde-deps kdeclarative kidletime kwayland layer-shell-qt kcmutils kdoctools libkscreen
 
 name=kscreenlocker
 version=5.27.0
