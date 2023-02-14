@@ -2,10 +2,10 @@
 # depends : libxml2
 
 name=wayland
-version=1.20.0
+version=1.21.0
 release=1
 
-source="https://wayland.freedesktop.org/releases/wayland-1.20.0.tar.xz"
+source="https://gitlab.freedesktop.org/wayland/wayland/-/releases/$version/downloads/wayland-$version.tar.xz"
 options="!checksum"
 
 build() {
