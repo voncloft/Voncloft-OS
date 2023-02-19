@@ -2,7 +2,7 @@
 # depends : python-markdown-it-py
 
 name=python-mdit_py_plugins
-version=0.3.3
+version=0.3.4
 release=1
 
 source="https://github.com/executablebooks/mdit-py-plugins/archive/refs/tags/v$version.tar.gz"
