@@ -2,7 +2,7 @@
 # depends : kde-deps kactivities-stats kactivitymanagerd kde-clie-tools kholidays kio-extras kio-fuse knotifyconfig kpeople kquickcharts ksystemstats ktexteditor kwin libkscreen milou plasma-integration prison baloo discover kdepim-addons plasma-workspace-wallpapers kunitconversion plasma-wayland-protocols
 
 name=plasma-workspace
-version=5.27.0
+version=5.27.1
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
