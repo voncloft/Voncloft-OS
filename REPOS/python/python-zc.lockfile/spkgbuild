@@ -2,7 +2,7 @@
   # depends : python
 
 name=python-zc.lockfile
-version=2.0
+version=3.0
 release=5
 
 source="https://github.com/zopefoundation/zc.lockfile/archive/refs/tags/$version.tar.gz"
