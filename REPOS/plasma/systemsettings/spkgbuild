@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps plasma-workspace kdoctools
+# depends : kde-deps plasma-workspace kdoctools kirigami-addons
 
 name=systemsettings
 version=5.27.1
