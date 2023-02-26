@@ -32,7 +32,7 @@ build()
             --enable-mbstring            \
             --disable-mbregex            \
             --with-mysqli=shared	\
-            --with-pgsql=/srv/pgsql	\
+            --with-pgsql=shared	\
             --with-readline              
 make
 make INSTALL_ROOT=$PKG install
