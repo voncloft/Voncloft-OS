@@ -5,8 +5,7 @@ name=php
 version=8.2.3
 release=1
 
-source="https://www.php.net/distributions/php-$version.tar.gz
-	php"
+source="https://www.php.net/distributions/php-$version.tar.gz"
 options="!checksum"
 build()
 {
@@ -33,9 +32,10 @@ build()
             --enable-mbstring            \
             --disable-mbregex            \
             --with-mysqli=shared	\
+            --with-pgsql=/srv/pgsql	\
             --with-readline              
 make
-make DESTDIR=$PKG install
+make INSTALL_ROOT=$PKG install
 create_startup_directories php K28php-fpm S28php-fpm $SRC $PKG
 #install -v -Dm644 $SRC/php.ini-production $PKG/etc/php.ini
 #if [ -f /etc/php-fpm.conf.default ]; then
