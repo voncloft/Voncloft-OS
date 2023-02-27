@@ -6,3 +6,7 @@ sed -i -e "s/version=1.2.0/version=1.3.0/g" python/python-kikit/spkgbuild
 changelog "python/python-kikit/spkgbuild" "Upgraded from version 1.2.0 to version 1.3.0"
 sed -i -e "s/version=0.8/version=0.8.1/g" python/python-sphinxcontrib-mermaid/spkgbuild
 changelog "python/python-sphinxcontrib-mermaid/spkgbuild" "Upgraded from version 0.8 to version 0.8.1"
+sed -i -e "s/version=0.7.0/version=0.8.0/g" core/bubblewrap/spkgbuild
+changelog "core/bubblewrap/spkgbuild" "Upgraded from version 0.7.0 to version 0.8.0"
+sed -i -e "s/version=4.4/version=4.4.1/g" core/make/spkgbuild
+changelog "core/make/spkgbuild" "Upgraded from version 4.4 to version 4.4.1"
