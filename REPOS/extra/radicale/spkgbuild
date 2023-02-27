@@ -1,0 +1,16 @@
+# description : calendar sync program
+# depends : python-bcrypt python-dateutil python-defusedxml python-passlib python-pytz python-vobject
+
+name=radicale
+version=3.1.8
+release=1
+_name=Radicale
+source="$name-$version.tar.gz::https://github.com/Kozea/$name/archive/v$version.tar.gz"
+
+build() {
+	cd $_name-$version
+	touch "users"
+	python -m build --wheel --no-isolation
+	python -m installer --destdir="$PKG" dist/*.whl
+	install -vDm 644 {config,rights,users} -t $"PKG/etc/name/"
+}
