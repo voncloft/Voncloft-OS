@@ -57,8 +57,8 @@ f:9e852273cc09843dd54dae23b26a453b:openssh/run
 f:0e61311a53a5b063620e7025ece1fe6f:networkmanager/CHANGELOG
 f:3d2b081a6829aac4dd33c0cb0761088a:networkmanager/override
 f:f504f8f832c0abe50b3dc11ee1fdf608:networkmanager/spkgbuild
-f:f216cfbcff704a84b50a83f8452c9f45:whois/CHANGELOG
-f:acfb3166b886be776c14aa430fb3b9c2:whois/spkgbuild
+f:69c67252e9c194af5c920ff151cdb3a9:whois/CHANGELOG
+f:f301b871e6760c240846a320b1cb7bc7:whois/spkgbuild
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
 f:175b2e549251358f799753ba9816697d:iptraf-ng/CHANGELOG
 f:b4bf1f4f174c64b959c2f56c70c15717:iptraf-ng/spkgbuild
@@ -115,9 +115,9 @@ f:22c773627e449c3631e0540aa86d4003:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
-f:afc63656e6be4a8402a4d104fd6aa096:thunderbird/CHANGELOG
+f:c475f2491973c9d7368bc9e41a95ce59:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:56e04aa74b9f830b3d541e0d01e5201d:thunderbird/spkgbuild
+f:0dbd40eb2b5638cb31f308cd6e2f928f:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:d18dce76462cdf0fb6d05986ec9a9985:openvpn/post-install.sh
@@ -156,10 +156,10 @@ f:846fdcfa3e23348148544291e824e588:wireshark/CHANGELOG
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
 f:b177998349e09d45a62c7fcc1aab92cd:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
-f:949c726ece9856e68468f8763427a07d:tigervnc/CHANGELOG
+f:cb0bd8efdb3af3b657a7e270e0a38671:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
 f:01cb746432115354d4b5e1fda5bddcc4:tigervnc/more-xsessions.patch
-f:2582a3fc728150e2080689e3035be760:tigervnc/spkgbuild
+f:28bac32f82bafae7f3726085b399856d:tigervnc/spkgbuild
 f:27a3b07dd384b7079820acc1497e2539:libnftnl/CHANGELOG
 f:2792209166ff62340a978fb038ec1821:libnftnl/spkgbuild
 f:5c4961299a2e67e34a67a56823ae4d76:wireless_tools/spkgbuild
