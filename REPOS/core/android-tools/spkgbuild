@@ -2,7 +2,7 @@
 # depends : android-udev brotli libusb protobuf zstd
 
 name=android-tools
-version=33.0.3
+version=34.0.0
 release=1
 
 source="https://github.com/nmeum/android-tools/releases/download/$version/android-tools-$version.tar.xz"
