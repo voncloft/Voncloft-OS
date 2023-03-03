@@ -115,8 +115,12 @@ f:f8ca89a168853f3ef1d56fe835b0f1b9:subsonic/subsonic_boot
 f:2bb9b178ab9e4424b10f7a2a0290cb05:subsonic/override
 f:9e07c4d043b54bf3ec270aef22340c53:subsonic/spkgbuild
 f:34ac5562638486542f9978e941925c1a:subsonic/subsonic
+f:cdbf9b3e951732f764bfbdbbf72f1fc9:radicale/post-install.sh
 f:744fb0626d2eb61b35cb419f223e15bd:radicale/CHANGELOG
-f:d0b2b34ac71a9c13f9f0ff70ad4811e6:radicale/spkgbuild
+f:cdbf9b3e951732f764bfbdbbf72f1fc9:radicale/post-upgrade.sh
+f:a90cec770b6b86b414f68faf7ea6b584:radicale/spkgbuild
+f:1f6f6181709e035e9125a442d859c556:radicale/radicale
+f:ba45b98ad6a1419b38d5218c76b1ba50:radicale/config
 f:c3d3a1a2a1520401ce5c91b9b9cf431d:samba/post-install.sh
 f:5538f3ca4f73289a04322163875c18fd:samba/CHANGELOG
 f:c65f2e42ce19954986906299c2b8851f:samba/post-upgrade.sh

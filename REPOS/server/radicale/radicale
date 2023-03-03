@@ -1,0 +1,122 @@
+#!/bin/sh
+
+########################################################################
+
+# Begin hostapd
+
+#
+
+# Description : Start hostap daemon
+
+#
+
+# Author      : Bruce Dubbs - bdubbs at linuxfromscratch.org
+
+#
+
+# Version     : LFS 7.0
+
+#
+
+########################################################################
+
+
+
+### BEGIN INIT INFO
+
+# Provides:            hostap
+
+# Required-Start:      $network
+
+# Should-Start:        $remote_fs haldaemon
+
+# Required-Stop:       $network
+
+# Should-Stop:         haldaemon $remote_fs
+
+# Default-Start:       3 4 5
+
+# Default-Stop:        0 1 2 6
+
+# Short-Description:   Starts hostap daemon.
+
+# Description:         Starts hostap daemon.
+
+# X-LFS-Provided-By:   BLFS / LFS 7.0
+
+### END INIT INFO
+
+
+
+. /lib/lsb/init-functions
+
+
+
+#$LastChangedBy: dj $
+
+#$Date: 2011-12-05 07:38:40 +0000 (Mon, 05 Dec 2011) $
+
+
+
+case $1 in
+
+   start)
+
+      log_info_msg "Starting radicale daemon..."
+
+      start_daemon /usr/bin/env python3 -m radicale --config /etc/radicale/config&
+
+      evaluate_retval
+
+      ;;
+
+
+
+   stop)
+
+      log_info_msg "Stopping radicale daemon..."
+	pid=$(ps -ef | grep '[p]ython3 -m radicale' | awk '{ print $2 }')
+	kill $pid
+	evaluate_retval
+
+      ;;
+
+
+
+   restart)
+
+      $0 stop
+
+      sleep 1
+
+      $0 start
+
+      ;;
+
+
+
+   status)
+        pid=$(ps -ef | grep '[p]ython3 -m radicale' | awk '{ print $2 }')
+        if [ -e /proc/${pid} -a -e /proc/${pid}/exe ]; then
+                echo "radicale is running with PID $pid"
+        else
+                echo "radicale is not running"
+        fi
+      ;;
+
+
+
+   *)
+
+      echo "Usage: $0 {start|stop|restart|status}"
+
+      exit 1
+
+      ;;
+
+esac
+
+
+
+# End /etc/init.d/hostapd
+
