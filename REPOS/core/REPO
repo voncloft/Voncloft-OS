@@ -773,8 +773,8 @@ f:8d75b04742611560b66735b60e4abbea:twm/CHANGELOG
 f:a78845425f9f2a30d4dec2f1738a8a1a:twm/spkgbuild
 f:cb39462d84f62b2194834538eec298f0:docbook-xml/post-install.sh
 f:90f59decf5050a8cdaa1b4d6f48fc270:docbook-xml/spkgbuild
-f:8279eca18c4f3372e866e26ab8224ae5:audacious/CHANGELOG
-f:abb93651e43c5e2d07307ea156aaa075:audacious/spkgbuild
+f:247c0d85a088b91720fe6a5cbaa1f458:audacious/CHANGELOG
+f:8091d09966258a94e180d197ea745956:audacious/spkgbuild
 f:3be4cac952eb28068866325cd416ad96:opencl-headers/spkgbuild
 f:6329bf659a8ec7c10b39a913baaf363a:yad/CHANGELOG
 f:51d9496d2bbb519fdf348fadb321dec2:yad/spkgbuild
@@ -791,8 +791,8 @@ f:8a08762832134a52ac75e84ef4fd24f0:fribidi/spkgbuild
 f:976e25fefcb47ade4da57d2cd6c8e1c2:acpi/spkgbuild
 f:b15d3172895fc4d74fa406d151cc5dcd:lcms2/CHANGELOG
 f:a63c76038c279654a013b17f962f72f6:lcms2/spkgbuild
-f:4e914f1b1f6b890d0b67195fb018cac8:scons/CHANGELOG
-f:0306d6ac6409301c981903c972eeae43:scons/spkgbuild
+f:ac9826df5d696a265c841644e09d0a64:scons/CHANGELOG
+f:12a88b8a8d6af6b57b75babc7353dc51:scons/spkgbuild
 f:e960073bb1102ec44234bdd6f7ca645f:help2man/CHANGELOG
 f:5356d99fb44f22facdde29f20d570425:help2man/spkgbuild
 f:103f5c1155a621109ceef0a5ab5329a2:numactl/CHANGELOG
@@ -818,8 +818,8 @@ f:eb2a5a71bf61ea7554f33409ec8d98d6:ntfs-3g/CHANGELOG
 f:36d82aeb003144c79a0bdbb5c30513fa:ntfs-3g/spkgbuild
 f:a967ac7858bdcb1ddf6dfa05410a19b5:gwenhywfar/spkgbuild
 f:f1a24cdd0b11bc01cc510600a167f701:faad2/spkgbuild
-f:8964da3f8bfb4dc14ff5180e8e4e42f4:wpebackend-fdo/CHANGELOG
-f:2d16b40707bcc9a886940037f5da6ce1:wpebackend-fdo/spkgbuild
+f:30a46f5237ca265eba6d2fc45255b9ab:wpebackend-fdo/CHANGELOG
+f:40733755bac006e2b9bcf2cc00661af4:wpebackend-fdo/spkgbuild
 f:9a0031cab0e772ca6e487d161667241e:bamf/CHANGELOG
 f:95c6fd0c56ec5a60673cc030f885d51b:bamf/spkgbuild
 f:7d1d64e365680113d57a17b6cbb5eca6:utilities/CHANGELOG
@@ -841,8 +841,8 @@ f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
 f:9e7254403ce579eb0f93988680a84b99:efibootmgr/spkgbuild
-f:21186a6e9b33c0cbfd6e4b5be0f18b84:conky/CHANGELOG
-f:3306632ba6c4e01ba3149479d5e97ebc:conky/spkgbuild
+f:ac25e207dca69888b67d104ab2777780:conky/CHANGELOG
+f:852fac0cf45b8f6133290b2b30622b88:conky/spkgbuild
 f:39099c98ec5fea676a000610a8789173:flex/spkgbuild
 f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
 f:35c0bc218ac475f090f213223b034046:blueman/CHANGELOG
@@ -965,9 +965,9 @@ f:5bc8a15b1f11f4e1b59f73e9c3120d67:cryptsetup/readme
 f:ab7252f8ed151e1a00263ef363bcce08:cryptsetup/CHANGELOG
 f:5ccc2d224d4b04cf5c84bead00a43714:cryptsetup/spkgbuild
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
-f:d5f05860f0dfcbadf7692ec94bc01860:cracklib/CHANGELOG
+f:7a0fe8481c40b8d72ab454b68f29b43c:cracklib/CHANGELOG
 f:3dd3aebdb7f724cbabf55c78c1d8dc84:cracklib/post-upgrade.sh
-f:5891159d26622e15246cbc3df30d88fd:cracklib/spkgbuild
+f:e5e663b0bcf14fe046c7a06693cfeeea:cracklib/spkgbuild
 f:8b72709701fadff8a7bcf7acdbdea263:gnutls/CHANGELOG
 f:b2a9b1e7df70b593cceeeb4597b6a290:gnutls/spkgbuild
 f:2e68d4ce70eef7e0349c55c7e0f1feed:refind/spkgbuild
@@ -1046,8 +1046,8 @@ f:0e9eec6f93402366a99023874b77ef1f:uthash/CHANGELOG
 f:aa606493e8c0487273df31f0e39d8c61:uthash/spkgbuild
 f:e1e86b8aa37ef9b40ce0968d79fd5efd:notification-daemon/spkgbuild
 f:1c0c2cf65a1d95e9cb61c428891d7e77:chntpw/spkgbuild
-f:57e6c6b0579af7acb5dfec52dd0b5f8a:mlt/CHANGELOG
-f:597cdbc85c810c93dddd280916c41373:mlt/spkgbuild
+f:a29458c9ec590c63dbd1fe985d4d2972:mlt/CHANGELOG
+f:19f2a874d73fdb8b96bbf5d10cd216bd:mlt/spkgbuild
 f:9afb4d6be4545c15210f05302f24b8b4:docbook2x/spkgbuild
 f:826fae88a435d9278c4f9614991d55a1:docbook2x/docbook2x.datadir.patch
 f:39d7b749276659b8c7d22d66ae83184a:sassc/CHANGELOG
@@ -1080,8 +1080,8 @@ f:eb7a8a86792273889c58c6bc9ea6011f:consolekit2/consolekit2.install.bak
 f:e184366eba89b39268dbb42359f86bfc:consolekit2/CHANGELOG
 f:d75ed3438dab01552304c06fd9a967b1:consolekit2/pam-foreground-compat.ck
 f:593266f7a2b014dbb3c7ba8d5877d80f:consolekit2/spkgbuild
-f:664694c82eb1fb32eb4cfd935c3c9e8c:audacious-plugins/CHANGELOG
-f:6b4af8f8e07e989c9743f7f0456f8425:audacious-plugins/spkgbuild
+f:0177d79081ff15ff75b7becff2603893:audacious-plugins/CHANGELOG
+f:151dc0440b778c1c771b60f05d87fc4a:audacious-plugins/spkgbuild
 f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
 f:41cdc97cea4655d466f4f52722ffc5e1:yelp-xsl/CHANGELOG
 f:c596979032ce1ffad64856d7fb1c94df:yelp-xsl/spkgbuild
@@ -1090,8 +1090,8 @@ f:a8e5c3af35b596acaf3b77bc7546fa88:yaml-cpp/spkgbuild
 f:16c915aa34458314f20abd5a433e866a:links/CHANGELOG
 f:72135aca679840a48fa87361381f5a68:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
-f:b229cc75d0c277dacb64525b3e4bd810:qalculate/CHANGELOG
-f:3d86c85e6f73ec6347e732b39de0a18b:qalculate/spkgbuild
+f:1cf7f94f52b6b76a941b922714a18af9:qalculate/CHANGELOG
+f:490051e6949815819c9a3e886243880f:qalculate/spkgbuild
 f:1be3c09df828b2b26781bb99d76cc85e:gc/CHANGELOG
 f:68ab29f3289f14e3535d0fd0b5ce4cfe:gc/spkgbuild
 f:45f13b305d240b2a298e9d1a4353049e:bash-completion/CHANGELOG
@@ -1222,8 +1222,8 @@ f:eca42e3356b6dd0c13ceaf010b4664c9:cdparanoia/spkgbuild
 f:08b0d328e8381b632afcc36d634f0d15:polkit-gnome/spkgbuild
 f:29e5a1b866cadfe9e705ae1bdf850975:zstd/CHANGELOG
 f:dca5c05bbfc1adee0bf1df5716314e8d:zstd/spkgbuild
-f:53912035d328ea94d599905c37f30bf4:grep/CHANGELOG
-f:6b010efc32527bccbfcc82e3b1080c11:grep/spkgbuild
+f:2f69a9393bc8ebc7a0ca4bfdf04a6ece:grep/CHANGELOG
+f:6b06f0c403ddc9f3126c181e846311cd:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
 f:88e8a64499a1f0e58e30276ca6b46167:icewm/CHANGELOG
 f:7b8ed01b52b8817a8819372451733f4a:icewm/spkgbuild
@@ -1384,5 +1384,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:36f26491d08427c852a589b74f1837fb:hugo/CHANGELOG
-f:3472e0cbef523048b677ef785e6c8b4b:hugo/spkgbuild
+f:a0f573ada2eb553bab177c27ccd4024d:hugo/CHANGELOG
+f:83818c170e939b14613414171f7530e2:hugo/spkgbuild

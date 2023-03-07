@@ -2,7 +2,7 @@
 # depends : python qt5-python-bindings python-numpy
 
 name=python-pyqtgraph
-version=0.13.1
+version=0.13.2
 release=1
 
 source="https://github.com/pyqtgraph/pyqtgraph/archive/refs/tags/r$version.tar.gz"
