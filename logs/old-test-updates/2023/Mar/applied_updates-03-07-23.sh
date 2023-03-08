@@ -82,3 +82,25 @@ sed -i -e "s/version=3.12.10/version=3.12.11/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.12.10 to version 3.12.11"
 sed -i -e "s/version=0.6.2/version=0.7.0/g" xfce/xfburn/spkgbuild
 changelog "xfce/xfburn/spkgbuild" "Upgraded from version 0.6.2 to version 0.7.0"
+sed -i -e "s/version=3.16.0/version=3.18.0/g" core/fortune-mod/spkgbuild
+changelog "core/fortune-mod/spkgbuild" "Upgraded from version 3.16.0 to version 3.18.0"
+sed -i -e "s/version=4.5.0/version=4.5.1/g" core/scons/spkgbuild
+changelog "core/scons/spkgbuild" "Upgraded from version 4.5.0 to version 4.5.1"
+sed -i -e "s/version=2.26.3/version=2.26.4/g" libs/sdl2/spkgbuild
+changelog "libs/sdl2/spkgbuild" "Upgraded from version 2.26.3 to version 2.26.4"
+sed -i -e "s/version=111.0b2/version=111.0b3/g" networking/thunderbird/spkgbuild
+changelog "networking/thunderbird/spkgbuild" "Upgraded from version 111.0b2 to version 111.0b3"
+sed -i -e "s/version=2.4.2/version=2.5.0/g" python/python-aiobotocore/spkgbuild
+changelog "python/python-aiobotocore/spkgbuild" "Upgraded from version 2.4.2 to version 2.5.0"
+sed -i -e "s/version=6.1.0/version=6.2.0/g" python/python-apispec/spkgbuild
+changelog "python/python-apispec/spkgbuild" "Upgraded from version 6.1.0 to version 6.2.0"
+sed -i -e "s/version=1.26.85/version=1.26.86/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.26.85 to version 1.26.86"
+sed -i -e "s/version=1.29.85/version=1.29.86/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.29.85 to version 1.29.86"
+sed -i -e "s/version=0.92.0/version=0.93.0/g" python/python-fastapi/spkgbuild
+changelog "python/python-fastapi/spkgbuild" "Upgraded from version 0.92.0 to version 0.93.0"
+sed -i -e "s/version=0.19.1/version=1.0.0/g" python/python-myst-parser/spkgbuild
+changelog "python/python-myst-parser/spkgbuild" "Upgraded from version 0.19.1 to version 1.0.0"
+sed -i -e "s/version=2.4.55/version=2.4.56/g" server/httpd/spkgbuild
+changelog "server/httpd/spkgbuild" "Upgraded from version 2.4.55 to version 2.4.56"

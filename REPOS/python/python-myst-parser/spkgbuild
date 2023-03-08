@@ -2,7 +2,7 @@
 # depends : python-markdown-it-py python-mdit_py_plugins python-yaml python-docutils python-sphinx python-jinja
 
 name=python-myst-parser
-version=0.19.1
+version=1.0.0
 release=1
 
 source="https://github.com/executablebooks/MyST-Parser/archive/refs/tags/v$version.tar.gz"
