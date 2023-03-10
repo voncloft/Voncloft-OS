@@ -39,13 +39,13 @@ f:120598e7c6816ff293a64ff2a26d9928:php/spkgbuild
 f:44d2be15152b16a9dddf9113ab2c80cb:php/php-fpm
 f:4035a98afb724658df44a3a12d100fdb:plex-media-server/post-install.sh
 f:63ce9e0d1367ad92a747840646c4170c:plex-media-server/plex
-f:ea9cc2ae39671ae7f7682219a593ae24:plex-media-server/CHANGELOG
+f:8ee541f13cf6a2efcf7e75a4973ce0b9:plex-media-server/CHANGELOG
 f:61c6a988b4f9ae98404d642194757372:plex-media-server/post-upgrade.sh
 f:9322a10019c0226e3f9b8d1e0a3c22f3:plex-media-server/plexmediaserver.conf.d
 f:561722f0631737ca172ce54ab9413bb3:plex-media-server/plex.tmpfiles
 f:b8bbdb316c5b2d6871488e94c9854925:plex-media-server/override
 f:d9f76e547b6c31912efa19463af0f3c6:plex-media-server/plex.sysusers
-f:f72dd23a2c2e29825a73a6706805009a:plex-media-server/spkgbuild
+f:0fa7b9d9e93b1d8dc353b0bad76b6bba:plex-media-server/spkgbuild
 f:cf9b5340b220350df739de0c21edf471:dnsmasq/post-install.sh
 f:998b25dadef0f1c560a87e86e1f8ed20:dnsmasq/CHANGELOG
 f:5aaab8848cb002c179721ee07bc5a160:dnsmasq/post-upgrade.sh
@@ -92,8 +92,8 @@ f:1c642e246a03125cbf5f85e59988aa85:mailme/spkgbuild
 f:4df42432020ba1bab2a20b4b7c2a09f6:httpup/spkgbuild
 f:137b1497c17f5bd8df3631074f3ec67d:nginx/CHANGELOG
 f:089a04a51466d2800ef5f0e447f32f53:nginx/spkgbuild
-f:b7cb62b881e917ea7b6c40751b6c97aa:homeassistant/CHANGELOG
-f:907dbfb4c81c45803c2b1c4437d029c3:homeassistant/spkgbuild
+f:db5f3783e5bf80a9780c03e63fc2a270:homeassistant/CHANGELOG
+f:f089ac7033e07898a8285eee6d403c0a:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
 f:6658763c41244bc6cfdc96f72a3ea7e9:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh
