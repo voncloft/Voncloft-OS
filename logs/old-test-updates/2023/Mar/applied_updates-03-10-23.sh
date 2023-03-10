@@ -32,3 +32,5 @@ sed -i -e "s/version=2023.3.2/version=2023.3.3/g" server/homeassistant/spkgbuild
 changelog "server/homeassistant/spkgbuild" "Upgraded from version 2023.3.2 to version 2023.3.3"
 sed -i -e "s/version=1.31.1.6733/version=1.31.1.6782/g" server/plex-media-server/spkgbuild
 changelog "server/plex-media-server/spkgbuild" "Upgraded from version 1.31.1.6733 to version 1.31.1.6782"
+sed -i -e "s/version=1/version=1.31.1.6782/g" server/plex-media-server/spkgbuild
+changelog "server/plex-media-server/spkgbuild" "Upgraded from version 1 to version 1.31.1.6782"
