@@ -34,3 +34,33 @@ sed -i -e "s/version=1.31.1.6733/version=1.31.1.6782/g" server/plex-media-server
 changelog "server/plex-media-server/spkgbuild" "Upgraded from version 1.31.1.6733 to version 1.31.1.6782"
 sed -i -e "s/version=1/version=1.31.1.6782/g" server/plex-media-server/spkgbuild
 changelog "server/plex-media-server/spkgbuild" "Upgraded from version 1 to version 1.31.1.6782"
+sed -i -e "s/version=6.2.2/version=6.2.3/g" core/linux-api-headers/spkgbuild
+changelog "core/linux-api-headers/spkgbuild" "Upgraded from version 6.2.2 to version 6.2.3"
+sed -i -e "s/version=6.2.2/version=6.2.3/g" core/linux-desktop/spkgbuild
+changelog "core/linux-desktop/spkgbuild" "Upgraded from version 6.2.2 to version 6.2.3"
+sed -i -e "s/version=6.2.2/version=6.2.3/g" core/linux-router/spkgbuild
+changelog "core/linux-router/spkgbuild" "Upgraded from version 6.2.2 to version 6.2.3"
+sed -i -e "s/version=3.88.1/version=3.89/g" core/nss/spkgbuild
+changelog "core/nss/spkgbuild" "Upgraded from version 3.88.1 to version 3.89"
+sed -i -e "s/version=2.38.1/version=2.39/g" core/util-linux/spkgbuild
+changelog "core/util-linux/spkgbuild" "Upgraded from version 2.38.1 to version 2.39"
+sed -i -e "s/version=2.39/version=2.39.1/g" extra/discordchatexporter/spkgbuild
+changelog "extra/discordchatexporter/spkgbuild" "Upgraded from version 2.39 to version 2.39.1"
+sed -i -e "s/version=22.1/version=22.2/g" extra/protobuf/spkgbuild
+changelog "extra/protobuf/spkgbuild" "Upgraded from version 22.1 to version 22.2"
+sed -i -e "s/version=4.1.0/version=4.1.1/g" libs/libimagequant/spkgbuild
+changelog "libs/libimagequant/spkgbuild" "Upgraded from version 4.1.0 to version 4.1.1"
+sed -i -e "s/version=6.2.0/version=6.3.0/g" python/python-apispec/spkgbuild
+changelog "python/python-apispec/spkgbuild" "Upgraded from version 6.2.0 to version 6.3.0"
+sed -i -e "s/version=1.60.1/version=1.61.0/g" python/python-aws-sam-translator/spkgbuild
+changelog "python/python-aws-sam-translator/spkgbuild" "Upgraded from version 1.60.1 to version 1.61.0"
+sed -i -e "s/version=0.93.0/version=0.94.0/g" python/python-fastapi/spkgbuild
+changelog "python/python-fastapi/spkgbuild" "Upgraded from version 0.93.0 to version 0.94.0"
+sed -i -e "s/version=1.2.2/version=1.2.3/g" python/python-qtawesome/spkgbuild
+changelog "python/python-qtawesome/spkgbuild" "Upgraded from version 1.2.2 to version 1.2.3"
+sed -i -e "s/version=1.2.0/version=1.3.3/g" python/python-rangehttpserver/spkgbuild
+changelog "python/python-rangehttpserver/spkgbuild" "Upgraded from version 1.2.0 to version 1.3.3"
+sed -i -e "s/version=0.22.0/version=0.23.0/g" python/python-responses/spkgbuild
+changelog "python/python-responses/spkgbuild" "Upgraded from version 0.22.0 to version 0.23.0"
+sed -i -e "s/version=0.25.0/version=0.26.0/g" python/python-starlette/spkgbuild
+changelog "python/python-starlette/spkgbuild" "Upgraded from version 0.25.0 to version 0.26.0"
