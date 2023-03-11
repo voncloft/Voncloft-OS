@@ -2,7 +2,7 @@
 # depends : kde-deps kconfig kcoreaddons kwindowsystem
 
 name=knotifications
-version=5.103.0
+version=5.104.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
