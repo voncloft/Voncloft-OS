@@ -32,6 +32,7 @@ d:vidtomp3
 d:inotify-tools
 d:minecraft-launcher
 d:discordchatexporter
+d:plex-desktop
 d:nodejs
 d:dbi-drivers
 d:bluefish
@@ -139,6 +140,9 @@ f:c759c05311ef7eb0ca4b6c3767375f03:minecraft-launcher/spkgbuild
 f:415209017a32e2e91fce788454a86406:discordchatexporter/CHANGELOG
 f:64954657c0f4a6327b7bdc8c120278eb:discordchatexporter/spkgbuild
 f:8569a98c5a3f646ad61db9a1890f9eae:discordchatexporter/discord-chat-exporter-cli
+f:38595037e7bc6344b7b78bfeade8a579:plex-desktop/qt.conf
+f:79b5b73cb2eaa08e1989270282c8c079:plex-desktop/CHANGELOG
+f:b0547515a6950fc53825b833f2fbf507:plex-desktop/spkgbuild
 f:62cbf7d9432d07a7cf186d7d5f9f57b9:nodejs/spkgbuild
 f:855a926513e4239c61a09466de81de36:dbi-drivers/spkgbuild
 f:762ce89b03a307b323402765ca0a830b:bluefish/CHANGELOG
