@@ -15,7 +15,8 @@ build() {
 	    --enable-cdda \
 	    --enable-dvb \
 	    --enable-libarchive \
-	    --enable-lua
+	    --enable-lua \
+	    --enable-libmpv-shared
 	./waf build
 	./waf install --destdir=$PKG
 }
