@@ -4,12 +4,13 @@
 name=plex-desktop
 version=1.58.1
 release=1
-
+_snapid=qc6MFRM433ZhI1XjVzErdHivhSOhlpf0
+_snaprev=24
 source="https://api.snapcraft.io/api/v1/snaps/download/${_snapid}_${_snaprev}.snap
 	qt.conf"
 
 build() {
-  unsquashfs -q -f -d "${SRC}/${name}" "${_snapid}_${_snaprev}.snap
+  unsquashfs -q -f -d "${SRC}/${name}" "${_snapid}_${_snaprev}.snap"
   install -d "${PKG}/opt/${name}"
   cp -r "${SRC}/${name}/." "${PKG}/opt/${name}"
 
