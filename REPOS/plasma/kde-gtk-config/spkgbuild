@@ -2,7 +2,7 @@
 # depends : kde-deps kconfigwidgets kdbusaddons kdecoration
 
 name=kde-gtk-config
-version=5.27.2
+version=5.27.3
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"

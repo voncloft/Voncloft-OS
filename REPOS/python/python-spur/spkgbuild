@@ -2,7 +2,7 @@
 # depends : python python-paramiko
 
 name=python-spur
-version=0.3.22
+version=0.3.23
 release=3
 
 source="https://github.com/mwilliamson/spur.py/archive/refs/tags/$version.tar.gz"

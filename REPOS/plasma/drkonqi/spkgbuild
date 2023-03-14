@@ -2,7 +2,7 @@
 # depends : kde-deps kidletime kio syntax-highlighting kuserfeedback
 
 name=drkonqi
-version=5.27.2
+version=5.27.3
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"

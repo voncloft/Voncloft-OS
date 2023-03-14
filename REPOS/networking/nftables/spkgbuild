@@ -2,7 +2,7 @@
 # depends : libnftnl readline libmnl gmp ncurses jansson
 
 name=nftables
-version=1.0.6
+version=1.0.7
 release=1
 
 source="https://netfilter.org/projects/nftables/files/nftables-$version.tar.bz2
