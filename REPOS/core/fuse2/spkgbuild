@@ -13,7 +13,7 @@ build() {
 	meson --prefix=/usr --sbindir=bin -D examples=false . build
 	cd build
 	ninja
-	install -Dm644 $PKG/fuse.conf $PKG/etc/fuse.conf
+	install -Dm644 $SRC/fuse.conf $PKG/etc/fuse.conf
 	DESTDIR=$PKG ninja install
 	#./configure --prefix=/usr    \
 	#            --disable-static \
