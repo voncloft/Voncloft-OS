@@ -8,8 +8,7 @@ release=1
 backup="var/spool/fcron/systab.orig"
 source="http://fcron.free.fr/archives/$name-$version.src.tar.gz\
 	systab.orig
-	run-parts
-	fcrontab"
+	run-parts"
 options="!checksum"
 
 build() {
