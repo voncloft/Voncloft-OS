@@ -16,6 +16,8 @@ options="!checksum"
 
 build() {
 	cd Linux-PAM-$version
+	autoreconf -ifv
+	autoconf
 	sed -e /service_DATA/d \
     		-i modules/pam_namespace/Makefile.am &
 
