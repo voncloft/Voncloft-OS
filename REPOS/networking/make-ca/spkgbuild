@@ -2,10 +2,10 @@
 # depends : p11-kit fcron log-folders
 
 name=make-ca
-version=1.8.1
+version=1.12
 release=1
 
-source="https://github.com/djlucas/make-ca/releases/download/v$version/$name-$version.tar.xz
+source="https://github.com/lfs-book/make-ca/releases/download/v$version/make-ca-$version.tar.xz
 	http://www.cacert.org/certs/root.crt
 	http://www.cacert.org/certs/class3.crt
 	update-pki.sh"
