@@ -1,0 +1,15 @@
+# description : packages i use
+# depends : 
+
+name=vontools
+version=1
+release=1
+
+source="clean-packages
+	update-kde"
+
+build() {
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/clean-packages $PKG/usr/bin/clean-packages
+	install -Dm755 $SRC/update-kde $PKG/usr/bin/update-kde
+}

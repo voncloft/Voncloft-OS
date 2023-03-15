@@ -105,6 +105,7 @@ d:obconf
 d:fakeroot
 d:file
 d:parallel
+d:vontools
 d:upower
 d:mtools
 d:unzip
@@ -682,6 +683,9 @@ f:6a3e7fffc6f584aa57dbed83bf31bf21:fakeroot/spkgbuild
 f:03553e078e541d92a7d5cc76d955a641:file/CHANGELOG
 f:2b274d80c8157b6dab9145e6b72766a8:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
+f:40c765dc99ae21d5af584e10aab9bf02:vontools/clean-packages
+f:254fb5ec8a9197747f7498554ab76f97:vontools/CHANGELOG
+f:d5fbbef1d99e476acdc741b00f41b2ba:vontools/spkgbuild
 f:81ce46ac08d7ab4f3a6629a155162716:upower/CHANGELOG
 f:9b22367f91bcff2f545ae267628adffb:upower/spkgbuild
 f:8703a33a48893de7bb25a2c3c9172424:mtools/CHANGELOG
