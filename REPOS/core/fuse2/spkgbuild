@@ -1,9 +1,9 @@
 # description	: Simple interface for userspace programs to export a virtual filesystem to the Linux kernel
-
+# depends: meson
 name=fuse2
 version=3.14.0
 release=1
-source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz
+source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz
 	fuse.conf"
 backup=/etc/fuse.conf
 
