@@ -35,8 +35,7 @@ build() {
 	      -Wno-dev -G Ninja
 	ninja
 	DESTDIR=$PKG ninja install
-	mkdir $PKG/usr/bin
-	cp bin/FileCheck $PKG/usr/bin
+	cp bin/FileCheck usr/bin
 	# multilib stub
 	mv $PKG/usr/include/llvm/Config/llvm-config.h \
 	   $PKG/usr/include/llvm/Config/llvm-config-64.h
