@@ -6,10 +6,12 @@ version=1
 release=1
 
 source="clean-packages
-	update-kde"
+	update-kde
+	outdated"
 
 build() {
 	mkdir -pv $PKG/usr/bin
 	install -Dm755 $SRC/clean-packages $PKG/usr/bin/clean-packages
 	install -Dm755 $SRC/update-kde $PKG/usr/bin/update-kde
+	install -Dm755 $SRC/outdated $PKG/usr/bin/outdated
 }

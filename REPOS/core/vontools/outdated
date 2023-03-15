@@ -1,0 +1,2 @@
+sudo scratch outdate | grep -v masked | grep -v newer | grep -v python | grep -v perl
+echo "Done checking for outdated packages"
