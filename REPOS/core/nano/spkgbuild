@@ -5,7 +5,8 @@ name=nano
 version=7.2
 release=1
 backup="etc/nanorc"
-source="https://www.nano-editor.org/dist/v${version%%.*}/$name-$version.tar.xz"
+source="https://www.nano-editor.org/dist/v${version%%.*}/$name-$version.tar.xz
+	.nanorc"
 options="!checksum"
 build() {
 	cd $name-$version
@@ -16,6 +17,7 @@ build() {
 		    --disable-nls
 	make
 	make DESTDIR=$PKG install
-
+	mkdir -pv $PKG/etc/skel
+	install -Dm644 $SRC/.nanorc $PKG/etc/skel/.nanorc
 	install -v -Dm644 doc/sample.nanorc $PKG/etc/nanorc
 }
