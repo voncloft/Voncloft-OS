@@ -10,6 +10,7 @@ d:luajit
 d:llvm
 d:xkbcomp
 d:pkgconf
+d:llvm-bak
 d:rust
 d:gcc
 d:autoconf-archive
@@ -43,11 +44,14 @@ f:a52f267e6b20a2c7257b747ad4ed7a35:lld/spkgbuild
 f:efbc369782cf6837d3430e16ec1fafa5:luajit/spkgbuild
 f:4a927d554b3cbe5fdb8576f6e740426d:llvm/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
-f:6b17022edd36d3f193451f404d144cb2:llvm/spkgbuild
+f:ccffc9b01b1fa59b3358215c81bf2be6:llvm/spkgbuild
 f:c756eaae15dd3e429e3fefa53e1c57ce:xkbcomp/CHANGELOG
 f:ae82392524ab8e2e8a8fb091639717cb:xkbcomp/spkgbuild
 f:ac4e62132fc9446d2946d76237475519:pkgconf/CHANGELOG
 f:2b7656c5cd4a29226f35cd7255f1d550:pkgconf/spkgbuild
+f:4a927d554b3cbe5fdb8576f6e740426d:llvm-bak/CHANGELOG
+f:295c343dcd457dc534662f011d7cff1a:llvm-bak/llvm-config.h
+f:6b17022edd36d3f193451f404d144cb2:llvm-bak/spkgbuild
 f:e53d7bdb37a5ef1afcdef3c906e57169:rust/CHANGELOG
 f:01370d49e5639f8f333ee7c58def539d:rust/override
 f:5ad17287c9b2c3f6fdbb8e87db13b46a:rust/spkgbuild
