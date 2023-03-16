@@ -1,5 +1,5 @@
 # description	: Toolkit for defining and handling authorizations
-# depends	: glib mozjs linux-pam gobject-introspection intltool
+# depends	: glib mozjs linux-pam gobject-introspection intltool elogind
 
 name=polkit
 version=122
