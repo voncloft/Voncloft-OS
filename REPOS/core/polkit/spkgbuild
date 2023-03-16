@@ -2,21 +2,19 @@
 # depends	: glib mozjs linux-pam gobject-introspection intltool
 
 name=polkit
-version=0.120
+version=122
 release=1
-source="https://www.freedesktop.org/software/polkit/releases/$name-$version.tar.gz"
+source="https://gitlab.freedesktop.org/$Name/$name/-/archive/$version/$name-$version.tar.gz"
 options="!checksum"
 build() {
 	cd $name-$version
-
-	./configure --prefix=/usr \
-	            --sysconfdir=/etc \
-	            --localstatedir=/var \
-	            --disable-static \
-	            --enable-libsystemd-login=no \
-		    --with-authfw=pam \
-		    --enable-libelogind=no \
-		    --disable-man-pages
-	make
-	make DESTDIR=$PKG install
+	meson setup ..                      \
+      	--prefix=/usr                 \
+      	--buildtype=release           \
+      	-Dman=true                    \
+      	-Dsession_tracking=libelogind \
+      	-Dsystemdsystemunitdir=/tmp   \
+      	-Dtests=true                  
+	ninja
+	DESTDIR=$PKG ninja install
 }
