@@ -4,10 +4,12 @@
 name=polkit
 version=122
 release=1
-source="https://gitlab.freedesktop.org/$Name/$name/-/archive/$version/$name-$version.tar.gz"
+source="https://gitlab.freedesktop.org/$name/$name/-/archive/$version/$name-$version.tar.gz"
 options="!checksum"
 build() {
 	cd $name-$version
+	mkdir build
+	cd build
 	meson setup ..                      \
       	--prefix=/usr                 \
       	--buildtype=release           \
