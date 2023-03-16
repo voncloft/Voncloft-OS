@@ -10,14 +10,23 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	mkdir build
-	cd build
+	sed -i '/Disable polkit/,+8 d' meson.build 
 
-	meson --prefix=/usr \
-	-Dcgroup-controller=elogind \
-	-Ddbuspolictydir=/etc/dbus-1/system.d \
-	.. 
+	sed '/request_name/i\
+	r = sd_bus_set_exit_on_disconnect(m->bus, true);\
+	if (r < 0)\
+    	return log_error_errno(r, "Failed to set exit on disconnect: %m");' \
+    		-i src/login/logind.c 
 
+	mkdir build 
+	cd    build 
+
+	meson setup ..                    \
+      	--prefix=/usr               \
+      	--buildtype=release         \
+      	-Dman=auto                  \
+      	-Dcgroup-controller=elogind \
+      	-Ddbuspolicydir=/etc/dbus-1/system.d
 	ninja
 	DESTDIR=$PKG ninja install
 
