@@ -4,10 +4,12 @@
 name=giblib
 version=1.2.4
 release=1
-source="http://kent.dl.sourceforge.net/project/slackbuildsdirectlinks/giblib/giblib-$version.tar.gz"
-
+source="https://downloads.sourceforge.net/project/slackbuildsdirectlinks/giblib/giblib-${version}.tar.gz
+	giblib.patch"
 build() {
 	cd giblib-$version
+	patch -Np1 -i "${SRC}/giblib.patch"
+	
 	./configure --prefix=/usr
 	make
 	make DESTDIR=$PKG docsdir=/usr/share/doc/giblib install
