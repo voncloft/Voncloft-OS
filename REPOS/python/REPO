@@ -1843,8 +1843,8 @@ f:bf9d79e480a14c0db969be692f5d0069:python-pysocks/CHANGELOG
 f:017cfadf53d8e24c3b4a77941fd4d436:python-pysocks/spkgbuild
 f:210f9ea088b49f947c7a01e400983f66:python-dotenv/CHANGELOG
 f:70fa3f1ae63572a32b0991e4485b5406:python-dotenv/spkgbuild
-f:3ab412ddd053b1e8d635e6046c2f385f:python-pipenv/CHANGELOG
-f:17b4e516b9cd4b9e0a2edbbe1724583f:python-pipenv/spkgbuild
+f:8b0b18390117b0e79a4a79a181cb8a4d:python-pipenv/CHANGELOG
+f:1a13ce857c5124ec26a093814e9a37f9:python-pipenv/spkgbuild
 f:b78503d83916564cc91cbc517f092541:python-six/CHANGELOG
 f:b67762c961aea4e99a5216ed18b9a751:python-six/spkgbuild
 f:9a85ac019e04819bd4021f3b9801424b:python-wsaccel/CHANGELOG
@@ -2381,8 +2381,8 @@ f:2ea0f08d01ff2d2a46a247ad481c0663:python-pytest-httpbin/CHANGELOG
 f:9653ac71b7932e3f6423a8bf27a5b41d:python-pytest-httpbin/spkgbuild
 f:67cb948a283376391e77ed7e511a77c1:python-biscuits/CHANGELOG
 f:f40deaffd8953d25e471ff8e4aa2f88e:python-biscuits/spkgbuild
-f:5011dad2afde312993ea00f6d88035a1:python-pygithub/CHANGELOG
-f:b4146be2aeb975cf21df5e39debcfdf9:python-pygithub/spkgbuild
+f:fde60cddbc4cf5e9e18b1e0e7183585b:python-pygithub/CHANGELOG
+f:b39abfccc532de285d7c00c3d6816dcf:python-pygithub/spkgbuild
 f:5c2598b3f37682de4d7045cd67386b78:python-utils/CHANGELOG
 f:4837c6ab72626e7c9f0490e1f89e7013:python-utils/spkgbuild
 f:32ae597014e0be392c6b0064e517c044:python-nose-exclude/CHANGELOG
@@ -3002,8 +3002,8 @@ f:01d23a48cbc24c85cec40aa9b6b77c3a:python-ipykernel/CHANGELOG
 f:b97c279193ac953cd818db8b0321d33c:python-ipykernel/spkgbuild
 f:c9d752998717930e873e5190806bf700:python-pyadi-iio/CHANGELOG
 f:c9d916ea0c2dadcc72942ad6341d3cc3:python-pyadi-iio/spkgbuild
-f:70675cc610ea70e0018a04e322a205ec:python-requirementslib/CHANGELOG
-f:d956e2735c6036eaf87bdc7027e09140:python-requirementslib/spkgbuild
+f:11c6f9f02d135acefe40ecda41b9886e:python-requirementslib/CHANGELOG
+f:7726e1460fb995ab6012453edbb61909:python-requirementslib/spkgbuild
 f:5a663d19a68a2ceeef1524fe882a0081:python-cachetools/CHANGELOG
 f:8beac76454ec1637e6e1c84428443f82:python-cachetools/spkgbuild
 f:c7cb58bfe19989ea7c64f49e4052fd4d:python-flake8-docstrings/CHANGELOG
@@ -3426,8 +3426,8 @@ f:d5a4daf3c8a4a5fd0bed59dc85c00483:python-async-timeout/CHANGELOG
 f:41ceaac8a232ca87da87af8500d988aa:python-async-timeout/spkgbuild
 f:b87c8305eed59e730f4c6777f7f238b7:python-deprecated/CHANGELOG
 f:cea3783eb48cd98446817b198970ea61:python-deprecated/spkgbuild
-f:ff07e3fda86c03088606d44d0c91e4b2:python-softlayer/CHANGELOG
-f:6d06967147fac0ff0c761a669d2437fa:python-softlayer/spkgbuild
+f:8aa45d5dae8e266936424e75bbc0ce76:python-softlayer/CHANGELOG
+f:b0bb05f6d20f020384057ec71b1b5f8b:python-softlayer/spkgbuild
 f:81bac6edeb70efeed3abff652759d18a:python-pygame-sdl2/CHANGELOG
 f:466a3dca1dc4ab65dbdeba9c23d39897:python-pygame-sdl2/spkgbuild
 f:77774525300a1a6cbbdd6d19fc1a2719:python-crc8/CHANGELOG
@@ -4028,8 +4028,8 @@ f:1035c42c4d79c587018c24ce45785337:python-rope/CHANGELOG
 f:819651881c28f5fb02ebce91e2576afa:python-rope/spkgbuild
 f:c725c1a4ea568ca6e82f93ced52ccde8:python-pysmi/CHANGELOG
 f:fa8155af58c67bbb63042d7598772201:python-pysmi/spkgbuild
-f:3024b584462e720ec60e011e94bc1b62:python-importlib-metadata/CHANGELOG
-f:498db37dd4175761b7bc32e12bbff4ea:python-importlib-metadata/spkgbuild
+f:c61c186486829790f0d19d0332d212e9:python-importlib-metadata/CHANGELOG
+f:0f2c5a196f194afbdd458871adf23d85:python-importlib-metadata/spkgbuild
 f:2383afae0cc78eab5d7a754ac0ce0eed:python-botocore/CHANGELOG
 f:20b48434e12f71141a22dce565769785:python-botocore/spkgbuild
 f:5bb30db6e04577ede110e3ad5fca1236:python-pwntools/CHANGELOG
@@ -4102,8 +4102,8 @@ f:ac250baabc50db9168af5719b15d0ec4:python-pastedeploy/CHANGELOG
 f:5daf11b828a62f92a8383cef7ae26985:python-pastedeploy/spkgbuild
 f:4d05b26e6d0c365804724bd756a67674:python-whoosh/CHANGELOG
 f:b8d884656e6872e41fa2cbf21a63a644:python-whoosh/spkgbuild
-f:6b4a9986dd83830ad772054dc3f18990:python-rdflib/CHANGELOG
-f:382a0661255cbd1313ae741128b5e71d:python-rdflib/spkgbuild
+f:cff6fd20b83e83971f5a7b6aca62615f:python-rdflib/CHANGELOG
+f:4ef7846343c7ae4b0fd7d5281eb1616f:python-rdflib/spkgbuild
 f:db12a444b50974e2ba287a895fecd19f:python-redis/CHANGELOG
 f:95db676c932397d844da9ed18e62f8c7:python-redis/spkgbuild
 f:a0ca4e45bd1104613bb908cb17093d15:python-django-haystack/CHANGELOG
