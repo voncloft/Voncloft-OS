@@ -1,6 +1,7 @@
---- giblib-hak/configure.ac	2023-03-17 19:52:43.520815693 -0400
-+++ giblib-1.2.4/configure.ac	2004-09-04 09:42:10.000000000 -0500
-@@ -17,6 +17,10 @@
+diff -Naur giblib-1.2.4/configure.ac giblib-hak/configure.ac
+--- giblib-1.2.4/configure.ac	2004-09-04 09:42:10.000000000 -0500
++++ giblib-hak/configure.ac	2023-03-17 19:52:43.520815693 -0400
+@@ -17,10 +17,6 @@
  AM_MAINTAINER_MODE
  AM_WITH_DMALLOC
  

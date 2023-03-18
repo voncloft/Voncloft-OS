@@ -9,7 +9,7 @@ source="https://downloads.sourceforge.net/project/slackbuildsdirectlinks/giblib/
 build() {
 	cd giblib-$version
 	patch -Np1 "${SRC}/giblib.patch"
-	
+	autoreconf -ifv
 	./configure --prefix=/usr
 	make
 	make DESTDIR=$PKG docsdir=/usr/share/doc/giblib install
