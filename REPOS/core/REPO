@@ -772,9 +772,9 @@ f:0d452f7f2f6fce718f6611a10f252fd1:hunspell/spkgbuild
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-install.sh
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-upgrade.sh
 f:cff3571dcd31294f38def129c5ded3b4:shared-mime-info/spkgbuild
-f:96a1eec64c9606f9f65f4c2d6f1fbfeb:curl/CHANGELOG
+f:1610ea886c8e00694a1ed1eea8d56cb8:curl/CHANGELOG
 f:2ab2fd51a5d53ce21c2d56b931fd54ed:curl/override
-f:9e53e5e504b191c4218b70e4b7a9c361:curl/spkgbuild
+f:fe25a7dee76be282154f4df042ab085d:curl/spkgbuild
 f:3f1370d9ad233b9c717f14d5ae9859c1:syslinux/syslinux-6.03-sysmacros.patch
 f:b56631b817e26139f47a4d0039e7e90d:syslinux/spkgbuild
 f:1c34344db681c09f8085a99d44d53da1:findutils/CHANGELOG
@@ -1150,9 +1150,9 @@ f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
 f:85d0cffc3e99919fcb47b718e2f28548:parcellite/CHANGELOG
 f:7b161690d643e376c03ffa2eacae58bf:parcellite/spkgbuild
 f:0ffae7bed396419428b15e8adb9b952d:mpfr/spkgbuild
-f:9fe50cfe8b3cc280f0a226470ac197a7:coreutils/CHANGELOG
+f:674f7225f6732ce61949b1f1dfe0fd33:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
-f:ad48224ed35baeeb5bd6dccab53a42ca:coreutils/spkgbuild
+f:5a8ec870139fcc7141ad263eb401a597:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
 f:a196fa883e35545ab2c0ff2ed4de9bc7:btrfs-progs/CHANGELOG
 f:2731f7fe7fc2a037c071cbbd3fbfae6e:btrfs-progs/spkgbuild
@@ -1203,8 +1203,8 @@ f:be504191612e31c58eaaea584e2e7508:lmdb/spkgbuild
 f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:e485d74f524820e693f8a53c0cbcdc02:zsh/CHANGELOG
 f:23fdfe608891c3828582a7ec3f79023f:zsh/spkgbuild
-f:a7322171fc8aa45dece3b0d8421a56ec:redis/CHANGELOG
-f:2afe7ff6841f3121948763cde6f6f1b0:redis/spkgbuild
+f:ca7ed64280cbc91c704eb715c7eb1163:redis/CHANGELOG
+f:8a588162877b4790a5ab47c13a9c8231:redis/spkgbuild
 f:61021c497dfec4de20c7d8e57cadaeee:ntp/post-install.sh
 f:bc12af08e46ffd1d1dabc90858ccf935:ntp/post-upgrade.sh
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh

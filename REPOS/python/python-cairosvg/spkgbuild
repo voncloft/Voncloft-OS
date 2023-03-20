@@ -2,7 +2,7 @@
 # depends : python-cairocffi python-cssselect2 python-defusedxml python-pillow python-tinycss2
 
 name=python-cairosvg
-version=2.6.0
+version=2.7.0
 release=1
 
 source="https://github.com/Kozea/CairoSVG/archive/refs/tags/$version.tar.gz"
