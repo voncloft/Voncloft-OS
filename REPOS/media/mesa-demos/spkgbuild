@@ -2,7 +2,7 @@
 # depends	: glew freeglut mesa freetype2
 
 name=mesa-demos
-version=8.4.0
+version=9.0.0
 release=1
 source="ftp://ftp.freedesktop.org/pub/mesa/demos/mesa-demos-$version.tar.bz2"
 
