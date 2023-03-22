@@ -12,7 +12,6 @@ d:openjdk
 d:protobuf
 d:waterfox
 d:epson-inkjet-printer-escpr2
-d:firefox-esr
 d:mcomix
 d:extra-cmake-modules
 d:gtk-engine-murrine
@@ -28,7 +27,6 @@ d:setconf
 d:nspr
 d:ebook-tools
 d:chessx
-d:thunderbird
 d:vidtomp3
 d:inotify-tools
 d:minecraft-launcher
@@ -52,7 +50,6 @@ d:gtksourceview3
 d:qemu
 d:gtk2
 d:gtkmm3
-d:firefox
 d:clazy
 d:florence
 d:youtubemp3
@@ -97,10 +94,6 @@ f:a4a9a2704930b1033bbe80e6f1c7f049:epson-inkjet-printer-escpr2/bug_x86_64.patch
 f:cc1347064094c2cf55f9bb202c6e83da:epson-inkjet-printer-escpr2/CHANGELOG
 f:951abdb870a129e245794d08f1699992:epson-inkjet-printer-escpr2/.pkgfiles
 f:ab27e9e6d69c04dae161cab744cfb2c1:epson-inkjet-printer-escpr2/spkgbuild
-f:ede5c134e43e03df52398c41110d6b94:firefox-esr/CHANGELOG
-f:cf6971669f70b440cb6ff8df8b2722ae:firefox-esr/firefox.desktop
-f:afe61c7760e835bd12d5dfd40af4ec84:firefox-esr/firefox-install-dir.patch
-f:6169e1d8334a97117e238299207c910b:firefox-esr/spkgbuild
 f:06761fbf361c7a3305bf38f633aa89c9:mcomix/CHANGELOG
 f:3d7248195242a2aba64cc45e3f4942d3:mcomix/spkgbuild
 f:1369c74fa543c79c58e12c58eac16fd6:extra-cmake-modules/CHANGELOG
@@ -131,11 +124,6 @@ f:4b8798bee1339effc3924a8cbff88177:ebook-tools/CHANGELOG
 f:fb88c6791ab60fc530b329f9c34f316d:ebook-tools/spkgbuild
 f:668adb700ec0292770dea8f95161e67f:chessx/CHANGELOG
 f:751d2935949c4f5ff4cf08e2717bea9e:chessx/spkgbuild
-f:c509da7f40b02c68313f436ed2317021:thunderbird/CHANGELOG
-f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:c6eaff8f0841408618327d76b99c3ce3:thunderbird/spkgbuild
-f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
-f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:21926b318d7ecd15a531ffae0cd7146e:vidtomp3/CHANGELOG
 f:f1739fcafcb78fde77578cc276f1ff06:vidtomp3/vidtomp3
 f:182d294f6367ebed6cc4e144c9695dcb:vidtomp3/spkgbuild
@@ -188,12 +176,6 @@ f:c042d05679b6b984548e455df36c69be:qemu/spkgbuild
 f:bb0ad7d077d5a01e5aa061e1662d37fa:gtk2/post-install.sh
 f:13f2c9445f7358f37ebde4fd22c3a024:gtk2/spkgbuild
 f:bf89bb98ad0d06cef7a9bebda179720f:gtkmm3/spkgbuild
-f:32df5ae300c826235d57e4a710535e42:firefox/CHANGELOG
-f:37db9ec3cc336d3a09ede8becec2ad69:firefox/fix-ftbfs-newer-cbindgen.patch
-f:a4a0f7c9c1e3424463670d031976aa67:firefox/override
-f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
-f:9621e1b73e0d8f2bec1adc310543f7ed:firefox/spkgbuild
-f:89fb28a484e7f5126839e83f10de377a:firefox/pre-upgrade.sh
 f:e10125f78449ccedbf2b06f976ed31c0:clazy/CHANGELOG
 f:36bdf7180586d2e28d35d6f424c3fe11:clazy/spkgbuild
 f:b13fb88e9ef3731e5374c3ad2f672146:florence/CHANGELOG
