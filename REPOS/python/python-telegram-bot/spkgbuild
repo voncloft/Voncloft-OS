@@ -2,7 +2,7 @@
 # depends : python-apscheduler python-cryptography python-decorator python-tornado
 
 name=python-telegram-bot
-version=20.1
+version=20.2
 release=1
 
 source="https://github.com/python-telegram-bot/python-telegram-bot/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-apptools
 
 name=python-envisage
-version=6.1.1
+version=7.0.1
 release=1
 
 source="https://github.com/enthought/envisage/archive/refs/tags/r$version.tar.gz"

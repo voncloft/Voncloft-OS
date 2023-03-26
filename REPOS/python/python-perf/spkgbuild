@@ -2,7 +2,7 @@
   # depends : python python-setuptools python-six
 
 name=python-perf
-version=2.5.0
+version=2.6.0
 release=5
 
 source="https://github.com/vstinner/perf/archive/refs/tags/$version.tar.gz"

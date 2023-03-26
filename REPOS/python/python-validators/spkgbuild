@@ -2,7 +2,7 @@
 # depends : python-decorator python-six
 
 name=python-validators
-version=0.20.0
+version=0.20.9
 release=3
 
 source="https://github.com/kvesteri/validators/archive/refs/tags/$version.tar.gz"
