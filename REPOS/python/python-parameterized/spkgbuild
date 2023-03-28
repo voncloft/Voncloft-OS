@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-parameterized
-version=0.8.1
+version=0.9.0
 release=1
 
 source="https://github.com/wolever/parameterized/archive/refs/tags/v$version.tar.gz"

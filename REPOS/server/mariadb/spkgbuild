@@ -2,7 +2,7 @@
 # depends : cmake libevent
 
 name=mariadb
-version=10.6.9
+version=11.0
 release=1
 
 backup="etc/mysql/my.cnf"
