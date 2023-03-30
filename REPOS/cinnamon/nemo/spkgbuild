@@ -2,7 +2,7 @@
 # depends : cinnamon-desktop dconf exempi gvfs libexif libnotify libxml2 python xapp ffmpegthumbnailer gobject-introspection intltool meson ninja
 
 name=nemo
-version=5.6.4
+version=5.6.5
 release=1
 
 source="https://github.com/linuxmint/nemo/archive/refs/tags/$version.tar.gz"

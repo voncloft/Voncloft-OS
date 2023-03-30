@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-zope-deprecation
-version=4.4.0
+version=5.0
 release=5
 
 source="https://github.com/zopefoundation/zope.deprecation/archive/refs/tags/$version.tar.gz"
