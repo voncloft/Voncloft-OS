@@ -852,8 +852,8 @@ f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
 f:9e7254403ce579eb0f93988680a84b99:efibootmgr/spkgbuild
-f:ac25e207dca69888b67d104ab2777780:conky/CHANGELOG
-f:852fac0cf45b8f6133290b2b30622b88:conky/spkgbuild
+f:c408dc4ffe2ace5b99b6ccfe0554f13b:conky/CHANGELOG
+f:36bed41c79a03b4bdbcad190d607657b:conky/spkgbuild
 f:39099c98ec5fea676a000610a8789173:flex/spkgbuild
 f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
 f:35c0bc218ac475f090f213223b034046:blueman/CHANGELOG
@@ -981,9 +981,9 @@ f:5bc8a15b1f11f4e1b59f73e9c3120d67:cryptsetup/readme
 f:ab7252f8ed151e1a00263ef363bcce08:cryptsetup/CHANGELOG
 f:5ccc2d224d4b04cf5c84bead00a43714:cryptsetup/spkgbuild
 f:90318310d476a44fdcccad3b67eec4eb:vimb/spkgbuild
-f:fc1851055ac758f2491cee6ea51e8507:cracklib/CHANGELOG
+f:2861f87d8eb9cd1edbc29853ca28c34e:cracklib/CHANGELOG
 f:3dd3aebdb7f724cbabf55c78c1d8dc84:cracklib/post-upgrade.sh
-f:58465f6c01c0380829748e215d62fbfa:cracklib/spkgbuild
+f:220f682478f2627228aa85c14bb85ffb:cracklib/spkgbuild
 f:8b72709701fadff8a7bcf7acdbdea263:gnutls/CHANGELOG
 f:b2a9b1e7df70b593cceeeb4597b6a290:gnutls/spkgbuild
 f:2e68d4ce70eef7e0349c55c7e0f1feed:refind/spkgbuild
@@ -1093,9 +1093,9 @@ f:8675ce8c2c219f5031a09af1e961e050:fakescratch/CHANGELOG
 f:3d2e3f2cfe26282b6053c712fba0dd25:fakescratch/fakescratch
 f:bde6290ea341b4c95b3d48c14cc6d656:fakescratch/spkgbuild
 f:eb7a8a86792273889c58c6bc9ea6011f:consolekit2/consolekit2.install.bak
-f:e184366eba89b39268dbb42359f86bfc:consolekit2/CHANGELOG
+f:3441391f1b5f16ff5e76aae5a15ef090:consolekit2/CHANGELOG
 f:d75ed3438dab01552304c06fd9a967b1:consolekit2/pam-foreground-compat.ck
-f:593266f7a2b014dbb3c7ba8d5877d80f:consolekit2/spkgbuild
+f:820bf547f01c3d9373650972968ea072:consolekit2/spkgbuild
 f:0177d79081ff15ff75b7becff2603893:audacious-plugins/CHANGELOG
 f:151dc0440b778c1c771b60f05d87fc4a:audacious-plugins/spkgbuild
 f:f41e00685b2e1f910fa7303b10eecf41:arc-icon-theme/spkgbuild
@@ -1293,8 +1293,8 @@ f:35544c837283b66ab08b6f7173a6c185:atomicparsley/spkgbuild
 f:31f63820e56357cd9fd659e617c04f21:dash/post-install.sh
 f:8ff63801f3418c520b683476512ffb0d:dash/CHANGELOG
 f:e35b0297a1b1884bb706ff890fa12141:dash/spkgbuild
-f:c4dd77d680237a7559c3a674101a6d5e:irssi/CHANGELOG
-f:4959f1b0c57f55eb745f48088666fba2:irssi/spkgbuild
+f:b424867ac5353064127c8b2b5c4ac199:irssi/CHANGELOG
+f:defc179e8c6c20212fdca0f475077421:irssi/spkgbuild
 f:5839075cae19030b5de27c8b23f6249b:reaver/spkgbuild
 f:18368ea5b75160d553ae044c4d8b618e:ghostscript/CHANGELOG
 f:a5d0f6d1e30717cad873ead9031ddfec:ghostscript/spkgbuild
@@ -1332,8 +1332,8 @@ f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
 f:1faa0c30d77048812b9f76b696899eb0:zeromq/CHANGELOG
 f:946d742b6966c9fd833e07769da75516:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
-f:a2e69dd7a51dff4a26e07eccb544e770:man-pages/CHANGELOG
-f:346dcef589cfec25e28069183922d82d:man-pages/spkgbuild
+f:d815d46e3a7137fed95f8f6982874bcc:man-pages/CHANGELOG
+f:433c3fd2a2c42d1645ece945ae691464:man-pages/spkgbuild
 f:4b73aec10634ab1a10fe9dfb00cf8930:dunst/CHANGELOG
 f:768a0872ae64f52fab2e673ea4c0a7e0:dunst/spkgbuild
 f:750ebc91710c4eb2d3ccf1725d5e05bb:lua/CHANGELOG

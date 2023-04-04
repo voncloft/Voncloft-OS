@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-websockets
-version=10.4
+version=11.0
 release=3
 
 source="https://github.com/aaugustin/websockets/archive/refs/tags/$version.tar.gz"

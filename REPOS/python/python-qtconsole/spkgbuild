@@ -2,7 +2,7 @@
 # depends : python-ipykernel python-jupyter_core python-jupyter_client
 
 name=python-qtconsole
-version=5.4.1
+version=5.4.2
 release=2
 
 source="https://github.com/jupyter/qtconsole/archive/refs/tags/$version.tar.gz"

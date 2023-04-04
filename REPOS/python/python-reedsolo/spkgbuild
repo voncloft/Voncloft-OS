@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-reedsolo
-version=1.7.0
+version=2.0.5
 release=1
 
 source="https://github.com/tomerfiliba/reedsolomon/archive/refs/tags/v$version.tar.gz"
