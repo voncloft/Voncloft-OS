@@ -2,7 +2,7 @@
 # depends	: apr-util pcre openssl
 
 name=httpd
-version=2.4.56
+version=2.4.57
 release=1
 
 backup="etc/httpd/httpd.conf"

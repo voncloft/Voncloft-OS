@@ -2,7 +2,7 @@
 # depends : qt5 mariadb
 
 name=qtsql
-version=5.15.8
+version=5.15.9
 release=1
 
 source="https://download.qt.io/archive/qt/${version%.*}/$version/single/qt-everywhere-src-$version.tar.xz"
