@@ -7,7 +7,6 @@ d:polkit-kde-agent-1
 d:ksshaskpass
 d:plasma-sdk
 d:plasma-programs
-d:plasma-tests
 d:kde-gtk-config
 d:plasma-nano
 d:plasma-workspace-wallpapers
@@ -74,9 +73,7 @@ f:ea8da8086d4f04be3a3b671720e0d542:ksshaskpass/spkgbuild
 f:fff4eb4a41363963ebe3938b36588fbd:plasma-sdk/CHANGELOG
 f:365fd99202d12acafc8c69398dc54f8c:plasma-sdk/spkgbuild
 f:9498d277ead49cb39a2cebe35bb88f6b:plasma-programs/CHANGELOG
-f:49dd570437c86dd450330e00da5d3709:plasma-programs/spkgbuild
-f:b222c694ce379d240dac6cda75e1511b:plasma-tests/CHANGELOG
-f:6167af84d0a4e312656345c3ebf63ccf:plasma-tests/spkgbuild
+f:787fdbdbb1fb8b9e9ad9740cdeeaa96a:plasma-programs/spkgbuild
 f:521ce089407e366e6a6bc8d126fbc5c3:kde-gtk-config/CHANGELOG
 f:effaf8309c2fca679dc70665dcaa4973:kde-gtk-config/spkgbuild
 f:4919045bf5ac7bbebe5710d790128c16:plasma-nano/CHANGELOG
