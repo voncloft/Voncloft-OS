@@ -50,3 +50,25 @@ sed -i -e "s/version=5.15.8/version=5.15.9/g" qt/qtsql/spkgbuild
 changelog "qt/qtsql/spkgbuild" "Upgraded from version 5.15.8 to version 5.15.9"
 sed -i -e "s/version=2.4.56/version=2.4.57/g" server/httpd/spkgbuild
 changelog "server/httpd/spkgbuild" "Upgraded from version 2.4.56 to version 2.4.57"
+sed -i -e "s/version=1.10.1/version=1.10.2/g" libs/libgcrypt/spkgbuild
+changelog "libs/libgcrypt/spkgbuild" "Upgraded from version 1.10.1 to version 1.10.2"
+sed -i -e "s/version=3.7.1/version=3.7.2/g" libs/libressl/spkgbuild
+changelog "libs/libressl/spkgbuild" "Upgraded from version 3.7.1 to version 3.7.2"
+sed -i -e "s/version=1.26.107/version=1.26.109/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.26.107 to version 1.26.109"
+sed -i -e "s/version=1.29.107/version=1.29.109/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.29.107 to version 1.29.109"
+sed -i -e "s/version=4.18.1/version=4.19.0/g" python/python-braintree/spkgbuild
+changelog "python/python-braintree/spkgbuild" "Upgraded from version 4.18.1 to version 4.19.0"
+sed -i -e "s/version=6.70.2/version=6.71.0/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.70.2 to version 6.71.0"
+sed -i -e "s/version=6.1.0/version=6.2.0/g" python/python-importlib-metadata/spkgbuild
+changelog "python/python-importlib-metadata/spkgbuild" "Upgraded from version 6.1.0 to version 6.2.0"
+sed -i -e "s/version=0.21.0/version=0.21.1/g" python/python-libtmux/spkgbuild
+changelog "python/python-libtmux/spkgbuild" "Upgraded from version 0.21.0 to version 0.21.1"
+sed -i -e "s/version=0.54.0/version=0.55.0/g" python/python-zeroconf/spkgbuild
+changelog "python/python-zeroconf/spkgbuild" "Upgraded from version 0.54.0 to version 0.55.0"
+sed -i -e "s/version=3.12.17/version=3.12.18/g" server/blacklist-hosts/spkgbuild
+changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.12.17 to version 3.12.18"
+sed -i -e "s/version=2023.4.0/version=2023.4.1/g" server/homeassistant/spkgbuild
+changelog "server/homeassistant/spkgbuild" "Upgraded from version 2023.4.0 to version 2023.4.1"
