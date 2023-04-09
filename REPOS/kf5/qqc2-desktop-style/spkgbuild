@@ -2,7 +2,7 @@
 # depends : kde-deps kiconthemes kirigami2 sonnet
 
 name=qqc2-desktop-style
-version=5.104.0
+version=5.105.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
