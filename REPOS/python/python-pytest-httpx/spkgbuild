@@ -2,7 +2,7 @@
 # depends : python-httpx python-pytest
 
 name=python-pytest-httpx
-version=0.21.3
+version=0.22.0
 release=1
 
 source="https://github.com/Colin-b/pytest_httpx/archive/refs/tags/v$version.tar.gz"

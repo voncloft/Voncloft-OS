@@ -2,7 +2,7 @@
 # depends : python-docopt python-yarg
 
 name=python-pipreqs
-version=0.4.11
+version=0.4.12
 release=3
 
 source="https://github.com/bndr/pipreqs/archive/refs/tags/v$version.tar.gz"
