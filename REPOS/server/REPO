@@ -69,11 +69,11 @@ f:b5486c50dd2dfe4c2ba554d37dcd71fb:minecraft-server/CHANGELOG
 f:cd19656cc7c340287eddf072d0dfd13f:minecraft-server/minecraft.sh
 f:4b16cfca41ddf366d7a1416b704948bb:minecraft-server/spkgbuild
 f:d7ecf376ff1dbee70335d1c57b565e38:postfix/post-install.sh
-f:ab818270ab599437870eb813713b9617:postfix/CHANGELOG
+f:b615fde2a4e7bb313028affba6e9ae2b:postfix/CHANGELOG
 f:fcc3e56a9dd90b4b33ed3adb5b2d4e3c:postfix/post-upgrade.sh
 f:a3ff08bd47351d46202719a46207f6c8:postfix/pre-install.sh
 f:2f10db001686e24dd9ac31f4aa57dc23:postfix/postfix
-f:458ef9a819382b5d76a1d16d28122e02:postfix/spkgbuild
+f:70efc5a3a08f5846679a0c7e9633a8c6:postfix/spkgbuild
 f:7dcc5e2b309c9c085a987d6832601c5b:mariadb/mysql
 f:4453595e194cb89b26d9b66dc9117d71:mariadb/post-install.sh
 f:41363cceaba8869e89e712eba4d426b2:mariadb/my.cnf
@@ -95,10 +95,10 @@ f:2a92ab8d982b315ac14c502a4f561254:nginx/spkgbuild
 f:927fff4faeb88de01b858590e5cfaf7b:homeassistant/CHANGELOG
 f:9dde0ef310d0c67587c287eb6f6be90f:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
-f:7a37aec15fbbe93bc3770df3e5e522b8:blacklist-hosts/CHANGELOG
+f:5f8a1515965d3ab8430f93fb779ea368:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh
 f:3b365d0e52f2510a3e6f60ae04ec45af:blacklist-hosts/test
-f:cd984bcb9da5b4e86d52fd2c44763621:blacklist-hosts/spkgbuild
+f:6bea82b12706cb73c908068c65907118:blacklist-hosts/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
