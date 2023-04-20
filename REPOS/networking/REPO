@@ -52,9 +52,9 @@ f:218369b026ffe13e5152bce3f766228f:openssh/spkgbuild
 f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:2349a85d7ff9ad653f52774205f0ac02:openssh/sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
-f:7db9b4eb45a4c5faaaa4624cd5af008a:networkmanager/CHANGELOG
+f:a8ddc33347c6a2d7d35fb1a6616ab955:networkmanager/CHANGELOG
 f:3d2b081a6829aac4dd33c0cb0761088a:networkmanager/override
-f:c11b92ae50e25b6bd4981f043be75783:networkmanager/spkgbuild
+f:a07ad6ecc634940be6e29e86288c753c:networkmanager/spkgbuild
 f:69c67252e9c194af5c920ff151cdb3a9:whois/CHANGELOG
 f:f301b871e6760c240846a320b1cb7bc7:whois/spkgbuild
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
@@ -86,10 +86,10 @@ f:afee9a7296e03db24b8f26cff0cb3cd8:you-get/CHANGELOG
 f:76f9c11e6e9577cbfb5f4f13914e29c7:you-get/spkgbuild
 f:cd9b62908a6be2bd13619dcda7edcdd4:bind/named.conf
 f:78eda3f14608136647796bfb82dd7402:bind/post-install.sh
-f:10ea14d9b4e55630184e3946d0a91be9:bind/CHANGELOG
+f:7352aa4d7c92eee844ebd32ce182884d:bind/CHANGELOG
 f:e868838f27ab81c82dcb63b06155bbb1:bind/127.0.0
 f:41aaa5553bceb2f69c18afa43d38ed45:bind/override
-f:ad087d7d4a65c4a3c4be77bb49027020:bind/spkgbuild
+f:542018ff339f18ae39c5d6ed91766f43:bind/spkgbuild
 f:3a7bdc9221be6f91b1b96ba0fe382667:bind/root.hints
 f:9da2194edd2f85c0b83b0c3f4427e89b:iptables-client/rc.iptables
 f:e73bda3719b3e01b05b87431b4f1117f:iptables-client/spkgbuild
