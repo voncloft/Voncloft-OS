@@ -2,11 +2,10 @@
 # depends : qt5
 
 name=qt5-declarative
-version=5.15.6
+version=5.15.2
 release=1
-
-source="https://invent.kde.org/qt/qt/qtdeclarative/-/archive/v$version-lts-lgpl/qtdeclarative-v$version-lts-lgpl.tar.gz"
-
+_pkgfqn="${name/5-/}-everywhere-src-${version}"
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/${_pkgfqn}.tar.xz"
 build() {
 	cd *
 	mkdir build
