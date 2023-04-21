@@ -5,7 +5,7 @@ name=qt5-declarative
 version=5.15.2
 release=1
 _pkgfqn="${name/5-/}-everywhere-src-${version}"
-source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/${_pkgfqn}.tar.xz"
+source="https://download.qt.io/official_releases/qt/5.15/$version/submodules/qtdeclarative-everywhere-src-$version.tar.xz"
 build() {
 	cd *
 	mkdir build
