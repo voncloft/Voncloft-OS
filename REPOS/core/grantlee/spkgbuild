@@ -2,9 +2,9 @@
 # depends	: qt5 cmake
 
 name=grantlee
-version=5.2.0
+version=5.3.1
 release=1
-source="http://downloads.grantlee.org/$name-$version.tar.gz"
+source="https://github.com/steveire/grantlee/releases/download/v$version/$name-$version.tar.gz"
 
 build() {
 	cd $name-$version
