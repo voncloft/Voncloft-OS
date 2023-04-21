@@ -138,6 +138,7 @@ d:audiofile
 d:numix-icon-theme-circle
 d:gperf
 d:leafpad
+d:zxing-cpp
 d:bash
 d:xbps
 d:nano
@@ -761,6 +762,8 @@ f:58289e3cb839111f43e9853e219b65dd:numix-icon-theme-circle/spkgbuild
 f:4daf5d27981cd63ad075146c88a39533:gperf/spkgbuild
 f:652191ef522559c1d0f7b2317dd744da:leafpad/CHANGELOG
 f:cd34dec63d0d6ec4f10eb4a682ec1547:leafpad/spkgbuild
+f:53e426d718d2bf0faa5377672dcaca6c:zxing-cpp/CHANGELOG
+f:47b7a912dcd566333e0f16cc971aa2d2:zxing-cpp/spkgbuild
 f:d8d5cc69d4acae5ab824d0e712accac4:bash/CHANGELOG
 f:ddb70cf34a8bf61591120dba80f8fcfb:bash/spkgbuild
 f:40f5213a8d76656844ce0c8028a60629:xbps/spkgbuild
