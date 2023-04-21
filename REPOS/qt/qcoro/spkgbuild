@@ -1,0 +1,17 @@
+# description : c++ coroutines for qt
+# depends : qt5-declarative
+
+name=qcoro
+version=0.8.0
+release=1
+
+source="https://github.com/danvratil/qcoro/archive/v$version/$name-$version.tar.gz"
+
+build() {
+  cmake -B build5 -S $name-$version \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_QT_VERSION=5 \
+    -DBUILD_SHARED_LIBS=ON
+  cmake --build build5
+  DESTDIR="$PKG" cmake --install build5
+}

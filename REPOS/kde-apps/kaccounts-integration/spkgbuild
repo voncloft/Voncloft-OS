@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps libaccounts-qt signonqt5
+# depends : kde-deps libaccounts-qt signonqt5 qcoro
 
 name=kaccounts-integration
 version=23.04.0
