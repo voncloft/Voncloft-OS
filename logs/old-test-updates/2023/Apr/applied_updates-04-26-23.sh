@@ -46,3 +46,23 @@ sed -i -e "s/version=0.57.0/version=0.58.0/g" python/python-zeroconf/spkgbuild
 changelog "python/python-zeroconf/spkgbuild" "Upgraded from version 0.57.0 to version 0.58.0"
 sed -i -e "s/version=3.12.23/version=3.12.24/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.12.23 to version 3.12.24"
+sed -i -e "s/version=113.0b7/version=113.0b8/g" nonfree/firefox/spkgbuild
+changelog "nonfree/firefox/spkgbuild" "Upgraded from version 113.0b7 to version 113.0b8"
+sed -i -e "s/version=1.2.1/version=1.3.0/g" plasma/ktextaddons/spkgbuild
+changelog "plasma/ktextaddons/spkgbuild" "Upgraded from version 1.2.1 to version 1.3.0"
+sed -i -e "s/version=2.3.0/version=2.3.1/g" python/python-flask/spkgbuild
+changelog "python/python-flask/spkgbuild" "Upgraded from version 2.3.0 to version 2.3.1"
+sed -i -e "s/version=3.6.0/version=3.6.1/g" python/python-hunter/spkgbuild
+changelog "python/python-hunter/spkgbuild" "Upgraded from version 3.6.0 to version 3.6.1"
+sed -i -e "s/version=6.72.4/version=6.74.0/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.72.4 to version 6.74.0"
+sed -i -e "s/version=2.5.22/version=2.5.23/g" python/python-identify/spkgbuild
+changelog "python/python-identify/spkgbuild" "Upgraded from version 2.5.22 to version 2.5.23"
+sed -i -e "s/version=23.1.1/version=23.1.2/g" python/python-pip/spkgbuild
+changelog "python/python-pip/spkgbuild" "Upgraded from version 23.1.1 to version 23.1.2"
+sed -i -e "s/version=5.4.1/version=5.5.0/g" python/python-pynamodb/spkgbuild
+changelog "python/python-pynamodb/spkgbuild" "Upgraded from version 5.4.1 to version 5.5.0"
+sed -i -e "s/version=2.28.2/version=2.29.0/g" python/python-requests/spkgbuild
+changelog "python/python-requests/spkgbuild" "Upgraded from version 2.28.2 to version 2.29.0"
+sed -i -e "s/version=0.58.0/version=0.58.2/g" python/python-zeroconf/spkgbuild
+changelog "python/python-zeroconf/spkgbuild" "Upgraded from version 0.58.0 to version 0.58.2"
