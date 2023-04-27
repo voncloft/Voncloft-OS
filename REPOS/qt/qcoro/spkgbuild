@@ -2,7 +2,7 @@
 # depends : qt5-declarative
 
 name=qcoro
-version=0.8.0
+version=0.9.0
 release=1
 
 source="https://github.com/danvratil/qcoro/archive/v$version/$name-$version.tar.gz"

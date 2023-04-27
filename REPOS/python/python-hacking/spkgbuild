@@ -2,7 +2,7 @@
 # depends : python-flake8
 
 name=python-hacking
-version=6.0.0
+version=6.0.1
 release=1
 
 source="https://github.com/openstack/hacking/archive/refs/tags/$version.tar.gz"
