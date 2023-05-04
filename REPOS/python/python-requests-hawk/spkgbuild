@@ -2,7 +2,7 @@
 # depends : python-mohawk python-requests
 
 name=python-requests-hawk
-version=1.1.1
+version=1.2.1
 release=2
 
 source="https://github.com/mozilla-services/requests-hawk/archive/refs/tags/$version.tar.gz"
