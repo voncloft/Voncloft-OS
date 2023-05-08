@@ -1,0 +1,18 @@
+# description : steam controllers
+# depends : 
+
+name=steam-devices
+version=1
+release=1
+
+source="71-logitech-controllers.rules
+	71-sony-controllers.rules"
+
+build() {
+	mkdir -pv $PKG/etc/udev/rules.d
+	install -Dm644 $SRC/71-logitech-controllers.rules $PKG/etc/udev/rules.d/71-logitech-controllers-rules
+	install -Dm644 $SRC/71-sony-controllers.rules $PKG/etc/udev/rules.d/71-sony-controllers.rules
+	mkdir -pv $PKG/lib/udev/rules.d
+	install -Dm644 $SRC/71-sony-controllers.rules $PKG/lib/udev/rules.d/71-sony-controllers.rules
+	install -Dm644 $SRC/71-logitech-controllers.rules $PKG/lib/udev/rules.d/71-logitech-controllers.rules
+}

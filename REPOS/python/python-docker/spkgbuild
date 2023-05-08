@@ -2,7 +2,7 @@
 # depends : python-requests python-six python-websocket-client python-docker-pycreds python-paramiko
 
 name=python-docker
-version=6.1.0
+version=6.1.1
 release=1
 
 source="https://github.com/docker/docker-py/archive/refs/tags/$version.tar.gz"

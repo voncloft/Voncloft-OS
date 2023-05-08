@@ -20,6 +20,7 @@ d:gtkmm2
 d:ncdu
 d:mailcap
 d:iotop
+d:steam-devices
 d:geoip-database
 d:solaar
 d:epson-inkjet-printer-escpr
@@ -74,8 +75,8 @@ f:3046fd641e724726b7ce5b49ecbec66a:scid_vs_pc/spkgbuild
 f:be6f0a27a75911f166aede33d4048e12:wayland-protocols/CHANGELOG
 f:e0188d613cb06ca339f0b0f52a2a7e64:wayland-protocols/override
 f:868b3fdd602dbcc238dc4c52b0478ee8:wayland-protocols/spkgbuild
-f:5ea144700449891e6ba89df09018ae9f:flexget/CHANGELOG
-f:5e587b4c6a2b96dee2524755666c83bb:flexget/spkgbuild
+f:df51b8abcc10128f4a061c8f819c3db6:flexget/CHANGELOG
+f:19de0b6d8b997da16934b0ccccd630b0:flexget/spkgbuild
 f:d8e499cccb1a6fa8b6eb3732477f5eb1:woff2/spkgbuild
 f:c000b5faf4c8278507d27622d1f263d1:flashplugin/CHANGELOG
 f:66c331be421c449c521adcbb688bb862:flashplugin/spkgbuild
@@ -85,8 +86,8 @@ f:ec42fae2cd9c4afedeab617315cd4f55:openjdk/post-install.sh
 f:c0dd249c01ef3729e2317bd5244c2b9b:openjdk/CHANGELOG
 f:43ad58e10cd9197d555ca44341091298:openjdk/override
 f:de32018d272061c22978d2fb388caa3d:openjdk/spkgbuild
-f:44d9dc9443a0bb626824e6b1e05a1e49:protobuf/CHANGELOG
-f:ae45d69ae722729e28b956e027e162da:protobuf/spkgbuild
+f:73af33c070394725fa5a4a4742ae32b6:protobuf/CHANGELOG
+f:9d917df906511a075b6857d39e8419a4:protobuf/spkgbuild
 f:a893e6a506d6cbb2685182b298fe7964:waterfox/mozconfig
 f:ae7a2882092719b68e78ca8a0c4290e5:waterfox/spkgbuild
 f:cd463125b53a1a25c1b559721934aa90:waterfox/waterfox.desktop
@@ -108,6 +109,10 @@ f:0aac25f665686c1bd01882388315c9f3:mailcap/CHANGELOG
 f:f5e28499227c990b66410a2319831ce6:mailcap/spkgbuild
 f:c984e1b4b811f4ab1e49dcd24b1aad3a:iotop/CHANGELOG
 f:d650694be84e7271c275c8cb6a571075:iotop/spkgbuild
+f:049e5b85607b852febd24360d669deae:steam-devices/71-logitech-controllers.rules
+f:97dc1a63020b6a0a6e1272eca2e58443:steam-devices/CHANGELOG
+f:f45afdd44e87a3a1f68ac26c8dfa74ae:steam-devices/71-sony-controllers.rules
+f:c4270356f06a2783e91a75d3ebbf1770:steam-devices/spkgbuild
 f:80a0050adc4e383a71fca11c158c09a8:geoip-database/spkgbuild
 f:f0744a640061bd65c5e921a47b70c756:solaar/CHANGELOG
 f:ed11e8350d03fe315fa742824d6f95aa:solaar/override
