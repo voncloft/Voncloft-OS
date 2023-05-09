@@ -2,7 +2,7 @@
 # depends : libnsl libtirpc libpwquality
 
 name=linux-pam
-version=1.5.2
+version=1.5.3
 release=1
 
 source="https://github.com/linux-pam/linux-pam/releases/download/v$version/Linux-PAM-$version.tar.xz
