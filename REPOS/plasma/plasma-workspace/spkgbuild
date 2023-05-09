@@ -13,7 +13,6 @@ options="!checksum"
 build() {
    cd $name-$version
    patch -p1 < $SRC/event.patch
-   patch -p1 < $SRC/version_patch.patch
    plasma-package-installer
    cd build
    make DESTDIR=$PKG install
