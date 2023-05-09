@@ -1,0 +1,22 @@
+# description : iostat package
+# depends : lm_sensors
+
+name=sysstat
+version=12.7.2
+release=1
+
+source="https://github.com/sysstat/sysstat/archive/refs/tags/v${version}.tar.gz
+	lib64-fix.patch"
+
+build() {
+	cd $name-$version
+	patch -p1 <"$SRC/lib64-fix.patch"
+	autoreconf -ifv
+	conf_dir=/etc/conf.d ./configure --prefix=/usr \
+	--mandir=/usr/share/man \
+	--enable-install-cron \
+	--enable-copy-only \
+	--disable-compress-manpg
+	make
+	make DESTDIR=$PKG install
+}

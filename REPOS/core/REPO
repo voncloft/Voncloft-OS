@@ -390,6 +390,7 @@ d:p11-kit
 d:rfkill
 d:atomicparsley
 d:dash
+d:sysstat
 d:irssi
 d:reaver
 d:ghostscript
@@ -1297,6 +1298,9 @@ f:35544c837283b66ab08b6f7173a6c185:atomicparsley/spkgbuild
 f:31f63820e56357cd9fd659e617c04f21:dash/post-install.sh
 f:8ff63801f3418c520b683476512ffb0d:dash/CHANGELOG
 f:e35b0297a1b1884bb706ff890fa12141:dash/spkgbuild
+f:1c6cd5f0ad19aa21e9328f24d70a6f2f:sysstat/CHANGELOG
+f:f724be045624c778c77b0ced3ad39afc:sysstat/lib64-fix.patch
+f:65ece07935201cc28987a5363ed7eeb1:sysstat/spkgbuild
 f:b424867ac5353064127c8b2b5c4ac199:irssi/CHANGELOG
 f:defc179e8c6c20212fdca0f475077421:irssi/spkgbuild
 f:5839075cae19030b5de27c8b23f6249b:reaver/spkgbuild
