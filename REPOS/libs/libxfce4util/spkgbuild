@@ -2,7 +2,7 @@
 # depends	: glib gobject-introspection intltool
 
 name=libxfce4util
-version=4.19.1
+version=4.19.2
 release=1
 source="http://archive.xfce.org/src/xfce/$name/${version:0:4}/$name-$version.tar.bz2"
 
