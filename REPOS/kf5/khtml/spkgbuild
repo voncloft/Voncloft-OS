@@ -2,7 +2,7 @@
 # depends : kde-deps kjs kparts
 
 name=khtml
-version=5.105.0
+version=5.106.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/portingAids/$name-$version.tar.xz"
