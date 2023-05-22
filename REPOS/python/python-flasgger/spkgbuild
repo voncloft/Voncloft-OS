@@ -2,7 +2,7 @@
 # depends : python-flask python-yaml python-jsonschema python-mistune python-six
 
 name=python-flasgger
-version=0.9.7
+version=0.9.7.1
 release=3
 
 source="https://github.com/flasgger/flasgger/archive/refs/tags/$version.tar.gz"
