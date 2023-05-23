@@ -2,7 +2,7 @@
   # depends : python-urllib3 python-chardet python-idna
 
 name=python-requests
-version=2.30.0
+version=2.31.0
 release=1
 
 source="https://github.com/psf/requests/archive/refs/tags/v$version.tar.gz"

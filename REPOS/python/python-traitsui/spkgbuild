@@ -2,7 +2,7 @@
 # depends : python-pyface
 
 name=python-traitsui
-version=7.4.3
+version=8.0.0
 release=3
 
 source="https://github.com/enthought/traitsui/archive/refs/tags/r$version.tar.gz"
