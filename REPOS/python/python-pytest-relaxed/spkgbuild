@@ -2,7 +2,7 @@
 # depends : python-pytest python-decorator python-six
 
 name=python-pytest-relaxed
-version=2.0.0
+version=2.0.1
 release=5
 
 source="https://github.com/bitprophet/pytest-relaxed/archive/refs/tags/$version.tar.gz"
