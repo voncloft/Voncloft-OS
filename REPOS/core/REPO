@@ -329,6 +329,7 @@ d:cmus
 d:mtdev
 d:pavucontrol
 d:hyphen
+d:cifs-utils
 d:pypanel
 d:iproute2
 d:psmisc
@@ -1172,6 +1173,8 @@ f:4e99f89d1133ead42b256976cc4668c0:mtdev/spkgbuild
 f:91fcf57823cf5dd1b626efbe3aab4a0b:pavucontrol/CHANGELOG
 f:de7f10bd580af1c176732b2048c1577c:pavucontrol/spkgbuild
 f:63156f47268cf2ea1bd7b2ba3ab9d38f:hyphen/spkgbuild
+f:570f4a8e0fb448df3c360aaad60319cd:cifs-utils/CHANGELOG
+f:1f324fdbb21e9d389f2161b70b21c508:cifs-utils/spkgbuild
 f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
 f:3e3391b47820283c9490cfab34f6f233:iproute2/CHANGELOG
 f:b76fc11649fe277a981a8fa030f75ef3:iproute2/spkgbuild
