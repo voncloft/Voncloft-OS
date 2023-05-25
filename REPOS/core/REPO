@@ -618,9 +618,9 @@ f:9152af24dad0cfee15da3094da963614:cowsay/CHANGELOG
 f:7091f9a6d97006299a1f27a665b638b6:cowsay/cowsay.patch
 f:2754d951cff391b6efb8f02374c5f4f1:cowsay/spkgbuild
 f:47c2d99b1e13cd5f97e53c8b8773e92f:go/spkgbuild
-f:89b145047017cd579ec97ba20d520d91:linux-api-headers/CHANGELOG
+f:d9fc53ac1f4664d8663134ed06e385fa:linux-api-headers/CHANGELOG
 f:262eda046c808cedb749b7f139f4233e:linux-api-headers/override
-f:32efef294009ad8c0f1b282e6dca88cc:linux-api-headers/spkgbuild
+f:5399e0c087bcb8949d464b327b5b10fd:linux-api-headers/spkgbuild
 f:181974f7a7196a64f7e502ddb3dc17f5:ncmpcpp/CHANGELOG
 f:0c90e058908c64ab5672fcfd86bbe113:ncmpcpp/spkgbuild
 f:4518fb25b99ed8c1af5f6277f9ac1adb:pacmixer/CHANGELOG
@@ -662,11 +662,11 @@ f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:d9bfc56da4159aacca3cf2894702e25c:nss/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:linux-desktop/extract.sh
 f:6f0f530adbe1f4d982c017270087eaf2:linux-desktop/post-install.sh
-f:12d65648cebfb7f6b96277622a9746c7:linux-desktop/CHANGELOG
+f:c76a24c70081d2ffa3b38b9205d572e8:linux-desktop/CHANGELOG
 f:ad48edb5e6a47c82f5f84256c73a631a:linux-desktop/post-upgrade.sh
 f:511d2d2f2ca57c4a5938f0bedb1ff0de:linux-desktop/.old-config
 f:262eda046c808cedb749b7f139f4233e:linux-desktop/override
-f:1b6ed9ed58ee4b46f2648dadc03e43d0:linux-desktop/spkgbuild
+f:9a7c36f5f40c9aafe9b9af5266908709:linux-desktop/spkgbuild
 f:d536957a77dc208ece67a289ca972c85:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -844,8 +844,8 @@ f:4a756bf3bce5beac9af146d6fe324953:utilities/upgrade-python-packages
 f:ea5b4a275145bc05db4a2f18fb1cf468:utilities/upgrade-perl-packages
 f:33f0fd6d8e33753d2e744a8bffe37ddb:utilities/spkgbuild
 f:0d29f39429ce00a91dda37e4fa3a00c8:utilities/update-kde
-f:25671c0a7fbc84a464b5b83028f1e91d:enchant/CHANGELOG
-f:367c5391a23243d8a97da1d0c6cedb72:enchant/spkgbuild
+f:8f9524a36616bc49bcb47a6d9e76675f:enchant/CHANGELOG
+f:d3b20c3747601d2968486049d8bf28bd:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:eda0545af6a628507e33990495ec6e60:aspell/spkgbuild
@@ -1014,10 +1014,10 @@ f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:dde2b1dcd664417006b5c48e006f4d20:iw/CHANGELOG
 f:0c2c826b9063fc3a7799afa8b4c6002a:iw/spkgbuild
 f:e762fccfee971f972096f130162c2edb:linux-router/post-install.sh
-f:7d9275da8bea2897870a2bdd485d76df:linux-router/CHANGELOG
+f:189fc58b6a7f16d0b42536c3f6cf1352:linux-router/CHANGELOG
 f:793969456faf973b96e1aba7f8a4651e:linux-router/post-upgrade.sh
 f:262eda046c808cedb749b7f139f4233e:linux-router/override
-f:cf308d86aabb21e48442bdd3287bb0ce:linux-router/spkgbuild
+f:4202af0eed4f760e5a55949c2affd7cf:linux-router/spkgbuild
 f:9a66451909861d207ef7b152e0bff6b0:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
@@ -1410,5 +1410,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:67e61654772503b992910aaa5521e624:hugo/CHANGELOG
-f:ab0b44e414e4b6facab0531bff3ff2ab:hugo/spkgbuild
+f:002597fa891bb409c27c24d2c0b36454:hugo/CHANGELOG
+f:fcc6cc432341c31352c5b8b3542c55c9:hugo/spkgbuild
