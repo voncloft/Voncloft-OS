@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-interface python-zope-schema python-zope-proxy
 
 name=python-zope-location
-version=4.3
+version=5.0
 release=6
 
 source="https://github.com/zopefoundation/zope.location/archive/refs/tags/$version.tar.gz"
