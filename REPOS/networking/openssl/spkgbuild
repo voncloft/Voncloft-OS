@@ -1,7 +1,7 @@
 # description	: Management tools and libraries relating to cryptography
 
 name=openssl
-version=3.1.0
+version=3.1.1
 release=1
 source="https://openssl.org/source/$name-$version.tar.gz"
 options="!checksum"
