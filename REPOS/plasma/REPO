@@ -1,6 +1,7 @@
 d:plasma-depends
 d:breeze-plymouth
 d:plasma-nm
+d:aura-browser
 d:plasma-workspace
 d:breeze-grub
 d:polkit-kde-agent-1
@@ -13,6 +14,7 @@ d:plasma-workspace-wallpapers
 d:plasma-pa
 d:plymouth-kcm
 d:kpipewire
+d:plasma-remotecontrollers
 d:plasma-phone-components
 d:kmenuedit
 d:drkonqi
@@ -23,6 +25,7 @@ d:kde-cli-tools
 d:breeze
 d:discover
 d:xdg-desktop-portal-kde
+d:plasma-welcome
 d:kwin
 d:kactivitymanagerd
 d:qqc2-breeze-style
@@ -30,8 +33,10 @@ d:ksystemstats
 d:systemsettings
 d:plasma-systemmonitor
 d:plasma-desktop
+d:plasma-bigscreen
 d:kscreenlocker
 d:plasma-disks
+d:plank-player
 d:libksysguard
 d:breeze-gtk
 d:oxygen
@@ -62,6 +67,8 @@ f:d4a22e79248281c5ac1741e98777d7d8:breeze-plymouth/CHANGELOG
 f:b701557e03019e17f3f3aacd7f897a3d:breeze-plymouth/spkgbuild
 f:b06f090c8865137ca1b780988b92f66c:plasma-nm/CHANGELOG
 f:be8ae1af7d4cec1d49ae9e3c81495a15:plasma-nm/spkgbuild
+f:a13422d762068d41544ac9cb00c2b13a:aura-browser/CHANGELOG
+f:df099e6f03f44bac6e090cd2c3d553eb:aura-browser/spkgbuild
 f:b278114f0c9e44d861e01d5612f9cc6a:plasma-workspace/event.patch
 f:e2c82617a8ea487fa788db4bbdeb42cf:plasma-workspace/CHANGELOG
 f:e57c6968d657e5c66179ef055b51ae0c:plasma-workspace/version_patch.patch
@@ -88,6 +95,8 @@ f:bbe1b364c2e0f2e6f7d49effb1b31ee5:plymouth-kcm/CHANGELOG
 f:6dbe795f791b3c4e8a9388fd434b793b:plymouth-kcm/spkgbuild
 f:c390f27576526411e85b684258a84690:kpipewire/CHANGELOG
 f:8663537b9dd03b6fea83e3d6de8963df:kpipewire/spkgbuild
+f:a13422d762068d41544ac9cb00c2b13a:plasma-remotecontrollers/CHANGELOG
+f:712fc3acb6ef98942cd15205f93085be:plasma-remotecontrollers/spkgbuild
 f:1074d347f82611f3f7afaf3ee21227a5:plasma-phone-components/CHANGELOG
 f:55a737f2f9ca5d46f151f20a04ad363f:plasma-phone-components/spkgbuild
 f:53bb4877e11ded1ddb83c4a2b4ded741:kmenuedit/CHANGELOG
@@ -108,6 +117,8 @@ f:84436efba333b446d4f2b23eecd6991a:discover/CHANGELOG
 f:68ba854de59f837c831dcbca0d867b7a:discover/spkgbuild
 f:65ceb03d576c49334c93c39bc936dff7:xdg-desktop-portal-kde/CHANGELOG
 f:ceb0b0cbf4c2276d9fd203b8f44b6c13:xdg-desktop-portal-kde/spkgbuild
+f:a13422d762068d41544ac9cb00c2b13a:plasma-welcome/CHANGELOG
+f:db5d4d41847a234881700cab55aa506c:plasma-welcome/spkgbuild
 f:1af30b3dbbf9401412586c2635ee106f:kwin/CHANGELOG
 f:9112a8db904380612da59688f51f6504:kwin/spkgbuild
 f:2f6d5ea7a4b064a4cca9848e71c30fea:kactivitymanagerd/CHANGELOG
@@ -122,10 +133,14 @@ f:698d5ab7f0bfd2979650b4ae0cf5a8b9:plasma-systemmonitor/CHANGELOG
 f:51204bcee2ff5ddc81490693cba6ba6e:plasma-systemmonitor/spkgbuild
 f:5cd26bc665459d60fa66055356a0acc8:plasma-desktop/CHANGELOG
 f:0e1c891eb77884aefb42ad916a3e41c1:plasma-desktop/spkgbuild
+f:a13422d762068d41544ac9cb00c2b13a:plasma-bigscreen/CHANGELOG
+f:d0694bb941a7250ce85b55e7f262c532:plasma-bigscreen/spkgbuild
 f:f00ed12eb8e526e491f7d22e5b09b357:kscreenlocker/CHANGELOG
 f:411928b952151f26425c68878f11d841:kscreenlocker/spkgbuild
 f:a10a16063e58610c146deddc4aa7b0fd:plasma-disks/CHANGELOG
 f:16f61a76dadbceb77e2eaa2927a726dd:plasma-disks/spkgbuild
+f:a13422d762068d41544ac9cb00c2b13a:plank-player/CHANGELOG
+f:07cd363f98b3a76faa1635b51323e938:plank-player/spkgbuild
 f:5074389eed4852fcb2cf2582de2b5548:libksysguard/CHANGELOG
 f:3c0e3d9bbf6ad5f1828922dbed02b64b:libksysguard/spkgbuild
 f:6359ecdb4cc4414891820ff8fad0c62a:breeze-gtk/CHANGELOG

@@ -1,0 +1,16 @@
+# description : Core components for the kde desktop
+# depends : kde-deps kconfig kcoreaddons ki18n kirigami-addons networkmanager-qt qt5-multimedia qt5-svg qtkeychain-qt5 syndication taglib threadweaver vlc
+
+name=kate
+version=23.04.1
+release=1
+
+source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   plasma-package-installer
+  cd build
+  make DESTDIR=$PKG install
+}

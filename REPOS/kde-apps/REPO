@@ -2,16 +2,19 @@ d:kalarmcal
 d:picmi
 d:khelpcenter
 d:kpublictransport
+d:ghostwriter
 d:akonadi-calendar
 d:kopete
 d:khtml
 d:kcalutils
 d:kolf
 d:kgoldrunner
+d:keysmith
 d:kcron
 d:kbackup
 d:ktuberling
 d:kldap
+d:colord-kde
 d:audiocd-kio
 d:khangman
 d:kapptemplate
@@ -51,6 +54,7 @@ d:kompare
 d:ksystemlog
 d:kross-interpreters
 d:incidenceeditor
+d:kio-admin
 d:kcalc
 d:eventviews
 d:kbounce
@@ -84,6 +88,7 @@ d:kfind
 d:kdegraphics-thumbnailers
 d:kalzium
 d:ark
+d:kde-inotify-survey
 d:kturtle
 d:katomic
 d:korganizer
@@ -123,6 +128,7 @@ d:knights
 d:step
 d:ktimer
 d:kmag
+d:audiotube
 d:kde-dev-scripts
 d:kdenetwork-filesharing
 d:kmime
@@ -165,7 +171,9 @@ d:kollision
 d:filelight
 d:kimap
 d:akonadi-contacts
+d:kalk
 d:krdc
+d:kio-zeroconf
 d:kmouth
 d:kmines
 d:ksnakeduel
@@ -212,6 +220,7 @@ d:akonadi-search
 d:signon-kwallet-extension
 d:kontactinterface
 d:konversation
+d:kasts
 d:pim-data-exporter
 d:kontact
 d:ktp-approver
@@ -234,6 +243,8 @@ f:2a4cbca8a864228b7d5e64b8c8edfb1c:khelpcenter/CHANGELOG
 f:8cbca1528c9a036e831fac0ea62fddfa:khelpcenter/spkgbuild
 f:b472de31cd4aadae27e4fe10eba590cf:kpublictransport/CHANGELOG
 f:05466690f3165cdc4a2be5d625e41ecd:kpublictransport/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:ghostwriter/CHANGELOG
+f:af13aeba84a1a9af24839c4e5a474246:ghostwriter/spkgbuild
 f:9101b864db41fbda78d5e743d03dc809:akonadi-calendar/CHANGELOG
 f:d8db7864be5d29c6b448260762fac6f0:akonadi-calendar/spkgbuild
 f:3950abe02918264e3389b9cd9c2532de:kopete/CHANGELOG
@@ -246,6 +257,8 @@ f:baace9441ab767c27880213133a68ed9:kolf/CHANGELOG
 f:6c6392dee0931117dea0d6cc7dcefca2:kolf/spkgbuild
 f:f097b3709adad80c4797e5eeeba30c42:kgoldrunner/CHANGELOG
 f:532044c73b3a4d425a9fc81d6546a8c6:kgoldrunner/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:keysmith/CHANGELOG
+f:96a6d917f7da55815f3299c5c6798a59:keysmith/spkgbuild
 f:d074f03c195f18dc307cf1480710df3b:kcron/CHANGELOG
 f:83d462cdaf0c6a4b1471fd64ee642d3a:kcron/spkgbuild
 f:ccbb7ee41c8620c9f3dd8fc6b72b419d:kbackup/CHANGELOG
@@ -254,6 +267,8 @@ f:66c58d2765cb38d9a01a8fceeffec6b1:ktuberling/CHANGELOG
 f:f07a82477a545ce3b394292426d3b3d8:ktuberling/spkgbuild
 f:8221c88dedb88ed70178fc222d6cc75e:kldap/CHANGELOG
 f:1cf440fffcb030d9a77fff566a18faac:kldap/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:colord-kde/CHANGELOG
+f:bd41667bdb98b69aca2e14d7a80a1667:colord-kde/spkgbuild
 f:ac9caf804477980cf3dc6a3653895c2b:audiocd-kio/CHANGELOG
 f:a6f2037b31429e7c4a6e35cba10b6f2a:audiocd-kio/spkgbuild
 f:09404cea39a50ed17248f47b30fd85a0:khangman/CHANGELOG
@@ -332,6 +347,8 @@ f:a8e7fd344a17229343e90f084c5dc983:kross-interpreters/CHANGELOG
 f:b884ab43634e085c990b03a1585e80f4:kross-interpreters/spkgbuild
 f:2532ff8e1be27f9e659c01420b38f375:incidenceeditor/CHANGELOG
 f:6a64c29b3ee8dbf015bcdc76eabded85:incidenceeditor/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:kio-admin/CHANGELOG
+f:de1987fd4ea5976bad061111e0e92d1e:kio-admin/spkgbuild
 f:f36071feaccac295300764ad18d2356e:kcalc/CHANGELOG
 f:18ee9a0843ddb0c52be85d57c49580fb:kcalc/spkgbuild
 f:c2b31e19961043bb64302a591b16d758:eventviews/CHANGELOG
@@ -398,6 +415,8 @@ f:45c2d84357a4c7afc55127f7c51431e0:kalzium/CHANGELOG
 f:ac16d6c5c0adb589d158ad66e24627e1:kalzium/spkgbuild
 f:c478b41a30e0876529ba3581ebc09782:ark/CHANGELOG
 f:159b4deb1fb27fa6369f59cbc906b426:ark/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:kde-inotify-survey/CHANGELOG
+f:c995fd95ca75cc89e1b50de9532a05a2:kde-inotify-survey/spkgbuild
 f:6d9e1e4f7e7eb2bf5c587245c35e5743:kturtle/CHANGELOG
 f:2ee817d42a7d189b9a3868e7bc80ad5f:kturtle/spkgbuild
 f:9ec36332659f0dd0823735690ceb3799:katomic/CHANGELOG
@@ -476,6 +495,8 @@ f:35b26fd71917de4479df30186d542538:ktimer/CHANGELOG
 f:44418c932c1d9b00f38a7823b262ad86:ktimer/spkgbuild
 f:b0f0a675a4ac8d2e11899abefca93b9d:kmag/CHANGELOG
 f:921d3698f7046f5c27b36725861bbe0e:kmag/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:audiotube/CHANGELOG
+f:91a8515f9bf33a5a9b120cb17b839c55:audiotube/spkgbuild
 f:9b4ea638209ab5c569809e14396506c2:kde-dev-scripts/CHANGELOG
 f:bc8229a7b7124cdf70cb4d5236552ee4:kde-dev-scripts/spkgbuild
 f:96a9c3c68cd4031da01119097ea276ba:kdenetwork-filesharing/CHANGELOG
@@ -560,8 +581,12 @@ f:04ada67dec84f4642f3af2c2f170bd94:kimap/CHANGELOG
 f:67c89917664561b55b4e9bdd8236dea5:kimap/spkgbuild
 f:116b5058d32d62491d550be54c5c6b5b:akonadi-contacts/CHANGELOG
 f:8b08eae2e00b0d8020824f7f602089ec:akonadi-contacts/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:kalk/CHANGELOG
+f:8c252582fca4d39bb8e86cca2d35dd80:kalk/spkgbuild
 f:8b074a9d8f2fea1a48e330cadcf3086f:krdc/CHANGELOG
 f:85d01dc291ee5e7fe665501371ca863b:krdc/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:kio-zeroconf/CHANGELOG
+f:fe88acaab95eb5b64fd9405dc7ddc70b:kio-zeroconf/spkgbuild
 f:bbb4e2bae76bdba8d6371bd7154021c4:kmouth/CHANGELOG
 f:6647ba8b7dc1b8fe7064aadc75596353:kmouth/spkgbuild
 f:0ac400cdcfeaf36f311b62773296b280:kmines/CHANGELOG
@@ -654,6 +679,8 @@ f:6d577c78b2bafce08003a7dfa1385736:kontactinterface/CHANGELOG
 f:2b41d1ef0e3c39dbda816105fb414c51:kontactinterface/spkgbuild
 f:22268329aa987f6e32aae14cdaa47beb:konversation/CHANGELOG
 f:64ad5a45c3033007478d914d9628c932:konversation/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:kasts/CHANGELOG
+f:d39d00f51b65fac284ea80e5bf66679a:kasts/spkgbuild
 f:6f875be3af302456efadf8203e4fa3e0:pim-data-exporter/CHANGELOG
 f:35cd222f27b2513567d787cec899eac6:pim-data-exporter/spkgbuild
 f:79abb24151b8f9ac07850f40dfd6c0ca:kontact/CHANGELOG
