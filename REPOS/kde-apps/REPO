@@ -15,6 +15,7 @@ d:kbackup
 d:ktuberling
 d:kldap
 d:colord-kde
+d:zanshin
 d:audiocd-kio
 d:khangman
 d:kapptemplate
@@ -104,6 +105,7 @@ d:kdeedu-data
 d:kblackbox
 d:partitionmanager
 d:kiten
+d:telly-skout
 d:libgravatar
 d:kdepim-runtime
 d:pim-sieve-editor
@@ -269,6 +271,8 @@ f:8221c88dedb88ed70178fc222d6cc75e:kldap/CHANGELOG
 f:1cf440fffcb030d9a77fff566a18faac:kldap/spkgbuild
 f:28a626d3518be45f3ec1f05e0498dc61:colord-kde/CHANGELOG
 f:bd41667bdb98b69aca2e14d7a80a1667:colord-kde/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:zanshin/CHANGELOG
+f:ccc335d46f269ffefebcaa8c55fed603:zanshin/spkgbuild
 f:ac9caf804477980cf3dc6a3653895c2b:audiocd-kio/CHANGELOG
 f:a6f2037b31429e7c4a6e35cba10b6f2a:audiocd-kio/spkgbuild
 f:09404cea39a50ed17248f47b30fd85a0:khangman/CHANGELOG
@@ -447,6 +451,8 @@ f:2a24ae59e2be216332f4406da2726888:partitionmanager/CHANGELOG
 f:f059e3ec828b3284d063bf504938679b:partitionmanager/spkgbuild
 f:c5fc489b44fdb4dda9af59c0385f50dc:kiten/CHANGELOG
 f:c51219bf5e354c8347d920d89cd41d55:kiten/spkgbuild
+f:28a626d3518be45f3ec1f05e0498dc61:telly-skout/CHANGELOG
+f:340ca5e54fefd086477df9ae56eec28d:telly-skout/spkgbuild
 f:373f81db365c539368aa6c6f871bebf7:libgravatar/CHANGELOG
 f:ff6b123fb7dbd7c7b45da337a97d6b65:libgravatar/spkgbuild
 f:98902ed5e1d326d64db23427fcc1df59:kdepim-runtime/CHANGELOG
