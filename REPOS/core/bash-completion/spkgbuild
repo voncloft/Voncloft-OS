@@ -1,5 +1,5 @@
 # description   : Programmable completion for the bash shell
-# depends       : bash nano screenfetch cowsay lolcat fortune-mod monitor_process
+# depends       : bash nano screenfetch cowsay ruby-lolcat fortune-mod monitor_process
 
 name=bash-completion
 version=2.11.0

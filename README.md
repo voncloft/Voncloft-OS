@@ -5,6 +5,9 @@ A Linux From Scratch Repository that I self maintain.
 ## (You are on your own if you choose to use my repository)
 
 _As of 12-18-2022_
+**TODO**
+- fix qt5 sub single projects (multimedia, speech, etc) to use: https://download.qt.io/official_releases/qt
+- add new qt5s compare with updates for today in commit
 
 **Update:**
 - fixed update utility

@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps baloo kmenuedit polkit-kde-agent systemsettings kaccounts-integration kscreen plasma-nm powerdevil kdesignerplugin kdoctools kinit
+# depends : kde-deps baloo kmenuedit polkit-kde-agent-1 systemsettings kaccounts-integration kscreen plasma-nm powerdevil kdesignerplugin kdoctools kinit
 
 name=plasma-desktop
 version=5.27.5
