@@ -4,7 +4,7 @@
 name=qt5-lottie
 version=5.15.2
 release=1
-pg_name=qtlottie
+pkg_name=qtlottie
 
 source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/$pkg_name-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"

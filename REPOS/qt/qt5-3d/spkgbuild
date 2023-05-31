@@ -4,7 +4,7 @@
 name=qt5-3d
 version=5.15.2
 release=1
-pg_name=qt3d
+pkg_name=qt3d
 
 source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/$pkg_name-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"
