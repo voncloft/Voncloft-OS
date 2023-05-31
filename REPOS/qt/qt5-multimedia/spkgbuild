@@ -1,20 +1,22 @@
-# description : qt media
-# depends : gst-plugins-base pulseaudio openal qt5
+# description : Qt5 sub module
+# depends : qt5
 
 name=qt5-multimedia
-version=5.15.9
+version=5.15.2
 release=1
-source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/qtmultimedia-everywhere-opensource-src-$version.tar.xz"
+pg_name=qtmultimedia
+
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/$pkg_name-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"
 
 build() {
 	cd *
-	mkdir -pv build
+	mkdir build
 	cd build
-	qmake ../${_pkgfqn}
+	qmake ..
 	make
-	make INSTALL_ROOT="$PKG" install
-
- find "$PKG/usr/lib" -type f -name '*.prl' \
-    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+	make INSTALL_ROOT=$PKG install
+	
+ 	find "$PKG/usr/lib" -type f -name '*.prl' \
+    		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 }

@@ -1,24 +1,22 @@
-# description : classes for qml
+# description : Qt5 sub module
 # depends : qt5
 
 name=qt5-declarative
-version=5.15.9
+version=5.15.2
 release=1
-_pkgfqn="${name/5-/}-everywhere-src-${version}"
-source="https://download.qt.io/official_releases/qt/5.15/$version/submodules/qtdeclarative-everywhere-src-$version.tar.xz"
+pg_name=qtdeclarative
+
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/$pkg_name-everywhere-opensource-src-$version.tar.xz"
+options="!checksum"
+
 build() {
 	cd *
 	mkdir build
 	cd build
-	qmake ../
+	qmake ..
 	make
 	make INSTALL_ROOT=$PKG install
-
-  for b in "$PKG"/usr/bin/*; do
-    ln -s $(basename $b) "$PKG"/usr/bin/$(basename $b)-qt5
-  done
-
-  # Drop QMAKE_PRL_BUILD_DIR because reference the build dir
-  find "$PKG/usr/lib" -type f -name '*.prl' \
-    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+	
+ 	find "$PKG/usr/lib" -type f -name '*.prl' \
+    		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 }

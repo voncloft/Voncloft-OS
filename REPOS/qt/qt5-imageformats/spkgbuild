@@ -1,20 +1,22 @@
-# description : classes for displaying svg files
+# description : Qt5 sub module
 # depends : qt5
 
-name=qt5-svg
-version=5.15.2+kde+r13
+name=qt5-imageformats
+version=5.15.2
 release=1
+pg_name=qtimageformats
 
-source="https://invent.kde.org/qt/qt/qtsvg/-/archive/v$version/qtsvg-v$version.tar.gz"
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/$pkg_name-everywhere-opensource-src-$version.tar.xz"
 options="!checksum"
 
 build() {
-cd qtsvg
-mkdir -p build
-cd build
-qmake ..
-make
-make INSTALL_ROOT=$PKG install
- find "$PKG/usr/lib" -type f -name '*.prl' \
-    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+	cd *
+	mkdir build
+	cd build
+	qmake ..
+	make
+	make INSTALL_ROOT=$PKG install
+	
+ 	find "$PKG/usr/lib" -type f -name '*.prl' \
+    		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 }

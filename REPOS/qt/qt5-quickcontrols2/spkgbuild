@@ -1,19 +1,22 @@
-# description : interface controls for qt
-# depends : qt5 qt5-declarative
+# description : Qt5 sub module
+# depends : qt5
 
 name=qt5-quickcontrols2
-version=5.15.6
+version=5.15.2
 release=1
+pg_name=qtquickcontrols2
 
-source="https://invent.kde.org/qt/qt/qtquickcontrols2/-/archive/v$version-lts-lgpl/qtquickcontrols2-v$version-lts-lgpl.tar.gz"
+source="https://download.qt.io/official_releases/qt/${version%.*}/${version}/submodules/$pkg_name-everywhere-opensource-src-$version.tar.xz"
+options="!checksum"
 
 build() {
 	cd *
-	mkdir -p build
+	mkdir build
 	cd build
-	qmake ../
+	qmake ..
 	make
 	make INSTALL_ROOT=$PKG install
-	  find "$PKG/usr/lib" -type f -name '*.prl' \
-    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+	
+ 	find "$PKG/usr/lib" -type f -name '*.prl' \
+    		-exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 }
