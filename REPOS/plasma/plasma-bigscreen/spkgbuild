@@ -1,5 +1,6 @@
 # description : Core components for the kde desktop
-# depends : kde-deps kdeconnect-kde plasma-nano plasma-nm plasma-pa plasma-remotecontrollers plasma-settings qt5-virtualkeyboard aura-browser plank-player
+# depends : kde-deps kdeconnect-kde plasma-nano plasma-nm plasma-pa plasma-remotecontrollers qt5-virtualkeyboard aura-browser plank-player
+
 name=plasma-bigscreen
 version=5.27.5
 release=1

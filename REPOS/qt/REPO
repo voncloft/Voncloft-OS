@@ -21,7 +21,6 @@ d:qt5-script
 d:qt5-purchasing
 d:transmission-qt
 d:qt5-doc
-d:qt5-quickcontrols
 d:qt5-3d
 d:libdbusmenu-qt
 d:poppler-qt5
@@ -54,6 +53,7 @@ d:qt5-declarative
 d:lazy-setup
 d:qt5-lottie
 d:qt5-quickcontrols2
+d:qt5-quickcontrols2/qt5-quickcontrols
 d:qt5-scxml
 d:qt5-virtualkeyboard
 d:qt5-webglplugin
@@ -90,7 +90,6 @@ f:1a642a860ce7756c08d04baa5c4d6518:qt5-script/spkgbuild
 f:ca5030637ba1df8ea1b34bb89b604a6b:qt5-purchasing/spkgbuild
 f:619ad204181379af2bbd45372778c92a:transmission-qt/spkgbuild
 f:e84173cc601bcb85fe906ef3ea19ccba:qt5-doc/spkgbuild
-f:ee17897cdf4b6eae11a52f3e74d74109:qt5-quickcontrols/spkgbuild
 f:410ea9a77635ce3f77bb74f7871ca99d:qt5-3d/spkgbuild
 f:a08008fecdeb820bd957abf154595701:libdbusmenu-qt/spkgbuild
 f:5953c3fc61ba095fab77eca248fb4fd0:poppler-qt5/spkgbuild
@@ -140,6 +139,7 @@ f:0b010b3da695b868100a11a46d4c8397:qt5-declarative/spkgbuild
 f:8b847a7fd41ee640895470ab4e583a00:lazy-setup/CHANGELOG
 f:9395c1fef90adf942ba353f3b519f0d8:lazy-setup/spkgbuild
 f:54d62731057d26d76f3b5e1a16f164c0:qt5-lottie/spkgbuild
+f:ee17897cdf4b6eae11a52f3e74d74109:qt5-quickcontrols2/qt5-quickcontrols/spkgbuild
 f:bfa92a7b0cda3e7580d3fbfa785f4678:qt5-quickcontrols2/spkgbuild
 f:8aa71e64c8d2362b7ab33730e88dee4b:qt5-scxml/spkgbuild
 f:4457c25b373bdaac877f1afada567931:qt5-virtualkeyboard/spkgbuild
