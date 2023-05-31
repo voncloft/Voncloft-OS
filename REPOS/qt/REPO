@@ -50,7 +50,6 @@ d:bluez-qt
 d:pcmanfm-qt
 d:qca
 d:qt5-declarative
-d:lazy-setup
 d:qt5-lottie
 d:qt5-quickcontrols2
 d:qt5-quickcontrols2/qt5-quickcontrols
@@ -136,8 +135,6 @@ f:bc38d0d890e65a5d750ffbeb373b55fa:pcmanfm-qt/spkgbuild
 f:59bf65f2b85f9ace7766c095a1bb653b:qca/qca-2.1.3-openssl-1.patch
 f:2ade06ac0f38a3ff50aac0744a6daa15:qca/spkgbuild
 f:0b010b3da695b868100a11a46d4c8397:qt5-declarative/spkgbuild
-f:8b847a7fd41ee640895470ab4e583a00:lazy-setup/CHANGELOG
-f:9395c1fef90adf942ba353f3b519f0d8:lazy-setup/spkgbuild
 f:54d62731057d26d76f3b5e1a16f164c0:qt5-lottie/spkgbuild
 f:ee17897cdf4b6eae11a52f3e74d74109:qt5-quickcontrols2/qt5-quickcontrols/spkgbuild
 f:bfa92a7b0cda3e7580d3fbfa785f4678:qt5-quickcontrols2/spkgbuild
