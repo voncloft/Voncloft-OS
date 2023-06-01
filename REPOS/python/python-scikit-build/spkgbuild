@@ -2,7 +2,7 @@
 # depends : cmake python-distro python-wheel
 
 name=python-scikit-build
-version=0.17.5
+version=0.17.6
 release=3
 
 source="https://github.com/scikit-build/scikit-build/archive/refs/tags/$version.tar.gz"
