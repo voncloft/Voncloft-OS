@@ -2,7 +2,7 @@
 # depends : libdbusmenu-glib libgnomekbd python gobject-introspection meson python-gobject3 vala
 
 name=xapp
-version=2.4.3
+version=2.6.0
 release=1
 
 source="https://github.com/linuxmint/$name/archive/refs/tags/$version.tar.gz"

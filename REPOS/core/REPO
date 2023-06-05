@@ -601,10 +601,10 @@ f:b2ad46d9f0a6592924fa075b21cd958f:gptfdisk/CHANGELOG
 f:f35ffa11a0417d2a5b0fa7f4c148c00b:gptfdisk/spkgbuild
 f:18d7ddd71d3e0c3ddb5c50668f6466f1:runit/spkgbuild
 f:324848d098be356a18083b0a02c3c842:cups/rc.cupsd
-f:cca78009a14af6a4bd9e834095169d90:cups/CHANGELOG
+f:3c1d73d98b943419ee09585a9a33f0c2:cups/CHANGELOG
 f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
 f:20dd912fbad050c8908f296e525f9ac6:cups/cupsd.conf
-f:5fb2e11611bd00a2d8344bf7c669ab69:cups/spkgbuild
+f:80d3131a284a0efcaa7e83633c960d35:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
 f:2d1ade8ab8e53dea6788d912ee4178d9:dbus/CHANGELOG
@@ -657,10 +657,10 @@ f:37ed666b243f05311f800a6639649a8d:lz4/CHANGELOG
 f:db13b1ad2b0be92315ef6e7f00554d37:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:006fd925329269b72bf0bcf5be295313:nss/CHANGELOG
+f:a3e388fe35a35c2dfc7a7baec939a703:nss/CHANGELOG
 f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:d9bfc56da4159aacca3cf2894702e25c:nss/spkgbuild
+f:a3ab7b69ecb9a64f44a214c9eaf106f2:nss/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:linux-desktop/extract.sh
 f:6f0f530adbe1f4d982c017270087eaf2:linux-desktop/post-install.sh
 f:e4ba1dfc1166a5126b88aaeb6d668d9c:linux-desktop/CHANGELOG
@@ -1413,5 +1413,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:7a602838a910d86c4f396fc70c760fa9:hugo/CHANGELOG
-f:02611729334b8da4e983e5ad9860d0df:hugo/spkgbuild
+f:6b473df897e89bb221d26b5d7d49878c:hugo/CHANGELOG
+f:bcce2f2b8506b092d260730a248ffb6a:hugo/spkgbuild

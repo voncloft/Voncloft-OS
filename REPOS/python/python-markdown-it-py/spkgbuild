@@ -2,7 +2,7 @@
 # depends : python-attrs
 
 name=python-markdown-it-py
-version=2.2.0
+version=3.0.0
 release=1
 
 source="https://github.com/executablebooks/markdown-it-py/archive/refs/tags/v$version.tar.gz"
