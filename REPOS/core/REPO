@@ -619,9 +619,9 @@ f:9152af24dad0cfee15da3094da963614:cowsay/CHANGELOG
 f:7091f9a6d97006299a1f27a665b638b6:cowsay/cowsay.patch
 f:2754d951cff391b6efb8f02374c5f4f1:cowsay/spkgbuild
 f:47c2d99b1e13cd5f97e53c8b8773e92f:go/spkgbuild
-f:ea1ab1ed8f1a3fa105c325a119bf785b:linux-api-headers/CHANGELOG
+f:c924d60960138463b73c3556f4dd8e5f:linux-api-headers/CHANGELOG
 f:262eda046c808cedb749b7f139f4233e:linux-api-headers/override
-f:090c7eb44c916accc218fa46525e9e6e:linux-api-headers/spkgbuild
+f:6cb68d8229668bd28d318eb2ce066f67:linux-api-headers/spkgbuild
 f:181974f7a7196a64f7e502ddb3dc17f5:ncmpcpp/CHANGELOG
 f:0c90e058908c64ab5672fcfd86bbe113:ncmpcpp/spkgbuild
 f:4518fb25b99ed8c1af5f6277f9ac1adb:pacmixer/CHANGELOG
@@ -663,11 +663,11 @@ f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
 f:a3ab7b69ecb9a64f44a214c9eaf106f2:nss/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:linux-desktop/extract.sh
 f:6f0f530adbe1f4d982c017270087eaf2:linux-desktop/post-install.sh
-f:e4ba1dfc1166a5126b88aaeb6d668d9c:linux-desktop/CHANGELOG
+f:ce0bf16dc1ebd006e31a74246a095750:linux-desktop/CHANGELOG
 f:ad48edb5e6a47c82f5f84256c73a631a:linux-desktop/post-upgrade.sh
 f:511d2d2f2ca57c4a5938f0bedb1ff0de:linux-desktop/.old-config
 f:262eda046c808cedb749b7f139f4233e:linux-desktop/override
-f:a25a6a407d20b13db3d032e54fd2b828:linux-desktop/spkgbuild
+f:b37e79a1c59cf2eb1697926ca793433b:linux-desktop/spkgbuild
 f:98c05aba28c01eb48be3a81a9e49e718:linux-desktop/.config
 f:80929e6cd29c1f598053c82e83ee221f:dconf/spkgbuild
 f:19f7c192d0099452972860c2ccea0410:icon-naming-utils/spkgbuild
@@ -1015,10 +1015,10 @@ f:94e3e887c5641a2d47abb1a2137ef785:taglib/spkgbuild
 f:dde2b1dcd664417006b5c48e006f4d20:iw/CHANGELOG
 f:0c2c826b9063fc3a7799afa8b4c6002a:iw/spkgbuild
 f:e762fccfee971f972096f130162c2edb:linux-router/post-install.sh
-f:7444be6edeee17fd4040b62d521aa4a7:linux-router/CHANGELOG
+f:edc0c1b9ec799a6bc731b75c0586980f:linux-router/CHANGELOG
 f:793969456faf973b96e1aba7f8a4651e:linux-router/post-upgrade.sh
 f:262eda046c808cedb749b7f139f4233e:linux-router/override
-f:e22f360cd22d2164b3a12e6a4df3942e:linux-router/spkgbuild
+f:4232c5dc0c2a6a5684a7a1f86b1f2417:linux-router/spkgbuild
 f:29aa8d933fb3dab100d7d75e4137c3b4:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
 f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
@@ -1250,8 +1250,8 @@ f:2e704edcef0579afc661ba1adf961ae0:zstd/spkgbuild
 f:b6db4801627a181a7736fffd95108e18:grep/CHANGELOG
 f:2c4c84b44734c07dba242aefc81766c0:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
-f:92bccbe87b238beb4d7349454157a192:icewm/CHANGELOG
-f:fa86427865d19f41f5fd6d94dfa05760:icewm/spkgbuild
+f:863b1bd9b8d43561dd3e8237af92b414:icewm/CHANGELOG
+f:a16cd3a60dc001606527dab3a347d54b:icewm/spkgbuild
 f:819e5325b26b8d7d92568276a6a6b65a:ibus/CHANGELOG
 f:e1b08a57d769b5b45c2bf90bdb6285a5:ibus/spkgbuild
 f:ff63cefdccc761edd6ee5ff997c05eab:smplayer-themes/CHANGELOG
@@ -1413,5 +1413,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:6b473df897e89bb221d26b5d7d49878c:hugo/CHANGELOG
-f:bcce2f2b8506b092d260730a248ffb6a:hugo/spkgbuild
+f:18e0e44f4573a30020c5f3b3f8bc5ce6:hugo/CHANGELOG
+f:dab822b0922573e165b2251ecd9214bb:hugo/spkgbuild
