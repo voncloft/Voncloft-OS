@@ -18,6 +18,7 @@ d:ccache
 d:iasl
 d:nasm
 d:autoconf
+d:llvm-old-2023-06-07
 d:autoconf2.13
 d:gdb
 d:cmake
@@ -44,7 +45,7 @@ f:5ad0fe9ca8785a7c07a3b48b7bae8518:lld/spkgbuild
 f:efbc369782cf6837d3430e16ec1fafa5:luajit/spkgbuild
 f:4cd2ca3f1ce8f0f48e31997cf5ff5ba9:llvm/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
-f:ae539dd38fbb012fe8ac62f9c2eb5195:llvm/spkgbuild
+f:b95ef9973a0e295de60c59a5649292db:llvm/spkgbuild
 f:c756eaae15dd3e429e3fefa53e1c57ce:xkbcomp/CHANGELOG
 f:ae82392524ab8e2e8a8fb091639717cb:xkbcomp/spkgbuild
 f:1e81bcd358fba12c2b0c54865f1b725c:pkgconf/CHANGELOG
@@ -72,6 +73,9 @@ f:67e065f38f8fdab69426e1159f8ee845:ccache/spkgbuild
 f:e303f0dd300e993d72fa8d9100e8e723:iasl/spkgbuild
 f:0d8e67141b01c9e575176f89f60f19ee:nasm/spkgbuild
 f:5d958c9ea1ac631ac9402f77ff7fa5a6:autoconf/spkgbuild
+f:4cd2ca3f1ce8f0f48e31997cf5ff5ba9:llvm-old-2023-06-07/CHANGELOG
+f:295c343dcd457dc534662f011d7cff1a:llvm-old-2023-06-07/llvm-config.h
+f:ae539dd38fbb012fe8ac62f9c2eb5195:llvm-old-2023-06-07/spkgbuild
 f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes-1.patch
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
 f:aaeb3465ef9ff6a44548a547ffb626e9:gdb/CHANGELOG

@@ -1,0 +1,44 @@
+# description	: Collection of modular and reusable compiler and toolchain technologies
+# depends	: cmake libffi python ninja libxml2
+
+name=llvm
+version=16.0.5
+release=1
+source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
+	https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-$version.src.tar.xz
+	llvm-config.h"
+noextract="llvm-cmake-$version.src.tar.xz"
+	
+options="!checksum"
+build() {
+	cd $name-$version.src
+	tar -xf ../llvm-cmake-$version.src.tar.xz
+	sed '/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-$version.src@' \
+    		-i CMakeLists.txt
+	grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
+	export CC=gcc
+	export CXX=g++	
+
+	mkdir -v build
+	cd       build
+	
+	cmake .. -G Ninja \
+	      -DCMAKE_INSTALL_PREFIX=/usr           \
+	      -DLLVM_ENABLE_FFI=ON                  \
+	      -DCMAKE_BUILD_TYPE=Release            \
+	      -DLLVM_BUILD_LLVM_DYLIB=ON            \
+      	      -DLLVM_LINK_LLVM_DYLIB=ON             \
+	      -DLLVM_ENABLE_RTTI=ON                 \
+	      -DLLVM_TARGETS_TO_BUILD="X86;AMDGPU;BPF" \
+	      -DLLVM_BINUTILS_INCDIR=/usr/include       \
+	      -DLLVM_INCLUDE_BENCHMARKS=OFF             \
+	      -Wno-dev -G Ninja
+	ninja
+	DESTDIR=$PKG ninja install
+	#cp bin/FileCheck usr/bin/FileCheck
+	# multilib stub
+	mv $PKG/usr/include/llvm/Config/llvm-config.h \
+	   $PKG/usr/include/llvm/Config/llvm-config-64.h
+	cp $SRC/llvm-config.h \
+	   $PKG/usr/include/llvm/Config/llvm-config.h	
+}
