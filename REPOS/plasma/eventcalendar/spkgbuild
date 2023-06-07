@@ -9,8 +9,8 @@ source="https://github.com/Zren/plasma-applet-eventcalendar/archive/v$version.ta
 
 build() {
 	cd plasma-applet-eventcalendar-$version/package
-	mkdir -pv $PKG/usr/share/plasma/plasmoids/org.kde.plasma/eventcalendar
-	cp -r * $PKG/usr/share/plasma/plasmoids/org.kde.plasma/eventcalendar
+	mkdir -pv $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar
+	cp -r * $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar
 	cd $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar/translate
 	sh ./build
 	mkdir $PKG/usr/share/locale
