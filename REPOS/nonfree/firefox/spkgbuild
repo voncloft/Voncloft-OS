@@ -2,7 +2,7 @@
 # depends	: alsa-lib pulseaudio pulseaudio-alsa  gtk2 gtk3 nss nspr icu libevent dbus-glib unzip zip autoconf2.13 yasm rust cbindgen nodejs clang nasm geos ccache
 
 name=firefox
-version=115.0b1
+version=115.0b2
 options="!checksum"
 rust_version=91.6.0
 release=1
