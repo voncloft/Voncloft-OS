@@ -18,3 +18,9 @@ sed -i -e "s/version=2.0.2/version=2.0.3/g" python/python-urllib3/spkgbuild
 changelog "python/python-urllib3/spkgbuild" "Upgraded from version 2.0.2 to version 2.0.3"
 sed -i -e "s/version=3.12.37/version=3.12.38/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.12.37 to version 3.12.38"
+sed -i -e "s/version=23.04.1/version=23.04.2/g" kde-apps/ktorrent/spkgbuild
+changelog "kde-apps/ktorrent/spkgbuild" "Upgraded from version 23.04.1 to version 23.04.2"
+sed -i -e "s/version=7.5.3/version=7.5.4/g" nonfree/libreoffice/spkgbuild
+changelog "nonfree/libreoffice/spkgbuild" "Upgraded from version 7.5.3 to version 7.5.4"
+sed -i -e "s/version=23.04.1/version=23.04.2/g" kde-apps/k3b/spkgbuild
+changelog "kde-apps/k3b/spkgbuild" "Upgraded from version 23.04.1 to version 23.04.2"
