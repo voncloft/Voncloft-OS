@@ -2,7 +2,7 @@
 # depends : python python-sphinx python-importlib-metadata
 
 name=python-pallets-sphinx-themes
-version=2.1.0
+version=2.1.1
 release=7
 
 source="https://github.com/pallets/pallets-sphinx-themes/archive/refs/tags/r$version.tar.gz"
