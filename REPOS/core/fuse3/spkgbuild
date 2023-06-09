@@ -2,7 +2,7 @@
 # depends	: meson
 
 name=fuse3
-version=3.14.1
+version=3.15.0
 release=1
 source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz"
 
