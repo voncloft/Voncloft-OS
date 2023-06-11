@@ -2,7 +2,7 @@
 # depends : kde-deps kconfig kcoreaddons kdoctools
 
 name=kdesignerplugin
-version=5.106.0
+version=5.107.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/portingAids/$name-$version.tar.xz"
