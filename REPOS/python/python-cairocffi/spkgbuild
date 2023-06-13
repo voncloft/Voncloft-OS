@@ -2,7 +2,7 @@
 # depends : python-cffi cairo python-xcffib
 
 name=python-cairocffi
-version=1.5.1
+version=1.6.0
 release=3
 
 source="https://github.com/Kozea/cairocffi/archive/refs/tags/v$version.tar.gz"

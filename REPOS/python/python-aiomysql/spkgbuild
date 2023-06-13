@@ -2,7 +2,7 @@
 # depends : python python-pymysql
 
 name=python-aiomysql
-version=0.1.1
+version=0.2.0
 release=2
 
 source="https://github.com/aio-libs/aiomysql/archive/refs/tags/v$version.tar.gz"

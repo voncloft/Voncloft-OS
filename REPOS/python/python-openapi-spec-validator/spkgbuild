@@ -2,7 +2,7 @@
 # depends : python-six python-yaml python-jsonschema
 
 name=python-openapi-spec-validator
-version=0.5.6
+version=0.5.7
 release=3
 
 source="https://github.com/p1c2u/openapi-spec-validator/archive/refs/tags/$version.tar.gz"
