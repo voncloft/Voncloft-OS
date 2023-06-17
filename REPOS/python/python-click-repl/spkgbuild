@@ -2,7 +2,7 @@
 # depends : python-click python-prompt_toolkit python-six
 
 name=python-click-repl
-version=0.2.0
+version=0.3.0
 release=4
 
 source="https://github.com/click-contrib/click-repl/archive/refs/tags/$version.tar.gz"

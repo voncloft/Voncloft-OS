@@ -2,7 +2,7 @@
 # depends : gcc glibc zlib python python-six
 
 name=protobuf
-version=23.2
+version=23.3
 release=3
 
 source="https://github.com/protocolbuffers/$name/archive/refs/tags/v${version}.tar.gz"
