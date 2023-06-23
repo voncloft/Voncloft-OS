@@ -2,7 +2,7 @@
 # depends : python-traits
 
 name=python-apptools
-version=5.2.0
+version=5.2.1
 release=3
 
 source="https://github.com/enthought/apptools/archive/refs/tags/v$version.tar.gz"

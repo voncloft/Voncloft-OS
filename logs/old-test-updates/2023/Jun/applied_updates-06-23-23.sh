@@ -54,3 +54,33 @@ sed -i -e "s/version=1.58.2/version=1.59.0/g" python/python-pygithub/spkgbuild
 changelog "python/python-pygithub/spkgbuild" "Upgraded from version 1.58.2 to version 1.59.0"
 sed -i -e "s/version=1.7.0/version=2.0.0/g" python/python-tblib/spkgbuild
 changelog "python/python-tblib/spkgbuild" "Upgraded from version 1.7.0 to version 2.0.0"
+sed -i -e "s/version=1.4.2/version=1.4.3/g" core/flac/spkgbuild
+changelog "core/flac/spkgbuild" "Upgraded from version 1.4.2 to version 1.4.3"
+sed -i -e "s/version=0.114.0/version=0.114.1/g" core/hugo/spkgbuild
+changelog "core/hugo/spkgbuild" "Upgraded from version 0.114.0 to version 0.114.1"
+sed -i -e "s/version=0.19.0/version=0.20.0/g" displaym/sddm/spkgbuild
+changelog "displaym/sddm/spkgbuild" "Upgraded from version 0.19.0 to version 0.20.0"
+sed -i -e "s/version=1.9.2/version=1.10.0/g" libs/libzip/spkgbuild
+changelog "libs/libzip/spkgbuild" "Upgraded from version 1.9.2 to version 1.10.0"
+sed -i -e "s/version=115.0b8/version=115.0b9/g" nonfree/firefox/spkgbuild
+changelog "nonfree/firefox/spkgbuild" "Upgraded from version 115.0b8 to version 115.0b9"
+sed -i -e "s/version=5.2.0/version=5.2.1/g" python/python-apptools/spkgbuild
+changelog "python/python-apptools/spkgbuild" "Upgraded from version 5.2.0 to version 5.2.1"
+sed -i -e "s/version=1.26.158/version=1.26.160/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.26.158 to version 1.26.160"
+sed -i -e "s/version=1.29.158/version=1.29.160/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.29.158 to version 1.29.160"
+sed -i -e "s/version=6.23.2/version=6.23.3/g" python/python-ipykernel/spkgbuild
+changelog "python/python-ipykernel/spkgbuild" "Upgraded from version 6.23.2 to version 6.23.3"
+sed -i -e "s/version=2.4.8/version=2.4.9/g" python/python-markdown2/spkgbuild
+changelog "python/python-markdown2/spkgbuild" "Upgraded from version 2.4.8 to version 2.4.9"
+sed -i -e "s/version=1.13.0/version=2.0.0/g" python/python-param/spkgbuild
+changelog "python/python-param/spkgbuild" "Upgraded from version 1.13.0 to version 2.0.0"
+sed -i -e "s/version=8.13.14/version=8.13.15/g" python/python-phonenumbers/spkgbuild
+changelog "python/python-phonenumbers/spkgbuild" "Upgraded from version 8.13.14 to version 8.13.15"
+sed -i -e "s/version=4.6/version=5.0/g" python/python-zope-event/spkgbuild
+changelog "python/python-zope-event/spkgbuild" "Upgraded from version 4.6 to version 5.0"
+sed -i -e "s/version=3.13.6/version=3.13.7/g" server/blacklist-hosts/spkgbuild
+changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.13.6 to version 3.13.7"
+sed -i -e "s/version=2023.6.2/version=2023.6.3/g" server/homeassistant/spkgbuild
+changelog "server/homeassistant/spkgbuild" "Upgraded from version 2023.6.2 to version 2023.6.3"

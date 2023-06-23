@@ -2,7 +2,7 @@
 # depends : bzip2 gnutls openssl zlib zstd cmake
 
 name=libzip
-version=1.9.2
+version=1.10.0
 release=1
 
 source="https://libzip.org/download/$name-$version.tar.xz"
