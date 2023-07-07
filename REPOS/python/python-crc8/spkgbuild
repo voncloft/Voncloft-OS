@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-crc8
-version=0.1.0
+version=0.2.0
 release=2
 
 source="https://github.com/niccokunzmann/crc8/archive/refs/tags/v$version.tar.gz"
