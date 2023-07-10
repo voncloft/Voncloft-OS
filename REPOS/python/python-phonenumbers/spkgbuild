@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-phonenumbers
-version=8.13.15
+version=8.13.16
 release=1
 
 source="https://github.com/daviddrysdale/python-phonenumbers/archive/refs/tags/v$version.tar.gz"
