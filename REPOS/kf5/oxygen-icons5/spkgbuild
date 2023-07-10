@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=oxygen-icons5
-version=5.107.0
+version=5.108.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
