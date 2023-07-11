@@ -5,12 +5,15 @@ name=samba
 version=4.18.4
 release=1
 source="https://www.samba.org/ftp/samba/stable/$name-$version.tar.gz
-	samba"
+	samba
+	smb.conf"
 
 
 build() {
 	cd $name-$version
-
+	mkdir -pv $PKG/etc/samba
+	install -Dm644 $SRC/smb.conf $PKG/etc/samba/smb.conf
+	
 	# fix build with glibc-2.32
 	sed -r 's/nss_(setpw|endpw|setgr|endgr)ent/my_&/' \
 	    -i nsswitch/nsstest.c
@@ -43,4 +46,5 @@ build() {
 	install -v -m644 examples/smb.conf.default $PKG/etc/samba
 	install -dvm 755 $PKG/usr/lib/cups/backend
 	ln -v -sf /usr/bin/smbspool $PKG/usr/lib/cups/backend/samba
+	create_startup_directories samba K45samba S45samba $SRC $PKG
 }
