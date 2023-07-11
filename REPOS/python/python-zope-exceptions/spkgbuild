@@ -2,7 +2,7 @@
   # depends : python-setuptools python-zope-interface
 
 name=python-zope-exceptions
-version=5.0
+version=5.0.1
 release=3
 
 source="https://github.com/zopefoundation/zope.exceptions/archive/refs/tags/$version.tar.gz"
