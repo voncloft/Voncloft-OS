@@ -1,0 +1,23 @@
+# description : The Xwayland package is an Xorg server running on top of the wayland server. It has been separated from the main Xorg server package. It allows running X clients inside a wayland session.
+# depends : libxcvt pixman wayland-protocols xorg-fonts libepoxy libtirpc mesa
+
+name=xwayland
+version=22.1.8
+release=1
+
+source="https://www.x.org/pub/individual/xserver/xwayland-$version.tar.xz"
+
+build() {
+	cd $name-$version
+	sed -i '/install_man/,$d' meson.build 
+
+	mkdir build 
+	cd    build 
+
+	meson --prefix=/usr         \
+      	--buildtype=release           \
+      	-Dxkb_output_dir=/var/lib/xkb \
+      	..
+      	ninja
+      	DESTDIR=$PKG ninja install
+}
