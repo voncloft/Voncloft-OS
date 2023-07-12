@@ -2,7 +2,7 @@
 # depends : xorg libdrm python-mako libva libvdpau llvm wayland-protocols
 
 name=mesa
-version=22.3.5
+version=22.1.5
 release=1
 source="https://mesa.freedesktop.org/archive/$name-$version.tar.xz
 	https://www.linuxfromscratch.org/patches/blfs/svn/mesa-21.1.4-add_xdemos-1.patch"
@@ -11,19 +11,25 @@ options="!checksum"
 build() {
 	cd $name-$version
 	patch -Np1 -i $SRC/mesa-21.1.4-add_xdemos-1.patch
+	GALLIUM_DRV="i915,iris,nouveau,r600,radeonsi,svga,swrast,virgl"
+	DRI_DRIVERS="i965,nouveau"
 	
 	mkdir build &&
 	cd    build &&
-	meson setup                   \
-      	--prefix=$XORG_PREFIX   \
-      	--buildtype=release     \
-      	-Dplatforms=x11,wayland \
-      	-Dgallium-drivers=auto  \
-      	-Dvulkan-drivers=""     \
-      	-Dvalgrind=disabled     \
-      	-Dlibunwind=disabled    \
-      	..
-	
+
+	meson --prefix=$XORG_PREFIX          \
+	--libdir=/usr/lib \
+      --buildtype=release            \
+      -Ddri-drivers=$DRI_DRIVERS     \
+      -Dgallium-drivers=$GALLIUM_DRV \
+      -Dgallium-nine=false           \
+      -Dglx=dri                      \
+      -Dvalgrind=disabled            \
+      -Dlibunwind=disabled           \
+      ..
+
+
+	unset GALLIUM_DRV DRI_DRIVERS
 	ninja
 	DESTDIR=$PKG ninja install
 
