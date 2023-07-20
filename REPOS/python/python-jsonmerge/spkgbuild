@@ -2,7 +2,7 @@
 # depends : python-jsonschema
 
 name=python-jsonmerge
-version=1.9.1
+version=1.9.2
 release=3
 
 source="https://github.com/avian2/jsonmerge/archive/refs/tags/$version.tar.gz"
