@@ -1843,8 +1843,8 @@ f:bf9d79e480a14c0db969be692f5d0069:python-pysocks/CHANGELOG
 f:017cfadf53d8e24c3b4a77941fd4d436:python-pysocks/spkgbuild
 f:210f9ea088b49f947c7a01e400983f66:python-dotenv/CHANGELOG
 f:70fa3f1ae63572a32b0991e4485b5406:python-dotenv/spkgbuild
-f:d0d586387a789775d402dae11ad39329:python-pipenv/CHANGELOG
-f:5ae39950da147f347ed0cf0f2d3b0a38:python-pipenv/spkgbuild
+f:79b34c15ab58864fe58320e6f12a43e3:python-pipenv/CHANGELOG
+f:a0ac994548e96946c50a70b1324b411a:python-pipenv/spkgbuild
 f:b78503d83916564cc91cbc517f092541:python-six/CHANGELOG
 f:b67762c961aea4e99a5216ed18b9a751:python-six/spkgbuild
 f:9a85ac019e04819bd4021f3b9801424b:python-wsaccel/CHANGELOG
@@ -2171,8 +2171,8 @@ f:dc200676242e41c5b590d41243982a17:python-django-picklefield/CHANGELOG
 f:a965483917e44a816ed9491ce52fde6f:python-django-picklefield/spkgbuild
 f:609f5afc9c56331e418e66e5c0b56ac0:python-gevent/CHANGELOG
 f:91b0196a1288b6089b26739461bb6cd2:python-gevent/spkgbuild
-f:037e46f93a64cb7871dfaaf740bb30f7:python-virtualenv/CHANGELOG
-f:6dee501a91510704a24d1f6a36e7ea42:python-virtualenv/spkgbuild
+f:4053c716f02821bc8601ad51c122b3c0:python-virtualenv/CHANGELOG
+f:7c67c5d3ea8f783fb3bb82e18f93502e:python-virtualenv/spkgbuild
 f:492bc627d408f29185b1e71b79bf545f:python-ptyprocess/CHANGELOG
 f:3b569c5e31f535713ae9ff6a70d5004e:python-ptyprocess/spkgbuild
 f:e3edc8f5174f5c77ed1b0c8b7cbc89ec:python-google-auth-httplib2/CHANGELOG
@@ -2443,8 +2443,8 @@ f:2bb88501c7c4ce4c56f7cc30c962b279:python-milc/CHANGELOG
 f:58060d6b309ccd589e7c17ada870786f:python-milc/spkgbuild
 f:37ecae836cb21ff48221d6c6755f2ca4:python-pydle/CHANGELOG
 f:fa70354fa5f6bf040b84fa0989c54b75:python-pydle/spkgbuild
-f:e48cba128d1b6a1bfd407d6bdebb15d3:python-starlette/CHANGELOG
-f:acc41e3244d50c9022e45b7f67f8858c:python-starlette/spkgbuild
+f:24ee4ccd3cfe350e794ceea0121f3b4d:python-starlette/CHANGELOG
+f:25cda6208060a93579e728827b71b2d3:python-starlette/spkgbuild
 f:be931bd61db20e590334d1a3853ef8f2:python-pytest-html/CHANGELOG
 f:b73a7b620bc7613190c7f29eef68fab9:python-pytest-html/spkgbuild
 f:6dda4a5986272cff94f7850063fb9d1f:python-pytest-plugins/spkgbuild
@@ -2615,8 +2615,8 @@ f:8c31acc13f4df49ffd90e7ef259aed3c:python-statsmodels/CHANGELOG
 f:9fb003d34ff73936193458cd8f5db9a4:python-statsmodels/spkgbuild
 f:08a869fb9d5cc86098bc8bb4bc7fa500:python-praw/CHANGELOG
 f:a6c8c9d6a7044057e8ad17c7cfe13719:python-praw/spkgbuild
-f:702bbd73c86be4ae4329bdf027bdd69d:python-zeroconf/CHANGELOG
-f:067afc59ed034147532141913f029879:python-zeroconf/spkgbuild
+f:2dc2b9ebbc29a3051c94c266b9da44b6:python-zeroconf/CHANGELOG
+f:61a4b60c663493a77dbf3341dcd4adde:python-zeroconf/spkgbuild
 f:da4f5782a7ae31bbd914bae17a0c95b8:python-auditwheel/CHANGELOG
 f:26e65bed87c52b4acfc99a92b9a81c98:python-auditwheel/spkgbuild
 f:96264c34fd0dc1b3063934f5e1439427:python-databases/CHANGELOG
@@ -3144,8 +3144,8 @@ f:596909fba558fa7842bf2fdc3ffd24fd:python-ldap3/CHANGELOG
 f:e22bb5270e35d471ff652179e48bec5b:python-ldap3/spkgbuild
 f:aec177b432dc6ca0c33b462723cabfad:python-biopython/CHANGELOG
 f:889ae8d4f27ad8da9a7ad3f1554c5349:python-biopython/spkgbuild
-f:a5b404aaeceaaa269fe02db127bbf021:python-keyrings-alt/CHANGELOG
-f:8dfe12dee5a490ac7f72dc08e5f89a4a:python-keyrings-alt/spkgbuild
+f:dc8e6207fbbf3774a2ad2b2e191f6354:python-keyrings-alt/CHANGELOG
+f:078d08ba268a4fae9b30f6e1e657e21f:python-keyrings-alt/spkgbuild
 f:cb9bab651c61c67cc83d0c4e9de23b7d:python-django-guardian/CHANGELOG
 f:b0ce52555f30943f1ab43fa2425d2431:python-django-guardian/spkgbuild
 f:78b2174aff15dcbd47156f0ae3d5fa00:python-basemap/CHANGELOG
@@ -3506,8 +3506,8 @@ f:18e62f10e08d3551e0b99ae824f9bffc:python-litevideo/spkgbuild
 f:295fcf5656d3d87a793630ca449546d0:python-gnupginterface/spkgbuild
 f:530065ef81fae397cdd4ba7ace9447bd:python-testpath/CHANGELOG
 f:4881b1df9d50a280f6f04327b2875002:python-testpath/spkgbuild
-f:bb8449be31b5947f10c621114b767aa4:python-cairocffi/CHANGELOG
-f:98d5e6fb40bf0d0210bbf8848d5b46c8:python-cairocffi/spkgbuild
+f:a707ac7d0af7b067bb1ee22c8029432d:python-cairocffi/CHANGELOG
+f:87e2a02c4c1de80ddb8b5727926dd0bf:python-cairocffi/spkgbuild
 f:802943f01b2266ffab35170b03aa5fbf:python-ethtool/CHANGELOG
 f:2c97d17208192c2ffa16d5f7079b8adc:python-ethtool/spkgbuild
 f:473f299fb52c4cb725ccabe89876a3e2:python-svg.path/CHANGELOG

@@ -2,7 +2,7 @@
 # depends	: mesa lcms2 ffmpeg libass libarchive luajit
 
 name=mpv
-version=0.35.1
+version=0.36.0
 release=1
 source="https://github.com/mpv-player/mpv/archive/v$version/$name-$version.tar.gz"
 
