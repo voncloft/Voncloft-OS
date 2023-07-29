@@ -52,9 +52,9 @@ f:218369b026ffe13e5152bce3f766228f:openssh/spkgbuild
 f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:2349a85d7ff9ad653f52774205f0ac02:openssh/sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
-f:1e60ebbabe434871d666cd8fe4c5caee:networkmanager/CHANGELOG
+f:025cfda161ab5c3cf5d5d5aac3baee5a:networkmanager/CHANGELOG
 f:3d2b081a6829aac4dd33c0cb0761088a:networkmanager/override
-f:ba90d7d680cc6320ec598efebcca298d:networkmanager/spkgbuild
+f:c54fe22a01881dabe497561502436a51:networkmanager/spkgbuild
 f:4ac7d29ba218d829582ce61d6151a5eb:whois/CHANGELOG
 f:2a8cd29177f5027ff42b45550acf5551:whois/spkgbuild
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
@@ -100,12 +100,12 @@ f:73094aefef5d679c106af69f745c7a2b:subversion/spkgbuild
 f:66119448ecd40461df344fc2a804071a:make-ca/CHANGELOG
 f:78153899fd744640486a4e7855849fd5:make-ca/update-pki.sh
 f:946ea8da6f9b03de60688b9f45394632:make-ca/spkgbuild
-f:04241272d3f2b8f47226ee5534bc52dc:tor/CHANGELOG
+f:3968e9ce88db71c442dd4c03ca09872b:tor/CHANGELOG
 f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
 f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
 f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
 f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
-f:d1d3ad5e7e5bb4aac8d43be9596b7e35:tor/spkgbuild
+f:ef4dc4f2f50370ee5edec176e6b1439b:tor/spkgbuild
 f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
 f:cebb4c69b08678489cf0cef1307a5c61:nftables/CHANGELOG
