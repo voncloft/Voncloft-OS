@@ -2,7 +2,7 @@
   # depends : python-setuptools
 
 name=python-pycodestyle
-version=2.10.0
+version=2.11.0
 release=3
 
 source="https://github.com/PyCQA/pycodestyle/archive/refs/tags/a$version.tar.gz"
