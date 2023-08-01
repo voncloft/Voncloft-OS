@@ -1,0 +1,13 @@
+# description : flashcard app
+# depends : 
+
+name=anki
+version=2.1.65
+release=1
+
+source="https://github.com/ankitects/anki/releases/download/$version/anki-$version-linux-qt5.tar.zst"
+
+build() {
+	cd *
+	PREFIX=$PKG/usr ./install.sh
+}
