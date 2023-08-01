@@ -8,7 +8,9 @@ release=1
 source="https://github.com/ankitects/anki/releases/download/$version/anki-$version-linux-qt5.tar.zst"
 
 build() {
-	tar xaf $SRC/anki-2.1.65-linux-qt5.tar.zst
-	cd anki-2.1.65-linux-qt5
+	tar xaf $SRC/anki-$version-linux-qt5.tar.zst
+	cd anki-$version-linux-qt5
 	PREFIX=$PKG/usr ./install.sh
+	rm $PKG/usr/bin/anki
+	ln -sfv /usr/share/anki/anki "$PKG"/usr/bin/anki
 }
