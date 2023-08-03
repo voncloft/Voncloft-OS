@@ -1,7 +1,7 @@
 # description	: Cross-platform library designed to make it easy to write multimedia software
 # depends	: libx11 libxext libxrandr libxfixes libxi libxinerama
 name=sdl2
-version=2.28.1
+version=2.28.2
 release=1
 source="https://www.libsdl.org/release/SDL2-$version.tar.gz"
 
