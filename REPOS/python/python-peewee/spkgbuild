@@ -2,7 +2,7 @@
 # depends : python sqlite
 
 name=python-peewee
-version=3.16.2
+version=3.16.3
 release=3
 
 source="https://github.com/coleifer/peewee/archive/refs/tags/$version.tar.gz"

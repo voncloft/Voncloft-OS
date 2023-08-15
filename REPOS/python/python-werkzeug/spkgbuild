@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-werkzeug
-version=2.3.6
+version=2.3.7
 release=4
 
 source="https://github.com/pallets/werkzeug/archive/refs/tags/r$version.tar.gz"
