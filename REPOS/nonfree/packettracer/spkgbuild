@@ -1,5 +1,5 @@
 # description : network simulator
-# depends : dbus glib2 icu java-runtime libjpeg-turbo libxml2 libxss nss openssl qt5-multimedia qt5-networkauth qt5-script qt5-speech qt5-svg qt5-webengine qt5-websockets
+# depends : dbus glib icu java-headliss libjpeg-turbo libxml2 libxss nss openssl qt5-multimedia qt5-networkauth qt5-script qt5-speech qt5-svg qt5-webengine qt5-websockets
 
 name=packettracer
 version=8.2.1
