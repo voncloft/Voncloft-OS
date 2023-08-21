@@ -11,6 +11,7 @@ source="CiscoPacketTracer_821_Ubuntu_64bit.deb
 	cisco-ptsa.desktop"
 
 build() {
+	ar x *.deb
 	tar xf data.tar.xz -C "${PKG}"
 	chown -R 0:0 "${PKG}"
 	mv "${PKG}/opt/pt/" "${PKG}/opt/packettracer/"

@@ -2,7 +2,7 @@
 # depends	: libxv
 
 name=brotli-32
-version=1.0.9
+version=1.1.0
 release=1
 source="https://github.com/google/brotli/archive/v$version.tar.gz"
 build() {
