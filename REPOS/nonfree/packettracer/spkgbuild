@@ -1,0 +1,42 @@
+# description : network simulator
+# depends : dbus glib2 icu java-runtime libjpeg-turbo libxml2 libxss nss openssl qt5-multimedia qt5-networkauth qt5-script qt5-speech qt5-svg qt5-webengine qt5-websockets
+
+name=packettracer
+version=8.2.1
+release=1
+
+source="CiscoPacketTracer_821_Ubuntu_64bit.deb
+	packettracer.sh
+	cisco-pt.desktop
+	cisco-ptsa.desktop"
+
+build() {
+	tar xf data.tar.xz -C "${PKG}"
+	chown -R 0:0 "${PKG}"
+	mv "${PKG}/opt/pt/" "${PKG}/opt/packettracer/"
+	mkdir -p "${PKG}/usr/share/applications/"
+	mv "${SRC}/cisco-pt.desktop" "${PKG}/usr/share/applications/cisco-pt.desktop"
+	mv "${SRC}/cisco-ptsa.desktop" "${PKG}/usr/share/applications/cisco-ptsa.desktop"
+	chmod a+x "${PKG}/usr/share/applications/cisco-pt.desktop"
+	chmod a+x "${PKG}/usr/share/applications/cisco-ptsa.desktop"
+	mkdir -p "${PKG}/usr/bin/"
+
+	find "${PKG}" -type d -exec chmod 755 {} \;
+	find "${PKG}/opt/packettracer/help/" -type d -exec chmod 777 {} \;
+	find "${PKG}/opt/packettracer/saves/" -type d -exec chmod 555 {} \;
+	find "${PKG}/opt/packettracer/art/html/network_controller/" -type d -exec chmod 775 {} \;
+	find "${PKG}/opt/packettracer/art/RackView/CablePegboard/" -type d -exec chmod 775 {} \;
+	find "${PKG}/opt/packettracer/bin/xcbglintegrations/" -type d -exec chmod 775 {} \;
+	find "${PKG}/opt/packettracer/help/default/NetconRestAPI/" -type d -exec chmod 775 {} \;
+	
+	ln -s /opt/packettracer/packettracer "${PKG}/usr/bin/packettracer"
+
+	ln -s /usr/lib/libdouble-conversion.so "${PKG}/opt/packettracer/bin/libdouble-conversion.so.1"
+
+	sed -i 's|/opt/pt|/opt/packettracer|' "${PKG}/opt/packettracer/linguist" "${PKG}/opt/packettracer/packettracer"
+
+	install -D -m755 "${SRC}/packettracer.sh" "${PKG}/etc/profile.d/packettracer.sh"
+
+	install -D -m644 "${PKG}/opt/packettracer/help/default/copyrights.htm" "${PKG}/usr/share/licenses/${name}/COPYRIGHT"
+
+}

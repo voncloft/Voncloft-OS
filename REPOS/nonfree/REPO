@@ -24,6 +24,7 @@ d:virtualbox-guest-modules
 d:virtualbox
 d:google-chrome
 d:firefox
+d:packettracer
 f:c08dd6aba85106175542d97c55e61998:discord/CHANGELOG
 f:32c2bdaf6c6b65df67ef08a2e2645dc5:discord/override
 f:e74f90cf8324be8b15b54d637eb1c2fe:discord/spkgbuild
@@ -133,3 +134,8 @@ f:a4a0f7c9c1e3424463670d031976aa67:firefox/override
 f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
 f:186eee5a8f89701a00ed3d8265cbf6c7:firefox/spkgbuild
 f:89fb28a484e7f5126839e83f10de377a:firefox/pre-upgrade.sh
+f:8f2ecb1b71ef5f7ccbb5bef10da5a846:packettracer/cisco-ptsa.desktop
+f:367c64382056110df3e35d1d74749889:packettracer/CHANGELOG
+f:5287f37b01c5ecd15f6da88d848ec2a7:packettracer/packettracer.sh
+f:cc0b30455e37cb3eecd00f72d659d767:packettracer/spkgbuild
+f:362400fd2f20491517f6a8f6f2a756d4:packettracer/cisco-pt.desktop
