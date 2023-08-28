@@ -2,7 +2,7 @@
 # depends : python-geographiclib
 
 name=python-geopy
-version=2.3.0
+version=2.4.0
 release=1
 
 source="https://github.com/geopy/geopy/archive/refs/tags/r$version.tar.gz"
