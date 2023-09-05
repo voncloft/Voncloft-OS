@@ -2,7 +2,7 @@
 # depends : python-cfgv python-identify python-nodeenv python-yaml python-toml
 
 name=python-pre-commit
-version=3.3.3
+version=3.4.0
 release=1
 
 source="https://github.com/pre-commit/pre-commit/archive/refs/tags/v$version.tar.gz"

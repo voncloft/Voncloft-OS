@@ -380,8 +380,8 @@ f:635c4b0d3138b99311a2261ec0ffaee2:libmtp/spkgbuild
 f:a4b96eda4c6ba381e2b45308097e0457:libxxf86dga/spkgbuild
 f:342bc6386ee2a7ccd83ec22289a46398:libvorbis/spkgbuild
 f:b528501759a4fda046b8fefa4467f995:libxcomposite/spkgbuild
-f:e9bd3a4a4724b504e4795fbb90430679:libressl/CHANGELOG
-f:82018f67f9f41821be08ab5d31e2aa56:libressl/spkgbuild
+f:74ff5836f9bd2d2444b3713308f0b6d2:libressl/CHANGELOG
+f:cca45caa8c5a0db5f0f4225c46dde25c:libressl/spkgbuild
 f:34d34e099d543154d1cfebb4cfb24bcc:liblzf/spkgbuild
 f:b122910723fffae95d1eb83450bfe83d:libfilezilla/CHANGELOG
 f:7d30b1470fd0668c75aef86b38ea20c7:libfilezilla/spkgbuild
@@ -426,8 +426,8 @@ f:98738e2009c8973bf6300a21bca8b740:libxrandr/spkgbuild
 f:52d3e85f6ea7d824e4f05272c9909584:ktoblzcheck/spkgbuild
 f:d9a61d9fc2d1e028724b92457922614b:lapack/CHANGELOG
 f:36cad4b69f5b8517d1116d993e241f42:lapack/spkgbuild
-f:e460d085db880412220f9bf025bfed4a:libtommath/CHANGELOG
-f:60c77b3ef14d1561bed271ed04015f36:libtommath/spkgbuild
+f:aa7c98134f20e4293864f9f38b0401e3:libtommath/CHANGELOG
+f:4a8bf90d285df409d444ef6b732d1342:libtommath/spkgbuild
 f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
 f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
 f:a66b9d37fda083893f0a0ba540bc9e41:glibc/CHANGELOG
@@ -549,8 +549,8 @@ f:4be5fa7076a0d2627f8ebc567d45884a:muparser/spkgbuild
 f:a1f7108c7196742f3086f6ce7857d26c:libqmi/CHANGELOG
 f:77fee194336dea0d3856c48601f64cd9:libqmi/spkgbuild
 f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
-f:64ecc181b5d19c72125fc9ca00c83d8d:libwacom/CHANGELOG
-f:2247ef1fd21666a00e53fe09c3f9585a:libwacom/spkgbuild
+f:edbfcf3e5a8d91a542ce4204277620ef:libwacom/CHANGELOG
+f:56cdd57832d596ea3f88563763ad0fca:libwacom/spkgbuild
 f:ae13bc7326af8d543d55bc1c8b130ebe:libftdi-compat/spkgbuild
 f:303816b3ff77e02723a38d101867e7ba:libexif/spkgbuild
 f:53e64757fb50427f24303690a0aa2d65:libxpm/spkgbuild
@@ -686,8 +686,8 @@ f:ae9c1dc576fcb9a75a659a1d176ab7d8:libxshmfence/spkgbuild
 f:dd6ad16ac8d42935847832cb4402e60c:libtheora/spkgbuild
 f:7f1f89b8a4e74c05614bdf2fd5c66f6a:icu/post-upgrade.sh
 f:1a17d0159dd30424d490b008af85d810:icu/spkgbuild
-f:cf3b883d09142520e09d82f2f3acd9ab:sdl2/CHANGELOG
-f:1fbf86c05b313a495bdbc92ea88ebb6c:sdl2/spkgbuild
+f:26cda03fbcfefbf6aafb974622d35df7:sdl2/CHANGELOG
+f:e5b4d92f3ce2f12c681f02ce430638e2:sdl2/spkgbuild
 f:00da7d84cb8655394fd8e3d7d62a2280:libxft/spkgbuild
 f:6ec548c11489436ddad4effffbcbde0b:libtool/CHANGELOG
 f:33d4308bb3da3d465c4c999f96009c2a:libtool/spkgbuild
@@ -701,8 +701,8 @@ f:86499e781da345d09753644836b6a7f0:libtorrent/CHANGELOG
 f:e4ea060a5287b6dc181f43ab2f69d503:libtorrent/fix-build-with-boost-1.72.0.patch
 f:98bc5f08753e9fab4b911af3031fdd42:libtorrent/spkgbuild
 f:76226b0dee30494f6932b0a92d1ee6f4:alsa-lib/readme
-f:44967565fae83172530a674c2bc576ff:alsa-lib/CHANGELOG
-f:6b996c26a4f5f03c04505aa02b35316b:alsa-lib/spkgbuild
+f:74f707bdbd394f6b20e30189cab74c06:alsa-lib/CHANGELOG
+f:ee427bfae06e2996d96030c49ebdf5dd:alsa-lib/spkgbuild
 f:4e42721f3a4cc2132ddbabde13256d2a:libxfont2/spkgbuild
 f:3965a59dbebb04051391e83daa216932:libcurl-compat/spkgbuild
 f:5398cb59afddaddac7c6e15b9af9d2e9:expat/CHANGELOG
@@ -715,8 +715,8 @@ f:6fd6bf450d3b8c2155eeed2e5e13b69d:gsl/spkgbuild
 f:b96f445c38de9f1a209e04e9fc868096:libatomic_ops/CHANGELOG
 f:a45e89443a2352551072a18170e82626:libatomic_ops/spkgbuild
 f:debace56a4999da0b057c5dafd0ea2ba:libsoup/spkgbuild
-f:98c38c0267a654b8f27a2315e8a55c42:blosc/CHANGELOG
-f:cea0eef4ba2ccc55f172779476e4c440:blosc/spkgbuild
+f:492fc9a6bfbf57fb8be62ea1d91f6081:blosc/CHANGELOG
+f:c64047f67f0fbcfc2b64be8041e4fd6b:blosc/spkgbuild
 f:89344eec43d1125d321ce45265b5e03c:babl/babl.patch
 f:3a9ce6159f442e132a985036c7fcad36:babl/CHANGELOG
 f:1702c84c3998bc89b251b0a52bae70ef:babl/spkgbuild
