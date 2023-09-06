@@ -112,3 +112,13 @@ sed -i -e "s/version=4.18.6/version=4.19.0/g" server/samba/spkgbuild
 changelog "server/samba/spkgbuild" "Upgraded from version 4.18.6 to version 4.19.0"
 sed -i -e "s/version=4.18.6/version=4.18.7/g" xfce/thunar/spkgbuild
 changelog "xfce/thunar/spkgbuild" "Upgraded from version 4.18.6 to version 4.18.7"
+sed -i -e "s/version=5.3.5/version=5.3.6/g" python/python-flask-socketio/spkgbuild
+changelog "python/python-flask-socketio/spkgbuild" "Upgraded from version 5.3.5 to version 5.3.6"
+sed -i -e "s/version=6.84.0/version=6.84.1/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.84.0 to version 6.84.1"
+sed -i -e "s/version=0.6.4/version=0.6.6/g" python/python-wsaccel/spkgbuild
+changelog "python/python-wsaccel/spkgbuild" "Upgraded from version 0.6.4 to version 0.6.6"
+sed -i -e "s/version=3.0.0/version=3.0.1/g" python/python-yaspin/spkgbuild
+changelog "python/python-yaspin/spkgbuild" "Upgraded from version 3.0.0 to version 3.0.1"
+sed -i -e "s/version=3.13.26/version=3.13.28/g" server/blacklist-hosts/spkgbuild
+changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.13.26 to version 3.13.28"

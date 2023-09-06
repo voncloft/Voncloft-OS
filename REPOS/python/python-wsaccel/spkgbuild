@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-wsaccel
-version=0.6.4
+version=0.6.6
 release=2
 
 source="https://github.com/methane/wsaccel/archive/refs/tags/v$version.tar.gz"
