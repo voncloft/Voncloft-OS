@@ -24,3 +24,5 @@ sed -i -e "s/version=19.3.1/version=19.6.0/g" python/python-faker/spkgbuild
 changelog "python/python-faker/spkgbuild" "Upgraded from version 19.3.1 to version 19.6.0"
 sed -i -e "s/version=0.17.3/version=0.18.0/g" python/python-httpcore/spkgbuild
 changelog "python/python-httpcore/spkgbuild" "Upgraded from version 0.17.3 to version 0.18.0"
+sed -i -e "s/version=0.23.1/version=0.23.2/g" python/python-libtmux/spkgbuild
+changelog "python/python-libtmux/spkgbuild" "Upgraded from version 0.23.1 to version 0.23.2"
