@@ -2,7 +2,7 @@
 # depends : python python-click python-distro
 
 name=python-userpath
-version=1.9.0
+version=1.9.1
 release=3
 
 source="https://github.com/ofek/userpath/archive/refs/tags/$version.tar.gz"
