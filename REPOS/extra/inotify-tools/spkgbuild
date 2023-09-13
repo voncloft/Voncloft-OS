@@ -2,7 +2,7 @@
 # depends : 
 
 name=inotify-tools
-version=4.23.8.0
+version=4.23.9.0
 release=1
 
 source="https://github.com/inotify-tools/inotify-tools/archive/refs/tags/$version.tar.gz"

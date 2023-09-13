@@ -2,7 +2,7 @@
 # depends : kde-deps kactivities kactivities-stats kcmutils kdeclarative kdeconnect-kde ki18n kirigami2 kwayland plasma-framework plasma-wayland-session plasma-workspace 
 
 name=plasma-nano
-version=5.27.7
+version=5.27.8
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
