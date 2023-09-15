@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-iso8601 python-prettytable python-debtcollector
 
 name=python-keystoneclient
-version=5.1.0
+version=5.2.0
 release=1
 
 source="https://github.com/openstack/python-keystoneclient/archive/refs/tags/e$version.tar.gz"
