@@ -2,7 +2,7 @@
 # depends : python-colorama python-pygments python-typing_extensions python-commonmark
 
 name=python-rich
-version=13.5.2
+version=13.5.3
 release=1
 
 source="https://github.com/willmcgugan/rich/archive/refs/tags/v$version.tar.gz"
