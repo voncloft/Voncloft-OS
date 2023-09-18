@@ -1,5 +1,5 @@
 # description : Core components for the kde desktop
-# depends : kde-deps kmailtransport kidentitymanagement kcalutils akonadi-contacts
+# depends : kde-deps kmailtransport kidentitymanagement kcalutils akonadi-contacts messagelib
 
 name=akonadi-calendar
 version=23.08.1
