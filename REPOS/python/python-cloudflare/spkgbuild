@@ -2,7 +2,7 @@
 # depends : python-requests python-future python-yaml python-jsonlines python-beautifulsoup4
 
 name=python-cloudflare
-version=2.11.7
+version=2.12.2
 release=1
 
 source="https://github.com/cloudflare/python-cloudflare/archive/refs/tags/$version.tar.gz"
