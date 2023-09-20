@@ -73,7 +73,7 @@ meson --prefix /usr              \
 	EOF
 
 
-	groupadd -fg 86 netdev &&
+	#groupadd -fg 86 netdev &&
 	#/usr/sbin/usermod -a -G netdev <username>
 
 	mkdir -pv $PKG/usr/share/polkit-1/rules.d/

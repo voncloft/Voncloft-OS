@@ -10,7 +10,6 @@ options="!checksum"
 
 build() {
 	cd $name-$version
-	groupadd -g 62 wireshark
 
 	mkdir build
 	cd build

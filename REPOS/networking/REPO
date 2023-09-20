@@ -53,8 +53,9 @@ f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:2349a85d7ff9ad653f52774205f0ac02:openssh/sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
 f:1cf43714e68f92d320742188b49e311a:networkmanager/CHANGELOG
+f:0644ece4a3fb7df43d40c58eb7188fbf:networkmanager/pre-install.sh
 f:3d2b081a6829aac4dd33c0cb0761088a:networkmanager/override
-f:840545cb02e5ebacfd154dbb232a1bc2:networkmanager/spkgbuild
+f:3f9227be089fe4ff72d5e6457fff51ed:networkmanager/spkgbuild
 f:4ac7d29ba218d829582ce61d6151a5eb:whois/CHANGELOG
 f:2a8cd29177f5027ff42b45550acf5551:whois/spkgbuild
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
@@ -146,8 +147,9 @@ f:d6c80d7cb1f2516073e9c98269d44fb2:nmap/CHANGELOG
 f:b05ef6321275c531ca6074bb082e23f3:nmap/ssl.patch
 f:fdc2c425f36d2e83f672d70ff6818dba:nmap/spkgbuild
 f:34b612ad2efb982138ff438989d68383:wireshark/CHANGELOG
+f:6736b07aea5c8a1239a964908036ff95:wireshark/pre-install.sh
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
-f:50a7aa50326044393387b59bda889f17:wireshark/spkgbuild
+f:81fcfdeab7031a77377b0a5762377997:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
 f:cb0bd8efdb3af3b657a7e270e0a38671:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
