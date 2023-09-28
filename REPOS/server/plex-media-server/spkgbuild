@@ -4,7 +4,7 @@
 name=plex-media-server
 version=1.32.6.7468
 release=2
-checksum=07e0d4a7e
+checksum=
 source="https://downloads.plex.tv/plex-media-server-new/$version-$checksum/redhat/plexmediaserver-$version-$checksum.x86_64.rpm
 	plexmediaserver.conf.d
 	plex.sysusers
