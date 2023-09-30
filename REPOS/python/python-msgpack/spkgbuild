@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-msgpack
-version=1.0.6
+version=1.0.7
 release=2
 
 source="https://github.com/msgpack/msgpack-python/archive/refs/tags/v$version.tar.gz"

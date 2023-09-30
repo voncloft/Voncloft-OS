@@ -25,8 +25,8 @@ d:cmake
 f:5dba1fbb401b1e2d3ca8b87007700628:ruby/CHANGELOG
 f:18f97db36b6ad7d4948bb8eb81a1fa58:ruby/override
 f:18e2c47fb108eca8998164c9f1ce7e47:ruby/spkgbuild
-f:80cc7c6528e87ebbcdf9e556ba7eace7:meson/CHANGELOG
-f:aec0bb7d7c527e3ac3517b480ebd3263:meson/spkgbuild
+f:4eacfc5705d8b473eed4708d85b8e08d:meson/CHANGELOG
+f:23ced7a70864628a865a32f9f0bc0a81:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
 f:d659b78f7071326fd1be1afde98d2b3a:zig/spkgbuild
 f:6be2a5e3cd924b417e134fccf6449d41:zig/resolve_DNS.patch
@@ -58,7 +58,7 @@ f:42a219b7c8492481dc020c509697e329:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:c517a80834bcc3043583de3f2a1bb579:rust/spkgbuild
+f:2a16718443c11d40048d1b51ff10c34b:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
