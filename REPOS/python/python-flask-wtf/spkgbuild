@@ -2,7 +2,7 @@
 # depends : python-flask python-wtforms python-werkzeug
 
 name=python-flask-wtf
-version=1.2.0
+version=1.2.1
 release=3
 
 source="https://github.com/lepture/flask-wtf/archive/refs/tags/v$version.tar.gz"

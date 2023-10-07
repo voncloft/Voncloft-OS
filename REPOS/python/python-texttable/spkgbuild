@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-texttable
-version=1.6.7
+version=1.7.0
 release=3
 
 source="https://github.com/foutaise/texttable/archive/refs/tags/v$version.tar.gz"

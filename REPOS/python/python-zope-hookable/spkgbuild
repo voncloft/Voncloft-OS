@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-zope-hookable
-version=5.4
+version=6.0
 release=3
 
 source="https://github.com/zopefoundation/zope.hookable/archive/refs/tags/$version.tar.gz"

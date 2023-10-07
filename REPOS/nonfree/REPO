@@ -31,9 +31,9 @@ f:e74f90cf8324be8b15b54d637eb1c2fe:discord/spkgbuild
 f:fa93a0c669b5f0cd8b9be4c8eecf5cdd:telegram-desktop-bin/telegram-desktop-bin.desktop
 f:0a31f20f902f7940883b0575731e7c69:telegram-desktop-bin/spkgbuild
 f:5808f91768336b5955b5dfe2defa4b47:veracrypt/veracrypt.desktop
-f:a5ac271036250bf30ec1fb3f0e8bfc7f:veracrypt/CHANGELOG
+f:fc4ff81891c828bfb9daefe3e24931bd:veracrypt/CHANGELOG
 f:210b0e70cbe6645148e668bf611413b6:veracrypt/override
-f:3a7845f8c49cbe7da0f8654be32898c0:veracrypt/spkgbuild
+f:6db578da1e88aa7d6394116984922e87:veracrypt/spkgbuild
 f:6a88c6894d8e09120ef1d48004c3c550:veracrypt/no-makeself.patch
 f:f3350cc0fb7b5f4fb6f2c0adda7e1260:dropbox/dropbox.desktop
 f:5485cda5d86e02748a09e4ab02b39b09:dropbox/spkgbuild
@@ -87,9 +87,9 @@ f:22a3925173a3f0f7cc69b343e9323def:webtorrent-desktop-bin/spkgbuild
 f:53f9343506c4d4020f7a90fa3ec03437:nvidia-32/CHANGELOG
 f:cfcb2fdfc65066f4197f1d593883c205:nvidia-32/override
 f:de4bc6cfbab0aed753037ddd453a939a:nvidia-32/spkgbuild
-f:1e9d05f8d9a613bc019415a3a3f27b29:thunderbird/CHANGELOG
+f:a82d983313d260658eddd6b907e2b597:thunderbird/CHANGELOG
 f:fcc39527591fe21fe556132e94870dc2:thunderbird/override
-f:4016226e413dc8886ff582389bdef894:thunderbird/spkgbuild
+f:61c6b1b5e1205ac7883d1b0532d7761d:thunderbird/spkgbuild
 f:bb20e95b9d65d59ba39f2f7f1c853c27:thunderbird/cbindgen-0.24.patch
 f:1016981b5fb5a6d9ea6ddb2de2bc04b3:thunderbird/pre-upgrade.sh
 f:cb4624812911701f60b09e463a7057ea:pandoc-bin/CHANGELOG
@@ -128,11 +128,11 @@ f:7a36cd99437f7b5e4785a8975b3c0e1b:virtualbox/spkgbuild
 f:7e2790e8c21dd5fc7af08d1e3a3f95d9:virtualbox/virtualbox.60-vboxdrv.rules.1
 f:99fa93d5e7fb5d622cef0f9621f3ffa3:google-chrome/google-chrome-stable.sh
 f:4fa4d507cb612620abc1c785c22dbbfc:google-chrome/spkgbuild
-f:7bbcb1acb3cec6a215ecbcae59a90519:firefox/CHANGELOG
+f:1035eccb5e8bcf52e0a576888a4584e7:firefox/CHANGELOG
 f:37db9ec3cc336d3a09ede8becec2ad69:firefox/fix-ftbfs-newer-cbindgen.patch
 f:a4a0f7c9c1e3424463670d031976aa67:firefox/override
 f:971c77648caea312fca2d9340c4382a6:firefox/firefox.desktop
-f:b2140fac74070510b178789ef89b253f:firefox/spkgbuild
+f:e3724f8b9468b1252e0aa04845058f3f:firefox/spkgbuild
 f:89fb28a484e7f5126839e83f10de377a:firefox/pre-upgrade.sh
 f:8f2ecb1b71ef5f7ccbb5bef10da5a846:packettracer/cisco-ptsa.desktop
 f:367c64382056110df3e35d1d74749889:packettracer/CHANGELOG
