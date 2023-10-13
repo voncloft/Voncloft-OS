@@ -6,7 +6,7 @@ diff -Naur plasma-workspace-5.27.2/components/calendar/daysmodel.cpp plasma-work
  #include <QMetaObject>
  
 -constexpr int maxEventDisplayed = 5;
-+constexpr int maxEventDisplayed = 10;
++constexpr int maxEventDisplayed = 20;
  
  class DaysModelPrivate
  {
