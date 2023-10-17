@@ -332,8 +332,8 @@ f:79c52e3e94c98e58c61e1df46ca56915:libunistring/spkgbuild
 f:9f89cf1a6d3d96334f8929cfc7496791:libisoburn/CHANGELOG
 f:4991a9969d07dc7fefbd481cf6a535de:libisoburn/spkgbuild
 f:cb935b4dd3d6cf99183951ac7075f718:confuse/spkgbuild
-f:4e28d51c21c4c31478fa3bd4f9371d90:libjpeg-turbo/CHANGELOG
-f:d567511a223413d5f0ff46887300ba1f:libjpeg-turbo/spkgbuild
+f:22ef829dc50a2e3c51f191c3eeeb5075:libjpeg-turbo/CHANGELOG
+f:a738c550dc41948f7c5e6c8395b21803:libjpeg-turbo/spkgbuild
 f:4b491e29a8142fedd11472306f5c1192:snappy/snappy.pc
 f:97e362a5b1bcefb192540f33c5e8a1be:snappy/CHANGELOG
 f:9a53dc35bf446fb74a6176f89d6a8190:snappy/spkgbuild
@@ -418,8 +418,8 @@ f:0e2150bea309564c3cb1a728a0510d8a:libmpdclient/spkgbuild
 f:2e7999403d2db0ca8279cfcbeb589615:sqlite/CHANGELOG
 f:6edd51a5975a3a6edc90c2a1dcfb2f01:sqlite/spkgbuild
 f:980dae759970bc666aacc3af31e7fa77:libxmu/spkgbuild
-f:a8984332736d618984da416c38f86e96:oniguruma/CHANGELOG
-f:b1b2e994bc4cf2538323ac32bc077380:oniguruma/spkgbuild
+f:8bc602caceda677f00a5f5b9dc15873e:oniguruma/CHANGELOG
+f:78588d8df0aa5bd39bc9e2e768256820:oniguruma/spkgbuild
 f:995a0571aec3eef550332bf9ac21e733:libstatgrab/CHANGELOG
 f:a9a32945996a8e7d0f9f03d1a87dfef4:libstatgrab/spkgbuild
 f:98738e2009c8973bf6300a21bca8b740:libxrandr/spkgbuild
@@ -453,8 +453,8 @@ f:860473d01ed41240349a65595c70378b:xapian-core/spkgbuild
 f:4c6f9b74b72d3561b8ce8b37e1ce269d:libxaw3dxft/spkgbuild
 f:fcd6515962b376624de7136f7e2260ad:liblastfm-qt5/CHANGELOG
 f:446dffe884ea47190dd2176d9419a379:liblastfm-qt5/spkgbuild
-f:c2e6ee9ab164c1acfc6ddd039649465e:libical/CHANGELOG
-f:b4a4c8499a38dff7b1f33e9a53610d87:libical/spkgbuild
+f:9c8f8cf7d3aab2fe81f5f5b317c4af57:libical/CHANGELOG
+f:1fdb7f27320dec6fe3d4e92181ad1aaa:libical/spkgbuild
 f:49b4b3d299436c07e66cee2d297c7c53:libarchive/CHANGELOG
 f:de812a827fb7fefa707481b835d1505e:libarchive/spkgbuild
 f:e89d1b5e9cf6d4c6b34c5c81a1d36d93:libpeas/spkgbuild
@@ -518,8 +518,8 @@ f:bbc7a90ecd7bbbad71f246291f8342d9:libxfce4util/CHANGELOG
 f:1deff1a29272d2c6094b2de73b75ac65:libxfce4util/spkgbuild
 f:19b3e00d381b6ffbde04c972044d1651:libmng/spkgbuild
 f:987864f7de70b563fd66bd097b81cceb:opensp/spkgbuild
-f:f4f3a6fc723d20ab46f6fb28de0b5bfc:libxfce4ui/CHANGELOG
-f:343bc240164216a072c3b80b8ba34c12:libxfce4ui/spkgbuild
+f:52524c57d39d078fe375358152cd6205:libxfce4ui/CHANGELOG
+f:a7d47a6cd927dc57cfdfedbbde92bc78:libxfce4ui/spkgbuild
 f:45bd22fe9c6a7aa494b6c61fc0e97c07:libxres/spkgbuild
 f:772a4b7611de6572930cc2ed0e432d78:libmpc/spkgbuild
 f:079f9c832f587f45f9504e4d3c41a4d3:libftdi/spkgbuild
@@ -588,9 +588,9 @@ f:21e681165bb49e3c65d86356c25102d0:jansson/spkgbuild
 f:017631b827b5ee0a09362f174b98c5c3:fdk-aac/CHANGELOG
 f:c0e5b72a990a6743cc49e35beb2680f6:fdk-aac/spkgbuild
 f:75a55a676dc7c60a7ec1afe5742a4542:libnsl/post-install.sh
-f:1d82dd5803eb640101f9677573266280:libnsl/CHANGELOG
+f:3b5d704654cfaa80a274e990a47e23c9:libnsl/CHANGELOG
 f:75a55a676dc7c60a7ec1afe5742a4542:libnsl/post-upgrade.sh
-f:887c0cd2e8b90915731e37d34e2d446a:libnsl/spkgbuild
+f:0f7ab62f060907ca7122d2d2a58dfb75:libnsl/spkgbuild
 f:040cb02ae65ca70e8f7214692ac59af8:fmt/CHANGELOG
 f:cef6ea981c7dd2d1faaff225a88c393b:fmt/spkgbuild
 f:1e1bdd34bdf6b06349a8cd542d9e9ba8:glib/CHANGELOG
@@ -649,8 +649,8 @@ f:616aa4c5f66474efb18afd0f07536e41:gexiv2/spkgbuild
 f:e89329c6516c98a3be24cf9fbee776f3:libxss/spkgbuild
 f:f8537f793572b3e15da7f5c60a8f3b87:libdbusmenu-glib/spkgbuild
 f:f73bc2555810b4587344ad7fb325fef7:libev/spkgbuild
-f:06dcc0508c37c0ffd6fd49c4369442e5:libimagequant/CHANGELOG
-f:e96c7f45dae684e818f3ba77c0feac2f:libimagequant/spkgbuild
+f:25e762b8bf4cd7278527e7f8acf34f34:libimagequant/CHANGELOG
+f:326ba6ec2e739269449c139de5c52421:libimagequant/spkgbuild
 f:86317dae69c67b43d4d2f7240149be9f:libtasn1/CHANGELOG
 f:6d1743dca32cdf57f567b4e6b56a467c:libtasn1/spkgbuild
 f:f5cbe48f97a53f3fa84ebc48d88fe654:gpgme/CHANGELOG

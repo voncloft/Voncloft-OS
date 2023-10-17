@@ -2,7 +2,7 @@
 # depends : python libuv
 
 name=python-uvloop
-version=0.17.0
+version=0.18.0
 release=3
 
 source="https://github.com/MagicStack/uvloop/archive/refs/tags/v$version.tar.gz"
