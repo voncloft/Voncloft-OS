@@ -52,10 +52,10 @@ f:389d0b9a267e33152cccb77020a40efc:openssh/spkgbuild
 f:b7e7193fefab7b03d54e55ca3f178fad:openssh/rc.sshd
 f:2349a85d7ff9ad653f52774205f0ac02:openssh/sshd
 f:9e852273cc09843dd54dae23b26a453b:openssh/run
-f:e67422e8a934fa7b3300c29dfe14eecf:networkmanager/CHANGELOG
+f:cddac29c4ff6ff2cb3c80e75ed9197df:networkmanager/CHANGELOG
 f:0644ece4a3fb7df43d40c58eb7188fbf:networkmanager/pre-install.sh
 f:3d2b081a6829aac4dd33c0cb0761088a:networkmanager/override
-f:e30f996231d710e71a92a4e514e0d6ee:networkmanager/spkgbuild
+f:483e16e7b1083f00fbe33a05f4301e0c:networkmanager/spkgbuild
 f:a4db0a5d64a30b0dabb348d3fd35757d:whois/CHANGELOG
 f:8727e6e60ab1847877be90ee2aab6576:whois/spkgbuild
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
@@ -109,8 +109,8 @@ f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
 f:ef3b74c74d426ea3b3c7a3a10a24255e:tor/spkgbuild
 f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
-f:cebb4c69b08678489cf0cef1307a5c61:nftables/CHANGELOG
-f:d3b9aaa4cf8e4bae3aa3777d6e5f032a:nftables/spkgbuild
+f:c8abad37a8a588bfbb6cb242a274cdc1:nftables/CHANGELOG
+f:a3ce1347758acccd4ce6e80e37d56587:nftables/spkgbuild
 f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
@@ -146,10 +146,10 @@ f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:d6c80d7cb1f2516073e9c98269d44fb2:nmap/CHANGELOG
 f:b05ef6321275c531ca6074bb082e23f3:nmap/ssl.patch
 f:fdc2c425f36d2e83f672d70ff6818dba:nmap/spkgbuild
-f:5a0da7e6321a4f17710fd523c03dd27c:wireshark/CHANGELOG
+f:b13b23c9e57b2e6f56118506b910cdd3:wireshark/CHANGELOG
 f:6736b07aea5c8a1239a964908036ff95:wireshark/pre-install.sh
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
-f:6abb5751df7fb6c8a64cca55e9b9bcc0:wireshark/spkgbuild
+f:0b3fb462bd076cd1f6e2636bc0dabbcf:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
 f:cb0bd8efdb3af3b657a7e270e0a38671:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
