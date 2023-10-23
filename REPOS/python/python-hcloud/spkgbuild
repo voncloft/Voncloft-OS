@@ -2,7 +2,7 @@
 # depends : python-requests python-dateutil python-future
 
 name=python-hcloud
-version=1.30.0
+version=1.31.0
 release=2
 
 source="https://github.com/hetznercloud/hcloud-python/archive/refs/tags/v$version.tar.gz"

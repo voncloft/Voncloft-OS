@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-construct
-version=2.10.68
+version=2.10.69
 release=1
 
 source="https://github.com/construct/construct/archive/refs/tags/v$version.tar.gz"
