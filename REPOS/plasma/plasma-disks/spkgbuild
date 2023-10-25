@@ -2,7 +2,7 @@
 # depends : kde-deps kinfocenter
 
 name=plasma-disks
-version=5.27.8
+version=5.27.9
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"

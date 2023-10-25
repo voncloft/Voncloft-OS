@@ -2,7 +2,7 @@
 # depends : kernel-prereq linux-firmware
 
 name=linux-desktop
-version=6.5.8
+version=6.5.9
 release=1
 
 source="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
