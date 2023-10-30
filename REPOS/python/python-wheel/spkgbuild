@@ -2,7 +2,7 @@
   # depends : python-packaging
 
 name=python-wheel
-version=0.41.2
+version=0.41.3
 release=1
 
 source="https://github.com/pypa/wheel/archive/refs/tags/$version.tar.gz"
