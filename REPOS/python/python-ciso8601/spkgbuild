@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-ciso8601
-version=2.3.0
+version=2.3.1
 release=3
 
 source="https://github.com/closeio/ciso8601/archive/refs/tags/v$version.tar.gz"
