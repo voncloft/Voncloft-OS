@@ -2,7 +2,7 @@
 # depends : 
 
 name=anki
-version=23.10
+version=23.10.1
 release=1
 
 source="https://github.com/ankitects/anki/releases/download/$version/anki-$version-linux-qt5.tar.zst"
