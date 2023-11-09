@@ -2,7 +2,7 @@
 # depends	: qt5 cmake libstatgrab libsysstat lm_sensors liblxqt kwindowsystem libqtxdg solid lxqt-globalkeys pulseaudio libdbusmenu-qt libxcomposite
 
 name=lxqt-panel
-version=1.3.0
+version=1.4.0
 release=1
 source="https://github.com/lxqt/$name/releases/download/$version/$name-$version.tar.xz"
 

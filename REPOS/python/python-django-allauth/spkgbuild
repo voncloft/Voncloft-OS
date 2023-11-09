@@ -2,7 +2,7 @@
 # depends : python-django python-openid python-requests
 
 name=python-django-allauth
-version=0.58.1
+version=0.58.2
 release=1
 
 source="https://github.com/pennersr/django-allauth/archive/refs/tags/$version.tar.gz"
