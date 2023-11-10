@@ -101,12 +101,12 @@ f:73094aefef5d679c106af69f745c7a2b:subversion/spkgbuild
 f:f7815f80328c2b04a73137d02cd13707:make-ca/CHANGELOG
 f:78153899fd744640486a4e7855849fd5:make-ca/update-pki.sh
 f:245dc3239c6f263c23bc6c8070ecdc14:make-ca/spkgbuild
-f:e6648cb8f55edb01bf0c21bedd44ed09:tor/CHANGELOG
+f:5daa679a6445eaf89c1bb4dbd5c47c74:tor/CHANGELOG
 f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
 f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
 f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
 f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
-f:15fd27418a9e8bba6fa95dd88039c4d5:tor/spkgbuild
+f:7b7511d252e5f4ea2b0664b2cf8e3b33:tor/spkgbuild
 f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
 f:c8abad37a8a588bfbb6cb242a274cdc1:nftables/CHANGELOG
@@ -115,10 +115,10 @@ f:bea51ee7d8aec45d56a25ad8aa62a9e0:nftables/nftables.conf
 f:43e47cdc9f911a50b0b38237f0206a22:sshfs/CHANGELOG
 f:ab22b7009a648a911b98c3d115181ec6:sshfs/spkgbuild
 f:d18dce76462cdf0fb6d05986ec9a9985:openvpn/post-install.sh
-f:e764c01eb9bb8ee3a409cc026e250b67:openvpn/CHANGELOG
+f:0a68412dd1c0ccc75e822b032828414a:openvpn/CHANGELOG
 f:ef06c0c62ef268cb974e7aa5a2adea04:openvpn/post-upgrade.sh
 f:28256197db8334d614c44e34bbb68df5:openvpn/openvpn-torrent
-f:b2005d55d5de1caf412205fd0784df79:openvpn/spkgbuild
+f:acae67bc194c75909445a908531c57b7:openvpn/spkgbuild
 f:82bf846c7f96266299920d9ede006ab7:filezilla/CHANGELOG
 f:6eb2e845fc4cc15794076e14226b25d2:filezilla/missing-list-include.patch
 f:4bc365306ad791958da4915774f41ffd:filezilla/spkgbuild

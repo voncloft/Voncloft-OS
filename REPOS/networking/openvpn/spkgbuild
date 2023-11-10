@@ -2,7 +2,7 @@
 # depends:     openvpn-daemon lzo iproute2 pkcs11-helper
 
 name=openvpn
-version=2.6.6
+version=2.6.7
 release=1
 source="https://github.com/OpenVPN/openvpn/archive/$version/$name-$version.tar.gz
 	openvpn-torrent"
