@@ -1,5 +1,5 @@
 # description : IT automation platform
-# depends : python python-crpytography python-jinja python-packaging python-paramiko python-yaml python-resolvelib python-typing_extensions
+# depends : python python-cryptography python-jinja python-packaging python-paramiko python-yaml python-resolvelib python-typing_extensions
 
 name=ansible-core
 version=2.16.0
