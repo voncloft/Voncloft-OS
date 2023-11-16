@@ -1,0 +1,14 @@
+# description : IT automation platform
+# depends : python python-crpytography python-jinja python-packaging python-paramiko python-yaml python-resolvelib python-typing_extensions
+
+name=ansible-core
+version=2.16.0
+release=1
+
+source="${PKG}-${version}.tar.gz::https://github.com/ansible/ansible/archive/refs/tags/v${version}.tar.gz"
+
+build() {
+	cd ansible-$version
+	python -m build --wheel --no-isolation
+	python -m installer --destdir=$PKG dist/*.whl
+}

@@ -1,0 +1,14 @@
+# description : a service to launch OS remotely for iPxe
+# depends : ansible git httpd
+
+name=netboot
+version=2.0.74
+release=1
+
+source="https://github.com/netbootxyz/netboot.xyz/archive/refs/tags/$version.tar.gz"
+noextract=$version.tar.gz"
+\
+build() {
+	mkdir -pv $PKG/opt/netboot.xyz
+	tar -xf $versioin.tar.gz -C $PKG/opt/netboot.xyz
+}

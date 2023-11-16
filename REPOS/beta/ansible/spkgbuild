@@ -1,0 +1,14 @@
+# description : assortmant of ansible collections
+# depends : python ansible-core
+
+name=ansible
+version=8.6.1
+release=1
+
+source="https://pypi.python.org/packages/source/a/ansible/ansible-${version}.tar.gz"
+
+build() {
+	cd ansible-$version
+	python setup.py build
+	python setup.py install -O1 --root=$PKG
+}
