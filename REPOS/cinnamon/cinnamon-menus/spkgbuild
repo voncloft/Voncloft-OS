@@ -2,7 +2,7 @@
 # depends : glib
 # depends : gobject-introspection meson ninja
 name=cinnamon-menus
-version=5.8.0
+version=6.0.0
 release=1
 
 source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"

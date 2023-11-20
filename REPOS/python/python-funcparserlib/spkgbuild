@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-funcparserlib
-version=1.0.1
+version=2.0.0
 release=5
 
 source="https://github.com/vlasovskikh/funcparserlib/archive/refs/tags/a$version.tar.gz"
