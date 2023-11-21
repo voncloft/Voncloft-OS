@@ -2,7 +2,7 @@
 # depends : python-aiohttp
 
 name=python-aioresponses
-version=0.7.5
+version=0.7.6
 release=3
 
 source="https://github.com/pnuckowski/aioresponses/archive/refs/tags/$version.tar.gz"

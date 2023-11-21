@@ -2,7 +2,7 @@
 # depends : python-requests python-setuptools
 
 name=python-qiniu
-version=7.12.0
+version=7.12.1
 release=1
 
 source="https://github.com/qiniu/python-sdk/archive/refs/tags/v$version.tar.gz"
