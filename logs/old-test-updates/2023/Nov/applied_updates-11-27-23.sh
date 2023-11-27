@@ -14,3 +14,5 @@ sed -i -e "s/version=0.41.3/version=0.42.0/g" python/python-wheel/spkgbuild
 changelog "python/python-wheel/spkgbuild" "Upgraded from version 0.41.3 to version 0.42.0"
 sed -i -e "s/version=3.14.29/version=3.14.34/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.14.29 to version 3.14.34"
+sed -i -e "s/version=3.94/version=3.95/g" core/nss/spkgbuild
+changelog "core/nss/spkgbuild" "Upgraded from version 3.94 to version 3.95"
