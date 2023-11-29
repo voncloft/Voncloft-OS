@@ -2,7 +2,7 @@
 # depends : python-cffi python-six
 
 name=python-bcrypt
-version=4.1.0
+version=4.1.1
 release=3
 
 source="https://github.com/pyca/bcrypt/archive/refs/tags/$version.tar.gz"
