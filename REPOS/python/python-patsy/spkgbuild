@@ -2,7 +2,7 @@
 # depends : python-numpy
 
 name=python-patsy
-version=0.5.3
+version=0.5.4
 release=6
 
 source="https://github.com/pydata/patsy/archive/refs/tags/v$version.tar.gz"
