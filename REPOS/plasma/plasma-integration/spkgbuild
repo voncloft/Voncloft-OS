@@ -2,7 +2,7 @@
 # depends : kde-deps kio kwayland qqc2-desktop-style breeze
 
 name=plasma-integration
-version=5.27.9
+version=5.27.10
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"

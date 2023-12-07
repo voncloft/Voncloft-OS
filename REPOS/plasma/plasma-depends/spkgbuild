@@ -5,7 +5,7 @@
 # depends : perl libxcursor wayland-protocols doxygen lcms2 libxrandr libxres gawk xdg-user-dirs ibus noto-fonts networkmanager-qt xmessage xrdb xsetroot libqalculate sddm
 
 name=plasma-depends
-version=5.27.9
+version=5.27.10
 release=1
 build(){
 	mkdir -pv $PKG/usr
