@@ -498,3 +498,31 @@ sed -i -e "s/version=3.29.0/version=3.30.0/g" python/python-openmdao/spkgbuild
 changelog "python/python-openmdao/spkgbuild" "Upgraded from version 3.29.0 to version 3.30.0"
 sed -i -e "s/version=6.3.0/version=6.4.0/g" python/python-openstackclient/spkgbuild
 changelog "python/python-openstackclient/spkgbuild" "Upgraded from version 6.3.0 to version 6.4.0"
+sed -i -e "s/version=0.121.0/version=0.121.1/g" core/hugo/spkgbuild
+changelog "core/hugo/spkgbuild" "Upgraded from version 0.121.0 to version 0.121.1"
+sed -i -e "s/version=6.6.4/version=6.6.5/g" core/linux-api-headers/spkgbuild
+changelog "core/linux-api-headers/spkgbuild" "Upgraded from version 6.6.4 to version 6.6.5"
+sed -i -e "s/version=6.6.4/version=6.6.5/g" core/linux-desktop/spkgbuild
+changelog "core/linux-desktop/spkgbuild" "Upgraded from version 6.6.4 to version 6.6.5"
+sed -i -e "s/version=6.6.4/version=6.6.5/g" core/linux-router/spkgbuild
+changelog "core/linux-router/spkgbuild" "Upgraded from version 6.6.4 to version 6.6.5"
+sed -i -e "s/version=3.0.2/version=3.1.0/g" core/qutebrowser/spkgbuild
+changelog "core/qutebrowser/spkgbuild" "Upgraded from version 3.0.2 to version 3.1.0"
+sed -i -e "s/version=2.1.0/version=2.2.0/g" core/zxing-cpp/spkgbuild
+changelog "core/zxing-cpp/spkgbuild" "Upgraded from version 2.1.0 to version 2.2.0"
+sed -i -e "s/version=0.4.8.9/version=0.4.8.10/g" networking/tor/spkgbuild
+changelog "networking/tor/spkgbuild" "Upgraded from version 0.4.8.9 to version 0.4.8.10"
+sed -i -e "s/version=121.0b8/version=121.0b9/g" nonfree/firefox/spkgbuild
+changelog "nonfree/firefox/spkgbuild" "Upgraded from version 121.0b8 to version 121.0b9"
+sed -i -e "s/version=1.33.9/version=1.33.11/g" python/python-boto3/spkgbuild
+changelog "python/python-boto3/spkgbuild" "Upgraded from version 1.33.9 to version 1.33.11"
+sed -i -e "s/version=1.33.9/version=1.33.11/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.33.9 to version 1.33.11"
+sed -i -e "s/version=8.11.0/version=8.11.1/g" python/python-elasticsearch/spkgbuild
+changelog "python/python-elasticsearch/spkgbuild" "Upgraded from version 8.11.0 to version 8.11.1"
+sed -i -e "s/version=2.25.1/version=2.25.2/g" python/python-google-auth/spkgbuild
+changelog "python/python-google-auth/spkgbuild" "Upgraded from version 2.25.1 to version 2.25.2"
+sed -i -e "s/version=6.0.1/version=6.1.0/g" python/python-hacking/spkgbuild
+changelog "python/python-hacking/spkgbuild" "Upgraded from version 6.0.1 to version 6.1.0"
+sed -i -e "s/version=6.91.0/version=6.91.1/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.91.0 to version 6.91.1"
