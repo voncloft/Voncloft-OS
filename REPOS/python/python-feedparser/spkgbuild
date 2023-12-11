@@ -3,7 +3,7 @@
 # depends : python
 
 name=python-feedparser
-version=6.0.10
+version=6.0.11
 release=9
 
 source="https://github.com/kurtmckee/feedparser/archive/refs/tags/$version.tar.gz"
