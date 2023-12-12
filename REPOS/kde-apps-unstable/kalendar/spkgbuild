@@ -1,0 +1,14 @@
+# description : calendar application using akonadi
+# depends: eventviews kdepim-runtime kirigami-addons
+
+name=kalendar
+version=23.04.3
+release=1
+
+source="https://github.com/KDE/kalendar/archive/refs/tags/v$version.tar.gz"
+build(){
+   cd *
+   kf5-package-installer
+   cd build
+   make DESTDIR=$PKG install	
+}

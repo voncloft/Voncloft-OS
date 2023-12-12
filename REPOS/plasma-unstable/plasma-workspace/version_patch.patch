@@ -1,0 +1,12 @@
+diff -Naur plasma-workspace-5.27.4-bak/CMakeLists.txt plasma-workspace-5.27.4/CMakeLists.txt
+--- plasma-workspace-5.27.4-bak/CMakeLists.txt	2023-04-04 06:43:40.000000000 -0400
++++ plasma-workspace-5.27.4/CMakeLists.txt	2023-04-05 22:11:36.563167855 -0400
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 3.16)
+ 
+ project(plasma-workspace)
+-set(PROJECT_VERSION "5.27.3")
++set(PROJECT_VERSION "5.27.4")
+ set(PROJECT_VERSION_MAJOR 5)
+ 
+ set(QT_MIN_VERSION "5.15.2")

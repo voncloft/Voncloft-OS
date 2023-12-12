@@ -1,0 +1,19 @@
+# description : extended calendar plasmoid much better than default
+# depends : plasma-workspace
+
+name=eventcalendar
+version=76
+release=1
+
+source="https://github.com/Zren/plasma-applet-eventcalendar/archive/v$version.tar.gz"
+
+build() {
+	cd plasma-applet-eventcalendar-$version/package
+	mkdir -pv $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar
+	cp -r * $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar
+	cd $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar/translate
+	sh ./build
+	mkdir $PKG/usr/share/locale
+	mv $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar/contents/locale $PKG/usr/share/
+	rm -rfv $PKG/usr/share/plasma/plasmoids/org.kde.plasma.eventcalendar/translate
+}

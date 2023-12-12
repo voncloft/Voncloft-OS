@@ -1,0 +1,58 @@
+# description : Core components for the kde desktop these are all the kf5 dependencies
+# depends : qt5 boost extra-cmake-modules docbook-xml docbook-xsl giflib libepoxy libgcrypt libical libjpeg-turbo libpng libxslt lmdb qrencode 
+# depends : phonon plasma-wayland-protocols shared-mime-info perl-uri wget aspell avahi libdbusmenu-qt networkmanager polkit-qt bluez
+# depends : noto-fonts doxygen python-jinja yaml jasper openexr upower gpgme hunspell sudo exiv2 ffmpeg poppler-qt5 taglib libxss
+# depends : libutempter libdmtx telegram-desktop-bin udisks2 aspell hunspell
+# depends : discount libspectre djvulibre chmlib libzip ebook-tools
+name=kf5-depends
+version=5.112.0
+release=1
+verzion=5.81
+source="kf5.sh
+	qt5.sh
+	qt
+	kde"
+build(){
+        mkdir -pv $PKG/usr
+	mkdir -pv $PKG/etc/profile.d
+        install -Dm644 $SRC/kf5.sh $PKG/etc/profile.d/kf5.sh
+        install -Dm644 $SRC/qt5.sh $PKG/etc/profile.d/qt5.sh
+        mkdir -pv $PKG/etc/sudoers.d
+        install -Dm644 $SRC/qt $PKG/etc/sudoers.d/qt
+        install -Dm644 $SRC/kde $PKG/etc/sudoers.d/kde
+
+	###KEEP JUST INCASE###
+        # cat <<- EOF > $PKG/etc/profile.d/kf5.sh
+        # Begin /etc/profile.d/kf5.sh
+	#if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+        #	export $(dbus-launch)
+	#fi
+
+        #export KF5_PREFIX=/usr
+
+        # End /etc/profile.d/kf5.sh
+	#EOF
+
+        #cat <<- EOF > $PKG/etc/profile.d/qt5.sh
+        # Begin Qt5 changes for KF5
+	#QT5DIR=/usr
+	
+	#pathappend /usr/lib/qt5/plugins    QT_PLUGIN_PATH
+	#pathappend $QT5DIR/lib/plugins     QT_PLUGIN_PATH
+
+	#pathappend /usr/lib/qt5/qml        QML2_IMPORT_PATH
+	#pathappend $QT5DIR/lib/qml         QML2_IMPORT_PATH
+
+
+        # End Qt5 changes for KF5
+	#EOF
+	#mkdir $PKG/etc/sudoers.d
+	#cat <<- EOF > $PKG/etc/sudoers.d/qt
+	#Defaults env_keep += QT_PLUGIN_PATH
+	#Defaults env_keep += QML2_IMPORT_PATH
+	#EOF
+
+	#cat <<- EOF > $PKG/etc/sudoers.d/kde
+	#Defaults env_keep += KF5_PREFIX
+	#EOF
+}

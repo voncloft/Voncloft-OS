@@ -1,0 +1,17 @@
+# description : create business diagrams
+# depends :
+
+name=kdiagram
+version=2.8.0
+release=1
+
+source="https://download.kde.org/unstable/$name/$version/$name-$version.tar.xz"
+
+build()
+{
+	cd $name-$version
+	mkdir build
+	cd build
+	cmake ..
+	make DESTDIR=$PKG install
+}

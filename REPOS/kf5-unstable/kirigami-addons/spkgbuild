@@ -1,0 +1,15 @@
+# description : addons for kirigami framework
+# depends : kde-deps kirigami2
+
+name=kirigami-addons
+version=0.11.76
+release=1
+
+source="https://download.kde.org/unstable/$name/$name-$version.tar.xz"
+
+build() {
+   cd $name-$version
+   kf5-package-installer
+   cd build
+   make DESTDIR=$PKG install
+}

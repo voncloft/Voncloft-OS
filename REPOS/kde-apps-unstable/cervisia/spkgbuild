@@ -1,0 +1,16 @@
+# description : Core components for the kde desktop
+# depends : kde-deps
+
+name=cervisia
+version=24.01.80
+release=1
+
+source="https://download.kde.org/unstable/release-service/$version/src/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+   cd $name-$version
+   plasma-package-installer
+  cd build
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,12 @@
+diff -Naur plasma-workspace-5.27.2/components/calendar/daysmodel.cpp plasma-workspace-5.27.2-modded/components/calendar/daysmodel.cpp
+--- plasma-workspace-5.27.2/components/calendar/daysmodel.cpp	2023-02-28 07:23:29.000000000 -0500
++++ plasma-workspace-5.27.2-modded/components/calendar/daysmodel.cpp	2023-03-01 19:59:03.161478495 -0500
+@@ -14,7 +14,7 @@
+ #include <QDir>
+ #include <QMetaObject>
+ 
+-constexpr int maxEventDisplayed = 5;
++constexpr int maxEventDisplayed = 20;
+ 
+ class DaysModelPrivate
+ {
