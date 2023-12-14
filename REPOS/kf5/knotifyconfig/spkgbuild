@@ -2,7 +2,7 @@
 # depends : kde-deps kio
 
 name=knotifyconfig
-version=5.112.0
+version=5.113.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
