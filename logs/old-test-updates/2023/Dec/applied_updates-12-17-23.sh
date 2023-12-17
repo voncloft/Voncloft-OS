@@ -38,3 +38,23 @@ sed -i -e "s/version=5.112.0/version=5.113.0/g" kf5-unstable/kf5-programs/spkgbu
 changelog "kf5-unstable/kf5-programs/spkgbuild" "Upgraded from version 5.112.0 to version 5.113.0"
 sed -i -e "s/version=22.3.5/version=23.3.1/g" hardware/mesa/spkgbuild
 changelog "hardware/mesa/spkgbuild" "Upgraded from version 22.3.5 to version 23.3.1"
+sed -i -e "s/version=9.0.1/version=9.0.3/g" hardware/glu/spkgbuild
+changelog "hardware/glu/spkgbuild" "Upgraded from version 9.0.1 to version 9.0.3"
+sed -i -e "s/version=0.30.0/version=1.4.0/g" hardware/xf86-input-libinput/spkgbuild
+changelog "hardware/xf86-input-libinput/spkgbuild" "Upgraded from version 0.30.0 to version 1.4.0"
+sed -i -e "s/version=1.9.1/version=1.9.2/g" hardware/xf86-input-synaptics/spkgbuild
+changelog "hardware/xf86-input-synaptics/spkgbuild" "Upgraded from version 1.9.1 to version 1.9.2"
+sed -i -e "s/version=13.1.0/version=13.2.0/g" hardware/xf86-input-vmmouse/spkgbuild
+changelog "hardware/xf86-input-vmmouse/spkgbuild" "Upgraded from version 13.1.0 to version 13.2.0"
+sed -i -e "s/version=0.40.0/version=1.2.0/g" hardware/xf86-input-wacom/spkgbuild
+changelog "hardware/xf86-input-wacom/spkgbuild" "Upgraded from version 0.40.0 to version 1.2.0"
+sed -i -e "s/version=19.1.0/version=23.0.0/g" hardware/xf86-video-amdgpu/spkgbuild
+changelog "hardware/xf86-video-amdgpu/spkgbuild" "Upgraded from version 19.1.0 to version 23.0.0"
+sed -i -e "s/version=19.1.0/version=22.0.0/g" hardware/xf86-video-ati/spkgbuild
+changelog "hardware/xf86-video-ati/spkgbuild" "Upgraded from version 19.1.0 to version 22.0.0"
+sed -i -e "s/version=1.0.16/version=1.0.17/g" hardware/xf86-video-nouveau/spkgbuild
+changelog "hardware/xf86-video-nouveau/spkgbuild" "Upgraded from version 1.0.16 to version 1.0.17"
+sed -i -e "s/version=2.4.0/version=2.6.0/g" hardware/xf86-video-vesa/spkgbuild
+changelog "hardware/xf86-video-vesa/spkgbuild" "Upgraded from version 2.4.0 to version 2.6.0"
+sed -i -e "s/version=13.3.0/version=13.4.0/g" hardware/xf86-video-vmware/spkgbuild
+changelog "hardware/xf86-video-vmware/spkgbuild" "Upgraded from version 13.3.0 to version 13.4.0"

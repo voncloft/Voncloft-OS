@@ -2,7 +2,7 @@
 # depends	: libdrm mesa eudev xorg-server
 
 name=xf86-video-vmware
-version=13.3.0
+version=13.4.0
 release=1
 source="http://ftp.x.org/pub/individual/driver/$name-$version.tar.bz2
 	gcc8.diff"
