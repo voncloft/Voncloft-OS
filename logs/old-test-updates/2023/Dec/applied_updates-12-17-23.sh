@@ -32,3 +32,7 @@ sed -i -e "s/version=3.14.37/version=3.14.38/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.14.37 to version 3.14.38"
 sed -i -e "s/version=2023.12.2/version=2023.12.3/g" server/homeassistant/spkgbuild
 changelog "server/homeassistant/spkgbuild" "Upgraded from version 2023.12.2 to version 2023.12.3"
+sed -i -e "s/version=5.112.0/version=5.113.0/g" kf5-unstable/kf5-depends/spkgbuild
+changelog "kf5-unstable/kf5-depends/spkgbuild" "Upgraded from version 5.112.0 to version 5.113.0"
+sed -i -e "s/version=5.112.0/version=5.113.0/g" kf5-unstable/kf5-programs/spkgbuild
+changelog "kf5-unstable/kf5-programs/spkgbuild" "Upgraded from version 5.112.0 to version 5.113.0"

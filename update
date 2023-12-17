@@ -670,7 +670,7 @@ cd /Voncloft-OS/REPOS
 ###GLOBAL VARIABLE###
 logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
 table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
-repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* libs/* networking/* nonfree/* perl/* plasma/* python/* ruby-gems/* server/* xfce/* xorg/*"
+repos="cinnamon/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* libs/* networking/* nonfree/* perl/* plasma/* python/* ruby-gems/* server/* xfce/* xorg/* plasma-unstable kde-apps-unstable kf5-unstable"
 
 start_time="$(date -u +%s)"
 ###Start Checking###
