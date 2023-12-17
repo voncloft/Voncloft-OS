@@ -36,3 +36,5 @@ sed -i -e "s/version=5.112.0/version=5.113.0/g" kf5-unstable/kf5-depends/spkgbui
 changelog "kf5-unstable/kf5-depends/spkgbuild" "Upgraded from version 5.112.0 to version 5.113.0"
 sed -i -e "s/version=5.112.0/version=5.113.0/g" kf5-unstable/kf5-programs/spkgbuild
 changelog "kf5-unstable/kf5-programs/spkgbuild" "Upgraded from version 5.112.0 to version 5.113.0"
+sed -i -e "s/version=22.3.5/version=23.3.1/g" hardware/mesa/spkgbuild
+changelog "hardware/mesa/spkgbuild" "Upgraded from version 22.3.5 to version 23.3.1"
