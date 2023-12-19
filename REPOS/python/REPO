@@ -1631,8 +1631,8 @@ f:f1d9a5c078cc3bb150f5364e261a0461:python-netcdf4-openmpi/CHANGELOG
 f:0882aaf4ba2f94b7367d436b23b96c53:python-netcdf4-openmpi/spkgbuild
 f:286c27d3e3d2488c5ee41e0ce9f79c03:python-sphinxcontrib-autoprogram/CHANGELOG
 f:96e3733bc5f86131738f835a9ede912c:python-sphinxcontrib-autoprogram/spkgbuild
-f:91d58b0cc29a88e002ed0b39cfde4ddb:python-cx-freeze/CHANGELOG
-f:52f1b906450875cf8b9577d909bd7203:python-cx-freeze/spkgbuild
+f:623aa8d01578d578299cbb11d075357b:python-cx-freeze/CHANGELOG
+f:104b36787a91c9414109451f39833a13:python-cx-freeze/spkgbuild
 f:8e3e5513d6ecd16b600c9457ff18acca:python-recommonmark/CHANGELOG
 f:f05d4d8cedc83699c6d34ec466f2e3ee:python-recommonmark/spkgbuild
 f:9094262f4fb06a09abde32313920be28:python-pyotherside/CHANGELOG
@@ -1825,8 +1825,8 @@ f:51e2cf0b041a4c256ee7116359e4d915:python-transaction/CHANGELOG
 f:c9fb433c492638b686d5ea132de5f6e7:python-transaction/spkgbuild
 f:d22900b1e6aad2e8fdbc68c644dec23e:python-webob/CHANGELOG
 f:8eef84c435541d3d6273f1302759e7e7:python-webob/spkgbuild
-f:3dee665e479b42a70889849bfc40f8e8:python-markdown2/CHANGELOG
-f:18472f7611343f4cd59fb5d2b799b6c3:python-markdown2/spkgbuild
+f:69aedd3041a36d95022da0fcd1227aac:python-markdown2/CHANGELOG
+f:b7b012f961159de579bd5cc0e945f072:python-markdown2/spkgbuild
 f:793bc02c84514be3bb3f10e0fb3d5380:python-pytest-mock/CHANGELOG
 f:07ce1d3b3c57616f0c9c46017aa208dd:python-pytest-mock/spkgbuild
 f:76754b60409457555a6bb3d8e2ade715:python-sure/CHANGELOG
@@ -2045,8 +2045,8 @@ f:e20b6d67803891b5aafa24a3549669cc:python-ruamel-yaml/CHANGELOG
 f:7e6d877bd4818cd2d1cf7aa933ea388e:python-ruamel-yaml/spkgbuild
 f:b9a594359c96073acd914a711d2e1645:python-pytest-subtesthack/CHANGELOG
 f:21360c773f2c106fa8f2c268da3e83e5:python-pytest-subtesthack/spkgbuild
-f:657c814c19f9f7dc0d43b152e41f8da8:python-paramiko/CHANGELOG
-f:da90762e60a56637a9b1ec8dc692f49d:python-paramiko/spkgbuild
+f:294d16c4116c92f87b40c6753d2c4e45:python-paramiko/CHANGELOG
+f:c5d94f5d4ded66094a73947a329d450c:python-paramiko/spkgbuild
 f:570995bf480f83c9a677a42be9f65344:python-astral/CHANGELOG
 f:2f9087dd76004fabbd3e2643db0516f4:python-astral/spkgbuild
 f:26bb0ca185791369017e7e02b39df0fc:python-flask-talisman/CHANGELOG
@@ -2103,8 +2103,8 @@ f:a35ebd475202650ed64ec8753830a5a6:python-sphinx-autoapi/CHANGELOG
 f:b972578f3ee93c31bb1a0651ad17f3f6:python-sphinx-autoapi/spkgbuild
 f:8579a3b046ae3aaf8195b413883fd7ca:python-django-filter/CHANGELOG
 f:4280ee16b914df8d5933de855e7ba903:python-django-filter/spkgbuild
-f:b7b46991b2af1015078b91f28e1eb9c6:python-chameleon/CHANGELOG
-f:c4a7df4574111e90f1aa5fb5e4d811b6:python-chameleon/spkgbuild
+f:c10a0f33a45448970982ea61b15d32cc:python-chameleon/CHANGELOG
+f:6603d6213299800fecf3666cf3e957a7:python-chameleon/spkgbuild
 f:47b694105318fa16e425b512c123eb8b:python-autobahn/CHANGELOG
 f:a48a1cc5d26ac1f6f3d8d918ca4d8cb7:python-autobahn/spkgbuild
 f:7d83685a325f431750541004bc43f675:python-html5lib/CHANGELOG
@@ -2177,8 +2177,8 @@ f:492bc627d408f29185b1e71b79bf545f:python-ptyprocess/CHANGELOG
 f:3b569c5e31f535713ae9ff6a70d5004e:python-ptyprocess/spkgbuild
 f:e3edc8f5174f5c77ed1b0c8b7cbc89ec:python-google-auth-httplib2/CHANGELOG
 f:8d9ba165fa9ea18374392f341a8051c9:python-google-auth-httplib2/spkgbuild
-f:8c223c85d88cf5fa5831914f330de50b:python-fonttools/CHANGELOG
-f:672ae5560c1ce675309931e13b49e0ab:python-fonttools/spkgbuild
+f:97e63f010f539bdea1aa15b657b83891:python-fonttools/CHANGELOG
+f:06a73175d8ff139e5bf683f7c2c22705:python-fonttools/spkgbuild
 f:540080f7a66c19c219cb3c69306465db:python-i3ipc/CHANGELOG
 f:f42faa39388047fe2cdc673644b740bb:python-i3ipc/spkgbuild
 f:c3d142d25bcbcfec2ec1b4059126859b:python-dephell-pythons/CHANGELOG
@@ -4229,8 +4229,8 @@ f:c08c85470f7b68a14fee8ed8eb24fb2e:python-pybluez/CHANGELOG
 f:c495f732c6d6040601be07530b1a6471:python-pybluez/spkgbuild
 f:5993c82ad0835c3d5de9593c1a6f52e7:python-retrying/CHANGELOG
 f:89e139e969c38b9c0463fe009aa6609a:python-retrying/spkgbuild
-f:fd40f6694b7f71d3b631fa88ad4f9c5f:python-jupyter_core/CHANGELOG
-f:0e5960a68d54ff003a771b14158f6d6d:python-jupyter_core/spkgbuild
+f:960f64c6254c0cea6534f982138e0336:python-jupyter_core/CHANGELOG
+f:4582e24b4194bdd8f2cf0066ba9be2f7:python-jupyter_core/spkgbuild
 f:c8ae13963dfe793eefee8a104953e741:python-language-server/spkgbuild
 f:ccc146b1c4f0bf7c6dee98c52dd8caf8:python-shutilwhich/CHANGELOG
 f:6aae3567b55291034a2e7063d1a5ce3a:python-shutilwhich/spkgbuild

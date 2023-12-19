@@ -2,7 +2,7 @@
 # depends	: linux-pam xorg-server
 
 name=openssh
-version=9.5
+version=9.6
 release=1
 
 backup="etc/ssh/sshd_config"
