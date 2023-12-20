@@ -1,0 +1,692 @@
+#!/bin/sh
+#Written: 09-19-21
+
+print_progress() {
+        echo -ne " $@\033[0K\r"
+}
+vercomp() {
+        if [ "$1" = "$2" ]; then
+		echo "0" #same version
+        elif [ "$(printf '%s\n' "$1" "$2" | sort -V | head -n1)" = "$1" ]; then
+                return 1 # $1 lower than $2
+        else
+                return 2 # $1 higher than $2
+        fi
+}
+get_url()
+{
+	source $1
+	ppath=$1
+	url="${source[0]}"
+	url=$(echo $url | cut -d ' ' -f1 | sed 's|\(.*\)/.*|\1|')/
+}
+fetch() {
+	curl -L -f "$url" -o index.html -s --max-time 5
+}
+alter_per_url() {
+        case $url in
+                *github.com*)
+                        url=https://github.com/$(echo $url | cut -d / -f4,5)/tags;;
+                *downloads.sourceforge.net*)
+                        url="https://sourceforge.net/projects/$(echo $url | cut -d / -f4)/rss?limit=200";;
+                *sourceforge.net*)
+                        url="https://sourceforge.net/projects/$(echo $url | cut -d / -f5)/rss?limit=200";;
+                *gitlab.com*)
+                        url=$(echo $url | cut -d/ -f1-5)/tags;;
+                *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
+			url=https://pypi.org;;
+		*cpan.*)
+			url=https://cpan.org;;
+                *rubygems.org*)
+                        url=https://rubygems.org/gems/${name/ruby-/};;
+                *launchpad.net*)
+                        url=https://launchpad.net/$(echo $url | cut -d / -f4)/;;
+                *ftp.gnome.org*)
+                        url=https://ftp.gnome.org/pub/gnome/sources/$filename/cache.json;;
+                *archive.xfce.org*)
+                        url=http://archive.xfce.org/src/$(echo $url | cut -d / -f5)/$name/
+                        url=$(echo $url | sed "s/http/https/g");;
+		*/plasma/*)
+			url="$(echo $url | cut -d / -f1-5)/"
+			;;
+                */frameworks/*)
+                        url="$(echo $url | cut -d / -f1-5)/"
+                        ;;
+		*.kde.*/*/release-service/*)
+			url="$(echo $url | cut -d / -f1-5)/"
+			;;
+		*..subsonic.*)
+			url="http://www.subsonic.org/pages/download.jsp"
+			;;
+		*x.org*|*xcb.freedesktop.org*|*xorg.freedesktop.org*)
+			url=$(echo $url | sed "s/pub/archive/g" | sed "s/ftp/www/g")
+			if [[ "$url" == *"http://"* ]]; then
+				url=$(echo $url | sed "s/http/https/g")
+			fi
+			;;
+               *qt.io*)
+               		url="$(echo $url | cut -d / -f1-6)/"
+               		;;
+                *)
+               
+        esac
+}
+check_manual_upd()
+{
+	update=$(echo $ppath | sed "s/spkgbuild/override/g")
+	if [ -f $update ];then
+		return 1
+	else
+		return 0
+	fi
+}
+run_manual_upd()
+{
+	update_script=$(echo $ppath)
+	echo -e "${CYAN}ALERT:     Update script found in $update_script${NC}"
+	source $update_script
+	fetch
+	get_generic
+	cmd="override"
+}
+cmd_torun()
+{
+        case $url in
+                *github.com*)
+                	cmd="github"
+                        check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
+                		fetch
+                		uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
+				| sed "s/.tar.*//g"	\
+        	        	| sort -V -r \
+				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                		| uniq \
+                		| head -n1)
+			fi
+                	;;
+                #*downloads.sourceforge.net*)
+                #	cmd="sourceforge"
+                #	fetch
+                #	;;
+                #*sourceforge.net*)
+                #	cmd="sourcefoge"
+                #	fetch
+                #	;;
+                #*gitlab.com*)
+                #	cmd="gitlab"
+		#	fetch
+                #	;;
+                *cpan.*)
+                        cmd="perl"
+                        check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
+				retry_index
+				grep_retry
+                        fi
+                ;;
+                *python.org*|*pypi.org*|*pythonhosted.org*|*pypi.io*|*pypi.org*)
+                	cmd="python"
+                        check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
+                                retry_index
+                                grep_retry
+			fi
+			;;
+                *rubygems.org*)
+			cmd="ruby"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+                	else
+	                	fetch
+				uversion=$(grep -i "href" index.html \
+					| grep -Po '(?<=href=")[^"]*' \
+					| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+					| sort -V -r \
+					| head -n1)
+			fi
+			;;
+		*qt.io*)
+			cmd="Qt"
+			check_manual_upd
+                        if [ $? = 1 ];then
+                                run_manual_upd
+                        else
+                                fetch
+                                uversion=$(grep -i "href" index.html \
+                                        | grep -Po '(?<=href=")[^"]*' \
+                                        | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+                                        | sort -V -r \
+                                        | head -n1)
+                        fi
+                        ;;
+                #*launchpad.net*)
+                #	cmd="launchpad"
+		#	fetch
+                #	;;
+                #*ftp.gnome.org*)
+                #	cmd="gnome"
+                #	fetch
+                #	;;
+                *archive.xfce.org*)
+                	cmd="xfce"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+                	else
+ 		               	fetch
+                		uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                		| sort -V -r \
+                        	| head -n1)
+                        	url=$url$uversion/
+                        	rm index.html
+                        	fetch
+                        	uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                        	| sort -V -r \
+                        	| head -n1)
+                        fi
+                	;;
+		*plasma*)
+			cmd="plasma"
+			check_manual_upd
+			if [ $? = 1 ];then
+				run_manual_upd
+			else
+				fetch 
+				uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+				| sort -V -r \
+                        	| head -n1)
+                        fi
+			;;
+                *frameworks*)
+                	cmd="frameworks"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+                	else
+                		fetch
+                		uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                		| sort -V -r \
+                		| head -n1).0
+                	fi
+                	;;
+                *.kde.*/*/release-service/*)
+                	cmd="kde-apps"
+			check_manual_upd
+			if [ $? = 1 ];then
+				run_manual_upd
+			else
+                		fetch
+                		uversion=$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" index.html \
+                		| sort -V -r \
+                		| head -n1)
+                	fi
+                	;;
+                *.subsonic.*)
+                	cmd="custom"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		url="http://www.subsonic.org/pages/download.jsp"
+                		run_manual_upd
+                	fi
+                	;;
+                *x.org*|*xcb.freedesktop.org*|*xorg.freedesktop.org*)
+                	cmd="xorg"
+                	check_manual_upd
+                	if [ $? = 1 ];then
+                		run_manual_upd
+			else
+                                fetch
+				uversion=$(grep $name index.html \
+				| grep -i "href" \
+				| grep -Po '(?<=href=")[^"]*' \
+				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+				| sort -V -r \
+				| uniq \
+				| head -n1)
+                	fi
+                	;;
+                *)
+                	cmd="generic"
+			check_manual_upd
+			if [ $? = 1 ];
+			then
+				run_manual_upd
+			else
+				echo -e "${FRED}ERROR:     Update script does not exist for $name trying manually${NC}"
+				fetch
+				if [ ! -f index.html ];then
+					retry_index
+					grep_retry
+				else
+				uversion=$(grep -Eio $name[_-][0-9a-z.]+.tar.[bgx]z2? index.html \
+        				| sed "s/$name[-_]//;s/\.tar.*//" \
+        				| grep -Evi '(alpha|beta|rc|pre|latest)' \
+        				| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        				| sort -V -r \
+        				| uniq \
+        				| head -n1)
+				#####more robust maybe idk
+				#uversion=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+				#| grep -v : \
+				#| tr '[:upper:]' '[:lower:]' \
+				#| grep $name \
+				#| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+				#| uniq \
+				#| sort -V -r \
+				#| head -n1)
+        			fi
+			fi
+                	;;
+        esac
+}
+retry_index()
+{
+spkg_src=$(grep "source=" $ppath | sed "s/source=//g")
+url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
+fetch
+if [ ! -f /Voncloft-OS/index.html ];then
+	url="https://raw.githubusercontent.com/archlinux/svntogit-community/packages/$name/trunk/PKGBUILD"
+	fetch
+fi
+if [ ! -f /Voncloft-OS/index.html ];then
+	url="https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/$name/trunk/PKGBUILD"
+	fetch
+fi
+}
+grep_retry()
+{
+	unset uversion url_lazy new_url
+	if [ -f test.txt ];then
+        	rm test.txt
+	fi
+	if [ -f /Voncloft-OS/index.html ];then
+		grep "pkg=" index.html > /Voncloft-OS/test.txt
+		grep "_pkg=" index.html >> /Voncloft-OS/test.txt
+		grep "pkgbase=" index.html >> /Voncloft-OS/test.txt
+                grep "pkgver=" index.html >> /Voncloft-OS/test.txt
+                grep "name=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
+                grep "pkgname=" index.html | cut -d ' ' -f1 >> /Voncloft-OS/test.txt
+                grep "url=" index.html >> /Voncloft-OS/test.txt
+                grep "source=" index.html >> /Voncloft-OS/test.txt
+		sed -i -e "s/\'//g" /Voncloft-OS/test.txt
+                sed -i -e "s/(//g" /Voncloft-OS/test.txt
+                sed -i -e "s/)//g" /Voncloft-OS/test.txt
+		sed -i -e "s/{,.asc}//g" /Voncloft-OS/test.txt
+                new_url=$spkg_url
+                source /Voncloft-OS/test.txt
+		spkg_src=$(echo $spkg_src | sed "s/\"//g")
+                uversion="$pkgver"
+                if [ "$uversion" != "$version" ];then
+                vercomp $uversion $version
+                        if [ $? = 2 ]; then
+				if [ -z $test_upgrade ];then
+					sed -i -e "s,$spkg_src,$source,g" $ppath
+				else
+					echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath >> test_updates.sh
+					echo 'sed -i -e "s,'$spkg_src','$source',g"' $ppath "<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+				fi
+                                if [ ! -f /Voncloft-OS/index.html ];then
+                                        echo "NO PACKAGE FOUND AT ARCH"
+                                fi
+                        fi
+                fi
+	fi
+}
+perform_override()
+{
+        get_url $check_override
+	fix_spkgbuild=$(echo $ppath | sed 's/override/spkgbuild/g')
+        echo -e "${WHITE}PPath:     $fix_spkgbuild${NC}"
+        echo -e "${YELLOW}URL:       $url${NC}"
+        echo -e "${GREEN}Filename:  $name${NC}"
+        echo -e "${BLUE}Version:   $version${NC}"
+        alter_per_url
+        echo -e "${RED}New URL:   $url${NC}"
+	cmd_torun
+        ppath=$(echo $ppath | sed 's/override/spkgbuild/g')
+        echo -e "${PURPLE}Command:   $cmd${NC}"
+        echo -e "${DBLUE}Upgraded:  $uversion${NC}"
+}
+upgrade_normally()
+{
+	echo -e "${WHITE}PPath:     $ppath${NC}"
+        echo -e "${YELLOW}URL:       $url${NC}"
+        echo -e "${GREEN}Filename:  $name${NC}"
+        echo -e "${BLUE}Version:   $version${NC}"
+        alter_per_url
+        echo -e "${RED}New URL:   $url${NC}"
+        cmd_torun
+        echo -e "${PURPLE}Command:   $cmd${NC}"
+        echo -e "${DBLUE}Upgraded:  $uversion${NC}"
+}
+upgrade_process()
+{
+        #find upgraded version from fetch code compare and then upgrade package using uversion as variable name
+        check=${#uversion}
+        if [ $check -ge 1 ];
+        then
+                if [ "$uversion" != "$version" ];
+                then
+                vercomp $uversion $version
+                        if [ $? = 2 ]; then
+                                echo "NEW"
+                                ((count=count+1))
+                                if [ -z $test_upgrade ];then
+                                	title="Updates for: "
+                                	sed -i -e "s/version=$version/version=$uversion/g" $ppath
+                                	changelog "$ppath" "Upgraded from version $version to version $uversion"
+					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath "<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+				else
+					title="Test updates for: "
+					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath >> test_updates.sh
+					echo -e 'changelog "'$ppath'" "Upgraded from version '$version' to version '$uversion'"' >> test_updates.sh
+					echo -e 'sed -i -e "s/version='$version'/version='$uversion'/g"' $ppath "<br>"  >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+				fi
+				create_table $ppath $version $uversion
+                        elif [ $? = 1 ];then
+                                echo "Overupdated"
+					echo $ppath "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+
+                        fi
+                fi
+	else
+                ((missing=missing+1))
+                log_missing
+        fi
+        if [ -z $keep_index ];then
+		if [ -f index.html ];then
+        		rm index.html
+		fi
+	fi
+	if [ -f test.txt ];then
+		rm test.txt
+	fi
+}
+alerts_and_logs()
+{
+	echo "-----------------------------------------------------------------------------------"
+	if [ ! -z $count ];
+	then
+	echo -e "Packages upgraded: $count<br>\n" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+	echo -e "Packages upgraded: $count<br>\n" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+	words=$(cat $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html)
+	title="Outdated Packages in Repository: "$(date +"%m-%d-%y")
+	if [ ! -z $count ];
+	then
+		recipients=$(cat < /etc/scratchpkg.email)
+		format_date=$(date +"%Y")/$(date +"%b")
+		email_link="http://voncloft.dnsfor.me/updated/"$format_date"/reports/repository_upgrade_report-"$(date +"%m-%d-%y").html
+	 	mailme voncloft@gmail.com "$words" "$title"
+        	mailme $recipients "Updated packages: $count <br> $email_link" "Upgrade Report"
+		#mailme $recipients" "$email_link" "$title"
+        	#missing_packages=$(cat missing.txt | grep -v '<head' | wc -l)
+        	#mailme 2606159678@vtext.com "Total Missing: $missing_packages" "Total Outdated Packages"
+        	#echo "<br><br>Total Missing: $missing_packages" >> missing.txt
+        	#missing=$(cat missing.txt)
+        	#mailme voncloft@gmail.com "$missing" "Missing Packages not in the loop to be checked as of: "$(date +"%m-%d-%y")
+	fi
+	cp $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html /var/log/old/repository_upgrade_report-$(date +"%m-%d-%y").html
+	cp $logpath/changes/repository_changes-$(date +"%m-%d-%y").html /var/log/old/repository_changes-$(date +"%m-%d-%y").html
+	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html 
+	cp $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html /var/log/old/over_updated-$(date +"%m-%d-%y").html
+	find /Voncloft-OS/logs/ -maxdepth 5 -type d -exec cp /Voncloft-OS/logs/secondary.php {} \;
+	if [ $count = 1 ];
+	then
+		message="package updated"
+	else
+		message="packages updated"
+	fi
+	echo -e "${BLUE}$count $message${NC}"
+	else
+	
+		echo -e "${BLUE}No new updates${NC}"
+	fi
+	if [ ! -z $missing ];
+	then
+		if [ $missing = 1 ];
+		then
+			message="package missed"
+		else
+			message="packages missing"
+		fi
+	echo -e "${BLUE}$missing $message${NC}"
+	else
+	message="No missing packages"
+	echo -e "${BLUE}$message${NC}"
+	fi
+}
+prepare_backup_and_logs()
+{
+	if [ -z $skip_tar ];then
+		foltotar /var/log/old/repo-$(date +"%m-%d-%y").tar.gz /Voncloft-OS
+	fi
+	if [ ! -f $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html ];then
+		mkdir -pv $logpath/changes
+		mkdir -pv $logpath/reports
+		mkdir -pv $logpath/over_updated
+		mkdir -pv $logpath/missing
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+		echo -e '<head><link rel="stylesheet" type="text/css" href="http://voncloft.dnsfor.me/updated/colors.css" /></head>' >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+	fi
+}
+timestamp_log()
+{
+	#if [ ! -z $count ] && [ $count -eq 1 ];then
+                        #echo -e "\n$(date +%H)<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+                        echo -e "\n$(date +%H)<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+                        echo -e "\n$(date +%H)<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+	#fi
+}
+log_missing()
+{
+	if [ ! -z $missing ] && [ $missing -eq 1 ];then
+		echo -e "\n$(date +%H)<br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+	fi
+	if [ -z $uversion ];then
+                echo $ppath"<br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+       	fi
+}
+finish_logs()
+{
+	if [ ! -z $missing ];then
+		echo "<br>Total missing packages: $missing" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+		echo "<br><br>" >> $logpath/missing/missing-$(date +"%m-%d-%y").html
+	fi
+	if [ ! -z $count ];then
+        	echo -e "<br>" >> $logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+        	echo -e "<br>" >> $logpath/changes/repository_changes-$(date +"%m-%d-%y").html
+        	echo -e "<br>" >> $logpath/over_updated/over_updated-$(date +"%m-%d-%y").html
+		echo -e "</table>" >> $table_log
+	fi
+}
+create_table()
+{
+	if [ $count = 1 ];then
+	        echo "<CENTER>" >> $table_log
+		echo -e '<table border = "2" width="600px"><caption>'$title $(date +"%m-%d-%y") $(date "+%H")'</caption>' >> $table_log
+		echo '<tr><td align=center>Package Path</td><td align=center>Old Version</td><td align=center>New Version</td><td align=center>Changelog</td><td align=center>spkgbuild</td></tr>' >> $table_log
+	fi
+	spkg_dir=$(echo $1 | sed "s/\/spkgbuild//g")
+	changelog="http://voncloft.dnsfor.me/repository/REPOS/$spkg_dir/CHANGELOG"
+        echo '<tr><td align=center>'$1'</td><td align=center>'$2'</td><td align=center>'$3'</td><td align=center><a href='$changelog'>Changelog</a></td><td align=center><a href=http://voncloft.dnsfor.me/repository/REPOS/'$1'>spkgbuild</a></td></tr>' >> $table_log	
+}
+check_handles()
+{
+        while [ $1 ]; do
+                case $1 in
+                	-a) apply_test_updates
+                	apply=1
+                	exit;;
+                        -st) skip_tar=1;;
+                        -t) test_upgrade=1;;
+                        -s) repos;;
+                        -k) keep_index=1;;
+                        -e) edit_program
+                        exit;;
+                        -stu) show_test_updates
+                        apply=1
+                        exit;;
+                        -utg) update_to_github
+                        exit;;
+                        -tp) test_prog
+                        exit;;
+			-h) help
+         		exit;;
+         		-l) apply_test_updates
+         		apply=1
+         		update_to_github
+         		exit;;
+                esac
+                shift
+        done
+}
+test_prog()
+{
+	#recipients=$(cat < /etc/scratchpkg.email)
+	#mailme $recipients "test" "test2"
+	mkdir -pv $(date +"%Y")/$(date +"%b")
+}
+edit_program()
+{
+	nano /Voncloft-OS/update
+}
+update_to_github()
+{
+	echo "Description of update"
+	read description
+	update-rep "$description"
+}
+
+apply_test_updates()
+{
+	if [ -f test_updates.sh ];then
+		sh test_updates.sh
+		mkdir -pv /Voncloft-OS/logs/old-test-updates/$(date +"%Y")/$(date +"%b")
+		cat test_updates.sh >> /Voncloft-OS/logs/old-test-updates/$(date +"%Y")/$(date +"%b")/applied_updates-$(date +"%m-%d-%y").sh
+		rm test_updates.sh
+		rm *.sh
+		echo "Test updates applied"
+		if [ -f index.html ];then
+			rm index.html
+		fi
+	else
+		echo "No test updates available"
+	fi
+}
+repos()
+{
+	echo "What packages do you want to check?"
+	read repos
+}
+help()
+{
+	echo "-a apply test updates"
+	echo "-e edit program"
+	echo "-k keep index.html file for debugging"
+	echo "-l too lazy to run two commands merging apply and upload to github"
+	echo "-s check for specific package updates (format category/package_name)"
+	echo "-st skip tarballing"
+	echo "-t test upgrades do not apply them"
+	echo "-stu show test updates"
+	echo "-utg upload changes to github"
+	echo "-h help"
+}
+show_test_updates()
+{
+	nano test_updates.sh
+}
+main()
+{
+	check_handles $@
+	if [ -z $apply ];then
+		echo "Backup up test upgrade script"
+		backup_test
+	else
+		echo "Not backing up scripts"
+	fi
+	if [ -z $skip_tar ];then
+		echo "Backing up repo"
+	else
+		echo "Skipping backup of repo"
+	fi
+	if [ -z $test_upgrade ];then
+		echo "Applying updates to repo"
+	else
+		echo "Checking for updates - not applying any, test run"
+	fi
+	if [ -z $keep_index ];then
+		echo "Not keeping index.html"
+	else
+		echo "Keeping index.html for debugging"
+	fi
+	timestamp_log
+	prepare_backup_and_logs
+	for f in $repos;
+	do
+	echo "-----------------------------------------------------------------------------------"
+	if [ "${f##*/}" != "REPO" ];then
+		get_url $f/spkgbuild
+		check_override=$(echo $f/spkgbuild | sed 's/spkgbuild/override/g')
+		if [ ! -f $check_override ];then
+			upgrade_normally
+		else
+			perform_override
+		fi
+			upgrade_process
+	fi
+	done
+	finish_logs	
+	alerts_and_logs
+}
+backup_test()
+{
+        if [ -f test_updates.sh ];then
+                mv test_updates.sh test_updates-$(date +"%m-%d-%y").sh
+        fi
+}
+####GLOBAL VARIABLES##############
+###COLORS###
+RED='\e[0;31;40m'
+YELLOW='\e[0;33;40m'
+GREEN='\e[0;32;40m'
+BLUE='\e[0;34;40m'
+WHITE='\e[0;37;40m'
+PURPLE='\e[0;35;40m'
+DBLUE='\e[1;34;40m'
+CYAN='\e[0;36;40m'
+FRED='\e[5;31;40m'
+NC='\033[0m'
+cd /Voncloft-OS/REPOS
+###GLOBAL VARIABLE###
+logpath=/Voncloft-OS/logs/$(date +"%Y")/$(date +"%b")
+table_log=$logpath/reports/repository_upgrade_report-$(date +"%m-%d-%y").html
+repos="cinnamon/* hardware/* compilers/* core/* displaym/* extra/* firewall/* fonts/* gnome/* kde-apps/* kf5/* lxde/* lxqt/* mate/* media/* multilib/* libs/* networking/* nonfree/* perl/* plasma/* python/* ruby-gems/* server/* xfce/* xorg/* plasma-unstable kde-apps-unstable kf5-unstable"
+
+start_time="$(date -u +%s)"
+###Start Checking###
+main $@
+end_time="$(date -u +%s)"
+elapsed="$(($end_time-$start_time))"
+
+if [ $elapsed -gt 60 ];then
+	minutes_passed=$((elapsed/60))
+	minutes_quote="Total of $minutes_passed minutes elapsed for process"
+else
+	minutes_passed=$elapsed
+	minutes_quote="Total of $minutes_passed seconds elapsed for process"
+fi
+echo $minutes_quote
+
+if [[ $count -gt 0 ]];then
+	echo $minutes_quote"<br>" >> $table_log
+fi
