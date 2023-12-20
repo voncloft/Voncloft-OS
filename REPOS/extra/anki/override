@@ -1,0 +1,11 @@
+source="https://github.com/ankitects/anki/"
+
+get_generic()
+{
+        uversion=$(grep -Eio [0-9a-z.]+.tar.[bgx]z2? index.html \
+        | sed "s/.tar.*//g"     \
+        | grep -v beta \
+        | sort -V -r \
+        | uniq \
+        | head -n1)
+}

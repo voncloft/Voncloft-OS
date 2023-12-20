@@ -30,3 +30,5 @@ sed -i -e "s/version=2.5.0/version=2.5.1/g" python/python-xmlschema/spkgbuild
 changelog "python/python-xmlschema/spkgbuild" "Upgraded from version 2.5.0 to version 2.5.1"
 sed -i -e "s/version=0.130.0/version=0.131.0/g" python/python-zeroconf/spkgbuild
 changelog "python/python-zeroconf/spkgbuild" "Upgraded from version 0.130.0 to version 0.131.0"
+sed -i -e "s/version=23.8/version=23.10.1/g" extra/anki/spkgbuild
+changelog "extra/anki/spkgbuild" "Upgraded from version 23.8 to version 23.10.1"
