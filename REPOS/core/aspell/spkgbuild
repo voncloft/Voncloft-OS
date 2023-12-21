@@ -7,6 +7,7 @@ release=2
 _pkgmajorver=0.60
 
 source="https://github.com/GNUAspell/aspell/archive/rel-$version.tar.gz"
+
 options="!checksum"
 
 build() {
