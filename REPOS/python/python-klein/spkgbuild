@@ -2,7 +2,7 @@
 # depends : python python-attrs python-hyperlink python-incremental python-six
 
 name=python-klein
-version=23.5.0
+version=23.12.0
 release=3
 
 source="https://github.com/twisted/klein/archive/refs/tags/$version.tar.gz"
