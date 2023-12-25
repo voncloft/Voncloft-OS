@@ -60,3 +60,5 @@ sed -i -e "s/version=8.3.0/version=8.3.1/g" server/php/spkgbuild
 changelog "server/php/spkgbuild" "Upgraded from version 8.3.0 to version 8.3.1"
 sed -i -e "s/version=3.8.3/version=3.8.4/g" server/postfix/spkgbuild
 changelog "server/postfix/spkgbuild" "Upgraded from version 3.8.3 to version 3.8.4"
+sed -i -e "s/version=23.11/version=23.12/g" extra/anki/spkgbuild
+changelog "extra/anki/spkgbuild" "Upgraded from version 23.11 to version 23.12"
