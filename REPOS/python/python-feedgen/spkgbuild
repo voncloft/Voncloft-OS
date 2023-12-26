@@ -2,7 +2,7 @@
 # depends : python python-dateutil python-lxml
 
 name=python-feedgen
-version=0.9.0
+version=1.0.0
 release=2
 
 source="https://github.com/lkiesow/python-feedgen/archive/refs/tags/v$version.tar.gz"

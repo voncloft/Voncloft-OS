@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-pythondata-cpu-lm32
-version=2023.08
+version=2023.12
 release=1
 
 source="https://github.com/litex-hub/pythondata-cpu-lm32/archive/refs/tags/$version.tar.gz"
