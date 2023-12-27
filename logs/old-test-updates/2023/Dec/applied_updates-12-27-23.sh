@@ -22,3 +22,5 @@ sed -i -e "s/version=7.12.1/version=7.13.0/g" python/python-qiniu/spkgbuild
 changelog "python/python-qiniu/spkgbuild" "Upgraded from version 7.12.1 to version 7.13.0"
 sed -i -e "s/version=3.14.40/version=3.14.41/g" server/blacklist-hosts/spkgbuild
 changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.14.40 to version 3.14.41"
+sed -i -e "s/version=3.2/version=3.3.0/g" compilers/ruby/spkgbuild
+changelog "compilers/ruby/spkgbuild" "Upgraded from version 3.2 to version 3.3.0"

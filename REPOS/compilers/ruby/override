@@ -13,6 +13,7 @@ get_generic()
 		| sed "s/\.tar.gz//g" \
 		| sed "s/\_/\./g" \
 		| grep -v preview \
+		| grep -v rc1 \
 		| sort -V -r \
 		| uniq \
 		| head -n1
