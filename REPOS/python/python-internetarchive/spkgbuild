@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-internetarchive
-version=3.5.0
+version=3.6.0
 release=1
 
 source="https://github.com/jjjake/internetarchive/archive/refs/tags/v$version.tar.gz"

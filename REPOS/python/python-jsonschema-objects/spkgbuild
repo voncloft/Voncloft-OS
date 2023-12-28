@@ -2,7 +2,7 @@
 # depends : python-inflection python-markdown python-jsonschema python-six
 
 name=python-jsonschema-objects
-version=0.5.1
+version=0.5.2
 release=2
 
 source="https://github.com/cwacek/python-jsonschema-objects/archive/refs/tags/$version.tar.gz"
