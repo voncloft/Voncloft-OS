@@ -2,7 +2,7 @@
 # depends : python-pandas python-matplotlib python-scipy
 
 name=python-seaborn
-version=0.13.0
+version=0.13.1
 release=3
 
 source="https://github.com/mwaskom/seaborn/archive/refs/tags/v$version.tar.gz"
