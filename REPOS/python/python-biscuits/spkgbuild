@@ -2,7 +2,7 @@
 # depends : python cython3
 
 name=python-biscuits
-version=0.3.0
+version=0.3.1
 release=5
 
 source="https://github.com/pyrates/biscuits/archive/refs/tags/$version.tar.gz"

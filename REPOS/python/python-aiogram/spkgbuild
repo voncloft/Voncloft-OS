@@ -2,7 +2,7 @@
 # depends : python-aiohttp python-babel
 
 name=python-aiogram
-version=3.2.0
+version=3.3.0
 release=3
 
 source="https://github.com/aiogram/aiogram/archive/refs/tags/v$version.tar.gz"
