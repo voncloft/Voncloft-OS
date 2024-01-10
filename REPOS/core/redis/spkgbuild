@@ -2,7 +2,7 @@
 # depends : grep jemalloc shadow
 
 name=redis
-version=7.2.3
+version=7.2.4
 release=2
 
 source="https://github.com/redis/redis/archive/$version.tar.gz"
