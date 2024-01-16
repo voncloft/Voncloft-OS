@@ -551,9 +551,9 @@ f:875848ec112fad18f7efa969e55e9f9e:gtest/CHANGELOG
 f:f84a73fe3501272d1d8cfe0ac0555f56:gtest/spkgbuild
 f:ed5071c4a89231f23cbb341f533ac1b6:bluez/bluez-obexd_without_systemd-1.patch
 f:3e25909a9413066e78f97f728ca4c36d:bluez/readme
-f:500737c7bd7d2fe36bb87e7d849a7913:bluez/CHANGELOG
+f:15661fcb7dce25181beac13334004232:bluez/CHANGELOG
 f:16baf2462c222b819504f9a9ce05300f:bluez/rc.bluetoothd
-f:a044086dbf70e9d6539792b02cfa2c9b:bluez/spkgbuild
+f:d75f7147decf03cb6fe3229f2500d901:bluez/spkgbuild
 f:f715f0b49a44a5764e9379ab3c99d9b1:bluez/run
 f:a3180046fba38f1012d61de38bc9f089:recode/CHANGELOG
 f:19e9def180083d1c6e53d85a3c33c785:recode/spkgbuild
@@ -614,8 +614,8 @@ f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
 f:67531743d9c84fc2209b217baf93d2d3:dbus/spkgbuild
 f:abba39f9c73fa5f3861ff6b64d843e58:readline/CHANGELOG
 f:b1f6e7bfb58371645779a2965faecb42:readline/spkgbuild
-f:8862f6413d88215c209054ef89e74816:cpio/CHANGELOG
-f:d836c70b5274f8d211b10afd13194de7:cpio/spkgbuild
+f:67d1467b02d4226b287071e68bea9a19:cpio/CHANGELOG
+f:2393cc6d2b217a952f450776bc311326:cpio/spkgbuild
 f:fe269c0d67598bcfc16ad936c9f1e981:terminator/spkgbuild
 f:9152af24dad0cfee15da3094da963614:cowsay/CHANGELOG
 f:7091f9a6d97006299a1f27a665b638b6:cowsay/cowsay.patch
@@ -680,8 +680,8 @@ f:0b77913cd023afab7282cd503dbe5abc:lsb-release/spkgbuild
 f:8e0404ee17344a2c3818e24bc0a84900:dbus-glib/CHANGELOG
 f:f74d959ce047d39a08b8da10991b7ae0:dbus-glib/spkgbuild
 f:0e150d97845e078efd599951c389b83a:cronie/cronie.pam
-f:1d6228129bb5b0415352e94576155281:cronie/CHANGELOG
-f:dff17a7e6c771c4baa0f4d191891fcd0:cronie/spkgbuild
+f:846ba1cc84aa8bd8b3ede4c1201072ea:cronie/CHANGELOG
+f:8732d4a7e42e652ea2306adb44325b5e:cronie/spkgbuild
 f:bc467f8038f933c87be1c4003f212fc6:cronie/rc.crond
 f:1f0ab4b9116a4a3dcfb34e87ef784ebb:cronie/run
 f:2962d9812fbbbdee1bd7f1c1ccb5e372:cronie/cronie.deny
@@ -708,8 +708,8 @@ f:f6f79d057b1b6e85a4cb43086a0f7ce9:nnn/spkgbuild
 f:a685fad18eeff9d43c602c9b9087ebe2:gnupg/CHANGELOG
 f:f5d11ffa4c4eff7a810b36f1a521bfd5:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:44af0235b5cf2b9c0efa8f5351d51f30:pipewire/CHANGELOG
-f:b704edb99d7ae244ceb4a0999fd38ba7:pipewire/spkgbuild
+f:10ed04c0f3dea8f4d55463074a83ca0d:pipewire/CHANGELOG
+f:64e26aeacb14462a09eab385385106ff:pipewire/spkgbuild
 f:0f20437ceabcfe279db7d4ff8bc7f9ae:duktape/CHANGELOG
 f:1f799c92594d55ced8d183d0e29132c9:duktape/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
@@ -749,8 +749,8 @@ f:1cc4984ee64448ca7f55c37f28b83019:light/finish
 f:d443423606ba6fb12ae58215c606afc9:light/rc.light
 f:0a05a9a982a2f696d01f9ec9ed8a52db:light/spkgbuild
 f:b4b85009911ad5c0f383d59f1a62de20:light/run
-f:820aea386b0b51a32782487c41da8fc2:attr/CHANGELOG
-f:f969b442b7c6ef628e8a77981cc41a41:attr/spkgbuild
+f:cd16ab61bb48e663b5af6414040b888c:attr/CHANGELOG
+f:063f14c49b9d2516edc56a1274b97bc1:attr/spkgbuild
 f:9075e9ea1c3bf2d9b2735cd79990982d:smartmontools/CHANGELOG
 f:7d14428e62f1a3c871fd93da52b31bfc:smartmontools/rc.smartd
 f:ed21926e9b77059c2f707ecc927b8b0b:smartmontools/spkgbuild
@@ -946,8 +946,8 @@ f:9dbbb05c50025586c9cce35468dde9c7:jemalloc/CHANGELOG
 f:f1ca8a404836fcc0a43cec5a0acd65a6:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:10ae9982bb1946f1f76c4fadc60e5f66:mercurial/CHANGELOG
-f:6633419bf52ecd382c67d1efbc80a84e:mercurial/spkgbuild
+f:29e66fdd7c657e5390154e556d406b45:mercurial/CHANGELOG
+f:912c64df446a93e8d9a1edde63e255e4:mercurial/spkgbuild
 f:8179d62708938e5ea94a6ff77b70b63f:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:8fce0ef8aef888c5a59e7c03753504d4:rxvt-unicode/spkgbuild

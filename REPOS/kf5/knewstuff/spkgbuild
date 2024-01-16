@@ -2,7 +2,7 @@
 # depends : kde-deps attica kio kpackage syndication kirigami2
 
 name=knewstuff
-version=5.113.0
+version=5.114.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"

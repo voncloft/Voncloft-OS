@@ -2,7 +2,7 @@
 # depends : qt5 jansson libndp curl dhcp gobject-introspection iptables newt nss polkit python-gobject3 upower vala wpa_supplicant elogind
 
 name=networkmanager
-version=1.45.9
+version=1.45.10
 release=1
 
 source="https://download.gnome.org/sources/NetworkManager/${version:0:4}/NetworkManager-$version.tar.xz"

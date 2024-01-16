@@ -2,7 +2,7 @@
 # depends	: bash log-folders
 
 name=cronie
-version=1.7.0
+version=1.7.1
 release=3
 source="https://github.com/cronie-crond/cronie/releases/download/$name-$version/$name-$version.tar.gz
 	rc.crond

@@ -2,7 +2,7 @@
 # depends : python-cliff python-jsonschema python-osc-lib python-oslo-serialization
 
 name=python-designateclient
-version=5.3.0
+version=6.0.0
 release=1
 
 source="https://github.com/openstack/python-designateclient/archive/refs/tags/e$version.tar.gz"
