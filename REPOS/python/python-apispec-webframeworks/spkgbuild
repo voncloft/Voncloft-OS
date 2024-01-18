@@ -2,7 +2,7 @@
 # depends : python-apispec python-yaml
 
 name=python-apispec-webframeworks
-version=0.5.2
+version=1.0.0
 release=3
 
 source="https://github.com/marshmallow-code/apispec-webframeworks/archive/refs/tags/$version.tar.gz"
