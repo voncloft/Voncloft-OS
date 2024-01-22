@@ -2,7 +2,7 @@
 # depends : dotnet-host
 
 name=discordchatexporter
-version=2.42.6
+version=2.42.7
 release=1
 noextract="DiscordChatExporter.CLI.zip"
 source="https://github.com/Tyrrrz/DiscordChatExporter/releases/download/$version/DiscordChatExporter.CLI.zip
