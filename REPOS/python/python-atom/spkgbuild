@@ -2,7 +2,7 @@
 # depends : python python-setuptools
 
 name=python-atom
-version=0.10.3
+version=0.10.4
 release=3
 
 source="https://github.com/nucleic/atom/archive/refs/tags/r$version.tar.gz"

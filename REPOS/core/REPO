@@ -1029,8 +1029,8 @@ f:262eda046c808cedb749b7f139f4233e:linux-router/override
 f:fc57d76f6c76d333b3de25e1b6583b9b:linux-router/spkgbuild
 f:d70e0f07fbfcb4cae93bcdf5d0383521:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
-f:de8e29580643fd2cbd68e5a07c868479:acl/CHANGELOG
-f:ad497aff9b0466ede33894410c8f66db:acl/spkgbuild
+f:3dbe32983dea0f426e4ae47109a5b393:acl/CHANGELOG
+f:e8ae99d49e2f06ac353f57943ef3948f:acl/spkgbuild
 f:645f3c898abd270a9143036824ae121a:sgml-common/sgml-common-manpage-1.patch
 f:c54e11f610f3df565cebb9e288c8486e:sgml-common/post-install.sh
 f:b6b946256494c2d0c1e14f90cd10423f:sgml-common/spkgbuild
@@ -1042,9 +1042,9 @@ f:39e65caf258a38aebfe847a89ac5822f:sudo/sudo
 f:92b668cc3a2ad668f2e9414b6b26a52b:sudo/spkgbuild
 f:639e39ed09138ef37a0599a0f4dc1f28:transmission-gtk/spkgbuild
 f:bbb9246b68e936f2518b9824b8ffac99:json-c/spkgbuild
-f:691b9e96f0927d9d5d2d262f4179af3d:util-linux/CHANGELOG
+f:e2aa2119ff11eb37c539b44a9b087618:util-linux/CHANGELOG
 f:de135bdbd4ecdaa0f5c7b997da8214c7:util-linux/override
-f:25f372452e4964bbda36c4666a813b4b:util-linux/spkgbuild
+f:004be08cdbe007444b33950d3f9bc1b9:util-linux/spkgbuild
 f:29b919ccfbf7887c714cd8f3f01d6fc7:js60/spkgbuild
 f:dc114e1991cb212e2a8e97dee265ee01:optipng/CHANGELOG
 f:dbd7945cd5c6cad82b9cdce01d7e3f09:optipng/spkgbuild
@@ -1384,8 +1384,8 @@ f:61be67b6337ba017fdeba029383bc41b:lvm2/spkgbuild
 f:18d6d9f4f875f5a0c6b12736e9d5ffbc:lvm2/portability.patch
 f:9ea9a6fb278858afa379a9474e8d6740:gdk-pixbuf/post-install.sh
 f:d1147ab3204d26693f112780759b9801:gdk-pixbuf/spkgbuild
-f:26b4dff9f339bbdc45c71bb998ee9174:emacs/CHANGELOG
-f:580f5c45a4a208be7b42990fc410ac2c:emacs/spkgbuild
+f:07b21b4f01dba373e9372a1e55136e51:emacs/CHANGELOG
+f:885d91f72f60a5104c893c691c4a1027:emacs/spkgbuild
 f:38aa4e01298d1ed0da4e20a2cb26edbc:iucode-tool/spkgbuild
 f:30a1afa896286c8b68f1d65084218c05:xdo/spkgbuild
 f:1db530f7d49d0e4c0514efaf6c257cf0:ohsnap/spkgbuild
