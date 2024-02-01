@@ -2,7 +2,7 @@
 # depends : libgit2>=1:0.27.0 python-cffi python-six python-cached-property
 
 name=python-pygit2
-version=1.13.3
+version=1.14.0
 release=1
 
 source="https://github.com/libgit2/pygit2/archive/refs/tags/v$version.tar.gz"

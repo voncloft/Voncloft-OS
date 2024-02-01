@@ -2,7 +2,7 @@
 # depends : python-deprecated python-pyjwt python-requests
 
 name=python-pygithub
-version=2.1.1
+version=2.2.0
 release=1
 
 source="https://github.com/PyGithub/PyGithub/archive/refs/tags/v$version.tar.gz"

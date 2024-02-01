@@ -2,7 +2,7 @@
 # depends : python-six python-requests
 
 name=python-requests-file
-version=1.5.1
+version=2.0.0
 release=3
 
 source="https://github.com/dashea/requests-file/archive/refs/tags/$version.tar.gz"

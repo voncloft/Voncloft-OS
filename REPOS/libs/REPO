@@ -293,8 +293,8 @@ f:c776fa1f46649ba07d837f91e5fd7966:gnu-efi/CHANGELOG
 f:975390c810c3ff4fe5704b0baf2fe8a0:gnu-efi/spkgbuild
 f:9254fdfcd1ad6fc8e0befd45b6084cf0:libxt/spkgbuild
 f:6fde37f3d3e98c429dd25a6ae1c7b5b6:libwnck2/spkgbuild
-f:207260730f4a5976134aa27b428f1e0c:libwpe/CHANGELOG
-f:1dccbe343af9c519dba1025fc48f564b:libwpe/spkgbuild
+f:a4bed716f68f20e34f2557bc43872905:libwpe/CHANGELOG
+f:072ff78d5f3bfd1441199c3e807b6d7c:libwpe/spkgbuild
 f:0b2f1ff1bedfb169888ffbe8e37cb8f6:libpwquality/CHANGELOG
 f:3769d268f598d84c520ea22c062f261a:libpwquality/system-password
 f:36de63769a04a6ddfb288643dadc3c80:libpwquality/spkgbuild
@@ -438,8 +438,8 @@ f:732aef84e19c211dc89dd13a61e8d42a:libogg/CHANGELOG
 f:e20540d6329d98b05f98c19c41902986:libogg/spkgbuild
 f:c3c46b31f18b25ec72e3ce8c09cf6f6a:libmaxminddb/CHANGELOG
 f:1cbe5784de70334e0b6e67f4f351377b:libmaxminddb/spkgbuild
-f:cc739be096275ec6422a190e5c647ad4:cmark/CHANGELOG
-f:e5650ef0fd43115640035b40d53ffe0c:cmark/spkgbuild
+f:b1a2e5b9f957215c12721ff8bb041f00:cmark/CHANGELOG
+f:2802f7d11cb84cdd7736fa305e5fb6a4:cmark/spkgbuild
 f:6ef7eb607d341ca9ac023b12b62f3e02:shapelib/spkgbuild
 f:3bf9a43ee00af17dca6f7185a8fb3c18:libunwind/CHANGELOG
 f:a194b5f5238d3c6386c87111352cec43:libunwind/spkgbuild
@@ -526,8 +526,8 @@ f:772a4b7611de6572930cc2ed0e432d78:libmpc/spkgbuild
 f:079f9c832f587f45f9504e4d3c41a4d3:libftdi/spkgbuild
 f:a839123273bee56e796669a147626c8f:libfontenc/CHANGELOG
 f:d5bf9b71253ae07c9c4cb9cbffc42f78:libfontenc/spkgbuild
-f:6c3f0332664c88f3ab0832b029f60407:libpng/CHANGELOG
-f:2686601ab15afd16f96b8a4fa3e6215e:libpng/spkgbuild
+f:bd5bf4d56ce3af7becaad7808492a35b:libpng/CHANGELOG
+f:77859799db82ca184f2c07ff94aa0b1c:libpng/spkgbuild
 f:555618a093b2a65c51ec12eac36bc68f:libxml2/spkgbuild
 f:42996404d387a0becbc233d70fc84c17:newt/CHANGELOG
 f:17c45f6623e4f3bc483af9f04f213ce5:newt/spkgbuild
@@ -658,8 +658,8 @@ f:a4965bec473af67c6211bcc7bd2345ef:gpgme/CHANGELOG
 f:e8850471f993935ff104b3354863f1e3:gpgme/spkgbuild
 f:8eb02952289c7ce662ea743af6e19f34:libindicator/spkgbuild
 f:17f00fae5f4be8e100d5a915477ccc24:libnotify/spkgbuild
-f:7b6c0c53871a3cb3f89c68a28d889df1:libidn2/CHANGELOG
-f:fad5f6bc4dd803e8313a88a671bc58ba:libidn2/spkgbuild
+f:45755ddc37692dd9fee3c64f60b5b5d6:libidn2/CHANGELOG
+f:d119260fb290ccff3adf83e6dfb20f4a:libidn2/spkgbuild
 f:051a6e7add098c4c89f107189f64b1f6:lirc/CHANGELOG
 f:d80cd25aa263531f098d0b90bde08056:lirc/lirc-0.10-build-fix.patch
 f:4fd0cc3324e9e62e50dec34822f3fa57:lirc/spkgbuild
@@ -667,8 +667,8 @@ f:0b4d8ca274e20e271f715190611e1494:poppler/CHANGELOG
 f:bd2c360100c06d8ea2e2ea064b1f527e:poppler/spkgbuild
 f:124f90691b94971fb85f74b8c9283566:libffi/CHANGELOG
 f:c3aae9aa68c71eafeb1719596338cdb7:libffi/spkgbuild
-f:0b407790ec64bfb36a320de84101aace:c-ares/CHANGELOG
-f:17d8368527eb1b9c077a02ae095a5d36:c-ares/spkgbuild
+f:5acce3198a97ff7915c7e73da6abd671:c-ares/CHANGELOG
+f:5d209e1edf5d5158304785d252600396:c-ares/spkgbuild
 f:c3ae70689ce9ba5fefb6055d52fe94fb:libdmx/CHANGELOG
 f:037bf05d650fb58e630a9a6de02926d0:libdmx/spkgbuild
 f:b172b985ff187f16299dc7f7ee2736ed:libbytesize/CHANGELOG
@@ -688,8 +688,8 @@ f:ae9c1dc576fcb9a75a659a1d176ab7d8:libxshmfence/spkgbuild
 f:dd6ad16ac8d42935847832cb4402e60c:libtheora/spkgbuild
 f:7f1f89b8a4e74c05614bdf2fd5c66f6a:icu/post-upgrade.sh
 f:1a17d0159dd30424d490b008af85d810:icu/spkgbuild
-f:177091a94314b080216d4eb6d8dcf3bb:sdl2/CHANGELOG
-f:2ae278ad980f47af2049094c49e7dff3:sdl2/spkgbuild
+f:6bc3af2ea53e8ceb156b4581b45c51a1:sdl2/CHANGELOG
+f:ae1a36cb46d81bad9fdbc22ffc245554:sdl2/spkgbuild
 f:00da7d84cb8655394fd8e3d7d62a2280:libxft/spkgbuild
 f:6ec548c11489436ddad4effffbcbde0b:libtool/CHANGELOG
 f:33d4308bb3da3d465c4c999f96009c2a:libtool/spkgbuild
@@ -703,8 +703,8 @@ f:86499e781da345d09753644836b6a7f0:libtorrent/CHANGELOG
 f:e4ea060a5287b6dc181f43ab2f69d503:libtorrent/fix-build-with-boost-1.72.0.patch
 f:98bc5f08753e9fab4b911af3031fdd42:libtorrent/spkgbuild
 f:76226b0dee30494f6932b0a92d1ee6f4:alsa-lib/readme
-f:74f707bdbd394f6b20e30189cab74c06:alsa-lib/CHANGELOG
-f:ee427bfae06e2996d96030c49ebdf5dd:alsa-lib/spkgbuild
+f:d0965c1a1a135a7841f2fdd50594074a:alsa-lib/CHANGELOG
+f:218398502c9ff277be2007fc45cf5f0a:alsa-lib/spkgbuild
 f:4e42721f3a4cc2132ddbabde13256d2a:libxfont2/spkgbuild
 f:3965a59dbebb04051391e83daa216932:libcurl-compat/spkgbuild
 f:5398cb59afddaddac7c6e15b9af9d2e9:expat/CHANGELOG
