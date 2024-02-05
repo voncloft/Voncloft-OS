@@ -2,7 +2,7 @@
 # depends	: linux-api-headers python
 
 name=glibc
-version=2.38
+version=2.39
 release=1
 backup="etc/locales"
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
