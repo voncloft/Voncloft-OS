@@ -2,7 +2,7 @@
 # depends : python-botocore python-jmespath python-s3transfer
 
 name=python-boto3
-version=1.34.35
+version=1.34.37
 release=1
 
 source="https://github.com/boto/boto3/archive/refs/tags/$version.tar.gz"
