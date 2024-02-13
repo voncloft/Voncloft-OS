@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-interface python-zope-schema python-zope-i18nmessageid
 
 name=python-zope-configuration
-version=5.0
+version=5.0.1
 release=3
 
 source="https://github.com/zopefoundation/zope.configuration/archive/refs/tags/$version.tar.gz"
