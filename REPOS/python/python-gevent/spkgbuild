@@ -2,7 +2,7 @@
 # depends : c-ares libev python-greenlet python-setuptools python-zope-event python-zope-interface
 
 name=python-gevent
-version=23.9.1
+version=24.2.1
 release=2
 
 source="https://github.com/gevent/gevent/archive/refs/tags/$version.tar.gz"

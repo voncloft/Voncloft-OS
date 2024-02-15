@@ -486,11 +486,11 @@ f:b29b65d589f675a3d72ee060c0d16943:sysvinit/CHANGELOG
 f:edafae1086d6b0f0203c7ecba31de6f8:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-install.sh
-f:a296d83fa0d5ee4c82be90ab5432b228:shadow/CHANGELOG
+f:7bfe808282cc0575c090106315111127:shadow/CHANGELOG
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-upgrade.sh
 f:67bfdee60d1f31efc42ea724c5da9cad:shadow/su
 f:a647a87ebd460912bf80a62a8c66d2ac:shadow/chpasswd
-f:ff3dd89e70daff21cf85bc852e39c496:shadow/spkgbuild
+f:bb95ae3ca5602e65fc79e6c8bd8525e8:shadow/spkgbuild
 f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
 f:651dd39e74b086fa23e8c8cf915224a6:shadow/chage
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
@@ -1170,8 +1170,8 @@ f:c5f2809907c763973084810d66bf8e8f:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:56f5ccc078700261c581112aa720d883:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
-f:9426cbf0e6d857177b5fad186e4d93f8:btrfs-progs/CHANGELOG
-f:3b16f81e08a85af937974476704cb858:btrfs-progs/spkgbuild
+f:10704162d86fb0384b3fbe9a777af608:btrfs-progs/CHANGELOG
+f:8ca7790b2a2d8ab8cebb4959485b53cf:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
 f:b44a2b0bff7d9c7c1d14640d0a8c7c9c:sed/CHANGELOG
 f:eb13e7233eba3eae549fe4afd76b2b5a:sed/spkgbuild
@@ -1209,8 +1209,8 @@ f:0230c3ff2dc0e51fd0ddb9b6c25e4e9f:slang/CHANGELOG
 f:f3e7818496df20f396b4784a76806739:slang/spkgbuild
 f:a9c5426cedad28b06c9b1002fcc35bc4:m4/CHANGELOG
 f:ed0d9386fc726acbf3706c5e86a5d28c:m4/spkgbuild
-f:19de23b2a80ca2151a98e080c1307cea:tmux/CHANGELOG
-f:295fcb5d3bee7c1432f231c187223807:tmux/spkgbuild
+f:49445b6cc5e38dd054a778fc73dd8ddf:tmux/CHANGELOG
+f:d75820eee0c530b5d8c73370fe60d060:tmux/spkgbuild
 f:f291dcbccde11293890010e229fd5563:busybox/CHANGELOG
 f:6c38ca9110e63f88de5d652b85e232ad:busybox/spkgbuild
 f:45de326e439ed1393f20b9cd5c55fa22:busybox/config
@@ -1268,8 +1268,8 @@ f:232228ddc8227ccdf79f76b049322099:smplayer-themes/spkgbuild
 f:481b89ead6b42b6067b6a0ea21efddd5:opera/CHANGELOG
 f:c8dd8ee8caf71e5f5f9302f9039136d5:opera/spkgbuild
 f:d23fcb98b83b3deae74524c235ebd412:picom/picom.conf
-f:6b44b78e5737327b33d5045b63205f2c:picom/CHANGELOG
-f:f6df724e38f8a726f4275b3f8c3a5acd:picom/spkgbuild
+f:c00f76bb5fef73eda91fc107b1b2f5da:picom/CHANGELOG
+f:1e3018e2fb2b79d1d2138c46ab9eb681:picom/spkgbuild
 f:5791378f6f86dd25a302ad8586292dd6:gcolor2/gcolor2-0.4-amd64.patch
 f:1bbc11865df2a0529757cdbdf806b079:gcolor2/gcolor2.desktop
 f:1c0e96c73cf841c7907261e58a569712:gcolor2/spkgbuild
