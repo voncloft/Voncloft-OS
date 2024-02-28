@@ -4,7 +4,7 @@
   depends+=python-jsbeautifier
 
 name=python-jsbeautifier
-version=1.14.11
+version=1.15.1
 release=1
 
 source="https://github.com/beautify-web/js-beautify/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends	: extra-cmake-modules qt5 linux-pam upower consolekit2 libxcb
 
 name=sddm
-version=0.20.0
+version=0.21.0
 release=6
 backup="usr/share/sddm/scripts/Xsetup
 	etc/sddm.conf

@@ -2,7 +2,7 @@
 # depends : kde-deps kconfig kcoreaddons ki18n kirigami2 kunitconversion mpfr qt5-feedback
 
 name=kalk
-version=23.08.4
+version=23.08.5
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
