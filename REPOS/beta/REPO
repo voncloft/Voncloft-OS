@@ -8,7 +8,6 @@ d:tl-unx
 d:ansible-core
 d:jellyfin-web-bin
 d:libvncserver
-d:qt6
 d:jellyfin-server-bin
 d:netboot
 d:cups-old
@@ -35,12 +34,6 @@ f:91835579b6573b9b5fb8dc3b68ef7999:jellyfin-web-bin/CHANGELOG
 f:cc1a6cbc8c582eda6caf1d3b066e0541:jellyfin-web-bin/spkgbuild
 f:203eeaf6d72517ca59bd6f661a594e42:libvncserver/CHANGELOG
 f:6ddf5f7a3cf3bf27d6ec27b958b6f430:libvncserver/spkgbuild
-f:aadd40347642d4a60f78270664b2d369:qt6/main.patch
-f:87719b71fc17dccb96f069d0322122ef:qt6/spkgbuild-backup
-f:5422c3342c7975a39eb5f684388152cf:qt6/CHANGELOG
-f:af3a7093ca9f5f3ee85f45ce85615569:qt6/webengine.patch
-f:39a4717a7d5cc1751c3f98d07b3291e4:qt6/override
-f:641dcfb3af2962c792ed89e48b72bf75:qt6/spkgbuild
 f:e4412c02e101874e9df2df8ae09e86cc:jellyfin-server-bin/jellyfin.sysusers
 f:7a11eae371358c3c38cabc19de6e5bcc:jellyfin-server-bin/jellyfin.service
 f:e6f82edec60b79aeabfddfc744b99fd0:jellyfin-server-bin/CHANGELOG
