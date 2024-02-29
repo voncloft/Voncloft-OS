@@ -2,10 +2,10 @@
 # depends : kde-deps kactivities-stats kactivitymanagerd kde-client-tools kholidays kio-extras kio-fuse knotifyconfig kpeople kquickcharts ksystemstats ktexteditor kwin libkscreen milou plasma-integration prison baloo discover kdepim-addons plasma-workspace-wallpapers kunitconversion plasma-wayland-protocols
 
 name=plasma-workspace
-version=6.0.0
+version=5.90.0
 release=1
 
-source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz
+source="https://download.kde.org/unstable/plasma/$version/$name-$version.tar.xz
 	event.patch
 	version_patch.patch"
 options="!checksum"

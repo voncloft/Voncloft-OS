@@ -8,7 +8,7 @@ release=1
 source="https://github.com/KDE/kalendar/archive/refs/tags/v$version.tar.gz"
 build(){
    cd *
-   kf5-package-installer
+   kf-package-installer
    cd build
    make DESTDIR=$PKG install	
 }

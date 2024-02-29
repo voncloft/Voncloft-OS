@@ -1,0 +1,11 @@
+# description : kde meta basically installs all of kde
+# depends : kde-deps kf5-programs plasma-programs
+
+name=kde6
+version=6
+release=1
+verzion=6.81
+build () {
+	mkdir -pv $PKG/opt
+
+}

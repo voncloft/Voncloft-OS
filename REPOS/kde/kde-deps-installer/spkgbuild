@@ -2,16 +2,16 @@
 # depends : 
 
 name=kde-deps-installer
-version=5
+version=6
 release=1
 
-source="kf5-package-installer
+source="kf-package-installer
 	plasma-package-installer"
 options="!checksum"
 
 build() {
 	mkdir -pv $PKG/usr/bin
-	install -Dm755 $SRC/kf5-package-installer $PKG/usr/bin/
+	install -Dm755 $SRC/kf-package-installer $PKG/usr/bin/
 	install -Dm755 $SRC/plasma-package-installer $PKG/usr/bin/
 }
 
