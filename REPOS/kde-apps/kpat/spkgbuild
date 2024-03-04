@@ -2,7 +2,7 @@
 # depends : kde-deps libblack-hole-solver freecell-solver hicolor-icon-theme libkdegames extra-cmake-modules
 
 name=kpat
-version=24.01.80
+version=24.01.95
 release=1
 
 source="https://download.kde.org/unstable/release-service/$version/src/$name-$version.tar.xz"
