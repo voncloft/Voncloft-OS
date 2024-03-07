@@ -11,6 +11,7 @@ d:libvncserver
 d:jellyfin-server-bin
 d:netboot
 d:cups-old
+d:collabora-online-server
 f:f1a8acd1414b409acf7752793002a939:jellyfin-bin/CHANGELOG
 f:c02a86f37c530f3d57a0e1d35bd51730:jellyfin-bin/spkgbuild
 f:0c3fa3172acd15a041c22a855fdc7e06:kuserfeedback/CHANGELOG
@@ -49,3 +50,9 @@ f:485892b0c31bacd1d8f96e8d2d470a86:cups-old/pre-install.sh
 f:036553576036ed2b58c8df09d4d88c50:cups-old/cupsd.conf
 f:f53fc94e3c8219ad67bee113d250687e:cups-old/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups-old/run
+f:f21afa63615261799be1e1ca6a752df0:collabora-online-server/post-install.sh
+f:53f8cc00331729d1df8ea7257fd9b89f:collabora-online-server/CHANGELOG
+f:d75784cd2d6011872f13c2af06c16568:collabora-online-server/post-upgrade.sh
+f:37da350bb8cf3da7c298e4227e5bf7fc:collabora-online-server/coolwsd.patch
+f:920e2d8dde47e41a024d20389054277d:collabora-online-server/service.patch
+f:efe96b61076e7f585d3f00924b17df57:collabora-online-server/spkgbuild

@@ -1,0 +1,38 @@
+# description : online office suite based on LibreOffice
+# depends : libcap libcap-ng lib32-libcap libpng poco cpuunit nodejs npm python-lxml python-polib cpio
+
+name=collabora-online-server
+version=23.05.0.1
+release=1
+
+source="https://github.com/CollaboraOnline/online/archive/refs/tags/helm-collabora-online-1.1.13.tar.gz
+	coolwsd.patch
+	service.patch"
+
+build() {
+	patch online/coolwsd.xml.in coolwsd.patch
+	patch online/coolwsd.service service.patch
+	cd online
+	./autogen.sh
+	./configure --enable-silent-rules --with-lokit-path="${srcdir}"/include --with-lo-path=/usr/share/coolwsd/libreoffice --disable-werror --disable-setcap
+	cd "${SRC}"/online
+	make
+	make INSTALL DESTDIR=$PKG
+	cd $PKG/usr/local/
+	mv etc ../../
+	mv bin ../
+	mv share ../
+	cd ..
+	rm local -r
+	cd $PKG/etc
+	mkdir -pv httpd/conf/extra
+	mv apache2/conf-available/coolwsd.conf httpd/conf/extra
+	rm -r apache2
+	cd $PKG
+	mkdir -pv var/lib/coolwsd/systemplate
+	cp -r $SRC/instdir $PKG/usr/share/coolwsd/libreoffice
+	#find a way to edit
+	#mkdir -p usr/lib/systemd/system
+	#cp $SRC/online/coolwsd.service usr/lib/systemd/system
+	
+}
