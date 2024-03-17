@@ -2,7 +2,7 @@
 # depends	: xcb-util-image xcb-util-xrm libxkbcommon cairo linux-pam libev
 
 name=i3lock
-version=2.14.1
+version=2.15
 release=1
 backup="etc/pam.d/i3lock"
 source="https://i3wm.org/i3lock/$name-$version.tar.bz2"
