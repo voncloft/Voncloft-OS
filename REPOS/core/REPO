@@ -551,9 +551,9 @@ f:875848ec112fad18f7efa969e55e9f9e:gtest/CHANGELOG
 f:f84a73fe3501272d1d8cfe0ac0555f56:gtest/spkgbuild
 f:ed5071c4a89231f23cbb341f533ac1b6:bluez/bluez-obexd_without_systemd-1.patch
 f:3e25909a9413066e78f97f728ca4c36d:bluez/readme
-f:08f044a5250607c34acee58f2186beae:bluez/CHANGELOG
+f:fccd6718ec5e18f4165a88e98bd58369:bluez/CHANGELOG
 f:16baf2462c222b819504f9a9ce05300f:bluez/rc.bluetoothd
-f:6151ea0f1c5dae826847302a1585182c:bluez/spkgbuild
+f:6c769d08e41c3177618b8734f398bf52:bluez/spkgbuild
 f:f715f0b49a44a5764e9379ab3c99d9b1:bluez/run
 f:a3180046fba38f1012d61de38bc9f089:recode/CHANGELOG
 f:19e9def180083d1c6e53d85a3c33c785:recode/spkgbuild
@@ -709,8 +709,8 @@ f:f6f79d057b1b6e85a4cb43086a0f7ce9:nnn/spkgbuild
 f:b46647417ed22579d8c1cbcda5cbbb9a:gnupg/CHANGELOG
 f:9f7d63c74474b73b99f90ea734c3b696:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:420f521b73318c5bf7694343b71460ed:pipewire/CHANGELOG
-f:64771337f492cdfdfb5c242e131e680d:pipewire/spkgbuild
+f:8087173e9200d17e1d1f8d1461fee844:pipewire/CHANGELOG
+f:d50cba50028e10b9695ce476cd9c33bf:pipewire/spkgbuild
 f:0f20437ceabcfe279db7d4ff8bc7f9ae:duktape/CHANGELOG
 f:1f799c92594d55ced8d183d0e29132c9:duktape/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
@@ -1358,8 +1358,8 @@ f:6dcfec7992ae6d7fa451317575ff098b:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
 f:47d8e5a810396a09183b234930f60729:man-pages/CHANGELOG
 f:bdfe0168ba2f2301ed8cbc9328db8569:man-pages/spkgbuild
-f:aaff048d8060927ece602c132b27cae6:dunst/CHANGELOG
-f:e2a9f11939566af5aec445645648aa52:dunst/spkgbuild
+f:1f2d38372a6c7adb9634f96379556eeb:dunst/CHANGELOG
+f:aa6d281f32e8b26c9673b19585e0aeaa:dunst/spkgbuild
 f:1445306ae5e2cf8a8c32d5e3bde8de92:lua/CHANGELOG
 f:4712a2988b29a71cf2b3a69a4c1d5871:lua/spkgbuild
 f:deee148134a3fede4595152e34d8cdc7:lua/lua.pc
@@ -1426,5 +1426,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:0f10765f05332d880e601bcb962891e1:hugo/CHANGELOG
-f:1a21fa41a90f58c6cf3055a73efdbe9f:hugo/spkgbuild
+f:fba95ec8dfbcfb13ad30d73bb67aa486:hugo/CHANGELOG
+f:1e97c53e575c130d255fac8954da8f19:hugo/spkgbuild
