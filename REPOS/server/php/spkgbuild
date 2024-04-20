@@ -1,5 +1,5 @@
 # description : php
-# depends: httpd libxml2 
+# depends: httpd libxml2 curl mariadb openssl
 
 name=php
 version=8.3.3
@@ -32,6 +32,8 @@ build()
             --enable-mbstring            \
             --disable-mbregex            \
             --with-mysqli=shared	\
+            --with-openssl \
+            --with-curl \
             --with-pgsql=shared	\
             --with-readline              
 make
