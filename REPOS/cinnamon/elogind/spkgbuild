@@ -2,7 +2,7 @@
 # depends : dbus docbook-xml docbook-xsl libxslt linux-pam polkit
 
 name=elogind
-version=255.4
+version=255.5
 release=1
 
 source="https://github.com/elogind/elogind/archive/v246.10/$name-$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends	: binutils
 
 name=gcc
-version=11.2.0
+version=13.2.0
 release=1
 source="https://ftp.gnu.org/gnu/$name/$name-$version/$name-$version.tar.xz
 	c89 c99"
