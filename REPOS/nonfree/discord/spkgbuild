@@ -1,4 +1,5 @@
 # description	: All-in-one voice and text chat for gamers that's free and secure
+# depends : xdg-desktop-portal-gtk
 
 name=discord
 version=0.0.27
@@ -6,6 +7,7 @@ release=1
 source="https://dl.discordapp.net/apps/linux/$version/discord-$version.tar.gz"
 
 build() {
+	#note use GTK_USE_PORTAL=1 when running
 	cd Discord
 	sed -i "s|Exec=.*|Exec=/usr/bin/$name|" $name.desktop
   	echo 'Path=/usr/bin' >> $name.desktop

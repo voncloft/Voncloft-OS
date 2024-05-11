@@ -4,7 +4,7 @@
 name=fuse3
 version=3.16.2
 release=1
-source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz"
+source="https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz"
 
 build() {
 	cd fuse-$version
