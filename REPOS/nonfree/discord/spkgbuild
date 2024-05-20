@@ -8,6 +8,9 @@ source="https://dl.discordapp.net/apps/linux/$version/discord-$version.tar.gz"
 
 build() {
 	#note use GTK_USE_PORTAL=1 when running
+	#also export $(dbus-launch)
+	#put in .profile of usesr directory
+	
 	cd Discord
 	sed -i "s|Exec=.*|Exec=/usr/bin/$name|" $name.desktop
   	echo 'Path=/usr/bin' >> $name.desktop
