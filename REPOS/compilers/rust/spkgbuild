@@ -2,12 +2,12 @@
 # depends	: curl cmake python3 llvm libssh2
 
 name=rust
-version=1.78.0
+version=1.79.0
 release=1
-_date=2024-05-02
-_rust=1.78.0
-_cargo=1.78.0
-#_cargo=1.78.01.72.1$_rust
+_date=2024-06-13
+_rust=1.79.0
+_cargo=1.79.0
+#_cargo=1.79.01.72.1$_rust
 _triplet=x86_64-unknown-linux-gnu
 
 source="https://static.rust-lang.org/dist/rustc-$version-src.tar.xz

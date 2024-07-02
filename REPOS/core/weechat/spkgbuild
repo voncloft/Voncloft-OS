@@ -2,7 +2,7 @@
 # depends	: cmake ncurses curl zlib libgcrypt gnutls guile tcl lua ruby
 
 name=weechat
-version=4.3.1
+version=4.3.3
 release=1
 source="https://www.weechat.org/files/src/weechat-3.3.tar.xz"
 

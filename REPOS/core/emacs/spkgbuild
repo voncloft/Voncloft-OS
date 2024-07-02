@@ -2,7 +2,7 @@
 # depends	: giflib libxml2 gnutls imagemagick6 libxpm
 
 name=emacs
-version=29.3
+version=29.4
 release=1
 source="ftp://ftp.gnu.org/gnu/emacs/$name-$version.tar.xz"
 

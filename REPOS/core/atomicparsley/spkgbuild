@@ -2,7 +2,7 @@
 # depends : gcc zlib cmake
 
 name=atomicparsley
-version=20221229.172126
+version=20240608.083822.1
 release=1
 
 source="https://github.com/wez/atomicparsley/archive/$version/$name-$version.tar.gz"
