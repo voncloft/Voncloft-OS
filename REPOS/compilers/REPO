@@ -22,9 +22,9 @@ d:llvm-old-2023-06-07
 d:autoconf2.13
 d:gdb
 d:cmake
-f:e872e12e88159fb2889e51711f81af8a:ruby/CHANGELOG
+f:fa830757a9d09a33ba7172f30ec06089:ruby/CHANGELOG
 f:d9f4d5de58a076d2af1a828c4c3edf5b:ruby/override
-f:2bbb85c0c4d051a6bcba176be4878414:ruby/spkgbuild
+f:95f88c4d6e052a6f31cc6ba6f4a5efcd:ruby/spkgbuild
 f:4770fca39cdba8b6b2cd0c3ef376bde5:meson/CHANGELOG
 f:1ed1570fb060af1fa179c748fa8951c9:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
@@ -38,8 +38,8 @@ f:43ad58e10cd9197d555ca44341091298:apache-ant/override
 f:b4f6b37eab6f66b363d13d3774bb7501:apache-ant/spkgbuild
 f:9d9a7b4e33e3748c64729139c042558a:ninja/CHANGELOG
 f:71c4de9c0c08b1fd444ebc6199502681:ninja/spkgbuild
-f:3974f8f7a47a02daff9c222aeff3e1b6:automake/CHANGELOG
-f:bb267fddaaa154f28badbace1efb73b4:automake/spkgbuild
+f:e59dbe0fa23a3c52dd27b4c48d74a248:automake/CHANGELOG
+f:76ac108fe598c4fa0c0fd56b0320cd8b:automake/spkgbuild
 f:383721e4de63af217922d307b0f07b6d:lld/CHANGELOG
 f:32a28fe30c51e0b9e35c37a41d840b33:lld/spkgbuild
 f:efbc369782cf6837d3430e16ec1fafa5:luajit/spkgbuild
@@ -79,8 +79,8 @@ f:295c343dcd457dc534662f011d7cff1a:llvm-old-2023-06-07/llvm-config.h
 f:afb5c53d07349a5da95db19f993ecb62:llvm-old-2023-06-07/spkgbuild
 f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes-1.patch
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
-f:0a1c594cd4e58d9559e5f4c8a30eb389:gdb/CHANGELOG
-f:9969b1d8f82357f8d627eb26f82d4fe6:gdb/spkgbuild
+f:fc551b4059c4b333645177064d797237:gdb/CHANGELOG
+f:ed85b0029d2360a8b4d4b8d7bc45287b:gdb/spkgbuild
 f:a0419329cc289d63720c92e0a66c7f3d:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override

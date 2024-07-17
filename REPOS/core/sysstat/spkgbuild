@@ -2,7 +2,7 @@
 # depends : lm_sensors
 
 name=sysstat
-version=12.7.5
+version=12.7.6
 release=1
 
 source="https://github.com/sysstat/sysstat/archive/refs/tags/v${version}.tar.gz
