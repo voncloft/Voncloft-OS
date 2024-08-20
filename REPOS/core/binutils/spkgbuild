@@ -2,7 +2,7 @@
 # depends	: zlib
 
 name=binutils
-version=2.43
+version=2.43.1
 release=1
 source="https://ftp.gnu.org/gnu/binutils/$name-$version.tar.xz"
 

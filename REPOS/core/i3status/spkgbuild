@@ -2,7 +2,7 @@
 # depends	: confuse yajl libnl alsa-lib pulseaudio asciidoc xmlto
 
 name=i3status
-version=2.14
+version=2.15
 release=1
 backup="etc/i3status.conf"
 source="https://i3wm.org/i3status/$name-$version.tar.bz2"
