@@ -22,9 +22,9 @@ d:llvm-old-2023-06-07
 d:autoconf2.13
 d:gdb
 d:cmake
-f:fa830757a9d09a33ba7172f30ec06089:ruby/CHANGELOG
+f:8a4bd9f824813a7d1a2d6c66d3412590:ruby/CHANGELOG
 f:d9f4d5de58a076d2af1a828c4c3edf5b:ruby/override
-f:95f88c4d6e052a6f31cc6ba6f4a5efcd:ruby/spkgbuild
+f:dc68c109213aee25545c8835c40d7293:ruby/spkgbuild
 f:1190bd89b70fe14e1c4f268dfc784685:meson/CHANGELOG
 f:9ce01a169c27ac54a6810af87feb2d8b:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
@@ -33,9 +33,9 @@ f:6be2a5e3cd924b417e134fccf6449d41:zig/resolve_DNS.patch
 f:47e6fef4e94f93408245db535b2cbfdf:clang/CHANGELOG
 f:d5ef877abc6d0afa08e1808686680c54:clang/spkgbuild
 f:d12fcf021316bb31fc95e469d0423c97:apache-ant/post-install.sh
-f:de99741f85d75a88e77a40841635c907:apache-ant/CHANGELOG
+f:603ababf2529f9ca3957861f246bead4:apache-ant/CHANGELOG
 f:43ad58e10cd9197d555ca44341091298:apache-ant/override
-f:b4f6b37eab6f66b363d13d3774bb7501:apache-ant/spkgbuild
+f:935290b9a601c9d954fae52476f63af5:apache-ant/spkgbuild
 f:9d9a7b4e33e3748c64729139c042558a:ninja/CHANGELOG
 f:71c4de9c0c08b1fd444ebc6199502681:ninja/spkgbuild
 f:e59dbe0fa23a3c52dd27b4c48d74a248:automake/CHANGELOG
@@ -81,7 +81,7 @@ f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
 f:fc551b4059c4b333645177064d797237:gdb/CHANGELOG
 f:ed85b0029d2360a8b4d4b8d7bc45287b:gdb/spkgbuild
-f:37cf883d67f530104d68458d7a797c4f:cmake/CHANGELOG
+f:275d42cc051af727c7cd3386a393af0a:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override
-f:a0b84eae1c0ae73fb7a0db57196b68d9:cmake/spkgbuild
+f:53ea1768dd83c51b2d53e2b4a908035d:cmake/spkgbuild

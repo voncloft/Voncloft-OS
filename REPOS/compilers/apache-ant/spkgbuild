@@ -2,7 +2,7 @@
 # depends : openjdk glib
 
 name=apache-ant
-version=1.10.14
+version=1.10.15
 release=1
 
 source="https://archive.apache.org/dist/ant/source/$name-$version-src.tar.xz"
