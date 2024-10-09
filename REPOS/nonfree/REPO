@@ -25,6 +25,7 @@ d:virtualbox
 d:google-chrome
 d:firefox
 d:packettracer
+d:firefox-bin
 f:c08dd6aba85106175542d97c55e61998:discord/CHANGELOG
 f:32c2bdaf6c6b65df67ef08a2e2645dc5:discord/override
 f:4a328388c0a67f98edbfdc8fa4309bc5:discord/spkgbuild
@@ -139,3 +140,5 @@ f:367c64382056110df3e35d1d74749889:packettracer/CHANGELOG
 f:5287f37b01c5ecd15f6da88d848ec2a7:packettracer/packettracer.sh
 f:c3c5adb340ee6403403d104253cb8d49:packettracer/spkgbuild
 f:362400fd2f20491517f6a8f6f2a756d4:packettracer/cisco-pt.desktop
+f:58d43b27b1195030c8875239e92efea9:firefox-bin/CHANGELOG
+f:491a1721710ef46f03d81cadd0e3047a:firefox-bin/spkgbuild

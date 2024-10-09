@@ -2,7 +2,7 @@
 # depends : python-six gcc guile valgrind
 
 name=gdb
-version=15.1
+version=15.2
 release=4
 
 source="https://ftp.gnu.org/gnu/gdb/${name}-${version}.tar.xz"

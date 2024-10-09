@@ -2,7 +2,7 @@
 # depends	: ncurses
 
 name=busybox
-version=1.36.1
+version=1.37.0
 release=1
 source="https://www.busybox.net/downloads/$name-$version.tar.bz2
 	config"
