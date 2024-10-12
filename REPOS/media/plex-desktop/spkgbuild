@@ -1,0 +1,32 @@
+# description : plex video player for the desktop
+# depends : hicolor-icon-theme alsa-lib dbus expat ffmpeg fontconfig freetype2 gcc-libs glib2 glibc harfbuzz lcms2 libdrm libjpeg-turbo libwebp libx11 libxcb libxcomposite libxdamage libxext libxfixes libxkbcommon libxkbfile libxml2 libxrandr libxslt libxtst mesa minizip nspr nss opus xcb-util-renderutil pciutils libxss xcb-util-image libxkbcommon-x11 libxinerama xcb-util-keysyms xcb-util-wm zlib snappy libva libpulse libxrender wayland qt6
+
+name=plex-desktop
+version=1.103.1.238
+release=1
+_pkghash=223cbba6
+source="https://artifacts.plex.tv/plex-desktop-stable/$version-$_pkghash/linux/Plex-$version-$_pkghash-linux-x86_64.tar.bz2
+	https://github.com/flathub/tv.plex.PlexDesktop/raw/master/tv.plex.PlexDesktop.desktop
+	https://github.com/flathub/tv.plex.PlexDesktop/raw/master/tv.plex.PlexDesktop.png
+	http://ftp.us.debian.org/debian/pool/main/libw/libwebp/libwebp6_0.6.1-2.1+deb11u2_amd64.deb"
+	
+build() {
+	cd $SRC
+	tar --no-same-owner -xvf $SRC/Plex-$version-$_pkghash-linux-x86_64.tar.bz2 -C $PKG/opt/$name
+	tar -xvf $SRC/data.tar.xz ./usr/lib/x86_64-linux-gnu/libwebp.so.6.0.2
+	install -Dm644 usr/lib/x86_64-linux-gnu/libwebp.so.6.0.2 ${PKG}/opt/${name}/lib/libwebp.so.6
+	rm -rf $pkgdir/opt/${PKG}/lib/dri
+  	rm -rf $pkgdir/opt/${PKG}/lib/libEGL.so*
+  	rm -rf $pkgdir/opt/${PKG}/lib/libdrm.so*
+  	rm -rf $pkgdir/opt/${PKG}/lib/libdrm_*.so*
+  	rm -rf $pkgdir/opt/${PKG}/lib/libpciaccess.so*
+  	rm -rf $pkgdir/opt/${PKG}/lib/libswresample.so*
+  	rm -rf $pkgdir/opt/${PKG}/lib/libva.so*
+  	rm -rf $pkgdir/opt/${PKG}/lib/libva-*.so*
+
+  install -d ${pkgdir}/usr/bin
+  ln -s /opt/${name}/Plex.sh ${PKG}/usr/bin/Plex
+
+  install -Dm644 "${SRC}/tv.plex.PlexDesktop.desktop" -t "${PKG}/usr/share/applications"
+  install -Dm644 "${SRC}/tv.plex.PlexDesktop.png" -t "${PKG}/usr/share/icons/hicolor/256x256/apps/"
+}

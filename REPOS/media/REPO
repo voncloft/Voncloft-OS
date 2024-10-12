@@ -16,6 +16,7 @@ d:libsamplerate
 d:openal
 d:graphite2
 d:vlc
+d:plex-desktop
 d:x265
 d:ffmpeg
 d:alsa-plugins
@@ -64,6 +65,8 @@ f:195e3b19b62beb26b1a438f72d3d9b46:graphite2/spkgbuild
 f:2b3de8844e0ba005eb53b7926c0aea19:vlc/CHANGELOG
 f:59c8c1fadb493a39fe519c8d74fcdc28:vlc/override
 f:4494b0aca162b69b31cc76aa8897c610:vlc/spkgbuild
+f:94fce86ee9592c327f95f7b09aa0ab6d:plex-desktop/CHANGELOG
+f:5959d60560847c349dde72b7cf88de6f:plex-desktop/spkgbuild
 f:a1fd2ca208dae39f2e120211f29b29f8:x265/spkgbuild
 f:134f5cb934f3e55151e4724f6cf3e408:ffmpeg/CHANGELOG
 f:785f902a4330e60edfe51c36e835a23a:ffmpeg/spkgbuild
