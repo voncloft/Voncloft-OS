@@ -1,16 +1,18 @@
 #!/bin/sh
-########################################################################
-# Begin fcron
-#
-# Description : deluge-daemon
-#
-#
-########################################################################
-
 ### BEGIN INIT INFO
-# Provides:            deluged
+# Provides:          plexmediaserver
+# Required-Start:    $remote_fs $networking
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Plex Media Server
+# Description:       Plex Media Server for Linux,
+#                    More information at http://www.plexapp.com
+#                    Many thanks to the great PlexApp team for their wonderfull job !
+# Author:            Cedric Quillevere / origin@killy.net
+# Rewamped	     Christian Svedin / christian.svedin@gmail.com
+# Version:           1.2
 ### END INIT INFO
-
 . /lib/lsb/init-functions
 
 BIN_FILE="/usr/lib/plexmediaserver/Plex Media Server"
