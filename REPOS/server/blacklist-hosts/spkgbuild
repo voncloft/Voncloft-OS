@@ -2,7 +2,7 @@
 # depends : dnsmasq
 
 name=blacklist-hosts
-version=3.14.73
+version=3.14.124
 release=1
 
 source="https://github.com/StevenBlack/hosts/archive/refs/tags/$version.tar.gz"

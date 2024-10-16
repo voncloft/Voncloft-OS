@@ -1376,3 +1376,19 @@ sed -i -e "s/version=1.5.0/version=1.5.1/g" xorg/xtrans/spkgbuild
 changelog "xorg/xtrans/spkgbuild" "Upgraded from version 1.5.0 to version 1.5.1"
 sed -i -e "s/version=1.0.6/version=1.0.7/g" xorg/xwud/spkgbuild
 changelog "xorg/xwud/spkgbuild" "Upgraded from version 1.0.6 to version 1.0.7"
+sed -i -e "s/version=3.14.73/version=3.14.124/g" server/blacklist-hosts/spkgbuild
+changelog "server/blacklist-hosts/spkgbuild" "Upgraded from version 3.14.73 to version 3.14.124"
+sed -i -e "s/version=2024.3.0/version=2024.10.2/g" server/homeassistant/spkgbuild
+changelog "server/homeassistant/spkgbuild" "Upgraded from version 2024.3.0 to version 2024.10.2"
+sed -i -e "s/version=2.4.58/version=2.4.62/g" server/httpd/spkgbuild
+changelog "server/httpd/spkgbuild" "Upgraded from version 2.4.58 to version 2.4.62"
+sed -i -e "s/version=1.25.4/version=1.27.2/g" server/nginx/spkgbuild
+changelog "server/nginx/spkgbuild" "Upgraded from version 1.25.4 to version 1.27.2"
+sed -i -e "s/version=8.3.3/version=8.3.12/g" server/php/spkgbuild
+changelog "server/php/spkgbuild" "Upgraded from version 8.3.3 to version 8.3.12"
+sed -i -e "s/version=3.8.5/version=3.9.0/g" server/postfix/spkgbuild
+changelog "server/postfix/spkgbuild" "Upgraded from version 3.8.5 to version 3.9.0"
+sed -i -e "s/version=3.1.8/version=3.3.0/g" server/radicale/spkgbuild
+changelog "server/radicale/spkgbuild" "Upgraded from version 3.1.8 to version 3.3.0"
+sed -i -e "s/version=4.19.5/version=4.21.1/g" server/samba/spkgbuild
+changelog "server/samba/spkgbuild" "Upgraded from version 4.19.5 to version 4.21.1"

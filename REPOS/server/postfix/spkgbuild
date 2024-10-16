@@ -2,7 +2,7 @@
 # depends : berkeley-db cyrus-sasl libnsl postfix-boot
 
 name=postfix
-version=3.8.5
+version=3.9.0
 release=1
 
 backup="etc/postfix/main.cf
