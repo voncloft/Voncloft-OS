@@ -3,7 +3,7 @@
 
 _name=rb-inotify
 name=ruby-$_name
-version=0.10.1
+version=0.11.1
 release=2
 options="!emptydirs"
 source="https://rubygems.org/downloads/$_name-$version.gem"

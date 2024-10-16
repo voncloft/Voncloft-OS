@@ -2,7 +2,7 @@
 # depends : python python-requests python-dateutil python-six python-pytz python-msgpack
 
 name=python-influxdb
-version=5.3.1
+version=5.3.2
 release=2
 
 source="https://github.com/influxdata/influxdb-python/archive/refs/tags/v$version.tar.gz"

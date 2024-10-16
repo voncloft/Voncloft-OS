@@ -2,7 +2,7 @@
 # depends : python-requests python-six
 
 name=python-requests-mock
-version=1.11.0
+version=1.12.1
 release=3
 
 source="https://github.com/jamielennox/requests-mock/archive/refs/tags/$version.tar.gz"

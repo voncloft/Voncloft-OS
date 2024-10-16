@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-queuelib
-version=1.6.2
+version=1.7.0
 release=7
 
 source="https://github.com/scrapy/queuelib/archive/refs/tags/v$version.tar.gz"

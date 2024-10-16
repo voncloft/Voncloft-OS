@@ -2,7 +2,7 @@
 # depends : python python-flask python-blinker
 
 name=python-flask-mail
-version=0.9.1
+version=0.10.0
 release=6
 
 source="https://github.com/mattupstate/flask-mail/archive/refs/tags/$version.tar.gz"

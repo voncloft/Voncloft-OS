@@ -2,7 +2,7 @@
 # depends : glibc libnl openssl sqlite
 
 name=hostapd
-version=2.10
+version=2.11
 release=4
 
 source="https://w1.fi/releases/$name-$version.tar.gz

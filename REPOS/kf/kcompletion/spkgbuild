@@ -2,7 +2,7 @@
 # depends : kde-deps kconfig kwidgetsaddons
 
 name=kcompletion
-version=6.0.0
+version=6.7.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"

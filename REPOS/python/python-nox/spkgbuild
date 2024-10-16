@@ -2,7 +2,7 @@
 # depends : python python-argcomplete python-colorlog python-py python-virtualenv
 
 name=python-nox
-version=2023.04.22
+version=2024.10.09
 release=1
 
 source="https://github.com/theacodes/nox/archive/refs/tags/$version.tar.gz"

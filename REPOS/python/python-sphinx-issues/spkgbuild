@@ -2,7 +2,7 @@
 # depends : python python-sphinx
 
 name=python-sphinx-issues
-version=4.0.0
+version=5.0.0
 release=5
 
 source="https://github.com/sloria/sphinx-issues/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python libmpc
 
 name=python-gmpy2
-version=2.2.0
+version=2.2.1
 release=3
 
 source="https://github.com/aleaxit/gmpy/archive/refs/tags/m$version.tar.gz"

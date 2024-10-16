@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-pygal
-version=3.0.4
+version=3.0.5
 release=8
 
 source="https://github.com/Kozea/pygal/archive/refs/tags/$version.tar.gz"

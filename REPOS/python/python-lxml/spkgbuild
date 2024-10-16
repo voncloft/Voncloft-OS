@@ -2,7 +2,7 @@
 # depends : python libxslt
 
 name=python-lxml
-version=5.1.0
+version=5.3.0
 release=1
 
 source="https://github.com/lxml/lxml/releases/download/lxml-$version/lxml-$version.tar.gz"

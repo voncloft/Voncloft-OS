@@ -2,7 +2,7 @@
 # depends : fuse2 python
 
 name=python-fuse
-version=1.0.7
+version=1.0.8
 release=3
 
 source="https://github.com/libfuse/python-fuse/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-zope-interface
 
 name=python-persistent
-version=5.2
+version=6.1
 release=3
 
 source="https://github.com/zopefoundation/persistent/archive/refs/tags/$version.tar.gz"

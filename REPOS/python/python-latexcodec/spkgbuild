@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-latexcodec
-version=2.0.1
+version=3.0.0
 release=3
 
 source="https://github.com/mcmtroffaes/latexcodec/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-click
 
 name=python-click-didyoumean
-version=0.3.0
+version=0.3.1
 release=3
 
 source="https://github.com/click-contrib/click-didyoumean/archive/refs/tags/v$version.tar.gz"

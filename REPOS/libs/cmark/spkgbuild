@@ -2,7 +2,7 @@
 # depends	: cmake python
 
 name=cmark
-version=0.31.0
+version=0.31.1
 release=1
 source="https://github.com/jgm/$name/archive/$version/$name-$version.tar.gz"
 

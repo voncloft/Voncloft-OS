@@ -2,7 +2,7 @@
 # depends	: ncurses libpcap
 
 name=nethogs
-version=0.8.7
+version=0.8.8
 release=1
 source="$name-$version.tar.gz::https://github.com/raboof/nethogs/archive/v$version.tar.gz"
 

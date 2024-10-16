@@ -2,7 +2,7 @@
 # depends : cblas lapack python
 
 name=python-numpy
-version=2.0.0
+version=2.2.0
 release=1
 
 source="https://github.com/numpy/numpy/archive/refs/tags/v$version.tar.gz"

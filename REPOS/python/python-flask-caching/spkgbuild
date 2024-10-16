@@ -2,7 +2,7 @@
 # depends : python-flask
 
 name=python-flask-caching
-version=2.1.0
+version=2.3.0
 release=3
 
 source="https://github.com/sh4nks/flask-caching/archive/refs/tags/v$version.tar.gz"

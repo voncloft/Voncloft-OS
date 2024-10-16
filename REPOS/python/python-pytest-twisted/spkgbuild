@@ -2,7 +2,7 @@
 # depends : python-pytest python-greenlet python-decorator python-twisted
 
 name=python-pytest-twisted
-version=1.14.0
+version=1.14.3
 release=3
 
 source="https://github.com/pytest-dev/pytest-twisted/archive/refs/tags/v$version.tar.gz"

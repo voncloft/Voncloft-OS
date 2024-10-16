@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-tornado
-version=6.4.0
+version=6.4.1
 release=3
 
 source="https://github.com/tornadoweb/tornado/archive/refs/tags/v$version.tar.gz"

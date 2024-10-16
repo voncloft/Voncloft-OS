@@ -2,7 +2,7 @@
 # depends : python-requests python-oauthlib python-requests-oauthlib python-flask
 
 name=python-flask-dance
-version=7.0.1
+version=7.1.0
 release=1
 
 source="https://github.com/singingwolfboy/flask-dance/archive/refs/tags/v$version.tar.gz"

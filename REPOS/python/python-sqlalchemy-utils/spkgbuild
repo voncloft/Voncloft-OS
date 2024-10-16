@@ -2,7 +2,7 @@
 # depends : python python-sqlalchemy python-anyjson python-babel
 
 name=python-sqlalchemy-utils
-version=0.41.1
+version=0.42.2
 release=3
 
 source="https://github.com/kvesteri/sqlalchemy-utils/archive/refs/tags/$version.tar.gz"

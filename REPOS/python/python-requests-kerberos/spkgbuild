@@ -2,7 +2,7 @@
 # depends : python-requests python-pykerberos python-cryptography
 
 name=python-requests-kerberos
-version=0.14.0
+version=0.15.0
 release=7
 
 source="https://github.com/requests/requests-kerberos/archive/refs/tags/v$version.tar.gz"

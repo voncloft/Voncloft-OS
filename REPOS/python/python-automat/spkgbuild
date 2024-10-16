@@ -2,7 +2,7 @@
 # depends : python-attrs
 
 name=python-automat
-version=22.10.0
+version=24.8.1
 release=5
 
 source="https://github.com/glyph/automat/archive/refs/tags/v$version.tar.gz"

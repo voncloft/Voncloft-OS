@@ -2,7 +2,7 @@
 # depends : python-migen python-litex python-litedram python-liteeth python-liteiclink python-litejesd204b
 
 name=python-litex-boards
-version=2023.12
+version=2024.08
 release=1
 
 source="https://github.com/litex-hub/litex-boards/archive/refs/tags/$version.tar.gz"

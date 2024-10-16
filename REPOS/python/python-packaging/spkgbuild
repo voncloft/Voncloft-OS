@@ -2,7 +2,7 @@
   # depends : python-pyparsing python-six
 
 name=python-packaging
-version=23.2
+version=24.1
 release=1
 
 source="https://github.com/pypa/packaging/archive/refs/tags/$version.tar.gz"

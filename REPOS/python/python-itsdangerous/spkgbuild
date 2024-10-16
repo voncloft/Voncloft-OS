@@ -2,7 +2,7 @@
 depends+=python
 
 name=python-itsdangerous
-version=2.1.2
+version=2.2.0
 release=6
 
 source="https://github.com/mitsuhiko/itsdangerous/archive/refs/tags/r$version.tar.gz"

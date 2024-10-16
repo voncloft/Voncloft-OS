@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-netaddr
-version=1.2.1
+version=1.3.0
 release=3
 
 source="https://github.com/drkjam/netaddr/archive/refs/tags/$version.tar.gz"

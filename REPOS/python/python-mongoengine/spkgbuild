@@ -2,7 +2,7 @@
 # depends : python-pymongo python-six
 
 name=python-mongoengine
-version=0.27.0
+version=0.29.1
 release=1
 
 source="https://github.com/MongoEngine/mongoengine/archive/refs/tags/v$version.tar.gz"

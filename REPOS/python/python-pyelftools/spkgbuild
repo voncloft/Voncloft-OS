@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-pyelftools
-version=0.30
+version=0.31
 release=1
 
 source="https://github.com/eliben/pyelftools/archive/refs/tags/v$version.tar.gz"

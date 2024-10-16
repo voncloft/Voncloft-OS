@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-interface
 
 name=python-zope-proxy
-version=5.2
+version=6.1
 release=3
 
 source="https://github.com/zopefoundation/zope.proxy/archive/refs/tags/$version.tar.gz"

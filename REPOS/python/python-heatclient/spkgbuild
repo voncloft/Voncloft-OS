@@ -2,7 +2,7 @@
 # depends : python-babel python-pbr python-cliff python-iso8601 python-osc-lib
 
 name=python-heatclient
-version=3.4.0
+version=4.0.0
 release=1
 
 source="https://github.com/openstack/python-heatclient/archive/refs/tags/e$version.tar.gz"

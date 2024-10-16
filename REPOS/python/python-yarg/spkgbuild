@@ -2,7 +2,7 @@
 # depends : python-requests
 
 name=python-yarg
-version=0.1.9
+version=0.1.10
 release=6
 
 source="https://github.com/kura/yarg/archive/refs/tags/$version.tar.gz"

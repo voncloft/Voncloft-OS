@@ -2,7 +2,7 @@
 # depends : python-sphinx python-six
 
 name=python-sphinxcontrib-autoprogram
-version=0.1.8
+version=0.1.9
 release=3
 
 source="https://github.com/sphinx-contrib/autoprogram/archive/refs/tags/r$version.tar.gz"

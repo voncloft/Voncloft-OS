@@ -2,7 +2,7 @@
   # depends : python-importlib-metadata
 
 name=python-pluggy
-version=1.4.0
+version=1.5.0
 release=4
 
 source="https://github.com/pytest-dev/pluggy/archive/refs/tags/d$version.tar.gz"

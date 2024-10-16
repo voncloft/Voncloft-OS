@@ -2,7 +2,7 @@
   # depends : python
 
 name=python-objgraph
-version=3.6.1
+version=3.6.2
 release=3
 
 source="https://github.com/mgedmin/objgraph/archive/refs/tags/$version.tar.gz"

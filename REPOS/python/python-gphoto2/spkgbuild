@@ -2,7 +2,7 @@
 # depends : libgphoto2 python
 
 name=python-gphoto2
-version=2.5.0
+version=2.5.1
 release=2
 
 source="https://github.com/jim-easterbrook/python-gphoto2/archive/refs/tags/v$version.tar.gz"

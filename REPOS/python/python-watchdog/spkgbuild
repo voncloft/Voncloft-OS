@@ -2,7 +2,7 @@
 # depends : python-pathtools python-yaml python-argh
 
 name=python-watchdog
-version=4.0.0
+version=5.0.3
 release=1
 
 source="https://github.com/gorakhargosh/watchdog/archive/refs/tags/v$version.tar.gz"

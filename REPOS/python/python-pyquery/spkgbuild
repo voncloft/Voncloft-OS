@@ -2,7 +2,7 @@
 # depends : python-lxml python-cssselect
 
 name=python-pyquery
-version=2.0.0
+version=2.0.1
 release=1
 
 source="https://github.com/gawel/pyquery/archive/refs/tags/$version.tar.gz"
