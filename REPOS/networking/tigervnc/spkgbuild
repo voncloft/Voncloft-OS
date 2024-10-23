@@ -2,7 +2,7 @@
 # depends : fltk linux-pam gnutls libjpeg-turbo libxtst pixman xauth xsetroot xkeyboard-config xkbcomp libglvnd libgcrypt perl libxdamage libxfont2 libdrm xinit cmake nasm font-util util-macros xtrans xorgproto mesa imagemagick7 openjdk
 
 name=tigervnc
-version=1.14.0
+version=1.14.1
 release=3
 
 _xorgver=1.20.9
