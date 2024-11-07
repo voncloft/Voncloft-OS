@@ -2,7 +2,7 @@
 # depends : python python-tox
 
 name=python-tox-current-env
-version=0.0.12
+version=0.0.14
 release=1
 
 source="https://github.com/fedora-python/tox-current-env/archive/refs/tags/v$version.tar.gz"

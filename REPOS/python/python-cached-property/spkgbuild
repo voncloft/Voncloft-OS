@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-cached-property
-version=1.5.2
+version=2.0.1
 release=3
 
 source="https://github.com/pydanny/cached-property/archive/refs/tags/$version.tar.gz"

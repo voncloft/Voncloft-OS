@@ -102,12 +102,12 @@ f:c73b608cf8374db83acd346a9138fc43:xdg-dbus-proxy/CHANGELOG
 f:8c4fddc7c7ab607b620330052826bbc6:xdg-dbus-proxy/spkgbuild
 f:0e3da6ef56446692ad765d4260e551b1:xgamma/CHANGELOG
 f:70b8f5d96298c1c8c0dd1c96accd4776:xgamma/spkgbuild
-f:ce3331dbdb9998fbff7dfb7e16099209:xorg-server/CHANGELOG
+f:1c156361cdb14a97fbfd8225d9ba1663:xorg-server/CHANGELOG
 f:5e263e1c42bc24fbdc1f9da4b7a62ee9:xorg-server/0001-v2-FS-58644.patch
 f:cb9fb0b71ce9b0ecb3a87b02a1810fc1:xorg-server/spkgbuild.meson
 f:295fc2a9cf201d13b9d69044211b99ba:xorg-server/glvnd-arch.patch
 f:bf9ad45b6fe50b9776b38c4125b3a6fb:xorg-server/0002-fix-libshadow-2.patch
-f:deb10c1e61c5d46142cf9609a9541559:xorg-server/spkgbuild
+f:547fc32bf27c137cc593368c177ef131:xorg-server/spkgbuild
 f:295fc2a9cf201d13b9d69044211b99ba:xorg-server/glvnd.patch
 f:2ad1e27406175e8c13b18e3e27d1af65:xorg-applications/spkgbuild
 f:440071b04358b4a38f23f37ee35128b1:xcb-util-cursor/CHANGELOG
@@ -142,7 +142,8 @@ f:97240b1c1d3ece09f65dbc2854f10400:setxkbmap/CHANGELOG
 f:b333486d0cd410a2e160b0788e7c5acc:setxkbmap/spkgbuild
 f:55d8f0fa4c4ba36bd36dc0cf50fc6727:xcursorgen/CHANGELOG
 f:0547cbb4bf6760ac3e4fda0dee9ce7a5:xcursorgen/spkgbuild
-f:089969a0565fed51c48af9a0a70d89d2:xbacklight/spkgbuild
+f:cd1ae6ac51159da20746fdbbd99a6294:xbacklight/CHANGELOG
+f:be1a0c099fafc7360de3459ca8767864:xbacklight/spkgbuild
 f:865e0de9571bf6c76cbe4bd06fff0ceb:xrdb/CHANGELOG
 f:d60f6cb7221fdecfae7a2e59d10996b0:xrdb/spkgbuild
 f:d202cfe2b84da0a2be7f10a4b1597983:sessreg/CHANGELOG
@@ -201,5 +202,5 @@ f:2138eb28b6589624f2abbc892e1d3460:bdftopcf/CHANGELOG
 f:21a114cd239d20ced7a11c4169d22514:bdftopcf/spkgbuild
 f:4bd29ef054c2419bd51f4ed2a529fd84:util-macros/CHANGELOG
 f:d03931e8fba0ead9fa43fcf4599f31f1:util-macros/spkgbuild
-f:0c6de5c106e7aa693c88c64d83c064be:xrandr/CHANGELOG
-f:694b2e78fe3dc1aae348626c8d71a46c:xrandr/spkgbuild
+f:332c6bae51c4e4c96cf717e68fc3dfbd:xrandr/CHANGELOG
+f:1df38aa593343645c5caa1662b4246a7:xrandr/spkgbuild

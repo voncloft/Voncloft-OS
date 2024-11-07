@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-whitenoise
-version=5.3.0
+version=6.8.2
 release=2
 
 source="https://github.com/evansd/whitenoise/archive/refs/tags/v$version.tar.gz"

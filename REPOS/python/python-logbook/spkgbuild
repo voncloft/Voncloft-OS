@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-logbook
-version=1.7.0
+version=1.8.0
 release=8
 
 source="https://github.com/mitsuhiko/logbook/archive/refs/tags/p$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-async-timeout
-version=4.0.3
+version=5.0.1
 release=5
 
 source="https://github.com/aio-libs/async-timeout/archive/refs/tags/v$version.tar.gz"

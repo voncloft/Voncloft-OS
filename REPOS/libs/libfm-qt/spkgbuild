@@ -2,7 +2,7 @@
 # depends	: qt5 cmake glib libxcb libfm
 
 name=libfm-qt
-version=2.0.2
+version=2.1.0
 release=1
 source="https://github.com/lxqt/$name/releases/download/$version/$name-$version.tar.xz"
 

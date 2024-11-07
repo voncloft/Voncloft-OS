@@ -2,7 +2,7 @@
 # depends	: libbytesize lvm2 volume_key nss cryptsetup parted gobject-introspection python yaml
 
 name=libblockdev
-version=3.2.0
+version=3.2.1
 release=1
 source="https://github.com/storaged-project/libblockdev/releases/download/$version-1/$name-$version.tar.gz"
 

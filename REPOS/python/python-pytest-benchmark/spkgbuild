@@ -2,7 +2,7 @@
 # depends : python-pytest python-py-cpuinfo
 
 name=python-pytest-benchmark
-version=4.0.0
+version=5.1.0
 release=4
 
 source="https://github.com/ionelmc/pytest-benchmark/archive/refs/tags/v$version.tar.gz"

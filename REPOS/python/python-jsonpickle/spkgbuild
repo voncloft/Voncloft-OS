@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-jsonpickle
-version=3.3.0
+version=3.4.2
 release=1
 
 source="https://github.com/jsonpickle/jsonpickle/archive/refs/tags/v$version.tar.gz"
