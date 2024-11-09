@@ -1,0 +1,20 @@
+#source=https://www.plex.tv/media-server-downloads/?cat=computer&plat=linux#plex-media-server
+
+get_generic()
+{
+	curl -L -f "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=plex-media-server" -o index.html
+	#cat index.html
+        #url=$(grep -Po "pkgver=" index.html)
+        #echo "TEST".$url
+	#echo $checksum
+	source /Voncloft-OS/REPOS/index.html
+	uversion=$pkgver
+	_checksum=$_pkgsum
+        new_file=/Voncloft-OS/REPOS/$(echo $ppath | sed "s/override/spkgbuild/g")
+        #echo $new_file
+	#echo $_checksum
+        sed -i -e "s/checksum=$checksum/checksum=$_checksum/g" $new_file
+
+        #uversion=$(grep -i "pkgver=" index.html)
+        #echo $uversion
+}
