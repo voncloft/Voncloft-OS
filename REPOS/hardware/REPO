@@ -17,8 +17,8 @@ d:xf86-video-ati
 d:xf86-input-evdev
 f:8b6c79b5055f99289b6927f44cfca71e:gavl/spkgbuild
 f:6912799edf45bc2421a7e81d646fdf0d:xf86-video-nouveau/readme
-f:a89fd51ae08132e75e8801955778f44d:xf86-video-nouveau/CHANGELOG
-f:4c204f2cce2ab10e1e7da59e9c65aa5a:xf86-video-nouveau/spkgbuild
+f:d02c81a0ef2c5c2209529689b375297b:xf86-video-nouveau/CHANGELOG
+f:4e2f9fef4b2a2b070fdf925067052c09:xf86-video-nouveau/spkgbuild
 f:29993513724f9dc948c2f8db0e2648ec:xf86-video-intel/readme
 f:34be12006052aaa8851b31c6cdac32e8:xf86-video-intel/spkgbuild
 f:c6ef6f33520abab19da3bd3429648377:xf86-input-vmmouse/readme
@@ -35,7 +35,8 @@ f:0f84efa5846f77ebf2b060b1080d446f:xf86-video-amdgpu/readme
 f:a25b88b9df343bbb14b98bfddf2c0b80:xf86-video-amdgpu/CHANGELOG
 f:80594244026ddb408aa8d93ebbb1e2b8:xf86-video-amdgpu/spkgbuild
 f:5b2e96ff5d87c3bfdddf12f401c0a498:xf86-video-fbdev/gcc8.diff
-f:0ae2828a627e6c12f7984f6b806d3eff:xf86-video-fbdev/spkgbuild
+f:c3e93c1b71b15096e7a1cf380f3e43a3:xf86-video-fbdev/CHANGELOG
+f:a72257cfd74880d3b9d7c31f128e5f8a:xf86-video-fbdev/spkgbuild
 f:345b025bb986233cd5e4a086fbb76750:mesa/CHANGELOG
 f:f27a2518cce7bc4ed8bab2582eda5415:mesa/spkgbuild
 f:d5143da79daabda60c293d6b0915954c:scim/spkgbuild

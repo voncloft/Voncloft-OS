@@ -2,7 +2,7 @@
 # depends : libnetfilter_conntrack nftables
 
 name=iptables
-version=1.8.10
+version=1.8.11
 release=1
 
 source="http://www.netfilter.org/projects/iptables/files/iptables-$version.tar.bz2

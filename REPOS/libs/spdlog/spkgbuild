@@ -2,7 +2,7 @@
 # depends : fmt cmake
 
 name=spdlog
-version=1.14.1
+version=1.15.0
 release=1
 
 source="https://github.com/gabime/spdlog/archive/v$version.tar.gz"
