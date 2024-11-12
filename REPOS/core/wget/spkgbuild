@@ -2,7 +2,7 @@
 # depends	: make-ca openssl pcre util-linux libidn2 pcre2
 
 name=wget
-version=1.24.5
+version=1.25.0
 release=1
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz"
 options="!checksum"
