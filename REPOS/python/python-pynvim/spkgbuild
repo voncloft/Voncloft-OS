@@ -1,7 +1,7 @@
 # depends : python python-msgpack python-greenlet
 
 name=python-pynvim
-version=0.5.1
+version=0.5.2
 release=2
 
 source="https://github.com/neovim/pynvim/archive/refs/tags/$version.tar.gz"

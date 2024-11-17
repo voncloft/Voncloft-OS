@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-waitress
-version=3.0.1
+version=3.0.2
 release=5
 
 source="https://github.com/Pylons/waitress/archive/refs/tags/v$version.tar.gz"
