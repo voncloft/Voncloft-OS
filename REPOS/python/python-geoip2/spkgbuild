@@ -2,7 +2,7 @@
 # depends : python-aiohttp python-maxminddb python-requests
 
 name=python-geoip2
-version=4.8.0
+version=4.8.1
 release=3
 
 source="https://github.com/maxmind/GeoIP2-python/archive/refs/tags/v$version.tar.gz"
