@@ -2,7 +2,7 @@
 # depends : python sqlite
 
 name=python-apsw
-version=3.47.0.0
+version=3.47.1.0
 release=1
 
 source="https://github.com/rogerbinns/apsw/archive/refs/tags/r$version.tar.gz"
