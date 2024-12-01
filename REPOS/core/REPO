@@ -467,9 +467,9 @@ f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:65a20e17cf0eaf7ed1e009d670329562:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
-f:9c94be68212c03da3513fc1d9d96817f:systemd/CHANGELOG
+f:8490a0e6a74743672159c0b56aeb49b3:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:7b82e10cd9ffcb35ee2e33ed4e2dec6f:systemd/spkgbuild
+f:405d55d851aa4b8781fa00a2b69cf4df:systemd/spkgbuild
 f:ece56886fa95c95d2b62d23f00920029:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
 f:c8999a29e48618d654c559af11ecff81:lm_sensors/spkgbuild
@@ -866,8 +866,8 @@ f:eb4d12691cdbb5bfa9efcfc02aafc524:pnmixer/spkgbuild
 f:837f3e2b5d0c37c62a5d5fa1c26d4fb1:zip/spkgbuild
 f:1f4a1ab1e40a399daadd60f056a728d7:efibootmgr/efivar.patch
 f:9e7254403ce579eb0f93988680a84b99:efibootmgr/spkgbuild
-f:13770449eaae264caf869e1b8495c032:conky/CHANGELOG
-f:883cfcfd2777e5060ffb0b32f1970415:conky/spkgbuild
+f:d6a31c02c65d210e171790aee713a9e6:conky/CHANGELOG
+f:3739587ebfef7dad2ebb8d70d420086d:conky/spkgbuild
 f:39099c98ec5fea676a000610a8789173:flex/spkgbuild
 f:62c7ebf30b05c7fb2578ef6d41e41708:ssh-askpass/spkgbuild
 f:fd2b0a084b1f13f673c70efa8e734b78:blueman/CHANGELOG
@@ -1175,8 +1175,8 @@ f:dd45f81a012b84bc7f064362a9c4478e:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:a560169be918383d970b32d6f9ed08b7:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
-f:cc429ebf754d4b7f12329dd5d90e0fbb:btrfs-progs/CHANGELOG
-f:a37ca2c0f5734a5581ce367a5be58440:btrfs-progs/spkgbuild
+f:c8fa5ac21636732079d514808e293d2b:btrfs-progs/CHANGELOG
+f:2db8ed4b5f434043881a828a9a2a11ce:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
 f:b44a2b0bff7d9c7c1d14640d0a8c7c9c:sed/CHANGELOG
 f:eb13e7233eba3eae549fe4afd76b2b5a:sed/spkgbuild
@@ -1361,8 +1361,8 @@ f:6dcfec7992ae6d7fa451317575ff098b:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
 f:48482028b66838383062ed709c40c6c5:man-pages/CHANGELOG
 f:56eb46cefa8dd8fb471bf2690c150155:man-pages/spkgbuild
-f:1f2d38372a6c7adb9634f96379556eeb:dunst/CHANGELOG
-f:aa6d281f32e8b26c9673b19585e0aeaa:dunst/spkgbuild
+f:fa0d09a4f077cc6c39ab7d0599a8c3ca:dunst/CHANGELOG
+f:bd9f576068b39294c7890f3e31765425:dunst/spkgbuild
 f:937d8bf46cdb765f21df8720164f1b06:lua/CHANGELOG
 f:7695ed636c031d2d9f332dc6aad7c46e:lua/spkgbuild
 f:deee148134a3fede4595152e34d8cdc7:lua/lua.pc
@@ -1372,8 +1372,8 @@ f:1c9ab70a85685bc65f25dc08d84bd845:jwm/spkgbuild
 f:86a520326cc265843cccc42e557d869c:patch/spkgbuild
 f:f6e621be6c7e9228e4daf40520901483:gconf/spkgbuild
 f:da3acd3a32c6f5ce2a4333dbf3a6a2b5:at-spi2-atk/spkgbuild
-f:37e6474ea16e91181516df4c214a371a:weechat/CHANGELOG
-f:ea2b805e717f6dad9fd3b3db68b25fd0:weechat/spkgbuild
+f:52147be4b15fccaeec9d167f1bbb2741:weechat/CHANGELOG
+f:58c643e4d4e615863434ba22b7d5f1dc:weechat/spkgbuild
 f:10b78093700de405c76cc7005592dd23:geos/CHANGELOG
 f:6c0dc8d6cfa490a1449848ca17b67034:geos/spkgbuild
 f:f2d5afae36f9821bbe4a3e82207ffb61:speedtest-cli/CHANGELOG
@@ -1429,5 +1429,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:6b08bc47a7dad9b24a89dc16709ffd37:hugo/CHANGELOG
-f:ad354a5171828f65cdd4c2e84b4995bd:hugo/spkgbuild
+f:fe9653931f6ed0d441da8b18a3823d1e:hugo/CHANGELOG
+f:bf488766dc42251c3c79d1e47d141437:hugo/spkgbuild
