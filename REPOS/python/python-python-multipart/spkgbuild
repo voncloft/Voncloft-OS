@@ -2,7 +2,7 @@
 # depends : python python-six
 
 name=python-python-multipart
-version=0.0.18
+version=0.0.19
 release=3
 
 source="https://github.com/andrew-d/python-multipart/archive/refs/tags/$version.tar.gz"
