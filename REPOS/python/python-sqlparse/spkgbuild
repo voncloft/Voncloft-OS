@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-sqlparse
-version=0.5.2
+version=0.5.3
 release=3
 
 source="https://github.com/andialbrecht/sqlparse/archive/refs/tags/$version.tar.gz"
