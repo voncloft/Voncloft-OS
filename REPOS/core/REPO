@@ -610,9 +610,9 @@ f:20dd912fbad050c8908f296e525f9ac6:cups/cupsd.conf
 f:82a85641298f4c644e88fd3278d7e797:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
-f:df749edf4b7891f6d88722b7dd05b492:dbus/CHANGELOG
+f:dd46f121feae97a91b4d6d7041f6134f:dbus/CHANGELOG
 f:4276b51c9c9d5355149c8de5ee5fa2be:dbus/pre-install.sh
-f:ce5f78b9dbf6864f07b63f7d08b1be4a:dbus/spkgbuild
+f:3763425439208f334687e825576cfe60:dbus/spkgbuild
 f:10b2fb546fc4ea776b20eb8ad98311b0:readline/CHANGELOG
 f:c83504a3f03d3388d255244ef534764d:readline/spkgbuild
 f:67d1467b02d4226b287071e68bea9a19:cpio/CHANGELOG
@@ -785,9 +785,9 @@ f:0d452f7f2f6fce718f6611a10f252fd1:hunspell/spkgbuild
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-install.sh
 f:be1cac6f2d8d636cb15515addcb90665:shared-mime-info/post-upgrade.sh
 f:cff3571dcd31294f38def129c5ded3b4:shared-mime-info/spkgbuild
-f:8682005544a1ebaa0edf756ce8acda58:curl/CHANGELOG
+f:5e9d11d0b3c8eae9a67c7492ca58d974:curl/CHANGELOG
 f:2ab2fd51a5d53ce21c2d56b931fd54ed:curl/override
-f:80f675cb28818016bf5791a08d8bc7ef:curl/spkgbuild
+f:86da75154a05b535891c1ae6057ab060:curl/spkgbuild
 f:3f1370d9ad233b9c717f14d5ae9859c1:syslinux/syslinux-6.03-sysmacros.patch
 f:b56631b817e26139f47a4d0039e7e90d:syslinux/spkgbuild
 f:3a5ed9f92b5f694464d9aa9cf2f9297a:findutils/CHANGELOG
@@ -1074,8 +1074,8 @@ f:ff889454e3b9565b2ca04525257eb651:swig/spkgbuild
 f:4694f42e660035fb2311d38922d2aeb7:double-conversion/CHANGELOG
 f:f6f06988130f0540319d0cee4665d6b0:double-conversion/spkgbuild
 f:cbf6a5420ae3ad95fad609a613c5630d:shellcheck-static/spkgbuild
-f:72041502394768ea0314751317c888e9:socat/CHANGELOG
-f:7f8948e66c8e06e66ae7bd6c905ff7c4:socat/spkgbuild
+f:c8001fc0ffe65ba0ddf3df427141c780:socat/CHANGELOG
+f:6fdec8a55ff03e68ef400aaa5180a98e:socat/spkgbuild
 f:f6fe6886d34e97c23d8308bb7d21dbbb:graphviz/CHANGELOG
 f:5ac0ca02f44146925625a7fca9122d4d:graphviz/spkgbuild
 f:0e9eec6f93402366a99023874b77ef1f:uthash/CHANGELOG

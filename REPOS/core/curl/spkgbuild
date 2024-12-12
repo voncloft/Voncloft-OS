@@ -2,7 +2,7 @@
 # depends	: make-ca openssl zlib
 
 name=curl
-version=8.11.0
+version=8.11.1
 release=1
 source="https://curl.haxx.se/download/$name-$version.tar.xz"
 options="!checksum"
