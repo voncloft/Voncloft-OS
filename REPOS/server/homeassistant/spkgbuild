@@ -2,7 +2,7 @@
 # depends : gcc python-aiodiscover python-aiohttp python-aiohttp-cors python-astral python-async-timeout python-atomicwrites python-attrs python-awesomeversion python-bcrypt python-certifi python-ciso8601 python-cryptography python-defusedxml python-httpx python-jinja python-lru-dict python-mutagen python-pillow python-pip python-pyjwt python-pytz python-requests python-ruamel-yaml python-slugify python-sqlalchemy python-voluptuous python-voluptuous-serialize python-yaml python-yarl python-zeroconf
 
 name=homeassistant
-version=2024.12.2
+version=2024.12.3
 release=1
 
 source="https://github.com/home-assistant/core/archive/refs/tags/$version.tar.gz"
