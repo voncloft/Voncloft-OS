@@ -2,7 +2,7 @@
 # depends : python-furl python-jsonschema python-xmltodict
 
 name=python-pook
-version=2.1.2
+version=2.1.3
 release=4
 
 source="https://github.com/h2non/pook/archive/refs/tags/v$version.tar.gz"

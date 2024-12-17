@@ -2,7 +2,7 @@
 # depends : python-cssselect python-lxml python-six python-w3lib
 
 name=python-parsel
-version=1.9.1
+version=1.10.0
 release=3
 
 source="https://github.com/scrapy/parsel/archive/refs/tags/v$version.tar.gz"
