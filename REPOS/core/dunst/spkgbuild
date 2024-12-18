@@ -2,7 +2,7 @@
 # depends	: libxinerama pango libnotify gtk2 libxdg-basedir libxscrnsaver
 
 name=dunst
-version=1.12.0
+version=1.12.1
 release=1
 source="https://github.com/dunst-project/dunst/archive/v$version/$name-$version.tar.gz"
 
