@@ -2,7 +2,7 @@
 # depends : python-pydispatcher
 
 name=python-sqlobject
-version=3.11.0
+version=3.12.0
 release=1
 
 source="https://github.com/sqlobject/sqlobject/archive/refs/tags/$version.tar.gz"
