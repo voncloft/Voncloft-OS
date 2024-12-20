@@ -2,7 +2,7 @@
 # depends: httpd libxml2 curl mariadb openssl
 
 name=php
-version=8.4.1
+version=8.4.2
 release=1
 
 source="https://www.php.net/distributions/php-$version.tar.gz"
