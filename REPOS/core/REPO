@@ -467,9 +467,9 @@ f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:65a20e17cf0eaf7ed1e009d670329562:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
-f:8490a0e6a74743672159c0b56aeb49b3:systemd/CHANGELOG
+f:f5e36846917263747d58124015c2a597:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:405d55d851aa4b8781fa00a2b69cf4df:systemd/spkgbuild
+f:52a1d625bcc1c22f23de411146e2b540:systemd/spkgbuild
 f:ece56886fa95c95d2b62d23f00920029:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
 f:c8999a29e48618d654c559af11ecff81:lm_sensors/spkgbuild
@@ -482,8 +482,8 @@ f:61f739fbea314fd6fe1d56b7212aebcd:binutils/CHANGELOG
 f:ab049cf7f0d0b36bd061f97d579e60a8:binutils/spkgbuild
 f:33cc4a8dff1fb684eba8df54b0d5b96b:make/CHANGELOG
 f:c9ef724abcc2f5d4633a63fa0843a758:make/spkgbuild
-f:78c994a98e5515dc2b92a66284715596:sysvinit/CHANGELOG
-f:adc8df94784ebf975247139c47fe477d:sysvinit/spkgbuild
+f:1327bdf30b68f71bb6ab26509e11127c:sysvinit/CHANGELOG
+f:9a18bb3231d15fc227271ecf20b306e3:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-install.sh
 f:84bfb9420e582ef80cbb91a2e740498d:shadow/CHANGELOG
@@ -688,8 +688,8 @@ f:1f0ab4b9116a4a3dcfb34e87ef784ebb:cronie/run
 f:2962d9812fbbbdee1bd7f1c1ccb5e372:cronie/cronie.deny
 f:1fd106caba5c68c76f01b83f89396ba5:obconf/spkgbuild
 f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
-f:98e6f0b3f1c3b52f46bf0d183b346e8c:fakeroot/CHANGELOG
-f:c01d03837a578788bd6b2e4ebafc95a7:fakeroot/spkgbuild
+f:f91f7623e1feffb120c924fe10aa2e30:fakeroot/CHANGELOG
+f:a36035893b1e1eb96fc3f160cb2920f2:fakeroot/spkgbuild
 f:6abd824eb59e856527d8a435b65109eb:file/CHANGELOG
 f:23f3f9b682a1bde7600aafb60671e4ce:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
@@ -776,9 +776,9 @@ f:a933f7fbcc96097db6f8491f7428ef65:bash/CHANGELOG
 f:8613b41b21c25b48158676c155669e13:bash/spkgbuild
 f:3e0948fddf94f6a7867b459137b2c786:xbps/CHANGELOG
 f:64e75680d113eee1124d1af1aa61067e:xbps/spkgbuild
-f:5cda9ca399175a0442dc52381aaafd4e:nano/CHANGELOG
+f:fc925a43e31e164f3a122676bcdfa04f:nano/CHANGELOG
 f:a29e3ca802507d76730b59739cd44085:nano/override
-f:f458bcfa9ac3845000e85b14757debd8:nano/spkgbuild
+f:1cf5897ba186bebaf49335eeddd71f13:nano/spkgbuild
 f:7467e2646fd67befffdb2496d03e7267:nano/.nanorc
 f:286b85b5d71e99216d5c2ade69b20212:hunspell/CHANGELOG
 f:0d452f7f2f6fce718f6611a10f252fd1:hunspell/spkgbuild
