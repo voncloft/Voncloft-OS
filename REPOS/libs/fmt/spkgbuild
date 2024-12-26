@@ -2,7 +2,7 @@
 # depends : gcc cmake ninja
 
 name=fmt
-version=11.0.2
+version=11.1.0
 release=1
 
 source="https://github.com/fmtlib/fmt/archive/refs/tags/$version.tar.gz"
