@@ -2,7 +2,7 @@
 # depends : python libusb
 
 name=python-libusb1
-version=3.1.0
+version=3.2.0
 release=1
 
 source="https://github.com/vpelletier/python-libusb1/archive/refs/tags/$version.tar.gz"
