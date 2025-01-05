@@ -2,7 +2,7 @@
 # depends : kde-deps appstream-qt kcmutils kidletime kirigami2 kitemmodels knewstuff plasma-framework
 
 name=discover
-version=6.2.4
+version=6.2.5
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
