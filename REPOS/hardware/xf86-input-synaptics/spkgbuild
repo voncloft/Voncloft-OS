@@ -2,7 +2,7 @@
 # depends	: libx11 libxi libxtst libevdev xorg-server
 
 name=xf86-input-synaptics
-version=1.9.2
+version=1.10.0
 release=1
 source="http://ftp.x.org/pub/individual/driver/xf86-input-synaptics-$version.tar.bz2
 	50-synaptics.conf"

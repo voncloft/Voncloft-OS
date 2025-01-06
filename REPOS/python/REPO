@@ -1791,8 +1791,8 @@ f:1624ec160203ae91a0a6816b48e8e20e:python-pikepdf/CHANGELOG
 f:90d18f901bfef60d2e181aab2e462a82:python-pikepdf/spkgbuild
 f:0e9d89a33e039f72bd3d689a8cd6f6bf:python-octaviaclient/CHANGELOG
 f:b23c3921a351e41e214a3bbdf5985f7d:python-octaviaclient/spkgbuild
-f:dc3bd70f2022ac74d35ac013ab0d361a:python-setuptools/CHANGELOG
-f:5c2cdf0feb01703db3ad2722e1e8f10b:python-setuptools/spkgbuild
+f:ed1369c1cea61b772adb71821e361e75:python-setuptools/CHANGELOG
+f:18f1cf121d559d1a995b8724978e2cfa:python-setuptools/spkgbuild
 f:a65c461b39e920e5d12364cdbb74d2b3:python-oslotest/CHANGELOG
 f:04b3144d3fad2e76ec376918d300d529:python-oslotest/spkgbuild
 f:7d3efa29443038d19a3f44915fc1afa4:python-rcssmin/CHANGELOG
@@ -2067,8 +2067,8 @@ f:8aa163c625fdd90b040fca8b7b82e31f:python-validate-email/CHANGELOG
 f:ce8930da94a4046e8ea87656cb1b0dc2:python-validate-email/spkgbuild
 f:b1e3f39269d52dd66fe1a3e4c3370888:python-flask-socketio/CHANGELOG
 f:a9d126959d00ff32eb1e12db44371a05:python-flask-socketio/spkgbuild
-f:24d1c2e46d9ccd2f972cda9d73696d27:python-anyio/CHANGELOG
-f:95511aa2e170a721cc8f3bcee168da5c:python-anyio/spkgbuild
+f:601703542edfdfdc1edd3c5faaf25dd0:python-anyio/CHANGELOG
+f:e9709f350055d9c1a14e49c96915bbbc:python-anyio/spkgbuild
 f:c3a946a8a616d539d8392eeacf932736:python-pytest-timeout/CHANGELOG
 f:5f34d1ca296a8fcd8c3cdb19a7e61712:python-pytest-timeout/spkgbuild
 f:63c4758ff4ac3fa1ebbb5afdb0f872b0:python-virtualenvwrapper/CHANGELOG
@@ -2704,8 +2704,8 @@ f:bafb02598dcc635a36ce1060dce61389:python-kazoo/CHANGELOG
 f:3d423827c7916879af856e10964b24fb:python-kazoo/spkgbuild
 f:c1337e63ad4f0bedf1dfdb81170b826a:python-django/CHANGELOG
 f:44248ab6318c3a5c0af8e021e275cb3a:python-django/spkgbuild
-f:dc558361c599a249a6281d1fe8df79a5:python-poetry/CHANGELOG
-f:fe74df7bd9a8f8692822df004922611f:python-poetry/spkgbuild
+f:bde225f07f5ed4f4760e0f84577a5032:python-poetry/CHANGELOG
+f:de7e25f2f520173b9ff4a88d6a7f83b0:python-poetry/spkgbuild
 f:37b09d07f0d7cf23e7f1b8a2a9d836d4:python-qt.py/CHANGELOG
 f:f33a1a46416e6d2ee2a7d9a27d09b00e:python-qt.py/spkgbuild
 f:f6180735a88f53877378b78202dd3400:python-pycodestyle/CHANGELOG
@@ -2966,8 +2966,8 @@ f:9043891b858697225c708eb26d0c6edd:python-crayons/CHANGELOG
 f:b98c892d24762b29af29079fcdb458fd:python-crayons/spkgbuild
 f:7ef04c57ea81aa27065edc74c1be38fd:python-pexpect/CHANGELOG
 f:f3ffa92edaa13ae170f10a37f2fed3d9:python-pexpect/spkgbuild
-f:e0f6cd5c0f264f7f9d75bac75c05091a:python-xattr/CHANGELOG
-f:2f610131b478b675818510db1f4a81f3:python-xattr/spkgbuild
+f:30097e58b70b946be2d930a257ce1ec2:python-xattr/CHANGELOG
+f:e6df54113c8e8491a73879775565589d:python-xattr/spkgbuild
 f:4fc23947ff5ad0558b160fc76e7c3bdc:python-spur/CHANGELOG
 f:1945a870b6730786381ca393dd6fa623:python-spur/spkgbuild
 f:9f3702c8c198427275572812cdef84c2:python-mygpoclient/CHANGELOG
@@ -3900,8 +3900,8 @@ f:0f2c724db101dfd62a468c4a5b4f531d:python-traitlets/CHANGELOG
 f:0a4699d6538eeb65fb2778406b9e7928:python-traitlets/spkgbuild
 f:7be9f001e17eabc29b7bd8f19ae2c19e:python-keystoneauth1/CHANGELOG
 f:f99c164751d76c1c6eb40cd45a296905:python-keystoneauth1/spkgbuild
-f:17c08d3e911c64ddf29a87032601f3ac:python-pytables/CHANGELOG
-f:85a9a595827195de81996ed7572cc29d:python-pytables/spkgbuild
+f:301a565a96c302ccd46be8b12bca57d3:python-pytables/CHANGELOG
+f:9294fb6e0f2923587fda00217db035a5:python-pytables/spkgbuild
 f:57eb422928796cb3344a86d018e71da1:python-pyproj/CHANGELOG
 f:58f0961898af8725be4ff74ecd85bdd1:python-pyproj/spkgbuild
 f:d415c0c99046aa6015d5cb9f6d2e5bea:python-translationstring/CHANGELOG
@@ -4387,8 +4387,8 @@ f:3d19bd0f3bc6cb598da5d589e457ba92:python-xpybutil/spkgbuild
 f:5eec8499f2a8386468b794e545f5f309:python-gflags/spkgbuild
 f:88b0f8a40b3a6b55fbe77ee5bf1a4d75:python-pyswip/CHANGELOG
 f:99fd75d0ab7d298c0d8aeb0b30451a97:python-pyswip/spkgbuild
-f:60680975fc00b8c529089308e35ea883:python-pydot/CHANGELOG
-f:c0957b964a22aba1bef12d5964e8ae08:python-pydot/spkgbuild
+f:e3f44ab3d5da421612a670f6471f5214:python-pydot/CHANGELOG
+f:be08ce4ad8a4538a87103c1413ca59b9:python-pydot/spkgbuild
 f:1b1cc0609c241e816b265f7675446788:python-toml/CHANGELOG
 f:ea34da4f24d1cca6d58c8324b4054182:python-toml/spkgbuild
 f:085f7cee975ca0a4e77cc0e2e56de6ee:python-json5/CHANGELOG

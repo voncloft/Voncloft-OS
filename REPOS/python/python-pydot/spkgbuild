@@ -2,7 +2,7 @@
 # depends : python-pyparsing graphviz
 
 name=python-pydot
-version=3.0.3
+version=3.0.4
 release=5
 
 source="https://github.com/erocarrera/pydot/archive/refs/tags/v$version.tar.gz"
