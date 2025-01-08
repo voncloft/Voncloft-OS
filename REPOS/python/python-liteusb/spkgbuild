@@ -2,7 +2,7 @@
 # depends : python-migen python-litex
 
 name=python-liteusb
-version=2024.08
+version=2024.12
 release=1
 
 source="https://github.com/enjoy-digital/litejesd204b/archive/refs/tags/$version.tar.gz"

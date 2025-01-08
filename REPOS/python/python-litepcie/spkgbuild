@@ -2,7 +2,7 @@
 # depends : python-migen python-litex python-yaml
 
 name=python-litepcie
-version=2024.08
+version=2024.12
 release=1
 
 source="https://github.com/enjoy-digital/litepcie/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python python-cffi lmdb
 
 name=python-lmdb
-version=1.5.1
+version=1.6.2
 release=3
 
 source="https://github.com/jnwatson/py-lmdb/archive/refs/tags/$version.tar.gz"
