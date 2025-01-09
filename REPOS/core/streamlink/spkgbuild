@@ -2,7 +2,7 @@
 # depends	: python-pysocks python-websocket-client python-iso3166 python-iso-639 python-requests python-pycryptodome python-isodate
 
 name=streamlink
-version=7.1.1
+version=7.1.2
 release=1
 source="https://github.com/$name/$name/releases/download/$version/$name-$version.tar.gz"
 

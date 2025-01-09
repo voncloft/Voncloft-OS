@@ -2,7 +2,7 @@
 # depends : python-clickclick python-jsonschema python-pyaml python-requests
 
 name=python-connexion
-version=3.1.0
+version=3.2.0
 release=3
 
 source="https://github.com/zalando/connexion/archive/refs/tags/$version.tar.gz"
