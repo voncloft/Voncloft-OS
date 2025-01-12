@@ -2,7 +2,7 @@
 # depends : python-six python-uhashring
 
 name=python-binary-memcached
-version=0.31.2
+version=0.31.4
 release=2
 
 source="https://github.com/jaysonsantos/python-binary-memcached/archive/refs/tags/v$version.tar.gz"

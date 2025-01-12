@@ -2,7 +2,7 @@
 # depends : glibc
 
 name=libmaxminddb
-version=1.12.1
+version=1.12.2
 release=1
 
 source="https://github.com/maxmind/libmaxminddb/releases/download/1.5.2/$name-$version.tar.gz"

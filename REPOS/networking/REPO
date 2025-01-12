@@ -146,10 +146,10 @@ f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:758ef2b9cf4feeb7dbff13795e9fc8f9:nmap/CHANGELOG
 f:b05ef6321275c531ca6074bb082e23f3:nmap/ssl.patch
 f:67dcc8ca489c54deb446bba3a758f308:nmap/spkgbuild
-f:44ce45dc65bfc9eaa0e9bb908cb57162:wireshark/CHANGELOG
+f:a9305a0e71191efabcb67cd0d493247a:wireshark/CHANGELOG
 f:6736b07aea5c8a1239a964908036ff95:wireshark/pre-install.sh
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
-f:d4fbdc77d5a2bc4d7adcb726a64152cc:wireshark/spkgbuild
+f:d288b1e160de07d2b7514b0b225c0dd2:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
 f:400e7e437f96cd4661edc56cccd4048b:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
@@ -164,8 +164,8 @@ f:0e8c42daae6cab0096d8b65a2dcb2c3b:avahi/pre-install.sh
 f:104a643de888cb977c33b53c8211fd6a:avahi/spkgbuild
 f:497d4af7bf83dbe15393a04847f79571:youtube-dl/CHANGELOG
 f:c71c1cf8de6e2bb5ded1dbb19ec3edf6:youtube-dl/spkgbuild
-f:6e853f8b15634af84c7cac707f13ef4d:git/CHANGELOG
-f:6844817b11c7e0e2ff0ed713658c5609:git/spkgbuild
+f:bcc9f8d8837a0442bda1b2b5154aeefc:git/CHANGELOG
+f:0d2f8774121f511bf227aa80c989dfa9:git/spkgbuild
 f:b94d4b17b2fdddf8bfe422041320e174:openssl1.0/openssl-compat_versioned_symbols-1.patch
 f:8d7bd327b21a79be08fac73661082cd7:openssl1.0/spkgbuild
 f:51e16e0ae483af6a3665d7afefdc8663:dhcp/CHANGELOG
