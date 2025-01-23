@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-babel python-prettytable python-keystoneauth1
 
 name=python-novaclient
-version=18.7.0
+version=18.8.0
 release=1
 
 source="https://github.com/openstack/python-novaclient/archive/refs/tags/e$version.tar.gz"

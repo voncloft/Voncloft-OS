@@ -2,7 +2,7 @@
 # depends : python-pbr python-cliff python-debtcollector python-iso8601 python-netaddr
 
 name=python-neutronclient
-version=11.3.1
+version=11.4.0
 release=1
 
 source="https://github.com/openstack/python-neutronclient/archive/refs/tags/e$version.tar.gz"
