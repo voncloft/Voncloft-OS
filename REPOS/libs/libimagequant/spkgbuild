@@ -2,7 +2,7 @@
 # depends : gcc
 
 name=libimagequant
-version=4.3.3
+version=4.3.4
 release=1
 
 source="https://github.com/ImageOptim/libimagequant/archive/$version/libimagequant-$version.tar.gz"

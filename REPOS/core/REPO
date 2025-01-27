@@ -630,8 +630,8 @@ f:0c90e058908c64ab5672fcfd86bbe113:ncmpcpp/spkgbuild
 f:4518fb25b99ed8c1af5f6277f9ac1adb:pacmixer/CHANGELOG
 f:f665855ab4ae1d7f1e545adb9e4800b7:pacmixer/spkgbuild
 f:be20fc63ac0fdfd1586bdcb07cee7883:cython3/spkgbuild
-f:861941786296dc73e79a1eea21a29cb0:xz/CHANGELOG
-f:6ad26cca56bec4edee9c4c27bafe7608:xz/spkgbuild
+f:762d037fa8bb58cdca60ddab96cc7576:xz/CHANGELOG
+f:02195d9ea094de66d0b768b7ae4ae593:xz/spkgbuild
 f:9df734d8a4772a6c6354ab4374af4a49:gnustep-make/CHANGELOG
 f:df99024f919d4cf0e5e7a9b2b0840509:gnustep-make/spkgbuild
 f:9347bd50fd10e00ca0d122d35a95fdee:spectrwm/baraction.sh
@@ -688,8 +688,8 @@ f:1f0ab4b9116a4a3dcfb34e87ef784ebb:cronie/run
 f:2962d9812fbbbdee1bd7f1c1ccb5e372:cronie/cronie.deny
 f:1fd106caba5c68c76f01b83f89396ba5:obconf/spkgbuild
 f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
-f:f91f7623e1feffb120c924fe10aa2e30:fakeroot/CHANGELOG
-f:a36035893b1e1eb96fc3f160cb2920f2:fakeroot/spkgbuild
+f:8c0d7e89b004c03ccf0009558c70a0fe:fakeroot/CHANGELOG
+f:1016a4795edf011989b3ad2e7e3e66d7:fakeroot/spkgbuild
 f:6abd824eb59e856527d8a435b65109eb:file/CHANGELOG
 f:23f3f9b682a1bde7600aafb60671e4ce:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
@@ -709,8 +709,8 @@ f:aa505f91d788a76a68b3d55eaed95460:nnn/spkgbuild
 f:fed777d17707e7ba7b2974aa9101cfac:gnupg/CHANGELOG
 f:2538c937f368acc018ab0716f711fdd4:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:8c551daaac02a6c30737a11341d18861:pipewire/CHANGELOG
-f:7090510c73b551696cfe78140a14bfff:pipewire/spkgbuild
+f:d7cdfb7e6f54fec90ae418f9e8cd7e2d:pipewire/CHANGELOG
+f:e4dd97948df73080b3546db6a2b361a1:pipewire/spkgbuild
 f:0f20437ceabcfe279db7d4ff8bc7f9ae:duktape/CHANGELOG
 f:1f799c92594d55ced8d183d0e29132c9:duktape/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
@@ -956,8 +956,8 @@ f:8fce0ef8aef888c5a59e7c03753504d4:rxvt-unicode/spkgbuild
 f:71bbcc9ba1218a8413e0430b851b33c2:papirus-icon-theme-light/spkgbuild
 f:b11daab950b3c2835f6cde99889e8e20:pixman/CHANGELOG
 f:9a6236390ba8da8ea331ed1d00ad4753:pixman/spkgbuild
-f:347c0aab64e50f4ebf69bdbbf280db7c:mc/CHANGELOG
-f:fecdcc1ba41b1773212b8dec729effd1:mc/spkgbuild
+f:0daab832c2d2b1d0829e60a4baeb7588:mc/CHANGELOG
+f:19d75e62a7498f448f9555f687d5dba4:mc/spkgbuild
 f:2fd8dd85e3e3e3c53e4518bda19856cb:fdupes/CHANGELOG
 f:be7da50ffc8695ab0b600cbeb07e30e0:fdupes/spkgbuild
 f:a39a3ceb97a26ca0cd031d17eb8ef7d4:squashfs-tools/CHANGELOG
@@ -1146,7 +1146,8 @@ f:f70bbec388eac3b99a99718b96b6d4c6:bash-completion/.bash_logout
 f:7a9dcf4e4b24dbbe1064b16db851fe65:bash-completion/.bash_profile
 f:5d15bfd4cbd46defb0ce6d2646789858:bash-completion/.nanorc
 f:bac0d8dedad1bed2ab5d127f21ed5e2f:bash-completion/i18n.sh
-f:5c46211dded50961bbaac0cdfed95157:which/spkgbuild
+f:339d490e54097eb4e709d20df3a2bc61:which/CHANGELOG
+f:94616ab7f928be8474e00ad03d95134b:which/spkgbuild
 f:e71ac89e0ed2562d821cfbf1263ce4cb:wxgtk3/make-abicheck-non-fatal.patch
 f:5f8c737c0eb89645de3949fd29b698c3:wxgtk3/CHANGELOG
 f:e1334ced9a37c35e55514582fadfd526:wxgtk3/spkgbuild
@@ -1359,8 +1360,8 @@ f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
 f:4b0f9b5d0e0f33782a2fd67d2603c134:zeromq/CHANGELOG
 f:6dcfec7992ae6d7fa451317575ff098b:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
-f:48482028b66838383062ed709c40c6c5:man-pages/CHANGELOG
-f:56eb46cefa8dd8fb471bf2690c150155:man-pages/spkgbuild
+f:3f3c7a737946284ef8673295cfcb89fe:man-pages/CHANGELOG
+f:ef05f0a1db499c6b1d320934124b14df:man-pages/spkgbuild
 f:a14ea9977123453b317503d9b1876463:dunst/CHANGELOG
 f:521dd224ab0790f475b221fdc66e659e:dunst/spkgbuild
 f:937d8bf46cdb765f21df8720164f1b06:lua/CHANGELOG

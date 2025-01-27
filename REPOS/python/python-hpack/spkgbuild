@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-hpack
-version=4.0.0
+version=4.1.0
 release=1
 
 source="https://github.com/python-hyper/hpack/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python-requests
 
 name=python-prawcore
-version=2.4.0
+version=3.0.1
 release=3
 
 source="https://github.com/praw-dev/prawcore/archive/refs/tags/v$version.tar.gz"
