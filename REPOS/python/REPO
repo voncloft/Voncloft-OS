@@ -2829,8 +2829,8 @@ f:fcc1218ad3530434ba18e27719d85fad:python-pytest-benchmark/CHANGELOG
 f:73d87d3edde83ae3168c79329294edbd:python-pytest-benchmark/spkgbuild
 f:ca840991846496756177af84d72295bd:python-html5-parser/CHANGELOG
 f:4ccf06c093d11a4caa4c6ded20d5f837:python-html5-parser/spkgbuild
-f:07a917c4daa2bdd6e1791118f6669988:python-w3lib/CHANGELOG
-f:d9829bf7ec1f5380d52322dc6a086dc8:python-w3lib/spkgbuild
+f:4723c9f4219bb2cccf195656e9959977:python-w3lib/CHANGELOG
+f:784dacff949cdbfe76865023ca8fa30a:python-w3lib/spkgbuild
 f:d0810f0d972619e28f830ddbb9c6d315:python-scipy/CHANGELOG
 f:571d076c98868b2c37c6ee9999a04eed:python-scipy/spkgbuild
 f:e16b86c9dc729ff2468dbdfd2d54b9b4:python-pyxdameraulevenshtein/CHANGELOG
@@ -3156,8 +3156,8 @@ f:84312d7155c00f7c9403475f2637c26a:python-whitenoise/spkgbuild
 f:08113b7dd333f391eee75a2d8d21e08f:python-linux-procfs/spkgbuild
 f:8a546a95610850bef5f45c29947e6003:python-mox3/CHANGELOG
 f:65a0773f65daf0a1e91bd717eea05764:python-mox3/spkgbuild
-f:95a12e058a450125a0f09f4778cbdec4:python-openstacksdk/CHANGELOG
-f:0e33bbdf1097c26074abdad5b04473cd:python-openstacksdk/spkgbuild
+f:699065558e6e9be15825e0cf490b40dd:python-openstacksdk/CHANGELOG
+f:2558e111fded9c89f3a30512d43403ba:python-openstacksdk/spkgbuild
 f:95303ebbf63966966c257f5c58b14c34:python-aiohttp/CHANGELOG
 f:2cad1cebe544f5d57c8d4205fc5d2463:python-aiohttp/spkgbuild
 f:b6723e39091a2e77c512d38945ab181b:python-pytest-flake8/CHANGELOG
@@ -3411,8 +3411,8 @@ f:b2c10054fc7bd580dc24a32657cdf239:python-sphinxcontrib-newsfeed/CHANGELOG
 f:92a5750a55a600b32ef39d986999d979:python-sphinxcontrib-newsfeed/spkgbuild
 f:e904c1b1709590611e2c986af4cc6ea4:python-sane/CHANGELOG
 f:19c5023aa5fc414196d648aac62ab54e:python-sane/spkgbuild
-f:b7d4b46dacfa3ad344beea924c50ad80:python-boto3/CHANGELOG
-f:f7788218a4137768dd60f7434c203b05:python-boto3/spkgbuild
+f:b8eaa3dc6493e87d6153b48825f1c383:python-boto3/CHANGELOG
+f:cc3bab6fd00ce11dfe26eebb41da4286:python-boto3/spkgbuild
 f:cc22b5acf1a529bc792d26021da9beda:python-inflection/CHANGELOG
 f:e0f853d4f99fea30dc9a174b6da9478c:python-inflection/spkgbuild
 f:62b2806ab60feadbeaf4cd66eba1c411:python-nosexcover/CHANGELOG
@@ -3425,8 +3425,8 @@ f:cba8a29d5fd9643f3631ef29dd775b5f:python-sphinx-autorun/CHANGELOG
 f:2ab01deeab5ce54ca251433f45136829:python-sphinx-autorun/spkgbuild
 f:194d8aa6082a4866d0ef80bec82d0406:python-async-timeout/CHANGELOG
 f:6324fc18a4776f29194860e54c075f04:python-async-timeout/spkgbuild
-f:da5f4081e4aa9bff02a5e1a45b4de3c4:python-deprecated/CHANGELOG
-f:b24745d6baaf2385b639f412d7dc5cc5:python-deprecated/spkgbuild
+f:ceb35c03530f2a9b63f50b9c14aec694:python-deprecated/CHANGELOG
+f:f81ec9e24dd9d8fc224909f4cb30498c:python-deprecated/spkgbuild
 f:328e7ba661517bfd9096efbdd67fa8fd:python-softlayer/CHANGELOG
 f:15bdb189da48d773b7f5bf434c067204:python-softlayer/spkgbuild
 f:81bac6edeb70efeed3abff652759d18a:python-pygame-sdl2/CHANGELOG
@@ -3599,8 +3599,8 @@ f:1e8b0162280cdc4b0293c182568de5a7:python-klein/CHANGELOG
 f:f407957e076747547cfd83cfca276eb7:python-klein/spkgbuild
 f:778e7be85e71eb193d73f89d0e9ed835:python-pyroute2/CHANGELOG
 f:1238d848282238b764ffcfc77fa70a08:python-pyroute2/spkgbuild
-f:a6c354fd5529770daeb1c975b6b7c4f1:python-pbr/CHANGELOG
-f:49bc829783afda6c339c37bcfbd52c47:python-pbr/spkgbuild
+f:90ea8a97d0a4058499b94c3a458770f5:python-pbr/CHANGELOG
+f:63ccc417b75d65c040c787340ddf15d0:python-pbr/spkgbuild
 f:9211d29ea3851ba4a144b138418fb684:python-mccabe/CHANGELOG
 f:9e30264d41125d3ff0c96befd2f4003e:python-mccabe/spkgbuild
 f:3e68f2a51429b02bbfdd391113b85a34:python-dbus-signature-pyparsing/CHANGELOG
@@ -4031,8 +4031,8 @@ f:c725c1a4ea568ca6e82f93ced52ccde8:python-pysmi/CHANGELOG
 f:fa8155af58c67bbb63042d7598772201:python-pysmi/spkgbuild
 f:401bb8f2570d081b1ac8e1fb5c86a852:python-importlib-metadata/CHANGELOG
 f:fd1fb0a09d0b95ed3be1f52c44cd8d03:python-importlib-metadata/spkgbuild
-f:e5d00103723f55194cb9420dd91b000b:python-botocore/CHANGELOG
-f:1047631987c5d105a38a5571c1d9fbc8:python-botocore/spkgbuild
+f:2660621a5a4a5a0809504fd7d72cb0bc:python-botocore/CHANGELOG
+f:23bbdd348f52d2e54c8f26ae4bec2c3f:python-botocore/spkgbuild
 f:401b58293d4f319495ada9e0bf5649a1:python-pwntools/CHANGELOG
 f:a36b38e2bbea193c8906f6b8ddf2b875:python-pwntools/spkgbuild
 f:273ecb345dd2fa906ce85b58cea1108b:python-distro/CHANGELOG
