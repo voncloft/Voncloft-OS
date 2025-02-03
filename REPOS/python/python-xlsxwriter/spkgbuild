@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-xlsxwriter
-version=3.2.1
+version=3.2.2
 release=1
 
 source="https://github.com/jmcnamara/XlsxWriter/archive/refs/tags/$version.tar.gz"

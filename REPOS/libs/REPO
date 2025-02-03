@@ -315,8 +315,8 @@ f:d2ffdfbdef07651a2a9b39d0288f0bfe:libaec/CHANGELOG
 f:8d62a37b64966f401abfce68102da4c7:libaec/spkgbuild
 f:376807bbc96d25302f36e90893d27f61:js78/spkgbuild
 f:2b735e0b63377f2b155bfbb2093060e3:libvdpau-va-gl/spkgbuild
-f:a0c4f3e815f4ba52ed5626b9446d55ab:spdlog/CHANGELOG
-f:022f384c740b7041caf062829b7d4821:spdlog/spkgbuild
+f:1c28f0d6c6ee8b09b469975a37e56788:spdlog/CHANGELOG
+f:13267a413c3453d84c5f427a1bf57b0c:spdlog/spkgbuild
 f:c9167fc50b6822f374bf67d1ee0de403:yaml/spkgbuild
 f:b3c3ae439aae53a5f0cb95c1e6780e35:giblib/giblib.patch
 f:213bedae415fa860d767a4d7cece4e38:giblib/spkgbuild
@@ -432,8 +432,8 @@ f:76ab641ee188a685baaae00e48614cbd:libtommath/CHANGELOG
 f:c35ef84ed6d7d30a72906ab6780f7962:libtommath/spkgbuild
 f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
 f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
-f:6b5b071f2f8b3fb8ce0575903270b3a2:glibc/CHANGELOG
-f:9ce8c3e17a187fe05e83d856b9cee9a8:glibc/spkgbuild
+f:cdf5013e47e43c174f1451cd63896921:glibc/CHANGELOG
+f:070aa760762151889480cbc32ae543ce:glibc/spkgbuild
 f:b69b528488730410c45f949a4f58b57a:libcroco/spkgbuild
 f:732aef84e19c211dc89dd13a61e8d42a:libogg/CHANGELOG
 f:e20540d6329d98b05f98c19c41902986:libogg/spkgbuild
@@ -471,8 +471,8 @@ f:90d3277bd92251e54671973c0ce1ac18:libqalculate/CHANGELOG
 f:2f03bf20c4fcf98bdf22813e126bb962:libqalculate/spkgbuild
 f:a6ecc616ffa9fde0e64cab6d4b68f047:libzip/CHANGELOG
 f:f7b9338b5b7dc40ba671688273a241db:libzip/spkgbuild
-f:b5623f22e493616e07d3d8a827c7d096:libtorrent-rasterbar/CHANGELOG
-f:b97cfdaa4c372f82051a065c6d4d43e7:libtorrent-rasterbar/spkgbuild
+f:d12b1717e9f31bef519e1c62c4683d5e:libtorrent-rasterbar/CHANGELOG
+f:58cfd1d2eea475d43d29d7f3fa31a968:libtorrent-rasterbar/spkgbuild
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild
 f:881b3feb662b2f8d4076bd279bf40bfb:geoip/spkgbuild
 f:2b00e53bc976fa121eca2f69c690f964:wayland/CHANGELOG
@@ -690,8 +690,8 @@ f:073f72499935fca142e3de45d4b33a11:libxshmfence/spkgbuild
 f:dd6ad16ac8d42935847832cb4402e60c:libtheora/spkgbuild
 f:7f1f89b8a4e74c05614bdf2fd5c66f6a:icu/post-upgrade.sh
 f:1a17d0159dd30424d490b008af85d810:icu/spkgbuild
-f:e73eeff279f4cbfc2c1e1e28affa8cef:sdl2/CHANGELOG
-f:fb7d7399c4bbfce406bd61fdb9b50425:sdl2/spkgbuild
+f:9a83d8e84c7fb50b3c80970eeb0bcc46:sdl2/CHANGELOG
+f:3db70fde3d916a787c6baacff9e38690:sdl2/spkgbuild
 f:00da7d84cb8655394fd8e3d7d62a2280:libxft/spkgbuild
 f:761aa9a968ef84c6ca4e9efb7a254220:libtool/CHANGELOG
 f:fd36b1d0a9925e6d6b45f698d57e9519:libtool/spkgbuild
@@ -701,9 +701,9 @@ f:db037c03f87cbe37cc1b713f185beac5:apr-util/CHANGELOG
 f:b785830d09b53b2311af83db058a1974:apr-util/spkgbuild
 f:313134b3a95f774026af51e1cc2125c6:libva/CHANGELOG
 f:99289825689bb66ffea4c17f36b78043:libva/spkgbuild
-f:3a7ecee7204b09891b4996486fbf0189:libtorrent/CHANGELOG
+f:d3791ad667e1a1a7d94db52397f045d3:libtorrent/CHANGELOG
 f:e4ea060a5287b6dc181f43ab2f69d503:libtorrent/fix-build-with-boost-1.72.0.patch
-f:c26841566fa2fd58d3575e006468db6b:libtorrent/spkgbuild
+f:053fa9d617718af30ec67802720d4ddb:libtorrent/spkgbuild
 f:76226b0dee30494f6932b0a92d1ee6f4:alsa-lib/readme
 f:34ac35e930485d788a39e43eb5fe7255:alsa-lib/CHANGELOG
 f:a3484ed7123e2a3d2b7eebe5cf781bab:alsa-lib/spkgbuild
