@@ -2,7 +2,7 @@
 # depends : python-importlib-metadata
 
 name=python-cx-freeze
-version=7.2.9
+version=7.2.10
 release=1
 
 source="https://github.com/marcelotduarte/cx_Freeze/archive/refs/tags/$version.tar.gz"

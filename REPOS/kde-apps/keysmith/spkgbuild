@@ -2,7 +2,7 @@
 # depends : kde-deps kdbusaddons ki18n kirigami2 kwindowsystem libsodium qt5-svg
 
 name=keysmith
-version=24.12.1
+version=24.12.2
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"

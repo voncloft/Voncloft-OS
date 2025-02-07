@@ -2,7 +2,7 @@
 # depends : kde-deps kcrash ki18n kirigami-addons kwindowsystem python-ytmusicapi qt5-imageformats qt5-multimedia qt5-svg yt-dlp
 
 name=audiotube
-version=24.12.1
+version=24.12.2
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
