@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-iso8601 python-oslo-i18n python-pytz
 
 name=python-oslo-utils
-version=8.0.0
+version=8.1.0
 release=3
 
 source="https://github.com/openstack/oslo.utils/archive/refs/tags/e$version.tar.gz"

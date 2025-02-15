@@ -2,7 +2,7 @@
 # depends : python qt5-base qt5-declarative qt5-svg
 
 name=python-pyotherside
-version=1.6.1
+version=1.6.2
 release=3
 
 source="https://github.com/thp/pyotherside/archive/refs/tags/$version.tar.gz"

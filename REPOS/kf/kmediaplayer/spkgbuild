@@ -2,7 +2,7 @@
 # depends : kde-deps kparts
 
 name=kmediaplayer
-version=6.10.0
+version=6.11.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/portingAids/$name-$version.tar.xz"
