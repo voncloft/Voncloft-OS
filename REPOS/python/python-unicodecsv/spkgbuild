@@ -1,7 +1,7 @@
 # description : Python2s stdlib csv module is nice, but it doesnt support unicode. This module is a drop-in replacement which *does*.
 
 name=python-unicodecsv
-version=0.14.1
+version=0.14.2
 release=4
 
 source="https://github.com/jdunck/python-unicodecsv/archive/refs/tags/$version.tar.gz"
