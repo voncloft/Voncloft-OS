@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-evdev
-version=1.9.0
+version=1.9.1
 release=1
 
 source="https://github.com/gvalkov/python-evdev/archive/refs/tags/v{version}.tar.gz"
