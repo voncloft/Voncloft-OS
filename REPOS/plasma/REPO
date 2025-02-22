@@ -54,6 +54,7 @@ d:khotkeys
 d:kwayland-integration
 d:kwrited
 d:plasma-integration
+d:krdp
 d:kgamma5
 d:libkscreen
 d:sddm-kcm
@@ -175,6 +176,8 @@ f:d1aba570df388c9376e4827933f5232b:kwrited/CHANGELOG
 f:37ba9bed8206e00f5ed1c9bcd9804a00:kwrited/spkgbuild
 f:b077d0c13712b1439a56ca7253b4b0cc:plasma-integration/CHANGELOG
 f:2adabf975e4eaa3dccb7204bc978f790:plasma-integration/spkgbuild
+f:e479f9cb2c5e55abbc1e8b4b585333d4:krdp/CHANGELOG
+f:a0faa0700b4e06e994e7c2ea146d2041:krdp/spkgbuild
 f:3766c66e29403f5c0a2e19856cb39733:kgamma5/CHANGELOG
 f:2350de7398937b15121a06fb0958ba3e:kgamma5/spkgbuild
 f:f7322c9460ca3fed62d4ebf3f9dc9bf4:libkscreen/CHANGELOG
