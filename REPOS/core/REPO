@@ -486,11 +486,11 @@ f:119f8dc8369b680b9396e1f1d48b780b:sysvinit/CHANGELOG
 f:1fe9b7e4a596be7003e9d0149a64c5f1:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-install.sh
-f:2f07d307c3e40a04f6fc46b3371d8c4f:shadow/CHANGELOG
+f:77456670c48b8b11519f5cd1c32bdda0:shadow/CHANGELOG
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-upgrade.sh
 f:67bfdee60d1f31efc42ea724c5da9cad:shadow/su
 f:a647a87ebd460912bf80a62a8c66d2ac:shadow/chpasswd
-f:cf3239d73291643bc21bbe09b3f7c832:shadow/spkgbuild
+f:313dc23ed4237517cf2c8dd0b0a10b76:shadow/spkgbuild
 f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
 f:651dd39e74b086fa23e8c8cf915224a6:shadow/chage
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
@@ -1126,8 +1126,8 @@ f:914b44bc01750ec7eedd5af2d538c3f6:yaml-cpp/spkgbuild
 f:62719d87ca1a4b40beb8caf018557038:links/CHANGELOG
 f:e310272e0f6b9cb9b1dc5e127ab4e287:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
-f:d8cf53640e73de6df238221452f931e2:qalculate/CHANGELOG
-f:365ca38ea87b6be99816275164c894ab:qalculate/spkgbuild
+f:79ce031b071edc53b64e67e74dde94e4:qalculate/CHANGELOG
+f:5aac8fd00ab14c6561958a8602f32b1d:qalculate/spkgbuild
 f:32b12b2331b8d3442f9ceaad39534e37:gc/CHANGELOG
 f:936796b773e0ecb2398909f0c5b0c529:gc/spkgbuild
 f:45f13b305d240b2a298e9d1a4353049e:bash-completion/CHANGELOG
@@ -1360,8 +1360,8 @@ f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
 f:4b0f9b5d0e0f33782a2fd67d2603c134:zeromq/CHANGELOG
 f:6dcfec7992ae6d7fa451317575ff098b:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
-f:a51cf10a68a9702ae52f8fa2342ab77d:man-pages/CHANGELOG
-f:39a48a09d6e5b6be84ec3a96eaed0108:man-pages/spkgbuild
+f:118ceacf0d6b5e61f355eebdbd86de48:man-pages/CHANGELOG
+f:78f5f957aa6581c9069a175b3317f1f0:man-pages/spkgbuild
 f:a14ea9977123453b317503d9b1876463:dunst/CHANGELOG
 f:521dd224ab0790f475b221fdc66e659e:dunst/spkgbuild
 f:937d8bf46cdb765f21df8720164f1b06:lua/CHANGELOG
