@@ -2,7 +2,7 @@
 # depends : python-pbr python-babel python-keystoneauth1 python-stevedore python-requests
 
 name=python-magnumclient
-version=4.7.0
+version=4.8.0
 release=1
 
 source="https://github.com/openstack/python-magnumclient/archive/refs/tags/e$version.tar.gz"
