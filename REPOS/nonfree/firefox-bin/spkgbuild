@@ -5,7 +5,9 @@ name=firefox-bin
 version=132.0b5
 release=1
 
-source="https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-US/firefox-$version.tar.bz2"
+source="https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-US/firefox-$version.tar.bz2
+	firefox.sh
+	firefox.desktop"
 
 build() {
 	mkdir -pv $PKG/usr/bin
@@ -15,12 +17,12 @@ build() {
 	cp -rv firefox/ $PKG/opt/$name
 
 	#launchers
-	install -m755 firefox.sh "$PKG"/usr/bin/firefox
+	install -m755 $SRC/firefox.sh "$PKG"/usr/bin/firefox
 	install -m644 *.desktop $PKG/usr/share/applications/
 	for i in 16x16 32x32 48x48 64x64 128x128; do
     		install -d "$PKG"/usr/share/icons/hicolor/$i/apps/
     		ln -s /opt/$name/browser/chrome/icons/default/default${i/x*}.png \
-          	$PKG/usr/share/icons/hicolor/$i/apps/$_name.png
+          	$PKG/usr/share/icons/hicolor/$i/apps/firefox.png
   	done
   	ln -Ts /usr/share/hunspell "$PKG"/opt/$name/dictionaries
 	ln -Ts /usr/share/hyphen "$PKG"/opt/$name/hyphenation
