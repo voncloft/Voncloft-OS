@@ -2,10 +2,10 @@
 # depends : gtk3 libxt mime-types dbus-glib nss tff-font
 
 name=firefox-bin
-version=132.0b5
+version=138.0y
 release=1
 
-source="https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-US/firefox-$version.tar.bz2
+source="https://archive.mozilla.org/pub/firefox/nightly/2025/03/2025-03-09-09-02-50-mozilla-central/firefox-138.0a1.en-US.linux-x86_64.tar.xz
 	firefox.sh
 	firefox.desktop"
 
