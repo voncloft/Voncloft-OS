@@ -13,7 +13,9 @@ build() {
 	mkdir -pv $PKG/opt
 
 	cp -rv firefox/ $PKG/opt/$name
-	install -m755 $PKG/$name
+
+	#launchers
+	install -m755 firefox.sh "$PKG"/usr/bin/firefox
 	install -m644 *.desktop $PKG/usr/share/applications/
 	for i in 16x16 32x32 48x48 64x64 128x128; do
     		install -d "$PKG"/usr/share/icons/hicolor/$i/apps/
