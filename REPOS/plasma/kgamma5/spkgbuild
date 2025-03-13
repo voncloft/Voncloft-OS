@@ -2,7 +2,7 @@
 # depends : kde-deps systemsettings kdoctools
 
 name=kgamma5
-version=6.3.2
+version=6.3.3
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
