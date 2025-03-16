@@ -2,7 +2,7 @@
 # depends	: dbus glib
 
 name=dbus-glib
-version=0.112
+version=0.114
 release=2
 source="http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz"
 

@@ -2,7 +2,7 @@
 # depends : python libarchive
 
 name=python-libarchive-c
-version=5.1
+version=5.2
 release=3
 
 source="https://github.com/Changaco/python-libarchive-c/archive/refs/tags/$version.tar.gz"
