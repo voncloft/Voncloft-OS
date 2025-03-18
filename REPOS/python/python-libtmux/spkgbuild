@@ -2,7 +2,7 @@
 # depends : python tmux
 
 name=python-libtmux
-version=0.46.0
+version=0.46.1
 release=3
 
 source="https://github.com/tmux-python/libtmux/archive/refs/tags/v$version.tar.gz"
