@@ -486,11 +486,11 @@ f:119f8dc8369b680b9396e1f1d48b780b:sysvinit/CHANGELOG
 f:1fe9b7e4a596be7003e9d0149a64c5f1:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-install.sh
-f:77456670c48b8b11519f5cd1c32bdda0:shadow/CHANGELOG
+f:3b65d23c376f74fd87b72cfdd492d850:shadow/CHANGELOG
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-upgrade.sh
 f:67bfdee60d1f31efc42ea724c5da9cad:shadow/su
 f:a647a87ebd460912bf80a62a8c66d2ac:shadow/chpasswd
-f:313dc23ed4237517cf2c8dd0b0a10b76:shadow/spkgbuild
+f:5acc178612b52128bafe2fbf231319f3:shadow/spkgbuild
 f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
 f:651dd39e74b086fa23e8c8cf915224a6:shadow/chage
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
@@ -949,8 +949,8 @@ f:9dbbb05c50025586c9cce35468dde9c7:jemalloc/CHANGELOG
 f:f1ca8a404836fcc0a43cec5a0acd65a6:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:8b5414483541b533cd91c0abfcfbc16d:mercurial/CHANGELOG
-f:f0f4397e620a42440da536753665078f:mercurial/spkgbuild
+f:eb4ece2246becb4a244f9d0838e6f26c:mercurial/CHANGELOG
+f:83646668528b4a6e98cc4f9358a48ff4:mercurial/spkgbuild
 f:8179d62708938e5ea94a6ff77b70b63f:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:8fce0ef8aef888c5a59e7c03753504d4:rxvt-unicode/spkgbuild

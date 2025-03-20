@@ -2,7 +2,7 @@
 # depends	: linux-pam cracklib
 
 name=shadow
-version=4.17.3
+version=4.17.4
 release=1
 source="https://github.com/shadow-maint/shadow/releases/download/v$version/shadow-$version.tar.xz
 	login
