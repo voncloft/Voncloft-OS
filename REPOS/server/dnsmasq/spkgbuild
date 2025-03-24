@@ -2,7 +2,7 @@
 # depends : dnsmasq-boot iptables
 
 name=dnsmasq
-version=2.90
+version=2.91
 release=1
 
 source="http://www.thekelleys.org.uk/dnsmasq/$name-$version.tar.xz

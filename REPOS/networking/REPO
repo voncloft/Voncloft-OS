@@ -41,8 +41,8 @@ d:git
 d:openssl1.0
 d:dhcp
 d:libnetfilter_conntrack
-f:32a8376815e2d5276b0d0102794a1405:yt-dlp/CHANGELOG
-f:0435a95cdaf14e3e644a7af633be8f00:yt-dlp/spkgbuild
+f:39b596c51f906c71b8083c967a1e3ca4:yt-dlp/CHANGELOG
+f:a068cbeb90954e4441ca32b7a1bfbffa:yt-dlp/spkgbuild
 f:29547b2cd5195a0b93a28e2ffaaae3f3:openssh/post-install.sh
 f:e677a90df693b058eee9dd32af8b3a0c:openssh/CHANGELOG
 f:6323af6f0662d0fb596d663f2e04c733:openssh/post-upgrade.sh
@@ -101,12 +101,12 @@ f:d9d6b28dc313d469efd32da07c3feb9b:subversion/spkgbuild
 f:f05722c322e70f50d4f5a849faf180b6:make-ca/CHANGELOG
 f:78153899fd744640486a4e7855849fd5:make-ca/update-pki.sh
 f:2d70b128cd3944b50a0ff4d36470b5a6:make-ca/spkgbuild
-f:7b03afe9491b3b8bdd82c7131d753471:tor/CHANGELOG
+f:4d8874c054f060edd08660eadc8f06ce:tor/CHANGELOG
 f:7d36366889907a378f46922b63e280be:tor/pre-install.sh
 f:9000ad824fd570d43e02e8033dbf2767:tor/rc.tor
 f:f58147f876effca915152f5ca8b60f0f:tor/mkdirs
 f:c1dd4004c63edaeaa829e01be5413cfc:tor/torrc
-f:3044d144a13b52a58cf02529c4847cfa:tor/spkgbuild
+f:b6cdc27419379e2f944f37bf499e4b25:tor/spkgbuild
 f:c03a74c62be382749b206c13ce5560b0:tor/run
 f:e735e19889bef8711ad84093ba431a15:net-tools/spkgbuild
 f:eca90415a47bafeb7e10dc2599998210:nftables/CHANGELOG

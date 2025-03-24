@@ -2,7 +2,7 @@
 # depends : python-cfgv python-identify python-nodeenv python-yaml python-toml
 
 name=python-pre-commit
-version=4.1.0
+version=4.2.0
 release=1
 
 source="https://github.com/pre-commit/pre-commit/archive/refs/tags/v$version.tar.gz"

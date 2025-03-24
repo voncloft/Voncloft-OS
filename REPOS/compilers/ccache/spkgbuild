@@ -2,7 +2,7 @@
 # depends	: zlib
 
 name=ccache
-version=4.11.1
+version=4.11.2
 release=1
 source="https://github.com/ccache/ccache/releases/download/v$version/$name-$version.tar.xz
 	ccache.conf"
