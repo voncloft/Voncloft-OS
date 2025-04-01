@@ -2,7 +2,7 @@
 # depends : python python-flit-core python-requests python-docutils python-pytoml
 
 name=python-flit
-version=3.11.0
+version=3.12.0
 release=3
 
 source="https://github.com/takluyver/flit/archive/refs/tags/$version.tar.gz"
