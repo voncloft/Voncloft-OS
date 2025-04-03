@@ -2,7 +2,7 @@
 # depends	: dbus glib libical
 
 name=bluez
-version=5.81
+version=5.82
 release=1
 source="https://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz
 	rc.bluetoothd
