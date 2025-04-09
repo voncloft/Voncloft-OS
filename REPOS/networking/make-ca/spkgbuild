@@ -2,7 +2,7 @@
 # depends : p11-kit fcron log-folders
 
 name=make-ca
-version=1.15
+version=1.16
 release=1
 
 source="https://github.com/lfs-book/make-ca/releases/download/v$version/make-ca-$version.tar.xz

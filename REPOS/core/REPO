@@ -604,10 +604,10 @@ f:05f978bd126e13c737d40513d7d853e5:gptfdisk/CHANGELOG
 f:7b8f2f5c40db38b72dc03bd3b7f7a7f7:gptfdisk/spkgbuild
 f:18d7ddd71d3e0c3ddb5c50668f6466f1:runit/spkgbuild
 f:324848d098be356a18083b0a02c3c842:cups/rc.cupsd
-f:523aa85e5c4378ff6c19eefa92ba4a4d:cups/CHANGELOG
+f:88ae34f73a435264adedc9cf812ec9aa:cups/CHANGELOG
 f:485892b0c31bacd1d8f96e8d2d470a86:cups/pre-install.sh
 f:20dd912fbad050c8908f296e525f9ac6:cups/cupsd.conf
-f:82a85641298f4c644e88fd3278d7e797:cups/spkgbuild
+f:b8c7f1f14bcddf9d24866b4ae937d6a3:cups/spkgbuild
 f:7ff084677614b02915fa8e05e8817cfe:cups/run
 f:497e7e86cc109a7378489c4482bf4292:dbus/post-install.sh
 f:228313dd85edd07d13f14b831d7339f6:dbus/CHANGELOG
@@ -1270,8 +1270,8 @@ f:2c4c84b44734c07dba242aefc81766c0:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
 f:4ee4118f44c11d170d522aa437226771:icewm/CHANGELOG
 f:c91f3101c843ff870a65969d2168fb7c:icewm/spkgbuild
-f:897b16d1885b97e5793ddde081f03122:ibus/CHANGELOG
-f:97436ad09a2229959a91c916ee9ba4a1:ibus/spkgbuild
+f:922c004a280b76836aea6674362ace2c:ibus/CHANGELOG
+f:bd87d18e6f16045b737405444e767c09:ibus/spkgbuild
 f:ff63cefdccc761edd6ee5ff997c05eab:smplayer-themes/CHANGELOG
 f:232228ddc8227ccdf79f76b049322099:smplayer-themes/spkgbuild
 f:481b89ead6b42b6067b6a0ea21efddd5:opera/CHANGELOG
@@ -1307,8 +1307,8 @@ f:4d3c370cc7fb747324369ea84801a2ee:dkms/CHANGELOG
 f:242fb54a67cb16e71d53d7ea587e5f69:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
 f:8e8a437236bdeebcbcfb3f631d095501:gsettings-desktop-schemas/spkgbuild
-f:fd7856f32d24d7b7ebceb5cbb7b2f6e1:ethtool/CHANGELOG
-f:a28917a06d359d2903925371b6166173:ethtool/spkgbuild
+f:fe9968c78db3b9eb9d81de8a94ccb125:ethtool/CHANGELOG
+f:f94e10945fd9fafbd8b4bc372c0c1cdb:ethtool/spkgbuild
 f:a3b27534933eeeabeaf7ddcab763c725:nbwmon/spkgbuild
 f:c0332b48914c5e38332b7e81bc126ae5:java-headless/spkgbuild
 f:accf94bbc2a71c8deac6a6b774e85cd5:p11-kit/CHANGELOG
