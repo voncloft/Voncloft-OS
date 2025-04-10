@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-uhashring
-version=2.3
+version=2.4
 release=3
 
 source="https://github.com/ultrabug/uhashring/archive/refs/tags/$version.tar.gz"

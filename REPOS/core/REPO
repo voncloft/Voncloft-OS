@@ -1174,9 +1174,9 @@ f:7e06cccb8df80d3bae31317e30ebbad3:appstream-glib/spkgbuild
 f:85d0cffc3e99919fcb47b718e2f28548:parcellite/CHANGELOG
 f:7b161690d643e376c03ffa2eacae58bf:parcellite/spkgbuild
 f:0ffae7bed396419428b15e8adb9b952d:mpfr/spkgbuild
-f:a4695db1da89135dfebabcfbe7770347:coreutils/CHANGELOG
+f:cfb325d4392a65241e3f18fe944a4420:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
-f:d9ec41e4825a7c6964d0edb4ff218f7e:coreutils/spkgbuild
+f:7108d0131b2b4fd3e4577942602db214:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
 f:9b8bf5f9d934d2a5175ab5d4e00bc37c:btrfs-progs/CHANGELOG
 f:f5b31259e2e0f334ddedeb6ea0593c0d:btrfs-progs/spkgbuild
@@ -1376,8 +1376,8 @@ f:4288cf709d54b676efc79a88cb0ba1db:patch/CHANGELOG
 f:0b5ec533d33c252b7316d4235eb438f9:patch/spkgbuild
 f:f6e621be6c7e9228e4daf40520901483:gconf/spkgbuild
 f:da3acd3a32c6f5ce2a4333dbf3a6a2b5:at-spi2-atk/spkgbuild
-f:c0ed5508ba39b5790b3eac1e2cc229ff:weechat/CHANGELOG
-f:7ef1653a4a96b69a21684a4fe9ee10b8:weechat/spkgbuild
+f:63c1e8db5458088fcf22ef910f672679:weechat/CHANGELOG
+f:de96e939df3eee2e6aa2d053a2ff81d3:weechat/spkgbuild
 f:ab0b9de0d0e5d9f47bab99409a5401b3:geos/CHANGELOG
 f:5eebe882015f5a73feaa6aff7d93d6bd:geos/spkgbuild
 f:f2d5afae36f9821bbe4a3e82207ffb61:speedtest-cli/CHANGELOG
@@ -1426,8 +1426,8 @@ f:5b9dd726f47e3fb7c296e64203b9a0bf:jack/CHANGELOG
 f:73060059c06ed7739211b8f47e55b70c:jack/post-upgrade.sh
 f:59c3734515e5e6ccb0ea274802671e16:jack/99-audio.conf
 f:6eb98b838480b8e1198c828a5678afdf:jack/spkgbuild
-f:b529cacb7000cadef0a74bb4ad082d2f:diffutils/CHANGELOG
-f:12dffabbcc496f6db4760e8e4e25c0d7:diffutils/spkgbuild
+f:13039426f97e90fb6d3d4e1d67403f1f:diffutils/CHANGELOG
+f:890be45aa03bbf49e15299df27d5ae33:diffutils/spkgbuild
 f:869ff831f2b73baea69fe6be2f08afab:unrar/CHANGELOG
 f:6d0e2ee67d073419576701c5e2f535b0:unrar/spkgbuild
 f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
