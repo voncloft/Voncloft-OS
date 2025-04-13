@@ -2,7 +2,7 @@
 # depends : python-elementpath
 
 name=python-xmlschema
-version=3.4.5
+version=4.0.0
 release=3
 
 source="https://github.com/sissaschool/xmlschema/archive/refs/tags/v$version.tar.gz"

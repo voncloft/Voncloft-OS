@@ -2,7 +2,7 @@
 # depends : python-h11 python-sniffio
 
 name=python-httpcore
-version=1.0.7
+version=1.0.8
 release=3
 
 source="https://github.com/encode/httpcore/archive/refs/tags/$version.tar.gz"
