@@ -2,7 +2,7 @@
 # depends	: gdbm readline ncurses openssl libffi zlib yaml gmp
 
 name=ruby
-version=3.4.2
+version=3.4.3
 rverz=$(echo $version | sed "s/\./\_/g")
 release=1
 source="https://github.com/ruby/ruby/archive/refs/tags/v${rverz}.tar.gz"
