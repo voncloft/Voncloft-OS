@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=kdeconnect-kde
-version=24.12.3
+version=25.04.0
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"
