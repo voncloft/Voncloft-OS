@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-joblib
-version=1.4.2
+version=1.5.0
 release=1
 
 source="https://github.com/joblib/joblib/archive/refs/tags/$version.tar.gz"
