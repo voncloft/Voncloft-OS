@@ -2,7 +2,7 @@
 # depends	: libxext libxmu libxt libx11 libice libsm 
 
 name=twm
-version=1.0.13
+version=1.0.13.1
 release=1
 source="https://www.x.org/pub/individual/app/$name-$version.tar.xz"
 

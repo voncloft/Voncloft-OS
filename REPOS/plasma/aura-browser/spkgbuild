@@ -1,7 +1,7 @@
 # description : Core components for the kde desktop
 # depends : kde-deps ki18n kirigami2 qt5-multimedia qt5-virtualkeyboard qt5-webengine
 name=aura-browser
-version=6.3.4
+version=6.3.5
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"
