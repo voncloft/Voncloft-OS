@@ -2,7 +2,7 @@
 # depends : python python-attrs
 
 name=python-aiorpcx
-version=0.24
+version=0.25.0
 release=3
 
 source="https://github.com/kyuupichan/aiorpcX/archive/refs/tags/$version.tar.gz"

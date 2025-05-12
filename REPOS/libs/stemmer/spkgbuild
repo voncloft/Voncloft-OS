@@ -1,7 +1,7 @@
 # description	: Stemming library supporting several languages
 
 name=stemmer
-version=2.2.0
+version=3.0.1
 release=1
 source="$name-$version.tar.gz::https://github.com/snowballstem/snowball/archive/v$version.tar.gz
 	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/snowball/trunk/dynamiclib.patch"

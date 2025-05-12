@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-twisted
-version=24.11.0
+version=25.5.0
 release=1
 
 source="https://github.com/twisted/twisted/archive/refs/tags/r$version.tar.gz"

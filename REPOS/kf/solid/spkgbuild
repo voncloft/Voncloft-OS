@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=solid
-version=6.13.0
+version=6.14.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
