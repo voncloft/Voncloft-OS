@@ -517,8 +517,8 @@ f:80e55a5e3a46326aa47559fe6af368bb:imagemagick6/spkgbuild
 f:48692f14c80b4cee76bf409c7d389450:fbpanel/spkgbuild
 f:7b7f9b89150f4ebc1d87d2e09551ed84:pcre2/CHANGELOG
 f:24165fb6dd6f754d5fb029aa966f1f81:pcre2/spkgbuild
-f:2dc40a38c419056aa90a2f2aa3e9a7df:gegl/CHANGELOG
-f:cf1aaff7d0901d63c936be5842d8f727:gegl/spkgbuild
+f:1f01d7e5086ad702eaaf3a1b9c681408:gegl/CHANGELOG
+f:0d08afb40111f287ab6cdb1b25c1cafb:gegl/spkgbuild
 f:98a6d8e81d5bc1c721c7782ed473962b:gmp/CHANGELOG
 f:f475d86709dadc86bdbfe03be7d14e04:gmp/spkgbuild
 f:fe169ae27610baad62a0443e057a40f2:os-prober/CHANGELOG
@@ -688,8 +688,8 @@ f:1f0ab4b9116a4a3dcfb34e87ef784ebb:cronie/run
 f:2962d9812fbbbdee1bd7f1c1ccb5e372:cronie/cronie.deny
 f:1fd106caba5c68c76f01b83f89396ba5:obconf/spkgbuild
 f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
-f:f6ac3bb73adb12341459a259e17416c7:fakeroot/CHANGELOG
-f:62c12a8de858a1ca562fcbb4f10ccfba:fakeroot/spkgbuild
+f:563fb0e6fb4ce75d3e7a0fcad3b154dd:fakeroot/CHANGELOG
+f:6cc0a788ef2ebdbe22b9df860efbc17c:fakeroot/spkgbuild
 f:6abd824eb59e856527d8a435b65109eb:file/CHANGELOG
 f:23f3f9b682a1bde7600aafb60671e4ce:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
@@ -1230,8 +1230,8 @@ f:aa00f2a0cc35c6ce9a115053535b1fab:lmdb/spkgbuild
 f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:e485d74f524820e693f8a53c0cbcdc02:zsh/CHANGELOG
 f:23fdfe608891c3828582a7ec3f79023f:zsh/spkgbuild
-f:803438ea71aaa812bc3050f6d754be3c:redis/CHANGELOG
-f:9fc9734038122b2e6de30c0f8f785507:redis/spkgbuild
+f:bcdc20c6fb340c532bf5a58b985d5813:redis/CHANGELOG
+f:9cd50106f0d28ed0a6c7878cfa463215:redis/spkgbuild
 f:61021c497dfec4de20c7d8e57cadaeee:ntp/post-install.sh
 f:bc12af08e46ffd1d1dabc90858ccf935:ntp/post-upgrade.sh
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh
