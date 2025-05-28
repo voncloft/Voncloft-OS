@@ -306,8 +306,8 @@ f:c21bafd15c3efd053e98dd024f815a0c:libwebp/spkgbuild
 f:90b626f0b1d5c288278c7ca6fccb7595:libxkbcommon/CHANGELOG
 f:171ac49cd6807980c2b0d01dfe2ff0c4:libxkbcommon/spkgbuild
 f:3a7989518d35034a8742dda3da97c8a7:libsigc++/spkgbuild
-f:404a217bb934cb7bab113dd6aa1bd842:hidapi/CHANGELOG
-f:1cef8a0e323ca8043d8d16190bd5090c:hidapi/spkgbuild
+f:abd974fdaea1e50de57ef9edf55cd659:hidapi/CHANGELOG
+f:2a35fd11fe02f1620b084d62625ca174:hidapi/spkgbuild
 f:658495f0f6820e120872b0ccdc690127:libass/CHANGELOG
 f:441fccf52d8eb3d5779fafa60a474bb3:libass/spkgbuild
 f:0c70f05290c0205ad9fab534839901e5:libxxf86vm/spkgbuild
@@ -457,8 +457,8 @@ f:fcd6515962b376624de7136f7e2260ad:liblastfm-qt5/CHANGELOG
 f:446dffe884ea47190dd2176d9419a379:liblastfm-qt5/spkgbuild
 f:03406af0e313257b11309d1a95430440:libical/CHANGELOG
 f:068070d4ac1df0e31357e9761e86c27f:libical/spkgbuild
-f:78ebadf4d1673996cc578550bf328c07:libarchive/CHANGELOG
-f:0b091e59f1cc7dc5591b96712c84f191:libarchive/spkgbuild
+f:2157f06827b0708961b0a07ef43e591d:libarchive/CHANGELOG
+f:28e9a7bbf8ca98139ecffc9037573cfe:libarchive/spkgbuild
 f:e89d1b5e9cf6d4c6b34c5c81a1d36d93:libpeas/spkgbuild
 f:373744d67738ccd830abdb592c7725e6:libsecret/spkgbuild
 f:e34ec8f5bc9ad3756ff9530f9fb68d47:libuv/spkgbuild
@@ -469,8 +469,8 @@ f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
 f:f4d8ae092579f5bdfef702146850d5c8:libqalculate/CHANGELOG
 f:20fb88780cda40456420bd7e229a5e4e:libqalculate/spkgbuild
-f:a6ecc616ffa9fde0e64cab6d4b68f047:libzip/CHANGELOG
-f:f7b9338b5b7dc40ba671688273a241db:libzip/spkgbuild
+f:1e0192c06dfb76c068be95babd7765a6:libzip/CHANGELOG
+f:38a13871e44520a8787062f906fd4d56:libzip/spkgbuild
 f:d12b1717e9f31bef519e1c62c4683d5e:libtorrent-rasterbar/CHANGELOG
 f:58cfd1d2eea475d43d29d7f3fa31a968:libtorrent-rasterbar/spkgbuild
 f:504fe3278d61e1547c59854e1ab75e51:libglade/spkgbuild
@@ -520,8 +520,8 @@ f:2497ef57ca3837ef22c13434754f3f25:libxfce4util/CHANGELOG
 f:66f7feb5910e6298bcd44f1658f87e8d:libxfce4util/spkgbuild
 f:19b3e00d381b6ffbde04c972044d1651:libmng/spkgbuild
 f:987864f7de70b563fd66bd097b81cceb:opensp/spkgbuild
-f:0d6a126c58df556efd3ff51d12ba6955:libxfce4ui/CHANGELOG
-f:e0c2b28325ceebb676f4f8095a862ceb:libxfce4ui/spkgbuild
+f:aa2fb99c2f5c01ffcae0a89e381044b8:libxfce4ui/CHANGELOG
+f:3cf7a9d6d35a955393e3e9a2b47ad129:libxfce4ui/spkgbuild
 f:45bd22fe9c6a7aa494b6c61fc0e97c07:libxres/spkgbuild
 f:772a4b7611de6572930cc2ed0e432d78:libmpc/spkgbuild
 f:079f9c832f587f45f9504e4d3c41a4d3:libftdi/spkgbuild
@@ -575,8 +575,8 @@ f:e7d609ccff761f328c802f6463393266:libpciaccess/spkgbuild
 f:20a8c3e4e13d4585d647363e1af42673:libxpresent/spkgbuild
 f:4ce1bf51879a679b55be831f31bf3a2f:libunique/libunique-upstream_fixes.patch
 f:3e7f83c19607106e030819a0fb34f8cb:libunique/spkgbuild
-f:93660f9226c20eb6cc81cfa2cdc30030:xapp/CHANGELOG
-f:a7a93ca606c3e847c9f15d24c1619671:xapp/spkgbuild
+f:db0f4076a27e4d2da65abb2712274f74:xapp/CHANGELOG
+f:4ea633136d0535469464aca613d4439f:xapp/spkgbuild
 f:741965aa2d34b8d5a0cc08b787a0bc02:libconfig/CHANGELOG
 f:858938988b4780e0cfb3c596fb57985a:libconfig/spkgbuild
 f:104c25389156c85f0d9ca9df802b5c62:hdf5/spkgbuild
@@ -620,8 +620,8 @@ f:79b5a6b22f197c0ad21ebd9d6c18d915:libxcvt/spkgbuild
 f:de464b6f8efdbae14f0043a790425fdb:neon/CHANGELOG
 f:ebcc64ce6811a8e9fb961ed771f201e7:neon/spkgbuild
 f:d472f4e112b787b34503fb20103eb231:libcdio-paranoia/spkgbuild
-f:0b45a2728189ae060988e211a3c35e01:apr/CHANGELOG
-f:d95db147148cd5a3f09532f913381ba0:apr/spkgbuild
+f:c4420a18608e92fd70d1e6a8be83dff7:apr/CHANGELOG
+f:79b9f1a9632835ae196278ec940538ae:apr/spkgbuild
 f:15625a5c7b2874ac21b4276b7dee75bc:libdbi/spkgbuild
 f:81a6c6c2cfa799b0fbb2d933d3bbdc8f:libspectre/CHANGELOG
 f:18eecc4cc02f7a3726ad96ca97d967dc:libspectre/spkgbuild

@@ -2,7 +2,7 @@
 # depends : python-six python-requests
 
 name=python-swiftclient
-version=4.7.0
+version=4.8.0
 release=1
 
 source="https://github.com/openstack/python-swiftclient/archive/refs/tags/e$version.tar.gz"
