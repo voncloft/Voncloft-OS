@@ -467,9 +467,9 @@ f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:65a20e17cf0eaf7ed1e009d670329562:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
-f:3ca99addabedceae66d0b2bcbed4f3d6:systemd/CHANGELOG
+f:962b88223022d2b59713c038d13a5785:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:f99c8546842b2e3abdac332e28a2dd6d:systemd/spkgbuild
+f:b65055ed70121f13d49124d8c5234e91:systemd/spkgbuild
 f:ece56886fa95c95d2b62d23f00920029:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
 f:c8999a29e48618d654c559af11ecff81:lm_sensors/spkgbuild
@@ -709,8 +709,8 @@ f:4141a14986102eed358f539886cbc289:nnn/spkgbuild
 f:c66317cdbc11723c9b14d9cbb1d08c70:gnupg/CHANGELOG
 f:172697632861618089e0c213d76c3d79:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:b8ab584057803b2e030848dccaa21ff9:pipewire/CHANGELOG
-f:96d63013efab5f912ece5e9b61bf8f41:pipewire/spkgbuild
+f:faf0f52517b5c9c16eea748ed4047a57:pipewire/CHANGELOG
+f:0a8b473073ad50c6491de26761a24eda:pipewire/spkgbuild
 f:0f20437ceabcfe279db7d4ff8bc7f9ae:duktape/CHANGELOG
 f:1f799c92594d55ced8d183d0e29132c9:duktape/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
@@ -853,8 +853,8 @@ f:4a756bf3bce5beac9af146d6fe324953:utilities/upgrade-python-packages
 f:ea5b4a275145bc05db4a2f18fb1cf468:utilities/upgrade-perl-packages
 f:33f0fd6d8e33753d2e744a8bffe37ddb:utilities/spkgbuild
 f:0d29f39429ce00a91dda37e4fa3a00c8:utilities/update-kde
-f:313589306e37f4b7080f7b8f2775d931:enchant/CHANGELOG
-f:ee9547efbdddc010e16f6bf2bdef921f:enchant/spkgbuild
+f:cbe3a0e09b54ca3200fb43aa4c3e8a56:enchant/CHANGELOG
+f:94ca4b1a800b86b6eae610383f2dd170:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:820fad5d643851793dbbddfbae5ab1e9:aspell/post-install.sh
@@ -927,8 +927,8 @@ f:c4da2ec1e80552fdf9232a21f0878e44:vsv/spkgbuild
 f:371b04400afc06bc4df62338bf55a897:rapidjson/spkgbuild
 f:7a1cde0ddf229e3053f1d231f125dbec:openjpeg2/CHANGELOG
 f:8df26d188d5454422d4786f16f0a29fb:openjpeg2/spkgbuild
-f:d3dec27e1bc30297c21e2638ccd381e8:webkitgtk/CHANGELOG
-f:caa348ca34b9c49489f62e5920ac6cf5:webkitgtk/spkgbuild
+f:b507e531900fe317b48c988911f3b084:webkitgtk/CHANGELOG
+f:decc64bf4927c405181c6e6c2f69dd47:webkitgtk/spkgbuild
 f:9b2b1b68e1751587a3a8ac81cf70a11f:openjpeg/CHANGELOG
 f:a08812e0681a7af09a1cc2119dcf58a8:openjpeg/spkgbuild
 f:9cfc81b89eb217a94b4f01de32cfd492:pugixml/CHANGELOG
@@ -1434,5 +1434,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:31e7cf013502639c26dc8cfb9fd51611:hugo/CHANGELOG
-f:ee2cd173ee3a5c917c3e50bd247571c8:hugo/spkgbuild
+f:001afbfb3222646634b25fcfcae020a0:hugo/CHANGELOG
+f:ed30938dbde8735aa2739645eacfa9af:hugo/spkgbuild
