@@ -2,7 +2,7 @@
 # depends : python-pytest
 
 name=python-pytest-datadir
-version=1.7.0
+version=1.7.1
 release=3
 
 source="https://github.com/gabrielcnr/pytest-datadir/archive/refs/tags/$version.tar.gz"

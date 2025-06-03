@@ -2,7 +2,7 @@
 # depends	: oniguruma autoconf automake bison flex python
 
 name=jq
-version=1.7.1
+version=1.8.0
 release=1
 source="https://github.com/stedolan/jq/releases/download/$name-$version/$name-$version.tar.gz"
 
