@@ -2,7 +2,7 @@
 # depends : python-incremental python-requests python-pyopenssl python-service-identity
 
 name=python-treq
-version=24.9.1
+version=25.5.0
 release=1
 
 source="https://github.com/twisted/treq/archive/refs/tags/r$version.tar.gz"
