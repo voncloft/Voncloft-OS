@@ -42,9 +42,9 @@ f:03b9ba99aec66b315eba505e1b535520:dnsmasq_malware_protector/dnslogblock
 f:2b4202d68ee37461303d2cf2dceb6407:dnsmasq_malware_protector/spkgbuild
 f:25b0b6c92bac916ecdca4d9d7615432e:dnsmasq_malware_protector/build_blocks.sh
 f:2198e71661171aba95734cf94ffb58fe:php/post-install.sh
-f:954e3070f221469dcdde076aa8366bd7:php/CHANGELOG
+f:9e29d5ab72335923e1c3f41b401f433d:php/CHANGELOG
 f:3c11643c3f50fc89aaf0a6f75987d71c:php/post-upgrade.sh
-f:3cf9d0fc6dd8ac8a667ca5486beacc29:php/spkgbuild
+f:ebd038b73b805268ef795be3c57dd84e:php/spkgbuild
 f:44d2be15152b16a9dddf9113ab2c80cb:php/php-fpm
 f:4035a98afb724658df44a3a12d100fdb:plex-media-server/post-install.sh
 f:1fe6233f330a2e138a07bc4ede84ed37:plex-media-server/plex
@@ -105,10 +105,10 @@ f:4892ff8cb814357cd059403c789a215f:nginx/spkgbuild
 f:b942ec7b3a84f02aef88c481c94548d8:homeassistant/CHANGELOG
 f:a2298178140b3c3285917dd13fee77bf:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
-f:788a777a499f9277685cc3a31a6dcdd9:blacklist-hosts/CHANGELOG
+f:e81a345c9615e1e880ef367171ea1b9e:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh
 f:3b365d0e52f2510a3e6f60ae04ec45af:blacklist-hosts/test
-f:4b1d9e53f7af0998b28e4f8cc536a4cf:blacklist-hosts/spkgbuild
+f:5568c68ab7323e33706fc045cf802747:blacklist-hosts/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
@@ -133,9 +133,9 @@ f:1f6f6181709e035e9125a442d859c556:radicale/radicale
 f:ba45b98ad6a1419b38d5218c76b1ba50:radicale/config
 f:67bd17721c463cecde9859bcb091a50a:samba/smb.conf
 f:c3d3a1a2a1520401ce5c91b9b9cf431d:samba/post-install.sh
-f:0466b5a8a19666b68a12d67791166302:samba/CHANGELOG
+f:f2eac7be8323c285a5252793548b4da2:samba/CHANGELOG
 f:c65f2e42ce19954986906299c2b8851f:samba/post-upgrade.sh
-f:cc3fb2bdd7e09e2f6d18ff60dad96fa5:samba/spkgbuild
+f:5fd0a44f424f35096e9c55ca10eae6e2:samba/spkgbuild
 f:98abcdacd06a8e4210d34c58b93464d4:samba/samba
 f:7af2bc4dd9c88cc95ae96b7c338dd102:toolbox/createpackage
 f:3dd4aad9607de44d05d369b8ee95a6ed:toolbox/CHANGELOG

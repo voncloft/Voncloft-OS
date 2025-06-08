@@ -56,8 +56,8 @@ f:120329f9a4c7f594e8028589acc421f6:networkmanager/CHANGELOG
 f:0644ece4a3fb7df43d40c58eb7188fbf:networkmanager/pre-install.sh
 f:3d2b081a6829aac4dd33c0cb0761088a:networkmanager/override
 f:c74461333dcb035892dc450c96102b04:networkmanager/spkgbuild
-f:0f024e3dca05855958d1e26abdb4c715:whois/CHANGELOG
-f:11f3091b25bb33be4ac06aa54f8e6d01:whois/spkgbuild
+f:2e1e2873f068bd5dbab19dae07755183:whois/CHANGELOG
+f:b603dea7771ac9f5990794a415d63038:whois/spkgbuild
 f:8d97806d6692a16a2d378f95271a59e8:iftop/spkgbuild
 f:c29582b8bc33b56733a6bcec9042b7e4:iptraf-ng/CHANGELOG
 f:757972da7e4e22dff79c9070ce7a9df3:iptraf-ng/spkgbuild
@@ -146,10 +146,10 @@ f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
 f:022b2f0f4338dae6fd52a80b24183a4a:nmap/CHANGELOG
 f:b05ef6321275c531ca6074bb082e23f3:nmap/ssl.patch
 f:de5985e9dbb4b3d9148d0508955c1faa:nmap/spkgbuild
-f:931eb032fa2afe07226a6722990502ef:wireshark/CHANGELOG
+f:b7bf08d84fe6bc7b1a34ee8614c2d3cf:wireshark/CHANGELOG
 f:6736b07aea5c8a1239a964908036ff95:wireshark/pre-install.sh
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override
-f:3387d0acf436cbc1f6882f385b8d2813:wireshark/spkgbuild
+f:7b43a9c418ca8510ff14a017e6232f09:wireshark/spkgbuild
 f:ac1bea05f68535dec95f280ac79a8d53:tigervnc/remove-selinux.patch
 f:d0c606ef9a340e3b2aac77350403d549:tigervnc/CHANGELOG
 f:8778a8a714cdd3072918cd3c0380ed5e:tigervnc/Xsession
