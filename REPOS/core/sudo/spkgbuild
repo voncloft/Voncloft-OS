@@ -2,7 +2,7 @@
 # depends	: linux-pam
 
 name=sudo
-version=1.9.8
+version=1.9.16
 release=1
 backup="etc/sudoers
 	etc/pam.d/sudo"
