@@ -2,7 +2,7 @@
   # depends : python-pytest python-coverage
 
 name=python-pytest-cov
-version=6.1.1
+version=6.2.1
 release=1
 
 source="https://github.com/pytest-dev/pytest-cov/archive/refs/tags/v$version.tar.gz"
