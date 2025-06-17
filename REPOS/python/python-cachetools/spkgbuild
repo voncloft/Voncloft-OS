@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-cachetools
-version=6.0.0
+version=6.1.0
 release=1
 
 source="https://github.com/tkem/cachetools/archive/refs/tags/v$version.tar.gz"
