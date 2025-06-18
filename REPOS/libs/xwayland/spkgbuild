@@ -2,7 +2,7 @@
 # depends : libxcvt pixman wayland-protocols xorg-fonts libepoxy libtirpc mesa xorg-libraries
 
 name=xwayland
-version=24.1.6
+version=24.1.7
 release=1
 
 source="https://www.x.org/pub/individual/xserver/xwayland-$version.tar.xz"

@@ -2,7 +2,7 @@
 # depends : python-sphinx python-pybtex python-pybtex-docutils python-docutils
 
 name=python-sphinxcontrib-bibtex
-version=2.6.3
+version=2.6.4
 release=1
 
 source="https://github.com/mcmtroffaes/sphinxcontrib-bibtex/archive/refs/tags/$version.tar.gz"

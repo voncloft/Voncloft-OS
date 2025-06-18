@@ -2,7 +2,7 @@
 # depends	: make-ca libarchive openssl1.0
 
 name=xbps
-version=0.60.2
+version=0.60.3
 release=1
 source="$name-$version.tar.gz::https://github.com/void-linux/xbps/archive/$version.tar.gz"
 

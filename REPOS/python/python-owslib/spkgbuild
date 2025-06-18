@@ -2,7 +2,7 @@
 # depends : python-dateutil python-pyproj python-pytz python-requests
 
 name=python-owslib
-version=0.34.0
+version=0.34.1
 release=1
 
 source="https://github.com/geopython/OWSLib/archive/refs/tags/$version.tar.gz"
