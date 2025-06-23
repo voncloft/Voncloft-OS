@@ -2,7 +2,7 @@
 # depends : p8-platform cmake
 
 name=libcec
-version=7.0.0
+version=7.1.0
 release=1
 
 source="https://github.com/Pulse-Eight/$name/archive/$name-$version.tar.gz"
