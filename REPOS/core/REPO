@@ -878,10 +878,10 @@ f:f9adb31b0ddce53fff522d2d8888d7ab:vimix-gtk-themes/spkgbuild
 f:01054dca3ebb4806b1782a3f469a7138:vimix-gtk-themes/Install.patch
 f:41731562065a553a023e0b0608b74dc2:surf/spkgbuild
 f:63e69a28c75fd5233c75615e65757079:dzen2/spkgbuild
-f:68f799a3a9d2d9e06c80a40bcb0fab64:colord/CHANGELOG
+f:eedafe97b74a7a68247bc453da6268b1:colord/CHANGELOG
 f:561181f4c3e83bb6affa8fad85d0981c:colord/pre-install.sh
 f:371a660dae1b590d86edc86de1565e11:colord/mkdirs
-f:cf1f193480ba4cf9927a08c31de1c6c8:colord/spkgbuild
+f:0e5fcc591d474a9b527e1e14d323e1e8:colord/spkgbuild
 f:bb6d623cc3dc7e105d2eaad32e683413:lsof/CHANGELOG
 f:1c6b5d2d2a9fadabede6dc458e8cd9cd:lsof/spkgbuild
 f:9ed07e6225e626478096997d020d0ca2:cdw/spkgbuild
@@ -1178,8 +1178,8 @@ f:cfb325d4392a65241e3f18fe944a4420:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:7108d0131b2b4fd3e4577942602db214:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
-f:9b8bf5f9d934d2a5175ab5d4e00bc37c:btrfs-progs/CHANGELOG
-f:f5b31259e2e0f334ddedeb6ea0593c0d:btrfs-progs/spkgbuild
+f:04d1e1baeb6f9efa4a80f300210a8480:btrfs-progs/CHANGELOG
+f:9c8208db81d040eb8471c0941e67972f:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
 f:b44a2b0bff7d9c7c1d14640d0a8c7c9c:sed/CHANGELOG
 f:eb13e7233eba3eae549fe4afd76b2b5a:sed/spkgbuild
@@ -1268,8 +1268,8 @@ f:54aa4116e97573d07670ab510eb84318:zstd/spkgbuild
 f:f16eda02021ba4abc1125db5ceb32804:grep/CHANGELOG
 f:a86235e7b92c60de18ac21932db60c35:grep/spkgbuild
 f:3deb6946e9e04fc5800ea3b2170b243f:yajl/spkgbuild
-f:dbf13c9e88b81e46fb0641b91d45bbf8:icewm/CHANGELOG
-f:7f8b74cbec5ab1d4a3f7b6a4129b5232:icewm/spkgbuild
+f:9e3cd4617d74da7e28b700da71fbfd84:icewm/CHANGELOG
+f:860d17e2d2c2191517c9ab9af55d224a:icewm/spkgbuild
 f:922c004a280b76836aea6674362ace2c:ibus/CHANGELOG
 f:bd87d18e6f16045b737405444e767c09:ibus/spkgbuild
 f:ff63cefdccc761edd6ee5ff997c05eab:smplayer-themes/CHANGELOG
@@ -1307,8 +1307,8 @@ f:f7060f133d853a472a2775036ca11cbe:dkms/CHANGELOG
 f:983e7da5ec6a091f53fa30f53c4113ad:dkms/spkgbuild
 f:31738d4fbd25625d67bc94b250c31507:st/spkgbuild
 f:8e8a437236bdeebcbcfb3f631d095501:gsettings-desktop-schemas/spkgbuild
-f:fe9968c78db3b9eb9d81de8a94ccb125:ethtool/CHANGELOG
-f:f94e10945fd9fafbd8b4bc372c0c1cdb:ethtool/spkgbuild
+f:08eda49550efc838dafc3a61a9801d9d:ethtool/CHANGELOG
+f:143acc6c2a9ce742dd1894b13faad548:ethtool/spkgbuild
 f:a3b27534933eeeabeaf7ddcab763c725:nbwmon/spkgbuild
 f:c0332b48914c5e38332b7e81bc126ae5:java-headless/spkgbuild
 f:accf94bbc2a71c8deac6a6b774e85cd5:p11-kit/CHANGELOG
@@ -1434,5 +1434,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:937d60d1f04314c086ac710f59f74af7:hugo/CHANGELOG
-f:e06e05b34cd380cb57d39c2148315dca:hugo/spkgbuild
+f:7945031a55346a7b2cf6f67d2739f129:hugo/CHANGELOG
+f:67d4f1550b655a7a1af6aa59d09207aa:hugo/spkgbuild
