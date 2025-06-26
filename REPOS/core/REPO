@@ -467,9 +467,9 @@ f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:65a20e17cf0eaf7ed1e009d670329562:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
-f:962b88223022d2b59713c038d13a5785:systemd/CHANGELOG
+f:07d98bed4abc161a9d45cac9a9be2c63:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:b65055ed70121f13d49124d8c5234e91:systemd/spkgbuild
+f:8325119bc55af2fca185e0ac4acba764:systemd/spkgbuild
 f:ece56886fa95c95d2b62d23f00920029:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
 f:c8999a29e48618d654c559af11ecff81:lm_sensors/spkgbuild
@@ -486,11 +486,11 @@ f:119f8dc8369b680b9396e1f1d48b780b:sysvinit/CHANGELOG
 f:1fe9b7e4a596be7003e9d0149a64c5f1:sysvinit/spkgbuild
 f:a205549bec2e6990af562d02b3fc3298:shadow/passwd
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-install.sh
-f:3b65d23c376f74fd87b72cfdd492d850:shadow/CHANGELOG
+f:b15581c229916066d99b02fbc49b9d28:shadow/CHANGELOG
 f:d65f80e3f592084b62d205b075f08a9c:shadow/post-upgrade.sh
 f:67bfdee60d1f31efc42ea724c5da9cad:shadow/su
 f:a647a87ebd460912bf80a62a8c66d2ac:shadow/chpasswd
-f:5acc178612b52128bafe2fbf231319f3:shadow/spkgbuild
+f:d826a03205baeb51d6dba5a551169ffd:shadow/spkgbuild
 f:55fc7bcfb155ac3106dd4aed2e6bf910:shadow/login
 f:651dd39e74b086fa23e8c8cf915224a6:shadow/chage
 f:a1a9d74dca9c6ca8a9ed43b2a7c30ab8:plank/spkgbuild
