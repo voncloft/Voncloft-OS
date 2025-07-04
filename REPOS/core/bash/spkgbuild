@@ -2,7 +2,7 @@
 # depends	: ncurses readline
 
 name=bash
-version=5.2.37
+version=5.3
 majver=${version%%.*}
 basever=${version%.*}
 patchver=${version##*.}
