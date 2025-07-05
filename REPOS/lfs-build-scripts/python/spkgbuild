@@ -1,0 +1,27 @@
+# description	: Python developer
+# depends	: 
+
+name=python
+version=3.13.5
+release=1
+source="https://www.python.org/ftp/python/$version/Python-$version.tar.xz"
+options="!checksum"
+build() {
+	cd Python-$version
+
+	./configure --prefix=/usr          \
+            --enable-shared        \
+            --with-system-expat    \
+            --enable-optimizations \
+            --without-static-libpython
+	make
+	make DESTDIR=$PKG install
+	mkdir $PKG/etc
+        cat > $PKG/etc/pip.conf << "EOF"
+[global]
+root-user-action = ignore
+disable-pip-version-check = true
+EOF
+
+
+}

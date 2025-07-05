@@ -1,0 +1,24 @@
+# description	: Small build system with a focus on speed
+# depends	: 
+name=ninja
+version=1.13.0
+release=1
+source="https://github.com/ninja-build/ninja/archive/v$version/ninja-$version.tar.gz"
+
+build() {
+	cd $name-$version
+
+	export NINJAJOBS=4
+	sed -i '/int Guess/a \
+  	int   j = 0;\
+  	char* jobs = getenv( "NINJAJOBS" );\
+  	if ( jobs != NULL ) j = atoi( jobs );\
+  	if ( j > 0 ) return j;\
+	' src/ninja.cc
+
+
+	python3 ./configure.py --bootstrap --verbose
+	mkdir -pv $PKG/usr/bin
+	install -vm755 ninja $PKG/usr/bin/
+	install -vDm644 misc/bash-completion $PKG/usr/share/bash-completion/completions/ninja
+}

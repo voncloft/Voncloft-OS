@@ -1,0 +1,18 @@
+source=https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/
+
+get_generic()
+{
+        url=$(grep -Po "(?<=>)[^<>]*(?=<)" index.html \
+	| egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        | sort -V -r \
+        | head -n1)
+        rm index.html
+        wget -o index.html $source"v"$url
+
+        uversion=$(grep util-linux v$url \
+        | egrep -o "([0-9]{1,}\.)+[0-9]{1,}" \
+        | sort -V -r \
+        | head -n1)
+	rm v$url
+	
+}

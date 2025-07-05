@@ -1,0 +1,19 @@
+# description	: Keytable files
+# depends	: 
+
+name=kbd
+version=2.8.0
+release=1
+source="https://www.kernel.org/pub/linux/utils/kbd/kbd-$version.tar.xz
+	https://www.linuxfromscratch.org/patches/lfs/development/kbd-$version-backspace-1.patch"
+options="!checksum"
+build() {
+	cd $name-$version
+	patch -Np1 -i $SRC/kbd-$version-backspace-1.patch
+
+	sed -i '/RESIZECONS_PROGS=/s/yes/no/' configure
+	sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in
+	./configure --prefix=/usr --disable-vlock
+	make
+	make DESTDIR=$PKG install
+}

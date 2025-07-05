@@ -1,0 +1,18 @@
+# description	: Extremely fast compression algorithm
+
+name=lz4
+version=1.10.0
+release=1
+source="$name-$version.tar.gz::https://github.com/lz4/lz4/archive/v$version.tar.gz"
+
+build() {
+	cd $name-$version
+	make BUILD_STATIC=no PREFIX=/usr
+	make DESTDIR=$PKG BUILD_STATIC=no PREFIX=/usr install
+
+	make clean
+	CC="gcc -m32" make BUILD_STATIC=no
+	make BUILD_STATIC=no PREFIX=/usr LIBDIR=/usr/lib32 DESTDIR=$(pwd)/m32 install
+	mkdir -pv $PKG/usr/lib32
+	cp -a m32/usr/lib32/* $PKG/usr/lib32/
+}

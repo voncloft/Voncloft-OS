@@ -1,0 +1,16 @@
+# description	: Programs for displaying information about running processes
+# depends	: ncurses
+
+name=psmisc
+version=23.7
+release=1
+source="https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+}

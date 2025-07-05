@@ -1,0 +1,44 @@
+# description	: Programs for compressing and decompressing files
+
+name=bzip2
+version=1.0.8
+release=1
+source="https://www.sourceware.org/pub/bzip2/$name-$version.tar.gz
+	https://www.linuxfromscratch.org/patches/lfs/development/bzip2-$version-install_docs-1.patch"
+
+build() {
+	cd $name-$version
+	patch -Np1 -i ../bzip2-$version-install_docs-1.patch
+	sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
+	sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
+	
+	make -f Makefile-libbz2_so
+	make clean	
+	make
+	make PREFIX=$PKG/usr install
+
+	mkdir -pv $PKG/usr/lib
+	cp -av libbz2.so.* $PKG/usr/lib
+	ln -sv libbz2.so.1.0.8 $PKG/usr/lib/libbz2.so
+	
+	cp -v bzip2-shared $PKG/usr/bin/bzip2
+	for i in $PKG/usr/bin/{bzcat,bunzip2}; do
+  		ln -sfv bzip2 $i
+	done
+	#ln -sv bzip2 $PKG/usr/bin/bunzip2
+	#ln -sv bzip2 $PKG/usr/bin/bzcat
+
+	rm -fv $PKG/usr/lib/libbz2.a
+
+	make clean
+	sed -e "s/^CC=.*/CC=gcc -m32/" -i Makefile{,-libbz2_so}
+	make -f Makefile-libbz2_so
+	make libbz2.a
+
+	mkdir -pv $PKG/usr/lib32
+	install -Dm755 libbz2.so.1.0.8 $PKG/usr/lib32/libbz2.so.1.0.8
+	ln -sf libbz2.so.1.0.8 $PKG/usr/lib32/libbz2.so
+	ln -sf libbz2.so.1.0.8 $PKG/usr/lib32/libbz2.so.1
+	ln -sf libbz2.so.1.0.8 $PKG/usr/lib32/libbz2.so.1.0
+	install -Dm644 libbz2.a $PKG/usr/lib32/libbz2.a
+}

@@ -1,0 +1,35 @@
+# description	: Set of libraries that offers command-line editing and history capabilities
+# depends	: 
+
+name=readline
+version=8.3
+release=rc2
+source="https://ftp.gnu.org/gnu/$name/$name-$version-$release.tar.gz"
+
+build() {
+	cd $name-$version-$release
+
+	sed -i '/MV.*old/d' Makefile.in
+	sed -i '/{OLDSUFF}/c:' support/shlib-install
+	sed -i 's/-Wl,-rpath,[^ ]*//' support/shobj-conf
+	./configure --prefix=/usr    \
+            --disable-static \
+            --with-curses    \
+            --docdir=/usr/share/doc/readline-$version-$release
+
+	make SHLIB_LIBS="-lncursesw"
+	make SHLIB_LIBS="-lncurses" DESTDIR=$PKG install
+
+	make distclean
+	CC="gcc -m32" ./configure \
+    --host=i686-pc-linux-gnu      \
+    --prefix=/usr                 \
+    --libdir=/usr/lib32           \
+    --disable-static              \
+    --with-curses
+
+	make SHLIB_LIBS="-lncursesw"
+	make SHLIB_LIBS="-lncursesw" DESTDIR=$PWD/DESTDIR install
+	mkdir -pv $PKG/usr/lib32
+	cp -Rv DESTDIR/usr/lib32/* $PKG/usr/lib32
+}

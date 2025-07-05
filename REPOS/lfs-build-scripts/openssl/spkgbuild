@@ -1,0 +1,38 @@
+# description	: SSL certificates
+# depends	: 
+
+name=openssl
+version=3.5.0
+release=1
+source="https://github.com/openssl/openssl/releases/download/openssl-$version/openssl-$version.tar.gz"
+options="!checksum"
+build() {
+	cd $name-$version
+
+	./config --prefix=/usr         \
+         --openssldir=/etc/ssl \
+         --libdir=lib          \
+         shared                \
+         zlib-dynamic
+	make
+	sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
+	make DESTDIR=$PKG MANSUFFIX=ssl install
+	mv -v $PKG/usr/share/doc/openssl $PKG/usr/share/doc/openssl-$version
+
+	make distclean
+
+	
+
+	./config --prefix=/usr         \
+         --openssldir=/etc/ssl \
+         --libdir=lib32        \
+         shared                \
+         zlib-dynamic          \
+         linux-x86
+
+
+	make
+	mkdir -pv $PKG/usr/lib32
+	make DESTDIR=$PWD/DESTDIR install
+	cp -Rv DESTDIR/usr/lib32/* $PKG/usr/lib32
+}

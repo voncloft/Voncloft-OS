@@ -1,0 +1,19 @@
+# description	: Programs for manipulating text files
+# depends	: 
+
+name=gawk
+version=5.3.2
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	# ensure some unneeded files are not installed
+	sed -i 's/extras//' Makefile.in
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	ln -sv gawk.1 $PKG/usr/share/man/man1/awk.1
+}

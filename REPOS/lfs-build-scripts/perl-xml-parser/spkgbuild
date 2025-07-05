@@ -1,0 +1,14 @@
+# description	: Perl xml parser
+# depends	: 
+
+name=perl-xml-parser
+version=2.47
+release=1
+source="https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-$version.tar.gz"
+options="!checksum"
+build() {
+	cd *
+	perl Makefile.PL
+	make
+	make DESTDIR=$PKG install	
+}

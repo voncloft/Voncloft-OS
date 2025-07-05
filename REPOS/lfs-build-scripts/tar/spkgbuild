@@ -1,0 +1,19 @@
+# description	: An archiving program
+# depends	: acl attr
+
+name=tar
+version=1.35
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+options="!checksum"
+
+build() {
+	cd $name-$version
+
+	FORCE_UNSAFE_CONFIGURE=1  \
+	./configure --prefix=/usr 
+
+	make
+	make DESTDIR=$PKG install
+
+}

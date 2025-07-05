@@ -1,0 +1,29 @@
+# description	: A linker, an assembler, and other tools for handling object files
+# depends	: 
+
+name=binutils
+version=2.44
+release=1
+source="https://ftp.gnu.org/gnu/binutils/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	mkdir -v build
+	cd       build
+
+	../configure --prefix=/usr       \
+             --sysconfdir=/etc   \
+             --enable-ld=default \
+             --enable-plugins    \
+             --enable-shared     \
+             --disable-werror    \
+             --enable-64-bit-bfd \
+             --enable-new-dtags  \
+             --with-system-zlib  \
+             --enable-default-hash-style=gnu
+	make tooldir=/usr
+	make tooldir=/usr DESTDIR=$PKG install
+	rm -rfv $PKG/usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a \
+        $PKG/usr/share/doc/gprofng/
+}

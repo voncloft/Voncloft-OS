@@ -1,0 +1,14 @@
+# description	: lfs udev rules
+# depends	: 
+
+name=udev-lfs
+version=20230818
+release=1
+source="https://anduin.linuxfromscratch.org/LFS/udev-lfs-$version.tar.xz"
+options="!checksum"
+noextract="udev-lfs-20230818.tar.xz"
+build() {
+	tar -xvf udev-lfs-$version.tar.xz
+	mkdir -pv $PKG/udev-lfs-$version
+	make DESTDIR=$PKG -f udev-lfs-20230818/Makefile.lfs install
+}

@@ -1,0 +1,18 @@
+# description	: Simple text editor which aims to replace Pico, the default editor in the Pine package
+# depends	: 
+
+name=isl
+version=0.27
+release=1
+source="https://libisl.sourceforge.io/isl-$version.tar.xz"
+options="!checksum"
+build() {
+	cd $name-$version
+	./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/isl-$version
+	make
+	make DESTDIR=$PKG install
+	mkdir -pv $PKG/usr/share/gdb/auto-load/usr/lib	
+	mv -v $PKG/usr/lib/libisl*gdb.py $PKG/usr/share/gdb/auto-load/usr/lib
+}

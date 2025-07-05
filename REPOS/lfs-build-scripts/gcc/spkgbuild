@@ -1,0 +1,45 @@
+# description	: The GNU compiler collection, which includes the C and C++ compilers
+# depends	: 
+
+name=gcc
+version=15.1.0
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	sed -e '/m64=/s/lib64/lib/' \
+    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
+    -i.orig gcc/config/i386/t-linux64
+	
+	sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&\& TARGET_SSE)/' \
+      -i gcc/config/i386/i386.h
+
+	mkdir -v build
+	cd       build
+
+	mlist=m64,m32
+	../configure --prefix=/usr               \
+             LD=ld                       \
+             --enable-languages=c,c++    \
+             --enable-default-pie        \
+             --enable-default-ssp        \
+             --enable-host-pie           \
+             --enable-multilib           \
+             --with-multilib-list=$mlist \
+             --disable-bootstrap         \
+             --disable-fixincludes       \
+             --with-system-zlib
+	make
+	make -j1 DESTDIR=$PKG install
+
+	#mkdir $PKG/usr/lib
+	mkdir $PKG/usr/lib/bfd-plugins
+	ln -svr $PKG/usr/bin/cpp $PKG/usr/lib	
+	ln -sv gcc.1 $PKG/usr/share/man/man1/cc.1
+	ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/15.1.0/liblto_plugin.so \
+        $PKG/usr/lib/bfd-plugins/
+	mkdir -pv $PKG/usr/share/gdb/auto-load/usr/lib
+	mv -v $PKG/usr/lib/*gdb.py $PKG/usr/share/gdb/auto-load/usr/lib
+}

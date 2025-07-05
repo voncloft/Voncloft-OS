@@ -1,0 +1,15 @@
+# description	: Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible
+# depends	: python ninja python-setuptools
+
+name=meson
+version=1.8.2
+release=1
+source="https://github.com/mesonbuild/meson/releases/download/$version/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+	pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD
+	pip3 install --no-index --find-links dist meson --root=$PKG
+	install -vDm644 data/shell-completions/bash/meson $PKG/usr/share/bash-completion/completions/meson
+
+}

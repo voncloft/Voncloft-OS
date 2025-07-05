@@ -1,0 +1,22 @@
+# description	: Simple text editor which aims to replace Pico, the default editor in the Pine package
+# depends	: 
+
+name=expect
+version=5.45.4
+release=1
+source="https://prdownloads.sourceforge.net/expect/expect$version.tar.gz
+	https://www.linuxfromscratch.org/patches/lfs/development/expect-5.45.4-gcc15-1.patch"
+options="!checksum"
+build() {
+	cd $name$version
+	patch -Np1 -i $SRC/expect-5.45.4-gcc15-1.patch
+	./configure --prefix=/usr           \
+            --with-tcl=/usr/lib     \
+            --enable-shared         \
+            --disable-rpath         \
+            --mandir=/usr/share/man \
+            --with-tclinclude=/usr/include
+	make
+	make DESTDIR=$PKG install
+	ln -svf expect$version/libexpect$version.so $PKG/usr/lib
+}

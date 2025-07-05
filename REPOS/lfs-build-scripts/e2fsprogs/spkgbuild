@@ -1,0 +1,29 @@
+# description	: utilities for handling the ext2, ext3 and ext4 file system
+# depends	: bash bc
+
+name=e2fsprogs
+version=1.47.2
+release=1
+source="https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v$version/e2fsprogs-$version.tar.gz"
+options="!checksum"
+build() {
+	cd $name-$version
+
+	mkdir -v build
+	cd build
+
+	../configure --prefix=/usr       \
+             --sysconfdir=/etc   \
+             --enable-elf-shlibs \
+             --disable-libblkid  \
+             --disable-libuuid   \
+             --disable-uuidd     \
+             --disable-fsck
+	make
+	make DESTDIR=$PKG install
+	make DESTDIR=$PKG install-libs
+	rm -fv $PKG/usr/lib/{libcom_err,libe2p,libext2fs,libss}.a
+	gunzip -v $PKG/usr/share/info/libext2fs.info.gz
+	install-info --dir-file=$PKG/usr/share/info/dir $PKG/usr/share/info/libext2fs.info
+	sed 's/metadata_csum_seed,//' -i $PKG/etc/mke2fs.conf
+}

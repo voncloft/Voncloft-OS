@@ -1,0 +1,13 @@
+# description	: Tools and library to manipulate EFI variables
+# depends	: popt
+
+name=efivar
+version=39
+release=1
+source="https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz"
+
+build() {
+	cd $name-$version
+	make ENABLE_DOCS=0
+	make DESTDIR=$PKG install ENABLE_DOCS=0 LIBDIR=/usr/lib
+}

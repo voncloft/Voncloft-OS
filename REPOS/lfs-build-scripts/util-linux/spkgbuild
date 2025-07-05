@@ -1,0 +1,67 @@
+# description	: Utilities for handling file systems, consoles, partitions, and messages
+# depends	: 
+
+name=util-linux
+version=2.41.1
+release=1
+source="https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v$version/util-linux-$version.tar.xz"
+#source="https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v${version%.*}/util-linux-${version%.*}.tar.gz"
+options="!checksum"
+build() {
+	cd *
+
+	./configure --bindir=/usr/bin     \
+            --libdir=/usr/lib     \
+            --runstatedir=/run    \
+            --sbindir=/usr/sbin   \
+            --disable-chfn-chsh   \
+            --disable-login       \
+            --disable-nologin     \
+            --disable-su          \
+            --disable-setpriv     \
+            --disable-runuser     \
+            --disable-pylibmount  \
+            --disable-liblastlog2 \
+            --disable-static      \
+            --without-python      \
+            --without-systemd     \
+            --without-systemdsystemunitdir        \
+            ADJTIME_PATH=/var/lib/hwclock/adjtime \
+            --docdir=/usr/share/doc/util-linux-$version
+	
+	make
+	make DESTDIR=$PKG install
+
+	make distclean
+
+	mv /usr/bin/ncursesw6-config{,.tmp}
+
+	CC="gcc -m32" \
+./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
+            --host=i686-pc-linux-gnu \
+            --libdir=/usr/lib32      \
+            --runstatedir=/run       \
+            --sbindir=/usr/sbin      \
+            --docdir=/usr/share/doc/util-linux-$version \
+            --disable-chfn-chsh      \
+            --disable-login          \
+            --disable-nologin        \
+            --disable-su             \
+            --disable-setpriv        \
+            --disable-runuser        \
+            --disable-pylibmount     \
+            --disable-liblastlog2    \
+            --disable-static         \
+            --without-python         \
+            --without-systemd        \
+            --without-systemdsystemunitdir	
+
+	
+
+	mv /usr/bin/ncursesw6-config{.tmp,}
+	make
+	make DESTDIR=$PWD/DESTDIR install
+	mkdir $PKG/usr/lib32
+	cp -Rv DESTDIR/usr/lib32/* $PKG/usr/lib32
+}
+

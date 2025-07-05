@@ -1,0 +1,23 @@
+# description	: Zstandard is a real-time compression algorithm, providing high compression ratios.
+# depends	: zlib xz lz4
+
+name=zstd
+version=1.5.7
+release=1
+source="https://github.com/facebook/zstd/releases/download/v$version/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+
+	make prefix=/usr
+	make PREFIX=/usr DESTDIR=$PKG install
+	rm -v $PKG/usr/lib/libzstd.a
+
+	make clean
+	CC="gcc -m32" make prefix=/usr
+	make prefix=/usr DESTDIR=$PWD/DESTDIR install
+	mkdir -pv $PKG/usr/lib32
+	cp -Rv DESTDIR/usr/lib/* $PKG/usr/lib32/
+	sed -e "/^libdir/s/lib$/lib32/" -i $PKG/usr/lib32/pkgconfig/libzstd.pc
+
+}

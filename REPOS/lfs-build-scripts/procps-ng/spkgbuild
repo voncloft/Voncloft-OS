@@ -1,0 +1,19 @@
+# description	: Programs for monitoring processes
+# depends	: ncurses
+
+name=procps-ng
+version=4.0.5
+release=1
+source="https://sourceforge.net/projects/procps-ng/files/Production/$name-$version.tar.xz"
+
+build() {
+	cd *
+	./configure --prefix=/usr                           \
+            --docdir=/usr/share/doc/procps-ng-$version \
+            --disable-static                        \
+            --disable-kill                          \
+            --enable-watch8bit
+	make
+	make DESTDIR=$PKG install
+
+}

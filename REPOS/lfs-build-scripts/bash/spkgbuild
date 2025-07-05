@@ -1,0 +1,20 @@
+# description	: The Bourne-Again SHell
+# depends	: ncurses readline
+
+name=bash
+version=5.3
+release=rc2
+source="https://ftp.gnu.org/gnu/bash/bash-$version-$release.tar.gz"
+options="!checksum"
+
+build() {
+	cd $name-$version-$release
+
+	./configure --prefix=/usr             \
+            --without-bash-malloc     \
+            --with-installed-readline \
+            --docdir=/usr/share/doc/bash-$version-$release
+	make
+	make DESTDIR=$PKG install
+
+}

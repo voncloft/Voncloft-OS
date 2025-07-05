@@ -1,0 +1,14 @@
+# description	: An arbitrary precision numeric processing language
+# depends	: readline
+
+name=bc
+version=7.0.3
+release=1
+source="https://ftp.gnu.org/gnu/bc/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+	CC='gcc -std=c99' ./configure --prefix=/usr -G -O3 -r
+	make
+	make DESTDIR=$PKG install
+}

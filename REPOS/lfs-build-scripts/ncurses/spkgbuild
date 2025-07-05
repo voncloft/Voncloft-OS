@@ -1,0 +1,58 @@
+# description	: Libraries for terminal-independent handling of character screens
+# depends	: gcc
+
+name=ncurses
+version=6.5
+release=20250531
+source="https://invisible-mirror.net/archives/ncurses/current/ncurses-$version-$release.tgz"
+
+build() {
+	cd $name-$version-$release
+
+	./configure --prefix=/usr           \
+            --mandir=/usr/share/man \
+            --with-shared           \
+            --without-debug         \
+            --without-normal        \
+            --with-cxx-shared       \
+            --enable-pc-files       \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig
+	make
+	make DESTDIR=$PKG install
+	sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+    -i $PKG/usr/include/curses.h
+        
+	for lib in ncurses form panel menu ; do
+	    ln -sfv lib${lib}w.so /usr/lib/lib${lib}.so
+	    ln -sfv ${lib}w.pc        $PKG/usr/lib/pkgconfig/${lib}.pc
+	done
+
+	ln -sfv libncurses.so      $PKG/usr/lib/libcurses.so
+	
+	make distclean
+	CC="gcc -m32" CXX="g++ -m32" \
+./configure --prefix=/usr           \
+            --host=i686-pc-linux-gnu \
+            --libdir=/usr/lib32     \
+            --mandir=/usr/share/man \
+            --with-shared           \
+            --without-debug         \
+            --without-normal        \
+            --with-cxx-shared       \
+            --enable-pc-files       \
+            --with-pkg-config-libdir=/usr/lib32/pkgconfig
+
+	make
+	make DESTDIR=$PWD/DESTDIR install
+	mkdir -pv DESTDIR/usr/lib32/pkgconfig
+	for lib in ncurses form panel menu ; do
+    		rm -vf                    DESTDIR/usr/lib32/lib${lib}.so
+    		echo "INPUT(-l${lib}w)" > DESTDIR/usr/lib32/lib${lib}.so
+    		ln -svf ${lib}w.pc        DESTDIR/usr/lib32/pkgconfig/$lib.pc
+	done
+	rm -vf                     DESTDIR/usr/lib32/libcursesw.so
+	echo "INPUT(-lncursesw)" > DESTDIR/usr/lib32/libcursesw.so
+	ln -sfv libncurses.so      DESTDIR/usr/lib32/libcurses.so
+	mkdir $PKG/usr/lib32
+	cp -Rv DESTDIR/usr/lib32/* $PKG/usr/lib32
+}

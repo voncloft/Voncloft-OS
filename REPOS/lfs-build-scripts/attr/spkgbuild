@@ -1,0 +1,32 @@
+# description	: Utilities to administer the extended attributes on filesystem objects
+
+name=attr
+version=2.5.2
+release=1
+source="https://download.savannah.gnu.org/releases/attr/attr-$version.tar.gz"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr     \
+            --disable-static  \
+            --sysconfdir=/etc \
+            --docdir=/usr/share/doc/attr-$version
+
+	make
+	make DESTDIR=$PKG install
+
+	make distclean
+
+	CC="gcc -m32" ./configure \
+    --prefix=/usr         \
+    --disable-static      \
+    --sysconfdir=/etc     \
+    --libdir=/usr/lib32   \
+    --host=i686-pc-linux-gnu
+
+	make
+	make DESTDIR=$PWD/DESTDIR install
+	mkdir -pv $PKG/usr/lib32
+	cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+}

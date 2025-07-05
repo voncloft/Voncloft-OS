@@ -1,0 +1,32 @@
+# description	: utilities and libraries for handling ELF files
+
+name=elfutils
+version=0.193
+release=1
+source="https://sourceware.org/ftp/elfutils/0.193/elfutils-$version.tar.bz2"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr        \
+            --disable-debuginfod \
+            --enable-libdebuginfod=dummy
+	make
+	make DESTDIR=$PKG -C libelf install
+	install -vm644 config/libelf.pc $PKG/usr/lib/pkgconfig
+	rm $PKG/usr/lib/libelf.a
+
+	make distclean
+	CC="gcc -m32" CXX="g++ -m32" ./configure \
+    --host=i686-pc-linux-gnu \
+    --prefix=/usr            \
+    --libdir=/usr/lib32      \
+    --disable-debuginfod     \
+    --enable-libdebuginfod=dummy
+	
+	make
+	make DESTDIR=$PWD/DESTDIR -C libelf install
+	install -vDm644 config/libelf.pc DESTDIR/usr/lib32/pkgconfig/libelf.pc
+	mkdir -pv $PKG/usr/lib32
+	cp -Rv DESTDIR/usr/lib32/* $PKG/usr/lib32
+}

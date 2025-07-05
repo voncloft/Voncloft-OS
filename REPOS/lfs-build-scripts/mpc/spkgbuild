@@ -1,0 +1,16 @@
+# description	: Minimalist command line interface to MPD
+# depends	: 
+
+name=mpc
+version=1.3.1
+release=1
+source="https://ftp.gnu.org/gnu/mpc/mpc-$version.tar.gz"
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/mpc-$version
+	make
+	make DESTDIR=$PKG install
+}

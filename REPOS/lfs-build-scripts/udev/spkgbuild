@@ -1,0 +1,91 @@
+# description	: dynamic creation of device nodes
+# depends	: 
+
+name=udev
+version=257.6
+release=1
+source="https://github.com/systemd/systemd/archive/v257.6/systemd-$version.tar.gz
+	https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz"
+options="!checksum"
+build() {
+	cd systemd-$version
+	sed -e 's/GROUP="render"/GROUP="video"/' \
+    -e 's/GROUP="sgx", //'               \
+    -i rules.d/50-udev-default.rules.in
+
+	sed -i '/systemd-sysctl/s/^/#/' rules.d/99-systemd.rules.in
+
+	sed -e '/NETWORK_DIRS/s/systemd/udev/' \
+    -i src/libsystemd/sd-network/network-util.h
+
+	mkdir -p build
+cd       build
+
+meson setup ..                  \
+      --prefix=/usr             \
+      --buildtype=release       \
+      -D mode=release           \
+      -D dev-kvm-mode=0660      \
+      -D link-udev-shared=false \
+      -D logind=false           \
+      -D vconsole=false
+
+	udev_helpers=$(grep "'name' :" ../src/udev/meson.build | \
+                      awk '{print $3}' | tr -d ",'" | grep -v 'udevadm')
+
+
+
+
+
+ninja udevadm systemd-hwdb                                           \
+      $(ninja -n | grep -Eo '(src/(lib)?udev|rules.d|hwdb.d)/[^ ]*') \
+      $(realpath libudev.so --relative-to .)                         \
+      $udev_helpers
+	mkdir -pv $PKG/usr/bin
+	mkdir -pv $PKG/usr/sbin
+	mkdir -pv $PKG/usr/include
+
+	install -vm755 -d {$PKG/usr/lib,$PKG/etc}/udev/{hwdb.d,rules.d,network}
+install -vm755 -d $PKG/usr/{lib,share}/pkgconfig
+install -vm755 udevadm                             $PKG/usr/bin/
+install -vm755 systemd-hwdb                        $PKG/usr/bin/udev-hwdb
+ln      -svfn  ../bin/udevadm                      $PKG/usr/sbin/udevd
+cp      -av    libudev.so{,*[0-9]}                 $PKG/usr/lib/
+install -vm644 ../src/libudev/libudev.h            $PKG/usr/include/
+install -vm644 src/libudev/*.pc                    $PKG/usr/lib/pkgconfig/
+install -vm644 src/udev/*.pc                       $PKG/usr/share/pkgconfig/
+install -vm644 ../src/udev/udev.conf               $PKG/etc/udev/
+install -vm644 rules.d/* ../rules.d/README         $PKG/usr/lib/udev/rules.d/
+install -vm644 $(find ../rules.d/*.rules \
+                      -not -name '*power-switch*') $PKG/usr/lib/udev/rules.d/
+install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README} $PKG/usr/lib/udev/hwdb.d/
+install -vm755 $udev_helpers                       $PKG/usr/lib/udev
+install -vm644 ../network/99-default.link          $PKG/usr/lib/udev/network
+
+	cd ..
+	rm -rfv build
+	mkdir build
+	cd build
+	PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+CC="gcc -m32 -march=i686"              \
+CXX="g++ -m32 -march=i686"             \
+LANG=en_US.UTF-8                       \
+meson setup \
+      --prefix=/usr                 \
+      --buildtype=release           \
+      -Dmode=release                \
+      -Ddev-kvm-mode=0660           \
+      -Dlink-udev-shared=false      \
+      -Dlogind=false                \
+      -Dvconsole=false              \
+      ..
+ninja \
+      $(grep -o -E "^build (src/libudev|src/udev)[^:]*" \
+        build.ninja | awk '{ print $2 }')                              \
+      $(realpath libudev.so --relative-to .)
+mkdir -pv $PKG/usr/lib32/pkgconfig
+cp -av libudev.so{,*[0-9]} $PKG/usr/lib32/
+sed -e "s;/usr/lib;&32;g" src/libudev/libudev.pc > $PKG/usr/lib32/pkgconfig/libudev.pc
+
+
+}

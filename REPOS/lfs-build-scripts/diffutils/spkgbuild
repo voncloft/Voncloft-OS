@@ -1,0 +1,16 @@
+# description	: Programs that show the differences between files or directories
+# depends	: bash
+
+name=diffutils
+version=3.12
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+}

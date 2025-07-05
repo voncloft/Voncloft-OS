@@ -1,0 +1,22 @@
+# description	: Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
+# depends	: 
+
+name=libcap
+version=2.76
+release=1
+source="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+	sed -i '/install -m.*STA/d' libcap/Makefile
+	make prefix=/usr lib=lib
+	make DESTDIR=$PKG prefix=/usr lib=lib install
+
+	make distclean
+	make CC="gcc -m32 -march=i686"
+	mkdir -pv $PKG/usr/lib32
+	make CC="gcc -m32 -march=i686" lib=lib32 prefix=$PWD/DESTDIR/usr -C libcap install
+	cp -Rv DESTDIR/usr/lib32/* $PKG/usr/lib32
+	sed -e "s|^libdir=.*|libdir=/usr/lib32|" -i $PKG/usr/lib32/pkgconfig/lib{cap,psx}.pc
+	chmod -v 755 $PKG/usr/lib32/libcap.so.2.76
+}
