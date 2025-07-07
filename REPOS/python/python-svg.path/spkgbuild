@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-svg.path
-version=6.4
+version=7.0
 release=2
 
 source="https://github.com/regebro/svg.path/archive/refs/tags/a$version.tar.gz"
