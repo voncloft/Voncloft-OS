@@ -2,7 +2,7 @@
 # depends : tigervnc libxrandr fuse2 fuse3 fdk-aac ffmpeg imlib2
 
 name=xrdp
-version=0.10.4
+version=0.10.4.1
 release=2
 
 source="https://github.com/neutrinolabs/$name/releases/download/v${version}/$name-$version.tar.gz"

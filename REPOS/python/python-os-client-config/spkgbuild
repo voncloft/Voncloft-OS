@@ -2,7 +2,7 @@
 # depends : python-openstacksdk
 
 name=python-os-client-config
-version=2.1.0
+version=2.3.0
 release=4
 
 source="https://github.com/openstack/os-client-config/archive/refs/tags/e$version.tar.gz"

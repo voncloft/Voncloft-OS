@@ -2,7 +2,7 @@
 # depends	: perl curl openssl python
 
 name=git
-version=2.50.0
+version=2.50.1
 release=1
 source="https://github.com/git/git/archive/v${version}.tar.gz"
 options="!checksum"
