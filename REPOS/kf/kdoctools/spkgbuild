@@ -2,7 +2,7 @@
 # depends : kde-deps karchive ki18n
 
 name=kdoctools
-version=6.15.0
+version=6.16.0
 release=1
 
 source="https://download.kde.org/stable/frameworks/${version%.*}/$name-$version.tar.xz"
