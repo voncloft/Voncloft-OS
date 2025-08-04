@@ -2,7 +2,7 @@
 # depends : sane python
 
 name=python-sane
-version=2.9.1
+version=2.9.2
 release=6
 
 source="https://github.com/python-pillow/Sane/archive/refs/tags/v$version.tar.gz"

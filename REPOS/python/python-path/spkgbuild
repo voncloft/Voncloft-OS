@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-path
-version=17.1.0
+version=17.1.1
 release=1
 
 source="https://github.com/jaraco/path/archive/refs/tags/v$version.tar.gz"
