@@ -467,9 +467,9 @@ f:b4a4d287513091e7e66eca5853101a93:grub/grub.default
 f:65a20e17cf0eaf7ed1e009d670329562:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:3c08cf3732cb2ac939e8edea63dc1a30:bspwm/spkgbuild
-f:07d98bed4abc161a9d45cac9a9be2c63:systemd/CHANGELOG
+f:f99a03e3eda22321ed60f11c1d4cb098:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:8325119bc55af2fca185e0ac4acba764:systemd/spkgbuild
+f:3335b04b020e11882001ac0a81d0a3f2:systemd/spkgbuild
 f:ece56886fa95c95d2b62d23f00920029:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
 f:c8999a29e48618d654c559af11ecff81:lm_sensors/spkgbuild
@@ -950,8 +950,8 @@ f:9dbbb05c50025586c9cce35468dde9c7:jemalloc/CHANGELOG
 f:f1ca8a404836fcc0a43cec5a0acd65a6:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:5ea859eb47f98dbaf1909bf6a150f9e4:mercurial/CHANGELOG
-f:cc098d3bde6d6cd8341152ea2ec66007:mercurial/spkgbuild
+f:138359c29f79c11f82a721279133c3ae:mercurial/CHANGELOG
+f:59756ecd22f41b977e8d8488ab394ce8:mercurial/spkgbuild
 f:8179d62708938e5ea94a6ff77b70b63f:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:8fce0ef8aef888c5a59e7c03753504d4:rxvt-unicode/spkgbuild
@@ -1128,8 +1128,8 @@ f:914b44bc01750ec7eedd5af2d538c3f6:yaml-cpp/spkgbuild
 f:62719d87ca1a4b40beb8caf018557038:links/CHANGELOG
 f:e310272e0f6b9cb9b1dc5e127ab4e287:links/spkgbuild
 f:08aa3d9bf912a900bbfa5e7947b2eaf7:galculator/spkgbuild
-f:9551fad9094822eda0cea2c6dd931d2e:qalculate/CHANGELOG
-f:b57187ab221eb563d2cf48b2dcd79361:qalculate/spkgbuild
+f:f66afa6f1bab8b0b539a6cc0b75a53ad:qalculate/CHANGELOG
+f:86640e91aaee611cf6f7175e10502bad:qalculate/spkgbuild
 f:32b12b2331b8d3442f9ceaad39534e37:gc/CHANGELOG
 f:936796b773e0ecb2398909f0c5b0c529:gc/spkgbuild
 f:45f13b305d240b2a298e9d1a4353049e:bash-completion/CHANGELOG
@@ -1194,8 +1194,8 @@ f:63156f47268cf2ea1bd7b2ba3ab9d38f:hyphen/spkgbuild
 f:7269eeb7fe5976be5ac8c1d7ddbc9eac:cifs-utils/CHANGELOG
 f:7c82d255d1d091de2e77c7f2f11e0698:cifs-utils/spkgbuild
 f:faf2a0d66b008f0270aeb68dbdf0757f:pypanel/spkgbuild
-f:b1261fb2866f0ed2054916df0a3ed4db:iproute2/CHANGELOG
-f:8cc0799ccb98da0c6c7e45912458ab0d:iproute2/spkgbuild
+f:7bc3735cfdbdf41d00feb9138e1f74e1:iproute2/CHANGELOG
+f:05f3ef52e48a6f2dec2875e10f8b0426:iproute2/spkgbuild
 f:4a434021a1b1d4c4d17ce27bf4bd8997:psmisc/CHANGELOG
 f:23c0c47a8a752a477f5a366d1a10d005:psmisc/spkgbuild
 f:31043aeb69dc0973664cf6d197bf27cc:wgetpaste/spkgbuild
@@ -1230,8 +1230,8 @@ f:aa00f2a0cc35c6ce9a115053535b1fab:lmdb/spkgbuild
 f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:e485d74f524820e693f8a53c0cbcdc02:zsh/CHANGELOG
 f:23fdfe608891c3828582a7ec3f79023f:zsh/spkgbuild
-f:8b75e9c74b6df8ef8860b93588604105:redis/CHANGELOG
-f:497dbf293f14a4ecec3aa231fd6af75c:redis/spkgbuild
+f:b75c57913f90b49d999134fcd3ab60d7:redis/CHANGELOG
+f:12567b49fda23055586d5b51f7bb27cc:redis/spkgbuild
 f:61021c497dfec4de20c7d8e57cadaeee:ntp/post-install.sh
 f:bc12af08e46ffd1d1dabc90858ccf935:ntp/post-upgrade.sh
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh
@@ -1364,8 +1364,8 @@ f:6dcfec7992ae6d7fa451317575ff098b:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
 f:c223a474cbefddf23d78219e22ccae74:man-pages/CHANGELOG
 f:99bc5749425ebe27e60e4c3b45f70a78:man-pages/spkgbuild
-f:c238e41ae29c333bd2d0654bba9ef294:dunst/CHANGELOG
-f:ff38149859866f96e99131f2f4f15dec:dunst/spkgbuild
+f:0c93ff332e6b4f9cfd592cacb9668577:dunst/CHANGELOG
+f:feb7f1ef4300b0942176e74a4c901a6b:dunst/spkgbuild
 f:f3ec9f557f82590fc80b330fca4bb97f:lua/CHANGELOG
 f:ed1af2febbb4f4b63e3fc1cd5a4c2414:lua/spkgbuild
 f:deee148134a3fede4595152e34d8cdc7:lua/lua.pc

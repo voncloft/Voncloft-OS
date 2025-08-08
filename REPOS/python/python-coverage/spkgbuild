@@ -2,7 +2,7 @@
 # depends : python-setuptools
 
 name=python-coverage
-version=7.10.1
+version=7.10.2
 release=1
 
 source="https://github.com/nedbat/coveragepy/archive/refs/tags/$version.tar.gz"

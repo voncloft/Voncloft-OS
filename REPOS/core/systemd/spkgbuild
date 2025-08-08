@@ -2,7 +2,7 @@
 # depends : 
 
 name=systemd
-version=257.7
+version=257.8
 release=1
 
 source="https://github.com/systemd/systemd/archive/v$version/$name-$version.tar.gz

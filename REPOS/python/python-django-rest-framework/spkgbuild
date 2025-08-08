@@ -3,7 +3,7 @@
 # bootstrap without python-django-filter, as it has a checkdepends on
 
 name=python-django-rest-framework
-version=3.16.0
+version=3.16.1
 release=3
 
 source="https://github.com/encode/django-rest-framework/archive/refs/tags/$version.tar.gz"

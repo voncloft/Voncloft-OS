@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-interface python-zope-component
 
 name=python-zope-annotation
-version=5.1
+version=5.2
 release=4
 
 source="https://github.com/zopefoundation/zope.annotation/archive/refs/tags/$version.tar.gz"
