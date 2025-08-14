@@ -41,8 +41,8 @@ d:git
 d:openssl1.0
 d:dhcp
 d:libnetfilter_conntrack
-f:4b2d57f5ab6494fb7d3c5097fb543ff8:yt-dlp/CHANGELOG
-f:36797aa546a013499f00d798b0fc4b7e:yt-dlp/spkgbuild
+f:cfd673f04cf5e40ebdafa5b225ea43db:yt-dlp/CHANGELOG
+f:556805dfd04b1fd16095f59c65c80232:yt-dlp/spkgbuild
 f:29547b2cd5195a0b93a28e2ffaaae3f3:openssh/post-install.sh
 f:7ce9fd15d27168e3f6549486f7883513:openssh/CHANGELOG
 f:6323af6f0662d0fb596d663f2e04c733:openssh/post-upgrade.sh
@@ -143,9 +143,9 @@ f:463f717515ab0f27e22f9a6166063f1e:wpa_supplicant/rc.wpa
 f:64d22c68fd52aaea378dde9d844872a2:wpa_supplicant/conf
 f:c2de1bb82eae15971a980a89da8f3017:wpa_supplicant/spkgbuild
 f:6d4f130ffb0b4840eb6b8d890e2be7c0:wpa_supplicant/run
-f:022b2f0f4338dae6fd52a80b24183a4a:nmap/CHANGELOG
+f:8584b1c39463fac312df9e55f7d2b1b5:nmap/CHANGELOG
 f:b05ef6321275c531ca6074bb082e23f3:nmap/ssl.patch
-f:de5985e9dbb4b3d9148d0508955c1faa:nmap/spkgbuild
+f:696580b665df8f526e283154e45dbe79:nmap/spkgbuild
 f:37673d9d69b917269217f9a676a653ce:wireshark/CHANGELOG
 f:6736b07aea5c8a1239a964908036ff95:wireshark/pre-install.sh
 f:2244eff70c4482ce925cb94a0a568212:wireshark/override

@@ -2,7 +2,7 @@
 # depends : geoip libxcrypt mailcap openssl pcre zlib
 
 name=nginx
-version=1.29.0
+version=1.29.1
 release=1
 
 source="https://$name.org/download/$name-$version.tar.gz"

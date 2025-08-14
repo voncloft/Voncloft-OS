@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-kiwisolver
-version=1.4.8
+version=1.4.9
 release=3
 
 source="https://github.com/nucleic/kiwi/archive/refs/tags/r$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : libpcap lua pcre liblinear
 
 name=nmap
-version=7.97
+version=7.98
 release=1
 
 source="https://nmap.org/dist/$name-$version.tar.bz2
