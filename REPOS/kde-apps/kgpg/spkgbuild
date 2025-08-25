@@ -2,7 +2,7 @@
 # depends : kde-deps
 
 name=kgpg
-version=25.04.3
+version=25.08.0
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"

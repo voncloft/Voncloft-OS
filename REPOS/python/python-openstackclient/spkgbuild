@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-babel python-cliff python-keystoneclient
 
 name=python-openstackclient
-version=8.1.0
+version=8.2.0
 release=3
 
 source="https://github.com/openstack/python-openstackclient/archive/refs/tags/e$version.tar.gz"
