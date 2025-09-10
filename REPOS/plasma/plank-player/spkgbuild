@@ -2,7 +2,7 @@
 # depends : kde-deps hicolor-icon-theme ki18n kirigami2 qt5-graphicaleffects qt5-multimedia
 
 name=plank-player
-version=6.4.4
+version=6.4.5
 release=1
 
 source="https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz"

@@ -2,7 +2,7 @@
 # depends : cups fontconfig freetype2 libjpeg-turbo libpng libtiff openjpeg
 
 name=ghostscript
-version=10.03.1
+version=10.06.0
 release=1
 _ver=9561
 source="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$_ver/$name-$version.tar.xz
