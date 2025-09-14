@@ -2,7 +2,7 @@
   # depends : python
 
 name=python-pyparsing
-version=3.2.3
+version=3.2.4
 release=3
 
 source="https://github.com/pyparsing/pyparsing/archive/refs/tags/pyparsing_$version.tar.gz"

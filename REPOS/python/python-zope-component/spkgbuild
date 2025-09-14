@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-deferredimport python-zope-deprecation
 
 name=python-zope-component
-version=6.1
+version=7.0
 release=3
 
 source="https://github.com/zopefoundation/zope.component/archive/refs/tags/$version.tar.gz"

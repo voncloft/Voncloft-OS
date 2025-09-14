@@ -2,7 +2,7 @@
 # depends : kde-deps kauth kdbusaddons ki18n knotifications
 
 name=kde-inotify-survey
-version=25.08.0
+version=25.08.1
 release=1
 
 source="https://download.kde.org/stable/release-service/$version/src/$name-$version.tar.xz"

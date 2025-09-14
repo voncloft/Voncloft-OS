@@ -2,7 +2,7 @@
 # depends : python-setuptools python-zope-interface python-zope-event
 
 name=python-zope-schema
-version=7.1
+version=8.0
 release=1
 
 source="https://github.com/zopefoundation/zope.schema/archive/refs/tags/$version.tar.gz"
