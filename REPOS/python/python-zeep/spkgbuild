@@ -2,7 +2,7 @@
 # depends : python-appdirs python-attrs python-cached-property python-defusedxml
 
 name=python-zeep
-version=4.3.1
+version=4.3.2
 release=3
 
 source="https://github.com/mvantellingen/python-zeep/archive/refs/tags/$version.tar.gz"
