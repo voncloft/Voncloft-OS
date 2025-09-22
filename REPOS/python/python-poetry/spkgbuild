@@ -2,7 +2,7 @@
 # depends : ${_deps[@]/#/python-}
 
 name=python-poetry
-version=2.2.0
+version=2.2.1
 release=1
 
 source="https://github.com/sdispater/poetry/archive/refs/tags/a$version.tar.gz"
