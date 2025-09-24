@@ -2,7 +2,7 @@
 # depends : python python-jinja
 
 name=python-edalize
-version=0.6.1
+version=0.6.2
 release=1
 
 source="https://github.com/olofk/edalize/archive/refs/tags/v$version.tar.gz"
