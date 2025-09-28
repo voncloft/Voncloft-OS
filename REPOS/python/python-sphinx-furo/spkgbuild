@@ -2,7 +2,7 @@
 # depends : python-sphinx python-beautifulsoup4
 
 name=python-sphinx-furo
-version=2025.07.19
+version=2025.09.25
 release=3
 
 source="https://github.com/pradyunsg/furo/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends	: libxcb xcb-util-keysyms xcb-util
 
 name=sxhkd
-version=0.6.2
+version=0.6.3
 release=1
 source="https://github.com/baskerville/sxhkd/archive/$version/$name-$version.tar.gz"
 
