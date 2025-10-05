@@ -2,7 +2,7 @@
 # depends : python-migen python-litex python-yaml
 
 name=python-litedram
-version=2025.04
+version=2025.08
 release=1
 
 source="https://github.com/enjoy-digital/litedram/archive/refs/tags/$version.tar.gz"

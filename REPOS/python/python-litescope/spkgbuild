@@ -2,7 +2,7 @@
 # depends : python-migen python-litex
 
 name=python-litescope
-version=2025.04
+version=2025.08
 release=1
 
 source="https://github.com/enjoy-digital/litescope/archive/refs/tags/$version.tar.gz"

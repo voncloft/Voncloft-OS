@@ -519,8 +519,8 @@ f:80e55a5e3a46326aa47559fe6af368bb:imagemagick6/spkgbuild
 f:48692f14c80b4cee76bf409c7d389450:fbpanel/spkgbuild
 f:2e8300b78427bb60ef8d039d9fccd524:pcre2/CHANGELOG
 f:4639d93f84211933d49a0e7c39f2efe5:pcre2/spkgbuild
-f:1f01d7e5086ad702eaaf3a1b9c681408:gegl/CHANGELOG
-f:0d08afb40111f287ab6cdb1b25c1cafb:gegl/spkgbuild
+f:90a1b99bf31a8b5271bc6ca1d17e2250:gegl/CHANGELOG
+f:300b037321ec13e6a9e3f581e92b9a83:gegl/spkgbuild
 f:98a6d8e81d5bc1c721c7782ed473962b:gmp/CHANGELOG
 f:f475d86709dadc86bdbfe03be7d14e04:gmp/spkgbuild
 f:fe169ae27610baad62a0443e057a40f2:os-prober/CHANGELOG
@@ -663,10 +663,10 @@ f:d678006a4e87d73a38e425bcde86a3aa:lz4/CHANGELOG
 f:34789927a64e6bdfd8e4aaaa4a967d03:lz4/spkgbuild
 f:4c19133edafa7881c1c62a26bb00fa03:xarchiver/spkgbuild
 f:c56d017e03c3c94f17119e39f82521c2:opus/spkgbuild
-f:f495049573046875768283925defc6ae:nss/CHANGELOG
+f:bbc0ffdae690da1bf6237e50f16fa6b7:nss/CHANGELOG
 f:6c1f2e50100a73543d841efb401b57a5:nss/override
 f:7b66031f27586e37dafc08cfb6ff105d:nss/nss-standalone.patch
-f:adf0e356bee973f76ba3ecbcbdde944c:nss/spkgbuild
+f:2c68437fa37742e64b8b550732dee8e8:nss/spkgbuild
 f:8bc83aa05179429d031aec0c45013f5b:linux-desktop/extract.sh
 f:6f0f530adbe1f4d982c017270087eaf2:linux-desktop/post-install.sh
 f:6c3661b4f18287e6371a4b4177bb743d:linux-desktop/CHANGELOG
@@ -818,8 +818,8 @@ f:23b759ad8260fea36014446fb3239f0c:acpi/CHANGELOG
 f:e563d85f949dd9632aeaa991b7eebae2:acpi/spkgbuild
 f:431a87287cbc9fc25e69a8a4bb2ab5e4:lcms2/CHANGELOG
 f:b8b1c6904e11197f3c8cf729fcd8ca5c:lcms2/spkgbuild
-f:7035ab4b404fd5f57b00035cf8ab3369:scons/CHANGELOG
-f:3702cdd62ac3010316f8b9cbb98f7942:scons/spkgbuild
+f:0513c9c9874538e6338ef28e259df84e:scons/CHANGELOG
+f:8f9c6158b25d559e10f63a44f4084e23:scons/spkgbuild
 f:e960073bb1102ec44234bdd6f7ca645f:help2man/CHANGELOG
 f:f32cb638610bd8c77c40bcfaa75c8b7a:help2man/spkgbuild
 f:a76713ba377493aaf711b9b6052920b2:numactl/CHANGELOG
@@ -1232,8 +1232,8 @@ f:aa00f2a0cc35c6ce9a115053535b1fab:lmdb/spkgbuild
 f:16281798e9d7e95ab09cf94a67820613:zsh/post-install.sh
 f:e485d74f524820e693f8a53c0cbcdc02:zsh/CHANGELOG
 f:23fdfe608891c3828582a7ec3f79023f:zsh/spkgbuild
-f:48e55c16e5e9f3587ef96418f011de61:redis/CHANGELOG
-f:d43d5f893afdea68e9dd1d486fae61a4:redis/spkgbuild
+f:902db4d2d1c9d80532b56439fe05646b:redis/CHANGELOG
+f:2e3f3de5e4cea634c798ff4bec91f4ad:redis/spkgbuild
 f:61021c497dfec4de20c7d8e57cadaeee:ntp/post-install.sh
 f:bc12af08e46ffd1d1dabc90858ccf935:ntp/post-upgrade.sh
 f:25589872f9890126aaa26c26ad6807aa:ntp/pre-install.sh
@@ -1436,5 +1436,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:279095de8cb45b40b6048e69ddb35df7:hugo/CHANGELOG
-f:22ee31f40210db8377053b77a292fcc2:hugo/spkgbuild
+f:a3eb3a7214e90fb31369a1fdc9a45d63:hugo/CHANGELOG
+f:84962d6a02a21f806d63d25674848c57:hugo/spkgbuild
