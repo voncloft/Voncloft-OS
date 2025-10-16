@@ -2,7 +2,7 @@
 # depends : python python-aiohttp python-botocore python-wrapt python-aioitertools
 
 name=python-aiobotocore
-version=2.24.2
+version=2.25.0
 release=1
 
 source="https://github.com/aio-libs/aiobotocore/archive/refs/tags/$version.tar.gz"

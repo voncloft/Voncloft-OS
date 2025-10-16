@@ -2,7 +2,7 @@
 # depends : python python-yaml python-six python-aws-sam-translator
 
 name=python-cfn-lint
-version=1.40.0
+version=1.40.2
 release=1
 
 source="https://github.com/aws-cloudformation/cfn-lint/archive/refs/tags/v$version.tar.gz"

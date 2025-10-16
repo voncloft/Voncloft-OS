@@ -2,7 +2,7 @@
 # depends : python-requests
 
 name=python-braintree
-version=4.38.0
+version=4.39.0
 release=1
 
 source="https://github.com/braintree/braintree_python/archive/refs/tags/$version.tar.gz"

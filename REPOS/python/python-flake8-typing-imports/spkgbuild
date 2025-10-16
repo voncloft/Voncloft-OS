@@ -2,7 +2,7 @@
 # depends : flake8
 
 name=python-flake8-typing-imports
-version=1.16.0
+version=1.17.0
 release=1
 
 source="https://github.com/asottile/flake8-typing-imports/archive/refs/tags/v$version.tar.gz"

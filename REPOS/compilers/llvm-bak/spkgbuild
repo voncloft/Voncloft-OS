@@ -2,7 +2,7 @@
 # depends	: cmake libffi python ninja libxml2
 
 name=llvm
-version=21.1.2
+version=21.1.3
 release=1
 source="https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
 	llvm-config.h"

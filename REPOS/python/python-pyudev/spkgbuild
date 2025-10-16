@@ -2,7 +2,7 @@
 # depends : python-six systemd
 
 name=python-pyudev
-version=0.24.3
+version=0.24.4
 release=5
 
 source="https://github.com/pyudev/pyudev/archive/refs/tags/v$version.tar.gz"
