@@ -1,7 +1,7 @@
 # description	: New generation of the Perl Compatible Regular Expression libraries
 
 name=pcre2
-version=10.46
+version=10.47
 release=1
 source="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-$version/pcre2-$version.tar.bz2"
 
