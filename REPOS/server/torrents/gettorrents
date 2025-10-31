@@ -1,0 +1,46 @@
+#!/bin/bash
+# torrent.sh - Push WORKING magnet with LIVE trackers → Deluge downloads
+[ -z "$1" ] && exit 1
+
+QUERY=$(printf %s "$1" | sed 's/ /+/g')
+echo $QUERY
+JSON=$(wget -qO- "https://apibay.org/q.php?q=$QUERY")
+
+INFOHASH=$(echo "$JSON" | grep -o '"info_hash":"[A-F0-9]\{40\}' | head -1 | cut -d'"' -f4)
+[ -z "$INFOHASH" ] && { echo "No torrent found for: $1"; exit 1; }
+
+NAME=$(echo "$JSON" | grep -o '"name":"[^"]*' | head -1 | cut -d'"' -f4)
+
+# LIVE TRACKERS — NO SPACES BEFORE QUOTES
+TRACKERS=(
+"udp://tracker.opentrackr.org:1337/announce"
+"udp://open.tracker.cl:1337/announce"
+"udp://tracker.torrent.eu.org:451/announce"
+"udp://open.stealth.si:80/announce"
+"udp://tracker.moeking.me:6969/announce"
+"udp://exodus.desync.com:6969/announce"
+"udp://tracker.tiny-vps.com:6969/announce"
+"udp://p4p.arenabg.com:1337/announce"
+"udp://explodie.org:6969/announce"
+"udp://tracker1.bt.moack.co.kr:80/announce"
+"udp://tracker.theoks.net:6969/announce"
+"udp://movies.zsw.ca:6969/announce"
+"udp://tracker.therarbg.to:6969/announce"
+"udp://tracker.dump.cl:6969/announce"
+"udp://ipv4.tracker.harry.lu:80/announce"
+"udp://tracker.0x7c0.com:6969/announce"
+"—udp://retracker.lanta-net.ru:2710/announce"
+"udp://discord.heihachi.pw:6969/announce"
+"udp://abufinzio.monocul.us:6969/announce"
+"udp://thouvenin.cloud:6969/announce"
+)
+
+TR=""
+for t in "${TRACKERS[@]}"; do
+  TR="${TR}&tr=$(printf '%s' "$t" | sed 's/:/%3A/g; s/\//%2F/g')"
+done
+
+MAGNET="magnet:?xt=urn:btih:$INFOHASH&dn=$NAME$TR"
+
+deluge-console "connect 127.0.0.1:58846; add \"$MAGNET\""
+echo "ADDED: $NAME"

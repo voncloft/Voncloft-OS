@@ -1,0 +1,14 @@
+# description : get torrents no more flexget
+# depends : 
+
+name=gettorrents
+version=1
+release=1
+
+source="gettorrents"
+
+build()
+{
+	mkdir -pv $PKG/usr/bin
+	install -Dm755 $SRC/gettorrents $PKG/usr/bin/gettorrents
+}

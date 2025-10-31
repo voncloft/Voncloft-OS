@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-structlog
-version=25.4.0
+version=25.5.0
 release=1
 
 source="https://github.com/hynek/structlog/archive/refs/tags/$version.tar.gz"

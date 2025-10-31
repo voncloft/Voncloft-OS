@@ -2,7 +2,7 @@
 # depends : gdb llvm
 
 name=valgrind
-version=3.25.1
+version=3.26.0
 release=1
 
 source="https://sourceware.org/pub/$name/$name-$version.tar.bz2"

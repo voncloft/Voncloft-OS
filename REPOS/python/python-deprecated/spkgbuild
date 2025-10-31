@@ -2,7 +2,7 @@
 # depends : python-wrapt
 
 name=python-deprecated
-version=1.2.18
+version=1.3.1
 release=1
 
 source="https://github.com/tantale/deprecated/archive/refs/tags/v$version.tar.gz"
