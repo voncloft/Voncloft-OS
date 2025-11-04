@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-starlette
-version=0.49.1
+version=0.50.0
 release=3
 
 source="https://github.com/encode/starlette/archive/refs/tags/$version.tar.gz"
