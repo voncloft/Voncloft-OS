@@ -1,0 +1,71 @@
+# description : smart pvr for torrent users
+# depends : aspnet sqlite deluge yarn
+
+name=sonaar
+_name=Sonarr
+version=4.0.15.2941
+release=1
+
+source="https://github.com/Sonarr/Sonarr/archive/refs/tags/v${version}.tar.gz"
+
+build() {
+case ${CARCH} in
+  x86_64) _CARCH='x64' ;;
+  aarch64) _CARCH='arm64' ;;
+  armv7h) _CARCH='arm' ;;
+esac
+_framework='net6.0'
+_runtime="linux-${_CARCH}"
+_output='_output'
+_artifacts="${_output}/${_framework}/${_runtime}/publish"
+_branch='main'
+
+cd *
+  rm global.json
+  export DOTNET_CLI_TELEMETRY_OPTOUT=1
+  export DOTNET_NOLOGO=1
+  export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+  dotnet new globaljson --sdk-version 6.0.113 --force
+
+  dotnet restore "src/${_name}.sln" \
+    --runtime "${_runtime}" \
+    --locked-mode
+
+  yarn install --frozen-lockfile --network-timeout 120000
+
+  export DOTNET_CLI_TELEMETRY_OPTOUT=1
+  export DOTNET_NOLOGO=1
+  export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+  dotnet build "src/${_name}.sln" \
+    --framework "${_framework}" \
+    --runtime "${_runtime}" \
+    --no-self-contained \
+    --no-restore \
+    --configuration Release \
+    -p:Platform=Posix \
+    -p:AssemblyVersion=${version} \
+    -p:AssemblyConfiguration=${_branch} \
+    -p:RuntimeIdentifiers="${_runtime}" \
+    -t:PublishAllRids \
+    && dotnet build-server shutdown # Build servers do not terminate automatically
+
+
+yarn run build --env production
+
+install -dm755 $PKG/usr/lib/sonarr/bin/UI
+  # Remove Service Helpers, Update, and Windows files
+  rm "${_artifacts}/ServiceInstall"*
+  rm "${_artifacts}/ServiceUninstall"*
+  rm "${_artifacts}/Sonarr.Windows."*
+  rm -rf "${_output}/Sonarr.Update"
+
+
+  dotnet restore "src/${_name}.sln" \
+
+  # Copy backend
+  cp -dr "${_artifacts}/"* "${PKG}/usr/lib/sonarr/bin"
+  # Copy frontend
+  cp -dr "${_output}/UI/"* "${PKG}/usr/lib/sonarr/bin/UI"
+
+chmod 755 "${PKG}/usr/lib/sonarr/bin/ffprobe"
+}

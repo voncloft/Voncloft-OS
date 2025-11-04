@@ -6,6 +6,7 @@ d:kwin-effects-cube
 d:ansible
 d:tl-unx
 d:ansible-core
+d:sonaar
 d:jellyfin-web-bin
 d:libvncserver
 d:jellyfin-server-bin
@@ -31,6 +32,8 @@ f:a94094d5197fccb109c9697d7c1ebae5:tl-unx/pre-install.sh
 f:2701d1e88d96aed3587128a591a11c8e:tl-unx/spkgbuild
 f:c17972cd8eeab5e76178cd4c97fdbd00:ansible-core/CHANGELOG
 f:e264c208bcf0636a5c6a02c55a207bbf:ansible-core/spkgbuild
+f:159b5cac05d293688e5c58ea25f42c94:sonaar/CHANGELOG
+f:dae5c4ac838eb42da7bf0d31366c526a:sonaar/spkgbuild
 f:91835579b6573b9b5fb8dc3b68ef7999:jellyfin-web-bin/CHANGELOG
 f:cc1a6cbc8c582eda6caf1d3b066e0541:jellyfin-web-bin/spkgbuild
 f:203eeaf6d72517ca59bd6f661a594e42:libvncserver/CHANGELOG
