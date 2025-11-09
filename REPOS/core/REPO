@@ -468,9 +468,9 @@ f:65a20e17cf0eaf7ed1e009d670329562:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:fe42766c0564e0322effeef9d124762f:bspwm/CHANGELOG
 f:87b3499304e338dc0bb278a7815e4e9a:bspwm/spkgbuild
-f:fc55c361bbf297373f3f60a931c5f971:systemd/CHANGELOG
+f:1d54dddd1df99765e5544738bd18e949:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:1d2a5d70bdce2d99ef9001e072263fd4:systemd/spkgbuild
+f:0c795eb38d1c5d6d1a513eea52041efd:systemd/spkgbuild
 f:9a97df12a65637c0d0316a52afd07905:sxhkd/CHANGELOG
 f:c43ef1d73f83e0da62491352b8d74a3f:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
@@ -598,8 +598,8 @@ f:282cfee8792da549b6bbbbcfb29844de:brotli/CHANGELOG
 f:49456a6de8b7c0a5d8b770117f553974:brotli/spkgbuild
 f:c9695ad50deb49c92aa332e830ccb83f:startup-notification/spkgbuild
 f:45cd179621565f30da2b491786255862:i3blocks/spkgbuild
-f:f64226c063a3385f609a794825b10fb0:udisks2/CHANGELOG
-f:f069c1eab6308e8c1916fe8c66b29124:udisks2/spkgbuild
+f:1108359c9f4a0a0ad485ea2345ff995b:udisks2/CHANGELOG
+f:9594e06719ab4ddcdc1d0034305bef81:udisks2/spkgbuild
 f:bb7e0e501d9bb18cef9be99623ba0183:valgrind/CHANGELOG
 f:8245aed32561e05a0059454a7e5ee4c1:valgrind/spkgbuild
 f:05f978bd126e13c737d40513d7d853e5:gptfdisk/CHANGELOG
@@ -711,8 +711,8 @@ f:4141a14986102eed358f539886cbc289:nnn/spkgbuild
 f:b5a375827b9de3bc1df22e874561d282:gnupg/CHANGELOG
 f:bb6053b1b59edf420ccbf25461cd789e:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
-f:6c90cfb696b36db5bc8636e30b10df40:pipewire/CHANGELOG
-f:d364e6aebd73941bfd67c120d3e04421:pipewire/spkgbuild
+f:0ccbaa4c264aa953513697eecf92d6ca:pipewire/CHANGELOG
+f:ae960b7f41379c01bc22cf655feaa65a:pipewire/spkgbuild
 f:0f20437ceabcfe279db7d4ff8bc7f9ae:duktape/CHANGELOG
 f:1f799c92594d55ced8d183d0e29132c9:duktape/spkgbuild
 f:36701c59fa6c88d0bf4ab8c90fb8afc6:foltotar/foltotar
@@ -1180,8 +1180,8 @@ f:8475c3e394df61c1c9f5c88315522f91:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:855cb406ff4b0c723e72119e33f2772d:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
-f:846ac884af9611d5a022f4a6ecf02fa3:btrfs-progs/CHANGELOG
-f:4e2efdf2308af600b145b23539d0267a:btrfs-progs/spkgbuild
+f:93757aab74046be036c01b0f29de759c:btrfs-progs/CHANGELOG
+f:f705889c6b2125d907b23aa50321228a:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
 f:b44a2b0bff7d9c7c1d14640d0a8c7c9c:sed/CHANGELOG
 f:eb13e7233eba3eae549fe4afd76b2b5a:sed/spkgbuild
