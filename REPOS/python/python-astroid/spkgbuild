@@ -2,7 +2,7 @@
 # depends : python-six python-lazy-object-proxy python-wrapt
 
 name=python-astroid
-version=4.0.1
+version=4.0.2
 release=4
 
 source="https://github.com/PyCQA/astroid/archive/refs/tags/v$version.tar.gz"
