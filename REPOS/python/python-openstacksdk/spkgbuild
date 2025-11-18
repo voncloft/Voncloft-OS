@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-yaml python-jsonpatch python-appdirs
 
 name=python-openstacksdk
-version=4.7.1
+version=4.8.0
 release=1
 
 source="https://github.com/openstack/openstacksdk/archive/refs/tags/e$version.tar.gz"

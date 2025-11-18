@@ -2,7 +2,7 @@
 # depends : python-mutagen python-pycryptodomex python-websockets python-setuptools pandoc-bin ffmpeg atomicparsley
 
 name=yt-dlp
-version=2025.10.22
+version=2025.11.12
 release=2
 
 source="https://github.com/yt-dlp/yt-dlp/archive/$version/$name-$version.tar.gz"

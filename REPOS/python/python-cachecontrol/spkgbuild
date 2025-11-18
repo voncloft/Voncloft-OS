@@ -2,7 +2,7 @@
 # depends : python-msgpack python-requests
 
 name=python-cachecontrol
-version=0.14.3
+version=0.14.4
 release=3
 
 source="https://github.com/ionrock/cachecontrol/archive/refs/tags/v$version.tar.gz"

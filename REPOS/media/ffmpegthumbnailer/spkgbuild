@@ -2,7 +2,7 @@
 # depends	: ffmpeg libjpeg-turbo libpng cmake
 
 name=ffmpegthumbnailer
-version=2.2.3
+version=2.2.4
 release=1
 source="$name-$version.tar.gz::https://github.com/dirkvdb/$name/archive/$version.tar.gz"
 

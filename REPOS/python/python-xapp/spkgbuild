@@ -2,7 +2,7 @@
 # depends : python python-psutil
 
 name=python-xapp
-version=2.4.2
+version=3.0.0
 release=2
 
 source=https://github.com/linuxmint/python3-xapp/archive/refs/tags/$version.tar.gz

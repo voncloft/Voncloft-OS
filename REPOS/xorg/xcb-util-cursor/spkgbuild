@@ -2,7 +2,7 @@
 # depends	: xcb-util-renderutil libxcb xcb-util-image 
 
 name=xcb-util-cursor
-version=0.1.5
+version=0.1.6
 release=1
 source="http://xcb.freedesktop.org/dist/xcb-util-cursor-$version.tar.xz"
 

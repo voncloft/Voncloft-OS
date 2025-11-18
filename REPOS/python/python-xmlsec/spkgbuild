@@ -2,7 +2,7 @@
 # depends : python-lxml xmlsec
 
 name=python-xmlsec
-version=1.3.16
+version=1.3.17
 release=3
 
 source="https://github.com/mehcode/python-xmlsec/archive/refs/tags/s$version.tar.gz"

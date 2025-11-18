@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-tblib
-version=3.2.1
+version=3.2.2
 release=3
 
 source="https://github.com/ionelmc/python-tblib/archive/refs/tags/v$version.tar.gz"

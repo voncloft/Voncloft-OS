@@ -2,7 +2,7 @@
 # depends	: libxi libxrandr mesa
 
 name=freeglut
-version=3.6.0
+version=3.8.0
 release=1
 source="https://downloads.sourceforge.net/freeglut/$name-$version.tar.gz"
 
