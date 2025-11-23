@@ -553,9 +553,9 @@ f:cd814e97e9135e9373c5495e415f2e2c:gtest/CHANGELOG
 f:33e6375b088da06b8486213879627dbd:gtest/spkgbuild
 f:ed5071c4a89231f23cbb341f533ac1b6:bluez/bluez-obexd_without_systemd-1.patch
 f:3e25909a9413066e78f97f728ca4c36d:bluez/readme
-f:d6efd5696c5e155ffac196d12b6352d4:bluez/CHANGELOG
+f:73d0d272e25914204219b06361423ed3:bluez/CHANGELOG
 f:16baf2462c222b819504f9a9ce05300f:bluez/rc.bluetoothd
-f:e3d052d0da822e1bd7098e596884b844:bluez/spkgbuild
+f:35f04b0435201d7f1837310b9ed1b68d:bluez/spkgbuild
 f:f715f0b49a44a5764e9379ab3c99d9b1:bluez/run
 f:6d0651c977dfa9516bee474a1f29da74:recode/CHANGELOG
 f:fabfa9b8f2cc0f04b5ba9fe295a784cb:recode/spkgbuild
@@ -708,8 +708,8 @@ f:d594f98bfc59eb0d416042712acdc2fb:unzip/spkgbuild
 f:59583b7acb6b7c62c73c6410d29b30ad:stfl/spkgbuild
 f:f8f3083af275825959a4c9719eadc12f:nnn/CHANGELOG
 f:4141a14986102eed358f539886cbc289:nnn/spkgbuild
-f:b5a375827b9de3bc1df22e874561d282:gnupg/CHANGELOG
-f:bb6053b1b59edf420ccbf25461cd789e:gnupg/spkgbuild
+f:481370ba535688e917188de6223916d4:gnupg/CHANGELOG
+f:a7cfa3dc8f44b8829829d8c0f9f8a8eb:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
 f:0ccbaa4c264aa953513697eecf92d6ca:pipewire/CHANGELOG
 f:ae960b7f41379c01bc22cf655feaa65a:pipewire/spkgbuild
@@ -855,8 +855,8 @@ f:4a756bf3bce5beac9af146d6fe324953:utilities/upgrade-python-packages
 f:ea5b4a275145bc05db4a2f18fb1cf468:utilities/upgrade-perl-packages
 f:33f0fd6d8e33753d2e744a8bffe37ddb:utilities/spkgbuild
 f:0d29f39429ce00a91dda37e4fa3a00c8:utilities/update-kde
-f:fe55a3dcd77e4d3db0c2ed8380528e4e:enchant/CHANGELOG
-f:23790d8b28862bf27d7a1e1e535696e3:enchant/spkgbuild
+f:e6c7223efc212bf1670df31571c17632:enchant/CHANGELOG
+f:8654e34a705898864695e6a2347479ff:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:820fad5d643851793dbbddfbae5ab1e9:aspell/post-install.sh

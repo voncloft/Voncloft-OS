@@ -2,7 +2,7 @@
 # depends : python-pbr
 
 name=python-os-service-types
-version=1.8.1
+version=1.8.2
 release=7
 
 source="https://github.com/openstack/os-service-types/archive/refs/tags/$version.tar.gz"

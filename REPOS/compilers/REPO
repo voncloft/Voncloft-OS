@@ -36,8 +36,8 @@ f:d12fcf021316bb31fc95e469d0423c97:apache-ant/post-install.sh
 f:603ababf2529f9ca3957861f246bead4:apache-ant/CHANGELOG
 f:43ad58e10cd9197d555ca44341091298:apache-ant/override
 f:935290b9a601c9d954fae52476f63af5:apache-ant/spkgbuild
-f:dae30c5e93bf8aff68ade782697950f3:ninja/CHANGELOG
-f:a047dca27040b12d58859f48aece0613:ninja/spkgbuild
+f:5139669b84e92c68e650e544a1b9948f:ninja/CHANGELOG
+f:c197fb3216f91d920e4f0f3a4c523328:ninja/spkgbuild
 f:5cf0370cea152661142b89d6a407d1fe:automake/CHANGELOG
 f:7dda05a949ef49a9bcde3c5a034ae8f7:automake/spkgbuild
 f:60bec32afa1f9c63d5e8615feb631f80:lld/CHANGELOG
@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:2f086b527b075ebc9b8b46891c78862e:rust/spkgbuild
+f:06874e23088298d98e55340dbf5274e0:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
@@ -81,7 +81,7 @@ f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
 f:70b6fecec1b9949f4d472742d7ab2927:gdb/CHANGELOG
 f:2f3c4d6eb50db425331b5087dc1cb827:gdb/spkgbuild
-f:e6ba76e1186d78055f591589018f0905:cmake/CHANGELOG
+f:18fe56c03173a6392f9279555a4a121a:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override
-f:04a7e6fbf344d9c60784f301d91db45a:cmake/spkgbuild
+f:d46ab9f3fbf8cee16b2a05b37b597c08:cmake/spkgbuild

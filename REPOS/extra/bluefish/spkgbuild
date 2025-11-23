@@ -2,7 +2,7 @@
 # depends : enchant gtk3 python
 
 name=bluefish
-version=2.2.18
+version=2.2.19
 release=2
 
 source="https://www.bennewitz.com/$name/stable/source/$name-$version.tar.gz"

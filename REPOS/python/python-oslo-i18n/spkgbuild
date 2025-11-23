@@ -2,7 +2,7 @@
 # depends : python-six python-pbr python-babel
 
 name=python-oslo-i18n
-version=6.7.0
+version=6.7.1
 release=3
 
 source="https://github.com/openstack/oslo.i18n/archive/refs/tags/e$version.tar.gz"
