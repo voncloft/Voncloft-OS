@@ -2,7 +2,7 @@
 # depends	: qt5 qt5-webkit qtwebengine python python-attrs python-yaml python-jinja2 python-pypeg2 python-pygments python-pyqt5 python-sip-pyqt5 python-pyqtwebengine asciidoc
 
 name=qutebrowser
-version=3.6.1
+version=3.6.3
 release=1
 source="https://github.com/qutebrowser/qutebrowser/releases/download/v$version/qutebrowser-$version.tar.gz"
 

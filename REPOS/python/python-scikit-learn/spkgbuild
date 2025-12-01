@@ -2,7 +2,7 @@
 # depends : python-scipy python-joblib python-threadpoolctl
 
 name=python-scikit-learn
-version=1.7.2
+version=1.8.0
 release=1
 
 source="https://github.com/scikit-learn/scikit-learn/archive/refs/tags/r$version.tar.gz"

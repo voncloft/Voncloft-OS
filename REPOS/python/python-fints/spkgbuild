@@ -2,7 +2,7 @@
 # depends : python python-mt-940 python-bleach python-sepaxml python-requests
 
 name=python-fints
-version=4.2.4
+version=5.0.0
 release=1
 
 source="https://github.com/raphaelm/python-fints/archive/refs/tags/v$version.tar.gz"
