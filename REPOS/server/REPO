@@ -25,10 +25,10 @@ d:samba
 d:toolbox
 f:01b882c49d81d4f9a48106834fe88e54:httpd/httpd
 f:6728f2b3aa5f409ef61aede4e9577942:httpd/post-install.sh
-f:128736c311f5a3cc15f0dcad08c30c60:httpd/CHANGELOG
+f:0d0c3fedcd051b1dc550089f7015ddb2:httpd/CHANGELOG
 f:915ed49eb11eeccfcc4e8b87a5b9c7e2:httpd/post-upgrade.sh
 f:2a424710304fdd98868c6511c4814d41:httpd/pre-install.sh
-f:2a2d8c9d0e6174799753ead2a2a78982:httpd/spkgbuild
+f:cc2759b22edfd71d8430f4f6b541bd40:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:47e741bec7fa4412bbb73a39cf9af748:blacklist-youtubeads/post-install.sh
 f:9adec20d3f1c66e9280eeb5e1c50626f:blacklist-youtubeads/CHANGELOG
@@ -111,10 +111,10 @@ f:b76d528e69566f3ebe13801135736dbf:nginx/spkgbuild
 f:965d1e6e0560dc33cab4f7945e5b9f70:homeassistant/CHANGELOG
 f:d901a93adbe5d8a5f64426e14bebc05a:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
-f:caa3ef90af8b5552d555b1e04684ccbb:blacklist-hosts/CHANGELOG
+f:b2e60f17d058168b5b72c6bf6050b13e:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh
 f:3b365d0e52f2510a3e6f60ae04ec45af:blacklist-hosts/test
-f:524a20690bf75d5f16f107bf4028b709:blacklist-hosts/spkgbuild
+f:877bf52164818593cc1726d9b4fbf385:blacklist-hosts/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
