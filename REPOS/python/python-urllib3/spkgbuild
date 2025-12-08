@@ -3,7 +3,7 @@
   # depends : python
 
 name=python-urllib3
-version=2.5.0
+version=2.6.0
 release=1
 
 source="https://github.com/urllib3/urllib3/archive/refs/tags/$version.tar.gz"
