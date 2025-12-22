@@ -2,7 +2,7 @@
   # depends : python
 
 name=python-zope.testing
-version=6.0
+version=6.1
 release=1
 
 source="https://github.com/zopefoundation/zope.testing/archive/refs/tags/$version.tar.gz"

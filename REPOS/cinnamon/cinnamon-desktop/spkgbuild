@@ -3,7 +3,7 @@
 # depends : meson ninja gobject-introspection intltool
 
 name=cinnamon-desktop
-version=6.6.0
+version=6.6.1
 release=1
 
 source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz
