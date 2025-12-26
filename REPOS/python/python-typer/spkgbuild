@@ -2,7 +2,7 @@
 # depends : python-click
 
 name=python-typer
-version=0.20.1
+version=0.21.0
 release=2
 
 source="https://github.com/tiangolo/typer/archive/refs/tags/$version.tar.gz"

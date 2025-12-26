@@ -22,9 +22,9 @@ d:llvm-old-2023-06-07
 d:autoconf2.13
 d:gdb
 d:cmake
-f:31836413cf042f0482256c1e81d202dd:ruby/CHANGELOG
+f:d925511c21222b88ee63cb4b0afb02d1:ruby/CHANGELOG
 f:d9f4d5de58a076d2af1a828c4c3edf5b:ruby/override
-f:01dd07bdfa4754d5954ac56268bbc063:ruby/spkgbuild
+f:41d8b5109549e6173fd291f6a9fc584c:ruby/spkgbuild
 f:9d33c702cdf6abf331b976f656f2eee2:meson/CHANGELOG
 f:869237658a6e828a9f56c55d4322fcdd:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:16f93eec2217e37f5cd86d26f4105212:rust/spkgbuild
+f:d2be1d7f05cc2cebf4e299511a08e224:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
