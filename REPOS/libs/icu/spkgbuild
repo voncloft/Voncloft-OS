@@ -1,7 +1,7 @@
 # description	: International Components for Unicode library
 
 name=icu
-version=78.1
+version=78.2
 verzion=$(echo $version | tr '.' '-')
 _verzion=$(echo $version | tr '.' '_')
 release=1

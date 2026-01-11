@@ -2,7 +2,7 @@
 # depends	: gst-plugins-base lame liba52 libdvdread x264 meson
 
 name=gst-plugins-ugly
-version=1.27.50
+version=1.27.90
 release=1
 source="https://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz"
 

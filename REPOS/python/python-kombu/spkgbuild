@@ -2,7 +2,7 @@
 # depends : python-amqp
 
 name=python-kombu
-version=5.6.1
+version=5.6.2
 release=3
 
 source="https://github.com/celery/kombu/archive/refs/tags/v$version.tar.gz"

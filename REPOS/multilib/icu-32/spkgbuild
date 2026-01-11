@@ -2,7 +2,7 @@
 # depends	: icu
 
 name=icu-32
-version=78.1
+version=78.2
 verzion=$(echo $version | tr '.' '-')
 _verzion=$(echo $version | tr '.' '_')
 release=1

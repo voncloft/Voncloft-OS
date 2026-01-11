@@ -6,7 +6,7 @@
 # depends : meson ninja xf86-input-wacom
 
 name=cinnamon-settings-daemon
-version=6.6.1
+version=6.6.2
 release=1
 
 source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"

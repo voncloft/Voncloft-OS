@@ -2,7 +2,7 @@
 # depends : python-bcrypt python-dateutil python-defusedxml python-passlib python-pytz python-vobject
 
 name=radicale
-version=3.5.10
+version=3.6.0
 release=1
 _name=Radicale
 source="$name-$version.tar.gz::https://github.com/Kozea/$name/archive/v$version.tar.gz

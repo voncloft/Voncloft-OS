@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-send2trash
-version=1.8.3
+version=2.0.0
 release=6
 
 source="https://github.com/hsoft/send2trash/archive/refs/tags/$version.tar.gz"

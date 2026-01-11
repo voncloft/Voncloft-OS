@@ -2,7 +2,7 @@
 # depends : (python python-idna python-sniffio)
 
 name=python-anyio
-version=4.12.0
+version=4.12.1
 release=4
 
 source="https://github.com/agronholm/anyio/archive/refs/tags/r$version.tar.gz"

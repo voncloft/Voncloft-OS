@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-json5
-version=0.12.1
+version=0.13.0
 release=3
 
 source="https://github.com/dpranke/pyjson5/archive/refs/tags/v$version.tar.gz"

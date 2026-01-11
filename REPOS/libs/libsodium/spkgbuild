@@ -2,7 +2,7 @@
 # depends : glibc
 
 name=libsodium
-version=1.0.20
+version=1.0.21
 release=2
 
 source="https://download.libsodium.org/libsodium/releases/libsodium-$version.tar.gz"
