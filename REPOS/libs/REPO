@@ -432,8 +432,8 @@ f:76ab641ee188a685baaae00e48614cbd:libtommath/CHANGELOG
 f:c35ef84ed6d7d30a72906ab6780f7962:libtommath/spkgbuild
 f:cabf312a0adc98de9d52a411b2c14baa:glibc/genlocales
 f:9a5997c3452909b1769918c759eff8a2:glibc/glibc-fhs-1.patch
-f:884b7c7c36b07e2740d1d99907589239:glibc/CHANGELOG
-f:cd487a04e78fbea9dbe31d5c09a31ecb:glibc/spkgbuild
+f:1d7d50eb5ef27aa39b631ee172bdecf5:glibc/CHANGELOG
+f:99b95dad629f5beed8ac695857d56787:glibc/spkgbuild
 f:b69b528488730410c45f949a4f58b57a:libcroco/spkgbuild
 f:233f821b44996b38558ebc86c520d0e0:libogg/CHANGELOG
 f:448349d710aa6e0ce887dd5ef70176fd:libogg/spkgbuild
@@ -467,8 +467,8 @@ f:09117913847f1a2744363b3851468dda:libmpd/0003-fix-comparison.patch
 f:a4c9c84441bdb99433e20fa34dc80cda:libmpd/spkgbuild
 f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
-f:5ed03b98d679659c3fe277b3a92182cf:libqalculate/CHANGELOG
-f:819e560013ce2b0696ec881471383082:libqalculate/spkgbuild
+f:01c27cf1e944d794bed819fcd839ba61:libqalculate/CHANGELOG
+f:3b62bbf2a7a445f8f4f8714486aca364:libqalculate/spkgbuild
 f:1e0192c06dfb76c068be95babd7765a6:libzip/CHANGELOG
 f:38a13871e44520a8787062f906fd4d56:libzip/spkgbuild
 f:d12b1717e9f31bef519e1c62c4683d5e:libtorrent-rasterbar/CHANGELOG
@@ -527,8 +527,8 @@ f:772a4b7611de6572930cc2ed0e432d78:libmpc/spkgbuild
 f:079f9c832f587f45f9504e4d3c41a4d3:libftdi/spkgbuild
 f:cd4121217499847ed2d59bc6142b9158:libfontenc/CHANGELOG
 f:7304d173468ec0ba7be75d1fe06f3cdd:libfontenc/spkgbuild
-f:36755746ee470f7a2eff449b228fd2d3:libpng/CHANGELOG
-f:c0041a01e113d4d31aec39977b539130:libpng/spkgbuild
+f:2018ebfac9ab7b719cdb8bf7b8d51422:libpng/CHANGELOG
+f:dc75265bf19034b9165e728004284f2c:libpng/spkgbuild
 f:555618a093b2a65c51ec12eac36bc68f:libxml2/spkgbuild
 f:6484cb831385a84953822e3bfe2698f9:newt/CHANGELOG
 f:f0577a2f28a4e24b69dc22772db2e03c:newt/spkgbuild
@@ -707,8 +707,8 @@ f:d3791ad667e1a1a7d94db52397f045d3:libtorrent/CHANGELOG
 f:e4ea060a5287b6dc181f43ab2f69d503:libtorrent/fix-build-with-boost-1.72.0.patch
 f:053fa9d617718af30ec67802720d4ddb:libtorrent/spkgbuild
 f:76226b0dee30494f6932b0a92d1ee6f4:alsa-lib/readme
-f:3a9c4d132aaecf399e122e0bf568598e:alsa-lib/CHANGELOG
-f:847524589681df756673700bf6f5d57c:alsa-lib/spkgbuild
+f:edf4d9791fd3af92a56a60b44ee8e27a:alsa-lib/CHANGELOG
+f:8c31013e4c19c4c8a425949e3afb671d:alsa-lib/spkgbuild
 f:4e42721f3a4cc2132ddbabde13256d2a:libxfont2/spkgbuild
 f:3965a59dbebb04051391e83daa216932:libcurl-compat/spkgbuild
 f:98bc514d41248a7b7b26f74fe3e6731e:expat/CHANGELOG
@@ -724,8 +724,8 @@ f:debace56a4999da0b057c5dafd0ea2ba:libsoup/spkgbuild
 f:b92da179772c7b851a709c8ee7bd99c1:blosc/CHANGELOG
 f:733778facd70cc6592e1c3d8f71470d2:blosc/spkgbuild
 f:89344eec43d1125d321ce45265b5e03c:babl/babl.patch
-f:d1fb007d7cc6931bff1864a39f4be31b:babl/CHANGELOG
-f:7bd25ee1a340bed7451346916fa277e0:babl/spkgbuild
+f:26a7116788ca006458d9351eb2fac09d:babl/CHANGELOG
+f:064ebd5b7c814537d9ccb001caa2596f:babl/spkgbuild
 f:32c4493d6312390cd36c4bc477c99c5b:libblockdev/CHANGELOG
 f:833ab087680b4680f5aa5205bce03ad9:libblockdev/spkgbuild
 f:7105a46924a6a6281b409d62e2ef8626:libmatekbd/spkgbuild

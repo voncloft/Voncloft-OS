@@ -22,11 +22,11 @@ d:llvm-old-2023-06-07
 d:autoconf2.13
 d:gdb
 d:cmake
-f:d925511c21222b88ee63cb4b0afb02d1:ruby/CHANGELOG
+f:bb34136d8ea5e0019d217623c01a724f:ruby/CHANGELOG
 f:d9f4d5de58a076d2af1a828c4c3edf5b:ruby/override
-f:41d8b5109549e6173fd291f6a9fc584c:ruby/spkgbuild
-f:9d33c702cdf6abf331b976f656f2eee2:meson/CHANGELOG
-f:869237658a6e828a9f56c55d4322fcdd:meson/spkgbuild
+f:1698f1d0ca1b94b398e2fd68d4a0b66b:ruby/spkgbuild
+f:8ca7aca73b1737a28747ce0afc8b151a:meson/CHANGELOG
+f:1bed0b23d329d7d9de8c6161ca30e490:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
 f:d659b78f7071326fd1be1afde98d2b3a:zig/spkgbuild
 f:6be2a5e3cd924b417e134fccf6449d41:zig/resolve_DNS.patch
@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:7225faaf30c466122b1985ff1e8c7f41:rust/spkgbuild
+f:20df56cbf5be2e239fd31f0440a4a5d0:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
@@ -81,7 +81,7 @@ f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
 f:8170101e72bdadaca1a9160043b52782:gdb/CHANGELOG
 f:e88f5ae0985bdcb2c935c9e81d66aadc:gdb/spkgbuild
-f:e697e4312f479e3ad6d143a6056fe7a3:cmake/CHANGELOG
+f:a35745ad20c48318bd4d4f93e860ad7e:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override
-f:23ac32ae214aa85bb04bac2c59a5eeeb:cmake/spkgbuild
+f:6d8a9b4e5ff81ab4dc7fb717bd9b38f3:cmake/spkgbuild

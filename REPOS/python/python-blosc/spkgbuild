@@ -2,7 +2,7 @@
 # depends : python blosc
 
 name=python-blosc
-version=1.11.3
+version=1.11.4
 release=1
 
 source="https://github.com/Blosc/python-blosc/archive/refs/tags/v$version.tar.gz"

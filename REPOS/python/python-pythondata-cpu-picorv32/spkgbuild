@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-pythondata-cpu-picorv32
-version=2025.08
+version=2025.12
 release=1
 
 source="https://github.com/litex-hub/pythondata-cpu-picorv32/archive/refs/tags/$version.tar.gz"

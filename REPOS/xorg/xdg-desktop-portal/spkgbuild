@@ -2,7 +2,7 @@
 # depends : fuse3 gdk-pixbuf json-glib dbus pipewire
 
 name=xdg-desktop-portal
-version=1.20.3
+version=1.21.0
 release=1
 
 source="https://github.com/flatpak/xdg-desktop-portal/releases/download/$version/xdg-desktop-portal-$version.tar.xz"

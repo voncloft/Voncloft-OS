@@ -2,7 +2,7 @@
 # depends : python-migen python-litex
 
 name=python-liteiclink
-version=2025.08
+version=2025.12
 release=1
 
 source="https://github.com/enjoy-digital/liteiclink/archive/refs/tags/$version.tar.gz"

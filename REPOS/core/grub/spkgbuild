@@ -2,7 +2,7 @@
 # depends	: gettext bash xz fuse2 python
 
 name=grub
-version=2.12
+version=2.14
 release=2
 backup="etc/default/grub"
 source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
