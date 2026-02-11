@@ -2,7 +2,7 @@
 # depends	: libatomic_ops
 
 name=gc
-version=8.2.10
+version=8.2.12
 release=1
 source="https://github.com/ivmai/bdwgc/releases/download/v$version/$name-$version.tar.gz"
 

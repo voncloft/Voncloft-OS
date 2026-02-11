@@ -2,7 +2,7 @@
 # depends : python-six
 
 name=python-tenacity
-version=9.1.2
+version=9.1.4
 release=1
 
 source="https://github.com/jd/tenacity/archive/refs/tags/$version.tar.gz"

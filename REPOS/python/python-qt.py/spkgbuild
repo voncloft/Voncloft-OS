@@ -2,7 +2,7 @@
 # depends : python qt5-python-bindings
 
 name=python-qt.py
-version=1.4.8
+version=2.0.3
 release=5
 
 source="https://github.com/mottosso/Qt.py/archive/refs/tags/$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : gcc glibc
 
 name=yaml-cpp
-version=0.8.0
+version=0.9.0
 release=2
 
 source="https://github.com/jbeder/$name/archive/$name-$version.tar.gz"

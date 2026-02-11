@@ -4,7 +4,7 @@
 # depends : meson ninja xtrans
 
 name=cinnamon-session
-version=6.6.1
+version=6.6.2
 release=1
 
 source="https://github.com/linuxmint/${name}/archive/${version}.tar.gz"
