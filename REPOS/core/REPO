@@ -706,8 +706,8 @@ f:0ecd02d84477e0417e317bb6e864ddf0:mtools/CHANGELOG
 f:d983261352b72b5ecc2311281e04838b:mtools/spkgbuild
 f:d594f98bfc59eb0d416042712acdc2fb:unzip/spkgbuild
 f:59583b7acb6b7c62c73c6410d29b30ad:stfl/spkgbuild
-f:f8f3083af275825959a4c9719eadc12f:nnn/CHANGELOG
-f:4141a14986102eed358f539886cbc289:nnn/spkgbuild
+f:2715d76d830d44dd2b3545017ef040b8:nnn/CHANGELOG
+f:bdabc56754f9ab4c55d9f00223c823a1:nnn/spkgbuild
 f:66b4dc00b9267fd30095c44869415ef6:gnupg/CHANGELOG
 f:a3db9159f3931dd052427e1da05f8095:gnupg/spkgbuild
 f:9a70f9d766d56165952cd611d32086e2:inxi/spkgbuild
@@ -773,8 +773,8 @@ f:edc94f971a9f756b8862dec28dba72fb:gperf/CHANGELOG
 f:64d9fc2c6c6628faeba3fe9396198867:gperf/spkgbuild
 f:652191ef522559c1d0f7b2317dd744da:leafpad/CHANGELOG
 f:cd34dec63d0d6ec4f10eb4a682ec1547:leafpad/spkgbuild
-f:361eac17df34f4676fa3085c9761d57a:zxing-cpp/CHANGELOG
-f:ddd8643e68a0fb156d916bcb3a5cacb6:zxing-cpp/spkgbuild
+f:cf88ab759b3cb3a0c2abe3caef298184:zxing-cpp/CHANGELOG
+f:f251db742b0bf048edf071a83a810ce6:zxing-cpp/spkgbuild
 f:b3d40b5619605c3dfb723fdb59971c39:bash/CHANGELOG
 f:bdffc36672134b38f18c4e13462e2eb4:bash/spkgbuild
 f:8d48bd201065e31928f7deb59004c73f:xbps/CHANGELOG
@@ -855,8 +855,8 @@ f:4a756bf3bce5beac9af146d6fe324953:utilities/upgrade-python-packages
 f:ea5b4a275145bc05db4a2f18fb1cf468:utilities/upgrade-perl-packages
 f:33f0fd6d8e33753d2e744a8bffe37ddb:utilities/spkgbuild
 f:0d29f39429ce00a91dda37e4fa3a00c8:utilities/update-kde
-f:e6c7223efc212bf1670df31571c17632:enchant/CHANGELOG
-f:8654e34a705898864695e6a2347479ff:enchant/spkgbuild
+f:9089f96af61e11d61b4fbf9882741c00:enchant/CHANGELOG
+f:a1e48f02b6d4bc5a3665573f4c4ae2da:enchant/spkgbuild
 f:007492e22d272871902afaf1f6765d6e:db/atomic.patch
 f:f1c0e21e1be4872d1f5728fb68300639:db/spkgbuild
 f:820fad5d643851793dbbddfbae5ab1e9:aspell/post-install.sh
@@ -1064,8 +1064,8 @@ f:9f6a19ecad2a99ab167287d57368928b:efivar/spkgbuild
 f:9aa57b5fe52d10eef0a50e25c11407b2:celt/spkgbuild
 f:8e38ad46a1ffc313086e14e19f383792:gmrun/spkgbuild
 f:a8fd3421b163421ea7990668c634d406:gmrun/gcc43.patch
-f:c86062a7f1af914e3de7efc9a80cc09c:fortune-mod/CHANGELOG
-f:009a62209227a3b8ef9c7468a3955058:fortune-mod/spkgbuild
+f:04e7f92cea7a8c1bc08df6f66f1a63bb:fortune-mod/CHANGELOG
+f:6354653c980ae7352297f6d23dd8f37a:fortune-mod/spkgbuild
 f:7a0702d2ff6422dc2a981adc32c25359:rpcsvc-proto/CHANGELOG
 f:22690185983e91e32948e881026f0b2e:rpcsvc-proto/spkgbuild
 f:c4ba65d06322f74819e15fdb7dff31bb:screen/CHANGELOG
@@ -1078,8 +1078,8 @@ f:db4e415c63bab565f7cc9c92b2d7f10f:swig/spkgbuild
 f:579b417086a9c834f6e1b31511663083:double-conversion/CHANGELOG
 f:c71e09ac5b46a2c3365bc8fe8fef211b:double-conversion/spkgbuild
 f:cbf6a5420ae3ad95fad609a613c5630d:shellcheck-static/spkgbuild
-f:16a27cef373d97c084780fedca49537c:socat/CHANGELOG
-f:80c9523714240ae8429d565ac83dcc6e:socat/spkgbuild
+f:5f93a791830fbc3697895dd6a0c2ae35:socat/CHANGELOG
+f:54257121630304529f7c66cc0dc8ecd0:socat/spkgbuild
 f:f6fe6886d34e97c23d8308bb7d21dbbb:graphviz/CHANGELOG
 f:5ac0ca02f44146925625a7fca9122d4d:graphviz/spkgbuild
 f:0e9eec6f93402366a99023874b77ef1f:uthash/CHANGELOG
@@ -1180,8 +1180,8 @@ f:e8fb89079744e096666442e3bbd68663:coreutils/CHANGELOG
 f:6cc582a474ec9e4c89638b419ddcaac9:coreutils/coreutils-i18n-1.patch
 f:110ad4209bea56d9c725406856dd697f:coreutils/spkgbuild
 f:57ddcd0c507747a6bcc88f2352aa3e16:btrfs-progs/readme
-f:93757aab74046be036c01b0f29de759c:btrfs-progs/CHANGELOG
-f:f705889c6b2125d907b23aa50321228a:btrfs-progs/spkgbuild
+f:17be8b6e20358a9b23ae90f430589ccf:btrfs-progs/CHANGELOG
+f:032dbd63d05bd7677962ba27ca5493b3:btrfs-progs/spkgbuild
 f:0c83b06895872d581a70a5188a2ae123:vala/spkgbuild
 f:b44a2b0bff7d9c7c1d14640d0a8c7c9c:sed/CHANGELOG
 f:eb13e7233eba3eae549fe4afd76b2b5a:sed/spkgbuild
@@ -1364,8 +1364,8 @@ f:72b0e8666493438941407b3a1877d1c4:dcfldd/spkgbuild
 f:4b0f9b5d0e0f33782a2fd67d2603c134:zeromq/CHANGELOG
 f:6dcfec7992ae6d7fa451317575ff098b:zeromq/spkgbuild
 f:4ecccfe10a85a8215ea5e00494d9b4d0:asciidoc/spkgbuild
-f:160260657f9f9a18852440524dcf5a8b:man-pages/CHANGELOG
-f:5d454d569aa7f8ea204d2dada4d2fd7e:man-pages/spkgbuild
+f:6e662a601f994e3b5a3b34df8dcdf782:man-pages/CHANGELOG
+f:f82f300af54e46be57143b054a8d3e1a:man-pages/spkgbuild
 f:b2bd4e3da326ff0d7023119247f3f19f:dunst/CHANGELOG
 f:32a20c9e9cb649d86a11e3fd5bd0004f:dunst/spkgbuild
 f:69324049da08313a5fcb5cee5fff18bb:lua/CHANGELOG

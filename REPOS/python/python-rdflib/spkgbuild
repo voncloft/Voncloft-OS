@@ -2,7 +2,7 @@
 # depends : python-isodate python-pyparsing
 
 name=python-rdflib
-version=7.5.0
+version=7.6.0
 release=3
 
 source="https://github.com/RDFLib/rdflib/archive/refs/tags/$version.tar.gz"
