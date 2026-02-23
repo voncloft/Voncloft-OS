@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-filelock
-version=3.24.2
+version=3.24.4
 release=5
 
 source="https://github.com/benediktschmitt/py-filelock/archive/refs/tags/v$version.tar.gz"

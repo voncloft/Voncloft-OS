@@ -2,7 +2,7 @@
 # depends : python-astroid python-mccabe python-isort python-setuptools python-toml
 
 name=python-pylint
-version=4.0.4
+version=4.0.5
 release=3
 
 source="https://github.com/PyCQA/pylint/archive/refs/tags/v$version.tar.gz"
