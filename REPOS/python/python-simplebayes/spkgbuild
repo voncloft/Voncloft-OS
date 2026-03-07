@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-simplebayes
-version=3.1.0
+version=3.2.0
 release=6
 
 source="https://github.com/hickeroar/simplebayes/archive/refs/tags/$version.tar.gz"

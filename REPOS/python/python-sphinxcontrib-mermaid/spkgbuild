@@ -2,7 +2,7 @@
 # depends : python-sphinx
 
 name=python-sphinxcontrib-mermaid
-version=2.0.0
+version=2.0.1
 release=1
 
 source="https://github.com/mgaitan/sphinxcontrib-mermaid/archive/refs/tags/$version.tar.gz"
