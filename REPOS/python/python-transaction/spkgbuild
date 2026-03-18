@@ -2,7 +2,7 @@
 # depends : python-zope-interface
 
 name=python-transaction
-version=5.0
+version=5.1
 release=1
 
 source="https://github.com/zopefoundation/transaction/archive/refs/tags/$version.tar.gz"
