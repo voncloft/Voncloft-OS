@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:f6fc05a5588bd3f15d60b49e3ecbe3e3:rust/spkgbuild
+f:98820c67433848fe1ca2f08cf5dbaeac:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
@@ -68,12 +68,12 @@ f:18314e042c02e7ffaa40d5ed79e7eb29:autoconf-archive/CHANGELOG
 f:c3fb7835399360e2ff9db4bb3fc2e330:autoconf-archive/spkgbuild
 f:267403b0bfc9b3b7ed82122a97f2e081:ccache/ccache.conf
 f:7d6740ee5358d7181c6f49a4141cacf4:ccache/readme
-f:3f0792e269c2328292e94413901e0411:ccache/CHANGELOG
-f:d8bdf238b35baec24187da2fb41317ea:ccache/spkgbuild
+f:220b0772d599377e611e4e515cd5a8ea:ccache/CHANGELOG
+f:4e32384e80bc9ff1c551d77b153f5661:ccache/spkgbuild
 f:e303f0dd300e993d72fa8d9100e8e723:iasl/spkgbuild
 f:0d8e67141b01c9e575176f89f60f19ee:nasm/spkgbuild
-f:f1af8e095c6ce1378522da99b1de8be1:autoconf/CHANGELOG
-f:9849773a39638216dcb3028f5f456e4a:autoconf/spkgbuild
+f:c710ad70b0145daaca77f8060b0436fd:autoconf/CHANGELOG
+f:e7ffc09c9a8446b948c12e6f7b9498b1:autoconf/spkgbuild
 f:61c834de209343f4daf35c3263a631d4:llvm-old-2023-06-07/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm-old-2023-06-07/llvm-config.h
 f:173829644b03054b6827c47aded26422:llvm-old-2023-06-07/spkgbuild
@@ -81,7 +81,7 @@ f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
 f:8170101e72bdadaca1a9160043b52782:gdb/CHANGELOG
 f:e88f5ae0985bdcb2c935c9e81d66aadc:gdb/spkgbuild
-f:375da5dff74f47a3bf992e7d7e118392:cmake/CHANGELOG
+f:57e33f5be1d4b89107a4fbd36fa914c2:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override
-f:8bfc733f54962ebd723cbb50c7c3ec72:cmake/spkgbuild
+f:f4351d8c34b33b2a5ab721e143a19e0b:cmake/spkgbuild
