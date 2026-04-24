@@ -2,7 +2,7 @@
 # depends : python-appdirs python-argcomplete python-colorama
 
 name=python-milc
-version=1.11.0
+version=2.0.0
 release=1
 
 source="https://github.com/clueboard/milc/archive/refs/tags/$version.tar.gz"
