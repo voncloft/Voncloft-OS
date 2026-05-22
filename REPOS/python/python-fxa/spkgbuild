@@ -2,7 +2,7 @@
 # depends : python-browserid python-cryptography python-hawkauthlib
 
 name=python-fxa
-version=0.8.1
+version=0.8.2
 release=2
 
 source="https://github.com/mozilla/PyFxA/archive/refs/tags/v$version.tar.gz"
