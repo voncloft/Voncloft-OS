@@ -2,7 +2,7 @@
 # depends : python-docutils python-future
 
 name=python-commonmark
-version=0.9.1
+version=0.9.2
 release=3
 
 source="https://github.com/readthedocs/commonmark.py/archive/refs/tags/$version.tar.gz"

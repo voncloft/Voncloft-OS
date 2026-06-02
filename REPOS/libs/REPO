@@ -278,8 +278,8 @@ d:libsass
 d:libspiro
 d:blas
 f:1418a41e50acfa647dc6091337c51a89:libcanberra/spkgbuild
-f:0ab290aa47a09dd8034076a22747c2ed:stemmer/CHANGELOG
-f:6f265b4ba0f62dbd0c3e4cb4d1235b07:stemmer/spkgbuild
+f:36e0b0e268ac7e6ede245a1e5c41213b:stemmer/CHANGELOG
+f:e6895490cd9119c0fddf0999056813cf:stemmer/spkgbuild
 f:182aa85fa281794108bd6e013ac554dc:libxrender/spkgbuild
 f:66e9544fe68abcb398ab60087620a3ea:libblack-hole-solver/CHANGELOG
 f:287668ad0d1dbb4bdcd9413c041025a2:libblack-hole-solver/spkgbuild
@@ -382,8 +382,8 @@ f:2519c55858f0081084821011e3bccd27:libmtp/spkgbuild
 f:a4b96eda4c6ba381e2b45308097e0457:libxxf86dga/spkgbuild
 f:342bc6386ee2a7ccd83ec22289a46398:libvorbis/spkgbuild
 f:b528501759a4fda046b8fefa4467f995:libxcomposite/spkgbuild
-f:0d585643d34d0d61a04f67102fc8f0aa:libressl/CHANGELOG
-f:de220c53598a8c4007b45a2cd0c8bb13:libressl/spkgbuild
+f:a0bdb1df48e29a74b07ea836a035b323:libressl/CHANGELOG
+f:46b99247af1830326f15a44335a12a56:libressl/spkgbuild
 f:34d34e099d543154d1cfebb4cfb24bcc:liblzf/spkgbuild
 f:a3314d6af3ca42df7008fa996f30a71b:libfilezilla/CHANGELOG
 f:26c887daa65331e715e78494e091a4f8:libfilezilla/spkgbuild
@@ -455,8 +455,8 @@ f:860473d01ed41240349a65595c70378b:xapian-core/spkgbuild
 f:4c6f9b74b72d3561b8ce8b37e1ce269d:libxaw3dxft/spkgbuild
 f:fcd6515962b376624de7136f7e2260ad:liblastfm-qt5/CHANGELOG
 f:446dffe884ea47190dd2176d9419a379:liblastfm-qt5/spkgbuild
-f:e1032ef70ef3f125921c08c22923c16d:libical/CHANGELOG
-f:3471b6709b15794a5b98d18b8b8ec939:libical/spkgbuild
+f:63b10385bd8fc3c8f143e5028f5c9b7a:libical/CHANGELOG
+f:ece5639e6aa705dde15b5d17d8c8fa4e:libical/spkgbuild
 f:32897851792b8c1f5e0ec6cc89da2156:libarchive/CHANGELOG
 f:fd589feb296cfd337b0766b63888a74f:libarchive/spkgbuild
 f:e89d1b5e9cf6d4c6b34c5c81a1d36d93:libpeas/spkgbuild
@@ -467,8 +467,8 @@ f:09117913847f1a2744363b3851468dda:libmpd/0003-fix-comparison.patch
 f:a4c9c84441bdb99433e20fa34dc80cda:libmpd/spkgbuild
 f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
-f:86bd7c5ec497549e25a7f138de678f05:libqalculate/CHANGELOG
-f:d5ab405eeb454fc2ad377e15bddd836f:libqalculate/spkgbuild
+f:deb2d8454a09a4368ccc8142a0872e37:libqalculate/CHANGELOG
+f:284db6d5e01da806da8b1bb97bf84de7:libqalculate/spkgbuild
 f:1e0192c06dfb76c068be95babd7765a6:libzip/CHANGELOG
 f:38a13871e44520a8787062f906fd4d56:libzip/spkgbuild
 f:e5b7b7f81a9e60bf52e20eb6a2ff5b85:libtorrent-rasterbar/CHANGELOG
@@ -478,8 +478,8 @@ f:881b3feb662b2f8d4076bd279bf40bfb:geoip/spkgbuild
 f:2b00e53bc976fa121eca2f69c690f964:wayland/CHANGELOG
 f:aa3526c17f1e2ed986578003448ed841:wayland/spkgbuild
 f:aa80cd71347713fb395c605a24c1da62:libfm-extra/spkgbuild
-f:03cef7910af4db78c34b053b5dcf3225:openexr/CHANGELOG
-f:0d8a9a960c614f6f71245ea44b821b87:openexr/spkgbuild
+f:b601777eddedabdfcecd0fd98492ef29:openexr/CHANGELOG
+f:2d0bd737201c01290788c5ddef470fbd:openexr/spkgbuild
 f:c83c0b2b0bd5835f302ac4e762e224ad:p8-platform/spkgbuild
 f:d1c6fb3a5151e94b149c2e4ea4b9d606:libwnck3/spkgbuild
 f:04888ab1a1ea8a86eac05b5d16739f6a:libepoxy/CHANGELOG
@@ -552,8 +552,8 @@ f:f413234a6efd1227afe73889bdb2e068:muparser/spkgbuild
 f:a1f7108c7196742f3086f6ce7857d26c:libqmi/CHANGELOG
 f:77fee194336dea0d3856c48601f64cd9:libqmi/spkgbuild
 f:ee4703e47a5310db455181fce9cc57a4:libmodplug/spkgbuild
-f:0c001c88923ecd8bcaa7c712cc560e1e:libwacom/CHANGELOG
-f:dfb863c3a92bf4a824eb118cf8c261b6:libwacom/spkgbuild
+f:bb18fca025af39d288c6381a0d53144b:libwacom/CHANGELOG
+f:c96ac5a973868ab03584cac42a2bf766:libwacom/spkgbuild
 f:ae13bc7326af8d543d55bc1c8b130ebe:libftdi-compat/spkgbuild
 f:303816b3ff77e02723a38d101867e7ba:libexif/spkgbuild
 f:53e64757fb50427f24303690a0aa2d65:libxpm/spkgbuild
@@ -582,8 +582,8 @@ f:e7cdebd714ff8ff0f07c131cac871bfa:libconfig/spkgbuild
 f:104c25389156c85f0d9ca9df802b5c62:hdf5/spkgbuild
 f:01028b2a2ee8fb8ec8c7403d0a36ddca:libgpg-error/CHANGELOG
 f:7a7f79780ba40f7c39975a7ae9dc739c:libgpg-error/spkgbuild
-f:58f1926d9ffbe48f25eb9f3c6812429c:libdrm/CHANGELOG
-f:b23acf65f7328e2e91e0a17bd6e7cc73:libdrm/spkgbuild
+f:12cec445f0c926355f5b69fbb06d88df:libdrm/CHANGELOG
+f:172b90a5518bac17632f2dc394732266:libdrm/spkgbuild
 f:bf769359af7894056f34cf39331fb983:libgtop/spkgbuild
 f:91113a71b8fce45e6fef1cf4b4a37e5b:libsm/spkgbuild
 f:21e681165bb49e3c65d86356c25102d0:jansson/spkgbuild
@@ -707,8 +707,8 @@ f:af975ac183c643f22696600c6d92b663:libtorrent/CHANGELOG
 f:e4ea060a5287b6dc181f43ab2f69d503:libtorrent/fix-build-with-boost-1.72.0.patch
 f:a4f150ffabcab876423a438096c88141:libtorrent/spkgbuild
 f:76226b0dee30494f6932b0a92d1ee6f4:alsa-lib/readme
-f:edf4d9791fd3af92a56a60b44ee8e27a:alsa-lib/CHANGELOG
-f:8c31013e4c19c4c8a425949e3afb671d:alsa-lib/spkgbuild
+f:523d8e80e81cfff4a9331d06b15800e1:alsa-lib/CHANGELOG
+f:3d4829e7e41644ccfff924bb78e14268:alsa-lib/spkgbuild
 f:4e42721f3a4cc2132ddbabde13256d2a:libxfont2/spkgbuild
 f:3965a59dbebb04051391e83daa216932:libcurl-compat/spkgbuild
 f:fce3f5829a32de57210fe514c6bf22c5:expat/CHANGELOG
