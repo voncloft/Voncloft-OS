@@ -480,8 +480,8 @@ f:fa96f6abf49b9378bf6f7c48979379d0:intltool/spkgbuild
 f:5d4e8f73a7420ba6997eb32b940d97f7:clipit/spkgbuild
 f:ad398cc11133888ff3936caeae51037c:mksh/post-install.sh
 f:caa54c2e8199d943be170a294f901e32:mksh/spkgbuild
-f:99aab51586372cb655855ecfc123fdb7:binutils/CHANGELOG
-f:ea1bda879ddeb738a56c97ed1e08ab02:binutils/spkgbuild
+f:2d1d9e8c9f939469476c94554d3e63c1:binutils/CHANGELOG
+f:8cefa4894297341b1abe8e6fa2f1ebec:binutils/spkgbuild
 f:33cc4a8dff1fb684eba8df54b0d5b96b:make/CHANGELOG
 f:c9ef724abcc2f5d4633a63fa0843a758:make/spkgbuild
 f:b46f735fcfa839bea634d4c2df18adc6:sysvinit/CHANGELOG
@@ -507,8 +507,8 @@ f:41bcbee48a9731e140f89d7673bf5f45:newsboat/newsboat.1.gz
 f:8355dc7165cbdf83517a19588de9f1d8:newsboat/CHANGELOG
 f:edb7d33365d3db7d0a4f3c98a8e6dc85:newsboat/spkgbuild
 f:43b602a9011a48837005f82972e0beca:newsboat/podboat.1.gz
-f:c8ef4eeb5082d88cc1f3ffd9dff786aa:cbindgen/CHANGELOG
-f:a3b6e7125bab0e396e23825d001b22b6:cbindgen/spkgbuild
+f:e7e378a65c1d1d09232d30085200a4f6:cbindgen/CHANGELOG
+f:accf1dae140b4cc45fd728defc16afa1:cbindgen/spkgbuild
 f:2bf40a877eedd001abcae0c495ae97ed:mkinitramfs/install
 f:ef609f40abcd6437acc84d6f7f3e1242:mkinitramfs/mkinitramfs.conf
 f:d300a6d09dadfc279b69aec15b1e1ee7:mkinitramfs/spkgbuild
@@ -692,8 +692,8 @@ f:1fd106caba5c68c76f01b83f89396ba5:obconf/spkgbuild
 f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
 f:3d61b5f4fec0dd840374401e4504ad45:fakeroot/CHANGELOG
 f:bff86c382c43410bb60fe1e38e821a97:fakeroot/spkgbuild
-f:e00ed9a679671f9ca8963c0182ae8a0a:file/CHANGELOG
-f:7a98c40427051958753077d229242b48:file/spkgbuild
+f:9951efe7948640bf773bc981db6f44d4:file/CHANGELOG
+f:bcead85cd8a98d884faab7fa547957c4:file/spkgbuild
 f:cf55ab1248efc6dab2820aa5bc682979:parallel/spkgbuild
 f:40c765dc99ae21d5af584e10aab9bf02:vontools/clean-packages
 f:254fb5ec8a9197747f7498554ab76f97:vontools/CHANGELOG
@@ -1354,10 +1354,10 @@ f:4a531ce4b52964c3ceb72bb40c4142d0:lhasa/CHANGELOG
 f:ba99f1ba58e763241c5b92067bd243dd:lhasa/spkgbuild
 f:6131c1b3967230ae0910ebe94ecc9e11:streamlink/CHANGELOG
 f:d0a9b7e01e20603d416b1fce190afa6a:streamlink/spkgbuild
-f:ee5b0c78c00d14d46174f1437d43bb38:rsync/CHANGELOG
+f:453085f66ef1623a7826d981d86f5de1:rsync/CHANGELOG
 f:af8998ac5e7145370a800a69aa1c774e:rsync/pre-install.sh
 f:8596e2539b37dd638a10418ba7168b57:rsync/rc.rsyncd
-f:f278622cf453ee1f5828beec185915e5:rsync/spkgbuild
+f:66a605240e437694d5c81ba5149cbd8d:rsync/spkgbuild
 f:19f06afc0a351605c10242252ad7ab9e:rsync/run
 f:d303c19d7ee4309acc730253488452c0:grantlee/spkgbuild
 f:dd9ac2c531f2ab9ceffff1deda89c70c:grantlee/3a5fc7662da3261be6496611900c095844e56ab1.patch
@@ -1437,5 +1437,5 @@ f:c346e64cb9b6c34f3e79e7adc0a9de74:frei0r-plugins/CHANGELOG
 f:7b5fb56ef32315bc55a133c3bc63cb48:frei0r-plugins/spkgbuild
 f:b5070b72da9894aaa75316b143facf88:xbindkeys/spkgbuild
 f:e5a7ead22210f9c37b2a65822d37d780:lynx/spkgbuild
-f:78f79a6f8e167a2f53edc9abb1ac0a62:hugo/CHANGELOG
-f:34cbcbe9e9184d0d65823de7960aeb34:hugo/spkgbuild
+f:91344204fd72169c8ff8f2e10a242450:hugo/CHANGELOG
+f:cda047b4b16b67cbd7c1e80cc9a46527:hugo/spkgbuild
