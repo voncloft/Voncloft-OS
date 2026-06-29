@@ -2,7 +2,7 @@
 # depends : python curl
 
 name=python-pycurl
-version=7.44.1
+version=7.47.0
 release=4
 
 source="https://github.com/pycurl/pycurl/archive/refs/tags/$version.tar.gz"

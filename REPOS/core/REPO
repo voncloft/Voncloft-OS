@@ -468,9 +468,9 @@ f:a0624bb78f191945d1049a970db4d5a9:grub/spkgbuild
 f:f074421752fa573485623cccc059c7d6:grub/0006-BootHole.patch
 f:fe42766c0564e0322effeef9d124762f:bspwm/CHANGELOG
 f:87b3499304e338dc0bb278a7815e4e9a:bspwm/spkgbuild
-f:aeb71e009c3c7e883898f202b8d3e5dd:systemd/CHANGELOG
+f:4c7b16fa04edd225de4274a32ac829fc:systemd/CHANGELOG
 f:7afe3d13464ae7d20dbe5e6f0fb8ccd3:systemd/systemd-247-upstream_fixes-2.patch
-f:6703a30eeb8095e1d9a30f1bc0f09ad7:systemd/spkgbuild
+f:38a760ce2fb2b2c9e4b3f414e851f6dc:systemd/spkgbuild
 f:9a97df12a65637c0d0316a52afd07905:sxhkd/CHANGELOG
 f:c43ef1d73f83e0da62491352b8d74a3f:sxhkd/spkgbuild
 f:30a878ab01ab1f24cb997a041f8867ed:lm_sensors/readme
@@ -752,8 +752,8 @@ f:1cc4984ee64448ca7f55c37f28b83019:light/finish
 f:d443423606ba6fb12ae58215c606afc9:light/rc.light
 f:0a05a9a982a2f696d01f9ec9ed8a52db:light/spkgbuild
 f:b4b85009911ad5c0f383d59f1a62de20:light/run
-f:cd16ab61bb48e663b5af6414040b888c:attr/CHANGELOG
-f:063f14c49b9d2516edc56a1274b97bc1:attr/spkgbuild
+f:0a8520987db741611925324cc9baafc5:attr/CHANGELOG
+f:a62424c1bb6bc68770143e9479e9de87:attr/spkgbuild
 f:eab2fbc5f166168d1769841fef637b54:smartmontools/CHANGELOG
 f:7d14428e62f1a3c871fd93da52b31bfc:smartmontools/rc.smartd
 f:038469f2ec0b5831e2efedb1480139db:smartmontools/spkgbuild
@@ -952,8 +952,8 @@ f:f97db67248b4a13cd5f3bfef8599a197:jemalloc/CHANGELOG
 f:7fa5ede2557cb255e18a2d54a8049eab:jemalloc/spkgbuild
 f:3c4f0765e8ff58fe15d79d208843b9e0:iso-codes/CHANGELOG
 f:5d41e469d1114b7976c75bf6a30f6482:iso-codes/spkgbuild
-f:120c1f032047768a3edd33764332529b:mercurial/CHANGELOG
-f:f2400e5b07ad151b56d3d80bd86fee5a:mercurial/spkgbuild
+f:91f79d886fcf351e93b4469aabef46c2:mercurial/CHANGELOG
+f:b1ea40a2b888e83baaed0a977b1045e9:mercurial/spkgbuild
 f:8179d62708938e5ea94a6ff77b70b63f:rxvt-unicode/CHANGELOG
 f:7c96dae1b166bf18f5b630f8555f42ab:rxvt-unicode/URxvt
 f:8fce0ef8aef888c5a59e7c03753504d4:rxvt-unicode/spkgbuild
@@ -1037,8 +1037,8 @@ f:262eda046c808cedb749b7f139f4233e:linux-router/override
 f:cfbfff49248b022d331da7cbde646548:linux-router/spkgbuild
 f:d70e0f07fbfcb4cae93bcdf5d0383521:linux-router/.config
 f:3bdb0c27368b7c1930cd957dadcc9db0:dwm/spkgbuild
-f:3dbe32983dea0f426e4ae47109a5b393:acl/CHANGELOG
-f:e8ae99d49e2f06ac353f57943ef3948f:acl/spkgbuild
+f:59191e6476b1711da4c8a90d3ac3e7bd:acl/CHANGELOG
+f:a3a4c2707a9b9670f8f7b8d537504b5b:acl/spkgbuild
 f:645f3c898abd270a9143036824ae121a:sgml-common/sgml-common-manpage-1.patch
 f:c54e11f610f3df565cebb9e288c8486e:sgml-common/post-install.sh
 f:b6b946256494c2d0c1e14f90cd10423f:sgml-common/spkgbuild
@@ -1078,8 +1078,8 @@ f:db4e415c63bab565f7cc9c92b2d7f10f:swig/spkgbuild
 f:579b417086a9c834f6e1b31511663083:double-conversion/CHANGELOG
 f:c71e09ac5b46a2c3365bc8fe8fef211b:double-conversion/spkgbuild
 f:cbf6a5420ae3ad95fad609a613c5630d:shellcheck-static/spkgbuild
-f:496f32f83411ab26cd1773ad5134ba92:socat/CHANGELOG
-f:483b9717ec4ac7a80f656a3e590d9a6c:socat/spkgbuild
+f:393d753c1743040ccf355bf61d0648c2:socat/CHANGELOG
+f:ec49245319e2cdab6135303003a9f332:socat/spkgbuild
 f:f6fe6886d34e97c23d8308bb7d21dbbb:graphviz/CHANGELOG
 f:5ac0ca02f44146925625a7fca9122d4d:graphviz/spkgbuild
 f:d3d9f3952d203a70a449e452e554a1a1:uthash/CHANGELOG
@@ -1220,8 +1220,8 @@ f:0230c3ff2dc0e51fd0ddb9b6c25e4e9f:slang/CHANGELOG
 f:f3e7818496df20f396b4784a76806739:slang/spkgbuild
 f:8e859d8f13588b1b6ee0c0007eeef446:m4/CHANGELOG
 f:01d45d6822a42769076dea310a1f065e:m4/spkgbuild
-f:bf1a9430479c0ad985dc9a22ded801d4:tmux/CHANGELOG
-f:ed8132617b164c33dbfd15e659a5d536:tmux/spkgbuild
+f:85cc99c8628f9290139d47d6b3cd3d99:tmux/CHANGELOG
+f:dd686cb279de0bcbc091b27d92c4d2eb:tmux/spkgbuild
 f:6fea4b47dc057dd6a279008f32740867:busybox/CHANGELOG
 f:634419ae0e17c0bc71654b3d195644f4:busybox/spkgbuild
 f:45de326e439ed1393f20b9cd5c55fa22:busybox/config
