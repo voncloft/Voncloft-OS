@@ -2,7 +2,7 @@
 # depends	: ncurses
 
 name=lame
-version=3.100
+version=4.0
 release=1
 source="https://downloads.sourceforge.net/$name/$name-$version.tar.gz"
 

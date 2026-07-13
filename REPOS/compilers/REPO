@@ -25,8 +25,8 @@ d:cmake
 f:dbe480f3f416088acae9ddf8eefcd677:ruby/CHANGELOG
 f:d9f4d5de58a076d2af1a828c4c3edf5b:ruby/override
 f:2e3877e4858bfd07ff4d1cee51d8c804:ruby/spkgbuild
-f:aaedb8773ee8f1f4e05d906f171e0181:meson/CHANGELOG
-f:5dcdfc8ed75a3fdf47a663e25f7597db:meson/spkgbuild
+f:eb9705d4e3d8c2b15fbbf51032c2ae5c:meson/CHANGELOG
+f:2cee68a4297d922df45d92969a5097cb:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
 f:d659b78f7071326fd1be1afde98d2b3a:zig/spkgbuild
 f:6be2a5e3cd924b417e134fccf6449d41:zig/resolve_DNS.patch
@@ -48,8 +48,8 @@ f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
 f:2c15e621974d06ec07a095ec932bb4c5:llvm/spkgbuild
 f:6388f439375efc8be05c8f5fb0030768:xkbcomp/CHANGELOG
 f:daf783137fb39bbd7ad994d6d2386f34:xkbcomp/spkgbuild
-f:006a7c0184146ade27ba32da3485ca4d:pkgconf/CHANGELOG
-f:7cad146f0b989a341ef4e1ba9007ac57:pkgconf/spkgbuild
+f:d0cb7d2f1263955bd4c62cf329640be3:pkgconf/CHANGELOG
+f:57c738f8d648453fa258fe8cb4b54bd7:pkgconf/spkgbuild
 f:d0182075336da7ed98c696c9bfb8de9c:llvm-bak/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm-bak/llvm-config.h
 f:fe37ff48ab559732e0a0c8bd600502f1:llvm-bak/spkgbuild
@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:618c8aa363afd40c584cc3fdc0c0db1b:rust/spkgbuild
+f:e646a1d4bc65471ce1a17aaac2e49d9d:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
@@ -81,7 +81,7 @@ f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
 f:5a97170041a03d1dbeba257dea7e2a8b:gdb/CHANGELOG
 f:d6f19b28de7a1db08ffe775e2e1e54a9:gdb/spkgbuild
-f:a44473a87963599a399277f33cc3ddf5:cmake/CHANGELOG
+f:4212e65c7b280977a2897c465fe7e0d3:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override
-f:398ada3cd4d3b329c601cdb31abe6c31:cmake/spkgbuild
+f:1d139c0024c8ce6130a3f51ca9ff17ef:cmake/spkgbuild

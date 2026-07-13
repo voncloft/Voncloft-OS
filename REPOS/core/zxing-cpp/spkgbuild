@@ -2,7 +2,7 @@
 # depends : gcc cmake
 
 name=zxing-cpp
-version=3.0.2
+version=3.1.0
 release=2
 
 source="https://github.com/nu-book/zxing-cpp/archive/v$version/$name-$version.tar.gz
