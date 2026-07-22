@@ -2,9 +2,9 @@
 # depends : 
 
 name=plex-media-server
-version=1.43.2.10687
+version=1.43.3.10828
 release=2
-checksum=563d026ea
+checksum=00f62d37d
 source="https://downloads.plex.tv/plex-media-server-new/$version-$checksum/redhat/plexmediaserver-$version-$checksum.x86_64.rpm
 	plexmediaserver.conf.d
 	plex.sysusers

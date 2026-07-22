@@ -2,7 +2,7 @@
 # depends : gcc
 
 name=p8-platform
-version=2.1.0.1
+version=2.2.0
 release=4
 
 source="https://github.com/Pulse-Eight/platform/archive/$name-${version}.tar.gz"

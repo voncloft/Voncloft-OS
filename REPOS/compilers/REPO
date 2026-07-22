@@ -22,9 +22,9 @@ d:llvm-old-2023-06-07
 d:autoconf2.13
 d:gdb
 d:cmake
-f:dbe480f3f416088acae9ddf8eefcd677:ruby/CHANGELOG
+f:0c0e02bcb36f2e7b852916325868c554:ruby/CHANGELOG
 f:d9f4d5de58a076d2af1a828c4c3edf5b:ruby/override
-f:2e3877e4858bfd07ff4d1cee51d8c804:ruby/spkgbuild
+f:1dec6b8f8fa218616cf220c57a9ec5fc:ruby/spkgbuild
 f:eb9705d4e3d8c2b15fbbf51032c2ae5c:meson/CHANGELOG
 f:2cee68a4297d922df45d92969a5097cb:meson/spkgbuild
 f:78f8b49962b9d7fbe5e6e3a51199af6c:zig/CHANGELOG
@@ -48,8 +48,8 @@ f:295c343dcd457dc534662f011d7cff1a:llvm/llvm-config.h
 f:2c15e621974d06ec07a095ec932bb4c5:llvm/spkgbuild
 f:6388f439375efc8be05c8f5fb0030768:xkbcomp/CHANGELOG
 f:daf783137fb39bbd7ad994d6d2386f34:xkbcomp/spkgbuild
-f:d0cb7d2f1263955bd4c62cf329640be3:pkgconf/CHANGELOG
-f:57c738f8d648453fa258fe8cb4b54bd7:pkgconf/spkgbuild
+f:6359805be36fa71e8476d19f744b2183:pkgconf/CHANGELOG
+f:b192d914c47cc8ebe932d42f59b3e9bd:pkgconf/spkgbuild
 f:d0182075336da7ed98c696c9bfb8de9c:llvm-bak/CHANGELOG
 f:295c343dcd457dc534662f011d7cff1a:llvm-bak/llvm-config.h
 f:fe37ff48ab559732e0a0c8bd600502f1:llvm-bak/spkgbuild
@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:e646a1d4bc65471ce1a17aaac2e49d9d:rust/spkgbuild
+f:900a2081aae484c1652a3a1824ef684c:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
