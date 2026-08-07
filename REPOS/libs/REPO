@@ -478,8 +478,8 @@ f:881b3feb662b2f8d4076bd279bf40bfb:geoip/spkgbuild
 f:2b00e53bc976fa121eca2f69c690f964:wayland/CHANGELOG
 f:aa3526c17f1e2ed986578003448ed841:wayland/spkgbuild
 f:aa80cd71347713fb395c605a24c1da62:libfm-extra/spkgbuild
-f:e4a1fd9090d1c7e710d9bc19d1cdb05e:openexr/CHANGELOG
-f:ef4fb9c2a0a57288b0e301c73bc8eb62:openexr/spkgbuild
+f:a3f5a2e1d882ca1de3984d959a6979db:openexr/CHANGELOG
+f:9856832aebdd08463af8c30d8d37cc82:openexr/spkgbuild
 f:3f27070e64062ffe086e209dd7165602:p8-platform/CHANGELOG
 f:985a7a25faf06e88e2ff547373065b8f:p8-platform/spkgbuild
 f:d1c6fb3a5151e94b149c2e4ea4b9d606:libwnck3/spkgbuild
@@ -562,8 +562,8 @@ f:0bd386b2ad7c92582d2f38f66387cda0:libevent/spkgbuild
 f:e590616d1d6ba2d848c8c45ec40ebf17:libdvdnav/spkgbuild
 f:10b6f9d18795bc74491283e6c7fc27aa:libfm-qt/CHANGELOG
 f:4e29e17808f63dc19b6d6aebe6dbe26d:libfm-qt/spkgbuild
-f:ea3353669e3e64c1c4ac04fa3b5ed195:libpsl/CHANGELOG
-f:0471314d204a062a226bfc0935307b32:libpsl/spkgbuild
+f:51c7db14c400c55537cf6314f1d67bff:libpsl/CHANGELOG
+f:6d38e602ce9f76b393ec29e386123637:libpsl/spkgbuild
 f:91fcf99fbe327b32a871b947b2135d2d:libpgm/CHANGELOG
 f:5b80353da631e58d2d11df9a7335cc4c:libpgm/spkgbuild
 f:a0feab13ab04ef03391be01446cac024:libutempter/spkgbuild
@@ -612,8 +612,8 @@ f:4eec6ebad5490020e3d60d6abd80e954:libmatemixer/spkgbuild
 f:06583db603bd44edd2307274dfd59532:libksba/CHANGELOG
 f:f5d94a1f9dbabad85b997e030c66efe4:libksba/spkgbuild
 f:eaf7228847ff2d2c172f9284cc5596f4:libx11/spkgbuild
-f:29c39d9a1ac0597d77a57dfbdd2b5d2f:libmicrohttpd/CHANGELOG
-f:867d34ca91f14d5c28221efdf4243d4e:libmicrohttpd/spkgbuild
+f:586ea49217882679370271f4ee893170:libmicrohttpd/CHANGELOG
+f:252cea0691fcdce299b8065b78c012e7:libmicrohttpd/spkgbuild
 f:8bcffde83136bf615728c13aac3be09d:libisofs/CHANGELOG
 f:460cdb8cafbf98df88fe476cd20e7611:libisofs/spkgbuild
 f:ff7a1ea9847f5a67050767a2422967df:libxcvt/CHANGELOG
@@ -666,8 +666,8 @@ f:bddc3642d31c3d20766bb133637b3da8:libidn2/spkgbuild
 f:051a6e7add098c4c89f107189f64b1f6:lirc/CHANGELOG
 f:d80cd25aa263531f098d0b90bde08056:lirc/lirc-0.10-build-fix.patch
 f:4fd0cc3324e9e62e50dec34822f3fa57:lirc/spkgbuild
-f:eaa12baa67b285065d112a6326e5829b:poppler/CHANGELOG
-f:46ce99aa8bfe9cfe0ed0634a001f1215:poppler/spkgbuild
+f:c2f8f50ff6752b325b0c789b3e779d3e:poppler/CHANGELOG
+f:661f940f52d3b5376dfea1d15b30b966:poppler/spkgbuild
 f:124f90691b94971fb85f74b8c9283566:libffi/CHANGELOG
 f:c3aae9aa68c71eafeb1719596338cdb7:libffi/spkgbuild
 f:debfd1d1c91246ed22ca7a37102f951b:c-ares/CHANGELOG
@@ -700,8 +700,8 @@ f:cdedc7ad6890ef7a810b7b337e9a09f6:libtool/CHANGELOG
 f:4043f9cc34ba2a4225534c460d222b4b:libtool/spkgbuild
 f:35385de3d9da0d2855eefaf04e6545c7:libofx/CHANGELOG
 f:267e72b23898eed86dc88d1d4470c175:libofx/spkgbuild
-f:db037c03f87cbe37cc1b713f185beac5:apr-util/CHANGELOG
-f:b785830d09b53b2311af83db058a1974:apr-util/spkgbuild
+f:a426fabc6db2b738090076730fce3267:apr-util/CHANGELOG
+f:e391387648ebcbc8c4b70360bb3e8f0b:apr-util/spkgbuild
 f:1a6d00cbfa3d7d6cdb05bb35f064988f:libva/CHANGELOG
 f:ec846a2702bef9da40eb4b8ac9391bea:libva/spkgbuild
 f:dd2af4f9bd0278327d0dc89cf2d93ee6:libtorrent/CHANGELOG
@@ -725,8 +725,8 @@ f:debace56a4999da0b057c5dafd0ea2ba:libsoup/spkgbuild
 f:b92da179772c7b851a709c8ee7bd99c1:blosc/CHANGELOG
 f:733778facd70cc6592e1c3d8f71470d2:blosc/spkgbuild
 f:89344eec43d1125d321ce45265b5e03c:babl/babl.patch
-f:e974ff48fd049d6f789f7b7dd8d038e1:babl/CHANGELOG
-f:5ed0a7be3b13592f094802f8dc61efda:babl/spkgbuild
+f:6cd5d048f4cc4146d7c324037b7b32a2:babl/CHANGELOG
+f:11a50fe73e01c0325feab3a9bc278b0b:babl/spkgbuild
 f:b8237ff392f05e3934fcff31d1f1e27b:libblockdev/CHANGELOG
 f:2689e0ce2d9397346eb9502789184605:libblockdev/spkgbuild
 f:7105a46924a6a6281b409d62e2ef8626:libmatekbd/spkgbuild
