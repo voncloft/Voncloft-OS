@@ -2,7 +2,7 @@
   # depends : python-pytest
 
 name=python-pytest-forked
-version=1.7.3
+version=1.7.5
 release=3
 
 source="https://github.com/pytest-dev/pytest-forked/archive/refs/tags/v$version.tar.gz"
