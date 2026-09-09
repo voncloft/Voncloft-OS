@@ -2,7 +2,7 @@
 # depends : python-pytest
 
 name=python-pytest-randomly
-version=4.1.0
+version=5.0.0
 release=2
 
 source="https://github.com/pytest-dev/pytest-randomly/archive/refs/tags/$version.tar.gz"
