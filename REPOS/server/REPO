@@ -111,10 +111,10 @@ f:421c86a80c7c64ea240dcd862890d17e:nginx/spkgbuild
 f:14dbe04c4bb34bb248e8e58870c24818:homeassistant/CHANGELOG
 f:d1b047d81d9b085417de851ae0d7b406:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
-f:b88399766d67397abbaff81fb4f982a8:blacklist-hosts/CHANGELOG
+f:9122ef4c234ffcc22c50492855867d5f:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh
 f:3b365d0e52f2510a3e6f60ae04ec45af:blacklist-hosts/test
-f:a9f7fc05e12f87023c120ea2e3aeb841:blacklist-hosts/spkgbuild
+f:b448a5c156abc3775106118802e03dba:blacklist-hosts/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
@@ -139,9 +139,9 @@ f:1f6f6181709e035e9125a442d859c556:radicale/radicale
 f:ba45b98ad6a1419b38d5218c76b1ba50:radicale/config
 f:67bd17721c463cecde9859bcb091a50a:samba/smb.conf
 f:c3d3a1a2a1520401ce5c91b9b9cf431d:samba/post-install.sh
-f:6e37ce4e9784783853703b6740a9faef:samba/CHANGELOG
+f:2b8acc839b3183913106e980ff783869:samba/CHANGELOG
 f:c65f2e42ce19954986906299c2b8851f:samba/post-upgrade.sh
-f:cab54a5440c0ed787a5a0e4277bf158e:samba/spkgbuild
+f:8d8030ddf479cd10d61d69391f01a1fd:samba/spkgbuild
 f:98abcdacd06a8e4210d34c58b93464d4:samba/samba
 f:7af2bc4dd9c88cc95ae96b7c338dd102:toolbox/createpackage
 f:3dd4aad9607de44d05d369b8ee95a6ed:toolbox/CHANGELOG
