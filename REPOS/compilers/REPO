@@ -58,7 +58,7 @@ f:8b3bfc9985a619b5a0008738f9bebacd:rust/CHANGELOG
 f:17bce39decd9d28762bec45f22cdb2b8:rust/spkgbuild-broken-dontknowwhy
 f:29f5be29852ef45a9cc2e52fc3f77df9:rust/0001-bootstrap-Change-libexec-dir.patch
 f:01370d49e5639f8f333ee7c58def539d:rust/override
-f:13d36970e4a83c8263970ee8995bbafe:rust/spkgbuild
+f:e93b1c29b97d0c668eb232ff2f8ffffe:rust/spkgbuild
 f:70861d1e87e9b6477b3c0481d6207885:rust/0002-compiler-Change-LLVM-targets.patch
 f:3d333df77302ed89e06a4a8539943b7d:gcc/c89
 f:da96f545b863e57c6ab2598c1ea9a740:gcc/c99
@@ -68,8 +68,8 @@ f:18314e042c02e7ffaa40d5ed79e7eb29:autoconf-archive/CHANGELOG
 f:c3fb7835399360e2ff9db4bb3fc2e330:autoconf-archive/spkgbuild
 f:267403b0bfc9b3b7ed82122a97f2e081:ccache/ccache.conf
 f:7d6740ee5358d7181c6f49a4141cacf4:ccache/readme
-f:700f03ff9dd9b52ed02cdfbafa32400a:ccache/CHANGELOG
-f:8f3bb06fbe16fe387023cc78ef8b2a99:ccache/spkgbuild
+f:c5e71a44fb7e1c5324ee05c0df1abd54:ccache/CHANGELOG
+f:3003bbfd0e353fac963f496dadf6ea7a:ccache/spkgbuild
 f:e303f0dd300e993d72fa8d9100e8e723:iasl/spkgbuild
 f:0d8e67141b01c9e575176f89f60f19ee:nasm/spkgbuild
 f:c710ad70b0145daaca77f8060b0436fd:autoconf/CHANGELOG
@@ -79,8 +79,8 @@ f:295c343dcd457dc534662f011d7cff1a:llvm-old-2023-06-07/llvm-config.h
 f:ead9cf8399e9cac12102f5a6c1d7aa20:llvm-old-2023-06-07/spkgbuild
 f:9ceaee69e62767770eb473d5242db70d:autoconf2.13/autoconf-2.13-consolidated_fixes-1.patch
 f:2c1fe7e333872910427df9a71bf7cc79:autoconf2.13/spkgbuild
-f:5a97170041a03d1dbeba257dea7e2a8b:gdb/CHANGELOG
-f:d6f19b28de7a1db08ffe775e2e1e54a9:gdb/spkgbuild
+f:daca3295de699949b64e0dbef991be73:gdb/CHANGELOG
+f:a40b63e86a13e251ccc3ed6414f1b17c:gdb/spkgbuild
 f:40de3899e87862d3d25b57887d271ea1:cmake/CHANGELOG
 f:8ba3c9f07f4f88b451083053325a1552:cmake/override-old
 f:3952e1e013f3675c6ec2d90dfd12f4a2:cmake/override
