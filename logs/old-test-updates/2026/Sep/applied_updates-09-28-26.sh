@@ -116,3 +116,33 @@ sed -i -e "s/version=3.8.0/version=3.8.1/g" server/radicale/spkgbuild
 changelog "server/radicale/spkgbuild" "Upgraded from version 3.8.0 to version 3.8.1"
 sed -i -e "s/version=4.24.7/version=4.25.0/g" server/samba/spkgbuild
 changelog "server/samba/spkgbuild" "Upgraded from version 4.24.7 to version 4.25.0"
+sed -i -e "s/version=1.25.0/version=1.25.1/g" core/conky/spkgbuild
+changelog "core/conky/spkgbuild" "Upgraded from version 1.25.0 to version 1.25.1"
+sed -i -e "s/version=0.166.0/version=0.167.0/g" core/hugo/spkgbuild
+changelog "core/hugo/spkgbuild" "Upgraded from version 0.166.0 to version 0.167.0"
+sed -i -e "s/version=10.48/version=10.49/g" core/pcre2/spkgbuild
+changelog "core/pcre2/spkgbuild" "Upgraded from version 10.48 to version 10.49"
+sed -i -e "s/version=2.55.0/version=2.56.0/g" networking/git/spkgbuild
+changelog "networking/git/spkgbuild" "Upgraded from version 2.55.0 to version 2.56.0"
+sed -i -e "s/version=157.0b5/version=158.0b1/g" nonfree/firefox/spkgbuild
+changelog "nonfree/firefox/spkgbuild" "Upgraded from version 157.0b5 to version 158.0b1"
+sed -i -e "s/version=1.43.103/version=1.43.104/g" python/python-botocore/spkgbuild
+changelog "python/python-botocore/spkgbuild" "Upgraded from version 1.43.103 to version 1.43.104"
+sed -i -e "s/version=1.7.7/version=1.8.0/g" python/python-configargparse/spkgbuild
+changelog "python/python-configargparse/spkgbuild" "Upgraded from version 1.7.7 to version 1.8.0"
+sed -i -e "s/version=4.0.4/version=4.0.5/g" python/python-filelock/spkgbuild
+changelog "python/python-filelock/spkgbuild" "Upgraded from version 4.0.4 to version 4.0.5"
+sed -i -e "s/version=8.5.0/version=8.6.0/g" python/python-gitlab/spkgbuild
+changelog "python/python-gitlab/spkgbuild" "Upgraded from version 8.5.0 to version 8.6.0"
+sed -i -e "s/version=6.168.2/version=6.168.3/g" python/python-hypothesis/spkgbuild
+changelog "python/python-hypothesis/spkgbuild" "Upgraded from version 6.168.2 to version 6.168.3"
+sed -i -e "s/version=9.0.1/version=9.0.2/g" python/python-isort/spkgbuild
+changelog "python/python-isort/spkgbuild" "Upgraded from version 9.0.1 to version 9.0.2"
+sed -i -e "s/version=1.12.0/version=1.12.1/g" python/python-parsel/spkgbuild
+changelog "python/python-parsel/spkgbuild" "Upgraded from version 1.12.0 to version 1.12.1"
+sed -i -e "s/version=1.17.6/version=1.17.7/g" python/python-pipx/spkgbuild
+changelog "python/python-pipx/spkgbuild" "Upgraded from version 1.17.6 to version 1.17.7"
+sed -i -e "s/version=2.15.0/version=2.15.1/g" python/python-pyjwt/spkgbuild
+changelog "python/python-pyjwt/spkgbuild" "Upgraded from version 2.15.0 to version 2.15.1"
+sed -i -e "s/version=0.24.4/version=0.24.5/g" python/python-pyudev/spkgbuild
+changelog "python/python-pyudev/spkgbuild" "Upgraded from version 0.24.4 to version 0.24.5"
