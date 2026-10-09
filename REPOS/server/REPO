@@ -25,10 +25,10 @@ d:samba
 d:toolbox
 f:01b882c49d81d4f9a48106834fe88e54:httpd/httpd
 f:6728f2b3aa5f409ef61aede4e9577942:httpd/post-install.sh
-f:ed5762b7e65c22de03dd2b942890e40b:httpd/CHANGELOG
+f:0d5801010ea6d7e1a8256392650a4b48:httpd/CHANGELOG
 f:915ed49eb11eeccfcc4e8b87a5b9c7e2:httpd/post-upgrade.sh
 f:2a424710304fdd98868c6511c4814d41:httpd/pre-install.sh
-f:a935a19f89a1bf4e52fed25319493f6f:httpd/spkgbuild
+f:415b0872c25dd4bc7829dbdfd381ee3e:httpd/spkgbuild
 f:a424ff35938fd7eefe670a8c9376feba:berkeley-db/spkgbuild
 f:47e741bec7fa4412bbb73a39cf9af748:blacklist-youtubeads/post-install.sh
 f:9adec20d3f1c66e9280eeb5e1c50626f:blacklist-youtubeads/CHANGELOG
@@ -111,10 +111,10 @@ f:5b08e8d5bf9229ddc54bcff067b4e2b5:nginx/spkgbuild
 f:0a4b9fa2d6b2472cf147ed574204ae06:homeassistant/CHANGELOG
 f:92e74cfa9d84896cd22cfb0ccc7bd760:homeassistant/spkgbuild
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-install.sh
-f:5969e3558d04e742fba794ff16c4607e:blacklist-hosts/CHANGELOG
+f:06b48334f45665e366e369fac32ea3ad:blacklist-hosts/CHANGELOG
 f:d36d8c1ca1e0fc10e6bc24714ac963bf:blacklist-hosts/post-upgrade.sh
 f:3b365d0e52f2510a3e6f60ae04ec45af:blacklist-hosts/test
-f:72e10ce5823fbf7bd38c64e0fd16a566:blacklist-hosts/spkgbuild
+f:cb12d01269fc0e051a744ad1645d3480:blacklist-hosts/spkgbuild
 f:7fe2bbac3f6174768afd11cd13f374a8:dhcpcd/CHANGELOG
 f:4510a90d2c0fb9e16cd1f0e5f2a3b744:dhcpcd/rc.network
 f:5f7f912c6a3f6087728f0db3d2692e0f:dhcpcd/conf
@@ -132,9 +132,9 @@ f:2bb9b178ab9e4424b10f7a2a0290cb05:subsonic/override
 f:9e07c4d043b54bf3ec270aef22340c53:subsonic/spkgbuild
 f:34ac5562638486542f9978e941925c1a:subsonic/subsonic
 f:cdbf9b3e951732f764bfbdbbf72f1fc9:radicale/post-install.sh
-f:dc05b76af1453d648821f2fd337b4a6a:radicale/CHANGELOG
+f:c24c6a11dd6c294ecf7dc26b5421fcf0:radicale/CHANGELOG
 f:cdbf9b3e951732f764bfbdbbf72f1fc9:radicale/post-upgrade.sh
-f:688ad7108750ffedb0e01105c30def8c:radicale/spkgbuild
+f:a5f29fdbeb25e9d287fad8c68d6e6c1d:radicale/spkgbuild
 f:1f6f6181709e035e9125a442d859c556:radicale/radicale
 f:ba45b98ad6a1419b38d5218c76b1ba50:radicale/config
 f:67bd17721c463cecde9859bcb091a50a:samba/smb.conf

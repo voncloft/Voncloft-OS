@@ -371,8 +371,8 @@ f:e58c896cc25846a1e96b4b9c25153751:libxfixes/spkgbuild
 f:9c0c0fa8da78b0447ddfef1295fe0dc7:rinutils/CHANGELOG
 f:b55b888382e3ca61612af7dfcf4beadf:rinutils/spkgbuild
 f:a7cccf7f4fafba1e0b0c4f127b2823ea:libevdev/readme
-f:ca6026d4e138e4130e85738b5c22b8c1:libevdev/CHANGELOG
-f:0b4e5564e5f4a2b673afa4c9f4fada1c:libevdev/spkgbuild
+f:76dcc72f17fb47c82871872ad1718152:libevdev/CHANGELOG
+f:d0ab59d8f802baa6c4f57503d9011809:libevdev/spkgbuild
 f:8e684119aa2ef9b3cf46e8ccad0a7d10:libxfont/spkgbuild
 f:2dcd2714a66fea92eeacf96660882b94:qrencode/CHANGELOG
 f:1b98d3585b2f53706feeea033e30d440:qrencode/spkgbuild
@@ -383,8 +383,8 @@ f:2519c55858f0081084821011e3bccd27:libmtp/spkgbuild
 f:a4b96eda4c6ba381e2b45308097e0457:libxxf86dga/spkgbuild
 f:342bc6386ee2a7ccd83ec22289a46398:libvorbis/spkgbuild
 f:b528501759a4fda046b8fefa4467f995:libxcomposite/spkgbuild
-f:a0bdb1df48e29a74b07ea836a035b323:libressl/CHANGELOG
-f:46b99247af1830326f15a44335a12a56:libressl/spkgbuild
+f:96bea60c37bacd23550485e336ff3411:libressl/CHANGELOG
+f:3a0f8044e3e9e45fe45f47c5eba187ee:libressl/spkgbuild
 f:34d34e099d543154d1cfebb4cfb24bcc:liblzf/spkgbuild
 f:a3314d6af3ca42df7008fa996f30a71b:libfilezilla/CHANGELOG
 f:26c887daa65331e715e78494e091a4f8:libfilezilla/spkgbuild
@@ -456,8 +456,8 @@ f:860473d01ed41240349a65595c70378b:xapian-core/spkgbuild
 f:4c6f9b74b72d3561b8ce8b37e1ce269d:libxaw3dxft/spkgbuild
 f:fcd6515962b376624de7136f7e2260ad:liblastfm-qt5/CHANGELOG
 f:446dffe884ea47190dd2176d9419a379:liblastfm-qt5/spkgbuild
-f:9c90ef9f6ac99b1e93456a2c04fe4f3e:libical/CHANGELOG
-f:67b88d6b0b373db4f89e429866285de0:libical/spkgbuild
+f:410e85a99ca205bd81cbd4b347cecb2c:libical/CHANGELOG
+f:66e3fae5e8aa066f6f1ce3653d7e7e25:libical/spkgbuild
 f:a48b3ef9d7bfa6cfb29ec4190bcedf4d:libarchive/CHANGELOG
 f:c1048c3af6fc99b1cc874b052067f738:libarchive/spkgbuild
 f:e89d1b5e9cf6d4c6b34c5c81a1d36d93:libpeas/spkgbuild
@@ -468,8 +468,8 @@ f:09117913847f1a2744363b3851468dda:libmpd/0003-fix-comparison.patch
 f:a4c9c84441bdb99433e20fa34dc80cda:libmpd/spkgbuild
 f:37a7d0616f8cb77a261afd294f27f708:libmpd/0002-include-config.h.patch
 f:ea932ae6f0e93ca13c25bdaffb04577e:libxcursor/spkgbuild
-f:e63afb192f09d6d6334bc67c7d188b5f:libqalculate/CHANGELOG
-f:8b481f5a3f54136fd332a3026a97da1d:libqalculate/spkgbuild
+f:60f061764f0076c606a8a99b55879aba:libqalculate/CHANGELOG
+f:535c452a44c58fc9a9626f05eb7e167c:libqalculate/spkgbuild
 f:1e0192c06dfb76c068be95babd7765a6:libzip/CHANGELOG
 f:38a13871e44520a8787062f906fd4d56:libzip/spkgbuild
 f:1adbc8b620fd1d9bfc945e1fbb2f2531:libtorrent-rasterbar/CHANGELOG
@@ -479,8 +479,8 @@ f:881b3feb662b2f8d4076bd279bf40bfb:geoip/spkgbuild
 f:2b00e53bc976fa121eca2f69c690f964:wayland/CHANGELOG
 f:aa3526c17f1e2ed986578003448ed841:wayland/spkgbuild
 f:aa80cd71347713fb395c605a24c1da62:libfm-extra/spkgbuild
-f:631e3df9f9acc9584fb52f2a63bb4f1d:openexr/CHANGELOG
-f:f46154a2a81a5e868bf019fd3448a697:openexr/spkgbuild
+f:bab9d06c2a548857ce514c9eef0cfa66:openexr/CHANGELOG
+f:12d45b03a05cb50ed37837c270aefde2:openexr/spkgbuild
 f:3f27070e64062ffe086e209dd7165602:p8-platform/CHANGELOG
 f:985a7a25faf06e88e2ff547373065b8f:p8-platform/spkgbuild
 f:d1c6fb3a5151e94b149c2e4ea4b9d606:libwnck3/spkgbuild
@@ -515,8 +515,8 @@ f:44731ff6e9acdff5575ba810474cbc99:libbluray/spkgbuild
 f:9652206f589e2e8ad5a3095af54bc5c9:sdl/spkgbuild
 f:1345b5d1e5c97877030dfd3f5364e9e0:libaccounts-glib/CHANGELOG
 f:24edf191ba2d016aced70dbe1d8e7114:libaccounts-glib/spkgbuild
-f:6384b2f8ca2694f79af0d25109569457:xwayland/CHANGELOG
-f:3cadf7721c49296ac122274a39f3c5b6:xwayland/spkgbuild
+f:eb994580c40ccaa2b87865650e1aeff5:xwayland/CHANGELOG
+f:914600837e7c228e86e1143610ae3ebe:xwayland/spkgbuild
 f:2f2b56de7290d4010c40cf53b428ff5b:libfs/spkgbuild
 f:2497ef57ca3837ef22c13434754f3f25:libxfce4util/CHANGELOG
 f:66f7feb5910e6298bcd44f1658f87e8d:libxfce4util/spkgbuild
@@ -667,8 +667,8 @@ f:bddc3642d31c3d20766bb133637b3da8:libidn2/spkgbuild
 f:051a6e7add098c4c89f107189f64b1f6:lirc/CHANGELOG
 f:d80cd25aa263531f098d0b90bde08056:lirc/lirc-0.10-build-fix.patch
 f:4fd0cc3324e9e62e50dec34822f3fa57:lirc/spkgbuild
-f:67d04134949320a47e0c8793878d0ac0:poppler/CHANGELOG
-f:e34823d02f5ada9a6e3eadcabda76fa6:poppler/spkgbuild
+f:2397593d3933258e7ed057a9d9a39910:poppler/CHANGELOG
+f:8886f78fd8d88bc00562d34ac61be877:poppler/spkgbuild
 f:124f90691b94971fb85f74b8c9283566:libffi/CHANGELOG
 f:c3aae9aa68c71eafeb1719596338cdb7:libffi/spkgbuild
 f:debfd1d1c91246ed22ca7a37102f951b:c-ares/CHANGELOG
