@@ -2,7 +2,7 @@
 # depends : cracklib
 
 name=cracklib-dict
-version=2.10.3
+version=2.10.4
 release=1
 
 source="https://github.com/cracklib/cracklib/releases/download/v$version/cracklib-words-$version.bz2"

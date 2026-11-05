@@ -2,7 +2,7 @@
 # depends : gcc glibc
 
 name=brotli
-version=1.2.0
+version=1.2.1
 release=4
 
 source="https://github.com/google/brotli/archive/v$version.tar.gz"

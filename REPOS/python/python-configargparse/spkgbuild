@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-configargparse
-version=1.8.0
+version=1.9.0
 release=3
 
 source="https://github.com/bw2/ConfigArgParse/archive/refs/tags/v$version.tar.gz"

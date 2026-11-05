@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-fissix
-version=24.4.24
+version=26.10.29
 release=5
 
 source="https://github.com/jreese/fissix/archive/refs/tags/v$version.tar.gz"

@@ -2,7 +2,7 @@
 # depends : python
 
 name=python-entrypoints
-version=0.4
+version=0.4.2
 release=6
 
 source="https://github.com/takluyver/entrypoints/archive/refs/tags/$version.tar.gz"
